@@ -17,3 +17,6 @@ figures/out/*.tmp
 build/
 .vale/styles/*
 !.vale/styles/config/
+
+# Local tool logs (may contain environment variables)
+appmap.log
