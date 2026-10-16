@@ -1,0 +1,19 @@
+# Program context pulled from Google Drive (internal, contains people and strategy) — never commit
+docs/context/
+# Answer keys for even-numbered items and certification item bank — never commit
+private/
+# Build output
+_book/
+_site/
+.quarto/
+figures/out/*.tmp
+# OS / editor
+.DS_Store
+*.swp
+.claude/settings.local.json
+.claude/worktrees/
+
+# Build output
+build/
+.vale/styles/*
+!.vale/styles/config/
