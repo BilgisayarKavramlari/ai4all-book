@@ -1,6 +1,6 @@
 # Chapter 1 blueprint — Why AI Changes Study and Work
 
-Status: DRAFT v0.2 for author approval (2026-10-17). v0.2 applies an independent pedagogy review (3 must-fix, 12 should-fix items) and the published figures of the opening study. No chapter text is written until this blueprint is approved.
+Status: v0.2 APPROVED by the author (2026-10-17). v0.2 applies an independent pedagogy review (3 must-fix, 12 should-fix items) and the published figures of the opening study. No chapter text is written until this blueprint is approved.
 Part I — Understanding AI · Syllabus week 1 (Tue Jan 19 concept session; Thu Jan 21 baseline lab) · Path: Core · Sources: docs/factcheck/ch01-sources.md.
 
 ## 1. Outcome link
