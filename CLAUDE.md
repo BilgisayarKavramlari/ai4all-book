@@ -14,7 +14,8 @@ Talk to the author in Turkish; write book content in English.
 
 ## Outputs and constraints
 - Two editions from one source: print interior PDF (grayscale, Draft2Digital Print) and EPUB 3 (color). Every figure has a color and a grayscale render.
-- Free open-web edition is planned; licensing is not decided yet (see docs/context/KITAP_TASARIMI.md).
+- Book decisions are in docs/decisions.md (they override docs/context/). License CC BY-NC-SA 4.0. First release through Draft2Digital (EPUB + D2D Print, two volumes); open-web edition later.
+- The book is not part of the course development grant; never describe it as grant-funded or grant-owned.
 - D2D rules change: always re-check before upload (ai4all-publisher-d2d).
 
 ## Skills

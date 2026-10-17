@@ -1,0 +1,73 @@
+# AI for All: Career-Ready AI Skills — Quarto book project
+# Outputs: print interior PDF via Typst (grayscale, Draft2Digital Print) and EPUB 3 (color); HTML for the open web edition.
+# Trim size, volumes, fonts and callout styles are NOT decided yet (see docs/design-options.md).
+# Values marked "placeholder" change when docs/design-system.md is written.
+
+project:
+  type: book
+  output-dir: _book
+
+lang: en-US
+
+book:
+  title: "AI for All"
+  subtitle: "Career-Ready AI Skills"
+  author: "Şadi Evren Şeker"
+  edition: "2027.1 (draft)"
+  chapters:
+    - index.qmd
+    - front/preface.qmd
+    - front/how-to-use-this-book.qmd
+    - front/how-this-book-was-written.qmd
+    - part: "Part I — Understanding AI"
+      chapters:
+        - chapters/01-why-ai-changes-study-and-work.qmd
+        - chapters/02-how-machines-learn-from-data.qmd
+        - chapters/03-inside-large-language-models.qmd
+        - chapters/04-how-and-why-ai-fails.qmd
+    - part: "Part II — Working with AI"
+      chapters:
+        - chapters/05-framing-tasks-and-iterating-prompts.qmd
+        - chapters/06-context-engineering-and-reusable-workflows.qmd
+        - chapters/07-learning-with-ai-tutor-not-answer-machine.qmd
+        - chapters/08-hallucination-uncertainty-and-verification.qmd
+        - chapters/09-sources-evidence-and-reading-with-ai.qmd
+        - chapters/10-writing-and-professional-communication-keeping-your-voice.qmd
+    - part: "Part III — Deciding and Building with AI"
+      chapters:
+        - chapters/11-decision-support-data-work-and-hidden-assumptions.qmd
+        - chapters/12-the-tool-ecosystem-and-task-tool-fit.qmd
+        - chapters/13-multimodal-ai-images-audio-and-video.qmd
+        - chapters/14-agentic-workflows-and-human-oversight.qmd
+    - part: "Part IV — Using AI Responsibly"
+      chapters:
+        - chapters/15-privacy-and-security.qmd
+        - chapters/16-bias-and-fairness.qmd
+        - chapters/17-explainability-and-transparency.qmd
+        - chapters/18-intellectual-property-law-and-governance.qmd
+    - part: "Part V — AI in Your Field and Your Future"
+      chapters:
+        - chapters/19-ai-across-disciplines-field-guides.qmd
+        - chapters/20-your-ai-portfolio-and-career-narrative.qmd
+        - chapters/21-your-personal-ai-code-of-practice.qmd
+    - part: "Part VI — Frontiers and Big Questions"
+      chapters:
+        - chapters/22-the-state-of-the-art-current-developments.qmd
+        - chapters/23-philosophical-debates-minds-meaning-and-responsibility.qmd
+
+format:
+  html:
+    toc: true
+    number-sections: true
+  typst:
+    papersize: us-letter        # placeholder until the trim size is chosen
+    margin:
+      x: 1in                    # placeholder
+      y: 1in                    # placeholder
+    mainfont: "Source Serif 4"  # placeholder (font option A)
+    fontsize: 10.5pt            # placeholder
+    toc: true
+    number-sections: true
+  epub:
+    toc: true
+    number-sections: true

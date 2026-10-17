@@ -71,8 +71,8 @@ Outcome coverage (from the design guide): LO1 Ch. 1–4, 22 · LO2 Ch. 5, 6, 12 
 | F | Deep Dives: mathematics and Python (optional) |
 | G | Case Index (by field, failure type and chapter) |
 
-## Volume and editions (proposed, not decided)
+## Volume and editions (decided 2026-10-16, see docs/decisions.md)
 
 - At least 10,000 words per chapter; 250,000+ words in total (about 700–900 printed pages); roughly one third of page area for figures.
-- Print in two volumes: Volume 1 = Parts I–II (to the midterm), Volume 2 = Parts III–VI.
-- Primary format digital (web + EPUB), with a grayscale print interior; calendar-based edition numbers (2027.1 Spring, 2027.2 Fall).
+- Print in two volumes (8.5 × 11 in): Volume 1 = Parts I–II (to the midterm), Volume 2 = Parts III–VI.
+- First release through Draft2Digital: EPUB 3 (color) and D2D Print (grayscale interior); open-web edition later; calendar-based edition numbers (2027.1 Spring, 2027.2 Fall).
