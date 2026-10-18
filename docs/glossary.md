@@ -138,5 +138,21 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Consistency check | Asking the same question in several new chats and comparing the answers. | Tutarlılık kontrolü |
 | Stated confidence | The certainty an output expresses in words or numbers, such as "I'm 95% sure" or "definitely." | Beyan edilen güven |
 | Calibration (of a model) | How closely a model's stated confidence matches its accuracy. | Kalibrasyon (modelin) |
-| Calibration gap | The difference between stated (or predicted) confidence and the share correct. In A4 (Ch. 7), the sum of your confidences compared with your score; in A5 (Ch. 8), the average confidence of the claims rated 80% or higher minus the share of them supported, in percentage points, leaving out not-checkable, not-checked and cannot-verify rows and counting partly supported as not supported. | Kalibrasyon farkı |
+| Calibration gap | Your predicted score minus your actual score, across a set of answers; divided by the number of questions, your average confidence minus the share you got right. A positive gap means you were overconfident. | Kalibrasyon farkı |
 | Expected calibration error (Deep) | The average gap between confidence and accuracy across confidence groups, giving larger groups more weight. | Beklenen kalibrasyon hatası |
+| Performance (during practice) | How well you do a task while practicing, often with help; it can differ from what you have learned. | Performans (alıştırma sırasında) |
+| Learning (durable) | A lasting change in what you can do without help, shown later and in new situations. | Kalıcı öğrenme |
+| Overreliance | Relying on an AI tool's output more than the task or the evidence warrants, so that your own checking or skill-building drops out. | Aşırı bağımlılık |
+| Retrieval practice (learning) | Recalling information from your own memory, for example by self-testing, which strengthens it more than restudying. Not the same as retrieval in an AI system (Ch. 3). | Geri çağırma alıştırması |
+| Desirable difficulty | A condition that makes learning feel harder and slower but improves long-term memory and use, provided you can meet it with effort. | İstenen zorluk |
+| Generation effect (learning) | The finding that information you produce yourself is remembered better than information you only read. | Üretme etkisi |
+| Spacing (spaced practice) | Spreading study of the same material over separate sessions instead of massing it in one. | Aralıklı çalışma |
+| Metacognition | Knowing about and monitoring your own thinking and learning. | Üstbiliş |
+| Calibration (of your own confidence) | How closely your confidence in your answers matches how often they are actually correct, across many answers. | Kalibrasyon (kendi güveninin) |
+| Keyed questions | Questions that come with an answer key, such as a textbook's end-of-section or practice questions. | Cevap anahtarlı sorular |
+| Scaffold | Temporary support that lets you do what you cannot yet do alone, withdrawn as you improve. | İskele (destek) |
+| Crutch (in learning with AI) | Help that does the part of the work you needed to do yourself, and that you keep depending on. | Koltuk değneği |
+| Tutor mode | A way of using an AI tool in which it is set up to respond with questions and hints and to wait for your attempts, instead of giving answers. | Öğretmen kipi |
+| Answer mode | The default way of using an AI tool, in which it produces the answer or finished work you ask for. | Cevap kipi |
+| Socratic questioning | Teaching by asking questions that lead the learner to reason the answer out. | Sokratik sorgulama |
+| Cognitive offloading (Deep) | Using a tool or action to reduce the mental work a task requires, such as writing a note or using a calculator. | Bilişsel yük aktarımı |

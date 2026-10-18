@@ -272,7 +272,7 @@ def chapter_map(f):
             f.arrow(x + 236, 217, x + 252, 217)
     y = 372
     f.text(150, y, "AI Work Loop:", size=14, weight="700", anchor="end")
-    xs = [205, 300, 420, 540, 640]
+    xs = [195, 290, 405, 548, 668]
     for i, step in enumerate(LOOP):
         if step == "Decide":
             f.box(xs[i] - 50, y - 20, 100, 40, step, role="highlight", kind="human", thick=True, size=15)
@@ -281,7 +281,7 @@ def chapter_map(f):
         else:
             f.text(xs[i], y, step, size=14, color=muted)
         if i < 4:
-            f.text((xs[i] + xs[i + 1]) / 2 + (8 if i == 1 else 0), y, "→", size=14, color=muted)
+            f.text((xs[i] + xs[i + 1]) / 2 + (-6 if i == 1 else 0), y, "→", size=14, color=muted)
     f.text(400, 410, "This chapter strengthens Decide (who owns the decision, and what can an analysis settle?), "
            "then Verify (dashed): recalculate what the decision depends on.", size=13, color=muted, width=780)
     f.text(400, 446, "Opening case: a health algorithm that never received race (Obermeyer et al., 2019)", size=13,
@@ -296,11 +296,11 @@ def storyboard(f):
            "neutral", "human"),
           ("Before publication", "The maker replicates the finding on 3.7 million patients (authors' report)",
            "neutral", "step"),
+          ("Before publication", "Trying a health-and-cost label: 84% less bias by one measure (authors' report)",
+           "neutral", "step"),
           ("Oct 25, 2019", "Article published in Science (confirmed)", "verified", "step"),
           ("Oct 25, 2019", "New York regulators write to the maker's parent company (confirmed)", "neutral",
-           "human"),
-          ("Next step", "A health-and-cost label: 84% less bias by one measure (authors' report)",
-           "verified", "step")]
+           "human")]
     f.line(24, 230, 776, 230, color=ink, width=2.4)
     for i, (d, txt, role, kind) in enumerate(ev):
         x = 14 + i * 129

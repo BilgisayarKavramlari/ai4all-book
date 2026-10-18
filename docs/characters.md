@@ -136,3 +136,7 @@ Why they exist: recurring people make examples personal and memorable (Mayer's p
 | 2026-10-18 | Ch. 8 | Lucía | Wrote a paragraph on the Enron scandal and the Sarbanes-Oxley Act for an accounting class; checked three AI-suggested references |
 | 2026-10-18 | Ch. 8 | Lucía | Keeps ten known-answer accounting study questions from her textbook's answer key; used them to test a tool's calibration |
 | 2026-10-18 | Ch. 8 | Lucía | Her A5 rows (claims 3–5 of the CPA overview) and her calibration gap (36 points) appear in 8.6 |
+| 2026-10-18 | Ch. 7 | Elif | Takes an introductory statistics course for her psychology major; learns standard deviation vs. standard error; turns her bilingual vocabulary notebook from rereading into self-testing (Mon/Wed/Fri) |
+| 2026-10-18 | Ch. 7 | Elif | At the peer-tutoring center where she volunteers, has noticed that students she simply gives the answer to often return with the same question (her impression, presented as an anecdote, not evidence) |
+| 2026-10-18 | Ch. 7 | Marcus | Studies acid–base balance for a pathophysiology exam between night shifts, using textbook practice questions only; rates his confidence 100/100/90% after a smooth AI explanation and scores 1 of 3 (calibration gap +1.9) |
+| 2026-10-18 | Ch. 7 | Marcus | In his tutor-mode session (on worked examples, not his check questions), 24 turns, 12 of them his own; types "just tell me" when tired after a shift (turn 9); gap +0.5 right after, 0.0 three days later on parallel questions; decides to stop sessions when too tired to attempt |

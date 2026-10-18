@@ -77,3 +77,48 @@ A light pass with docs/voice/voice-profile.md rules 1–4:
 - **"Teachers, sports coaches and employers"** as a cross-field opening in 7.1.
 
 No facts, numbers, citations, headings or figure references were changed in the voice pass. The author's final voice edit is still pending.
+
+## Final review (2026-10-18): applied
+
+The final reviewer (Opus, independent) found 6 must-fix, 17 should-fix and 5 nice-to-have items, and called the chapter "ready after the must-fixes, without another full review." All 28 are applied.
+
+**Must-fix**
+- "Artificial intelligence (AI)" is defined at first use.
+- "SD" in Elif's dialogue is written out.
+- Calibration gap: redefined as predicted score minus actual score across a set of answers; divided by the number of questions, it gives Chapter 8's form. The glossary row is updated.
+- Model calibration: "how closely a model's stated confidence matches its accuracy," word for word as in Chapter 8.
+- Multiple-choice cue: the key is now the longest option only in A5 and A7, within the brief's limit of two. A9, A10 and A12 were rebalanced, and the "always" in A10(c) is gone.
+- Fact-check closure: docs/factcheck/ch07.csv has a `resolution_v2` column for every row and a new row K01 for Kornell, Hays & Bjork (2009).
+- C04: the [VERIFY] marker is replaced by a refresh-list note.
+
+**Should-fix**
+- F7.5's note now matches 7.2 ("or if the answer follows").
+- Overconfidence collision handled: Chapter 1 uses the word for output, so 7.3 notes the difference.
+- Rubric gaps filled in Task, Reflection and Declaration.
+- Marcus's record now meets A4's minimum (24 turns, 12 of them his own).
+- Anthropomorphic wording removed: "relies on the model's output about your attempt"; "if the output does not follow your setup."
+- **Key test reworded book-wide** (D-7.e): "Who produced the answer in this turn: you, from your own memory, or the tool?" It is updated in the text, F7.8, F7.12, F7.15, the labs, Appendix E and the handoff.
+- The agent definition is cited (Anthropic, 2024), and the reference is added.
+- F7.3: GPT Tutor is no longer drawn thick, which had clashed with the legend.
+- The `prompt_anatomy` legend issue is passed to the editor as a cross-chapter request.
+- F7.9: caption and title now read "more often opened by asking for the answer or repeating the question"; the alt text separates the two measures.
+- Cross-chapter requests for Chapter 1, line 199, and Chapter 8's own-confidence wording are in the handoff.
+- Glosses added: context window, price elasticity, n, low pH, combinatorics, tokens.
+- The word-budget overrun is recorded in D-7.d and in the blueprint.
+- Refresh rows added for Flavell, Chi, Wood (full-text checks) and for a nursing check of the acid–base cases.
+- Every distractor now names a misconception (M1–M5b); options without one were rewritten.
+- Study dates now read "published in".
+- University-tool wording: "such as Microsoft Copilot Chat (as of October 2026)".
+- In-text citations in APA order.
+- Lab 7.2 says "prediction gap", not "calibration gap".
+
+**Nice-to-have**
+- Serial comma removed.
+- True minus signs in F7.2.
+- Delegation Ladder sentence reworded.
+- "An AI tool" used as in the glossary.
+- "In a few sentences each" added to the Opening Case's pointer to 7.1–7.3.
+
+**Re-rendered** (color and gray): F7.2, F7.3, F7.5, F7.8, F7.9, F7.12 and F7.15. Alt texts and captions were checked identical to figures/longdesc/ch07.md.
+
+**Not changed:** nothing from the final review was skipped. The items that can't be closed here remain open on the refresh list: the full text of Flavell, Chi and Wood et al., the nursing textbook check (C90), and the SSRN posting date (C28).

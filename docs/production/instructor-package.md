@@ -75,3 +75,17 @@ Everything the chapter, labs or assignment promise on eLearning or in Compass. A
 | Compass: interactive Verification Funnel ("take this claim through the funnel"); calibration self-check; Chapter 8 quiz; Lab 8.1–8.3 pages | Compass [COMPASS] | Post-MVP (D7 covers Chapters 1–4), or by Feb 18 |
 | Readings: R6 full opinion link (ECF 54); R5 section pointer (shared with Chapter 4) | eLearning | Thu Feb 18, 2027 |
 <!-- /ch08 -->
+
+<!-- ch07 -->
+## Chapter 7
+Every asset the chapter promises on eLearning or in Compass. All sample outputs must carry the model name and the date of generation; use a university-provided tool where possible.
+
+| Asset | Used by | Content and format | Needed by |
+|---|---|---|---|
+| Answer-mode / tutor-mode transcript pair | Tuesday demonstration; Lab 7.3 no-device route; A4 alternative assignment | One concept from a general-education course, run once in answer mode and once with the 7.5 tutor-mode setup; full transcripts with model name and date; at least 8 student turns in the tutor-mode transcript, including one request for the answer and one tool error or over-agreement if it occurs naturally (never staged without saying so) | Tue Feb 9, 2027 |
+| Case Study slides or handout | Tuesday's class (the Case Study is read in class) | The three-study comparison table and the "two terms first" glosses (peer-reviewed, working paper, SD), with the five Case Study Questions | Tue Feb 9, 2027 |
+| Peer-tutor question script | A4 alternative assignment; Lab 7.1 no-device route | One page: how to tutor without giving answers (ask for an attempt, one hint at a time, ask the learner to explain back), with 6–8 generic prompts ("What would you try first?", "Which step are you unsure of?") | Thu Feb 11, 2027 |
+| A4 record sheet and template | Lab 7.1; A4 | Figure 7.12 as a fillable table (screen-reader-friendly: header row, no merged cells): three check questions × before/right after/later, predicted score, actual score, gap; turn log with at least 6 rows; reflection prompts (a)–(e); declaration fields | Thu Feb 11, 2027 |
+| Keyed-question guidance by field | Pre-lab Your Turn (7.5) | Short list of where keyed questions live in common course types (textbook end-of-section sets; publisher practice quizzes; study-guide identification items keyed to pages for history and literature; problem sets with posted solutions), plus the fallback (questions from headings, key looked up afterward) | Tue Feb 9, 2027 (so students can prepare before Thursday) |
+| Compass pages | Labs 7.1–7.3; A4 | Current tools' built-in study or learning modes and where to find them (dated), fresh/temporary chats, exporting and redacting transcripts; A4 template; interactive F7.8 step-through after the MVP | Thu Feb 11, 2027 (tool steps); interactives after the MVP |
+<!-- /ch07 -->

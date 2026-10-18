@@ -38,3 +38,10 @@
 3. **Optional From the Field addition:** a verification story from your own editorial or SME work (for example, checking references as an encyclopedia editor), alongside or instead of the Delphi paper. Never constructed.
 4. **Final voice edit**, as for every chapter.
 <!-- /ch08 -->
+
+<!-- ch07 -->
+## Chapter 7
+1. Live syllabus (week 4): R3 → the PNAS 2025 version, Significance statement and Table 1 before Tuesday; R4 → abstract only, discussed in class; the Case Study read in Tuesday's class. Week 4 then totals about 2.2 hours outside class. (The editor updates the repository's docs/syllabus.md.)
+2. Optional: a real, anonymized moment from your own teaching where students used AI as a crutch or a scaffold, to add to From the Field (never constructed). The source entry (Şeker, 2015, *YBS Ansiklopedi* 2(1), 19–21) is now confirmed.
+3. Final voice edit.
+<!-- /ch07 -->

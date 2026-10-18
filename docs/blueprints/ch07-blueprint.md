@@ -323,3 +323,13 @@ Four independent reviews applied with the editor's decisions E1–E9; details an
 - Nickow et al. is cited in the AERJ 2024 version (about 0.29 SD).
 - The Nigeria caveats are added.
 - Week 4 comes to about 2.2 h.
+
+## Word budget after the final review (2026-10-18)
+
+The final word budget departs from §1 of this blueprint; recorded in handoff D-7.d:
+- Core 7.1–7.5: about 4,090 words, against the planned ≤ 3,400.
+- 7.4: about 930 words; 7.5: about 980 words; both against the planned 650–750.
+- Core + Studio: about 4,570 words, against 4,200 (30–31 minutes at 150 wpm).
+- Required weekly package: about 45 minutes; the week totals about 2.2 h.
+
+The overrun comes from additions the reviews required: the coding rules, the pretesting caveat, the calibration arithmetic and the glosses.
