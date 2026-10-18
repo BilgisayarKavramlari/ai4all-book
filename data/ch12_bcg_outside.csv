@@ -1,0 +1,4 @@
+condition,correct_pct,diff_pp_vs_control,quality_change_pct_vs_control,source
+No AI (control),84.4,0,0,"Dell'Acqua et al. (2023) HBS WP 24-013, Table 4 col. 1 (control mean 0.844)"
+GPT-4 only,70.5,-13.9,17.9,"Table 4 col. 1 coefficient -0.139; Table 6 col. 1: +1.05 (17.9% over control mean)"
+GPT-4 + overview,59.9,-24.5,25.1,"Table 4 col. 1 coefficient -0.245; Table 6 col. 1: +1.47 (25.1% over control mean)"

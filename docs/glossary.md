@@ -219,3 +219,21 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Missing not at random, MNAR (Deep) | Values are missing for a reason that depends on the missing value itself. | Rastgele olmayan eksiklik |
 | Multiple imputation (Deep) | Filling each missing value several times with plausible values, analyzing each completed dataset and pooling the results with their extra uncertainty. | Çoklu tamamlama (çoklu töhmet) |
 | Sensitivity analysis (Deep, missing data) | Assuming the missing values were somewhat higher or lower than the fill and checking whether the conclusion survives. | Duyarlılık analizi |
+| Task–tool fit | How well one tool, used in one way, meets one task's success criteria within your limits of data and cost, on a given date. | Görev–araç uyumu |
+| AI tool | The software you use: a model plus what the tool adds to the model's context window, what it can do, where the model runs and whose terms cover it. | Yapay zekâ aracı |
+| Provider | The company or institution that runs an AI tool. | Sağlayıcı |
+| Domain tool | A tool built for one field, often given that field's records or documents. | Alana özgü araç |
+| Open-weight model | A model whose settings (parameters), called its weights, can be downloaded and run under a license. | Açık ağırlıklı model |
+| Local model | An open-weight model run on hardware that you or your institution control, so your input need not go to the model's provider. | Yerel model |
+| Total cost of use | The price of a tool, plus usage limits, the time spent checking outputs, the time spent learning the tool, what you give up in data, and the cost of switching later. | Toplam kullanım maliyeti |
+| Verification cost | The time and effort needed to confirm that an output meets your criteria. | Doğrulama maliyeti |
+| No-AI baseline | The time a part of a task takes you without any AI tool, done well enough to meet your criteria. | Yapay zekâsız başlangıç ölçüsü |
+| Data terms | The parts of a tool's terms and its options that say what happens to what you type and upload. | Veri koşulları |
+| Data class | The category an institution assigns to information by how much harm its release could cause; UTD's policy names three: Public Data, Controlled Data and Confidential Data. | Veri sınıfı |
+| Data gate | A check, made before any quality test, of whether a tool's data terms fit the class of the input. | Veri kapısı |
+| Bake-off | A side-by-side test of two or more tools, and where possible no AI, on the same part of a task. | Karşılaştırmalı deneme (bake-off) |
+| Fit matrix | A table whose rows are the parts of a task and whose columns are the tools you tested plus no AI; each cell holds a fit decision, its rung and its reason. | Uyum matrisi |
+| Drift (in a tool or model over time) | A change in how a named model or tool behaves on the same inputs over time, often after its provider updates it. | Kayma (araç ya da modelde zamanla) |
+| Lock-in | The effort and cost that keep you on a tool after a better fit appears. | Bağımlılık (kilitlenme) |
+| Re-test trigger | An event that should make you test a fit again, such as a model update or retirement, a change in price or terms, a new kind of input, or a change of job or school. | Yeniden test tetikleyicisi |
+| Leaderboard (Deep) | A ranking of models by benchmarks or by crowd votes. | Sıralama tablosu (leaderboard) |

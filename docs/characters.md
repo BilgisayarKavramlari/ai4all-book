@@ -154,3 +154,8 @@ Why they exist: recurring people make examples personal and memorable (Mayer's p
 | 2026-10-18 | Ch. 11 | Lucía | Is the treasurer of the accounting students' association (consistent with Ch. 5's handout for the association) |
 | 2026-10-18 | Ch. 11 | Lucía | The association ran three fundraisers last year (bake sale, book swap, car wash); volunteer hours logged in a shared spreadsheet, and start and end times written on paper sign-in sheets kept in the association's binder; the two longest book-swap shifts went unlogged in the spreadsheet; the board votes on which to repeat and chooses the car wash after her audit (constructed data) |
 | 2026-10-18 | Ch. 11 | Lucía | Her customer-support team ranks agents by tickets closed per hour (faded example; constructed, no company or customer data) |
+| 2026-10-18 | Ch. 12 | Sam | Compares two tools (Tool A under institutional terms; Tool B under consumer terms, with search and a calculation feature) on parts of the robotics club's parts order (continuing Ch. 6) |
+| 2026-10-18 | Ch. 12 | Sam | Unit-conversion known-answer test: stall torque 41 oz-in = about 0.29 N·m (the same club motor as Ch. 4's diary entry, 0.29 N·m); Tool A's conversion ten times too large (2.9 N·m) |
+| 2026-10-18 | Ch. 12 | Sam | Summarizes 20 public motor datasheets for the club (bake-off: metric, US-unit and missing-stall-torque inputs); keeps the torque calculation in his own spreadsheet |
+| 2026-10-18 | Ch. 12 | Sam | The club has corporate sponsors who receive thank-you emails; he drafts with placeholders and merges names by hand |
+| 2026-10-18 | Ch. 12 | Sam | As a senior, writes a handover note for next year's captain (prompts, test inputs, matrix, re-test triggers; the Ch. 6 standing instruction copied out) |

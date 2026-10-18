@@ -140,3 +140,14 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | A9 sheet (F11.18) as an accessible table | eLearning; printed | Thu Mar 25 |
 | Case Study reading for Tuesday's class (chapter section; slides with F11.2, F11.19, F11.20) | Tuesday slides | Tue Mar 23 |
 <!-- /ch11 -->
+
+<!-- ch12 -->
+## Chapter 12
+| Asset (promised in the chapter or labs) | Where | Needed by |
+|---|---|---|
+| Tuesday demo: one task in two tools (mirrors the 12.6 Worked Example 1), with dated outputs, model names and prompts | eLearning | Tue Mar 30, 2027 |
+| Dated terms cards for at least three tools, including a university-provided tool such as Microsoft Copilot Chat: the three data-terms questions answered, with page titles and dates; a one-page copy of the §12.5 data-class table | eLearning (and printed) | Thu Apr 1, 2027 |
+| Route C package: a provided task split into parts, typical, different and edge inputs, and dated outputs of two tools (model names, dates, prompts), for the alternative assignment and for students who reach only one tool | eLearning | Thu Apr 1, 2027 |
+| A10 sheet template (F12.16), screen-reader-friendly, with the polish anchors; the partly filled sheet for the 12.9 faded example (biology abstract) | eLearning | Thu Apr 1, 2027 |
+| Compass pages (optional): tools you can reach by term; price forms and limits; data options by tool; fit-matrix builder; data-terms drill; lab pages ch12-lab1 to lab3; Chapter 12 quiz | Compass (optional) and eLearning | Tue Mar 30, 2027 |
+<!-- /ch12 -->

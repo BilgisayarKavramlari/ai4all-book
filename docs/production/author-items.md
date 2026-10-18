@@ -71,3 +71,13 @@
 3. **Optional:** a real, anonymized moment from your consulting or SME work where a missing-data or proxy choice changed a client's decision; never constructed (D16 disclosure if commercial).
 4. **Final voice edit** (pipeline step 8).
 <!-- /ch11 -->
+
+<!-- ch12 -->
+## Chapter 12
+1. **Live syllabus:** (a) R10 is recommended, not required, in week 10 (editor decision); (a2) the Chapter 12 Case Study is read together in Tuesday's class (Mar 30), as in Chapter 11, which keeps the week at about 131 minutes; (b) the Materials line "university-provided tools (Microsoft Copilot, CometAI)": as of October 2026, UTD's OIT lists CometAI only for faculty, staff and student employees at a manager's request, so for most students the university-provided tool is Microsoft Copilot Chat; (c) A10 wording as in the Application Assignment (three routes; 6 runs; edge repeat optional); week total about 2.2 h counted per requirement (D-12.9).
+2. **From the Field:** approve the use of your 2020 OptiScorer entry (*YBS Ansiklopedi* 8(1), 11–22; commercial, OptiWisdom's product, not named in the text), with the D16 disclosure placed first and the entry framed as a 2020 vendor argument tested with the chapter's lens (the vendor's own tests are not the customer's independent check; each central update is a re-test trigger). The fact-check notes that "founder" is not in the entry; it is the approved D16 wording. Please confirm whether OptiScorer was built by your company: the entry gives only the OptiWisdom affiliation and "offered since 2017", so the text no longer says "my company built". Optional: a real, anonymized moment when a client chose between a ready-made tool and a custom build; it will not be written for you.
+3. **Guest practitioner (Tue Mar 30):** name, field and whether the chapter should mention the session; nothing about it is invented.
+4. **Library access** to the *Organization Science* (2026) full text and to Randazzo et al. (2025), so the journal's numbers and the three-mode shares and accuracy can be checked before print.
+5. **Final voice edit** (pipeline step 8).
+6. **Course guidance:** confirm the §12.5 data-class table (D-12.8) as course guidance, including "no personal data about other people in consumer tools" and "no Confidential Data in any tool in this course"; it extends D15.
+<!-- /ch12 -->
