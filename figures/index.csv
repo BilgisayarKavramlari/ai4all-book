@@ -1,16 +1,16 @@
 id,chapter,title,type,source,status
-F1.1,1,Chapter Map — this chapter in 20 minutes,chapter map,,planned
-F1.2,1,Every AI-assisted task passes through five human decisions,signature diagram (AI Work Loop),figures/src/signature/,planned
-F1.3,1,The same question can produce different answers that sound equally sure,typeset text panels,needs dated AI outputs,planned
-F1.4,1,Search points you to sources; generation writes new text — even when it cites sources,concept diagram,,planned
-F1.5,1,Less experienced agents gained the most from the AI assistant,data chart,Brynjolfsson et al. 2025,planned
-F1.6,1,Inside the frontier AI help raised quality; outside it correct answers fell,data chart,Dell'Acqua et al. 2023,planned
-F1.7,1,AI capability is uneven across tasks that look equally hard,signature diagram (Jagged Frontier Map),figures/src/signature/,planned
-F1.8,1,What happened when the assistant arrived,case storyboard,,planned
-F1.9,1,Sounding right and being right are two different things,2x2 matrix,,planned
-F1.11,1,Disclosure and verification make middle-zone uses acceptable; some uses stay off-limits,three-zone diagram,,planned
-F1.12,1,The AI Work Loop applied to an upset customer's email,process walkthrough,,planned
-F1.13,1,Working faster with AI is not the same as learning,concept diagram,,planned
-F1.14,1,Your baseline: three tasks one failure two goals,template graphic,,planned
-F1.15,1,Chapter summary card,summary card,,planned
-F1.16,1,A staggered rollout turns a workplace into an experiment,process diagram,,planned
+F1.1,1,Chapter Map — this chapter in 20 minutes,chapter map,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-01-chapter-map.svg","drawn (color+gray); illustrator pass pending for F1.1, F1.2, F1.7"
+F1.2,1,Every AI-assisted task passes through five human decisions,signature diagram (AI Work Loop),"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-02-ai-work-loop.svg","drawn (color+gray); illustrator pass pending for F1.1, F1.2, F1.7"
+F1.3,1,The same question can produce different answers that sound equally sure,typeset text panels,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-03-two-answers.svg",drawn (color+gray)
+F1.4,1,Search points you to sources; generation writes new text — even when it cites sources,concept diagram,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-04-three-lanes.svg",drawn (color+gray)
+F1.5,1,Less experienced agents gained the most from the AI assistant,data chart,"figures/scripts/ch01_charts.py → figures/out/{color,gray}/f1-05-support-gains.svg",drawn (color+gray)
+F1.6,1,Inside the frontier AI help raised quality; outside it correct answers fell,data chart,"figures/scripts/ch01_charts.py → figures/out/{color,gray}/f1-06-frontier-results.svg",drawn (color+gray)
+F1.7,1,AI capability is uneven across tasks that look equally hard,signature diagram (Jagged Frontier Map),"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-07-jagged-frontier.svg","drawn (color+gray); illustrator pass pending for F1.1, F1.2, F1.7"
+F1.8,1,What happened when the assistant arrived,case storyboard,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-08-storyboard.svg",drawn (color+gray)
+F1.9,1,Sounding right and being right are two different things,2x2 matrix,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-09-fluent-correct.svg",drawn (color+gray)
+F1.11,1,Disclosure and verification make middle-zone uses acceptable; some uses stay off-limits,three-zone diagram,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-11-three-zones.svg",drawn (color+gray)
+F1.12,1,The AI Work Loop applied to an upset customer's email,process walkthrough,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-12-loop-walkthrough.svg",drawn (color+gray)
+F1.13,1,Working faster with AI is not the same as learning,concept diagram,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-13-faster-vs-learning.svg",drawn (color+gray)
+F1.14,1,Your baseline: three tasks one failure two goals,template graphic,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-14-baseline-template.svg",drawn (color+gray)
+F1.15,1,Chapter summary card,summary card,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-15-summary-card.svg",drawn (color+gray)
+F1.16,1,A staggered rollout turns a workplace into an experiment,process diagram,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-16-staggered-rollout.svg",drawn (color+gray)

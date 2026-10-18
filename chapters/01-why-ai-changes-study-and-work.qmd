@@ -1,221 +1,257 @@
 # Why AI Changes Study and Work {#sec-ch01}
 
-<!-- Status: FIRST DRAFT (2026-10-17), written from blueprint v0.2 (approved). Not fact-checked, not voice-edited.
-Placeholders: [CHARACTER: …] until docs/characters.md is approved; [AUTHOR ANECDOTE NEEDED: …]; [FIG n.m: …]; [VERIFY: …]; [AI OUTPUT NEEDED: …]. -->
+<!-- Status: REVISION v2 (2026-10-17) after four independent reviews (docs/editorial/ch01-dev-memo.md).
+Not marked done: awaiting the five recurring students ([CHARACTER: …]), the author's From the Field story,
+and the author's final voice edit. Figures: figures/out/color (EPUB/web) and figures/out/gray (print). -->
 
-[FIG 1.1: Chapter Map — this chapter in 20 minutes]
+![Chapter 1 at a glance: what you learn, judge and do in this chapter.](../figures/out/color/f1-01-chapter-map.svg){#fig-1-1 fig-alt="Chapter map with three columns: Learn (sections 1.1 to 1.3), Judge (1.4 to 1.6) and Do (labs, baseline, assignment A1)."}
 
-**This chapter in 20 minutes.** Artificial intelligence (AI) tools now write, summarize and answer questions in seconds. Studies of real workplaces show that these tools can make people faster and better, but not everyone gains the same amount, and on some tasks the tools make work worse. This chapter shows you where the gains come from and where the tools fail. It also gives you a five-step method for working with them, which you will use for the rest of the course: the AI Work Loop. You finish the chapter by recording where you start, so you can see later how far you have come.
+**Chapter 1 at a glance.** Artificial intelligence (AI) tools now write, summarize and answer questions in seconds. Studies of real and realistic work tasks show that these tools can make people faster and better. Not everyone gains the same amount, and on some tasks the tools make work worse.
 
-[FIG 1.2: Every AI-assisted task passes through five human decisions — AI Work Loop, with "Frame" highlighted for this chapter]
+This chapter shows you where the gains come from and where the tools fail. It also gives you a five-step method for working with them, which you will use for the rest of the course: the AI Work Loop. You finish by recording where you start, so you can see later how far you have come.
+
+**Time:** about 35–50 minutes for the Core reading, plus 20–30 minutes if you do the Your Turn activities at home. Some of them are done in the Thursday lab.
+
+![Every AI-assisted task passes through five human decisions. This chapter strengthens the first: Frame.](../figures/out/color/f1-02-ai-work-loop-frame.svg){#fig-1-2a fig-alt="The AI Work Loop: five rounded boxes in a circle (Frame, Prompt, Verify, Decide, Disclose) around a hexagon labeled The AI tool; Frame is highlighted."}
 
 ## Opening Case: 5,172 Support Agents and an AI Assistant {.unnumbered}
 
-Picture a customer-support center for a large software company. Agents answer chat messages from business customers all day. Some agents have been there for years and can solve almost anything. Others started last month and are still learning which questions are easy and which ones are traps.
+Picture a customer-support center for a large software company. Agents answer chat messages from business customers all day. Some agents have worked there for years and can solve almost any problem. Others started last month and are still learning which questions are simple and which are difficult.
 
-The company, a Fortune 500 firm that sells business-process software, decided to give its agents an AI assistant. The assistant read each conversation as it happened and suggested replies the agent could use, change or ignore. The company did not switch it on for everyone at once. It reached different groups of agents at different times. That staggered rollout gave three economists, Erik Brynjolfsson, Danielle Li and Lindsey Raymond, an unusual chance. They could compare agents who had the assistant with similar agents who did not have it yet (Brynjolfsson et al., 2025).
+The company is a Fortune 500 firm, which means it is one of the 500 largest companies in the United States by revenue. It sells business-process software, and it decided to give its agents an AI assistant. During each chat, the assistant generated suggested replies that the agent could use, change or ignore.
 
-The study followed 5,172 agents. On average, access to the assistant raised the number of issues an agent resolved per hour by 15%. That average hides the most interesting part. Less experienced and lower-skilled agents improved by about 30% and got better on quality, too. The most experienced and highest-skilled agents gained only a little speed and showed small declines in quality (Brynjolfsson et al., 2025).
+The company did not switch the assistant on for everyone at once. It reached agents a few at a time over several months, because training sessions were limited. That gave three economists, Erik Brynjolfsson, Danielle Li and Lindsey Raymond, an unusual chance.
 
-There were other changes. Customers were more polite and less likely to ask to speak to a manager. The researchers also found signs that the assistant helped agents learn, and that it improved agents' English fluency, especially for agents working in English as a second language (Brynjolfsson et al., 2025).
+They could compare agents who had the assistant with similar agents who did not have it yet, during the same weeks. Because both groups faced the same busy seasons during the same weeks, a difference between them is good evidence of the tool's effect (Brynjolfsson et al., 2025).
 
-[FIG 1.8: What happened when the assistant arrived — case storyboard]
+The study followed 5,172 agents. On average, access to the assistant raised the number of issues an agent resolved per hour by 15%. That average hides the most interesting part.
 
-So here is a puzzle. The same tool, given to the same team, helped the newest people a lot and the best people hardly at all. Why? And if a tool helps beginners most at work, what does that mean for you, a beginner in many subjects, while you are still learning? Keep both questions in mind. You will have answers by the end of this chapter.
+Less experienced and lower-skilled agents improved by about 30% and also improved the quality of their work. The most experienced and highest-skilled agents gained only a little speed, and the quality of their work dropped slightly (Brynjolfsson et al., 2025).
+
+There were other changes. Customers were more polite and less likely to ask to speak to a manager, although overall customer satisfaction scores did not change significantly. The researchers also found signs that the assistant helped agents learn, and that agents' written English improved, especially for international agents (Brynjolfsson et al., 2025).
+
+![What happened when the assistant arrived, in four steps.](../figures/out/color/f1-08-storyboard.svg){#fig-1-8 fig-alt="Four-step storyboard: agents answer chats alone; the assistant reaches agents a few at a time over several months; researchers compare agents with and without it in the same weeks; result: plus 15 percent on average, about plus 30 percent for newer agents, small quality dip for the most experienced."}
+
+So here is a puzzle. The same tool, given to the same team, helped the newest people a lot and the most skilled people hardly at all. Why?
+
+And if a tool helps beginners most at work, what does that mean for you, a beginner in many subjects, while you are still learning? Keep both questions in mind. You will have answers by the end of this chapter.
 
 ## Learning Objectives {.unnumbered}
 
+LO1–LO7 are the seven course learning outcomes; section 1.7 lists them in plain language. Framework tags refer to the UNESCO (United Nations Educational, Scientific and Cultural Organization) AI Competency Framework for Students and the AI Fluency framework.
+
 After this chapter you will be able to:
 
-1. **Explain** how a generative AI system produces an answer, how that differs from looking something up, and why the same prompt can give different answers. (LO1)
-2. **Explain** why measured gains from AI at work were uneven across workers and tasks, using evidence from three studies. (LO1)
-3. **Judge** whether AI is fit for a given task by testing its output and telling a fluent answer from a correct one. (LO1)
-4. **Judge** whether a given use of AI is assistance or outsourcing under this course's three-zone policy, and justify your judgment. (LO4)
-5. **Apply** the AI Work Loop (Frame → Prompt → Verify → Decide → Disclose) to a task from your own major. (LO4)
-6. **Produce** an AI use baseline: three real tasks, their results, one documented failure and two personal goals, with an AI Use Declaration. (LO4, LO7)
+- **O1 — Explain** how a generative AI system produces an answer, how that differs from looking something up (including tools that search first and then generate), and why the same prompt can give different answers. *(LO1 · UNESCO: AI techniques and applications, Understand)*
+- **O2 — Explain** why measured gains from AI at work were uneven across workers and tasks, using evidence from three studies. *(LO1 · UNESCO: human-centred mindset, Understand)*
+- **O3 — Judge** whether AI is fit for a given task by testing its output and telling a fluent answer from a correct one. *(LO1 · AI Fluency: Delegation, Discernment)*
+- **O4 — Judge** whether a use of AI is assistance or outsourcing under this course's three-zone policy, and justify your judgment. *(LO4 · UNESCO: ethics of AI, Apply)*
+- **O5 — Apply** the AI Work Loop (Frame → Prompt → Verify → Decide → Disclose) to a task from your own major. *(LO4 · AI Fluency: Description, Diligence)*
+- **O6 — Produce** an AI use baseline: three real tasks, their results, one documented failure and two personal goals, with an AI Use Declaration. *(LO4, LO7 · AI Fluency: Diligence)*
 
 ::: {.callout-note title="Warm-up (ungraded)"}
-Answer from what you know today. There are no wrong answers here; you will come back to these at the end of the chapter.
+Answer from what you know today. There are no wrong answers. You will come back to these in the Chapter Summary.
 
 1. The last time an AI tool gave you an answer, where did that answer come from?
 2. Name one task you think AI does badly. Why do you think so?
 3. In this course, is using AI allowed? Write down your guess before you read section 1.5.
 :::
 
-## 1.1 Same Question, Different Answers {#sec-1-1}
+::: {.callout-note title="How to use the boxes in this chapter"}
+**Check Yourself** boxes are short recall questions at the end of each section. **Worked examples** show every step; **faded examples** leave some steps for you; **Your Turn** boxes ask you to try it yourself. None of these are graded. They are practice for the exams and for your portfolio. Answers to odd-numbered end-of-chapter questions are in Appendix E; Compass (optional, free and ungraded) offers feedback on Check Yourself questions.
+:::
+
+## 1.1 Same Question, Different Answers {#sec-1-1 .unnumbered}
 
 [Core]{.path}
 
-Try a small experiment. Type the same question into two different AI tools, or into the same tool twice: "What are three good study strategies for a chemistry exam?" Read both answers side by side.
+Try a small experiment. Type the same question into two different AI tools: "What are three good study strategies for a chemistry exam?" Then read both answers side by side. @fig-1-3 shows what happened when I did this with two models from the same provider on the same day.
 
-[FIG 1.3: The same question can produce different answers that sound equally sure — two typeset answer panels, each labeled with tool, model and date, plus a transcript]
+![The same question can produce different answers that sound equally sure.](../figures/out/color/f1-03-two-answers.svg){#fig-1-3 fig-alt="Two answer panels to the same chemistry study question, from Claude Haiku 5.5 and Claude Sonnet 5.5 on October 17, 2026; the advice overlaps but differs in emphasis and form."}
 
-[AI OUTPUT NEEDED: run the prompt above in two tools from different providers; record tool, model version and date; typeset both outputs for F1.3]
+*These are real, unedited outputs from two models made by the same company (Anthropic), collected on October 17, 2026. Both were also asked to answer in at most 120 words. The full text is in the figure's long description.*
 
-You will almost certainly get two different answers. They may overlap, but the wording, the order and sometimes the advice itself will differ. Both will sound confident. Neither will tell you, unprompted, how sure it is.
+The two answers overlap, but they are not the same. Both suggest practicing problems. Only one suggests flashcards and spaced review; only the other suggests timed practice exams.
 
-This is your first clue about what these tools are. A generative AI system is software that produces new content, such as text, images or code, in response to an input. The input you type is called a **prompt**. What comes back is the **output**. The part of the system that turns a prompt into an output is a **model**: a large mathematical function whose settings were adjusted by training on huge amounts of existing text. You will see how that training works in Chapter 2, and what happens inside a language model in Chapter 3.
+Both sound confident. Neither says how sure it is.
 
-For now, one idea matters. When you ask a generative model a question, it does not look up a stored answer. It produces text, one small piece at a time, choosing each piece because it is a likely continuation of what came before. "Likely" here means likely given the patterns in the training text and in your prompt. Because each step involves some chance, the same prompt can lead down different paths. That is why your two answers differ.
+This is your first clue about what these tools are. Let's name the parts, one at a time.
 
-### Search points to sources; generation writes new text
+- A **generative AI system** is software that produces new content, such as text, images or code, in response to an input.
+- The input you give it is a **prompt**.
+- What comes back is the **output**.
+- A **model** is the trained mathematical function inside an AI system that turns a prompt into an output. Its internal settings were adjusted by training on huge amounts of existing text, and then tuned further to follow instructions and give answers people prefer. Chapter 2 shows how training works; Chapter 3 shows what happens inside a language model.
 
-Compare this with a search engine. A search engine takes your words, finds documents that match, and shows you a ranked list of links. The documents already existed. You decide which one to open, and you can see who wrote it.
+Now the key idea. When you ask a generative model a question, it does not look up a stored answer. It produces text one small piece at a time.
 
-A generative model works differently. It writes new text that did not exist a second ago. The text may be accurate. It may also mix accurate pieces with errors, because the model is producing what is likely, not checking what is true.
+A piece is usually a word or part of a word. Each piece is chosen because it is a likely continuation of what came before, given patterns in the training text and in your prompt.
 
-Many tools now do both. They search the web first, then generate an answer that cites the pages they found. This is useful, but it creates a trap. The answer text is still generated. The citations show where the tool looked, not proof that each sentence matches the page. A tool can cite a real source and still misstate what that source says.
+Why did the two answers differ? There are two reasons. If you ask the **same** tool twice, the answers usually differ because the tool picks each piece with some chance (Chapter 3 explains this sampling step). If you ask two **different** tools, they also differ because they run different models, trained on different data and given different hidden instructions.
 
-[FIG 1.4: Search points you to sources; generation writes new text — even when it cites sources (three lanes: search engine, generative model, search-then-generate tool)]
+### Search, generation, and tools that do both {.unnumbered}
 
-| | Search engine | Generative model | Search-then-generate tool |
-|---|---|---|---|
-| What you get | A list of existing documents | New text written for your prompt | New text plus links to sources |
-| Who wrote the words | The document authors | Nobody; the model produced them | Nobody; but the tool points to pages |
-| What you must still check | Whether the source is reliable | Every claim | Whether each claim matches its cited page |
+Compare this with a classic search engine. A search engine takes your words, finds documents that match, and shows you a ranked list of links. The documents already existed. You decide which one to open, and you can see who wrote it.
 
-The analogy many people use is that a generative model is "like autocomplete on your phone, but much bigger." That is a fair starting point. Your phone suggests the next word from patterns in what people usually type. A language model does something similar at a far larger scale and with far more context. The analogy breaks when you assume the bigger version is just a better guesser of words. Large models can follow instructions, keep track of long conversations and reorganize information in ways phone autocomplete never could. Chapter 3 explains why.
+A generative model works differently. It generates text for your prompt, usually in new wording. Sometimes it can repeat passages from its training data almost word for word. Either way, the model is producing likely text, not checking whether the text is true.
 
-So a generative model is not a library and not an oracle. It is a powerful producer of likely text. That makes it useful for drafting, explaining and brainstorming, and risky whenever you need something to be exactly right.
+As of October 2026, many tools do both. They search the web first, then generate an answer that includes links to the pages they retrieved. This is useful, but the answer text is still generated. The links show which pages the tool retrieved.
+
+They do not prove that each sentence matches its page. In a 2023 study of generative search engines, only about half of the generated sentences were fully supported by their citations (Liu et al., 2023). Many search engines now also show an AI-generated summary above the links. That summary belongs in the third category, not the first.
+
+![Search points to sources; generation writes new text, even when it cites sources.](../figures/out/color/f1-04-three-lanes.svg){#fig-1-4 fig-alt="Three rows: a search engine returns existing documents for you to choose; a generative model writes new text you must verify; a search-then-generate tool writes text with links, and you check each claim against its cited page."}
+
+| Tool type | What you must still check |
+|---|---|
+| Search engine (list of links) | Whether the source you open is reliable |
+| Generative model (no search) | Every claim, because no human author stands behind the words |
+| Search-then-generate tool, including AI summaries on search pages | Whether each claim matches the page it links to |
+
+A common comparison is that a generative model is "like autocomplete on your phone, but much bigger." The comparison holds for the basic step: both predict what comes next. It breaks on scale. A large model is trained on vastly more text, uses far more of the conversation as context, and receives extra training to follow instructions. That lets the same prediction step produce summaries, explanations and code that phone autocomplete never could.
+
+So a generative model is not a library of stored answers, and it is not a source of guaranteed truth. It is a powerful producer of likely text. That makes it useful for drafting, explaining and brainstorming, and risky whenever something has to be exactly right.
 
 ::: {.callout-tip title="Check Yourself 1.1"}
-1. In one sentence, explain why the same prompt can produce two different answers.
+1. Give the two reasons why answers to the same prompt can differ.
 2. A tool gives you an answer with three links underneath. What do the links show, and what do they not show?
-3. Why is "the AI looked it up" a misleading description of how a generative model answers?
+3. Why is "the AI looked it up" misleading for a model answering without web search, and only partly true for a tool that searches first?
 :::
 
 Different answers are one surprise. The next is that these tools, used at work, help some people much more than others.
 
-## 1.2 What the Evidence Says About AI at Work {#sec-1-2}
+## 1.2 What the Evidence Says About AI at Work {#sec-1-2 .unnumbered}
 
 [Core]{.path}
 
-You will hear many claims about AI and jobs. Some say AI will make everyone more productive. Others say it will make human skill pointless. In this course you will treat such claims the way a scientist treats any claim: you will ask for evidence. Let's look at three studies that measured what actually happened when people used generative AI for real tasks.
+You will hear many claims about AI and jobs. In this course you will treat such claims the way a scientist treats any claim: you will ask for evidence. Here is the pattern to look for in three studies of real or realistic work: **the gains were real, and the people who started lower gained more.**
 
-### Study 1: Customer support
+### Study 1: Customer support {.unnumbered}
 
-You already know the first study from the Opening Case. Brynjolfsson, Li and Raymond (2025) tracked 5,172 support agents as an AI assistant reached them in waves. **Productivity** here had a precise meaning: issues resolved per hour. On that measure, access to the assistant raised productivity by 15% on average.
+You already know this study from the Opening Case. **Productivity** had a precise meaning here: issues resolved per hour. Access to the assistant raised it by 15% on average, and by about 30% for less experienced and lower-skilled agents (Brynjolfsson et al., 2025).
 
-The average is only the start of the story. Look at who gained.
+![Less experienced agents gained the most from the AI assistant.](../figures/out/color/f1-05-support-gains.svg){#fig-1-5 fig-alt="Bar chart: average gain plus 15 percent; less experienced and lower-skilled agents plus 30 percent; most experienced agents show a small speed gain and a small quality decline, with no single figure reported."}
 
-[FIG 1.5: Less experienced agents gained the most from the AI assistant — data chart from published figures: average +15%; less experienced and lower-skilled agents about +30%; most experienced agents small speed gains with small quality declines]
+Why would that happen? The assistant had been trained on past chat transcripts, with extra weight given to chats handled by the company's top performers (Brynjolfsson et al., 2025). Its suggestions often carried the habits of skilled agents: how they worded an offer to help, or when they asked a clarifying question.
 
-Less experienced and lower-skilled agents gained about twice the average, around 30%. The most experienced agents gained little speed, and the quality of their work dipped slightly (Brynjolfsson et al., 2025).
-
-Why would that happen? The researchers point to a likely reason [VERIFY: QJE wording on how the assistant spreads the practices of more skilled agents]. The assistant had been built from records of past conversations, including those of the best agents. Its suggestions often carried the habits of skilled agents: how they phrased an apology, which fix they tried first. A new agent who received those suggestions got a shortcut to experience. An expert who already worked that way got little new, and could be slowed or distracted by suggestions that were not quite right.
-
-### Study 2: Professional writing
-
-The second study comes from economists Shakked Noy and Whitney Zhang (2023). They gave college-educated professionals realistic writing tasks of the kind found in their jobs, such as press releases, short reports and emails [VERIFY: task list in Noy & Zhang, 2023]. About half of the participants were randomly given access to ChatGPT, a chatbot built on a large language model. The average time taken fell by about 40%, and graders rated the quality of the output about 18% higher (Noy & Zhang, 2023) [VERIFY: confirm 40% / 18% and n = 453 on the Science article page]. The gap between weaker and stronger writers also narrowed.
-
-There is a limit you should notice. The graders judged the writing as writing. They did not fact-check it. So the study tells you the drafts were faster and read better; it does not tell you whether they were more accurate. Keep that gap in mind: "reads well" and "is correct" are different things, and you will return to it in section 1.4.
-
-### Study 3: Management consulting
-
-The third study involved 758 consultants at Boston Consulting Group (BCG), about 7% of the firm's individual-contributor consultants (Dell'Acqua et al., 2023). Consultants were given realistic tasks, such as developing ideas for a new product and writing up a plan [VERIFY: task descriptions in Dell'Acqua et al., 2023]. Some had access to an AI model; others did not.
-
-The researchers judged 18 of the tasks to be within the AI's capability. On those tasks, consultants with AI completed 12.2% more tasks and finished 25.1% faster. Their work was also rated more than 40% higher in quality than the control group's. Consultants below the average performance threshold improved by 43%; those above it improved by 17% (Dell'Acqua et al., 2023).
-
-Notice the same pattern as in the support center. Everyone gained on these tasks, but those who started lower gained more. This study also contains a warning, which you will meet in the next section.
-
-### What the three studies have in common
-
-| Study | Who | Task | Average gain | Who gained most |
-|---|---|---|---|---|
-| Brynjolfsson et al. (2025) | 5,172 support agents | Customer chats | +15% issues resolved per hour | Less experienced and lower-skilled agents (about +30%) |
-| Noy & Zhang (2023) | College-educated professionals | Workplace writing | About 40% less time; about 18% higher rated quality [VERIFY] | Weaker writers (gap narrowed) |
-| Dell'Acqua et al. (2023) | 758 consultants | Consulting tasks within AI's capability | +12.2% tasks, 25.1% faster, >40% quality | Below-average performers (+43% vs. +17%) |
-
-Three different jobs, three different research teams, and a common finding: the gains were real, and they were uneven.
-
-### Working faster is not the same as learning
-
-Here is where you need to be careful. If AI helps beginners the most at work, you might conclude that you, as a beginner, should lean on it as much as possible while you study. That conclusion does not follow.
-
-At work, the goal of a support chat is to solve the customer's problem. If the AI's suggestion solves it, the job is done. In a course, the goal of an assignment is different. The assignment exists so that you build a skill you can use without the tool, on an exam, in an interview, or when the tool gives you something wrong. If the AI does the thinking, the assignment is done but the learning is not.
-
-[FIG 1.13: Working faster with AI is not the same as learning — two paths from the same task: "output delivered" vs. "skill built"]
-
-There is early evidence for this difference. A 2025 study of high school mathematics students in Türkiye found that unrestricted access to a chatbot improved performance while students had it. Once the tool was taken away, those students did worse. A version designed to give hints instead of answers largely avoided that harm (Bastani et al., 2025) [VERIFY: confirm design and direction of effects in PNAS article]. You will study this in Chapter 7. For now, hold on to the distinction: a tool that makes you faster today can leave you weaker tomorrow, depending on how you use it.
+A new agent who received those suggestions got a shortcut to experience. The researchers describe their results as consistent with this idea rather than proof of it. For the most experienced agents, the researchers suggest that they already worked this way, so suggestions added little and could sometimes distract them.
 
 ::: {.callout-note title="Worked Example: Reading the Evidence"}
-**Question:** Look at Figure 1.5. Which group gained most, by how much, and how was the gain measured?
+**Question:** Look at @fig-1-5. Which group gained most, by how much, and how do we know the tool caused it?
 
-**Step 1 — Find the measure.** The study measured productivity as issues resolved per hour. Not satisfaction, not quality alone.
+**Step 1 — The measure.** Productivity was measured as issues resolved per hour.
 
-**Step 2 — Find the comparison.** Agents with the assistant were compared with similar agents who did not have it yet.
+**Step 2 — The comparison.** Agents who had just received the assistant were compared with similar agents who did not have it yet, over the same weeks.
 
-**Step 3 — Read the groups.** The average gain was 15%. Less experienced and lower-skilled agents gained about 30%. The most experienced gained little speed and lost a little quality.
+**Step 3 — The groups.** The average gain was 15%. Less experienced and lower-skilled agents gained about 30%. The most experienced gained little speed and lost a little quality.
 
-**Answer:** Less experienced agents gained most, about twice the average, measured in issues resolved per hour.
+**Answer:** Less experienced agents gained most, about twice the average. The same-weeks comparison is what lets the researchers attribute the gain to the tool.
 :::
 
-::: {.callout-note title="Faded Example: Your Turn to Finish"}
-**Question:** In the writing study (Noy & Zhang, 2023), what was found, and what is one limit of that finding?
+### Study 2: Professional writing {.unnumbered}
 
-**Step 1 — The measure:** time taken and graders' quality ratings.
+Economists Shakked Noy and Whitney Zhang (2023) gave college-educated professionals writing tasks like those in their jobs: press releases, short reports, analysis plans and delicate emails. The tasks were realistic, but they were designed for the experiment. Participants were **randomly assigned**: chance decided who got access to ChatGPT, a chatbot built on a large language model, and who did not.
 
-**Step 2 — The finding:** _______________________
+Random assignment makes the two groups alike, on average, in everything except the tool. With access, the time taken fell by about 40%, and graders rated quality about 18% higher. The gap between weaker and stronger writers also narrowed (Noy & Zhang, 2023).
 
-**Step 3 — One limit:** _______________________ (Hint: what did the graders not check?)
+Notice a limit. Graders scored overall quality, writing quality, content quality and originality; the study did not separately measure factual accuracy. It shows the drafts were faster and rated better. It does not show they were more accurate.
+
+::: {.callout-note title="Faded Example: Same Steps, Your Turn to Finish"}
+**Question:** In the writing study, what was found, and what is one limit?
+
+**Step 1 — The measure:** time taken, and graders' quality ratings.
+
+**Step 2 — The comparison:** How were the two groups formed? _______________________
+
+**Step 3 — The result and one limit:** _______________________
+
+*Try it without looking back at the text.*
 :::
 
-::: {.callout-tip title="Your Turn"}
-Suggest one alternative explanation for why the most experienced support agents gained little. Then say what evidence would help you choose between your explanation and the researchers' explanation.
+### Study 3: Management consulting {.unnumbered}
+
+The third study involved 758 consultants at the consulting firm Boston Consulting Group (BCG), split between two experiments (Dell'Acqua et al., 2023, 2026). In the first, 385 consultants worked on realistic tasks designed by the researchers, such as designing a new shoe for an underserved market, segmenting the market and drafting a press release. Some were randomly given GPT-4, a large language model; others had no AI. Those without the tool formed the **control group**: the comparison group.
+
+On these tasks, which the researchers judged to be within the AI's capability, consultants with AI completed more tasks, worked faster and produced work that human graders rated more than 40% higher in quality. Compared with their own earlier scores, consultants who started below average improved by 43%; those above average improved by 17% (Dell'Acqua et al., 2023).
+
+| Study | Who | Task | Measured as | Who gained most |
+|---|---|---|---|---|
+| Brynjolfsson et al. (2025) | 5,172 support agents | Real customer chats | Issues resolved per hour: +15% | Less experienced and lower-skilled agents (about +30%) |
+| Noy & Zhang (2023) | Professionals | Designed writing tasks | Time −40%; rated quality +18% | Weaker writers (gap narrowed) |
+| Dell'Acqua et al. (2023) | 385 consultants (inside-frontier tasks) | Designed consulting tasks | Quality rated by human graders: more than +40% | Below-average performers (+43% vs. +17%, against their own baseline) |
+
+The three studies measured different things, so their numbers cannot be compared directly. What they share is the pattern: real gains, unevenly spread.
+
+### Working faster is not the same as learning {.unnumbered}
+
+Here you need to be careful. If AI helps beginners most at work, you might conclude that you, as a beginner, should lean on it as much as possible while you study. That conclusion does not follow.
+
+At work, the goal of a support chat is to solve the customer's problem. If the suggestion solves it, the job is done. In a course, the goal of an assignment is different.
+
+It exists so that you build a skill you can use without the tool: on an exam, in an interview, or when the tool gives you something wrong. If the tool produces the reasoning you were meant to do, the assignment is done but the learning is not.
+
+![Working faster with AI is not the same as learning.](../figures/out/color/f1-13-faster-vs-learning.svg){#fig-1-13 fig-alt="Two paths from a course assignment: when the tool produces the answer and you hand it in, output is delivered but the skill is not built; when you reason it through and the tool assists, the skill is built."}
+
+There is evidence for this difference. In a study of high school mathematics students in Türkiye, students who practiced with unrestricted access to a chatbot did better during practice. On a later exam without the tool, they did worse than students who had never had access.
+
+A version designed to give hints instead of answers largely avoided that harm (Bastani et al., 2025). You will study this in Chapter 7.
+
+::: {.callout-important title="Your Turn"}
+Suggest one alternative explanation for why the most experienced support agents gained little. What evidence would help you choose between your explanation and the researchers' explanation?
 :::
 
 ::: {.callout-tip title="Check Yourself 1.2"}
-1. In the support-center study, what exactly did "productivity" mean?
-2. Name one pattern that appears in all three studies.
+1. In the support study, what exactly did "productivity" mean?
+2. What is a control group, and why does random assignment matter?
 3. Why does "AI helps beginners most at work" not mean "beginners should let AI do their coursework"?
 :::
 
-All three studies measured gains on tasks the AI handled well. What happens on a task it does not handle well is the subject of the next section.
+All three studies measured gains on tasks the AI handled well. The next section is about tasks it does not handle well.
 
-## 1.3 The Jagged Frontier {#sec-1-3}
+## 1.3 The Jagged Frontier {#sec-1-3 .unnumbered}
 
 [Core]{.path}
 
-Go back to the consultants. The researchers did not only give them tasks the AI did well. They also designed one task that looked similar in difficulty but was, by their judgment, outside what the AI could do reliably at the time. It required combining figures from spreadsheets with clues from interview notes, and the obvious answer was wrong [VERIFY: description of the outside-the-frontier task].
+Go back to the consultants. In the second experiment, 373 consultants worked on a task the researchers designed to be outside what the AI could do reliably at the time: a brand-growth recommendation for a hypothetical company. The spreadsheet looked complete, but interview notes held details that changed the right answer.
 
-On that task, consultants using AI were 19 percentage points less likely to produce a correct solution than consultants without AI (Dell'Acqua et al., 2023). The tool did not just fail to help. It made the results worse. A likely reason is that people trusted fluent, confident output on a problem where the output was misleading [VERIFY: authors' interpretation].
+About 85% of consultants without AI reached the correct answer, compared with about 60% to 70% of those with AI, a drop of roughly 19 **percentage points** (Dell'Acqua et al., 2023). A percentage point is the simple difference between two percentages, such as 85% minus 66%.
 
-[FIG 1.6: Inside the frontier AI help raised quality; outside it, correct answers fell — data chart from Dell'Acqua et al. (2023)]
+![Inside the frontier AI help raised quality; outside it, correct answers fell.](../figures/out/color/f1-06-frontier-results.svg){#fig-1-6 fig-alt="Two panels. Inside the frontier on 18 tasks: more tasks completed plus 12.2 percent, faster plus 25.1 percent, higher quality more than 40 percent. Outside the frontier on one task: correct solutions minus 19 percentage points."}
 
-The researchers described this with a striking image: a **jagged technological frontier**. Imagine all the tasks you could give an AI model, arranged by how hard they look to a person. You might expect a smooth line: easy tasks inside the AI's ability, hard tasks outside. The real boundary is not smooth. It zigzags. Some tasks that look hard to you sit comfortably inside. Some that look easy sit outside.
+The tool did not just fail to help. It made results worse. The authors found that consultants who did worse tended to adopt the AI's output without questioning it. This result comes from a single task, so treat it as a warning sign rather than a precise measurement.
 
-[FIG 1.7: AI capability is uneven across tasks that look equally hard — Jagged Frontier Map (schematic; each task marker labeled "tested with tool X on date Y")]
+The researchers described this with an image: a **jagged technological frontier**. Imagine all the tasks you could give an AI tool, arranged by how hard they look to a person. You might expect a smooth line, with easy tasks inside the tool's ability and hard tasks outside. The real boundary is not smooth.
 
-Here are some patterns you are likely to meet, as of late 2026 [VERIFY: confirm each pattern with a dated test before publication; add to docs/refresh-list.md]:
+It zigzags. Some tasks that look hard sit inside the frontier. Some that look easy sit outside.
+
+![AI capability is uneven across tasks that look equally hard.](../figures/out/color/f1-07-jagged-frontier.svg){#fig-1-7 fig-alt="Schematic jagged line separating inside the frontier from outside it, with six numbered example tasks, illustrative as of October 2026: three usually inside (rewriting tone, summarizing a pasted article, generating ideas) and three usually outside (exact quotes from a book not given, exact letter counts without a calculator feature, local facts without web search)."}
+
+Here are patterns you are likely to meet, as of late 2026. Each depends on the tool, so test before you rely on it.
 
 | Often inside the frontier | Often outside the frontier |
 |---|---|
-| Summarizing a long article you provide | Giving exact quotations with page numbers from a book it was not given |
-| Rewriting a paragraph in a different tone | Reporting recent events accurately |
-| Drafting an outline for a familiar topic | Counting precisely, or arithmetic buried in a long word problem |
+| Summarizing an article you paste in | Exact quotations with page numbers from a book the tool was not given |
+| Rewriting a paragraph in a different tone | Recent events, when the tool does not search the web |
+| Drafting an outline on a familiar topic | Counting items or letters exactly in a long text, or long calculations, when the tool has no calculator or code feature |
 | Explaining a standard concept in simpler words | Facts about small organizations, local rules or niche topics |
-| Generating many ideas quickly | Judging which idea is right for your specific situation |
+| Generating many ideas quickly | Details that depend on information the tool was never given |
 
-Treat this table as a starting hypothesis, not a fact to memorize. Three things make the frontier move:
+You may hear that newer models "can handle everything" now. Testing like the examples in this section keeps finding new edges. Newer models move the frontier, but it stays jagged: a new model can fix one failure and still miss another task that looks easier. Three things move the frontier for you:
 
-- **The task.** Two tasks that look alike can sit on opposite sides. Summarizing an article you paste in is usually fine; summarizing one from memory often is not.
+- **The task.** Summarizing an article you paste in is usually fine. Summarizing one from memory often is not.
 - **The tool.** Different models, and tools that can search or calculate, have different frontiers.
-- **The date.** Models change every few months. A task that fails today may work next year, and the reverse can happen too.
+- **The date.** Models and tools are updated often.
 
-The only reliable way to find the frontier for your task is to **test**. Give the tool a version of the task where you already know the right answer, and see what happens. If it gets that right, try a harder version. If it fails, you have found an edge.
+So the only reliable way to find the frontier for your task is to **test it**. Give the tool a version of the task where you already know the right answer. If it gets that right, try a harder version. If it fails, you have found an edge.
 
-::: {.callout-note title="Worked Example: Testing Whether a Task Is Inside the Frontier"}
+::: {.callout-note title="Worked Example: One Change, Two Results"}
 **Field:** Arts and humanities. [CHARACTER: humanities major]
 
-**Task A:** "Summarize the main argument of this essay in five sentences." The student pastes the full essay into the prompt.
+The student wants three exact quotations, with page numbers, from an essay for her paper. *(Constructed example for teaching.)* She tests the same request twice, changing only one thing: what the tool is given.
 
-**Test:** The student has already read the essay. She compares the summary with her own notes. The summary matches the argument and misses one minor point. **Verdict:** inside the frontier, with light checking.
+**Test A — essay pasted into the prompt.** Request: "Give me three direct quotations from this essay, with page numbers." She searches the essay for each quotation. All three appear; one page number is off by one. **Verdict:** inside the frontier, with checking.
 
-**Task B:** "Give me three direct quotations from this essay, with page numbers." This time she does not paste the essay; she only names it.
+**Test B — essay named but not given.** Same request, but she only names the essay. Two quotations do not appear anywhere in it. The third exists, but the page number is wrong. **Verdict:** outside the frontier for this tool, on this date.
 
-**Test:** She opens the essay and searches for each quotation. Two do not appear anywhere. The third exists, but the page number is wrong. **Verdict:** outside the frontier for this tool, on this date.
-
-**Rule she takes away:** a task can move from inside to outside just by changing what the tool is given.
+**Rule:** when only one thing changed, you know what made the difference. Here, giving the tool the source moved the task inside the frontier.
 :::
 
 ::: {.callout-note title="Faded Example: Design the Test"}
@@ -223,112 +259,130 @@ The only reliable way to find the frontier for your task is to **test**. Give th
 
 **Task:** "A pump moves 450 liters per minute. How many gallons per hour is that?"
 
-**Your test:** How could you check the answer without trusting the tool? _______________________
+**Test (partly done):** Find the liters-to-gallons conversion factor in an official source. Hint: which gallon? US and imperial gallons differ. Then multiply by 60 to go from minutes to hours.
 
-**Verdict rule:** If the tool's answer matches your check, call it inside the frontier _for this kind of problem_. If not, what would you do next? _______________________
+**Compare:** Does the tool's answer match yours? _______________________
+
+**Verdict:** If it matches, does one correct answer prove the tool is reliable for this kind of problem? What would you test next? _______________________
 :::
 
-::: {.callout-tip title="Your Turn"}
-List three tasks from your own week: one you expect to be inside the frontier, one outside, and one you are unsure about. For each, write a test that would tell you which side it is on. You will run these tests in the Thursday lab.
+::: {.callout-important title="Your Turn"}
+List three tasks from your own week: one you expect to be inside the frontier, one outside, and one you are unsure about. For each, write a test that would show which side it is on. **Bring this list to the Thursday lab; it is the task list for Lab 1.2.**
 :::
 
 ::: {.callout-tip title="Check Yourself 1.3"}
-1. What happened to consultants' accuracy on the task outside the frontier, and why?
-2. Name the three things that can move the frontier.
-3. Why is "test it on a case where you already know the answer" a better strategy than memorizing a list of what AI can do?
+1. What happened to accuracy on the consulting task outside the frontier, and why is one task not enough for a precise conclusion?
+2. Name the three things that move the frontier for you.
+3. Why is testing on a case where you already know the answer better than memorizing a list of what AI can do?
 :::
 
-Testing tells you whether a tool can do a task. But how do you notice failure in the first place, when every answer sounds equally sure? That is the next skill.
+Testing tells you whether a tool can do a task. But how do you notice a failure in the first place, when every answer sounds equally sure? That is the next skill.
 
-## 1.4 Fluent Is Not the Same as Correct {#sec-1-4}
+## 1.4 Fluent Is Not the Same as Correct {#sec-1-4 .unnumbered}
 
 [Core]{.path}
 
+In this book, **fluent** means smooth, confident and well organized: text that sounds like an expert wrote it. Fluent text is easy to trust. That is exactly the problem.
+
 Read these two answers to the same question, "How much water should an adult drink per day?"
 
-> **Answer A.** Most health guidance avoids a single number, because needs depend on body size, activity, climate and diet; food also supplies water. Many sources mention rough totals, but check a current guideline from a health authority in your country.
+> **Answer A.** Guidance gives reference values for total water from drinks and food, for example about 2.7 liters a day for women and 3.7 for men from the U.S. National Academies, but needs vary with body size, activity, climate and diet. Check a current guideline from a health authority in your country.
 >
 > **Answer B.** According to a 2019 study by the Global Hydration Institute, adults should drink exactly 3.2 liters of water per day, regardless of climate or activity level.
 
-*Constructed example written by the author for teaching; not a real model output, and not health advice.*
+*Constructed example written for teaching. Not a real model output, and not health advice. Answer A's reference values: Institute of Medicine (2005).*
 
-Answer B sounds more precise. It has a year, an organization and an exact figure. It is also the one you should trust less. The precision is decoration. A quick search would be your first test, and an answer that hides behind an organization you cannot find has failed it.
+Answer B sounds more precise. It has a year, an organization and one exact figure for everyone. It is also the one you should trust less. Look for the red flags:
 
-This is the most important habit in this chapter: **fluency is not evidence.** A generative model produces text that reads well because reading well is what it was trained to do. Whether the text is true is a separate question, and the model's tone does not answer it.
+- **Exact numbers for things that vary.** "Exactly 3.2 liters" for every adult.
+- **Words that remove all conditions.** "Regardless of climate or activity."
+- **A source you cannot find.** Search for the "Global Hydration Institute." If you cannot find it, the claim fails its first test.
 
-[FIG 1.9: Sounding right and being right are two different things — 2 × 2 matrix: fluent and correct; fluent and wrong (the dangerous corner); halting and correct; halting and wrong]
+Answer A also gives numbers, but it names a real source, states the conditions and tells you where to check. Those are good signs.
 
-The dangerous corner of Figure 1.9 is "fluent and wrong." It is dangerous because nothing on the surface warns you. Professional people have been caught there. In 2023, lawyers in New York were sanctioned after filing a brief that cited court decisions a chatbot had invented (*Mata v. Avianca, Inc.*, 2023) [VERIFY: confirm details against the court's sanctions order]. You will study that case in Chapter 8.
+This is the most important habit in this chapter: **fluency is not evidence.** A generative model was trained to produce likely text and then tuned to give answers people rate highly. Neither step checks whether the answer is true, so a confident tone is not evidence of accuracy.
+
+![Sounding right and being right are two different things.](../figures/out/color/f1-09-fluent-correct.svg){#fig-1-9 fig-alt="Two-by-two grid: fluent and correct (useful, still verify); fluent and wrong (dangerous, nothing on the surface warns you); halting and correct (useful, needs editing); halting and wrong (easy to spot)."}
+
+The dangerous corner of @fig-1-9 is "fluent and wrong," because nothing on the surface warns you. Professionals have been caught there. In 2023, a federal judge in New York sanctioned, meaning penalized, two lawyers and their firm.
+
+They had filed a brief (a written legal argument) citing court decisions that ChatGPT had made up, and they kept defending them when questioned (*Mata v. Avianca, Inc.*, 2023). You will study that case in Chapter 8.
 
 You do not need a full catalog of failures yet; Chapter 4 provides one. Start with three terms:
 
-- **Hallucination**: fluent output that is not supported by the input or by facts. Some researchers prefer the word *confabulation*; this book uses *hallucination* because it is the more common term.
-- **Outdated information**: output that was correct at some point but is no longer, because the model's training data stops at a certain date.
-- **Overconfidence**: output stated with more certainty than the evidence supports, as in Answer B.
+- **Hallucination:** fluent output that is not supported by the model's input or by facts. Some researchers use the word *confabulation* for some of these errors (Farquhar et al., 2024); this book uses *hallucination* because it is more common.
+- **Outdated information:** output that was once correct but no longer is, because the model's training data ends at a cutoff date and the tool did not search for newer information, or found old pages.
+- **Overconfidence:** output stated with more certainty than the evidence supports, as in Answer B.
 
 ::: {.callout-note title="Worked Example: Tracing a Confident Statistic"}
-**Field:** Social science. [CHARACTER: social science major]
+**Field:** Psychology and social science. [CHARACTER: psychology major]
 
-A student asks an AI tool for evidence that remote work affects productivity. The output includes: "A Stanford study found remote workers are 13% more productive." *(Constructed example for teaching.)*
+A student asks an AI tool whether working from home affects productivity. The output says: "A Stanford study found remote workers are 13% more productive." *(Constructed example for teaching.)*
 
 **Step 1 — Isolate the claim.** One number (13%), one source (a Stanford study), one direction (more productive).
 
-**Step 2 — Find the original.** The student searches for the study and finds a real paper on a related topic [VERIFY: if a real study is named in the final text, cite it exactly and confirm what it measured].
+**Step 2 — Find the original.** The student searches and finds a study led by Stanford economist Nicholas Bloom: a randomized experiment at a large Chinese travel company, where call-center employees who volunteered were assigned by chance to work from home or in the office for nine months (Bloom et al., 2015).
 
-**Step 3 — Compare.** The original studied one company's call-center staff in one country, and measured something narrower than "productivity" in general.
+**Step 3 — Compare what was measured.** The 13% was an increase in the performance of those call-center employees, mostly from working more minutes per shift and partly from handling more calls per minute (Bloom et al., 2015). It was one company, one kind of job and one period.
 
-**Step 4 — Decide.** The student keeps the study as an example, rewrites the claim to match what the study measured, and drops the general statement.
+**Step 4 — Decide.** The student rewrites the claim: "In a nine-month experiment with call-center staff at one Chinese travel company, working from home raised performance by 13% (Bloom et al., 2015)."
 
 **Rule:** a statistic is only as good as your ability to find where it came from and what it measured.
 :::
 
 ::: {.callout-note title="Faded Example: Find the Error"}
-**Field:** Natural science. [CHARACTER: biology or chemistry major]
+**Field:** Natural science. [CHARACTER: biology major]
 
 *Constructed AI-style output:* "Seasons happen because Earth is closer to the Sun in summer and farther away in winter."
 
-**Step 1 — Isolate the claim:** _______________________
+**Step 1 — Isolate the claim:** Seasons are caused by Earth's distance from the Sun.
 
-**Step 2 — How would you check it?** _______________________ (Hint: when is the Northern Hemisphere's summer, and when is the Southern Hemisphere's?)
+**Step 2 — How would you check it?** _______________________ (Hint: when is it summer in the Northern Hemisphere, and when in the Southern Hemisphere?)
 
 **Step 3 — Corrected statement:** _______________________
 :::
 
-::: {.callout-tip title="Your Turn"}
-Take one output you produced in Lab 1.1 or Lab 1.2. Mark each sentence as *checked and correct*, *checked and wrong*, or *not checked*. How many sentences could you not check at all?
+::: {.callout-important title="Your Turn"}
+Take one full output you saved in Lab 1.1. Mark each sentence as *checked and correct*, *checked and wrong*, or *not checked*. How many sentences could you not check at all?
 :::
 
 ::: {.callout-tip title="Check Yourself 1.4"}
-1. Why is Answer B less trustworthy than Answer A, even though it is more precise?
-2. Define *hallucination* in one sentence.
-3. Which corner of Figure 1.9 is most dangerous, and why?
+1. What does "fluent" mean in this book, and why is fluency not evidence?
+2. Name two red flags in Answer B.
+3. Why is the "fluent and wrong" corner of @fig-1-9 the most dangerous?
 :::
 
 You now know that AI output can be uneven, fluent and wrong. So when is it acceptable to use it at all, especially in a course? That is a question of judgment, and of rules.
 
-## 1.5 Your Judgment, Your Responsibility {#sec-1-5}
+## 1.5 Your Judgment, Your Responsibility {#sec-1-5 .unnumbered}
 
 [Core]{.path}
 
-Students arrive in this course with two opposite fears. Some think any use of AI is cheating. Others think anything is fine as long as the result is good. Both are wrong, and this course replaces them with a clear policy.
+Students arrive in this course with two opposite worries. Some think any use of AI is cheating. Others think anything is fine as long as the result is good. Both are wrong, and this course replaces them with a clear policy.
 
-The principle is simple: **AI use is not prohibited; unacknowledged, unverified or intellectually outsourced AI use is not acceptable.** In practice, uses fall into three zones.
+The principle: **AI use is not prohibited; unacknowledged, unverified or intellectually outsourced AI use is not acceptable.** In practice, uses fall into three zones.
 
-[FIG 1.11: Disclosure and verification make middle-zone uses acceptable; some uses stay off-limits — three-zone diagram]
+![Disclosure and verification make middle-zone uses acceptable; some uses stay off-limits.](../figures/out/color/f1-11-three-zones.svg){#fig-1-11 fig-alt="Three zones: permitted (brainstorming, explanations, study help, feedback on your draft); permitted with disclosure and verification (drafting, coding support, source synthesis, case and data work); not acceptable (undisclosed outsourcing, fabricated sources, unsupported claims, work you do not understand, AI use in exams, personal or confidential data in public tools)."}
 
 | Permitted | Permitted with disclosure and verification | Not acceptable |
 |---|---|---|
-| Brainstorming, explanations of concepts, study help, feedback on your own draft, formatting, testing prompts | Drafting, coding support, source synthesis, case analysis, data and decision work — provided you disclose, verify and can explain the result | Undisclosed outsourcing, fabricated sources, unsupported claims, submitting work you do not understand, any AI use during examinations |
+| Brainstorming, explanations of concepts, study help, feedback on your own draft, formatting, testing prompts | Drafting, coding support, source synthesis, case analysis, data and decision work, provided you disclose, verify and can explain the result | Undisclosed outsourcing; fabricated sources; unsupported claims; submitting work you do not understand; any AI use during examinations; entering personal or confidential data (yours or anyone else's) into a public AI tool (course guidance) |
 
-Three ideas sit behind this table.
+Four ideas sit behind this table.
 
-**Assistance versus outsourcing.** Assistance helps you do the thinking. Outsourcing replaces your thinking. Asking a tool to explain a concept you then use in your own words is assistance. Pasting its answer in as your own work is outsourcing, even if the answer is correct. The test is not what the tool did; it is what you can do afterward. If you cannot explain, defend or redo the work without the tool, you outsourced it.
+**Assistance versus outsourcing.** Assistance helps you do the thinking. Outsourcing replaces it. Asking a tool to explain a concept that you then use in your own words is assistance.
 
-**Disclosure.** In the middle zone, you say what you used and how. This is not a confession. It is a professional habit, the same way a scientist reports methods or an accountant documents assumptions. In this course, every major artifact carries an **AI Use Declaration**. It states the tools you used and for what purpose, which outputs you accepted, rejected or revised, how you verified them, and where your own judgment shaped the work.
+Pasting its answer in as your own work is outsourcing, even if the answer is correct. The test is what you can do afterward: if you cannot explain, defend or redo the work without the tool, you outsourced it.
 
-**Some uses stay off-limits.** Disclosure does not rescue everything. Fabricated sources remain unacceptable even if you admit them. AI use during an exam is not allowed, disclosed or not, because the exam exists to show what you can do yourself.
+**Where drafting ends and outsourcing begins.** Drafting is in the middle zone, but it depends on the purpose of the assignment. If the assignment exists to build a skill in writing or reasoning itself, such as a reflection essay or an argument, then having AI draft it is outsourcing, unless your instructor explicitly allows it. If the writing serves another purpose, such as a newsletter that accompanies your project, AI drafting with disclosure and verification can be acceptable.
 
-Recall the support agents. At work, the assistant's job was to help solve a customer's problem, and it did. In a course, the "customer" is your future self, who needs the skill. That is why the same tool can be a good colleague at work and a bad shortcut in a course. Figure 1.13 applies here too.
+**Disclosure.** Every major artifact in this course carries an **AI Use Declaration**. It states the tools you used and for what purpose, which outputs you accepted, rejected or revised, how you verified them, and where your own judgment shaped the work. Middle-zone uses must be described in detail.
+
+Permitted-zone uses, such as brainstorming or grammar feedback, are listed briefly. Disclosure is a professional habit, like a scientist reporting methods. It is not a confession.
+
+**Some uses stay off-limits.** Disclosure does not make everything acceptable. Fabricated sources remain unacceptable even if you admit them. AI use during an exam is not allowed, because the exam exists to show what you can do yourself. Personal and confidential data, such as a patient's case or a classmate's work, never goes into a public tool; Chapter 15 explains why in detail.
+
+Recall the support agents. At work, the goal was to solve the customer's problem, and the assistant helped. In a course, the "customer" is your future self, who needs the skill. That is why the same tool can be useful at work and a bad shortcut in a course.
 
 ::: {.callout-note title="Worked Example: Sorting Uses into the Three Zones"}
 **Field:** Education. [CHARACTER: education major]
@@ -338,8 +392,8 @@ A student teacher uses AI in four ways while preparing a lesson.
 | Use | Zone | Why |
 |---|---|---|
 | Asks for five ways to explain fractions to ten-year-olds, then picks and adapts one | Permitted | Brainstorming; the student does the choosing and adapting |
-| Has the tool draft a parent newsletter, then edits it and fact-checks dates | Permitted with disclosure and verification | Drafting; must disclose and verify |
-| Has the tool write the reflection essay required for the teaching course, and submits it unchanged | Not acceptable | Outsourcing the thinking the assignment is meant to build |
+| Has the tool draft a parent newsletter, then edits it and checks the dates | Permitted with disclosure and verification | Drafting for a practical purpose; must disclose and verify |
+| Has the tool write the reflection essay her teaching course requires and submits it unchanged | Not acceptable | The essay exists to build her own reflection; this is outsourcing |
 | Asks for feedback on her own reflection draft, then revises it herself | Permitted | Feedback on her own draft |
 :::
 
@@ -348,67 +402,73 @@ A student teacher uses AI in four ways while preparing a lesson.
 
 | Use | Zone | Why |
 |---|---|---|
-| Asks AI to quiz her on drug classes before an exam | Permitted | Study help |
-| Uses AI to summarize three research articles for a literature review, then checks each summary against the article | _______ | _______ |
-| Pastes a patient case from her clinical placement into a public AI tool | _______ | _______ (Hint: think about privacy, which Chapter 15 covers in depth.) |
+| Asks AI to quiz him on drug classes before an exam | Permitted | Study help |
+| Asks AI to explain a lab value, then checks it in his textbook | Permitted | Explanation, verified against a source |
+| Uses AI to summarize three research articles for a literature review, then checks each summary against the article and discloses it | _______ | _______ |
+| Pastes a real patient's case from his clinical placement into a public AI tool to get a care plan | _______ | _______ |
 :::
 
-::: {.callout-tip title="Your Turn"}
-Sort these five uses into the three zones and give one reason each: (a) an accounting student asks AI to explain depreciation; (b) a music student has AI write program notes and submits them as her own; (c) an engineering student uses AI to find a bug in his code and explains the fix in his report; (d) a history student asks AI for sources and cites two she never opened; (e) a psychology student uses AI to suggest a clearer structure for her own essay.
+::: {.callout-important title="Your Turn"}
+Sort these five uses into the three zones and give one reason each:
+(a) an accounting student asks AI to explain depreciation;
+(b) a music student asks AI for feedback on the structure of program notes she wrote, then revises them herself;
+(c) an engineering student has AI write the reflection section of a lab report and submits it as his own;
+(d) a history student asks AI for sources and cites two he never opened;
+(e) a psychology student uses AI to suggest a clearer structure for her own essay and lists this in her declaration.
 :::
 
 ::: {.callout-tip title="Check Yourself 1.5"}
 1. State the course's AI principle in your own words.
-2. What is the test for telling assistance from outsourcing?
-3. Name two uses that stay unacceptable even if disclosed.
+2. Why does disclosure not make fabricated sources acceptable?
+3. When does AI drafting become outsourcing?
 :::
 
 You now have the pieces: what the tools produce, where they help, where they fail, and what the rules are. The next section puts the pieces into one method.
 
-## 1.6 The AI Work Loop {#sec-1-6}
+## 1.6 The AI Work Loop {#sec-1-6 .unnumbered}
 
 [Core]{.path}
 
 Every time you use AI on a task that matters, you make five decisions, whether you notice them or not. This book names them so you can make them on purpose. Together they form the **AI Work Loop**.
 
-[FIG 1.2: Every AI-assisted task passes through five human decisions — AI Work Loop (full version)]
+![Every AI-assisted task passes through five human decisions.](../figures/out/color/f1-02-ai-work-loop.svg){#fig-1-2 fig-alt="The AI Work Loop: Frame, Prompt, Verify, Decide, Disclose arranged in a circle with arrows, around a hexagon labeled The AI tool that produces drafts while you make every decision."}
 
-1. **Frame.** Decide what the task really is, what a good result looks like, and whether AI belongs in it at all. Is this task likely inside the frontier? What would you lose by delegating it?
-2. **Prompt.** Give the tool what it needs: the task, the context, the constraints, the format you want. Chapter 5 is devoted to this step.
+1. **Frame.** Decide what the task really is, what a good result looks like, and whether AI belongs in it at all. Is the task likely inside the frontier? What would you lose by delegating it?
+2. **Prompt.** Give the tool what it needs: the task, the context, the limits, the format you want. Chapter 5 is devoted to this step.
 3. **Verify.** Check the output against something other than the tool: a source, a calculation, your own knowledge, an expert. Fluency is not evidence.
-4. **Decide.** Choose what to keep, change or reject, and take responsibility for the result. The tool does not decide; you do.
+4. **Decide.** Choose what to keep, change or reject, and take responsibility for the result. The tool produces options; you decide.
 5. **Disclose.** Say what you used and how, in the way your context requires: an AI Use Declaration in this course, a note to a manager or client at work.
 
-The loop is drawn as a circle because the steps feed each other. Verification often sends you back to framing ("this task is outside the frontier; I need another approach") or to prompting ("I left out the key constraint").
+The loop is drawn as a circle because the steps feed each other. Verification often sends you back to framing ("this task is outside the frontier; I need another approach") or to prompting ("I left out the key limit").
 
 Each chapter of this book opens with the loop and highlights the step that chapter strengthens. This chapter highlights **Frame**, because the first decision is whether and how to use AI at all.
 
 ::: {.callout-note title="Worked Example: The AI Work Loop on an Upset Customer's Email"}
-**Field:** Business. [CHARACTER: business major, working part-time in customer service]
+**Field:** Business. [CHARACTER: business major working part-time in customer service]
 
-[FIG 1.12: The AI Work Loop applied to an upset customer's email — process walkthrough]
+![The AI Work Loop applied to an upset customer's email.](../figures/out/color/f1-12-loop-walkthrough.svg){#fig-1-12 fig-alt="Five steps for a customer email: Frame the goal; Prompt for a polite reply; Verify catches an invented 20 percent discount; Decide deletes it and sends; Disclose follows the company rule."}
 
-**The situation.** A customer writes that her order arrived broken and that this is the second time. She is angry and asks for a refund.
+**The situation.** A customer writes that her order arrived broken, for the second time. She is angry and asks for a refund.
 
 **Frame.** The goal is to solve the problem and keep the customer. A good reply apologizes, states the fix clearly and follows company policy. Drafting a calm reply is likely inside the frontier. Deciding the refund is not the tool's job; it depends on policy and on this customer's history.
 
-**Prompt.** "Draft a short, polite reply to a customer whose order arrived broken for the second time. Apologize, offer a replacement shipped by express at no cost, and say a refund is also available if she prefers. Do not promise anything else. Keep it under 120 words." *(Company policy details come from the employee, not the tool.)*
+**Prompt.** "Draft a short, polite reply to a customer whose order arrived broken for the second time. Apologize, offer a replacement shipped by express at no cost, and say a refund is also available if she prefers. Do not promise anything else. Keep it under 120 words." *(The policy details come from the employee, not the tool.)*
 
-**Verify.** The draft is good, but it promises "a 20% discount on your next order," which the prompt did not mention and policy does not allow. That sentence is invented.
+**Verify.** The draft is good, but it promises "a 20% discount on your next order." The prompt did not ask for that, and policy does not allow it. That sentence is invented.
 
 **Decide.** Delete the discount line. Add the order number. Send it under your own name, because you are responsible for what it says.
 
-**Disclose.** The company's rule says AI-drafted customer messages are fine if a person reviews them; no further note is needed. In another company, the rule might differ, so you check.
+**Disclose.** The company's rule says AI-drafted customer messages are fine if a person reviews them, so no further note is needed. Another company might have a different rule, so you check.
 :::
 
-::: {.callout-note title="Faded Example: The Loop on a Clinical Leaflet"}
-**Field:** Health sciences. [CHARACTER: nursing or public health major]
+::: {.callout-note title="Faded Example: The Loop on a Patient Leaflet"}
+**Field:** Health sciences. [CHARACTER: public health major]
 
 **Situation.** You need to turn a hospital leaflet about a new medication into plain language for patients.
 
 **Frame.** Rewriting for readability is likely inside the frontier. Medical accuracy is not negotiable, so every changed sentence must still be correct.
 
-**Prompt.** "Rewrite this leaflet at a sixth-grade reading level. Keep every dose, warning and side effect exactly as written. Do not add advice." *(The leaflet is pasted in.)*
+**Prompt.** "Rewrite this leaflet at a sixth-grade reading level. Keep every dose, warning and side effect exactly as written. Do not add advice." *(The leaflet text is pasted in; it contains no patient data.)*
 
 **Verify:** How will you check that nothing medical changed? _______________________
 
@@ -417,7 +477,7 @@ Each chapter of this book opens with the loop and highlights the step that chapt
 **Disclose:** Who should be told that AI helped, and how? _______________________
 :::
 
-::: {.callout-tip title="Your Turn"}
+::: {.callout-important title="Your Turn"}
 Choose a task from your own major that you might do with AI this month. Write one or two sentences for each step of the loop. Mark the step where you think a mistake is most likely.
 :::
 
@@ -427,32 +487,46 @@ Choose a task from your own major that you might do with AI this month. Write on
 3. Why is the loop drawn as a circle rather than a straight line?
 :::
 
-One step remains before you move on: recording where you are starting from.
+One step remains: recording where you are starting from.
 
-## 1.7 Your Baseline: Where You Start {#sec-1-7}
+## 1.7 Your Baseline: Where You Start {#sec-1-7 .unnumbered}
 
 [Studio]{.path}
 
-Athletes record their starting times so they can see their progress. You will do the same with AI. In the Thursday lab, and in your first studio artifact (A1), you will build a **baseline**: an honest snapshot of how you use AI today.
+*Studio sections are hands-on work for the Thursday lab and your weekly assignment.*
 
-**This baseline is not judged.** It will not be used for any academic-integrity purpose. If you have never used AI, "I have not used AI yet" is a perfectly good starting point. You may have used AI in ways that would now fall in the "not acceptable" zone. Describe your current habits honestly anyway. The point is to see where you start, and the policy applies from this course forward.
+Athletes record their starting times so they can see their progress. You will do the same with AI. Your first **studio artifact**, the weekly assignment for your course portfolio, is A1: an AI use baseline. It combines two things: how you use AI today, and a first structured test you run in Lab 1.2.
+
+**How it is graded.** A1 is graded for completeness and for the quality of your process: clear tasks, honest records, a real test. It is never graded on how much you used AI before, or on whether your past use was "acceptable." The baseline is not used for any academic-integrity purpose. The course policy applies from this course forward.
+
+**If you have not used AI before,** that is a good starting point. Write "I have not used AI yet" for current habits, and run your three tasks for the first time in Lab 1.2. If you prefer not to use AI at all, use the alternative assignment at the end of this chapter.
 
 Your baseline has four parts:
 
-1. **Three real tasks** from your study, work or daily life, ideally of different kinds (for example, one writing task, one research or fact task, one calculation or planning task).
-2. **What happened** when you used AI on each, or would have, if you are starting without it: what you asked, what came back, what you did with it.
-3. **One documented failure**: a case where the output was wrong, misleading or unhelpful, and how you found out.
-4. **Two personal goals** for the course, each tied to a learning outcome.
+1. **Three real tasks:** the three from your 1.3 Your Turn list (one inside, one outside, one unsure).
+2. **What happened:** what you asked, what came back, what you did with it.
+3. **One documented failure:** an output that was wrong, misleading or unhelpful, and the test that showed it.
+4. **Two personal goals** for the course, each tied to one of the course learning outcomes below.
 
-[FIG 1.14: Your baseline: three tasks, one failure, two goals — template graphic]
+::: {.callout-note title="The seven course learning outcomes (LO1–LO7), in plain language"}
+- **LO1** Explain what generative and agentic AI systems are, how they work in outline, and how and why they fail.
+- **LO2** Frame a task for AI and improve the results through careful, documented iteration.
+- **LO3** Verify AI-generated claims, sources and outputs, and record what is still uncertain.
+- **LO4** Tell responsible assistance apart from overreliance, hidden outsourcing and academic misconduct.
+- **LO5** Apply privacy, security, fairness, transparency and human-oversight principles to AI-assisted work.
+- **LO6** Design an AI-assisted workflow for a task in your own field, and defend it to a non-specialist.
+- **LO7** Present your work as a portfolio that an employer or graduate program will recognize.
+:::
 
-### Writing a useful goal
+![Your baseline: three tasks, one failure, two goals.](../figures/out/color/f1-14-baseline-template.svg){#fig-1-14 fig-alt="Template with boxes for three tasks, one documented failure, two goals tied to learning outcomes, and an AI Use Declaration."}
 
-A useful goal is specific, observable and connected to the course. Compare:
+### Writing a useful goal {.unnumbered}
+
+A useful goal is specific, observable and tied to a learning outcome. Compare:
 
 | Weak goal | Stronger goal |
 |---|---|
-| "Get better at AI." | "By midterm, check every statistic an AI tool gives me against an original source before I use it (LO3)." |
+| "Get better at AI." | "By the midterm, check every statistic an AI tool gives me against an original source before I use it (LO3)." |
 | "Use AI more for my major." | "By April, design one AI-assisted workflow for a real task in my nursing courses, with a step where I verify medical facts (LO6)." |
 
 ::: {.callout-note title="Worked Example: A Sample Baseline"}
@@ -460,125 +534,149 @@ A useful goal is specific, observable and connected to the course. Compare:
 
 | Task | What I asked | What came back | What I did |
 |---|---|---|---|
-| Summarize a 20-page reading for my sociology class | "Summarize this article" (pasted the text) | A clear one-page summary | Compared it with my notes; it skipped the author's main limitation, so I added it |
-| Find statistics on student loan debt | "How much student loan debt is there in the US?" | A precise number with no source | Could not find the number anywhere; did not use it |
-| Plan my study week | "Make a study schedule for four exams" | A neat schedule | Used it, but moved two sessions to fit my job |
+| Summarize a 20-page reading for my sociology class (expected inside) | "Summarize this article" (text pasted) | A clear one-page summary | Compared it with my notes; it left out the author's main limitation, so I added it |
+| Find statistics on student loan debt (unsure) | "How much student loan debt is there in the US?" | A precise number with no source | Could not find the number in any official source; did not use it |
+| Count how many times a keyword appears in a 30-page report (expected outside) | "How many times does 'equity' appear in this report?" | A number | Counted with my word processor's search; the tool's number was wrong |
 
-**Documented failure:** the student loan figure had no source, and the official figures I found were different [VERIFY: if a real figure is used, cite the official source and date].
+**Documented failure:** the keyword count was wrong, and the search function showed it.
 
-**Goals:** (1) By midterm, never use a statistic I have not traced to its source (LO3). (2) By the final portfolio, write an AI Use Declaration for every major assignment without being reminded (LO4).
+**Goals:** (1) By the midterm, never use a statistic I have not traced to its source (LO3). (2) By the final portfolio, write an AI Use Declaration for every major assignment without being reminded (LO4).
 
-**AI Use Declaration for this baseline:** I used [tool, date] for the three tasks above. I accepted the study schedule with changes, revised the summary, and rejected the statistic. I verified the summary against my notes and searched for the statistic's source. My own judgment decided what to keep.
+**AI Use Declaration:** I used a free chatbot (model and date recorded in my log, January 2027) for the three tasks above. I revised the summary, rejected the statistic and rejected the keyword count. I verified the summary against my notes, searched for the statistic's source, and counted the keyword with the search function. My own judgment decided what to keep.
 :::
 
 ::: {.callout-note title="Faded Example: Write the Declaration"}
-Here is a baseline without its AI Use Declaration. A chemistry student used an AI tool to (a) explain a reaction mechanism she found confusing, (b) generate practice problems, and (c) check her lab report's grammar. She found that one practice problem had a wrong answer key.
+A chemistry student used an AI tool to (a) explain a reaction mechanism she found confusing, (b) generate practice problems, and (c) check her lab report's grammar. She found that one practice problem had a wrong answer key.
 
-Write her AI Use Declaration (tools, purpose, accepted/rejected/revised, verification, where her judgment mattered): _______________________
+Complete her declaration using these sentence frames:
+
+- I used ________ (tool, date) to ________.
+- I accepted ________. I revised ________. I rejected ________.
+- I checked the results by ________.
+- My own judgment mattered when ________.
 :::
 
-::: {.callout-tip title="Your Turn"}
-Start your own baseline now, using the template in Figure 1.14. You will finish it in the Thursday lab (Lab 1.2) and submit it as A1.
+::: {.callout-important title="Your Turn"}
+Start your own baseline now with the template in @fig-1-14. You will finish it in Lab 1.2 and submit it as A1.
 :::
 
 ::: {.callout-tip title="Check Yourself 1.7"}
 1. What are the four parts of the baseline?
-2. Rewrite the goal "Use AI responsibly" so that it is specific and tied to a learning outcome.
+2. Why is an honest baseline more useful to you than an impressive one?
 :::
 
-## Deep 1.A: How Economists Measure AI's Effect at Work {#sec-1-deep-a}
+## Deep 1.A: How Economists Measure AI's Effect at Work {#sec-1-deep-a .unnumbered}
 
 [Deep]{.path}
 
-How can anyone know that an AI assistant *caused* a 15% gain, and not something else, such as a busy season or a new manager? The support-center study used a feature of the rollout.
+*Deep sections are optional and not on the exams.*
 
-The assistant did not reach every agent on the same day. It reached teams in waves. At any given moment, some agents had it and similar agents did not yet. Researchers could compare the change in performance of agents who just received the tool with the change, over the same weeks, for agents still waiting. Anything that affected everyone, like a seasonal rush, shows up in both groups and cancels out. What remains is a better estimate of the tool's effect. Economists call this approach a **staggered rollout** analysis, a form of **difference-in-differences** comparison.
+How can anyone know that an AI assistant *caused* a 15% gain, and not something else, such as a busy season or a new manager? The support-center study used the way the tool was introduced.
 
-[FIG 1.16: A staggered rollout turns a workplace into an experiment — process diagram]
+The assistant did not reach every agent on the same day; agents received it a few at a time over several months, so the rollout was **staggered**. At any given moment, some agents had the tool and similar agents did not yet. The analysis compares the change in performance for agents who just received the tool with the change, over the same weeks, for agents still waiting.
 
-The method has limits worth knowing:
+This is a **difference-in-differences** comparison. Anything that affected everyone, like a seasonal rush, shows up in both groups and cancels out.
 
-- The waves were chosen by the company, not purely at random, so researchers must check that early and late groups were similar [VERIFY: how the QJE paper addresses rollout timing].
+![Schematic: a staggered rollout lets researchers compare recently treated and not-yet-treated agents in the same months.](../figures/out/color/f1-16-staggered-rollout.svg){#fig-1-16 fig-alt="Grid of three waves of agents over eight months; each wave receives the AI assistant two months after the previous one, so recently treated and not-yet-treated groups can be compared in the same months."}
+
+The comparison works only if one assumption holds: without the tool, the two groups would have moved in parallel. Researchers check this by confirming that the groups were on similar paths before the tool arrived. That check matters here, because managers chose which agents attended each training session.
+
+The authors report several checks, including similar effects across groups that started at different times and a small randomized pilot with similar results (Brynjolfsson et al., 2025). Other limits are worth knowing:
+
 - One company, one kind of job and one tool were studied. Results may not carry over to other settings.
 - Productivity was measured as issues resolved per hour. A different measure, such as long-term customer loyalty, might tell a different story.
 
-The writing and consulting studies used a stronger design: participants were randomly assigned to have AI or not. Random assignment is the most direct way to make the two groups alike in everything except the tool. Even so, those studies used tasks designed for the experiment, which may differ from real jobs.
+The writing and consulting studies used random assignment, which makes the groups alike on average in everything except the tool. Even so, their tasks were designed for the experiment and may differ from real jobs.
 
 When you read any claim about AI and productivity, ask three questions: *Compared with whom? Measured how? In what setting?*
 
-## Deep 1.B: AI Literacy as an Employer Duty {#sec-1-deep-b}
+## Deep 1.B: AI Literacy as an Employer Duty {#sec-1-deep-b .unnumbered}
 
 [Deep]{.path}
 
-In the European Union, the regulation known as the EU AI Act includes an article on **AI literacy**: the skills and understanding that let people use AI systems knowingly and see their opportunities and risks. Article 4 addresses organizations that provide or deploy AI systems and their staff, and it has applied since February 2, 2025 (Regulation (EU) 2024/1689, Art. 4; Art. 113) [VERIFY: the current wording of Article 4 — one secondary source shows wording about "supporting" AI literacy that differs from the 2024 text; confirm the version in force as of the edition date and add to docs/refresh-list.md].
+In the European Union, the regulation known as the EU AI Act includes an article on **AI literacy**: the skills and understanding that let people use AI systems knowingly and see their opportunities and risks. Article 4, which applied from February 2, 2025, originally required organizations that provide or deploy AI systems "to ensure, to their best extent, a sufficient level of AI literacy" among their staff (Regulation (EU) 2024/1689). In 2026 an amending regulation softened this duty: organizations now have to take steps that help their staff build AI literacy, without guaranteeing any particular level (Regulation (EU) 2026/1744). This summary is as of October 2026.
 
-This is a duty placed on organizations, not a requirement for students. But it tells you something about your future workplace. Employers, especially those operating in Europe, are expected to make sure their staff understand the AI systems they use. The skills in this book are the kind of AI literacy such policies describe. Chapter 18 returns to AI law and governance in more detail.
+This is a duty placed on organizations, not a requirement for students. But it tells you something about your future workplace: employers that provide or deploy AI systems covered by the Act must take measures to support their staff's AI literacy, though the law does not require any guaranteed level. The skills in this book are the kind of AI literacy such policies describe. Chapter 18 returns to AI law and governance.
 
 ## Hands-on Labs {.unnumbered}
 
-The labs describe what to do, not which buttons to press. Step-by-step instructions for current tools are in Compass, which is optional and ungraded. [COMPASS: lab pages L1.1–L1.3 with current tool steps] Use only free tiers or university-provided tools, and never enter personal or confidential data.
+The labs describe what to do, not which buttons to press. Full lab sheets are on eLearning; step-by-step instructions for current tools are in Compass, which is optional and ungraded. [COMPASS: lab pages ch01-lab1 to ch01-lab3] Use only free or university-provided tools, and never enter personal or confidential data.
 
-### Lab 1.1: Same Question, Two Answers (Compare · 20 minutes · Tuesday, in class)
+### Lab 1.1: Same Question, Two Answers (Compare · 20 minutes · Tuesday, in class) {.unnumbered}
 
-1. Choose three questions: one factual ("When was the first email sent?"), one practical ("How should I prepare for a group presentation?") and one from your major.
-2. Ask each question in two different tools, or twice in the same tool in fresh conversations.
-3. Record, for each pair of answers: what is the same, what is different, whether either gives sources, and how confident each sounds.
-4. Keep your table. You will use it in section 1.4 and in your baseline.
+*(O1 · LO1 · Analyze)*
 
-**If this doesn't work:** if you have access to only one tool, run each question three times in new conversations. If you prefer not to use AI, compare the two sample outputs provided on eLearning.
+1. Choose three questions: one factual, one practical and one from your major.
+2. Ask each question in two different tools, or twice in one tool using new conversations.
+3. For each pair, record what is the same, what differs, whether either gives sources, and how certain each sounds.
+4. Save the full outputs. You will use them in section 1.4.
 
-### Lab 1.2: Your Baseline (Explore and Reflect · 45 minutes · Thursday lab)
+**If this doesn't work:** with only one tool, run each question three times in new conversations. If you prefer not to use AI, compare the two sample outputs on eLearning.
 
-1. Pick three real tasks from your week, of different kinds (see section 1.7).
-2. Before you use AI, write down what a good result would look like for each. This is the Frame step.
-3. Run each task with an AI tool. Save what you asked and what came back.
-4. Check each output with a test you choose: your notes, a source, a calculation, a classmate who knows the topic.
-5. Find and document at least one failure. If everything worked, try a harder version of one task until something breaks.
-6. In your group, share one surprise. Then draft your baseline (A1).
+### Lab 1.2: Your Baseline (Explore and Reflect · 45 minutes · Thursday lab) {.unnumbered}
 
-**If this doesn't work:** if a tool is unavailable, use the provided dated outputs on eLearning for your three tasks and document how you would test them.
+*(O3, O5, O6 · LO4, LO7 · Apply)*
 
-### Lab 1.3: Find the Edge (Break It · 30 minutes · optional)
+1. Bring your three tasks from the 1.3 Your Turn.
+2. **Frame:** write what a good result would look like for each, before using AI.
+3. Run each task. Save what you asked and what came back.
+4. **Verify** each output with a test: your notes, a source, a calculation, or a classmate who knows the topic.
+5. Document at least one failure. If everything worked, make one task harder until something fails.
+6. If time allows, share one surprise with your group. Then start your A1 draft.
 
-Find one task where the output *looks* right but is wrong. Write down the prompt, the output, the test that exposed the error, and the tool and date. Share it with the class; collected examples will be used again in Chapter 4.
+**If this doesn't work:** use the dated sample outputs on eLearning for your three tasks and design the tests.
+
+### Lab 1.3: Find the Edge (Break It · 30 minutes · optional) {.unnumbered}
+
+*(O3 · LO1 · Evaluate)*
+
+Find one output that looks right but is wrong. Record the prompt, the output, the test that exposed the error, the tool and the date. Collected examples return in Chapter 4.
+
+**If this doesn't work:** use the dated sample outputs on eLearning and find the error with a test.
 
 ## Case Study: The Support Center, Revisited {.unnumbered}
 
 **Context.** A Fortune 500 company selling business-process software introduced an AI chat assistant for its customer-support agents. The study does not name the company, and neither does this book (Brynjolfsson et al., 2025).
 
-**Timeline.** The assistant reached groups of agents at different times. Researchers used that staggered rollout to compare agents with and without the tool over the same period (see Deep 1.A).
+**Timeline.** The assistant reached groups of agents at different times. Researchers compared agents with and without the tool over the same weeks (see Deep 1.A).
 
-**What the AI did.** It read live conversations and suggested replies and links to technical documentation. Agents could use a suggestion as written, edit it or ignore it [VERIFY: description of the assistant's functions in the QJE paper].
+**What the AI did.** It generated suggested replies during live chats. It had been trained on past chat transcripts, with extra weight on chats handled by top performers (Brynjolfsson et al., 2025).
 
-**What humans did.** Agents chose what to send, handled the customer and remained responsible for the result. Managers and researchers decided how the tool was introduced and measured.
+**What humans did.** Agents chose what to send and remained responsible for each conversation. Managers decided who received the tool and when.
 
-**Failure label.** None in the usual sense. The lesson is about *uneven benefit*: large gains for less experienced agents, small speed gains and small quality declines for the most experienced.
+**Failure label.** None in the usual sense. The lesson is about *uneven benefit*.
 
-**Consequences (documented).** Issues resolved per hour rose 15% on average and about 30% for less experienced and lower-skilled agents; customers became more polite and less likely to ask for a manager; there was evidence of worker learning and improved English fluency, especially among international agents (Brynjolfsson et al., 2025).
+**Consequences (documented).** Issues resolved per hour rose 15% on average and about 30% for less experienced and lower-skilled agents. The most experienced agents gained a little speed and lost a little quality. Customers were more polite and less likely to ask for a manager, while customer satisfaction scores did not change significantly.
 
-**A better workflow.** For an experienced agent, the AI Work Loop suggests a different Frame: use the assistant for rare problems or documentation look-ups, where the study found the largest gains came from moderately rare problems, and ignore routine suggestions that slow you down (Brynjolfsson et al., 2025). For a new agent, the Verify step matters most, because a new agent is less able to spot a suggestion that is subtly wrong.
+The researchers found evidence of worker learning and better written English, especially among international agents. Gains were largest for moderately rare problems: those the agents had seen too seldom to master, but that the system still had enough past examples to handle (Brynjolfsson et al., 2025).
 
-**Short case 1: Professional writing (Noy & Zhang, 2023).** Professionals with access to ChatGPT finished writing tasks faster and with higher rated quality, and the gap between weaker and stronger writers narrowed. Graders did not fact-check the work [VERIFY: figures and caveat on the Science article page].
+**A better workflow.** For a new agent, the Verify step matters most, because a new agent is less able to spot a suggestion that is subtly wrong. For an experienced agent, the Frame step matters: the study suggests the assistant adds most on moderately rare problems. Ignoring routine suggestions that do not help an expert is our inference from the findings, not a result the study tested.
+
+**Short case 1: Professional writing (Noy & Zhang, 2023).** Professionals with ChatGPT finished realistic writing tasks faster, with higher rated quality, and the gap between weaker and stronger writers narrowed. The study did not separately measure factual accuracy.
 
 **Short case 2: Consultants at the frontier (Dell'Acqua et al., 2023).** Consultants with AI did better on tasks inside the frontier and worse on a task outside it. Chapter 12 examines this study in full.
 
 ## Ethics Lens: Who Gains, and Who Should Know? {.unnumbered}
 
-If an AI tool lifts the performance of newer workers the most, two questions follow.
+If an AI tool lifts the performance of newer workers most, two questions follow.
 
-**Who captures the gain?** In the support study, newer agents worked more like experienced agents. Part of what the tool spread was the know-how of the best workers, captured in past conversations [VERIFY: authors' discussion of this point]. Should those workers share in the value their experience created? Should newer workers be paid for output they could not produce alone? There is no settled answer, but you should notice the question.
+**Who captures the gain?** In the support study, the assistant had been trained on past chats, with extra weight on the top performers' chats. The authors present suggestive evidence that part of what it spread to newer agents was the know-how of the best agents. Should those agents share in the value their experience created?
 
-**Who should be told?** Customers in the study were chatting with people who were helped by AI. Is that something customers should know? In some settings, such as a condolence message, a medical explanation or a graded essay, the use of AI changes what the reader thinks they are receiving. Disclosure is how you respect that. Chapter 10 returns to this with a case where an AI-written message caused real harm to trust.
+Should newer agents be paid for output they could not yet produce alone? There is no settled answer, but you should notice the question.
+
+**Who should be told?** The customers in the study were chatting with people who had AI help. Should customers know that? In some settings, such as a condolence message, a medical explanation or a graded essay, the use of AI changes what the reader thinks they are receiving.
+
+Disclosure is how you respect that. Chapter 10 returns to this with a case where an AI-written message damaged trust.
 
 ## Career Connection {.unnumbered}
 
-Employers increasingly describe the ability to use technology well as part of being ready for a career. The National Association of Colleges and Employers (NACE), a U.S. organization of college career offices and employers, lists Technology as one of its eight career readiness competencies, defined as understanding and using technologies ethically to work more efficiently and accomplish goals (NACE, n.d.) [VERIFY: confirm current wording and version date on the NACE site]. Here is what the ideas in this chapter look like in three different jobs. These are illustrations of the method, not survey findings.
+The National Association of Colleges and Employers (NACE), an association of colleges and employers, treats the ability to use technology well as part of being career-ready. It lists Technology among its eight career readiness competencies, described as understanding and using technologies ethically to work more efficiently and reach goals (NACE, n.d.). Here is what this chapter's ideas look like in three jobs. These are illustrations of the method, not survey findings.
 
-| Role | Where AI might help | Where the frontier bites | The Work Loop step that matters most |
+| Role | Where AI might help | Where the frontier is a risk | The Work Loop step that matters most |
 |---|---|---|---|
-| Customer-support specialist | Drafting replies, finding documentation | Promising things policy does not allow; rare technical faults | Verify, then Decide |
-| K-12 or university teacher | Generating practice questions, adapting reading levels | Wrong answer keys; examples that do not fit the students in the room | Frame, then Verify |
-| Laboratory research assistant | Summarizing papers, drafting methods text | Invented citations; subtle errors in procedures | Verify, then Disclose |
+| Customer-support specialist | Drafting replies, finding documentation | Promises policy does not allow; rare technical faults | Verify, then Decide |
+| School or university teacher | Generating practice questions, adapting reading levels | Wrong answer keys; examples that do not fit the students in the room | Frame, then Verify |
+| Laboratory research assistant | Summarizing papers, drafting methods text | Made-up citations; small errors in procedures | Verify, then Disclose |
 
 ## From the Field {.unnumbered}
 
@@ -586,126 +684,191 @@ Employers increasingly describe the ability to use technology well as part of be
 
 ## Chapter Summary {.unnumbered}
 
-[FIG 1.15: Chapter summary card]
+![Chapter 1 summary card.](../figures/out/color/f1-15-summary-card.svg){#fig-1-15 fig-alt="Six cards summarizing what you can do now: explain generation, explain uneven gains, judge tasks by testing, tell fluent from correct, judge assistance versus outsourcing, apply the AI Work Loop."}
 
-Return to the puzzle from the Opening Case. The AI assistant helped new agents most because it carried the habits of experienced agents to people who did not have them yet. It helped experts little because they already worked that way, and its routine suggestions sometimes got in their way. The answer to the second question is just as important. At work, a faster result can be the goal. In a course, the goal is the skill. A tool that helps beginners produce better output does not automatically help them learn.
+Return to the puzzle from the Opening Case. The authors' evidence suggests that the assistant helped new agents most because it carried the habits of top performers to people who did not have them yet. The most experienced agents already worked that way, so they gained little, and their quality dipped slightly. The answer to the second question matters just as much.
+
+At work, a faster result can be the goal. In a course, the goal is the skill. A tool that helps beginners produce better output does not automatically help them learn.
+
+**Revisit your Warm-up.** Look at your three answers from the start of the chapter. Where did your last AI answer really come from? Is your "task AI does badly" a fixed fact, or something you could test? And what did you guess about the course policy?
 
 You can now:
 
-- **Explain** that a generative AI system produces likely new text rather than looking up a stored answer, and why the same prompt can give different outputs, even when a tool cites sources.
-- **Explain** why gains from AI at work have been real but uneven, using three studies of support agents, professional writers and consultants.
+- **Explain** that a generative AI system produces likely text rather than looking up a stored answer, why the same prompt can give different outputs, and why a cited source does not prove a generated claim.
+- **Explain** why gains from AI at work have been real but uneven, using three studies.
 - **Judge** whether AI is fit for a task by testing it, remembering that the frontier is jagged and moves with the task, the tool and the date, and that fluency is not evidence.
-- **Judge** whether a use is assistance or outsourcing under the course's three-zone policy.
+- **Judge** whether a use is assistance or outsourcing under the three-zone policy.
 - **Apply** the AI Work Loop: Frame, Prompt, Verify, Decide, Disclose.
 - **Produce** an honest baseline of your own AI use, with a declaration and two specific goals.
 
 ### Key Terms {.unnumbered}
 
-AI Use Declaration · AI Work Loop · assistance · baseline · difference-in-differences (Deep) · fluency · frontier (jagged technological frontier) · generative AI · hallucination · model · output · outsourcing · overconfidence · productivity · prompt · staggered rollout (Deep)
+AI Use Declaration · AI Work Loop · assistance · baseline · control group · difference-in-differences (Deep) · fluent · frontier (jagged technological frontier) · generative AI system · hallucination · model · output · outsourcing · overconfidence · percentage point · productivity · prompt · random assignment · staggered rollout (Deep)
 
 ## End-of-Chapter Package {.unnumbered}
 
-<!-- Draft items. Answer keys and distractor rationales come from ai4all-assessment-builder: odd-numbered answers → Appendix E; even-numbered → private/. Each item: LO code · revised Bloom level. -->
+<!-- Each item: objective · LO · revised Bloom level. Odd-numbered answers → appendix/answers.md (Appendix E); even-numbered → private/ch01-answers-even.md. -->
 
-### Review Questions A — Terms and Concepts {.unnumbered}
+### Review Questions A: Terms and Concepts {.unnumbered}
 
-1. *(LO1 · Remember)* What is a **prompt**? (a) The model's training data (b) The input you give an AI tool (c) The tool's confidence score (d) A list of sources
-2. *(LO1 · Understand)* Which statement best describes how a generative model answers a question? (a) It retrieves the stored correct answer (b) It searches a database of verified facts (c) It produces likely text step by step (d) It copies the most popular web page
-3. *(LO1 · Understand)* A tool gives an answer with three links. What do the links show? (a) That every sentence is supported by those pages (b) Where the tool looked, not that each claim matches the page (c) That the answer is correct (d) That the model has read the whole internet
-4. *(LO1 · Remember)* Define **hallucination** in one sentence.
-5. *(LO1 · Understand)* In Brynjolfsson et al. (2025), how was productivity measured?
-6. *(LO1 · Understand)* Which group gained most from the support assistant? (a) The most experienced agents (b) All agents equally (c) Less experienced and lower-skilled agents (d) Managers
-7. *(LO1 · Understand)* What does the **jagged frontier** describe? (a) A fixed list of tasks AI can do (b) An uneven boundary between tasks AI handles well and poorly, even among tasks of similar difficulty (c) The growth of AI over time (d) The difference between search and generation
-8. *(LO1 · Remember)* Name the three things that can move the frontier for a task.
-9. *(LO1 · Understand)* On the consulting task outside the frontier, consultants using AI were ____ percentage points less likely to produce a correct solution.
-10. *(LO4 · Remember)* List the five steps of the AI Work Loop in order.
-11. *(LO4 · Understand)* Match each use to its zone (permitted / permitted with disclosure and verification / not acceptable): (i) feedback on your own draft; (ii) AI-drafted report you verified and disclosed; (iii) citing a source you never opened.
-12. *(LO4 · Understand)* What is the test for telling assistance from outsourcing?
-13. *(LO4 · Remember)* Name four elements of an AI Use Declaration.
-14. *(LO1 · Understand)* Why is a precise number with a named organization not, by itself, evidence that a claim is true?
+1. *(O1 · LO1 · Understand)* A classmate pastes the same prompt into two tools and gets two different study plans. Which explanation is best?\
+   (a) One of the tools is broken.\
+   (b) One tool looked up a better stored answer than the other.\
+   (c) The tools run different models and each picks words with some chance.\
+   (d) The second tool corrected the first tool's mistakes.
+2. *(O1 · LO1 · Understand)* An AI summary at the top of a search page links to three websites. What can you conclude?\
+   (a) Every sentence in the summary is supported by those websites.\
+   (b) The tool retrieved those pages; each claim still needs checking against them.\
+   (c) The authors of those websites wrote the summary.\
+   (d) The summary is more reliable than any single website.
+3. *(O1 · LO1 · Remember)* Define *prompt* and *output* in one sentence each.
+4. *(O2 · LO1 · Understand)* Which statement about the support-center study is accurate?\
+   (a) All agents improved by about 15%.\
+   (b) The most experienced agents gained the most in quality.\
+   (c) Less experienced agents gained about twice the average.\
+   (d) Customer satisfaction scores rose sharply.
+5. *(O2 · LO1 · Understand)* Why is comparing agents with and without the tool *in the same weeks* more convincing than comparing agents' performance before and after the tool arrived?
+6. *(O2 · LO1 · Understand)* In an experiment, what does random assignment do, and why does it matter?
+7. *(O3 · LO1 · Understand)* Which description of the jagged frontier is most accurate?\
+   (a) A fixed list of tasks AI can do.\
+   (b) A boundary that newer models will soon remove.\
+   (c) An uneven, shifting boundary that you find by testing.\
+   (d) The line between tasks that are easy and hard for people.
+8. *(O3 · LO1 · Apply)* An AI tool gives you an exact sales figure for a small local competitor. What test would you run first, and why?
+9. *(O3 · LO1 · Understand)* On one task outside the frontier, consultants with AI were 19 percentage points less likely to be correct. What does this suggest about when to trust AI, and what is one limit of this evidence?
+10. *(O3 · LO1 · Understand)* Which is the best reason to trust a claim in an AI answer?\
+    (a) It names a study and a year.\
+    (b) It gives an exact figure without any hedging.\
+    (c) A second AI tool gave the same answer.\
+    (d) It matches a source you checked yourself.
+11. *(O3 · LO1 · Remember)* Define *hallucination* in one sentence.
+12. *(O4 · LO4 · Understand)* During a take-home exam where AI is not allowed, a student uses an AI tool and adds a note disclosing it. Under the course policy, this is:\
+    (a) acceptable, because it was disclosed.\
+    (b) not acceptable; AI use in an exam stays off-limits even when disclosed.\
+    (c) not acceptable, because any use of AI in a course is cheating.\
+    (d) acceptable, if the student verified the answers.
+13. *(O4 · LO4 · Understand)* Match each use to a zone: P (permitted), D (permitted with disclosure and verification), N (not acceptable). Zones may be used more than once.\
+    (i) Asking for an explanation of a concept you then write up in your own words.\
+    (ii) An AI-drafted club newsletter that you verified and disclosed.\
+    (iii) Citing a source you never opened.\
+    (iv) Grammar feedback on your own essay.\
+    (v) Entering a friend's medical details into a public chatbot.\
+    (vi) An AI-drafted reflection essay, submitted with a declaration, when the instructor has not allowed AI drafting.
+14. *(O5 · LO4 · Remember)* List the five steps of the AI Work Loop in order.
 
-### Review Questions B — Case Questions {.unnumbered}
+### Review Questions B: Case Questions {.unnumbered}
 
-1. *(LO1 · Analyze)* A classmate says, "I asked the same question twice and got two different answers, so the tool must be broken." Using section 1.1, explain what is happening and what your classmate should do instead.
-2. *(LO1 · Analyze)* A manager reads the support-center study and decides to give the AI assistant only to new hires. Using the evidence, give one argument for and one against this decision.
-3. *(LO1 · Evaluate)* A marketing intern must produce (a) ten slogan ideas, (b) last quarter's exact sales figures for a small competitor and (c) a polished email to a client. For each, judge whether AI is likely inside or outside the frontier, and name the test you would run.
-4. *(LO4 · Evaluate)* A student uses AI to write the first draft of a reflection essay, edits two sentences and submits it with an AI Use Declaration. Is this assistance or outsourcing under the course policy? Justify your answer.
-5. *(LO4 · Apply)* A pharmacy student must explain a drug interaction to a patient using a plain-language handout. Walk through the five steps of the AI Work Loop for this task.
+1. *(O1 · LO1 · Analyze)* A classmate says, "I asked the same question twice and got two different answers, so the tool must be broken." Explain what is happening and what your classmate should do instead.
+2. *(O2 · LO1 · Analyze)* A manager reads the support-center study and decides to give the AI assistant only to new hires. Give one argument for and one against this decision, using the evidence.
+3. *(O3 · LO1 · Evaluate)* A marketing intern must produce (a) ten slogan ideas, (b) last quarter's exact sales figures for a small competitor and (c) a polished email to a client. For each, judge whether AI is likely inside or outside the frontier, and name the test you would run.
+4. *(O4 · LO4 · Evaluate)* A student's course requires a personal reflection essay. The instructor has not allowed AI drafting. The student has AI write the first draft, edits two sentences, and submits it with an AI Use Declaration. Is this assistance or outsourcing? Justify your answer.
+5. *(O5 · LO4 · Apply)* A pharmacy student must explain a drug interaction to patients in a plain-language handout. Walk through the five steps of the AI Work Loop for this task.
 
-### Review Questions C — Interpretive Questions {.unnumbered}
 
-1. *(LO1 · Evaluate)* "If AI helps beginners most, experience will soon stop mattering." Take a position on this claim and defend it using at least two studies from this chapter.
-2. *(LO4 · Evaluate)* Is it fair that disclosure makes some uses acceptable but not others? Argue for or against the course's three-zone policy, using an example from your own major.
+### Review Questions C: Interpretive Questions {.unnumbered}
+
+1. *(O2 · LO1 · Evaluate)* "If AI helps beginners most, experience will soon stop mattering." Take a position and defend it using at least two studies from this chapter.
+2. *(O4 · LO4 · Evaluate)* Is it fair that disclosure makes some uses acceptable but not others? Argue for or against the three-zone policy, using an example from your own major.
+3. *(O3 · LO1 · Evaluate)* "Models improve every few months, so testing tasks yourself is a waste of time; just wait for the next model." Agree or disagree, and justify your answer.
 
 ### Spaced Review {.unnumbered}
 
-Come back to these a few days after reading the chapter, without looking back.
+Come back to these a few days after reading, without looking back.
 
-1. *(LO1 · Understand)* Why can a search-then-generate tool cite a real source and still be wrong?
-2. *(LO1 · Understand)* What did the support study find for the most experienced agents, and why does it matter?
-3. *(LO1 · Apply)* Give one task from your own life that you think sits outside the frontier, and the test that would show it.
-4. *(LO1 · Understand)* In the writing study, what did graders not check, and why does that limit the finding?
+1. *(O3 · LO1 · Apply)* A friend says the newest model "never makes mistakes with numbers." What would you ask them to do before believing it?
+2. *(O1 · LO1 · Understand)* Why can an AI summary on a search page cite a real source and still be wrong?
+3. *(O2 · LO1 · Understand)* What happened to the quality of work of the most experienced support agents, and why does it matter?
+4. *(O1, O3 · LO1 · Analyze)* A tool gives a confident answer about a niche local topic, with no links. Which two ideas from sections 1.1–1.3 apply, and what would you do next?
 
 ### Discussion Questions {.unnumbered}
 
-1. *(Ethics · LO5)* Part of what the support assistant spread was the know-how of the best agents. Should those agents share in the value that know-how created? How?
-2. *(Career · LO7)* Think of a job you might want. Which of its tasks do you expect to be inside the frontier, and which outside? What does that mean for the skills you should build now?
-3. *(Interdisciplinary · LO1)* How would a historian, a nurse and an engineer each define a "correct" answer? What does that imply for the Verify step in each field?
-4. *(Learning · LO4)* When does getting help from AI make you better at something, and when does it make you dependent on it? Use an example from your own experience.
-5. *(Society · LO1)* If AI narrows the gap between weaker and stronger workers, is that good news, bad news or both? For whom?
+1. *(Ethics · O2 · LO1 · Evaluate)* The authors present suggestive evidence that the assistant spread the know-how of the best agents. Should those agents share in the value that know-how created? How?
+2. *(Career · O3 · LO1 · Analyze)* Think of a job you might want. Which of its tasks do you expect to be inside the frontier, and which outside? What does that mean for the skills you should build now?
+3. *(Interdisciplinary · O5 · LO4 · Analyze)* How would a historian, a nurse and an engineer each define a "correct" answer? What does that mean for the Verify step in each field?
+4. *(Learning · O4 · LO4 · Evaluate)* When does help from AI make you better at something, and when does it make you depend on it? Use an example from your own experience.
+5. *(Society · O2 · LO1 · Evaluate)* If AI narrows the gap between weaker and stronger workers, is that good news, bad news or both? For whom?
 
 ### Application Assignment: A1 — AI Use Baseline and Personal Goals {.unnumbered}
 
-**Due:** Monday, January 25, 2027, 11:59 p.m., on eLearning. *(LO4, LO7)*
+**Due:** Monday, January 25, 2027, 11:59 p.m., on eLearning. *(O6 · LO4, LO7 · Create)*
 
 **What to submit (1–2 pages):**
 
-1. Three real tasks of different kinds, what you asked (or would have asked), what came back, and what you did with it.
+1. Three real tasks (from your 1.3 Your Turn list), what you asked, what came back, and what you did with it.
 2. One documented failure: the output, why it was wrong or unhelpful, and the test that showed it.
-3. Two personal goals for the course, each specific, observable and tied to a learning outcome (LO1–LO7).
+3. Two personal goals for the course, each specific, observable and tied to a learning outcome (LO1–LO7, listed in section 1.7).
 4. An AI Use Declaration for the baseline itself.
 
-**Rubric (10 points):**
+**Rubric (10 points)**
 
-| Criterion | Points | What earns full credit |
-|---|---|---|
-| Task | 3 | Three real, varied tasks, clearly described |
-| Process evidence | 3 | What was asked, what came back and what you did are all visible |
-| Verification | 2 | One failure documented, with the test that exposed it |
-| Declaration and judgment | 2 | Complete AI Use Declaration; two specific goals tied to LO codes |
+| Criterion (points) | Exemplary | Proficient | Developing | Beginning |
+|---|---|---|---|---|
+| **Task (3)** | 3: three real, varied tasks (inside / outside / unsure), each clearly described | 2: three real tasks, described, but similar in kind | 1: fewer than three tasks, or tasks vague | 0: no real tasks |
+| **Process evidence (3)** | 3: for every task, the prompt, the output and what you did are all visible | 2: visible for two tasks | 1: visible for one task | 0: no process evidence |
+| **Verification (2)** | 2: a real failure documented with the specific test that exposed it | 1.5: failure documented; the test is vague | 1: failure claimed without a test | 0: no failure documented |
+| **Declaration (1)** | 1: all five elements (tools, purpose, accepted/rejected/revised, how verified, your judgment) | 0.75: four elements | 0.5: two or three elements | 0: missing |
+| **Goals (1)** | 1: two goals, each specific, observable and tied to an LO | 0.75: two goals, one vague or untied | 0.5: one usable goal | 0: no usable goal |
 
-**This baseline is non-judgmental.** It is not used for academic-integrity purposes, and "I have not used AI yet" is a valid starting point.
+**Grading note.** A1 is graded on completeness and the quality of your process, never on how much AI you used before. It is not used for any academic-integrity purpose.
 
-**Alternative assignment** (for students with little access to AI tools or who prefer not to use them): interview someone working in a field you are interested in about how they use, or avoid, AI. Then analyze one dated AI output provided on eLearning, documenting at least one failure. Submit the interview notes, your analysis, two goals and a declaration. Same rubric.
+**Alternative assignment** (for students with little access to AI tools or who prefer not to use them). Interview someone working in a field you are interested in about how they use, or avoid, AI. Then analyze one dated AI output provided on eLearning. Same rubric, read this way:
+
+- **Task:** three tasks from the interview where AI is or could be used.
+- **Process evidence:** your interview notes and your analysis steps.
+- **Verification:** the failure you found in the provided output, with your test.
+- **Declaration and Goals:** as above.
 
 ### Case Study Questions {.unnumbered}
 
-1. *(LO1 · Understand)* Why did the staggered rollout make the support study more convincing than simply comparing performance before and after the tool arrived?
-2. *(LO1 · Analyze)* The study found the largest gains on moderately rare problems. Why might very common and very rare problems show smaller gains?
-3. *(LO1 · Analyze)* The most experienced agents showed small declines in quality. Propose two possible reasons.
-4. *(LO4 · Evaluate)* If you managed this support center, would you tell customers that agents use an AI assistant? Justify your decision.
-5. *(LO1 · Evaluate)* What would you want to know before applying this study's results to a hospital's patient-support line?
+1. *(O2 · LO1 · Understand)* Why did comparing agents with and without the assistant in the same weeks make the support study more convincing than a simple before-and-after comparison?
+2. *(O2 · LO1 · Analyze)* The study found the largest gains on moderately rare problems. Why might very common and very rare problems show smaller gains?
+3. *(O2 · LO1 · Analyze)* The most experienced agents showed small declines in quality. Propose two possible reasons.
+4. *(O4 · LO4 · Evaluate)* If you managed this support center, would you tell customers that agents use an AI assistant? Justify your decision.
+5. *(O3 · LO1 · Evaluate)* What would you want to know before applying this study's results to a hospital's patient-support line?
 
 ## Further Reading and Compass Links {.unnumbered}
 
-- Brynjolfsson, Li and Raymond (2025) — the full support-center study. The introduction is readable without economics training.
-- Dell'Acqua et al. (2023) — the consulting experiment and the origin of the "jagged frontier" image.
-- Noy and Zhang (2023) — a short experimental study of AI-assisted professional writing.
-- Reading R2: Anthropic, *AI Fluency: Framework & Foundations*, module 1 [VERIFY: title, year and URL].
-- [COMPASS: interactive AI Work Loop (F1.2) and Jagged Frontier Map (F1.7); Chapter 1 quiz; Lab 1.1–1.3 pages]
+- Brynjolfsson, Li and Raymond (2025): the full support-center study. The introduction is readable without economics training.
+- Dell'Acqua et al. (2023, 2026): the consulting experiment and the origin of the "jagged frontier" image (working paper and Organization Science version).
+- Bastani et al. (2025): AI tutoring with and without guardrails, previewing Chapter 7.
+- Noy and Zhang (2023): a short experimental study of AI-assisted professional writing.
+- Reading R2: Anthropic Academy, *AI Fluency: Framework & Foundations*, module 1, "Introduction to AI Fluency" (Anthropic, n.d.).
+- [COMPASS: interactive AI Work Loop (@fig-1-2) and Jagged Frontier Map (@fig-1-7); Chapter 1 quiz; Lab 1.1–1.3 pages]
 
 ## References {.unnumbered}
 
-Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *Proceedings of the National Academy of Sciences*. [VERIFY: full author list, title, volume, article number, DOI]
+Anthropic. (n.d.). *AI fluency: Framework & foundations* [Online course]. Anthropic Academy. https://anthropic.skilljar.com/ai-fluency-framework-foundations
+
+Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *Proceedings of the National Academy of Sciences, 122*(26), Article e2422633122. https://doi.org/10.1073/pnas.2422633122
+
+Bloom, N., Liang, J., Roberts, J., & Ying, Z. J. (2015).
+
+Does working from home work? Evidence from a Chinese experiment. *The Quarterly Journal of Economics, 130*(1), 165–218. https://doi.org/10.1093/qje/qju032
 
 Brynjolfsson, E., Li, D., & Raymond, L. (2025). Generative AI at work. *The Quarterly Journal of Economics, 140*(2), 889–942. https://doi.org/10.1093/qje/qjae044
 
-Dell'Acqua, F., McFowland, E., III, Mollick, E., Lifshitz-Assaf, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K. R. (2023). *Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality* (Harvard Business School Working Paper No. 24-013). https://ssrn.com/abstract=4573321
+Dell'Acqua, F., McFowland, E., III, Mollick, E., Lifshitz-Assaf, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K. R.
 
-*Mata v. Avianca, Inc.*, No. 22-cv-1461 (S.D.N.Y. 2023). [VERIFY: docket number and date of the sanctions opinion]
+(2023). *Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality* (Harvard Business School Working Paper No. 24-013). https://ssrn.com/abstract=4573321
 
-National Association of Colleges and Employers. (n.d.). *Career readiness: Competencies for a career-ready workforce*. Retrieved October 17, 2026, from https://www.naceweb.org/career-readiness/competencies/career-readiness-defined/ [VERIFY: page title and version date]
+Dell'Acqua, F., McFowland, E., III, Mollick, E., Lifshitz, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K. R.
 
-Noy, S., & Zhang, W. (2023). Experimental evidence on the productivity effects of generative artificial intelligence. *Science, 381*(6654), 187–192. https://doi.org/10.1126/science.adh2586 [VERIFY: volume, issue and pages]
+(2026). Navigating the jagged technological frontier: Field experimental evidence of the effects of artificial intelligence on knowledge worker productivity and quality. *Organization Science, 37*(2), 403–423. https://doi.org/10.1287/orsc.2025.21838
 
-Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). *Official Journal of the European Union*, L, 2024/1689. [VERIFY: current consolidated version of Article 4]
+Farquhar, S., Kossen, J., Kuhn, L., & Gal, Y. (2024). Detecting hallucinations in large language models using semantic entropy. *Nature, 630*, 625–630. https://doi.org/10.1038/s41586-024-07421-0
+
+Institute of Medicine. (2005). *Dietary reference intakes for water, potassium, sodium, chloride, and sulfate*. The National Academies Press. https://doi.org/10.17226/10925
+
+Liu, N. F., Zhang, T., & Liang, P. (2023).
+
+Evaluating verifiability in generative search engines. In *Findings of the Association for Computational Linguistics: EMNLP 2023* (pp. 7001–7025). https://doi.org/10.18653/v1/2023.findings-emnlp.467
+
+*Mata v. Avianca, Inc.*, 678 F. Supp. 3d 443 (S.D.N.Y. 2023) (No. 1:22-cv-01461-PKC) (opinion and order on sanctions, June 22, 2023).
+
+National Association of Colleges and Employers. (n.d.). *What is career readiness?* Retrieved October 17, 2026, from https://www.naceweb.org/career-readiness/competencies/career-readiness-defined/
+
+Noy, S., & Zhang, W. (2023). Experimental evidence on the productivity effects of generative artificial intelligence. *Science, 381*(6654), 187–192. https://doi.org/10.1126/science.adh2586
+
+Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence and amending Regulations (EC) No 300/2008, (EU) No 167/2013, (EU) No 168/2013, (EU) 2018/858, (EU) 2018/1139 and (EU) 2019/2144 and Directives 2014/90/EU, (EU) 2016/797 and (EU) 2020/1828 (Artificial Intelligence Act). *Official Journal of the European Union*, L, 2024/1689. http://data.europa.eu/eli/reg/2024/1689/oj
+
+Regulation (EU) 2026/1744 of the European Parliament and of the Council amending Regulation (EU) 2024/1689 (Digital Omnibus on AI). *Official Journal of the European Union*, L, July 2026. https://eur-lex.europa.eu/eli/reg/2026/1744/oj
