@@ -222,3 +222,11 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 18 | Deep 18.C | GEMA v. OpenAI (Munich, Nov 11, 2025) on appeal (OLG München 6 U 3662/25 e) | Oct 2026 | gesetze-bayern.de; reports | Each edition |
 | 18 | 18.1 | UTDSP5017 (Mar 24, 2025); UTDBP3096 "Information Security and Acceptable Use" | Oct 2026 | policy.utdallas.edu | Each term |
 | 18 | Labs, 18.1 faded | University-provided tool: Microsoft Copilot Chat for students | Oct 2026 | UTD OIT pages (brief) | Each term |
+| 20 | 20.1, F20.3, F20.4 | NACE's eight competencies; equity and inclusion "under review" | Oct 2026 | NACE (n.d.) | Each term |
+| 20 | 20.1, F20.3 | NACE perception gap (2024 Student Survey; Job Outlook 2025); newer Job Outlook 2026 data exist, no newer gap comparison found | Jan 2025 article | Gray (2025) | When NACE publishes a newer comparison |
+| 20 | 20.2, F20.5, Deep 20.A, Lab 20.3 | WEF Future of Jobs 2025 numbers (170/92/78 million; 14/8/7%; churn 22%; 39%; 7 in 10; two-thirds / 40%) | Jan 2025 report | WEF (2025) | Next edition (expected 2027) |
+| 20 | Opening, Case Study, F20.2, F20.18 | Anthropic's candidate AI guidance (last updated Jul 10, 2025); Amazon (Feb 27, 2025) and Goldman Sachs (Jun 2025) interview rules, reported | Oct 2026 | Anthropic (2025); Burleigh (2025a–d); Kim (2025) | Each edition |
+| 20 | 20.6 | Course data-class table (Ch. 12 verbatim); UTDBP3096 classes | Oct 2026 | UTD policy via Ch. 12 | With Ch. 12 |
+| 20 | 20.4, F20.10 | CPA exam: 75 is a scaled score on 0–99; BEC retired (via Ch. 8) | Oct 2026 | Ch. 8 sources | Each exam edition |
+| 20 | 20.2 | WEF: AI and information processing ≈ 11 million created / 9 million displaced (p. 25); dataset 1.18 of 2.18 billion ILO employees (p. 99) | Jan 2025 report | WEF (2025) | Next edition |
+| 20 | §9c defense brief | UT Dallas AccessAbility Resource Center (ARC) name | Oct 2026 | UTD | Each term |

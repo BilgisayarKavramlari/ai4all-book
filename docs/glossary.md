@@ -395,3 +395,19 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Rules-and-rights risk | An A12 risk written as "risk of breaking [a named rule] or of [a named person] losing [a named right]," with the rule's own text as evidence. | Kurallar ve haklar riski |
 | Disparate impact (Deep) | A practice that falls more heavily on a protected group without a job-related reason. | Dolaylı ayrımcı etki |
 | Opt-out (text and data mining) (Deep) | A rights holder's machine-readable reservation that excludes its works from text and data mining under EU law. | (Metin ve veri madenciliğinden) çekilme |
+| Career readiness | A foundation for showing the core competencies that prepare college graduates for success at work and for managing a career (NACE's definition, paraphrased). | Kariyere hazırlık |
+| Competency (career) | A capability that shows in what you do, not a topic you studied. | Yetkinlik |
+| Labor-market forecast | An estimate of future jobs or skills, made by named people or organizations at a date. | İşgücü piyasası tahmini |
+| Portfolio (course sense) | A selection of your work, each piece with the evidence of how you made and checked it, presented for a reader outside the course. | Portfolyo |
+| Portfolio Anatomy | The book's diagram of a portfolio as an argument: a career narrative and an evidence map backed by entries (artifact, revision trace, verification trail, declaration), a reflection, a code of practice and an oral defense. | Portfolyo anatomisi |
+| Evidence map | A table that lists each entry with the course outcome it shows, the NACE competency it gives evidence of, and where the checks are. | Kanıt haritası |
+| Revision evidence | The record, for one artifact, of the before, the after, the reason for the change and the check behind it. | Revizyon kanıtı |
+| Verification trail | The record of checks behind a result, with the sources or recalculations used, the verdicts reached and what remained uncertain. | Doğrulama izi |
+| Portfolio entry | A short account of one piece of work for an outside reader: the situation and task, what you did, what the AI did, how you checked, the result and one limit. | Portfolyo girdisi |
+| Redaction | Removing or blacking out information so it cannot be read. | Karartma (bilgi gizleme) |
+| Career narrative | A short argument to one named reader: where you are going, shown by three pieces of evidence. | Kariyer anlatısı |
+| Oral defense | A short, live explanation of your work followed by questions, in which you show that you own it. | Sözlü savunma |
+| Decision-chain answer | An answer that gives five links: what you asked for, what the AI produced, what you kept, changed or rejected and why, how you checked, and who decided. | Karar zinciri yanıtı |
+| Net job growth (Deep) | The expected change in the size of the workforce: jobs created minus jobs displaced. | Net istihdam artışı |
+| Labor-market churn (Deep) | Jobs created plus jobs displaced, as a share of the starting total. | İşgücü piyasası çalkantısı |
+| Extrapolation (in labor-market forecasts; Deep) | Estimating beyond what was measured, such as scaling survey answers up to a whole economy's jobs. | Dışdeğerleme |

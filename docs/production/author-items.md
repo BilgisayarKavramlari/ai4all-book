@@ -140,3 +140,12 @@
 4. **UTD policy:** confirm the book may cite UTDSP5017 and that the live syllabus states the course's choice under it.
 5. Final voice edit (pipeline step 8).
 <!-- /ch18 -->
+
+<!-- ch20 -->
+## Chapter 20
+1. **Live syllabus:** (a) A14 title "A14 Revision evidence map and career narrative" and A14 as the 13th weekly artifact (D-20.5); (b) R17 and R18 recommended (D-20.8); (c) **the syllabus says "about 5 hours" for portfolio assembly; write "about 6 hours" (honest range about 5.5 to 7.5 hours, including the Failure Diary and up to three first-time revisions; about 9 hours if all five non-A13 artifacts are revised for the first time)** (D-20.2); (d) the week-14 exception, ~2 h 25 (D25, D-20.1); (e) the 100-point sub-split (D-20.3); (f) the privacy self-check and 48-hour fix window (D-20.4); (g) defense format (index card, no AI, time limit not pace, ARC route).
+2. **From the Field:** approve the Bilgi ekonomisi entry with marked present-day connections; optionally supply a real, anonymized employer's view (what he looked for when hiring, or a portfolio that convinced him) for the placeholder `[FROM THE FIELD: author case needed — an employer's view]`; D16 applies if it concerns OptiWisdom. Never written for him.
+3. **Defense logistics:** 40 students × 5 minutes ≈ 200 minutes (plus changeovers) against about 140 usable class minutes. Proposal: move the final review on May 4 online (eLearning), freeing about 150 minutes for about 27 in-class slots at 5.5 minutes; add a second room with a teaching assistant (after three jointly scored calibration defenses) or about 13 announced extra slots (e.g., Apr 30, May 3); assign days by lot. Alternative: 3 + 1 minutes (still ≈ 180 minutes).
+4. Closed 2026-10-18: Business Insider headline and date confirmed by the editor in a browser (build/sources/business-insider-amazon-2025.md).
+5. Final voice edit.
+<!-- /ch20 -->

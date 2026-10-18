@@ -246,3 +246,15 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | Blank Regulation Map for Lab 18.3 and the Mini-Project; text version | eLearning | Chapter release |
 | Mini-Project alternative: a provided pair of dated policy excerpts (two universities' student AI guidance, or the EU AI Act's transparency article and TRAIGA § 552.051) | eLearning | Chapter release |
 <!-- /ch18 -->
+
+<!-- ch20 -->
+## Chapter 20
+| Asset (promised in the chapter or labs) | Where | Needed by |
+|---|---|---|
+| A14 template (the 20.9 faded example: first map row filled), the evidence-map table and a one-page entry layout, screen-reader-friendly | eLearning | Mon Apr 19, 2027 |
+| Provided reader profiles for the alternative A14 (a graduate program per field, a campus employer, a scholarship committee) | eLearning | Mon Apr 19, 2027 |
+| Final portfolio brief, 100-point rubric, defense rubric and sample questions (printed in the chapter); privacy self-check line | eLearning | Mon Apr 19, 2027 |
+| Lab 20.1 materials: printed privacy flow (section 20.6), timing sheet with minutes 50–65 for Ch. 21's peer check, one strong and one weak evidence line for the briefing | Printed + eLearning | Tue Apr 27, 2027 |
+| Defense sign-up slots (extra slots or second room if adopted); ARC alternative-route procedure; days by lot | eLearning | Mon Apr 19, 2027 |
+| Compass pages: Signature 12 step by step; evidence-map builder; labor-market claim checker; Chapter 20 quiz; Lab 20.1–20.3 pages | Compass (optional companion) and eLearning | Tue Apr 27, 2027 |
+<!-- /ch20 -->

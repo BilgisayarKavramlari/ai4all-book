@@ -841,3 +841,51 @@ Overall 364 of 400 (91.0%); Spanish first-year questions 28 of 40 (70.0%), hidde
 ### Lab notes
 
 - **Lab 18.2:** uses 3, 7 and 8 share Ross's features (same purpose or market; commercial), 4 resembles Bartz's training holding, 5 Bartz's pirated library, 6 is non-expressive analysis (statistics only), 1–2 are study and commentary; factor 4 carries great weight; use 7 is untested for generative AI as of October 2026.
+
+## Chapter 20
+
+### Check Yourself
+- **20.1** (§20.1) Two different groups rated recent graduates, so the figures show that students' and employers' views differ; they cannot show that any one student over- or underrates themselves.
+- **20.2** (§20.2) It is not an AI number: 170 million is the WEF's estimate for all trends combined (AI and information processing account for about 11 million created and 9 million displaced); and it is gross, an estimate from employers' 2024 expectations, not a fact ("will").
+- **20.3** (§20.3) It shows that you can find where a tool fails, or decide not to use it, which a polished final product hides.
+- **20.4** (§20.4) The before is the evidence of what changed; if you rewrote it, no reader could see the revision. Only other people's names and data are replaced, with a note.
+- **20.5** (§20.5) It shows a decision based on evidence about the tool, the judgment a reader is looking for.
+- **20.6** (§20.6) A portfolio goes to new readers outside the course, with no contract, and can be forwarded; the data classes decide again, and others' information is not yours to publish.
+- **20.7** (§20.7) Claims, evidence and wording can then fit what that reader needs; a narrative for everyone convinces no one in particular.
+- **20.8** (§20.8) What you asked for; what the AI produced; what you kept, changed or rejected and why; how you checked; who decided.
+- **20.9** (§20.9; asked in the Lab 20.1 briefing) The partner says what they believe you did and what the AI did after 90 seconds; you learn where your entry blurs the two or hides your part.
+
+### Faded examples
+- **20.1 Marketing:** e.g., "Compared two tools on five test inputs; one invented a product feature twice, so I chose the other and added a fact check before posting" (technology: choosing the right tool and knowing its limits).
+- **20.2 Headline:** gross, not net: the same estimate has about 170 million jobs created, net about 78 million; and the 92 million are displaced by all trends combined, not by AI alone (the report links about 9 million displaced and 11 million created to AI and information processing); it is the WEF's estimate from employers' 2024 expectations for 2025–2030.
+- **20.3 Pre-med biology:** five that, with A13 (LO6), cover different outcomes and include a documented failure or "no AI" entry, e.g., A2 (LO1), A4 (LO4), A6 (LO3; the tool's summary was wrong), A9 (LO3, LO5) and A10 (LO2, LO5; "no AI" chosen for one task); A5 (LO3; one claim contradicted) is a reasonable swap for A6.
+- **20.4 Education:** why: the mentor asked "How many is most?"; check: the gradebook count for that week (14 of 24).
+- **20.5 Environmental science:** "I recalculated all 12 conversions by hand and checked each flag against the permitted limit; one of the tool's two flags was wrong because it used the wrong limit, so I corrected it." Check: hand recalculation against the stated limit.
+- **20.6 Hospitality (done in Lab 20.1):** remove the internal rate sheet (an employer's confidential data) or describe the method without it; ask the employer, in writing, before showing anything from the job.
+- **20.7 Psychology:** e.g., "I keep a record of how my writing changed and why (A7)"; "I build and test research workflows others can use (A13)", each pointing to its map row and matched to the program's request for research experience and a writing sample.
+- **20.8 Computer science:** rejected the function's month order, rewrote the parser and added three tests (the check); the TA decided to merge.
+
+### Review Questions A
+1. **(b)** A foundation for showing the competencies that prepare graduates for work and careers. (a) M3: self-reported skills are not the definition; (c) and (d) narrow it to a test score or to tools.
+3. **(a)** About 78 million jobs, or 7% of the jobs in the report's dataset (170 − 92). (b) gives the gross figure (M4); (c) adds created and displaced (that is churn, 22%); (d) is the displaced figure.
+5. A table that lists each entry with the course outcome it shows, the NACE competency it gives evidence of, and where the checks are. In A14 each row also has a one-line revision note and a privacy status.
+7. A revision trace records versions and what changed, who or what proposed it, and why; a verification trail records the checks behind a result: sources or recalculations, verdicts and what remained uncertain.
+9. Tools used; purpose; what you accepted, rejected or revised; how you verified it; where your judgment shaped the work.
+11. **(b)** The decision chain: asked, produced, kept/changed/rejected and why, checked, decided. (a) M6: leaves out every link; (c) cites a rule instead of evidence; (d) admits no ownership of the work.
+
+### Review Questions B
+1. Three rows, e.g.: A5 · LO3 · critical thinking: "checked a drug-interaction claim against the prescribing label" · trail: A5 row · as is. A7 · LO2, LO4 · communication: "rewrote a patient-education leaflet from a textbook case; revision trace shows each change" · as is (no patient data). A13 · LO6 · teamwork or communication: "study workflow peer-tested by an engineering student; revised after the test" · tester's name replaced.
+3. Before and after as given; **what changed:** corrected (source 3 reclassified from "reliable" to "a press release; lead only"); **why:** the press release overstated the sample; **trail:** checked the study itself (the primary source), verdict on the press release's claim: contradicted (or partly supported), with the study's citation and date; **declaration line:** e.g., "No AI used for this check," or the tool, its purpose and what was rejected.
+
+### Review Questions C
+1. Strong answers take a position and use §20.2: one exact, dated, attributed sentence can show awareness of the field (the WEF's 2025 estimate from employers' 2024 expectations, all trends combined), but such numbers say nothing about the student and are easily misquoted as AI numbers; most portfolios are stronger without one. Weak answers treat the numbers as facts or reject all forecasts.
+3. Strong answers use the rubric: it scores structure and explanation, not accent, fluency or speed, and three minutes is a limit, not a pace; an alternative route exists through ARC (a recorded presentation plus a live conversation, or one written answer where ARC approves). They may still argue that live questioning disadvantages some students and propose further supports.
+
+### Spaced Review
+1. The confusion is a finding: record it (step 3 unclear to a non-specialist), change the instructions, rerun with a new input, and show before, after, reason and check; if it goes beyond A13 as submitted, it is the portfolio's row-3 further change.
+3. The employer's policy: follow the strictest rule that applies (§18.1); the course permits, it does not require, so describe the method without the tools, or ask the employer, its owner, in writing.
+
+### Case Study Questions
+1. First-draft rule: evidence of the applicant's own thinking; no-invention rule: the truth of the record; interview rule: a moment when the employer sees the person think without a tool (the page's stated reason; the rest is this book's reading).
+3. Materials: the declaration says the first draft was yours and what the tool refined; take-home: "no AI used" unless allowed, or what was allowed and how it was used; interviews: no tool, and a decision-chain answer when asked about AI.
+5. Mirrors: live, no tool, questions about your own work. Differs: it is about course work, it is graded on a published rubric with an alternative route, and it asks explicitly about the AI's part.

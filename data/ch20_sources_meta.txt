@@ -1,0 +1,20 @@
+Chapter 20 data files (copied by hand from the publishers' own pages; checked 2026-10-18)
+
+data/ch20_nace_gap.csv
+  Source: Gray, K. (2025, January 13). The gap in perceptions of new grads' competency proficiency and resources to shrink it. NACE. Figure 1.
+  https://naceweb.org/career-readiness/competencies/the-gap-in-perceptions-of-new-grads-competency-proficiency-and-resources-to-shrink-it
+  Columns: percentages of responding students ("New Graduates" column) and employers rating each competency
+  "very" (4) or "extremely" (5) important / rating recent graduates "very" or "extremely" proficient, on five-point scales.
+  Student side: NACE 2024 Student Survey, March 13 - May 15, 2024, 20,482 students including 2,281 graduating seniors;
+  NACE does not say which group the column shows. Employer side: Job Outlook 2025 survey, August 5 - September 16, 2024,
+  237 respondents (162 NACE members, 19.2% of eligible members, plus 75 nonmembers).
+  gap_points = students_proficiency - employers_proficiency (percentage points), computed by this book.
+  The two groups are different people; this is not a matched comparison.
+
+data/ch20_wef2025.csv
+  Source: World Economic Forum. (2025, January). The future of jobs report 2025, Key findings pp. 5-6 and section 2.
+  https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf
+  Employers' expectations for 2025-2030, extrapolated by the WEF to about 1.2 billion formal jobs (ILOSTAT data).
+  Survey: over 1,000 employers representing more than 14 million workers, 22 industry clusters, 55 economies;
+  data collection May to September 2024 (methods appendix, p. 97; a note on p. 99 says May to August 2024).
+  Structural labour-market churn = (created + displaced) / current jobs = 22%.
