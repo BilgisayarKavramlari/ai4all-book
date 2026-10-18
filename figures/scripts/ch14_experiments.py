@@ -1,5 +1,5 @@
 """Chapter 14 experiment: how errors compound over the steps of an agent run, and what check
-points and an approval gate change. A constructed model, not data about any real agent.
+points and an approval gate change. This book's own calculation and simulation, not data about any real agent.
 
 Run from the repo root:
     python3 figures/scripts/ch14_experiments.py
@@ -16,6 +16,16 @@ Model (stated in the chapter as assumptions, not findings):
   * When a check catches an error, the steps from the error onward are redone (each redo can
     fail again with probability 1 - p); a run is given up after MAX_PASSES caught passes and
     counted as "stopped" (no harm, task not done).
+Five further simplifications (stated in Deep 14.B and in the meta file):
+  * no false alarms: a check never flags a correct result;
+  * a check that catches an error always finds the first wrong step, so rework starts there;
+  * the catch rate does not fall as checks multiply (no approval fatigue; this flatters design C);
+  * only the final action is irreversible; every earlier step can be redone;
+  * misses are independent: a check that missed an error is as likely to catch it at the next check
+    (real reviewers tend to miss the same subtle error again; this also flatters design C).
+A run caught and redone more than MAX_PASSES times is abandoned and counted as "stopped" (under 0.1% of runs).
+Independence cuts both ways: correlated errors (one bad observation spoiling many later steps) can make real
+runs worse than p^n, while harmless or self-corrected errors can make them better.
 Designs compared:
   A  no person in the loop: the irreversible action runs at the end.
   B  one approval gate, just before the irreversible action.
@@ -132,7 +142,12 @@ if __name__ == "__main__":
         fh.write(f"simulation: N={N}, p={P}, catch rates {C_VALUES}, check every {K} steps (design C), "
                  f"max {MAX_PASSES} caught passes, {RUNS} runs x seeds {list(SEEDS)}; numpy default_rng\n")
         fh.write("assumptions: independent step errors; errors propagate until caught; same catch rate at "
-                 "every check; caught work redone from the first wrong step. A constructed model, not data "
-                 "about any real agent.\n")
+                 "every check; caught work redone from the first wrong step. This book's own calculation and "
+                 "simulation, not data about any real agent.\n")
+        fh.write("further simplifications: (1) no false alarms; (2) a catching check always finds the first wrong "
+                 "step; (3) the catch rate does not fall as checks multiply (no approval fatigue, which flatters "
+                 "design C); (4) only the final action is irreversible; (5) misses are independent across checks; runs caught and redone "
+                 "more than five times are abandoned as stopped (<0.1%). Independence cuts both ways: correlated "
+                 "errors can make real runs worse than p^n; harmless or self-corrected errors can make them better.\n")
     for r in sim:
         print(r)

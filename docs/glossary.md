@@ -259,3 +259,21 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Cheap fake | Media manipulated without generative AI, such as a real photo with a false caption or date, a slowed-down video or a simple edit (Paris & Donovan, 2019). | Ucuz sahte (cheap fake) |
 | Liar's dividend | The benefit a person gains by dismissing real recordings as fake when fakes are common (Chesney & Citron, 2019). | Yalancının kazancı |
 | Verification protocol | Rules you write in advance for when and how you check media and media-borne requests before you act on them. | Doğrulama protokolü |
+| Workflow | A fixed sequence of steps for a task, run by people, by software or by both. | İş akışı |
+| Automated workflow | A workflow whose steps software runs, along a path people fixed in advance. | Otomatik iş akışı |
+| Agent loop | The cycle an agent repeats: the model produces a plan for the next action, the system runs the tool call, and the result, the observation, is added to the context window, until a stop condition is met. | Ajan döngüsü |
+| Error compounding | The tendency for the chance of an error-free run to fall as steps are added, because each step is another chance for an error and later steps can build on earlier ones. | Hata birikmesi |
+| Reversible action | An action whose effect can be undone at little cost, such as a draft, an item in a cart or a change in a test copy. | Geri alınabilir eylem |
+| Approval gate | A point at which a system pauses before an action takes effect until a named person approves, edits or rejects it. | Onay kapısı |
+| Check point | A point at which a person inspects an intermediate result before later steps build on it (not a saved restore point). | Kontrol noktası |
+| Stop point | A condition at which a run halts and hands control back to a person, such as a step, time or spending limit, an error, or an unexpected result. | Durma noktası |
+| Soft gate | An instruction in the context asking the model to ask first or not to act; the model receives it as text and may not follow it. | Yumuşak kapı |
+| Hard gate | A gate the system enforces outside the model, so the action cannot run unless a person acts, or cannot run at all. | Sert kapı |
+| Approval fatigue | Approvals given so often or so quickly that they stop working as checks. | Onay yorgunluğu |
+| Least privilege | Giving each tool and account only the access its step needs, for only as long as it is needed. | En az yetki |
+| Sandbox | A separate test copy where changes do not reach real data or people. | Korumalı alan (test ortamı) |
+| Log (of an agent run) | A record the system writes as it runs of every plan, tool call, observation, approval and stop, with times. | Kayıt (ajan çalışma günlüğü) |
+| Dry run | Running a whole workflow on test inputs with real effects switched off, before anyone relies on it. | Kuru çalıştırma (prova) |
+| Planted fault | An error put into one step of a dry run on purpose, to see whether a check point, gate or stop point catches it. | Yerleştirilmiş hata |
+| Done-criteria | Two or three checks that tell you whether a run succeeded. | Tamamlanma ölçütleri |
+| Workflow blueprint | A written design of a workflow: its steps, who or what runs each, its actions, people points, permissions, log plan and dry-run results. | İş akışı planı |

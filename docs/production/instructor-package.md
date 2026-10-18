@@ -165,3 +165,17 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | Two dated test items for the optional protocol: P1 public-domain library-building photo with the archive record; P2 generated flood image of the fictional town of Port Calder with credentials and search-results sheet; both carry the neutral band "COURSE SAMPLE — may be real or generated"; not used in Lab 13.2; eLearning only | Optional artifact | Tue Mar 30, 2027 |
 | One-page verification-protocol template (screen-reader-friendly) | Optional artifact | Tue Mar 30, 2027 |
 <!-- /ch13 -->
+
+<!-- ch14 -->
+## Chapter 14
+| Asset (promised in the chapter or labs) | Where | Needed by |
+|---|---|---|
+| Tuesday demo: a multi-step agent run and its failure, with tool kind, model name and date; a dated recording | eLearning | Tue Apr 6, 2027 |
+| Planted-fault deck: 48 cards (3 kinds: wrong tool result, missing data, hidden instruction × 4 templates × 4 copies), dealt per team, each with an insertion rule ("at the first step that reads data…"); coins for the soft-gate rule | Printed + eLearning (accessible digital version) | Thu Apr 8, 2027 |
+| Blank trace cards and the "unplanned action" card template; digital card sets for screen-reader users | eLearning | Mon Apr 5, 2027 (pre-lab) |
+| A11 lab sheet / template (F14.16) with columns what happened · right? · how I checked · caught by; screen-reader-friendly (the 14.9 faded sheet and the sample A11 are printed in the chapter) | eLearning | Mon Apr 5, 2027 |
+| Alternative assignment: three provided scenarios (a tutoring center's appointment booking and reminders; online shop confirmations and refunds; lab sample tracking and reorders), each with a step map containing two design flaws, and trace cards with one planted fault | eLearning | Thu Apr 8, 2027 |
+| Lab 14.2 sample trace: printed in the chapter (constructed); optional dated real trace for class discussion | eLearning | Thu Apr 8, 2027 |
+| Compounding calculator spreadsheet (p^n and the chapter's simulation) and a printed p^n table | Compass (optional) and eLearning | Thu Apr 8, 2027 |
+| Compass pages: Signature 9 step by step; action-classification drill; Chapter 14 quiz; lab pages ch14-lab1 to lab3 | Compass (optional companion) and eLearning | Tue Apr 6, 2027 |
+<!-- /ch14 -->

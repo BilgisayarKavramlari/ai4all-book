@@ -88,3 +88,11 @@
 2. **No live-syllabus change** ("D: Ch. 13" with Chapter 12 on Mar 30 stays).
 3. **Final voice edit** of the chapter.
 <!-- /ch13 -->
+
+<!-- ch14 -->
+## Chapter 14
+1. **Live syllabus:** (a) R11 recommended rather than required in week 11 (its five short sections, about 800 words, named in Further Reading); (b) A11 wording as in the Application Assignment (any recurring task; three dry runs; photographed lab sheet accepted; defense 100–120 words; no AI tool required); (c) LO tags for Thu Apr 8: the book map lists LO6 for Chapter 14, the syllabus row lists LO2 and LO5; the chapter tags LO6 as secondary until you decide; (d) the A11/A13 boundary sentence (D-14.7).
+2. **From the Field:** approve the use of your 2014 Kanban entry (*YBS Ansiklopedi* 1(4), 21–25; not commercial), with the present-day connections marked as the book's reading. Optional: a real, anonymized moment from your industry work when an automated process ran without a check, or a sign-off caught something; it will not be written for you.
+3. **Tuesday demo (Apr 6):** which tool kind and model you will use for "a multi-step agent and its failure," so the 14.2–14.3 worked examples can mirror it; a dated recording for students who miss it.
+4. **Final voice edit** (pipeline step 8).
+<!-- /ch14 -->

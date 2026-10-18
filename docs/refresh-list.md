@@ -158,3 +158,11 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 13 | 13.6 | Since Nov 2025 one provider's chat app checks uploaded images for its own SynthID watermark | Oct 2026 | Google (2025c) | Each term |
 | 13 | 13.4, references | C2PA specification 2.3 (Jan 5, 2026); soft bindings ("durable" credentials) supported by few tools | Oct 2026 | C2PA (2026) | Each edition |
 | 13 | 13.2 | Voice cloning from short samples available in commercial tools | Oct 2026 | (dated clause; Ch. 15 owns) | Each edition |
+| 14 | Opening, 14.5–14.7, Case Study | Replit's safeguards: dev/prod database separation; agent limited to the development database; restore points with database state; planning/chat-only mode | Oct 2026 | Masad (2025); Brewster & Chávez (2025); Sharwood (2025b) | Each edition |
+| 14 | 14.5 | OpenAI Operator: confirmation before purchases; egg purchase Feb 2025; merged into ChatGPT's agent mode on Jul 17, 2025 (later name or status not confirmed) | Oct 2026 | Fowler (2025); OpenAI page (fact-check C141) | Each edition |
+| 14 | 14.5 | Users approve 93% of a coding agent's permission prompts; auto mode with a classifier | Oct 2026 (post dated Mar 25, 2026) | Hughes (2026) | Each edition |
+| 14 | 14.3 | τ-bench (June 2024 version): GPT-4o pass^1 61.2% retail, 35.2% airline; pass^8 below 25% retail | Oct 2026 | Yao et al. (2024) | Each edition |
+| 14 | 14.3 | METR time horizons: v1 (Mar 2025) Claude 3.7 Sonnet ~50 min at 50%, ~15 min at 80%; 4–6× across models; v4 (Jul 2026) ~110 min for o3 | Oct 2026 | Kwa et al. (2025) | Each edition |
+| 14 | 14.1 | Many chat tools run a short agent loop inside one reply (search several times, run code) | Oct 2026 | Product knowledge (dated statement) | Each edition |
+| 14 | 14.6 | OWASP Top 10 for LLM Applications 2025, LLM06:2025 Excessive Agency (too much functionality, permission or autonomy) | Oct 2026 | OWASP Gen AI Security Project (2025) | When the next list appears |
+| 14 | Lab 14.2 | UTD OIT matrix: Microsoft Copilot Chat has web access; custom agents not offered | Oct 2026 | UTD OIT AI Tools Matrix | Each term |
