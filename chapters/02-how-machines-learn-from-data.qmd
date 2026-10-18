@@ -47,7 +47,7 @@ You will revisit your answers in the Chapter Summary.
 
 [Core]{.path}
 
-Think about the spam filter in your email. One way to build it is to write rules. If the subject line contains "free money," mark it as spam. If there are five exclamation marks in a row, mark it as spam. If the attachment is a program file from an unknown sender, mark it as spam.
+Almost every field has a sorting task. A clinic sorts patients by urgency, a bank sorts transactions into normal and suspicious, and your inbox sorts mail. Let's take the spam filter in your email. One way to build it is to write rules. If the subject line contains "free money," mark it as spam. If there are five exclamation marks in a row, mark it as spam. If the attachment is a program file from an unknown sender, mark it as spam.
 
 Rules like these work for a while. Then spammers change their wording, and someone has to write new rules. Soon there are thousands of them. Some contradict each other. Nobody remembers why rule 2,317 exists. And every new trick needs a human expert to notice it first.
 
@@ -144,7 +144,7 @@ Not all learning is supervised. For reference, here are the main kinds. You do n
 | Reinforcement | Rewards and penalties for actions | Game-playing systems; robot control |
 
 ::: {.callout-note title="Worked Example: One Round of the Loop"}
-Sam's untrained model receives photo 17, which is labeled "bolt."
+Let's take one round. Sam's untrained model receives photo 17, which is labeled "bolt."
 
 **Predict:** "nut." The model gives each class a score, and here "bolt" gets only 41%. **Measure:** the answer was "bolt," so the model is penalized; the lower the score it gave to "bolt," the bigger the error. **Adjust:** the settings shift slightly so that photos like this one look more like "bolt" next time. **Repeat:** photo 18.
 
@@ -179,7 +179,7 @@ How can nearly 2.4 million answers be so wrong? The usual explanation is that th
 
 Either way, the lesson is the same: **big data is not the same as the right data.**
 
-Every dataset is a **sample**: the examples we actually have. The **population** is everything the model will meet in the real world. A model learns its sample, not the world. Many errors in real use come from the gap between the two.
+Every dataset is a **sample**: the examples we actually have. The **population** is everything the model will meet in the real world. A model learns its sample, not the world. Many errors in real use come from the gap between the two. For example, a voice assistant trained mostly on adult voices may struggle with children's voices, and a medical model trained in one hospital may struggle in another.
 
 ![A model learns its sample, not the world.](../figures/out/color/f2-05-population-sample.svg){#fig-2-5 fig-alt="Population of mixed shapes; a dashed sample box with mostly one shape; three gaps: coverage, non-response, selection."}
 
@@ -259,7 +259,7 @@ The second row of the table shows another problem. When one class has far fewer 
 
 Now take it to the extreme. Imagine 100,000 card transactions, of which 100 are fraud. A model that says "not fraud" every single time is right 99,900 times out of 100,000. That is 99.9% accuracy, and it catches no fraud at all. *(Illustrative numbers.)*
 
-The case you care about is often the rare one: fraud, a disease, a broken part, a customer about to leave. That is exactly the class a model most easily misses. The remedy starts with measurement: always check the score on the smallest class. For a single class, this score, the share of its real cases the model catches, is called **recall** (Deep 2.C adds a second number, precision).
+The case you care about is often the rare one: fraud, a disease, a broken part, a customer about to leave. That is exactly the class a model most easily misses. In other words, the more a case matters, the less you can trust a single overall score. The remedy starts with measurement: always check the score on the smallest class. For a single class, this score, the share of its real cases the model catches, is called **recall** (Deep 2.C adds a second number, precision).
 
 ::: {.callout-note title="Worked Example: The 99.9% Fraud Model"}
 A bank's new fraud model reports 99.9% accuracy on last month's transactions.
@@ -287,7 +287,7 @@ The problem took Sam an evening to find. He had photographed all the bolts on hi
 
 ![A model can score well for the wrong reason.](../figures/out/color/f2-07-shortcut.svg){#fig-2-7 fig-alt="Bolts shot on a brown desk, other parts on a white table; model learns 'brown means bolt'; fails at a new workbench."}
 
-This is called a **shortcut**: a clue that happens to go with the label in the training data but has nothing to do with the task. Researchers have found shortcuts in many published systems, such as image classifiers that relied on backgrounds or textures instead of the objects themselves (Geirhos et al., 2020). The remedy is variety: train and test under the different conditions the model will meet in the real world. The proxy in the recruiting tool is a close cousin of a shortcut: a clue that went with the label in the data, but not one anyone wanted the model to use. Unlike Sam's background, a proxy does not stop working in a new setting, so testing in new conditions will not reveal it; you have to look for it.
+This is called a **shortcut**: a clue that happens to go with the label in the training data but has nothing to do with the task. Researchers have found shortcuts in many published systems, such as image classifiers that relied on backgrounds or textures instead of the objects themselves (Geirhos et al., 2020). The remedy is variety: train and test under the different conditions the model will meet in the real world. The proxy in the recruiting tool is a close cousin of a shortcut: a clue that went with the label in the data, but not one anyone wanted the model to use. Unlike Sam's background, a proxy does not stop working in a new setting, so testing in new conditions will not reveal it; you have to look for it. In other words, a shortcut breaks when conditions change, while a proxy keeps working and keeps doing harm.
 
 ### Testing on examples the model has never seen {.unnumbered}
 
@@ -369,7 +369,7 @@ You now know how a model learns and where it goes wrong. One question remains fr
 
 [Core]{.path}
 
-The words "artificial intelligence," "machine learning," "deep learning" and "generative AI" are often used as if they meant the same thing. They do not. They fit inside each other, like nested boxes.
+In news stories, job ads and product pages, the words "artificial intelligence," "machine learning," "deep learning" and "generative AI" are often used as if they meant the same thing. They do not. They fit inside each other, like nested boxes.
 
 ![Generative AI is a branch of machine learning, not a different kind of thing.](../figures/out/color/f2-11-nested-family.svg){#fig-2-11 fig-alt="Nested boxes: AI, machine learning, deep learning, generative AI, large language models, each with an example."}
 
@@ -440,7 +440,7 @@ Why now? Many of the core ideas are decades old. Most accounts point to three th
 
 [Deep]{.path}
 
-Take the simplest possible model: predicting a price as *price = w × size*, with one setting, *w*. Suppose a 100-square-meter apartment sold for 300 (in thousands of dollars). If *w* is 2, the model predicts 200, so the prediction is 100 too low.
+Let's take the simplest possible model: predicting a price as *price = w × size*, with one setting, *w*. Suppose a 100-square-meter apartment sold for 300 (in thousands of dollars). If *w* is 2, the model predicts 200, so the prediction is 100 too low.
 
 To learn, the training procedure measures how the error changes when *w* changes, and moves *w* a small step in the direction that reduces the error. Picture the error as a valley over all possible values of *w*. Each step goes a little downhill. This procedure is called **gradient descent**. Large models do the same thing with billions of settings at once.
 
@@ -671,7 +671,7 @@ Come back to these a few days after reading, without looking back. They connect 
 
 ### Application Assignment: A2 — Concept Map of 15 Terms {.unnumbered}
 
-**Due:** Monday, February 1, 2027, 11:59 p.m., on eLearning. *(O5 · LO1 · Create)* Start it this week with Chapter 2 terms (Thursday's lab) and complete it after Chapter 3. Expect about 30 minutes at home after the lab.
+**Due:** Monday, February 1, 2027, 11:59 p.m., on eLearning. *(O5 · LO1 · Create)* A2 has two parts. **Part 1** (at home, after this chapter): at least 7 Chapter 2 terms with worked definitions and links. **Part 2** (started in Thursday's "Probe the model" lab, section 3.6): at least 5 Chapter 3 terms, linked to your Chapter 2 terms. Expect about 45–60 minutes in all outside class. One rubric (below) scores the finished map.
 
 **What to submit:**
 

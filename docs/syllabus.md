@@ -109,8 +109,8 @@ Calendar dates come from secondary sources and must be checked against the offic
 |---|---|---|---|---|---|---|
 | 1 | Tue Jan 19 | Concept | Course opening. Demo: the same question in two tools, two different answers | Syllabus | | |
 | 1 | Thu Jan 21 | Lab | Baseline lab: three tasks from your own work, record the results, find at least one failure | Ch. 1; R2 m1 | A1 AI use baseline and personal goals (Jan 25) | LO4, LO7 |
-| 2 | Tue Jan 26 | Concept | What a language model is: tokens, training and inference, context window, retrieval, tools, agents. Demo: tokenizer, repeated sampling | R1 | | |
-| 2 | Thu Jan 28 | Lab | "Probe the model": token, context and knowledge-cutoff probes, turned into a concept map | Ch. 2–3 | A2 15-term concept map (Feb 1) | LO1 |
+| 2 | Tue Jan 26 | Concept | Opening case: the Amazon recruiting tool (Ch. 2). How machines learn from data, then what a language model is: tokens, training and inference, context window, retrieval, tools, agents. Demo: tokenizer, repeated sampling. Concept check includes 2–3 Chapter 2 items | Ch. 2; R1 | | |
+| 2 | Thu Jan 28 | Lab | "Probe the model": token, context and knowledge-cutoff probes, turned into a concept map | Ch. 3 | A2 15-term concept map (Feb 1) | LO1 |
 | 3 | Tue Feb 2 | Concept | Framing a task. Demo: vague prompt versus framed prompt | R2 m2 | | |
 | 3 | Thu Feb 4 | Lab | Prompt iteration sprint: a real task, at least four versions, a peer swap test | Ch. 5 (D: Ch. 6) | A3 prompt and iteration log (Feb 8) | LO2 |
 | 4 | Tue Feb 9 | Concept | Tutor or answer machine; the evidence. Demo: answer mode versus Socratic mode | R3; R4 | | |

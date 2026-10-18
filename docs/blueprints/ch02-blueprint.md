@@ -24,8 +24,8 @@ Part I — Understanding AI · Syllabus week 2 (shared with Chapter 3) · Path: 
 | Chapter 3 Core reading | 30 min (to be confirmed in the Chapter 3 blueprint) |
 | R1, selected sections | ~15 min |
 | Paper Task in 2.5 (Core, ungraded) | ~15 min |
-| A2 at home (terms are drafted in Thursday's lab) | ~30 min |
-| **Total** | **~2 h** (syllabus: 1–2 h) |
+| A2 Parts 1 and 2 at home (Part 2 started in Thursday's lab; see Ch. 3 blueprint) | 45–60 min |
+| **Total** | **~2.2–2.5 h** (syllabus: 1–2 h; flagged to the author in the Ch. 3 blueprint, Proposal 3) |
 | Optional: labs L2.1–L2.3, Deep sections | 60–90 min |
 
 **Documented week-2 exception (word budget).** Core subsections are ~650–800 words, below the anatomy's 1,500–2,500, because week 2 carries two chapters. Worked and faded examples sit inside the Core word count. The chapter still reaches ≥ 10,000 words with the Opening Case, Deep sections, Case Study, Ethics Lens, Career Connection, From the Field and the End-of-Chapter Package.
@@ -166,7 +166,7 @@ Accessibility and alternatives: a paper version of L2.1–L2.2 (sorting printed 
 - Computed figures: numbers in the text are copied from data/ch02_*.csv only; script, seed and library versions in data/ch02_experiments_meta.txt.
 - Characters: Sam (main), Lucía (support-ticket routing — consistent with her job), Hana (art-style detector); log new details in docs/characters.md.
 
-## Proposals that need the author (live syllabus)
+## Proposals that need the author (live syllabus) — approved 2026-10-18 (D17)
 
 1. List Chapter 2 as the reading before Tuesday, January 26.
 2. Use Tuesday's opening-case slot for the Amazon case and add 2–3 Chapter 2 items to the concept check.
