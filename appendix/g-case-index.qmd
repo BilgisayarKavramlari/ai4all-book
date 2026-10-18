@@ -2,7 +2,7 @@
 
 # Case Index {#sec-appendix-g}
 
-This index lists the 29 documented cases the book analyzes: by chapter, by field and by failure type. The failure label follows the Failure Taxonomy Tree (Chapter 4): *documented* means the record shows the branch's defining feature, *inferred* means it does not; "chain link" refers to the failure-to-harm chain. Cases in which no output was wrong (input-side harms, policies, training-data disputes, positive results) are not placed on the tree.
+This index lists the 30 documented cases the book analyzes: by chapter, by field and by failure type. The failure label follows the Failure Taxonomy Tree (Chapter 4): *documented* means the record shows the branch's defining feature, *inferred* means it does not; "chain link" refers to the failure-to-harm chain. Cases in which no output was wrong (input-side harms, policies, training-data disputes, positive results) are not placed on the tree.
 
 † Taken from the case file; not yet in the book's case register (cases/index.csv).
 
@@ -28,9 +28,10 @@ This index lists the 29 documented cases the book analyzes: by chapter, by field
 | 16 | C02, C08, C13 |
 | 17 | C14 |
 | 18 | C03, C05, C15 |
-| 19 | C22†, C23†, C24†, C25†, C26†, C27†, C28† |
+| 19 | C22, C23, C24, C25, C26, C27, C28 |
 | 20 | C29 |
 | 21 | C21 |
+| 23 | C30† |
 
 | ID | Title | Year | Chapter(s) | Field | Failure label | Outcome |
 |----|------------------|-----|-----|----------|----------------------------|--------|
@@ -54,26 +55,27 @@ This index lists the 29 documented cases the book analyzes: by chapter, by field
 | C13 | Gender Shades: intersectional error rates in commercial gender classification | 2018 | 16 | computer vision | bias, leaf unequal quality across groups or languages (documented: subgroup error rates in a published audit); chain link 2 checked before use? inferred (no published group results; internal tests unknown); no harm documented in this audit | negative (then mixed: named companies cut the gaps within seven months) |
 | C14 | Dutch childcare-benefits scandal: a self-learning risk model used a citizenship indicator; reviewers could not see which indicators drove a score | 2013–2021 | 17 | government/social services | bias, documented (AP 2020 report pp. 14–16, 50; AP fine decision 25 Nov 2021); chain link 2 review without reasons (confirmed: AP p. 15); link 4 harm reported (Amnesty); opacity = condition, not a tree branch; the model was one part of a larger failure (inquiry pp. 7–8, 11) | negative |
 | C15 | Thomson Reuters v. Ross: training on Westlaw headnotes not fair use (affirmed on appeal 2026) | 2025–2026 | 18 | law/intellectual property | none on the tree (input-side harm: copying works to train a tool; no output was wrong); data-flow map | negative (for the AI developer) |
-| C22† | Ithaca, experts and a model restoring ancient Greek inscriptions | 2022 | 19 | arts and humanities (epigraphy, ancient history) | none on the tree (positive research result) | positive |
-| C23† | Zillow Offers winds down after it cannot forecast home prices | 2021 | 19 | business (real estate, forecasting) | other (a forecast used outside the conditions it was built for), inferred; chain link 4 loss documented | negative |
-| C24† | A hospital tests a widely used sepsis model and finds it below its reported accuracy | 2021 | 19 | health (hospital medicine, clinical decision support) | other (a prediction model below its reported accuracy at a new site), documented; chain link 3 alert burden inferred; no documented harm | negative |
-| C25† | Can a language model stand in for survey respondents? Silicon samples | 2023–2024 | 19 | social science (political science, survey research) | bias (a skew across matched outputs: too little variation), documented | mixed |
-| C26† | The A-Lab's "novel" materials — claimed, challenged, corrected | 2023–2026 | 19 | natural science (materials chemistry) | other (automated identifications not confirmed on expert re-analysis: 4 of 40), documented by the Author Correction; chain link 2 inferred (a full manual re-check is documented only after publication) | mixed |
-| C27† | Tesla's Autopilot recall and the gap between expectations and capability | 2023–2024 | 19 | engineering (automotive safety) | tree not applicable (no AI output was wrong; the defect is in the design of the human's controls); chain link 2 controls insufficient (documented, recall report); link 3 overreliance (documented, NHTSA) | negative |
-| C28† | Tutor CoPilot — AI suggestions to tutors, not to students | 2024–2025 | 19 | education (K–12 tutoring) | none on the tree (positive trial); chain: the tutor is the gate (design, documented) | positive (mixed on long-term tests) |
+| C22 | Ithaca: experts with a model's ranked suggestions restore ancient Greek inscriptions better than either alone (Assael et al.) | 2022 | 19 | arts and humanities (epigraphy) | none on the tree (positive research result) | positive |
+| C23 | Zillow Offers winds down after it cannot forecast home prices ($304M Q3 write-down) | 2021 | 19 | business (real estate forecasting) | other: a forecast used outside its conditions (inferred: Zillow did not blame an algorithm); chain link 4 loss documented | negative |
+| C24 | External validation of the Epic Sepsis Model at Michigan Medicine (Wong et al.); version 2 validated 2026 | 2021 | 19 | health (clinical decision support) | other: a prediction model below its reported accuracy at a new site (documented); chain link 3 alert burden (inferred); no harm documented | negative |
+| C25 | Silicon samples: language models as survey respondents (Argyle et al. 2023; Bisbee et al. 2024) | 2023–2024 | 19 | social science (survey research) | bias: a skew across matched outputs, too little variation (documented) | mixed |
+| C26 | A-Lab: 'novel' materials claimed, challenged and corrected (Author Correction 2026) | 2023–2026 | 19 | natural science (materials chemistry) | other: automated identifications not confirmed on expert re-analysis, 4 of 40 (documented, Author Correction); chain link 2 a full manual re-check documented only after publication (inferred) | mixed |
+| C27 | Tesla Autopilot recall 23V-838 and NHTSA's finding of a gap between drivers' expectations and capability | 2023–2024 | 19 | engineering (automotive safety) | tree not applicable (no AI output wrong; human-control design defect); chain link 2 controls insufficient (documented, recall); link 3 overreliance (documented, NHTSA) | negative |
+| C28 | Tutor CoPilot: tutor-facing AI suggestions in a randomized trial (Wang et al.) | 2024–2025 | 19 | education (tutoring) | none on the tree (positive trial); the tutor is the gate (design) | positive |
 | C29 | Your experience your first draft: employers' rules for applicants' AI use (Anthropic's stage-by-stage candidate guidance; Amazon and Goldman Sachs interview rules as reported) | 2025 | 20 | business/human resources | none on the tree (policy case; no AI output was wrong); no failure-to-harm chain | mixed (rules; no outcome data) |
 | C21 | ACM Code of Ethics and Professional Conduct (2018 update): what a profession's code can and cannot do | 2018 | 21 | computing/professional ethics | none on the tree (governance document; no AI output); no chain link | governance (code revised; current as of October 2026) |
+| C30† | # Case C30: Three texts on machine understanding, and a 2026 test (1950–2026) |  | 23 | philosophy / AI research | none on the tree (debate case; no AI output shown wrong) | research debate (unresolved) |
 
 ## Cases by Field {#sec-appendix-g-field .unnumbered}
 
 | Field | ID | Title | Year | Chapter(s) | Outcome |
 |------------|----|---------------------------|-----|-----|----------|
 | AI research/general knowledge | C16 | The reversal curse: models trained on "A is B" fail on "B is A" (Berglund et al.) | 2024 | 3 | research finding (no harm) |
-| arts and humanities (epigraphy, ancient history) | C22† | Ithaca, experts and a model restoring ancient Greek inscriptions | 2022 | 19 | positive |
+| arts and humanities (epigraphy) | C22 | Ithaca: experts with a model's ranked suggestions restore ancient Greek inscriptions better than either alone (Assael et al.) | 2022 | 19 | positive |
 | business | C01 | Generative AI at Work: customer-support productivity (Brynjolfsson Li & Raymond) | 2025 | 1 | positive |
 | business/HR | C02 | Amazon recruiting tool penalizes résumés mentioning women | 2018 | 2, 16 | negative |
 | business/customer service | C18 | Klarna AI customer-service assistant: by the company's own measures | 2024–2025 | 5 | mixed |
-| business (real estate, forecasting) | C23† | Zillow Offers winds down after it cannot forecast home prices | 2021 | 19 | negative |
+| business (real estate forecasting) | C23 | Zillow Offers winds down after it cannot forecast home prices ($304M Q3 write-down) | 2021 | 19 | negative |
 | business/human resources | C29 | Your experience your first draft: employers' rules for applicants' AI use (Anthropic's stage-by-stage candidate guidance; Amazon and Goldman Sachs interview rules as reported) | 2025 | 20 | mixed (rules; no outcome data) |
 | computer vision | C13 | Gender Shades: intersectional error rates in commercial gender classification | 2018 | 16 | negative (then mixed: named companies cut the gaps within seven months) |
 | computing/professional ethics | C21 | ACM Code of Ethics and Professional Conduct (2018 update): what a profession's code can and cannot do | 2018 | 21 | governance (code revised; current as of October 2026) |
@@ -83,19 +85,20 @@ This index lists the 29 documented cases the book analyzes: by chapter, by field
 | customer service/law | C03 | Moffatt v. Air Canada: airline liable for its chatbot's wrong bereavement-fare answer | 2024 | 4, 10, 18 | negative |
 | education | C04 | Bastani et al.: GPT-4 tutors and learning in a high school in Türkiye | 2025 | 1, 7 | mixed |
 | education/institutional communication | C07 | Vanderbilt Peabody message after the Michigan State shooting drafted with ChatGPT | 2023 | 10 | negative |
-| education (K–12 tutoring) | C28† | Tutor CoPilot — AI suggestions to tutors, not to students | 2024–2025 | 19 | positive (mixed on long-term tests) |
+| education (tutoring) | C28 | Tutor CoPilot: tutor-facing AI suggestions in a randomized trial (Wang et al.) | 2024–2025 | 19 | positive |
 | engineering/corporate | C12 | Samsung engineers paste source code and a meeting transcript into a chat tool (three cases in 20 days; data could not be retrieved; generative AI restricted on company devices, confirmed by a spokesperson) | 2023 | 15 | negative |
-| engineering (automotive safety) | C27† | Tesla's Autopilot recall and the gap between expectations and capability | 2023–2024 | 19 | negative |
+| engineering (automotive safety) | C27 | Tesla Autopilot recall 23V-838 and NHTSA's finding of a gap between drivers' expectations and capability | 2023–2024 | 19 | negative |
 | enterprise software/security | C19 | EchoLeak: zero-click indirect prompt injection in Microsoft 365 Copilot (CVE-2025-32711, 'AI command injection', CWE-74; fixed by the vendor; no known exploitation) | 2025 | 15 | mixed |
 | finance/corporate security | C10 | Arup deepfake video conference fraud in Hong Kong (pre-recorded conference from public clips, police believe) | 2024 | 13, 15 | negative |
 | government/social services | C14 | Dutch childcare-benefits scandal: a self-learning risk model used a citizenship indicator; reviewers could not see which indicators drove a score | 2013–2021 | 17 | negative |
 | health | C08 | Obermeyer et al.: health-care algorithm uses cost as a proxy for need | 2019 | 11, 16 | negative |
 | health/medical benchmarks (research) | C17 | Medprompt: same model (GPT-4) different context and steps; reversal with o1-preview | 2023–2024 | 6 | mixed |
-| health (hospital medicine, clinical decision support) | C24† | A hospital tests a widely used sepsis model and finds it below its reported accuracy | 2021 | 19 | negative |
+| health (clinical decision support) | C24 | External validation of the Epic Sepsis Model at Michigan Medicine (Wong et al.); version 2 validated 2026 | 2021 | 19 | negative |
 | law | C05 | Mata v. Avianca: fabricated case citations in a court filing | 2023 | 8, 10, 18 | negative |
 | law/intellectual property | C15 | Thomson Reuters v. Ross: training on Westlaw headnotes not fair use (affirmed on appeal 2026) | 2025–2026 | 18 | negative (for the AI developer) |
-| natural science (materials chemistry) | C26† | The A-Lab's "novel" materials — claimed, challenged, corrected | 2023–2026 | 19 | mixed |
-| social science (political science, survey research) | C25† | Can a language model stand in for survey respondents? Silicon samples | 2023–2024 | 19 | mixed |
+| natural science (materials chemistry) | C26 | A-Lab: 'novel' materials claimed, challenged and corrected (Author Correction 2026) | 2023–2026 | 19 | mixed |
+| philosophy / AI research | C30† | # Case C30: Three texts on machine understanding, and a 2026 test (1950–2026) |  | 23 | research debate (unresolved) |
+| social science (survey research) | C25 | Silicon samples: language models as survey respondents (Argyle et al. 2023; Bisbee et al. 2024) | 2023–2024 | 19 | mixed |
 | software engineering | C11 | Replit agent deletes a production database during a code freeze (freeze was an instruction; agent could reach production data; restore point limited the harm) | 2025 | 14 | negative |
 
 ## Cases by Failure Type {#sec-appendix-g-failure .unnumbered}
@@ -116,16 +119,16 @@ A case appears once for each branch its label names; "Not on the tree" collects 
 | Bias | C08 | Obermeyer et al.: health-care algorithm uses cost as a proxy for need | 2019 | 11, 16 | negative |
 | Bias | C13 | Gender Shades: intersectional error rates in commercial gender classification | 2018 | 16 | negative (then mixed: named companies cut the gaps within seven months) |
 | Bias | C14 | Dutch childcare-benefits scandal: a self-learning risk model used a citizenship indicator; reviewers could not see which indicators drove a score | 2013–2021 | 17 | negative |
-| Bias | C25† | Can a language model stand in for survey respondents? Silicon samples | 2023–2024 | 19 | mixed |
+| Bias | C25 | Silicon samples: language models as survey respondents (Argyle et al. 2023; Bisbee et al. 2024) | 2023–2024 | 19 | mixed |
 | Context loss | C11 | Replit agent deletes a production database during a code freeze (freeze was an instruction; agent could reach production data; restore point limited the harm) | 2025 | 14 | negative |
 | Overconfidence | C05 | Mata v. Avianca: fabricated case citations in a court filing | 2023 | 8, 10, 18 | negative |
 | Overconfidence | C11 | Replit agent deletes a production database during a code freeze (freeze was an instruction; agent could reach production data; restore point limited the harm) | 2025 | 14 | negative |
 | Security vulnerability | C19 | EchoLeak: zero-click indirect prompt injection in Microsoft 365 Copilot (CVE-2025-32711, 'AI command injection', CWE-74; fixed by the vendor; no known exploitation) | 2025 | 15 | mixed |
 | Other (including misuse) | C10 | Arup deepfake video conference fraud in Hong Kong (pre-recorded conference from public clips, police believe) | 2024 | 13, 15 | negative |
 | Other (including misuse) | C17 | Medprompt: same model (GPT-4) different context and steps; reversal with o1-preview | 2023–2024 | 6 | mixed |
-| Other (including misuse) | C23† | Zillow Offers winds down after it cannot forecast home prices | 2021 | 19 | negative |
-| Other (including misuse) | C24† | A hospital tests a widely used sepsis model and finds it below its reported accuracy | 2021 | 19 | negative |
-| Other (including misuse) | C26† | The A-Lab's "novel" materials — claimed, challenged, corrected | 2023–2026 | 19 | mixed |
+| Other (including misuse) | C23 | Zillow Offers winds down after it cannot forecast home prices ($304M Q3 write-down) | 2021 | 19 | negative |
+| Other (including misuse) | C24 | External validation of the Epic Sepsis Model at Michigan Medicine (Wong et al.); version 2 validated 2026 | 2021 | 19 | negative |
+| Other (including misuse) | C26 | A-Lab: 'novel' materials claimed, challenged and corrected (Author Correction 2026) | 2023–2026 | 19 | mixed |
 | Not on the tree | C01 | Generative AI at Work: customer-support productivity (Brynjolfsson Li & Raymond) | 2025 | 1 | positive |
 | Not on the tree | C12 | Samsung engineers paste source code and a meeting transcript into a chat tool (three cases in 20 days; data could not be retrieved; generative AI restricted on company devices, confirmed by a spokesperson) | 2023 | 15 | negative |
 | Not on the tree | C15 | Thomson Reuters v. Ross: training on Westlaw headnotes not fair use (affirmed on appeal 2026) | 2025–2026 | 18 | negative (for the AI developer) |
@@ -133,7 +136,8 @@ A case appears once for each branch its label names; "Not on the tree" collects 
 | Not on the tree | C18 | Klarna AI customer-service assistant: by the company's own measures | 2024–2025 | 5 | mixed |
 | Not on the tree | C20 | ChatGPT shared chats made findable by search engines (opt-in option removed July 31, 2025) | 2025 | 15 | negative |
 | Not on the tree | C21 | ACM Code of Ethics and Professional Conduct (2018 update): what a profession's code can and cannot do | 2018 | 21 | governance (code revised; current as of October 2026) |
-| Not on the tree | C22† | Ithaca, experts and a model restoring ancient Greek inscriptions | 2022 | 19 | positive |
-| Not on the tree | C27† | Tesla's Autopilot recall and the gap between expectations and capability | 2023–2024 | 19 | negative |
-| Not on the tree | C28† | Tutor CoPilot — AI suggestions to tutors, not to students | 2024–2025 | 19 | positive (mixed on long-term tests) |
+| Not on the tree | C22 | Ithaca: experts with a model's ranked suggestions restore ancient Greek inscriptions better than either alone (Assael et al.) | 2022 | 19 | positive |
+| Not on the tree | C27 | Tesla Autopilot recall 23V-838 and NHTSA's finding of a gap between drivers' expectations and capability | 2023–2024 | 19 | negative |
+| Not on the tree | C28 | Tutor CoPilot: tutor-facing AI suggestions in a randomized trial (Wang et al.) | 2024–2025 | 19 | positive |
 | Not on the tree | C29 | Your experience your first draft: employers' rules for applicants' AI use (Anthropic's stage-by-stage candidate guidance; Amazon and Goldman Sachs interview rules as reported) | 2025 | 20 | mixed (rules; no outcome data) |
+| Not on the tree | C30† | # Case C30: Three texts on machine understanding, and a 2026 test (1950–2026) |  | 23 | research debate (unresolved) |

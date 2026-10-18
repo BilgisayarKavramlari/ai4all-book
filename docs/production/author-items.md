@@ -149,3 +149,11 @@
 4. Closed 2026-10-18: Business Insider headline and date confirmed by the editor in a browser (build/sources/business-insider-amazon-2025.md).
 5. Final voice edit.
 <!-- /ch20 -->
+
+<!-- ch19 -->
+## Chapter 19
+1. **Live syllabus:** R16 required in part (abstract and Figure 1, about 500 words; Figure 2 recommended); A13 wording (graded only on the new build, runs and peer test, with their checks, safeguards, card and defense; may extend A11; D-14.7 sentence; card ≤ 100 words, defense 80–100); Lab 19.1 flow (5 · 30 · 20 · 10 · 10); LO tags (LO6 primary; LO5, LO2 secondary).
+2. **From the Field:** approve the 2016 sentiment-analysis entry (*YBS Ansiklopedi* 3(3), 22–36; page range provisional) with the present-day connections marked. The entry says it was written within a project with work packages: if that project was commercial, funded or tied to a company, the D16 wording must be added. Optional: a real, anonymized moment when a model built for one sector failed in another; it will not be written for you.
+3. **Tuesday demo (Apr 20):** which end-to-end workflow you will demonstrate, so 19.5's worked example mirrors it; a dated recording for Compass.
+4. Final voice edit.
+<!-- /ch19 -->

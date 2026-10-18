@@ -258,3 +258,16 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | Defense sign-up slots (extra slots or second room if adopted); ARC alternative-route procedure; days by lot | eLearning | Mon Apr 19, 2027 |
 | Compass pages: Signature 12 step by step; evidence-map builder; labor-market claim checker; Chapter 20 quiz; Lab 20.1–20.3 pages | Compass (optional companion) and eLearning | Tue Apr 27, 2027 |
 <!-- /ch20 -->
+
+<!-- ch19 -->
+## Chapter 19
+| Asset | Needed by |
+|---|---|
+| Seven provided field scenarios for the alternative assignment, each with four inputs and three dated outputs (model and date labeled, one per input type) | Tue Apr 20, 2027 (posted with the pre-lab) |
+| Seven field-guide one-pagers (printable, screen-reader friendly) | Tue Apr 20, 2027 |
+| Pre-lab sheet with a "my guide" line; pairing plan (sort the sheets by guide, pair across guides, confirm any same-guide pair on the sheet) | Thu Apr 22, 2027 |
+| A13 template and workflow-card template; peer-test card with the sentence frame | Thu Apr 22, 2027 |
+| Class poster of the Discipline × Use Map (blank cells for the share step) | Thu Apr 22, 2027 |
+| Links to two providers' published model cards, dated (Lab 19.2) | Thu Apr 22, 2027 |
+| Dated recording of Tuesday's end-to-end demo | Tue Apr 20, 2027 |
+<!-- /ch19 -->

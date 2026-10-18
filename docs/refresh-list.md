@@ -230,3 +230,23 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 20 | 20.4, F20.10 | CPA exam: 75 is a scaled score on 0–99; BEC retired (via Ch. 8) | Oct 2026 | Ch. 8 sources | Each exam edition |
 | 20 | 20.2 | WEF: AI and information processing ≈ 11 million created / 9 million displaced (p. 25); dataset 1.18 of 2.18 billion ILO employees (p. 99) | Jan 2025 report | WEF (2025) | Next edition |
 | 20 | §9c defense brief | UT Dallas AccessAbility Resource Center (ARC) name | Oct 2026 | UTD | Each term |
+| Claim | Where | As of | Check |
+| NIH bars peer reviewers from generative AI for critiques (NOT-OD-23-149, Jun 23, 2023); NIH does not treat applications substantially developed by AI as original (NOT-OD-25-132, Jul 17, 2025; from the Sep 25, 2025 receipt date) | 19.4; 19.F5 | Oct 2026 | grants.nih.gov |
+| ICMJE: AI not an author; disclose use (updated Jan 2026) | 19.4 | Oct 2026 | icmje.org |
+| TRAIGA health-care disclosure (§552.051(f), eff. Jan 1, 2026); SB 1188 (§183.005, eff. Sep 1, 2025; Ch. 19 only — not in Ch. 18) | 19.4; 19.F2; F19.22 | Oct 2026 | Texas statutes |
+| TBPELS PAO No. 71 (Nov 14, 2024); 22 TAC §137.33(b) | 19.4; 19.F6 | Oct 2026 | pels.texas.gov |
+| ANA Code of Ethics (released Jan 29, 2025), Provision 3.1 | 19.4; 19.F2 | Oct 2026 | codeofethics.ana.org |
+| AICPA 1.700.001 and 1.700.040 (via Blatch, 2015) | 19.F1 | Oct 2026 | official Code site unread (login) |
+| FTC Operation AI Comply (Sep 25, 2024); Rytr order set aside (Dec 22, 2025) | 19.F1 | Oct 2026 | ftc.gov |
+| AAPOR task force report (Rothschild et al., May 8, 2026) | 19.F4 | Oct 2026 | aapor.org |
+| UTD OIT initial guidelines (URL moved to /oit-ai-studio/; undated); UTD ISO AI Usage Guidelines (Mar 17, 2026) | 19.F4 | Oct 2026 | utdallas.edu |
+| Springer Nature AI policy (undated; rewritten 2026; AI authorship and photorealistic images not permitted) | 19.F5 | Oct 2026 | nature.com |
+| MLA guidance on citing generative AI (Aug 13, 2025) | 19.F3 | Oct 2026 | style.mla.org |
+| COPPA Rule amendments (90 FR 16918; compliance Apr 22, 2026) | 19.F7 | Oct 2026 | ftc.gov |
+| NHTSA RQ24-009 open | 19.F6; C27 | Oct 2026 | static.nhtsa.gov flat file |
+| Tutor CoPilot not peer reviewed (EdWP 24-1054, Nov 2025 version; arXiv v3 Oct 10, 2026) | 19.F7; C28 | Oct 2026 | journal search |
+| Epic Sepsis Model v2 validated at four systems (Wong et al., 2026) | 19.F2; C24 | Feb 2026 | JAMA Netw Open |
+| A-Lab corrected, not retracted (Author Correction Jan 19, 2026) | Case Study; C26 | Oct 2026 | nature.com |
+| Microsoft Copilot Chat available to UTD students | A13 brief | Oct 2026 | OIT |
+| UTD 2026 catalog majors-to-guides map (checked 2026-10-18) | Field Guides intro | 2026 catalog | catalog.utdallas.edu/2026/undergraduate/programs |
+| Anthropic education report shares (38.6% vs. 5.4%; intro 36.8%) | Deep 19.A | Apr 2025 data | anthropic.com |

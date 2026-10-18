@@ -411,3 +411,15 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Net job growth (Deep) | The expected change in the size of the workforce: jobs created minus jobs displaced. | Net istihdam artışı |
 | Labor-market churn (Deep) | Jobs created plus jobs displaced, as a share of the starting total. | İşgücü piyasası çalkantısı |
 | Extrapolation (in labor-market forecasts; Deep) | Estimating beyond what was measured, such as scaling survey answers up to a whole economy's jobs. | Dışdeğerleme |
+| Discipline | A field of study and work with its own questions, methods and standards. | Disiplin (alan) |
+| Discipline × Use Map | A table of fields against kinds of AI use in which each cell shows the default people point for a student's coursework (log review, check point, approval gate, keep with a person); this book's reading, which a field's rules and an instructor's policy override. | Disiplin × Kullanım Haritası |
+| People point | A place where a person checks AI work (Chapter 14: approval gate, check point, stop point); on the Discipline × Use Map, a use's default level: log review, check point, approval gate or keep with a person. | İnsan kontrol noktası |
+| Field guide | A one-page summary, for one field, of what counts as correct and who can confirm it, which data is protected, which rules apply and who bears an error, plus typical uses and a career note. | Alan rehberi |
+| Verification authority | The source or person a field accepts as able to confirm a result: a primary record, a standard, a replication, a licensed professional or a trained specialist. | Doğrulama otoritesi |
+| Prototype | The smallest working version of a workflow, built so that someone can run it, check it and change it. | Prototip |
+| Peer test | A test in which a person from another field runs your prototype on an input of their choosing, within its stated scope and with only your instructions, and records where it confused them or failed. | Akran testi |
+| Workflow card | This book's five-field version of a model card for a student workflow: not for, for, tested on, results, and limits and safeguards. | İş akışı kartı |
+| Informed consent | A participant's agreement after being told what happens to their data. | Bilgilendirilmiş onam |
+| Institutional review board (IRB) | A committee that approves and oversees research with people. | Kurumsal etik kurul (IRB) |
+| Licensure | Permission from a state body to practice a profession. | Mesleki ruhsat (lisans) |
+| Scope of practice | What the members of a licensed profession may do. | Uygulama kapsamı |

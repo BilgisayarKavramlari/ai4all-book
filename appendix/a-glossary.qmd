@@ -315,6 +315,12 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Disaggregated evaluation** · Ch. 16
 :   Reporting a system's performance separately for each group and subgroup instead of one overall number.
 
+**Discipline** · Ch. 19
+:   A field of study and work with its own questions, methods and standards.
+
+**Discipline × Use Map** · Ch. 19
+:   A table of fields against kinds of AI use in which each cell shows the default people point for a student's coursework (log review, check point, approval gate, keep with a person); this book's reading, which a field's rules and an instructor's policy override.
+
 **Disclaimer** · Ch. 18
 :   A notice that tries to limit responsibility, such as "AI responses may contain errors."
 
@@ -445,6 +451,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Fidelity (of a surrogate model)** · Ch. 17
 :   How often a surrogate model gives the same output as the model it imitates.
 
+**Field guide** · Ch. 19
+:   A one-page summary, for one field, of what counts as correct and who can confirm it, which data is protected, which rules apply and who bears an error, plus typical uses and a career note.
+
 **Fine-tuning** · Ch. 3
 :   Extra training of an already trained model on a smaller, new set of texts or examples.
 
@@ -538,8 +547,14 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Inferred (label)** · Ch. 4
 :   A failure label for which the evidence does not show the branch's defining feature; drawn with a dashed border.
 
+**Informed consent** · Ch. 19
+:   A participant's agreement after being told what happens to their data.
+
 **Infringement** · Ch. 18
 :   Using a protected work in one of the ways copyright controls without permission or a legal exception.
+
+**Institutional review board (IRB)** · Ch. 19
+:   A committee that approves and oversees research with people.
 
 **Instruction tuning** · Ch. 3
 :   Further training on prompts paired with good responses written by people.
@@ -624,6 +639,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 
 **License** · Ch. 18
 :   Permission to use something on stated conditions.
+
+**Licensure** · Ch. 19
+:   Permission from a state body to practice a profession.
 
 **Likelihood (of a risk)** · Ch. 15
 :   How probable a harmful event is, rated low, medium or high by written anchors.
@@ -780,6 +798,12 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Peer swap test** · Ch. 5
 :   Someone else runs your prompt without your explanation and scores the output against your criteria, to reveal what was in your head but not in the prompt.
 
+**Peer test** · Ch. 19
+:   A test in which a person from another field runs your prototype on an input of their choosing, within its stated scope and with only your instructions, and records where it confused them or failed.
+
+**People point** · Ch. 19
+:   A place where a person checks AI work (Chapter 14: approval gate, check point, stop point); on the Discipline × Use Map, a use's default level: log review, check point, approval gate or keep with a person.
+
 **Percentage point** · Ch. 1
 :   The simple difference between two percentages (for example, 84% minus 65% is 19 percentage points).
 
@@ -875,6 +899,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 
 **Protected characteristic** · Ch. 16
 :   A characteristic, such as race or sex, that anti-discrimination law says decisions such as hiring must not be based on.
+
+**Prototype** · Ch. 19
+:   The smallest working version of a workflow, built so that someone can run it, check it and change it.
 
 **Provenance** · Ch. 13
 :   A record of where a piece of content came from and how it was changed.
@@ -1034,6 +1061,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 
 **Scaffold** · Ch. 7
 :   Temporary support that lets you do what you cannot yet do alone, withdrawn as you improve.
+
+**Scope of practice** · Ch. 19
+:   What the members of a licensed profession may do.
 
 **Secondary source** · Ch. 9
 :   A source that reports on or interprets primary sources, such as a review article, a textbook or a news story about a study.
@@ -1227,6 +1257,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Verification** · Ch. 8
 :   Checking a claim against evidence that no AI tool produced.
 
+**Verification authority** · Ch. 19
+:   The source or person a field accepts as able to confirm a result: a primary record, a standard, a replication, a licensed professional or a trained specialist.
+
 **Verification cost** · Ch. 12
 :   The time and effort needed to confirm that an output meets your criteria.
 
@@ -1268,6 +1301,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Workflow blueprint** · Ch. 14
 :   A written design of a workflow: its steps, who or what runs each, its actions, people points, permissions, log plan and dry-run results.
 
+**Workflow card** · Ch. 19
+:   This book's five-field version of a model card for a student workflow: not for, for, tested on, results, and limits and safeguards.
+
 **Write first** · Ch. 10
 :   Putting down what you want to say, in notes or a rough draft, before you ask a tool for anything.
 
@@ -1290,6 +1326,8 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Akıcı (çıktı) | Fluent (output) |
 | Akıl yürütme belirteçleri | Reasoning tokens |
 | Akran takas testi | Peer swap test |
+| Akran testi | Peer test |
+| Alan rehberi | Field guide |
 | Alana özgü araç | Domain tool |
 | Algoritma sicili | Algorithm register |
 | Alternatif metin | Alt text |
@@ -1326,6 +1364,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Bellek (ürün özelliği) | Memory (product feature) |
 | Beyan edilen güven | Stated confidence |
 | Bilgi kesim tarihi | Knowledge cutoff |
+| Bilgilendirilmiş onam | Informed consent |
 | Bilişsel yük aktarımı | Cognitive offloading (Deep) |
 | Birincil kaynak | Primary source |
 | Biyometrik veri | Biometric data |
@@ -1356,10 +1395,13 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Difüzyon modeli | Diffusion model |
 | Dikey okuma | Vertical reading |
 | Dikkat (mekanizması) | Attention (Deep) |
+| Disiplin × Kullanım Haritası | Discipline × Use Map |
+| Disiplin (alan) | Discipline |
 | Doğrulama | Verification |
 | Doğrulama hunisi | Verification Funnel |
 | Doğrulama izi | Verification trail |
 | Doğrulama maliyeti | Verification cost |
+| Doğrulama otoritesi | Verification authority |
 | Doğrulama protokolü | Verification protocol |
 | Dolaylı ayrımcı etki | Disparate impact (Deep) |
 | Döküm (konuşma tanıma) | Transcription (speech recognition) |
@@ -1437,6 +1479,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | İlk derece mahkemesi | Trial court |
 | İnce ayar | Fine-tuning |
 | İnsan geri bildiriminden öğrenme | Learning from human feedback |
+| İnsan kontrol noktası | People point |
 | İskele (destek) | Scaffold |
 | İstem | Prompt |
 | İstem anatomisi | Anatomy of a prompt |
@@ -1448,6 +1491,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | İstenen zorluk | Desirable difficulty |
 | İstinaf/temyiz mahkemesi | Appeals court |
 | İş akışı | Workflow |
+| İş akışı kartı | Workflow card |
 | İş akışı planı | Workflow blueprint |
 | İşgücü piyasası çalkantısı | Labor-market churn (Deep) |
 | İşgücü piyasası tahmini | Labor-market forecast |
@@ -1507,11 +1551,13 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Kural tabanlı sistem | Rule-based system |
 | Kurallar ve haklar riski | Rules-and-rights risk |
 | Kuru çalıştırma (prova) | Dry run |
+| Kurumsal etik kurul (IRB) | Institutional review board (IRB) |
 | Lisans | License |
 | Liste boyunca silme | Listwise deletion |
 | Makine öğrenmesi | Machine learning |
 | Marka | Trademark |
 | Meslek etiği kodu | Professional code of ethics |
+| Mesleki ruhsat (lisans) | Licensure |
 | Meta-analiz | Meta-analysis |
 | Metnin sahipliği | Ownership (of a text) |
 | Model | Model |
@@ -1554,6 +1600,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Portfolyo anatomisi | Portfolio Anatomy |
 | Portfolyo girdisi | Portfolio entry |
 | Proje alanı | Project space |
+| Prototip | Prototype |
 | Pürüzlü teknolojik sınır | Jagged technological frontier |
 | Rastgele atama | Random assignment |
 | Rastgele eksiklik | Missing at random, MAR (Deep) |
@@ -1618,6 +1665,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Tutarlılık kontrolü | Consistency check |
 | Ucuz sahte (cheap fake) | Cheap fake |
 | Uydurma kaynak gösterimi | Fabricated citation |
+| Uygulama kapsamı | Scope of practice |
 | Uygulama niyeti | Implementation intention (Deep) |
 | Uygulayıcı (kullanıma sunan) | Deployer |
 | Uygun güven (yerinde dayanma) | Appropriate reliance |

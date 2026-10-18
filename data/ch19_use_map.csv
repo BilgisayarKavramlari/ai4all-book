@@ -1,0 +1,43 @@
+field,use,level,label,reason,guide
+Business,Drafting and editing text,2,check,"Others read it (customers, managers); the writer checks before it goes out",19.F1
+Business,Summarizing and searching sources,2,check,Every field: check each claim against the source before others rely on it (Ch. 8-9),19.F1
+Business,Analyzing data,2,check,Coursework analysis informs a decision; becomes an approval gate when it moves money or reaches customers,19.F1
+Business,Writing code or calculations,2,check,Recalculate by hand or in your own spreadsheet before anyone uses the number,19.F1
+Business,"Making images, audio or video",2,check,Marketing material reaches the public; check claims and disclosure first,19.F1
+Business,Advising or deciding about people,4,person,"Every field: hiring, credit, grades and care decisions stay with a named person (Ch. 11, 16)",19.F1
+Health,Drafting and editing text,3,gate,Placement work can reach patients: a licensed clinician approves patient-facing text; the field's rules raise the floor,19.F2
+Health,Summarizing and searching sources,2,check,"Every field: check each claim against the source (here, the guideline or drug reference)",19.F2
+Health,Analyzing data,3,gate,"Health data is protected; results affect care, borne by patients",19.F2
+Health,Writing code or calculations,3,gate,Dose calculations can reach a patient; a practice set that reaches no one is a check point against the key,19.F2
+Health,"Making images, audio or video",3,gate,Clinical images and recordings are protected health information,19.F2
+Health,Advising or deciding about people,4,person,Every field: decisions about patients stay with a licensed clinician,19.F2
+Arts and humanities,Drafting and editing text,2,check,Others read submitted or published work; disclosure rules apply (Ch. 10),19.F3
+Arts and humanities,Summarizing and searching sources,2,check,Every field: check against the primary source and archive record,19.F3
+Arts and humanities,Analyzing data,1,log,"Counting or sorting your own notes or a public corpus: reversible, borne by you",19.F3
+Arts and humanities,Writing code or calculations,1,log,"A small script on your own copy of a public text: reversible, borne by you",19.F3
+Arts and humanities,"Making images, audio or video",3,gate,"Media shown as real, or made for a client, needs approval and disclosure (Ch. 13, 18)",19.F3
+Arts and humanities,Advising or deciding about people,4,person,Every field: decisions about people stay with a named person,19.F3
+Social science,Drafting and editing text,2,check,Others read it; claims about findings are checked against the data,19.F4
+Social science,Summarizing and searching sources,2,check,Every field: check against the source,19.F4
+Social science,Analyzing data,3,gate,Participant data under consent and an IRB protocol; findings reach others,19.F4
+Social science,Writing code or calculations,2,check,Rerun the analysis code yourself on known data before trusting it,19.F4
+Social science,"Making images, audio or video",1,log,"Charts of your own public data for class: reversible, borne by you",19.F4
+Social science,Advising or deciding about people,4,person,Every field: decisions about people stay with a named person,19.F4
+Natural science,Drafting and editing text,2,check,Others read it; every claim is checked against the data and the lab record,19.F5
+Natural science,Summarizing and searching sources,2,check,Every field: check against the source,19.F5
+Natural science,Analyzing data,3,gate,"Before a result leaves the lab, a person re-checks the analysis against the raw data",19.F5
+Natural science,Writing code or calculations,2,check,Test the code on cases with known answers,19.F5
+Natural science,"Making images, audio or video",4,person,"Images that are data (micrographs, gels, spectra) are evidence; diagrams are a check point, disclosed",19.F5
+Natural science,Advising or deciding about people,4,person,Every field: decisions about people stay with a named person,19.F5
+Engineering,Drafting and editing text,2,check,Others read it; check numbers and units,19.F6
+Engineering,Summarizing and searching sources,2,check,Every field: check against the datasheet or standard,19.F6
+Engineering,Analyzing data,3,gate,A design decision built on the analysis is hard to undo; others bear the error,19.F6
+Engineering,Writing code or calculations,3,gate,Safety-relevant calculations: a licensed engineer who directs the work checks before use; other coursework code is a check point,19.F6
+Engineering,"Making images, audio or video",2,check,Diagrams and renders are checked against the design,19.F6
+Engineering,Advising or deciding about people,4,person,Every field: decisions about people and safety stay with a named person,19.F6
+Education,Drafting and editing text,2,check,Lesson materials and practice quizzes reach students; the teacher checks them first,19.F7
+Education,Summarizing and searching sources,2,check,Every field: check against the source,19.F7
+Education,Analyzing data,3,gate,Student data are education records (FERPA); results affect students,19.F7
+Education,Writing code or calculations,1,log,"A small script that formats your own course material: reversible, borne by you",19.F7
+Education,"Making images, audio or video",2,check,Classroom media are checked and synthetic media disclosed,19.F7
+Education,Advising or deciding about people,4,person,Every field: feedback that counts and grades stay with the teacher,19.F7
