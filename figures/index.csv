@@ -14,3 +14,20 @@ F1.13,1,Working faster with AI is not the same as learning,concept diagram,"figu
 F1.14,1,Your baseline: three tasks one failure two goals,template graphic,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-14-baseline-template.svg",drawn (color+gray)
 F1.15,1,Chapter summary card,summary card,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-15-summary-card.svg",drawn (color+gray)
 F1.16,1,A staggered rollout turns a workplace into an experiment,process diagram,"figures/scripts/ch01_figures.py → figures/out/{color,gray}/f1-16-staggered-rollout.svg",drawn (color+gray)
+F2.1,2,Chapter 2 at a glance,chapter map,"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-01-chapter-map.svg",drawn (color+gray); illustrator pass pending for signature figures
+F2.2,2,In machine learning people supply the answers and the machine finds the rule,two-lane comparison,"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-02-rules-vs-examples.svg",drawn (color+gray)
+F2.3,2,Learning is many small corrections toward less error,loop diagram,"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-03-learning-loop.svg",drawn (color+gray)
+F2.4,2,Every prediction inherits the choices made in collecting and labeling its data,signature diagram (Signature 3: Data-to-Prediction Pipeline),"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-04-pipeline.svg",drawn (color+gray); illustrator pass pending for signature figures
+F2.4b,2,The sampling stage: every later stage inherits who was in the sample and who was not,Signature 3 variant (stage highlighted),"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-04b-pipeline-sampling.svg",drawn (color+gray)
+F2.4c,2,The labeling stage: a label is a human decision or a recorded outcome often from the past,Signature 3 variant (stage highlighted),"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-04c-pipeline-labels.svg",drawn (color+gray)
+F2.4d,2,The recruiting tool: problems at three stages of the pipeline,Signature 3 variant (case),"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-04d-pipeline-case.svg",drawn (color+gray)
+F2.5,2,A model learns its sample not the world,population vs. sample,"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-05-population-sample.svg",drawn (color+gray)
+F2.6,2,Different data problems leave different symptoms,contrast table figure,(cut in revision v2: duplicated the table in 2.5; redundancy principle),cut
+F2.7,2,A model can score well for the wrong reason,shortcut schematic,"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-07-shortcut.svg",drawn (color+gray)
+F2.9,2,The same share of wrong labels costs about 6 points when scattered and about 23 when they all point one way,computed data chart (data/ch02_regimes.csv),"figures/scripts/ch02_charts.py → figures/out/{color,gray}/f2-09-label-regimes.svg",drawn (color+gray)
+F2.10,2,When a model starts memorizing training accuracy keeps rising but test accuracy levels off,computed data chart (data/ch02_overfitting.csv),"figures/scripts/ch02_charts.py → figures/out/{color,gray}/f2-10-overfitting.svg",drawn (color+gray)
+F2.11,2,Generative AI is a branch of machine learning not a different kind of thing,nested diagram,"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-11-nested-family.svg",drawn (color+gray)
+F2.12,2,A concept map is a set of labeled links between terms,mini concept map,"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-12-concept-map.svg",drawn (color+gray)
+F2.13,2,Old ideas became practical when data computing power and algorithms matured together,timeline,"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-13-timeline.svg",drawn (color+gray)
+F2.14,2,Each step moves the setting toward lower error,computed illustration,"figures/scripts/ch02_charts.py → figures/out/{color,gray}/f2-14-gradient-step.svg",drawn (color+gray)
+F2.15,2,Chapter summary card,summary card,"figures/scripts/ch02_figures.py → figures/out/{color,gray}/f2-15-summary-card.svg",drawn (color+gray)

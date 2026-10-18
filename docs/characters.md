@@ -107,3 +107,6 @@ Why they exist: recurring people make examples personal and memorable (Mayer's p
 | 2026-10-18 | Ch. 1 | Elif | Traces the remote-work statistic for a class discussion; sample baseline (sociology reading, international-student statistic, keyword count) |
 | 2026-10-18 | Ch. 1 | Lucía | General-education science course (seasons); customer-support email at work |
 | 2026-10-18 | Ch. 1 | Marcus | Drug-class quiz; patient leaflet during a clinical placement |
+| 2026-10-18 | Ch. 2 | Sam | Builds a camera parts sorter (bolts, nuts, washers) for the robotics club; 60 photos per part; photographed bolts on his brown desk at home and nuts/washers on a white club table, so the model learned the background (shortcut); parts from one supplier only |
+| 2026-10-18 | Ch. 2 | Lucía | Her support team routes tickets by written rules (faded example in 2.1) |
+| 2026-10-18 | Ch. 2 | Hana | Skeptical of an app claiming "97% accuracy" at telling human from AI illustrations; her own work is hand-drawn and scanned |

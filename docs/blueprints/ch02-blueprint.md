@@ -1,6 +1,6 @@
 # Chapter 2 blueprint — How Machines Learn from Data
 
-Status: DRAFT v0.2 for author approval (2026-10-18). v0.2 applies an independent pedagogy review (5 must-fix, 15 should-fix) and the results of the book's own experiment. No chapter text is written until this blueprint is approved.
+Status: v0.2 APPROVED by the author (2026-10-18). Chapter revision v2 (2026-10-18) moved the diagnosis table and paper task to the end of 2.5, cut F2.6, widened the A2 Chapter 2 pool to the Core Key Terms and added an A2 alternative assignment (docs/editorial/ch02-dev-memo.md). v0.2 applies an independent pedagogy review (5 must-fix, 15 should-fix) and the results of the book's own experiment. No chapter text is written until this blueprint is approved.
 Part I — Understanding AI · Syllabus week 2 (shared with Chapter 3) · Path: Core · Featured student: Sam (Lucía and Hana in short examples) · Work Loop step highlighted in the Chapter Map: **Verify** (question the data behind an output).
 
 **Author's source material.** The chapter follows the author's own English lectures at Haliç University — Lecture 2 "Concept Architecture" and Lecture 3 "Data: source, sampling, labelling and quality" (docs/context/halic/, internal): the session question answered at the end, a prediction before the evidence, build-then-break, the Amazon case, roles along the data pipeline. The lectures' "illustrative results" are replaced by **real, reproducible results** from the book's experiment (figures/scripts/ch02_experiments.py; data/ch02_*.csv).
@@ -13,7 +13,7 @@ Part I — Understanding AI · Syllabus week 2 (shared with Chapter 3) · Path: 
 | Studio artifact | **A2 — 15-term concept map with worked definitions**, due Monday, February 1, 2027. The brief is hosted in this chapter (section 2.7, Part 1: at least 7 Chapter 2 terms) and completed with Chapter 3 terms |
 | Reading order (proposal to the author) | Read Chapter 2 **before Tuesday, January 26** (it supplies the learning vocabulary for the concept session), and Chapter 3 before Thursday's "Probe the model" lab |
 | In-class time (proposal to the author) | Tuesday's 10-minute opening case = the Amazon recruiting tool; 2–3 Chapter 2 items in Tuesday's ungraded concept check |
-| Labs | Thursday's lab belongs to Chapter 3. Chapter 2's build-and-break labs are home/Compass labs (optional, recommended); a **required paper task** in 2.4 gives every student the build-and-break reasoning without a tool |
+| Labs | Thursday's lab belongs to Chapter 3. Chapter 2's build-and-break labs are home/Compass labs (optional, recommended); a **paper task** at the end of 2.5 (Core, ungraded) gives every student the build-and-break reasoning without a tool |
 | Readings | R1 Wolfram (2023): only the sections on "what is a model" and "neural nets" (~15 minutes) [VERIFY section titles]; the Gebru et al. excerpt is dropped (the datasheet questions are in the text) |
 
 ### Week 2 workload (out of class)
@@ -23,8 +23,9 @@ Part I — Understanding AI · Syllabus week 2 (shared with Chapter 3) · Path: 
 | Chapter 2 Core reading (~4,800 Core words incl. examples) | 25–30 min |
 | Chapter 3 Core reading | 30 min (to be confirmed in the Chapter 3 blueprint) |
 | R1, selected sections | ~15 min |
+| Paper Task in 2.5 (Core, ungraded) | ~15 min |
 | A2 at home (terms are drafted in Thursday's lab) | ~30 min |
-| **Total** | **~1.7–1.8 h** (syllabus: 1–2 h) |
+| **Total** | **~2 h** (syllabus: 1–2 h) |
 | Optional: labs L2.1–L2.3, Deep sections | 60–90 min |
 
 **Documented week-2 exception (word budget).** Core subsections are ~650–800 words, below the anatomy's 1,500–2,500, because week 2 carries two chapters. Worked and faded examples sit inside the Core word count. The chapter still reaches ≥ 10,000 words with the Opening Case, Deep sections, Case Study, Ethics Lens, Career Connection, From the Field and the End-of-Chapter Package.
@@ -132,7 +133,7 @@ Review A distractors are built from M1–M7; counts follow the anatomy (A 10–1
 | F2.3 | Learning is many small corrections toward less error | Loop diagram | 2.2 | O2 |
 | F2.4 | Every prediction inherits the choices made in collecting and labeling its data | **Signature 3: Data-to-Prediction Pipeline** (master; reused with a highlighted stage in 2.3, 2.4 and the Case Study) | 2.2 | O2, O3 |
 | F2.5 | A model learns its sample, not the world | Population vs. sample with three gaps | 2.3 | O3 |
-| F2.6 | Different data problems leave different symptoms | Symptom → likely problem → check (contrast figure) | 2.4 | O3 |
+| F2.6 | — (cut in chapter revision v2: duplicated the diagnosis table; the table is kept) | | | |
 | F2.7 | A model can score well for the wrong reason | Shortcut schematic (Sam's desk) | 2.5 | O4 |
 | F2.8 | — (cut; mechanism shown in Ch. 3 Signature 4) | | | |
 | F2.9 | The same share of wrong labels costs 6 points when scattered and 23 when they all point one way | **Computed data chart** (four regimes) | 2.4 | O3 |
