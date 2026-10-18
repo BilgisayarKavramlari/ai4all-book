@@ -124,7 +124,7 @@ def f10_15(mode, rows):
     ax.set_title("In this illustration, most flagged texts are human-written\nwhen most writing is human",
                  loc="left", fontweight="bold", fontsize=12.5)
     fig.text(0.01, -0.12, "Computed illustration, not a study: detection 26% and false positives 9%, the rates OpenAI "
-             "reported for its 2023 classifier (withdrawn\nJuly 2023); assumed shares of AI-written text. "
+             "reported for its own weak 2023 classifier on a challenge set\n(withdrawn July 2023); assumed shares of AI-written text. "
              "Dashed line = half of all flags. Data: data/ch10_detector_baserate.csv.", fontsize=9.5,
              color=s["ink"])
     save(fig, "f10-15-base-rates", mode)

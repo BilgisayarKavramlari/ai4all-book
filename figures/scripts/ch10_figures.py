@@ -119,9 +119,8 @@ def voice_spectrum(highlight=None, marks=None, band=None, note=None):
             f.box(x, ty, 372, 82, lab, role="highlight" if on else "soft", kind="human", thick=on, size=15,
                   sub=sub, sub_size=13)
         f.line(400, ty - 4, 400, ty + 86, dashed=True, width=1.6)
-        f.text(400, ty + 112, "Rounded = your decisions · inner bar and label = how much wording the tool "
-               "supplies · thick = highlighted · dashed bracket = an inferred placement", size=13,
-               color=muted, width=780)
+        f.text(400, ty + 112, "Inner bar = the tool's share of the wording (also in each label) · dashed "
+               "bracket = an inferred placement", size=13, color=muted, width=780)
     return draw
 
 
@@ -174,7 +173,7 @@ def storyboard(f):
     ev = [("Feb 13, 2023", "Shooting at Michigan State: three students killed (reported)", "risk", "step"),
           ("Feb 16", "Office emails the Peabody community; last line credits ChatGPT (confirmed)", "ai", "step"),
           ("Feb 17", "Student newspaper reports; the associate dean apologizes (reported)", "neutral", "human"),
-          ("Feb 18", "Dean: review layers were skipped; a review opens; two deans step back", "neutral", "human"),
+          ("Feb 18", "Dean: review layers skipped; a review opens (confirmed: her statement)", "neutral", "human"),
           ("Apr 11", "The two deans return to their roles (reported)", "soft", "step")]
     f.line(24, 200, 776, 200, color=ink, width=2.4)
     for i, (d, txt, role, kind) in enumerate(ev):
@@ -185,9 +184,9 @@ def storyboard(f):
         f.line(cx, 180 if i % 2 == 0 else 222, cx, 200, color=ink, width=1.4)
         f.raw(f'<circle cx="{cx}" cy="200" r="5" fill="{ink}"/>')
     f.text(400, 396, "Yellow = the AI-drafted message · rounded = people's actions · thick (hatched in print) = "
-           "the tragedy · confirmed = the emails as quoted · reported = news reports", size=13, color=muted,
+           "the tragedy · confirmed = the email's line and the dean's statement · reported = news reports", size=13, color=muted,
            width=780)
-    f.text(400, 440, "Sources: Perrotta (2023); Lele (2023); Lele & Faquih (2023); Korn (2023); NPR (2023). What "
+    f.text(400, 440, "Sources: Perrotta (2023); Benbow (2023); Lele (2023); Lele & Faquih (2023); Korn (2023); NPR (2023). What "
            "readers expected, and how much the office changed the output, are inferred.", size=13,
            color=muted, italic=True, width=780)
 
@@ -237,7 +236,7 @@ def pull(f):
           sub_size=13)
     f.arrow(494, 220, 538, 220)
     f.box(542, 150, 236, 140, "Drafts that sound more alike", role="soft", kind="step", size=15,
-          sub="fewer specifics, fewer hedges, more stock phrases", sub_size=13)
+          sub="fewer specifics, lost nuances, more stock phrases", sub_size=13)
     f.text(660, 354, "Studies: stories with AI ideas were more alike (Doshi & Hauser, 2024); autocomplete moved "
            "Indian participants toward Western styles (Agarwal et al., 2025).", size=13, width=250, italic=True,
            color=muted)
@@ -276,7 +275,7 @@ def keep_rewrite_reject(f):
 def a7_sheet(f):
     muted = MUTED[f.mode]
     f.text(400, 24, "One A7 annotated draft and revision trace", size=17, weight="700")
-    fields = [("Context card", "document · reader · purpose · stakes · own words expected? · target position",
+    fields = [("Context card", "document · reader · purpose · stakes · own words expected? · target position, with a reason",
                "neutral", False),
               ("v0 (before any AI)", "your notes or first draft, dated", "verified", False),
               ("Prompts", "parts labeled · tool · date · at least one iteration", "neutral", False),
@@ -284,8 +283,8 @@ def a7_sheet(f):
                                  "privacy) · why", "neutral", False),
               ("Fact-check row", "claim · source opened · verdict on the Chapter 8 scale", "neutral", False),
               ("Trace row", "v0 → v1 → v2 · who or what proposed it · why kept or changed", "neutral", False),
-              ("Reflection", "where your voice is · one rejected change · one thing you would not delegate",
-               "soft", False),
+              ("Reflection", "voice · one rejected change · one thing not to delegate · reader-only route: v1 = "
+                             "the tool's comments", "soft", False),
               ("Declaration", "five elements, with the disclosure decision inside", "soft", True)]
     for i, (h, sub, role, dashed) in enumerate(fields):
         y = 44 + i * 50
@@ -301,10 +300,10 @@ def score_vs_process(f):
     f.text(400, 24, "What a detector score can show, and what process evidence shows", size=17, weight="700")
     f.box(30, 52, 340, 66, "A detector score", role="ai", kind="ai", size=16, sub="a number about the text",
           sub_size=13)
-    f.box(30, 136, 340, 90, "Rests on how predictable the words are", role="neutral", kind="step", size=14,
-          sub="simple, common wording scores as \"AI-like\"", sub_size=13)
+    f.box(30, 136, 340, 90, "Often rests on how predictable the words are", role="neutral", kind="step", size=14,
+          sub="plain, common wording can score as \"AI-like\"", sub_size=13)
     f.box(30, 244, 340, 90, "Cannot show who wrote it, or how", role="risk", kind="step", thick=True, size=14,
-          sub="false positives fell hardest on non-native writers in a 2023 test", sub_size=13)
+          sub="its error rate for this writer and this text is unknown", sub_size=13)
     f.box(430, 52, 340, 66, "Process evidence", role="human", kind="human", size=16,
           sub="a record of how you wrote", sub_size=13)
     f.box(430, 136, 340, 60, "Notes and earlier drafts, dated", role="verified", kind="human", size=14)
@@ -340,7 +339,7 @@ def disclosure(f):
     f.box(30, 406, 300, 56, "No line needed; keep your record", role="soft", kind="step", size=14)
     f.box(424, 290, 352, 124, "The sender answers either way", role="highlight", kind="human",
           thick=True, size=15, sub="a label tells readers how a message was made, not who checks it (Moffatt, "
-                                   "paras. 27–28; this book's reading)", sub_size=13)
+                                   "paras. 27–29; this book's reading)", sub_size=13)
     f.text(400, 494, "Diamonds = your decisions · green = disclose · thick = always true", size=13, color=muted)
 
 
@@ -365,18 +364,20 @@ def ai_mc(f):
 
 
 # ---------------------------------------------------------------- F10.17 Midterm Bridge map
-BRIDGE = [("Frame", ["Ch. 1 Work Loop; Jagged Frontier", "Ch. 5 Delegation Ladder", "Ch. 7 scaffold vs. crutch"]),
+BRIDGE = [("Frame", ["Ch. 1 Work Loop; Jagged Frontier", "Ch. 4 (second)", "Ch. 5 Delegation Ladder",
+                     "Ch. 7 scaffold vs. crutch"]),
           ("Prompt", ["Ch. 3 Anatomy of an LLM Response", "Ch. 5 Anatomy of a Prompt",
                       "Ch. 6 context layers (Deep, not examined)"]),
-          ("Verify", ["Ch. 2 Data-to-Prediction Pipeline", "Ch. 4 Failure Tree and chain", "Ch. 7 closed-book check",
-                      "Ch. 8 Verification Funnel", "Ch. 9 source ladder"]),
-          ("Decide", ["Ch. 10 keep, rewrite or reject"]),
-          ("Disclose", ["Ch. 10 voice spectrum; disclosure", "Ch. 9 cite what you read (second)"])]
+          ("Verify", ["Ch. 2 Data-to-Prediction Pipeline", "Ch. 3 (second)", "Ch. 4 Failure Tree and chain",
+                      "Ch. 6 (second; Deep)", "Ch. 7 closed-book check", "Ch. 8 Verification Funnel",
+                      "Ch. 9 source ladder"]),
+          ("Decide", ["Ch. 8 keep, change or reject (second)", "Ch. 10 keep, rewrite or reject (second)"]),
+          ("Disclose", ["Ch. 9 cite what you read (second)", "Ch. 10 voice spectrum; disclosure"])]
 
 
 def midterm_map(f):
     muted = MUTED[f.mode]
-    f.text(400, 24, "Chapters 1–10 on one loop: the step each chapter's map highlighted", size=17, weight="700")
+    f.text(400, 24, "Chapters 1–10 on one loop: every step each chapter's map highlighted", size=17, weight="700")
     for i, (step, items) in enumerate(BRIDGE):
         x = 14 + i * 156
         f.box(x, 50, 146, 54, step, role="highlight" if step in ("Decide", "Disclose") else "neutral",
@@ -384,17 +385,33 @@ def midterm_map(f):
         if i < 4:
             f.arrow(x + 148, 77, x + 156, 77)
         for j, it in enumerate(items):
-            f.text(x + 73, 134 + j * 56, it, size=13, width=144, italic=it.endswith("examined)"))
-    f.text(400, 432, "Boxes = the AI Work Loop's steps · text = chapters whose Chapter Map highlighted that step, "
-           "with their key diagram · thick = this chapter", size=13, color=muted, width=780)
-    f.text(400, 470, "Midterm: Core sections of Chapters 1–10. Chapter 6 is Deep and not examined.", size=13,
+            f.text(x + 73, 130 + j * 46, it, size=13, width=144,
+                   italic=("second" in it or it.endswith("examined)")))
+    f.text(400, 468, "Boxes = the AI Work Loop's steps · text = chapters whose Chapter Map highlighted that step, "
+           "with their key diagram · italic = a second highlight or Deep · thick = this chapter", size=13,
+           color=muted, width=780)
+    f.text(400, 506, "Midterm: Core sections of Chapters 1–10. Chapter 6 is Deep and not examined.", size=13,
            weight="700")
+
+
+# ---------------------------------------------------------------- F10.19 reader bands (10.1)
+def reader_bands(f):
+    muted = MUTED[f.mode]
+    f.text(400, 24, "Before you ask a tool: what do these readers expect?", size=17, weight="700")
+    f.box(22, 52, 372, 150, "Own words expected", role="human", kind="human", size=16,
+          sub="thank-you note · apology · message after a loss · reference letter · personal statement · "
+              "reflection essay", sub_size=13)
+    f.box(406, 52, 372, 150, "Accuracy and clarity first", role="soft", kind="human", size=16,
+          sub="meeting summary · status update · routine notice · FAQ answer", sub_size=13)
+    f.line(400, 46, 400, 208, dashed=True, width=1.6)
+    f.text(400, 236, "Readers judge the sender by what they believe about how the message was made (Liu et al., "
+           "2022) · the boundary is dashed because messages vary", size=13, color=muted, width=780)
 
 
 # ---------------------------------------------------------------- F10.18 summary card
 def summary_card(f):
     f.text(400, 26, "Chapter 10 — what you can do now", size=18, weight="700")
-    cards = ["Classify: a writing use on the spectrum, for these readers, in the course's zones",
+    cards = ["Differentiate: a writing use on the spectrum, for these readers, in the course's zones",
              "Frame: your points first; name the reader and the tone",
              "Judge: keep, rewrite or reject each sentence, with a tag",
              "Check: facts in the draft through the funnel",
@@ -415,15 +432,15 @@ PROMPT_WRITING = prompt_anatomy(highlight=["role", "context", "constraints"],
 FUNNEL_DRAFT = verification_funnel(highlight=["claims", "check"],
                                    note="Facts in your draft: names, dates, numbers, policies")
 PEABODY_CHAIN = failure_chain(
-    notes={0: "One wrong detail: \"shootings\" for one (reported)",
-           1: "Inappropriate delegation; review skipped (documented)",
+    notes={0: "One wrong detail; AI origin inferred",
+           1: "Inappropriate delegation; review skipped (documented: the dean)",
            2: "Sent to the Peabody community",
            3: "Hurt and lost trust; deans step back (reported)"},
     highlight={1},
     tag="Peabody email (2023) · primary label: chain link 2, inappropriate delegation and skipped review "
         "(documented by the dean's statement)")
 PEABODY_TREE = failure_tree({"hallucination"}, dashed={"hallucination"},
-                            tag="Case: Peabody email (2023) · secondary label: hallucination, inferred (dashed)",
+                            tag="Case: Peabody email (2023) · secondary label: a wrong detail; AI origin inferred (dashed)",
                             note="The wrong detail is reported; whether the tool produced it is not on record")
 
 FIGS = [
@@ -452,9 +469,11 @@ FIGS = [
      "The one wrong detail is a hallucination only if the tool produced it, which is inferred"),
     ("f10-16-ai-mc", ai_mc, 800, 344, "In AI-mediated communication, software changes the message between two "
                                       "people"),
-    ("f10-17-midterm-map", midterm_map, 800, 490, "Chapters 1–10 on one loop: where each chapter's map put its "
+    ("f10-17-midterm-map", midterm_map, 800, 526, "Chapters 1–10 on one loop: where each chapter's map put its "
                                                   "weight"),
     ("f10-18-summary-card", summary_card, 800, 340, "Chapter 10 summary card"),
+    ("f10-19-reader-bands", reader_bands, 800, 262,
+     "Readers of some messages expect your own words; readers of others want accuracy and clarity first"),
 ]
 
 if __name__ == "__main__":

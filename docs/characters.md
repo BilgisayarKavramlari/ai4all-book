@@ -145,3 +145,9 @@ Why they exist: recurring people make examples personal and memorable (Mayer's p
 | 2026-10-18 | Ch. 9 | Elif | Checks an AI summary sentence by sentence (constructed study); her A6 reference list cites one AI chat; her declaration covers all five elements |
 | 2026-10-18 | Ch. 9 | Marcus | Nursing course has an evidence-based-practice approach, a care-plan assignment and a discussion board; checks a classmate's study (preprint → published version) |
 | 2026-10-18 | Ch. 9 | Marcus | A friend sends him a supplement website; he places it on the ladder and reads it laterally (no patient information involved) |
+| 2026-10-18 | Ch. 10 | Elif | Writes important messages as Turkish notes first, then drafts in English |
+| 2026-10-18 | Ch. 10 | Elif | Had to reschedule a peer-tutoring session (Thursday 4 p.m.) because her own statistics exam moved; emailed the center's coordinator (unnamed one-off figure) with five points; chose the warm version and edited it |
+| 2026-10-18 | Ch. 10 | Elif | Applied for a research-assistant position in a memory lab in her psychology department (constructed lab); has used SPSS once in a course lab; has not published research |
+| 2026-10-18 | Ch. 10 | Elif | Applies to a summer research program; her statement uses an example from İzmir: her grandmother forgot neighbors' names but remembered every song from her youth; does not yet know whether she wants research or clinical work (consistent with her existing scholarship, Ch. 3) |
+| 2026-10-18 | Ch. 10 | Elif | Her psychology instructor (one-off) allows translation of her own Turkish drafts with a declaration line; she keeps dated notes in her bilingual notebook, version history and a revision trace for her sleep-and-memory essay (Ch. 9) |
+| 2026-10-18 | Ch. 10 | Elif | Designed a flyer for the peer-tutoring center (accepted some of a tool's grammar corrections); took a tutor-training course with a required reflection, which she wrote herself |

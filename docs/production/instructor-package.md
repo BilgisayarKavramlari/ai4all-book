@@ -102,3 +102,21 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | Lab 9.3: list of open-access abstracts by field; dated sample summaries | eLearning | Thu Feb 25, 2027 (optional lab) |
 | Compass pages: ch09 research-tool notes, lab pages ch09-lab1 to lab3, interactive source ladder, summary-check drill, Chapter 9 quiz | Compass | Tue Feb 23, 2027 (optional companion) |
 <!-- /ch09 -->
+
+<!-- ch10 -->
+## Chapter 10
+| Asset | Where | Needed by |
+|---|---|---|
+| Content note (one slide/line) for the Peabody case | Tuesday slides | Tue Mar 2, 2027 |
+| The three-tone demonstration email (Elif's five points; formal, warm, brief), with tool, model and date | Slides; Compass ch10-lab2 | Tue Mar 2 |
+| R7 and R8 reading-guide handout (paras. 27–29; abstract and the figures on time and graded quality) | eLearning | Before Tue Mar 2 (chapter release) |
+| Refund reply sentences 6–8 (Faded Example 10.5) and their key | eLearning; key in instructor package | Chapter release |
+| Review B4 club announcement (printed in the book): key for instructors | private/ch10-answers-even.md | Chapter release |
+| Provided dated AI drafts (model, date, prompt) for each A7 document type: email to a professor or employer, cover letter, short memo, profile summary, club or volunteer announcement | eLearning (print and screen-reader versions) | Thu Mar 4 |
+| Sample draft for the opt-in alternative to the pair read | eLearning; printed | Thu Mar 4 |
+| A7 sheet (F10.9) as an accessible table; reason-tag card; one-page label summary (from the Chapter Summary) | eLearning; printed | Thu Mar 4 |
+| Lab 10.3 materials: a sample paragraph with dated grammar-only and "improve" versions; a sample Turkish or Spanish paragraph with a dated tool translation for the back-check | Compass ch10-lab3; eLearning | Thu Mar 4 |
+| Instructions for submitting the reflection as a 2-minute audio recording (A7 item 7) | eLearning | Thu Mar 4 |
+| Midterm Bridge MB1–MB8 with feedback; even-numbered keys (private/ch10-answers-even.md) | Compass; instructor package | Tue Mar 9 (review session) |
+| Chapter 10 quiz; spectrum placement and keep/rewrite/reject drills | Compass (post-MVP) | When available |
+<!-- /ch10 -->

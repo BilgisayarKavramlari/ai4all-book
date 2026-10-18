@@ -110,3 +110,16 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 9 | 9.7, F9.14 | APA generative-AI guidance (Sept 9, 2025); MLA guidance (Aug 13, 2025) | Oct 2026 | McAdoo et al. (2025a, 2025b); MLA (2025) | Each edition |
 | 9 | 9.2 | Retraction Watch database open via Crossref (2023) | Oct 2026 | Hendricks (2023) | Each edition |
 | 9 | Labs | University-provided tool: Microsoft Copilot Chat for students | Oct 2026 | UTD OIT pages (brief) | Each term |
+| 10 | 10.6, Deep 10.A, Ethics Lens | Detectors flagged 61.3% of 91 TOEFL essays on average; 97.8% by at least one; 19.8% by all seven (detectors as of early 2023) | Oct 2026 | Liang et al. (2023) | Each edition |
+| 10 | 10.6 | Later evidence: a 2024 study with its own exam-specific detectors reported no bias against non-native writers; as of 2026 some commercial detectors show near-zero false-positive rates in independent tests, others still fail | Oct 2026 | Jiang et al. (2024) (findings via the abstract only); Jabarian & Imas (2025) | Each edition (new detector and model versions change results) |
+| 10 | 10.6, Deep 10.A | OpenAI's classifier: 26% detection, 9% false positives on a challenge set of English texts; withdrawn July 20, 2023 | Oct 2026 | OpenAI (2023), Internet Archive copy | Each edition |
+| 10 | Deep 10.A | Vanderbilt turned off one detector (Aug 16, 2023): 1% claimed false-positive rate, about 750 of ~75,000 papers | Oct 2026 | Vanderbilt University (2023) | Each edition |
+| 10 | 10.4 | 68% of the ChatGPT group reported submitting its first output unedited (March 2023 working paper; whether the published version reports it is unknown) | Oct 2026 | Noy & Zhang (2023b) | Before print, if the *Science* full text becomes available |
+| 10 | 10.4 | Homogenization and stance-drift studies (Doshi & Hauser 2024; Agarwal et al. 2025; Jakesch et al. 2023) | Oct 2026 | as cited | Each edition |
+| 10 | Ethics Lens | 52% of AI users at work reluctant to admit use for important tasks (31,000 people, 31 countries; fieldwork Feb–Mar 2024; later Work Trend Index editions exist) | Oct 2026 | Microsoft & LinkedIn (2024) | Each edition |
+| 10 | Ethics Lens | Disclosure trust penalty in 13 experiments; exposure costs more trust; the authors have a 2026 follow-up article | Oct 2026 | Schilke & Reimann (2025) | Each edition |
+| 10 | 10.7, Career Connection | AP standards on generative AI (Aug 16, 2023; unchanged in a December 2025 copy) | Oct 2026 | Barrett (2023) | Each edition |
+| 10 | Case Study | Deloitte callback: corrected report's methods disclosure (DEWR, 2026, pp. 48, 147) | Oct 2026 | DEWR (2026); McGuirk (2025) | With Ch. 9 |
+| 10 | Opening Case, Case Study | Peabody: deans returned April 11, 2023; the dean's statement page is offline (archived copy cited); no later developments found | Oct 2026 | Benbow (2023); Lele & Faquih (2023) | Each edition |
+| 10 | 10.7 | *Moffatt*: no later review or appeal searched for in this chapter (Ch. 4's row covers it) | Oct 2026 | Ch. 4 refresh row | With Ch. 4 |
+| 10 | Labs 10.1–10.3 | Expected observations and provided dated drafts | Oct 2026 | Compass lab notes | Each term |

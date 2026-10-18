@@ -53,3 +53,13 @@
 3. **Optional:** a real, anonymized moment from your consulting, editorial or teaching work where a report or submission carried references nobody had opened; never constructed.
 4. **Final voice edit** (pipeline step 8).
 <!-- /ch09 -->
+
+<!-- ch10 -->
+## Chapter 10
+1. **Live syllabus (week 7):** R7 = paras. 27–29 of *Moffatt*; R8 = Noy & Zhang (2023) abstract and the figures on time and graded quality; the A7 brief as in the chapter (150–300-word document; three claims; three trace changes; reflection 100–150 words or a 2-minute recording; disclosure decision inside the declaration). Week stated as about 2.2 hours (≈ 131 min counted; Your Turn 10.1–10.2 in class). Tuesday's opening slot uses the Peabody case, with Moffatt in the concept core (the syllabus line names "the airline chatbot case").
+2. **Course-policy reading (D-10.2):** confirm the coursework table in section 10.2: grammar-only edits permitted and listed briefly; translating one's own text permitted with disclosure for other coursework and needing the instructor's permission for skill-building writing; "AI as author" permitted only with disclosure and verification outside skill-building work; A7 as the explicit permission for co-drafting. Add to the live syllabus policy if you agree.
+3. **From the Field:** confirm the Social CRM entry and the D16 disclosure; confirm the page range (the running headers on PDF pages 2–4 read 38–40, page 1 is unnumbered; check the volume's table of contents); the running header reads "İş Planı (Business Plan)".
+4. **Optional:** a real, anonymized moment from your consulting, teaching or editorial work when a message was drafted by someone (or something) other than its sender, and review caught or missed it; never constructed.
+5. **Library checks you may wish to make** (the fact-checker could not open the full texts): Matsuda (2001) p. 40 definition; Noy & Zhang (2023) *Science* figure numbers and whether the 68% figure appears; Kruger et al. (2005): which read-aloud condition (V04).
+6. **Final voice edit**, as for every chapter.
+<!-- /ch10 -->
