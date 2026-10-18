@@ -48,6 +48,7 @@ The author asked the editor to make suitable choices for open items and to escal
 | D18 | Chapter 3 blueprint proposals | Reversal curse (Berglund et al., 2024) is the Opening Case and main Case Study; From the Field uses the author's 2024 manuscript on LLM-based modular software development (unpublished; cited as a manuscript); R1 becomes recommended rather than required in week 2 so the week stays near 2 hours | Decided by the editor under D19 (2026-10-18); the author updates the live syllabus |
 | D19 | Production mandate | The author asked the editor to finish the whole book without asking him. The editor decides editorial matters, records them here, and collects author-only items (personal anecdotes, final voice edits, live-syllabus changes, money and credentials) for the end. Chapters are produced by chapter agents under docs/production/chapter-brief.md | **Author's instruction, 2026-10-18** |
 | D20 | Examinable scope | The midterm covers the Core sections of Chapters 1–10 and the final the Core sections of the whole book; Deep chapters (6, 13, 17, 22, 23) and Deep sections are not examinable. The practice exam and syllabus wording should say "Core sections" | Editor decision under D19 (2026-10-18); the author updates the live syllabus wording |
+| D21 | Week-5 workload exception | Week 5 (Chapters 4 and 8, A5) is about 2.3 h out of class after all cuts (R5 recommended, Failure Diary moved to the Mar 12 checkpoint, A5 verifies eight of ten claims). Accepted as a one-week exception rather than cutting the verification skill the course is built on | Editor decision under D19 (2026-10-18); the author may trim further in the live syllabus |
 
 ## Chapter-level decisions (from handoffs)
 
@@ -106,3 +107,13 @@ The author asked the editor to make suitable choices for open items and to escal
 | C17 | Medprompt | none on the tree | — | Positive study |
 | C18 | Klarna AI assistant | none documented on the tree | inappropriate delegation, documented only if the company's own statements say quality fell [VERIFY] | Ch. 5 |
 <!-- /ch04-decisions -->
+<!-- ch05-decisions -->
+### Chapter 5
+| # | Topic | Decision | Notes |
+|---|---|---|---|
+| D-5.a | Signature 7 (Delegation Ladder) | Order = AI Fluency v1.1 Modality 1–3 over a floor "no AI"; one axis (how hard it is to see and check what the AI contributed before it takes effect) describing each rung's **default**; a design can restore a check before outputs take effect (approval gate, Ch. 14) without changing the rung; ladder, floor and axis labeled as the book's construction. `delegation_ladder(highlight=None, annotate=None, note=None)` | Ch. 12, 14, 21 reuse |
+| D-5.b | Signature 6 (Anatomy of a Prompt) | Six parts; "task" always needed (thick border); box label "In-context examples"; Role = voice or perspective, audience goes in context. `prompt_anatomy(highlight=None, note=None)` | Ch. 6, 7, 10, 14 reuse |
+| D-5.c | Agency vs. agent | Agency = a way of working (Dakan & Feller, 2025); agent = a system in which the model directs its own steps and tool use (Anthropic, 2024; Ch. 3 wording). Box in 5.2 points to 6.5, 7.5, Ch. 14 | Book-wide rule implemented |
+| D-5.d | C01 and C18 | Both agency by the framework's definition; they differ in whether the design kept a human check before each output | Ch. 14 may reuse |
+| D-5.e | Week-3 reading R2 | R2 module 2 becomes **recommended** in week 3 so the honest count stays ≤ 2.2 h. Count (150 wpm): Core package ~53 min + Your Turn 5.3 ~5 min (Your Turns 5.1–5.2 are done in Lab 5.1 step 2) + A3 60–70 min = ~2.0–2.15 h; with R2 required, ~2.25–2.4 h | Live-syllabus change: author-only item; precedent D18 |
+<!-- /ch05-decisions -->

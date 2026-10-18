@@ -32,3 +32,17 @@ Assets the chapter and labs promise, with the date each is needed (all on eLearn
 | Compass: interactive Signature 5 "label this case"; Chapter 4 quiz; Lab 4.1–4.3 pages; current notes on how tools handle text beyond the context window (section 4.4) | Compass [COMPASS] | Compass MVP (Jan 8, 2027; D7) or by Feb 16 |
 | Readings: R5 section pointer (Ji et al., 2023, definitions and categories); R7 decision PDF link | eLearning | Tue Feb 16, 2027 |
 <!-- /ch04 -->
+
+<!-- ch05 -->
+## Chapter 5
+Every asset the chapter promises on eLearning or in Compass. All sample outputs must carry the model name and the date of generation.
+
+| Asset | Used by | Content and format | Needed by |
+|---|---|---|---|
+| A3 log template | Lab 5.1, A3 | Table with the columns of Figure 5.13 plus a frame-card block (goal, audience, criteria, limits, what stays with you, rung per part); one accessible plain-table version for screen readers (no merged cells, header row) | Thu Feb 4, 2027 (Lab 5.1) |
+| Task bank | Lab 5.1, A3 | 10–15 short real tasks across fields (business, health, arts and humanities, social science, natural science, engineering, education), none needing personal data | Thu Feb 4, 2027 |
+| Dated six-version sample log | A3 alternative assignment; Lab 5.1 no-device route | One task, six prompt versions with real outputs (two runs each), model names and dates; at least one row that changes several things at once and one frame change, so the audit has something to label | Thu Feb 4, 2027 |
+| L5.2 sample outputs | Lab 5.2 no-device route | A dated AI summary of a short public reading, with the reading itself | Tue Feb 9, 2027 (week 4 review) |
+| L5.3 sample outputs and scoring sheet | Lab 5.3 (scoring sheet), no-device route (samples) | Outputs for one trick, with and without, on two inputs, three runs each, with model and date; a shared sheet for pooling class results | Tue Feb 9, 2027 |
+| Compass pages | Labs 5.1–5.3; A3 | How to open a fresh, temporary chat in current tools; interactive Signature 6 (prompt builder) and Signature 7 (rung chooser) after the MVP | Thu Feb 4, 2027 (tool steps); signatures after the MVP |
+<!-- /ch05 -->

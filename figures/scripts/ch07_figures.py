@@ -189,7 +189,7 @@ def scaffold_crutch(highlight=None, note=None):
 
 # ---------------------------------------------------------------- F7.11 Session protocol
 def session_protocol(f):
-    steps = [("1 · Before", "3 keyed check questions; baseline answers; confidence", "human", "neutral"),
+    steps = [("1 · Before", "3 keyed check questions; first answers; confidence", "human", "neutral"),
              ("2 · During", "Tutor-mode dialogue on other problems: attempt first", "ai", "ai"),
              ("3 · Right after", "Devices away: rate, answer, score, calibration gap", "human", "neutral"),
              ("4 · Later", "2+ days: same steps, parallel questions if possible", "human", "neutral"),

@@ -242,3 +242,5 @@ The chapter (v2) departs from this blueprint as recorded in docs/editorial/ch05-
 - Lucía's log is one change per row; the final prompt (v5) is shown in 5.3. Klarna statements are re-cited with attribution tiers, and the SEC DRS/A (Jan 2025) has been added.
 - The A3 rubric gaps are closed. The alternative assignment has its own rubric. The in-lab peer swap counts. The final version runs once on each of a different and an edge input.
 - Role is now defined as voice or perspective (audience goes in context). The ladder axis describes each rung's default, and an approval gate does not change the rung.
+
+**Final review (v3) departure, recorded:** Core + Studio is about 5,300 words by section count (5.2 ~1,070 and 5.5 ~1,050 exceed the ~950 ceiling), above the 4,700 cap. 5.5 was tightened in v3, but the cap is not reached. The week-3 count still stays ≤ 2.2 h: Core package ~53 min + Your Turn 5.3 ~5 min (the 5.1–5.2 Your Turns are done in Lab 5.1 step 2) + A3 60–70 min ≈ 2.0–2.15 h, with R2 recommended (D-5.e). Per the editor's rule, the overage is recorded rather than cut further.

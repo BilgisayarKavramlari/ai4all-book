@@ -124,3 +124,6 @@ Why they exist: recurring people make examples personal and memorable (Mayer's p
 | 2026-10-18 | Ch. 4 | Sam | Drafted a robotics-club recruiting post ("a typical robotics engineer" came out as "he") |
 | 2026-10-18 | Ch. 4 | Sam | Plans an AI assistant to answer new members' questions about club rules (tested; it invented an automatic-reimbursement rule) — sets up Ch. 14's approval gates |
 | 2026-10-18 | Ch. 4 | Lucía | Referenced only through her Ch. 1 invented-discount example (no new detail) |
+| 2026-10-18 | Ch. 5 | Lucía | Prepares a one-page "budget basics" handout for a first-year workshop run by the accounting students' association (constructed figures only; no employer or student data) |
+| 2026-10-18 | Ch. 5 | Lucía | Considers, and postpones ("not now"), a study-group FAQ chatbot that would answer classmates' money questions |
+| 2026-10-18 | Ch. 5 | Lucía | In the lab peer swap on her v3, a classmate cannot follow "net pay … minus withholdings"; she had not noticed because she is an accounting major, and rewrites her plain-language criterion |

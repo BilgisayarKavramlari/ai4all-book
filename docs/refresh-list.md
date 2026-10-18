@@ -55,3 +55,13 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 4 | Case Study, short case 1 | MyCity taken down by Feb 4, 2026 | Feb 2026 | Lecher & Honan (2026) | Each edition |
 | 4 | Career Connection | "As of 2026, many organizations use AI tools in work that touches customers"; role list | Oct 2026 | General (fact-check C109: no occupational source) | Each edition |
 | 4 | Labs 4.2, 4.3 | Expected observations on tool behavior (constraint recall, pushback, stated confidence, hidden instructions) | Oct 2026 | Compass lab notes | Each term |
+| 5 | Opening Case, Case Study, C18 | Klarna figures (2024 release; Jan 2025 DRS/A 60%; Nov 2025 >853 agents, $60M) and the CEO's May 2025 statements; story still developing (Feb 2026 trade coverage of a "two-tier" model and "focused too much on cost" not verified) | Oct 2026 | Klarna (2024); Klarna Group (2025); Fisher (2025); Shibu (2025); Engelking (2025); Doerer (2025) | Each edition; check Q4 2025–Q2 2026 investor documents |
+| 5 | References, C18 | Klarna press-release page: one outlet reported it removed; live on 2026-10-18 | Oct 2026 | Klarna (2024) | Archive a copy now; each edition |
+| 5 | Opening Case, references | Bloomberg (May 8, 2025) wording not read (paywall) | Oct 2026 | Bloomberg (2025) | When access is available |
+| 5 | 5.4, 5.5, F5.10, Short case 2 | Prompt-wording effects measured on GPT-4o / GPT-4o mini (2024 models) and LLaMA-2-13B (2023) | Oct 2026 | Meincke et al. (2025a, 2025c); Sclar et al. (2024) | Each edition |
+| 5 | 5.3 | Personas do not improve factual accuracy overall | Oct 2026 | Zheng et al. (2024) | Each edition |
+| 5 | Deep 5.A | Step-by-step prompting gives reasoning models marginal gains | Oct 2026 | Meincke et al. (2025b) | Each edition |
+| 5 | Deep 5.B, F5.14 | Economic Index: Aug 2025 (49% chat vs 77% API automation); Jan 2026 report (Nov 2025 data: 52% augmentation / 45% automation on chat; about three-quarters API automation); March 2026 report not used | Oct 2026 | Appel et al. (2025, 2026); Handa et al. (2025) | Each edition (newer reports) |
+| 5 | 5.1, 5.3, Further Reading | Provider guides change; Google's 2024 guide URL returned 404 (cited via an archived copy) | Oct 2026 | Anthropic (n.d.-b); OpenAI (n.d.); Google (2024) | Each edition |
+| 5 | 5.2, Further Reading | AI Fluency v1.1 (Dec 2025) definitions; R2 module 2 = "The AI Fluency Framework" (10-module course) | Oct 2026 | Dakan & Feller (2025); Anthropic (n.d.-a) | Each edition |
+| 5 | 5.3, 5.4, labs | Memory and temporary-chat features (product state) | Oct 2026 | Ch. 3; Compass | Each edition |

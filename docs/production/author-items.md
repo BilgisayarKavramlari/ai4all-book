@@ -14,3 +14,11 @@
 2. **From the Field:** written from your 2014 fishbone entry (Şeker, 2014, pp. 2–4 as printed), translated and paraphrased, facts limited to the entry; please confirm the wording. Optional: a real AI-failure story from your SME work could follow it (never constructed).
 3. **Final voice edit** of the chapter.
 <!-- /ch04 -->
+
+<!-- ch05 -->
+## Chapter 5
+1. Optional: a short personal anecdote about framing a problem before solving it (industry or teaching), to add to From the Field. The section stands without it; never invented.
+2. **Live syllabus (week 3):** R2 module 2 is now *recommended*, not required, so the honest out-of-class count stays at about 2.0 h (D-5.e). Optional: modules 4 (Delegation) and 5 (Description) fit week 3 better than module 2.
+3. Şeker (2014) page range: the entry's own citation line says pp. 5–6 (Kasım 2014); the issue is Aralık 2014 and its contents list p. 5. Please confirm.
+4. Final voice edit.
+<!-- /ch05 -->

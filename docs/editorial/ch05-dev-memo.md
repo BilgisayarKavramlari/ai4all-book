@@ -75,3 +75,53 @@ A light pass with docs/voice/voice-profile.md rules 1–4:
 - Two "In other words" restatements: 5.1, success criteria decide what "worked" means; 5.5, evidence, not proof.
 
 No facts, numbers, citations, headings or figure references were changed in this pass.
+
+## Final review (2026-10-18) — applied
+
+The final reviewer (Opus, independent) found 6 must-fix items, 16 should-fix items and 4 nice-to-haves. All are applied in v3. The v2 text is kept in build/ch05/ch05-v2-prefinal.qmd.
+
+**Must-fix.**
+
+1. **Klarna's quality claim restored.**
+   - The press release's "more accurate errand resolution" (behind the 25% drop in repeat inquiries) is now in the Opening Case, 5.1, the Case Study, the Summary, F5.5, C18 and the handoff answers.
+   - The SEC filing's matching wording, which the agent re-read in the EDGAR text, is added: "resolved issues more accurately than human agents", with the 25% counted before and after launch.
+   - The book's reading now says the company "published no direct count of problems actually solved". Fact-check row C113 is added.
+2. **Multiple-choice keys.** Options were lengthened so the key is never the longest option; keys stay rotated. Every distractor's rationale names a misconception (A2(d) is M3, A10(b–d) are M5/M1, A12(d) is M3, A14 is M5), including the distractors the reviewer flagged.
+3. **Acronyms.** AI, FAQ and GPQA are now defined at first use. "CEO" became "chief executive" in F5.5.
+4. **Lab 5.1 header.** The home time now reads 60–70 minutes.
+5. **docs/factcheck/ch05.csv.** It has a `resolution_v2` column for all 27 non-supported rows. New rows C112–C116 cover the DRS/A sentence, the 2024 accuracy claim, the January 2026 Economic Index figures, the Engelking statements and the 2024 model versions.
+6. **[VERIFY] markers removed.** Bloomberg is disclosed as not read. The Şeker reference cites pp. 5–6 and stays an author-only item.
+
+**Should-fix.**
+
+1. F5.12 now says "Your latest prompt (in the lab, v3)".
+2. Signature 7 now says "including for others".
+3. The partly met C4 run is now "gives the worked example as a list, not a table".
+4. The F5.11 alt text is disambiguated.
+5. The F5.13 empty row is labeled "Your row".
+6. The chart result now reads "about 20 and 24 points".
+7. Glossary wording is reused word for word for context window, memory, test set and temperature, and the handoff line is corrected.
+8. The Delegation wording now reads "when and how … and in which way; the competencies start from whether to use AI at all".
+9. The orphan one-page summary reference is deleted.
+10. Full APA author lists for Brown (19 authors, ellipsis, Amodei), Handa (all 15) and Schulhoff (19 authors, ellipsis, Resnik).
+11. Every distractor now maps to a named misconception (see must-fix 2).
+12. Workload recount, including the Your Turns:
+    - The 5.1 and 5.2 Your Turns now point to Lab 5.1 step 2, where the frame card is written in class.
+    - The 5.3 Your Turn is counted at about 5 minutes.
+    - The week comes to about 2.0–2.15 h with R2 recommended, under 2.2 h.
+13. Word budget:
+    - Because the week stays under 2.2 h, the editor's rule allows recording the overage rather than trimming to the cap.
+    - 5.5 was still tightened, from about 1,150 to about 1,050 words.
+    - The remaining overage (Core + Studio about 5,300 words against 4,700) is recorded as a departure in the blueprint.
+14. The Ethics Lens now points to Chapter 10 for disclosure.
+15. Paragraphs over four sentences are split throughout the body text (the structured lists and the Warm-up revisit are left as they are). The long sentences at the Delegation, Ladder, Role, Context, in-context example, Sclar and Zamfirescu-Pereira passages are split. The Ladder's defining sentence is shortened, and the glossary row matches it.
+16. The handoff notes now cover Chapter 6's "settings" wording (Brown), the Chapter 4 benchmark wording reused here ("a standard test used to compare models"), and chart titles.
+
+**Nice-to-haves.**
+
+- "walked a home cook through" became "guided … step by step".
+- Deep 5.A has a figure (F5.16) and both Deep sections have a Check Yourself.
+- In the handoff, the Instructor package section now comes right after Author-only items.
+- The chart SVGs now get a `<title>` (ch05_charts.py inserts it); this is noted for other chapters.
+
+**Re-rendered:** F5.3, F5.3b, F5.5, F5.10, F5.11, F5.12, F5.13, F5.14 (title only), plus the new F5.16. The longdesc is regenerated from the chapter, so alt texts match it and all are under 150 characters.

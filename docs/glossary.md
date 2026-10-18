@@ -97,3 +97,21 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Failure-to-harm chain | The links by which an AI error becomes a harm: the output is wrong, it is not checked before use, someone relies on it, and a loss follows. | Hatadan zarara zincir |
 | Failure Diary | A dated record of AI failures you met, each with the test that showed it, a label and likely causes. | Başarısızlık günlüğü |
 | Confabulation (Deep) | Another word for hallucination, used by some researchers and by NIST's Generative AI Profile: confidently stated but false content. | Konfabulasyon (uydurma) |
+| Task frame | A short statement of a task's goal, audience, success criteria, limits and what stays with you, written before the first prompt. | Görev çerçevesi |
+| Success criteria | Checks, written in advance, that an output must pass to count as good; each can be scored met, partly met or not met. | Başarı ölçütleri |
+| Delegation Ladder | The book's arrangement of three ways of working with AI over a floor of no AI, ordered by how hard it is to check what the AI contributed before it takes effect. | Devretme merdiveni |
+| Automation (mode of working with AI) | Working with AI in which the AI carries out a task you define, and you check the output. | Otomasyon |
+| Augmentation | Working with AI in which you and the AI shape and carry out the task together, turn by turn. | Güçlendirme (birlikte çalışma) |
+| Agency (mode of working with AI) | Working with AI in which you configure it to carry out future tasks on your behalf, including for other people. Not the same as an agent. | Vekâlet kipi (ajanlık) |
+| Anatomy of a prompt | The book's six-part description of what a prompt can contain: role, task, context, constraints, in-context examples and output format. | İstem anatomisi |
+| Role (prompt part) | The voice or perspective the output takes; who will read the output belongs in the context. | Rol (istem bileşeni) |
+| Task (prompt part) | What you want done: an action and what it acts on. The one part every prompt needs. | Görev (istem bileşeni) |
+| Context (prompt part) | The background a task needs that the tool cannot otherwise receive, such as figures, readers or source text. | Bağlam (istem bileşeni) |
+| Constraint | A limit or a must-not in a prompt, such as a length, a source rule or an excluded topic. | Kısıt |
+| In-context example | A sample input with the output you want, placed in a prompt to show the pattern. | Bağlam içi örnek |
+| Output format | The shape the output should take, such as a table, a list or a word limit, chosen so it can be checked. | Çıktı biçimi |
+| Iteration | Improving a prompt by changing one thing at a time, predicting the effect, rerunning and scoring the result against your success criteria. | Yineleme |
+| Iteration log | A record of each prompt version: what changed, the prediction, the results of each run and the decision to keep or revert. | Yineleme günlüğü |
+| Test inputs | A small set of different inputs a prompt is tried on (typical, different, edge) to see whether it works beyond one case. | Test girdileri |
+| Peer swap test | Someone else runs your prompt without your explanation and scores the output against your criteria, to reveal what was in your head but not in the prompt. | Akran takas testi |
+| Benchmark | A standard test used to compare models. | Kıyaslama testi (benchmark) |
