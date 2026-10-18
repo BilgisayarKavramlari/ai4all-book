@@ -62,3 +62,16 @@ Everything the chapter, labs or assignment promise on eLearning or in Compass. A
 | Dated, constructed sample library with four flawed entries (no placeholders, whole document pasted, one-sided examples, a personal-data field) | Alternative assignment | Thu Feb 4, 2027 |
 | Compass pages: ch06-lab1 to ch06-lab4, persistent features by tool (where to view and delete memory, standing instructions), interactive Context Layers, template tester | Labs; 6.5 dated box; Further Reading | After the Compass MVP (Jan 8, 2027, D7); placeholders until then |
 <!-- /ch06 -->
+
+<!-- ch08 -->
+## Chapter 8
+| Asset (promised in the chapter or labs) | Where | Needed by |
+|---|---|---|
+| Pre-lab sample outputs for students without an AI tool: one dated output per field (business, health, engineering, humanities, social science, science), about 250–400 words, one number or date, two or three citations, the tool's stated confidence per claim (model name and date) | eLearning | Tue Feb 16, 2027 (students prepare before Thursday) |
+| A5 one-page checklist of the nine items; accessible table template for the A5 row (F8.13 columns) | eLearning | Tue Feb 16, 2027 |
+| Lab 8.1: R6 pp. 1–2 and a one-page glossed handout of ¶¶ 12, 26, 45; the dated printout of Tuesday's demonstration outputs; a backup provided output (ten claims, two citations, dated) with instructor key (labs/ch08-lab1.md) | eLearning / print | Thu Feb 18, 2027 |
+| Lab 8.2: five dated sample references per field for the no-device route; list of free indexes (library catalog, DOI lookup, scholarly search, public court records) | eLearning | Thu Feb 18, 2027 |
+| Lab 8.3: six keyed question packs (ten questions each) and dated sample transcripts with stated confidence; calibration chart template | eLearning | Thu Feb 18, 2027 |
+| Compass: interactive Verification Funnel ("take this claim through the funnel"); calibration self-check; Chapter 8 quiz; Lab 8.1–8.3 pages | Compass [COMPASS] | Post-MVP (D7 covers Chapters 1–4), or by Feb 18 |
+| Readings: R6 full opinion link (ECF 54); R5 section pointer (shared with Chapter 4) | eLearning | Thu Feb 18, 2027 |
+<!-- /ch08 -->

@@ -22,7 +22,7 @@ Many students expect to remember the reread half better and in fact recall more 
 
 ## Debrief (3–5)
 1. Which half did you expect to remember better, and which did you? (evaluate)
-2. What was your calibration gap for each half (predicted minus recalled)? (apply)
+2. What was your prediction gap for each half (predicted minus recalled main ideas)? (apply)
 3. What might make your two halves unequal, and how would you fix that next time? (analyze)
 4. Which course could you study this way this week? (apply)
 

@@ -20,7 +20,7 @@ Ten questions give a rough picture, not a measurement. "The tool was well calibr
 [COMPASS: ch08-lab3 — question packs and a calibration chart template]
 
 ## Expected observations
-As of 2026, stated confidence clusters at 80–100% for many tools, and disagreement across runs, when it happens, often marks the wrong answers. Some packs produce no errors at all; that is a finding too.
+In 2023 tests (Xiong et al., 2024), stated confidence clustered at 80–100%; record what your tool does. Disagreement across runs, when it happens, is a warning sign worth noting. Some packs produce no errors at all; that is a finding too.
 
 ## Debrief
 1. Did the tool's stated confidence rise with its accuracy? (evaluate)

@@ -9,7 +9,7 @@ A field experiment by a team led by researchers at the University of Pennsylvani
 
 ## Timeline
 - Fall semester 2023–24: four sessions per grade; each session = teacher review → assisted practice (randomized) → closed-book, closed-laptop exam with problems paired to the practice problems; practice and exam both counted toward grades.
-- July 2024: working paper on SSRN, "Generative AI Can Harm Learning" (written July 15, 2024, per the SSRN record as reported by EdTech Hub; the SSRN page now carries the PNAS title) [VERIFY first posting date in a browser]. The repository syllabus is being updated to cite the PNAS version for R3.
+- July 2024: working paper on SSRN, "Generative AI Can Harm Learning" (written July 15, 2024, per the SSRN record as reported by EdTech Hub; the SSRN page now carries the PNAS title) (first posting date not confirmed on SSRN; on the refresh list). The repository syllabus is being updated to cite the PNAS version for R3.
 - June 25, 2025: *PNAS* article, 122(26), e2422633122.
 - August 20, 2025: *PNAS* correction, 122(34), e2518204122 (affiliation of Osbert Bastani; no change to findings).
 

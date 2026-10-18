@@ -77,3 +77,15 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 6 | Opening Case, Case Study, C17 | Medprompt (GPT-4, 2023) and the o1-preview reversal (2024; model since superseded); MedQA near saturation | Oct 2026 | Nori et al. (2023, 2024) | Each edition |
 | 6 | 6.1 | "Context engineering" term (Lütke, 18/19 June 2025; Karpathy, 25 June 2025) | Oct 2026 | Willison (2025) | Each edition |
 | 6 | Case Study | Microsoft as investor in and cloud distributor of OpenAI's models | Oct 2026 | OpenAI (2023) | Each edition |
+| 8 | Opening Case, C05 | Charlotin database: 2,199 decisions, last updated Oct 16, 2026 ("more than 2,100"); scope = decisions on filings that relied, or were alleged to rely, on hallucinated content | Oct 2026 | https://www.damiencharlotin.com/hallucinations/ | Each edition |
+| 8 | C05, Case Study | Mata: no appeal found (CourtListener RECAP: clerk's judgment July 7, 2023, no later entries; PACER not queried) | Oct 2026 | https://www.courtlistener.com/docket/63107798/mata-v-avianca-inc/ | Each edition; PACER |
+| 8 | 8.2, 8.6, References | CPA exam: 3 Core (AUD, FAR, REG) + 1 Discipline since Jan 2024; BEC last tested Dec 15, 2023; 75 on 0–99 | Oct 2026 | AICPA & CIMA FAQ; NASBA; TSBPA scoring page; AICPA Blueprints (editions effective Jan 1, 2026 and Jan 1, 2027) | Each edition |
+| 8 | 8.6, References | 22 TAC § 511.80: section credit 30 months; amended effective June 3, 2026 (51 TexReg 1981); a separate 36-month education window from Aug 31, 2026 | Oct 2026 | https://www.sos.state.tx.us/texreg/archive/May292026/Adopted%20Rules/22.EXAMINING%20BOARDS.html | Before printing |
+| 8 | 8.3 | Fabricated references: GPT-3.5 55%, GPT-4 18% (outputs from April 2023) | Oct 2026 | Walters & Wilder (2023) | Each edition (newer studies) |
+| 8 | 8.3 | OpenAI PersonQA hallucination rates: o3 33%, o4-mini 48%, o1 16% (April 2025) | Oct 2026 | OpenAI (2025) system card | Each edition |
+| 8 | 8.3 | Retrieval-based legal research tools: 17–33% incorrect or misgrounded (products as of March–May 2024) | Oct 2026 | Magesh et al. (2025) | Each edition |
+| 8 | 8.5 | Stated confidence clusters at 80–100% (2023 models); SimpleQA (Nov 2024 preprint, four OpenAI models, questions hard for GPT-4) | Oct 2026 | Xiong et al. (2024); Wei et al. (2024) | Each edition |
+| 8 | Career Connection | PCAOB AS 1105.08 wording; Release 2024-007 effective for fiscal years beginning on or after Dec 15, 2025 | Oct 2026 | https://assets.pcaobus.org/pcaob-dev/docs/default-source/rulemaking/docket-052/2024-007-adoptingrelease.pdf | Before printing |
+| 8 | Short case 1 | *Kohls v. Ellison*: ECF 47 denied the injunction the same day; 8th Cir. affirmed Feb 9, 2026 (No. 25-1300); litigation continues | Oct 2026 | https://ecf.ca8.uscourts.gov/opndir/26/02/251300P.pdf | Each edition |
+| 8 | 8.1 faded example | A36 steel 36 ksi (250 MPa): ASTM standard paywalled, not opened (Wikipedia secondary) | Oct 2026 | https://en.wikipedia.org/wiki/A36_steel | Before printing (library) |
+| 8 | Labs 8.1–8.3 | Expected observations and dated sample outputs | Oct 2026 | Compass lab notes | Each term |

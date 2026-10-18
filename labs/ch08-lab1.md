@@ -5,12 +5,12 @@
 | Type | Studio (verification lab) |
 | Objectives | O2, O3, O6 (LO3) · tags 4D:DISC, 4D:DIL |
 | Time | Thursday, February 18, 2027, in class (75 minutes: briefing 10 · practice 40 · share 15 · exit 5 · buffer 5) |
-| Materials | R6 pp. 1–2 of *Mata v. Avianca*, ECF 54, and a one-page glossed handout of ¶¶ 12, 26 and 45 (ECF, ¶, docket, Federal Reporter, Westlaw/LexisNexis explained); the dated printout of Tuesday's demonstration (the two cards labeled in Lab 4.1); one provided dated output with ten claims and two citations (backup set); each student's A5 rows 1–10 with both confidences (Your Turn 8.1) and stage plan (Your Turn 8.2); Figure 8.4 (Verification Funnel) and Figure 8.13 (A5 row) |
+| Materials | R6 pp. 1–2 of *Mata v. Avianca*, ECF 54, and a one-page glossed handout of ¶¶ 12, 26 and 45 (ECF, ¶, docket, Federal Reporter, Westlaw/LexisNexis explained); the dated printout of Tuesday's demonstration (the two cards labeled in Lab 4.1); one provided dated output with ten claims and two citations (backup set); each student's A5 rows 1–10 with both confidences (Your Turn 8.1) and stage plan (Your Turn 8.2); the chapter's figures "Take each claim only as far as its stakes require" (the Verification Funnel, section 8.2) and "A verification table records how far each claim got, not only a verdict" (section 8.6) |
 
 ## Steps (tool-neutral)
 1. **Briefing (10 min).** Read pp. 1–2 of the sanctions opinion and the glossed handout (¶¶ 12, 26, 45). Recap the funnel (independent check → primary source → expert; stop when the evidence matches the stakes), the three citation checks (checks 1–2 = stage 1, check 3 = stage 2) and the citation verdict rule.
 2. **Team check (10 min).** Teams of three or four. Each member takes one or two claims from the Tuesday demo printout, citations first (use the provided backup output if the demo produced too few claims). Before each check, write your confidence (0–100%). Record stage, source, verdict and uncertainty.
-3. **Your own claims (30 min).** Individually, take three of your A5 claims through the funnel: your highest-stakes row first (A5 row 1), then your citations. These three count toward A5's primary-source minimum.
+3. **Your own claims (30 min).** Individually, take three of your A5 claims through the funnel: your highest-stakes row first (A5 row 1), then your citations. These three count toward A5's primary-source minimum if they reach the primary source.
 4. **Share and critique (15 min).** Each team reports one claim whose verdict changed at the primary source. The instructor pools the team records into one calibration gap for the shared set (average confidence of the claims rated 80% or higher minus the share of them supported).
 5. **Exit (5 min).** One claim you could not verify, and the stage that would settle it.
 6. **Buffer (5 min).** Kept free for overruns, questions and setup.

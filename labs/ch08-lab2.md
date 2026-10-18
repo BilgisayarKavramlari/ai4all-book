@@ -5,7 +5,7 @@
 | Type | Check It |
 | Objectives | O3 (LO3) · tags 4D:DISC |
 | Time | 30 minutes, home, optional, recommended |
-| Materials | Any AI tool; your library catalog, a scholarly search engine, a DOI lookup or a publisher's site; Figure 8.5 (three ways a citation fails) |
+| Materials | Any AI tool; your library catalog, a scholarly search engine, a DOI lookup or a publisher's site; the chapter's figure "A citation can fail in three ways, and each needs a different check" (section 8.3) |
 
 ## Steps (tool-neutral)
 1. Ask an AI tool for five references on a narrow topic in your field (the Tuesday demonstration, done yourself). Save the output with the tool's name and the date.

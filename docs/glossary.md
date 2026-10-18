@@ -125,3 +125,18 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Prompt version | A numbered, dated state of a prompt or template, recorded with what changed and what it was tested on. | İstem sürümü |
 | Prompt library | A personal or shared collection of tested prompt templates, each recorded with when to use it, what it was tested on and how it has changed. | İstem kütüphanesi |
 | Prompt chain | A fixed sequence of prompts that you run one after another, where each step's output becomes the next step's input and you check the result between steps. | İstem zinciri |
+| Claim | One statement in an output that you might rely on; marked checkable (it can be true or false) or not checkable as true or false (a judgment, recommendation or prediction). | İddia |
+| Stakes (of a claim) | What would be lost, by you or by someone else, if the claim were wrong. | Risk (iddianın önemi) |
+| Verification | Checking a claim against evidence that no AI tool produced. | Doğrulama |
+| Verification Funnel | The book's diagram of three checks a claim can pass through (an independent check, the primary source, an expert), each outside the tool, taken only as far as the stakes require. | Doğrulama hunisi |
+| Independent check | Evidence that no AI tool produced: a source with an author or publisher you can name, or your own recalculation or reasoning from known inputs. | Bağımsız kontrol |
+| Primary source | The original record a claim comes from: the study, the dataset, the law, the court record, the official page of the organization that sets the rule. | Birincil kaynak |
+| Verdict | A judgment on the book's five-point scale: supported (the evidence says what the claim says); partly supported (part holds, part does not or is missing); unsupported (no evidence for it at the stage you reached: nothing found, or the source does not say it); contradicted (the evidence says otherwise); cannot verify (the evidence exists or may exist, but you cannot reach it). | Hüküm (doğrulama sonucu) |
+| Remaining uncertainty | What you could not check, and why; recorded with every verdict. | Kalan belirsizlik |
+| Fabricated citation | A citation to a work that does not exist. | Uydurma kaynak gösterimi |
+| Uncertainty signal | A feature of an output that makes an error more or less likely without settling whether a claim is true. | Belirsizlik işareti |
+| Consistency check | Asking the same question in several new chats and comparing the answers. | Tutarlılık kontrolü |
+| Stated confidence | The certainty an output expresses in words or numbers, such as "I'm 95% sure" or "definitely." | Beyan edilen güven |
+| Calibration (of a model) | How closely a model's stated confidence matches its accuracy. | Kalibrasyon (modelin) |
+| Calibration gap | The difference between stated (or predicted) confidence and the share correct. In A4 (Ch. 7), the sum of your confidences compared with your score; in A5 (Ch. 8), the average confidence of the claims rated 80% or higher minus the share of them supported, in percentage points, leaving out not-checkable, not-checked and cannot-verify rows and counting partly supported as not supported. | Kalibrasyon farkı |
+| Expected calibration error (Deep) | The average gap between confidence and accuracy across confidence groups, giving larger groups more weight. | Beklenen kalibrasyon hatası |

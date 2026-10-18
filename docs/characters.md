@@ -131,3 +131,8 @@ Why they exist: recurring people make examples personal and memorable (Mayer's p
 | 2026-10-18 | Ch. 6 | Sam | Drafts the club's parts orders within the club's budget rules (rule 3, January 2027: orders over $250 need two officers' approval; constructed); the club changed its meeting format in January 2027 |
 | 2026-10-18 | Ch. 6 | Sam | Keeps a personal prompt library as a plain text file; his club-update template reached v1.1 after an edge-input failure |
 | 2026-10-18 | Ch. 6 | Sam | An out-of-date memory note from his completed co-op ("Sam is on co-op") reached a draft; he deleted it and moved a club-only standing instruction into the club's project; the club meets on Thursdays |
+| 2026-10-18 | Ch. 8 | Lucía | Asked a chat tool for an overview of the CPA exam for her study plan; the output listed the retired BEC section and an 18-month credit window (both outdated as of 2026) |
+| 2026-10-18 | Ch. 8 | Lucía | Plans to apply to sit for the CPA exam in Texas (checks her state board's rules); consistent with "saving to sit for the CPA exam" |
+| 2026-10-18 | Ch. 8 | Lucía | Wrote a paragraph on the Enron scandal and the Sarbanes-Oxley Act for an accounting class; checked three AI-suggested references |
+| 2026-10-18 | Ch. 8 | Lucía | Keeps ten known-answer accounting study questions from her textbook's answer key; used them to test a tool's calibration |
+| 2026-10-18 | Ch. 8 | Lucía | Her A5 rows (claims 3–5 of the CPA overview) and her calibration gap (36 points) appear in 8.6 |

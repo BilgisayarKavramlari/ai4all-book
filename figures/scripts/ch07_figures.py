@@ -69,7 +69,7 @@ def storyboard(f):
           sub="same for every class", sub_size=13)
     arms = [("Control", "books and notes, no devices", "neutral", "human", False),
             ("GPT Base", "chat built like ChatGPT, asked to act as a tutor", "ai", "ai", False),
-            ("GPT Tutor", "hints, not answers; teachers' solutions in its instructions", "ai", "ai", True)]
+            ("GPT Tutor", "hints, not answers; teachers' solutions in its instructions", "ai", "ai", False)]
     for i, (lab, sub, role, kind, thick) in enumerate(arms):
         y = 44 + i * 92
         f.box(290, y, 240, 80, lab, role=role, kind=kind, thick=thick, size=15, sub=sub, sub_size=13)
@@ -103,7 +103,7 @@ def retrieval_moves(f):
         f.arrow(580, y + h / 2, 598, y + h / 2)
     f.text(400, 386, "Retrieval practice is the core habit; generation and spacing support it.", size=13,
            color=MUTED[f.mode])
-    f.text(400, 408, "A difficulty helps only if you can meet it with effort (Bjork & Bjork, 2011).", size=13,
+    f.text(400, 408, "A difficulty helps if you can meet it with effort, or if the answer follows (Bjork & Bjork, 2011; Kornell et al., 2009).", size=13,
            color=MUTED[f.mode])
 
 
@@ -178,7 +178,7 @@ def scaffold_crutch(highlight=None, note=None):
         f.box(xs[3], y, W, 84, "You compare, redo and explain it back", role="highlight", kind="human", size=13)
         f.arrow(xs[3] + W + 2, y + 42, xs[4] - 2, y + 42)
         f.box(xs[4], y, W, 84, "You recalled and produced: skill built", role="verified", kind="step", size=13)
-        f.text(400, 360, "Test for every turn: who recalled and produced the answer, you or the tool?", size=14,
+        f.text(400, 360, "Test for every turn: who produced the answer: you, from your own memory, or the tool?", size=14,
                weight="700")
         f.text(400, 384, "Hexagon = the AI reply (identical in both lanes) · rounded = you · thick border = risk",
                size=13, color=MUTED[f.mode])
@@ -235,7 +235,7 @@ def a4_sheet(f):
                 cell = "— " if c == 1 else "+ / − ___"
             f.text((cols[c] + cols[c + 1]) / 2, y, cell, size=13, color=MUTED[f.mode])
     cols2 = [20, 110, 220, 620, 780]
-    heads2 = ["Turn #", "Code S / C", "Reason: which rule? who recalled and produced it?", "Error found?"]
+    heads2 = ["Turn #", "Code S / C", "Reason: which rule? who produced it?", "Error found?"]
     top2 = 282
     for i, h in enumerate(heads2):
         f.text((cols2[i] + cols2[i + 1]) / 2, top2 + 16, h, size=13, weight="700")
@@ -255,7 +255,7 @@ def summary_card(f):
     cards = ["Performance with help is not learning: check without the tool",
              "Retrieve, generate, space: the effort is the point",
              "Predict, then check: find your calibration gap",
-             "Ask of every turn: who recalled and produced it, you or the tool?",
+             "Ask of every turn: who produced it, you from memory or the tool?",
              "Tutor mode: role, attempt-first constraints, one question per turn",
              "A4: a session record, scored against your source"]
     for i, c in enumerate(cards):

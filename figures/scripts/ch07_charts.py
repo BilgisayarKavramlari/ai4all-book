@@ -73,7 +73,7 @@ def f7_02(mode):
             r = get[(arm, p)]
             rel = int(r["relative_pct"])
             sig = "" if r["significance"] != "ns" else ", not significant"
-            lab = f"{v:+.1f} pts\n({rel:+d}%{sig})"
+            lab = (f"{v:+.1f} pts\n({rel:+d}%{sig})").replace("-", "\u2212")
             y = v + se + 1.2 if v >= 0 else v - se - 1.2
             ax.text(xi, y, lab, ha="center", va="bottom" if v >= 0 else "top", fontsize=10.5, color=s["ink"])
     ax.axhline(0, color=s["ink"], linewidth=1.2)
@@ -106,7 +106,7 @@ def f7_09(mode):
     ax.set_xlim(0, 100)
     ax.set_xlabel("Share that repeated the question or asked for the answer (%)")
     ax.legend(loc="lower right", frameon=False, fontsize=11)
-    ax.set_title(wrapped("Students with the unrestricted tool asked for answers more often than tutor users", 95),
+    ax.set_title(wrapped("Students with the unrestricted tool more often opened by asking for the answer or repeating the question", 70),
                  loc="left", fontweight="bold", fontsize=12.5, pad=12)
     fig.text(0.01, -0.12, wrapped("Published values: Bastani et al. (2025), section \"Student Engagement.\" GPT Tutor also offered "
              "suggested prompts, which the authors note may explain part of the first-message gap.", 110), fontsize=10,

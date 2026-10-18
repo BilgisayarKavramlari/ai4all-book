@@ -9,17 +9,17 @@ Not marked done: final review and the author's final voice edit are pending. -->
 
 **Chapter 8 at a glance.** In Tuesday's class you met Chapter 4, which named the ways artificial intelligence (AI) tools fail and explained why. This chapter is about what you do next: how to check an output before you rely on it. You will split an answer into claims, take each claim through a short series of checks called the Verification Funnel, check citations properly, read the signals that suggest where an error is hiding, and measure how far a tool's confidence can be trusted. Thursday's lab in class and assignment A5 put all of it to work on an output from your own field. (If you are reading outside the course, "Tuesday" and "Thursday" are its two class meetings in week 5.)
 
-**Before you read (5 minutes).** Ask an AI tool a question from your major that calls for a short explanation, about 250 words, with at least one number or date and two sources, for example "Explain [a concept from your course] in about 250 words, with one statistic and two sources." Save the whole conversation (the transcript) with the tool's name and the date. You will use it in the Your Turn boxes, which become the first rows of A5. Use a university-provided tool if you can, and never put personal or confidential information into the prompt. **No AI tool, or prefer not to use one?** Use the dated sample output on eLearning instead.
+**Before you read (5 minutes).** Ask an AI tool a question from your major that calls for a short explanation, about 250 words, with at least one number or date and two sources, for example "Explain [a concept from your course] in about 250 words, with one statistic and two sources." Save the whole conversation (the transcript) with the tool's name and the date. You will use it in the Your Turn boxes, which become the first rows of A5. Use a university-provided tool such as Microsoft Copilot Chat (as of October 2026) if you can, and never put personal or confidential information into the prompt. **No AI tool, or prefer not to use one?** Use the dated sample output on eLearning instead.
 
-**Time:** about 24 minutes for the Core sections and about 38 minutes for the whole Core package (Opening Case, sections 8.1–8.6, the main Case Study, the Summary and the Check Yourself boxes), longer if English is not your first language. The Your Turn boxes take about 18 minutes and are the first part of A5; the rest of A5 is estimated item by item in the assignment (about 37 minutes at home). With Chapter 4, week 5 comes to about 2.3 hours outside class, a documented one-week exception to the course's usual 1–2 hours. Core sections are examinable; Studio sections are hands-on work; Deep sections are optional.
+**Time:** about 24 minutes for the Core sections and about 38 minutes for the whole Core package (Opening Case, sections 8.1–8.6, the main Case Study, the Summary and the Check Yourself boxes), longer if English is not your first language. The Your Turn boxes take about 18 minutes and are the first part of A5; the rest of A5 is estimated item by item in the assignment (about 37 minutes at home). With Chapter 4, week 5 comes to about 2.4 hours outside class, a documented one-week exception to the course's usual 1–2 hours. Core sections are examinable; Studio sections are hands-on work; Deep sections are optional.
 
 **The question of this chapter:** *How do you know when an AI output is true enough to use?* The Chapter Summary answers it.
 
 ## Opening Case: Six Cases That Did Not Exist {.unnumbered}
 
-In 2023, two New York lawyers filed a court document that cited court decisions in support of their client. Six of those decisions did not exist. ChatGPT had produced them. Here is how it happened, as the court's own record tells it.
+In 2023, two New York lawyers filed a court document that cited court decisions in support of their client. Six of those decisions did not exist. ChatGPT had produced them. Here is what the court's record shows.
 
-A word on the record first. A federal court keeps a **docket**, a numbered list of every document filed in a case. "ECF 54" means document 54 in that electronic file, and "¶ 12" means numbered paragraph 12 of that document. Citing them this way lets you check every fact below yourself.
+A word on the record first. A federal court keeps a **docket**, a numbered list of every document filed in a case. "ECF 54" means document 54 in that file (ECF: Electronic Case Files, the court's online record), and "¶ 12" means numbered paragraph 12 of that document.
 
 In August 2019, Roberto Mata was flying on Avianca Flight 670 from El Salvador to New York. He says that a metal serving cart struck his left knee, and in February 2022 he sued the airline (*Mata v. Avianca*, ECF 55, 2023, pp. 1–2). In January 2023 the airline asked the federal court in New York to dismiss the case: under the Montreal Convention, the treaty that governs claims against international airlines, Mata had waited too long to sue (ECF 54, 2023, ¶¶ 1, 3).
 
@@ -34,8 +34,6 @@ At a hearing, the lawyer who wrote the filing said he had not imagined the tool 
 On June 22, 2023, Judge P. Kevin Castel found that the two lawyers had acted in **bad faith**, that is, dishonestly and not just carelessly. They had kept standing by the fake decisions after the court's orders questioned them, and began to tell the truth only on May 25 (ECF 54, pp. 1–2). The court imposed **sanctions**, penalties for misconduct in a case: $5,000, to be paid by the two lawyers and their firm together, and letters to their client and to each real judge whose name had been attached to a fake opinion (pp. 33–34). The same day, in a separate opinion, the court dismissed Mata's claim as filed too late (ECF 55). The fake cases were not the reason; the deadline was.
 
 The judge did not blame the technology itself. He wrote that there is "nothing inherently improper about using a reliable artificial intelligence tool for assistance" (ECF 54, p. 1). What the rules require is that lawyers act as gatekeepers, the people who make sure what they file is accurate.
-
-Mata was not the last case of its kind. As of October 2026, a public database kept by the researcher Damien Charlotin listed more than 2,100 decisions by courts and tribunals around the world on filings that relied, or were alleged to rely, on AI-generated content that was false, such as invented or misquoted authorities (Charlotin, 2026).
 
 So here is the puzzle. **When the lawyer asked the tool whether the cases were real, it said yes. What check would have caught them, and when?** Section 8.3 answers the first half; the Case Study answers the second.
 
@@ -66,7 +64,7 @@ Answer from what you know today. You will come back to these in the Chapter Summ
 
 Whatever your field, an AI answer arrives as one smooth piece of text. Chapter 4 explained why errors hide inside it: a language model produces likely text, nothing in that step checks truth, and true patterns can be recombined into false statements. So an answer is a bundle of statements, some right and some not.
 
-**You verify claims, not answers.** A **claim** is one statement in an output that you might rely on. Some claims are *checkable*: they can be true or false, such as a date, a number or "this study found X." Others are *not checkable as true or false*, such as a recommendation ("start with the hardest section") or a prediction. You still list them, because you may rely on them too.
+**You verify claims, not answers.** A **claim** is one statement in an output that you might rely on. Some claims are *checkable* (true or false), such as a date, a number or "this study found X." Others are *not checkable as true or false*, such as a recommendation ("start with the hardest section") or a prediction. You still list them, because you may rely on them too.
 
 A common belief is that if most of an answer checks out, the rest is probably right too. In a 2023 study, researchers split biographies of people written by ChatGPT into single facts and checked each one against Wikipedia. Only 58% were supported there (Min et al., 2023). "Not supported" is not the same as false, but it needs checking. Facts later in an answer, and facts about less famous people, were supported less often. In this book's reading, a correct first sentence tells you little about the fourth sentence.
 
@@ -81,7 +79,7 @@ In other words, you will not check everything equally: the ranking tells you whe
 ::: {.callout-note title="Worked Example: Lucía's Exam Overview"}
 *Featuring Lucía (accounting), who is saving to sit for the CPA (Certified Public Accountant) exam.* *(Constructed example.)*
 
-Let's take Lucía's study plan. She asks a chat tool for a short overview of the exam, and the output is one confident paragraph (@fig-8-3). She splits it into six claims: (1) four sections, AUD, BEC, FAR and REG; (2) four hours each; (3) 75 to pass; (4) all four within 18 months; (5) the source, "the official exam blueprint"; (6) start with the hardest section.
+Let's take Lucía's study plan. She asks a chat tool for a short overview of the exam, and the output is one confident paragraph (@fig-8-3). She splits it into six claims: (1) four sections, AUD, BEC, FAR and REG (Auditing and Attestation; Business Environment and Concepts; Financial Accounting and Reporting; Taxation and Regulation); (2) four hours each; (3) 75 to pass; (4) all four within 18 months; (5) the source, "the official exam blueprint"; (6) start with the hardest section.
 
 ![One fluent paragraph held six separate claims to check.](../figures/out/color/f8-03-claim-split.svg){#fig-8-3 fig-alt="A constructed AI paragraph about the CPA exam split into six rows: four sections, four hours, score of 75, 18 months, a source, and a judgment."}
 
@@ -135,13 +133,13 @@ Each check ends in a **verdict**, a judgment on the book's five-point scale, and
 How far a particular source deserves trust is Chapter 9's question.
 
 ::: {.callout-note title="Worked Example: Is BEC Still on the Exam?"}
-*Featuring Lucía.* Claim 1: the exam has four sections, AUD (Auditing and Attestation), BEC (Business Environment and Concepts), FAR (Financial Accounting and Reporting) and REG (Taxation and Regulation). Stakes: high.
+*Featuring Lucía.* Claim 1: the exam has four sections, AUD, BEC, FAR and REG. Stakes: high.
 
 **Stage 1.** A review-course page with a named publisher says the exam changed in January 2024, which conflicts with the claim.
 
 **Stage 2.** The National Association of State Boards of Accountancy (NASBA), which runs the exam together with the American Institute of Certified Public Accountants (AICPA), states that the last day to take BEC was December 15, 2023 (NASBA, n.d.). The exam now has three core sections, AUD, FAR and REG, and one discipline section chosen from three (AICPA & CIMA, 2021; Texas State Board of Public Accountancy [TSBPA], n.d.).
 
-**Verdict:** contradicted. **Label:** outdated information, a leaf of hallucination (Chapter 4), documented. **Remaining uncertainty:** checked October 2026; rules change, so she will recheck before applying.
+**Verdict:** contradicted. **Label:** outdated information (output that was once correct but no longer is), a leaf of hallucination (fluent output that is not supported by the model's input or by facts; Chapter 4), documented. **Remaining uncertainty:** checked October 2026; rules change, so she will recheck before applying.
 :::
 
 ::: {.callout-note title="Faded Example: A Drug Interaction"}
@@ -216,7 +214,7 @@ Take one citation from your A5 rows and run check 1 now: search for it in one in
 
 ::: {.callout-tip title="Check Yourself 8.3"}
 1. Name the three ways a citation can fail and the check for each.
-2. A reference does not appear in your library catalog or in a scholarly search engine. Which verdict do you give, and what goes in the uncertainty line?
+2. Why are checks 1 and 2 part of stage 1, while check 3 is stage 2?
 3. Why is asking the tool "Is this source real?" not a check?
 :::
 
@@ -236,7 +234,7 @@ A common belief is that if several runs, or several tools, give the same answer,
 ![Answers that change across fresh runs are a warning sign; answers that agree are not proof. Each run picks its words again (Chapter 3).](../figures/out/color/f8-07-three-runs.svg){#fig-8-7 fig-alt="One question, three fresh chats: two runs give the outdated four sections at 95% sure; one differs; agreement is not proof, disagreement is a warning."}
 
 ::: {.callout-note title="Worked Example: What the Signals Would Have Shown"}
-*Featuring Lucía.* *(Constructed example.)* Let's go back to before she checked claim 1. She asks the same question in three temporary chats and asks how sure the tool is.
+*Featuring Lucía.* *(Constructed example.)* Let's go back to before she checked claim 1. She asks the same question in three temporary chats and asks the tool to state its confidence.
 
 Runs 1 and 2 repeat the four-section structure, each "95% sure." Run 3 describes three core sections plus a discipline section.
 
@@ -265,7 +263,7 @@ In a "signals" column of your A5 table, mark any claim whose stated confidence i
 
 [Core]{.path}
 
-A common belief is that a tool that says it is 90% sure will be right about 9 times in 10. That belief can be tested. Chapter 7 gave the word *calibration* two meanings. **Calibration (of your own confidence)** is how closely your confidence in your answers matches how often they are actually correct. **Calibration (of a model)** is how closely a model's stated confidence matches its accuracy. Two meanings, one habit: predict, then check.
+A common belief is that a tool that says it is 90% sure will be right about 9 times in 10. Chapter 7 gave the word *calibration* two meanings. **Calibration (of your own confidence)** is how closely your confidence in your answers matches how often they are actually correct, across many answers. **Calibration (of a model)** is how closely a model's stated confidence matches its accuracy. Two meanings, one habit: predict, then check.
 
 To measure a tool's calibration:
 
@@ -278,14 +276,14 @@ A perfectly calibrated tool would be right about 90% of the time when it says 90
 
 ![This constructed tool's "90–100% sure" answers were right only 9 times in 15.](../figures/out/color/f8-09-calibration-toy.svg){#fig-8-9 fig-alt="Bars below a dashed diagonal: 50–69% group 2 of 5 correct, 70–89% 5 of 10, 90–100% 9 of 15; arrows show the gaps."}
 
-Published tests found the same pattern. When researchers asked five models in 2023 to state their confidence, most values fell between 80% and 100% (Xiong et al., 2024). In a 2024 benchmark (a fixed set of test questions) made of short factual questions chosen to be hard for GPT-4, the four OpenAI models tested consistently stated more confidence than their accuracy justified, though answers stated with higher confidence were more often right (Wei et al., 2024). Chapter 4 noted a reason: the extra training that turns a model into a chat assistant made GPT-4's confidence a worse match for its accuracy (OpenAI, 2023). So stated confidence is a weak signal, but one you can measure.
+Published tests found the same pattern. When researchers asked five models in 2023 to state their confidence, most values fell between 80% and 100% (Xiong et al., 2024). In a 2024 benchmark (a fixed set of test questions) made of short factual questions chosen to be hard for GPT-4, the four OpenAI models tested consistently stated more confidence than their accuracy justified, though answers stated with higher confidence were more often right (Wei et al., 2024). Chapter 4 noted a related result: chat training made the probabilities GPT-4 assigned to its own answer choices (numbers inside the model, not words in its output) a worse match for its accuracy (OpenAI, 2023). So stated confidence is a weak signal, but one you can measure.
 
 Two cautions. Ten or twenty questions give a rough picture, not a measurement of the tool. And good calibration is not the same as usefulness: a tool that says "60%" to everything and is right 60% of the time is perfectly calibrated but tells you nothing about which answers to trust.
 
-The **calibration gap** is the difference between stated confidence and the share correct, the same idea you met in A4, Chapter 7's tutor-mode assignment. In A5 you compute it one way, for yourself and for the tool: take the claims rated 80% or higher, leave out rows marked not checkable or cannot verify, and subtract the share of them that were supported (count "partly supported" as not) from their average confidence.
+The **calibration gap** is the difference between stated confidence and the share correct, the same idea you met in A4, Chapter 7's tutor-mode assignment. In A5 you compute it one way, for yourself and for the tool: take the claims rated 80% or higher, leave out rows marked not checkable, not checked or cannot verify, and subtract the share of them that were supported (count "partly supported" as not) from their average confidence. A4 compared the sum of your confidences with your score; A5 works in percentage points and uses only the claims rated 80% or higher.
 
 ::: {.callout-note title="Worked Example: Reading the Chart"}
-*(Constructed data for teaching.)* @fig-8-9 shows a 30-question record. In the 90–100% group, the tool's average stated confidence was 94%, but it was right on 9 of 15 answers, 60%: a gap of about 34 points. In the 70–89% group, an average of 80% met 50% correct. Confidence rose with accuracy, as in the published tests, but every group sits below the diagonal. **Conclusion:** this tool's high confidence still needs checking.
+*(Constructed data for teaching.)* @fig-8-9 shows a 30-question record. In the 90–100% group, the tool's average stated confidence was 94%, but it was right on 9 of 15 answers, 60%: a gap of about 34 points. Confidence rose with accuracy, as in the published tests, but every group sits below the diagonal. **Conclusion:** this tool's high confidence still needs checking.
 :::
 
 ::: {.callout-note title="Faded Example: Lucía's Study Questions"}
@@ -315,7 +313,7 @@ Revisit Warm-up question 3. Then mark the A5 claims that you, and the tool, rate
 
 *Read before Thursday's lab in class. Lab 8.1 uses it, and you finish A5 at home.*
 
-A **claim verification table** has one row per claim and records how far each claim got, not only the verdict. You have already written ten rows with both confidences (section 8.1). In Thursday's lab you check three of your own claims, starting with your highest-stakes row and your citations, after a team check of the sources from Tuesday's demonstration. Those three count toward A5's primary-source minimum.
+A **claim verification table** has one row per claim and records how far each claim got, not only the verdict. You have already written ten rows with both confidences (section 8.1). In Thursday's lab you check three of your own claims, starting with your highest-stakes row and your citations, after a team check of the sources from Tuesday's demonstration. Those three count toward A5's primary-source minimum if they reach the primary source.
 
 ![A verification table records how far each claim got, not only a verdict.](../figures/out/color/f8-13-a5-template.svg){#fig-8-13 fig-alt="One A5 row: claim, stakes, confidence before checking, stage reached, source, verdict, remaining uncertainty, corrected statement."}
 
@@ -326,11 +324,11 @@ A strong table splits claims one fact per row, matches the stage to the stakes, 
 
 **Claim 5, citation, medium stakes.** "Source: the official exam blueprint." Lucía 80%, the tool 95%. Stage 2: the blueprints exist (AICPA & CIMA, 2026), but they describe three core sections and a discipline section, not BEC. Verdict for claim 5: contradicted (failure 3: the source says the opposite).
 
-**Her gap.** Four of her ten claims were at 80% or higher, average 86%; two were supported, 50%. Gap: 86 − 50 = 36 points.
+**Her gap.** Of her ten A5 claims (the six above plus four from the rest of the output), four were at 80% or higher, average 86%; two were supported, 50%. Gap: 86 − 50 = 36 points.
 :::
 
 ::: {.callout-note title="Faded Example: A Half-Filled Row"}
-**Claim 3, number, high stakes.** "You need a score of 75 to pass each section." Before checking: Lucía 90%, the tool 95%. **Stage reached and source:** stage 2, the exam's official FAQ. **Verdict and uncertainty:** _______ **The tool's gap, if six of its ten claims were at 80% or higher, average 93%, and three were supported:** _______
+**Claim 3, number, high stakes.** "You need a score of 75 to pass each section." Before checking: Lucía 90%, the tool 95%. **Stage reached and source:** stage 2, the exam's official frequently asked questions page. **Verdict and uncertainty:** _______ **The tool's gap, if six of its ten claims were at 80% or higher, average 93%, and three were supported:** _______
 :::
 
 ::: {.callout-important title="Your Turn"}
@@ -382,7 +380,7 @@ These labs are tool-neutral: they describe what to do, not which buttons to pres
 
 1. **Briefing (10 minutes).** Read pages 1–2 of the sanctions opinion in *Mata v. Avianca* and the handout of paragraphs 12, 26 and 45, with their legal terms explained.
 2. **Team check (10 minutes).** In teams of three or four, take the dated printout of Tuesday's demonstration. Each member takes one or two claims through the funnel, citations first, writing a confidence before each check.
-3. **Your own claims (30 minutes).** Individually, take three of your A5 claims through the funnel: your highest-stakes row first, then your citations.
+3. **Your own claims (30 minutes).** Individually, take three of your A5 claims through the funnel: your highest-stakes row first, then your citations. They count toward A5's primary-source minimum if they reach the primary source.
 4. **Share (15 minutes).** Each team reports one claim whose verdict changed at the primary source. The class pools the team check's confidences and verdicts into one calibration gap on the board.
 5. **Exit (5 minutes).** Write down one claim you could not verify and the stage that would settle it.
 
@@ -422,9 +420,9 @@ Five minutes are left as a buffer. **If this doesn't work:** the dated sample ou
 
 **Failure label.** Chapter 4's rules: the Failure Taxonomy Tree labels what went wrong in the output, the failure-to-harm chain labels what people and workflows did, and each label is **documented** (the evidence shows it) or **inferred** (it does not).
 
-![The Mata citations on the tree: invented sources, stated as real.](../figures/out/color/f8-11-tree-mata.svg){#fig-8-11 fig-alt="The tree with hallucination and overconfidence highlighted with solid borders; tag Mata v. Avianca (S.D.N.Y. 2023), both documented."}
+![The Mata citations on the tree: invented sources, stated as real.](../figures/out/color/f8-11-tree-mata.svg){#fig-8-11 fig-alt="The tree with hallucination and overconfidence highlighted with solid borders; tag Mata v. Avianca (federal court, New York, 2023), both documented."}
 
-- **Tree:** hallucination, leaf *invented facts or sources*, **documented**: the record shows the decisions do not exist and were generated by ChatGPT (¶ 36). Secondary branch: overconfidence, leaf *certainty beyond the evidence*, **documented**. Before anyone checked, a firm answer was no evidence either way (section 8.4). Once the record showed the cases false, the replies' flat assertion, when asked directly, that the cases were real and findable is stated certainty with no evidence behind it, one of Chapter 4's signs of overconfidence (¶¶ 45, 47). The Moffatt chatbot in Chapter 4 gave plain instructions with no such statement, which is why it carried no overconfidence label.
+- **Tree:** hallucination, leaf *invented facts or sources*, **documented**: the record shows the decisions do not exist and were generated by ChatGPT (¶ 36). Secondary branch: overconfidence, leaf *certainty beyond the evidence*, **documented**. Before anyone checked, a firm answer was no evidence either way (section 8.4). The evidence about expressed certainty is in the replies: asked directly, they affirmed that the authorities were real and findable in named databases, and, by the lawyer's account, insisted again that "Varghese" existed (¶¶ 45, 47; the second is reported, from his declaration). That is certainty beyond the evidence, one of Chapter 4's signs; a plain wrong answer would be hallucination only. The Moffatt chatbot in Chapter 4 gave plain instructions with no such statement, which is why it carried no overconfidence label.
 - **Chain:** link 2, "checked before use?", failed, **documented** (¶¶ 6, 12).
 
 ![The fake cases reached the court because no one checked them outside the tool.](../figures/out/color/f8-12-chain-mata.svg){#fig-8-12 fig-alt="Chain: six nonexistent decisions; not checked outside the tool; filed and defended; $5,000 penalty and letters. The check link is marked as failed."}
@@ -435,17 +433,19 @@ Five minutes are left as a buffer. **If this doesn't work:** the dated sample ou
 
 - **Stage 1** would have flagged "Varghese": the lawyer's own search found nothing (¶ 12). One more index would have made the verdict unsupported, and a citation in a court filing cannot rest on an unsupported verdict.
 - **Stage 2** would have made it contradicted: the court's records hold no such case, and its Federal Reporter citation and docket number belong to other cases (¶¶ 26, 28).
-- **A warning signal the signer missed:** the April 25 affidavit attached only excerpts produced by the tool, and a quick reading would have shown that "Varghese" contradicted itself (Conclusions of Law ¶ 23(b), pp. 29–30). That should have sent him to stage 1.
+- **A warning signal the signer missed:** the April 25 affidavit (a sworn written statement) attached only excerpts produced by the tool, and a quick reading would have shown that "Varghese" contradicted itself (Conclusions of Law ¶ 23(b), pp. 29–30). That should have sent him to stage 1.
 
 **A better workflow.** *Frame:* a chatbot can help brainstorm arguments; it is not a source of law. *Verify:* every citation opened in a legal research database before filing. *Decide:* the lawyer who signs reads the cited authorities. *Disclose:* follow the court's rules on AI use where they exist (Chapters 10 and 18).
 
 **Short case 1 (recommended): An expert's declaration (2025).** In a Minnesota case over a state law on election deepfakes, the state filed a sworn statement by a university expert on AI and misinformation. It cited two academic articles that do not exist and gave the wrong authors for a third. The court's order records that the errors apparently came from the expert's use of GPT-4o in drafting and that he did not verify the citations (*Kohls v. Ellison*, 2025, p. 3). On January 10, 2025, Judge Laura M. Provinzino excluded the statement, noting the irony of the subject. She did not fault the expert for using AI; she faulted the unchecked citations (pp. 8–9). She also denied the state's request to file a corrected version as **moot**, meaning there was no longer anything for it to decide (pp. 11–12). **Tree label:** hallucination, invented facts or sources (documented, p. 3). Case Study Question 4 asks you to add the chain link. Lesson for the funnel: an expert's statement is evidence to check, not the end of checking.
 
-**Short case 2 (recommended): A summer reading list (2025).** On May 18, 2025, the *Chicago Sun-Times* carried a licensed summer insert produced by King Features. Its reading list paired real authors with books that do not exist: of the 15 titles, 10 were false, according to the newspaper's owner (Bell, 2025). The newspaper said that King Features had worked with a freelance writer who used AI to build the section, and that it ran without review by the newspaper's own editors (Chicago Sun-Times, 2025). The *Philadelphia Inquirer* had run a 56-page summer supplement from the same company, and the company said it was ending its relationship with the writer (Mihalopoulos, 2025; reported). **Labels:** hallucination, invented facts or sources (documented); chain link 2 failed (documented by the newspaper's statement). *This book's inference:* a stage-1 check, one catalog search per title, would have flagged the invented titles.
+**Short case 2 (recommended): A summer reading list (2025).** On May 18, 2025, the *Chicago Sun-Times* carried a licensed summer insert produced by King Features. Its reading list paired real authors with books that do not exist: of the 15 titles, 10 were false, according to Melissa Bell, chief executive of Chicago Public Media, which owns the newspaper (Bell, 2025). The newspaper said that King Features had worked with a freelance writer who used AI to build the section, and that it ran without review by the newspaper's own editors (Chicago Sun-Times, 2025). The *Philadelphia Inquirer* had run a 56-page summer supplement from the same company, and the company said it was ending its relationship with the writer (Mihalopoulos, 2025; reported). **Labels:** hallucination, invented facts or sources (documented); chain link 2 failed (documented by the newspaper's statement). *This book's inference:* a stage-1 check, one catalog search per title, would have flagged the invented titles.
 
 ## Ethics Lens: Who Pays for an Unchecked Claim? {.unnumbered}
 
 Every field that publishes claims, from law to news to medicine, depends on someone checking them. The *Mata* court listed the costs when no one did (ECF 54, pp. 1–2). The other side spends time and money exposing fake citations. The court's time is taken from other cases. The client may lose arguments that real precedents could have supported. Real judges are named as authors of opinions they never wrote. And every such case gives people one more reason to doubt courts and lawyers.
+
+Mata was not the last case of its kind. As of October 2026, a public database kept by the researcher Damien Charlotin listed more than 2,100 decisions by courts and tribunals around the world on filings that relied, or were alleged to rely, on AI-generated content that was false, such as invented or misquoted authorities (Charlotin, 2026).
 
 Notice who pays. Producing the fake cases took the lawyer a few prompts (¶ 39). Exposing them took months of letters, court orders and a hearing, plus a search by a federal appeals court's clerk (¶¶ 7–26). The same pattern holds outside law: the reader of a reading list, the customer reading a chatbot answer and the patient reading a health summary pay for checks that the writer skipped.
 
@@ -462,7 +462,7 @@ Verification is already a job skill, and in some jobs it is a large part of the 
 - **Paralegals and legal researchers** often check the authorities in a filing before it goes to court.
 - **Journalists and fact-checkers** take claims back to primary sources and keep a record of how each one was checked.
 - **Reference librarians** help people find and confirm sources; for students, they are often the expert at stage 3.
-- **Auditors and staff accountants**, Lucía's future field, trace amounts back to source documents. U.S. audit standards, set by the Public Company Accounting Oversight Board (PCAOB), treat evidence from a knowledgeable source independent of the company as more reliable than evidence from inside it (PCAOB, 2024, AS 1105.08). Chapter 9 returns to judging sources.
+- **Auditors and staff accountants**, Lucía's future field, trace amounts back to source documents. U.S. audit standards, set by the Public Company Accounting Oversight Board (PCAOB), treat evidence from a knowledgeable source independent of the company as more reliable than evidence from inside it (Public Company Accounting Oversight Board [PCAOB], 2024, AS 1105.08). Chapter 9 returns to judging sources.
 - **Pharmacists and nurses** check drug information against official labeling before it reaches a patient.
 - **Data analysts** check a figure in a report against the dataset it came from, and recompute it.
 - **In your own field:** the person who can say "this claim is supported by the primary source, and here is what I could not check" is the one people trust with AI tools.
@@ -514,33 +514,33 @@ calibration (of a model) · calibration gap · claim · consistency check · exp
 2. *(O1 · LO3 · Understand)* In a 2023 study, 58% of the separate facts in ChatGPT's biographies of people were supported by Wikipedia. What does this suggest?\
    (a) Most AI answers are mostly wrong.\
    (b) If the first few facts check out, the later ones probably will too.\
-   (c) Support varied fact by fact, so a correct opening says little about later facts.\
-   (d) Facts about famous people were the least reliable.
-3. *(O2 · LO3 · Remember)* Name the three stages of the Verification Funnel in order.
+   (c) Support varied fact by fact; a correct opening says little.\
+   (d) Facts about famous people were supported less often than facts about little-known people.
+3. *(O2 · LO3 · Remember)* Put these in funnel order and say which one is a person: the primary source, an expert, an independent check.
 4. *(O2 · LO3 · Understand)* Which of these counts as an independent check?\
    (a) You redo the calculation yourself from the inputs given.\
    (b) A second AI tool gives the same answer.\
    (c) A web page with no author repeats the claim word for word.\
    (d) The first tool says it is 95% sure.
 5. *(O2 · LO3 · Understand)* A student says, "Verifying means taking every claim to an expert." What is the most accurate response?\
-   (a) That is right; anything less is not verification.\
+   (a) That is right; anything short of an expert's judgment is not really verification.\
    (b) Claims that sound right can skip checking.\
-   (c) Only citations need checking; numbers can usually be trusted.\
-   (d) Checks are proportional to stakes; every claim you rely on gets at least the independent check.
+   (c) Only citations need checking; numbers and dates can usually be trusted as given.\
+   (d) Checks follow the stakes; every claim you rely on gets at least stage 1.
 6. *(O2 · LO3 · Understand)* Match each situation to a verdict: (i) the official page lists a different figure; (ii) the source is a private memo you cannot see; (iii) the figure is right but the year is wrong; (iv) you search two indexes for a statistic's source and find nothing.
 7. *(O3 · LO3 · Understand)* An output cites a journal article with a real author and a real journal, but the title and pages match nothing in the journal's archive. Which statement is most accurate?\
    (a) The real author's name shows the citation is reliable.\
-   (b) Ask the tool whether the article is real; if it says yes, cite it.\
-   (c) It may point to another work or not exist; match every detail to the record before giving a verdict.\
+   (b) Ask the tool whether the article is real; if it says yes and names the journal, cite it.\
+   (c) It may not exist or may be another work; match each detail to the record.\
    (d) The output named a source, so the claim is verified.
 8. *(O3 · LO3 · Apply)* You search two indexes that no AI tool produced and cannot find a cited book. No record says it does not exist. Which verdict do you give, and what goes in the uncertainty line?
 9. *(O3 · LO3 · Understand)* Why is asking a tool "Is this source real?" not a check?\
    (a) Because a tool that can search the web gives a yes that counts as an independent check, so the question is unnecessary.\
-   (b) Because tools are designed to refuse such questions.\
+   (b) Because the yes counts only when the tool also supplies a link to the source.\
    (c) Because a yes from a newer model is reliable, while one from an older model is not.\
    (d) Because the answer comes from the same kind of process that produced the source, not from evidence outside it.
 10. *(O4 · LO3 · Understand)* Three fresh runs give the same answer. What does this show?\
-    (a) It lowers the priority of a check but does not settle the claim; the same patterns can repeat the same error.\
+    (a) It lowers the priority of a check but does not settle the claim.\
     (b) The answer is settled, especially if a second tool agrees as well.\
     (c) The tool has the answer stored, so it is correct.\
     (d) Agreement is worthless as a signal.
@@ -550,8 +550,8 @@ calibration (of a model) · calibration gap · claim · consistency check · exp
     (a) About 18 will be right, because the tool's stated confidence matches its accuracy.\
     (b) Probably fewer than 18; check the high-stakes answers.\
     (c) The stated confidence has no relation to which answers are right.\
-    (d) None will be right, because stated confidence is always invented.
-14. *(O4 · LO1 · Remember)* Define *calibration (of a model)* and *calibration (of your own confidence)*.
+    (d) Fewer than half, because stated confidence runs opposite to accuracy.
+14. *(O4 · LO1 · Understand)* You predicted 90% on ten quiz answers and got six right. A tool stated 90% on ten other answers and six were right. Which kind of calibration does each case describe, and is either well calibrated?
 
 ### Review Questions B: Case Questions {.unnumbered}
 
@@ -681,15 +681,15 @@ Mihalopoulos, D. (2025, May 20). Syndicated content in Sun-Times special section
 
 Min, S., Krishna, K., Lyu, X., Lewis, M., Yih, W., Koh, P. W., Iyyer, M., Zettlemoyer, L., & Hajishirzi, H. (2023). FActScore: Fine-grained atomic evaluation of factual precision in long form text generation. In *Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing* (pp. 12076–12100). https://aclanthology.org/2023.emnlp-main.741/
 
-NASBA. (n.d.). *Exam transition FAQs*. National Association of State Boards of Accountancy. Retrieved October 18, 2026, from https://nasba.org/examtransitionfaqs
+National Association of State Boards of Accountancy. (n.d.). *Exam transition FAQs*. Retrieved October 18, 2026, from https://nasba.org/examtransitionfaqs
 
-NASBA. (2023). *UAA Model Rule 5-7: The 18 to 30 shift*. National Association of State Boards of Accountancy. https://nasba.org/?p=69994
+National Association of State Boards of Accountancy. (2023). *UAA Model Rule 5-7: The 18 to 30 shift*. https://nasba.org/?p=69994
 
 OpenAI. (2023). *GPT-4 technical report* (arXiv:2303.08774). arXiv. https://doi.org/10.48550/arXiv.2303.08774
 
 OpenAI. (2025, April 16). *OpenAI o3 and o4-mini system card*. https://cdn.openai.com/pdf/2221c875-02dc-4789-800b-e7758f3722c1/o3-and-o4-mini-system-card.pdf
 
-PCAOB. (2024). *Amendments related to aspects of designing and performing audit procedures that involve technology-assisted analysis of information in electronic form* (PCAOB Release No. 2024-007), Appendix 1 (AS 1105.08). Public Company Accounting Oversight Board. https://assets.pcaobus.org/pcaob-dev/docs/default-source/rulemaking/docket-052/2024-007-adoptingrelease.pdf
+Public Company Accounting Oversight Board. (2024). *Amendments related to aspects of designing and performing audit procedures that involve technology-assisted analysis of information in electronic form* (PCAOB Release No. 2024-007), Appendix 1 (AS 1105.08). https://assets.pcaobus.org/pcaob-dev/docs/default-source/rulemaking/docket-052/2024-007-adoptingrelease.pdf
 
 Şeker, Ş. E. (2015). Computerized argument Delphi technique. *IEEE Access, 3*, 368–380. https://doi.org/10.1109/ACCESS.2015.2424703
 

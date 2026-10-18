@@ -30,3 +30,11 @@
 3. Live syllabus: the syllabus names CometAI as a university-provided tool, but UTD OIT pages (October 2026) list it for faculty and staff, and for student employees only at a manager's request. Copilot Chat is approved for students. The chapter states this; the live syllabus should be aligned.
 4. Final voice edit.
 <!-- /ch06 -->
+
+<!-- ch08 -->
+## Chapter 8
+1. **Live syllabus (week 5):** R6 read in the Thursday lab briefing (pages 1–2), the full opinion in Further Reading; R5 recommended only; the A5 brief as in the chapter (ten claims; three at the primary source; reflection 60–100 words); the Tuesday demo wording ("checking them live") to read "asking for sources on a niche topic; students check them on Thursday."
+2. **Live syllabus, A5:** ten claims listed, eight verified (D-8.10); week 5 is about 2.4 h, a documented one-week exception (D21).
+3. **Optional From the Field addition:** a verification story from your own editorial or SME work (for example, checking references as an encyclopedia editor), alongside or instead of the Delphi paper. Never constructed.
+4. **Final voice edit**, as for every chapter.
+<!-- /ch08 -->

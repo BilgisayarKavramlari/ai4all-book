@@ -168,7 +168,7 @@ def chapter_map(f):
             f.text((xs[i] + xs[i + 1]) / 2, y, "→", size=14, color=muted)
     f.text(400, 410, "This chapter strengthens Verify (how to check a claim), then Decide (dashed): keep, change "
            "or reject.", size=13, color=muted, width=780)
-    f.text(400, 436, "Opening case: Mata v. Avianca (S.D.N.Y. 2023), six court decisions that did not exist",
+    f.text(400, 436, "Opening case: Mata v. Avianca (federal court, New York, 2023), six court decisions that did not exist",
            size=13, color=muted)
 
 
@@ -191,7 +191,7 @@ def storyboard(f):
         f.raw(f'<circle cx="{cx}" cy="200" r="5" fill="{ink}"/>')
     f.text(400, 396, "Hexagon = the AI-produced text · hatched in print, dark orange in color = the filing that "
            "repeated the error · rounded = admission · shaded = the order", size=13, color=muted, width=780)
-    f.text(400, 446, "Dates and paragraphs from Mata v. Avianca, Inc., No. 22-cv-1461 (S.D.N.Y.), ECF 54 "
+    f.text(400, 446, "Dates and paragraphs from Mata v. Avianca, Inc. (federal court, New York), court document ECF 54 "
            "(June 22, 2023). The claim itself was dismissed as filed too late (ECF 55).", size=13, color=muted,
            italic=True, width=780)
 
@@ -234,7 +234,7 @@ def three_failures(f):
     muted = MUTED[f.mode]
     f.text(400, 24, "Three ways a citation fails", size=17, weight="700")
     cols = [("1. It does not exist", "Search an index no AI tool produced",
-             "“Varghese v. China Southern Airlines”: the Eleventh Circuit's clerk confirmed no such case (¶ 26)"),
+             "“Varghese v. China Southern Airlines”: the federal appeals court's clerk confirmed no such case (¶ 26)"),
             ("2. It points to another work", "Match every detail to the record",
              "Its docket number and Federal Reporter citation belong to two other cases (¶ 28)"),
             ("3. It does not say it", "Open the source and find the passage",
@@ -294,7 +294,7 @@ def a5_template(f):
         y = 44 + i * 50
         f.box(20, y, 210, 42, h, role=role, kind="human", dashed=dashed, size=14)
         f.text(244, y + 21, sub, size=13, anchor="start", width=540)
-    f.text(400, 458, "Rounded = what you write · green = the verdict · dashed = uncertainty · "
+    f.text(400, 458, "Rounded = what you write · shaded = the verdict · dashed = uncertainty · "
            "the tool's own “yes” never counts as a source", size=13, color=muted, width=780)
 
 
@@ -341,7 +341,7 @@ def summary_card(f):
 
 # ---------------------------------------------------------------- Case figures (Signature 5, chain, Signature 8)
 MATA_TREE = failure_tree({"hallucination", "overconfidence"},
-                         tag="Case: Mata v. Avianca (S.D.N.Y. 2023) · hallucination + overconfidence, both documented",
+                         tag="Case: Mata v. Avianca (federal court, New York, 2023) · hallucination + overconfidence, both documented",
                          note="Invented cases (¶ 36); asked directly if they were real, the replies said they were (¶¶ 45, 47)")
 MATA_CHAIN = failure_chain(
     notes={0: "Six decisions that do not exist (¶ 36)",

@@ -4,7 +4,7 @@
 
 ![Chapter 7 at a glance: it strengthens Frame (output or skill?) and Verify (check your learning, not only the tool's answer).](../figures/out/color/f7-01-chapter-map.svg){#fig-7-1 fig-alt="Chapter map: Evidence (7.1–7.3), Use (7.4, 7.5), Do (7.6, Lab 7.1, A4); Work Loop strip with Frame and Verify highlighted."}
 
-**Chapter 7 at a glance.** Chapter 5 asked which parts of a task to hand to AI, and its third question was, "Is this skill yours to build?" This chapter is about the tasks where the answer is yes: studying, practicing and learning something new, whether your field is nursing, marketing or history. It adds one question to the AI Work Loop's **Frame** step: is the goal here the output, or the skill? It also changes what **Verify** means. When you are learning, the thing to check is not only the tool's answer but your own ability to produce it without the tool.
+**Chapter 7 at a glance.** Chapter 5 asked which parts of a task to hand to artificial intelligence (AI), and its third question was, "Is this skill yours to build?" This chapter is about the tasks where the answer is yes: studying, practicing and learning something new, whether your field is nursing, marketing or history. It adds one question to the AI Work Loop's **Frame** step: is the goal here the output, or the skill? It also changes what **Verify** means. When you are learning, the thing to check is not only the tool's answer but your own ability to produce it without the tool.
 
 **Time:** about 31 minutes for sections 7.1 to 7.6, and about 45 minutes for everything this chapter asks you to read this week (the Opening Case, the Learning Objectives and Warm-up, sections 7.1 to 7.6, the Chapter Summary and the A4 brief), at 150 words per minute. It takes longer if English is not your first language. The Case Study is read together in Tuesday's class. Counted requirement by requirement, the week comes to about 2.2 hours outside class: reading R3 (10 minutes), this chapter (45), the short Your Turn boxes (8), the pre-lab Your Turn in section 7.5 (15) and finishing A4 at home (about 55).
 
@@ -18,7 +18,7 @@ In the fall semester of the 2023–24 school year, a team led by researchers at 
 
 The study used the school's own math review sessions. There were four 90-minute sessions, which together covered about 15% of the semester's math curriculum. Every session had three parts, in the same order:
 
-1. A teacher reviewed a topic the class had already covered, such as combinatorics, and solved examples on the board.
+1. A teacher reviewed a topic the class had already covered, such as combinatorics (counting arrangements), and solved examples on the board.
 2. Students worked on practice problems on their own. Only this part differed between classes.
 3. Students took a closed-book, closed-laptop exam. Each exam problem was paired with a very similar practice problem from part 2.
 
@@ -26,13 +26,13 @@ The study used the school's own math review sessions. There were four 90-minute 
 
 Both the practice and the exam counted toward students' grades, so everyone had a reason to try. The school places students in regular classrooms at random, and the researchers assigned whole classrooms to one of three conditions with a procedure that balanced their observable characteristics, such as earlier grades (Bastani et al., 2025). In other words, the three groups were alike on average before the study began.
 
-In the **control** classes, students practiced with their course books and notes and had no devices. In the **GPT Base** classes, each student had a laptop with a chat interface built to work like ChatGPT. Its hidden instructions told GPT-4 to act as a tutor and help the student solve the current problem. In the **GPT Tutor** classes, students had the same interface and model, but the hidden instructions also contained the teachers' worked solutions, common student mistakes, and an instruction to give hints instead of the answer.
+In the **control** classes, students practiced with their course books and notes and had no devices. In the **GPT Base** classes, each student had a laptop with a chat interface built to work like ChatGPT. Its hidden instructions told GPT-4 to act as a tutor and help the student solve the current problem. In the **GPT Tutor** classes, students had the same interface and model, but the hidden instructions also contained the teachers' worked solutions, common student mistakes and an instruction to give hints instead of the answer.
 
 Here is what happened. During practice, GPT Base students scored 48% higher than the control group, and GPT Tutor students scored 127% higher. On the exam that came right after, without any tool, GPT Base students scored 17% lower than the control group. The difference was statistically significant: by the study's test, unlikely to be due to chance alone. GPT Tutor students' exam scores were not measurably different from the control group's (Bastani et al., 2025).
 
 One more finding makes the case unsettling. When surveyed, the GPT Base students did not report that they had learned less or done worse on the exam (Bastani et al., 2025). They did not notice.
 
-Chapter 1 gave you the headline of this study in two sentences. Here is the puzzle behind it: **how can students who did better with a tool end up worse without it, and not notice?** Sections 7.1 to 7.3 offer an answer, and the Case Study in Tuesday's class asks how far the evidence goes.
+Chapter 1 gave you the headline of this study in two sentences. Here is the puzzle behind it: **how can students who did better with a tool end up worse without it, and not notice?** Sections 7.1 to 7.3 offer an answer in a few sentences each, and the Case Study in Tuesday's class asks how far the evidence goes.
 
 ## Learning Objectives {.unnumbered}
 
@@ -71,7 +71,7 @@ In @fig-7-2, the thin line on each bar shows its standard error: a measure of ho
 
 Recall @fig-1-13 in Chapter 1: the same output can leave the skill built or not built. The study also shows what students actually did. The researchers grouped the students' messages by type. In the GPT Base classes, students most often asked for the answer or simply repeated the question text. In the GPT Tutor classes, students increasingly attempted answers and asked for help (Bastani et al., 2025). The authors' word for the GPT Base pattern was a *crutch*: something you lean on instead of building your own strength. Section 7.4 makes the word precise.
 
-![Students with the unrestricted tool asked for answers more often than tutor users.](../figures/out/color/f7-09-message-types.svg){#fig-7-9 fig-alt="Bars: share of first messages that restated the question or asked for the answer: Base 56% and 67%; Tutor 42% and 37%."}
+![Students with the unrestricted tool more often opened by asking for the answer or repeating the question.](../figures/out/color/f7-09-message-types.svg){#fig-7-9 fig-alt="Share of first messages asking for the answer or repeating the question: Base 56% (very first) and 67% (each problem); Tutor 42% and 37%."}
 
 This pattern has a name. **Overreliance** is relying on an AI tool's output more than the task or the evidence warrants, so that your own checking or skill-building drops out. It is something people do, not something the output does. A correct answer can still be overrelied on: the output is fine, and the skill is still not built. Chapter 4, next week, shows where overreliance fits among the ways AI use goes wrong.
 
@@ -114,7 +114,7 @@ Think of a time when help (a solution manual, a friend, an AI tool) raised your 
 
 Whether you are learning drug classes, accounting rules or the dates of a war, one habit stands out. Return to the Warm-up's second question and write your answer before you look at @fig-7-4.
 
-In 2006, two psychologists at Washington University in St. Louis ran almost exactly this comparison with 180 undergraduates (Roediger & Karpicke, 2006, Experiment 2). Students learned a short prose passage. One group studied it in four 5-minute periods, about 14 read-throughs in all. A second group studied it in three periods and then recalled it once, writing down everything they could remember, without feedback. A third group studied it once (about 3 read-throughs) and then recalled it three times. Then each student took a final recall test, either 5 minutes later or one week later.
+In a study published in 2006, two psychologists at Washington University in St. Louis ran almost exactly this comparison with 180 undergraduates (Roediger & Karpicke, 2006, Experiment 2). Students learned a short prose passage. One group studied it in four 5-minute periods, about 14 read-throughs in all. A second group studied it in three periods and then recalled it once, writing down everything they could remember, without feedback. A third group studied it once (about 3 read-throughs) and then recalled it three times. Then each student took a final recall test, either 5 minutes later or one week later.
 
 ![Rereading won after 5 minutes; testing yourself won after a week.](../figures/out/color/f7-04-retrieval-rk2006.svg){#fig-7-4 fig-alt="Recall after 5 min: 4 study periods 83%, 3 + 1 recall 78%, 1 + 3 recalls 71%. After 1 week: 40%, 56%, 61%. Restudiers predicted the best."}
 
@@ -123,7 +123,7 @@ After 5 minutes, rereading won: 83% of the passage recalled, against 71% for the
 This is **retrieval practice**: recalling information from your own memory, for example by self-testing, which strengthens it more than restudying. A major review of ten common techniques rated practice testing and spreading practice over time as high in usefulness, and rereading and highlighting as low (Dunlosky et al., 2013).
 
 ::: {.callout-warning title="Two Meanings of Retrieval and Generation"}
-In Chapter 3, **retrieval** is something an AI system does: it searches a collection and adds the passages it finds to the context window. In this chapter, **retrieval practice** is something *you* do: you recall information from your own memory. In the same way, **generative AI** is a tool that produces content, while the **generation effect** below is about content *you* produce. This chapter's key question uses both ideas: **who recalled and produced the answer, you or the tool?**
+In Chapter 3, **retrieval** is something an AI system does: it searches a collection and adds the passages it finds to the context window (the space for everything a language model receives in one turn). In this chapter, **retrieval practice** is something *you* do: you recall information from your own memory. In the same way, **generative AI** is a tool that produces content, while the **generation effect** below is about content *you* produce. This chapter's key question uses both ideas: **who produced the answer: you, from your own memory, or the tool?**
 :::
 
 Retrieval practice is one example of a **desirable difficulty**: a condition that makes learning feel harder and slower but improves long-term memory and use, provided you can meet it with effort (Bjork, 1994; Bjork & Bjork, 2011). The condition matters. A difficulty you cannot meet, such as a problem that needs knowledge you do not have yet, with no answer or feedback afterward, is simply a difficulty (Bjork & Bjork, 2011). Guessing before you study can help, though, if you then see the right answer: people who tried to answer questions before being shown the answers remembered them better than people who only read questions and answers together (Kornell, Hays & Bjork, 2009). That is one reason A4 starts with questions.
@@ -176,13 +176,13 @@ The students in the Opening Case did not notice that they had learned less. The 
 
 **Metacognition** is knowing about and monitoring your own thinking and learning (Flavell, 1979). One part of it can be measured. **Calibration (of your own confidence)** is how closely your confidence in your answers matches how often they are actually correct, across many answers. One answer cannot show it; a set of answers can.
 
-Here is how to measure it on a small set. Rate your confidence in each answer from 0% to 100%. Add the ratings and divide by 100: that is your **predicted score**. For example, 40% + 30% + 50% = 120%, a predicted score of 1.2 out of 3. Then check your answers and count how many are right. The **calibration gap** is the difference between your predicted confidence and the share you actually got right, across a set of answers: predicted score minus actual score. A positive gap means overconfidence; a negative gap means underconfidence.
+Here is how to measure it on a small set. Rate your confidence in each answer from 0% to 100%. Add the ratings and divide by 100: that is your **predicted score**. For example, 40% + 30% + 50% = 120%, a predicted score of 1.2 out of 3. Then check your answers and count how many are right. The **calibration gap** is your predicted score minus your actual score, across a set of answers. Divided by the number of questions, it is your average confidence minus the share you got right, the form Chapter 8 uses. A positive gap means you were overconfident, more sure than your results justify (in Chapter 1, overconfidence describes output); a negative gap means you were underconfident.
 
 ::: {.callout-warning title="Two Meanings of Calibration"}
-This chapter's calibration is about *your* confidence. Chapter 8 uses the word for a tool: **calibration (of a model)** is how well a model's stated confidence matches its accuracy. One habit serves both: predict, then check.
+This chapter's calibration is about *your* confidence. Chapter 8 uses the word for a tool: **calibration (of a model)** is how closely a model's stated confidence matches its accuracy. One habit serves both: predict, then check.
 :::
 
-Why does feeling ready mislead? One reason is that ease feels like learning, and effort feels like failure. In a 2019 experiment, 149 students in introductory physics at Harvard each attended one lesson taught as an active class, where they worked on problems, and one taught as a polished lecture. They learned more in the active classes, but rated their learning lower there than after the lectures (Deslauriers et al., 2019). The authors' reading: students took the extra effort as a sign of poor learning.
+Why does feeling ready mislead? One reason is that ease feels like learning, and effort feels like failure. In an experiment published in 2019, 149 students in introductory physics at Harvard each attended one lesson taught as an active class, where they worked on problems, and one taught as a polished lecture. They learned more in the active classes, but rated their learning lower there than after the lectures (Deslauriers et al., 2019). The authors' reading: students took the extra effort as a sign of poor learning.
 
 The high-school experiment adds an AI version. GPT Base students did not perceive that they had learned less. GPT Tutor students believed they had done significantly better on the exam than the control group, although they had not (Bastani et al., 2025). A fluent explanation from a chat tool is about as smooth as studying gets.
 
@@ -195,13 +195,13 @@ The fix is simple and a little uncomfortable: **predict, then check**. Rate how 
 
 After his shift, Marcus asks a chat tool to explain acid–base balance. The explanation is clear, and he feels he has it. He then takes three practice questions from his textbook's end-of-section set, closes the tool and the book, and rates his confidence: 100%, 100% and 90%. His predicted score is 2.9 out of 3.
 
-He scores **1 of 3** against the textbook key. His calibration gap is 2.9 − 1 = +1.9: strongly overconfident. He identified one case of respiratory acidosis (low pH, high carbon dioxide) but mixed up the two metabolic cases. **What the gap tells him:** he recognized the explanation when he read it, but could not yet produce it. **What he changes:** next time, he answers one question before asking for any explanation.
+He scores **1 of 3** against the textbook key. His calibration gap is 2.9 − 1 = +1.9: strongly overconfident. He identified one case of respiratory acidosis (low pH, meaning more acidic blood, and high carbon dioxide) but mixed up the two metabolic cases. **What the gap tells him:** he recognized the explanation when he read it, but could not yet produce it. **What he changes:** next time, he answers one question before asking for any explanation.
 :::
 
 ::: {.callout-note title="Faded Example: A Business Calibration Check"}
 **Field:** Business. *Constructed example.*
 
-A marketing student self-tests on price elasticity of demand.
+A marketing student self-tests on price elasticity of demand (how strongly sales respond to a price change).
 
 | Question | Confidence | Correct? |
 |---|---|---|
@@ -233,7 +233,7 @@ At the peer-tutoring center where she volunteers, Elif has noticed that students
 
 In 1976, three researchers described how a tutor helps a child build something the child could not yet build alone. They called it **scaffolding** (Wood, Bruner & Ross, 1976). A **scaffold** is temporary support that lets you do what you cannot yet do alone, withdrawn as you improve, like the frame around a building under construction. Its opposite, in this book, is a **crutch**: help that does the part of the work you needed to do yourself, and that you keep depending on.
 
-The difference is not in the help itself. The same AI reply can be either. A worked solution that arrives after you have tried the problem works as feedback on your attempt. The same solution arriving before you try does the recalling and producing for you. So the test, for every turn of a dialogue, is the question from section 7.2: **who recalled and produced the answer in this turn, you or the tool?** Two rules settle the harder cases:
+The difference is not in the help itself. The same AI reply can be either. A worked solution that arrives after you have tried the problem works as feedback on your attempt. The same solution arriving before you try does the recalling and producing for you. So the test, for every turn of a dialogue, is the question from section 7.2: **who produced the answer in this turn: you, from your own memory, or the tool?** Two rules settle the harder cases:
 
 - **Requests.** A request that sets up your own attempt ("ask me a question," "give me another problem and don't tell me the answer") counts as S, for scaffold. A request for the answer counts as C, for crutch.
 - **Feedback.** A tool's answer or worked solution counts as S only after you attempted *the same question*. An answer to a question you have not attempted counts as C.
@@ -246,7 +246,7 @@ Chapter 1's Jagged Frontier Map adds a warning. Inside the tool's frontier it ca
 
 ![Inside the tool's frontier, it can do the task for you; outside it, only your skill catches its errors.](../figures/out/color/f7-07-frontier-learner.svg){#fig-7-7 fig-alt="Jagged Frontier Map from Chapter 1 with two notes: inside, the tool can do the task for you; outside, only your own skill catches its errors."}
 
-Confidence in the tool plays a part too. In a 2025 survey of 319 knowledge workers about 936 tasks, people reported less critical thinking in tasks where they were more confident that AI could do the work, and more where they were more confident in their own ability (Lee et al., 2025). These are self-reports from people at work, an association, not a cause; but they fit the warning that trusting the tool more can mean thinking less.
+Confidence in the tool plays a part too. In a survey published in 2025, 319 knowledge workers described 936 tasks. They reported less critical thinking in tasks where they were more confident that AI could do the work, and more where they were more confident in their own ability (Lee et al., 2025). These are self-reports from people at work, an association, not a cause; but they fit the warning that trusting the tool more can mean thinking less.
 
 **What crutch turns mean under the course policy.** Chapter 1 sorted uses of AI into three zones. Read this section with it:
 
@@ -263,8 +263,8 @@ A closed-book check puts Chapter 1's test into practice: "if you cannot explain,
 | Turn | Text | Code | Why |
 |---|---|---|---|
 | 1 Elif | "Just tell me the difference between standard deviation and standard error." | C | A request for the answer, with no attempt |
-| 2 Tool | Gives both definitions and the formula: standard error = standard deviation ÷ √n | C | Answers a question she has not attempted |
-| 3 Elif | "Wait, let me try with my textbook's example: 25 students, SD = 10. Is the standard error 10 ÷ 25 = 0.4?" | S | She produces an attempt |
+| 2 Tool | Gives both definitions and the formula: standard error = standard deviation ÷ √n, where n is the number of scores | C | Answers a question she has not attempted |
+| 3 Elif | "Wait, let me try with my textbook's example: 25 students, standard deviation 10. Is the standard error 10 ÷ 25 = 0.4?" | S | She produces an attempt |
 | 4 Tool | "Look at what you divided by. What does the formula take of n?" | S | A hint after her attempt at the same question |
 | 5 Elif | "The square root: 10 ÷ 5 = 2. So class averages would vary by about 2 points from sample to sample, but single scores by about 10." | S | She produces and explains |
 | 6 Tool | "Now predict: what happens to the standard error if n is 100?" | S | Sets up her next attempt |
@@ -303,18 +303,18 @@ Code each turn S, C or uncoded, naming the rule. *(Business; constructed example
 
 How do you make a tool behave more like GPT Tutor than GPT Base? GPT Tutor's hidden instructions asked for hints instead of answers and supplied the teachers' correct solutions (Bastani et al., 2025). A Harvard physics tutor that outperformed an in-class active-learning lesson also had expert solutions in its instructions (Kestin et al., 2025). Both kept students doing the work and supplied accurate reference material. Even GPT Base had been told to act as a tutor: calling it a tutor was not enough.
 
-You cannot rebuild a research system, but you can set up a session with the same features. **Tutor mode** is a way of using an AI tool in which it is set up to respond with questions and hints and to wait for your attempts, instead of giving answers. Its opposite is **answer mode**, the default way of using a tool, in which it produces the answer or finished work you ask for. Tutor mode relies on **Socratic questioning**: teaching by asking questions that lead the learner to reason the answer out.
+You cannot rebuild a research system, but you can set up a session with the same features. **Tutor mode** is a way of using an AI tool in which it is set up to respond with questions and hints and to wait for your attempts, instead of giving answers. Its opposite is **answer mode**, the default way of using an AI tool, in which it produces the answer or finished work you ask for. Tutor mode relies on **Socratic questioning**: teaching by asking questions that lead the learner to reason the answer out.
 
 ![A tutor-mode setup changes the role, the constraints and the output format.](../figures/out/color/f7-10-tutor-anatomy.svg){#fig-7-10 fig-alt="Anatomy of a Prompt from Chapter 5 with role, constraints and output format highlighted for a tutor-mode setup; the task stays the same."}
 
 In the six-part anatomy from Chapter 5, a tutor-mode setup changes three parts most. The **role** becomes a tutor who responds with questions. The **constraints** say: wait for my attempt; one hint at a time; no full answer unless I ask after two attempts. The **output format** is one short question or hint per turn, ending with a request to explain the idea back in your own words. The **context**, as always, names your course, your level and the source you will check against. If English is not your first language, the context can also ask for simple English, or you can run the dialogue in your first language.
 
-**Three limits.** First, a setup is text the model receives, not a lock (Chapter 5). The tool may still produce the answer, and answer mode is one request away. Second, the tool can be wrong. Keep your course source open. Third, "check my answer" relies on the model judging you, and a model can agree with a wrong attempt. Chapter 4 calls this **sycophancy**: output that agrees with your stated view even when the evidence points the other way. So **score your answers against your course source, not against the tool's verdict**.
+**Three limits.** First, a setup is text the model receives, not a lock (Chapter 5). The tool may still produce the answer, and answer mode is one request away. Second, the tool can be wrong. Keep your course source open. Third, "check my answer" relies on the model's output about your attempt, and that output can agree with a wrong attempt. Chapter 4 calls this **sycophancy**: output that agrees with your stated view even when the evidence points the other way. So **score your answers against your course source, not against the tool's verdict**.
 
-Several chat tools now include a built-in study or learning mode: Claude since April 2025 for education accounts and since August 2025 for everyone, ChatGPT since July 29, 2025, and Gemini since August 6, 2025 (Anthropic, 2025; Engadget, 2025; OpenAI, 2025; Google, 2025). As far as this book could find in October 2026, none had been tested in a published experiment on learning. [COMPASS: study and learning modes in current tools, dated] A built-in mode is a setup someone else wrote; the three limits still apply.
+Several chat tools now include a built-in study or learning mode: Claude since April 2025 for education accounts and since August 2025 for everyone, ChatGPT since July 29, 2025, and Gemini since August 6, 2025 (Anthropic, 2025; Engadget, 2025; Google, 2025; OpenAI, 2025). As far as this book could find in October 2026, none had been tested in a published experiment on learning. [COMPASS: study and learning modes in current tools, dated] A built-in mode is a setup someone else wrote; the three limits still apply.
 
 ::: {.callout-warning title="Agency Is Not an Agent (Again)"}
-Chapter 5 separated *agency*, configuring AI to carry out future tasks on your behalf (Dakan & Feller, 2025), from an *agent*, a system in which the model directs its own steps and tool use. GPT Tutor was agency from the researchers' side. For a student, a tutor-mode session is augmentation: you and the tool work turn by turn. Neither is an agent.
+Chapter 5 separated *agency*, configuring AI to carry out future tasks on your behalf (Dakan & Feller, 2025), from an *agent*, a system in which the model directs its own steps and tool use (Anthropic, 2024). GPT Tutor was agency from the researchers' side. For a student, a tutor-mode session is augmentation: you and the tool work turn by turn. Neither is an agent.
 :::
 
 ::: {.callout-note title="Worked Example: Elif Switches to Tutor Mode"}
@@ -397,7 +397,7 @@ Thursday's lab turns sections 7.1 to 7.5 into a small experiment on yourself. A 
 
 **Concept:** mixed acid–base disorders (new to him). **Source:** his textbook's end-of-section questions and key; the section has six questions, so he keeps three for the delayed check. **Before:** confidence 40%, 30% and 50%; one answer right.
 
-**During:** 14 turns in tutor mode on the section's worked examples, not on his check questions. At turn 9, tired after a night shift, he typed "just tell me." He coded it C.
+**During:** 24 turns in tutor mode, 12 of them his own, on the section's worked examples, not on his check questions. At turn 9, tired after a night shift, he typed "just tell me." He coded it C.
 
 | Check | Confidence ratings | Predicted score | Actual | Gap |
 |---|---|---|---|---|
@@ -445,7 +445,7 @@ What this suggests for AI tools, as this book reads it: feedback on each step of
 
 Not every use of a tool to save mental effort is a crutch. Psychologists call it **cognitive offloading**: using a tool or action to reduce the mental work a task requires, such as writing a note or using a calculator (Risko & Gilbert, 2016). People do it all the time, and usually sensibly. Writing a phone number down so you can stop repeating it to yourself is offloading.
 
-The question is whether the offloaded skill is the goal. An accountant who uses a spreadsheet to add a column is not losing a skill the job needs. A student in an arithmetic course who does the same thing is. Chapter 5's Delegation Ladder asks the same question as its third question: "Is this skill yours to build?"
+The question is whether the offloaded skill is the goal. An accountant who uses a spreadsheet to add a column is not losing a skill the job needs. A student in an arithmetic course who does the same thing is. Chapter 5's third question for the Delegation Ladder asks the same thing: "Is this skill yours to build?"
 
 ![When the skill is yours to build, work on the floor or in augmentation, not automation.](../figures/out/color/f7-14-ladder-skill.svg){#fig-7-14 fig-alt="Delegation Ladder with augmentation highlighted: tutor mode; automation: answer mode on a skill you are building; floor: closed-book checks."}
 
@@ -453,7 +453,7 @@ Professions that depend on automation have faced the same choice. Bastani et al.
 
 ## Hands-on Labs {.unnumbered}
 
-Lab 7.1 is Thursday's in-class lab and starts A4. Labs 7.2 and 7.3 are optional and can be done at home or in Compass, which is optional and ungraded. The labs say what to do, not which buttons to press; current tool steps, including built-in study modes and temporary chats, are in Compass. [COMPASS: lab pages ch07-lab1 to ch07-lab3] Use a university-provided tool by default. Never put personal, confidential or patient information into a prompt.
+Lab 7.1 is Thursday's in-class lab and starts A4. Labs 7.2 and 7.3 are optional and can be done at home or in Compass, which is optional and ungraded. The labs say what to do, not which buttons to press; current tool steps, including built-in study modes and temporary chats, are in Compass. [COMPASS: lab pages ch07-lab1 to ch07-lab3] Use a university-provided tool such as Microsoft Copilot Chat (as of October 2026) by default. Never put personal, confidential or patient information into a prompt.
 
 ### Lab 7.1: Tutor-Mode Session (Studio · 75 minutes · in class) {.unnumbered}
 
@@ -466,7 +466,7 @@ Lab 7.1 is Thursday's in-class lab and starts A4. Labs 7.2 and 7.3 are optional 
 5. **Annotate (20 min).** Code at least six turns S or C, with a reason that names the rule. Each team brings one scaffold turn and one crutch turn to the class.
 6. **Exit (5 min).** Write one change you will make before your delayed check.
 
-**If it does not work:** if the tool ignores your setup, record that as a result and restate the constraint once; if you cannot use a tool, follow the alternative assignment's route with a classmate or the textbook. If you miss the lab, run the same steps at home by Friday, so the delayed check fits before Monday's deadline, and score yourself.
+**If it does not work:** if the output does not follow your setup, record that as a result and restate the constraint once; if you cannot use a tool, follow the alternative assignment's route with a classmate or the textbook. If you miss the lab, run the same steps at home by Friday, so the delayed check fits before Monday's deadline, and score yourself.
 
 ### Lab 7.2: Reread or Retrieve? (Compare · 15 minutes + a 5-minute check two days later · optional) {.unnumbered}
 
@@ -474,7 +474,7 @@ Lab 7.1 is Thursday's in-class lab and starts A4. Labs 7.2 and 7.3 are optional 
 
 ### Lab 7.3: Tutor Mode Versus Answer Mode (Compare · 20 minutes · optional) {.unnumbered}
 
-*(O3, O4 · LO4 · Analyze)* Take two questions of similar difficulty from the same section of a course you are taking this term. Work the first in tutor mode, with your setup, in a fresh chat. Ask the second in answer mode in another fresh chat. For each chat, count how many times *you* recalled or produced something. Then answer one new closed-book question on each and score them against your source. This mirrors Tuesday's class demonstration.
+*(O3, O4 · LO4 · Analyze)* Take two questions of similar difficulty from the same section of a course you are taking this term. Work the first in tutor mode, with your setup, in a fresh chat. Ask the second in answer mode in another fresh chat. For each chat, count how many times *you* produced something from your own memory. Then answer one new closed-book question on each and score them against your source. This mirrors Tuesday's class demonstration.
 
 ## Case Study: How Strong Is the Evidence? {.unnumbered}
 
@@ -540,7 +540,7 @@ It also listed the warning signs that a pair is not really working together. In 
 
 ![Chapter 7 summary card.](../figures/out/color/f7-15-summary-card.svg){#fig-7-15 fig-alt="Six cards: performance is not learning; retrieve, generate, space; predict then check; who produced it; tutor-mode setup; A4 session."}
 
-**The chapter's question:** *Can a chatbot help you learn, or only help you finish?* Both have been observed. In one school, one subject and fall 2023, unrestricted answer access raised practice scores and lowered closed-book exam scores; a design that kept students working, with hints instead of answers, showed no measurable harm (Bastani et al., 2025). Two structured tutors produced gains in short studies (Kestin et al., 2025; De Simone, Tiberti, Barron Rodriguez, et al., 2025). In this book's reading, what differed was who recalled and produced the answers, and that is partly up to you.
+**The chapter's question:** *Can a chatbot help you learn, or only help you finish?* Both have been observed. In one school, one subject and fall 2023, unrestricted answer access raised practice scores and lowered closed-book exam scores; a design that kept students working, with hints instead of answers, showed no measurable harm (Bastani et al., 2025). Two structured tutors produced gains in short studies (Kestin et al., 2025; De Simone, Tiberti, Barron Rodriguez, et al., 2025). In this book's reading, what differed was who produced the answers, the students from their own memory or the tool, and that is partly up to you.
 
 **Return to the Opening Case.** The GPT Base students did better with the tool because, in most conversations, the tool produced the answers. The most likely reason they did worse without it, consistent with the authors' evidence that students copied, is that they had done less of the recalling and producing that builds memory (sections 7.1 and 7.2). One likely reason they did not notice: smooth help feels like learning (section 7.3).
 
@@ -550,7 +550,7 @@ You can now:
 
 - **Explain** why performance with AI can overstate learning, using the high-school experiment.
 - **Explain** how retrieval practice, generation and spacing build lasting learning, and why they feel harder.
-- **Distinguish** scaffold turns from crutch turns by asking who recalled and produced the answer.
+- **Distinguish** scaffold turns from crutch turns by asking who produced the answer: you, from your own memory, or the tool.
 - **Set up** a tutor-mode session with an attempt-first rule and a keyed source.
 - **Judge** your learning by predicting, then checking, and computing your calibration gap.
 - **Produce** A4, a tutor-mode dialogue and reflection.
@@ -569,38 +569,38 @@ answer mode · calibration (of your own confidence) · calibration gap · cognit
 2. *(O1 · LO4 · Understand)* In the high-school experiment in Türkiye, what best describes the GPT Base results?\
    (a) Higher practice scores and lower exam scores than the control group.\
    (b) Higher practice and exam scores, because more practice meant more learning.\
-   (c) Lower practice scores, because the tool's answers were often wrong.\
-   (d) Results no different from the control group, because both groups did the same problems.
+   (c) Lower practice and exam scores, because AI help always harms learning.\
+   (d) No difference in either part, because students felt they learned the same.
 3. *(O1 · LO4 · Apply)* A tool raises a practice average of 20 points by 10 points. State the change in percentage points and as a relative change.
 4. *(O1 · LO4 · Understand)* Why is overreliance something people do, not a property of the output? Give an example in which the output is correct and overreliance still does harm.
 5. *(O2 · LO4 · Understand)* In Roediger and Karpicke's 2006 experiment, which group recalled the most after one week?\
    (a) The group with four study periods, because it saw the passage most often.\
-   (b) The group with three study periods, because it combined study with one recall.\
-   (c) All groups about equally, because a week erases the differences.\
+   (b) The group with three study periods, because it felt the most prepared.\
+   (c) All groups about equally, because rereading and testing feel equally useful.\
    (d) The group with one study period and three recalls, because recalling strengthens memory.
 6. *(O2 · LO4 · Understand)* Explain the difference between retrieval practice and retrieval in an AI system.
 7. *(O2 · LO4 · Understand)* Which statement about desirable difficulties is most accurate?\
-   (a) Any difficulty strengthens learning, because effort is what counts.\
+   (a) Struggle means you are studying the wrong way, so make it easier.\
    (b) If studying feels easy, it is working, because ease means you understand.\
    (c) A difficulty helps when you can meet it with effort, or see the answer afterward.\
    (d) Desirable difficulties raise scores during practice, because they keep you alert.
 8. *(O5 · LO4 · Understand)* Explain calibration of your own confidence, and how it differs from a model's calibration.
 9. *(O5 · LO4 · Understand)* In the 2019 physics experiment, students in active classes learned more. How did they rate their learning?\
-   (a) Lower than after lectures; the authors suggest they took the extra effort as a sign of poor learning.\
+   (a) Lower than after lectures, though they learned more in active classes.\
    (b) Higher than after lectures, because effort felt like progress to them.\
-   (c) The same as after lectures, because both lessons covered the same content.\
+   (c) The same as after lectures, because students judge their learning accurately.\
    (d) Higher than after lectures, because they enjoyed working on problems more.
 10. *(O3 · LO4 · Understand)* A student attempts a problem, then asks the tool for a worked solution and compares it with her attempt. A second student asks for the same solution without trying. Which is true?\
     (a) Both are crutch turns, because the tool produced the full solution each time.\
-    (b) The first is a scaffold turn and the second a crutch turn, because only the first student attempted the same question.\
-    (c) Both are scaffold turns, because a correct solution always helps learning.\
-    (d) Neither matters for learning, as long as both students disclose the tool.
+    (b) Scaffold, then crutch, because only the first student attempted the question.\
+    (c) Both are scaffold turns, because a correct solution helps learning either way.\
+    (d) Neither matters, because both students got the right answer in the end.
 11. *(O3 · LO4 · Remember)* State the test this chapter uses to code a turn as scaffold or crutch, and the rule for a request turn.
 12. *(O4 · LO4 · Understand)* A tutor-mode tool tells you your answer is correct. What should you do?\
     (a) Accept it, because tutor mode is designed to check answers.\
-    (b) Ask the tool again, because two confirmations are stronger than one.\
+    (b) Ask the tool again, because two confirmations are stronger than a single one.\
     (c) Switch to answer mode, because it will show the full worked answer.\
-    (d) Score it against your course source, because a model can agree with a wrong attempt.
+    (d) Score it against your course source, since tools can agree with errors.
 13. *(O4 · LO4 · Understand)* Even GPT Base was told to act as a tutor. What did GPT Tutor have that GPT Base lacked, and why does it matter?
 14. *(O5 · LO4 · Apply)* Your confidence ratings on three check questions are 90%, 70% and 50%, and you get two right. What is your predicted score, and what is your calibration gap?
 
@@ -624,7 +624,7 @@ Come back to these a few days after reading, without looking back.
 
 1. *(Chapter 5 · LO2 · Understand)* Rewrite "the explanation should be good" as a success criterion you could check after a tutor-mode session.
 2. *(Chapter 5 · LO2 · Apply)* Using the third of Chapter 5's three questions, on which rung of the Delegation Ladder (automation, augmentation or agency), or on the floor of no AI, would you place the parts of a problem set that exists to build your skill? Why?
-3. *(Chapter 3 · LO1 · Understand)* Why can a fluent, confident explanation from a chat tool still be false? Use Chapter 3's idea that the model scores possible next tokens.
+3. *(Chapter 3 · LO1 · Understand)* Why can a fluent, confident explanation from a chat tool still be false? Use Chapter 3's idea that the model scores possible next tokens (units of text).
 4. *(Chapter 3 · LO1 · Understand)* A study tool searches your course website before answering. What does that retrieval change about the answer, and what does it not change?
 
 ### Discussion Questions {.unnumbered}
@@ -643,7 +643,7 @@ Come back to these a few days after reading, without looking back.
 
 1. **Setup:** the concept (new to you, from a course you are taking this term), your course source with an answer key, and your tutor-mode setup.
 2. **Before:** three keyed check questions, preferably your textbook's own end-of-section or practice questions. If your source has none, write questions from its headings or learning objectives only, and look up the key in the source after your immediate check. Include your first answers before the session (or "don't know") and a confidence rating for each.
-3. **Dialogue:** the full transcript, with tool name and date, and at least 10 of your own turns, worked on neighboring problems, **not on your check questions**. Use a university-provided tool by default. No personal or confidential data; remove names and identifiers from the exported transcript. The dialogue may be in any language; give an English gloss (a short translation) for each turn you annotate. Answer the closed-book questions in the language of your course.
+3. **Dialogue:** the full transcript, with tool name and date, and at least 10 of your own turns, worked on neighboring problems, **not on your check questions**. Use a university-provided tool such as Microsoft Copilot Chat (as of October 2026) by default. No personal or confidential data; remove names and identifiers from the exported transcript. The dialogue may be in any language; give an English gloss (a short translation) for each turn you annotate. Answer the closed-book questions in the language of your course.
 4. **Annotation:** at least 6 turns coded S or C by the rules in section 7.4, each with a one-line reason; mark any factual error you found.
 5. **Closed-book record:** right after the session and again at least two days later, a confidence rating for each question, your answers, your score against the key, your predicted score (sum of ratings ÷ 100) and your calibration gap (predicted minus actual). For the later check, use three parallel keyed questions if your source has them; otherwise use the same three and say so. A teammate may check your in-lab score; you may score yourself if you prefer to keep your answers private.
 6. **Verification:** at least two of the tool's explanations, hints or verdicts checked against your source (not against the tool's own verdict), with any error corrected. If the tool was wrong, or gave the answer despite your setup, save it for your Failure Diary (Chapter 4).
@@ -656,12 +656,12 @@ Come back to these a few days after reading, without looking back.
 
 | Criterion (points) | Exemplary | Proficient | Developing | Beginning |
 |---|---|---|---|---|
-| **Task (3)** | 3: concept new and from a current course; keyed source named; setup with an attempt-first constraint; three keyed check questions chosen before the session, with first answers and confidence; dialogue of at least 10 of your turns on neighboring problems, with tool and date | 2: all parts present, but one is weak (e.g., questions not tied to the source, no attempt-first constraint, or check questions worked in the dialogue) | 1: one required part missing (setup, first answers, keyed questions or a 10-turn dialogue), or two parts weak | 0: two or more required parts missing |
+| **Task (3)** | 3: concept new and from a current course; keyed source named; setup with an attempt-first constraint; three keyed check questions chosen before the session, with first answers and confidence; dialogue of at least 10 of your turns on neighboring problems, with tool and date | 2: all parts present, but one is weak (e.g., questions not tied to the source, no attempt-first constraint, or check questions worked in the dialogue) | 1: one required part missing (setup, first answers, keyed questions or a 10-turn dialogue), or two or more parts weak | 0: two or more required parts missing |
 | **Annotation (1.5)** | 1.5: at least 6 turns coded, each reason applying the section 7.4 rules to that turn | 1: at least 6 turns coded; one or two reasons vague or not matching the rules | 0.5: 3–5 turns coded, or three or more reasons vague | 0: 0–2 coded turns |
 | **Closed-book record (1.5)** | 1.5: immediate and delayed checks, each with ratings, answers, score, predicted score and gap | 1: both checks present; one rating, score or gap missing | 0.5: only one check, or both with two or more missing elements | 0: no closed-book record |
 | **Verification (2)** | 2: at least two explanations, hints or verdicts checked against the named source; any error corrected and explained | 1.5: two checks; correction present but thin, or the source not specific | 1: one check, or checks without a named source | 0: no verification |
-| **Reflection (1.5)** | 1.5: covers (a)–(e) with specifics from your own record, and the change follows from the evidence | 1: covers (a)–(e), but one or two are general | 0.5: covers two or three of (a)–(e) | 0: missing, or covers one or none |
-| **Declaration (0.5)** | 0.5: all five declaration elements, specific to this work | 0.4: all five elements, one or two generic | 0.2: two to four elements | 0: 0–1 elements |
+| **Reflection (1.5)** | 1.5: covers (a)–(e) with specifics from your own record, and the change follows from the evidence | 1: covers (a)–(e), one or two general; or four of (a)–(e) with specifics | 0.5: covers two to four of (a)–(e), or all five but mostly general | 0: missing, or covers one or none |
+| **Declaration (0.5)** | 0.5: all five declaration elements, specific to this work | 0.4: all five elements, one or two generic | 0.2: two to four elements, or all five but mostly generic | 0: 0–1 elements |
 
 **Formats.** The sheet in @fig-7-12 or the eLearning template; a plain table works with screen readers. Compass offers the same template (optional and ungraded). [COMPASS: A4 template]
 
@@ -698,6 +698,8 @@ Come back to these a few days after reading, without looking back.
 - [COMPASS: interactive scaffold-versus-crutch step-through (@fig-7-8) and calibration self-check; Chapter 7 quiz; Lab 7.1–7.3 pages; A4 template]
 
 ## References {.unnumbered}
+
+Anthropic. (2024, December 19). *Building effective agents*. https://www.anthropic.com/engineering/building-effective-agents
 
 Anthropic. (2025, April 2). *Introducing Claude for Education*. https://www.anthropic.com/news/introducing-claude-for-education
 

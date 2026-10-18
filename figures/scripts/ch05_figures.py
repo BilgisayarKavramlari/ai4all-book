@@ -68,14 +68,14 @@ def prompt_anatomy(highlight=None, note=None):
             label, sub, (x, y, w, h) = spec[key]
             on = key in hl
             f.box(x, y, w, h, label, role="highlight" if on else "neutral", kind="human",
-                  thick=on or key == "task", size=15, sub=sub, sub_size=13)
+                  thick=key == "task", size=15, sub=sub, sub_size=13)
         f.arrow(588, 240, 618, 240)
         f.box(622, 196, 162, 88, "The AI tool", role="ai", kind="ai", size=15,
               sub="receives only what is written", sub_size=13)
         f.arrow(703, 288, 703, 330)
         f.box(632, 334, 142, 84, "Output", role="neutral", kind="step", size=15,
               sub="scored against your criteria", sub_size=13)
-        f.text(400, 458, "Rounded boxes = parts you write (thick = always needed) · hexagon = AI component",
+        f.text(400, 458, "Rounded boxes = parts you write (thick border = always needed; dark = highlighted here) · hexagon = AI component",
                size=13, color=MUTED[f.mode])
         if note:
             f.text(400, 482, note, size=13, color=MUTED[f.mode], italic=True)

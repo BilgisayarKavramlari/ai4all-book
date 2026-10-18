@@ -5,12 +5,12 @@
 | Type | Compare |
 | Objectives | O3, O4 (LO4) · tags 4D:DEL, 4D:DESC, 4D:DISC |
 | Time | 20 minutes, at home or in Compass (optional) |
-| Materials | An AI chat tool (university-provided by default) that can open a fresh, temporary chat; two questions of similar difficulty from the same section of a course you are taking this term, with answers you can check; your tutor-mode setup (section 7.5) |
+| Materials | An AI chat tool (a university-provided tool such as Microsoft Copilot Chat, as of October 2026, by default) that can open a fresh, temporary chat; two questions of similar difficulty from the same section of a course you are taking this term, with answers you can check; your tutor-mode setup (section 7.5) |
 
 ## Steps (tool-neutral)
 1. **Tutor mode first:** in a fresh chat, paste your setup and work through question 1.
 2. **Answer mode:** in another fresh chat, ask question 2 directly.
-3. For each chat, count how many times *you* recalled or produced something (an attempt, an explanation, a prediction). Code the turns with the rules in section 7.4.
+3. For each chat, count how many times *you* produced something from your own memory (an attempt, an explanation, a prediction). Code the turns with the rules in section 7.4.
 4. Close both chats. Answer one new closed-book question on each topic, rating your confidence first, and score both against your course source.
 
 [COMPASS: ch07-lab3]
