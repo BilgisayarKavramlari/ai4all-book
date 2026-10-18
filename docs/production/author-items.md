@@ -96,3 +96,13 @@
 3. **Tuesday demo (Apr 6):** which tool kind and model you will use for "a multi-step agent and its failure," so the 14.2–14.3 worked examples can mirror it; a dated recording for students who miss it.
 4. **Final voice edit** (pipeline step 8).
 <!-- /ch14 -->
+
+<!-- ch15 -->
+## Chapter 15
+1. **Live syllabus:** (a) **R12 becomes recommended** (D22; its parts named in Further Reading), and R13–R15 recommended unless they fit their chapters' budgets; (b) A12 hosted in Chapter 15 (five risks, four drafted in the lab; note 60–80 words); (c) the Tuesday Apr 13 split (Samsung as the week's opening case).
+2. **From the Field:** approve the 2015 *YBS Ansiklopedi* entry (pages 10–17, now cited) with present-day connections marked. Optional: a real, anonymized moment from the author's industry work; it will not be written for him.
+3. **Lab safety and terms:** confirm with UTD OIT and the Information Security Office that running the provided hidden-instruction file in Microsoft Copilot Chat is consistent with Microsoft's code of conduct and UTD's acceptable-use policy (one-document upload is available per UTD KB 1175); until confirmed, station 1 uses printed outputs, with one instructor demonstration on Tuesday.
+4. **Tuesday demo and guest (Apr 13):** the tool kind and model for the injection demo, a dated recording for Compass, the guest's field.
+5. **Course guidance:** the section 12.5 table is reused verbatim (Ch. 12 author item 6).
+6. Final voice edit (pipeline step 8).
+<!-- /ch15 -->

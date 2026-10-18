@@ -179,3 +179,20 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | Compounding calculator spreadsheet (p^n and the chapter's simulation) and a printed p^n table | Compass (optional) and eLearning | Thu Apr 8, 2027 |
 | Compass pages: Signature 9 step by step; action-classification drill; Chapter 14 quiz; lab pages ch14-lab1 to lab3 | Compass (optional companion) and eLearning | Tue Apr 6, 2027 |
 <!-- /ch14 -->
+
+<!-- ch15 -->
+## Chapter 15
+| Asset | For | Needed by |
+|---|---|---|
+| Station 1: the harmless study guide (with hidden line; labeled version) and three numbered, printed, dated outputs per version (model name and date), varied by table; about seven packet copies | Lab 15.1; 15.3 worked example | Tue Apr 13, 2027 (demo) |
+| Station 2: fake customer record with TEST-CANARY-0415; printed, dated screenshot of one provider's data options | Lab 15.1 | Thu Apr 15, 2027 |
+| Station 3 (Chapter 16): cards for prompts A, B, C with copy-paste text, fixed names (A) and paragraph (B), preregistered counting rules, three numbered printed outputs per version varied by table, live and printed tally sheets per prompt | Lab 15.1 | Thu Apr 15, 2027 |
+| Rules excerpts (Chapter 18): course AI policy, section 12.5 table, one provider's terms | Lab 15.1 rules-and-rights risk | Thu Apr 15, 2027 |
+| A12 sheet with blank data-flow map and Signature 10 template (print and accessible digital) | Lab 15.1; A12 | Thu Apr 15, 2027 |
+| Paper heat-map posters; seated gallery-walk version | Lab 15.1 | Thu Apr 15, 2027 |
+| Three provided scenarios for the alternative assignment (data terms, users, policy text, fairness decision, a map with two errors, a register with one mis-rated risk, printed outputs for all three probes) | A12 alternative | Thu Apr 15, 2027 |
+| Role cards for the call-back drill | Lab 15.3 | Thu Apr 15, 2027 |
+| Dated recording of Tuesday's injection demo | Students who miss it | Tue Apr 13, 2027 |
+
+**For the editor (not the author):** (a) ftf-sources.md row: Ch. 15 — Şeker (2015), Büyük Veri ve Büyük Veri Yaşam Döngüleri, *YBS Ansiklopedi* 2(3), 10–17, Drive 1MSa-eUSm0X6xlScQUCrVUTZWfiomZBfW; (b) Ch. 16 v2's station-3 text is merged into Lab 15.1 (prompt B as a stated first language; prompt C two runs per version; matching rule; private opt-out; one subtotal line per table; gallery table in counts with the 26-run row); (c) Ch. 18's lab drafting step merged as a timed 5-minute slot (49–54) with its five scratch-list prompts, and its descriptor merged; the legal-layer pointer is "section 18.1" (Chapter 18 adds the FERPA/HIPAA/consent/state-privacy paragraph there); (d) `data_flow_map` no longer uses dashes: Ch. 18 should re-render its imports; (e) the chapter was test-rendered alone with Quarto; (f) docs/factcheck/ch15.csv has resolution_v2 for all 107 rows plus rows C108–C121 for claims added in revision.
+<!-- /ch15 -->

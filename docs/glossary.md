@@ -277,3 +277,27 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Planted fault | An error put into one step of a dry run on purpose, to see whether a check point, gate or stop point catches it. | Yerleştirilmiş hata |
 | Done-criteria | Two or three checks that tell you whether a run succeeded. | Tamamlanma ölçütleri |
 | Workflow blueprint | A written design of a workflow: its steps, who or what runs each, its actions, people points, permissions, log plan and dry-run results. | İş akışı planı |
+| Data-flow map | A drawing of where one input goes once you send it: what goes in, where it is stored, who can see it, whether it is reused and where the output goes. | Veri akış haritası |
+| Trust boundary | The line past which your data is handled under someone else's rules. | Güven sınırı |
+| Personal data | Information about an identified or identifiable person (also called personally identifiable information, PII). | Kişisel veri |
+| Sensitive data | Personal data that can do special harm if exposed, such as biometric, health or location data. | Hassas veri |
+| Biometric data | Data about a person's body or behavior, such as a face, a voice, a fingerprint or the way someone walks. | Biyometrik veri |
+| Quasi-identifier | A detail that is harmless alone but identifying together with others, such as ZIP code, sex and date of birth. | Yarı tanımlayıcı |
+| Re-identification | Linking quasi-identifiers with another record, such as a voter list, to learn who a person in a dataset is. | Yeniden kimliklendirme |
+| De-identification | Removing names and obvious identifiers from data; a start, not a guarantee that the data is anonymous. | Kimliksizleştirme |
+| Data minimization | Sending only what a part of a task needs. | Veri en aza indirme |
+| Inference (of personal attributes) | A model producing a likely personal detail that a text never states, such as a writer's location; not the same as Chapter 3's inference, running a model. | Çıkarım (kişisel özelliklere dair) |
+| Exfiltration | Getting data out of a system to an attacker. | Veri sızdırma (dışarı çıkarma) |
+| Defense in depth | Several layers of defense, built to fail in different ways. | Katmanlı savunma |
+| Lethal trifecta | Willison's (2025) name for a system that combines three legs, access to private data, exposure to untrusted content and a way to send data out, which together allow data theft. | Ölümcül üçlü |
+| Dual authorization | A control under which two people must approve a payment or an account change. | Çift onay |
+| Risk | A combination of how likely a harmful event is and how bad its consequences would be (after NIST, 2023). | Risk |
+| Likelihood (of a risk) | How probable a harmful event is, rated low, medium or high by written anchors. | Olasılık (riskin) |
+| Impact (of a risk) | How bad the consequences of a harmful event would be, rated low, medium or high by written anchors. | Etki (riskin) |
+| Risk Heat Map | Signature 10: a 3-by-3 grid of likelihood by impact on which each risk is placed, with its evidence marked documented or inferred; risks in the high-impact row need a mitigation or a named owner. | Risk ısı haritası |
+| Risk register | A list of risks with their ratings and evidence. | Risk kaydı |
+| Mitigation | A change that lowers a risk's likelihood, its impact or both; this book uses four kinds: avoid, reduce, detect, accept. | Risk azaltma (önlem) |
+| Residual risk | The risk that remains after mitigation. | Kalıntı risk |
+| Qualifying risk | A risk that needs a full mitigation plan in A12: its impact is high, or both its likelihood and its impact are at least medium. | Plan gerektiren risk |
+| Risk owner | The person who agrees in writing to carry a risk. | Risk sahibi |
+| Red-teaming | Testing a system the way an attacker would, with permission, to find weaknesses first. | Kırmızı takım testi |

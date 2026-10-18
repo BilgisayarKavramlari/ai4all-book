@@ -166,3 +166,13 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 14 | 14.1 | Many chat tools run a short agent loop inside one reply (search several times, run code) | Oct 2026 | Product knowledge (dated statement) | Each edition |
 | 14 | 14.6 | OWASP Top 10 for LLM Applications 2025, LLM06:2025 Excessive Agency (too much functionality, permission or autonomy) | Oct 2026 | OWASP Gen AI Security Project (2025) | When the next list appears |
 | 14 | Lab 14.2 | UTD OIT matrix: Microsoft Copilot Chat has web access; custom agents not offered | Oct 2026 | UTD OIT AI Tools Matrix | Each term |
+| 15 | 15.3; Summary; Review A9; C2; F15.8 | Prompt injection has no complete fix shown outside tests; Anthropic Aug 2025 (23.6% → 11.2%); Anthropic Aug 26, 2026 (no successful attacks on three of four newest models, 0.3% on the fourth, new grader); NCSC Dec 2025; OWASP 2025 ranks it first | Oct 2026 | Anthropic (2025, 2026); David C. (2025); OWASP (2025) | Each term |
+| 15 | Deep 15.B | OpenAI's Dec 22, 2025 statement (unlikely ever fully solved; keep raising the cost of attacks); CaMeL | Oct 2026 | OpenAI (2025); Debenedetti et al. (2025) | Each edition |
+| 15 | Deep 15.A | NYT v. OpenAI preservation order (May 2025; duty for new logs ended Sept 26, 2025; flagged accounts and kept logs remain) | Oct 2026 | Chen (2025, Engadget) | Each edition |
+| 15 | 15.1, 15.2 table, labs | University-provided tool (Microsoft Copilot Chat; one-document upload); the section 12.5 table | Oct 2026 | UTD OIT; Ch. 12 D-12.8 | Each term |
+| 15 | 15.1 | OpenAI's March 2023 bug (chat titles visible to other users) | Mar 2023 | OpenAI (2023a) | URL each edition |
+| 15 | 15.4 | FTC voice-cloning alert; FBI PSA I-120324-PSA | Oct 2026 | Puig (2023); FBI (2024) | Each edition |
+| 15 | 15.6; Ethics Lens | 78% of AI users bring their own AI tools | May 2024 | Microsoft & LinkedIn (2024) | When a newer index appears |
+| 15 | Case Study | OpenAI API no-training default (Mar 1, 2023); chat history off (Apr 25, 2023) | 2023 | OpenAI (2023b, 2023c) | Each edition |
+| 15 | Short cases | EchoLeak fixed; shared-link option removed | Oct 2026 | Microsoft (2025); Abdullahi (2025) | Each edition |
+| 15 | Lab 15.1 | Live runs of the hidden-instruction file allowed in the university tool | Pending | UTD OIT / ISO (author item) | Before Apr 15, 2027 |
