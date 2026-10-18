@@ -68,12 +68,12 @@ Why they exist: recurring people make examples personal and memorable (Mayer's p
 | Featured chapters | 1, 2, 4, 6, 12, 14, 17 |
 | Fixed details | Did a co-op at a manufacturing firm; plays pickup soccer; captain of the student robotics club; double-checks units on everything after one bad lab grade |
 
-### Hana Nguyen — Arts and Technology
+### Hana Nguyen — Media Arts and Design
 
 | Field | Value |
 |---|---|
 | Name, pronouns | Hana Nguyen (they/them) |
-| Major and year | Arts and technology (visual art and design), sophomore; minor in history |
+| Major and year | Media Arts and Design (B.A., UT Dallas 2026 catalog), sophomore; minor in history |
 | Background | Freelance illustrator for small local businesses; Vietnamese-American family in the Dallas area. |
 | Starting attitude to AI | Anxious and opposed; fears AI image tools will replace artists and were trained on artists' work without consent |
 | Arc across the book | From fear to an informed position. Tests AI on historical sources (Ch. 1, 3), studies image generation and deepfakes (Ch. 13), examines copyright and training data (Ch. 18), and writes a personal code of practice for creative work (Ch. 21, 23). |

@@ -284,7 +284,7 @@ def two_codes(f):
 
 
 # ---------------------------------------------------------------- F21.13 Final Bridge map
-BRIDGE = [("Frame", ["12 (task × tool fit matrix)", "19 (discipline × use heat map)"]),
+BRIDGE = [("Frame", ["12 (task × tool fit matrix)", "19 (Discipline × Use Map)"]),
           ("Prompt", ["15 (data-flow map)"]),
           ("Verify", ["8 (Verification Funnel)", "9 (source ladder)", "16 (Bias Lifecycle)",
                       "11, 12, 14, 20 (second)", "13 (Deep, not examined)", "17 (second; Deep)"]),

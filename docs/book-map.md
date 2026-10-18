@@ -32,7 +32,7 @@ Path: **C** = Core (examinable, weekly required reading); **D** = Deep (optional
 | 17 | Explainability and Transparency | 12 | D | LO5 | Black box → explanation layers | Dutch child-benefit scandal (Amnesty International, 2021) | Explaining-a-decision report |
 | 18 | Intellectual Property, Law and Governance | 12 | C | LO5 | Regulation map (EU, U.S., state) | *Thomson Reuters v. Ross* (D. Del., February 2025) | Policy comparison note |
 | | **Part V — AI in Your Field and Your Future** | | | | | | |
-| 19 | AI Across Disciplines: Field Guides | 13 | C | LO6 | Discipline × use heat map | One case per field (business, health, arts/humanities, social science, natural science, engineering, education) | A13 domain workflow prototype |
+| 19 | AI Across Disciplines: Field Guides | 13 | C | LO6 | Discipline × Use Map | One case per field (business, health, arts/humanities, social science, natural science, engineering, education) | A13 domain workflow prototype |
 | 20 | Your AI Portfolio and Career Narrative | 14 | C | LO7 | Portfolio Anatomy | From the Field (an employer's view) | A14 revision evidence and career narrative |
 | 21 | Your Personal AI Code of Practice | 15 | C | LO7 | Personal principles card | — | Final portfolio and personal AI code of practice |
 | | **Part VI — Frontiers and Big Questions** | | | | | | |
