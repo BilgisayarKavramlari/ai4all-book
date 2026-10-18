@@ -1,0 +1,7 @@
+Chapter 8 computed and constructed data (generated 2026-10-18)
+- data/ch08_calibration_toy.csv, data/ch08_calibration_groups.csv: figures/scripts/ch08_experiments.py
+  (Python 3.10.7, standard library only; fixed values, no random seed needed). CONSTRUCTED for teaching;
+  not a measurement of any real tool.
+- data/ch08_checkers.csv: constructed counts for Deep 8.A (two reference checkers, 20 references, 5 fake).
+- data/ch08_citations.csv: published values (Walters & Wilder, 2023, Scientific Reports); see source column.
+- Charts: figures/scripts/ch08_charts.py (matplotlib 3.8.4).

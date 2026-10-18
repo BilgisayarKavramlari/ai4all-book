@@ -110,3 +110,10 @@ Why they exist: recurring people make examples personal and memorable (Mayer's p
 | 2026-10-18 | Ch. 2 | Sam | Builds a camera parts sorter (bolts, nuts, washers) for the robotics club; 60 photos per part; photographed bolts on his brown desk at home and nuts/washers on a white club table, so the model learned the background (shortcut); parts from one supplier only |
 | 2026-10-18 | Ch. 2 | Lucía | Her support team routes tickets by written rules (faded example in 2.1) |
 | 2026-10-18 | Ch. 2 | Hana | Skeptical of an app claiming "97% accuracy" at telling human from AI illustrations; her own work is hand-drawn and scanned |
+| 2026-10-18 | Ch. 3 | Elif | Writes a short abstract in English and Turkish for her research-methods class (constructed study on test anxiety and sleep; 59 vs. 51 words) |
+| 2026-10-18 | Ch. 3 | Elif | Holds an international student scholarship with a GPA requirement; has 45 of 120 credits and plans 15 credits per semester (worked example, 3.5) |
+| 2026-10-18 | Ch. 3 | Elif | Asks a chat tool about last week's student-government election on her campus (3.3) |
+| 2026-10-18 | Ch. 3 | Hana | Tests a chat tool on a long public-domain document, a digitized 1890s county history, with questions from the start, middle and end; checks answers by asking for a supporting quotation and searching the document for it (3.4) |
+| 2026-10-18 | Ch. 3 | Hana | Ethics Lens: draws by hand and worries about artists' work being used for training without consent (consistent with the profile) |
+| 2026-10-18 | Ch. 3 | Lucía | Faded example: a 60-message support thread in which a customer changed the email address on their account (constructed, anonymized; privacy pointer to Ch. 15) |
+| 2026-10-18 | Ch. 3 | Elif | Ethics Lens: writes in English but thinks in Turkish |

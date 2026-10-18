@@ -1,0 +1,3 @@
+question_direction,example_form,accuracy_pct,model,source
+Celebrity -> parent,"Who is [celebrity]'s mother? / father?",79,GPT-4 (2023),"Berglund et al. (2024), section 2.2: GPT-4 identified the parent 79% of the time, giving 1,573 child-parent pairs (mother and father questions for the top 1,000 IMDb celebrities; list accessed 28 June 2023). No GPT-4 snapshot or query date is given in the paper."
+Parent -> celebrity,"Name a child of [parent]",33,GPT-4 (2023),"Berglund et al. (2024), section 2.2 and footnote 11: counted correct if any of 10 tries named the celebrity. The note to Figure 5 gives 28% without explanation; the book uses the text's 33%."

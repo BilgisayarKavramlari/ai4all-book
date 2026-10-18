@@ -9,6 +9,9 @@
 | 5 | 5 Neden Yöntemi / 5 Whys (2014) | 1DrAi2SG_C_WyYCC5xminYeMS0uoMl7zJ |
 | 6 | CRISP-DM (2018) | 1eES0f0OQwHiRuvUB8LVTkhMGi1SddAxY |
 | 7 | Eşli programlama / pair programming (2015) | see ybs-inventory |
+| 8 | Computerized Argument Delphi Technique, IEEE Access 3 (2015) | 14tfA7WBJODNmUh4Ne5bFSsNQuSPMZPyu |
+| 9 | Elaboration Likelihood Model (2014) | 19Lkd-v0kU9qwp48yVAWa0izSVZUcuIIy |
+| 10 | Sosyal CRM (2016), YBS Ansiklopedi 3(3) | 1WM_8xQ6x5y7m1NGlm5wLki2A59O9LtLO |
 | 17 | HermAI (2025) — reserved | 1c_sgq7_xCtrgyF_9nZ1BWeLi4gXBAIXY |
 
 Do not reuse a source assigned to another chapter.

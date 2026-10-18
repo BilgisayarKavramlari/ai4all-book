@@ -1,0 +1,6 @@
+# Published values: Shi et al. (2023), "Large language models can be easily distracted by irrelevant context", ICML, PMLR 202. Model: code-davinci-002 (Codex), chain-of-thought prompting with exemplars without irrelevant context.
+# base = Table 2 (accuracy on the 100 base problems from GSM8K). gsm_ic = Table 3, overall micro accuracy on GSM-IC-4K (4,000 problems, each a base problem with one irrelevant sentence added).
+condition,label,accuracy
+base,Original problems (100),95.0
+gsm_ic,Same problems + one irrelevant sentence,72.4
+gsm_ic_inst,+ instruction to ignore irrelevant information,77.8

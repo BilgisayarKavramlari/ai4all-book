@@ -1,0 +1,11 @@
+model,answer_position,accuracy_pct,closed_book_pct,source
+GPT-3.5-Turbo (0613),1,75.8,56.1,"Liu et al. (2024); per-position values from arXiv:2307.03172v3, Appendix G.2, Table 6 (20 total retrieved documents); closed-book from Table 1"
+GPT-3.5-Turbo (0613),5,57.2,56.1,same
+GPT-3.5-Turbo (0613),10,53.8,56.1,same
+GPT-3.5-Turbo (0613),15,55.4,56.1,same
+GPT-3.5-Turbo (0613),20,63.2,56.1,same
+Claude-1.3,1,59.9,48.3,same
+Claude-1.3,5,55.9,48.3,same
+Claude-1.3,10,56.8,48.3,same
+Claude-1.3,15,57.2,48.3,same
+Claude-1.3,20,60.1,48.3,same

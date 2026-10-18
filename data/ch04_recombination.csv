@@ -1,0 +1,4 @@
+condition,label,n_generated,n_true,n_false,pct_true,pct_all_pairs_seen_in_training,example_false
+word_pair_free,"Word-pair model, free generation",1000,76,924,7.6,100.0,Ankara is the capital of Canada .
+long_context_seen,"Five-word context, city seen in training",1000,1000,0,100.0,,
+long_context_unseen,"Five-word context, city never seen",1000,0,1000,0.0,,Lisbon is the capital of Kenya .

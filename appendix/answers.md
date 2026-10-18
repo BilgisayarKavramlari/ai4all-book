@@ -63,3 +63,37 @@
 1. Collect data: most résumés came from men. Label: if "good candidate" was based on past applications and hiring, it may have carried past preferences. Train: words such as "women's" and the names of two all-women's colleges became proxies for gender.
 3. Common: both drew a large sample from a skewed source, so size did not fix who was missing or over-represented. Different: the poll's error came from who was on the lists and who answered; the recruiting tool also learned from labels and proxies, and its harm fell on a group of people rather than on one forecast.
 5. Examples: compare score distributions for women and men with similar qualifications; search for words and features that act as proxies; test on recent applicants the model never saw; ask what the label really measures; have recruiters review a sample of high and low scores with reasons.
+
+## Chapter 3
+
+```
+## Chapter 3
+
+### Review Questions A
+1. **(b)** As one or more tokens, each represented by a number. (a) and (c) are M1 (the model does not receive letters or syllables); (d) is M2 (no stored list of facts is consulted).
+3. **(c)** The tokenizer splits many Turkish words into several pieces, so the same content needs more tokens. (a) confuses length with processing; (b) is M1; (d) is false (counts for a given tokenizer are fixed).
+5. **(d)** At each step a token is picked with some chance, so the two runs can follow different paths. (a) is M3; (b) is M4 (the model does not learn from the conversation); (c) is M2.
+7. **(a)** It makes the highest-scoring tokens get picked more often. (b) confuses likely with true; temperature does not change facts or the context window, so (c) and (d) are wrong.
+9. **(c)** Correcting a model during inference does not change its settings; the correction stayed in the old conversation. (a) and (b) are versions of M4 (the chat trains or stores facts in the model); (d) is the second half of M4 (knowledge is not "complete up to" the cutoff, and the cutoff is not why the correction disappeared).
+11. **(d)** Retrieval changed what the model received; the pages, and the way the response uses them, can still be wrong. (a) is M6; (b) confuses retrieval with training (the settings do not change, so nothing is reflected "exactly"); (c) is false: the response is still produced token by token and can differ from the pages.
+13. It adds the exact result of a calculation the model requests to the context window. It does not change the model's settings or how it predicts, and it cannot fix a wrong calculation request or a wrong use of the result in the text.
+15. Instruction tuning trains the pretrained model further so that it follows instructions; its examples are prompts paired with good responses written by people (in the best-known recipe; newer recipes also use AI-generated examples).
+
+### Review Questions B (model answers)
+1. Most likely Hindi: in the book's measurement it needs 1.7 times (newer tokenizer) to 5.6 times (older tokenizer) as many tokens as English for the same text, more than Turkish (1.5–2.0×) or Spanish (1.2–1.5×). The company should check the token count for its own text with the tokenizer that the chosen tool uses (or the price per unit of content in each language).
+3. Claim 1: supported only if the registrar's page says so and is current; check the page itself. Claim 2: unsupported (no source), and it does not matter for the decision. Claim 3: unsupported for now: a 2017 blog post is neither official nor current; check the registrar's current fee page (the claim may turn out contradicted). Before acting: confirm the deadline and fee on official pages, and ask the registrar if anything is unclear.
+
+### Review Questions C (scoring guidance)
+1. Strong answers disagree or qualify: sources change what the model receives, but retrieved pages can be wrong or outdated, the wrong passages can be retrieved, information in a long context can be used unevenly (Liu et al., 2024), and the response can go beyond what the sources say. Strong answers name at least two checks.
+3. Either position, scored on reasoning: Petrov et al. (2023) and the book's measurement (cost, slower processing, less text in a fixed context); who pays the difference; practical options (pricing by content, better tokenizers). Strong answers separate the technical cause from the fairness question.
+
+### Spaced Review
+1. Search, generation, search-then-generate (Chapter 1, @fig-1-4). Retrieval is the search-then-generate lane.
+3. A sample is the examples we actually have; the population is everything the model will meet in the real world (Chapter 2).
+5. The model keeps learned settings; for text that appeared often, the settings can make an exact continuation very likely, so the model reproduces it token by token. That is still producing likely tokens, not looking up a stored record.
+
+### Case Study Questions
+1. Test 1: models fine-tuned on invented "A is B" facts often completed them in the trained direction but almost never in reverse (the largest GPT-3 model's score for the right reverse name was no higher than for a random name). Test 2: GPT-4 named the right parent in 79% of the mother and father questions about 1,000 celebrities (1,573 pairs) but named the famous child for only 33% of the pairs, even with up to ten tries.
+3. Training (in the invented-fact test, fine-tuning raised scores in the trained direction only; for real celebrities the authors suggest training text runs mostly one way) and scoring (the right reverse answer scored no higher than a random name) explain the curse; the context window explains why the reversal worked once the fact was in the prompt.
+5. Example: ask the question in both directions, in new chats; put the source fact in the prompt when you have it; check the answer against an official or reference source (for drugs, a drug database or a pharmacist); record the tool, model and date. Full credit: a two-direction test plus an independent check.
+```

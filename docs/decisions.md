@@ -48,3 +48,20 @@ The author asked the editor to make suitable choices for open items and to escal
 | D18 | Chapter 3 blueprint proposals | Reversal curse (Berglund et al., 2024) is the Opening Case and main Case Study; From the Field uses the author's 2024 manuscript on LLM-based modular software development (unpublished; cited as a manuscript); R1 becomes recommended rather than required in week 2 so the week stays near 2 hours | Decided by the editor under D19 (2026-10-18); the author updates the live syllabus |
 | D19 | Production mandate | The author asked the editor to finish the whole book without asking him. The editor decides editorial matters, records them here, and collects author-only items (personal anecdotes, final voice edits, live-syllabus changes, money and credentials) for the end. Chapters are produced by chapter agents under docs/production/chapter-brief.md | **Author's instruction, 2026-10-18** |
 | D20 | Examinable scope | The midterm covers the Core sections of Chapters 1–10 and the final the Core sections of the whole book; Deep chapters (6, 13, 17, 22, 23) and Deep sections are not examinable. The practice exam and syllabus wording should say "Core sections" | Editor decision under D19 (2026-10-18); the author updates the live syllabus wording |
+
+## Chapter-level decisions (from handoffs)
+
+<!-- ch03-decisions -->
+### Chapter 3
+| # | Topic | Decision | Notes |
+|---|---|---|---|
+| D-ch03-1 | Signature 4 code | `llm_anatomy(stage="complete", highlight=None, note=None)` in figures/scripts/ch03_figures.py; stages "tokens", "scores", "context", "complete"; `highlight` takes a set of parts (context, system, conversation, retrieved, prompt, tokens, model, scores, sampling) and overrides the stage; ≤ 9 boxes. **v2:** the figure now numbers the same four steps as section 3.2 (1 tokens, 2 score, 3 pick, 4 add and repeat); the scores box is unnumbered | Later chapters import it |
+| D-ch03-1b | Probe record code | `probe_record(rows=None, title=...)` returns a draw function; `rows` = list of (label, text) pairs; a label containing "Result" is drawn as a dashed hexagon. Default rows unchanged; the footer now says "options used (search on or off)" (terminology decision 1) | For Chapter 4 F4.7 |
+| D-ch03-2 | Next-token scores | No small open causal model in the local cache; all next-token scores illustrative, seeded picks recorded | Unchanged |
+| D-ch03-3 | Parallel text for token counts | Full UDHR (Unicode UDHR via NLTK udhr2, SHA-256 recorded), nine languages; o200k_base and cl100k_base, named in figure source lines and data only ("a newer / an older tokenizer" in student text) | Editor decision 6 |
+| D-ch03-4 | From the Field source | **v2:** cites the published article (Şeker & Nizam-Özoğur, 2026, *Electrica* 26, Article 0033, doi:10.5152/electrica.2026.25033; full text read) with the 2024 manuscript as its earlier version; facts limited to what both say, details only in the manuscript attributed to "the earlier version"; product not named in the text (its name is in the reference title); co-author named; D16 disclosure kept | Author approval requested |
+| D-ch03-5 | Figures vs. blueprint | F3.7 cut; F3.11 omitted; F3.13 and F3.3d added; F1.4 reuse kept (pedagogy suggested an in-text reference only; the editor's brief asked for the reuse) | 16 appearances |
+| D-ch03-6 | Case failure label | C16 labeled on Signature 5 (primary hallucination, inferred) in the case file and handoff only; the chapter describes the failure in plain words and points to Chapter 4 (book-wide rule; editor decision 6) | Figure import when Chapter 4's `failure_tree` exists |
+| D-ch03-7 | Terminology | "settings (parameters)" for learned values; "options" for temperature, search and memory toggles; never "temperature setting" | Editor decision 1 |
+| D-ch03-8 | Verdict scale | Section 3.5 examples, Your Turn and Review B3 use the book-wide five verdicts with a pointer to Chapter 8 | Book-wide rule |
+<!-- /ch03-decisions -->

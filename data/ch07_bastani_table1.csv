@@ -1,0 +1,8 @@
+# Published values: Bastani, Bastani, Sungu, Ge, Kabakci & Mariman (2025), PNAS 122(26) e2422633122, Table 1 (intention-to-treat regression; normalized grades 0-1; SEs clustered by classroom).
+# Control arm means: practice 0.284 (SD 0.287), exam 0.321 (SD 0.277). 2,848 observations. Significance: ** p<0.01, * p<0.05, ns not significant.
+# points = effect x 100 (points on a 100-point scale); relative_pct = effect / control_mean x 100, as reported in the text (48%, 127%, 17%).
+arm,phase,effect,se,control_mean,points,relative_pct,significance
+GPT Base,practice,0.137,0.031,0.284,13.7,48,**
+GPT Tutor,practice,0.361,0.032,0.284,36.1,127,**
+GPT Base,exam,-0.054,0.022,0.321,-5.4,-17,*
+GPT Tutor,exam,-0.004,0.013,0.321,-0.4,-1,ns

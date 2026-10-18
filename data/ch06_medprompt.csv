@@ -1,0 +1,9 @@
+# Published values: Nori et al. (2023), "Can generalist foundation models outcompete special-purpose tuning? Case study in medicine", arXiv:2311.16452v1, Figure 4 (printed accuracies, MedQA US 4-option, GPT-4).
+# The first bar is prior work reported in the paper (zero-shot, simple prompt). Steps are cumulative, in the authors' order, which they call subjective.
+# Note: Figure 6 of the same paper labels the last two increments +0.8 (kNN) and +2.1 (ensemble); Figure 4's printed accuracies (88.4, 90.2) imply +1.1 and +1.8. The chart uses Figure 4's printed accuracies.
+step,label,accuracy
+1,No examples (zero-shot),81.7
+2,+ five randomly chosen solved questions,83.9
+3,+ step-by-step reasoning GPT-4 wrote for those questions,87.3
+4,Examples chosen by similarity to each question,88.4
+5,+ five runs with answer options shuffled; majority vote,90.2

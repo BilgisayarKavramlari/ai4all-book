@@ -5,7 +5,7 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Term | Definition | Türkçe |
 |---|---|---|
 | Large language model (LLM) | A generative model that produces text, trained on large amounts of text to predict the next token in a sequence. | Büyük dil modeli |
-| Token | A unit of text (a word, part of a word, or symbol) that a language model reads and produces. | Belirteç (token) |
+| Token | A unit of text (a word, part of a word, or a symbol) that a language model receives and produces. | Belirteç (token) |
 | Hallucination | Fluent output that is not supported by the model's input or by facts. | Halüsinasyon / uydurma |
 | Generative AI system | Software that produces new content, such as text, images or code, in response to an input. | Üretken yapay zekâ |
 | Prompt | The input you give an AI tool. | İstem |
@@ -58,3 +58,26 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Self-supervised learning | Learning from examples whose answer is hidden in the data itself, such as the next word in a sentence. | Öz-denetimli öğrenme |
 | Learning rate | The size of each adjustment step in gradient descent. | Öğrenme oranı |
 | Generative AI | AI that produces new content (text, images, audio or code); today built almost entirely with deep learning. | Üretken yapay zekâ |
+| Tokenizer | A program that splits text into tokens and gives each token a number. | Belirteçleyici (tokenizer) |
+| Probability distribution | A set of chances for all possible outcomes that add up to 100%. | Olasılık dağılımı |
+| Sampling (of tokens) | Picking the next token according to the model's scores (not the same as a sample of examples in Chapter 2). | Örnekleme (belirteç seçimi) |
+| Next-token prediction | Producing text one token at a time in four steps: split the text into tokens, score every possible next token, pick one, add it and repeat. | Sonraki belirteç tahmini |
+| Reasoning tokens | Extra tokens some tools produce before the answer, sometimes hidden; they are made in the same way as other tokens and count toward context and cost. | Akıl yürütme belirteçleri |
+| Option | A control a user can change, such as temperature or search on or off; unlike the model's settings (parameters), it is not learned. | Seçenek |
+| Temperature | An option that changes how often less likely tokens are picked; it does not change the model's settings. | Sıcaklık (sıcaklık seçeneği) |
+| Pretraining | The first stage of training a language model: self-supervised learning on very large collections of text, in which the settings are adjusted so that the real next token gets a higher score. | Ön eğitim |
+| Fine-tuning | Extra training of an already trained model on a smaller, new set of texts or examples. | İnce ayar |
+| Instruction tuning | Further training on prompts paired with good responses written by people. | Talimat ayarı (talimatla ince ayar) |
+| Learning from human feedback | A training stage in which people rank responses, a separate scoring model is trained on their rankings, and the settings move toward responses that score higher. | İnsan geri bildiriminden öğrenme |
+| Knowledge cutoff | The date after which no text was collected for a model's training. | Bilgi kesim tarihi |
+| Context window | The space for everything a language model receives in one turn, measured in tokens; the response also counts toward it. | Bağlam penceresi |
+| System prompt | Instructions from a tool's provider or developer that are added to the context window, usually unseen by the user. | Sistem istemi |
+| Memory (product feature) | A product feature that saves notes about a user, or draws on past chats, and adds them to later conversations; it adds text and does not train the model. | Bellek (ürün özelliği) |
+| Retrieval | A system's search of a collection, such as the web or a set of files, that adds the passages it finds to the context window. | Erişim (getirme) |
+| Retrieval-augmented generation (RAG) | Producing a response with retrieved passages added to the context window. | Erişimle zenginleştirilmiş üretim |
+| Tool use | A model producing a request to run other software, such as a calculator or a search engine, whose result is added to the context window. | Araç kullanımı |
+| Agent | A system in which the model directs its own steps and tool use toward a goal; in a workflow, people fixed the steps in advance (adapted from Anthropic, 2024). Not the same as the AI Fluency "agency" mode. | Ajan (yapay zekâ ajanı) |
+| Probe | A small test of a model's behavior with four parts: prediction, prompt, result and conclusion. | Yoklama (sınama) |
+| Reversal curse | The finding that a model trained on "A is B" often fails to answer "B is A" (Berglund et al., 2024). | Tersine çevirme laneti |
+| Attention (Deep) | In a Transformer, the mechanism that updates each token's representation with a weighted mix of the tokens before it. | Dikkat (mekanizması) |
+| Transformer (Deep) | The model architecture, introduced in 2017, on which most of today's large language models are built (as of October 2026). | Transformer (dönüştürücü mimarisi) |

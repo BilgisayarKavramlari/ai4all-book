@@ -1,0 +1,5 @@
+python 3.10.7 · standard library only (random, csv)
+seed 4; N = 1000 generations per condition
+recombination: 12 training sentences '<city> is the capital of <country> .'; word-pair (bigram) model with counts; five-word-context model with back-off to shorter contexts; unseen cities: Accra, Quito, Lisbon, Seoul (their countries never appear in training)
+scoring: rule A right 1 / wrong 0 / abstain 0; rule B right 1 / wrong -3 / abstain 0 (penalty t/(1-t), t = 0.75)
+TOYS for teaching; not measurements of real large language models
