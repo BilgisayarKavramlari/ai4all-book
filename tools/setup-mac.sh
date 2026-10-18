@@ -9,6 +9,9 @@ try()  { "$@" || echo "   !! failed: $* (continue; fix later)"; }
 step "Homebrew packages"
 try brew install git gh node poppler qpdf epubcheck vale
 try brew install --cask quarto            # Quarto bundles Pandoc and Typst
+# If the cask installer cannot ask for a password, install without sudo into ~/Applications:
+#   pkgutil --expand-full "$(ls /opt/homebrew/Caskroom/quarto/*/quarto-*-macos.pkg | tail -1)" /tmp/quarto-pkg
+#   cp -R /tmp/quarto-pkg/quarto-core.pkg/Payload ~/Applications/quarto && ln -sf ~/Applications/quarto/bin/quarto ~/.local/bin/quarto
 
 step "Node tools"
 try npm install -g @mermaid-js/mermaid-cli   # mmdc: Mermaid -> SVG/PNG/PDF
