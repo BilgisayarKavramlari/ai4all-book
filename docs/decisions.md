@@ -324,3 +324,17 @@ The author asked the editor to make suitable choices for open items and to escal
 | D-21.7 | **Final Bridge "Chapters 8 to 20":** ten items — FB1 §8.2–8.3, FB2 §9.4–9.5, FB3 §11.2, FB4 §12.1/12.6, FB5 §16.3, FB6 §14.3–14.4, FB7 §15.1–15.2/15.5–15.6, FB8 §18.4, FB9 §18.3, FB10 §10.7; Chapters 19–20 left to the Spaced Review; ~40 min, final-exam practice; offered to Appendix D's practice final; even items on eLearning and in the first 10 minutes of Tue May 4 | Editor decisions 4, 5; D-10.4 |
 | D-21.8 | Figure ids follow page order (F21.1–F21.14) | As D-16.9 |
 <!-- /ch21-decisions -->
+<!-- ch18-decisions -->
+### Chapter 18
+| # | Decision | Notes |
+|---|---|---|
+| D-18.1 | **Regulation Map API (book-wide).** `regulation_map(highlight=None, notes=None, dashed=None, note=None, title=None)` in figures/scripts/ch18_figures.py; `MAP_PARTS = ["eu", "us_federal", "us_exec", "states", "city", "terms", "contract", "org"]` + a center box (9 boxes); `highlight` = applies to this use (dark fill, thick); `notes` replaces a box's sub-text (≤ 44 characters, checked); `dashed` = an inferred ("may apply") placement only; `us_exec` labeled "changes often" (never dashed); canvas 800 × `MAP_H` (520). Helper `ai_act_tiers(notes=None, as_of="October 2026")` reads dates from data/ch18_legal_status.csv | For Ch. 19 (rules per field), 21, 22; import, never redraw |
+| D-18.2 | **Training-data and copyright cases under the input-side rule:** C15 has no tree label; data-flow map | Brief rule |
+| D-18.3 | **Deployer responsibility is this book's reading**, from one small-claims decision (Moffatt); "is responsible for" replaces the idiom "answers for" in Ch. 18 | Editor decision 4; student panel |
+| D-18.4 | **Legal status:** data/ch18_legal_status.csv is the single dated table for Ch. 18's legal facts; date-stable wording; checkpoints Nov 2026 and Feb 2027 | Brief rule |
+| D-18.5 | **AI Act dates in other chapters:** Ch. 1's Art. 4 wording and Ch. 13's Art. 50 date are still correct; Ch. 11's Art. 14(4)(b) wording confirmed | No edits needed |
+| D-18.6 | **Rules-and-rights evidence (with the evidence-transfer rule):** D only if the student opened the rule's own text, for the tool and data actually used, and cites its section (tool terms: opened the page and cited the section); for a law, I with a reason is acceptable; a provided scenario's rules paragraph counts as the rule's text | Editor decision 3; brief rule |
+| D-18.7 | **Ross facts:** appeals opinion = main source; 2,243 headnotes; certification Apr 4, 2025 (D.I. 799); the appeals court "decided factor 3 the other way" (not "reversed"); only the trial court called factor 4 the most important; footnote 7 is not a holding; one quotation, "minimally transformative, at best" | Editor decision 4–5 |
+| D-18.8 | **Privacy law ownership:** the legal layer (FERPA, HIPAA, consent, state privacy law) is applied to a student's situation in **§18.1, paragraph "Privacy law, applied to you"**; Ch. 15 points there; Ch. 18 does not send it back | Editor decision 1; brief rule |
+| D-18.9 | **Court vocabulary box** after the Opening Case (trial court, appeals court, Third Circuit, holding, binds, persuasive, affirmed, declines to review); one name, "trial court"; citations in parentheses not examinable | Student panel; editor decision 7 |
+<!-- /ch18-decisions -->

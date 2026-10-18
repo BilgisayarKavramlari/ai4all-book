@@ -234,3 +234,15 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | Four role briefs for the alternative assignment (hospital unit clerk, marketing intern, lab research assistant, freelance translator), each with the role's rules and three dated incidents (about 5 minutes' reading each) | eLearning | Tue Apr 27, 2027 |
 | Final Bridge key (even items) for eLearning and the first 10 minutes of Tue May 4 | eLearning (released after Part B) | Tue May 4, 2027 |
 <!-- /ch21 -->
+
+<!-- ch18 -->
+## Chapter 18
+| Asset | Where | Needed by |
+|---|---|---|
+| Rules-and-rights risk sheet (the nine-row sheet in section 18.6) as an accessible table, printed for the lab | eLearning; printed | Thu Apr 15, 2027 |
+| A one-paragraph rules text for each of Chapter 15's three alternative-assignment scenarios (dated excerpts with section numbers: the club's, shop's or lab's own rule; the tool's terms section on training) so the risk can be marked D | eLearning | Thu Apr 15, 2027 |
+| Printed, dated, glossed excerpts of two providers' terms (Lab 18.1 no-device route) | eLearning | Chapter release |
+| Lab 18.2 sheet (eight constructed uses) and accessible version | eLearning | Chapter release |
+| Blank Regulation Map for Lab 18.3 and the Mini-Project; text version | eLearning | Chapter release |
+| Mini-Project alternative: a provided pair of dated policy excerpts (two universities' student AI guidance, or the EU AI Act's transparency article and TRAIGA § 552.051) | eLearning | Chapter release |
+<!-- /ch18 -->

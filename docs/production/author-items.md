@@ -131,3 +131,12 @@
 4. **From the Field:** approve the use of your 2014 entry "Kontrol Sayfası (Control Sheet)" (*YBS Ansiklopedi* 1(4), Aralık 2014), written in first person from the entry, facts limited to it, present-day connections marked; confirm the pages (printed 26 and 27; the PDF's printed citation line is wrong and names "Tam Süreli Eşdeğer").
 5. Final voice edit of the chapter (pipeline step 8).
 <!-- /ch21 -->
+
+<!-- ch18 -->
+## Chapter 18
+1. **Live syllabus, week 12:** (a) R14 and R15 **recommended** (R14 reading guide: Executive Summary, pp. ii–iii; R15's "instructor summary" replaced by §18.5's status box and the primary sections in Further Reading); (b) A12's required rules-and-rights risk is drafted in Lab 15.1, step 6 and finished at home (~3 min); (c) the book-map "Policy comparison note" is an optional Mini-Project (about 3–4 hours).
+2. **From the Field:** approve Şeker (2014), "Yazılımların Kaynakları", *YBS Ansiklopedi* 1(2), 5–8 (pages confirmed by the journal's contents page), written in first person from the entry, with present-day connections marked and the **D16 disclosure**. Optional: a real, anonymized moment when a license, contract or vendor term changed a software or AI decision; it will not be written for you.
+3. **Tuesday Apr 13:** about 7 concept minutes for Chapter 18 (Regulation Map; "three courts, three answers").
+4. **UTD policy:** confirm the book may cite UTDSP5017 and that the live syllabus states the course's choice under it.
+5. Final voice edit (pipeline step 8).
+<!-- /ch18 -->

@@ -358,3 +358,40 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Dated note | A fact about a tool or a rule, written with the date it was true: "as of [month year]." | Tarihli not |
 | Implementation intention (Deep) | A plan that links a goal you already hold to a cue in the world, in the form "if this situation arises, I will respond this way." | Uygulama niyeti |
 | Ethics washing (gloss, Ethics Lens) | A statement of good principles that makes a person or company look responsible without changing what they do. | Etik aklama |
+| Law | Rules made by a government and enforced by courts or agencies. | Hukuk / yasa |
+| Statute | A law passed by a legislature. | Kanun |
+| Regulation | A rule made by an agency, or a law adopted by the European Union. | Yönetmelik / tüzük (AB) |
+| Executive order | A president's or governor's instructions to the government. | Başkanlık kararnamesi |
+| Case law | Court decisions that later courts follow. | İçtihat |
+| Jurisdiction | The area, such as a country, a state or a city, whose law applies. | Yargı yetkisi alanı |
+| Terms of service | The contract a provider sets for using its tool. | Hizmet koşulları |
+| License | Permission to use something on stated conditions. | Lisans |
+| Policy (of an organization) | The written rules of a course, university or employer. | (Kurum) politikası |
+| Governance (of AI) | The rules, roles and checks that decide how AI may be used and who is responsible for it. | (Yapay zekâ) yönetişimi |
+| Regulation Map | This book's nine-box picture of where the rules for an AI use come from: law by jurisdiction (EU, U.S. federal law and executive policy, states, cities), agreements (terms, licenses, contracts) and your organization's policy. | Düzenleme haritası |
+| Trial court | The court that hears a case first; in the U.S. federal system, a district court. | İlk derece mahkemesi |
+| Appeals court | A court that reviews trial courts' decisions in its region (for example, the Third Circuit). | İstinaf/temyiz mahkemesi |
+| Holding | What a court decides in order to settle the case; it binds the courts below it and is only persuasive elsewhere. | (Mahkeme) hükmü |
+| Affirmed | The appeals court agreed with the trial court's decision. | Onandı |
+| FERPA | The Family Educational Rights and Privacy Act, a U.S. law that protects students' education records. | FERPA (öğrenci kayıtları gizliliği yasası) |
+| HIPAA | The Health Insurance Portability and Accountability Act, a U.S. law that protects health information held by health plans, most health-care providers and the companies that handle it for them. | HIPAA (sağlık bilgisi gizliliği yasası) |
+| Copyright | The legal right of the author of an original work to control copying, adaptation, distribution, public performance and public display; it arises automatically when the work is fixed and protects expression, not ideas or facts. | Telif hakkı |
+| Public domain | Works that copyright no longer protects, or never did. | Kamu malı |
+| Infringement | Using a protected work in one of the ways copyright controls without permission or a legal exception. | (Hak) ihlali |
+| Fair use | A U.S. legal exception that permits some uses of a protected work without permission, decided case by case by weighing four factors. | Adil kullanım |
+| Transformative (use) | A use that adds a new purpose rather than standing in for the original. | Dönüştürücü kullanım |
+| Authorship (in copyright) | The legal status of having created the expression in a work; in U.S. law only a human can be an author. | (Telifte) eser sahipliği |
+| Registration (copyright) | Recording a work with the U.S. Copyright Office; optional, but needed before suing over a U.S. work. | (Telif) tescil |
+| Trademark | A word, name, logo or other sign that identifies who offers goods or services, protected for the business that uses it in trade, whoever designed it. | Marka |
+| Liability | Legal responsibility to make up for harm or to pay a penalty. | Hukuki sorumluluk |
+| Provider (EU AI Act and Texas law) | The organization that builds an AI system or puts it on the market (called a developer in Texas law). | Sağlayıcı |
+| Deployer | An organization or person that uses an AI system in its own work, such as a company with a website chatbot. | Uygulayıcı (kullanıma sunan) |
+| Disclaimer | A notice that tries to limit responsibility, such as "AI responses may contain errors." | Sorumluluk reddi |
+| EU AI Act | Regulation (EU) 2024/1689, the European Union's law on AI systems, which sets duties by level of risk. | AB Yapay Zekâ Yasası |
+| Prohibited practice (EU AI Act) | An AI use the EU AI Act bans, such as inferring people's emotions from their faces or voices at work or in education. | Yasaklı uygulama |
+| High-risk AI system (EU AI Act) | An AI system in a listed use, such as admission, grading, test monitoring or screening job applicants, or built into a regulated product. | Yüksek riskli yapay zekâ sistemi |
+| Transparency duty | A duty to tell people they are dealing with AI, or that content was generated or altered by AI. | Şeffaflık yükümlülüğü |
+| Right (in the rules-and-rights risk) | Something a law or an agreement lets a person control or claim, such as copyright in their work or privacy of their records. | Hak |
+| Rules-and-rights risk | An A12 risk written as "risk of breaking [a named rule] or of [a named person] losing [a named right]," with the rule's own text as evidence. | Kurallar ve haklar riski |
+| Disparate impact (Deep) | A practice that falls more heavily on a protected group without a job-related reason. | Dolaylı ayrımcı etki |
+| Opt-out (text and data mining) (Deep) | A rights holder's machine-readable reservation that excludes its works from text and data mining under EU law. | (Metin ve veri madenciliğinden) çekilme |

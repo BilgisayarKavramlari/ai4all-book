@@ -786,3 +786,58 @@ Overall 364 of 400 (91.0%); Spanish first-year questions 28 of 40 (70.0%), hidde
 
 - **Lab 21.2.** Expect generated "codes" to be mostly slogans; few or no lines pass all three questions, and none can pass "reason" for the student, because the tool has no access to the student's evidence.
 - **Lab 21.3.** Use only the excerpts provided; the 2018 version names machine-learning systems and asks that systems whose future risks cannot be reliably predicted be reassessed often in use (principle 2.5).
+
+## Chapter 18
+
+### Check Yourself
+
+- **18.1** Your employer's rule: it forbids sharing the newsletter outside the company, and the strictest rule that applies decides; the course's permission and the tool's terms do not override it (§18.1).
+- **18.2** Any one: Ross's tool was not generative and served the same purpose as Westlaw, competing with it; Bartz's training produced new text (transformative in the court's view); Ross copied whole headnotes it did not need (§18.2).
+- **18.3** Authorship requires a human who created the expression; prompts alone are not enough control, and terms between you and the provider cannot create a copyright the law does not grant (§18.3).
+- **18.4** It rests on one small-claims decision in British Columbia (the airline case), which is not a general rule; other courts and laws may differ (§18.4).
+- **18.5** The emotion-reading tool is a prohibited practice: it may not be used in education at all (except for medical or safety reasons). The cheating-detection tool is high-risk: it may be used, but with duties such as risk management, documentation and human oversight (§18.5). (Instructor note: the Act's recital explains the ban by doubts about the scientific basis of emotion inference, the risk of discrimination and the imbalance of power in schools and workplaces, Recital 44; not required.)
+- **18.6** D when you opened the rule's own text for this tool and data and cite its section (a provided scenario's rules paragraph counts); I with a reason is acceptable for a law you know only from a summary (§18.6).
+
+### Faded examples
+
+- **18.1 A patient leaflet.** The free tool's terms say uploads may train its models, so the leaflet's text could be reused beyond the class; if the placement allowed it at all, use the university-provided tool, whose terms differ, or summarize from your own notes.
+- **18.2 Two ways to get books.** Use B: keeping a permanent library of pirated copies, including books never used for training, was a separate use with no transformative purpose; factor 1 leans against fair use. The court found use A fair and use B not.
+- **18.3 A product description.** Her rewritten and added sentences can be protected as her own expression if original; the tool's unchanged text cannot. If registered, the company identifies the AI-generated text and claims only her contribution.
+- **18.4 A listing.** By this book's reading, the agent (and the agency that posted the listing), who relied on and published the AI draft, is responsible; a check of the draft's numbers against the appraisal before posting would have caught it.
+- **18.5 Two U.S. uses.** (b) New York City's Local Law 144: a bias audit within one year before use, a published summary of it, and notice to candidates (as of October 2026).
+- **18.6 A club's sign-up assistant.** Harmed: club members; rating, for example, medium likelihood, medium impact; mitigation: reduce — a tool whose terms exclude training, or keep member emails out of the tool (avoid); risk owner: the club's president or data officer; the rule's owner: the club's officers (for § 3) and the provider (for § 5), e.g., "Can we turn off training on inputs for this account?"
+
+### Review Questions A
+
+1. **(c)** For coursework, the course's rule applies. (a) and (d) misread which layer governs; (b) is M6 (legal ≠ allowed).
+3. **(d)** Market effect. (a) is factor 2, (b) factor 1, (c) factor 3.
+5. **(c)** Training was fair use; keeping a library of pirated copies was not. (a) and (b) are M2; (d) confuses the scanning holding with training.
+7. **(a)** Short phrases and slogans are not protected by copyright (37 C.F.R. § 202.1(a)); trademark may apply. (b) and (c) are M3; (d) overcorrects.
+9. **(b)** The airline, which ran the chatbot. (a) is M4; (c) and (d) contradict the decision.
+11. High-risk (employment: screening applications). One deployer duty: use it as instructed, or assign oversight to people with the competence, training and authority (scheduled from December 2, 2027, as of October 2026).
+13. **(d)** Yes: the Act reaches providers whose systems are sold and used in the EU, wherever they are based. (a) and (c) are M5; (b) is wrong (employment is high-risk).
+
+### Review Questions B
+
+1. Course: the syllabus and UTDSP5017 decide whether AI may be used for this study task; university: the data classes and approved tools; terms: a free consumer tool may train on uploads and keep them; copyright: uploading the whole chapter makes a copy of a protected work, which needs permission or an exception. A respectful route: flashcards from your own notes, short passages in a university-provided tool if the course allows it, or the publisher's own study tools. Full credit: four layers with a rule each, and a route.
+3. By this book's reading, the property-management company, as deployer, is responsible; link 2 failed (fee answers never checked against the lease); the disclaimer does not move the duty to check (inferred). Check: test fee and policy answers against the lease before launch and after each change; route lease questions to a person.
+
+### Review Questions C
+
+1. Strong answers state a position and weigh the three positions (permission first, opt-out, pay afterward) with costs: access for small developers vs. consent and income for authors; they use the decisions accurately (Bartz's settled claims concerned pirated copies, not training; Ross found harm to a training-data licensing market). Weak answers treat a trial ruling as settling the question or ignore who bears the costs.
+3. Strong answers separate contract from copyright: terms allocate whatever rights exist between user and provider but cannot create authorship; prompts alone are not enough; your own expression, arrangement and changes may be protected; outputs can still copy others' work. Weak answers equate "owning" with "authoring."
+
+### Spaced Review
+
+1. An approval gate, ideally a hard gate the system enforces (Chapter 14): a person reviews before the action takes effect and can stop or refuse it, with the evidence, time and authority to do so.
+3. The data gate changes: your input stays on hardware you control, so more data classes may pass if your institution's rules agree. The license still decides what you may do with the model.
+
+### Case Study Questions
+
+1. Input = memos written from Westlaw headnotes (the copying); reuse = training the tool; output = passages of court decisions, not headnotes. The tree does not apply because no AI output was wrong; the harm sits at the input.
+3. Factor 3: the trial court found it for Ross (the outputs did not show headnotes); the appeals court decided it the other way (whole headnotes copied, and copying unnecessary because the decisions are free). Factor 4: both found market harm, to Westlaw and to a market for licensing training data; the trial court called it the most important factor, the appeals court did not rank it.
+5. Ross: U.S. fair use; a competing, non-generative tool trained on copied headnotes; decided on factors 1, 3 and 4. Getty: UK law (no general fair-use test); the training claim was dropped because training happened outside the UK; the question was whether the model's weights were an "infringing copy" (no: they do not store the works); limited trade-mark findings on watermark outputs.
+
+### Lab notes
+
+- **Lab 18.2:** uses 3, 7 and 8 share Ross's features (same purpose or market; commercial), 4 resembles Bartz's training holding, 5 Bartz's pirated library, 6 is non-expressive analysis (statistics only), 1–2 are study and commentary; factor 4 carries great weight; use 7 is untested for generative AI as of October 2026.
