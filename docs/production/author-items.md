@@ -106,3 +106,12 @@
 5. **Course guidance:** the section 12.5 table is reused verbatim (Ch. 12 author item 6).
 6. Final voice edit (pipeline step 8).
 <!-- /ch15 -->
+
+<!-- ch16 -->
+## Chapter 16
+1. **Live syllabus, week 12:** (a) R13 (Gender Shades) recommended with a reading guide; (b) Lab 15.1 station 3 (minutes 34–49) with the pooled reading at the gallery walk; (c) A12 includes a required fairness row and bias probe; the book-map "Bias audit" is an optional Mini-Project.
+2. **From the Field:** approve the 2014 equity-theory entry (Şeker, 2014, *YBS Ansiklopedi* 1(2), 17–19), written in first person from the entry, with present-day connections marked. Optional: a real, anonymized moment in which a scoring system was judged unfair by the people it scored; it will not be written for you.
+3. **Tuesday Apr 13:** confirm about 8 minutes for Chapter 16 in the shared session.
+4. **UTD check before Apr 15:** whether Copilot Chat's memory or personalization can be switched off for the station (the OIT page does not say).
+5. Final voice edit (pipeline step 8).
+<!-- /ch16 -->

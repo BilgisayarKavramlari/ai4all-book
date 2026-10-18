@@ -301,3 +301,29 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Qualifying risk | A risk that needs a full mitigation plan in A12: its impact is high, or both its likelihood and its impact are at least medium. | Plan gerektiren risk |
 | Risk owner | The person who agrees in writing to carry a risk. | Risk sahibi |
 | Red-teaming | Testing a system the way an attacker would, with permission, to find weaknesses first. | Kırmızı takım testi |
+| Bias (in an AI system) | A systematic difference in how a system's outputs or errors fall on different groups of people that disadvantages some of them. | (Yapay zekâ sisteminde) yanlılık |
+| Bias Lifecycle | The book's four-phase picture of where bias can enter an AI system: data, model, use and feedback. | Yanlılık yaşam döngüsü |
+| Allocation harm | Harm that withholds an opportunity or resource, such as a job or a place in a program. | Dağıtım zararı |
+| Representation harm | Harm that stereotypes, demeans or leaves out a group in what people see and read. | Temsil zararı |
+| Feedback loop (in an AI system) | A path by which a system's decisions become its next data, so a gap between groups can grow. | Geri besleme döngüsü |
+| Disaggregated evaluation | Reporting a system's performance separately for each group and subgroup instead of one overall number. | Ayrıştırılmış değerlendirme |
+| Intersectional subgroup | A group defined by two or more characteristics at once, such as darker-skinned women. | Kesişimsel alt grup |
+| Fairness definition | A stated rule for which comparison between groups must come out equal. | Adalet tanımı |
+| Selection rate | The share of a group that a tool flags. | Seçilme oranı |
+| Base rate | How often the outcome actually occurs in a group. | Temel oran |
+| Equal selection rates | A fairness definition: the same share of each group is flagged (demographic parity). | Eşit seçilme oranları |
+| Equal error rates | A fairness definition: the same share missed, and the same share flagged wrongly, in each group. | Eşit hata oranları |
+| Equal precision | A fairness definition: a flag means the same in each group; of the flagged, the same share were really positive (predictive parity). | Eşit kesinlik |
+| Miss rate | The share of real cases not flagged (one minus recall). | Kaçırma oranı |
+| False-positive rate (of a decision tool) | The share of people without the outcome who are flagged anyway. | (Karar aracının) yanlış pozitif oranı |
+| Paired-input test | A test that runs inputs identical except for one cue linked to a group, many times each, counts the outputs by a rule fixed before any run, and compares the counts. | Eşleştirilmiş girdi testi |
+| Two-part rule | A gap is a finding only if (1) the test was fair (one change, a fixed counting rule, one tool, fresh chats, the same number of runs per version, at least 10) and (2) the gap is at least the chance threshold; otherwise it is a lead. | İki koşullu kural |
+| Chance threshold | The smallest gap, in either direction, that chance alone reaches less than 1 time in 20 when both versions truly give the pattern 50% of the time. | Şans eşiği |
+| Bias probe | A paired-input test used as A12's red-team probe. | Yanlılık yoklaması |
+| Mitigation (of bias) | A change meant to reduce a measured bias. | (Yanlılığı) azaltma önlemi |
+| Protected characteristic | A characteristic, such as race or sex, that anti-discrimination law says decisions such as hiring must not be based on. | Korunan özellik |
+| Stakeholder | Everyone affected by a decision, including people who never use the tool. | Paydaş |
+| Bias audit | A structured test of whether a system's outputs or errors differ across groups, recorded with its method, counts and decisions. | Yanlılık denetimi |
+| Calibration within groups (Deep) | A score means the same chance of the outcome in every group (a score of 0.7 means a 70% chance). | Gruplar içi kalibrasyon |
+| Runaway feedback loop (Deep) | A feedback loop in which a system keeps being sent back to where it already looked, whatever the true rate. | Kontrolden çıkan geri besleme döngüsü |
+| Predictive policing (Deep) | Software that sends patrols to areas where past records show more crime. | Öngörücü polislik |

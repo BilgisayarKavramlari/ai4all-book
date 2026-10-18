@@ -1,0 +1,4 @@
+python 3.10.7 · standard library only (math.comb); exact, no seeds
+demo 1: score bins [0.1, 0.3, 0.5, 0.7, 0.9]; counts {'A': [150, 200, 300, 200, 150], 'B': [450, 300, 100, 100, 50]}; calibrated by construction (share needing help in a bin = its score); flag if score >= threshold
+demo 2: true rate 0.5 in both versions; chance of a gap >= 20 points; threshold = smallest gap with chance < 0.05; runs [5, 10, 15, 20, 25, 26, 30, 35, 39, 40, 45, 50, 65, 100, 200]
+This book's calculations, constructed for teaching; not data about any real system or group.

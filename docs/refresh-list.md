@@ -176,3 +176,11 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 15 | Case Study | OpenAI API no-training default (Mar 1, 2023); chat history off (Apr 25, 2023) | 2023 | OpenAI (2023b, 2023c) | Each edition |
 | 15 | Short cases | EchoLeak fixed; shared-link option removed | Oct 2026 | Microsoft (2025); Abdullahi (2025) | Each edition |
 | 15 | Lab 15.1 | Live runs of the hidden-instruction file allowed in the university tool | Pending | UTD OIT / ISO (author item) | Before Apr 15, 2027 |
+| 16 | 16.4, Review A10, references | Wilson & Caliskan (2024): gender-only results corrected; race and intersectional results stand; no AIES erratum found | Oct 2026 | arXiv:2407.20371v3 (2026-08-30) | Each edition |
+| 16 | 16.5, Short case 1 | Google paused Gemini's images of people (Feb 2024); Imagen 3 return announced Aug 28, 2024 (early access, paid tiers, English) | Oct 2026 | Raghavan (2024); Google (2024) | Each edition |
+| 16 | 16.6 | NYC Local Law 144: published bias audit (selection rates by sex and race/ethnicity, no pass mark); enforced since July 5, 2023; NY State Comptroller's Dec 2025 audit criticized enforcement | Oct 2026 | NYC DCWP; NYS OSC (2025) | Each edition (Ch. 18 coordinates) |
+| 16 | Case Study | IBM's 2020 exit from general-purpose facial recognition and analysis (primary now archived only); Amazon's moratorium extended until further notice (May 2021, reported) | Oct 2026 | IBM (2020); Amazon (2020); news | Each edition |
+| 16 | Short case 2 | Williams settlement (June 28, 2024): four-year court oversight | Oct 2026 | ACLU (2024); Michigan Public | 2028 |
+| 16 | Ethics Lens | GPT-4 translated-MMLU gap (English 85.5%, Telugu 62.0%), a 2023 model | Oct 2026 | OpenAI (2023) | Each edition |
+| 16 | Career | Atari et al. "Which humans?" is a preprint | Oct 2026 | PsyArXiv (2023) | Each edition |
+| 16 | 16.7, Labs | Microsoft Copilot Chat available to UTD students; memory/personalization options not documented on the OIT page — check before the lab | Oct 2026 | UTD OIT | Each term |

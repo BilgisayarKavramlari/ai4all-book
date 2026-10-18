@@ -621,3 +621,59 @@ Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter qu
 1. One map: input = two programs' source code and a meeting transcript; tool at the provider; storage on outside servers (could not be retrieved, reported); reuse depending on the terms. The harm sat in the input and storage boxes, past the trust boundary.
 3. Byte limit: reduce; in-house tool: reduce; warnings and possible discipline: reduce; device restriction: avoid. Likely owners (the reader's reasoning; the reports name none): the division's management or IT security, and the company's leadership for the restriction.
 5. C12: a person sent data across the boundary; controls: the data gate, an approved tool, a written rule, data loss prevention. C19: a system combined the three legs; controls: remove a leg, layered defenses, vendor fixes. Only C19 is on the tree, because injected text changed an output; in C12 no output was wrong.
+
+## Chapter 16
+
+### Check Yourself
+
+- **16.1** Data, model, use and feedback. Bias can enter through proxies and proxy labels in the data, testing only on overall accuracy, the setting of use and feedback, none of which needs intent (§16.1).
+- **16.2** English 112 of 120 = 93.3%; Spanish 28 of 40 = 70.0%. One first-year rate (140 of 160 = 87.5%) would hide the Spanish-language gap (§16.2).
+- **16.3** When more of one group truly has the outcome, a flag there is right more often by default; to keep precision equal, that group must end up with a higher false-positive rate, a higher miss rate or both (§16.3; Chouldechova, 2017).
+- **16.4** Everything stays the same except one cue, with the counting rule fixed first, one tool, fresh chats and equal runs. Elif's counts differ by 3; at 15 runs per version they must differ by 6, so it is a lead (§16.4).
+- **16.5** Avoid, reduce, detect, accept: reduce at data and model, avoid or reduce at use, detect at feedback, and accept what remains with a named owner (§16.5).
+- **16.6** The numbers show what each choice costs; which errors matter more is a value choice for the people affected and the decision owner (§16.6).
+- **16.7** Only when your workflow uses the same tool for the same kind of task and the probe passed the two-part rule; otherwise the row is inferred, the station result a lead, and you name the test that would document it (§16.7).
+
+### Faded examples
+
+- **16.1 Bank's offer chatbot.** Model: tested only on overall acceptance, not by group. Use: only app users see offers, so customers without the app are left out. Feedback: customers who decline see fewer offers, so the data repeat the old pattern. Harm: allocation.
+- **16.2 Speech recognition.** Report each group's size (42 and 73 speakers) and the error rate for each system as well as the average; check race × gender (for example, Black men) or race × age.
+- **16.3 Scholarship screen, group Y.** Selection 40 of 200 = 20%; miss rate 15 of 50 = 30%; false-positive rate 5 of 150 = 3.3%; precision 35 of 40 = 87.5%. It meets equal miss rates and equal precision and fails equal selection rates and equal false-positive rates (base rates 50% and 25%).
+- **16.4 Three pronouns.** Name one comparison before running (for example, her against his); 30 runs per version, so counts must differ by at least 9; the "their" version is counted and reported as a lead.
+- **16.5 Name-blind résumés.** It may miss proxies such as "women's chess club" and women's colleges (Chapter 2). Detect: a paired-input test that changes only the club line or the college, and a re-test after any change.
+- **16.6 Reminder calls.** Ask patients, including patients who speak neither English nor Spanish, and the call staff; equal miss rates across language groups follows from the worse error; the manager records the choice.
+
+### Review Questions A
+
+1. **(b)** Past decisions as labels, and proxies in résumés, can carry the old pattern. (a) is M1 (removing the field is not enough); (c) and (d) name later phases only.
+3. **(a)** You need results for each group and subgroup, with their sizes. (b) and (c) are M2; (d) is backward: large groups can hide small ones.
+5. **(b)** A lead: at 10 runs the counts must differ by 5 (50 points). (a) and (d) ignore the second part of the rule; (c) overcorrects (M3).
+7. **(d)** Of the people flagged, the same share really needed help in each group. (a) is selection rate, (b) miss rate, (c) overall accuracy.
+9. **(c)** Everything except one cue, with the rule fixed first. (a) changes two cues; (b) mixes tools and has one run; (d) sets the rule after seeing outputs.
+11. **(b)** A fix can create a new error, so test again. (a) overcorrects M5; (c) and (d) are M5.
+13. **(a)** A named decision owner, after asking the students who bear the errors. (b) and (c) are M6; (d) treats a value choice as a number.
+
+### Review Questions B
+
+1. Group M: selection 120 of 300 = 40%; miss 45 of 150 = 30%; false-positive 15 of 150 = 10%; precision 105 of 120 = 87.5%. Group N: selection 60 of 300 = 20%; miss 18 of 60 = 30%; false-positive 18 of 240 = 7.5%; precision 42 of 60 = 70%. It meets equal miss rates and fails equal selection rates, equal false-positive rates and equal precision.
+3. The counts differ by 6; at 30 runs per version they must differ by 9, so it is a lead. Next: name the comparison, keep the rule fixed, run 50 or more per version (counts must differ by 11) or pool, and add a version with "they" or a gender-neutral name, reported separately.
+
+### Review Questions C
+
+1. Strong answers: a tool that copies the world's base rates may still be unfair by some definitions (16.3), and generators can exaggerate the world (Bianchi et al.: 99% of generated software developers classified as White vs. 56% of the workforce). Many conclude that "reflects the world" is not a defense when the output decides or shapes how people are seen. Weak answers say "the data are the data" or "all AI is biased."
+3. Strong answers weigh what audits show (group gaps on a test) and cannot show (other tasks, tuning to the test, which groups were chosen; no gap ≠ no bias), name who should run them and on what data, and point to Chapter 18 for law. Weak answers say audits "prove" fairness or are useless.
+
+### Spaced Review
+
+1. Sending a rejection cannot be undone and the error falls on applicants, so it needs an approval gate a person can refuse (Chapter 14).
+3. It changes only one cue linked to a group; the prompt, the tool, the counting rule, fresh chats and the number of runs stay the same.
+
+### Case Study Questions
+
+1. Tree: bias, unequal quality across groups, documented (error rates measured across many faces in a published audit). Chain: link 2 inferred (no published group results; internal tests unknown); no harm documented in this audit.
+3. Any three: a balanced benchmark with enough faces in every subgroup; posed official photos and a check on a subset of consistent quality; dermatologist-labeled skin type; results given to the companies first; three companies named at once; a later re-test.
+5. Gender Shades: the gap became visible at the model phase (testing by group); no harm documented. Williams: the error became harm at the use phase, when a match and a lineup led to an arrest.
+
+### Lab 16.2 notes
+
+Overall 364 of 400 (91.0%); Spanish first-year questions 28 of 40 (70.0%), hidden by every single-characteristic rate.

@@ -1,0 +1,9 @@
+# Buolamwini & Gebru (2018), Table 4: gender classification on the Pilot Parliaments Benchmark (1,270 faces), April-May 2017. Values as published (%).
+# metric: tpr = true positive rate (accuracy for the overall column); error = 1 - TPR. Subgroups as labeled by the authors (Fitzpatrick I-III lighter, IV-VI darker; perceived gender).
+classifier,metric,All,Female,Male,Darker,Lighter,DarkerFemale,DarkerMale,LighterFemale,LighterMale
+Microsoft,tpr,93.7,89.3,97.4,87.1,99.3,79.2,94.0,98.3,100
+Microsoft,error,6.3,10.7,2.6,12.9,0.7,20.8,6.0,1.7,0.0
+Face++,tpr,90.0,78.7,99.3,83.5,95.3,65.5,99.3,90.2,99.2
+Face++,error,10.0,21.3,0.7,16.5,4.7,34.5,0.7,9.8,0.8
+IBM,tpr,87.9,79.7,94.4,77.6,96.8,65.3,88.0,92.9,99.7
+IBM,error,12.1,20.3,5.6,22.4,3.2,34.7,12.0,7.1,0.3

@@ -196,3 +196,16 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 
 **For the editor (not the author):** (a) ftf-sources.md row: Ch. 15 — Şeker (2015), Büyük Veri ve Büyük Veri Yaşam Döngüleri, *YBS Ansiklopedi* 2(3), 10–17, Drive 1MSa-eUSm0X6xlScQUCrVUTZWfiomZBfW; (b) Ch. 16 v2's station-3 text is merged into Lab 15.1 (prompt B as a stated first language; prompt C two runs per version; matching rule; private opt-out; one subtotal line per table; gallery table in counts with the 26-run row); (c) Ch. 18's lab drafting step merged as a timed 5-minute slot (49–54) with its five scratch-list prompts, and its descriptor merged; the legal-layer pointer is "section 18.1" (Chapter 18 adds the FERPA/HIPAA/consent/state-privacy paragraph there); (d) `data_flow_map` no longer uses dashes: Ch. 18 should re-render its imports; (e) the chapter was test-rendered alone with Quarto; (f) docs/factcheck/ch15.csv has resolution_v2 for all 107 rows plus rows C108–C121 for claims added in revision.
 <!-- /ch15 -->
+
+<!-- ch16 -->
+## Chapter 16
+| Asset | Where | Needed by |
+|---|---|---|
+| Station 3 cards for prompts A, B, C: copy-and-paste prompt text behind an eLearning link and QR code; preregistered counting and matching rules; threshold table; prompt A's fixed name pair (invented names associated with White and Black Americans in published audit studies); prompt B's fixed paragraph (constructed, neutral topic) | eLearning; printed | Thu Apr 15, 2027 |
+| Numbered printed outputs, dated with model name: a different set of three per version for each table (prompt C: she, he, they) | eLearning; printed; screen-reader-friendly | Thu Apr 15, 2027 |
+| Class tally sheets: one live and one printed sheet per prompt, with a "table subtotal" line format | Printed or projected | Thu Apr 15, 2027 |
+| Bias-probe sheet (F16.16) as an accessible table | eLearning; printed | Thu Apr 15, 2027 |
+| Bias-probe outputs and one fact line for the fairness row for each of Chapter 15's three alternative scenarios | eLearning | Thu Apr 15, 2027 |
+| Mini-Project alternative: three scenarios with 60 dated outputs per version | eLearning | Chapter release |
+| L16.2 file (data/ch16_lab_disagg.csv) and template; L16.3 trade-off spreadsheet | eLearning; Compass | Chapter release |
+<!-- /ch16 -->
