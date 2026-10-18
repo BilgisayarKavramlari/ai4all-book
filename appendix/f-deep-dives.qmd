@@ -1,0 +1,260 @@
+# Deep Dives: Mathematics and Python {#sec-appendix-f}
+
+<!-- Status: FIRST DRAFT (2026-10-18). Every snippet was run with Python 3.10.7 (standard library only) and its printed output pasted below unchanged; the numbers were checked against data/ch14_compounding.csv, data/ch16_small_samples.csv and data/ch11_matrix_sensitivity.csv and against the text of the chapters named. Chapter pointer satisfied: Chapter 2, Deep 2.B ("Appendix F works through the calculation"). -->
+
+[Deep]{.path}
+
+*This appendix is optional and not examinable.* Nothing in the course or on the exams needs it (decision D20: only Core sections are examinable). It is for readers who want to see the arithmetic behind four of the book's computed demonstrations, and to rerun it.
+
+Each dive starts from a number the chapter prints, shows the mathematics in a few lines and gives a short Python program that reproduces the number. You need no programming background to read the dives; to run the code, paste it into any browser-based Python notebook (Compass links one, optional) or into Python 3.10 or later on your own computer. The programs use only Python's standard library, so there is nothing to install. The output shown under each program is what it printed when this book was checked.
+
+All four dives use this book's own calculations on constructed numbers. They show how a method works, not facts about any real system or person.
+
+## F.1 One Learning Step: Loss and Gradient Descent {#sec-appendix-f-1 .unnumbered}
+
+*Supports Chapter 2, sections 2.2 and Deep 2.B.*
+
+Deep 2.B took the simplest possible model, *price = w × size*, with one setting, *w*. One 100-square-meter apartment sold for 300 (thousand dollars). With *w* = 2 the model predicts 200, so it is 100 too low. The chapter's figure showed one step downhill, from *w* = 2 toward the lowest error at *w* = 3, and promised the calculation here.
+
+**The loss.** Training needs one number that says how wrong the model is. A common choice is the **squared error**, the difference between the real and the predicted value, multiplied by itself:
+
+$$L(w) = (\text{price} - w \times \text{size})^2 = (300 - 100w)^2.$$
+
+At *w* = 2, *L* = 100² = 10,000. Squaring makes every error positive and punishes large errors more than small ones. With many examples, the training procedure adds up (or averages) the squared errors of all of them.
+
+**The slope.** Gradient descent needs to know which way is downhill. The slope of the loss, its **derivative**, says how fast *L* changes when *w* changes a little:
+
+$$\frac{dL}{dw} = -2 \times \text{size} \times (\text{price} - w \times \text{size}) = -200\,(300 - 100w).$$
+
+At *w* = 2 the slope is −200 × 100 = −20,000. A negative slope means the loss falls as *w* grows, so the step should increase *w*.
+
+**The step.** Gradient descent moves the setting a small amount against the slope:
+
+$$w_{\text{new}} = w - \eta \times \frac{dL}{dw},$$
+
+where *η* (the Greek letter eta) is the **learning rate**, the step size. With *η* = 0.00003, the step is 0.00003 × 20,000 = 0.6, so *w* moves from 2 to 2.6: the step drawn in the chapter's figure. Repeat, and *w* creeps toward 3.
+
+**Too small, too large.** For this one example the arithmetic has a neat form: after each step, the distance from 3 is multiplied by (1 − 20,000 × *η*). With *η* = 0.00003 that factor is 0.4, so the distance shrinks by 60% per step. With *η* = 0.0001 the factor is −1: each step jumps exactly past the bottom and back, forever. Anything larger and the jumps grow, so *w* runs away. A very small *η*, such as 0.000001, gives a factor of 0.98: it gets there, but takes hundreds of steps. This is Deep 2.B's warning in numbers.
+
+```python
+size, price = 100, 300        # one apartment: 100 square meters, sold for 300 (thousand dollars)
+
+def loss(w):                  # squared error of the prediction w * size
+    return (price - w * size) ** 2
+
+def slope(w):                 # how fast the loss changes as w changes (its derivative)
+    return -2 * size * (price - w * size)
+
+print("w = 2: prediction", 2 * size, " loss", loss(2), " slope", slope(2))
+
+for rate in (0.00003, 0.0001, 0.00011):
+    w, path = 2.0, [2.0]
+    for step in range(5):
+        w = w - rate * slope(w)          # one learning step
+        path.append(round(w, 3))
+    print(f"learning rate {rate}: w =", path)
+```
+
+```
+w = 2: prediction 200  loss 10000  slope -20000
+learning rate 3e-05: w = [2.0, 2.6, 2.84, 2.936, 2.974, 2.99]
+learning rate 0.0001: w = [2.0, 4.0, 2.0, 4.0, 2.0, 4.0]
+learning rate 0.00011: w = [2.0, 4.2, 1.56, 4.728, 0.926, 5.488]
+```
+
+**What carries over to large models.** The same three pieces, a loss, its slope with respect to each setting, and a small step against the slope, train models with billions of settings (Chapter 2, section 2.2; Chapter 3, section 3.3). The slopes are computed for all settings at once, the loss is averaged over batches of examples, and the step size is usually adjusted during training. The valley is no longer a simple U, so a step can also end in a dip that is not the lowest point. What does not change is the idea in section 2.2: predict, measure the error, adjust the settings, repeat.
+
+**Try it.** Add a second apartment, 60 square meters sold for 150, and make `loss` the sum of both squared errors. Where does *w* settle now, and why is it not exactly 3 any more?
+
+## F.2 Could a Gap Be Chance? The Binomial Behind the Two-Part Rule {#sec-appendix-f-2 .unnumbered}
+
+*Supports Chapter 16, section 16.4 (the chance threshold table).*
+
+Section 16.4 says that if two versions of a prompt truly give a pattern half the time, then with 10 runs each the counts still differ by 20 points or more about half the time; and it prints a table of the smallest gap that chance alone reaches less than 1 time in 20. Here is where those numbers come from.
+
+**One version.** Suppose each run of a version gives the pattern with chance *p*, independently of the other runs. The number of runs that give it, out of *n*, then follows the **binomial distribution**: the chance of exactly *k* is
+
+$$P(k) = \binom{n}{k}\, p^k (1-p)^{n-k},$$
+
+where $\binom{n}{k}$, read "*n* choose *k*", counts the ways to pick which *k* runs show the pattern. With *n* = 10 and *p* = 0.5, the most likely count is 5, but 4 or 6 together are more likely than 5 alone.
+
+**Two versions, no real difference.** Give both versions the same *p* and count each one separately. The gap is the difference between the two counts, *k*₁ − *k*₂, in either direction. Its chances come from adding up every pair of counts with that difference: the chance of *k*₁ times the chance of *k*₂, because the versions run independently.
+
+**The chance threshold.** Chapter 16's rule calls a gap a finding only if chance alone would produce a gap that large less than 1 time in 20 (5%). So the program searches for the smallest gap, in counts, whose chance "this large or larger" falls below 0.05. It uses *p* = 0.5 because that is where chance gaps are widest, so the thresholds are cautious for other true rates.
+
+```python
+from math import comb
+
+def gap_chances(n, p=0.5):
+    """Chance that two versions' counts differ by exactly d (d = 0..n), with no real difference."""
+    pmf = [comb(n, k) * p**k * (1 - p)**(n - k) for k in range(n + 1)]
+    gap = [0.0] * (n + 1)
+    for k1 in range(n + 1):
+        for k2 in range(n + 1):
+            gap[abs(k1 - k2)] += pmf[k1] * pmf[k2]
+    return gap
+
+def tail(gap, d):                       # chance of a gap of d counts or more, either direction
+    return sum(gap[d:])
+
+g10 = gap_chances(10)
+print(f"10 runs each: chance of a 20-point gap or more = {100 * tail(g10, 2):.1f}%")
+
+print("runs  counts  points  chance at threshold")
+for n in (10, 15, 20, 25, 30, 35, 40, 45, 50):
+    g = gap_chances(n)
+    d = next(d for d in range(n + 1) if tail(g, d) < 0.05)   # smallest gap chance reaches < 1 in 20
+    print(f"{n:4d}  {d:6d}  {100 * d / n:6.1f}  {100 * tail(g, d):6.2f}%")
+```
+
+```
+10 runs each: chance of a 20-point gap or more = 50.3%
+runs  counts  points  chance at threshold
+  10       5    50.0    4.14%
+  15       6    40.0    4.28%
+  20       7    35.0    3.85%
+  25       8    32.0    3.28%
+  30       9    30.0    2.73%
+  35       9    25.7    4.14%
+  40      10    25.0    3.30%
+  45      10    22.2    4.46%
+  50      11    22.0    3.52%
+```
+
+The counts and points are the rows of section 16.4's table (the chapter rounds 25.7 to 26 and 22.2 to 22), and 50.3% is the 10-run figure in the chapter's chart; the full results, including 5, 65, 100 and 200 runs, are in data/ch16_small_samples.csv. Twenty points at 10 runs is a gap of only 2 counts, which is why chance reaches it so often.
+
+**Three things the numbers show.** First, the threshold falls slowly: going from 10 to 40 runs per version halves it, from 50 points to 25. Roughly, quadrupling the runs halves the gap you can detect. Second, the last column is always below 5% but not equal to it, because counts come in whole numbers. Third, the reverse reading matters as much: at 30 runs per version, a real gap smaller than about 30 points could not have counted as a finding, so "no finding" is not "no bias" (section 16.4).
+
+**Limits.** The calculation assumes independent runs with one fixed chance per version, as fresh chats with memory off are meant to give. It answers one comparison named in advance; testing many comparisons and reporting the one that crossed the line raises the chance of a false finding. And it says nothing about whether the test was fair: that is part 1 of the two-part rule.
+
+**Try it.** Change `p=0.5` to `p=0.2` and rerun. Why do the thresholds shrink?
+
+## F.3 Compounding Error: Why p^n Falls Fast {#sec-appendix-f-3 .unnumbered}
+
+*Supports Chapter 14, section 14.3, and the shortcut in Deep 14.B.*
+
+Section 14.3 computed that at 95% per step, about 77% of 5-step runs, 60% of 10-step runs and 36% of 20-step runs have no error, under one assumption: every step goes right with the same chance, independently of the others.
+
+**The multiplication rule.** For independent events, the chance that all of them happen is the product of their chances. If each of *n* steps goes right with chance *p*, all *n* go right with chance
+
+$$P(\text{no error}) = p \times p \times \dots \times p = p^n.$$
+
+Each step keeps only 95% of the runs that were still clean, so the losses multiply rather than add: 0.95 × 0.95 = 0.9025 after two steps, not 0.90.
+
+**When does a run become a coin flip?** Solve *p^n* = 0.5 for *n* with logarithms: *n* = log 0.5 ÷ log *p*. At *p* = 0.95 that is about 13.5, so from 14 steps on, fewer than half of runs are error-free.
+
+**A check after every step.** Deep 14.B gives a shortcut: if a check after each step catches a share *c* of errors and a caught error is fixed, a step ends wrong only if it goes wrong *and* the check misses it, with chance (1 − *p*)(1 − *c*). The run is then error-free with chance about (1 − (1 − *p*)(1 − *c*))^*n*^. This is a different design from the chapter's simulation, which put check points every five steps, so its numbers differ from the simulation's.
+
+```python
+import math
+import random
+
+# 1. The closed form: all n independent steps right, each with chance p
+for p in (0.90, 0.95, 0.99):
+    row = [f"{n} steps {p ** n:.0%}" for n in (5, 10, 20)]
+    print(f"p = {p}:", " | ".join(row))
+
+# 2. How many steps until fewer than half of runs are error-free?
+p = 0.95
+n_half = math.ceil(math.log(0.5) / math.log(p))
+print(f"at p = {p}, runs drop below 50% error-free at {n_half} steps ({p ** n_half:.1%})")
+
+# 3. A check after every step that catches a share c of errors (the Deep 14.B shortcut)
+c = 0.8
+step_ok = 1 - (1 - p) * (1 - c)
+print(f"with c = {c}: each step ends right {step_ok:.0%}; 20 steps error-free {step_ok ** 20:.0%}")
+
+# 4. The same closed form, found by brute force (a tiny simulation, fixed seed)
+random.seed(14)
+runs = 100_000
+clean = sum(all(random.random() < 0.95 for _ in range(20)) for _ in range(runs))
+print(f"simulated: {clean / runs:.1%} of {runs:,} 20-step runs had no error (formula {0.95 ** 20:.1%})")
+```
+
+```
+p = 0.9: 5 steps 59% | 10 steps 35% | 20 steps 12%
+p = 0.95: 5 steps 77% | 10 steps 60% | 20 steps 36%
+p = 0.99: 5 steps 95% | 10 steps 90% | 20 steps 82%
+at p = 0.95, runs drop below 50% error-free at 14 steps (48.8%)
+with c = 0.8: each step ends right 99%; 20 steps error-free 82%
+simulated: 36.2% of 100,000 20-step runs had no error (formula 35.8%)
+```
+
+The first three lines match section 14.3 and data/ch14_compounding.csv (for example 0.95^20^ = 0.3585, and 0.99^20^ = 0.8179). The simulation lands within half a point of the formula; with another seed it would land at a slightly different place, which is Chapter 3's point that one run is one sample.
+
+**What the formula leaves out.** It is a direction, not a forecast. Real steps are not independent: one misread observation can spoil every later step, which makes real runs worse than *p^n^*, while harmless errors and errors a later step fixes make them better (section 14.3). And *p* itself is an estimate: Sam's 152 good passes out of 160 give 0.95 (section 14.3), but another week of tests could plausibly give 0.93 or 0.97 (this book's illustration), and for a 20-step run that moves the answer from about 23% to 54%.
+
+**Try it.** Keep *p* = 0.95 and 20 steps. What catch rate *c* does a per-step check need for 90% of runs to be error-free?
+
+## F.4 Weighted Decision Matrix Arithmetic {#sec-appendix-f-4 .unnumbered}
+
+*Supports Chapter 11, section 11.5.*
+
+Section 11.5 recalculated candidate E's total by hand (7.00) and then reported a sensitivity check: under five other defensible choices the top candidate changed, each time by less than 0.1 point. This dive reproduces every number in that worked example.
+
+**Scaling.** Each raw value becomes a score from 0 to 10 with ends fixed in advance:
+
+$$s = \frac{x - \text{low}}{\text{high} - \text{low}} \times 10,$$
+
+reversed as 10 − *s* when lower is better (price, hours). E's interview of 3.0 on a 1–5 scale gives (3 − 1) ÷ 4 × 10 = 5.0.
+
+**Weighting.** The total is the weighted sum, with weights that add up to 100%:
+
+$$\text{total} = \sum_j \frac{w_j}{100} \times s_j.$$
+
+For E: 0.25 × 6.5 + 0.25 × 5.0 + 0.30 × 8.0 + 0.10 × 7.25 + 0.10 × 10 = 7.00.
+
+**What a weight is worth.** Because each score is multiplied by its weight, a change of Δ*s* in one score moves the total by *w* × Δ*s*. Half a step on the interview (0.5 on a 1–5 scale) is 1.25 scaled points, times 25%: 0.31 points, the yardstick section 11.5 used to call margins of 0.04 to 0.09 near-ties. The scale ends matter just as much: on a 0–20-year scale instead of 0–10, each year of experience is worth half as many scaled points, so its 30% counts half as much.
+
+```python
+# Chapter 11's constructed internship matrix (section 11.5); None = interview not yet held
+CANDIDATES = {
+    "A": [88, 4.5, 1, 3.6, 0], "B": [72, 3.5, 6, 3.1, 1], "C": [91, None, 2, 3.8, 0],
+    "D": [80, 4.0, 3, 3.3, 1], "E": [65, 3.0, 8, 2.9, 1], "F": [84, 4.5, 2, 3.4, 0],
+}
+RANGES = [(0, 100), (1, 5), (0, 10), (0, 4), (0, 1)]   # test, interview, experience, GPA, referral
+
+def total(vals, weights, blank):
+    t = 0.0
+    for j, (v, w, (lo, hi)) in enumerate(zip(vals, weights, RANGES)):
+        if v is None:
+            if blank == "drop":
+                return None                                # leave the candidate out
+            others = [c[j] for c in CANDIDATES.values() if c[j] is not None]
+            v = lo if blank == "lowest" else sum(others) / len(others)
+        t += w / 100 * (v - lo) / (hi - lo) * 10          # scale to 0-10, then weight
+    return t
+
+def run(name, weights, blank):
+    s = {k: total(v, weights, blank) for k, v in CANDIDATES.items()}
+    s = {k: x for k, x in s.items() if x is not None}
+    ranked = sorted(s, key=s.get, reverse=True)
+    margin = s[ranked[0]] - s[ranked[1]]
+    scores = " ".join(f"{k} {s[k]:.2f}" for k in CANDIDATES if k in s)
+    print(f"{name:34s} top {ranked[0]} by {margin:.2f}; shortlist {' '.join(ranked[:3])} | {scores}")
+
+AI = [25, 25, 30, 10, 10]
+run("AI weights, blank = lowest", AI, "lowest")
+run("AI weights, blank = mean", AI, "mean")
+run("AI weights, C left out", AI, "drop")
+run("Experience 20, test 35", [35, 25, 20, 10, 10], "mean")
+run("Referral's 10 to the interview", [25, 35, 30, 10, 0], "mean")
+run("Equal weights", [20] * 5, "mean")
+print("half a step on one interview rating is worth", round(0.5 / 4 * 10 * 0.25, 2), "points")
+```
+
+```
+AI weights, blank = lowest         top E by 0.06; shortlist E B D | A 5.59 B 6.94 C 3.83 D 6.60 E 7.00 F 5.74
+AI weights, blank = mean           top E by 0.06; shortlist E B D | A 5.59 B 6.94 C 5.64 D 6.60 E 7.00 F 5.74
+AI weights, C left out             top E by 0.06; shortlist E B D | A 5.59 B 6.94 D 6.60 E 7.00 F 5.74
+Experience 20, test 35             top D by 0.04; shortlist D B E | A 6.37 B 7.06 C 6.35 D 7.10 E 6.85 F 6.38
+Referral's 10 to the interview     top F by 0.05; shortlist F B E | A 6.46 B 6.56 C 6.36 D 6.35 E 6.50 F 6.61
+Equal weights                      top B by 0.09; shortlist B D E | A 5.51 B 7.44 C 5.57 D 7.35 E 7.35 F 5.53
+half a step on one interview rating is worth 0.31 points
+```
+
+Every score, top, margin and shortlist matches data/ch11_matrix_sensitivity.csv. Two of section 11.5's sentences are visible in the output: B and E are on every shortlist of three, and filling C's blank with the average lifts C only from sixth (3.83) to fifth (5.64), ahead of A. The program cannot tell you the one thing that would settle C: the interview.
+
+**What the arithmetic cannot do.** Each line of output is exact, and none of it is objective. The ranges, the weights, the blank rule and the choice of criteria are judgments (section 11.5), and a proxy such as the referral stays a proxy however carefully it is weighted (section 11.3). The program makes those judgments visible and cheap to vary, which is what a sensitivity check is for.
+
+**Try it.** Add a sixth line that removes the referral and gives its 10 points to the skills test. Does the top change? Is the new margin larger than 0.31?

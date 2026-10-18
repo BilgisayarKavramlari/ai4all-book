@@ -1,3 +1,70 @@
 # Preface {#sec-preface .unnumbered}
 
-Status: not started
+<!-- Status: FIRST DRAFT (2026-10-18), front-matter agent, under the editor's delegation (D19). Personal facts are limited to the author's published writing (docs/voice/ybs-inventory.md, approved From the Field texts) and the approved disclosure wording (D14, D16). [AUTHOR NOTE] markers need the author. Pending the author's final voice edit. -->
+
+From accounting to nursing, from mechanical engineering to illustration, almost every kind of study and work now meets the same artificial intelligence (AI) tools. They draft an email in seconds, summarize a long report, suggest code, produce an image, or answer a question in confident, fluent sentences. Some of those answers are excellent. Some are wrong in ways that are hard to see. Very often, the person using the tool cannot tell which is which.
+
+This book is about that gap. It is not a book about one product, and it is not a book of clever tricks. It is a book about the part of the work that a tool cannot do for you: deciding what to ask, judging whether the answer is true, protecting the information you hand over, and taking responsibility for what you finally use.
+
+## Why This Book {.unnumbered}
+
+I wrote it for a course at The University of Texas at Dallas, CS 2V95.001, *AI for All: Career-Ready AI Skills*. The course is open to undergraduates in every major and has no prerequisites. That shaped every page. A business student, a nurse in training, a psychology major and an artist should be able to read any chapter without a programming background, and each of them should find examples from their own field.
+
+The title is a promise, and the promise has three parts.
+
+First, **for all majors.** The ideas are explained without code. Where a little mathematics or Python helps, it sits in an optional Deep section, never in the reading you are tested on.
+
+Second, **for all budgets.** The exercises are designed to work with free tools or with tools your university provides. No paid subscription is required, and the book itself is free for students in the course.
+
+Third, **for all careers.** Every chapter connects its topic to several occupations and ends with an assignment you can show to an employer or a graduate program. By the end of the term, your work forms a portfolio that shows not only what you produced, but how you checked it and where your own judgment shaped it.
+
+## Judgment Before Tricks {.unnumbered}
+
+When people first use AI tools, they often look for the perfect prompt, a hidden setting, or a list of magic phrases. Those tricks age quickly. The interface you learn this semester may look different next semester, and a model that fails a task today may handle it next year. A book built on menus would be out of date before it was printed.
+
+So this book is built on something slower to change: five decisions you make every time you use AI on a task that matters. You **frame** the task and decide whether AI belongs in it at all. You **prompt**, giving the tool what it needs. You **verify** the output against something other than the tool. You **decide** what to keep, change or reject, and you own the result. Finally, you **disclose** what you used and how. Together these form the AI Work Loop, which Chapter 1 introduces and every later chapter strengthens.
+
+Why put verification and disclosure at the center, rather than speed? Because the evidence does not support a simple story. Chapter 1 shows that AI help raised some workers' output a great deal, helped others very little, and on some tasks made results worse. Chapter 12 returns to a field experiment in which consultants using AI did better on tasks inside the tool's abilities and worse on a task outside them (Dell'Acqua et al., 2023). In other words, the same tool can be a strong partner or a quiet source of error, and nothing on the screen tells you which one you have. Only a habit of checking does.
+
+Disclosure matters for a related reason. Work is built on trust. A teacher, a manager, a patient or a client needs to know what stands behind the words you hand them. Saying plainly how you used AI is not a confession. It is part of doing the work well, in the same way that citing a source is part of writing a good report.
+
+For example, take a hospital, an accounting firm and a design studio. In each, a fluent but wrong output can cause a different harm: a wrong dose, a wrong number in a filing, an image that copies someone else's style without consent. The five decisions are the same in all three places. What changes is how far you must take your checking before you rely on the result.
+
+## Where This Book Comes From {.unnumbered}
+
+My own work has moved between teaching, writing and building software. Since 2014 I have written many encyclopedia entries in Turkish for *YBS Ansiklopedi*, a publication on management information systems. They explain one idea at a time for readers outside computer science: graph theory, the Pareto principle, cause-and-effect diagrams, Kanban, sentiment analysis, data mining and many more. That habit of explaining a technical idea to a reader from another field runs through this book. Several of those entries return in the chapters, in the boxes called From the Field.
+
+Most of my industry work has been with small and medium-sized firms in Türkiye. In 2023 I wrote about a problem I kept meeting there: a firm with five or ten employees usually cannot hire an AI specialist, decide which tasks to give that person, or check whether the work is right (Şeker, 2023). Chapter 1 returns to that article. Its lesson is one this book repeats often. Even a simple tool needs a person who frames the question, checks the output against what they know, and decides what to do.
+
+More recently, in a 2025 manuscript, I connected the philosophical tradition of interpretation (hermeneutics) to the methods that try to explain a model's outputs (Şeker, 2025). Chapter 17 returns to that work.
+
+I am a founder of OptiWisdom, which develops software for businesses, including AI tools, and which builds Compass, the optional digital companion to this book. Where the book draws on that work, it says so, and "How This Book Was Written" declares the interest in full.
+
+[AUTHOR NOTE: optional — a short personal passage (three to five sentences) on why you created this course or what you have seen students do with AI. Use only your own experience; nothing here has been written for you.]
+
+## How This Book Was Made {.unnumbered}
+
+A book that asks you to disclose your AI use should disclose its own. I used AI tools throughout this project, under my direction: to organize plans, draft and review chapters, check sources claim by claim, and produce the diagrams from source files. Every chapter then went through separate reviews and my own final revision. "How This Book Was Written" describes the process and what stayed human. Responsibility for what the book says, including its mistakes, is mine.
+
+This book is my own work. It is not funded by any course development grant and is not owned by one. It is published under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (CC BY-NC-SA 4.0). You may share and adapt it for noncommercial purposes if you give credit and share your version under the same license. A separate license allows Compass to use the material; the open edition does not change because of it.
+
+## How to Read It {.unnumbered}
+
+Read the next section, "How to Use This Book," before Chapter 1. It shows you the reading paths, the parts that repeat in every chapter, and where the answers are. Then meet the five students whose questions run through the book. They are invented, but their questions are real ones: Is this allowed? Can I trust it? Will it replace my voice? Who answers when it goes wrong?
+
+You will not finish this book with every answer. AI is changing too fast for that. You will finish it with a method you can apply to tools that do not exist yet, and with a portfolio that shows you can use it.
+
+## Acknowledgments {.unnumbered}
+
+[AUTHOR NOTE: acknowledgments — colleagues, reviewers, students, family, and anyone else you wish to thank.]
+
+Şadi Evren Şeker\
+[AUTHOR NOTE: place and date]
+
+## References {.unnumbered}
+
+Dell'Acqua, F., McFowland, E., III, Mollick, E., Lifshitz-Assaf, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K. R. (2023). *Navigating the jagged technological frontier: Field experimental evidence of the effects of AI on knowledge worker productivity and quality* (Harvard Business School Working Paper No. 24-013). https://ssrn.com/abstract=4573321
+
+Şeker, Ş. E. (2023). KOBİ'lere özel basit yapay zekâ çözümü: Kolay.AI [A simple artificial intelligence solution for SMEs: Kolay.AI]. *YBS Ansiklopedi, 11*(1), 24–46.
+
+Şeker, Ş. E. (2025). *HermAI: Hermenötik açıklanabilir yapay zeka* [HermAI: Hermeneutic explainable artificial intelligence] [Unpublished manuscript].

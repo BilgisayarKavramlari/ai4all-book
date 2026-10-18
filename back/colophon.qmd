@@ -1,0 +1,21 @@
+# Colophon {#sec-colophon .unnumbered}
+
+<!-- Status: FIRST DRAFT (2026-10-18), from CLAUDE.md, docs/decisions.md (D1, D3–D5, D8, D10, G1, G2, G4), docs/style-sheet.md §7 and _quarto.yml. Update for each edition. -->
+
+*AI for All: Career-Ready AI Skills*, edition 2027.1 (draft).
+
+**Source and build.** The book is written in Markdown and built with Quarto from a single source. The print interior is typeset as PDF with Typst; the ebook is EPUB 3; an open-web HTML edition is planned for later. The first release is through Draft2Digital, as an EPUB ebook and a print edition in two volumes: Volume 1 holds Parts I–II (Chapters 1–10) and Volume 2 holds Parts III–VI (Chapters 11–23).
+
+**Two editions from one source.** The print edition is grayscale and the EPUB is in color. Every figure is drawn from source files by the book's own figure library (Python scripts that write SVG) and rendered twice: in color for the EPUB and in grayscale for print. Shape, line style and labels, never color alone, carry each figure's meaning, so both renders say the same thing.
+
+**Design.** Pages are 8.5 × 11 inches with a single text column and a wide side margin. The type is Source Serif 4 for the body, Source Sans 3 for headings, callouts and figures, and JetBrains Mono for prompts and code, all under the SIL Open Font License.
+
+**Accessibility.** The book targets WCAG 2.1 AA: alt text for every image, long descriptions for complex figures, headings without skipped levels and tables with header rows. The EPUB is checked with EPUBCheck and Ace by DAISY before each release.
+
+**AI use.** How AI tools were used in writing this book, and how their output was checked, is set out in "How This Book Was Written."
+
+**License.** This book is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0): <https://creativecommons.org/licenses/by-nc-sa/4.0/>. Copyright © Şadi Evren Şeker. [AUTHOR NOTE: copyright year.]
+
+**Funding.** This book is the author's own work. It is not grant-funded and was not produced with course development grant funds.
+
+[AUTHOR NOTE: ISBNs for the ebook, print Volume 1 and print Volume 2 (decision D4: the author's own ISBNs); cover credit; illustrator credit for the signature diagrams, if one is engaged (decision D8).]

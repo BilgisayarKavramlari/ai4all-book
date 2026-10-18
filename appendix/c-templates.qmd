@@ -1,0 +1,150 @@
+# AI Use Declaration and Citation Templates {#sec-appendix-c}
+
+<!-- Status: FIRST DRAFT (2026-10-18). Style-guide guidance checked online on 2026-10-18; the APA Style pages refused automated access (bot check), so the APA formats below come from the Chapter 9 fact-check of the same day (docs/factcheck/ch09.csv, rows C49–C50) and need one more check by the editor in a browser before print. Recheck all three styles for each edition (refresh list). -->
+
+This appendix collects, in one place, the two records the book asks you to keep when AI is part of your work: the **AI Use Declaration** that goes with every major artifact (Chapter 1) and the **citation** you add when you quote or paraphrase AI output (Chapter 9). Templates change when style guides change, so each style section below says when its guidance was checked. Before you submit, check the current version of your style guide and your instructor's or employer's rules; where they differ from this appendix, they win.
+
+## The AI Use Declaration {#sec-appendix-c-declaration .unnumbered}
+
+An **AI Use Declaration** is a short statement of which AI tools you used, for what, what you accepted, rejected or revised, how you verified it, and where your judgment shaped the work. In this course it goes with every major artifact (Chapter 1), and the rubrics check its five elements.
+
+| Element | What to write | Where the book explains it |
+|--------------|----------------------------------|--------------------|
+| 1. Tools | The AI tools you used; for a model output you show or rely on, the model name and the date | Chapter 1; Chapter 12 (tool versus model) |
+| 2. Purpose | What you used each tool for, part by part | Chapter 1; Chapter 5 (Delegation Ladder) |
+| 3. Accepted, rejected or revised | Which outputs you kept as they were, which you threw out and which you changed | Chapter 1; Chapter 10 (annotated draft) |
+| 4. How you verified | What you checked each kept output against: a source no AI tool produced, your own recalculation, a test | Chapter 8 (independent check, Verification Funnel) |
+| 5. Your judgment | Where your own decisions shaped the work, and what stayed with you | Chapter 1; Chapter 10 (ownership) |
+
+Four rules from the chapters apply to every declaration:
+
+- **"No AI tools used" is a valid declaration.** Write it where it is true (for example, Chapters 4, 7 and 8).
+- **Uses in the middle zone of the course policy need detail.** Describe them part by part, not in one line (Chapter 1).
+- **A declaration is not a citation.** If you quote or paraphrase AI output, cite it as well (Chapter 9, Rule 3; templates below). If you used AI only to find sources, cite the sources you then read, not the tool (Chapter 9, Rule 1).
+- **Disclosure does not move responsibility.** Your declaration tells readers how the work was made; you still answer for every sentence in it (Chapter 10). At work, Chapter 10's three questions decide whether and how to disclose; in the A7 artifact the declaration also holds that disclosure decision.
+
+### Blank Template {.unnumbered}
+
+```text
+AI USE DECLARATION
+Artifact: ____________________   Date: ______________
+
+1. Tools: [tool, model name, date used] ____________________________
+   (or: "No AI tools used.")
+2. Purpose: [what each tool was used for, part by part] _____________
+3. Accepted, rejected or revised:
+   Accepted as is: ___________________________________________________
+   Rejected:       ___________________________________________________
+   Revised:        ___________________________________________________
+4. How I verified: [the source, recalculation or test for each
+   kept output] _______________________________________________________
+5. My judgment: [the decisions that were mine] ______________________
+```
+
+### A Filled Example {.unnumbered}
+
+*(Constructed example.)* Sam Okafor, a mechanical engineering student, used AI tools on a two-page lab report about a beam-deflection test.
+
+```text
+AI USE DECLARATION
+Artifact: Lab report 3, beam deflection   Date: March 30, 2027
+
+1. Tools: a university-provided chat tool (model name and date recorded
+   in my iteration log, March 28, 2027); a second chat tool from another
+   provider for one comparison run.
+2. Purpose: (a) explaining the deflection formula in plain words before
+   I wrote my analysis; (b) checking my draft's grammar; (c) suggesting
+   a table layout for my measurements.
+3. Accepted, rejected or revised:
+   Accepted as is: the table layout.
+   Rejected: a sentence claiming my error was "within normal tolerance";
+   the tool had no tolerance figure to go on.
+   Revised: two grammar suggestions, reworded so they kept my meaning.
+4. How I verified: I checked the formula explanation against our
+   textbook, section 4.2, and recalculated every predicted deflection
+   by hand from my own measurements.
+5. My judgment: the analysis, the error discussion and the conclusion
+   are my own writing. I decided which measurement to treat as an
+   outlier, and why, after rerunning the test.
+```
+
+## Citing AI Output and AI-Assisted Work {#sec-appendix-c-citing .unnumbered}
+
+Chapter 9's four rules come first, whatever the style:
+
+1. **Cite the source you read, not the tool that found it.** If an AI search tool led you to an article, cite the article.
+2. **Never cite a source you have not opened.** Never copy a citation from an AI answer into your reference list.
+3. **When you quote or paraphrase AI output itself, cite it** in your style's format (below).
+4. **Declare AI use every time** this course or your workplace asks you to, even where a style guide asks for no citation.
+
+All three styles below agree on one point: **an AI tool is never listed as an author.** APA names the company that made the tool in the author position; MLA leaves the author out and puts the tool in the container position; IEEE asks for a disclosure in the acknowledgments.
+
+Where a tool can produce a shareable link to the chat, use it, and check that it opens when you are signed out. A shared link can also make a chat public (Chapter 15's short case on shared links), so remove personal or confidential details before you share, or describe the exchange instead and keep the transcript for your instructor.
+
+### APA Style, 7th Edition {.unnumbered}
+
+*Checked October 18, 2026, against the APA Style blog posts of September 9, 2025 (McAdoo et al., 2025a, 2025b), as recorded in the Chapter 9 fact-check. The APA pages refused automated access on October 18, 2026.* [VERIFY: reread both APA pages in a browser before print.]
+
+**Reference format for a chat** (McAdoo et al., 2025a):
+
+> AI Company Name. (Year, Month Day). *Title of chat in italic sentence case* [Description, such as Generative AI chat]. Tool Name or Model. URL of the shared chat
+
+**Example** *(constructed; the same example as Chapter 9)*:
+
+> OpenAI. (2027, February 23). *Summary of a sleep and memory study* [Generative AI chat]. ChatGPT. https://chatgpt.com/share/…
+
+**In-text citation:** APA's usual author–date form, for example (OpenAI, 2027). [VERIFY: confirm the in-text form and any guidance for chats that cannot be shared on the APA page.]
+
+**AI used as a search engine:** in most cases you do not cite the AI at all; you cite the sources you read and then quote or paraphrase (McAdoo et al., 2025b).
+
+### MLA Style, 9th Edition {.unnumbered}
+
+*Checked October 18, 2026, against the MLA Style Center's updated and revised post of August 13, 2025 (Modern Language Association, 2025).*
+
+MLA uses its core elements and does not treat the AI tool as an author. The **title of source** describes what the tool generated, often by giving the prompt; the **container** is the tool; the **version** is the model, as specifically as you can name it; the **publisher** is the company that made the tool; the **date** is the day the content was generated; the **location** is a stable, shareable URL (or the tool's general URL if there is none).
+
+**Works-cited format:**
+
+> "Description of what was generated, often the prompt" prompt. *Tool Name*, model or version, Company, Day Month Year, URL.
+
+**Example** *(constructed)*:
+
+> "Explain the difference between weather and climate for a ninth-grade class" prompt. *Claude*, model [model name], Anthropic, 23 Feb. 2027, [shared-chat URL].
+
+**In-text citation:** a short form of the title, such as ("Explain the difference"). If the chat had several prompts, the description can be more general.
+
+**Images:** a figure caption can carry the same elements (Fig. 1. "Prompt description" prompt, *Tool*, version, Company, date, URL), or they can go in the works-cited list.
+
+**Sources the tool names:** follow them, read them and cite them directly; do not cite the AI response in their place.
+
+### IEEE Style {.unnumbered}
+
+*Checked October 18, 2026, against the IEEE Reference Style Guide for Authors (IEEE, 2025, version 3.28.2025) and IEEE's author guidelines for AI-generated text (IEEE, 2024).*
+
+As of October 2026, the IEEE reference guide has **no reference template for AI output**. IEEE's author guidelines ask instead for a **disclosure in the acknowledgments section** of an article: name the AI system, identify the sections that use AI-generated content (text, figures, images or code), and briefly explain how much the system was used. Using AI only to edit or improve grammar generally falls outside the policy, but IEEE recommends disclosing it too (IEEE, 2024).
+
+**Acknowledgment example** *(constructed)*:
+
+> The authors used [AI system and model] to generate a first draft of the code in Section III-B and to suggest the layout of Table 2; all code was tested and revised by the authors. [AI system] was also used to edit the grammar of Sections I and II.
+
+**If your instructor asks for a reference entry,** IEEE's in-text citations are numbers in square brackets, on the line and inside the punctuation ([1]). One option, which is this book's adaptation of IEEE's website format and **not an IEEE template**, is:
+
+> [1] Company, "Description of the generated content," *Tool Name*, model or version. Accessed: Mon. Day, Year. [Online]. Available: URL of the shared chat
+
+Use it only if your instructor or publisher accepts it, and keep the acknowledgment as well.
+
+### Citing AI-Assisted Work {.unnumbered}
+
+When AI helped make a work but you do not quote or paraphrase its output (for example, it suggested an outline you rewrote, or checked your grammar), there is usually nothing to cite: the work is yours. What you owe your reader is a **disclosure**, in the form your context requires: the AI Use Declaration in this course, an acknowledgment in an IEEE paper, or a note to a manager or client at work (Chapter 10). When you cite a published work that its authors say was made with AI help, cite it like any other work, and read it with the same care (Chapter 9).
+
+## References {.unnumbered}
+
+IEEE. (2024, April 16). *Author guidelines for artificial intelligence (AI)-generated text*. IEEE Open. Retrieved October 18, 2026, from https://open.ieee.org/author-guidelines-for-artificial-intelligence-ai-generated-text/
+
+IEEE. (2025). *IEEE reference style guide for authors* (Version 3.28.2025). IEEE Publication Operations. Retrieved October 18, 2026, from https://journals.ieeeauthorcenter.ieee.org/your-role-in-article-production/ieee-editorial-style-manual/
+
+McAdoo, T., Denneny, S., & Lee, C. (2025a, September 9). *Citing generative AI in APA Style: Part 1—Reference formats*. APA Style Blog. https://apastyle.apa.org/blog/cite-generative-ai-references
+
+McAdoo, T., Denneny, S., & Lee, C. (2025b, September 9). *Citing generative AI in APA Style: Part 2—AI as a search engine and AI integrated into common software*. APA Style Blog. https://apastyle.apa.org/blog/cite-generative-ai-search-software
+
+Modern Language Association. (2025, August 13). *How do I cite generative AI in MLA style? (Updated and revised)*. MLA Style Center. https://style.mla.org/citing-generative-ai-updated-revised/

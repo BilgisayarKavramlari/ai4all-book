@@ -1,6 +1,6 @@
 # How This Book Was Written {#sec-how-written .unnumbered}
 
-<!-- Status: FIRST DRAFT (2026-10-18), compiled from docs/ai-use-log.md and docs/decisions.md. Awaiting the author's review; update for each edition. -->
+<!-- Status: FIRST DRAFT (2026-10-18), compiled from docs/ai-use-log.md and docs/decisions.md; front-matter pass 2026-10-18 added the production sequence, the verdict line and the edition declaration. Awaiting the author's review; update for each edition. -->
 
 This is a book about using AI responsibly, so it should say plainly how AI was used to write it. This section is that disclosure. It follows the same principle the book asks of you: say what you used, how you checked it, and where human judgment decided.
 
@@ -15,11 +15,12 @@ The author used AI tools from Anthropic (Claude models, through the Claude app a
 - generate the diagrams and data charts from source files and data tables;
 - draft the five fictional students who appear in the book.
 
-Every chapter also has a human checkpoint before drafting (the chapter plan) and after it (the author's own revision and final voice edit). No AI tool is listed as an author.
+The work followed a fixed sequence for every chapter. A separate AI working session (a "chapter agent") drafted the chapter from its approved plan. Four independent AI review passes followed, each run without seeing the others: a subject expert, an instructional designer, a panel of student readers and a fact-checker. The chapter agent revised the draft, a final independent AI review checked the revision, and the last step is the author's own final voice edit. The author set the book's design, its rules and its main decisions, and directed this AI-assisted production; he reviews every chapter before it is final. No AI tool is listed as an author.
 
 ## How the Content Was Checked {.unnumbered}
 
 - **Sources.** Every factual claim is tied to a source and a year. Sources were opened and checked, and the results were logged claim by claim. Where a claim could not be confirmed, it was corrected or removed.
+- **Verdicts.** The fact-check gave every checked claim one of five verdicts, close to the scale Chapter 8 teaches: supported, partly supported, unsupported, cannot verify, and "outdated" where Chapter 8 has "contradicted."
 - **Examples.** AI outputs shown in the book are either labeled as constructed teaching examples or shown with the real model name and the date they were produced.
 - **Fictional students.** Lucía, Marcus, Elif, Sam and Hana are invented. They are never used as evidence.
 - **Time-sensitive content.** Claims about products, laws and model abilities carry an "as of" date and are rechecked for each edition.
@@ -35,3 +36,5 @@ This book is the author's own work. It was not funded by a course development gr
 The decisions in this book were made by the author: what to teach and in what order, which cases to include, how to judge competing evidence, what the fictional students should learn, and how the text should sound. AI tools made the work faster and the checking more thorough. Responsibility for what the book says, including its mistakes, belongs to the author.
 
 A detailed log of AI assistance is kept with the book's source files and is updated with every edition.
+
+**AI Use Declaration for this edition.** Tools: Claude models from Anthropic. Purpose: planning, drafting, independent review, source checking and figure production, all under the author's direction. Verification: claim-by-claim fact-check logs and four independent reviews per chapter. Status: as of this edition, the AI-assisted drafts are awaiting the author's final voice edit, and this declaration will be updated when that edit is complete.

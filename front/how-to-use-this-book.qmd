@@ -1,3 +1,120 @@
 # How to Use This Book {#sec-how-to-use .unnumbered}
 
-Status: not started
+<!-- Status: FIRST DRAFT (2026-10-18), front-matter agent, under the editor's delegation (D19). Sources: docs/chapter-anatomy.md, docs/syllabus.md, docs/production/chapter-brief.md (D20, reading order, time statements, answers), docs/glossary.md (verdict wording). Pending the author's voice edit. -->
+
+This book about artificial intelligence (AI) is long, and it is meant to be used, not only read. This section shows you how it is organized, so that you can find anything in any chapter and spend your time where it counts.
+
+## Three Reading Paths {.unnumbered}
+
+Every section of every chapter carries one of three tags, printed under its heading.
+
+| Tag | What it means | Who reads it |
+|---|---|---|
+| **Core** | The required weekly reading. Only Core sections are examinable. | Everyone |
+| **Studio** | Hands-on material used in the Thursday lab or at home for the week's assignment | Everyone taking the course; anyone who wants practice |
+| **Deep** | An optional extension: more evidence, a technical detail, a little mathematics or Python. Not examinable. | Readers who want more |
+
+Five whole chapters are Deep: Chapter 6 (Context Engineering and Reusable Workflows), Chapter 13 (Multimodal AI), Chapter 17 (Explainability and Transparency), Chapter 22 (The State of the Art) and Chapter 23 (Philosophical Debates). They are not examinable, but they are among the most useful chapters if your work leads that way. When a Core chapter needs a term from a Deep chapter, it defines that term again in its own Core text, so you never have to read a Deep chapter to follow the Core path.
+
+## The Parts of Every Chapter {.unnumbered}
+
+Every chapter follows the same pattern in the same order. Learn it once, and you can find anything anywhere. Boxes are told apart by their label, border and icon, never by color alone.
+
+| Part | What it is | What to do with it |
+|---|---|---|
+| Chapter Map | A one-page visual map of the chapter, with the AI Work Loop and this chapter's step highlighted, and a short "at a glance" summary | Read first; return to it before the exam |
+| Time | How long the Core reading and the whole Core package take | Plan your week |
+| Opening Case | A real, cited event that frames the chapter's problem; the chapter returns to it at the end | Keep its question in mind as you read |
+| Learning Objectives | Four to six things you will be able to do, each tagged with a course outcome (LO1–LO7) and a framework | Use them as a checklist |
+| Warm-up | Three ungraded questions answered from what you know today | Answer before reading; compare later |
+| Core sections | Five to eight short sections, one idea each, each with at least one figure | The examinable reading |
+| Check Yourself | Two or three recall questions at the end of each Core section | Answer without looking back, then check Appendix E |
+| Worked Example → Faded Example → Your Turn | For each skill: a fully solved example, then a partly solved one with steps left for you, then free practice | Study the first, finish the second, do the third |
+| Studio sections | The week's lab work and assignment steps | Do in the lab or at home |
+| Deep sections | Optional extensions, marked "Deep" | Read if you want more; not examinable |
+| Hands-on Labs | Two to four tool-neutral lab tasks; current tool steps live in Compass | Do in class or on your own |
+| Case Study | A cited real-world case, labeled on the book's diagrams | Read it, then answer the Case Study Questions |
+| Ethics Lens | The responsibility side of the chapter's topic | Discuss it |
+| Career Connection | How the topic shows up in at least three occupations | Find your own field |
+| From the Field | A short account drawn from the author's own published work | Connect the idea to practice |
+| Chapter Summary and Key Terms | A visual summary card and the chapter's terms, all defined in the Glossary (Appendix A) | Review before exams |
+| Review Questions A, B and C | A: terms and concepts; B: short cases with a justified decision; C: take a position and defend it. They mirror the three exam sections. | Exam practice |
+| Spaced Review | Three to five questions on the chapters read just before this one | Keep earlier ideas fresh |
+| Discussion Questions | Open questions, including one on ethics, one on careers and one across fields | For class and study groups |
+| Application Assignment | The week's portfolio artifact, with a rubric and an alternative assignment | Submit as instructed; it feeds your portfolio |
+| AI Use Declaration | A short statement attached to every assignment: tools used, purpose, what you accepted, rejected or revised, how you verified it, and where your judgment shaped the work | Write it for every artifact |
+| Case Study Questions | Analysis questions on the chapter's case | Practice for exam section B |
+| Mini-Project (optional) | A multi-week project that can feed your portfolio | Choose one if it fits your goals |
+| Midterm Bridge and Final Bridge | A review figure and eight exam-format items at the end of Chapter 10 (midterm) and Chapter 21 (final), each pointing to the section to reread | Use in the week before each exam |
+| Further Reading and Compass Links | Selected readings with full references, and links to optional practice | Follow what interests you |
+
+## Reading Order Is Not Always Chapter Order {.unnumbered}
+
+The chapters are numbered in the order that makes sense for a book. In the first five weeks of the course, you read them in a slightly different order, so that each week's lab has what it needs. Chapters 5, 6 and 7 are written so that they do not depend on Chapter 4.
+
+| Week | Read | Notes |
+|---|---|---|
+| 1 | Chapter 1 | Before Thursday's lab |
+| 2 | Chapter 2, then Chapter 3 | Chapter 2 before Tuesday; Chapter 3 before Thursday |
+| 3 | Chapter 5 | Chapter 6 is the optional Deep extension |
+| 4 | Chapter 7 | |
+| 5 | Chapter 4, then Chapter 8 | Chapter 4 before Tuesday; Chapter 8 before Thursday |
+| 6–7 | Chapters 9 and 10 | Week 8 is review and the midterm |
+| 9–11 | Chapters 11, 12 and 14 | Chapter 13 is the optional Deep extension in week 10 |
+| 12 | Chapters 15, 16 and 18 | Chapter 17 is the optional Deep extension |
+| 13 | Chapter 19 | |
+| 14–15 | Chapter 20; Chapter 21 in two parts | Part A by the week-14 workshop, Part B before the last week |
+
+The course syllabus sets the exact dates. If this book and the live syllabus ever disagree, the syllabus wins.
+
+## How Long It Takes {.unnumbered}
+
+Each chapter opens with a time statement. It gives two honest numbers, counted at 150 words a minute: the time for the Core sections, and the time for the whole Core package (the Core sections plus the case, the summary and the exercises you are expected to do). Each statement ends with the same reminder: allow more if you read more slowly or are reading in a second language.
+
+The course aims for about two hours of work outside class each week. A few weeks run a little over, and the chapter says so rather than hiding it.
+
+## Where the Answers Are {.unnumbered}
+
+Appendix E holds model answers to every Check Yourself question, every faded example and the odd-numbered end-of-chapter questions. Use them after you try, not before. Answers to even-numbered questions are kept with instructors, so they can be used for graded practice. Compass, the optional companion, also gives feedback on many questions ("Meet Compass").
+
+## Routes Through the Book {.unnumbered}
+
+**If you are a student in the course.** Read the week's Core sections before class, answer the Check Yourself boxes, and do the Your Turn activities. Thursday's lab uses the Studio sections and produces a draft of the week's artifact, which you submit on eLearning with its AI Use Declaration. Use the Warm-up and Spaced Review to keep earlier chapters fresh, and the Bridges before each exam.
+
+**If you teach.** The chapters follow a 15-week syllabus with a concept session and a lab each week, but they also stand alone. Each chapter defines its own terms, so you can assign chapters out of order. Rubrics are printed in the book. "Mapping to Frameworks" links the chapters to four AI literacy frameworks. The book's license allows noncommercial adaptation with credit, under the same license. [AUTHOR NOTE: how instructors request the instructor package (slides, notes, test bank, even-numbered answers).]
+
+**If you are learning on your own.** Follow the Core path in chapter order. Do the worked, faded and Your Turn examples; they are the heart of the method. The labs work with free tools. Compass can track your progress and leads to an optional certificate.
+
+**If you are a working professional.** Start with Chapter 1 and its AI Work Loop. Then pick by need: Chapters 4 and 8 (failure and verification), 5 and 12 (prompting and choosing tools), 14 (agents and oversight), 15 and 18 (privacy, law and governance), 19 (your field) and 21 (a personal code of practice). The Career Connection and From the Field boxes are written with you in mind.
+
+## Exams and the Portfolio {.unnumbered}
+
+In the course, the midterm covers the Core sections of Chapters 1–10 and the final covers the Core sections of the whole book, weighted to the second half. Both exams have the same three parts: terms and concepts, a case, and an interpretive question. Review Questions A, B and C practice exactly those parts. Appendix D adds a full-length practice exam.
+
+The portfolio grows week by week. Each chapter's Application Assignment produces one artifact. At the end of the term, you revise your strongest work, add a reflection and a personal AI code of practice (Chapter 21), and defend the portfolio orally. Chapter 20 shows how to present it to an employer or a graduate program.
+
+## The Students in This Book {.unnumbered}
+
+Five fictional students appear throughout the chapters: Lucía (accounting), Marcus (nursing), Elif (psychology), Sam (mechanical engineering) and Hana (arts and technology). They are invented composites, used to show the same skills in different fields, and they are never used as evidence. "Meet the Students" introduces them.
+
+## Two Scales Used Throughout {.unnumbered}
+
+When the book tells a real case, it says how firmly each fact is established. Three attribution tiers are used:
+
+| Tier | Meaning |
+|---|---|
+| Confirmed | Stated in the primary record |
+| Reported | Stated by a named outlet or person |
+| Inferred | The book's reading of the evidence |
+
+When you check a claim, from Chapter 8 on, you give it one of five verdicts (wording from the Glossary):
+
+| Verdict | Meaning |
+|---|---|
+| Supported | The evidence says what the claim says |
+| Partly supported | Part holds, part does not or is missing |
+| Unsupported | No evidence for it at the stage you reached: nothing found, or the source does not say it |
+| Contradicted | The evidence says otherwise |
+| Cannot verify | The evidence exists or may exist, but you cannot reach it |
+
+The book holds itself to nearly the same scale: its own fact-check gave every checked claim one of five verdicts, with "outdated" in the place of "contradicted" ("How This Book Was Written").

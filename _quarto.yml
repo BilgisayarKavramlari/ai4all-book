@@ -19,6 +19,9 @@ book:
     - front/preface.qmd
     - front/how-to-use-this-book.qmd
     - front/meet-the-students.qmd
+    - front/meet-compass.qmd
+    - front/visual-guide.qmd
+    - front/mapping-to-frameworks.qmd
     - front/how-this-book-was-written.qmd
     - part: "Part I — Understanding AI"
       chapters:
@@ -55,20 +58,32 @@ book:
       chapters:
         - chapters/22-the-state-of-the-art-current-developments.qmd
         - chapters/23-philosophical-debates-minds-meaning-and-responsibility.qmd
+  appendices:
+    - appendix/a-glossary.qmd
+    - appendix/b-lab-index.qmd
+    - appendix/c-templates.qmd
+    - appendix/d-practice-exam.qmd
+    - appendix/e-answers.qmd
+    - appendix/f-deep-dives.qmd
+    - appendix/g-case-index.qmd
+    - appendix/references.qmd
+    - back/about-the-author.qmd
+    - back/colophon.qmd
 
 format:
   html:
     toc: true
     number-sections: true
   typst:
-    papersize: us-letter        # placeholder until the trim size is chosen
-    margin:
-      x: 1in                    # placeholder
-      y: 1in                    # placeholder
+    papersize: us-letter        # placeholder until the trim size is chosen (applied in typst/typst-show.typ)
     mainfont: "Source Serif 4"  # placeholder (font option A)
     fontsize: 10.5pt            # placeholder
     toc: true
+    toc-depth: 1
     number-sections: true
+    template-partials:
+      - typst/typst-show.typ    # cover page, US Letter, palette, copyright block
   epub:
     toc: true
+    cover-image: cover/cover-epub.png
     number-sections: true
