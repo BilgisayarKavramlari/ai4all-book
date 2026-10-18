@@ -1,6 +1,6 @@
 """Chapter 15 diagrams (SVG, color + gray). Run from the repo root:
     python3 figures/scripts/ch15_figures.py
-The data chart F15.6 is in ch15_charts.py (data/ch15_reid.csv).
+The data chart f15-06-reid is in ch15_charts.py (data/ch15_reid.csv).
 
 Two reusable functions are introduced here and imported by later chapters (16, 17, 18, 19):
 
@@ -237,7 +237,7 @@ def data_flow_map(highlight=None, annotate=None, boundary=True, omit=None, note=
     return draw
 
 
-# ---------------------------------------------------------------- F15.1 Chapter map
+# ---------------------------------------------------------------- figure f15-01 Chapter map
 def chapter_map(f):
     muted = MUTED[f.mode]
     f.text(400, 30, "Chapter 15 at a glance", size=22, weight="700")
@@ -271,7 +271,7 @@ def chapter_map(f):
            size=13, color=muted)
 
 
-# ---------------------------------------------------------------- F15.2 Storyboard (C12)
+# ---------------------------------------------------------------- figure f15-02 Storyboard (C12)
 def storyboard(f):
     muted = MUTED[f.mode]
     steps = [("Mar 11, 2023", "Chip division allows a chat tool; staff told to take care"),
@@ -299,7 +299,7 @@ def storyboard(f):
            size=13, color=muted, width=780)
 
 
-# ---------------------------------------------------------------- F15.3–F15.5 data-flow maps
+# ---------------------------------------------------------------- figure f15-03–f15-05 data-flow maps
 FLOW_BASIC = data_flow_map(note="Ask of every box: what is here, for how long, and under whose rules?")
 FLOW_SAMSUNG = data_flow_map(
     highlight=["input", "storage"],
@@ -324,7 +324,7 @@ FLOW_LINKS = data_flow_map(
     note="C20 (2025): an opt-in sharing option widened who could see a chat. The option was removed.")
 
 
-# ---------------------------------------------------------------- F15.7 Marcus's constructed case
+# ---------------------------------------------------------------- figure f15-07 Marcus's constructed case
 def constructed_case(f):
     muted = MUTED[f.mode]
     heads = [("Kept: what the task needs", "verified"), ("Left out: what could point to a person", "risk"),
@@ -341,7 +341,7 @@ def constructed_case(f):
     f.text(400, 330, "Thick border = left out · thin border = kept or built", size=13, color=muted)
 
 
-# ---------------------------------------------------------------- F15.8 Defense in depth
+# ---------------------------------------------------------------- figure f15-08 Defense in depth
 def layers(f):
     muted = MUTED[f.mode]
     names = [("Label untrusted content", "keep material apart from instructions"),
@@ -371,7 +371,7 @@ LOOP_INJECTION = agent_loop(
          "permissions.")
 
 
-# ---------------------------------------------------------------- F15.10 Three legs
+# ---------------------------------------------------------------- figure f15-10 Three legs
 def three_legs(f):
     muted = MUTED[f.mode]
     f.box(300, 160, 200, 90, "One AI system", role="ai", kind="ai", size=16)
@@ -389,7 +389,7 @@ def three_legs(f):
            size=13, color=muted)
 
 
-# ---------------------------------------------------------------- F15.12 Channel check
+# ---------------------------------------------------------------- figure f15-12 Channel check
 def channel_check(f):
     muted = MUTED[f.mode]
     f.box(20, 120, 140, 90, "A request", role="neutral", kind="step", size=15, sub="money, logins or data",
@@ -413,7 +413,7 @@ def channel_check(f):
            "person · crossed out = set aside", size=13, color=muted, width=780)
 
 
-# ---------------------------------------------------------------- F15.13 Lucía's account-change rule
+# ---------------------------------------------------------------- figure f15-13 Lucía's account-change rule
 def account_change(f):
     muted = MUTED[f.mode]
     f.box(20, 130, 150, 90, "Caller asks to change the account email", role="neutral", kind="step", size=14)
@@ -432,7 +432,7 @@ def account_change(f):
     f.text(400, 360, "Rounded = a person · diamond = a check · thick = the safe default", size=13, color=muted)
 
 
-# ---------------------------------------------------------------- Heat maps F15.14–F15.18, F15.23
+# ---------------------------------------------------------------- Heat maps (f15-14 to f15-18, f15-23)
 HEAT_EMPTY = risk_heat_map(note="Anchors in full: section 15.5.")
 LUCIA = [(1, 2, 3, "D"), (2, 2, 3, "D"), (3, 2, 2, "I"), (4, 1, 2, "I"), (5, 1, 2, "D")]
 HEAT_LUCIA = risk_heat_map(risks=LUCIA, note="Constructed example. Risks 1–5 are listed in section 15.5.")
@@ -445,7 +445,7 @@ HEAT_SAME_CELL = risk_heat_map(risks=[(1, 2, 3, "I"), (2, 2, 3, "I")],
                                     "Same cell, very different harm.")
 
 
-# ---------------------------------------------------------------- F15.17 Mitigation ladder
+# ---------------------------------------------------------------- figure f15-17 Mitigation ladder
 def ladder(f):
     muted = MUTED[f.mode]
     rungs = [("Avoid", "do not send it, connect it or use the feature"),
@@ -465,7 +465,7 @@ def ladder(f):
            size=13, color=muted)
 
 
-# ---------------------------------------------------------------- F15.19 A12 sheet
+# ---------------------------------------------------------------- figure f15-19 A12 sheet
 def a12_sheet(f):
     muted = MUTED[f.mode]
     f.text(400, 26, "A12 responsible AI risk review (one record)", size=17, weight="700")
@@ -484,7 +484,7 @@ def a12_sheet(f):
            size=13, color=muted)
 
 
-# ---------------------------------------------------------------- F15.21 Summary card
+# ---------------------------------------------------------------- figure f15-21 Summary card
 def summary_card(f):
     f.text(400, 26, "Chapter 15 — what you can do now", size=18, weight="700")
     cards = ["Trace a prompt on the data-flow map",
@@ -499,7 +499,7 @@ def summary_card(f):
         f.box(x, y, 242, 130, c, role="neutral" if i % 2 else "soft", kind="human", size=14, weight="600")
 
 
-# ---------------------------------------------------------------- F15.22 Three families of defense (Deep)
+# ---------------------------------------------------------------- figure f15-22 Three families of defense (Deep)
 def defense_families(f):
     muted = MUTED[f.mode]
     cols = [("Train", "the model is trained to favor privileged instructions", "attacks still succeed, less often"),

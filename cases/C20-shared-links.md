@@ -16,7 +16,7 @@ Nothing wrong: no output was false. The harm came from a sharing option.
 Some users ticked the opt-in box, probably without expecting search engines to list the chats (inferred). The company removed the option.
 
 ## Labels
-Tree does not apply (no output was wrong). Map: the "seen by" box widened (F15.26). Heat map: high impact for users whose personal details became findable; an opt-in box did not make the likelihood low (inferred).
+Tree does not apply (no output was wrong). Map: the "seen by" box widened (the shared-links data-flow map in the Case Study). Heat map: high impact for users whose personal details became findable; an opt-in box did not make the likelihood low (inferred).
 
 ## Consequences (documented only)
 Option removed; removal of indexed chats under way, as reported.

@@ -1,6 +1,6 @@
 """Chapter 15 data chart (color + gray SVG). Run from the repo root:
     python3 figures/scripts/ch15_charts.py
-F15.6  Sweeney (2000): share of the 1990 U.S. population likely unique on three demographic fields
+f15-06-reid  Sweeney (2000): share of the 1990 U.S. population likely unique on three demographic fields
        (data/ch15_reid.csv; values copied from the paper; "likely unique" is the paper's estimate from
        census summary tables, not a count of identified people).
 """

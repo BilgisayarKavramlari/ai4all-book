@@ -16,7 +16,7 @@ When a user asked an ordinary question, the assistant retrieved an attacker's em
 Nothing was required of the victim (zero-click). The researchers disclosed responsibly; the vendor fixed the flaw server-side.
 
 ## Labels
-Tree: **security vulnerability** (indirect prompt injection), **documented** by the vulnerability record and the finders' write-up (F15.24). Map: input (outside email), connectors (the user's mail and files), output (outbound link) (F15.25). Chain: no loss known.
+Tree: **security vulnerability** (indirect prompt injection), **documented** by the vulnerability record and the finders' write-up (the EchoLeak tree figure in the Case Study). Map: input (outside email), connectors (the user's mail and files), output (outbound link) (the EchoLeak data-flow map in the Case Study). Chain: no loss known.
 
 ## Consequences (documented only)
 A vendor fix; no known exploitation.
