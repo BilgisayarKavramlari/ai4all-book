@@ -348,3 +348,13 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | System card | A provider's document about a released AI system, describing its evaluations, known risks and safety measures. | Sistem kartı |
 | Algorithm register | A public list of the algorithms an organization uses, with their purpose and a contact. | Algoritma sicili |
 | Right to contest | Being able to challenge a decision before a person who can review and change it. | İtiraz hakkı |
+| Personal AI code of practice | A short set of commitments you choose for how you will use AI in your own work, each written so that you recognize when it applies, with a date to review it. | Kişisel yapay zekâ uygulama ilkeleri |
+| Professional code of ethics | A statement of principles a profession sets for its members. | Meslek etiği kodu |
+| Commitment (in a code of practice) | A line in your code that states an action you will take. | Taahhüt |
+| Trigger (in a code of practice) | The observable situation that tells you a commitment applies now. | Tetikleyici (uygulama ilkelerinde) |
+| Own evidence (in a code of practice) | Something from your own work that shows why a line matters to you, such as a Failure Diary entry, an assignment result or a lab record; a rule counts only together with it. | Kendi kanıtın |
+| Trigger test | Three questions a line must pass: would you notice the moment at the time, could you or someone else trace afterward that you acted, and does the reason point to your own evidence? | Tetikleyici testi |
+| Review date | The date by which you reread your whole code and keep, revise or retire each line. | Gözden geçirme tarihi |
+| Dated note | A fact about a tool or a rule, written with the date it was true: "as of [month year]." | Tarihli not |
+| Implementation intention (Deep) | A plan that links a goal you already hold to a cue in the world, in the form "if this situation arises, I will respond this way." | Uygulama niyeti |
+| Ethics washing (gloss, Ethics Lens) | A statement of good principles that makes a person or company look responsible without changing what they do. | Etik aklama |

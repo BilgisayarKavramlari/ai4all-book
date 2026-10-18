@@ -195,3 +195,11 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 17 | 17.7 | Several providers publish system cards with major models | Oct 2026 | Provider pages (Anthropic confirmed; others via secondary analysis) | Each edition |
 | 17 | 17.7 | The Dutch government runs a national algorithm register | Oct 2026 | algoritmes.overheid.nl (checked 2026-10-18) | Each edition |
 | 17 | From the Field | hermai license (MIT per fact-check) | Oct 2026 | PyPI/GitHub | Each edition |
+| 21 | Opening, F21.2, Case Study | The 2018 ACM Code is the current version | Oct 2026 | ACM code page as archived Jul 9, 2026 (live page behind a bot check); booklet PDF served Oct 18, 2026 | Each edition |
+| 21 | 21.1, F21.8, Review A1, Lab 21.2 | The university provides Microsoft Copilot Chat to all students | Oct 2026 | UTD OIT pages (brief) | Each term |
+| 21 | 21.4, F21.5 (Hana's dated note) | The university-provided tool's terms say prompts are not used to train its foundation models | Oct 2026 | Ch. 13 (as cited there) | Each term |
+| 21 | 21.1, Deep 21.B | The EU's General-Purpose AI Code of Practice: drafted by independent experts in a process run by the AI Office; voluntary for providers; published July 10, 2025 | Oct 2026 | European Commission page (updated Oct 7, 2026) | Each edition (signatories, enforcement from Aug 2, 2026: Ch. 18) |
+| 21 | Deep 21.B | ANA released a revised Code of Ethics for Nurses in January 2025 | Oct 2026 | ANA (fact-check C111) | Each edition (other professions' revisions; AI wording) |
+| 21 | 21.2, Deep 21.A | Implementation-intention evidence (2006: 94 tests, d = 0.65; 2025: 642 tests, d ≈ .27–.66; 2021 independent: g = 0.34, publication bias); "no study we found tested AI use or professional codes" | Oct 2026 | Gollwitzer & Sheeran (2006); Sheeran et al. (2025); Wang et al. (2021) | Each edition (re-search) |
+| 21 | Career Connection | Schools increasingly publish AI guidance; employers may ask how candidates use AI | Oct 2026 | Illustrations (fact-check C116–C117) | Each edition |
+| 21 | Final Bridge, F21.14 | Chapter Map highlights of Ch. 19 (Frame, Disclose second) and Ch. 20 (Disclose, Verify second) | Oct 2026 | Drafts; editor decision 4 | At assembly |

@@ -222,3 +222,15 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | Alternative: "three explanations" packet (rule-based, attribution with fidelity, dated chatbot self-account; under 1,000 words) | Optional artifact | Apr 13, 2027 |
 | Compass (optional): layer-audit explorer; occlusion explorer for Sam's replica (data/ch17_occlusion.csv, with the baseline table) | Interactive versions | Before week 12 |
 <!-- /ch17 -->
+
+<!-- ch21 -->
+## Chapter 21
+| Asset | Where | Needed by |
+|---|---|---|
+| Trigger-test strip (moment · action you or someone else can trace · own evidence) and code template card (print and accessible) | eLearning; printed | Tue Apr 27, 2027 |
+| Lab 20.1 minutes 50–65 run sheet for the Ch. 21 peer check (labs/ch21-lab1.md) | Instructor notes | Tue Apr 27, 2027 |
+| Lab 21.2 sample sheet: a generated "code of AI ethics for students" with model name and date of generation | eLearning; accessible | Before Apr 27 |
+| Lab 21.3 excerpt sheet: one principle (privacy; competence) from the ACM 1992 and 2018 versions, short excerpts with sources (ACM's own pages) | eLearning; accessible | Before Apr 27 |
+| Four role briefs for the alternative assignment (hospital unit clerk, marketing intern, lab research assistant, freelance translator), each with the role's rules and three dated incidents (about 5 minutes' reading each) | eLearning | Tue Apr 27, 2027 |
+| Final Bridge key (even items) for eLearning and the first 10 minutes of Tue May 4 | eLearning (released after Part B) | Tue May 4, 2027 |
+<!-- /ch21 -->

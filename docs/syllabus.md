@@ -134,9 +134,9 @@ Calendar dates come from secondary sources and must be checked against the offic
 | 12 | Thu Apr 15 | Lab | Red-team lab: data leakage, injection, bias, and mitigations | — | A12 responsible AI risk review (Apr 19) | LO5 |
 | 13 | Tue Apr 20 | Concept | Designing for your own discipline. Demo: an end-to-end example workflow | R16; Ch. 19 | | |
 | 13 | Thu Apr 22 | Lab | Discipline sprint: test with three inputs, safeguards, peer test | — | A13 domain workflow prototype (Apr 26) | LO6 |
-| 14 | Tue Apr 27 | Workshop | Presenting to an employer, career narrative, portfolio peer review | R17; R18; Ch. 20 | Final portfolio and A14 career narrative (Wed Apr 28, 11:59 p.m.) [VERIFY A14 title] | LO7 |
+| 14 | Tue Apr 27 | Workshop | Presenting to an employer, career narrative, portfolio peer review | R17; R18; Ch. 20; Ch. 21 Part A | Final portfolio and A14 career narrative (Wed Apr 28, 11:59 p.m.) [VERIFY A14 title] | LO7 |
 | 14 | Thu Apr 29 | Defense | Oral portfolio defenses I (3 + 2 minutes) | — | | |
-| 15 | Tue May 4 | Defense | Oral portfolio defenses II; final review | Ch. 21 | | |
+| 15 | Tue May 4 | Defense | Oral portfolio defenses II; final review | Ch. 21 Part B | | |
 | 15 | Thu May 6 | Exam | Final examination (last class day, in class, 75 minutes) | — | | |
 
 Note: syllabus version 2 labels the textbook readings T1–T7, which predates the 23-chapter plan. The chapter numbers above follow docs/book-map.md; the author should align the live syllabus with them.

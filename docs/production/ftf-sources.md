@@ -22,6 +22,8 @@
 | 19 | Duygu Analizi (2016), YBS Ansiklopedi 3(3), 22–36 | see build/ch19/ftf-duygu-analizi.md |
 | 20 | Bilgi Ekonomisi (2014) | see build/ch20/ftf-bilgi-ekonomisi.md |
 | 21 | Kontrol Sayfası / check sheet (2014) | see build/ch21/ftf-kontrol-sayfasi.md |
+| 22 | Ağ Etkisi, Moore Yasası ve Dijitalleşme (2014) — credits Fichman et al. (2014) | see build/ch22/ftf-ag-etkisi-moore.md |
+| 23 | Aktör-Ağ Teorisi / ANT (2014) | see ybs-inventory |
 | 17 | HermAI (2025) — commercial affiliation (OptiWisdom), D16 | 1c_sgq7_xCtrgyF_9nZ1BWeLi4gXBAIXY |
 
 Do not reuse a source assigned to another chapter.

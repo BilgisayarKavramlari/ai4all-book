@@ -727,3 +727,62 @@ Overall 364 of 400 (91.0%); Spanish first-year questions 28 of 40 (70.0%), hidde
 1. Confirmed (the AP's report and fine decision; the inquiry): the model's description, scorecard and indicators; the 2013 start; hand checks of the highest scores; reviewers could not see the indicators; the citizenship finding; the inquiry's scope and findings; the fine. Reported (Amnesty): suspended payments and investigations; "tens of thousands"; the cabinet's resignation; the government's reply. Credit any five correctly placed, with the reason (who said it, in which record).
 3. *The book's reading, marked:* reviewers most needed local reasons (which indicators drove the score); parents most needed local reasons and a contest route with a person who could change the decision; both are inferences about what would have helped.
 5. In C14, the AP found discriminatory processing, and, on this book's reading, opacity disabled the checks and the contest; in the Apple Card case, the regulator found no unlawful discrimination, yet gaps in customer service and transparency caused confusion and complaints. Opacity costs trust and the ability to check, even when no discrimination is found.
+
+## Chapter 21
+
+### Check Yourself
+
+- **21.1** (1) A commitment names a moment you would notice and an action you or someone else can trace, with your own evidence as the reason; a slogan has neither moment nor action (§21.1–21.2). (2) Policy and a profession's code bind you whether or not you write them down; your code adds your own commitments inside them (§21.1, §21.3).
+- **21.2** (1) It fails "moment" ("when I use AI" is not a moment you would notice as special) and "action" ("careful" leaves no trace); it also has no reason (§21.2). (2) A rule says what you must do, not why the line matters to you; the reason question asks for your own evidence, so a rule counts only together with it (§21.2). (3) Verification, data, disclosure, and one on delegation and oversight, or risk, or fairness (§21.2).
+- **21.3** (1) The assignment: the stricter rule wins, and a personal code never loosens a rule (§21.3). (2) The rules you are under (cited, not copied); "where one is stricter, it wins"; the owner you would ask, by role (§21.3).
+- **21.4** (1) Tool facts change in months, commitments should last years; a dated note keeps the fact and its date together (§21.4). (2) No: a new kind of input is one of Chapter 12's re-test triggers, which are also review triggers, so it sends you back to your code before the review date (§21.4). (3) Marks show which lines applied and which never came up, so the review can keep, revise or retire lines on evidence; an unread code behaves like a soft gate (§21.4).
+- **21.5** (1) A classmate reads your draft aloud, applies the trigger test line by line, checks the boundaries line and names one line to revise; you record that line before and after, with the question it failed and the question it now passes (item 7 of the brief) (§21.5).
+
+### Faded examples
+
+- **21.1 Marketing student.** "AI drafting permitted with disclosure" = policy (her course); "Be transparent" = slogan; "Before I post client copy that a tool drafted, I check every product claim against the client's fact sheet" = personal commitment (it needs a reason); "The approved tool's free tier allows 50 messages a day (as of October 2026)" = dated tool note.
+- **21.2 Student teacher.** For example: *When an AI tool states a fact about the curriculum that will go into my lesson or feedback, I check it against the curriculum document and note the check, because two of ten AI-stated curriculum facts in my A5 table were wrong.* Test: moment (an AI-stated curriculum fact headed for a lesson) ✓; trace (the noted check) ✓; reason (his own A5 result) ✓.
+- **21.3 Finance intern.** (2) For example: *Before I put any client information into an AI tool, I use only the firm's approved tool and note which tool in my work file, because last month I had to report pasting a client's summary into an unapproved one.* (3) The compliance office, which owns the handbook.
+- **21.4 Co-op student.** (2) A model update or retirement (the model he tested is being retired) and a change of job or school (the co-op). (3) The line naming the AI tool his lab allows, and its model, becomes a dated note, "as of [month year]."
+
+### Review Questions A
+
+1. **(c)** "Before I submit work, I list every AI use in my declaration." (a) is a slogan (M1); (b) is policy; (d) is a dated tool note (M4).
+3. **(d)** Fourteen lines are hard to recall, so many will not come to mind when needed (M6). (a) is M6 itself; (b) misstates the rule (5–7 with four required); (c) invents a rule.
+5. A trigger in a code tells you that one of your commitments applies now; a re-test trigger (Chapter 12) is an event that should make you test a tool's fit again. In a code, Chapter 12's re-test triggers become review triggers for the whole code.
+7. **(d)** It is allowed: a personal code may be stricter, but never looser. (a) and (b) misstate the rule; (c) a personal code binds no one else.
+9. **(b)** Tool facts change in months, while commitments should last years. (a) overcorrects M4 (tools may be named, in dated notes); (c) and (d) are invented rules.
+11. **(c)** It is a basis for judgment: several principles may apply with different weight. (a) and (d) misread the phrase; (b) the code does contain principles and guidelines.
+
+### Review Questions B
+
+1. "Protect patient privacy" — slogan; "The pharmacy's handbook: no patient data in unapproved software" — policy (employer); "Before I ask an AI tool about a drug interaction, I remove anything that identifies a customer, and I check the answer in the pharmacy's reference" — personal commitment (add a "because"); "The pharmacy's chatbot runs model X (as of March 2027)" — dated tool note; "Know and respect existing rules (ACM 2.3)" — professional code; "Be careful" — slogan. Rewrite, for example: *Before I rely on a dose or interaction from an AI tool, I check it in the pharmacy's reference and initial the check, because last month I caught an AI answer with the wrong maximum dose.*
+3. Fixed line, for example: *When a draft involves anything from students' records, I use only the office's approved tool and note the tool in the file, because last term my own draft with a student's ID number ended up in a free tool's history.* Boundaries line: *This code works inside the course's zones (section 1.5), the university's data classes and the office's written AI rule; where one is stricter, it wins; when a rule is unclear, I ask the office manager.*
+
+### Review Questions C
+
+1. Strong answers take a position and use the ACM code's description of itself (a basis for decision-making, not a procedure) and the trigger test: triggers make commitments usable at the moment of action, while choosing commitments, weighing them and handling cases no trigger names still take judgment. Many conclude that triggers support judgment rather than replace it. Weak answers treat a code as either a pure checklist or pure intuition.
+3. Strong answers disagree or qualify: tools, rules and jobs change, so a code needs a review date, review triggers and dated notes (section 21.4; the ACM's 26-year gap); some note that keeping old versions is a useful record of how one's practice changed. Weak answers say a code is "just for the portfolio" or that it must change constantly.
+
+### Spaced Review
+
+1. It shows what the AI did and what you did for that entry: tools, purpose, what you accepted, rejected or revised, how you verified it, and where your judgment shaped the work (section 20.3).
+3. Any safeguard from A13 written in the "when, I, because" form with the student's own evidence, for example (constructed): *Before my study workflow's flashcards go into my review deck, I check each card against my textbook page, because my A13 peer test found an error.*
+
+### Case Study Questions
+
+1. In 1992 many people saw computing work as purely technical and the web was in its infancy; by 2018 computing work could affect people's lives and livelihoods in ways that may not be intended or even predictable.
+3. Strong answers set an interval no longer than six months, or tied to the next job or term, justified by how fast the tools in their field change, and turn one ACM principle into a commitment that passes the trigger test, for example (2.5) *When a tool I rely on is updated, I re-run my three test inputs before using it again, because a model update changed my results in a Chapter 12 bake-off.*
+
+### Final Bridge
+
+- **FB1. (c)** No evidence: a tool's own "yes" is never a source; check an index or open the work (sections 8.2–8.3). (a) a second question to the same tool is not independent; (b) the tool's naming is not the record; (d) a model is not an expert.
+- **FB3. (b)** Little on its own: each way of handling a blank is an assumption, and all can be wrong (section 11.2). (a) agreement among methods is not evidence that they are right; (c) leaving blanks out is itself a choice; (d) overcorrects.
+- **FB5. (a)** When it makes errors and the groups' base rates differ, the three cannot all hold (section 16.3). (b) is Chapter 16's M4 (a better choice would fix it); (c) and (d) are unrelated misreadings.
+- **FB7.** (a) Treasurer → spreadsheet (ZIP code, birth date, major, payment status) → a free chat tool, under its consumer terms (storage, possible review or reuse depend on the terms) → output list → treasurer. (b) ZIP code, birth date and major are quasi-identifiers: together they can identify a person without a name (section 15.2). (c) For example, likelihood medium and impact medium for members' data kept or reused under the tool's terms; inferred unless the terms were read and quoted. (d) Avoid: do the lookup with a filter in the spreadsheet itself, no AI tool; risk owner: the treasurer (or the club president). Reduce: only a tool that the university's data classes allow, with only the columns needed. (e) No AI output was wrong; the harm is on the input side, so the tree does not apply; the data-flow map and the heat map do.
+- **FB9.** Disagree. As of October 2026, the U.S. Copyright Office's position (2025 report) is that U.S. copyright protects what a person authors; output a tool produces from a prompt is not protected, though your own expression, selection, arrangement and changes can be (section 18.3). Writing the prompt does not make you the author of the image; the tool's terms may assign you whatever rights the provider has, which is a different question. Strong answers use human authorship and separate terms from copyright.
+
+### Lab notes
+
+- **Lab 21.2.** Expect generated "codes" to be mostly slogans; few or no lines pass all three questions, and none can pass "reason" for the student, because the tool has no access to the student's evidence.
+- **Lab 21.3.** Use only the excerpts provided; the 2018 version names machine-learning systems and asks that systems whose future risks cannot be reliably predicted be reassessed often in use (principle 2.5).

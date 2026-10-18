@@ -18,3 +18,5 @@ C01–C15: see cases/index.csv (planned in the book design).
 | C27 | 19 | Tesla Autopilot recall and NHTSA review (2023–24) (engineering) | assigned |
 | C28 | 19 | Tutor CoPilot (Wang et al., 2024–25) (education) | assigned |
 | C29 | 20 | Anthropic's guidance on AI use by job candidates (2025) | assigned |
+| C30 | 23 | Turing (1950), Searle (1980), Bender et al. (2021): can machines understand? (debate case) | assigned |
+| C31 | 22 | 2025 International Mathematical Olympiad gold-medal results by AI systems (certified vs company-arranged grading) | assigned |

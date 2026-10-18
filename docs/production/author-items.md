@@ -122,3 +122,12 @@
 2. **Live syllabus:** the week-12 row lists "Ch. 15–18" as reading; Chapter 17 is Deep and optional (D20, D22). Change it to "Ch. 15, 16, 18 (D: Ch. 17)" (fact-check C02).
 3. Final voice edit.
 <!-- /ch17 -->
+
+<!-- ch21 -->
+## Chapter 21
+1. **Live syllabus (weeks 14–15):** the editor has updated docs/syllabus.md (Ch. 21 Part A on Apr 27; Part B on May 4). Please carry these into the live syllabus, with the peer check in **Lab 20.1, minutes 50–65**, the code brief and 15-point rubric (§21.5 and the Application Assignment), and **even Final Bridge items reviewed on eLearning and in the first 10 minutes of Tue May 4** (May 6 is the exam).
+2. **AI use for the code (D-21.5):** the chapter follows the syllabus row ("drafting permitted with disclosure") and the brief now says it "is the explicit permission that section 10.2's table asks for"; this is looser than the §10.2 default for skill-building writing (D-10.2). Please confirm, or tell the editor to switch the brief to the §10.2 reading.
+3. **Last Words:** `[AUTHOR NOTE: optional]` marks where a personal closing note could go; the book's closing paragraph awaits your voice edit. Nothing personal was written for you.
+4. **From the Field:** approve the use of your 2014 entry "Kontrol Sayfası (Control Sheet)" (*YBS Ansiklopedi* 1(4), Aralık 2014), written in first person from the entry, facts limited to it, present-day connections marked; confirm the pages (printed 26 and 27; the PDF's printed citation line is wrong and names "Tam Süreli Eşdeğer").
+5. Final voice edit of the chapter (pipeline step 8).
+<!-- /ch21 -->
