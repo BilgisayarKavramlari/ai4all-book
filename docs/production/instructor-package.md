@@ -209,3 +209,16 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | Mini-Project alternative: three scenarios with 60 dated outputs per version | eLearning | Chapter release |
 | L16.2 file (data/ch16_lab_disagg.csv) and template; L16.3 trade-off spreadsheet | eLearning; Compass | Chapter release |
 <!-- /ch16 -->
+
+<!-- ch17 -->
+## Chapter 17
+| Asset | For | Needed by |
+|---|---|---|
+| Lab 17.1: three multiple-choice questions (two versions each, both asking for step-by-step reasoning, differing only in the hint line), record sheet, printed dated outputs (two tools, model names and dates, 3 runs per version; print every run, discard none) | Lab 17.1, A12 optional row | Tue Apr 13, 2027 |
+| Lab 17.2: two dated model or system card extracts (two providers) and one datasheet extract, about 200 words each, plain-text versions | Lab 17.2 | Apr 13, 2027 |
+| Lab 17.3: data/ch17_scorecard.csv, a printed table, and the points key (private/ch17-answers-even.md) | Lab 17.3 | Apr 13, 2027 |
+| Lab 17.4: three scenario cards (about 150 words each) with decision-owner answer sheets | Lab 17.4 | Apr 13, 2027 |
+| Report: three decision packets (housing priority, loan pre-screen with scorecard, clinic reminder ranking; each under 1,000 words), one-page template, a sample submission | Optional artifact | Apr 13, 2027 |
+| Alternative: "three explanations" packet (rule-based, attribution with fidelity, dated chatbot self-account; under 1,000 words) | Optional artifact | Apr 13, 2027 |
+| Compass (optional): layer-audit explorer; occlusion explorer for Sam's replica (data/ch17_occlusion.csv, with the baseline table) | Interactive versions | Before week 12 |
+<!-- /ch17 -->

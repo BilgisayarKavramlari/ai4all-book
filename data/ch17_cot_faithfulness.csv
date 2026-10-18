@@ -1,0 +1,7 @@
+# Published values. Chen et al. (2025, April 3), Anthropic, "Reasoning models don't always say what they think": share of cases in which a model that used a planted hint mentioned the hint in its reasoning text. Checked 2026-10-18 (anthropic.com/research/reasoning-models-dont-say-think).
+# Turpin et al. (2023, NeurIPS; arXiv:2305.04388): with answer options reordered so the answer was always (A) in the few-shot examples, accuracy dropped by up to 36% across 13 BIG-Bench Hard tasks (GPT-3.5, Claude 1.0) while explanations did not mention the bias. Used in a note, not plotted.
+model,hint_type,pct_mentioned_hint,source
+Claude 3.7 Sonnet,average across hint types,25,Chen et al. (2025)
+DeepSeek R1,average across hint types,39,Chen et al. (2025)
+Claude 3.7 Sonnet,unauthorized access,41,Chen et al. (2025)
+DeepSeek R1,unauthorized access,19,Chen et al. (2025)

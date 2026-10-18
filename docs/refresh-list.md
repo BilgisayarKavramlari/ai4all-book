@@ -184,3 +184,14 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 16 | Ethics Lens | GPT-4 translated-MMLU gap (English 85.5%, Telugu 62.0%), a 2023 model | Oct 2026 | OpenAI (2023) | Each edition |
 | 16 | Career | Atari et al. "Which humans?" is a preprint | Oct 2026 | PsyArXiv (2023) | Each edition |
 | 16 | 16.7, Labs | Microsoft Copilot Chat available to UTD students; memory/personalization options not documented on the OIT page — check before the lab | Oct 2026 | UTD OIT | Each term |
+| 17 | 17.7 box | EU AI Act Art. 50 applies from Aug 2, 2026; marking duty transition to Dec 2, 2026 for systems already on the market | Oct 2026 | Regulation (EU) 2026/1744 (book-wide rule) | Each edition |
+| 17 | 17.7 box | CJEU C-634/21 (2023) and C-203/22 (2025) as the leading rulings on automated scores and explanations | Oct 2026 | Judgment texts (EUR-Lex) | Each edition (new rulings) |
+| 17 | 17.6, F17.13 | Hint-mention rates 25% / 39% (Claude 3.7 Sonnet, DeepSeek R1) | Oct 2026 (study Apr 2025) | Chen et al. (2025) | Each edition |
+| 17 | 17.6 dated box | Reasoning-text monitoring (Baker et al., 2025; Korbak et al., 2025) | Oct 2026 | arXiv | Each edition (Ch. 22) |
+| 17 | 17.6 | Circuit-tracing findings on Claude 3.5 Haiku | Oct 2026 (post Mar 2025) | Anthropic (2025) | Each edition |
+| 17 | From the Field | hermai Python package 0.1.8 on PyPI | Oct 2026 | pypi.org/project/hermai | Each edition |
+| 17 | Labs | University tool: Microsoft Copilot Chat available to students | Oct 2026 | UTD OIT (book-wide rule) | Each term |
+| 17 | Case Study | AP fine €2.75 million on the Minister of Finance (decision Nov 25, 2021); no appeal found | Oct 2026 | AP decision (primary) | Each edition (appeal status) |
+| 17 | 17.7 | Several providers publish system cards with major models | Oct 2026 | Provider pages (Anthropic confirmed; others via secondary analysis) | Each edition |
+| 17 | 17.7 | The Dutch government runs a national algorithm register | Oct 2026 | algoritmes.overheid.nl (checked 2026-10-18) | Each edition |
+| 17 | From the Field | hermai license (MIT per fact-check) | Oct 2026 | PyPI/GitHub | Each edition |

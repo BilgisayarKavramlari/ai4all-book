@@ -115,3 +115,10 @@
 4. **UTD check before Apr 15:** whether Copilot Chat's memory or personalization can be switched off for the station (the OIT page does not say).
 5. Final voice edit (pipeline step 8).
 <!-- /ch16 -->
+
+<!-- ch17 -->
+## Chapter 17
+1. **From the Field (HermAI):** approve the use of the manuscript with the D16 disclosure; confirm the D16 wording ("I am a founder of OptiWisdom …"; fact-check C105); confirm publication status, issue and pages (the file says "issue and year to be added later"); confirm whether HermAI is part of any OptiWisdom product. **Decide** whether the book may note that the manuscript's example counterfactual changes features a passenger could not change after the fact (the manuscript calls its counterfactuals actionable); the book text has only a neutral, sourced caveat about counterfactuals in general. Optional: an anonymized moment when a client asked "why did the model decide this?", never written for him.
+2. **Live syllabus:** the week-12 row lists "Ch. 15–18" as reading; Chapter 17 is Deep and optional (D20, D22). Change it to "Ch. 15, 16, 18 (D: Ch. 17)" (fact-check C02).
+3. Final voice edit.
+<!-- /ch17 -->

@@ -1,0 +1,12 @@
+search,applicant_before,income_k,debt_ratio,months_employed,late_payments,age_band,approval_prob_before
+applicant,,61.81,0.28,32.72,0.0,1.0,0.406
+
+search,changes,cost_standardized_L1,approval_prob_after
+unconstrained,debt_ratio 0.28 -> 0.27,0.102,0.512
+actionable_only,debt_ratio 0.28 -> 0.27,0.102,0.512
+
+check,value
+debt_ratio_exact,0.2847
+smallest_debt_ratio_decrease_that_flips_0.001_steps,0.009
+debt_ratio_at_flip,0.2757
+approval_prob_if_age_band_plus_1,0.586

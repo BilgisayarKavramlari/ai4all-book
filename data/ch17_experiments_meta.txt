@@ -1,0 +1,8 @@
+Python 3.10.7; NumPy 1.26.4; scikit-learn 1.4.2
+Seeds: Demo A numpy default_rng(1702); Demo B default_rng(1703), GradientBoosting random_state=1703, local-surrogate seeds 1704-1713; scorecard default_rng(1714)
+Demo A fixed occlusion baseline (training-set mean pixel value): 0.5301
+Demo B black-box held-out accuracy against the constructed labels: 0.764
+Implementation note: the first run computed log-odds from probabilities clipped at 1e-12, which rounded saturated images to zero change; log-odds are now computed from the model's scores (same method, no rounding). No other change was made after seeing results.
+Results that differ from the blueprint's expectation are reported as they came (Demo A per-pixel measures; Demo B counterfactual): see docs/production/handoff/ch17.md.
+Revision v2 (reviewers' request): added the ring-position share, the baseline-sensitivity table, the always-reject agreement and approvals matched for each surrogate, the exact debt-ratio flip point and a one-band age change. These are extra reports of the same models; no method was changed.
+All data are constructed. See the module docstring for every method choice.

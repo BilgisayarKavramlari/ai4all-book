@@ -48,7 +48,7 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Test set | Labeled examples kept away from training and used only to score the model. | Test kümesi |
 | Deep learning | Machine learning with many layers of simple computing units. | Derin öğrenme |
 | Data-to-Prediction Pipeline | The book's five-stage picture of how data becomes predictions: collect, label, train, predict, feedback. | Veriden tahmine hattı |
-| Datasheet (for a dataset) | A short document describing why a dataset was created, what is in it, how it was collected and labeled, and what it should not be used for. | Veri seti bilgi föyü |
+| Datasheet (for a dataset) | A document that records why a dataset was created, what it contains, how it was collected and labeled, and what it should not be used for (after Gebru et al., 2021). | Veri seti bilgi formu |
 | Gradient descent | A training method that changes a model's settings in small steps that reduce the error. | Gradyan inişi |
 | Precision | Of the cases a model flagged, the share that were really positive. | Kesinlik |
 | Recall | Of the real cases of a class, the share the model caught (the score on the smallest class in Ch. 2). | Duyarlılık (geri çağırma) |
@@ -327,3 +327,24 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Calibration within groups (Deep) | A score means the same chance of the outcome in every group (a score of 0.7 means a 70% chance). | Gruplar içi kalibrasyon |
 | Runaway feedback loop (Deep) | A feedback loop in which a system keeps being sent back to where it already looked, whatever the true rate. | Kontrolden çıkan geri besleme döngüsü |
 | Predictive policing (Deep) | Software that sends patrols to areas where past records show more crime. | Öngörücü polislik |
+| Explainability | How far people can get reasons for a system's outputs that they can understand and use. | Açıklanabilirlik |
+| Appropriate reliance | Relying on a system when it is right and not relying on it when it is wrong (after Lee & See, 2004). | Uygun güven (yerinde dayanma) |
+| Transparency (of an AI system) | Openness about a system: whether it is used, what it is for, what data and logic it relies on, how it was tested and who answers for it. | Şeffaflık (yapay zekâ sisteminin) |
+| Interpretability | How far a person can follow how a model turns inputs into outputs from the model itself. | Yorumlanabilirlik |
+| Black box | A system whose inputs and outputs can be seen but whose internal workings are not visible, or not understandable, to the people who use it or are affected by it. | Kara kutu |
+| Interpretable model | A model whose decision process a person can follow from the model itself, such as a points scorecard, a short list of rules or a small decision tree; sometimes called a glass box. | Yorumlanabilir model (cam kutu) |
+| Post-hoc explanation | An explanation produced after a model is built, by a separate method that studies the model's inputs and outputs. | Sonradan (post-hoc) açıklama |
+| Global explanation | An explanation of how a model behaves across many cases, such as which features matter most overall. | Genel (küresel) açıklama |
+| Local explanation | An explanation of why a model produced one output for one case. | Yerel açıklama |
+| Feature attribution | An explanation that assigns each input feature a share of the credit for an output, for one case or across many. | Özellik atfı |
+| Counterfactual explanation | An explanation that names the smallest change to an input that would have changed the output. | Karşı-olgusal açıklama |
+| Recourse | A counterfactual change that a person can actually make. | Telafi yolu (başvuru imkânı) |
+| Example-based explanation | An explanation that shows past cases a model treated as similar, or typical examples of each outcome. | Örnek tabanlı açıklama |
+| Faithfulness (of an explanation) | How accurately an explanation reflects the process that actually produced the output. | Sadakat (açıklamanın) |
+| Surrogate model | A simpler model trained to imitate a complex one, often to explain it. | Vekil model |
+| Fidelity (of a surrogate model) | How often a surrogate model gives the same output as the model it imitates. | Uygunluk oranı (vekil modelin) |
+| Chain-of-thought text | The step-by-step text a model produces before or with its answer, sometimes shown and sometimes hidden as reasoning tokens. | Düşünce zinciri metni |
+| Model card | A short document published with a model that states what it is for and not for, how it was evaluated, including results by group where relevant, and its known limits (after Mitchell et al., 2019). | Model kartı |
+| System card | A provider's document about a released AI system, describing its evaluations, known risks and safety measures. | Sistem kartı |
+| Algorithm register | A public list of the algorithms an organization uses, with their purpose and a contact. | Algoritma sicili |
+| Right to contest | Being able to challenge a decision before a person who can review and change it. | İtiraz hakkı |
