@@ -1,0 +1,7 @@
+scenario,weights (test/interview/experience/GPA/referral),top candidate,shortlist of three,scores (0-10)
+"AI weights, blank interview = lowest score",25/25/30/10/10,E,E B D,E=7.00 B=6.94 D=6.60 F=5.74 A=5.59 C=3.83
+"AI weights, blank interview = mean of others",25/25/30/10/10,E,E B D,E=7.00 B=6.94 D=6.60 F=5.74 C=5.64 A=5.59
+"AI weights, candidate C left out until interviewed",25/25/30/10/10,E,E B D,E=7.00 B=6.94 D=6.60 F=5.74 A=5.59
+"Experience 20, test 35 (others unchanged), blank = mean",35/25/20/10/10,D,D B E,D=7.10 B=7.06 E=6.85 F=6.38 A=6.37 C=6.35
+"Referral removed, its 10 points to the interview, blank = mean",25/35/30/10/0,F,F B E,F=6.61 B=6.56 E=6.50 A=6.46 C=6.36 D=6.35
+"Equal weights (20 each), blank = mean",20/20/20/20/20,B,B D E,B=7.44 D=7.35 E=7.35 C=5.57 F=5.53 A=5.51

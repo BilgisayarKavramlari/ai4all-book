@@ -81,3 +81,19 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Reversal curse | The finding that a model trained on "A is B" often fails to answer "B is A" (Berglund et al., 2024). | Tersine çevirme laneti |
 | Attention (Deep) | In a Transformer, the mechanism that updates each token's representation with a weighted mix of the tokens before it. | Dikkat (mekanizması) |
 | Transformer (Deep) | The model architecture, introduced in 2017, on which most of today's large language models are built (as of October 2026). | Transformer (dönüştürücü mimarisi) |
+| Failure (AI) | An output or action of an artificial intelligence (AI) system that does not do what the task needs. | Başarısızlık (yapay zekâ hatası) |
+| Failure Taxonomy Tree | The book's diagram that sorts AI failures into five branches, each with smaller leaves. | Başarısızlık sınıflandırma ağacı |
+| Bias (in generated output) | A systematic pattern in outputs that treats or represents people or groups unfairly. | (Üretilen çıktıda) yanlılık |
+| Context loss | Output that ignores information or instructions the model was given. | Bağlam kaybı |
+| Security vulnerability (AI) | A weakness that lets someone make an AI system act against its owner's intent or reveal what it should not. | Güvenlik açığı |
+| Documented (label) | A failure label for which the evidence shows the branch's defining feature. | Belgelenmiş (etiket) |
+| Inferred (label) | A failure label for which the evidence does not show the branch's defining feature; drawn with a dashed border. | Çıkarsanmış (etiket) |
+| Intrinsic hallucination | A hallucination that contradicts the input the model received: what you pasted, or what the system retrieved. | İçsel halüsinasyon |
+| Extrinsic hallucination | A hallucination that the input can neither support nor contradict; it adds something from elsewhere. | Dışsal halüsinasyon |
+| Recombination | Joining patterns learned from true text into a statement that is false. | Yeniden birleştirme |
+| Sycophancy | Output that agrees with your stated view even when the evidence points the other way. | Dalkavukluk (yaranma eğilimi) |
+| Prompt injection | Text that acts as an instruction to an AI system against its owner's intent; direct when a user types it, indirect when it is hidden in content the system retrieves. | İstem enjeksiyonu |
+| Pushback test | A probe that challenges a correct answer to see whether the output changes to agree with you. | İtiraz testi |
+| Failure-to-harm chain | The links by which an AI error becomes a harm: the output is wrong, it is not checked before use, someone relies on it, and a loss follows. | Hatadan zarara zincir |
+| Failure Diary | A dated record of AI failures you met, each with the test that showed it, a label and likely causes. | Başarısızlık günlüğü |
+| Confabulation (Deep) | Another word for hallucination, used by some researchers and by NIST's Generative AI Profile: confidently stated but false content. | Konfabulasyon (uydurma) |

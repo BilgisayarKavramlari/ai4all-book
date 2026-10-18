@@ -1,32 +1,40 @@
 # Framing Tasks and Iterating Prompts {#sec-ch05}
 
-<!-- Status: v1 draft (2026-10-18), chapter agent, stages 2-3. From blueprint v0.2 (approved under D19). Featured student: Lucía only (docs/characters.md); other people are unnamed. Figures: figures/scripts/ch05_figures.py (Signatures 6 and 7 introduced here) and ch05_charts.py (published values in data/ch05_wording.csv and data/ch05_delegation.csv). All of Lucía's prompts and outputs are constructed examples. -->
+<!-- Status: v2 (2026-10-18), chapter agent, stage 5 (revision after four independent reviews; see docs/editorial/ch05-dev-memo.md). From blueprint v0.2 (approved under D19). Featured student: Lucía only (docs/characters.md); other people are unnamed. Figures: figures/scripts/ch05_figures.py (Signatures 6 and 7 introduced here) and ch05_charts.py (published values in data/ch05_wording.csv and data/ch05_delegation.csv). All of Lucía's prompts and outputs are constructed examples. Klarna facts carry attribution tiers: confirmed (Klarna's own documents), reported (named outlet), inferred (the book's reading). -->
 
 ![Chapter 5 at a glance. This chapter strengthens two steps of the AI Work Loop: Frame and Prompt.](../figures/out/color/f5-01-chapter-map.svg){#fig-5-1 fig-alt="Chapter map: Frame (5.1, 5.2), Prompt (5.3, 5.4), Test and do (5.5, Lab 5.1, A3); Work Loop strip with Frame and Prompt highlighted."}
 
-**Chapter 5 at a glance.** Part I of this book explained what AI tools are and how they work. Part II is about working with them. This chapter covers the first two decisions of the AI Work Loop from Chapter 1. **Frame:** what is the task, what does a good result look like, and which parts should AI do at all? **Prompt:** what does the tool need to receive, and how do you improve a prompt on purpose instead of by luck?
+**Chapter 5 at a glance.** Part I of this book explained what artificial intelligence (AI) tools are and how they work. Part II is about working with them.
 
-**Time:** about 30 minutes of Core reading at 150 words per minute (longer if English is not your first language). The boxes work as before: worked examples show every step, faded examples leave some steps for you, and Your Turn and Check Yourself boxes are ungraded practice. Thursday's lab (section 5.6) starts assignment A3. Answers to odd-numbered end-of-chapter questions are in Appendix E.
+This chapter covers the first two decisions of the AI Work Loop from Chapter 1. **Frame:** what is the task, what does a good result look like, and which parts should AI do at all? **Prompt:** what does the tool need to receive, and how do you improve a prompt on purpose instead of by luck?
+
+**Time:** at 150 words per minute, about 32 minutes for the Core sections (5.1 to 5.5) and about 53 minutes for the whole Core package (adding section 5.6, the Opening Case, the Summary, the Lab 5.1 page and the A3 brief); longer if English is not your first language. Assignment A3 then takes about 60 to 70 minutes at home (see its brief), and the Your Turn in 5.3 about 5 minutes; the Your Turns in 5.1 and 5.2 are done in Thursday's lab. Reading R2 is recommended this week rather than required. Worked examples show every step, faded examples leave some steps for you (each has a hint; answers are in Appendix E), and Your Turn and Check Yourself boxes are ungraded practice.
 
 **The question of this chapter:** *Is getting good results from AI mainly a matter of finding the right words?* Keep your answer in mind. The Chapter Summary returns to it.
 
 ## Opening Case: By Klarna's Own Measures {.unnumbered}
 
-Klarna is a Swedish company that lets shoppers pay for purchases in installments. Its customers contact it with questions about payments, refunds and returns. In early 2024 it added an AI assistant, built with OpenAI's technology, to answer customer-service chats.
+Klarna is a Swedish payments company. It offers "buy now, pay later" plans, which let shoppers pay for a purchase in several smaller payments. Its customers contact it with questions about payments, refunds and returns. In February 2024 it launched an AI assistant, built with OpenAI's technology, to answer customer-service chats.
 
-On February 27, 2024, the company announced the assistant's first month. According to Klarna, the assistant had handled 2.3 million conversations, two-thirds of all its customer-service chats. The company said this was the work of 700 full-time agents. It said customers now resolved their errands in under 2 minutes instead of 11, that satisfaction scores were on par with those for human agents, and that repeat questions had dropped by 25%. It expected the assistant to improve its profit by about $40 million in 2024. Customers could still choose to talk to a person (Klarna, 2024).
+On February 27, 2024, the company announced the assistant's first month. According to Klarna, the assistant had handled 2.3 million conversations, two-thirds of all its customer-service chats. The company said this was the work of 700 full-time agents, meaning human customer-service staff.
 
-Read those numbers carefully. Every one of them is the company's own. No independent study checked them, and a press release reports what a company chose to measure and chose to share. That does not make the numbers false. It means you know whose measures they are.
+It said customers now solved their problems in under 2 minutes instead of 11, and that their satisfaction scores were about the same as with human agents. It also said the assistant resolved problems more accurately, which it said led to 25% fewer repeat questions. It expected the assistant to improve its profit by about $40 million in 2024, and customers could still choose to talk to a person (Klarna, 2024).
 
-By the measures Klarna chose (volume, speed, cost and a satisfaction score), the assistant worked. Here is the question this chapter asks: **were those the right measures?**
+Read those numbers carefully. Every one of them is the company's own, and no independent study of them is cited here. A press release reports what a company chose to measure and chose to share.
 
-About fifteen months later, the story changed. In May 2025, Klarna's chief executive, Sebastian Siemiatkowski, gave an interview to Bloomberg. As other outlets reported it, he said that cost had weighed too heavily as the company judged its AI push, and that the result was lower quality. He said customers would always be able to reach a human if they wanted to, and Klarna began recruiting people for customer service on a flexible, remote model. He also said the company remained committed to AI (Entrepreneur, 2025, reporting Bloomberg, 2025). <!-- [VERIFY] Bloomberg (May 8, 2025) is paywalled; wording confirmed through Entrepreneur (May 9, 2025) and CX Dive (Nov 20, 2025). -->
+That does not make the numbers false. It means you know whose measures they are.
 
-![Klarna's public account moved from speed and cost (2024) to a guaranteed human option (2025).](../figures/out/color/f5-05-klarna-storyboard.svg){#fig-5-5 fig-alt="Three dated panels: Feb 2024 company figures; May 2025 CEO says cost weighed too heavily; Nov 2025 CEO claims work of 853 agents."}
+By the measures Klarna chose (volume, speed, cost, a satisfaction score, and a claim of more accurate resolution shown by fewer repeat questions), the assistant worked. Here is the question this chapter asks: **were those the right measures?**
+
+About fifteen months later, the company's account changed. In May 2025, Klarna's chief executive, Sebastian Siemiatkowski, gave an interview to Bloomberg. As a customer-service trade publication reported it, he said that cost had been too dominant a factor when the company organized this work, and that the result was lower quality (Fisher, 2025).
+
+Another outlet reported him saying that customers must know they can always reach a human if they want one, and that Klarna was hiring people for customer service in fully remote roles (Shibu, 2025). These statements are reported second-hand; the interview itself is behind a paywall. <!-- Bloomberg not read (paywall); statements attributed to Fisher (2025) and Shibu (2025), which were read. -->
+
+![Klarna's public account moved from efficiency (2024) to quality and a promise of human help (May 2025), then back to AI savings (Nov 2025).](../figures/out/color/f5-05-klarna-storyboard.svg){#fig-5-5 fig-alt="Three dated panels: Feb 2024 company figures; May 2025 CEO, as reported: cost too dominant, lower quality; Nov 2025 reported savings claims."}
 
 Notice what did not change. Nothing in the 2024 announcement says the assistant failed at what it was set up to do. It answered chats, quickly, in large numbers. What changed was the company's own account of what "working" should have meant.
 
-That is the puzzle. If a system does what it was set up to do, and the people who set it up later say the result was not good enough, where did things go wrong? By the end of section 5.2 you will be able to answer with two ideas: how a task's **success criteria** are chosen, and **where the human check sits** when a task is handed to AI. The Case Study returns to Klarna with both ideas and with what the company said later in 2025.
+That is the puzzle. If a system does what it was set up to do, and the people who set it up later say the result was not good enough, where did things go wrong? By the end of section 5.2 you will be able to answer with two ideas: how a task's **success criteria** are chosen, and **where the human check sits** when a task is handed to AI. The Case Study returns to Klarna with both ideas and with what was reported later in 2025.
 
 ## Learning Objectives {.unnumbered}
 
@@ -55,24 +63,26 @@ You will revisit your answers in the Chapter Summary.
 
 *Featuring Lucía, an accounting sophomore.*
 
-![Framing and prompting are the first two of five decisions you make.](../figures/out/color/f5-01b-work-loop.svg){#fig-5-1b fig-alt="The AI Work Loop with Frame and Prompt highlighted; Verify, Decide and Disclose follow; the AI tool sits in the middle."}
-
-Most people start using AI by typing. This section asks you to start one step earlier. Before the first prompt, write a **task frame**: a short statement of a task's goal, audience, success criteria, limits and what stays with you, written before the first prompt.
+Whether the task is a lab report, a marketing post, a lesson plan or a budget, most people start using AI by typing. Start one step earlier. Before the first prompt, write a **task frame**: a short statement of a task's goal, audience, success criteria, limits and what stays with you, written before the first prompt.
 
 The frame matters because of one part in particular. **Success criteria** are checks, written in advance, that an output must pass to count as good; each can be scored met, partly met or not met. Without them, "it worked" means "it looked fine to me at the time." With them, every version of a prompt can be scored against the same checks.
 
-AI providers' own guides agree. One assumes you have defined success, and a way to test for it, before you write a prompt (Anthropic, n.d.); another recommends tests that measure a prompt's behavior as you change it (OpenAI, n.d.).
+AI providers' own guides agree. One assumes you have defined success, and a way to test for it, before you write a prompt (Anthropic, n.d.-b); another recommends tests that measure a prompt's behavior as you change it (OpenAI, n.d.).
 
-![A task frame says what good looks like before the first prompt.](../figures/out/color/f5-02-frame-card.svg){#fig-5-2 fig-alt="Six boxes: goal, audience, success criteria (3–5 checkable checks), limits, what stays with you, a rung for each part."}
+![A task frame says what good looks like before the first prompt.](../figures/out/color/f5-02-frame-card.svg){#fig-5-2 fig-alt="Six boxes: goal, audience, success criteria (3–5 checkable checks), limits, what stays with you, and a rung for each part (added in 5.2)."}
 
 A good criterion is **checkable**. "Under 350 words" is: you can count. "Clear" is not, until you say clear to whom. Three to five criteria are usually enough; with more, you will stop scoring them.
 
-Now return to the Opening Case. This book reads Klarna's story as a framing problem, a reading Klarna itself has not offered. The measures the company announced in 2024 were volume, speed and cost. In 2025, its chief executive said cost had weighed too heavily and quality had suffered (Entrepreneur, 2025). In the language of this section, the success criteria a team chooses decide what "the system worked" means. A criterion nobody wrote down is a criterion nobody checks.
+The sixth box in the figure, a *rung* for each part, comes from section 5.2: it records which parts of the task you hand to AI, and in which way. The lowest level, the *floor*, means doing a part without AI.
+
+Now return to the Opening Case. This book reads Klarna's story as a framing problem, a reading Klarna itself has not offered. The company announced volume, speed, cost and one satisfaction score that it reported itself (Klarna, 2024). It also claimed more accurate resolution, citing fewer repeat questions, but published no direct count of problems actually solved, or of customers who wanted a person and reached one.
+
+In 2025, the chief executive was reported as saying cost had been too dominant and quality had suffered (Fisher, 2025). In other words, the success criteria a team chooses decide what "the system worked" means. A criterion nobody wrote down is a criterion nobody checks.
 
 ::: {.callout-note title="Worked Example: Lucía Frames a Handout"}
 **Field:** Business and accounting. *Constructed example.*
 
-The accounting students' association asks Lucía to prepare a one-page handout for a 30-minute workshop on budgeting for first-year students. The request, as she received it, was "something about budgeting for freshmen."
+The accounting students' association asks Lucía to prepare a one-page handout for a 30-minute workshop on budgeting for first-year students. The request, as she received it, was "something about budgeting for freshmen" (first-year students).
 
 **Her task frame:**
 
@@ -95,14 +105,16 @@ A biology student who leads a research lab group must give two new members a sum
 - **Success criteria:** (C1) every rule in the summary appears in the lab's official safety sheet; (C2) _______________________; (C3) _______________________.
 - **Limits:** _______________________
 - **What stays with the student:** _______________________
+
+*Hint:* look at Lucía's C1 (length) and C4 (format), and ask what the student must still decide or check personally.
 :::
 
 ::: {.callout-important title="Your Turn"}
-Choose a task from your major that you might do with AI this month. Write its frame: goal, audience, three to five checkable criteria, limits, and what stays with you. Mark any criterion you could not actually check.
+In Lab 5.1 (step 2) you will write a frame card for a task from your major that you might do with AI this month: goal, audience, three to five checkable criteria, limits, and what stays with you. Choose the task now, and mark any criterion you could not actually check.
 :::
 
 ::: {.callout-tip title="Check Yourself 5.1"}
-1. What are the five parts of a task frame?
+1. What are the five parts of a task frame (before the rung is added in 5.2)?
 2. Rewrite "the summary should be clear" as a criterion you could check.
 3. Why should success criteria be written before the first prompt, not after?
 :::
@@ -111,19 +123,23 @@ Choose a task from your major that you might do with AI this month. Write its fr
 
 [Core]{.path}
 
-A frame also says which parts of a task AI should do, and how. The AI Fluency framework, by the professors Rick Dakan and Joseph Feller, names four competencies: Delegation, Description, Discernment and Diligence (Dakan et al., 2025). This section is about **Delegation**: knowing when and how to use AI, and in which way (Dakan & Feller, 2025).
+A frame also says which parts of a task AI should do, and how. The AI Fluency framework by two professors, Rick Dakan and Joseph Feller, calls this competency **Delegation**: deciding when and how to use AI, and in which way. The framework's competencies start from whether to use AI at all (Dakan & Feller, 2025). The framework identifies three ways, which it calls modalities, of working with AI:
 
-The framework identifies three ways, which it calls modalities, of working with AI (Dakan & Feller, 2025):
+- **Automation**: working with AI in which the AI carries out a task you define, and you check the output. Emails and summaries are typical.
+- **Augmentation**: working with AI in which you and the AI shape and carry out the task together, turn by turn. Essays and research papers developed with AI as a thinking partner are typical.
+- **Agency**: working with AI in which you configure it to carry out future tasks on your behalf, including for other people. Course chatbots and tutors that others will use are typical. (*Agency* here means acting on someone's behalf, not a marketing agency.)
 
-- **Automation**: working with AI in which the AI carries out a task you define, and you check the output. Drafting an email or summarizing a document are typical.
-- **Augmentation**: working with AI in which you and the AI shape and carry out the task together, turn by turn. Developing an essay or a research question with AI as a thinking partner is typical.
-- **Agency**: working with AI in which you configure it to carry out future tasks on your behalf, often for other people. Setting up a course chatbot or a tutor that others will use is typical.
+This book draws the three as a **Delegation Ladder**. It is the book's arrangement of three ways of working with AI over a floor of no AI, ordered by how hard it is to check what the AI contributed before it takes effect. The order follows the framework's own numbering, but the ladder, its floor and its axis are this book's construction.
 
-This book arranges the three as a ladder, the **Delegation Ladder**: the book's arrangement of three ways of working with AI (automation, augmentation, agency) over a floor of no AI, ordered by how hard it is to see and check what the AI contributed before it takes effect. The order follows the framework's own numbering of the modalities. The ladder, its floor and its single axis are this book's construction. The framework itself ranks none of the modalities and notes that real work often mixes them (Dakan & Feller, 2025).
+The framework ranks none of the modalities and notes that real work often mixes them. It also warns that agency needs a good grasp of what AI can and cannot do (Dakan & Feller, 2025).
 
 ![The higher the rung, the harder it is to check what the AI contributed before it takes effect.](../figures/out/color/f5-03-delegation-ladder.svg){#fig-5-3 fig-alt="Delegation Ladder: floor no AI; rungs automation, augmentation, agency; arrow: harder to check what the AI contributed before it takes effect."}
 
-Why that axis? With automation, the output is a separate thing, such as an email, that you can check before you use it. With augmentation, the AI's suggestions enter your thinking turn by turn, so it is harder to say afterward which ideas were yours. With agency, the AI acts later, often for other people, and you do not see each output before it reaches them. A higher rung is not a more advanced use; it needs more checking, set up in a different place.
+Why that axis? With automation, the output is a separate thing, such as an email, that you can check before you use it. With augmentation, the AI's suggestions enter your thinking turn by turn, so it is harder to say afterward which ideas were yours.
+
+With agency, the AI acts later, often for other people, and by default nobody sees each output before it reaches them. A higher rung is not a more advanced use; it needs more checking.
+
+**Where the human check sits** means the point at which a person looks at an AI output before it takes effect: before an email is sent, or before a customer reads an answer. At the automation rung, the check usually sits with you. At the agency rung, there is none unless someone designs one. A design can add such a check, which Chapter 14 calls an *approval gate*, without changing the rung: the AI still acts on your behalf, but a person sees each output first.
 
 **Hand over parts, not whole tasks.** The framework's Delegation competency includes "Goal and Task Awareness": breaking a task into AI, human and collaborative parts (Dakan & Feller, 2025). Most real tasks have parts that belong on different rungs, and some parts that belong on the floor.
 
@@ -132,7 +148,7 @@ Why that axis? With automation, the output is a separate thing, such as an email
 Three questions help you place a part:
 
 1. **Can you check the result before it takes effect?** If yes, automation can fit. If not yet, add a check first, or keep the part with you.
-2. **What would an error cost, and who would bear it?** If an error is cheap and only you bear it, any rung can fit. If it is costly, or borne by other people, do not use agency without a human check before the output reaches them. Chapter 14 calls such checks approval gates.
+2. **What would an error cost, and who would bear it?** If an error is cheap and only you bear it, any rung can fit. If it is costly, or borne by other people, do not use agency without a human check before the output reaches them.
 3. **Is this skill yours to build?** If the point of the task is that you learn to do it, as in most coursework, keep it on the floor or use augmentation in a tutor style (Chapter 7). Otherwise, let the other two questions decide.
 
 ::: {.callout-warning title="Agency is not an agent"}
@@ -142,8 +158,6 @@ In the AI Fluency framework, *agency* is a way of working: you configure AI to c
 ::: {.callout-note title="Worked Example: Lucía's Handout, Part by Part"}
 **Field:** Business and accounting. *Constructed example.*
 
-Lucía splits her handout into parts and places each one.
-
 ![One task, several rungs: Lucía places each part of her handout.](../figures/out/color/f5-03b-ladder-lucia.svg){#fig-5-3b fig-alt="Ladder with Lucía's parts: floor, choose content and final check; automation, draft; augmentation, why the example confuses; agency, not now."}
 
 - **Part 1, choose what first-year students need to know: floor.** It is her judgment about her audience.
@@ -151,7 +165,7 @@ Lucía splits her handout into parts and places each one.
 - **Part 3, work out why the example budget confuses readers: augmentation.** She talks it through with a tool, turn by turn, and keeps the decision.
 - **Part 4, final check: floor.** She checks every number herself.
 
-A committee member also suggests a study-group FAQ chatbot that would answer classmates' money questions at any hour. That would be **agency**: it would answer other people later, without Lucía checking each answer, and they would bear any error. She decides "not now" until there is a fixed source of answers and a way to check them (Chapter 14).
+A committee member also suggests a study-group FAQ (frequently asked questions) chatbot that would answer classmates' money questions at any hour. That would be **agency**: it would answer other people later, with no check before each answer, and they would bear any error. She decides "not now" until there is a fixed source of answers and a way to check them (Chapter 14).
 :::
 
 ::: {.callout-note title="Faded Example: An Archive Visit Report"}
@@ -163,14 +177,16 @@ A history student writes a report on a visit to a city archive, for a seminar.
 - (b) Decide which three documents matter for the argument: **floor**, because choosing evidence is the skill the seminar assesses.
 - (c) Find a clearer way to explain why a 1910 letter contradicts a newspaper report: _______________________ because _______________________.
 - (d) The archive asks whether students would help set up a public chatbot that answers visitors' questions: _______________________ because _______________________.
+
+*Hint:* for (c), ask whether the student keeps the thinking; for (d), ask who would bear an error.
 :::
 
 ::: {.callout-important title="Your Turn"}
-Take the task you framed in section 5.1. Split it into three or four parts and place each on the ladder, or on the floor, with one reason from the three questions.
+In Lab 5.1 (step 2), split the task you chose into three or four parts and place each on the ladder, or on the floor, with one reason from the three questions.
 :::
 
 ::: {.callout-tip title="Check Yourself 5.2"}
-1. Name the three modalities of the AI Fluency framework and say what you do in each.
+1. A nursing student wants AI to turn her own lecture notes into flashcards for an exam. Place this part on the ladder and give your reason from one of the three questions.
 2. Why does this book place agency at the top of the ladder? Answer with the ladder's axis, not with "more advanced."
 3. Why is a configured course chatbot an example of agency but not necessarily an agent?
 :::
@@ -179,69 +195,70 @@ Take the task you framed in section 5.1. Split it into three or four parts and p
 
 [Core]{.path}
 
-Now you can write the prompt. The **anatomy of a prompt** is the book's six-part description of what a prompt can contain: role, task, context, constraints, in-context examples and output format. Most guides list similar parts. Google's prompting guide for its workplace tools, for example, names persona, task, context and format, and notes that you do not need all of them in every prompt (Google, 2024).
+Now you can write the prompt. The **anatomy of a prompt** is the book's six-part description of what a prompt can contain: role, task, context, constraints, in-context examples and output format. Google's prompting guide for its workplace tools, for example, names persona, task, context and format, and notes that you do not need all of them every time (Google, 2024).
 
 ![A prompt has six parts; the task is the only one you always need. In-context examples are sample inputs with the outputs you want.](../figures/out/color/f5-06-prompt-anatomy.svg){#fig-5-6 fig-alt="Six rounded boxes in Your prompt: role, context, in-context examples, task (thick), constraints, output format; arrow to AI tool, then output."}
 
 - **Task**: what you want done, an action and what it acts on. It is the one part every prompt needs: "Draft a one-page handout," "Rewrite this question," "List the three main risks."
-- **Role**: the voice, perspective or audience the output should be written for, such as "write as a peer mentor for first-year students." A role shapes tone and vocabulary. Do not expect it to make answers more accurate: in a test of four families of models on 2,410 factual questions, adding a persona, such as "you are a helpful assistant" or an occupational role, did not improve accuracy overall compared with no persona (Zheng et al., 2024).
-- **Context**: the background a task needs that the tool cannot otherwise receive, such as figures, readers or source text. Recall Chapter 3: the model receives only what is in the context window. What is in your head, or in last week's chat, is not there unless you put it there. Choosing and arranging context in depth is the subject of Chapter 6.
-- **Constraints**: a limit or a must-not in a prompt, such as a length, a source rule or an excluded topic. A "do not" line is still text the model receives. In one 2022 study, a prompt telling a chatbot not to say a particular sentence was followed by output containing that sentence, which surprised the people who wrote it (Zamfirescu-Pereira et al., 2023). Say what to do, and check the result.
-- **In-context examples**: an **in-context example** is a sample input with the output you want, placed in a prompt to show the pattern. For instance: "Question: *Don't you agree the fee is unfair?* → Neutral version: *How fair or unfair do you find the fee?*" A model can follow a pattern shown this way without any change to its settings (Brown et al., 2020). Choosing, balancing and testing in-context examples is Chapter 6's topic.
+- **Role**: the voice or perspective the output takes, such as "write as a peer mentor." Who will read the output belongs in the context. A role shapes tone and vocabulary, but do not expect it to make answers more accurate. One study tested four families of openly released models on 2,410 factual questions. Adding a persona to the system prompt, such as "you are a helpful assistant" or an occupational role, did not improve accuracy overall compared with no persona (Zheng et al., 2024).
+- **Context**: the background a task needs that the tool cannot otherwise receive, such as figures, readers or source text. Recall Chapter 3: the **context window** is the space for everything a language model receives in one turn. What is in your head, or in last week's chat, is not there unless you put it there. A **memory** feature can also add text without your seeing it: a product feature that saves notes about a user, or draws on past chats, and adds them to later conversations. Chapter 6 covers choosing and arranging context.
+- **Constraints**: a limit or a must-not in a prompt, such as a length, a source rule or an excluded topic. A "do not" line is still text the model receives. In one study published in 2023, a prompt telling a chatbot not to say a particular sentence was followed by output containing that sentence, to the surprise of the people who wrote it (Zamfirescu-Pereira et al., 2023). Where you can, say what to do as well as what not to do, and check the result.
+- **In-context examples**: an **in-context example** is a sample input with the output you want, placed in a prompt to show the pattern. For instance: "Question: *Don't you agree the fee is unfair?* → Neutral version: *How fair or unfair do you find the fee?*" A model can follow a pattern shown this way without any change to its parameters, the learned settings from Chapter 2. No retraining is involved (Brown et al., 2020). Chapter 6 covers choosing and testing in-context examples.
 - **Output format**: the shape the output should take, such as a table, a list or a word limit, chosen so it can be checked against your criteria.
 
-**More is not always better.** Each part earns its place by serving the task. Irrelevant material can make results worse: a published test found that adding unrelated sentences to math word problems lowered models' accuracy (Shi et al., 2023; Chapter 6 gives the numbers). Leave out parts the task does not need.
+**More is not always better.** Each part should serve the task. Irrelevant material can make results worse: a published test found that adding unrelated sentences to math word problems lowered models' accuracy (Shi et al., 2023; Chapter 6 gives the numbers). Leave out parts the task does not need.
 
 ::: {.callout-note title="Two meanings: example and context"}
-In Chapter 2, an **example** is one item in a dataset, such as one photo or one email. In this chapter, an **in-context example** is a sample input with its desired output, placed in a prompt. In Chapter 3, the **context window** is everything the model receives in one turn. In this chapter, **context** is one part of your prompt: the background this task needs. Your context is one of the things inside the context window.
+In Chapter 2, an **example** is one item in a dataset, such as one photo or one email. In this chapter, an **in-context example** is a sample input with its desired output, placed in a prompt. In Chapter 3, the **context window** is everything the model receives in one turn.
+
+In this chapter, **context** is one part of your prompt: the background this task needs. Your context is one of the things inside the context window.
 :::
 
-::: {.callout-note title="Worked Example: Lucía's v1 and v2"}
+::: {.callout-note title="Worked Example: Lucía's First and Final Prompts"}
 **Field:** Business and accounting. *Constructed example.*
 
-![The framed prompt carries what Lucía knew but had not written down.](../figures/out/color/f5-07-lucia-v1-v2.svg){#fig-5-7 fig-alt="Left: v1, a three-sentence prompt. Right: v2 with labeled parts: role, task, context with the figures, constraints, output format."}
+![The framed prompt carries what Lucía knew but had not written down.](../figures/out/color/f5-07-lucia-v1-v2.svg){#fig-5-7 fig-alt="Left: v1, a three-sentence prompt. Right: her final prompt, v5, with labeled parts: task, context with the figures, constraints, output format."}
 
-**v1**, Lucía's first prompt written from her frame card:
+**v1**, Lucía's first prompt, written from her frame card:
 
 ```
 Write a one-page handout for first-year students on how to make a
 monthly budget. Include one worked example as a table. Use plain language.
 ```
 
-It has a task, a format and a length. But two runs produced an example budget with income and rent figures she never gave, and a total row that did not match its items. One run also recommended a budgeting app by name. Section 5.4 traces why.
+It has a task, a format and a length. But two runs produced an example budget with income and rent figures she never gave, and a total row that did not match its items.
 
-**v2** adds the parts the frame card held but v1 left out:
+Here is her **final prompt (v5)**, with its parts labeled. Sections 5.4 and 5.5 show how she got there, one change at a time.
 
 ```
-Role: Write as a peer from the accounting students' association.
-Task: Draft a one-page handout that shows first-year students how to
-make a monthly budget.
-Context: Readers are first-year university students; many manage money
-alone for the first time; some work part-time. Use only these monthly
-figures: income $1,150; rent $650; groceries $280; phone $45;
-transport $60.
-Constraints: Under 350 words. Plain language. Do not name any product,
-bank or app. Do not add numbers I did not give.
-Output format: A title; three short sections (income, fixed costs,
-flexible costs); the example as a table with a total row.
+Task: Write a one-page handout for first-year students on how to make
+a monthly budget.
+Context: Use only these monthly figures: income $1,150; rent $650;
+groceries $280; phone $45; transport $60.
+Constraints: Use plain language. Refer to tools in general terms, such
+as "a spreadsheet or a notebook"; do not name any product, bank or app.
+Explain every money term in everyday words the first time you use it.
+If costs are higher than income, say so and show the gap.
+Output format: Include one worked example as a table.
 ```
 
-She left out **in-context examples** on purpose: the format line already shows the shape, and she has no sample handout she wants copied.
+Two parts are missing on purpose. She has no **role** line, because the handout's voice needed no special setting. She has no **in-context examples**, because the format line already shows the shape and she has no sample handout she wants copied.
 :::
 
 ::: {.callout-note title="Faded Example: A Lab-Report Abstract"}
 **Field:** Engineering.
 
 ```
-Role: Write for engineering faculty who will skim the abstract.
+Role: Write as the student team that ran the experiment.
 Task: Draft a 150-word abstract of the attached lab report on beam
 deflection.
-Context: The report is pasted below. The key result is in Table 2.
+Context: Readers are engineering faculty who will skim the abstract.
+The report is pasted below; the key result is in Table 2.
 Constraints: _______________________
 Output format: _______________________
 ```
 
-Which criterion from a frame would each line you add help you check?
+*Hint:* which number must the abstract get exactly right, and what shape lets a reader find it fast?
 :::
 
 ::: {.callout-important title="Your Turn"}
@@ -250,23 +267,25 @@ Take a prompt you used this week. Label each sentence with its part. Then cross 
 
 ::: {.callout-tip title="Check Yourself 5.3"}
 1. Which part of a prompt is always needed, and why?
-2. What did Zheng et al. (2024) find about adding a role or persona to prompts on factual questions?
-3. Why does a fact "in your head" not reach the model, using Chapter 3's idea of the context window?
+2. What did Zheng et al. (2024) find about adding a persona to prompts for factual questions?
+3. Why does a fact "in your head" not reach the model? Use Chapter 3's idea of the context window.
 :::
 
 ## 5.4 Iterate on Purpose {#sec-5-4 .unnumbered}
 
 [Core]{.path}
 
-Before you read on, make a prediction. Two prompts differ only in their first words: *Please answer the following question* and *I order you to answer the following question*. Each is used on 198 hard, multiple-choice science questions, and each question is asked 100 times. Which prompt gets more questions right? Write your guess down.
+Before you read on, make a prediction. Two prompts differ only in their first words: *Please answer the following question* and *I order you to answer the following question*. Each is used on 198 hard, multiple-choice science questions, and each question is asked 100 times.
 
-A team from the Wharton School of the University of Pennsylvania ran this test in 2025 with two OpenAI models, GPT-4o and GPT-4o mini (Meincke et al., 2025a). The questions came from a benchmark, a fixed collection of questions used to compare AI systems; these were graduate-level questions in biology, physics and chemistry. The setting that controls randomness, temperature (Chapter 3), was set to zero. For GPT-4o, *please* and *I order you* made no meaningful difference overall. But individual questions swung widely between the two wordings, in both directions. And one change did matter: removing the line that told the model how to format its answer lowered the share of questions it got right in all 100 runs (Meincke et al., 2025a).
+Which prompt gets more questions right? Write your guess down.
 
-![How strictly answers were scored mattered more than "please" or "I order you" (GPT-4o, 2025).](../figures/out/color/f5-10-wording-chart.svg){#fig-5-10 fig-alt="Bars for four prompt wordings, two scoring standards: near zero above random for all 100 runs correct; about 20 to 24 points for most runs."}
+A team from the Wharton School of the University of Pennsylvania ran this test with two OpenAI models released in 2024, GPT-4o and GPT-4o mini (Meincke et al., 2025a). The questions came from a **benchmark**, a standard test used to compare models; these were graduate-level questions in biology, physics and chemistry. For GPT-4o, *please* and *I order you* made no difference overall.
 
-The figure shows a second lesson. Judged by "right in all 100 runs," no wording scored clearly above random guessing; judged by "right in most runs," every wording did, by about 20 points. How you measure "it works" mattered more than the wording. Another research team found that changing only the formatting of a prompt, such as spacing or punctuation, moved one open model's accuracy (LLaMA-2-13B, tested in 2023) by up to 76 percentage points on some tasks (Sclar et al., 2024).
+But on single questions the results changed a lot between the two wordings, in both directions. A follow-up report from the same team found that offering the model a tip, or threatening it, generally made no significant difference to benchmark scores either (Meincke et al., 2025c).
 
-A follow-up report from the same team found that offering the model a tip, or threatening it, generally made no significant difference to benchmark scores either (Meincke et al., 2025c). Wording effects are real, but hard to predict, and they differ from question to question. So do not trust a trick. Test.
+Wording can still matter a lot. In a study published in 2023, changing only the formatting of a prompt, such as spacing or punctuation, moved the accuracy of LLaMA-2-13B, a model whose settings Meta released openly, by up to 76 percentage points on some tasks. The effect remained in larger and instruction-tuned models (Sclar et al., 2024).
+
+So wording effects are real, hard to predict, and different from question to question. Do not trust a trick. Test.
 
 **Iteration** is improving a prompt by changing one thing at a time, predicting the effect, rerunning and scoring the result against your success criteria. It has seven steps.
 
@@ -276,7 +295,7 @@ A follow-up report from the same team found that offering the model a tip, or th
 2. **Trace** the miss to a part of the prompt, or to the frame.
 3. **Change one thing.** If you change three things and the output improves, you will not know which change helped.
 4. **Predict** the effect before you run it.
-5. **Rerun** in a fresh chat, at least twice. Outputs vary from run to run (Chapter 3). A fresh chat is a clean test; a follow-up in the same chat keeps earlier turns in the context window.
+5. **Rerun** at least twice, each time in a **fresh, temporary chat**: a new conversation that carries no earlier messages and, where the tool allows, is not saved to memory. Outputs vary from run to run (Chapter 3). A follow-up in the same chat keeps earlier turns in the context window, so it is not a clean test.
 6. **Score** each output against your criteria.
 7. **Log** it, then keep the change or revert it.
 
@@ -287,17 +306,22 @@ A follow-up report from the same team found that offering the model a tip, or th
 
 ![Asking why more than once traces a weak output back to the prompt, or to the frame.](../figures/out/color/f5-09-why-chain.svg){#fig-5-9 fig-alt="Chain: wrong total and invented numbers → no figures in prompt → frame said use them → left in notes → fix v2. Dashed side: bad at sums?"}
 
-Lucía's v1 missed C2 in both runs: invented numbers and a wrong total. Why? No figures were in the prompt, so the output filled in plausible ones. Why? Her frame card said to use the association's figures, but she never pasted them. Why? They were in her notes, not in the prompt. She checked each link: the prompt really had no figures, and the frame card really said to use them.
+Let's take Lucía's v1. It missed C2 in both runs: invented numbers and a wrong total.
+
+Why? No figures were in the prompt, so the output filled in plausible ones. Why?
+
+Her frame card said to use the association's figures, but she never pasted them. Why? They were in her notes, not in the prompt.
+
+She checked each link: the prompt really had no figures, and the frame card really said to use them.
 
 A second explanation, "the model is just bad at sums," was only an assumption. Her v2 tests it: if the totals are still wrong when the figures are given, that explanation gains weight.
 
-**Her log so far:**
+**Her log** (each row is one change; the template is in section 5.6):
 
-![A strong log shows one change, one prediction and one score at a time.](../figures/out/color/f5-13-log-template.svg){#fig-5-13 fig-alt="Log table: version, part changed, prediction, run 1, run 2, keep. v2 added figures; v3 banned products; v4 row left empty."}
+- **v2 = v1 + the figures.** Changed: context (pasted "Use only these monthly figures: …"). Prediction: every number matches. Result: run 1 met all five criteria; run 2 used the right numbers but named a budgeting app (C5 not met). Keep.
+- **v3 = v2 + a product rule.** Changed: a constraint ("Refer to tools in general terms … do not name any product, bank or app"). Prediction: no product named, nothing else changes. Result: run 1 met all five; run 2 met four and partly met C3, using "discretionary spending" without explaining it. Keep.
 
-- **v2.** Changed: context (the figures). Prediction: every number matches. Result: run 1 met all five criteria; run 2 used the right numbers but named a budgeting app (C5). Keep.
-- **v3.** Changed: a constraint ("Do not name any product, bank or app"). Prediction: no product named, nothing else changes. Result: run 1 met all five; run 2 met four and partly met C3, using "discretionary spending" without explaining it. Keep.
-- **v4.** Changed: a constraint ("Explain each money term in a few plain words the first time you use it"). Prediction: C3 met in both runs. Result: met in both runs. Keep.
+Section 5.5 shows the rest: a change to the frame itself, v4 and v5.
 :::
 
 ::: {.callout-note title="Faded Example: A Museum Exhibit Label"}
@@ -308,15 +332,17 @@ A student intern drafts a wall label for a painting. Criteria: (C1) under 60 wor
 - **v2.** Changed: context (pasted the curator's notes). Prediction: no invented facts. Result: run 1 met all; run 2 added "restored in 1987," which is not in the notes (C2 not met). Keep, and fix C2 next.
 - **v3.** Changed: a constraint ("Use only facts in the notes; if something is not in them, leave it out"). Prediction: C2 met. Result: C2 met in both runs; both labels were about 85 words (C1 not met). Keep.
 - **v4.** Changed: _______________________ Prediction: _______________________
+
+*Hint:* C1 is now the only miss. Which part of the prompt controls length?
 :::
 
 ::: {.callout-important title="Your Turn"}
-In Lab 5.1 you will write v1 to v3 of your own prompt, one change at a time, with a prediction before each run.
+In Lab 5.1 you will write v1 to v3 of your own prompt, one change at a time, with a prediction before each run. If you miss the lab, write v1 and v2 from your 5.1 frame card now and run each twice.
 :::
 
 ::: {.callout-tip title="Check Yourself 5.4"}
 1. Why should each new version change only one thing?
-2. In the 2025 test with GPT-4o, what made a bigger difference to the results: *please* versus *I order you*, or how strictly the answers were scored?
+2. What did the 2025 test find when *Please answer…* and *I order you to answer…* were compared on GPT-4o, overall and on single questions?
 3. When should a trace send you back to Frame instead of to the prompt?
 :::
 
@@ -324,38 +350,49 @@ In Lab 5.1 you will write v1 to v3 of your own prompt, one change at a time, wit
 
 [Core]{.path}
 
-When can you say a prompt works? A 2022 study shows how people new to prompting tend to answer, and why that is risky.
+When can you say a prompt works? In a study published in 2023, researchers at the University of California, Berkeley, Georgia Tech and Cornell asked ten people new to prompt design to improve a chatbot. The chatbot guided a home cook through a recipe, step by step (Zamfirescu-Pereira et al., 2023). It ran on an OpenAI model of the time, GPT-3 (text-davinci-002). The participants were mostly professionals and graduate students in science and technology, not a representative sample, as the authors note.
 
-Four researchers at the University of California, Berkeley, Georgia Tech and Cornell asked ten people with little or no prompt-design experience to improve a chatbot that walked a home cook through a recipe (Zamfirescu-Pereira et al., 2023). The chatbot ran on an OpenAI model of the time, GPT-3 (text-davinci-002). The participants were mostly professionals and graduate students in science and technology fields, and the authors say they were not a representative sample.
+They worked by trial and error, without a plan for testing. Many stopped as soon as they saw the behavior they wanted once; some gave up after one or two failures and concluded the chatbot could not do it. They rarely checked whether a later change brought back a problem they had fixed, and they often wrote instructions as if to a person (Zamfirescu-Pereira et al., 2023).
 
-The participants worked opportunistically, not systematically. Most stopped as soon as they saw the behavior they wanted once, and moved on. Some gave up on an approach after one or two failures and concluded that the chatbot could not do it. They rarely checked whether a later change brought back a problem they had already fixed. And they often wrote instructions the way they would talk to a person, expecting the chatbot to understand what they meant (Zamfirescu-Pereira et al., 2023).
+So use a stricter standard. A prompt works when it meets your criteria across **repeated runs** and across **test inputs**: a small set of different inputs a prompt is tried on (typical, different, edge) to see whether it works beyond one case. A **typical** input is the case you expect most often, a **different** input changes something that matters, and an **edge** input is unusual but possible, the case most likely to break the prompt. After each change, rerun the earlier inputs too, because a fix can break something that used to work.
 
-So use a stricter standard. A prompt works when it meets your criteria across **repeated runs** and across **test inputs**: a small set of different inputs a prompt is tried on (typical, different, edge) to see whether it works beyond one case. A **typical** input is the case you expect most often. A **different** input changes something that matters. An **edge** input is unusual but possible, the case most likely to break the prompt. After each change, rerun the earlier inputs too, because a fix can break something that used to work.
+*A note on words:* these are test inputs, not a test set. In Chapter 2, a test set was labeled examples kept away from training and used only to score the model. The idea is related: you judge something on cases it was not shaped around. So once you change a prompt to pass an input, add at least one new input before you stop.
 
-*A note on words:* these are test inputs, not a test set. In Chapter 2, a test set was labeled examples held back to score a trained model. The idea is related: in both cases you judge something on cases it was not shaped around.
+**How strict is "works"?** The 2025 test in section 5.4 scored each question two ways. Under a **strict standard**, a question counted as right only if all 100 runs gave the correct answer; under a **majority standard**, if at least 51 did. With four answer options, random guessing gets 25% of questions right, so the chart shows each wording's score above or below that level.
 
-![A prompt works when it passes across runs and test inputs, not once.](../figures/out/color/f5-11-test-grid.svg){#fig-5-11 fig-alt="Grid for Lucía's v4: typical, different and edge inputs by two runs; one partly met, one not met on the edge input; verdict: not yet."}
+![Whether a wording "worked" depended on how strictly success was defined (GPT-4o, 2025). Lines show 95% intervals: the range the true value very likely falls in.](../figures/out/color/f5-10-wording-chart.svg){#fig-5-10 fig-alt="Please and I order you, GPT-4o: 1.5 and 3 points below random guessing under the strict standard; 20 and 24 points above under majority."}
+
+Under the strict standard, neither wording did clearly better than guessing; under the majority standard, both did, by about 20 and 24 points (Meincke et al., 2025a). The answers were the same; only the definition of success changed. They also varied across the 100 runs, even with temperature, an option that changes how often less likely tokens are picked (Chapter 3), set to zero. These were 2024 models on very hard questions, and results may not carry over to others.
 
 The last check needs another person. In a **peer swap test**, someone else runs your prompt without your explanation and scores the output against your criteria, to reveal what was in your head but not in the prompt. You cannot easily see your own missing context, because you always read the prompt with it.
 
-![A peer swap test shows what was in your head but not in your prompt.](../figures/out/color/f5-12-peer-swap.svg){#fig-5-12 fig-alt="Flow: your final prompt → a classmate runs it in a fresh chat → output → scored against your criteria → gap? yes: add it to the prompt; no: evidence."}
+![A peer swap test shows what was in your head but not in your prompt.](../figures/out/color/f5-12-peer-swap.svg){#fig-5-12 fig-alt="Flow: your latest prompt → a classmate runs it in a fresh chat → output → scored against your criteria → gap? yes: add it to prompt; no: evidence."}
 
 ::: {.callout-note title="Worked Example: Is Lucía's Prompt Done?"}
 **Field:** Business and accounting. *Constructed example.*
 
-Lucía runs v4 twice on three test inputs. **Typical:** the association's figures. **Different:** a student whose tutoring income changes from month to month. **Edge:** a student whose costs are higher than her income.
+**Peer swap on v3 (in the lab).** A classmate runs Lucía's v3 and marks C3 only partly met. The handout explains *net pay* (the money you actually receive after deductions) as "gross pay minus withholdings," and the classmate does not know that *withholdings* are amounts, such as taxes, that an employer keeps back from a paycheck. Lucía, an accounting major, had not noticed: her sense of "plain" was in her head.
 
-Five of six runs meet every criterion. One run on the different input leaves out the table (C4 partly met). One run on the edge input "balances" the budget by inventing an "other income" line (C2 not met). Verdict: not yet. Her **v5** adds a constraint: "If costs are higher than income, say so and show the gap. Never add a number I did not give." She reruns all three inputs, not only the edge case. All six runs meet all five criteria.
+- **Frame row.** C3 becomes "every money term is explained in everyday words." Prompt unchanged; rescored, the v3 outputs partly meet C3.
+- **v4 = v3 + an explain-terms rule.** Changed: a constraint ("Explain every money term in everyday words the first time you use it"). Prediction: C3 met. Result: met in both runs. Keep.
 
-Then a classmate runs v5 in a fresh chat and scores it. The classmate marks C3 only partly met: the handout explains "net pay" as "gross pay minus withholdings," and the classmate does not know what withholdings are. Lucía had not noticed, because she is an accounting major. Her sense of "plain" was in her head, not in the prompt. Her **v6** adds to the context: "Readers have never seen a pay stub; avoid accounting terms, or explain them with an everyday example." She also sharpens C3 to "every money term is explained in everyday words."
+**Test inputs for v4.** She swaps the figures in the context line. **Typical:** the association's figures.
 
-She stops at v6. Every criterion is met across runs and inputs, and the peer swap found no new gap. The rest is her own edit.
+**Different:** tutoring income that changes from month to month. **Edge:** costs higher than income.
+
+![A prompt works when it passes across runs and test inputs, not once.](../figures/out/color/f5-11-test-grid.svg){#fig-5-11 fig-alt="Grid for Lucía's v4: three inputs by two runs; one partly met (different input), one not met (edge input); verdict: not yet."}
+
+Four of six runs meet every criterion. One run on the different input gives the worked example as a list, not a table (C4 partly met). One run on the edge input "balances" the budget by inventing an "other income" line (C2 not met). Verdict: not yet.
+
+- **v5 = v4 + a gap rule.** Changed: a constraint ("If costs are higher than income, say so and show the gap"). Prediction: C2 met on the edge input. Result: she reruns all three inputs, and all six runs meet all five criteria. Keep.
+
+Because v5 was shaped to pass the edge input, she adds one new input: a month with a one-time $120 textbook cost. Both runs meet all criteria, and she stops. In other words, she has evidence for this task, tool and date, not proof that the prompt always works.
 :::
 
 ::: {.callout-note title="Faded Example: A Survey Question"}
-**Field:** Social science. *Constructed example.*
+**Field:** Social science (psychology and sociology). *Constructed example.*
 
-A sociology student's prompt: "Rewrite this survey question so it is neutral: *Don't you agree that the new parking fee is unfair?*" Three runs gave:
+A student's prompt: "Rewrite this survey question so it is neutral: *Don't you agree that the new parking fee is unfair?*" Three runs gave:
 
 1. "Do you agree or disagree that the new parking fee is fair?"
 2. "How fair or unfair do you find the new parking fee?"
@@ -363,9 +400,11 @@ A sociology student's prompt: "Rewrite this survey question so it is neutral: *D
 
 The student concludes, "It works: two out of three are neutral."
 
-- Output 3 fails because _______________________.
+- Output 3 fails because it still pushes the reader toward one answer ("Don't you think…") and adds a new claim ("too high").
 - Is "two out of three" enough evidence? _______________________
 - Which test is missing? _______________________
+
+*Hint:* how many different questions was the prompt tried on, and were the criteria written down?
 :::
 
 ::: {.callout-important title="Your Turn"}
@@ -374,7 +413,7 @@ In Lab 5.1, swap your latest prompts with a partner and score each other's outpu
 
 ::: {.callout-tip title="Check Yourself 5.5"}
 1. Name the three kinds of test inputs and give an example of each for a task in your field.
-2. What two habits did the participants in the 2022 study show that make "it worked once" risky?
+2. In the 2025 test, why did the same results look like failure under one standard and success under another?
 3. Why does a peer swap test find problems that you miss when you test your own prompt?
 :::
 
@@ -386,13 +425,19 @@ In Lab 5.1, swap your latest prompts with a partner and score each other's outpu
 
 Thursday's lab turns sections 5.1 to 5.5 into a record: your **iteration log**, a record of each prompt version: what changed, the prediction, the results of each run and the decision to keep or revert. The log is the core of assignment A3 (brief and rubric at the end of this chapter).
 
-**What a strong log shows.** Each row makes one change and names the prompt part it changes, or says "frame." Each row has a prediction written before the run. Each result is scored against the criteria from your frame card, not against a feeling. Each row ends with a decision: keep or revert. Lucía's log in section 5.4 is a condensed example.
+![A strong log shows one change, one prediction and one score at a time.](../figures/out/color/f5-13-log-template.svg){#fig-5-13 fig-alt="Log table: version, part changed, prediction, run 1, run 2, keep. Rows v2 (figures), v3 (product rule), a frame row; an empty row for you."}
+
+**What a strong log shows.** Each row makes one change and names the prompt part it changes, or says "frame." Each row has a prediction written before the run.
+
+Each result is scored against the criteria from your frame card, not against a feeling. Each row ends with a decision: keep or revert. Lucía's rows in sections 5.4 and 5.5 are a condensed example.
 
 **What a weak log looks like.** Four rewordings of the same sentence, no criteria, results described as "better" or "worse," one run each. It may end with a good prompt, but it gives no evidence that the prompt is good, or why.
 
-**Where v1 comes from.** Your v1 is the first prompt you write from your frame card, an honest first attempt. Do not write a deliberately weak v1 so that later versions look better. Lucía's v1 included a task, a length and a format; it still missed what was in her notes.
+**Where v1 comes from.** Your v1 is the first prompt you write from your frame card, an honest first attempt. Do not write a deliberately weak v1 so that later versions look better.
 
-**When to stop.** Stop when every criterion is met across your runs and test inputs and the peer swap finds no new gap, or when the trace keeps ending at the frame. Then the next step is to reframe, or to keep that part of the task for yourself.
+**How many runs are enough?** Two runs per version is a minimum that catches large swings; it does not prove a prompt works. For A3, "enough" means every version run twice, the final version also tried on a different and an edge input, and one peer swap. That is evidence for your task, your tool and your date.
+
+**When to stop.** Stop when every criterion is met across your runs and test inputs, including one input you did not shape the prompt around, and the peer swap found no new gap. If the trace keeps ending at the frame, the next step is to reframe, or to keep that part of the task for yourself.
 
 ::: {.callout-note title="Faded Example: Finish the Log"}
 *Constructed example.* An education major is writing practice questions for a fifth-grade unit on fractions.
@@ -403,10 +448,12 @@ Thursday's lab turns sections 5.1 to 5.5 into a record: your **iteration log**, 
 - **v2 (given):** Changed: output format ("For each answer, show one line of working"). Prediction: C4 met; the working line may expose wrong answers. Result: C4 met in both runs; one wrong answer remained in run 2, now easy to spot.
 - **v3:** Changed: _______________________ Prediction: _______________________
 - **Test inputs for the final version:** typical _______________ · different _______________ · edge _______________
+
+*Hint:* C1 is the costly miss. Can a prompt change alone guarantee a correct key, or does part of C1 stay with the student?
 :::
 
 ::: {.callout-tip title="Check Yourself 5.6"}
-1. What four things should every row of an iteration log contain?
+1. What should every row of an iteration log contain?
 2. Why should v1 be an honest first attempt rather than a deliberately weak prompt?
 :::
 
@@ -416,31 +463,53 @@ Thursday's lab turns sections 5.1 to 5.5 into a record: your **iteration log**, 
 
 *Deep sections are optional and not examinable.*
 
-The six parts cover most everyday prompts. Researchers have named many more techniques. One systematic review of the research literature collected a vocabulary of 33 terms and a list of 58 prompting techniques for text alone (Schulhoff et al., 2024). Three of them are worth knowing, each with its limits.
+The six parts cover most everyday prompts. Researchers have named many more techniques. One systematic review of the research literature collected a vocabulary of 33 terms and a list of 58 prompting techniques for text alone (Schulhoff et al., 2024). Three are worth knowing, each with its limits.
 
-**Step-by-step prompting.** In 2022, a team at Google reported that showing a model a few worked examples whose answers included the intermediate reasoning steps, not only the final answer, improved the performance of large models on arithmetic, commonsense and symbolic reasoning tasks (Wei et al., 2022). They called this *chain-of-thought prompting*. Since then, some models have been built to produce intermediate steps before an answer without being asked; providers often call them reasoning models. In a 2025 test, asking for step-by-step reasoning gave models without that built-in behavior a modest average gain but made their answers more variable, and gave reasoning models only marginal gains while taking 20% to 80% more time (Meincke et al., 2025b). Whether to ask for steps is therefore something to test on your own task, with your own criteria.
+**Step-by-step prompting.** In 2022, a team at Google reported that showing a model a few worked examples whose answers included the intermediate reasoning steps, not only the final answer, improved the performance of large models on arithmetic, commonsense and symbolic reasoning tasks (Wei et al., 2022). They called this *chain-of-thought prompting*.
+
+Since then, some models have been built to produce intermediate steps before an answer without being asked; providers often call them reasoning models. In a 2025 test, asking for step-by-step reasoning gave other models a small average gain, smaller for those that already produce steps unasked, and made their answers more variable; it gave reasoning models only marginal gains while taking 20% to 80% more time (Meincke et al., 2025b). Whether to ask for steps is something to test on your own task, with your own criteria.
 
 **Asking what the tool needs.** Before the task, you can ask the tool to list the information it would need to do the task well, then supply what is missing. This book suggests it as a framing aid, not as a tested technique: the list is itself an output to judge, and it can include things you do not need or should not share.
 
 **Splitting a task into steps.** Some tasks work better as a fixed sequence of smaller prompts, with a person checking between steps. Chapter 6 (section 6.7) covers these *prompt chains*.
 
+![A technique changes how the model is asked; your criteria still judge the result.](../figures/out/color/f5-16-techniques.svg){#fig-5-16 fig-alt="Three techniques (step-by-step, ask what it needs, split into steps) feed the AI tool; its output goes to a decision: meets your criteria?"}
+
 None of these replaces the frame. A technique changes how the model is asked; only your criteria say whether the result is good.
+
+::: {.callout-tip title="Check Yourself Deep 5.A"}
+1. What did Wei et al. (2022) show in the in-context examples they gave the model, besides the final answers?
+2. Why does this book call "ask what the tool needs" a framing aid rather than a tested technique?
+:::
 
 ## Deep 5.B: How People Actually Delegate {#sec-5-deep-b .unnumbered}
 
 [Deep]{.path}
 
-How much of real AI use is automation, and how much is collaboration? One AI provider, Anthropic, has published analyses of how its own users work, using a model to classify large numbers of conversations while keeping their contents private. Its definitions are its own. It counts a conversation as *automation* when the person mostly directs the output or relays feedback such as error messages, and as *augmentation* when the person iterates on a task with the model, learns from it or asks it to check their work (Handa et al., 2025). These are not the same as the AI Fluency modalities in section 5.2, so read the numbers as a related measure, not as a count of rungs.
+How much of real AI use is automation, and how much is collaboration? One AI provider, Anthropic, publishes analyses of how its own users work, using a model to classify large samples of conversations while keeping their contents private. Its definitions are its own.
 
-In its first report, covering conversations on its chat service from late 2024 and early 2025, 57% of conversations were classified as augmentation and 43% as automation (Handa et al., 2025). A later report used August 2025 data and a newer classifier model (Appel et al., 2025). With that classifier, 49% of chat conversations showed automation patterns (45% when the same data was re-scored with the older classifier). In traffic from businesses that connect their own software to the provider's models through an application programming interface (API), 77% of transcripts showed automation patterns and 12% augmentation (Appel et al., 2025).
+It counts a conversation as *automation* when the person mostly directs the output or relays feedback such as error messages, and as *augmentation* when the person iterates on a task with the model, learns from it or asks it to check their work (Handa et al., 2025). These are not the same as the AI Fluency modalities in section 5.2, so read the numbers as a related measure, not as a count of rungs.
 
-![In one provider's August 2025 data, automation patterns were far more common in business API traffic than in chat.](../figures/out/color/f5-14-delegation-data.svg){#fig-5-14 fig-alt="Two bars, August 2025, same classifier: chat conversations 49% automation patterns; business API traffic 77%."}
+Its first report, on chat conversations from late 2024 and early 2025, classified 57% as augmentation and 43% as automation (Handa et al., 2025). A September 2025 report used August 2025 data. On the chat service, 49% of conversations showed automation patterns. In traffic from businesses that connect their own software to the provider's models through an application programming interface (API), a channel through which software, not a person, sends requests, 77% of transcripts showed automation patterns and 12% augmentation (Appel et al., 2025).
 
-Because the classifier changed between the two reports, this book draws no trend from them. The comparison within August 2025 is cleaner, and it fits section 5.2: when a business builds AI into its own software, the person often drops out of the turn-by-turn loop, which is exactly when the place of the human check needs to be designed rather than assumed. These are one provider's users, classified by that provider's own model, so they describe that platform, not AI use in general.
+![In one provider's August 2025 data, automation patterns were far more common in business API traffic than in chat.](../figures/out/color/f5-14-delegation-data.svg){#fig-5-14 fig-alt="Two bars, August 2025, same month and method: chat conversations 49% automation patterns; business API traffic 77%."}
+
+Read the comparison with care. API records are single exchanges sent by software, so part of the gap comes from the format of the data itself. As of October 2026, newer reports exist.
+
+A January 2026 report, on November 2025 data and using a newer classifier model, found that 52% of chat conversations were classified as augmentation and 45% as automation, while about three-quarters of API interactions were classified as automation (Appel et al., 2026); a further report followed in March 2026. Because the classifier changed between reports, this book draws no trend from them and compares only figures from the same month and method.
+
+The pattern still fits section 5.2: when a business builds AI into its own software, the person often drops out of the turn-by-turn loop, which is exactly when the place of the human check needs to be designed rather than assumed. These are one provider's users, classified by that provider's own model, so they describe that platform, not AI use in general.
+
+::: {.callout-tip title="Check Yourself Deep 5.B"}
+1. Why does this book draw no trend from the provider's reports?
+2. Give one reason, other than how people delegate, why API traffic shows more automation patterns than chat.
+:::
 
 ## Hands-on Labs {.unnumbered}
 
-Lab 5.1 is Thursday's in-class lab and starts A3. Labs 5.2 and 5.3 are optional and can be done at home or in Compass, which is optional and ungraded. The labs say what to do, not which buttons to press; current tool steps, including how to open a fresh, temporary chat, are in Compass. [COMPASS: lab pages ch05-lab1 to ch05-lab3] Never put personal or confidential information into a prompt.
+Lab 5.1 is Thursday's in-class lab and starts A3. Labs 5.2 and 5.3 are optional and can be done at home or in Compass, which is optional and ungraded. The labs say what to do, not which buttons to press.
+
+Every run uses a **fresh, temporary chat**: start a new conversation, and where the tool offers a temporary or private mode that is not saved to memory, use it, so earlier chats cannot shape the test. Current steps for each tool are in Compass. [COMPASS: lab pages ch05-lab1 to ch05-lab3] Never put personal or confidential information into a prompt.
 
 ### Lab 5.1: Prompt Iteration Sprint (Studio · 75 minutes · in class) {.unnumbered}
 
@@ -448,55 +517,76 @@ Lab 5.1 is Thursday's in-class lab and starts A3. Labs 5.2 and 5.3 are optional 
 
 1. **Briefing (10 min).** Open the log template (eLearning or @fig-5-13). Your instructor pairs you for the peer swap. If you have no task of your own, pick one from the eLearning task bank.
 2. **Frame (10 min).** Write your frame card with a rung for each part. A teammate reads your criteria and marks any they could not score.
-3. **Versions 1 to 3 (20 min).** Write v1 from your frame card. Run it once in a fresh, temporary chat and score it. Write v2 and v3, one change each, with a prediction before each run. Second runs and v4 are done at home.
-4. **Peer swap (15 min).** Run your partner's v3 in a fresh chat, without asking them anything, and score the output against their criteria. Tell them what was missing.
+3. **Versions 1 to 3 (20 min).** Write v1 from your frame card. Run it once in a fresh, temporary chat and score it. Write v2 and v3, one change each, with a prediction before each run.
+4. **Peer swap (15 min).** Run your partner's v3 in a fresh chat, without asking them anything, and score the output against their criteria. Tell them what was missing. **This swap counts as the A3 peer swap**: record what it revealed and the change it led to. Swapping your final prompt again is optional.
 5. **Share and critique (15 min).** Each team shows the one change that mattered most and one that did not.
 6. **Exit (5 min).** Finish the sentence: "My prompt works for … but I have not tested …"
 
-**If it does not work:** if a tool refuses or errors, record that as a result and try a smaller task; if you cannot use a tool, start the alternative assignment's audit with the dated sample log on eLearning.
+**At home (A3):** second runs of v1 to v3, v4 with two runs, one run each on a different and an edge input, then the verification note, reflection and declaration. **If it does not work:** if a tool refuses or errors, record that as a result and try a smaller task; if you cannot use a tool, start the alternative assignment's audit with the dated sample log on eLearning.
 
-### Lab 5.2: Same Task, Two Rungs (Compare · 20 minutes · optional) {.unnumbered}
+### Lab 5.2: Same Task, Two Rungs (Compare · 30 minutes · optional) {.unnumbered}
 
-*(O2 · LO2 · Evaluate)* Pick one study task you would normally do yourself, such as a summary of a reading. Do it once as **automation** ("produce the summary") and once as **augmentation** ("help me work out the three main claims; ask me questions; do not write the summary"). Compare: what did you learn each time, how long did checking take, and which parts of the result were yours?
+*(O2 · LO2 · Evaluate)* Use a short reading you have already read for a course. Once as **automation**, ask a tool to produce a summary and check it against the reading. Once as **augmentation**, ask the tool to help you find the three main claims by asking you questions, without writing the summary, and write the summary yourself. Compare: what did you learn each time, how long did checking take, and which parts of the result were yours?
 
-### Lab 5.3: Test a Magic Phrase (Break It · 25 minutes · optional) {.unnumbered}
+### Lab 5.3: Test a "Magic" Phrase (Break It · 40 minutes · optional) {.unnumbered}
 
-*(O4, O5 · LO2 · Evaluate)* Choose one popular prompting "trick" (a politeness phrase, an expert role, an offered tip). Write a short task with three criteria and two test inputs. Run the prompt five times with the trick and five times without, on each input, in fresh chats, and score every output. Write a conclusion limited to your test, such as "for this task and tool, on this date, the phrase made no visible difference." If the trick makes an output worse in a way you did not expect, **save this for your Failure Diary (Chapter 4).**
+*(O4, O5 · LO2 · Evaluate)* Choose one popular prompting "trick", a phrase some people believe always improves answers, such as a politeness phrase, an expert role or an offered tip. Write a short task with three criteria and two test inputs.
+
+Run the prompt three times with the trick and three times without, on each input (12 runs), each in a fresh chat, and score every output. Write a conclusion limited to your test, such as "for this task and tool, on this date, the phrase made no visible difference." Your instructor may pool the class's results, because a few runs cannot show a small effect. If the trick makes an output worse in a way you did not expect, **save this for your Failure Diary (Chapter 4).**
 
 ## Case Study: Klarna, Revisited {.unnumbered}
 
-**Context.** Klarna, a Swedish payments company, sells "buy now, pay later" installment plans. Its customers contact customer service about payments, refunds and returns. In early 2024 it launched an AI assistant built with OpenAI's technology to answer those chats (Klarna, 2024).
+This case marks each fact by how it is known: **confirmed** (in Klarna's own documents), **reported** (by a named outlet) or **inferred** (this book's reading).
 
-**Timeline.** February 27, 2024: Klarna reports the assistant's first month (2.3 million conversations; two-thirds of customer-service chats; work it equates to 700 full-time agents; resolution time under 2 minutes instead of 11; satisfaction on par with human agents; 25% fewer repeat inquiries; an expected $40 million profit improvement) (Klarna, 2024). May 2025: in a Bloomberg interview, as reported by other outlets, the chief executive says cost weighed too heavily, quality suffered, and customers will always be able to reach a person; Klarna recruits people for customer service on a flexible, remote model (Entrepreneur, 2025). November 2025: on the company's third-quarter earnings call, the chief executive says the assistant now does the work of more than 853 full-time agents and has saved about $60 million; the company says satisfaction with it is on par with human agents (Doerer, 2025).
+**Context.** Klarna, a Swedish payments company, offers "buy now, pay later" plans. Its customers contact customer service about payments, refunds and returns.
 
-**Where the case sits on the ladder.** From the company's side, the assistant is **agency** in the AI Fluency framework's sense: Klarna configured an AI system to carry out future tasks, answering customers, on its behalf (Dakan & Feller, 2025). So, from the company's side, was the assistant in Chapter 1's support-center study, which a company set up for its agents (Brynjolfsson et al., 2025). The two cases sit on the same rung. What differs is **where the human check sits**.
+In February 2024 it launched an AI assistant built with OpenAI's technology to answer those chats (confirmed: Klarna, 2024). Before and alongside the assistant, human agents, many of them employed through outside service providers, handled customer chats (reported: Fisher, 2025; Engelking, 2025).
 
-- In Chapter 1's study, the assistant suggested replies to human agents, who could use, change or ignore them before the customer saw anything (Brynjolfsson et al., 2025). A person checked each output before it took effect.
-- At Klarna, as the company described it, the assistant answered customers directly, and customers could ask for a person (Klarna, 2024). The check before each answer took effect was removed; the human became an option the customer had to choose.
+**Timeline.**
 
-This book reads the 2025 statements in that light: when the check moves from before the output to after it, the measures that judge the system have to change too. Volume and speed measure how much the assistant did; they do not measure what happened to the customers it did not help. Chapter 14 calls a check placed before an output takes effect an *approval gate*.
+- **February 27, 2024** (confirmed): Klarna reports the assistant's first month: 2.3 million conversations, two-thirds of customer-service chats, work it equates to 700 full-time agents, resolution time under 2 minutes instead of 11, customer satisfaction about the same as with human agents, more accurate problem resolution (as the company described it) leading to 25% fewer repeat questions, an expected $40 million profit improvement, and a live-agent option for customers who want one (Klarna, 2024).
+- **January 24, 2025** (confirmed): in a draft registration statement filed with the U.S. Securities and Exchange Commission (SEC) before its stock listing, Klarna says the assistant has handled 60% of customer-service chats since launch, with no drop in customer satisfaction according to its internal surveys. It also says the assistant resolved issues more accurately than human agents and cut repeat inquiries by 25%, counted before and after launch (Klarna Group, 2025).
+- **May 2025** (reported): in a Bloomberg interview, the chief executive says cost had been too dominant a factor and the result was lower quality (Fisher, 2025); that customers must know they can always reach a human (Shibu, 2025); and that Klarna will test hiring its own agents in a flexible, remote "Uber-type" setup (Fisher, 2025), which a German technology outlet described as a small pilot (Engelking, 2025). The same outlet reported that he remained enthusiastic about AI (Engelking, 2025).
+- **November 2025** (reported): CX Dive reported that the chief executive said the assistant could now do the work of more than 853 full-time agents and had saved the company about $60 million, and that the company described satisfaction with the assistant as about the same as with human agents (Doerer, 2025).
 
-**Company claims and independent evidence.** Every number in this case comes from Klarna or its chief executive. They are claims about the company's own operations, made by a company with an interest in how they are received. An analyst quoted in a trade publication in November 2025 said Klarna had over-pivoted toward cost containment (Doerer, 2025). That is one analyst's view, not an independent measurement either. The honest summary is that the public record shows what the company chose to measure and later chose to say, not how many customers were well or badly served.
+**Where the case sits on the ladder** (inferred). By the AI Fluency framework's definition, Klarna's assistant is **agency**: the company configured an AI system to carry out future tasks, answering customers, on its behalf (Dakan & Feller, 2025). So, by the same definition, was the assistant in Chapter 1's support-center study, which a company set up for its agents (Brynjolfsson et al., 2025).
+
+Both are agency. They differ in whether the design kept a human check before each output took effect.
+
+- In Chapter 1's study, the assistant suggested replies to human agents, who could use, change or ignore them before the customer saw anything (Brynjolfsson et al., 2025). A person checked each output before it took effect, like an approval gate (Chapter 14).
+- At Klarna, as the company described it in 2024, the assistant answered customers directly, and customers could ask for a person (Klarna, 2024). There was no human check before each answer reached the customer; the human was an option the customer had to choose.
+
+This book reads the 2025 statements in that light: when nobody checks an output before it takes effect, the measures that judge the system carry more weight. Volume and speed measure how much the assistant did. A company-reported satisfaction score measures how customers rated it. Neither, nor a company claim of "more accurate" resolution without a published method, directly measures problems left unsolved, or customers who gave up.
+
+**Company claims and independent evidence.** Every number in this case comes from Klarna or its chief executive. They are claims about the company's own operations, made by a company with an interest in how they are received.
+
+An analyst quoted by CX Dive in November 2025 said Klarna had leaned too far toward cutting costs, and reported customer complaints that the assistant gave generic answers to complex questions (Doerer, 2025). That is one analyst's view, not an independent measurement either. The honest summary is that the public record shows what the company chose to measure and later chose to say, not how many customers were well or badly served.
 
 **A better workflow (AI Work Loop, for the team setting it up).** *Frame:* write quality criteria (problems actually solved, customers who wanted a person and got one) next to volume and cost, before launch. *Prompt and configure:* decide which kinds of question the assistant answers alone and which go to a person. *Verify:* sample conversations and score them against the quality criteria, not only the speed criteria. *Decide:* place a human check before outputs that are costly to get wrong. *Disclose:* tell customers they are talking to an AI and how to reach a person.
 
 ### Short case 1: Why people new to prompting stop too early {.unnumbered}
 
-In the 2022 study in section 5.5, ten people improved a recipe chatbot built on GPT-3 (Zamfirescu-Pereira et al., 2023). Read their habits against the iteration loop (@fig-5-8). They often skipped *score*: they stopped when they saw the behavior they wanted once. They skipped *rerun earlier inputs*: later changes could bring back problems they had fixed. And their *diagnose* step was shaped by talking to people: they expected the chatbot to understand their instructions, and few used in-context examples, even after being shown that examples helped. The authors drew a design lesson for tool builders and a literacy lesson for everyone else, which is the subject of this chapter.
+In the study in section 5.5, ten people improved a recipe chatbot built on GPT-3 (Zamfirescu-Pereira et al., 2023). Read their habits against the iteration loop (@fig-5-8).
+
+They often skipped *score*: many stopped when they saw the behavior they wanted once. They skipped *rerun earlier inputs*: later changes could bring back problems they had fixed. And their *diagnose* step was shaped by talking to people: they expected the chatbot to understand their instructions, and few used in-context examples, even after being shown that examples helped. The authors drew a design lesson for tool builders and a literacy lesson for everyone else, which is the subject of this chapter.
 
 ### Short case 2: Small changes, big swings {.unnumbered}
 
-Two studies, two years apart, point the same way. In 2023, researchers changed only the formatting of few-shot prompts (spacing, separators, capital letters) and found accuracy differences of up to 76 points for LLaMA-2-13B; they recommended reporting a range of results across plausible formats instead of one number (Sclar et al., 2024). In 2025, another team asked each of 198 questions 100 times and found that conclusions about a model depended on the scoring standard as much as on the prompt (Meincke et al., 2025a). The common lesson: "this prompt works" is a claim about a measurement. Say how you measured.
+Two studies point the same way. Researchers changed only the formatting of prompts that included a few in-context examples (spacing, separators, capital letters) and found accuracy differences of up to 76 points for LLaMA-2-13B; they recommended reporting a range of results across plausible formats instead of one number (Sclar et al., 2024). In 2025, another team asked each of 198 questions 100 times and found that whether a model looked better than guessing depended more on the scoring standard than on whether the prompt said *please* or *I order you* (Meincke et al., 2025a).
+
+The common lesson: "this prompt works" is a claim about a measurement. Say how you measured.
 
 ## Ethics Lens: Who Pays for a Badly Framed Delegation? {.unnumbered}
 
 Framing looks like a private, technical step. It is also a decision about other people.
 
-**Success criteria carry values.** A criterion such as "resolution time under two minutes" says speed matters. A criterion such as "customers who want a person can reach one" says choice matters. Neither is neutral, and whoever writes the criteria decides whose interests are counted. In the Klarna case, the company's own later account was that one kind of measure had weighed too heavily (Entrepreneur, 2025).
+**Success criteria carry values.** A criterion such as "resolution time under two minutes" says speed matters. A criterion such as "customers who want a person can reach one" says choice matters.
+
+Neither is neutral, and whoever writes the criteria decides whose interests are counted. In the Klarna case, the chief executive's own later account, as reported, was that cost had been too dominant a factor (Fisher, 2025).
 
 **The higher the rung, the more people carry the risk.** At the automation rung, a bad output costs you a rewrite. At the agency rung, it reaches classmates, customers or patients who did not choose the tool and may not know it is there. That is why the second question in section 5.2 asks who would bear an error, not only what it would cost.
 
-**Telling people.** If an AI system speaks to people on your behalf, they deserve to know, and to know how to reach a person. Chapter 17 discusses transparency, and Chapter 18 discusses the rules that increasingly require it.
+**Telling people.** If an AI system speaks to people on your behalf, they deserve to know, and to know how to reach a person. Chapter 10 covers disclosing AI use at work, Chapter 17 discusses transparency, and Chapter 18 discusses the rules that increasingly require it.
 
 **What goes into a prompt.** Context makes prompts better, and it is also where private information leaks. Lucía used constructed figures, not real students' finances. In this course, personal or confidential data does not go into public AI tools (course guidance); Chapter 15 explains why.
 
@@ -517,25 +607,33 @@ Framing looks like a private, technical step. It is also a decision about other 
 
 In 2014 I wrote a short encyclopedia entry on the "5 Whys," a method for finding what lies behind a problem (Şeker, 2014). It is used in quality work, usually with experts or the people inside a process, though it can also work with customers or suppliers. The method is simple: ask "why?" about a problem five times in a row.
 
-The entry used a common example. A car will not start. Why? The battery is dead. Why? The alternator may not have charged it. Why? The alternator is broken. Why? It had reached the end of its service life and was not replaced at the last service. Why? The car may not have been properly maintained by the service shop. A general problem, a car that will not start, turns out to rest on a detail: neglect during maintenance.
+The entry used a common example. A car will not start. Why? The battery is dead.
 
-The entry also reported criticisms of the method, citing Toyota's global purchasing manager, Teruyuki Minoura. The method can stay at the level of symptoms. It cannot go beyond what the investigator and the people answering already know. "Why" questions can lead the investigator in the wrong direction. Its results are not repeatable: different people, at different times and places, can reach different answers. And having to answer "why" again and again can scatter the focus instead of finding the main cause. In response, the entry noted, people developed refinements, such as confirming that each answer is true, and discussing how much it really matters, before asking the next "why."
+Why? The alternator, the part that recharges the battery, may not have charged it. Why?
+
+The alternator is broken. Why? It had reached the end of its service life and was not replaced at the last service.
+
+Why? The car may not have been properly maintained by the service shop. A general problem, a car that will not start, turns out to rest on a detail: neglect during maintenance.
+
+The entry also reported criticisms of the method, citing Toyota's global purchasing manager, Teruyuki Minoura. The method can stay at the level of symptoms, and it cannot go beyond what the investigator and the people answering already know. "Why" questions can lead the investigator in the wrong direction.
+
+Its results are not repeatable: different people, at different times and places, can reach different answers. And having to answer "why" again and again can scatter the focus instead of finding the main cause. In response, the entry noted, people developed refinements, such as confirming that each answer is true, and discussing how much it really matters, before asking the next "why."
 
 *Present-day connections, read with this chapter:* asking "why does this task exist, and for whom?" before writing a prompt is the Frame step. "It cannot go beyond what you already know" applies to a frame too: Lucía could not see her own jargon until a classmate ran her prompt. "Not repeatable" is why section 5.5 runs a prompt more than once and on more than one input. And "confirm each answer before the next why" is the discipline of changing one thing at a time and checking the result before moving on.
 
 ## Chapter Summary {.unnumbered}
 
-![A prompt has six parts; the task is the only one you always need.](../figures/out/color/f5-06-prompt-anatomy.svg){#fig-5-6s fig-alt="Six rounded boxes in Your prompt: role, context, in-context examples, task (thick), constraints, output format; arrow to AI tool, then output."}
-
-![The higher the rung, the harder it is to check what the AI contributed before it takes effect.](../figures/out/color/f5-03-delegation-ladder.svg){#fig-5-3s fig-alt="Delegation Ladder: floor no AI; rungs automation, augmentation, agency; arrow: harder to check what the AI contributed before it takes effect."}
+![A prompt has six parts; the task is the only one you always need. In-context examples are sample inputs with the outputs you want.](../figures/out/color/f5-06-prompt-anatomy.svg){#fig-5-6s fig-alt="Six rounded boxes in Your prompt: role, context, in-context examples, task (thick), constraints, output format; arrow to AI tool, then output."}
 
 ![Chapter 5 summary card.](../figures/out/color/f5-15-summary-card.svg){#fig-5-15 fig-alt="Six cards: frame, delegate by part, prompt parts, iterate, test, log it."}
 
-**The chapter's question:** *Is getting good results from AI mainly a matter of finding the right words?* Mostly no. Results depend first on framing: what the task is for, what a good result looks like, and which parts to hand over in which way. Then they depend on giving the tool what the task needs, and on testing deliberately. Wording does matter, sometimes a lot, but in ways that are hard to predict and that change from question to question. That is why you test instead of trusting a trick.
+**The chapter's question:** *Is getting good results from AI mainly a matter of finding the right words?* Mostly no, as far as the evidence in this chapter goes. Results depend first on framing: what the task is for, what a good result looks like, and which parts to hand over in which way.
 
-**Return to the Opening Case.** Klarna's assistant did what it was set up to do, by the measures the company chose. In 2025, the company's own chief executive said one of those measures, cost, had weighed too heavily. Read with this chapter, the story is about success criteria and about where the human check sits, not about wording.
+Then they depend on giving the tool what the task needs, and on testing deliberately. Wording does matter, sometimes a lot, but in ways that are hard to predict and that change from question to question; the studies here used particular models and tasks, and newer ones may differ. That is why you test instead of trusting a trick.
 
-**Revisit your Warm-up.** (1) How did you know a prompt worked? *A strong answer:* it met criteria written in advance, across more than one run and more than one input. (2) Does *please* help? *In one large 2025 test, not overall for GPT-4o*, though single questions swung both ways; test it on your own task. (3) Will a good answer come again? *Not guaranteed:* outputs vary between runs, so one good answer is not evidence.
+**Return to the Opening Case.** Klarna's assistant did what it was set up to do, by the measures the company chose: volume, speed, cost, a satisfaction score it reported itself, and a claim of more accurate resolution shown by fewer repeat questions. In 2025 the chief executive was reported as saying cost had been too dominant and quality had suffered. Read with this chapter, the story is about success criteria and about where the human check sits, not about wording.
+
+**Revisit your Warm-up.** (1) How did you know a prompt worked? *A strong answer:* it met criteria written in advance, across more than one run and more than one input. (2) Does *please* help? *In one large 2025 test, not overall for GPT-4o*, though single questions changed both ways; test it on your own task. (3) Will a good answer come again? *Not guaranteed:* outputs vary between runs, so one good answer is not evidence.
 
 You can now:
 
@@ -548,72 +646,72 @@ You can now:
 
 ### Key Terms {.unnumbered}
 
-agency (mode of working with AI) · agent (Ch. 3) · anatomy of a prompt · augmentation · automation · constraint · context (prompt part) · context window (Ch. 3) · Delegation Ladder · example (Ch. 2) · in-context example · iteration · iteration log · output format · peer swap test · role (prompt part) · success criteria · task (prompt part) · task frame · test inputs
+agency (mode of working with AI) · agent (Ch. 3) · anatomy of a prompt · augmentation · automation · benchmark · constraint · context (prompt part) · context window (Ch. 3) · Delegation Ladder · example (Ch. 2) · in-context example · iteration · iteration log · output format · peer swap test · role (prompt part) · success criteria · task (prompt part) · task frame · test inputs
 
 ## End-of-Chapter Package {.unnumbered}
 
-<!-- Each item: objective · LO · revised Bloom level. Odd-numbered answers → Appendix E (docs/production/handoff/ch05.md); even-numbered → private/ch05-answers-even.md. Review A distractors draw on M1–M6. -->
+<!-- Each item: objective · LO · revised Bloom level. Odd-numbered answers → Appendix E (docs/production/handoff/ch05.md); even-numbered → private/ch05-answers-even.md. Review A distractors draw on M1–M6; MC keys rotated (a: A2, A10; b: A9, A12; c: A4, A14; d: A7, A11). -->
 
 ### Review Questions A: Terms and Concepts {.unnumbered}
 
 1. *(O1 · LO2 · Remember)* Name the five parts of a task frame.
 2. *(O1 · LO2 · Understand)* Which of these is a checkable success criterion for a one-page handout?\
-   (a) "It should be engaging."\
-   (b) "Every number in the example comes from the figures provided."\
-   (c) "It should sound professional."\
-   (d) "The tool should do its best work."
+   (a) "Every number in the example comes from the figures provided."\
+   (b) "It should be engaging and interesting for first-year students."\
+   (c) "It should sound professional, confident and friendly to readers."\
+   (d) "The tool should work out what I mean and do its best on every part."
 3. *(O2 · LO2 · Remember)* In one sentence each, say what you do in automation, augmentation and agency.
 4. *(O2 · LO2 · Understand)* Why does this book place agency at the top of the Delegation Ladder?\
-   (a) It is the most advanced and efficient way to use AI.\
-   (b) The AI acts later, often for other people, so what it contributed is hardest to check before it takes effect.\
-   (c) The AI Fluency framework ranks it as the highest modality.\
-   (d) Agency is the only modality in which the model can use tools.
+   (a) It is the most advanced and efficient way to use AI, so experienced users aim for it.\
+   (b) The AI Fluency framework ranks it as the highest and most demanding of its three modalities.\
+   (c) By default nobody checks each output before it takes effect.\
+   (d) Agency is the only way of working in which the model can use tools such as web search.
 5. *(O2 · LO2 · Understand)* Explain the difference between agency (a way of working) and an agent (a kind of system). Give one example of agency that is not an agent.
 6. *(O3 · LO2 · Remember)* Which part of a prompt is always needed, and what does it contain?
 7. *(O3 · LO2 · Understand)* A student starts every prompt with "You are a world-class physicist" to get more accurate physics answers. Which statement best fits the evidence in section 5.3?\
-   (a) The role reliably makes factual answers more accurate.\
-   (b) In a large test, personas did not improve accuracy on factual questions overall; a role mainly shapes voice and audience.\
-   (c) Roles always make answers less accurate.\
-   (d) The model takes on a physicist's knowledge for that chat.
+   (a) The role reliably makes factual answers more accurate, so it is worth adding to every prompt.\
+   (b) The model takes on a physicist's knowledge and judgment for the rest of that chat.\
+   (c) A role has no effect on the output at all, not even on its tone or vocabulary.\
+   (d) Personas did not improve factual accuracy overall; a role mainly sets tone.
 8. *(O3 · LO2 · Understand)* In one sentence each, explain *example* in Chapter 2 and *in-context example* in this chapter.
-9. *(O3 · LO2 · Understand)* Which statement about prompt length is most accurate?\
-   (a) Adding everything you know about the topic usually improves the output.\
-   (b) Each part should serve the task; irrelevant material can lower the quality of the output.\
-   (c) A prompt should be one sentence long.\
-   (d) Length matters only for image tools.
+9. *(O3 · LO2 · Understand)* Which statement about what to put in a prompt is most accurate?\
+   (a) Adding everything you know about the topic usually improves the output, because the tool has more to work with.\
+   (b) Each part should serve the task; irrelevant material can lower quality.\
+   (c) Every prompt should contain all six parts, so that nothing the tool needs is missing.\
+   (d) A strong role line matters more than the context, so the role should be the longest part.
 10. *(O4 · LO2 · Understand)* You change the role, a constraint and the output format at the same time, and the output improves. What can you conclude?\
-    (a) All three changes helped.\
-    (b) You cannot tell which change helped.\
-    (c) The role helped most, because it comes first.\
-    (d) The prompt is now finished.
+    (a) You cannot tell which change helped.\
+    (b) All three changes helped, since the output improved after you made them.\
+    (c) The role helped most, because a role makes the model more of an expert.\
+    (d) The prompt now works, because it produced a better output this time.
 11. *(O4 · LO2 · Understand)* In the 2025 test with GPT-4o described in section 5.4, what happened when *Please answer…* and *I order you to answer…* were compared?\
-    (a) *Please* raised the score substantially.\
-    (b) *I order you* raised the score substantially.\
-    (c) Neither made a meaningful overall difference, although single questions swung in both directions.\
-    (d) The wording of a prompt never affects results.
+    (a) *Please* raised the overall score substantially, because politeness helps.\
+    (b) *I order you* raised the overall score, because firm commands work better.\
+    (c) The two wordings scored the same on every single question, in every run.\
+    (d) No overall difference, though single questions changed both ways.
 12. *(O5 · LO2 · Understand)* A prompt gave you a good answer once. What should you do before saying it works?\
-    (a) Nothing; one good answer shows the prompt works.\
-    (b) Conclude the tool cannot do the task if the next run fails.\
-    (c) Run it more than once on typical, different and edge test inputs, and score each output against your criteria.\
-    (d) Ask the tool whether the prompt works.
+    (a) Treat the good answer as enough evidence, because it shows the prompt can clearly do the task.\
+    (b) Run it more than once on typical, different and edge inputs, and score each output.\
+    (c) Conclude that the tool cannot do the task if the very next run fails your criteria.\
+    (d) Ask the tool whether its own answer meets your criteria, and accept what it says.
 13. *(O5 · LO2 · Remember)* What does a peer swap test reveal that testing your own prompt usually does not?
 14. *(O5 · LO2 · Understand)* Which description fits an **edge** test input?\
-    (a) The case you expect most often.\
-    (b) An input from a different tool.\
-    (c) An unusual but possible case, the one most likely to break the prompt.\
-    (d) The input that produced the best output so far.
+    (a) The case you expect most often, which most users of the prompt will send.\
+    (b) A typical input run a second time, to check that the result repeats.\
+    (c) An unusual but possible case, the most likely to break the prompt.\
+    (d) The input that produced the best output so far, so the prompt is shown at its best.
 
 ### Review Questions B: Case Questions {.unnumbered}
 
 1. *(O1 · LO2 · Apply)* A nursing student wants AI to "make a study sheet on heart medications." Write a task frame: goal, audience, three checkable criteria, one limit, and what stays with the student. Include one criterion about safety.
-2. *(O2 · LO2, LO5 · Evaluate)* A public library plans a chatbot, built from its own web pages, that answers patrons' questions about opening hours, fines and events. Place it on the Delegation Ladder, say where the human check sits in this plan, and propose one change that would move a check before the answers reach patrons for the questions that matter most.
+2. *(O2 · LO2, LO5 · Evaluate)* A public library plans a chatbot, built from its own web pages, that answers patrons' questions about opening hours, fines and events. Place it on the Delegation Ladder, say where the human check sits in this plan, and propose one change that would put a check before the answers that matter most reach patrons.
 3. *(O3, O4 · LO2 · Analyze)* A business student prompts: "Write a LinkedIn post about my internship." The output is 400 words of general praise and mentions a company award she never received. Label the prompt parts that are missing, trace the invented award with at least two "why" steps, and write v2 with one change and a prediction.
 4. *(O5 · LO2, LO3 · Evaluate)* A teaching assistant writes a prompt that produces quiz answer keys. He tests it on one quiz, finds the key correct, and shares the prompt with five other assistants. Judge his evidence and write a better test plan: runs, typical, different and edge inputs, and a peer swap.
 
 ### Review Questions C: Interpretive Questions {.unnumbered}
 
 1. *(O2 · LO2, LO5 · Evaluate)* "Klarna's assistant worked; the company simply changed its mind." Agree or disagree, using success criteria and where the human check sits.
-2. *(O5 · LO2 · Evaluate)* "Prompting is a passing skill: soon models will produce what we mean without careful prompts." Take a position, using the evidence in sections 5.4 and 5.5 and what framing adds that wording cannot.
+2. *(O5 · LO2 · Evaluate)* "Prompting is a passing skill: soon models will produce what we want without careful prompts." Take a position, using the evidence in sections 5.4 and 5.5 and what framing adds that wording cannot.
 3. *(O1 · LO4 · Evaluate)* For AI-assisted coursework, who should write the success criteria: the student, the instructor, or both? Defend your answer.
 
 ### Spaced Review {.unnumbered}
@@ -636,7 +734,9 @@ Come back to these a few days after reading, without looking back.
 
 ### Application Assignment: A3 — Prompt and Iteration Log {.unnumbered}
 
-**Due:** Monday, February 8, 2027, 11:59 p.m., on eLearning. *(O6 · LO2, LO4 · Create)* Started in Thursday's lab (v1 to v3); about 45–60 minutes at home for v4, second runs, the record and the declaration.
+**Due:** Monday, February 8, 2027, 11:59 p.m., on eLearning. *(O6 · LO2, LO4 · Create)* Started in Thursday's lab (frame card, v1 to v3 with one run each, the peer swap).
+
+**Time at home, counted from the requirements: about 60 to 70 minutes.** Second runs of v1 to v3 (3 runs) and v4 (2 runs), plus one run each on a different and an edge input (2 runs): 7 runs, about 10 minutes; scoring about 7 outputs against your criteria, about 20 minutes; writing v4 and its prediction, about 5 minutes; the verification note, about 10 minutes; the reflection and declaration, about 15 minutes.
 
 **Choose a task:** a real task from your major, a job or daily life that you would actually use AI for. Use **no personal or confidential data**, yours or anyone else's (course guidance), and no data from an employer unless you use that employer's approved tool under its rules. The eLearning task bank has options.
 
@@ -644,9 +744,9 @@ Come back to these a few days after reading, without looking back.
 
 1. **Frame card:** goal, audience, three to five checkable success criteria, limits, what stays with you, and **a rung for each part** of the task (or the floor), with one reason each.
 2. **At least four prompt versions.** v1 is the first prompt you write from your frame card, an honest first attempt. Each later version makes **one** change, names the prompt part it changes (or says "frame"), and states a prediction before the run.
-3. **Test record:** run every version at least twice, each time in a fresh, temporary chat. Run the final version on three test inputs (typical, different, edge). Score each output against each criterion: met, partly met or not met. Save outputs or excerpts with the tool name and date.
-4. **Peer swap test:** a classmate runs your final prompt in a fresh chat without your explanation and scores the output against your criteria. Record what they got, what was missing from your prompt, and what you changed.
-5. **Verification note:** list each claim or number you relied on in the final output and how you checked it, or explain why the task had none.
+3. **Test record:** run every version at least twice, each time in a fresh, temporary chat. Run the final version once more on a **different** and once on an **edge** input (your usual input counts as typical). Score each output against each criterion: met, partly met or not met. Save outputs or excerpts with the tool name and date. Two runs is a minimum; your results are evidence for your task, tool and date, not proof.
+4. **Peer swap test:** the in-lab swap counts. Record what your classmate found when running your v3 without explanation, and the change it led to in a later version. Swapping your final prompt again is optional.
+5. **Verification note:** for each number or fact you relied on in the final output, say how you checked it. In week 3 that means: recompute every total; compare each fact with the source you supplied, your textbook or your course notes. Chapter 8 adds more methods.
 6. **Reflection (3–5 sentences):** the change that mattered most and why, one change that did not help, and when and why you stopped.
 7. **AI Use Declaration:** tools, purpose, what you accepted, rejected or revised, how you verified it, and where your own judgment shaped the result.
 
@@ -654,21 +754,31 @@ Come back to these a few days after reading, without looking back.
 
 | Criterion (points) | Exemplary | Proficient | Developing | Beginning |
 |---|---|---|---|---|
-| **Task and frame (3)** | 3: a real task; all frame elements; 3–5 checkable criteria; a rung for each part, each with a reason | 2: all elements, but one or two criteria cannot be checked, or the rung reasons are generic | 1: two or more elements missing, or criteria vague throughout | 0: no frame card |
-| **Versions and changes (1.5)** | 1.5: at least four versions; each later version makes one named change with a prediction | 1: four versions; one or two change several things at once or lack a prediction | 0.5: two or three versions, or changes not named | 0: one version |
-| **Testing evidence (1.5)** | 1.5: every version run twice; final version on typical, different and edge inputs; every output scored against the criteria | 1: most versions run twice and scored; final version on one or two inputs | 0.5: single runs, or scores not tied to the criteria | 0: no test record |
-| **Verification (2)** | 2: peer swap recorded with what it revealed and what changed; every relied-on claim checked with a named method | 1.5: peer swap recorded; most claims checked | 1: peer swap or claim checks missing | 0: neither |
-| **Declaration and judgment (2)** | 2: all five declaration elements; reflection names the most and least useful change, with reasons and a stopping decision | 1.5: all five elements; a general reflection | 1: two to four elements, or no reflection | 0: missing |
+| **Task and frame (3)** | 3: a real task; all frame elements; 3–5 checkable criteria; a rung for each part, each with a reason | 2: all elements present, but one or two criteria cannot be checked, or the rung reasons are generic | 1: one or more elements missing, or criteria vague throughout | 0: no frame card |
+| **Versions and changes (1.5)** | 1.5: at least four versions; each later version makes one named change with a prediction | 1: at least four versions; one or two rows change several things or lack a prediction | 0.5: two or three versions, or most rows change several things or lack predictions | 0: one version only |
+| **Testing evidence (1.5)** | 1.5: every version run at least twice; the final version also run on a different and an edge input; every output scored against the criteria | 1: most versions run twice and scored, or the final version not run on both extra inputs | 0.5: mostly single runs, or scores not tied to the criteria | 0: no test record |
+| **Verification (2)** | 2: peer swap recorded with what it revealed and the change it led to; every relied-on number or fact checked with a named method | 1.5: peer swap recorded; most numbers and facts checked | 1: peer swap record or claim checks missing | 0: neither |
+| **Declaration and judgment (2)** | 2: all five declaration elements; reflection names the most and least useful change, with reasons and a stopping decision | 1.5: all five elements; a general reflection | 1: two to four elements, or no reflection | 0: missing, or only one element |
 
 **Formats.** A table with the columns of @fig-5-13 or the eLearning template. Saved text is enough; screenshots are optional. Compass offers the same template (optional and ungraded). [COMPASS: A3 template]
 
-**Alternative assignment: an iteration audit** (for students who prefer not to use AI tools, who have no suitable device, or for whom the peer swap is a barrier). Use the dated log on eLearning: six versions of one prompt with real outputs, model names and dates. Write your own frame card for its task, with a rung for each part. Label each change by prompt part and say whether it changed one thing or several. Score every output against your criteria. Choose the version you would use and write a v7 with a prediction. Instead of a peer swap, a classmate or the instructor (in office hours) reads your v7 without explanation and lists what they would need to ask. Same rubric, read this way:
+**Alternative assignment: an iteration audit** (for students who prefer not to use AI tools, who have no suitable device, or for whom the peer swap is a barrier). Use the dated log on eLearning: six versions of one prompt with real outputs, model names and dates.
 
-- **Task and frame:** your frame card for the provided task.
-- **Versions and changes:** your labeling of the six changes, plus your v7 and its prediction.
-- **Testing evidence:** your scoring of every provided output against your criteria.
-- **Verification:** the reader test of v7 and a check of the claims in the version you chose.
-- **Declaration and judgment:** as above; declare "no AI tools used" where that is true.
+1. Write your own frame card for its task, with a rung for each part.
+2. Label each change by prompt part, and say whether it changed one thing or several.
+3. Score every provided output against your criteria.
+4. Choose the version you would use and write a v7 with a prediction.
+5. Propose a typical, a different and an edge input for v7, and say what result on each would show that v7 works.
+6. A classmate, or the instructor in office hours, reads your v7 without explanation and lists what they would need to ask. Record it and the change you would make.
+7. Check the numbers and facts in the version you chose; write the AI Use Declaration ("no AI tools used" where true) and the reflection.
+
+| Criterion (points) | Exemplary | Proficient | Developing | Beginning |
+|---|---|---|---|---|
+| **Task and frame (3)** | 3: all frame elements for the provided task; 3–5 checkable criteria; a rung for each part with a reason | 2: all elements, but one or two criteria cannot be checked, or rung reasons generic | 1: one or more elements missing, or criteria vague | 0: no frame card |
+| **Versions and changes (1.5)** | 1.5: all six changes labeled correctly (single or several); v7 makes one named change with a prediction | 1: one or two labels wrong, or v7 lacks a prediction | 0.5: several labels wrong, or no v7 | 0: no labeling |
+| **Testing evidence (1.5)** | 1.5: every provided output scored against every criterion; typical, different and edge inputs proposed for v7, each with a pass result | 1: most outputs scored, or inputs proposed without pass results | 0.5: few outputs scored, or no proposed inputs | 0: no scoring |
+| **Verification (2)** | 2: reader test recorded with the change it suggests; every number and fact in the chosen version checked with a named method | 1.5: reader test recorded; most numbers and facts checked | 1: reader test or checks missing | 0: neither |
+| **Declaration and judgment (2)** | 2: all five declaration elements; reflection on which change mattered most in the provided log and why | 1.5: all five elements; general reflection | 1: two to four elements, or no reflection | 0: missing, or only one element |
 
 ### Mini-Project (optional): One Task, Three Weeks {.unnumbered}
 
@@ -677,51 +787,53 @@ Come back to these a few days after reading, without looking back.
 ### Case Study Questions {.unnumbered}
 
 1. *(O1 · LO2 · Analyze)* List the measures Klarna announced in February 2024. For each, say what it measures and what it cannot tell you.
-2. *(O2 · LO2 · Analyze)* Using the framework's definition, explain why both Klarna's assistant and Chapter 1's support tool count as agency from the company's side, and describe where the human check sat in each.
-3. *(O5 · LO3 · Evaluate)* Which statements in the case are company claims, which are an analyst's opinion, and which could be independently checked? What evidence would change your view of the case?
+2. *(O2 · LO2 · Analyze)* Using the framework's definition, explain why both Klarna's assistant and Chapter 1's support tool count as agency, and describe where the human check sat in each.
+3. *(O5 · LO3 · Evaluate)* Which statements in the case are confirmed, which are reported, and which are the book's inference? What evidence would change your view of the case?
 4. *(O2 · LO2, LO5 · Create)* Write three success criteria Klarna could have announced alongside speed and cost in 2024. Make each one checkable.
 5. *(O4 · LO2 · Analyze)* Apply three "why" steps to the 2025 statement that quality had suffered. Mark each link as checked (from the record) or assumed.
 
 ## Further Reading and Compass Links {.unnumbered}
 
-- Reading R2 (this week): Anthropic Academy, *AI Fluency: Framework & Foundations*, module 2, "The AI Fluency Framework." Recommended next: modules 4 (Delegation) and 5 (Description).
-- Dakan and Feller (2025): the AI Fluency framework itself, version 1.1; eight pages, with the three modalities and the 4D competencies.
+- Reading R2 (recommended this week): Anthropic Academy, *AI Fluency: Framework & Foundations*, module 2, "The AI Fluency Framework" (Anthropic, n.d.-a). Recommended next: modules 4 (Delegation) and 5 (Description).
+- Dakan and Feller (2025): the AI Fluency framework itself, version 1.1, a short document of about ten pages with the three modalities and the 4D competencies.
 - Zamfirescu-Pereira et al. (2023): "Why Johnny can't prompt," a readable study of how people new to prompting work, with many quoted prompts.
-- Meincke et al. (2025a): a six-page report on how much prompt wording and scoring standards matter, with clear figures.
+- Meincke et al. (2025a): a short report on how much prompt wording and scoring standards matter, with clear figures.
 - Schulhoff et al. (2024): a long survey of prompting techniques; useful as a reference, not to read end to end (Deep).
-- Providers' own prompting guides (Anthropic, n.d.; Google, 2024; OpenAI, n.d.); they change often, so check the date.
+- Providers' own prompting guides (Anthropic, n.d.-b; Google, 2024; OpenAI, n.d.); they change often, so check the date.
 - Chapter 6 (Deep): context, in-context examples, templates and reusable workflows.
 - [COMPASS: interactive Anatomy of a Prompt (@fig-5-6) and Delegation Ladder (@fig-5-3); Chapter 5 quiz; Lab 5.1–5.3 pages; A3 template]
 
 ## References {.unnumbered}
 
-Anthropic. (n.d.). *AI fluency: Framework & foundations* [Online course]. Anthropic Academy. https://anthropic.skilljar.com/ai-fluency-framework-foundations
+Anthropic. (n.d.-a). *AI fluency: Framework & foundations* [Online course]. Anthropic Academy. https://anthropic.skilljar.com/ai-fluency-framework-foundations
 
-Anthropic. (n.d.). *Prompt engineering overview*. Claude Docs. Retrieved October 18, 2026, from https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview
+Anthropic. (n.d.-b). *Prompt engineering overview*. Claude Docs. Retrieved October 18, 2026, from https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview
 
 Anthropic. (2024, December 19). *Building effective agents*. https://www.anthropic.com/engineering/building-effective-agents
 
+Appel, R., Massenkoff, M., McCrory, P., McCain, M., Heller, R., Neylon, T., & Tamkin, A. (2026, January 15). *Anthropic Economic Index report: Economic primitives*. Anthropic. https://www.anthropic.com/research/anthropic-economic-index-january-2026-report
+
 Appel, R., McCrory, P., Tamkin, A., McCain, M., Neylon, T., & Stern, M. (2025, September 15). *Anthropic Economic Index report: Uneven geographic and enterprise AI adoption*. Anthropic. https://www.anthropic.com/research/anthropic-economic-index-september-2025-report
 
-Bloomberg. (2025, May 8). *Klarna turns from AI to real person customer service*. Bloomberg News. https://www.bloomberg.com/news/articles/2025-05-08/klarna-turns-from-ai-to-real-person-customer-service
-
-Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., et al. (2020). Language models are few-shot learners. *Advances in Neural Information Processing Systems, 33*, 1877–1901.
+Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., . . . Amodei, D. (2020). Language models are few-shot learners. *Advances in Neural Information Processing Systems, 33*, 1877–1901.
 
 Brynjolfsson, E., Li, D., & Raymond, L. (2025). Generative AI at work. *The Quarterly Journal of Economics, 140*(2), 889–942. https://doi.org/10.1093/qje/qjae044
 
-Dakan, R., & Feller, J. (2025). *The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education* (Version 1.1). Higher Education Authority. https://aifluencyframework.org/ (CC BY-SA 4.0)
-
-Dakan, R., Feller, J., & Anthropic. (2025). *The AI Fluency Framework* [One-page summary]. Anthropic. https://www-cdn.anthropic.com/334975cdec18f744b4fa511dc8518bd8d119d29d.pdf (CC BY-NC-SA 4.0)
+Dakan, R., & Feller, J. (2025, December). *The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education* (Version 1.1). Higher Education Authority. https://hub.teachingandlearning.ie/wp-content/uploads/2025/12/hea-genai-fluency-framework.pdf (CC BY-SA 4.0)
 
 Doerer, K. (2025, November 20). Klarna says its AI agent is doing the work of 853 employees. *CX Dive*. https://www.customerexperiencedive.com/news/klarna-says-ai-agent-work-853-employees/805987/
 
-Entrepreneur. (2025, May 9). Klarna is hiring customer service agents after AI couldn't cut it on calls, according to the company's CEO. *Entrepreneur*. https://www.entrepreneur.com/business-news/klarna-ceo-reverses-course-by-hiring-more-humans-not-ai/491396
+Engelking, N. J. (2025, May 11). After AI offensive: Klarna focuses more on human customer service again. *heise online*. https://heise.de/-10379419
 
-Google. (2024). *Gemini for Google Workspace: Prompting guide 101*. https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf
+Fisher, R. (2025, May 12). Klarna grapples with AI-led customer service, pivots to an "Uber type of setup." *CX Today*. https://www.cxtoday.com/contact-center/klarna-grapples-with-ai-led-customer-service-pivots-to-an-uber-type-of-setup/
 
-Handa, K., Tamkin, A., McCain, M., Huang, S., Durmus, E., Heck, S., et al. (2025). *Which economic tasks are performed with AI? Evidence from millions of Claude conversations* (arXiv:2503.04761). arXiv. https://arxiv.org/abs/2503.04761
+Google. (2024, April). *Prompting guide 101: A quick-start handbook for effective prompts* (Gemini for Google Workspace). Archived March 5, 2026, at http://web.archive.org/web/20260305110408/https://services.google.com/fh/files/misc/gemini-for-google-workspace-prompting-guide-101.pdf
+
+Handa, K., Tamkin, A., McCain, M., Huang, S., Durmus, E., Heck, S., Mueller, J., Hong, J., Ritchie, S., Belonax, T., Troy, K. K., Amodei, D., Kaplan, J., Clark, J., & Ganguli, D. (2025). *Which economic tasks are performed with AI? Evidence from millions of Claude conversations* (arXiv:2503.04761). arXiv. https://arxiv.org/abs/2503.04761
 
 Klarna. (2024, February 27). *Klarna AI assistant handles two-thirds of customer service chats in its first month* [Press release]. https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/
+
+Klarna Group plc. (2025, January 24). *Draft registration statement* (Form DRS/A). U.S. Securities and Exchange Commission. https://www.sec.gov/Archives/edgar/data/2003292/000162827925000026/filename1.htm
 
 Meincke, L., Mollick, E., Mollick, L., & Shapiro, D. (2025a). *Prompting science report 1: Prompt engineering is complicated and contingent* (arXiv:2503.04818). arXiv. https://arxiv.org/abs/2503.04818
 
@@ -731,13 +843,15 @@ Meincke, L., Mollick, E., Mollick, L., & Shapiro, D. (2025c). *Prompting science
 
 OpenAI. (n.d.). *Prompt engineering*. OpenAI API documentation. Retrieved October 18, 2026, from https://developers.openai.com/api/docs/guides/prompt-engineering
 
-Schulhoff, S., Ilie, M., Balepur, N., Kahadze, K., Liu, A., Si, C., et al. (2024). *The prompt report: A systematic survey of prompt engineering techniques* (arXiv:2406.06608). arXiv. https://arxiv.org/abs/2406.06608
+Schulhoff, S., Ilie, M., Balepur, N., Kahadze, K., Liu, A., Si, C., Li, Y., Gupta, A., Han, H., Schulhoff, S., Dulepet, P. S., Vidyadhara, S., Ki, D., Agrawal, S., Pham, C., Kroiz, G., Li, F., Tao, H., Srivastava, A., . . . Resnik, P. (2024). *The prompt report: A systematic survey of prompt engineering techniques* (arXiv:2406.06608). arXiv. https://arxiv.org/abs/2406.06608
 
 Sclar, M., Choi, Y., Tsvetkov, Y., & Suhr, A. (2024). Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting. In *The Twelfth International Conference on Learning Representations (ICLR 2024)*. https://arxiv.org/abs/2310.11324
 
-Şeker, Ş. E. (2014). Beş neden yöntemi (5 whys) [The 5 Whys method]. *YBS Ansiklopedi, 1*(4), 5–6. <!-- [VERIFY] page range: the printed citation line says Kasım 2014, pp. 5–6; the issue is Aralık (December) 2014, vol. 1, no. 4. -->
+Şeker, Ş. E. (2014). Beş neden yöntemi (5 whys) [The 5 Whys method]. *YBS Ansiklopedi, 1*(4), 5–6. <!-- Pages as in the entry's own printed citation line; the issue contents list p. 5 (author-only item in the handoff). -->
 
 Shi, F., Chen, X., Misra, K., Scales, N., Dohan, D., Chi, E. H., Schärli, N., & Zhou, D. (2023). Large language models can be easily distracted by irrelevant context. *Proceedings of the 40th International Conference on Machine Learning, PMLR 202*, 31210–31227.
+
+Shibu, S. (2025, May 9). Klarna is hiring customer service agents after AI couldn't cut it on calls, according to the company's CEO. *Entrepreneur*. https://www.entrepreneur.com/business-news/klarna-ceo-reverses-course-by-hiring-more-humans-not-ai/491396
 
 Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., Chi, E., Le, Q. V., & Zhou, D. (2022). Chain-of-thought prompting elicits reasoning in large language models. *Advances in Neural Information Processing Systems, 35*, 24824–24837.
 

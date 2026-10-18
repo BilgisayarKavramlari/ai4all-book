@@ -63,8 +63,8 @@ def f4_4(mode):
     ax.set_xticks([0, 250, 500, 750, 1000])
     ax.set_xlabel("Sentences produced (1,000 per condition)")
     ax.legend(loc="upper center", bbox_to_anchor=(0.45, -0.2), ncol=2, frameon=False)
-    ax.set_title(f"A toy model trained only on true sentences can still produce false ones "
-                 f"({int(first['n_false']):,} of {int(first['n_generated']):,})",
+    ax.set_title(f"A toy model trained only on true sentences still produced false ones "
+                 f"({int(first['n_false']):,} of {int(first['n_generated']):,}),\nand always answered about cities it had never seen",
                  loc="left", fontweight="bold", fontsize=12.5, pad=14)
     fig.text(0.01, -0.2, "Toy counting models (word-pair and five-word context), not LLMs. Trained on 12 true sentences \"<city> is the capital of "
              "<country>.\" Book's own computation (seed 4; figures/scripts/ch04_experiments.py).",
@@ -86,10 +86,10 @@ def f4_6(mode):
     ax.set_ylim(0, 110)
     ax.set_yticks([0, 20, 40, 60, 80, 100])
     ax.set_ylabel("Average performance (%)")
-    ax.set_title("When a task arrived piece by piece, average scores fell from about 90% to about 65%",
+    ax.set_title("In the paper's introduction, average scores fell from about 90% to about 65%\nwhen tasks arrived piece by piece (15 models tested in 2025)",
                  loc="left", fontweight="bold", fontsize=12.5, pad=14)
-    fig.text(0.01, -0.1, "Published values: Laban et al. (2025), simulated conversations, 15 models, six tasks "
-             "(code, database, actions, math, data-to-text, summary).", fontsize=9.5, color=s["ink"])
+    fig.text(0.01, -0.1, "Published values: Laban et al. (2025), introduction; simulated conversations, 15 models, six tasks. "
+             "The abstract reports an average drop of 39%, computed differently.", fontsize=9.5, color=s["ink"])
     save(fig, "f4-06-multiturn", mode)
 
 
@@ -110,6 +110,8 @@ def f4_12(mode):
     ax.set_ylabel("Expected score for answering")
     ax.set_ylim(-3.2, 1.3)
     ax.legend(loc="lower right", frameon=False, fontsize=10.5)
+    # Penalty t/(1-t) = 3 at t = 0.75. Kalai et al. (2025, v1, section 4.2) print "penalty 2" for t = 0.75,
+    # an arithmetic slip; the book uses the formula's value, 3.
     ax.set_title("When a wrong answer costs nothing, guessing never scores worse than \"I don't know\"",
                  loc="left", fontweight="bold", fontsize=12.5, pad=14)
     fig.text(0.01, -0.08, "Computed illustration (data/ch04_scoring.csv); scoring idea discussed by Kalai et al. (2025).",

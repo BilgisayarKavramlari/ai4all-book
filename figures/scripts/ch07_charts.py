@@ -130,8 +130,9 @@ def f7_04(mode):
             ax1.text(xi, v + 1.5, f"{v:.0f}%", ha="center", va="bottom", fontsize=10.5, color=s["ink"])
     ax1.set_xticks(x, ["Final test after 5 minutes", "Final test after 1 week"])
     ax1.set_ylabel("Share of the passage recalled (%)")
-    ax1.set_ylim(0, 100)
-    ax1.legend(loc="upper right", frameon=False, fontsize=10)
+    ax1.set_ylim(0, 128)
+    ax1.set_yticks([0, 20, 40, 60, 80, 100])
+    ax1.legend(loc="upper left", frameon=False, fontsize=9.5)
     ax1.set_title("Recall", loc="left", fontsize=12)
     preds = [float(r["predicted_rating"]) for r in rows]
     yy = np.arange(len(rows))[::-1]
@@ -140,14 +141,14 @@ def f7_04(mode):
                  hatch=s["hatches"][k])
     for yi, v in zip(yy, preds):
         ax2.text(v + 0.1, yi, f"{v:.1f}", va="center", fontsize=10.5, color=s["ink"])
-    ax2.set_yticks(yy, ["Read 4 times", "Read 3 + recall 1", "Read 1 + recall 3"])
+    ax2.set_yticks(yy, ["4 study periods", "3 study + 1 recall", "1 study + 3 recalls"])
     ax2.set_xlim(1, 7)
     ax2.set_xlabel("Predicted recall in a week\n(1 = not well, 7 = very well)")
     ax2.set_title("How well they expected to remember", loc="left", fontsize=12)
     fig.suptitle("Rereading won after 5 minutes; testing yourself won after a week", x=0.01, ha="left",
                  fontweight="bold", fontsize=12.5)
     fig.text(0.01, -0.08, wrapped("Published values: Roediger & Karpicke (2006), Experiment 2, 180 students (30 per group); "
-             "recall tests without feedback. Rereaders predicted the best recall.", 110), fontsize=10, color=s["ink"])
+             "recall tests without feedback; study periods were 5 minutes each. Restudiers predicted the best recall.", 110), fontsize=10, color=s["ink"])
     fig.tight_layout()
     save(fig, "f7-04-retrieval-rk2006", mode)
 

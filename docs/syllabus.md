@@ -57,9 +57,9 @@ Citations below are working references and must be checked against the original 
 | T | Textbook, the week's chapter (see the schedule and docs/book-map.md) |
 | R1 | Wolfram (2023), *What Is ChatGPT Doing … and Why Does It Work?* |
 | R2 | Anthropic (2025), *AI Fluency: Framework & Foundations*, modules 1–2 |
-| R3 | Bastani et al. (2024), "Generative AI Can Harm Learning" (working paper; later journal version to be confirmed) |
-| R4 | Lee et al. (2025), "The Impact of Generative AI on Critical Thinking," CHI 2025 |
-| R5 | Ji et al. (2023), "Survey of Hallucination in Natural Language Generation," *ACM Computing Surveys* |
+| R3 | Bastani et al. (2025), "Generative AI without guardrails can harm learning: Evidence from high school mathematics," *PNAS* 122(26), e2422633122 — Significance statement and Table 1 (book decision, Ch. 7) |
+| R4 | Lee et al. (2025), "The Impact of Generative AI on Critical Thinking," CHI 2025 — abstract only, discussed in class (book decision, Ch. 7) |
+| R5 | Ji et al. (2023), "Survey of Hallucination in Natural Language Generation," *ACM Computing Surveys* — recommended, definitions sections (book decision, Ch. 4/8) |
 | R6 | *Mata v. Avianca, Inc.* (S.D.N.Y. 2023) |
 | R7 | *Moffatt v. Air Canada*, 2024 BCCRT 149 |
 | R8 | Noy & Zhang (2023), *Science* |

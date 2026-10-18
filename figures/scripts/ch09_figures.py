@@ -189,8 +189,7 @@ def storyboard(f):
     ev = [("Dec 2024–Jun 2025", "Deloitte conducts the review (confirmed)", "neutral", "step"),
           ("Aug 14, 2025", "The department publishes the report (confirmed)", "neutral", "step"),
           ("From Aug 2025", "An outside reader reports errors to the media (reported)", "neutral", "human"),
-          ("Oct 3, 2025", "Corrected version released; AI use disclosed (confirmed; disclosure reported)",
-           "verified", "step"),
+          ("Oct 3, 2025", "Corrected report released (confirmed)", "verified", "step"),
           ("Oct 2025", "Final instalment repaid: just over A$97,000 (reported)", "neutral", "step"),
           ("Feb 3, 2026", "Report updated again to address corrections (confirmed)", "verified", "step")]
     f.line(24, 200, 776, 200, color=ink, width=2.4)
@@ -203,8 +202,8 @@ def storyboard(f):
         f.raw(f'<circle cx="{cx}" cy="200" r="5" fill="{ink}"/>')
     f.text(400, 396, "Rounded = a person's action · green = a correction published · confirmed = the department's "
            "own pages · reported = news reports", size=13, color=muted, width=780)
-    f.text(400, 440, "Sources: DEWR (2025a, 2025b, 2026); Associated Press (2025); CFO Dive (2025). Whether the AI "
-           "tool produced the errors is not on record.", size=13, color=muted, italic=True, width=780)
+    f.text(400, 440, "Sources: DEWR (2025a, 2025b, 2026); Associated Press (2025); CFO Dive (2025). The corrected report "
+           "disclosed AI use (reported); whether the AI tool produced the errors is not on record.", size=13, color=muted, italic=True, width=780)
 
 
 # ---------------------------------------------------------------- F9.3 source types for one claim
@@ -271,7 +270,7 @@ def research_report(f):
     f.arrow(520, 90, 576, 90)
     f.box(578, 50, 202, 80, "A long report", role="ai", kind="ai", size=15, sub="dozens of citations", sub_size=13)
     f.line(679, 132, 679, 160)
-    f.line(110, 160, 679, 160)
+    f.line(110, 160, 695, 160)
     checks = [("1. Types", "which rungs, for which claims?"), ("2. Support", "does each page say it?"),
               ("3. Missing evidence", "dates, counter-evidence, primary sources"),
               ("4. Faithfulness", "does the synthesis match its sources?")]

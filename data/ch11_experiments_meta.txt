@@ -1,0 +1,5 @@
+python 3.10.7 · numpy 1.26.4
+events: constructed 18-shift table; Book swap shifts 3 and 5 (14 h, 13 h) unlogged; rates = total proceeds / total hours per event
+missing-value simulation: 1000 datasets per mechanism, seed 11, 8 shifts per event, missing share 0.25; MNAR probability rises with shift length; long shifts earn less per hour
+proxy simulation: population 20000, group B share 0.12, top 3% selected, need ~ lognormal(0, 0.6), cost = need x access x lognormal(0, 0.3), seeds 1000-1049; mechanism only, not Obermeyer et al.'s data
+decision matrix: constructed candidates A-F; each criterion scaled to 0-10 by fixed ranges, weighted sum; scenarios as in ch11_matrix_sensitivity.csv

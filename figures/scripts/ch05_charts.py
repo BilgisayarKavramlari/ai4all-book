@@ -35,16 +35,21 @@ def read(name):
     return list(csv.DictReader(lines))
 
 
-def save(fig, fid, mode):
+def save(fig, fid, mode, title=None):
     out = os.path.join(ROOT, "figures", "out", mode, f"{fid}.svg")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     fig.savefig(out, bbox_inches="tight")
     plt.close(fig)
+    if title:  # accessible <title> as the first child of <svg>
+        import html, re
+        svg = open(out, encoding="utf8").read()
+        svg = re.sub(r"(<svg[^>]*>)", lambda m: m.group(1) + f"<title>{html.escape(title)}</title>", svg, count=1)
+        open(out, "w", encoding="utf8").write(svg)
 
 
-PROMPTS = [("formatted", "Reference wording\n(with format line)"), ("unformatted", "Format line\nremoved"),
-           ("order", "\"I order you\nto answer…\""), ("please", "\"Please\nanswer…\"")]
-STANDARDS = [("all100", "Correct in all 100 of 100 runs"), ("majority", "Correct in most runs (51 or more)")]
+PROMPTS = [("please", "\"Please answer the following question.\""),
+           ("order", "\"I order you to answer the following question.\"")]
+STANDARDS = [("all100", "Strict: right in all 100 of 100 runs"), ("majority", "Majority: right in 51 or more of 100 runs")]
 
 
 def f5_10(mode):
@@ -53,14 +58,14 @@ def f5_10(mode):
     get = {(r["prompt"], r["standard"]): r for r in rows}
     fig, ax = plt.subplots(figsize=(8.6, 4.8))
     x = np.arange(len(STANDARDS))
-    w = 0.19
+    w = 0.3
     for k, (p, lab) in enumerate(PROMPTS):
         vals = [float(get[(p, st)]["pp_above_random"]) for st, _ in STANDARDS]
         lo = [float(get[(p, st)]["ci_low"]) for st, _ in STANDARDS]
         hi = [float(get[(p, st)]["ci_high"]) for st, _ in STANDARDS]
-        xs = x + (k - 1.5) * w
+        xs = x + (k - 0.5) * w
         err = [np.array(vals) - np.array(lo), np.array(hi) - np.array(vals)]
-        ax.bar(xs, vals, w, color=s["fills"][k], edgecolor=s["ink"], linewidth=1, hatch=s["hatches"][k],
+        ax.bar(xs, vals, w, color=s["fills"][2 * k], edgecolor=s["ink"], linewidth=1, hatch=s["hatches"][2 * k + 1] if mode == "gray" and k else None,
                label=lab.replace("\n", " "))
         ax.errorbar(xs, vals, yerr=err, fmt="none", ecolor=s["ink"], elinewidth=1, capsize=3)
         for xi, v, h in zip(xs, vals, hi):
@@ -69,12 +74,14 @@ def f5_10(mode):
     ax.set_xticks(x, [lab for _, lab in STANDARDS])
     ax.set_ylabel("Points above random guessing (0 = 25%)\nbars: estimate · lines: 95% interval")
     ax.set_ylim(-14, 36)
-    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12), frameon=False, fontsize=10.5, ncol=4)
-    ax.set_title("How strictly answers were scored mattered more than \"please\" or \"I order you\" (GPT-4o, 2025)",
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.12), frameon=False, fontsize=10.5, ncol=2)
+    ax.set_title("Whether a wording \"worked\" depended on how strictly success was defined (GPT-4o, 2025)",
                  loc="left", fontweight="bold", fontsize=12.5, pad=12)
-    fig.text(0.01, -0.13, "Published values: Meincke et al. (2025a), Supplementary Table 2. 198 GPQA Diamond questions, "
-             "each asked 100 times per prompt at temperature 0; model gpt-4o-2024-08-06.", fontsize=10, color=s["ink"])
-    save(fig, "f5-10-wording-chart", mode)
+    fig.text(0.01, -0.19, "Published values: Meincke et al. (2025a), Supplementary Table 2. 198 graduate-level science questions (GPQA Diamond), "
+             "each asked 100 times per prompt at temperature 0; model gpt-4o-2024-08-06.\n"
+             "Only the opening words differ between the two prompts. Lines: 95% intervals, the range the true value very likely falls in.",
+             fontsize=10, color=s["ink"])
+    save(fig, "f5-10-wording-chart", mode, "Whether a wording worked depended on how strictly success was defined (GPT-4o, 2025)")
 
 
 def f5_14(mode):
@@ -94,9 +101,9 @@ def f5_14(mode):
     ax.set_title("In one provider's August 2025 data, automation patterns were far more common in business API "
                  "traffic than in chat", loc="left", fontweight="bold", fontsize=12.5, pad=12)
     fig.text(0.01, -0.16, "Published values: Appel et al. (2025), Anthropic Economic Index, September 2025 report; same "
-             "month and classifier (Claude Sonnet 4). The provider's own definitions, not the AI Fluency modalities.",
+             "month and method. The provider's own definitions, not the AI Fluency modalities.",
              fontsize=10, color=s["ink"])
-    save(fig, "f5-14-delegation-data", mode)
+    save(fig, "f5-14-delegation-data", mode, "In one provider's August 2025 data, automation patterns were far more common in business API traffic than in chat")
 
 
 if __name__ == "__main__":

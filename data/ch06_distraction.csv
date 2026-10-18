@@ -1,5 +1,5 @@
-# Published values: Shi et al. (2023), "Large language models can be easily distracted by irrelevant context", ICML, PMLR 202. Model: code-davinci-002 (Codex), chain-of-thought prompting with exemplars without irrelevant context.
-# base = Table 2 (accuracy on the 100 base problems from GSM8K). gsm_ic = Table 3, overall micro accuracy on GSM-IC-4K (4,000 problems, each a base problem with one irrelevant sentence added).
+# Published values: Shi et al. (2023), "Large language models can be easily distracted by irrelevant context", ICML, PMLR 202. Model: code-davinci-002 (Codex, an older OpenAI model), chain-of-thought prompting with exemplars without irrelevant context.
+# base = Table 2 (accuracy on the 100 base problems from GSM8K; each base problem was solvable by at least one of the paper's prompting methods). gsm_ic = Table 3, overall micro accuracy on GSM-IC-4K (4,000 problems sampled from 58,052 built, each a base problem with one irrelevant sentence added). Macro accuracy (share of base problems solved in every variant): 6.0.
 condition,label,accuracy
 base,Original problems (100),95.0
 gsm_ic,Same problems + one irrelevant sentence,72.4

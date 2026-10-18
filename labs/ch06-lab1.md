@@ -4,15 +4,17 @@
 |---|---|
 | Type | Studio (Build and Test) |
 | Objectives | O5 (LO2, LO3) · tags 4D:DESC, 4D:DISC · UNESCO: AI techniques and applications, Create |
-| Time | 30 minutes, at home first (optional); a team that finishes Chapter 5's A3 sprint early may start it in class on Thursday, February 4, 2027 |
+| Time | 30 minutes (10-minute version available), at home first (optional); a team that finishes Chapter 5's A3 sprint early may start it in class on Thursday, February 4, 2027 |
 | Materials | Any AI chat tool available to you (university-provided or a free tier) that can open a fresh, temporary chat; your final A3 prompt from Chapter 5, or the provided sample prompt (eLearning); the library entry template (book Figure 6.10, eLearning) |
 
 ## Steps (tool-neutral)
-1. **Fixed and changing parts (5 min).** Take your final A3 prompt, or the provided sample. Underline what stays the same every time you would use it (task, audience, constraints, output format, any in-context examples) and circle what changes (the material).
-2. **Write the template (7 min).** Replace each changing part with a placeholder in braces, such as `{NOTES}` or `{DATE}`. Add a line "Do not use for: …".
-3. **Pass criteria (included in step 2).** Write two or three pass criteria you can score met, partly met or not met. Reuse your A3 criteria if they still fit.
+1. **Fixed and changing parts (5 min).** Take your final prompt from assignment A3 (your Chapter 5 prompt and iteration log), or the provided sample. Underline what stays the same every time you would use it (task, audience, constraints, output format, any in-context examples) and circle what changes (the material).
+2. **Write the template (5 min).** Replace each changing part with a placeholder in braces, such as {NOTES} or {DATE}. Put the material first and the full task last. Add a line "Do not use for: …".
+3. **Write pass criteria (2 min).** Two or three criteria you can score met, partly met or not met. Reuse your A3 criteria if they still fit.
 4. **Test (13 min).** In fresh chats, run the template on three test inputs it has not met before: a typical input, a different input and an edge input (Chapter 5's terms). Score each output against each criterion.
-5. **Fix and version (5 min).** Make one change for one failure. Rerun all three inputs, not only the one that failed. Save the result as v1.1 with the date, the tool and model name, and one line on what changed. This is the first entry in your library.
+5. **Fix and version (5 min).** Make one change for one failure. Rerun all three inputs, not only the one that failed. Save the result as v1.1 with the date, the tool and model name, and one line on what changed. This is the first entry in your library. If nothing failed, make the edge input harder until something does, and record that.
+
+**10-minute version:** steps 1–3 only.
 
 [COMPASS: ch06-lab1 — how to open a fresh, temporary chat in current tools; library entry template]
 

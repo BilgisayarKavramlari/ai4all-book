@@ -1,7 +1,7 @@
 traffic,period,classifier,automation_pct,augmentation_pct
 # Published values: Appel, McCrory, Tamkin et al. (2025), Anthropic Economic Index report: Uneven geographic and enterprise AI adoption (September 15, 2025).
-# Same month and same classifier (Claude Sonnet 4) for both rows. Augmentation share for Claude.ai is not given as a number in the report text ("nearly even"), so it is left blank.
-# Rerun with the older classifier (Claude Sonnet 3.7), Claude.ai automation was 45%. The February 2025 report (Handa et al., 2025; December 2024-January 2025 data) gave 43% automation / 57% augmentation with a different classifier, so no trend is drawn.
+# Same month and same classification method for both rows (the report names Claude Sonnet 4 as classifier for Claude.ai; for the API it says the same methods were used). Augmentation share for Claude.ai is not given as a number in the report text ("nearly even"), so it is left blank.
+# Rerun with the older classifier (Claude Sonnet 3.7), Claude.ai automation was 45%. The February 2025 report (Handa et al., 2025; December 2024-January 2025 data) gave 43% automation / 57% augmentation with a different classifier, so no trend is drawn. Newer: January 2026 report (Appel et al., 2026; November 2025 data, Sonnet 4.5): Claude.ai 52% augmentation / 45% automation; API about three-quarters automation (not charted).
 # Definitions are the provider's (automation = directive + feedback loop; augmentation = task iteration + learning + validation), not the AI Fluency framework's modalities.
 Claude.ai chat conversations,August 2025,Claude Sonnet 4,49,
 First-party API (business) traffic,August 2025,Claude Sonnet 4,77,12

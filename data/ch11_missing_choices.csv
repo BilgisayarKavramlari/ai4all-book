@@ -1,0 +1,7 @@
+choice,Bake sale ($/h),Book swap ($/h),Budget workshop ($/h),best event
+true hours (known only in this demo),18.0,19.6,22.5,Budget workshop
+blank = 0 (total proceeds / total logged hours),18.0,39.2,22.5,Book swap
+drop rows with a blank (listwise deletion),18.0,24.2,22.5,Book swap
+fill with the mean of all logged shifts,18.0,23.7,22.5,Book swap
+fill with the event's own mean,18.0,26.1,22.5,Book swap
+copy the previous shift (last observation carried forward),18.0,26.5,22.5,Book swap

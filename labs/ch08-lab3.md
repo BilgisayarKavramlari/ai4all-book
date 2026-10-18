@@ -10,10 +10,10 @@
 ## Steps (tool-neutral)
 1. Before asking, write your own predicted answer and confidence for each question (your calibration).
 2. Ask the tool each question and ask how confident it is, as a percentage. Record both.
-3. Ask three of the questions again in three fresh chats. Record whether the answers agree.
+3. Ask three of the questions again in three temporary chats (memory off). Record whether the answers agree.
 4. Score every answer against the key.
 5. Group the tool's answers by stated confidence (50–69%, 70–89%, 90–100%) and compute each group's share correct. Do the same for yourself.
-6. Write three sentences: which signal, stated confidence or disagreement across runs, went with the wrong answers? What is the calibration gap for the tool, and for you?
+6. Write three sentences: which signal, stated confidence or disagreement across runs, went with the wrong answers? What is the calibration gap for the tool, and for you (average confidence of the answers rated 80% or higher minus the share of them correct)?
 
 Ten questions give a rough picture, not a measurement. "The tool was well calibrated on my pack" is a valid result.
 

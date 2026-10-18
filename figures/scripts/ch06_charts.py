@@ -58,11 +58,11 @@ def f6_04(mode):
     ax.set_xticks(x, labels)
     ax.set_ylim(0, 105)
     ax.set_ylabel("Accuracy (%)")
-    ax.set_title("One irrelevant sentence lowered a 2022 model's accuracy\non math word problems (tested 2023)",
+    ax.set_title("One irrelevant sentence lowered an older model's accuracy\non math word problems (tested 2023)",
                  loc="left", fontweight="bold", fontsize=12.5, pad=12)
     fig.text(0.01, -0.2, "Published values: Shi et al. (2023), Tables 2 and 3. Model code-davinci-002, step-by-step\n"
              "(chain-of-thought) prompting. Middle and right bars: 4,000 problems (GSM-IC-4K), each a base\n"
-             "problem with one irrelevant sentence added. Hatched bar in print = the distracted condition.",
+             "problem with one irrelevant sentence added (from 58,052 built). Hatched bar in print = the distracted condition.",
              fontsize=10, color=s["ink"])
     save(fig, "f6-04-distraction-chart", mode)
 
@@ -86,9 +86,9 @@ def f6_12(mode):
     ax.set_xticks(x, labels)
     ax.set_ylim(79, 92)
     ax.set_ylabel("MedQA accuracy (%) — axis starts at 79")
-    ax.set_title("Medprompt raised GPT-4's MedQA score from 81.7% to 90.2%\nwithout changing the model's settings (2023)",
+    ax.set_title("Medprompt raised GPT-4's MedQA score from 81.7% to 90.2%\nwithout retraining the model (2023)",
                  loc="left", fontweight="bold", fontsize=12.5, pad=12)
-    fig.text(0.01, -0.26, "Published values: Nori et al. (2023), Figure 4; first bar is prior work reported in the paper.\n"
+    fig.text(0.01, -0.26, "Published values: Nori et al. (2023), Figure 4 (the paper's step-by-step chart; first bar: simple prompt, no examples).\n"
              "Steps are cumulative in the authors' order, which they call subjective; the paper's Figure 6\n"
              "gives slightly different sizes for the last two steps (+0.8, +2.1). Small numbers = change from the bar before.",
              fontsize=10, color=s["ink"])

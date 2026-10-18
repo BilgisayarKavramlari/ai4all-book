@@ -84,8 +84,8 @@ def f9_12(mode):
         ax.bar(x, v, 0.55, color=s["risk"], edgecolor=s["ink"], linewidth=1, hatch=s["risk_hatch"])
         ax.text(x, v + 2, f"{v:.0f}%", ha="center", fontsize=12, fontweight="bold", color=s["ink"])
     ax.axhline(float(allr["pct_incorrect"]), color=s["ink"], linestyle="--", linewidth=1.6)
-    ax.text(len(tools) - 0.5, float(allr["pct_incorrect"]) + 2.5, "all eight tools together: more than 60%",
-            fontsize=11, ha="right", color=s["ink"])
+    ax.text(-0.3, float(allr["pct_incorrect"]) + 2.5, "all eight tools together: more than 60%",
+            fontsize=11, ha="left", color=s["ink"])
     ax.set_xticks(list(xs), [r["tool"] for r in tools])
     ax.set_ylim(0, 105)
     ax.set_ylabel("Queries answered incorrectly (%)")

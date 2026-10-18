@@ -44,3 +44,14 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 3 | 3.1 | Letter counting: Fu et al. (2024) is an arXiv preprint | Oct 2026 | https://arxiv.org/abs/2412.18626 | Check for a published version |
 | 3 | 3.2 | Temperature exposed mainly in developer tools and some apps | Oct 2026 | Product observation | Each edition |
 | 3 | Labs | Free tokenizer pages, temporary-chat, memory and search options (Compass only) | Oct 2026 | Compass | Each term |
+| 4 | 4.2, Summary, Review A2 key | "This book found no evidence, as of October 2026, that any model has removed" hallucination's causes; newer models, search and retrieval reduce it on many tasks | Oct 2026 | Kalai et al. (2025); NIST (2024); fact-check C31 (only a weak 2026 preprint found) | Each edition |
+| 4 | 4.4, F4.6, data/ch04_multiturn.csv, References | Multi-turn drop: abstract "average drop of 39%" (per model and task); introduction about 90% → about 65%; 15 models tested in 2025, six tasks; numbers from arXiv v1, paper also published at ICLR 2026 (Outstanding Paper, reported by the final reviewer) | Oct 2026 | Laban et al. (2025), arXiv v1; ICLR 2026 proceedings | Each edition (compare the ICLR 2026 version's numbers) |
+| 4 | 4.4 | Tools differ in what they drop beyond the context window and whether they warn | Oct 2026 | Compass tool notes (fact-check C46: no source) | Each term |
+| 4 | 4.5 | GPT-4o update withdrawn in April 2025; OpenAI's two accounts of the cause | Oct 2026 | OpenAI (2025a, 2025b) | Each edition |
+| 4 | 4.5 | Post-training reduced GPT-4's probability calibration on an MMLU subset (2023) | Oct 2026 | OpenAI (2023), Fig. 8 | Each edition (newer reports) |
+| 4 | Deep 4.A | Kalai et al. (2025) still a preprint (three OpenAI authors, one Georgia Tech) | Oct 2026 | arXiv:2509.04664 | Each edition |
+| 4 | Deep 4.B | NIST AI 600-1 twelve risks; OWASP Top 10 for LLM Applications 2025 is the current edition on genai.owasp.org (checked 2026-10-18; secondary sources report a 2026 edition not yet listed there) | Oct 2026 | NIST (2024); OWASP (2024) | Each edition — swap to the 2026 edition if OWASP publishes it |
+| 4 | Opening Case, Case Study, C03 | Moffatt v. Air Canada: no later review or appeal found; airline said it would comply; payment not documented | Oct 2026 | CRT decision; Murphy (2024); fact-check C65, C91, C93 | Each edition |
+| 4 | Case Study, short case 1 | MyCity taken down by Feb 4, 2026 | Feb 2026 | Lecher & Honan (2026) | Each edition |
+| 4 | Career Connection | "As of 2026, many organizations use AI tools in work that touches customers"; role list | Oct 2026 | General (fact-check C109: no occupational source) | Each edition |
+| 4 | Labs 4.2, 4.3 | Expected observations on tool behavior (constraint recall, pushback, stated confidence, hidden instructions) | Oct 2026 | Compass lab notes | Each term |

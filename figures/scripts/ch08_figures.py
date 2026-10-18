@@ -176,9 +176,9 @@ def chapter_map(f):
 def storyboard(f):
     muted, ink = MUTED[f.mode], INK[f.mode]
     ev = [("Mar 1, 2023", "Filing cites cases ChatGPT made up (¶¶ 5, 36)", "ai", "ai"),
-          ("Mar 15", "Avianca's lawyers cannot find several cases (¶ 7)", "neutral", "step"),
+          ("Mar 15", "Avianca's lawyers cannot find most of the cases (¶ 7)", "neutral", "step"),
           ("Apr 11–12", "Court orders copies of the decisions (¶ 13)", "neutral", "step"),
-          ("Apr 25", "Affidavit attaches excerpts of the fake “decisions” (¶¶ 20–22)", "risk", "step"),
+          ("Apr 25", "Affidavit attaches excerpts of fake “decisions” (¶¶ 20–22)", "risk", "step"),
           ("May 25", "The lawyers begin to admit what happened (p. 2)", "neutral", "human"),
           ("Jun 22, 2023", "Sanctions: $5,000 and letters to the client and judges", "verified", "step")]
     f.line(24, 200, 776, 200, color=ink, width=2.4)
@@ -236,7 +236,7 @@ def three_failures(f):
     cols = [("1. It does not exist", "Search an index no AI tool produced",
              "“Varghese v. China Southern Airlines”: the Eleventh Circuit's clerk confirmed no such case (¶ 26)"),
             ("2. It points to another work", "Match every detail to the record",
-             "Its docket number and reporter citation belong to two other cases (¶ 28)"),
+             "Its docket number and Federal Reporter citation belong to two other cases (¶ 28)"),
             ("3. It does not say it", "Open the source and find the passage",
              "Real decisions cited inside it do not contain the quoted words (¶ 29g)")]
     for i, (h, check, ex) in enumerate(cols):
@@ -273,7 +273,7 @@ def three_runs(f):
     f.line(654, 236, 654, 266, color=ink)
     f.text(400, 374, "Hexagons = AI outputs · thick = the run that differs · dashed = an agreement that still "
            "needs checking", size=13, color=muted, width=780)
-    f.text(400, 396, "Each run samples again (Chapter 3), so differences show where the scores are spread.",
+    f.text(400, 396, "Each run picks its words again with some randomness (Chapter 3). Use a temporary chat or turn memory off.",
            size=13, color=muted, italic=True, width=780)
 
 
@@ -283,7 +283,7 @@ def a5_template(f):
     f.text(400, 24, "One row of a claim verification table (A5)", size=17, weight="700")
     fields = [("Claim", "one statement you might rely on; checkable or not; type", "neutral", False),
               ("Stakes", "low · medium · high, with a reason", "neutral", False),
-              ("Before checking", "your confidence · the tool's stated confidence or signal", "neutral", False),
+              ("Before checking", "your confidence (%) · the tool's stated confidence (%) · any signal", "neutral", False),
               ("Stage reached", "independent check · primary source · expert", "neutral", False),
               ("Source", "link or location; for citations: exists? matches? says it?", "neutral", False),
               ("Verdict", "supported · partly supported · unsupported · contradicted · cannot verify",
@@ -342,7 +342,7 @@ def summary_card(f):
 # ---------------------------------------------------------------- Case figures (Signature 5, chain, Signature 8)
 MATA_TREE = failure_tree({"hallucination", "overconfidence"},
                          tag="Case: Mata v. Avianca (S.D.N.Y. 2023) · hallucination + overconfidence, both documented",
-                         note="Invented cases (¶ 36); asked if they were real, the replies said yes (¶ 45)")
+                         note="Invented cases (¶ 36); asked directly if they were real, the replies said they were (¶¶ 45, 47)")
 MATA_CHAIN = failure_chain(
     notes={0: "Six decisions that do not exist (¶ 36)",
            1: "Not checked outside the tool; signer read no authorities (¶¶ 6, 12)",
@@ -351,25 +351,25 @@ MATA_CHAIN = failure_chain(
     highlight={1},
     tag="Responsibility: the court held the lawyers and their firm responsible for the filing (ECF 54).")
 MATA_FUNNEL = verification_funnel(
-    highlight=["check", "verdict"], verdict="contradicted",
-    tag="Case: “Varghese v. China Southern Airlines” — where the funnel would have stopped it",
-    notes={"check": "A free case-law site: not found (¶ 12)",
-           "primary": "Citation and docket belong to other cases (¶ 28)",
-           "expert": "The court's clerk: no such case (¶ 26)"})
+    highlight=["check", "primary", "verdict"], verdict="contradicted",
+    tag="Case: “Varghese v. China Southern Airlines” — flagged at stage 1, contradicted at stage 2",
+    notes={"check": "His own search: not found (¶ 12); a second index → unsupported",
+           "primary": "The court's records: no such case; citation and docket belong to other cases (¶¶ 26, 28)",
+           "expert": "Not needed"})
 
 FIGS = [
     ("f8-04-verification-funnel", verification_funnel(), 800, funnel_height(),
      "Take each claim only as far as its stakes require"),
     ("f8-04d-funnel-mata", MATA_FUNNEL, 800, funnel_height(tag=True),
-     "The fake case would have failed at the first stage"),
+     "The fake case would have been flagged at stage 1 and contradicted at stage 2"),
     ("f8-04s-funnel-complete", verification_funnel(highlight="verdict",
                                                    note="Every claim you rely on gets at least the independent check"),
      800, funnel_height(note=True), "Every verdict comes with a line of remaining uncertainty"),
     ("f8-01-chapter-map", chapter_map, 800, 455, "Chapter 8 at a glance"),
     ("f8-02-storyboard", storyboard, 800, 478,
-     "Six invented cases went from a chatbot to a sanctions order in under four months"),
+     "Six invented cases went from a court filing to a sanctions order in under four months"),
     ("f8-03-claim-split", claim_split, 800, 478,
-     "One fluent paragraph held six separate claims, and only some of them were right"),
+     "One fluent paragraph held six separate claims to check"),
     ("f8-05-three-failures", three_failures, 800, 390, "A citation can fail in three ways, and each needs a different check"),
     ("f8-07-three-runs", three_runs, 800, 410,
      "Answers that change across fresh runs are a warning sign; answers that agree are not proof"),

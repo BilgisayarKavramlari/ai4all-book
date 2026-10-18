@@ -44,7 +44,7 @@ def _as_set(x):
 # (key, label, subtitle, who sets it, new in Ch. 6?)  Ch. 3 labels and subtitles kept word for word.
 LAYERS = [
     ("system", "System prompt", "set by the tool's maker", "the provider; usually unseen", False),
-    ("standing", "Standing instructions", "your rules for every chat", "you, once, in settings", True),
+    ("standing", "Standing instructions", "your rules for every chat", "you, once, in the tool's options", True),
     ("project", "Project files and memory notes", "added automatically", "you, or the product", True),
     ("conversation", "Conversation so far", "earlier prompts and responses", "you and the model, earlier", False),
     ("documents", "Pasted or retrieved text", "documents, search results", "you, or a search tool", False),
@@ -142,14 +142,15 @@ def catalog_before_after(f):
           sub="travel, food, parts, fundraising", sub_size=13)
     f.text(200, 440, "The rule that applies is on page 6.", size=13, color=muted, italic=True)
     f.text(200, 462, "Two price lists disagree.", size=13, color=muted, italic=True)
-    rows = [("INSTRUCTIONS", "Use only the material below; if a part is missing, say so", "step"),
+    rows = [("TASK IN BRIEF", "a parts order for the club (details at the end)", "step"),
+            ("INSTRUCTIONS", "Use only the material below; if a part is missing, say so", "step"),
             ("CATALOG p. 14 · 2026 price list", "drive motors (four models)", "step"),
             ("CATALOG p. 52 · 2026 price list", "wheels and hubs", "step"),
             ("BUDGET RULE 3 · Sept 2026", "parts orders over $250 need two officers", "step"),
-            ("TASK", "Draft an order for two motors and four wheels; list total and who must approve", "human")]
+            ("TASK (full, last)", "Draft an order for two motors and four wheels; list total and who must approve", "human")]
     for i, (lab, sub, kind) in enumerate(rows):
-        f.box(430, 56 + i * 82, 340, 70, lab, role="verified" if i in (1, 2, 3) else "neutral", kind=kind,
-              thick=(i == 4), size=14, sub=sub, sub_size=13)
+        f.box(430, 56 + i * 70, 340, 62, lab, role="verified" if i in (2, 3, 4) else "neutral", kind=kind,
+              thick=(i == 5), size=14, sub=sub, sub_size=13)
     f.text(400, 494, "Thick border (orange in color, hatched in print) = material the task does not need · "
            "shaded = labeled excerpts with source and date · rounded = your task", size=13, color=muted, width=780)
     f.text(400, 516, "Constructed example: catalog, prices and rules are invented for teaching.", size=13,
@@ -182,14 +183,14 @@ def balanced_examples(f):
 
 # ---------------------------------------------------------------- F6.9 template anatomy (Signature 6 reused)
 def template_anatomy(f):
-    sig6 = prompt_anatomy(highlight=["context", "in-context examples"],
-                          note="Shown as a template: the highlighted parts are {placeholders} you fill each time.")
+    sig6 = prompt_anatomy(highlight="context",
+                          note="Shown as a template: the highlighted part becomes a {placeholder} you fill each time.")
     sig6(f)
     muted = MUTED[f.mode]
     f.line(20, 504, 780, 504, color=muted)
     f.text(400, 526, "Where the parts land in the context layers", size=15, weight="700")
     notes = ["Context → pasted text, project files or the prompt itself (6.2, 6.5)",
-             "In-context examples → the prompt or the template, kept only if a test shows they help (6.4)",
+             "In-context examples → a fixed part of the template, kept only if a with-and-without test shows they help (6.4)",
              "Task, constraints, format → the fixed part of the template (6.6)"]
     for i, n in enumerate(notes):
         f.text(400, 554 + i * 24, n, size=13, color=INK[f.mode])
@@ -202,11 +203,11 @@ def library_card(f):
     f.text(40, 40, "Library entry: Club update email · v1.1 · 2026-10-14", size=16, weight="700", anchor="start")
     fields = [("Purpose", "Turn my meeting notes into the weekly update for members"),
               ("Use when / not when", "Weekly meeting notes · not for budget or safety decisions"),
-              ("Template", "[fixed task, audience, format] + {NOTES} + {DATE}"),
+              ("Template", "{NOTES} + {DATE} first, then the fixed task, audience, format"),
               ("Context to attach", "My notes, names replaced by roles · never members' contact details"),
               ("In-context examples", "Not used: the test with and without showed no gain"),
               ("Tested on", "Tool and model name, date (in the file)"),
-              ("What changed", "v1.1 adds: \"If no decisions were made, say so\"")]
+              ("What changed", "v1.1 adds: If no decisions were made, write \"No decisions this week.\"")]
     for i, (k, v) in enumerate(fields):
         y = 72 + i * 32
         f.text(40, y, k, size=13, weight="700", anchor="start")
@@ -219,7 +220,7 @@ def library_card(f):
         f.text(c, 352, h, size=13, weight="700", anchor="start")
     rows = [("Typical", "Normal meeting, 3 decisions", "3 of 3", "keep"),
             ("Different", "Two meetings merged", "3 of 3", "keep"),
-            ("Edge (v1.0)", "Meeting with no decisions", "1 of 3: invented a decision", "fix → v1.1"),
+            ("Edge (v1.0)", "No decisions; draft invented one", "2 of 3: (b) failed", "fix → v1.1"),
             ("Edge (v1.1)", "Same notes, rerun", "3 of 3", "keep")]
     for r, row in enumerate(rows):
         y = 382 + r * 32

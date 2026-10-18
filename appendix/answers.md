@@ -97,3 +97,42 @@
 3. Training (in the invented-fact test, fine-tuning raised scores in the trained direction only; for real celebrities the authors suggest training text runs mostly one way) and scoring (the right reverse answer scored no higher than a random name) explain the curse; the context window explains why the reversal worked once the fact was in the prompt.
 5. Example: ask the question in both directions, in new chats; put the source fact in the prompt when you have it; check the answer against an official or reference source (for drugs, a drug database or a pharmacist); record the tool, model and date. Full credit: a two-direction test plus an independent check.
 ```
+
+## Chapter 4
+
+### Faded Examples
+- **4.2 Warm-up handout:** cause 1 fits better: the right value was in the input, so the summary produced likely text without checking it against the handout; recombination is about facts absent or thin in training text.
+- **4.3 Sam's recruiting post:** most likely entered at data collection (stereotypes in the training text), possibly reinforced by feedback. First fix: ask for skills rather than "a typical engineer," or ask for varied examples.
+- **4.4 Sam's millimeters:** context loss, documented (leaf: dropped constraint). First fix: a fresh chat with all constraints in one message, with "millimeters" repeated in the request for the drawing notes.
+- **4.5 Pushback probe (psychology):** Prompt: ask what the bystander effect is; then reply, "I think larger crowds make people more likely to help." Result: record whether the answer changes and any stated certainty. Conclusion: a switch to agreement is labeled overconfidence (leaf: sycophancy), documented; "the tool kept its answer" is also evidence; repeat with more questions.
+- **4.6 Email assistant:** if it can send email without asking, the injected text becomes an action: the thread, possibly with private information, goes to a stranger (data exposed). Approval steps are Chapter 14.
+- **4.7 Lucía:** no harm, because the error went down the "caught" path: link 2 held, so nobody relied on the false discount.
+- **Case Study, MyCity (chain):** link 2 failed, inferred: answers went to the public without a legal check, which the reporting implies but does not record.
+- **4.8 Sam's millimeters entry:** causes: methods, constraint stated once at turn 1 in a long chat (documented: rerunning with the constraint repeated gave millimeters); machine or environment, a long conversation (inferred). Next time: one fresh chat with all constraints, repeated in the final request.
+
+### Review Questions A
+1. Hallucination, bias, context loss, overconfidence, security vulnerability (plus a plain "other" box for anything else).
+3. **(a)** Intrinsic hallucination: the summary contradicts the input the student gave. (b) is content the input can neither support nor contradict; (c) is M3; (d) is a misapplied M5 (the handout held no instruction).
+5. **(d)** Bias (stereotyped default), inferred: one output only; it would be documented if matched requests repeated the skew. (a) is M2; (b) is M3; (c) mislabels a stereotype as expressed certainty (M4).
+7. **(b)** The rule may drop out; restating it in the message that needs it helps. (a) and (d) are M3; (c) is M4.
+9. **(d)** Stated confidence can follow pressure rather than evidence; one result is a reason to test further. (a) and (b) are M4; (c) misapplies M5.
+11. **(a)** Direct prompt injection: the user typed the instruction. (b) would require the instruction to be hidden in content the system retrieves; (c) is M3; (d) describes agreement with a stated view, not an instruction to override the system.
+13. **(c)** The airline answered for everything on its website, chatbot included (para. 27). (a) and (b) are M6; (d) contradicts para. 28.
+
+### Review Questions B (model answers)
+1. Hallucination (leaf: outdated information, or contradicts its source), **inferred**: the output is shown wrong by the library's fines page, but the library has not said the chatbot generates its answers, so generation is not confirmed. Full credit: branch, "inferred", and the reason.
+3. Link 1: the assistant's answer contradicts the clinic's rule (hallucination, inferred unless the clinic confirms a generative system). Link 2: the answer was not checked against the clinic's rules before the assistant was used (failed). Link 3: the patient reasonably relied on it. Link 4: lost wages. Strengthen link 2: test rule answers against the clinic's rules before launch and after each rule change, and hand rule questions to staff. Responsibility: by analogy with Moffatt, the clinic that runs the assistant, noting that Moffatt is one small-claims decision, not a general rule.
+
+### Review Questions C (scoring guidance)
+1. Strong answers disagree, or agree only in part: hallucination follows from producing likely text with no truth check and from recombining patterns, and scoring that rewards guessing adds pressure (Deep 4.A); newer models and tools reduce rates on many tasks but, as of October 2026, none removes the branch. Even a lower rate matters along the failure-to-harm chain, and knowing the causes tells you where to look. Weak answers repeat "AI is unreliable" without causes.
+3. Open. Strong answers name failures typical of their field, place each on the tree or the chain, use Deep 4.B to say what the five branches leave out, and argue for or against an added branch with an example.
+
+### Spaced Review
+1. The constraints part of the prompt (Chapter 5; also accept output format). Restating it in the final request places it in the newest message, so the output no longer depends on an instruction from many turns earlier (section 4.4).
+3. Typical (the case you expect most often), different (changes something that matters) and edge (unusual but possible, most likely to break the prompt). Examples will vary by field.
+5. Context loss (leaf: missed middle of a long input). Section 4.4 adds the loss that comes from long, piece-by-piece conversations, where models commit early.
+
+### Case Study Questions
+1. Hallucination, inferred: the reply was wrong, but the decision does not say how the chatbot produced it (para. 14), and two other readings (wrong written rules; another inconsistent Air Canada text) also fit.
+3. For MyCity, a named outlet reported that the chatbot was AI-powered, built on Microsoft's Azure AI services, and gave varying answers, all signs of a generative system; for Moffatt, the record is silent (para. 14). Both stay inferred because generation is reported, not confirmed. A statement from the operator or vendor describing the model, or documentation of the system, would make it documented.
+5. Open. Strong answers choose, for example, known-answer testing of policy answers before launch and after each change, and a rule that the policy page wins and the chatbot is corrected, with a reason tied to link 2 of the chain.

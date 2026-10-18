@@ -7,3 +7,10 @@
 3. **Final voice edit** of the chapter (pipeline step 8).
 4. **Live syllabus.** R1 recommended rather than required in week 2 (D18).
 <!-- /ch03 -->
+
+<!-- ch04 -->
+## Chapter 4
+1. **Live syllabus:** R5 recommended in week 5, pointed to its definitions-and-categories sections (D-4.7); the Failure Diary's ungraded status, its first-version date (the Fri Mar 12 portfolio checkpoint) and its use as portfolio evidence (D-4.6).
+2. **From the Field:** written from your 2014 fishbone entry (Şeker, 2014, pp. 2–4 as printed), translated and paraphrased, facts limited to the entry; please confirm the wording. Optional: a real AI-failure story from your SME work could follow it (never constructed).
+3. **Final voice edit** of the chapter.
+<!-- /ch04 -->

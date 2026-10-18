@@ -22,7 +22,6 @@ import sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 from figlib import render, MUTED, INK  # noqa: E402
-from ch01_figures import work_loop  # noqa: E402  (Signature 1, reused)
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 LOOP = ["Frame", "Prompt", "Verify", "Decide", "Disclose"]
@@ -53,7 +52,7 @@ def prompt_anatomy(highlight=None, note=None):
         raise ValueError(f"unknown prompt part(s): {sorted(unknown)}")
 
     spec = {
-        "role": ("Role", "voice and audience", (36, 84, 172, 100)),
+        "role": ("Role", "voice and perspective", (36, 84, 172, 100)),
         "context": ("Context", "what this task needs", (216, 84, 172, 100)),
         "in-context examples": ("In-context examples", "sample input with the output you want",
                                 (396, 84, 172, 100)),
@@ -101,7 +100,7 @@ def delegation_ladder(highlight=None, annotate=None, note=None):
         raise ValueError(f"unknown rung(s): {sorted(unknown)}")
 
     rows = [  # rung, y, your part (label, sub), AI part
-        ("agency", 52, ("3 · Agency", "you configure AI to carry out future tasks for you, often for others"),
+        ("agency", 52, ("3 · Agency", "you configure AI to carry out future tasks for you, including for others"),
          "acts later, without you checking each output"),
         ("augmentation", 172, ("2 · Augmentation", "you and the AI shape the task together, turn by turn"),
          "suggests, drafts and questions inside your thinking"),
@@ -179,7 +178,7 @@ def frame_card(f):
              ("Success criteria", "3–5 checks you can score met, partly or not met"),
              ("Limits", "length, sources, time, data you may not use"),
              ("What stays with you", "decisions, judgments, the final check"),
-             ("A rung for each part", "no AI, automation, augmentation or agency, part by part")]
+             ("A rung for each part (added in 5.2)", "no AI, automation, augmentation or agency, part by part")]
     for i, (lab, sub) in enumerate(items):
         x = 40 + (i % 2) * 370
         y = 56 + (i // 2) * 106
@@ -190,7 +189,7 @@ def frame_card(f):
 
 
 # ---------------------------------------------------------------- F5.3b Lucía's parts on the ladder
-LUCIA_PARTS = {"agency": "Not now: a study-group FAQ chatbot would answer classmates without her",
+LUCIA_PARTS = {"agency": "Not now: a study-group chatbot for common questions would answer classmates without her",
                "augmentation": "Part 3: why does the example budget confuse readers?",
                "automation": "Part 2: draft the handout text (checked against her criteria)",
                "none": "Part 1: choose what first-year students need; Part 4: final check"}
@@ -217,23 +216,23 @@ def three_questions(f):
 
 # ---------------------------------------------------------------- F5.5 Klarna storyboard
 def klarna_storyboard(f):
-    panels = [("February 2024", "Klarna said its assistant had 2.3 million chats in its first month, "
-               "two-thirds of its customer-service chats, work equal to 700 full-time agents, "
-               "with satisfaction on par with people."),
-              ("May 2025", "In an interview reported by Bloomberg, the CEO said cost had weighed too "
-               "heavily, quality had suffered, and customers would always be able to reach a person."),
-              ("November 2025", "On an earnings call, the CEO said the assistant did the work of more than "
-               "853 full-time agents and had saved about $60 million.")]
+    panels = [("February 2024", "Confirmed (press release): 2.3 million chats in month one, two-thirds of chats, "
+               "work equal to 700 full-time staff, satisfaction about the same as with people, more accurate "
+               "resolution (its claim) with 25% fewer repeat questions; a person available on request."),
+              ("May 2025", "Reported (Bloomberg interview, via other outlets): the chief executive said cost had "
+               "been too dominant and quality was lower; customers must always be able to reach a human."),
+              ("November 2025", "Reported (CX Dive): the chief executive said the assistant did the work of more than 853 "
+               "full-time staff and had saved about $60 million.")]
     for i, (when, txt) in enumerate(panels):
         x = 20 + i * 262
-        f.box(x, 40, 236, 230, "", role="neutral", kind="step", thick=(i == 1))
+        f.box(x, 40, 236, 250, "", role="neutral", kind="step", thick=(i == 1))
         f.text(x + 118, 64, when, size=16, weight="700")
-        f.text(x + 118, 160, txt, size=13, width=210)
+        f.text(x + 118, 170, txt, size=13, width=210)
         if i < 2:
-            f.arrow(x + 240, 155, x + 258, 155)
-    f.text(400, 296, "All figures and statements are the company's own, as reported; none is an independent "
-           "measurement.", size=13, color=MUTED[f.mode])
-    f.text(400, 318, "Sources: Klarna (2024); Bloomberg (2025) via Entrepreneur (2025); CX Dive (2025).",
+            f.arrow(x + 240, 165, x + 258, 165)
+    f.text(400, 314, "Every figure is the company's own statement; none is an independent measurement.",
+           size=13, color=MUTED[f.mode])
+    f.text(400, 336, "Sources: Klarna (2024); Fisher (2025); Shibu (2025); Doerer (2025).",
            size=13, color=MUTED[f.mode])
 
 
@@ -243,28 +242,29 @@ def lucia_v1_v2(f):
     f.text(145, 52, "v1 (first prompt)", size=15, weight="700")
     f.text(145, 120, "Write a one-page handout for first-year students on how to make a monthly budget. "
            "Include one worked example as a table. Use plain language.", size=13, width=222)
-    f.text(145, 258, "Missing: the figures, the readers' situation, what not to include.", size=13,
+    f.text(145, 258, "Missing: the figures that were in her notes.", size=13,
            width=240, italic=True, color=MUTED[f.mode])
     f.box(290, 30, 490, 470, "", role="neutral", kind="step")
-    f.text(535, 52, "v2 (parts labeled)", size=15, weight="700")
-    lines = [("Role", "Write as a peer from the accounting students' association."),
-             ("Task", "Draft a one-page handout that shows first-year students how to make a monthly budget."),
-             ("Context", "Readers: first-year university students; many manage money alone for the first "
-                         "time; some work part-time. Use only these monthly figures: income $1,150; rent $650; "
-                         "groceries $280; phone $45; transport $60."),
-             ("Constraints", "Under 350 words. Plain language. Do not name any product, bank or app. "
-                             "Do not add numbers I did not give."),
-             ("Output format", "A title; three short sections (income, fixed costs, flexible costs); "
-                               "the example as a table with a total row.")]
-    y = 78
+    f.text(535, 52, "Final prompt, v5 (parts labeled)", size=15, weight="700")
+    lines = [("Task", "Write a one-page handout for first-year students on how to make a monthly budget."),
+             ("Context", "Use only these monthly figures: income $1,150; rent $650; groceries $280; phone $45; "
+                         "transport $60."),
+             ("Constraints", "Use plain language. Refer to tools in general terms, such as \"a spreadsheet or "
+                             "a notebook\"; do not name any product, bank or app. Explain every money term in "
+                             "everyday words the first time you use it. If costs are higher than income, say so "
+                             "and show the gap."),
+             ("Output format", "Include one worked example as a table.")]
+    y = 80
     for tag, txt in lines:
         n = max(1, len(txt) // 46 + 1)
         h = max(44, 18 * n + 14)
         f.box(302, y, 112, h, tag, role="highlight" if tag == "Context" else "neutral", kind="human",
               thick=(tag == "Task"), size=13)
         f.text(426, y + h / 2, txt, size=13, width=340, anchor="start")
-        y += h + 12
-    f.text(535, 486, "No in-context example: the format line already shows the shape.", size=13,
+        y += h + 14
+    f.text(535, 452, "No role and no in-context examples: this task did not need them.", size=13,
+           italic=True, color=MUTED[f.mode])
+    f.text(535, 476, "v2 to v5 each added one line (sections 5.4 and 5.5).", size=13,
            italic=True, color=MUTED[f.mode])
 
 
@@ -327,7 +327,7 @@ def test_grid(f):
     rows = [("Typical", "the association's figures"), ("Different", "income that changes month to month"),
             ("Edge", "costs higher than income")]
     cells = [[("All 5 met", "verified"), ("All 5 met", "verified")],
-             [("All 5 met", "verified"), ("Format partly met: no table", "soft")],
+             [("All 5 met", "verified"), ("Format partly met: list, not a table", "soft")],
              [("All 5 met", "verified"), ("Numbers not met: invented income line", "risk")]]
     for j, c in enumerate(cols):
         f.text(390 + j * 200, 58, c, size=14, weight="700")
@@ -346,8 +346,8 @@ def test_grid(f):
 
 # ---------------------------------------------------------------- F5.12 Peer swap test
 def peer_swap(f):
-    f.box(20, 40, 170, 80, "Your final prompt", role="neutral", kind="human", size=14,
-          sub="no explanation added", sub_size=13)
+    f.box(20, 40, 170, 80, "Your latest prompt", role="neutral", kind="human", size=14,
+          sub="in the lab, v3; no explanation", sub_size=13)
     f.arrow(194, 80, 222, 80)
     f.box(226, 40, 170, 80, "A classmate runs it", role="neutral", kind="human", size=14,
           sub="fresh, temporary chat", sub_size=13)
@@ -371,28 +371,48 @@ def peer_swap(f):
 def log_template(f):
     heads = ["Version", "Part changed", "Prediction", "Run 1", "Run 2", "Keep?"]
     widths = [70, 160, 170, 140, 170, 60]
-    rows = [["v2", "Context: added the figures", "Every number matches the figures", "5 of 5 met",
+    rows = [["v2", "Context: pasted the figures", "Every number matches the figures", "5 of 5 met",
              "4 of 5: names a budgeting app", "Keep"],
-            ["v3", "Constraint: no products, banks or apps", "No product named; nothing else changes",
-             "5 of 5 met", "4 of 5 met, 1 partly: a money term undefined", "Keep"],
-            ["v4", "", "", "", "", ""]]
+            ["v3", "Constraint: tools in general terms; no product, bank or app", "No product named; nothing else changes",
+             "5 of 5 met", "4 met, 1 partly: a money term unexplained", "Keep"],
+            ["Frame", "C3 rewritten after the peer swap", "(no new run; rescore v3)", "C3 partly met",
+             "C3 partly met", "Keep"],
+            ["Your row", "", "", "", "", ""]]
     x0, y0, rh = 20, 40, 66
-    f.box(x0, y0, sum(widths), rh * 4, "", role="neutral", kind="step")
+    f.box(x0, y0, sum(widths), rh * 5, "", role="neutral", kind="step")
     f.box(x0, y0, sum(widths), rh, "", role="soft", kind="step")
     x = x0
     for k, w in enumerate(widths):
         f.text(x + w / 2, y0 + rh / 2, heads[k], size=13, weight="700", width=w - 8)
-        for r in range(3):
+        for r in range(4):
             f.text(x + w / 2, y0 + rh * (r + 1) + rh / 2, rows[r][k], size=13, width=w - 8)
         if k:
-            f.line(x, y0, x, y0 + rh * 4, width=1)
+            f.line(x, y0, x, y0 + rh * 5, width=1)
         x += w
-    for r in range(1, 4):
+    for r in range(1, 5):
         f.line(x0, y0 + rh * r, x0 + sum(widths), y0 + rh * r, width=1)
-    f.text(400, 330, "One change per row, a prediction before the run, scores tied to your criteria.",
+    f.text(400, 396, "One change per row, a prediction before the run, scores tied to your criteria.",
            size=13, color=MUTED[f.mode])
-    f.text(400, 352, "Constructed example (Lucía's log); the empty row is yours.", size=13, italic=True,
+    f.text(400, 418, "Constructed example (Lucía's log); the empty row is yours.", size=13, italic=True,
            color=MUTED[f.mode])
+
+
+# ---------------------------------------------------------------- F5.16 Techniques (Deep 5.A)
+def techniques(f):
+    techs = [("Step-by-step prompting", "ask for intermediate steps"),
+             ("Ask what it needs", "list missing information first"),
+             ("Split into steps", "a prompt chain (Chapter 6)")]
+    for i, (lab, sub) in enumerate(techs):
+        y = 30 + i * 100
+        f.box(20, y, 230, 80, lab, role="neutral", kind="step", size=14, sub=sub, sub_size=13)
+        f.arrow(254, y + 40, 300, 170)
+    f.box(304, 128, 150, 84, "The AI tool", role="ai", kind="ai", size=15)
+    f.arrow(458, 170, 488, 170)
+    f.box(492, 136, 110, 68, "Output", role="neutral", kind="step", size=15)
+    f.arrow(606, 170, 626, 170)
+    f.box(630, 100, 160, 140, "Meets your criteria?", role="neutral", kind="decision", size=14)
+    f.text(400, 336, "A technique changes how the model is asked; only your criteria say whether the result is good.",
+           size=13, color=MUTED[f.mode])
 
 
 # ---------------------------------------------------------------- F5.15 Summary card
@@ -412,8 +432,6 @@ def summary_card(f):
 
 FIGS = [
     ("f5-01-chapter-map", chapter_map, 800, 445, "Chapter 5 at a glance"),
-    ("f5-01b-work-loop", work_loop(["Frame", "Prompt"]), 800, 600,
-     "Framing and prompting are the first two of five decisions you make"),
     ("f5-02-frame-card", frame_card, 800, 410, "A task frame says what good looks like before the first prompt"),
     ("f5-03-delegation-ladder", delegation_ladder(), 800, 570,
      "The higher the rung, the harder it is to check what the AI contributed before it takes effect"),
@@ -421,8 +439,8 @@ FIGS = [
      "One task, several rungs: Lucía places each part of her handout"),
     ("f5-04-three-questions", three_questions, 800, 450,
      "Three questions point to different rungs; they are weighed, not computed"),
-    ("f5-05-klarna-storyboard", klarna_storyboard, 800, 335,
-     "Klarna's public account moved from speed and cost (2024) to a guaranteed human option (2025)"),
+    ("f5-05-klarna-storyboard", klarna_storyboard, 800, 350,
+     "Klarna's public account moved from efficiency (2024) to quality and a promise of human help (May 2025), then back to AI savings (Nov 2025)"),
     ("f5-06-prompt-anatomy", prompt_anatomy(), 800, 475,
      "A prompt has six parts; the task is the only one you always need"),
     ("f5-07-lucia-v1-v2", lucia_v1_v2, 800, 510, "The framed prompt carries what Lucía knew but had not written down"),
@@ -432,8 +450,10 @@ FIGS = [
      "Asking why more than once traces a weak output back to the prompt, or to the frame"),
     ("f5-11-test-grid", test_grid, 800, 440, "A prompt works when it passes across runs and test inputs, not once"),
     ("f5-12-peer-swap", peer_swap, 800, 430, "A peer swap test shows what was in your head but not in your prompt"),
-    ("f5-13-log-template", log_template, 800, 365, "A strong log shows one change, one prediction and one score at a time"),
+    ("f5-13-log-template", log_template, 800, 432, "A strong log shows one change, one prediction and one score at a time"),
     ("f5-15-summary-card", summary_card, 800, 340, "Chapter 5 summary card"),
+    ("f5-16-techniques", techniques, 800, 360,
+     "A technique changes how the model is asked; your criteria still judge the result"),
 ]
 
 if __name__ == "__main__":

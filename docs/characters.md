@@ -117,3 +117,10 @@ Why they exist: recurring people make examples personal and memorable (Mayer's p
 | 2026-10-18 | Ch. 3 | Hana | Ethics Lens: draws by hand and worries about artists' work being used for training without consent (consistent with the profile) |
 | 2026-10-18 | Ch. 3 | Lucía | Faded example: a 60-message support thread in which a customer changed the email address on their account (constructed, anonymized; privacy pointer to Ch. 15) |
 | 2026-10-18 | Ch. 3 | Elif | Ethics Lens: writes in English but thinks in Turkish |
+| 2026-10-18 | Ch. 4 | Sam | Keeps a Failure Diary since week 1; entry of Feb 3: asked a chat tool (search off) for a club motor's stall torque by part number; got an invented value and datasheet revision |
+| 2026-10-18 | Ch. 4 | Sam | Long design chat for a robot bracket ("all dimensions in millimeters" at turn 1; inches by turn 14) |
+| 2026-10-18 | Ch. 4 | Sam | Pushback test on a 12-tooth / 36-tooth gear ratio; the tool switched to his deliberately wrong suggestion |
+| 2026-10-18 | Ch. 4 | Sam | Summarized a parts supplier's PDF quote for the club treasurer; found a hidden white-text instruction (indirect prompt injection) |
+| 2026-10-18 | Ch. 4 | Sam | Drafted a robotics-club recruiting post ("a typical robotics engineer" came out as "he") |
+| 2026-10-18 | Ch. 4 | Sam | Plans an AI assistant to answer new members' questions about club rules (tested; it invented an automatic-reimbursement rule) — sets up Ch. 14's approval gates |
+| 2026-10-18 | Ch. 4 | Lucía | Referenced only through her Ch. 1 invented-discount example (no new detail) |

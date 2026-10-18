@@ -13,7 +13,8 @@ These are TOYS for teaching, not measurements of real large language models.
    name; for the unseen cities none is correct, because the right country never appeared in training.
 2. Scoring rules (F4.12, Deep 4.A). Expected score of answering vs. abstaining ("I don't know") at
    confidence p, under (A) right = 1, wrong = 0, abstain = 0 and (B) right = 1, wrong = -3, abstain = 0
-   (a penalty of t/(1-t) for t = 0.75, the kind of rule discussed by Kalai et al., 2025).
+   (a penalty of t/(1-t) = 3 for t = 0.75, the rule proposed by Kalai et al., 2025; their v1 text, section 4.2,
+   prints "penalty 2" for t = 0.75, an arithmetic slip).
 """
 import csv
 import os

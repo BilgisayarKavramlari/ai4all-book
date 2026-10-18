@@ -9,8 +9,8 @@
 
 ## Steps (tool-neutral)
 1. Ask an AI tool for five references on a narrow topic in your field (the Tuesday demonstration, done yourself). Save the output with the tool's name and the date.
-2. For each reference, run the three checks in order: (a) does it exist in an index no AI tool produced; (b) does every detail match the record (authors, year, title, venue, pages); (c) open it and find the passage that supports the claim, if the output made one.
-3. Give each a verdict (supported, partly supported, unsupported, contradicted, cannot verify) and an uncertainty line naming the indexes you searched.
+2. For each reference, run the three checks in order: (a) does it exist in an index no AI tool produced (stage 1); (b) does every detail match the record (authors, year, title, venue, pages; stage 1); (c) open it and find the passage that supports the claim, if the output made one (stage 2).
+3. Give each a verdict (supported, partly supported, unsupported, contradicted, cannot verify) and an uncertainty line naming the indexes you searched. Not found in two indexes = unsupported, not "fabricated"; a record showing another work = contradicted as cited.
 4. Keep the record: Chapter 9's source audit (A6) builds on it.
 
 "All five were real and said what was claimed" is a valid result.

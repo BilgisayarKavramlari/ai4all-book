@@ -65,3 +65,44 @@ The author asked the editor to make suitable choices for open items and to escal
 | D-ch03-7 | Terminology | "settings (parameters)" for learned values; "options" for temperature, search and memory toggles; never "temperature setting" | Editor decision 1 |
 | D-ch03-8 | Verdict scale | Section 3.5 examples, Your Turn and Review B3 use the book-wide five verdicts with a pointer to Chapter 8 | Book-wide rule |
 <!-- /ch03-decisions -->
+<!-- ch04-decisions -->
+### Chapter 4
+| # | Decision | Notes |
+|---|---|---|
+| D-4.1 | **Signature 5 API (book-wide).** `failure_tree(highlight=(), dashed=(), causes=(), leaves=True, tag=None, note=None)` in figures/scripts/ch04_figures.py; branches in the visual guide's order plus a plain "other" box (7 boxes); `tree_height(causes)` gives the canvas height (470 without causes, 560 with; add ~34 when both `tag` and `note` are used). Leaves: outdated information and wrong calculation or reasoning under hallucination ("contradicts its input or source" is the intrinsic leaf); sycophancy under overconfidence; **"misuse, such as fake media made to deceive" under other** (moved from security in v2) | Import, never redraw |
+| D-4.2 | **Failure-to-harm chain API (book-wide).** `failure_chain(notes=None, highlight=(), dashed=(), tag=None)`: stage 0 output (hexagon), 1 "checked before use?" (diamond), 2 reliance (rounded), 3 loss (risk), plus a "caught" box. Human and workflow failures are labeled on a stage of this chain | Used for every human/workflow failure label |
+| D-4.3 | **Defining features for documented labels (book-wide).** Hallucination: shown wrong or unsupported **and** generation confirmed. Bias: the same skew across matched outputs (one output = inferred). Context loss: the information or instruction was confirmed to be in the conversation or input you gave, and the output did not follow it (revised after the final review: a user cannot confirm what a long chat still passes to the model). Overconfidence: expressed certainty (stated %, absolute words, an exact figure for something that varies, a new answer after pushback). Security: instruction-like text in the input that the output followed. A feature that is only **reported** (named outlet) keeps the label inferred; say "reported" in the case text (attribution tiers) | Makes labels gradable (pedagogy #1; subject expert MyCity row) |
+| D-4.4 | **Sycophancy stays a leaf of overconfidence**, with one sentence that the literature treats it as its own behavior; a flip under pushback is the sycophancy sign; "its own category" with a reason is accepted on exams | Editor decision 1 |
+| D-4.5 | **Moffatt has one job per chapter.** Ch. 4: facts, chain, tree label; Ch. 10 (week 7, R7): disclosure and communication at work; Ch. 18: liability and governance | Avoids redundancy |
+| D-4.6 | **Failure Diary:** ungraded in CS 2V95; first version due at the ungraded **portfolio checkpoint, Fri Mar 12, 2027**, counted under the syllabus's "about 5 hours across the term for portfolio assembly"; ~50–60 min by requirement; causes marked documented/inferred (one uncertainty pair); lab probe records count | Editor decisions 9 and final-review M3 (moved from Thu Feb 25 because week 6 already carries Ch. 9 + A6) |
+| D-4.7 | **Week 5 workload.** Required out of class: Ch. 4 Core package ~42 min + Ch. 4 Your Turns ~5 min (4.3 and 4.5 Your Turns are recommended and can be done as Lab 4.2 probe 2 or diary entries) + Ch. 8 (~37 min reading and Your Turns + A5 ~45–50 min) ≈ 131 min, within the 2.2 h (132 min) target. R5 stays **recommended** (would add ~15 min). The diary is no longer in week 5 or 6 (D-4.6) | Brief workload rule; final-review M3. The editor tells Chapters 8 and 9 |
+
+**Note for the Chapter 8 agent (what Chapter 8 should only recall, not re-teach):** (1) the Failure Taxonomy Tree and the documented/inferred rule with D-4.3's defining features (import `failure_tree`; Mata v. Avianca: hallucination, invented sources, documented; overconfidence documented only if the opinion records the tool affirming that the cases were real; chain link 2 failed); (2) the causes of hallucination from 4.2 in at most two sentences (likely text with no truth check; recombination, worst for facts seen rarely) and intrinsic vs. extrinsic; (3) the pushback test (4.5) and probe-record format. Chapter 8 owns the Verification Funnel, citation checking, uncertainty signals, calibration measurement, fabricated-citation rates and A5. Chapter 4 mentions model calibration in one sentence (GPT-4, 2023) and points to Chapter 8.
+
+**Note for the Chapter 7 agent:** Chapter 4 section 4.5 opens with "Chapter 7 named sycophancy" and reuses Chapter 7's definition word for word; Spaced Review 2 and 4 rely on Chapter 7's "score against your course source, not the tool's verdict" and on the Bastani labels in Chapter 7's Case Study (hallucination of the wrong-calculation kind; overreliance on the chain). Please keep those wordings.
+
+**Editor requests (other chapters' files):** (a) done: Chapter 3's Deep 3.B pointer already names Chapters 4 and 8; (b) diary lines are present in Chapters 1, 3, 5 and 7 (checked 2026-10-18); Chapter 1's lines say the diary is in section 4.8 ✓; (c) **reference disambiguation:** Chapters 4 and 5 both cite "Şeker (2014)" for two different 2014 entries (fishbone; 5 Whys); the book-level reference list will need 2014a/2014b; (d) Chapters 8 and 9: the Failure Diary's first version now falls at the Mar 12 portfolio checkpoint, not in week 5 or 6.
+
+**Case labels on the tree and chain, C01–C18 (proposals for each case's chapter agent; apply D-4.3 and verify against each case's sources).**
+
+| Id | Case | Tree (primary [+ secondary]) | Chain link | Notes |
+|---|---|---|---|---|
+| C01 | Support-center study | none on the tree | — | Productivity study; uneven benefit |
+| C02 | Amazon recruiting tool | bias, documented (penalized "women's" across résumés) | — | Mechanism (pipeline stages) partly inferred, as in Ch. 2 |
+| C03 | Moffatt v. Air Canada | hallucination, inferred | link 2 no accuracy check, documented | This chapter |
+| C04 | Bastani et al. | hallucination (wrong calculation), documented | link 3 overreliance, documented | As in Ch. 7's Case Study |
+| C05 | Mata v. Avianca | hallucination (invented sources), documented [+ overconfidence, documented if the opinion records the tool affirming the cases; VERIFY] | link 2 no verification, documented | Ch. 8 |
+| C06 | Deloitte Australia report | hallucination (invented sources), documented if the firm confirmed generative-AI use; otherwise inferred | link 2 review failed, documented | Ch. 9 |
+| C07 | Vanderbilt Peabody email | none on the tree (output not wrong) | inappropriate delegation, documented | Ch. 10 |
+| C08 | Obermeyer et al. | bias (proxy label), documented | — | Not generative; Signature 3 also applies |
+| C09 | Dell'Acqua et al. (BCG) | hallucination (wrong reasoning), inferred | link 3 overreliance outside the frontier, documented | Ch. 12 |
+| C10 | Arup deepfake fraud | **other (misuse: fake media made to deceive)**, documented | link 2 no independent check of the request, documented | Ch. 13, 15 (changed in v2) |
+| C11 | Replit agent database deletion | context loss (ignored code-freeze instruction), inferred [+ hallucination if reports confirm misreported state; VERIFY] | link 2 no approval gate, documented | Ch. 14 |
+| C12 | Samsung source-code paste | none on the tree | user data leakage (link 3), documented | Ch. 15 |
+| C13 | Gender Shades | bias (unequal quality across groups), documented | — | Ch. 16 |
+| C14 | Dutch child-benefit scandal | bias, documented | link 2 no meaningful human review / opacity, documented | Ch. 17; not generative |
+| C15 | Thomson Reuters v. Ross | other (intellectual property) | — | Ch. 18 |
+| C16 | Reversal curse | hallucination (wrong or missing reverse answer), documented | — | Ch. 3 |
+| C17 | Medprompt | none on the tree | — | Positive study |
+| C18 | Klarna AI assistant | none documented on the tree | inappropriate delegation, documented only if the company's own statements say quality fell [VERIFY] | Ch. 5 |
+<!-- /ch04-decisions -->

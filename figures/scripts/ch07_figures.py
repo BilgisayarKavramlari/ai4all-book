@@ -77,7 +77,7 @@ def storyboard(f):
         f.arrow(532, y + 40, 598, 175)
     f.box(600, 120, 180, 110, "Closed-book exam", role="neutral", kind="step", thick=True, size=15,
           sub="same for all; each problem paired with a practice problem", sub_size=13)
-    f.text(400, 336, "Four 90-minute sessions, fall 2023–24; classrooms randomly assigned; practice and exam both graded.",
+    f.text(400, 336, "Four 90-minute sessions, fall 2023–24; classrooms assigned by a balancing procedure; both parts graded.",
            size=13, color=MUTED[f.mode])
     f.text(400, 358, "Source: Bastani et al. (2025). Hexagon = AI component; rounded = people; thick = the learning measure.",
            size=13, color=MUTED[f.mode])
@@ -189,11 +189,11 @@ def scaffold_crutch(highlight=None, note=None):
 
 # ---------------------------------------------------------------- F7.11 Session protocol
 def session_protocol(f):
-    steps = [("1 · Before", "3 keyed questions; baseline answers; confidence", "human", "neutral"),
-             ("2 · During", "Tutor-mode dialogue: attempt before every hint", "ai", "ai"),
-             ("3 · Right after", "Devices away: predict, answer, score against the key", "human", "neutral"),
-             ("4 · Later", "2+ days: predict and answer again (spacing)", "human", "neutral"),
-             ("5 · Reflect", "Calibration gap; one S turn, one C turn; one change", "human", "verified")]
+    steps = [("1 · Before", "3 keyed check questions; baseline answers; confidence", "human", "neutral"),
+             ("2 · During", "Tutor-mode dialogue on other problems: attempt first", "ai", "ai"),
+             ("3 · Right after", "Devices away: rate, answer, score, calibration gap", "human", "neutral"),
+             ("4 · Later", "2+ days: same steps, parallel questions if possible", "human", "neutral"),
+             ("5 · Reflect", "Gaps; one S turn, one C turn; one change", "human", "verified")]
     for i, (h, t, kind, role) in enumerate(steps):
         x = 10 + i * 158
         f.text(x + 73, 30, h, size=15, weight="700")
@@ -209,37 +209,43 @@ def session_protocol(f):
 def a4_sheet(f):
     ink = INK[f.mode]
     f.text(400, 22, "A4 record sheet", size=18, weight="700")
-    # table 1: closed-book record
-    cols = [20, 150, 360, 570, 780]
-    heads = ["Question", "Before: confidence, answer", "Right after (closed-book)", "2+ days later (closed-book)"]
+    cols = [20, 170, 370, 575, 780]
+    heads = ["Check question", "Before: confidence · answer", "Right after: confidence · right?",
+             "2+ days later: confidence · right?"]
     top = 44
+    rh = 32
     for i, h in enumerate(heads):
-        f.text((cols[i] + cols[i + 1]) / 2, top + 18, h, size=13, weight="700")
-    for r in range(5):
-        y = top + r * 36
-        f.line(cols[0], y, cols[-1], y, color=ink)
+        f.text((cols[i] + cols[i + 1]) / 2, top + 16, h, size=13, weight="700")
+    rows = ["Q1 (keyed)", "Q2 (keyed)", "Q3 (keyed)", "Predicted score", "Actual score", "Gap (predicted − actual)"]
+    for r in range(len(rows) + 2):
+        f.line(cols[0], top + r * rh, cols[-1], top + r * rh, color=ink)
     for c in cols:
-        f.line(c, top, c, top + 4 * 36, color=ink)
-    for r in range(3):
-        f.text(85, top + 36 * (r + 1) + 18, f"Q{r + 1} (keyed)", size=13)
+        f.line(c, top, c, top + (len(rows) + 1) * rh, color=ink)
+    for r, lab in enumerate(rows):
+        y = top + rh * (r + 1) + 16
+        f.text(cols[0] + 8, y, lab, size=13, anchor="start", weight="700" if r >= 3 else "normal")
         for c in range(1, 4):
-            f.text((cols[c] + cols[c + 1]) / 2, top + 36 * (r + 1) + 18, "___ %  ·  answer" if c == 1 else "predict ___ %  →  right? Y / N",
-                   size=13, color=MUTED[f.mode])
-    f.text(400, 208, "Calibration gap = predicted score − actual score (right after, and again later)", size=13,
-           weight="700")
-    # table 2: turn log
+            if r < 3:
+                cell = "___ %  ·  answer" if c == 1 else "___ %  ·  Y / N"
+            elif r == 3:
+                cell = "sum of % ÷ 100"
+            elif r == 4:
+                cell = "— " if c == 1 else "___ of 3"
+            else:
+                cell = "— " if c == 1 else "+ / − ___"
+            f.text((cols[c] + cols[c + 1]) / 2, y, cell, size=13, color=MUTED[f.mode])
     cols2 = [20, 110, 220, 620, 780]
-    heads2 = ["Turn #", "Code S / C", "Reason: who recalled and produced it?", "Error found?"]
-    top2 = 228
+    heads2 = ["Turn #", "Code S / C", "Reason: which rule? who recalled and produced it?", "Error found?"]
+    top2 = 282
     for i, h in enumerate(heads2):
-        f.text((cols2[i] + cols2[i + 1]) / 2, top2 + 18, h, size=13, weight="700")
-    for r in range(5):
-        f.line(cols2[0], top2 + r * 34, cols2[-1], top2 + r * 34, color=ink)
+        f.text((cols2[i] + cols2[i + 1]) / 2, top2 + 16, h, size=13, weight="700")
+    for r in range(4):
+        f.line(cols2[0], top2 + r * 30, cols2[-1], top2 + r * 30, color=ink)
     for c in cols2:
-        f.line(c, top2, c, top2 + 4 * 34, color=ink)
-    f.text(400, 390, "Add rows: at least 6 coded turns. Score against your source's key, not the tool's verdict.", size=13,
-           color=MUTED[f.mode])
-    f.text(400, 412, "Your score does not affect your grade; the record and the reflection do.", size=13,
+        f.line(c, top2, c, top2 + 3 * 30, color=ink)
+    f.text(400, 396, "Add rows: at least 6 coded turns. Score against your source's key, not the tool's verdict.",
+           size=13, color=MUTED[f.mode])
+    f.text(400, 418, "Your score does not affect your grade; the record and the reflection do.", size=13,
            color=MUTED[f.mode])
 
 
@@ -278,7 +284,7 @@ FIGS = [
     ("f7-10-tutor-anatomy", prompt_anatomy(["role", "constraints", "output format"], note=TUTOR_NOTE), 800, 495,
      "A tutor-mode setup changes the role, the constraints and the output format"),
     ("f7-11-session-protocol", session_protocol, 800, 270, "A tutor-mode session is a small experiment on yourself"),
-    ("f7-12-a4-sheet", a4_sheet, 800, 426, "Your calibration gap is the evidence; your score is not the grade"),
+    ("f7-12-a4-sheet", a4_sheet, 800, 432, "Your calibration gap is the evidence; your score is not the grade"),
     ("f7-14-ladder-skill", delegation_ladder("augmentation", annotate=LADDER_NOTES), 800, 570,
      "When the skill is yours to build, work on the floor or in augmentation, not automation"),
     ("f7-15-summary-card", summary_card, 800, 340, "Chapter 7 summary card"),
