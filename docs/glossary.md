@@ -198,3 +198,24 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Perplexity (Deep) | Roughly, how unlikely a language model's scores make each next word; low perplexity means the words are easy to predict. | Şaşkınlık ölçüsü (perplexity) |
 | Watermark (text; Deep) | A hidden statistical pattern in the tokens a provider's model favors, which a matching tool can later test for. | Filigran (dijital) |
 | AI-mediated communication (Deep) | Communication between people in which software acts on behalf of one of them by changing, adding to or generating their message. | Yapay zekâ aracılı iletişim |
+| Decision support | AI output, such as a summary, an analysis, a score or a recommendation, that goes to a named person who decides and answers for the result. | Karar desteği |
+| Decision owner | The named person or body who makes a decision and answers for its result. | Karar sahibi |
+| Automated decision | A decision in which an AI output triggers an action with no person in between. | Otomatik karar |
+| Hidden assumption | A choice built into data or an analysis that can change the result but is not stated. | Örtük varsayım |
+| Missing value | An empty cell or field where a value should be. | Eksik değer |
+| Listwise deletion | Deleting every row that has a missing value, so the analysis uses complete rows only. | Liste boyunca silme |
+| Imputation | Filling a missing value with an estimate, such as the average of the other values. | Eksik veri tamamlama (töhmet) |
+| Proxy label | A recorded outcome used as the label because it is easy to measure, standing in for the outcome you actually care about. | Vekil etiket |
+| Simpson's paradox | A pattern in a total that weakens or even reverses inside the groups that make it up. | Simpson paradoksu |
+| Decision matrix | A table that lists options against the criteria they are judged on, each criterion with a scale and a weight. | Karar matrisi |
+| Criterion (in a decision matrix) | One of the things the options are judged on, with its own scale. | Ölçüt |
+| Weight (in a decision matrix) | How much a criterion counts toward the total. | Ağırlık |
+| Sensitivity check | Changing one choice in an analysis, such as a weight or the handling of a blank, to see whether the result changes. | Duyarlılık kontrolü |
+| Automation bias | The tendency to over-rely on automated output, following it when it is wrong or missing what it did not flag. | Otomasyon yanlılığı |
+| Commission error | Following an automated output when it is wrong. | Yapma hatası |
+| Omission error | Missing a problem because an automated system did not flag it. | İhmal hatası |
+| Missing completely at random, MCAR (Deep) | Values are missing for a reason that has nothing to do with any data. | Tamamen rastgele eksiklik |
+| Missing at random, MAR (Deep) | Values are missing for a reason that depends only on things you did observe. | Rastgele eksiklik |
+| Missing not at random, MNAR (Deep) | Values are missing for a reason that depends on the missing value itself. | Rastgele olmayan eksiklik |
+| Multiple imputation (Deep) | Filling each missing value several times with plausible values, analyzing each completed dataset and pooling the results with their extra uncertainty. | Çoklu tamamlama (çoklu töhmet) |
+| Sensitivity analysis (Deep, missing data) | Assuming the missing values were somewhat higher or lower than the fill and checking whether the conclusion survives. | Duyarlılık analizi |

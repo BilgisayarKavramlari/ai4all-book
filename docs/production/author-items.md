@@ -63,3 +63,11 @@
 5. **Library checks you may wish to make** (the fact-checker could not open the full texts): Matsuda (2001) p. 40 definition; Noy & Zhang (2023) *Science* figure numbers and whether the 68% figure appears; Kruger et al. (2005): which read-aloud condition (V04).
 6. **Final voice edit**, as for every chapter.
 <!-- /ch10 -->
+
+<!-- ch11 -->
+## Chapter 11
+1. **Live syllabus, week 9:** R9 (Dell'Acqua et al.) becomes **recommended** (editor decision), with a reading guide in Further Reading; A9 brief with scenarios A′, B′ and C (options, not people; own data only in a university-provided tool); the week counts to about 2.0 h (scenario C about 2.1 h; R9 adds about 12 minutes); the Case Study is read together in Tuesday's class (uses in-class time). R9 is Chapter 12's opening case; you may prefer to move it to week 10.
+2. **From the Field:** the fact-check found the entry in *YBS Ansiklopedi* 4(3), 10–17 (PDF footers show 11–17); please confirm the first page and the co-author's name as printed. The section is written in first person from your entry; please check it in your voice.
+3. **Optional:** a real, anonymized moment from your consulting or SME work where a missing-data or proxy choice changed a client's decision; never constructed (D16 disclosure if commercial).
+4. **Final voice edit** (pipeline step 8).
+<!-- /ch11 -->

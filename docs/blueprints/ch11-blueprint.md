@@ -41,8 +41,9 @@ Part III — Deciding and Building with AI · Syllabus week 9 (the first week af
 | **Whole Core package:** body + Opening Case (~550) + Warm-up and Check Yourself (~400) + Studio 11.7 (≤ 450) + Summary (~250) | ~6,450 words | **~43 min** |
 | Your Turns not absorbed by A9 (11.1, 11.2, 11.3, 11.4, 11.6: five short tasks; 11.5's Your Turn = A9 items) | 5 × ~3 min | ~15 min |
 | Pre-lab: choose scenario A′ (internship shortlist), B′ (spring fundraiser) or C (your own choice among options, not people); read its one-page brief | 1 brief | ~5 min |
-| A9 at home, per requirement (§9): criteria audit, five criteria × ~3 min ≈ 15; recalculation of the top two options ≈ 10; two sensitivity tests ≈ 10; revised matrix and decision memo 150–200 words ≈ 12; remaining uncertainty ≈ 3; declaration ≈ 4. Scenario C adds ~10 min to fill the template | — | **~55 min** (C: ~65 min) |
-| **Total** | 43 + 15 + 5 + 55 = 118 min | **~1.95 h** (scenario C: ~2.1 h) with the Your Turns; ~1.7 h without them. Target ≤ 2.2 h; syllabus 1–2 h. The recommended R9 adds ~12 min (~2.15 h) |
+| A9 brief and rubric (read once) | ~1,140 words | ~8 min |
+| A9 at home after the lab, per requirement (chapter draft v2): finish the criteria audit ≈ 8; finish the recalculation with the template ≈ 5; second sensitivity test ≈ 5; revised matrix ≈ 5; memo 120–150 words ≈ 15; remaining uncertainty ≈ 3; declaration ≈ 5; checking and submitting ≈ 4. Scenario C fills its template before the lab (pre-lab 10 instead of 5) | — | **~50 min** |
+| **Total** (chapter draft v2, final review) | 44 + 8 + 13 + 5 + 50 = 120 min | **~2.0 h** (C ~2.1 h; +R9 ~2.2 h). Reading = the chapter's required reading (44 min; the Case Study is read in Tuesday's class); 13 = Your Turns and answer checks. Target ≤ 2.2 h; syllabus 1–2 h |
 | Optional: R9, labs L11.2–L11.4, Deep 11.A–11.B | | 55–80 min |
 
 **Word budget.** Core cap **4,800** words: 11.1 650 · 11.2 850 · 11.3 900 · 11.4 850 · 11.5 800 · 11.6 750. Worked examples ≤ 150 words; faded examples ≤ 80 words, always with the first step filled in; Your Turns ≤ 40 words. Studio 11.7 ≤ 450. Check Yourself sits outside the caps (counted in the reading time). Cuts for fit (review row 5): drift is one sentence, Simpson's paradox one paragraph; 11.6 keeps Goddard, Dratsch and Obermeyer, with Skitka and Parasuraman in one clause; R9 and the EU AI Act are out of Core. The chapter reaches ≥ 10,000 words with the Opening Case, Deep sections, Case Study, Ethics Lens, Career Connection, From the Field, labs and the End-of-Chapter Package (estimate ~11,500).
@@ -55,7 +56,7 @@ Part III — Deciding and Building with AI · Syllabus week 9 (the first week af
 | O2 | **Test** whether a hidden assumption in a dataset or an analysis (a blank, a definition or unit, a time window, a total that hides groups, a tool default) changes the result | Analyze | LO3 | 4D:DISC · UNESCO:TECH-A |
 | O3 | **Evaluate** whether a measure is a fit proxy for the outcome a decision should serve, including for whom the gap between them is larger | Evaluate | LO5, LO3 | 4D:DISC · UNESCO:ETH-A |
 | O4 | **Verify** an AI-generated analysis by recalculating the numbers a decision depends on from the raw data, with verdicts and remaining uncertainty | Apply | LO3 | 4D:DISC · 4D:DIL |
-| O5 | **Stress-test** a decision matrix by auditing its criteria, scales and blanks and running sensitivity checks on the top option and the shortlist | Apply | LO3, LO5 | 4D:DIL · 4D:DESC |
+| O5 | **Stress-test** a decision matrix by auditing its criteria, scales and blanks and running sensitivity checks on the top option and the shortlist | Apply | LO3, LO5 | 4D:DIL · 4D:DISC |
 | O6 | **Design** a review step that makes disagreement with an AI output possible and recorded | Create | LO5 | 4D:DIL · UNESCO:ETH-A |
 
 One verb per objective (review row 4). UNESCO codes follow the ai4all-frameworks table; at most three tags per objective. A9 is assessed through O1–O6 together (alignment matrix); its product is the revised matrix and the decision memo.
@@ -174,7 +175,7 @@ Counts follow the anatomy: Review A 13 (distractors from M1–M6, no absolute gi
 3. **Criteria audit:** for every criterion, what it is meant to capture, what the data actually measure, whether it is a proxy and for whom the gap could be larger, and how blanks were handled (and whether the real value can be obtained); at least one criterion revised, re-scaled or removed, or a reason why none needed changing.
 4. **Recalculation:** the top two options' totals recomputed outside the tool (by hand or with your own formula), compared with the AI's, each with a verdict (Chapter 8 scale).
 5. **Two sensitivity tests:** one weight change and one change in how a blank or a criterion is handled; for each, the new top option, its margin and the shortlist (or the top two for B′ and C).
-6. **Revised matrix and decision memo (150–200 words):** your matrix, the decision you would recommend to the owner and why, what the matrix cannot capture, the review step you propose, and what you would check before acting. The recommended option may differ from the top score if you say why.
+6. **Revised matrix and decision memo (120–150 words):** your matrix, the decision you would recommend to the owner and why, what the matrix cannot capture, the review step you propose, and what you would check before acting. The recommended option may differ from the top score if you say why.
 7. **Remaining uncertainty** (one or two sentences).
 8. **AI Use Declaration:** tools, purpose, what you accepted, rejected or revised, how you verified it, and where your own judgment shaped the work.
 
@@ -267,7 +268,7 @@ Accessibility and alternatives: no-device route (alternative assignment, printed
 | K1 | Opening Case and main Case Study = Obermeyer et al. (C08), one job per appearance (§5); the product named once, attributed | Book map; attribution tiers (review row 14) |
 | K2 | From the Field = Şeker & Eşmekaya (2017), imputation entry; facts limited to the entry; present-day connection marked; co-author named; no disclosure. "İş Zekası" (2016) read and not used; left free, a candidate for Ch. 12 or 19 | The entry's methods are the choices the 11.2 demo tests |
 | K3 | Work Loop highlight = Decide, with Verify second | Chapter 11 is the book's decision chapter |
-| K4 | **R9 recommended** (editor decision), with a reading guide; Ch. 12 owns the study; Core mentions it in one clause | Week ~1.95 h; Ch. 12 ownership (review rows 6–7) |
+| K4 | **R9 recommended** (editor decision), with a reading guide; Ch. 12 owns the study; Core mentions it in one clause | Week ~2.0 h (C ~2.1 h; +R9 ~2.2 h); Ch. 12 ownership (review rows 6–7) |
 | K5 | Proxy vocabulary: Ch. 2's *proxy* verbatim; "proxy in the inputs" vs. new "proxy label"; three questions; `proxy_trap()` (book-map "Proxy-variable trap"), reusable, with a `where` tag | One vocabulary; Ch. 2's promise (review row 8) |
 | K6 | Three computed demos, seeded and constructed; the missing-value simulation now has blanks that differ by event; the proxy simulation moves to the Deep lab; real-data charts from Obermeyer (Table 2, Table 3 text) and Dratsch (2023) | Honest demos (review rows 2, 9, 10) |
 | K7 | Signature 11 (Bias Lifecycle) not drawn; pointer only; optional pure import later | Ch. 16 introduces it later |
@@ -278,7 +279,7 @@ Accessibility and alternatives: no-device route (alternative assignment, printed
 | K12 | **A9 gets its own unsolved files** (A′ candidates G–L; B′ one fundraiser decision, five criteria, two blanks); **C = options, not people**, own data only in a university-provided tool, solo runs; rubric 3 / 1.5 + 1.5 / 2 / 2 with the review gaps filled; alternative = audit a provided or self-built matrix | Editor decisions; assessment validity; privacy (review rows 1, 12, 16) |
 | K13 | Candidates are letters, not names or demographic fields; Wilson & Caliskan (2024) left to Ch. 16 | Keeps name-bias research in Ch. 16 |
 | K14 | Lucía is the association's treasurer; the third fundraiser is a car wash (not Ch. 5's free workshop) | Rotation, arc and continuity (review row 15) |
-| K15 | Core cap 4,800; 11.4 and 11.6 trimmed; Studio ≤ 450; faded ≤ 80 with the first step filled; week ~1.95 h | Workload ≤ 2.2 h (review rows 5–6) |
+| K15 | Core cap 4,800; 11.4 and 11.6 trimmed; Studio ≤ 450; faded ≤ 80 with the first step filled; week ~2.0 h (C ~2.1 h; +R9 ~2.2 h), 44 + 8 + 13 + 5 + 50 | Workload ≤ 2.2 h (review rows 5–6) |
 | K16 | Spaced Review: Ch. 10 and 9, plus two items labeled "Bridge (before the midterm)" on Ch. 8 and Ch. 2 | Reading order; labeled bridge (review row 16) |
 | K17 | Law (EU AI Act Art. 14(4)(b)) only in the Ethics Lens, one sentence, high-risk systems, pointer Ch. 18 | Boundary; Core fit |
 | K18 | New reusable ch11 functions: `proxy_trap()`, `decision_roles()`, `analysis_audit()`, `matrix_anatomy()` | Reuse in Ch. 14, 16, 17, 19 |
@@ -291,7 +292,7 @@ Book-wide decisions for the handoff `## Decisions` section: K5 (proxy in the inp
 
 ## Author-only items (collected for the end, not asked now)
 
-1. Live syllabus, week 9: R9 becomes recommended (with a reading guide); A9 brief with scenarios A′, B′ and C (options, not people); week total ~1.95 h (~2.15 h with R9).
+1. Live syllabus, week 9: R9 becomes recommended (with a reading guide); A9 brief with scenarios A′, B′ and C (options, not people); week total ~2.0 h (C ~2.1 h; +R9 ~2.2 h); the Case Study read in Tuesday's class.
 2. From the Field: confirm where "Eksik Verilerin Tamamlanması" was published (venue, volume, issue, pages) and that the published text matches the August 2017 .docx in Drive; confirm Eda Eşmekaya's name and affiliation as printed. Optional: a first-person line on why you wrote about imputation; it will not be written for you.
 3. Optional: a real, anonymized moment from your consulting or SME work where a missing-data or proxy choice changed a client's decision; never constructed (D16 disclosure if it concerns OptiWisdom or a client product).
 4. Course materials before Mar 23–25 (instructor preparation): scenario files A′ and B′ with briefs, dated AI outputs for both and for the Tuesday demo, the provided matrix for the alternative assignment, the L11.2 dataset and key, the practice file for 11.2's Your Turn.
@@ -333,7 +334,7 @@ Applied the independent review (build/ch11/reviews/blueprint.md), all 16 rows, t
 - **Must, Obermeyer roles (row 3, top 3):** "the score alone flagged patients for enrollment"; "screening tool, not used in isolation"; "simulations on observable factors" and P = 0.83 attached every time; 84% "by one measure, in the manufacturer's data"; F11.3 and F11.17 retitled.
 - **Must, verbs (row 4, top 5):** O2 Test, O5 Stress-test, O6 Design; A9 assessed through all objectives.
 - **Should, caps (row 5, top 4):** drift one sentence, no Key Term (editor decision); Simpson one paragraph; 11.6 keeps Goddard, Dratsch, Obermeyer, with Skitka and Parasuraman in one clause; R9 and the EU AI Act out of Core.
-- **Should, workload (row 6):** R9 recommended (editor decision): ~1.95 h (C ~2.1 h; +R9 ~2.15 h), counted per requirement.
+- **Should, workload (row 6):** R9 recommended (editor decision); after the chapter reviews and final review: ~2.0 h (C ~2.1 h; +R9 ~2.2 h), 44 + 8 + 13 + 5 + 50, counted per requirement.
 - **Should, Ch. 12 (row 7):** 11.1 classifies AI help by what you can inspect (formula, code, nothing); Ch. 12's terms only in a pointer (checked against docs/blueprints/ch12-blueprint.md v0.1); no provider names.
 - **Should, proxy contrast (row 8):** "proxy in the inputs" vs. "proxy label" in 11.3, on F11.8 (`where` tag) and in a Bridge item.
 - **Should, 11.3 figures (row 9):** F11.10 moved to Lab 11.4 (Deep), "about 3.5%"; its noise caveat added.

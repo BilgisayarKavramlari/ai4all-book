@@ -16,6 +16,8 @@ Writes:
     data/ch11_scenario_b.csv          A9 scenario B' (unsolved): three spring fundraisers x five criteria for students
     private/ch11-a9-key.md            instructor key for A' and B' (never committed; private/ is git-ignored)
     data/ch11_experiments_meta.txt    versions, seeds and parameters
+    data/ch11_matrix_template.xlsx    spreadsheet template (instructor package): the A-F demo with formulas, and a
+                                      blank matrix with fixed-range scaling, "lower is better" reversal and blank flags
 """
 import csv
 import os
@@ -87,7 +89,7 @@ def lucia_table():
         for i, c in enumerate(CHOICES):
             r = rates(rows, i)
             best = max(r, key=r.get)
-            w.writerow([c] + [f"{r[e]:.1f}" for e in EVENTS] + [best])
+            w.writerow([c] + [f"{r[e]:.2f}" for e in EVENTS] + [best])
             print(f"  {c:62s}", "  ".join(f"{r[e]:6.1f}" for e in EVENTS), "->", best)
 
 
@@ -301,12 +303,71 @@ def scenarios():
               "value penalizes the candidate for the firm's own missing step; the fix is to get the value (hold the "
               "interview; ask for the transcript), not to pick a fill. The partner-university flag is a proxy (for "
               "preparation or fit) that tracks where someone studied; GPA scales differ across universities.",
+              "- A': candidate L offers 10 hours a week, but the firm needs at least 12. That is an eligibility rule, "
+              "not a weighted criterion: a matrix that scores hours on a scale lets L trade hours for other strengths; "
+              "students should screen L out (or ask L) before scoring.",
               "- B': the plant sale has no proceeds history (new event) and the photo booth was not on the survey; the "
               "survey count comes from 14 of about 60 members (a sample that volunteered). 'Lower is better' criteria "
-              "must be reversed; an AI-drafted matrix that adds raw hours or weather scores is a check-6 (formula) error."]
+              "must be reversed; an AI-drafted matrix that adds raw hours or weather scores is a check-6 (formula) error.",
+              "", "## Observations moved from Lab 11.1 (instructor only)",
+              "In A', the partner-university flag can decide the top spot: removing it moves H from fourth or fifth "
+              "to first in the illustrative tests above. Both blanks have reasons the firm controls (an interview not "
+              "yet held, a transcript not yet received), so the right move is to get the values, not to pick a fill. "
+              "In B', once blanks are handled with the mean the margins are small (0.08 and 0.13 on the 0-10 scale in "
+              "two of four tests). The survey count comes from 14 of about 60 members, a self-selected sample. Matrices "
+              "that do not reverse the two 'lower is better' criteria rank the options on the wrong basis."]
     os.makedirs(os.path.join(ROOT, "private"), exist_ok=True)
     with open(os.path.join(ROOT, "private", "ch11-a9-key.md"), "w") as f:
         f.write("\n".join(lines) + "\n")
+
+
+def xlsx_template():
+    """Spreadsheet template: scaled score = (value - low) / (high - low) x 10; "lower is better" = 10 - that;
+    a blank shows BLANK and blocks the total until you decide how to handle it."""
+    try:
+        from openpyxl import Workbook
+    except ImportError:
+        print("  openpyxl not installed: template skipped")
+        return
+    from openpyxl.utils import get_column_letter as L
+    wb = Workbook()
+
+    def sheet(ws, names, crit, ranges, lower, weights, values):
+        n = len(crit)
+        ws["A1"] = "Decision matrix: fixed-range scaling to 0-10; weights in percent (must sum to 100)"
+        ws["A3"], ws["A4"], ws["A5"], ws["A6"] = "Criterion", "Low end of scale", "High end of scale", "Lower is better? (yes/no)"
+        ws["A7"] = "Weight (%)"
+        for j in range(n):
+            c = L(j + 2)
+            ws[f"{c}3"], ws[f"{c}4"], ws[f"{c}5"] = crit[j], ranges[j][0], ranges[j][1]
+            ws[f"{c}6"], ws[f"{c}7"] = "yes" if lower[j] else "no", weights[j]
+        ws[f"{L(n + 2)}7"] = f"=SUM(B7:{L(n + 1)}7)"
+        ws["A9"] = "Option"
+        for j in range(n):
+            ws[f"{L(j + 2)}9"] = crit[j] + " (raw)"
+            ws[f"{L(n + j + 2)}9"] = crit[j] + " (scaled 0-10)"
+        ws[f"{L(2 * n + 2)}9"] = "Weighted total (0-10)"
+        for i, name in enumerate(names):
+            r = 10 + i
+            ws[f"A{r}"] = name
+            for j in range(n):
+                v = values[i][j] if values else None
+                if v is not None:
+                    ws[f"{L(j + 2)}{r}"] = v
+                raw, c = f"{L(j + 2)}{r}", L(j + 2)
+                ws[f"{L(n + j + 2)}{r}"] = (f'=IF(ISBLANK({raw}),"BLANK",IF(${c}$6="yes",10-({raw}-${c}$4)/(${c}$5-${c}$4)*10,'
+                                            f'({raw}-${c}$4)/(${c}$5-${c}$4)*10))')
+            sc = f"{L(n + 2)}{r}:{L(2 * n + 1)}{r}"
+            ws[f"{L(2 * n + 2)}{r}"] = (f'=IF(COUNTIF({sc},"BLANK")>0,"decide how to handle the blank",'
+                                        f'SUMPRODUCT({sc},$B$7:${L(n + 1)}$7)/100)')
+
+    ws = wb.active
+    ws.title = "Chapter demo A-F"
+    sheet(ws, list(CANDIDATES), CRITERIA, RANGES, [False] * 5, AI_WEIGHTS, list(CANDIDATES.values()))
+    ws2 = wb.create_sheet("Your matrix")
+    sheet(ws2, [f"Option {k}" for k in "123456"], [f"Criterion {k}" for k in "12345"], [(0, 10)] * 5, [False] * 5,
+          [20] * 5, None)
+    wb.save(os.path.join(DATA, "ch11_matrix_template.xlsx"))
 
 
 if __name__ == "__main__":
@@ -320,6 +381,8 @@ if __name__ == "__main__":
     matrix()
     print("5. A9 scenario files (key -> private/ch11-a9-key.md)")
     scenarios()
+    print("6. Spreadsheet template")
+    xlsx_template()
     with open(os.path.join(DATA, "ch11_experiments_meta.txt"), "w") as f:
         f.write(f"python {platform.python_version()} · numpy {np.__version__}\n")
         f.write("events: constructed 18-shift table; Book swap shifts 3 and 5 (14 h, 13 h) unlogged; "

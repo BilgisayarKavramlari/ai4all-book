@@ -39,7 +39,7 @@ Path: **C** = Core (examinable, weekly required reading); **D** = Deep (optional
 | 22 | The State of the Art: Current Developments | — | D | LO1 | Capability timeline (rewritten each edition) | Dated current developments | Short discussion essay |
 | 23 | Philosophical Debates: Minds, Meaning and Responsibility | — | D | LO5 | Argument maps | Turing (1950); Searle's Chinese Room (1980); "Stochastic Parrots" (Bender et al., 2021) | Position paper |
 
-Outcome coverage (from the design guide): LO1 Ch. 1–4, 22 · LO2 Ch. 5, 6, 12 · LO3 Ch. 8, 9, 11 · LO4 Ch. 7, 10 · LO5 Ch. 14–18, 23 · LO6 Ch. 13, 14, 19 · LO7 Ch. 20, 21.
+Outcome coverage (from the design guide): LO1 Ch. 1–4, 13, 22 · LO2 Ch. 5, 6, 12 · LO3 Ch. 8, 9, 11 · LO4 Ch. 7, 10 · LO5 Ch. 14–18, 23 · LO6 Ch. 14, 19 · LO7 Ch. 20, 21.
 
 ## Scope of Chapters 22 and 23
 

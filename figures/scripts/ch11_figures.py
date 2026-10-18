@@ -205,49 +205,54 @@ def analysis_audit(highlight=None, center="An AI-generated analysis"):
 def matrix_anatomy(f):
     muted, ink = MUTED[f.mode], INK[f.mode]
     f.text(400, 24, "Every number in a decision matrix is a choice someone made", size=18, weight="700")
-    gx, gy = 110, 64
-    cols = ["Skills test", "Interview", "Experience", "Total"]
-    weights = ["25", "25", "30", ""]
-    rows = [("A", ["88", "4.5", "1 yr", "5.59"]), ("C", ["91", "blank", "2 yrs", "3.83"]),
-            ("E", ["65", "3.0", "8 yrs", "7.00"])]
-    cw, rh = 100, 46
+    gx, gy = 120, 62
+    cols = ["Skills test", "Interview", "Experience", "GPA", "Referral", "Total"]
+    scales = ["0–100", "1–5", "0–10 yrs", "0–4", "no / yes", "0–10"]
+    weights = ["25", "25", "30", "10", "10", "100"]
+    rows = [("A", ["88", "4.5", "1", "3.6", "no", "5.59"]), ("C", ["91", "blank", "2", "3.8", "no", "3.83"]),
+            ("E", ["65", "3.0", "8", "2.9", "yes", "7.00"])]
+    cw, rh = 100, 36
 
     def tag(x, y, n):
         f.raw(f'<circle cx="{x}" cy="{y}" r="11" fill="#FFFFFF" stroke="{ink}" stroke-width="1.6"/>')
         f.text(x, y, str(n), size=13, weight="700")
 
-    f.text(gx - 14, gy + 33, "Weight", size=13, weight="700", anchor="end")
+    def cell(x, y, v, bold=False, blank=False):
+        dash = ' stroke-dasharray="6 4"' if blank else ""
+        f.raw(f'<rect x="{x}" y="{y}" width="{cw}" height="{rh}" fill="none" stroke="{ink}" '
+              f'stroke-width="{2.6 if blank else 1.2}"{dash}/>')
+        f.text(x + cw / 2, y + rh / 2, v, size=14, weight="700" if bold else "normal", italic=blank)
+
+    labels = ["Criterion", "Scale", "Weight (%)"]
+    for k, lab in enumerate(labels):
+        f.text(gx - 12, gy + rh * k + rh / 2, lab, size=13, weight="700", anchor="end")
     for j, c in enumerate(cols):
         x = gx + j * cw
-        f.raw(f'<rect x="{x}" y="{gy}" width="{cw}" height="{rh}" fill="none" stroke="{ink}" stroke-width="1.2"/>')
-        f.text(x + cw / 2, gy + 14, c, size=13, weight="700")
-        if weights[j]:
-            f.text(x + cw / 2, gy + 33, weights[j], size=13)
+        cell(x, gy, c, bold=True)
+        cell(x, gy + rh, scales[j])
+        cell(x, gy + 2 * rh, weights[j])
     for i, (name, vals) in enumerate(rows):
-        y = gy + rh * (i + 1)
-        f.text(gx - 20, y + rh / 2, name, size=14, weight="700")
+        y = gy + rh * (i + 3)
+        f.text(gx - 12, y + rh / 2, name, size=14, weight="700", anchor="end")
         for j, v in enumerate(vals):
-            x = gx + j * cw
-            blank = v == "blank"
-            dash = ' stroke-dasharray="6 4"' if blank else ""
-            f.raw(f'<rect x="{x}" y="{y}" width="{cw}" height="{rh}" fill="none" stroke="{ink}" '
-                  f'stroke-width="{2.6 if blank else 1.2}"{dash}/>')
-            f.text(x + cw / 2, y + rh / 2, v, size=14, weight="700" if j == 3 else "normal", italic=blank)
-    tag(gx + 2 * cw + cw / 2, gy - 14, 1)          # criterion
-    tag(gx + 2 * cw + cw / 2 + 30, gy + 33, 2)     # weight
-    tag(gx + cw + cw - 14, gy + rh * 2 + 14, 3)   # blank
-    tag(gx + 3 * cw + cw - 14, gy + rh * 3 + 14, 6)   # total / reason
-    calls = [(540, 60, "1  Criterion: a proxy?", "experience stands in for skill"),
-             (540, 146, "2  Weight: a judgment", "even equal weights are a choice"),
-             (540, 232, "3  Blank: scored how?", "C's interview was not yet held"),
-             (20, 330, "4  Scale: what counts as 10?", "fixed ranges or best-to-worst"),
-             (280, 330, "5  Margin: how close?", "E leads B by 0.06 of 10"),
-             (540, 330, "6  Reason: who decides?", "the owner, with reasons on record")]
-    for x, y, h, s in calls:
-        f.box(x, y, 240, 72, h, role="soft", kind="human", size=14, sub=s, sub_size=13)
-    f.text(400, 432, "Constructed internship shortlist from section 11.5 (three of six candidates shown; "
-           "totals on a 0–10 scale).", size=13, color=muted, italic=True, width=780)
-    f.text(400, 458, "Numbered circles point to the cells each note describes · dashed cell with thick border = "
+            cell(gx + j * cw, y, v, bold=(j == 5), blank=(v == "blank"))
+    tag(gx + 2 * cw + cw / 2, gy - 4, 1)              # criterion: experience
+    tag(gx + 2 * cw + cw - 12, gy + 2 * rh + 12, 2)   # weight 30
+    tag(gx + cw + cw - 12, gy + 4 * rh + 12, 3)       # blank
+    tag(gx + cw - 12, gy + rh + 12, 4)                # scale
+    tag(gx + 5 * cw + cw - 12, gy + 5 * rh + 12, 5)   # E's total / margin
+    calls = [(20, 290, "1  Criterion: a proxy?", "years of experience stand in for skill"),
+             (280, 290, "2  Weight: a judgment", "even equal weights are a choice"),
+             (540, 290, "3  Blank: scored how?", "C's interview was not yet held"),
+             (20, 372, "4  Scale: what counts as 10?", "fixed ranges set each 0–10 score"),
+             (280, 372, "5  Margin: how close?", "E leads B (6.94) by 0.06 of 10"),
+             (540, 372, "6  Reason: who decides?", "the owner, with reasons on record")]
+    for x, y, h, s_ in calls:
+        f.box(x, y, 240, 70, h, role="soft", kind="human", size=14, sub=s_, sub_size=13)
+    f.text(400, 470, "Constructed internship shortlist from section 11.5: three of six candidates, all five criteria. "
+           "Scaled score = (value − low end) ÷ (high end − low end) × 10; total = sum of weight × scaled score.",
+           size=13, color=muted, italic=True, width=780)
+    f.text(400, 512, "Numbered circles point to the cells each note describes · dashed cell with thick border = "
            "a blank · rounded = a judgment someone made", size=13, color=muted, width=780)
 
 
@@ -284,7 +289,7 @@ def chapter_map(f):
             f.text((xs[i] + xs[i + 1]) / 2 + (-6 if i == 1 else 0), y, "→", size=14, color=muted)
     f.text(400, 410, "This chapter strengthens Decide (who owns the decision, and what can an analysis settle?), "
            "then Verify (dashed): recalculate what the decision depends on.", size=13, color=muted, width=780)
-    f.text(400, 446, "Opening case: a health algorithm that never received race (Obermeyer et al., 2019)", size=13,
+    f.text(400, 446, "Opening case: a health algorithm built without race as an input (Obermeyer et al., 2019)", size=13,
            color=muted)
 
 
@@ -298,8 +303,9 @@ def storyboard(f):
            "neutral", "step"),
           ("Before publication", "Trying a health-and-cost label: 84% less bias by one measure (authors' report)",
            "neutral", "step"),
-          ("Oct 25, 2019", "Article published in Science (confirmed)", "verified", "step"),
-          ("Oct 25, 2019", "New York regulators write to the maker's parent company (confirmed)", "neutral",
+          ("Oct 24–25, 2019", "Article online Oct 24, in the Oct 25 issue of Science (confirmed)", "verified",
+           "step"),
+          ("Oct 25, 2019", "New York regulators write to UnitedHealth Group about Optum's Impact Pro (confirmed: their letter)", "neutral",
            "human")]
     f.line(24, 230, 776, 230, color=ink, width=2.4)
     for i, (d, txt, role, kind) in enumerate(ev):
@@ -316,8 +322,8 @@ def storyboard(f):
     f.text(400, 462, "Rounded = a person's or an agency's action · green = a published result · article = in the "
            "primary record; authors' report = what the authors state they were told or found", size=13,
            color=muted, width=780)
-    f.text(400, 502, "Sources: Obermeyer et al. (2019); NYDFS & NYSDOH (2019). The product's name and the maker's "
-           "response are reported in the news; what changed for patients is not on record.", size=13,
+    f.text(400, 502, "Sources: Obermeyer et al. (2019); NYDFS & NYSDOH (2019). The product's name and maker rest on the "
+           "regulators' letter and news reports; what changed for patients is not on record.", size=13,
            color=muted, italic=True, width=780)
 
 
@@ -393,11 +399,11 @@ OBERMEYER_TREE = failure_tree({"bias"}, tag="Case: Obermeyer et al. (2019) · bi
                               "documented", note="The article measured lower scores for Black patients at equal health")
 OBERMEYER_CHAIN = failure_chain(
     notes={0: "Lower scores at equal health (article)",
-           1: "Judged on cost accuracy; doctors fixed little",
+           1: "Judged on cost; review's effect an estimate",
            2: "Top 3% flagged by the score alone",
            3: "Fewer Black patients flagged (simulated)"},
-    highlight={1}, dashed={3},
-    tag="Stage 4 is inferred: an estimate from the authors' simulation, with no record of harm to individuals")
+    highlight={1}, dashed={1, 3},
+    tag="Links 2 and 4 are inferred: they rest on the authors' simulations, not on records of individual patients")
 
 FIGS = [
     ("f11-01-chapter-map", chapter_map, 800, 465, "Chapter 11 at a glance"),
@@ -413,7 +419,7 @@ FIGS = [
     ("f11-11-funnel-analysis", FUNNEL_ANALYSIS, 800, funnel_height(tag=True),
      "Checking an AI analysis starts with your own recalculation"),
     ("f11-12-analysis-audit", analysis_audit(), 800, 490, "Six places a hidden choice can change the answer"),
-    ("f11-14-matrix-anatomy", matrix_anatomy, 800, 470, "Every number in a decision matrix is a choice someone made"),
+    ("f11-14-matrix-anatomy", matrix_anatomy, 800, 530, "Every number in a decision matrix is a choice someone made"),
     ("f11-18-a9-sheet", a9_sheet, 800, 486, "Your audit records the evidence behind every number in the matrix"),
     ("f11-19-tree-obermeyer", OBERMEYER_TREE, 800, tree_height() + 34, "Obermeyer on the tree: bias, documented"),
     ("f11-20-chain-obermeyer", OBERMEYER_CHAIN, 800, 420,
