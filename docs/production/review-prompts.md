@@ -1,0 +1,21 @@
+# Independent review prompts (used by the editor)
+
+Replace NN, the chapter title and file names. Reviewers never edit files except where stated, and never see each other's reports.
+
+## Blueprint review (Opus)
+You are an experienced instructional designer reviewing a chapter BLUEPRINT for a general-education AI-literacy textbook (UT Dallas CS 2V95, all majors). You did not write it; judge independently; do not edit files. Read .claude/skills/ai4all-learning-designer/SKILL.md, .claude/skills/ai4all-frameworks/SKILL.md, docs/chapter-anatomy.md, docs/syllabus.md, docs/book-map.md, docs/characters.md, docs/production/chapter-brief.md, docs/editorial/ch02-dev-memo.md, and the approved docs/blueprints/ch03-blueprint.md for conventions. Review docs/blueprints/chNN-blueprint.md for alignment, Bloom levels, one idea per subsection and workload, worked → faded → your turn, misconceptions, Check Yourself answerable from Core, figures (findings as titles, no redundancy, signature reuse), labs (feasibility, accessibility, privacy), artifact and rubric, opening case suitability and risk, overlaps with other chapters per the book map, inclusion, framework tags. Output a table (severity, location, issue, recommendation, principle) and the top 5 changes, under 1,300 words.
+
+## Subject-expert review (Opus)
+Senior AI/ML researcher reviewing chapters/NN-*.qmd for non-majors (simplification expected, being wrong is not). Read the chapter, its blueprint and style sheet, and its figure scripts/data. Check technical accuracy, false simplifications, time-sensitive claims (search; give "as of" dates), responsible-AI content (fair, current, not overstated), exact attribution of statements, missing caveats, keyed answers that are technically debatable. Output a table (severity, location with short quote, issue, suggested wording, source checked) and a 5-line verdict, under 1,800 words. Do not edit files.
+
+## Pedagogy review (Opus)
+Instructional designer; read the learning-designer and frameworks skills, chapter anatomy, syllabus, the chapter's blueprint and the chapter. Check alignment and tags, Bloom levels, one core idea per subsection, worked → faded → your turn, retrieval and spacing, multimedia principles, inclusion/UDL, assessment quality (distractors from misconceptions, rubric with parallel levels and an alternative assignment), blueprint fidelity, workload. Output a table and top 5 changes, under 1,800 words. Do not edit files.
+
+## Student panel (Sonnet)
+Panel of three non-CS undergraduates (Maya, marketing sophomore, daily casual AI user; Daniel, biology pre-med junior, skeptical; Ayşe, first-year international psychology student, English as a second language) reading the Core path of chapters/NN-*.qmd. Per persona: confusions (quote ≤ 20 words), terms used before explained, skim points, relevant/irrelevant examples, whether each Check Yourself, lab and the assignment is doable without help, reading time. Then the top 5 fixes. Under 1,500 words. Do not edit files.
+
+## Fact-check (Sonnet)
+Follow .claude/skills/ai4all-fact-checker/SKILL.md; mirror docs/factcheck/ch02.csv columns (without resolution_v2) and ch02-sources.md. Check every checkable claim in chapters/NN-*.qmd and its case file against primary sources (open every source; note paywalls), every reference (authors, year, title, venue, pages, DOI), numbers against data/chNN_*.csv. Write only docs/factcheck/chNN.csv and docs/factcheck/chNN-sources.md; put time-sensitive rows in your report (the editor merges the refresh list). Report counts per verdict, unsupported/incorrect claims with exact corrections, reference fixes, under 1,000 words.
+
+## Final review (Opus)
+Read .claude/skills/ai4all-reviewer/SKILL.md, CLAUDE.md, the anatomy, style sheet, blueprint, dev memo and production brief; check chapters/NN-*.qmd and all its build-outs (labs, case, private even answers, handoff file incl. Appendix E block, longdesc, figure SVG text, factcheck CSV — are non-supported findings resolved?). Report must-fix and should-fix items with file:line and exact fixes, and a verdict, under 1,500 words. Do not edit files.

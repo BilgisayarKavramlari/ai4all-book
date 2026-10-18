@@ -61,3 +61,17 @@ Sections, in this order, each ready to paste:
 ## Report back
 
 End each stage with a short report: files written, word counts (Core / total), figure count, open [VERIFY] items, author-only items, and anything the editor must decide.
+
+## Book-wide rules added during production
+
+- **Case ids** are assigned by the editor (registry: docs/production/case-ids.md). Use the id given in your prompt; never pick one yourself.
+- **Deep Chapter 6 terms:** Core chapters (12, 14, 15, 19) may point to Chapter 6 but must define any Chapter 6 term they use (context layers, in-context example, standing instructions, memory, prompt chain) in their own Core text.
+- **Terminology fixed by Chapter 6:** "in-context example" (never a bare "example", which the glossary defines as a dataset item); "test inputs" (not "test set") for prompts tried on a template; "standing instructions" for a user's persistent instructions; "system prompt" only for the provider's or developer's layer; "memory" = a product feature that stores notes; "prompt chain" = a person-run multi-step workflow; workflow vs. agent per Anthropic (2024).
+- **Failure labels (from Chapter 4):** every case file and case study labels its failure on Signature 5 (Failure Taxonomy Tree: hallucination, bias, context loss, overconfidence, security vulnerability; outdated information and wrong calculation are leaves of hallucination; sycophancy is a leaf of overconfidence), with a primary and optional secondary branch, each marked documented (solid) or inferred (dashed). Import `failure_tree` from figures/scripts/ch04_figures.py.
+- **Boundaries:** Chapter 4 explains why failures happen; Chapter 8 owns detection and verification methods (fabricated-citation rates, calibration measurement); Chapters 15, 16, 18 and 10 own security, fairness, liability and disclosure respectively.
+- **work_loop(highlight)** in ch01_figures.py accepts one step name or a list of step names.
+- **Chapter 5/6 boundary:** Chapter 5 (Core) labels the prompt part "in-context examples", defines it in Core with one illustration; Chapter 6 (Deep) owns choosing, balancing, ordering and testing them. Both use "test inputs". Chapter 5 ends at single-prompt iteration; Chapter 6 starts at reuse across inputs.
+- **Examinable scope (D20):** Core sections only; Deep chapters 6, 13, 17, 22, 23 and all Deep sections are not examinable.
+- **Reading order differs from chapter order** (syllabus): weeks 1–5 read Ch. 1 → 2, 3 → 5 (+6 Deep) → 7 → 4 + 8. Chapters 5, 6 and 7 must not depend on Chapter 4; Spaced Review draws on the chapters read just before in reading order. Student-facing Failure Taxonomy Tree labels start in Chapter 8.
+- **Tree vs. chain:** the Failure Taxonomy Tree labels output and system failures; human and workflow failures (overreliance, no approval gate, inappropriate delegation, data leakage by a user) are labeled on a link of Chapter 4's failure-to-harm chain. One uncertainty pair everywhere: documented / inferred (solid / dashed). Label overconfidence only with evidence about expressed certainty.
+- **Failure Diary prompts:** Chapters 3, 5 and 7 each add one line in a lab or Your Turn: "Save this for your Failure Diary (Chapter 4)" — so students arrive in week 5 with entries.

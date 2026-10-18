@@ -34,7 +34,7 @@ def work_loop(highlight=None):
             ex, ey = x1 + dx * 0.70, y1 + dy * 0.70
             f.arrow(sx, sy, ex, ey, curve=-18)
         for i, (x, y) in enumerate(pos):
-            hl = highlight == LOOP[i]
+            hl = LOOP[i] in (highlight if isinstance(highlight, (list, tuple)) else [highlight])
             role = "highlight" if hl else "neutral"
             f.box(x - bw / 2, y - bh / 2, bw, bh, f"{i + 1}. {LOOP[i]}", role=role, kind="human",
                   thick=hl, size=17, sub=LOOP_SUB[i], sub_size=12)
