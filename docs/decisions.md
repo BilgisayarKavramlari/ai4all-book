@@ -117,3 +117,15 @@ The author asked the editor to make suitable choices for open items and to escal
 | D-5.d | C01 and C18 | Both agency by the framework's definition; they differ in whether the design kept a human check before each output | Ch. 14 may reuse |
 | D-5.e | Week-3 reading R2 | R2 module 2 becomes **recommended** in week 3 so the honest count stays ≤ 2.2 h. Count (150 wpm): Core package ~53 min + Your Turn 5.3 ~5 min (Your Turns 5.1–5.2 are done in Lab 5.1 step 2) + A3 60–70 min = ~2.0–2.15 h; with R2 required, ~2.25–2.4 h | Live-syllabus change: author-only item; precedent D18 |
 <!-- /ch05-decisions -->
+<!-- ch06-decisions -->
+### Chapter 6
+| # | Topic | Decision | Notes |
+|---|---|---|---|
+| D-6.a | Tags in a Deep chapter | 6.1–6.5 and 6.7 tagged Deep; 6.6 Studio; no Core; numbering 6.1–6.7; not examinable (D20); review questions labeled as practice | Model for other Deep chapters |
+| D-6.b | Core chapters must not depend on Chapter 6 | Ch. 12, 14, 15, 19 define any Chapter 6 term they use (already in chapter-brief) | Book-wide |
+| D-6.c | Context Layers diagram | `context_layers(highlight=None, note=None, side_note=None)` in ch06_figures.py; extends Signature 4's context stage with Ch. 3's labels and two new layers; layer keys "system", "standing", "project", "conversation", "documents", "prompt" | Reusable in Ch. 10, 14, 15 |
+| D-6.d | Terminology | "standing instructions" (written "in a tool's options or a project"), "project space", "gap instruction", "prompt template", "placeholder", "prompt version", "prompt library", "prompt chain"; "system prompt" for the provider's layer; "parameters" for learned values and "options" for user controls (Ch. 3/5 rule) | Glossary rows above |
+| D-6.e | Medprompt numbers | Text and chart use Figure 4 ("the paper's step-by-step chart"): 81.7 → 83.9 → 87.3 → 88.4 → 90.2; Table 1 / Figure 4 mismatch and Figure 6 increments recorded in data/ch06_medprompt.csv; o1-preview "about 95–96%" | Editor decision 1 |
+| D-6.f | Persistent features and agency | Standing instructions / shared projects described as a step toward AI Fluency's agency, not an agent (reusing Ch. 5's box, as Ch. 5 promised "sections 6.5 and 7.5") | Book-wide rule implemented |
+| D-6.g | Task placement | "Full task last; optionally one line at the top" attributed to provider guidance (Anthropic; OpenAI GPT-4.1 guide), with Liu et al. stated accurately and "test it" | Editor decision 2 |
+<!-- /ch06-decisions -->

@@ -22,3 +22,11 @@
 3. Şeker (2014) page range: the entry's own citation line says pp. 5–6 (Kasım 2014); the issue is Aralık 2014 and its contents list p. 5. Please confirm.
 4. Final voice edit.
 <!-- /ch05 -->
+
+<!-- ch06 -->
+## Chapter 6
+1. The CRISP-DM article's printed affiliation is "Bilkav Eğitim Danışmanlık". If that is the author's own company, confirm that no disclosure is needed (the article promotes no product; the chapter treats it as non-commercial).
+2. Optional: a short anecdote from a CRISP-DM project the author ran, for From the Field. The section stands without it; nothing is invented.
+3. Live syllabus: the syllabus names CometAI as a university-provided tool, but UTD OIT pages (October 2026) list it for faculty and staff, and for student employees only at a manager's request. Copilot Chat is approved for students. The chapter states this; the live syllabus should be aligned.
+4. Final voice edit.
+<!-- /ch06 -->

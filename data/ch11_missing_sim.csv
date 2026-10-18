@@ -1,6 +1,6 @@
-choice,share right when blanks are random (MCAR),share right when long shifts go unlogged (MNAR)
-blank = 0 (total proceeds / total logged hours),0.505,0.514
-drop rows with a blank (listwise deletion),0.922,0.904
-fill with the mean of all logged shifts,0.808,0.803
-fill with the event's own mean,0.793,0.772
-copy the previous shift (last observation carried forward),0.747,0.735
+choice,share right: blanks at random in every event,"share right: blanks only at one event, mostly its long shifts"
+blank = 0 (total proceeds / total logged hours),0.505,0.336
+drop rows with a blank (listwise deletion),0.922,0.870
+fill with the mean of all logged shifts,0.808,0.730
+fill with the event's own mean,0.793,0.608
+copy the previous shift (last observation carried forward),0.747,0.644

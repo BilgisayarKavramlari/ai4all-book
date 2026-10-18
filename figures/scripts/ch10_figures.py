@@ -98,7 +98,8 @@ def voice_spectrum(highlight=None, marks=None, band=None, note=None):
             f.raw(f'<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" fill="#FFFFFF" stroke="{ink}" '
                   f'stroke-width="1"/>')
             if share:
-                f.raw(f'<rect x="{bx}" y="{by}" width="{bw * share:.1f}" height="{bh}" fill="{ai_fill}" '
+                fill = "url(#dots)" if f.mode == "gray" else ai_fill
+                f.raw(f'<rect x="{bx}" y="{by}" width="{bw * share:.1f}" height="{bh}" fill="{fill}" '
                       f'stroke="{ai_stroke}" stroke-width="1"/>')
         # marks: dashed brackets above positions
         for (a, b), lab in marks.items():

@@ -9,7 +9,7 @@ Stages: blueprint → draft → build-outs → independent checks → dev memo �
 | 3 | Inside Large Language Models | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~12,600 / 10,000 | author: From the Field (Electrica 2026) approvals; Elif scholarship detail; voice edit | 2026-10-18 |
 | 4 | How and Why AI Fails | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~12,000 / 10,000 | author: From the Field (fishbone) wording, live syllabus (R5 recommended, Failure Diary at portfolio checkpoint Mar 12); voice edit | 2026-10-18 |
 | 5 | Framing Tasks and Iterating Prompts | v3 — four reviews, revision, final review fixes, voice pass; merged | ~14,900 / 10,000 | author: R2 recommended (live syllabus); Şeker (2014) pages; voice edit | 2026-10-18 |
-| 6 | Context Engineering and Reusable Workflows | draft v1 (Deep); reviews running | ~13,600 / 10,000 | — | 2026-10-18 |
+| 6 | Context Engineering and Reusable Workflows (Deep) | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~14,700 / 10,000 | author: CRISP-DM affiliation disclosure?; optional anecdote; voice edit | 2026-10-18 |
 | 7 | Learning with AI: Tutor, Not Answer Machine | draft v1; reviews running | ~12,100 / 10,000 | — | 2026-10-18 |
 | 8 | Hallucination, Uncertainty and Verification | draft v1; reviews running | ~11,450 / 10,000 | — | 2026-10-18 |
 | 9 | Sources, Evidence and Reading with AI | blueprint v0.2; drafting | 0 / 10,000 | — | 2026-10-18 |

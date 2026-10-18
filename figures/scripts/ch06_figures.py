@@ -44,7 +44,7 @@ def _as_set(x):
 # (key, label, subtitle, who sets it, new in Ch. 6?)  Ch. 3 labels and subtitles kept word for word.
 LAYERS = [
     ("system", "System prompt", "set by the tool's maker", "the provider; usually unseen", False),
-    ("standing", "Standing instructions", "your rules for every chat", "you, once, in the tool's options", True),
+    ("standing", "Standing instructions", "your rules for every chat in a scope", "you, once, in options or a project", True),
     ("project", "Project files and memory notes", "added automatically", "you, or the product", True),
     ("conversation", "Conversation so far", "earlier prompts and responses", "you and the model, earlier", False),
     ("documents", "Pasted or retrieved text", "documents, search results", "you, or a search tool", False),
@@ -95,7 +95,7 @@ def context_layers(highlight=None, note=None, side_note=None):
 def chapter_map(f):
     muted = MUTED[f.mode]
     f.text(400, 26, "Chapter 6 at a glance", size=22, weight="700")
-    f.text(400, 52, "Optional (Deep) chapter, read with Chapter 5 · not examinable · fast route about 20 minutes",
+    f.text(400, 52, "Optional (Deep) chapter, read with Chapter 5 · not examinable · fast route about 25 minutes",
            size=13, color=muted)
     cols = [("What the model receives", ["6.1 Context layers", "6.2 Choosing what to include",
                                          "6.3 Labels and order"]),
@@ -111,7 +111,7 @@ def chapter_map(f):
             f.box(x, 104 + i * 82, 232, 66, it, role=role, kind=kind, size=14)
         if c < 2:
             f.arrow(x + 238, 220, x + 254, 220)
-    f.text(400, 372, "Opening case: Medprompt (2023) — same model, different context (6.4) and steps (6.7)",
+    f.text(400, 372, "Opening case: Medprompt (2023) — same model, different context (6.2–6.4) and steps (6.7)",
            size=13, color=muted)
     y = 412
     f.text(150, y, "AI Work Loop:", size=14, weight="700", anchor="end")
@@ -136,7 +136,7 @@ def catalog_before_after(f):
     f.box(30, 56, 340, 54, "Draft a parts order for the club", role="neutral", kind="human", size=14,
           sub="task first, with no criteria", sub_size=13)
     f.box(30, 128, 340, 190, "Supplier catalog, all 120 pages", role="risk", kind="step", thick=True, size=15,
-          sub="motors, wheels, sensors, tools, clothing, returns policy, 2025 and 2026 price lists mixed",
+          sub="motors, wheels, sensors, tools, clothing, returns policy, 2026 and 2027 price lists mixed",
           sub_size=13)
     f.box(30, 336, 340, 74, "Club budget rules, all 8 pages", role="neutral", kind="step", size=14,
           sub="travel, food, parts, fundraising", sub_size=13)
@@ -144,9 +144,9 @@ def catalog_before_after(f):
     f.text(200, 462, "Two price lists disagree.", size=13, color=muted, italic=True)
     rows = [("TASK IN BRIEF", "a parts order for the club (details at the end)", "step"),
             ("INSTRUCTIONS", "Use only the material below; if a part is missing, say so", "step"),
-            ("CATALOG p. 14 · 2026 price list", "drive motors (four models)", "step"),
-            ("CATALOG p. 52 · 2026 price list", "wheels and hubs", "step"),
-            ("BUDGET RULE 3 · Sept 2026", "parts orders over $250 need two officers", "step"),
+            ("CATALOG p. 14 · 2027 price list", "drive motors (four models)", "step"),
+            ("CATALOG p. 52 · 2027 price list", "wheels and hubs", "step"),
+            ("BUDGET RULE 3 · Jan 2027", "parts orders over $250 need two officers", "step"),
             ("TASK (full, last)", "Draft an order for two motors and four wheels; list total and who must approve", "human")]
     for i, (lab, sub, kind) in enumerate(rows):
         f.box(430, 56 + i * 70, 340, 62, lab, role="verified" if i in (2, 3, 4) else "neutral", kind=kind,
@@ -200,7 +200,7 @@ def template_anatomy(f):
 def library_card(f):
     ink, muted = INK[f.mode], MUTED[f.mode]
     f.box(20, 16, 760, 548, "", role="soft", kind="step")
-    f.text(40, 40, "Library entry: Club update email · v1.1 · 2026-10-14", size=16, weight="700", anchor="start")
+    f.text(40, 40, "Library entry: Club update email · v1.1 · 2027-02-03", size=16, weight="700", anchor="start")
     fields = [("Purpose", "Turn my meeting notes into the weekly update for members"),
               ("Use when / not when", "Weekly meeting notes · not for budget or safety decisions"),
               ("Template", "{NOTES} + {DATE} first, then the fixed task, audience, format"),

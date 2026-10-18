@@ -127,3 +127,7 @@ Why they exist: recurring people make examples personal and memorable (Mayer's p
 | 2026-10-18 | Ch. 5 | Lucía | Prepares a one-page "budget basics" handout for a first-year workshop run by the accounting students' association (constructed figures only; no employer or student data) |
 | 2026-10-18 | Ch. 5 | Lucía | Considers, and postpones ("not now"), a study-group FAQ chatbot that would answer classmates' money questions |
 | 2026-10-18 | Ch. 5 | Lucía | In the lab peer swap on her v3, a classmate cannot follow "net pay … minus withholdings"; she had not noticed because she is an accounting major, and rewrites her plain-language criterion |
+| 2026-10-18 | Ch. 6 | Sam | Runs the robotics club's weekly meeting and writes the update email for members, from his notes (names replaced by roles before pasting) |
+| 2026-10-18 | Ch. 6 | Sam | Drafts the club's parts orders within the club's budget rules (rule 3, January 2027: orders over $250 need two officers' approval; constructed); the club changed its meeting format in January 2027 |
+| 2026-10-18 | Ch. 6 | Sam | Keeps a personal prompt library as a plain text file; his club-update template reached v1.1 after an edge-input failure |
+| 2026-10-18 | Ch. 6 | Sam | An out-of-date memory note from his completed co-op ("Sam is on co-op") reached a draft; he deleted it and moved a club-only standing instruction into the club's project; the club meets on Thursdays |

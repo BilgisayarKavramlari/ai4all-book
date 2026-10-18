@@ -7,10 +7,14 @@ Writes:
     data/ch11_events.csv              Lucía's constructed volunteer-shift table (true hours kept in a separate column)
     data/ch11_missing_choices.csv     per-event $/volunteer-hour and the "best" event under each missing-value choice
     data/ch11_missing_sim.csv         share of 1,000 simulated datasets in which each choice picks the truly best event,
-                                      when blanks are random (MCAR) and when long shifts go unlogged (MNAR)
+                                      when blanks fall at random in every event and when they fall only at one
+                                      event, mostly on its long shifts
     data/ch11_proxy_sim.csv           simulated selection of the top 3% by a cost proxy vs. by need, as the access gap grows
     data/ch11_matrix.csv              constructed hiring-shortlist decision matrix (candidates A-F)
-    data/ch11_matrix_sensitivity.csv  top candidate and shortlist under weight and missing-value changes
+    data/ch11_matrix_sensitivity.csv  top candidate, margin over second place and shortlist under each scenario
+    data/ch11_scenario_a.csv          A9 scenario A' (unsolved): internship candidates G-L for students
+    data/ch11_scenario_b.csv          A9 scenario B' (unsolved): three spring fundraisers x five criteria for students
+    private/ch11-a9-key.md            instructor key for A' and B' (never committed; private/ is git-ignored)
     data/ch11_experiments_meta.txt    versions, seeds and parameters
 """
 import csv
@@ -21,7 +25,7 @@ import numpy as np
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 DATA = os.path.join(ROOT, "data")
-EVENTS = ["Bake sale", "Book swap", "Budget workshop"]
+EVENTS = ["Bake sale", "Book swap", "Car wash"]
 
 # ------------------------------------------------------------------ 1. Lucía's events (constructed)
 # (event, shift, true_hours, proceeds, hours_logged?)  proceeds in dollars, net of costs
@@ -30,9 +34,9 @@ SHIFTS = [
     ("Bake sale", 4, 8, 144, True), ("Bake sale", 5, 9, 162, True), ("Bake sale", 6, 10, 180, True),
     ("Book swap", 1, 6, 150, True), ("Book swap", 2, 7, 168, True), ("Book swap", 3, 14, 210, False),
     ("Book swap", 4, 6, 144, True), ("Book swap", 5, 13, 195, False), ("Book swap", 6, 8, 192, True),
-    ("Budget workshop", 1, 10, 225, True), ("Budget workshop", 2, 10, 225, True),
-    ("Budget workshop", 3, 11, 248, True), ("Budget workshop", 4, 9, 202, True),
-    ("Budget workshop", 5, 10, 225, True), ("Budget workshop", 6, 10, 225, True),
+    ("Car wash", 1, 10, 225, True), ("Car wash", 2, 10, 225, True),
+    ("Car wash", 3, 11, 248, True), ("Car wash", 4, 9, 202, True),
+    ("Car wash", 5, 10, 225, True), ("Car wash", 6, 10, 225, True),
 ]
 CHOICES = ["true hours (known only in this demo)", "blank = 0 (total proceeds / total logged hours)",
            "drop rows with a blank (listwise deletion)", "fill with the mean of all logged shifts",
@@ -92,18 +96,22 @@ SIM_N, SIM_SEED, SHIFTS_PER_EVENT, MISSING_SHARE = 1000, 11, 8, 0.25
 
 
 def simulate(mechanism, rng):
+    """mechanism "spread": blanks at random in every event (each shift 25%).
+    mechanism "one_event": blanks only at the book swap, more often on its long shifts."""
     rows = []
-    base_rate = {"Bake sale": rng.normal(18, 2), "Book swap": rng.normal(20, 2), "Budget workshop": rng.normal(21, 2)}
+    base_rate = {"Bake sale": rng.normal(18, 2), "Book swap": rng.normal(20, 2), "Car wash": rng.normal(21, 2)}
     for ev in EVENTS:
         hours = np.clip(rng.normal(9, 3, SHIFTS_PER_EVENT), 3, 16).round()
         # longer shifts earn less per hour (traffic fades late in the day)
         rate = base_rate[ev] * (1.15 - 0.03 * (hours - 9))
         proceeds = (rate * hours * rng.normal(1, 0.08, SHIFTS_PER_EVENT)).round()
-        if mechanism == "MCAR":
+        if mechanism == "spread":
             miss = rng.random(SHIFTS_PER_EVENT) < MISSING_SHARE
-        else:  # MNAR: the longer the shift, the likelier it went unlogged
-            p = np.clip(MISSING_SHARE * (hours - 3) / 6, 0, 0.9)
+        elif ev == "Book swap":  # the longer the shift, the likelier it went unlogged
+            p = np.clip(2 * MISSING_SHARE * (hours - 3) / 6, 0, 0.9)
             miss = rng.random(SHIFTS_PER_EVENT) < p
+        else:
+            miss = np.zeros(SHIFTS_PER_EVENT, dtype=bool)
         for h, pr, m in zip(hours, proceeds, miss):
             rows.append((ev, float(h), float(pr), None if m else float(h)))
     return rows
@@ -111,7 +119,7 @@ def simulate(mechanism, rng):
 
 def simulation():
     rng = np.random.default_rng(SIM_SEED)
-    res = {mech: np.zeros(len(CHOICES)) for mech in ("MCAR", "MNAR")}
+    res = {mech: np.zeros(len(CHOICES)) for mech in ("spread", "one_event")}
     for mech in res:
         for _ in range(SIM_N):
             rows = simulate(mech, rng)
@@ -122,10 +130,11 @@ def simulation():
                 res[mech][i] += max(r, key=r.get) == best
     with open(os.path.join(DATA, "ch11_missing_sim.csv"), "w", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["choice", "share right when blanks are random (MCAR)", "share right when long shifts go unlogged (MNAR)"])
+        w.writerow(["choice", "share right: blanks at random in every event",
+                    "share right: blanks only at one event, mostly its long shifts"])
         for i in range(1, len(CHOICES)):
-            w.writerow([CHOICES[i], f"{res['MCAR'][i] / SIM_N:.3f}", f"{res['MNAR'][i] / SIM_N:.3f}"])
-            print(f"  {CHOICES[i]:62s} MCAR {res['MCAR'][i] / SIM_N:.3f}  MNAR {res['MNAR'][i] / SIM_N:.3f}")
+            w.writerow([CHOICES[i], f"{res['spread'][i] / SIM_N:.3f}", f"{res['one_event'][i] / SIM_N:.3f}"])
+            print(f"  {CHOICES[i]:62s} spread {res['spread'][i] / SIM_N:.3f}  one event {res['one_event'][i] / SIM_N:.3f}")
 
 
 # ------------------------------------------------------------------ 3. proxy simulation (mechanism only)
@@ -207,14 +216,97 @@ def matrix():
         sc = {k: score(v, wts, miss) for k, v in CANDIDATES.items()}
         sc = {k: s for k, s in sc.items() if s is not None}
         ranked = sorted(sc, key=sc.get, reverse=True)
-        out.append([name, "/".join(map(str, wts)), ranked[0], " ".join(ranked[:3]),
-                    " ".join(f"{k}={sc[k]:.2f}" for k in ranked)])
-        print(f"  {name:66s} top {ranked[0]}  shortlist {' '.join(ranked[:3])}  | {out[-1][-1]}")
+        out.append([name, "/".join(map(str, wts)), ranked[0], f"{sc[ranked[0]] - sc[ranked[1]]:.2f}",
+                    " ".join(ranked[:3])] + [f"{sc[k]:.2f}" if k in sc else "" for k in CANDIDATES])
+        print(f"  {name:66s} top {ranked[0]} (+{sc[ranked[0]] - sc[ranked[1]]:.2f})  shortlist {' '.join(ranked[:3])}")
     with open(os.path.join(DATA, "ch11_matrix_sensitivity.csv"), "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["scenario", "weights (test/interview/experience/GPA/referral)", "top candidate",
-                    "shortlist of three", "scores (0-10)"])
+                    "margin over second (0-10 scale)", "shortlist of three"] + [f"score {k}" for k in CANDIDATES])
         w.writerows(out)
+    on_list = {k: sum(k in r[4].split() for r in out) for k in CANDIDATES}
+    print("  shortlist appearances across", len(out), "scenarios:", on_list)
+
+
+# ------------------------------------------------------------------ 5. A9 scenario files (unsolved for students)
+A_CRIT = ["Work-sample task (0-100)", "Structured interview (1-5)", "GPA (0-4)",
+          "Hours available per week", "Attended a partner university (1 = yes)"]
+A_RANGES = [(0, 100), (1, 5), (0, 4), (0, 20), (0, 1)]
+A_CANDS = {"G": [78, 4.0, 3.2, 15, 1], "H": [90, 4.5, None, 12, 0],      # H: transfer student, no GPA here yet
+           "I": [70, 3.5, 3.7, 20, 1], "J": [85, None, 3.4, 15, 0],      # J: interview not yet held
+           "K": [74, 4.0, 3.0, 18, 1], "L": [82, 3.5, 3.5, 10, 0]}
+A_TRY = [("Even-looking weights 30/25/20/10/15, blanks = lowest", [30, 25, 20, 10, 15], "zero"),
+         ("Same weights, blanks = mean of others", [30, 25, 20, 10, 15], "mean"),
+         ("Partner-university flag removed, its 15 to the work sample", [45, 25, 20, 10, 0], "mean"),
+         ("Equal weights, blanks = mean", [20, 20, 20, 20, 20], "mean")]
+B_CRIT = ["Expected net proceeds ($)", "Volunteer hours needed (lower is better)",
+          "Weather risk (1 low - 3 high; lower is better)", "Members who said they would help (survey)",
+          "Fit with the association's mission (board rating 1-5)"]
+B_OPTS = {"Trivia night": [620, 40, 1, 9, 3], "Plant sale": [None, 30, 3, 6, 4],  # new event: no history
+          "Graduation photo booth": [900, 55, 2, None, 4]}                       # survey did not ask about it
+B_BETTER_LOW = [False, True, True, False, False]
+B_TRY = [("Weights 35/20/15/15/15, blanks = worst", [35, 20, 15, 15, 15], "zero"),
+         ("Same weights, blanks = mean of others", [35, 20, 15, 15, 15], "mean"),
+         ("Proceeds 20, mission 30", [20, 20, 15, 15, 30], "mean"),
+         ("Equal weights, blanks = mean", [20, 20, 20, 20, 20], "mean")]
+
+
+def generic_scores(opts, wts, ranges, missing, better_low=None):
+    cols = list(zip(*opts.values()))
+    out = {}
+    for name, vals in opts.items():
+        tot = 0.0
+        for j, v in enumerate(vals):
+            lo, hi = ranges[j]
+            present = [c for c in cols[j] if c is not None]
+            if v is None:
+                v = float(np.mean(present)) if missing == "mean" else (hi if better_low and better_low[j] else lo)
+            x = (v - lo) / (hi - lo)
+            if better_low and better_low[j]:
+                x = 1 - x
+            tot += wts[j] / 100 * x * 10
+        out[name] = tot
+    return out
+
+
+def scenarios():
+    with open(os.path.join(DATA, "ch11_scenario_a.csv"), "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["candidate"] + A_CRIT)
+        for k, v in A_CANDS.items():
+            w.writerow([k] + ["" if x is None else x for x in v])
+    with open(os.path.join(DATA, "ch11_scenario_b.csv"), "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["option"] + B_CRIT)
+        for k, v in B_OPTS.items():
+            w.writerow([k] + ["" if x is None else x for x in v])
+    b_ranges = []
+    for j in range(len(B_CRIT)):
+        present = [v[j] for v in B_OPTS.values() if v[j] is not None]
+        b_ranges.append({0: (0, 1000), 1: (0, 60), 2: (1, 3), 3: (0, 12), 4: (1, 5)}[j])
+    lines = ["# Chapter 11 — A9 scenario key (instructor only; generated by figures/scripts/ch11_experiments.py)", "",
+             "Scaling: each criterion to 0-10 by fixed ranges; weighted sum; one illustrative set of tests. "
+             "Students may choose other defensible weights and scales; grade the audit, not the ranking.", ""]
+    for label, opts, crit, ranges, tries, bl in [("A' internship shortlist (G-L)", A_CANDS, A_CRIT, A_RANGES, A_TRY, None),
+                                                 ("B' spring fundraiser", B_OPTS, B_CRIT, b_ranges, B_TRY, B_BETTER_LOW)]:
+        lines += [f"## {label}", "", "| Test | Ranking (score) | Top margin |", "|---|---|---|"]
+        for name, wts, miss in tries:
+            sc = generic_scores(opts, wts, ranges, miss, bl)
+            r = sorted(sc, key=sc.get, reverse=True)
+            lines.append(f"| {name} | {', '.join(f'{k} {sc[k]:.2f}' for k in r)} | {sc[r[0]] - sc[r[1]]:.2f} |")
+            print(f"  {label[:3]} {name:62s} -> {r[0]} (+{sc[r[0]] - sc[r[1]]:.2f}) | {' '.join(r)}")
+        lines.append("")
+    lines += ["Hidden assumptions students should find:",
+              "- A': H's blank GPA (transfer student) and J's blank interview (not yet held) — scoring a blank as the lowest "
+              "value penalizes the candidate for the firm's own missing step; the fix is to get the value (hold the "
+              "interview; ask for the transcript), not to pick a fill. The partner-university flag is a proxy (for "
+              "preparation or fit) that tracks where someone studied; GPA scales differ across universities.",
+              "- B': the plant sale has no proceeds history (new event) and the photo booth was not on the survey; the "
+              "survey count comes from 14 of about 60 members (a sample that volunteered). 'Lower is better' criteria "
+              "must be reversed; an AI-drafted matrix that adds raw hours or weather scores is a check-6 (formula) error."]
+    os.makedirs(os.path.join(ROOT, "private"), exist_ok=True)
+    with open(os.path.join(ROOT, "private", "ch11-a9-key.md"), "w") as f:
+        f.write("\n".join(lines) + "\n")
 
 
 if __name__ == "__main__":
@@ -226,13 +318,16 @@ if __name__ == "__main__":
     proxy_sim()
     print("4. Decision matrix")
     matrix()
+    print("5. A9 scenario files (key -> private/ch11-a9-key.md)")
+    scenarios()
     with open(os.path.join(DATA, "ch11_experiments_meta.txt"), "w") as f:
         f.write(f"python {platform.python_version()} · numpy {np.__version__}\n")
         f.write("events: constructed 18-shift table; Book swap shifts 3 and 5 (14 h, 13 h) unlogged; "
                 "rates = total proceeds / total hours per event\n")
         f.write(f"missing-value simulation: {SIM_N} datasets per mechanism, seed {SIM_SEED}, "
-                f"{SHIFTS_PER_EVENT} shifts per event, missing share {MISSING_SHARE}; MNAR probability rises with "
-                "shift length; long shifts earn less per hour\n")
+                f"{SHIFTS_PER_EVENT} shifts per event, missing share {MISSING_SHARE}; condition 'spread' = each shift "
+                f"blank with probability {MISSING_SHARE} in every event; condition 'one_event' = blanks only at the book "
+                "swap, probability 2 x 0.25 x (hours - 3) / 6 capped at 0.9; long shifts earn less per hour\n")
         f.write(f"proxy simulation: population {POP}, group B share {SHARE_B}, top {TOP:.0%} selected, "
                 f"need ~ lognormal(0, 0.6), cost = need x access x lognormal(0, 0.3), seeds 1000-1049; "
                 "mechanism only, not Obermeyer et al.'s data\n")

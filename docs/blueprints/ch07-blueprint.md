@@ -311,3 +311,15 @@ Brief rules applied: reading order (no Ch. 4 dependency; sycophancy and model ca
 - Study modes cited to Malik (2025, TechCrunch), which dates Google's Guided Learning (Aug 6, 2025) and OpenAI's Study Mode (about a week earlier); Anthropic's learning mode not mentioned (no primary source read).
 - Kirk-Johnson et al. (2019) moved to Further Reading (one source per point in 7.3).
 - F7.1's Work Loop strip highlights Frame and Verify; no separate `work_loop` figure (D-7.f in the handoff).
+
+## Revision v2 (2026-10-18)
+
+Four independent reviews applied with the editor's decisions E1–E9; details and skips in docs/editorial/ch07-dev-memo.md. Changes against this blueprint:
+- 7.2 adds a pretesting caveat (Kornell, Hays & Bjork, 2009).
+- 7.3 defines one prediction format (summed confidence → predicted score; calibration gap = predicted − actual).
+- 7.4 adds coding rules, and its Your Turn is now a self-contained business item (break-even) in place of music.
+- A4: check questions stay out of the dialogue; the delayed check uses parallel keyed questions; reflection is 200–300 words; the rubric now has six criteria (Reflection 1.5 + Declaration 0.5).
+- The Case Study is read in Tuesday's class, and its job is judging evidence strength across the three studies.
+- Nickow et al. is cited in the AERJ 2024 version (about 0.29 SD).
+- The Nigeria caveats are added.
+- Week 4 comes to about 2.2 h.

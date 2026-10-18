@@ -115,3 +115,13 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Test inputs | A small set of different inputs a prompt is tried on (typical, different, edge) to see whether it works beyond one case. | Test girdileri |
 | Peer swap test | Someone else runs your prompt without your explanation and scores the output against your criteria, to reveal what was in your head but not in the prompt. | Akran takas testi |
 | Benchmark | A standard test used to compare models. | Kıyaslama testi (benchmark) |
+| Context layers | The separate sources of text that together fill a model's context window in one turn, each set by someone and at some time. | Bağlam katmanları |
+| Context engineering | Deciding what goes into a model's context window, from which layer, in what form and in what order, so that a task can be done well. | Bağlam mühendisliği |
+| Standing instructions | Instructions you write once, in a tool's options or a project, that the tool adds to every conversation in that scope. | Kalıcı talimatlar |
+| Project space | A workspace in a tool where chosen files and instructions are added to every conversation started inside it. | Proje alanı |
+| Gap instruction | A line in a prompt that says what to do when the material is not enough. | Boşluk talimatı |
+| Prompt template | A prompt written for a recurring task, with fixed parts that stay the same each time and placeholders for the parts that change. | İstem şablonu |
+| Placeholder | A marked slot in a template, such as {NOTES} or {DATE}, that you replace with new material each time you use it. | Yer tutucu |
+| Prompt version | A numbered, dated state of a prompt or template, recorded with what changed and what it was tested on. | İstem sürümü |
+| Prompt library | A personal or shared collection of tested prompt templates, each recorded with when to use it, what it was tested on and how it has changed. | İstem kütüphanesi |
+| Prompt chain | A fixed sequence of prompts that you run one after another, where each step's output becomes the next step's input and you check the result between steps. | İstem zinciri |

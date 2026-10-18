@@ -46,3 +46,19 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | L5.3 sample outputs and scoring sheet | Lab 5.3 (scoring sheet), no-device route (samples) | Outputs for one trick, with and without, on two inputs, three runs each, with model and date; a shared sheet for pooling class results | Tue Feb 9, 2027 |
 | Compass pages | Labs 5.1–5.3; A3 | How to open a fresh, temporary chat in current tools; interactive Signature 6 (prompt builder) and Signature 7 (rung chooser) after the MVP | Thu Feb 4, 2027 (tool steps); signatures after the MVP |
 <!-- /ch05 -->
+
+<!-- ch06 -->
+## Chapter 6
+Everything the chapter, labs or assignment promise on eLearning or in Compass. All are needed by **Thu Feb 4, 2027** (the week-3 lab, when Chapter 6 is offered as the "D: Ch. 6" extension), unless noted.
+
+| Asset | Where promised | Needed by |
+|---|---|---|
+| Provided sample prompt (for students without an A3 prompt) | Lab 6.1 step 1; 6.6 Your Turn | Thu Feb 4, 2027 |
+| Library entry template (plain table; screen-reader version) | Lab 6.1; Application Assignment; F6.10 | Thu Feb 4, 2027 |
+| Constructed 12-page store-policy document (dated), three questions labeled typical/different/edge with answer keys, two in-context examples, scoring sheet; plain-text versions | Lab 6.2 | Thu Feb 4, 2027 |
+| Dated sample outputs (model name and date) for every lab version: Lab 6.2 (a)–(c) and with/without examples; Lab 6.3 Versions 1 and 2 | Labs 6.2–6.3 no-device and 10-minute routes | Thu Feb 4, 2027 |
+| Constructed meeting notes with planted errors (version A and harder version B), the error key, the one-prompt prompt; plain-text versions | Lab 6.3 | Thu Feb 4, 2027 |
+| Sample memory list and audit sheet (types and actions only) | Lab 6.4 no-feature route | Thu Feb 4, 2027 |
+| Dated, constructed sample library with four flawed entries (no placeholders, whole document pasted, one-sided examples, a personal-data field) | Alternative assignment | Thu Feb 4, 2027 |
+| Compass pages: ch06-lab1 to ch06-lab4, persistent features by tool (where to view and delete memory, standing instructions), interactive Context Layers, template tester | Labs; 6.5 dated box; Further Reading | After the Compass MVP (Jan 8, 2027, D7); placeholders until then |
+<!-- /ch06 -->

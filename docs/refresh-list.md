@@ -65,3 +65,15 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 5 | 5.1, 5.3, Further Reading | Provider guides change; Google's 2024 guide URL returned 404 (cited via an archived copy) | Oct 2026 | Anthropic (n.d.-b); OpenAI (n.d.); Google (2024) | Each edition |
 | 5 | 5.2, Further Reading | AI Fluency v1.1 (Dec 2025) definitions; R2 module 2 = "The AI Fluency Framework" (10-module course) | Oct 2026 | Dakan & Feller (2025); Anthropic (n.d.-a) | Each edition |
 | 5 | 5.3, 5.4, labs | Memory and temporary-chat features (product state) | Oct 2026 | Ch. 3; Compass | Each edition |
+| 6 | 6.5 dated box | OpenAI memory (Feb 2024 test; Apr 2025 reference to past chats; Jun 2025 free tier), Anthropic Projects (Jun 2024, paid plans first), Google Gems (announced May 2024, available Aug 2024) | Oct 2026 | OpenAI (2024); Zeff (2025); Anthropic (2024a); Google (2024) | Each term |
+| 6 | 6.5 dated box | UTD OIT: Copilot Chat approved for students, faculty and staff; CometAI for faculty and staff, student employees via manager request | Oct 2026 | atlas.utdallas.edu KB 1552 (AI tools matrix), 1384, 1480 | Each term |
+| 6 | 6.1, Ethics Lens | At least two providers publish chat-app system prompts (Anthropic since August 2024; xAI since May 2025) | Oct 2026 | Willison (2024); platform.claude.com/docs/en/release-notes/system-prompts; Wiggers (2025); github.com/xai-org/grok-prompts | Each edition |
+| 6 | 6.1, 6.5 | Memory = saved notes or past chats (product-dependent); training on conversations is a separate account option | Oct 2026 | Chapter 3 v2 wording; provider pages | Each edition |
+| 6 | 6.1 | Chat formats mark roles; models trained to prioritize system instructions | Oct 2026 | Wallace et al. (2024) | Each edition |
+| 6 | 6.5 names box | Product names for standing instructions, projects, memory; AGENTS.md as an instruction-file format | Oct 2026 | Product documentation; agents.md | Each edition |
+| 6 | 6.3 | Vendor advice on task placement: Anthropic (documents first, query last, "up to 30 percent in tests"); OpenAI GPT-4.1 guide (instructions before and after) | Oct 2026 | Anthropic (n.d.); OpenAI (n.d.) | Each edition |
+| 6 | 6.2, F6.4, Short case 2 | Distraction and long-context findings: code-davinci-002 (older model, since retired [unverified]); Hong et al. (18 models, 2025 versions) | Oct 2026 | Shi et al. (2023); Liu et al. (2024); Hong et al. (2025) | Each edition |
+| 6 | 6.4, Short case 1 | Example order/balance sensitivity (GPT-3-era models) | Oct 2026 | Zhao et al. (2021); Lu et al. (2022) | Each edition |
+| 6 | Opening Case, Case Study, C17 | Medprompt (GPT-4, 2023) and the o1-preview reversal (2024; model since superseded); MedQA near saturation | Oct 2026 | Nori et al. (2023, 2024) | Each edition |
+| 6 | 6.1 | "Context engineering" term (Lütke, 18/19 June 2025; Karpathy, 25 June 2025) | Oct 2026 | Willison (2025) | Each edition |
+| 6 | Case Study | Microsoft as investor in and cloud distributor of OpenAI's models | Oct 2026 | OpenAI (2023) | Each edition |

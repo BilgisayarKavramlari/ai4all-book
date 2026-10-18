@@ -17,20 +17,20 @@ Chapter 5's week is already full. A good plan is to read the fast route now and 
 - **Token:** a unit of text (a word, part of a word, or a symbol) that a language model receives and produces (Chapter 3).
 - **Context window:** the space for everything a language model receives in one turn, measured in tokens; the response also counts toward it (Chapter 3).
 - **Parameters and options:** a **parameter** is one of the learned settings inside a model; training adjusts parameters (Chapter 2). **Options** are the controls you can change in a tool, such as a memory switch, search or **temperature**, an option that changes how often less likely tokens are picked; it does not change the model's settings (Chapter 3).
-- **Benchmark:** a fixed set of test questions used to compare AI systems.
+- **Benchmark:** a standard test used to compare models.
 - **Zero-shot:** asking a question with no in-context examples in the prompt.
 - **Majority vote:** asking the same question several times and keeping the most common answer.
 - **Edge input:** an unusual but possible input, the one most likely to break a prompt (Chapter 5).
-- **Placeholder:** a marked slot in a reusable prompt, such as `{NOTES}`, filled with new material each time (section 6.6).
+- **Placeholder:** a marked slot in a template, such as {NOTES} or {DATE}, that you replace with new material each time you use it (section 6.6).
 - **Version:** a numbered, dated state of a prompt, recorded with what changed (section 6.6).
-- **Agent vs. agency:** an *agent* is a system in which the model directs its own steps and tool use; *agency* is a way of working in which you set AI up to act for you later (Chapter 5).
+- **Agent vs. agency:** an *agent* is a system in which the model directs its own steps and tool use toward a goal (Chapter 3); *agency* is a way of working in which you set AI up to act for you later (Chapter 5).
 :::
 
 **The question of this chapter:** *If the model is the same, why do two people get such different results from it?* Keep your answer in mind. The Chapter Summary returns to it.
 
 ## Opening Case: Same Model, Different Context {.unnumbered}
 
-In November 2023, a team at Microsoft Research published a study of GPT-4, a large language model from OpenAI (Nori et al., 2023). They tested it on MedQA, a benchmark of multiple-choice questions in the style of the U.S. exam that doctors must pass to practice. The team did not retrain the model or change its parameters. They changed what the model received with each question, and how they asked.
+In November 2023, researchers at Microsoft, with one co-author from OpenAI, posted a study of GPT-4, a large language model (LLM) from OpenAI (Nori et al., 2023). They tested it on MedQA, a benchmark of multiple-choice questions in the style of the U.S. exam that doctors must pass to practice. The team did not retrain the model or change its parameters. They changed what the model received with each question, and how they asked.
 
 In the paper's step-by-step chart, GPT-4 with a simple prompt and no examples (zero-shot) scored 81.7%. The team then added four things, one at a time, in this order (Nori et al., 2023):
 
@@ -100,7 +100,7 @@ The layers arrive as one long sequence of tokens. Hidden markers separate the pr
 This chapter's six context layers are not Chapter 5's six prompt parts (role, task, context, constraints, in-context examples, output format). The prompt parts describe one layer: your prompt. The layers describe everything the model receives.
 :::
 
-The system-prompt layer is real, even when it is invisible. At least two providers publish the system prompts of their chat apps: Anthropic since July 2024, with a log of later changes (Willison, 2024), and xAI, for its Grok chatbot, since May 2025, after it blamed an unauthorized change to its prompt for answers that kept raising an unrelated political topic (Wiggers, 2025). These prompts include instructions about tone, formatting and what the assistant should say it cannot do. Publishing is a choice each provider makes, so assume that a layer you did not write is shaping the output.
+The system-prompt layer is real, even when it is invisible. At least two providers publish the system prompts of their chat apps: Anthropic since August 2024, with a log of later changes (Willison, 2024), and xAI, for its Grok chatbot, since May 2025, after it blamed an unauthorized change to its prompt for answers that kept raising an unrelated political topic (Wiggers, 2025). These prompts include instructions about tone, formatting and what the assistant should say it cannot do. Publishing is a choice each provider makes, so assume that a layer you did not write is shaping the output.
 
 **Context engineering** is deciding what goes into a model's context window, from which layer, in what form and in what order, so that a task can be done well. The term spread in June 2025, when Shopify's chief executive, Tobi Lütke, and the AI researcher Andrej Karpathy said they preferred it to "prompt engineering" (Willison, 2025). This chapter uses it for everyday work in a chat tool.
 
@@ -114,13 +114,13 @@ The system-prompt layer is real, even when it is invisible. At least two provide
 | Layer | What was in it | Who set it | Could Sam see it? |
 |---|---|---|---|
 | System prompt | The provider's instructions | The provider | No |
-| Standing instructions | "Write for first-year club members: plain words; every task gets an owner and a due date" | Sam, in the project's options, in September | Yes, in the options |
+| Standing instructions | "Write for first-year club members: plain words; every task gets an owner and a due date" | Sam, in the project's options, in January | Yes, in the options |
 | Project files and memory notes | The club's meeting template (a file); a memory note: "Sam is on co-op at a manufacturing firm" | Sam (file); the product (note) | The file, yes; the note, only if he opens the memory list |
 | Conversation so far | Nothing; a new chat | — | — |
 | Pasted text | This week's notes | Sam | Yes |
 | Your prompt | "Write this week's update from my notes" | Sam, now | Yes |
 
-**Step 2 — Spot the surprise.** The draft ends with "Sam will share lessons from his co-op." A *co-op* is a paid work term at a company that counts toward a degree; Sam finished his last year. The memory note is out of date, and it reached the output.
+**Step 2 — Spot the surprise.** The draft ends with "Sam will share lessons from his co-op." A *co-op* is a paid work term at a company that counts toward a degree; Sam finished his co-op last year. The memory note is out of date, and it reached the output.
 
 **Step 3 — Conclude.** The prompt was fine. A layer Sam had not looked at in months changed the result. Section 6.5 shows what he does about it.
 :::
@@ -151,8 +151,6 @@ Think of the last conversation you had with an AI tool. Without copying any cont
 
 A nursing student pastes a drug handbook, an engineer pastes a supplier catalog, a history student pastes an archive's worth of letters. In every field, the layer you control most directly is the one where you add material: pasted text, attached documents, retrieved passages. It is tempting to paste everything. The document is right there, and more information seems safer than less. This section shows why that habit often makes results worse.
 
-![The documents you add are the layer you control most directly.](../figures/out/color/f6-05-layers-documents.svg){#fig-6-5 fig-alt="Context layers with the pasted or retrieved text layer highlighted; who sets it: you, or a search tool."}
-
 **Make a prediction first.** Researchers took 100 math word problems at school level, from a public set called GSM8K. The model they tested could solve each of them with at least one prompting method. Then they added one sentence to each problem that had nothing to do with the answer. Does the model's accuracy go up, stay the same or go down? Write your guess before you read on.
 
 Here is what happened. In a 2023 study, researchers built 58,052 versions of those 100 problems, each with one irrelevant sentence added, such as a detail about someone else's age or shopping, and tested a random 4,000 of them (Shi et al., 2023). The model was an older OpenAI model, code-davinci-002, used with step-by-step prompting. On the 100 original problems it scored 95.0%. On the versions with one irrelevant sentence it scored 72.4%. Adding an instruction to ignore irrelevant information brought it back up only to 77.8%. Each original problem had many distracted versions, and for only 6 of the 100 problems did the model answer every version correctly.
@@ -161,11 +159,13 @@ Here is what happened. In a 2023 study, researchers built 58,052 versions of tho
 
 That model is older than the tools you use. The pattern has kept turning up, though. In 2025, a company that sells search and retrieval software tested 18 models, including several from that year, on deliberately simple tasks. It reported that performance became less reliable as the input grew longer, and that even one distracting sentence lowered results (Hong et al., 2025). That report is an industry technical report, not a peer-reviewed study, from a company with an interest in the topic. Chapter 3's "lost in the middle" study points the same way: information in the middle of a long input was used less reliably than information at the start or end (Liu et al., 2024).
 
+![The documents you add are the layer you control most directly.](../figures/out/color/f6-05-layers-documents.svg){#fig-6-5 fig-alt="Context layers with the pasted or retrieved text layer highlighted; who sets it: you, or a search tool."}
+
 The lesson is not "give the model less." It is **give it what the task needs, and little else.** In other words, every page you add should earn its place by serving the task. Four habits follow.
 
 1. **Select excerpts, not whole documents.** Find the pages, rows or paragraphs the task depends on. If you cannot tell which parts matter, that is a sign the task needs more framing first (Chapter 5).
-2. **Name each excerpt's source and date.** "Catalog, p. 14, 2026 price list" lets you, and the reader of the output, check where a claim came from. Undated material is a common source of outdated answers.
-3. **Add a gap instruction**, a line that says what to do when the material is not enough. For example: "If the answer is not in the material below, say so; do not fill the gap." This does not guarantee the output will follow it, but it gives your check something to test.
+2. **Name each excerpt's source and date.** "Catalog, p. 14, 2027 price list" lets you, and the reader of the output, check where a claim came from. Undated material is a common source of outdated answers.
+3. **Add a gap instruction**, a line in a prompt that says what to do when the material is not enough. For example: "If the answer is not in the material below, say so; do not fill the gap." This does not guarantee the output will follow it, but it gives your check something to test.
 4. **Leave out what must not be shared.** Personal data, other people's information and confidential material do not belong in a prompt at all, however useful they seem. Chapter 15 covers privacy and what never to paste.
 
 ::: {.callout-note title="Worked Example: Sam's Parts Order"}
@@ -173,13 +173,13 @@ The lesson is not "give the model less." It is **give it what the task needs, an
 
 **Step 1 — What does the task need?** The motor and wheel pages, the current prices, and the rule on approving purchases.
 
-**Step 2 — Find it.** Motors are on catalog page 14 and wheels on page 52. The catalog contains two price lists, one from 2025 and one from 2026; he needs the 2026 one. In the budget rules, rule 3 on page 6 says orders over $250 need two officers' approval.
+**Step 2 — Find it.** Motors are on catalog page 14 and wheels on page 52. The catalog contains two price lists, one from 2026 and one from 2027; he needs the 2027 one. In the budget rules, rule 3 on page 6 says orders over $250 need two officers' approval.
 
-**Step 3 — Build the context.** He pastes the two catalog pages from the 2026 list and rule 3, each with its source and date. He leaves out the other 118 pages, the old price list and the rest of the rules.
+**Step 3 — Build the context.** He pastes the two catalog pages from the 2027 list and rule 3, each with its source and date. He leaves out the other 118 pages, the old price list and the rest of the rules.
 
 **Step 4 — Add the gap instruction.** "If a part I ask for is not in these pages, say so."
 
-**Why it is better.** A whole catalog would have put two price lists in front of the model. An order priced from the 2025 list would read smoothly and be wrong. By selecting, Sam removed the source of that error. He still checks each price against the page.
+**Why it is better.** A whole catalog would have put two price lists in front of the model. An order priced from the 2026 list would read smoothly and be wrong. By selecting, Sam removed the source of that error. He still checks each price against the page.
 :::
 
 ::: {.callout-note title="Faded Example: Five Primary Sources"}
@@ -214,11 +214,11 @@ Build the context: which section(s) do you include, with what labels, and what g
 
 Once you know what to include, how you arrange it matters too. Inside your own message, the model receives one stream of tokens. Nothing in that stream marks where your instructions end and a pasted document begins, unless the text itself shows it.
 
-**Label the parts.** Put a short heading or a clear marker before each part: instructions, material, in-context examples, task. Plain labels work: "INSTRUCTIONS", "CATALOG p. 14 (2026 price list)", "TASK". Some people use lines of dashes or tags such as `<document>` and `</document>`. The exact marker matters less than using one consistently, so that you and anyone who reuses your prompt can see the structure.
+**Label the parts.** Put a short heading or a clear marker before each part: instructions, material, in-context examples, task. Plain labels work: "INSTRUCTIONS", "CATALOG p. 14 (2027 price list)", "TASK". Some people use lines of dashes or tags such as `<document>` and `</document>`. The exact marker matters less than using one consistently, so that you and anyone who reuses your prompt can see the structure.
 
 **Keep instructions separate from material.** If a pasted email says "reply within one hour," is that a request to the model or part of the email? Labels make the difference visible to you, and reduce the chance that text from the material shapes the output as if it were an instruction. They do not remove that chance. Text inside a document can still act as an instruction, which is the mechanism behind prompt injection (Chapter 4, section 4.6) and the reason Chapter 15 covers defenses.
 
-**Put the full task last.** This book's rule: put long material first and the full task last, right before the output begins; if you like, add one line at the very top saying what the task is. The evidence is mostly providers' own guidance, and the providers differ. Anthropic's guide for its models says to put long documents near the top and the question at the end, and reports that this improved response quality by up to 30% in its tests (Anthropic, n.d.). OpenAI's guide for its GPT-4.1 models (2025) says to put instructions both before and after long material, and, if only once, before it (OpenAI, n.d.). Research adds a caution. In the "lost in the middle" study, position mattered for where the *relevant information* sat; when the researchers repeated the question before and after the documents, it helped a simple lookup task a great deal but barely changed question answering (Liu et al., 2024). So treat "full task last" as a habit to test on your own task, not a law.
+**Put the full task last.** This book's rule: put long material first and the full task last, right before the output begins; if you like, add one line at the very top saying what the task is. The evidence is mostly providers' own guidance, and the providers differ. Anthropic's guide for its models says to put long documents near the top and the question at the end, and reports that this improved response quality by up to 30% in its tests (Anthropic, n.d.). OpenAI's guide for its GPT-4.1 models says to put instructions both before and after long material, and, if only once, before it (OpenAI, n.d.). Research adds a caution. In the "lost in the middle" study, position mattered for where the *relevant information* sat; when the researchers repeated the question before and after the documents, it helped a simple lookup task a great deal but barely changed question answering (Liu et al., 2024). So treat "full task last" as a habit to test on your own task, not a law.
 
 **Expect small format changes to matter.** Chapter 5's second short case showed that changing only spacing, separators or capital letters in a prompt's format changed accuracy a great deal for one model (Sclar et al., 2024). That is one more reason to keep a layout that works and reuse it, rather than rewriting it every time.
 
@@ -230,9 +230,9 @@ Once you know what to include, how you arrange it matters too. Inside your own m
 ```
 TASK IN BRIEF: a parts order for the robotics club (details at the end).
 INSTRUCTIONS: Use only the material below. If a part is missing, say so.
-CATALOG p. 14 (2026 price list): [drive motors, four models]
-CATALOG p. 52 (2026 price list): [wheels and hubs]
-BUDGET RULE 3 (September 2026): Orders over $250 need two officers' approval.
+CATALOG p. 14 (2027 price list): [drive motors, four models]
+CATALOG p. 52 (2027 price list): [wheels and hubs]
+BUDGET RULE 3 (January 2027): Orders over $250 need two officers' approval.
 TASK: Draft an order for two drive motors (model M-20) and four wheels (W-100).
 List each line with its price, the total, and who must approve it.
 ```
@@ -305,7 +305,7 @@ Here is a short checklist for choosing in-context examples:
 :::
 
 ::: {.callout-important title="Your Turn"}
-In Lab 6.2, step 4, you run three test inputs with two in-context examples and without them, and decide from the results whether to keep the examples.
+In Lab 6.2's with-and-without step, you run three test inputs with two in-context examples and without them, and decide from the results whether to keep the examples.
 :::
 
 ::: {.callout-tip title="Check Yourself 6.4"}
@@ -353,7 +353,7 @@ All three features do the same thing in the end: they put text into the context 
 
 **Cost 3: privacy.** Whatever these features store sits in the provider's systems and reaches the model in later chats. Memory can also store things you said in passing. What to keep out of these features, and how providers handle stored data, is covered in Chapter 15.
 
-**Agency, not an agent.** Chapter 5's box "Agency is not an agent" applies here. Writing standing instructions, or setting up a project that classmates will use, is a step toward *agency* in the AI Fluency framework's sense: you configure AI to carry out future tasks on your behalf (Dakan & Feller, 2025). It does not make the tool an *agent*, a system in which the model directs its own steps and tool use. The tool still answers one message at a time from what it receives.
+**Agency, not an agent.** Chapter 5's box "Agency is not an agent" applies here. Writing standing instructions, or setting up a project that classmates will use, is a step toward *agency* in the AI Fluency framework's sense: you configure AI to carry out future tasks on your behalf (Dakan & Feller, 2025). It does not make the tool an *agent*, a system in which the model directs its own steps and tool use toward a goal. The tool still answers one message at a time from what it receives.
 
 ::: {.callout-note title="As of October 2026: persistent features"}
 Features like these have spread across providers since 2023. OpenAI announced a test of memory for ChatGPT in February 2024 (OpenAI, 2024) and, in April 2025, let it draw on users' past chats (Zeff, 2025). Anthropic introduced Projects, with their own instructions and files, in June 2024 (Anthropic, 2024a). Google announced Gems, saved custom instructions for its Gemini assistant, in May 2024 and made them available in August 2024 (Google, 2024). Names, availability on free tiers and options change often. At UT Dallas, the university's IT office lists Microsoft Copilot Chat as approved for students; CometAI is for faculty and staff, and for student employees at a manager's request (UT Dallas Office of Information Technology [OIT], 2026). Check the university's pages for which persistent features each tool offers. Current steps for each tool, including how to view and delete stored memory, are in Compass. [COMPASS: persistent features by tool]
@@ -370,7 +370,7 @@ Features like these have spread across providers since 2023. OpenAI announced a 
 
 **Memory note:** "Sam's robotics club meets on Thursdays." *Keep:* still true, harmless.
 
-**Project file:** the club's meeting template from last year. *Replace:* the club changed its meeting format in September.
+**Project file:** the club's meeting template from last year. *Replace:* the club changed its meeting format in January.
 
 **Result.** He reruns this week's update. The co-op line is gone, and the email follows the new meeting format.
 :::
@@ -484,7 +484,7 @@ Why split a task? When one prompt does everything, an early mistake, such as a w
 
 **Workflow or agent?** This book adapts the line from Anthropic (2024b), which describes workflows as systems where language models and tools run along paths that developers define in advance. In the prompt chains of this chapter, the steps are fixed before you start, and you run them. In an **agent**, a system in which the model directs its own steps and tool use toward a goal (Chapter 3), the model chooses what to do next. Chapter 14 covers agents, workflows built into software, and the approval gates that keep people in control of them.
 
-| | Prompt chain (this chapter) | Agent (Chapter 14) |
+| Question | Prompt chain (this chapter) | Agent (Chapter 14) |
 |---|---|---|
 | Who decides the next step? | You, in advance | The model, as it goes |
 | Who runs each step? | You | The system |
@@ -495,7 +495,7 @@ Why split a task? When one prompt does everything, an early mistake, such as a w
 
 **Step 1 (prompt):** "From the notes below, list every decision and every action item, with its owner (a role) and due date, exactly as written in the notes. Do not add anything." Input: his notes, with classmates' names replaced by roles before pasting.
 
-**Check (Sam):** He compares the list with his notes. This week, one due date reads "12 October" where the notes say "21 October." He corrects the list by hand.
+**Check (Sam):** He compares the list with his notes. This week, one due date reads "12 February" where the notes say "21 February." He corrects the list by hand.
 
 **Step 2 (prompt):** His v1.1 template, with the corrected list pasted in place of the raw notes.
 
@@ -552,7 +552,7 @@ All four labs are optional and can be done at home or in Compass, which is optio
 2. **Version 2:** a two-step chain: extract the items first, check that list against the notes for 5 minutes, then write the email from the corrected list.
 3. **Count:** open the error key. For each planted error, mark whether it reached each final email. For each error that got through, ask: **was it in the notes, or introduced by the output?** Which check position caught more, and why?
 
-Save one error that got through for your Failure Diary (Chapter 4, week 5).
+Save this for your Failure Diary (Chapter 4): one error that got through.
 
 ### Lab 6.4: Audit Your Standing Context (Audit · 15 minutes · optional) {.unnumbered}
 
@@ -572,7 +572,7 @@ Save one error that got through for your Failure Diary (Chapter 4, week 5).
 
 **Traced on the context layers.** Three of the changes were context engineering: they changed what the model received in the prompt layer, namely the choice of in-context examples and the reasoning attached to them (@fig-6-13). The last change was mainly a workflow: the same question run five times, with the options reordered, and the answers combined (section 6.7). None of them retrained the model.
 
-**A year later: the reversal.** In November 2024, the same lead author and colleagues tested o1-preview, an OpenAI model designed to produce reasoning before its final answer (Nori et al., 2024). With no examples and none of Medprompt's techniques, o1-preview scored about 95–96% on MedQA (the paper's summary table gives 96.0%; its chart of prompting methods shows slightly lower values). That is higher than the 90.2% of GPT-4 with Medprompt. Then the team tested Medprompt's parts one at a time. Five solved examples, given as question and answer only, *lowered* o1-preview's MedQA score. Across their benchmarks, examples were inconsistent and on average hurt. Running the question several times and voting still helped consistently, though at a higher cost. One reading the authors offer: o1-preview already reasons before it answers, so it does not need examples to start reasoning, and the examples may have confused it. To address the worry about memorized test questions, the 2024 team also used a Japanese medical licensing exam given after the model's training data was collected.
+**A year later: the reversal.** In November 2024, the same lead author and colleagues tested o1-preview, an OpenAI model designed to produce reasoning before its final answer (Nori et al., 2024). With no examples and none of Medprompt's techniques, o1-preview scored about 95–96% on MedQA (the paper's summary table gives 96.0%; its chart of prompting methods shows slightly lower values). That is higher than the 90.2% of GPT-4 with Medprompt. Then the team tested Medprompt's parts one at a time. Five solved examples, given as question and answer only, *lowered* o1-preview's MedQA score. Across their benchmarks, examples were inconsistent and on average hurt. Running the question several times and voting still helped consistently, though at a higher cost. One reading the authors offer: o1-preview already produces reasoning before its answer, so examples add little to prompt it, and the examples may have confused the model (the authors' word). To address the worry about memorized test questions, the 2024 team also used a Japanese medical licensing exam given after the model's training data was collected.
 
 **What the case teaches.** A context design belongs to a model and a date. The same kind of technique, five solved examples, that helped GPT-4 in 2023 lowered o1-preview's score in 2024. If you reuse a template, record what you tested it on, and test again when the tool or model changes. The benchmark caveats apply in both studies: these are exam-style questions, not patient care. The 2023 authors could not rule out that test questions had appeared in training text, and the 2024 authors noted that MedQA scores might have reached the most the benchmark can show, because some of its questions are flawed.
 
@@ -584,7 +584,7 @@ In 2021 and 2022, two research teams studied how GPT-3-era models respond to in-
 
 ### Short case 2: More text, less reliable use {.unnumbered}
 
-Three studies from 2023 to 2025 point in one direction: irrelevant sentences lowered an older model's accuracy (Shi et al., 2023); information in the middle of long inputs was used less reliably by 2023 models (Liu et al., 2024); and a 2025 industry report found performance less reliable as inputs grew, across 18 models (Hong et al., 2025). In week 5, Chapter 4 (section 4.4) will call this kind of failure **context loss**: output that ignores information or instructions the model was given. **Your task:** name one long document you use for study or work, and say which two excerpts a typical question about it would actually need.
+Three studies from 2023 to 2025 point in one direction: irrelevant sentences lowered an older model's accuracy (Shi et al., 2023); information in the middle of long inputs was used less reliably by 2023 models (Liu et al., 2024); and a 2025 industry report found performance less reliable as inputs grew, across 18 models (Hong et al., 2025). When information in the input is not used, as in the middle-of-input and long-input results, Chapter 4 (section 4.4, week 5) calls it **context loss**: output that ignores information or instructions the model was given. The distraction result is a related but different problem: unrelated text changed the output. **Your task:** name one long document you use for study or work, and say which two excerpts a typical question about it would actually need.
 
 ## Ethics Lens: Invisible Instructions {.unnumbered}
 
@@ -663,7 +663,7 @@ This chapter is optional and not examinable. The questions below follow the exam
    (d) A layer Sam did not write in this message, an out-of-date memory note, added the text.
 3. *(O1 · LO2 · Understand)* In your own words, define context engineering and explain how it differs from writing one prompt.
 4. *(O2 · LO2 · Understand)* A student pastes a 60-page student handbook to ask one question about the attendance rule. Which statement best fits section 6.2?\
-   (a) The relevant excerpt, labeled with its source and date, is likely to serve better; unrelated pages can lower accuracy.\
+   (a) The labeled excerpt is likely to serve better; unrelated pages can lower accuracy.\
    (b) Pasting all 60 pages gives the model more to draw on, so the answer is likely to be better.\
    (c) An added instruction to ignore unrelated pages will restore any accuracy those pages cost.\
    (d) Once the handbook fits in the context window, its middle pages are used as reliably as the rest.
@@ -672,13 +672,13 @@ This chapter is optional and not examinable. The questions below follow the exam
 7. *(O3 · LO2 · Understand)* Three in-context examples improved today's outputs. Which statement is accurate?\
    (a) The examples updated the model, so tomorrow's chats will follow the pattern without them.\
    (b) Adding two more examples of the same kind is the most reliable next step.\
-   (c) The examples steer outputs only while they are in the context; a new chat without them starts as before.\
+   (c) They steer outputs only while in the context; a new chat without them starts as before.\
    (d) Because the examples worked once, their order no longer needs to be tested.
 8. *(O3 · LO2 · Understand)* Explain how three in-context examples that all carry the same label can act like class imbalance from Chapter 2.
 9. *(O3 · LO2 · Remember)* In the 2024 study of o1-preview on MedQA, what happened when five solved examples were added?\
    (a) The score rose, as it had for GPT-4 in 2023.\
-   (b) The score fell.\
-   (c) The score rose, but only when the examples were chosen by similarity.\
+   (b) The score fell, unlike GPT-4's score in 2023.\
+   (c) The score stayed about the same once examples were chosen by similarity.\
    (d) The score rose, because newer models make better use of examples.
 10. *(O4 · LO2 · Apply)* Where does "this semester's course rubric (PDF)" belong, following section 6.5?\
     (a) In standing instructions, so that every chat receives it.\
@@ -687,7 +687,7 @@ This chapter is optional and not examinable. The questions below follow the exam
     (d) In a project space for that course.
 11. *(O4 · LO2 · Apply)* A student's standing instructions say "Answer in under 50 words." The feedback she now gets on her history essay drafts is too short to use. Using section 6.5's routine, which question flags the problem, and what should she do?
 12. *(O5 · LO2 · Apply)* A template passed all its tests last semester. You now use a newer model. What should you do?\
-    (a) Rerun its test inputs on the new model and record the result, as a new version if anything changes.\
+    (a) Rerun its test inputs on the new model and record the result.\
     (b) Keep using it as it is; its test record already shows that it works.\
     (c) Add in-context examples first, because examples helped GPT-4 in the Medprompt study.\
     (d) Keep it, but stop rerunning the earlier test inputs, since they passed before.
@@ -753,7 +753,7 @@ Come back to these a few days after reading, without looking back. Items 1 to 3 
 
 **Formats.** A plain text file, a document or a spreadsheet; one entry per page or row. No special tool is needed.
 
-**Alternative assignment** (for students who prefer not to, or cannot, run AI tools). Repair the dated, constructed sample library on eLearning. It has four flawed entries: no placeholders, a whole document pasted, one-sided in-context examples, and a field that asks for personal data. (1) Diagnose each flaw with this chapter's checklists. (2) Rewrite three entries. (3) For each, write a test plan: three test inputs (typical, different, edge), pass criteria, and the with-and-without comparison you would run. (4) Design a workflow card for the report-summary chain in section 6.7's faded example, naming the check and its pass criterion. (5) Write a declaration that states "no AI tools used," what you checked and how. Scored on the same five criteria, with these descriptors:
+**Alternative assignment** (for students who prefer not to, or cannot, run AI tools). Repair the dated, constructed sample library on eLearning. It has four flawed entries: no placeholders, a whole document pasted, one-sided in-context examples, and a field that asks for personal data. (1) Diagnose each flaw with this chapter's checklists. (2) Rewrite three entries. (3) For each, write a test plan: three test inputs (typical, different, edge), pass criteria, and the with-and-without comparison you would run. (4) Design a workflow card for the report-summary chain in section 6.7's faded example, naming the check and its pass criterion. (5) Write a declaration that states "no AI tools used," what you checked and how, and two sentences on which repaired entry you would least trust, and why. Scored on the same five criteria, with these descriptors:
 
 | Criterion | Exemplary | Proficient | Developing | Beginning |
 |---|---|---|---|---|
@@ -797,11 +797,11 @@ Anthropic. (2024b, December 19). *Building effective agents*. https://www.anthro
 
 Anthropic. (2025, September 29). *Effective context engineering for AI agents*. https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents
 
-Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., et al. (2020). Language models are few-shot learners. *Advances in Neural Information Processing Systems, 33*, 1877–1901.
+Brown, T. B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., Agarwal, S., Herbert-Voss, A., Krueger, G., Henighan, T., Child, R., Ramesh, A., Ziegler, D. M., Wu, J., Winter, C., . . . Amodei, D. (2020). Language models are few-shot learners. *Advances in Neural Information Processing Systems, 33*, 1877–1901.
 
 Chapman, P., Clinton, J., Kerber, R., Khabaza, T., Reinartz, T., Shearer, C., & Wirth, R. (2000). *CRISP-DM 1.0: Step-by-step data mining guide*. SPSS.
 
-Dakan, R., & Feller, J. (2025). *The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education* (Version 1.1). Higher Education Authority. https://aifluencyframework.org/ (CC BY-SA 4.0)
+Dakan, R., & Feller, J. (2025, December). *The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education* (Version 1.1). Higher Education Authority. https://hub.teachingandlearning.ie/wp-content/uploads/2025/12/hea-genai-fluency-framework.pdf (CC BY-SA 4.0)
 
 Google. (2024, August 28). *Customize Gemini (gemini.google.com) for your specific needs with Gems*. Google Workspace Updates. https://workspaceupdates.googleblog.com/2024/08/customize-gemini-with-gems.html
 
@@ -823,11 +823,11 @@ OpenAI. (2023, January 23). *OpenAI and Microsoft extend partnership*. https://o
 
 OpenAI. (2024, February 13). *Memory and new controls for ChatGPT*. https://openai.com/index/memory-and-new-controls-for-chatgpt/
 
+Sclar, M., Choi, Y., Tsvetkov, Y., & Suhr, A. (2024). Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting. In *The Twelfth International Conference on Learning Representations (ICLR 2024)*. https://arxiv.org/abs/2310.11324
+
 Şeker, Ş. E. (2018). CRISP-DM: Endüstriler arası standart işleme – veri madenciliği için [CRISP-DM: Cross industry standard processing – data mining]. *YBS Ansiklopedi, 5*(2), 10–17. https://ybsansiklopedi.com/cilt-5-sayi-2-temmuz-2018/
 
 Shi, F., Chen, X., Misra, K., Scales, N., Dohan, D., Chi, E. H., Schärli, N., & Zhou, D. (2023). Large language models can be easily distracted by irrelevant context. *Proceedings of the 40th International Conference on Machine Learning, PMLR 202*, 31210–31227.
-
-Sclar, M., Choi, Y., Tsvetkov, Y., & Suhr, A. (2024). Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting. In *The Twelfth International Conference on Learning Representations (ICLR 2024)*. https://arxiv.org/abs/2310.11324
 
 UT Dallas Office of Information Technology. (2026). *OIT AI tools matrix*. Retrieved October 18, 2026, from https://atlas.utdallas.edu/TDClient/30/Portal/KB/Article/1552/OIT-AI-Tools-Matrix
 

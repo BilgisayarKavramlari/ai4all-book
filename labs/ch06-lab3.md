@@ -14,7 +14,7 @@ Give yourself the **same time to check** in both versions: 5 minutes.
 2. **Version 2, a chain (12 min).** In a fresh chat, ask only for a list of decisions and action items, each with an owner and a due date, exactly as written in the notes. Check the **list** against the notes for 5 minutes and correct it. Then, in a fresh chat, ask for the update email from your corrected list.
 3. **Count (8 min).** Open the error key. For each planted error, mark whether it reached each final email. For each error that got through, ask: **was it in the notes, or introduced by the output?** Which check position caught more, and why?
 
-Save one error that got through for your Failure Diary (Chapter 4, week 5).
+Save this for your Failure Diary (Chapter 4): one error that got through.
 
 **10-minute version:** Version 2 only; compare with the dated sample output for Version 1 on eLearning.
 
