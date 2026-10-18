@@ -156,3 +156,28 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Answer mode | The default way of using an AI tool, in which it produces the answer or finished work you ask for. | Cevap kipi |
 | Socratic questioning | Teaching by asking questions that lead the learner to reason the answer out. | Sokratik sorgulama |
 | Cognitive offloading (Deep) | Using a tool or action to reduce the mental work a task requires, such as writing a note or using a calculator. | Bilişsel yük aktarımı |
+| Secondary source | A source that reports on or interprets primary sources, such as a review article, a textbook or a news story about a study. | İkincil kaynak |
+| Tertiary source | A source that collects and condenses secondary ones, such as an encyclopedia, an index or a study guide. | Üçüncül kaynak |
+| Gray literature | Material published outside journals and books, such as reports by governments, companies, charities and consulting firms. | Gri literatür |
+| Peer review | The checking of a research manuscript by a few experts in the field, at a journal editor's request, before publication. | Hakem değerlendirmesi |
+| Preprint | A research manuscript posted publicly before peer review. | Ön baskı (hakem öncesi makale) |
+| Correction (of an article) | A notice that fixes part of a published article. | Düzeltme |
+| Retraction | The withdrawal of a published article because of serious error or misconduct. | Geri çekme |
+| Abstract | The short summary at the start of a research article. | Özet (makale özeti) |
+| Open access | Free to read online. | Açık erişim |
+| Source ladder | The book's four-rung picture of how directly a source records a claim, judged from the source alone: 4, it is the record of this claim; 3, it cites the specific record or records a narrower part of the claim; 2, it names a source too vaguely to find; 1, it gives no source. | Kaynak merdiveni |
+| Rung needed | The rung of the source ladder that your purpose and the stakes require for a claim. | Gereken basamak |
+| Systematic review | A review that searches for every study on a question with a written plan. | Sistematik derleme |
+| Vertical reading | Judging a page by its own look and its own claims. | Dikey okuma |
+| Lateral reading | Leaving a page early to see what outside sources say about who is behind it. | Yanal okuma |
+| Outside source | A source not written or paid for by whoever is behind the page you are checking. | Dış kaynak |
+| Use decision | Your choice of how to use a source (rely on it, use it with a caveat, use it only as a lead, or do not use it); "rely on it" needs both a rung that meets your need and nothing in your outside sources that gives you reason to distrust who is behind it. | Kullanım kararı |
+| Citation tracing | Following a claim from where you met it, hop by hop, to the place it first appeared, checking at each hop that the cited source says what the citing source claims. | Atıf izleme |
+| Drift (in a retelling) | A change in a claim as it is retold: a dropped caveat, a broadened claim, a cause read into a correlation, or a changed number. | Kayma (aktarımda) |
+| Correlation | Two things varying together, which does not show that one causes the other. | Korelasyon (birlikte değişim) |
+| Summary fidelity | How closely a summary's claims match what the original supports. | Özet sadakati |
+| Omitted key result | A finding that changes the picture but is missing from a summary. | Atlanmış temel bulgu |
+| AI search | A tool that retrieves pages and then produces an answer with links (the search-then-generate lane). | Yapay zekâ destekli arama |
+| Research-report tool | A system that runs many searches, retrieves many pages and produces a long report with citations; often marketed as "deep research." | Araştırma raporu aracı |
+| Meta-analysis | A study that combines the results of many studies statistically into one estimate. | Meta-analiz |
+| GRADE (Deep) | Grading of Recommendations Assessment, Development and Evaluation: a system that rates the certainty of a body of health evidence, starting from study design and moving the rating down or up. | GRADE (kanıt kesinliği derecelendirmesi) |

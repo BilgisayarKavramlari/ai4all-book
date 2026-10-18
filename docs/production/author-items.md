@@ -45,3 +45,11 @@
 2. Optional: a real, anonymized moment from your own teaching where students used AI as a crutch or a scaffold, to add to From the Field (never constructed). The source entry (Şeker, 2015, *YBS Ansiklopedi* 2(1), 19–21) is now confirmed.
 3. Final voice edit.
 <!-- /ch07 -->
+
+<!-- ch09 -->
+## Chapter 9
+1. **Live syllabus:** week 6 has no R reading (confirm); the lab title says "five sources" but A6 now uses **three sources** (and Lab 9.1's team pack has four), so the live wording should change; week total about 2.2 h counted per requirement.
+2. **From the Field:** confirm the Elaboration Likelihood Model entry (*YBS Ansiklopedi* 1(1), 15–16, September 2014). The entry cites Petty & Cacioppo's *Communication and Persuasion* as 1980; the book was published in 1986. The chapter now marks "usually cited to Petty and Cacioppo, 1986" as the book's note. Optional: a first-person note on this would make a strong tracing example; it will not be written for you.
+3. **Optional:** a real, anonymized moment from your consulting, editorial or teaching work where a report or submission carried references nobody had opened; never constructed.
+4. **Final voice edit** (pipeline step 8).
+<!-- /ch09 -->

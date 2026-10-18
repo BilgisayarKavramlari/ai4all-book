@@ -140,3 +140,8 @@ Why they exist: recurring people make examples personal and memorable (Mayer's p
 | 2026-10-18 | Ch. 7 | Elif | At the peer-tutoring center where she volunteers, has noticed that students she simply gives the answer to often return with the same question (her impression, presented as an anecdote, not evidence) |
 | 2026-10-18 | Ch. 7 | Marcus | Studies acid–base balance for a pathophysiology exam between night shifts, using textbook practice questions only; rates his confidence 100/100/90% after a smooth AI explanation and scores 1 of 3 (calibration gap +1.9) |
 | 2026-10-18 | Ch. 7 | Marcus | In his tutor-mode session (on worked examples, not his check questions), 24 turns, 12 of them his own; types "just tell me" when tired after a shift (turn 9); gap +0.5 right after, 0.0 three days later on parallel questions; decides to stop sessions when too tired to attempt |
+| 2026-10-18 | Ch. 9 | Elif | Writes a psychology essay claiming that sleep after study improves memory; places five items on the source ladder; cites the systematic review |
+| 2026-10-18 | Ch. 9 | Elif | Prepares a short presentation on attention and memory; traces the "goldfish attention span" claim to a dead end |
+| 2026-10-18 | Ch. 9 | Elif | Checks an AI summary sentence by sentence (constructed study); her A6 reference list cites one AI chat; her declaration covers all five elements |
+| 2026-10-18 | Ch. 9 | Marcus | Nursing course has an evidence-based-practice approach, a care-plan assignment and a discussion board; checks a classmate's study (preprint → published version) |
+| 2026-10-18 | Ch. 9 | Marcus | A friend sends him a supplement website; he places it on the ladder and reads it laterally (no patient information involved) |

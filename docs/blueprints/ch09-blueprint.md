@@ -1,6 +1,6 @@
 # Chapter 9 blueprint — Sources, Evidence and Reading with AI
 
-Status: v0.2 (2026-10-18), APPROVED under delegation (D19). v0.2 applies the independent blueprint review (build/ch09/reviews/blueprint.md: 5 high, 9 medium, 6 low, appendices A–C) and the editor's decisions on it; see "Review changes" at the end. v0.1 is kept in build/ch09/ch09-blueprint-v0.1.md.
+Status: v0.2 (2026-10-18), APPROVED under delegation (D19). v0.2 applies the independent blueprint review (build/ch09/reviews/blueprint.md: 5 high, 9 medium, 6 low, appendices A–C) and the editor's decisions on it; see "Review changes" at the end. v0.1 is kept in build/ch09/ch09-blueprint-v0.1.md. **Revision note (draft v2, 2026-10-18):** the ladder's rung definitions, the lateral-reading/use-decision rule, the summary-check vocabulary, the workload count and A6 (three sources) were changed after the four chapter reviews; docs/editorial/ch09-dev-memo.md supersedes §1, §5 (rungs), §9 and N8/N11/N16 where they differ.
 Part II — Working with AI · Syllabus week 6 · Path: Core (examinable: Core sections only, D20; midterm covers Ch. 1–10) · Featured students: **Elif** (main) and **Marcus** (second), per docs/characters.md · Work Loop step highlighted in the Chapter Map: **Verify** (how directly does this source record the claim I need, and does the summary say what the source says?), with **Disclose** second (cite what you read; cite AI output correctly).
 
 **Source material.** Syllabus week 6: Tue Feb 23 concept session "Sources and evidence. Demo: an AI summary versus the original abstract" (reading: Ch. 9) and Thu Feb 25 "Source audit lab: five sources and the fidelity of one summary" → **A6 source reliability review**, due Mon Mar 1. No R reading is assigned in week 6, and no Haliç lecture covers this chapter. The chapter is built from the cited research below. Opening case C06 (Deloitte Australia's review for the Department of Employment and Workplace Relations, 2025) was checked on 2026-10-18 against the department's own pages (primary) and the Associated Press report (secondary), and its facts are stated in attribution tiers (§5, Appendix C of the review). From the Field: the author's 2014 encyclopedia entry on the Elaboration Likelihood Model, read in full via Drive and tools/drive2md.py (build/ch09/ftf-elm.md).
@@ -75,7 +75,7 @@ UNESCO codes follow the ai4all-frameworks table; at most three tags per objectiv
 
 **Not repeated:** no re-teaching of the funnel, the verdict scale, the three citation checks, calibration, fabricated-citation rates or Mata (Ch. 8); no retrieval mechanics beyond one sentence (Ch. 3); no intrinsic/extrinsic lesson beyond one sentence (Ch. 4); no disclosure practice (Ch. 10).
 
-## 4. Misconceptions (refutation pattern; seven)
+## 4. Misconceptions (refutation pattern; nine)
 
 | # | Misconception | Where confronted |
 |---|---|---|
@@ -86,6 +86,8 @@ UNESCO codes follow the ai4all-frameworks table; at most three tags per objectiv
 | M5 | "An AI summary is the original made shorter and neutral." | 9.5 (a summary is new generated text, Signature 4; overgeneralization across ten models, Peters & Chin-Yee, 2025). Refutation check: people overgeneralize too (Sumner et al., 2014), so the lesson is "check any summary against the original", not "humans are reliable, AI is not" |
 | M6 | "If an AI search answer shows citations, they back up the answer, and I can cite the AI tool as my source." | 9.6 (Ch. 1's Liu finding recalled; Tow Center, 2025), 9.7 (cite the source you read; APA, 2025) |
 | M7 | "A primary source always beats a secondary one." | 9.1 and Deep 9.A: the ladder measures how directly a source records **this claim** (how checkable it is), not the strength of a body of evidence; a systematic review is secondary yet often stronger evidence on "does this treatment work?" than any single primary study (Guyatt et al., 2008), while the single study is the primary record of "what this study found" |
+| M8 | "A document has one type, whatever the claim." (added after the final review) | 9.1 (the Deloitte report is primary for "what the department was told" and secondary for "what the court said") |
+| M9 | "Who is behind a source changes its rung." (added after the final review) | 9.3 (lateral reading feeds the use decision; the rung records directness) |
 
 ## 5. Concept sequence
 

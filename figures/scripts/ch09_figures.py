@@ -25,16 +25,16 @@ LOOP = ["Frame", "Prompt", "Verify", "Decide", "Disclose"]
 
 # ---------------------------------------------------------------- the source ladder (new, reusable)
 RUNGS = {  # rung: (label, sub)
-    4: ("4. Is the record itself", "the study, dataset, law, court record or official page that holds the claim"),
-    3: ("3. Cites the record specifically", "you can open the record and check it: a review, a textbook, a referenced report"),
-    2: ("2. Reports the claim and names a source", "that you have not checked yet: a news story, a press release"),
-    1: ("1. States the claim, no traceable origin", "an unsourced page, a social post, a quotation with no reference"),
+    4: ("4. Is the record of this claim", "the study for \u201cthis study found\u201d; a systematic review for \u201cwhat studies show\u201d"),
+    3: ("3. Cites the specific record", "a findable citation (page, table, DOI), or a narrower record: one study for a general claim"),
+    2: ("2. Names a source too vaguely to find", "\u201ca recent Harvard study\u201d, \u201cexperts say\u201d"),
+    1: ("1. Gives no source", "an unsourced page, a social post, a quotation with no reference"),
 }
 L_X, L_W, R_H, R_GAP, L_TOP = 160, 390, 70, 12, 60
 
 
 def ladder_height(note=None):
-    return 530 + (20 if note else 0)
+    return 566 + (20 if note else 0)
 
 
 def source_ladder(highlight=None, needed=None, note=None):
@@ -72,8 +72,8 @@ def source_ladder(highlight=None, needed=None, note=None):
               sub="a lead to sources, not evidence (except of what the tool produced)", sub_size=13)
         # brackets to the funnel
         bx = L_X + L_W + 32
-        for (y1, y2, lab) in ((ys[4], ys[4] + R_H, "Funnel stage 2: primary source (Chapter 8)"),
-                              (ys[3], ys[1] + R_H, "Funnel stage 1: independent check (Chapter 8), if the author or publisher can be named")):
+        for (y1, y2, lab) in ((ys[4], ys[4] + R_H, "Funnel stage 2: the record of this claim (Chapter 8)"),
+                              (ys[3], ys[1] + R_H, "Funnel stage 1: an independent check if the author or publisher can be named (rungs 1\u20132 rarely enough)")):
             f.line(bx, y1 + 4, bx, y2 - 4, color=ink, width=2)
             f.line(bx - 8, y1 + 4, bx, y1 + 4, color=ink, width=2)
             f.line(bx - 8, y2 - 4, bx, y2 - 4, color=ink, width=2)
@@ -83,8 +83,8 @@ def source_ladder(highlight=None, needed=None, note=None):
             yc = ys[needed] + R_H / 2
             f.arrow(18, yc, L_X - 16, yc, width=3.2)
             f.text(70, yc - 30, "Rung your purpose needs", size=13, weight="700", width=128)
-        f.text(400, ay + 92, "Pick the rung your purpose and stakes need. The ladder measures how checkable a "
-               "source is for one claim, not the strength of a body of evidence (Deep 9.A).", size=13,
+        f.text(400, ay + 92, "A citation lifts a source only if the cited record holds this claim (or a narrower part of it). Opening "
+               "the cited record does not raise this source's rung: it gives you a second source, with its own rung.", size=13,
                color=muted, italic=True, width=700)
         f.text(400, ay + 128, "Rectangles = sources on the rungs · green = the record itself · dashed hexagon = "
                "not on the ladder · thick dark border = the rung this figure marks · arrow = the rung you need",
@@ -116,7 +116,7 @@ def hop_chain(hops, dashed_arrows=(), notes=None, heading=None, foot=None):
                 f.arrow(x + w + 1, 122, x + w + gap - 1, 122, dashed=i in dashed_arrows, width=2.2)
             if i in notes:
                 f.text(x + w / 2, 236, notes[i], size=13, italic=True, width=w + 6)
-        f.text(400, 306, "Rectangles = sources written by people · hexagon = AI output · dashed box = no record "
+        f.text(400, 306, "Rectangles = sources written by people · hexagon = AI output · dashed box (when shown) = no record "
                "found · dashed arrow = drift documented at that step", size=13, color=muted, width=780)
         if foot:
             f.text(400, 336, foot, size=13, color=muted, italic=True, width=780)
@@ -139,11 +139,11 @@ RETELLINGS = hop_chain(
 GOLDFISH = hop_chain(
     [("AI answer", "“shorter than a goldfish's”; no source given", "ai", "ai", False),
      ("News articles", "many repeat the claim; cite a 2015 report", "step", "neutral", False),
-     ("Marketing report", "Microsoft Canada, 2015; credits a statistics website", "step", "neutral", False),
+     ("Consumer report", "Microsoft Canada, 2015 survey; cites a statistics website", "step", "neutral", False),
      ("Statistics website", "gives no study; did not answer requests", "step", "neutral", False),
      ("No study found", "dead end: verdict unsupported", "step", "soft", True)],
     notes={0: "Below the ladder: a lead", 1: "Exists; names its source", 2: "Exists; not the origin",
-           3: "Source material not provided", 4: "Write what the trail shows"},
+           3: "Its listed sources found no research", 4: "Write what the trail shows"},
     heading="Following the goldfish claim upstream showed that it had no origin",
     foot="Elif's trace (constructed walk-through of a documented trail; Maybin, 2017).")
 
@@ -152,7 +152,7 @@ GOLDFISH = hop_chain(
 def chapter_map(f):
     muted = MUTED[f.mode]
     f.text(400, 30, "Chapter 9 at a glance", size=22, weight="700")
-    cols = [("Judging sources", ["9.1–9.2 Types and status", "9.3 Read laterally", "9.4 Trace upstream"]),
+    cols = [("Judging sources", ["9.1 Types and the ladder · 9.2 Status", "9.3 Read laterally", "9.4 Trace upstream"]),
             ("Reading with AI", ["9.5 Summary fidelity", "9.6 AI search and reports", "9.7 Cite what you read"]),
             ("Practice", ["9.8 Lab 9.1 and A6 (Studio)", "Labs 9.2–9.3 (optional)",
                           "Case Study: the Deloitte report"])]
@@ -187,10 +187,10 @@ def chapter_map(f):
 def storyboard(f):
     muted, ink = MUTED[f.mode], INK[f.mode]
     ev = [("Dec 2024–Jun 2025", "Deloitte conducts the review (confirmed)", "neutral", "step"),
-          ("Aug 14, 2025", "The department publishes the report (confirmed)", "neutral", "step"),
-          ("From Aug 2025", "An outside reader reports errors to the media (reported)", "neutral", "human"),
-          ("Oct 3, 2025", "Corrected report released (confirmed)", "verified", "step"),
-          ("Oct 2025", "Final instalment repaid: just over A$97,000 (reported)", "neutral", "step"),
+          ("Aug 14, 2025", "The department publishes the report, dated Jul 4 (confirmed)", "neutral", "step"),
+          ("Aug 22, 2025", "A newspaper reports errors an outside reader raised (reported)", "neutral", "human"),
+          ("Oct 3, 2025", "Corrected report released; AI use disclosed (confirmed)", "verified", "step"),
+          ("Oct 8, 2025", "Final installment of A$97,587.11 repaid (confirmed)", "neutral", "step"),
           ("Feb 3, 2026", "Report updated again to address corrections (confirmed)", "verified", "step")]
     f.line(24, 200, 776, 200, color=ink, width=2.4)
     for i, (d, txt, role, kind) in enumerate(ev):
@@ -201,9 +201,9 @@ def storyboard(f):
         f.line(cx, 180 if i % 2 == 0 else 222, cx, 200, color=ink, width=1.4)
         f.raw(f'<circle cx="{cx}" cy="200" r="5" fill="{ink}"/>')
     f.text(400, 396, "Rounded = a person's action · green = a correction published · confirmed = the department's "
-           "own pages · reported = news reports", size=13, color=muted, width=780)
-    f.text(400, 440, "Sources: DEWR (2025a, 2025b, 2026); Associated Press (2025); CFO Dive (2025). The corrected report "
-           "disclosed AI use (reported); whether the AI tool produced the errors is not on record.", size=13, color=muted, italic=True, width=780)
+           "and other official records · reported = news reports", size=13, color=muted, width=780)
+    f.text(400, 440, "Sources: DEWR (2025a, 2025b, 2026); Karp (2025); Parliament of Australia (2025). Whether the AI "
+           "tool chain produced the errors is not on record.", size=13, color=muted, italic=True, width=780)
 
 
 # ---------------------------------------------------------------- F9.3 source types for one claim
@@ -241,7 +241,7 @@ def lateral(f):
     rows = [(70, [("Stay on the page", "read it carefully", "neutral"),
                   ("Judge it by its looks", "logos, About page, .org, references", "neutral"),
                   ("Often taken in", "historians and students in the study", "risk")]),
-            (282, [("Leave within seconds", "open new tabs", "neutral"),
+            (282, [("Leave early", "often within about half a minute", "neutral"),
                    ("Ask outside sources", "who is behind it, and who pays?", "neutral"),
                    ("Return with evidence", "fact-checkers: faster, more accurate", "verified")])]
     labels = ["Vertical reading", "Lateral reading"]
@@ -312,14 +312,14 @@ def a6_sheet(f):
     muted = MUTED[f.mode]
     f.text(400, 24, "One A6 source reliability review", size=17, weight="700")
     fields = [("Question, purpose, claim", "the claim you most need to support", "neutral", False),
-              ("Source: type and status", "primary/secondary/tertiary; peer-reviewed, preprint, corrected", "neutral",
+              ("Source: type and status", "primary/secondary/tertiary; peer-reviewed, preprint, corrected, retracted or not reviewed", "neutral",
                False),
               ("Outside-source log", "who is behind it, according to sources it did not write or pay for",
                "neutral", False),
               ("Rung for the claim · rung needed", "with a one-sentence justification", "verified", False),
-              ("Use decision", "rely · use with a caveat · only as a lead · do not use", "neutral", False),
+              ("Use decision", "needs both: the rung and who is behind it (outside sources)", "neutral", False),
               ("Trace", "at least two hops or a dead end; three checks per hop; verdict", "neutral", False),
-              ("Fidelity check", "each summary sentence: passage, verdict, drift type", "neutral", False),
+              ("Summary check", "each sentence: passage, verdict, drift type if one fits; omitted result", "neutral", False),
               ("References · judgment · declaration", "what you relied on, and what remains uncertain", "soft", True)]
     for i, (h, sub, role, dashed) in enumerate(fields):
         y = 44 + i * 50
@@ -341,24 +341,25 @@ def grade(f):
     f.arrow(242, 197, 300, 160)
     f.box(302, 110, 196, 80, "Certainty rating", role="neutral", kind="human", size=15)
     f.box(530, 46, 250, 104, "Move down", role="risk", kind="step", thick=True, size=15,
-          sub="risk of bias, inconsistency, indirectness, imprecision, publication bias", sub_size=13)
-    f.box(530, 168, 250, 70, "Move up", role="verified", kind="step", size=15, sub="for example, a very large effect",
+          sub="study limitations, inconsistency, indirectness, imprecision, reporting bias", sub_size=13)
+    f.box(530, 166, 250, 104, "Move up", role="verified", kind="step", size=15,
+          sub="mainly observational: a very large effect, dose-response, biases that would hide the effect",
           sub_size=13)
     f.arrow(500, 136, 528, 100)
-    f.arrow(500, 166, 528, 200)
+    f.arrow(242, 214, 528, 214, dashed=True)
     f.arrow(400, 192, 400, 276)
     f.box(150, 278, 500, 62, "High · Moderate · Low · Very low", role="soft", kind="step", size=15)
     f.text(400, 372, "Thick (hatched in print) = reasons to lower certainty · green = reasons to raise it",
            size=13, color=muted)
-    f.text(400, 396, "Simplified from Guyatt et al. (2008).", size=13, color=muted, italic=True)
+    f.text(400, 396, "Simplified from Guyatt et al. (2008) and Balshem et al. (2011). Dashed arrow: upgrades apply mainly to observational evidence.", size=13, color=muted, italic=True, width=760)
 
 
 # ---------------------------------------------------------------- F9.18 summary card
 def summary_card(f):
     f.text(400, 26, "Chapter 9 — what you can do now", size=18, weight="700")
     cards = ["Differentiate: type and status of a source, for one claim",
-             "Evaluate: read laterally with outside sources",
              "Place: the rung for the claim, and the rung you need",
+             "Read laterally: who is behind it decides how you use it",
              "Trace: follow a claim upstream; name the drift",
              "Judge: check a summary sentence by sentence",
              "Critique AI research reports; cite what you read and declare AI use"]
@@ -378,10 +379,10 @@ DELOITTE_TREE = failure_tree({"hallucination"}, dashed={"hallucination"},
                              note="Incorrect references are confirmed; no record shows they were generated")
 DELOITTE_CHAIN = failure_chain(
     notes={0: "Incorrect references reached the published report (confirmed)",
-           1: "Two checkpoints, firm and department; what ran is unknown (inferred)",
+           1: "Two checkpoints, firm and department; what ran is not on record",
            2: "Published by the department; recommendations stand (reported)",
-           3: "Corrections, partial refund, lost trust (reported)"},
-    highlight={1}, dashed={1},
+           3: "Corrections, part of the fee repaid, public criticism (confirmed; reported)"},
+    highlight={1}, dashed=set(),
     tag="Tiers: confirmed = the department's pages · reported = news reports · inferred = this book's reading")
 
 FIGS = [

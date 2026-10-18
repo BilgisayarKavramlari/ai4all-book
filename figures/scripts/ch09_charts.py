@@ -46,7 +46,6 @@ def f9_9(mode):
     models = [r for r in rows if r is not ref]
     models.sort(key=lambda r: float(r["pct_generalized"]))
     base = float(ref["pct_generalized"])
-    above = sum(float(r["pct_generalized"]) > base for r in models)
     fig, ax = plt.subplots(figsize=(8.0, 4.9))
     ys = range(len(models))
     for y, r in zip(ys, models):
@@ -62,12 +61,11 @@ def f9_9(mode):
     ax.set_yticks(list(ys), [r["model"] for r in models])
     ax.set_xlim(0, 100)
     ax.set_xlabel("Summaries containing generalized conclusions (%)")
-    ax.set_title(f"In a 2025 test, {above} of {len(models)} models produced broader conclusions\n"
-                 f"more often than the abstracts they summarized", loc="left", fontweight="bold",
-                 fontsize=12.5, pad=10)
+    ax.set_title("In a 2025 test, most models produced generalized conclusions\n"
+                 "more often than the abstracts did", loc="left", fontweight="bold", fontsize=12.5, pad=10)
     fig.text(0.01, -0.07, "Source: Peters & Chin-Yee (2025), Royal Society Open Science, Table 2: summaries of 100 "
              "medical abstracts with a simple prompt.\nDashed line = share of the original abstracts with generalized "
-             "conclusions. Results for these models and this prompt; newer tools differ.", fontsize=9.5,
+             "conclusions. The authors found no significant difference\nfrom the originals for the Claude models. Results for these models and this prompt; newer tools differ.", fontsize=9.5,
              color=s["ink"])
     save(fig, "f9-09-peters-summaries", mode)
 
@@ -92,8 +90,8 @@ def f9_12(mode):
     ax.set_title("In a February 2025 test, AI search tools gave wrong source details\n"
                  "for 37% to 94% of news excerpts", loc="left", fontweight="bold", fontsize=12.5, pad=10)
     fig.text(0.01, -0.1, "Source: Jaźwińska & Chandrasekar (2025), Tow Center, Columbia Journalism Review: 200 news "
-             "excerpts per tool, eight tools.\nThree tools shown: the best (37%), the worst (94%) and one with an "
-             "exact count reported (134 of 200). As tested in February 2025.", fontsize=9.5, color=s["ink"])
+             "excerpts per tool, eight tools, one run each.\nThe three tools whose rates the article text reports; "
+             "error rates ranged from 37% to 94%. As tested in February 2025.", fontsize=9.5, color=s["ink"])
     save(fig, "f9-12-tow-search", mode)
 
 

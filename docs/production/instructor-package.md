@@ -89,3 +89,16 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | Keyed-question guidance by field | Pre-lab Your Turn (7.5) | Short list of where keyed questions live in common course types (textbook end-of-section sets; publisher practice quizzes; study-guide identification items keyed to pages for history and literature; problem sets with posted solutions), plus the fallback (questions from headings, key looked up afterward) | Tue Feb 9, 2027 (so students can prepare before Thursday) |
 | Compass pages | Labs 7.1–7.3; A4 | Current tools' built-in study or learning modes and where to find them (dated), fresh/temporary chats, exporting and redacting transcripts; A4 template; interactive F7.8 step-through after the MVP | Thu Feb 11, 2027 (tool steps); interactives after the MVP |
 <!-- /ch07 -->
+
+<!-- ch09 -->
+## Chapter 9
+| Asset (promised in the chapter or labs) | Where | Needed by |
+|---|---|---|
+| Dated AI summary of an open-access abstract, with model, date and prompt, plus the abstract (Tuesday demo; also Lab 9.1's provided summary and the A6 alternative) | eLearning | Tue Feb 23, 2027 |
+| Four-source team packs (gray report, preprint, news story, peer-reviewed article) on one shared question, each with one printed claim; printable and screen-reader-friendly versions | eLearning (and printed) | Thu Feb 25, 2027 |
+| A6 sheet template (F9.15), screen-reader-friendly | eLearning | Thu Feb 25, 2027 |
+| University press release / study pairs with dates (A6 alternative) | eLearning | Thu Feb 25, 2027 |
+| Lab 9.2: three websites from published lateral-reading studies, printed front-page screenshots and search-result pages; answer key citing each study | eLearning and Compass (key in both) | Thu Feb 25, 2027 (optional lab) |
+| Lab 9.3: list of open-access abstracts by field; dated sample summaries | eLearning | Thu Feb 25, 2027 (optional lab) |
+| Compass pages: ch09 research-tool notes, lab pages ch09-lab1 to lab3, interactive source ladder, summary-check drill, Chapter 9 quiz | Compass | Tue Feb 23, 2027 (optional companion) |
+<!-- /ch09 -->

@@ -12,5 +12,11 @@ Stages: blueprint → draft → build-outs → independent checks → dev memo �
 | 6 | Context Engineering and Reusable Workflows (Deep) | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~14,700 / 10,000 | author: CRISP-DM affiliation disclosure?; optional anecdote; voice edit | 2026-10-18 |
 | 7 | Learning with AI: Tutor, Not Answer Machine | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~13,900 / 10,000 | author: live syllabus week 4 (R3 PNAS sections, R4 abstract); eLearning transcript pair; optional anecdote; voice edit | 2026-10-18 |
 | 8 | Hallucination, Uncertainty and Verification | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~12,800 / 10,000 | author: live syllabus week 5 (R6 in lab, R5 recommended, A5 brief, D21 ~2.4 h); optional anecdote; voice edit | 2026-10-18 |
-| 9 | Sources, Evidence and Reading with AI | blueprint v0.2; drafting | 0 / 10,000 | — | 2026-10-18 |
-| 10 | Writing and Professional Communication | blueprint v0.1; review running | 0 / 10,000 | — | 2026-10-18 |
+| 9 | Sources, Evidence and Reading with AI | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~13,500 / 10,000 | author: live syllabus lab title (A6 three sources); From the Field (ELM 2014) approval; optional anecdote; voice edit | 2026-10-18 |
+| 10 | Writing and Professional Communication | v2 — four reviews and revision done; final review running | ~14,200 / 10,000 | author: D-10.2 coursework table; live syllabus week 7; From the Field (Sosyal CRM) pages; voice edit | 2026-10-18 |
+| 11 | Decision Support, Data Work and Hidden Assumptions | draft v1; four reviews in; revision pending | — / 10,000 | — | 2026-10-18 |
+| 12 | The Tool Ecosystem and Task-Tool Fit | draft v1; reviews in; revision pending | — / 10,000 | — | 2026-10-18 |
+| 13 | Multimodal AI: Images, Audio and Video (Deep) | blueprint review applied; drafting | 0 / 8,000 | — | 2026-10-18 |
+| 14 | Agentic Workflows and Human Oversight | blueprint review applied; drafting | 0 / 10,000 | — | 2026-10-18 |
+| 15 | Privacy and Security | blueprint v0.1; review running | 0 / 10,000 | — | 2026-10-18 |
+| 16 | Bias and Fairness | blueprint running | 0 / 10,000 | — | 2026-10-18 |
