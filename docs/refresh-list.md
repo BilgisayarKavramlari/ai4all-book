@@ -143,3 +143,18 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 12 | 12.3 table | R10: "about 1,600 of them with the tool" (NBER WP: 1,636 agents post-AI); QJE count to check | Oct 2026 | Brynjolfsson et al. (2025) | Before print |
 | 12 | Case Study | Randazzo et al. shares (60/27/14, n = 244) from the authors' summaries; WP not opened | Oct 2026 | HBS AI Institute; Fortune (2026) | Before print |
 | 12 | Compass/eLearning notes | Prices, free-tier limits, data options by tool | Oct 2026 | Provider pages | Each term (Compass/eLearning only) |
+| 13 | Opening, Case Study, C10 | No arrest or recovery reported in the Arup case | Oct 2026 | Hong Kong police / reliable news | Each edition |
+| 13 | 13.1 dated box | One provider: one image token per 28 × 28 patch, 1,000 × 1,000 ≈ 1,296 tokens; another: 32 × 32 patches on newer models; both: file names and metadata not processed | Oct 2026 | Anthropic (n.d.); OpenAI (n.d.) | Each term |
+| 13 | 13.3 dated box | DOJ ADA Title II rule (WCAG 2.1 AA); compliance extended to April 26, 2027 (50,000+) and April 26, 2028 (smaller) | Oct 2026 | 89 FR 31320 (2024); 91 FR 20902 (Apr 20, 2026) | Before print; April 2027 |
+| 13 | 13.3 | Koenecke et al.: 187 of 13,140 segments (about 1.4%) reliably produced invented text; 312 transcriptions (roughly 1%); 38% of those harmful (2023 service) | Oct 2026 | Koenecke et al. (2024) | Each edition (newer studies) |
+| 13 | 13.4 dated box | Pixel 10 Pixel Camera adds content credentials to every photo | Oct 2026 | Google (2025a) | Each term |
+| 13 | 13.5 | SynthID: >10 billion items watermarked; detector portal for early testers (May 2025) | Oct 2026 | Google (2025b) | Each term |
+| 13 | 13.6 | Deepfake-Eval-2024: open-source AUC 0.43–0.63 on media flagged in 2024; best of 22 commercial tools (tested Dec 2024) 0.79/0.93/0.90 | Oct 2026 | Chandra et al. (2025, v5) | Each edition |
+| 13 | 13.6 | One provider's documentation: its model cannot determine whether an image is AI-generated | Oct 2026 | Anthropic (n.d.) | Each term |
+| 13 | Ethics Lens | TAKE IT DOWN Act: 48-hour removal duty enforceable May 19, 2026 | Oct 2026 | WilmerHale (2026) | Each edition |
+| 13 | Ethics Lens | EU AI Act Article 50 applies from Aug 2, 2026; systems already on the market have until Dec 2, 2026 for the Art. 50(2) marking duty | Oct 2026 | Regulation (EU) 2024/1689; Regulation (EU) 2026/1744 | Each edition (final check against the operative text at assembly) |
+| 13 | Short case 2 | Robocall consultant: $6M FCC forfeiture (FCC 24-104, Sept 26, 2024); acquitted of state charges (June 13, 2025) | Oct 2026 | FCC (2024b); Bookman (2025) | Each edition |
+| 13 | 13.6 | TrueMedia.org's hosted detection service closed to the public in January 2025 | Oct 2026 | Chandra et al. (2025); TrueMedia.org (2025) | Each edition |
+| 13 | 13.6 | Since Nov 2025 one provider's chat app checks uploaded images for its own SynthID watermark | Oct 2026 | Google (2025c) | Each term |
+| 13 | 13.4, references | C2PA specification 2.3 (Jan 5, 2026); soft bindings ("durable" credentials) supported by few tools | Oct 2026 | C2PA (2026) | Each edition |
+| 13 | 13.2 | Voice cloning from short samples available in commercial tools | Oct 2026 | (dated clause; Ch. 15 owns) | Each edition |

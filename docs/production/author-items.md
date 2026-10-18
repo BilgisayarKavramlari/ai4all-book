@@ -81,3 +81,10 @@
 5. **Final voice edit** (pipeline step 8).
 6. **Course guidance:** confirm the §12.5 data-class table (D-12.8) as course guidance, including "no personal data about other people in consumer tools" and "no Confidential Data in any tool in this course"; it extends D15.
 <!-- /ch12 -->
+
+<!-- ch13 -->
+## Chapter 13
+1. **From the Field:** please confirm the use of your 2015 entry, "Dijital Varlık ve Enformasyon Toplumu" (*YBS Ansiklopedi* 2(2), 12–16; non-commercial, so no disclosure). The section stays within the entry's facts, with present-day connections marked as the book's. Optional: a real, anonymized moment from your industry or SME work when a request, a document or an image had to be verified through another channel; it will not be written for you.
+2. **No live-syllabus change** ("D: Ch. 13" with Chapter 12 on Mar 30 stays).
+3. **Final voice edit** of the chapter.
+<!-- /ch13 -->

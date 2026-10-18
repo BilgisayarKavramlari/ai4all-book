@@ -19,6 +19,9 @@
 | 15 | Büyük Veri ve Büyük Veri Yaşam Döngüleri (2015), YBS Ansiklopedi 2(3) | 1MSa-eUSm0X6xlScQUCrVUTZWfiomZBfW |
 | 16 | Eşitlik Teorisi / equity theory (2014), YBS Ansiklopedi 1(2), 17–19 | 1fAsDSweXmViz_Sr3aYSxmieIiz93CU7G |
 | 18 | Yazılımların Kaynakları (2014) — D16 if commercial | see build/ch18 / ybs-inventory |
+| 19 | Duygu Analizi (2016), YBS Ansiklopedi 3(3), 22–36 | see build/ch19/ftf-duygu-analizi.md |
+| 20 | Bilgi Ekonomisi (2014) | see build/ch20/ftf-bilgi-ekonomisi.md |
+| 21 | Kontrol Sayfası / check sheet (2014) | see build/ch21/ftf-kontrol-sayfasi.md |
 | 17 | HermAI (2025) — commercial affiliation (OptiWisdom), D16 | 1c_sgq7_xCtrgyF_9nZ1BWeLi4gXBAIXY |
 
 Do not reuse a source assigned to another chapter.

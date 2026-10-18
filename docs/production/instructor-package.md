@@ -151,3 +151,17 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | A10 sheet template (F12.16), screen-reader-friendly, with the polish anchors; the partly filled sheet for the 12.9 faded example (biology abstract) | eLearning | Thu Apr 1, 2027 |
 | Compass pages (optional): tools you can reach by term; price forms and limits; data options by tool; fit-matrix builder; data-terms drill; lab pages ch12-lab1 to lab3; Chapter 12 quiz | Compass (optional) and eLearning | Tue Mar 30, 2027 |
 <!-- /ch12 -->
+
+<!-- ch13 -->
+## Chapter 13
+| Asset | Used in | Needed by |
+|---|---|---|
+| Provided image for Lab 13.1 (constructed city-street drawing, dated, no people) and a dated sample alt-text output (model and date) | Lab 13.1 | Tue Mar 30, 2027 |
+| Audio clip and script recorded for the course by a consenting speaker | Lab 13.1 extension | Tue Mar 30, 2027 |
+| Four dated items without people: authentic, miscaptioned and edited items built from **public-domain originals** a reverse search can find; one generated item of a fictional, non-local place with content credentials and a **dated search-results sheet**; **every** item carries the same neutral band outside the image, "COURSE SAMPLE — may be real or generated", with the real status only in the key; long descriptions; answer key; printed case packet. Generated items stay on eLearning only. Re-run all searches before term | Lab 13.2; alternative assignment | Tue Mar 30, 2027 |
+| Image file with content credentials, plus printed credential and screenshot readouts; note on current phones' screenshot behavior | Lab 13.3 | Tue Mar 30, 2027 |
+| Ten clips recorded by consenting speakers, synthetic versions made with written consent (forms covering synthetic versions and classroom use), key, transcript-and-spectrogram pairs | Lab 13.4 | Tue Mar 30, 2027 |
+| Case packet for the alternative assignment: written versions of P1 and P2 plus one further dated case (none from Lab 13.2), with printed search results, credential readouts and outside reports | Optional artifact (alternative) | Tue Mar 30, 2027 |
+| Two dated test items for the optional protocol: P1 public-domain library-building photo with the archive record; P2 generated flood image of the fictional town of Port Calder with credentials and search-results sheet; both carry the neutral band "COURSE SAMPLE — may be real or generated"; not used in Lab 13.2; eLearning only | Optional artifact | Tue Mar 30, 2027 |
+| One-page verification-protocol template (screen-reader-friendly) | Optional artifact | Tue Mar 30, 2027 |
+<!-- /ch13 -->

@@ -1,0 +1,4 @@
+# Sources
+# ch13_human_detection.csv: Nightingale & Farid (2022) PNAS 119(8) e2120481119 (PMC8872790, results); Mai et al. (2023) PLOS ONE 18(8) e0285333 (73% = share of deepfake clips correctly identified; overall accuracy 70.35%; fact-check C056).
+# ch13_deepfake_eval.csv: Chandra et al. (2025) arXiv:2503.02857v5 (27 May 2026), Table 3 (open-source models, off the shelf; AUC on Deepfake-Eval-2024 and on original publication test data re-run by the authors).
+# ch13_koenecke2024.csv: Koenecke et al. (2024) FAccT, Results: 187 of 13,140 segments (about 1.4%) reliably produced hallucinations; 312 hallucinated transcriptions across the April and May 2023 runs (authors: roughly 1% of transcriptions); categories overlap, so 19 + 13 + 8 exceeds 38.

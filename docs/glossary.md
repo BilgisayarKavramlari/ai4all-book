@@ -237,3 +237,25 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Lock-in | The effort and cost that keep you on a tool after a better fit appears. | Bağımlılık (kilitlenme) |
 | Re-test trigger | An event that should make you test a fit again, such as a model update or retirement, a change in price or terms, a new kind of input, or a change of job or school. | Yeniden test tetikleyicisi |
 | Leaderboard (Deep) | A ranking of models by benchmarks or by crowd votes. | Sıralama tablosu (leaderboard) |
+| Modality | A kind of data, such as text, images, audio or video. | Kip (veri türü) |
+| Multimodal model | A model that receives or produces more than one kind of data, such as text, images, audio or video. | Çok kipli model |
+| Image token | A small square patch of an image, turned into numbers that a multimodal model receives the way it receives text tokens. | Görüntü belirteci |
+| Audio token | A short slice of sound compressed into a code that a model can receive or produce like a text token. | Ses belirteci |
+| Diffusion model | A generator that starts from random noise and removes it step by step, guided by a prompt, until an image (or audio or video) appears. | Difüzyon modeli |
+| Synthetic media | Images, audio or video generated or substantially altered by AI. | Sentetik medya |
+| Deepfake | Synthetic media that realistically shows a real person, or a real event, saying, doing or happening in a way that did not happen. | Derin sahte (deepfake) |
+| Voice cloning | Using AI to produce new speech that imitates a particular person's voice from samples of it. | Ses klonlama |
+| Alt text | A short text alternative for an image that tells a reader who cannot see it what they need to know from it. | Alternatif metin |
+| Closed captions | On-screen text of a video's speech and important sounds, which viewers can turn on or off. | Kapalı altyazı |
+| Transcription (speech recognition) | Turning spoken audio into written text. | Döküm (konuşma tanıma) |
+| Provenance | A record of where a piece of content came from and how it was changed. | Köken kaydı (provenans) |
+| Metadata | Data about a file, such as when, where and with what it was made. | Üst veri |
+| Content credentials | A provenance record attached to a file under the C2PA standard: signed statements about how the file was made and edited. | İçerik kimlik bilgileri |
+| Watermark (media) | A pattern, visible or hidden, that a tool places in the image, audio or video it produces, which a matching detector can later test for. | Filigran (medya) |
+| Deepfake detector | A tool that gives a score for how likely an image, audio or video is to have been generated or altered by AI. | Derin sahte dedektörü |
+| Reverse image search | Searching with an image, instead of words, to find where it or similar images appear online, including its earliest version. | Tersine görsel arama |
+| Out-of-band check | Confirming a request or a claim through a separate channel you already trust, not one the message provides. | Kanal dışı doğrulama |
+| Social engineering | Manipulating people, rather than breaking into systems, to get them to give money, access or information. | Sosyal mühendislik |
+| Cheap fake | Media manipulated without generative AI, such as a real photo with a false caption or date, a slowed-down video or a simple edit (Paris & Donovan, 2019). | Ucuz sahte (cheap fake) |
+| Liar's dividend | The benefit a person gains by dismissing real recordings as fake when fakes are common (Chesney & Citron, 2019). | Yalancının kazancı |
+| Verification protocol | Rules you write in advance for when and how you check media and media-borne requests before you act on them. | Doğrulama protokolü |

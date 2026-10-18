@@ -159,3 +159,14 @@ Why they exist: recurring people make examples personal and memorable (Mayer's p
 | 2026-10-18 | Ch. 12 | Sam | Summarizes 20 public motor datasheets for the club (bake-off: metric, US-unit and missing-stall-torque inputs); keeps the torque calculation in his own spreadsheet |
 | 2026-10-18 | Ch. 12 | Sam | The club has corporate sponsors who receive thank-you emails; he drafts with placeholders and merges names by hand |
 | 2026-10-18 | Ch. 12 | Sam | As a senior, writes a handover note for next year's captain (prompts, test inputs, matrix, re-test triggers; the Ch. 6 standing instruction copied out) |
+| 2026-10-18 | Ch. 13 | Hana | The zine has a web page; Hana writes its alt text (purpose first, tool draft checked claim by claim) |
+| 2026-10-18 | Ch. 13 | Hana | Drew a 1920s Dallas streetcar on Elm Street by hand from a public archive photo for the zine's history issue |
+| 2026-10-18 | Ch. 13 | Hana | Checks a tool's data terms before uploading their drawings; uses the university-provided tool whose terms exclude training |
+| 2026-10-18 | Ch. 13 | Hana | Tested a text-to-image tool once on a non-client prompt (no artist's style, none of their own work uploaded) to understand it; still does not use generation in their own illustrations |
+| 2026-10-18 | Ch. 13 | Hana | Adds content credentials to scans of their drawings before posting |
+| 2026-10-18 | Ch. 13 | Hana | Belongs to a small zine collective that accepts hand-drawn work only; its rule asks every applicant, Hana included, for process evidence |
+| 2026-10-18 | Ch. 13 | Hana | A zine reader sent an AI-generated "1890s photograph"; Hana traced it and did not use it |
+| 2026-10-18 | Ch. 13 | Hana | Keeps a written verification protocol; checked a miscaptioned mural clip before citing it; added "a repost with no original" as a trigger |
+| 2026-10-18 | Ch. 13 | Hana | Revisits the "97% accuracy" art-detector app from Ch. 2 §2.5 |
+| 2026-10-18 | Ch. 13 | Hana | Another reader sent a 1920s photo of the Elm Street streetcar line from the city library's digital archive; Hana opened the archive directly and verified it (supported) |
+| 2026-10-18 | Ch. 13 | Hana | Removes location data from scans before uploading them |
