@@ -1,6 +1,6 @@
 # Chapter 3 blueprint — Inside Large Language Models
 
-Status: v0.2 (2026-10-18), awaiting the author's approval. v0.2 applies an independent pedagogy review (6 must-fix, 11 should-fix; see "Review changes" at the end). No chapter text is written until this blueprint is approved.
+Status: v0.2 (2026-10-18), APPROVED under delegation (D18, D19). v0.2 applies an independent pedagogy review (6 must-fix, 11 should-fix; see "Review changes" at the end). No chapter text is written until this blueprint is approved.
 Part I — Understanding AI · Syllabus week 2 (shared with Chapter 2) · Path: Core · Featured students: **Elif** (main) and **Hana** (they/them; short examples), per docs/characters.md · Work Loop step highlighted in the Chapter Map: **Prompt** (know what the model actually receives), with Verify second.
 
 **Source material.** The syllabus's week-2 concept session (tokens, training and inference, context window, retrieval, tools, agents; demo: tokenizer and repeated sampling) and Thursday's "Probe the model" lab. Reading R1: Wolfram (2023). No Haliç lecture covers this chapter; it is built from the cited research below. From the Field: candidate source is the author's 2024 English paper on large language models (Drive 1yPpN_rmplzKfjhJs7yXyE8YTBATr0_db), to be read before drafting; never constructed (see Proposals).
