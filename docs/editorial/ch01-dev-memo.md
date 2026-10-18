@@ -46,9 +46,12 @@ Inputs: four independent reviews run in parallel without sharing reports — sub
 - Forward references to later chapters: kept but reduced in Core; they are part of how the book connects.
 - Figure 1.4 and the 1.1 table both kept: the figure shows the process; the table is reduced to "what you must still check".
 
+## Resolved on 2026-10-18 (author delegation)
+
+- Characters chosen and placed (D11); From the Field drafted from the author's 2023 article (D13); light voice pass (Mode B) applied; Figure 1.3 exception documented (D12).
+
 ## Waiting for the author
 
-1. Five recurring students (docs/characters.md, decision D9) — [CHARACTER] placeholders remain.
-2. From the Field story — [AUTHOR ANECDOTE NEEDED] remains.
-3. Final voice edit (pipeline step 8) — the chapter is never marked "done" by the editor.
-4. Optional: replace one Figure 1.3 panel with a second provider's output (both current panels are Anthropic models, labeled as such).
+1. Confirm the From the Field draft and its disclosure (D13).
+2. Final voice edit (pipeline step 8) — the chapter is never marked "done" by the editor.
+3. Add "personal or confidential data in public AI tools" to the live syllabus policy (D15).

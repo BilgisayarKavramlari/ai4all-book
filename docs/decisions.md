@@ -31,3 +31,15 @@ Decisions made by the author. Proposals become decisions only when the author ap
 - 2026-10-16: Book in English first (Turkish adaptation later); no page limit; diagram-heavy; many hands-on labs and cited cases; current-developments and philosophy chapters; "How to Use This Book"; parallel to the Spring 2027 syllabus; end-of-chapter assignment, discussion and review questions.
 - 2026-10-16: The digital companion is a project inside OptiWisdom Compass, from chapter exercises to the certification exam. Compass is optional, free and ungraded for UTD students.
 - 2026-10-16: Final exams are held on the last class day (CS 2V95: Thursday, May 6, 2027).
+
+## 2026-10-18 — Decisions made by the editor on the author's delegation
+
+The author asked the editor to make suitable choices for open items and to escalate only what cannot be resolved.
+
+| # | Topic | Decision | Notes |
+|---|---|---|---|
+| D11 | Recurring characters | Lucía Herrera (accounting), Marcus Bell (nursing), Elif Kaya (psychology, from İzmir), Sam Okafor (mechanical engineering), Hana Nguyen (arts and technology, they/them). Story bible: docs/characters.md. Front-matter section "Meet the Students" tells readers they are fictional composites | Author may revise any detail |
+| D12 | Figure 1.3 providers | Keep two real outputs from two models of one provider (Anthropic), labeled as such in the text and caption — a documented exception to style sheet §3 until a second provider's output is added | Swap one panel before print if possible |
+| D13 | From the Field, Chapter 1 | Based on the author's published article on AI tools for SMEs (Şeker, 2023), without naming the product, with a conflict-of-interest disclosure | Needs the author's confirmation (it is written in the author's voice) |
+| D14 | How This Book Was Written | First draft written from the AI-use log and decisions; declares OptiWisdom interests and that the book is not grant-funded | Needs the author's review |
+| D15 | Course policy wording | "Personal or confidential data in public AI tools" appears in the book's not-acceptable zone as "course guidance" | The author should add it to the live syllabus policy |

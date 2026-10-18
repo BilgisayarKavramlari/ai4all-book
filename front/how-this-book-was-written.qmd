@@ -1,3 +1,37 @@
 # How This Book Was Written {#sec-how-written .unnumbered}
 
-Status: not started
+<!-- Status: FIRST DRAFT (2026-10-18), compiled from docs/ai-use-log.md and docs/decisions.md. Awaiting the author's review; update for each edition. -->
+
+This is a book about using AI responsibly, so it should say plainly how AI was used to write it. This section is that disclosure. It follows the same principle the book asks of you: say what you used, how you checked it, and where human judgment decided.
+
+## What AI Tools Did {.unnumbered}
+
+The author used AI tools from Anthropic (Claude models, through the Claude app and Claude Code) throughout the project. They were used to:
+
+- organize the author's course materials and planning notes into a book design;
+- draft chapter plans ("blueprints"), first drafts of chapter text and end-of-chapter questions;
+- run separate review passes on each draft, playing the roles of a subject expert, an instructional designer, a panel of student readers and a fact-checker, each without seeing the others' reports;
+- search for and check sources, and record every checked claim in a fact-check log;
+- generate the diagrams and data charts from source files and data tables;
+- draft the five fictional students who appear in the book.
+
+Every chapter also has a human checkpoint before drafting (the chapter plan) and after it (the author's own revision and final voice edit). No AI tool is listed as an author.
+
+## How the Content Was Checked {.unnumbered}
+
+- **Sources.** Every factual claim is tied to a source and a year. Sources were opened and checked, and the results were logged claim by claim. Where a claim could not be confirmed, it was corrected or removed.
+- **Examples.** AI outputs shown in the book are either labeled as constructed teaching examples or shown with the real model name and the date they were produced.
+- **Fictional students.** Lucía, Marcus, Elif, Sam and Hana are invented. They are never used as evidence.
+- **Time-sensitive content.** Claims about products, laws and model abilities carry an "as of" date and are rechecked for each edition.
+
+## Interests to Declare {.unnumbered}
+
+The author is a founder of OptiWisdom, a company that develops Compass, the optional digital companion to this book, and software for small and medium-sized businesses, including AI tools. Compass is optional, free and ungraded for students in the author's courses; no grades or student data go to Compass. Where the book mentions the author's own work, it is cited and disclosed.
+
+This book is the author's own work. It was not funded by a course development grant.
+
+## What Stayed Human {.unnumbered}
+
+The decisions in this book were made by the author: what to teach and in what order, which cases to include, how to judge competing evidence, what the fictional students should learn, and how the text should sound. AI tools made the work faster and the checking more thorough. Responsibility for what the book says, including its mistakes, belongs to the author.
+
+A detailed log of AI assistance is kept with the book's source files and is updated with every edition.

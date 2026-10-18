@@ -1,12 +1,12 @@
 # Why AI Changes Study and Work {#sec-ch01}
 
 <!-- Status: REVISION v2 (2026-10-17) after four independent reviews (docs/editorial/ch01-dev-memo.md).
-Not marked done: awaiting the five recurring students ([CHARACTER: …]), the author's From the Field story,
-and the author's final voice edit. Figures: figures/out/color (EPUB/web) and figures/out/gray (print). -->
+Characters per docs/characters.md (D11). Not marked done: awaiting the author's final voice edit
+and confirmation of the From the Field draft (D13). Figures: figures/out/color (EPUB/web) and figures/out/gray (print). -->
 
 ![Chapter 1 at a glance: what you learn, judge and do in this chapter.](../figures/out/color/f1-01-chapter-map.svg){#fig-1-1 fig-alt="Chapter map with three columns: Learn (sections 1.1 to 1.3), Judge (1.4 to 1.6) and Do (labs, baseline, assignment A1)."}
 
-**Chapter 1 at a glance.** Artificial intelligence (AI) tools now write, summarize and answer questions in seconds. Studies of real and realistic work tasks show that these tools can make people faster and better. Not everyone gains the same amount, and on some tasks the tools make work worse.
+**Chapter 1 at a glance.** Artificial intelligence (AI) tools now write, summarize and answer questions in seconds, in every field from accounting and nursing to engineering and the arts. Studies of real and realistic work tasks show that these tools can make people faster and better. Not everyone gains the same amount, and on some tasks the tools make work worse.
 
 This chapter shows you where the gains come from and where the tools fail. It also gives you a five-step method for working with them, which you will use for the rest of the course: the AI Work Loop. You finish by recording where you start, so you can see later how far you have come.
 
@@ -61,6 +61,10 @@ Answer from what you know today. There are no wrong answers. You will come back 
 **Check Yourself** boxes are short recall questions at the end of each section. **Worked examples** show every step; **faded examples** leave some steps for you; **Your Turn** boxes ask you to try it yourself. None of these are graded. They are practice for the exams and for your portfolio. Answers to odd-numbered end-of-chapter questions are in Appendix E; Compass (optional, free and ungraded) offers feedback on Check Yourself questions.
 :::
 
+::: {.callout-note title="Meet the students"}
+Five fictional students appear throughout this book: Lucía (accounting), Marcus (nursing), Elif (psychology), Sam (mechanical engineering) and Hana (arts and technology). They are invented composites, used to show the same skills in different fields. You met them in "Meet the Students" at the front of the book.
+:::
+
 ## 1.1 Same Question, Different Answers {#sec-1-1 .unnumbered}
 
 [Core]{.path}
@@ -108,7 +112,7 @@ They do not prove that each sentence matches its page. In a 2023 study of genera
 
 A common comparison is that a generative model is "like autocomplete on your phone, but much bigger." The comparison holds for the basic step: both predict what comes next. It breaks on scale. A large model is trained on vastly more text, uses far more of the conversation as context, and receives extra training to follow instructions. That lets the same prediction step produce summaries, explanations and code that phone autocomplete never could.
 
-So a generative model is not a library of stored answers, and it is not a source of guaranteed truth. It is a powerful producer of likely text. That makes it useful for drafting, explaining and brainstorming, and risky whenever something has to be exactly right.
+So a generative model is not a library of stored answers, and it is not a source of guaranteed truth. It is a powerful producer of likely text. In other words, *likely* is not the same as *true*. That makes it useful for drafting, explaining and brainstorming, and risky whenever something has to be exactly right.
 
 ::: {.callout-tip title="Check Yourself 1.1"}
 1. Give the two reasons why answers to the same prompt can differ.
@@ -220,7 +224,7 @@ The tool did not just fail to help. It made results worse. The authors found tha
 
 The researchers described this with an image: a **jagged technological frontier**. Imagine all the tasks you could give an AI tool, arranged by how hard they look to a person. You might expect a smooth line, with easy tasks inside the tool's ability and hard tasks outside. The real boundary is not smooth.
 
-It zigzags. Some tasks that look hard sit inside the frontier. Some that look easy sit outside.
+It zigzags. Some tasks that look hard sit inside the frontier. Some that look easy sit outside. In other words, how hard a task looks to you tells you little about how well the tool will do it.
 
 ![AI capability is uneven across tasks that look equally hard.](../figures/out/color/f1-07-jagged-frontier.svg){#fig-1-7 fig-alt="Schematic jagged line separating inside the frontier from outside it, with six numbered example tasks, illustrative as of October 2026: three usually inside (rewriting tone, summarizing a pasted article, generating ideas) and three usually outside (exact quotes from a book not given, exact letter counts without a calculator feature, local facts without web search)."}
 
@@ -243,19 +247,19 @@ You may hear that newer models "can handle everything" now. Testing like the exa
 So the only reliable way to find the frontier for your task is to **test it**. Give the tool a version of the task where you already know the right answer. If it gets that right, try a harder version. If it fails, you have found an edge.
 
 ::: {.callout-note title="Worked Example: One Change, Two Results"}
-**Field:** Arts and humanities. [CHARACTER: humanities major]
+**Field:** Arts and humanities. *Featuring Hana (arts and technology, history minor).*
 
-The student wants three exact quotations, with page numbers, from an essay for her paper. *(Constructed example for teaching.)* She tests the same request twice, changing only one thing: what the tool is given.
+Hana wants three exact quotations, with page numbers, from an essay for a history paper. *(Constructed example for teaching.)* They test the same request twice, changing only one thing: what the tool is given.
 
-**Test A — essay pasted into the prompt.** Request: "Give me three direct quotations from this essay, with page numbers." She searches the essay for each quotation. All three appear; one page number is off by one. **Verdict:** inside the frontier, with checking.
+**Test A — essay pasted into the prompt.** Request: "Give me three direct quotations from this essay, with page numbers." They search the essay for each quotation. All three appear; one page number is off by one. **Verdict:** inside the frontier, with checking.
 
-**Test B — essay named but not given.** Same request, but she only names the essay. Two quotations do not appear anywhere in it. The third exists, but the page number is wrong. **Verdict:** outside the frontier for this tool, on this date.
+**Test B — essay named but not given.** Same request, but they only name the essay. Two quotations do not appear anywhere in it. The third exists, but the page number is wrong. **Verdict:** outside the frontier for this tool, on this date.
 
 **Rule:** when only one thing changed, you know what made the difference. Here, giving the tool the source moved the task inside the frontier.
 :::
 
 ::: {.callout-note title="Faded Example: Design the Test"}
-**Field:** Engineering. [CHARACTER: engineering major]
+**Field:** Engineering. *Featuring Sam (mechanical engineering), who checks units on everything since one bad lab grade.*
 
 **Task:** "A pump moves 450 liters per minute. How many gallons per hour is that?"
 
@@ -315,23 +319,23 @@ You do not need a full catalog of failures yet; Chapter 4 provides one. Start wi
 - **Overconfidence:** output stated with more certainty than the evidence supports, as in Answer B.
 
 ::: {.callout-note title="Worked Example: Tracing a Confident Statistic"}
-**Field:** Psychology and social science. [CHARACTER: psychology major]
+**Field:** Psychology and social science. *Featuring Elif (psychology).*
 
-A student asks an AI tool whether working from home affects productivity. The output says: "A Stanford study found remote workers are 13% more productive." *(Constructed example for teaching.)*
+For a class discussion, Elif asks an AI tool whether working from home affects productivity. The output says: "A Stanford study found remote workers are 13% more productive." *(Constructed example for teaching.)*
 
 **Step 1 — Isolate the claim.** One number (13%), one source (a Stanford study), one direction (more productive).
 
-**Step 2 — Find the original.** The student searches and finds a study led by Stanford economist Nicholas Bloom: a randomized experiment at a large Chinese travel company, where call-center employees who volunteered were assigned by chance to work from home or in the office for nine months (Bloom et al., 2015).
+**Step 2 — Find the original.** Elif searches and finds a study led by Stanford economist Nicholas Bloom: a randomized experiment at a large Chinese travel company, where call-center employees who volunteered were assigned by chance to work from home or in the office for nine months (Bloom et al., 2015).
 
 **Step 3 — Compare what was measured.** The 13% was an increase in the performance of those call-center employees, mostly from working more minutes per shift and partly from handling more calls per minute (Bloom et al., 2015). It was one company, one kind of job and one period.
 
-**Step 4 — Decide.** The student rewrites the claim: "In a nine-month experiment with call-center staff at one Chinese travel company, working from home raised performance by 13% (Bloom et al., 2015)."
+**Step 4 — Decide.** Elif rewrites the claim: "In a nine-month experiment with call-center staff at one Chinese travel company, working from home raised performance by 13% (Bloom et al., 2015)."
 
 **Rule:** a statistic is only as good as your ability to find where it came from and what it measured.
 :::
 
 ::: {.callout-note title="Faded Example: Find the Error"}
-**Field:** Natural science. [CHARACTER: biology major]
+**Field:** Natural science. *Featuring Lucía, studying for her general-education science course.*
 
 *Constructed AI-style output:* "Seasons happen because Earth is closer to the Sun in summer and farther away in winter."
 
@@ -385,7 +389,7 @@ Permitted-zone uses, such as brainstorming or grammar feedback, are listed brief
 Recall the support agents. At work, the goal was to solve the customer's problem, and the assistant helped. In a course, the "customer" is your future self, who needs the skill. That is why the same tool can be useful at work and a bad shortcut in a course.
 
 ::: {.callout-note title="Worked Example: Sorting Uses into the Three Zones"}
-**Field:** Education. [CHARACTER: education major]
+**Field:** Education. *(A one-off example; not one of the recurring students.)*
 
 A student teacher uses AI in four ways while preparing a lesson.
 
@@ -398,11 +402,11 @@ A student teacher uses AI in four ways while preparing a lesson.
 :::
 
 ::: {.callout-note title="Faded Example: Sort Two Yourself"}
-**Field:** Health. [CHARACTER: nursing major]
+**Field:** Health. *Featuring Marcus (nursing).*
 
 | Use | Zone | Why |
 |---|---|---|
-| Asks AI to quiz him on drug classes before an exam | Permitted | Study help |
+| Marcus asks AI to quiz him on drug classes before an exam | Permitted | Study help |
 | Asks AI to explain a lab value, then checks it in his textbook | Permitted | Explanation, verified against a source |
 | Uses AI to summarize three research articles for a literature review, then checks each summary against the article and discloses it | _______ | _______ |
 | Pastes a real patient's case from his clinical placement into a public AI tool to get a care plan | _______ | _______ |
@@ -444,7 +448,7 @@ The loop is drawn as a circle because the steps feed each other. Verification of
 Each chapter of this book opens with the loop and highlights the step that chapter strengthens. This chapter highlights **Frame**, because the first decision is whether and how to use AI at all.
 
 ::: {.callout-note title="Worked Example: The AI Work Loop on an Upset Customer's Email"}
-**Field:** Business. [CHARACTER: business major working part-time in customer service]
+**Field:** Business. *Featuring Lucía, who works part-time in customer support. Here you take her place.*
 
 ![The AI Work Loop applied to an upset customer's email.](../figures/out/color/f1-12-loop-walkthrough.svg){#fig-1-12 fig-alt="Five steps for a customer email: Frame the goal; Prompt for a polite reply; Verify catches an invented 20 percent discount; Decide deletes it and sends; Disclose follows the company rule."}
 
@@ -462,9 +466,9 @@ Each chapter of this book opens with the loop and highlights the step that chapt
 :::
 
 ::: {.callout-note title="Faded Example: The Loop on a Patient Leaflet"}
-**Field:** Health sciences. [CHARACTER: public health major]
+**Field:** Health sciences. *Featuring Marcus (nursing), during a clinical placement.*
 
-**Situation.** You need to turn a hospital leaflet about a new medication into plain language for patients.
+**Situation.** Marcus's unit asks him to turn a hospital leaflet about a new medication into plain language for patients. Put yourself in his place.
 
 **Frame.** Rewriting for readability is likely inside the frontier. Medical accuracy is not negotiable, so every changed sentence must still be correct.
 
@@ -530,12 +534,12 @@ A useful goal is specific, observable and tied to a learning outcome. Compare:
 | "Use AI more for my major." | "By April, design one AI-assisted workflow for a real task in my nursing courses, with a step where I verify medical facts (LO6)." |
 
 ::: {.callout-note title="Worked Example: A Sample Baseline"}
-*[CHARACTER: one recurring student; sample written for teaching]*
+*Elif's baseline (a sample written for teaching).*
 
 | Task | What I asked | What came back | What I did |
 |---|---|---|---|
 | Summarize a 20-page reading for my sociology class (expected inside) | "Summarize this article" (text pasted) | A clear one-page summary | Compared it with my notes; it left out the author's main limitation, so I added it |
-| Find statistics on student loan debt (unsure) | "How much student loan debt is there in the US?" | A precise number with no source | Could not find the number in any official source; did not use it |
+| Find statistics on international students in the US (unsure) | "How many international students study in the US?" | A precise number with no source | Could not find the number in any official source; did not use it |
 | Count how many times a keyword appears in a 30-page report (expected outside) | "How many times does 'equity' appear in this report?" | A number | Counted with my word processor's search; the tool's number was wrong |
 
 **Documented failure:** the keyword count was wrong, and the search function showed it.
@@ -680,7 +684,15 @@ The National Association of Colleges and Employers (NACE), an association of col
 
 ## From the Field {.unnumbered}
 
-[AUTHOR ANECDOTE NEEDED: a short, real experience from the author's work — for example, a team or small firm whose work changed when an AI tool arrived: who gained most, what went wrong, and what the author learned. Anonymize organizations. 150–300 words.]
+<!-- Draft based on the author's published article (Şeker, 2023). Awaiting the author's confirmation of wording and of the conflict-of-interest note (decision D13). -->
+
+The support-center study is about a large company with thousands of agents and its own AI team. Most of my industry work has been with the opposite: small and medium-sized firms in Türkiye. In 2023 I wrote about a problem I kept running into there (Şeker, 2023). A firm with five or ten employees usually cannot hire an AI specialist, decide which tasks to give that person, or check whether the work is right. For those firms, I argued, ready-made software is a more realistic path than custom AI projects, at least for now.
+
+The software I described in that article starts from data almost every small firm already has: its invoices. Document number, date, customer, product, quantity and price are enough to estimate which customers may be slipping away, which products stand out and how sales are changing. In that work, many of the hard problems were about the data itself rather than the algorithm: discipline in recording it, its quality, and access to it.
+
+The lesson connects to this chapter. Gains from AI are uneven not only between new and experienced workers, but between firms that have AI specialists and firms that do not. And even a simple tool needs a person who frames the question, checks the output against what they know about their customers, and decides what to do.
+
+*Disclosure: I have a commercial interest in software of this kind. See "How This Book Was Written."*
 
 ## Chapter Summary {.unnumbered}
 
@@ -868,6 +880,8 @@ Evaluating verifiability in generative search engines. In *Findings of the Assoc
 National Association of Colleges and Employers. (n.d.). *What is career readiness?* Retrieved October 17, 2026, from https://www.naceweb.org/career-readiness/competencies/career-readiness-defined/
 
 Noy, S., & Zhang, W. (2023). Experimental evidence on the productivity effects of generative artificial intelligence. *Science, 381*(6654), 187–192. https://doi.org/10.1126/science.adh2586
+
+Şeker, Ş. E. (2023). KOBİ'lere özel basit yapay zekâ çözümü: Kolay.AI [A simple artificial intelligence solution for SMEs: Kolay.AI]. *YBS Ansiklopedi, 11*(1), 24–46.
 
 Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence and amending Regulations (EC) No 300/2008, (EU) No 167/2013, (EU) No 168/2013, (EU) 2018/858, (EU) 2018/1139 and (EU) 2019/2144 and Directives 2014/90/EU, (EU) 2016/797 and (EU) 2020/1828 (Artificial Intelligence Act). *Official Journal of the European Union*, L, 2024/1689. http://data.europa.eu/eli/reg/2024/1689/oj
 
