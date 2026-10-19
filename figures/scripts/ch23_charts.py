@@ -74,8 +74,8 @@ def f23_07(mode):
     ax.set_ylabel("Games in which the system was judged human (%)")
     ax.set_ylim(0, 85)
     ax.set_title(title, fontsize=13, fontweight="bold", loc="left")
-    source(fig, "Source: Jones & Bergen (2026), PNAS 123(21), abstract. Five-minute, three-party games; two "
-                "preregistered studies. Bars are published values, not this book's calculation.")
+    source(fig, "Source: Jones & Bergen (2026), PNAS 123(21), full text and Table 1. Five-minute, three-party games; "
+                "two preregistered studies. Bars are published values, not this book's calculation.")
     save(fig, "f23-07-turing-2026", mode)
 
 

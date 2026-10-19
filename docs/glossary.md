@@ -424,3 +424,29 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Licensure | Permission from a state body to practice a profession. | Mesleki ruhsat (lisans) |
 | Scope of practice | What the members of a licensed profession may do. | Uygulama kapsamı |
 | Terms of service | The contract a provider sets for using its tool. | Hizmet koşulları |
+| AI welfare | The question of whether and how an AI system's possible interests should count. | Yapay zekâ refahı |
+| Anthropomorphism | Attributing human traits such as thoughts or feelings to things that are not human. | İnsanbiçimcilik (antropomorfizm) |
+| Argument map | A diagram of an argument: the claim at the top, the reasons that support it on one side, the objections against it on the other, and lines showing which reason or objection bears on what. | Argüman haritası |
+| Artificial general intelligence (AGI) | An AI system that matches or exceeds people across most cognitive tasks, not only some; there is no agreed definition. | Yapay genel zekâ |
+| Computational functionalism | The view, used by Butlin et al. as a working hypothesis, that the right computations could be enough for consciousness. | Hesaplamalı işlevselcilik |
+| Chinese Room argument | Searle's (1980) thought experiment and the conclusion he drew from it: running the right program, which manipulates symbols by their form (syntax), is not by itself enough for understanding (semantics). | Çin Odası argümanı |
+| Creativity | Producing ideas or artifacts that are new, surprising and valuable (Boden, 2004). | Yaratıcılık |
+| ELIZA effect | Reading far more understanding into a program's output than it warrants (named by Hofstadter, 1995). | ELIZA etkisi |
+| Existential risk (from AI) | The risk of outcomes as bad as human extinction or the permanent loss of humanity's future. | Varoluşsal risk |
+| Forward-looking responsibility | A duty assigned in advance to prevent harm, as opposed to blame assigned afterward. | İleriye dönük sorumluluk |
+| Imitation game (Turing test) | Turing's (1950) proposed test: an interrogator types questions to two hidden players, one a person and one a machine, and must decide which is which. | Taklit oyunu (Turing testi) |
+| Indicator property (of consciousness) | A feature that a scientific theory of consciousness says matters, stated in computational terms, used to check whether an AI system's design has it (Butlin et al., 2023). | Bilinç göstergesi özelliği |
+| Interested source | Someone with a stake in the answer. | Çıkar sahibi kaynak |
+| Meaningful human control | Designing systems so that they respond to the relevant human reasons and their outcomes can be traced to a person who understood what they were doing (Santoni de Sio & van den Hoven, 2018). | Anlamlı insan denetimi |
+| Meaningful work | Work in which people use their skills, make their own decisions and contribute something others value. | Anlamlı iş |
+| Moral crumple zone | The person nearest an automated system absorbing the blame for a failure even when they had little control over the system's behavior (Elish, 2019). | Ahlaki ezilme bölgesi |
+| Moral status | Being something whose interests matter morally for its own sake, so that what happens to it can wrong it. | Ahlaki statü |
+| Phenomenal consciousness | Experience: there is something it is like to be that system. | Fenomenal bilinç |
+| Position paper | A short paper that takes a side on a contested question after stating both sides fairly, with the writer's own view in a labeled paragraph. | Görüş (pozisyon) yazısı |
+| Problem of many hands | When many people each contribute a little to an outcome, it becomes hard to say who is responsible (Thompson, 1980; applied to computing by Nissenbaum, 1996). | Çok eller sorunu |
+| Responsibility gap | The problem that when learning systems act in ways their makers and operators cannot predict, the grounds for holding anyone responsible for what they do weaken (Matthias, 2004). | Sorumluluk boşluğu |
+| Steelman | The strongest fair version of a view, the one its own holders would recognize and accept; the opposite of a straw man. | Güçlendirilmiş karşı görüş (steelman) |
+| Straw man | A weak version of a view, built to be knocked down; the opposite of a steelman. | Saman adam (çürük karşı görüş) |
+| Stochastic parrot | Bender et al.'s (2021) description of a language model: a system that stitches together sequences of linguistic form it has seen, guided by probabilities of how they combine, without reference to meaning. | Stokastik papağan |
+| Symbol grounding problem | How symbols could get their meaning from something other than more symbols (Harnad, 1990). | Sembol temellendirme sorunu |
+| Systems reply | The reply to the Chinese Room that the person is only one part of a system that also includes the rulebook, the papers and the room, and that the whole system understands. | Sistem yanıtı |

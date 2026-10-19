@@ -271,3 +271,19 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | Links to two providers' published model cards, dated (Lab 19.2) | Thu Apr 22, 2027 |
 | Dated recording of Tuesday's end-to-end demo | Tue Apr 20, 2027 |
 <!-- /ch19 -->
+
+<!-- ch23 -->
+## Chapter 23
+| Asset | For | Needed by |
+|---|---|---|
+| Source pack: library links (never copies) to one passage per side for each debate, with about 750-word excerpts for the short paper: Turing (1950) §§1, 6; Searle (1980) main text; Bender & Koller (2020) §§3–4; Bender et al. (2021) §6; Piantadosi & Hill (2022); Butlin et al. (2023) summary; Seth (2025); Long et al. (2024) summary; Suleyman (2025); Matthias (2004); Tigard (2021); Elish (2019); Boden (2004) ch. 1; Chiang (2024); Doshi & Hauser (2024); Bankins & Formosa (2023); Danaher (2019) ch. 1; CAIS (2023); Narayanan & Kapoor (2025); Gebru & Torres (2024); IASR 2026 summary; Rawls (1971) §§11–13; Driver (2025) | Position paper (both versions), Lab 23.2 | Before any session that uses the chapter |
+| One-page paraphrase sheet of Searle (1980) with section references (written by the instructor or editor, not copied), including the robot reply's concession | Lab 23.2 | Before Lab 23.2 |
+| Lab 23.1: a longer constructed op-ed (optional; the lab sheet prints a sample and a model map) and a map template | Lab 23.1 | Before Lab 23.1 |
+| Lab 23.2: printed, dated outputs from two tools (model names and dates) for the steelman prompt | Lab 23.2 | Before Lab 23.2 |
+| Lab 23.3: six transcripts of about 250 words (three by consenting volunteers, no personal details; three from AI systems with model names, dates and persona/no-persona marked) and the answer sheet | Lab 23.3 | Before Lab 23.3 |
+| Lab 23.4: optional longer scenario and a four-gap table template (the lab sheet prints the scenario, Matthias's and Tigard's views and a model judgment) | Lab 23.4 | Before Lab 23.4 |
+| Alternative assignment: a list of 6–8 dated op-eds or essays (two per debate, both sides represented) with library links, each paired with one primary passage for the side it leaves out | Optional artifact | Before the assignment is set |
+| Position-paper template (labeled "My view" paragraph; declaration block) and one sample (Hana's, constructed) | Optional artifact | Before the assignment is set |
+| Accessible versions: plain-text transcripts, outline form of the argument maps, accessible table templates | All labs | With the lab materials |
+| Compass (optional): interactive argument-map builder using `argument_map()` data; Chapter 23 quiz; moderated debate board | Interactive versions | Before Part VI release |
+<!-- /ch23 -->

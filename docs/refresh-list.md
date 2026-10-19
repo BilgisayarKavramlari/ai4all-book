@@ -250,3 +250,17 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | Microsoft Copilot Chat available to UTD students | A13 brief | Oct 2026 | OIT |
 | UTD 2026 catalog majors-to-guides map (checked 2026-10-18) | Field Guides intro | 2026 catalog | catalog.utdallas.edu/2026/undergraduate/programs |
 | Anthropic education report shares (38.6% vs. 5.4%; intro 36.8%) | Deep 19.A | Apr 2025 data | anthropic.com |
+| 23 | Opening, 23.2, F23.7, C30 | Persona-prompted GPT-4.5 judged human 73%; without persona 36% (GPT-4.5) and 38% (LLaMa-3.1); 15-minute study 56% (LLaMa-3.1) and 59% (GPT-5) | Oct 2026 | Jones & Bergen (2026), PNAS 123(21), full text and Table 1 | Each edition (new tests, replications) |
+| 23 | 23.3, F23.9 | Butlin et al. method; journal version TiCS 30, 488–501 (June 2026) | Oct 2026 | Crossref; Europe PMC | Each edition |
+| 23 | 23.3, Short 1 | Anthropic lets two models end a rare subset of abusive chats (Aug 15, 2025); Suleyman's essay (Aug 19, 2025); Suleyman leads Microsoft AI, a division of Microsoft (chief executive as of August 2025; March 2026 restructuring reported in search summaries, not verified) | Oct 2026 | Company page; author's site | Each edition (policies, roles) |
+| 23 | 23.3, Short 1 | Anthropic's model-welfare policies after August 2025 (secondary reports describe later commitments) [VERIFY on anthropic.com before adding anything] | Oct 2026 | Not yet checked at primary pages | Next edition |
+| 23 | 23.3 | Seth (2025) BBS target article, vol. 49, e315 | Oct 2026 | Crossref | Next edition (commentaries and reply) |
+| 23 | 23.6, F23.17 | Humlum & Vestergaard "Still Waters, Rapid Currents", NBER w33777 revised March 2026: no effect > 2% two years after launch | Oct 2026 | nber.org | Each edition (new revision; consistent with Ch. 12) |
+| 23 | 23.6, F23.17 | Canaries (Brynjolfsson, Chandar & Chen), revised Aug 12, 2026: ages 22–25 19% below, through June 2026; descriptive | Oct 2026 | Stanford Digital Economy Lab page | Each edition (revisions change the figure) |
+| 23 | 23.7 | International AI Safety Report 2026 (Feb 3, 2026); endorses no policy | Oct 2026 | internationalaisafetyreport.org | Each edition (new report or key update; align with Ch. 22) |
+| 23 | 23.7 | Grace et al. survey (2023), arXiv v3 Oct 8, 2025: 38–51% give ≥ 10% to extinction-level outcomes | Oct 2026 | arXiv | Each edition (journal version, newer survey) |
+| 23 | 23.5 | Thaler v. Perlmutter line (cert. denied March 2026) | Oct 2026 | Ch. 18 (owner) | With Ch. 18 |
+| 23 | Short 2 | Tempe legal outcome: prosecutors declined to charge the company; operator pleaded guilty to endangerment (July 2023) | Oct 2026 | Associated Press (2023), syndicated by KTVK/azfamily | Stable (historic) |
+| 23 | 23.4 author box | Şeker & Arslanhan (2026), Artificial Intelligence Theory and Applications 6(1), 56–74; hermai package | Oct 2026 | DergiPark article page and PDF | With Ch. 17 (package version) |
+| 23 | 23.2 | Li et al. (2023) Othello world-representation study, cited as an example of interpretability evidence | Oct 2026 | arXiv 2210.13382 v5; ICLR 2023 | Each edition (newer interpretability evidence) |
+| 23 | F23.7, 23.2 | GPT-4o named only as a 2026 study's baseline (historic; retired from ChatGPT Jan 2026, API Jan 14, 2027) | Oct 2026 | book-wide rule | Each edition |

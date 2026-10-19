@@ -222,7 +222,7 @@ def storyboard(f):
           ("2021", "\"Stochastic parrots\" paper"),
           ("2023", "Consciousness indicators report"),
           ("2026", "Its authors say two models pass a three-party test")]
-    f.text(400, 24, "A 1950 question, a 2026 test: the tests changed, the dispute did not", size=17,
+    f.text(400, 24, "A 1950 question, a 2026 test: seven texts in one unsettled debate", size=17,
            weight="700", width=780)
     f.line(24, 226, 776, 226, color=ink, width=2.4)
     for i, (d, txt) in enumerate(ev):
@@ -268,7 +268,7 @@ def indicators(f):
 # ---------------------------------------------------------------- four gaps
 def four_gaps(f):
     muted = MUTED[f.mode]
-    f.text(400, 24, "Four responsibility gaps need four different fixes", size=17, weight="700")
+    f.text(400, 24, "Four responsibility gaps ask four different questions", size=17, weight="700")
     gaps = [("Culpability", "Can anyone fairly be blamed for this harm?", "clear duties before use"),
             ("Moral accountability", "Can anyone explain and answer for what the system did?",
              "reasons people can give and check"),
@@ -281,7 +281,7 @@ def four_gaps(f):
         y = 60 + (i // 2) * 150
         f.box(x, y, 370, 130, a, role="neutral", size=15, sub=q + "\nFix: " + fix, sub_size=13)
     f.text(400, 380, "After Santoni de Sio & Mecacci (2021); the \"fix\" lines summarize their proposals. "
-           "They argue the gaps can arise with non-learning systems too.", size=13, color=muted, width=780)
+           "They argue the gaps have different sources and can arise with non-learning systems too.", size=13, color=muted, width=780)
 
 
 # ---------------------------------------------------------------- creative / author / owner
@@ -306,13 +306,13 @@ def labor_table(f):
     cols = [20, 190, 400, 600, 780]
     heads = ["Study", "Question asked", "Result (as of its date)", "Evidence status"]
     rows = [("Brynjolfsson, Li & Raymond (2025)", "Did an assistant change support agents' output?",
-             "+15% issues resolved per hour; about +30% for less experienced agents",
+             "+15% issues resolved per hour; about +30% for less experienced, lower-skilled agents",
              "measured (one firm)"),
             ("Humlum & Vestergaard (rev. March 2026)", "Did chatbots change earnings and hours in Denmark?",
-             "no effect larger than 2% two years after launch; tasks reorganized",
+             "effects larger than 2% ruled out two years after launch; tasks reorganized",
              "measured (national records)"),
             ("Brynjolfsson, Chandar & Chen (rev. Aug 12, 2026)", "How has young workers' employment moved in "
-             "exposed jobs?", "22–25-year-olds 19% below less-exposed peers' pace, to June 2026",
+             "AI-exposed jobs?", "22–25-year-olds 19% below less-exposed peers' pace, to June 2026",
              "measured; descriptive, not causal")]
     y = 60
     f.raw(f'<rect x="20" y="{y}" width="760" height="40" fill="none" stroke="{ink}" stroke-width="1.4"/>')
@@ -338,7 +338,7 @@ def doc_kinds(f):
            weight="700", width=780)
     cols = [("Statement (CAIS, May 2023)", "Who: signatories, including researchers and company leaders\n"
              "What: one sentence\nAsks: treat extinction risk as a global priority"),
-            ("Assessment (International AI Safety Report, Feb 2026)", "Who: 100+ experts, government-backed\n"
+            ("Assessment (International AI Safety Report, Feb 2026)", "Who: developed with 100+ experts; backed by 30+ countries and bodies\n"
              "What: a review of evidence, with disagreements recorded\nAsks: endorses no policy"),
             ("Essay (Narayanan & Kapoor, Apr 2025)", "Who: two computer scientists\n"
              "What: an argument from how past technologies spread\nAsks: policies for resilience")]
@@ -378,7 +378,7 @@ def summary_card(f):
              ("Responsibility", "can anyone be justly held responsible when no one could foresee?"),
              ("Creativity", "new, surprising and valuable, or someone's choices?"),
              ("Work", "which tasks change, and who decides?"),
-             ("Long-term risk", "how fast do effects arrive, and what comes first?")]
+             ("Long-term risk", "how fast do effects arrive, can systems be controlled, what comes first?")]
     for i, (a, b) in enumerate(cards):
         x = 20 + (i % 3) * 260
         y = 50 + (i // 3) * 130
@@ -420,8 +420,8 @@ MAP_ROOM = dict(
           ("Form alone is not enough for meaning (semantics)", "Searle (1980)"),
           ("The person in the room follows the rules and understands no Chinese", "the thought experiment")],
     cons=[("Simulate the neurons of a Chinese speaker's brain", "brain simulator reply (Searle, 1980)"),
-          {"text": "Connect the symbols to the world with cameras and motors",
-           "source": "robot reply (Searle, 1980)", "target": "pro:2"},
+          ("Accepts premise 2, adds the world: a program linked to cameras and motors might understand",
+           "robot reply (Searle, 1980)"),
           {"text": "The whole system (person, rules, papers) is what understands",
            "source": "systems reply (Searle, 1980)", "target": "pro:3"}],
     highlight="con:3",
@@ -433,8 +433,11 @@ MAP_PARROTS = dict(
           ("A model trained only on text receives only form", "Bender & Koller (2020)")],
     cons=[{"text": "Meaning can come from relations among concepts (conceptual role)",
            "source": "Piantadosi & Hill (2022)", "target": "pro:1"},
-          ("Machines may have a different mode of understanding", "Mitchell & Krakauer (2023)")],
-    title="\"Stochastic parrots\" is a claim about meaning; critics dispute what meaning needs")
+          ("We grant understanding on the evidence of behavior, as with other people",
+           "Turing (1950), applied by this book", "inferred")],
+    note="Between the sides: Mitchell & Krakauer (2023) survey both; Mahowald et al. (2024) separate formal and "
+         "functional competence.",
+    title="Bender and colleagues: form without meaning. Their critics dispute what meaning needs")
 
 MAP_WELFARE = dict(
     claim=("AI welfare deserves serious attention now", "Long et al. (2024)"),
@@ -449,24 +452,27 @@ MAP_WELFARE = dict(
     title="Moral status: two serious sides, one label: contested")
 
 MAP_GAP = dict(
-    claim=("Learning systems open a responsibility gap", "Matthias (2004)"),
+    claim=("Learning systems open a responsibility gap: stop using them or accept the gap", "Matthias (2004)"),
     pros=[("Holding someone responsible needs control and foresight", "Matthias (2004)"),
           ("Learning systems act in ways makers and operators cannot predict", "Matthias (2004)")],
-    cons=[{"text": "Responsibility practices can stretch to cover new cases", "source": "Tigard (2021)",
-           "target": "pro:1"},
-          {"text": "Design systems for meaningful human control", "source": "Santoni de Sio & van den Hoven (2018)",
-           "target": "pro:2"},
-          ("The bigger risk is blame landing on the nearest person", "Elish (2019)")],
-    title="Matthias's gap and the main replies")
+    cons=[{"text": "Responsibility practices are flexible and can stretch to cover new cases",
+           "source": "Tigard (2021)", "target": "pro:1"},
+          ("A third option: design for meaningful human control (tracking and tracing)",
+           "Santoni de Sio & van den Hoven (2018)")],
+    note="Not drawn: Elish (2019), whose moral crumple zone is a warning about where blame lands, not a denial "
+         "of the gap.",
+    title="The replies to Matthias deny a premise or offer a third option")
 
 MAP_RISK = dict(
     claim=("Extinction risk from AI should be a global priority", "CAIS statement (2023), paraphrased"),
-    pros=[("Capabilities are improving fast and may outpace our ability to control them", "Bengio et al. (2024)"),
+    pros=[("Capabilities are improving fast; systems may pursue goals in ways people cannot control",
+           "Bengio et al. (2024)"),
           ("Many AI researchers give non-trivial chances to extremely bad outcomes", "Grace et al. (survey 2023; forecast)")],
-    cons=[{"text": "AI's effects arrive slowly, through adoption, like other general-purpose technologies",
+    cons=[{"text": "Fast capability gains do not mean fast effects: effects arrive through adoption",
            "source": "Narayanan & Kapoor (2025)", "target": "pro:1"},
           ("The framing draws attention from present harms", "Gebru & Torres (2024)")],
-    title="The long-term-risk debate turns on how fast effects arrive")
+    note="The disputed premises: how fast gains become effects, and whether such systems can be kept under control.",
+    title="The long-term-risk debate turns on speed and control")
 
 CHAIN_TEMPE = failure_chain(
     notes={0: "Detected 5.6 s before impact, never classified as a pedestrian (NTSB)",
@@ -474,7 +480,7 @@ CHAIN_TEMPE = failure_chain(
            2: "Automation complacency not addressed by the company (NTSB)",
            3: "A pedestrian was killed (NTSB)"},
     highlight={1, 2},
-    tag="Tempe, Arizona, 2018 · all links documented (NTSB report HAR-19-03) · no tree branch is assigned")
+    tag="Tempe, Arizona, 2018 · all links documented (NTSB report HAR-19-03) · tree: other (misclassification)")
 
 FUNNEL_QUOTE = verification_funnel(
     highlight=["claims", "primary"],
@@ -495,7 +501,7 @@ def mh(d):
 
 FIGS = [
     ("f23-01-chapter-map", chapter_map, 800, 455, "Chapter 23 at a glance"),
-    ("f23-02-storyboard", storyboard, 800, 470, "A 1950 question, a 2026 test: the tests changed, the dispute did not"),
+    ("f23-02-storyboard", storyboard, 800, 470, "A 1950 question, a 2026 test: seven texts in one unsettled debate"),
     ("f23-03-map-template", mp(MAP_TEMPLATE), 800, mh(MAP_TEMPLATE), MAP_TEMPLATE["title"]),
     ("f23-04-map-elif", mp(MAP_ELIF), 800, mh(MAP_ELIF), MAP_ELIF["title"]),
     ("f23-05-map-turing", mp(MAP_TURING), 800, mh(MAP_TURING), MAP_TURING["title"]),
@@ -503,9 +509,10 @@ FIGS = [
     ("f23-08-map-parrots", mp(MAP_PARROTS), 800, mh(MAP_PARROTS), MAP_PARROTS["title"]),
     ("f23-09-indicators", indicators, 800, 430, "Check a system against theories' indicator properties, not its words"),
     ("f23-11-map-welfare", mp(MAP_WELFARE), 800, mh(MAP_WELFARE), MAP_WELFARE["title"]),
-    ("f23-12-four-gaps", four_gaps, 800, 410, "Four responsibility gaps need four different fixes"),
+    ("f23-12-four-gaps", four_gaps, 800, 410, "Four responsibility gaps ask four different questions"),
     ("f23-13-map-gap", mp(MAP_GAP), 800, mh(MAP_GAP), MAP_GAP["title"]),
-    ("f23-14-chain-tempe", CHAIN_TEMPE, 800, 420, "Blame can land on the last person in the chain"),
+    ("f23-14-chain-tempe", CHAIN_TEMPE, 800, 420,
+     "Tempe 2018: every link is documented; who answered for it is the question"),
     ("f23-15-three-questions", three_questions, 800, 384,
      "\"Creative\", \"author\" and \"owner\" answer different questions"),
     ("f23-17-labor-table", labor_table, 800, 466, "Three studies of AI and work answer three different questions"),

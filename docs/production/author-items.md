@@ -157,3 +157,12 @@
 3. **Tuesday demo (Apr 20):** which end-to-end workflow you will demonstrate, so 19.5's worked example mirrors it; a dated recording for Compass.
 4. Final voice edit.
 <!-- /ch19 -->
+
+<!-- ch23 -->
+## Chapter 23
+1. **Author's view boxes** (optional, about 60 words each, from his own position, never constructed): 23.2 (understanding), 23.3 (consciousness and moral status), 23.5 (creativity and authorship), 23.6 (work and meaning), 23.7 (AGI and long-term risk), Ethics Lens (whose claims come first). Each is now a callout titled "Author's view — to be added by the author before publication" with one neutral line. Before publication: fill each, or delete the box and the matching sentence in 23.1.
+2. **23.4 partial view:** approve the first-person paraphrase of Şeker & Arslanhan (2026), section 2.2 (opaque models: barriers to trust, accountability and fairness; an incorrect diagnosis or biased loan denial as a potential societal harm), and the D16 disclosure line in that box; extend it if he wishes.
+3. Whether Kolay.AI's "democratization of AI" stance should be presented as his view in 23.6 (not used without his word).
+4. **From the Field:** approve the ANT entry (September 2014, printed pp. 14–15) and the paraphrase, including the 2004 e-government actor network (five groups) as the entry states it; any real anecdote, never constructed.
+5. Final voice edit (Mode B pass pending).
+<!-- /ch23 -->
