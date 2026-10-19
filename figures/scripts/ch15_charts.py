@@ -50,7 +50,7 @@ def f15_6(mode):
     ax.set_xlim(0, 100)
     ax.set_xlabel("Share of the U.S. population likely unique on these three facts (%)", color=s["ink"])
     ax.tick_params(colors=s["ink"], labelsize=12)
-    fig.text(0.01, -0.04, "Source: Sweeney (2000), estimates from 1990 U.S. Census summary data "
+    fig.text(0.01, -0.15, "Source: Sweeney (2000), estimates from 1990 U.S. Census summary data "
              "(87% = about 216 of 248 million people). Not a count of people identified.", fontsize=11,
              color=s["muted"])
     save(fig, "f15-06-reid", mode)

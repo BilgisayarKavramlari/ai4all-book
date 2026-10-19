@@ -31,6 +31,7 @@ $endif$
   font-size: 10.5pt,
   first-line-indent: false,
   outline-depth: 1,
+  outline-small-depth: 1,
   copyright: [
     *AI for All: Career-Ready AI Skills* \
     Şadi Evren Şeker \
@@ -47,3 +48,31 @@ $endif$
 
 // Body paragraphs: no first-line indent, so give paragraphs visible spacing.
 #set par(spacing: 0.95em, leading: 0.62em)
+
+// Callouts (worked examples, Your Turn, Check Yourself) may break across pages.
+// Quarto's default callout is breakable: false, so a box taller than the space left
+// on a page overflowed into the footer. Same look; the title stays with the body.
+#let callout(body: [], title: "Callout", background_color: rgb("#dddddd"), icon: none, icon_color: black, body_background_color: white) = {
+  block(
+    breakable: true,
+    fill: background_color,
+    stroke: (paint: icon_color, thickness: 0.5pt, cap: "round"),
+    width: 100%,
+    radius: 2pt,
+    block(
+      inset: 1pt,
+      width: 100%,
+      below: 0pt,
+      sticky: true,
+      block(
+        fill: background_color,
+        width: 100%,
+        inset: 8pt)[#if icon != none [#text(icon_color, weight: 900)[#icon] ]#title]) +
+      if (body != []) {
+        block(
+          inset: 1pt,
+          width: 100%,
+          block(fill: body_background_color, width: 100%, inset: 8pt, body))
+      }
+  )
+}

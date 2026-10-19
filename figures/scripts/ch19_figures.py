@@ -453,8 +453,7 @@ MARCUS_FLOW = data_flow_map(
     highlight="input",
     annotate={"input": "textbook tables and his own notes only", "storage": "institutional terms",
               "recipients": "only Marcus"},
-    note="Placement data never enters, even without names: the table's floor allows de-identified data, and his "
-         "placement rule says no.")
+    note="Placement data never enters, even de-identified: his placement rule says no, above the table's floor.")
 SAM_LOOP = agent_loop(
     highlight=["tool", "check"],
     annotate={"tool": "read one datasheet (read-only)", "check": "Sam compares speed and units with the datasheet",
