@@ -4,7 +4,7 @@
 |---|---|
 | Type | Studio (in class) |
 | Objectives | O3, O4, O5, O6 (LO2, LO5; LO6 secondary) · tags 4D:DEL, 4D:DIL |
-| Time | 75 minutes, Thursday, April 8, 2027 (briefing 10 · practice 45 · share 15 · exit 5), plus about 13 minutes before class |
+| Time | 75 minutes in the lab session (briefing 10 · practice 45 · share 15 · exit 5), plus about 13 minutes before class |
 | Materials | Your trace cards (one per step, each a step-map row: proposed action, who or what runs it, input, output, what it changes; plus one "unplanned action" card); the lab sheet (A11 template, F14.16) with columns what happened · right? · how I checked · caught by; a coin; the instructor's planted-fault deck (48 cards: 3 kinds × 4 templates × 4 copies, dealt per team; each card has an insertion rule); digital card sets for screen-reader users. **No device or AI account needed.** |
 
 ## Steps (tool-neutral)
@@ -16,9 +16,9 @@ Never put personal or confidential information into a workflow you test.
 4. **Share and critique (15 min).** Four teams present one fault a point caught, one that got through, and the change it led to.
 5. **Exit (5 min).** Write one gate you decided not to add, and why (approval fatigue). Photograph your lab sheet.
 
-**No partner** (absent or working alone): play both roles; shuffle your cards and draw the next one at random instead of choosing; flip the coin at soft gates; use a fault card from eLearning or write one of the three kinds; submit your own sheet.
+**No partner** (absent or working alone): play both roles; shuffle your cards and draw the next one at random instead of choosing; flip the coin at soft gates; use a fault card from the course site or write one of the three kinds; submit your own sheet.
 
-In Compass (optional): ch14-lab1, with the card template and the A11 sheet; also on eLearning.
+In Compass (optional): ch14-lab1, with the card template and the A11 sheet; also on the course site.
 
 ## Expected observations
 Most first designs gate the obvious payment or send action but miss the unplanned-action card. Coin flips at soft gates show quickly why an instruction is not a gate. Hidden-instruction faults are usually caught only where a person checks the content of a result, not where they approve an action by its title. Several students find that their task needs no agent at all: a fixed workflow or a prompt chain fits. All are valid results.

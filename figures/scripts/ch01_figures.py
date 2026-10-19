@@ -52,7 +52,7 @@ def chapter_map(f):
                        "1.3 The jagged frontier"]),
             ("Judge", ["1.4 Fluent is not the same as correct", "1.5 Your judgment, your responsibility",
                        "1.6 The AI Work Loop"]),
-            ("Do", ["Labs 1.1–1.3", "1.7 Your baseline", "A1: AI use baseline and goals (due Jan 25)"])]
+            ("Do", ["Labs 1.1–1.3", "1.7 Your baseline", "A1: AI use baseline and goals"])]
     for c, (head, items) in enumerate(cols):
         x = 30 + c * 255
         f.text(x + 115, 78, head, size=16, weight="700")

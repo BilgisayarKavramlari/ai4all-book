@@ -1,6 +1,6 @@
 # A9 Scenario A′ — Internship Shortlist (one-page brief)
 
-*Constructed scenario for Chapter 11's A9. No real people: candidates are letters. File: data/ch11_scenario_a.csv (on eLearning as a spreadsheet and a screen-reader-friendly table).*
+*Constructed scenario for Chapter 11's A9. No real people: candidates are letters. File: data/ch11_scenario_a.csv (on your course site as a spreadsheet and a screen-reader-friendly table).*
 
 **The decision.** A small accounting firm has one paid spring internship (12–20 hours a week). The office manager must send a **shortlist of three** candidates to the two partners for final interviews by Friday. The partners make the final choice; the office manager owns the shortlist.
 

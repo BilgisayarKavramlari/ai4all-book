@@ -13,7 +13,7 @@
 3. Mark each tool on a small data-flow map: which boxes (storage, seen by, reuse) are filled in your case?
 4. Decide what you will delete or switch off. Make any changes yourself, on your own account.
 
-In Compass (optional): ch15-lab2, with notes on current tools' data and memory options; also on eLearning.
+In Compass (optional): ch15-lab2, with notes on current tools' data and memory options; also on the course site.
 
 ## Expected observations
 Terms differ between providers and between plans of one provider; some options are on by default. Many students find a memory note or a shared link they had forgotten.
@@ -25,4 +25,4 @@ Terms differ between providers and between plans of one provider; some options a
 Ungraded. The record can support A12's privacy row or the Mini-Project.
 
 ## Accessibility and alternatives
-A dated sample record for two tools on eLearning replaces the live search.
+A dated sample record for two tools on the course site replaces the live search.

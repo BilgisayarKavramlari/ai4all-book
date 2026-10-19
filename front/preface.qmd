@@ -8,19 +8,19 @@ This book is about that gap. It is not a book about one product, and it is not a
 
 ## Why This Book {.unnumbered}
 
-I wrote it for a course at The University of Texas at Dallas, CS 2V95.001, *AI for All: Career-Ready AI Skills*. The course is open to undergraduates in every major and has no prerequisites. That shaped every page. A business student, a nurse in training, a psychology major and an artist should be able to read any chapter without a programming background, and each of them should find examples from their own field.
+I wrote it for a course open to undergraduates in every major, with no prerequisites, and for any instructor who wants to teach such a course or any reader who wants to learn on their own. That shaped every page. A business student, a nurse in training, a psychology major and an artist should be able to read any chapter without a programming background, and each of them should find examples from their own field.
 
 The title is a promise, and the promise has three parts.
 
-First, **for all majors.** The ideas are explained without code. Where a little mathematics or Python helps, it sits in an optional Deep section, never in the reading you are tested on.
+First, **for all majors.** The ideas are explained without code. Where a little mathematics or Python helps, it sits in an optional Deep section, never in the Core reading a course would examine.
 
-Second, **for all budgets.** The exercises are designed to work with free tools or with tools your university provides. No paid subscription is required, and the book itself is free for students in the course.
+Second, **for all budgets.** The exercises are designed to work with free tools or with tools your institution provides or approves. No paid subscription is required, and the book itself is openly licensed.
 
-Third, **for all careers.** Every chapter connects its topic to several occupations and ends with an assignment you can show to an employer or a graduate program. By the end of the term, your work forms a portfolio that shows not only what you produced, but how you checked it and where your own judgment shaped it.
+Third, **for all careers.** Every chapter connects its topic to several occupations and ends with an assignment you can show to an employer or a graduate program. By the end of the book, your work forms a portfolio that shows not only what you produced, but how you checked it and where your own judgment shaped it.
 
 ## Judgment Before Tricks {.unnumbered}
 
-When people first use AI tools, they often look for the perfect prompt, a hidden setting, or a list of magic phrases. Those tricks age quickly. The interface you learn this semester may look different next semester, and a model that fails a task today may handle it next year. A book built on menus would be out of date before it was printed.
+When people first use AI tools, they often look for the perfect prompt, a hidden setting, or a list of magic phrases. Those tricks age quickly. The interface you learn this month may look different in a few months, and a model that fails a task today may handle it next year. A book built on menus would be out of date before it was printed.
 
 So this book is built on something slower to change: five decisions you make every time you use AI on a task that matters. You **frame** the task and decide whether AI belongs in it at all. You **prompt**, giving the tool what it needs. You **verify** the output against something other than the tool. You **decide** what to keep, change or reject, and you own the result. Finally, you **disclose** what you used and how. Together these form the AI Work Loop, which Chapter 1 introduces and every later chapter strengthens.
 
@@ -36,7 +36,7 @@ My own work has moved between teaching, writing and building software. Since 201
 
 Most of my industry work has been with small and medium-sized firms in Türkiye. In 2023 I wrote about a problem I kept meeting there: a firm with five or ten employees usually cannot hire an AI specialist, decide which tasks to give that person, or check whether the work is right (Şeker, 2023). Chapter 1 returns to that article. Its lesson is one this book repeats often. Even a simple tool needs a person who frames the question, checks the output against what they know, and decides what to do.
 
-More recently, in a 2025 manuscript, I connected the philosophical tradition of interpretation (hermeneutics) to the methods that try to explain a model's outputs (Şeker, 2025). Chapter 17 returns to that work.
+More recently, with Zümra Arslanhan, I connected the philosophical tradition of interpretation (hermeneutics) to the methods that try to explain a model's outputs, and released the work as an open-source package (Şeker & Arslanhan, 2026). Chapter 17 returns to that work.
 
 I am a founder of OptiWisdom, which develops software for businesses, including AI tools, and which builds Compass, the optional digital companion to this book. Where the book draws on that work, it says so, and "How This Book Was Written" declares the interest in full.
 
@@ -54,7 +54,7 @@ You will not finish this book with every answer. AI is changing too fast for tha
 
 ## Acknowledgments {.unnumbered}
 
-I thank the students who will test these chapters first, the colleagues at The University of Texas at Dallas who supported a course for every major, and the readers of my earlier writing in Turkish, whose questions over many years shaped how this book explains things.
+I thank the students who will test these chapters first, the colleagues who supported the idea of a course for every major, and the readers of my earlier writing in Turkish, whose questions over many years shaped how this book explains things.
 
 Şadi Evren Şeker\
 Dallas, Texas, October 2026
@@ -65,4 +65,4 @@ Dell'Acqua, F., McFowland, E., III, Mollick, E., Lifshitz-Assaf, H., Kellogg, K.
 
 Şeker, Ş. E. (2023). KOBİ'lere özel basit yapay zekâ çözümü: Kolay.AI [A simple artificial intelligence solution for SMEs: Kolay.AI]. *YBS Ansiklopedi, 11*(1), 24–46.
 
-Şeker, Ş. E. (2025). *HermAI: Hermenötik açıklanabilir yapay zeka* [HermAI: Hermeneutic explainable artificial intelligence] [Unpublished manuscript].
+Şeker, Ş. E., & Arslanhan, Z. (2026). Hermai: A hermeneutic framework for context-aware and narrative explainable AI. *Artificial Intelligence Theory and Applications, 6*(1), 56–74. https://dergipark.org.tr/en/pub/aita/article/1796258

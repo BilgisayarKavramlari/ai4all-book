@@ -4,8 +4,8 @@
 |---|---|
 | Type | Compare |
 | Objectives | O1 (LO1) · tags UNESCO:TECH-U, LM:how-works |
-| Time | 20 minutes, Tuesday concept session, in class |
-| Materials | Two free or university-provided AI tools, or one tool used in fresh conversations; no account needed with the eLearning sample outputs |
+| Time | 20 minutes, concept session, in class |
+| Materials | Two free AI tools or tools your institution provides or approves, or one tool used in fresh conversations; no account needed with the sample outputs on the course site |
 
 ## Steps (tool-neutral)
 1. Choose three questions: one factual, one practical, one from your major.
@@ -35,10 +35,10 @@ Comparison table for three questions (feeds A1).
 | Not yet | One pair or no recording |
 
 ## Accessibility and alternatives
-Screen-reader users can work from the plain-text sample outputs on eLearning. Students without a laptop can use a phone browser or the printed sample outputs. Students who prefer not to use AI compare the two provided outputs.
+Screen-reader users can work from the plain-text sample outputs on the course site. Students without a laptop can use a phone browser or the printed sample outputs. Students who prefer not to use AI compare the two provided outputs.
 
 ## Safety and privacy
 No personal, confidential or institutional data in prompts.
 
 ## Instructor notes
-Run it after the Tuesday demo. Collect two striking pairs for discussion. Common problem: students compare only length; prompt them to compare claims.
+Run it after the concept-session demo. Collect two striking pairs for discussion. Common problem: students compare only length; prompt them to compare claims.

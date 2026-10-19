@@ -1,0 +1,6 @@
+# This book's calculation (figures/scripts/ch22_calc.py): 30 prompts a day; laptop = 50 W. Illustration only.
+case,wh_per_prompt,prompts_per_day,wh_per_day,laptop_minutes_equivalent
+"active chips only (Google, 2025)",0.10,30,3.0,4
+"full serving stack (Google, 2025)",0.24,30,7.2,9
+"typical query estimate (Epoch AI, 2025)",0.30,30,9.0,11
+long reasoning answers (book's assumption: 10 x 0.24),2.40,30,72.0,86

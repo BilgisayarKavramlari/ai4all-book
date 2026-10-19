@@ -4,8 +4,8 @@
 |---|---|
 | Type | Studio (Compare and Reflect) |
 | Objectives | O1–O6 (LO2; LO3, LO4 in support) · tags 4D:DEL, 4D:DESC, 4D:DISC, 4D:DIL |
-| Time | 75 minutes, Thursday, February 4, 2027, in class; teams of 3–4; every log is individual. About 60–70 minutes at home to finish A3 |
-| Materials | Any AI chat tool available to you (university-provided or a free tier); the A3 log template (eLearning; book Figure 5.13; screen-reader-friendly version on eLearning); the eLearning task bank; the dated sample log (for the no-device route) |
+| Time | 75 minutes, in the lab session; teams of 3–4; every log is individual. About 60–70 minutes at home to finish A3 |
+| Materials | Any AI chat tool available to you (one your institution provides or approves, or a free tier); the A3 log template (course site; book Figure 5.13; screen-reader-friendly version on the course site); the task bank on the course site; the dated sample log (for the no-device route) |
 
 **Fresh, temporary chat.** Every run starts a new conversation, so no earlier messages are in the context. Where the tool offers a temporary or private mode that is not saved to memory (a product feature that saves notes about a user, or draws on past chats, and adds them to later conversations), use it. Current steps for each tool are in Compass.
 
@@ -37,10 +37,10 @@ If the tool refuses or errors, record that as a result and try a smaller task. I
 A3 (Application Assignment, Chapter 5): frame card, at least four versions, test record, peer swap record, verification note, reflection, AI Use Declaration. 10-point rubric in the chapter.
 
 ## Accessibility and alternatives
-No-device or opt-out route: the iteration audit (alternative assignment) using the dated sample log on eLearning, started in class with the team. Screen-reader-friendly log template (a plain table). The peer swap can be done by sharing text in any accessible format; a student for whom the swap is a barrier uses the alternative's reader test.
+No-device or opt-out route: the iteration audit (alternative assignment) using the provided dated sample log, started in class with the team. Screen-reader-friendly log template (a plain table). The peer swap can be done by sharing text in any accessible format; a student for whom the swap is a barrier uses the alternative's reader test.
 
 ## Safety and privacy
 No personal or confidential data in prompts. No employer data unless you use the employer's approved tool under its rules. Use a fresh, temporary chat, so earlier chats do not shape the test. Save outputs as text excerpts; crop screenshots.
 
 ## Instructor notes
-Pair students from different majors for the swap where possible. Collect a few anonymized "most useful change" examples for Tuesday's review in week 4. Remind students that v1 is an honest first attempt, not a straw man.
+Pair students from different majors for the swap where possible. Collect a few anonymized "most useful change" examples for review in the next concept session. Remind students that v1 is an honest first attempt, not a straw man.

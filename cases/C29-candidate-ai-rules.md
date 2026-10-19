@@ -47,7 +47,7 @@ For an applicant: **Frame** the application yourself (your experience, your reas
 2. Where do the three employers' rules agree, and where do the reports leave gaps?
 3. How does an AI Use Declaration answer the request for openness at each stage?
 4. Why do all three rules keep AI out of the interview?
-5. How does the CS 2V95 oral defense mirror the live interview, and how does it differ?
+5. How does the oral defense in section 20.8 mirror the live interview, and how does it differ?
 
 ## Sources (accessed 2026-10-18)
 

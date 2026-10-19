@@ -1,10 +1,10 @@
-# Lab 21.1 — Code Peer Check (inside Lab 20.1, minutes 50–65)
+# Lab 21.1 — Code Peer Check (suggested within Lab 20.1)
 
 | Field | Value |
 |---|---|
-| Type | Studio (in class), a named 15-minute slot of Chapter 20's portfolio workshop: **Lab 20.1, minutes 50–65 (Ch. 21 peer check)** |
+| Type | Studio (in class), a suggested 15-minute activity that fits inside Chapter 20's portfolio workshop (the Ch. 21 peer check step of Lab 20.1) or runs on its own |
 | Objectives | Ch. 21 O3, O5 (LO5, LO7) · tags 4D:DIL · feeds item 7 of the code's brief (trigger-test record and one revision) |
-| Time | 15 minutes, Tuesday, April 27, 2027 |
+| Time | 15 minutes |
 | Materials | Your workshop draft of the code (the section 21.2 and 21.3 Your Turns: three commitments and a boundaries line; the rest of the code is added after the workshop), on paper or on screen; the trigger-test strip (three questions, printed); a pen. No device or AI account is needed |
 
 ## Steps (tool-neutral)
@@ -23,7 +23,7 @@ Most first drafts have at least one line that fails "moment" ("when I use AI …
 2. Did your boundaries line name a rule you had forgotten? (evaluate)
 
 ## Deliverable and rubric
-None in class. The before-and-after line goes into item 7 of the code; the code is scored with Chapter 21's 15-point rubric, inside the portfolio rubric (Chapter 20).
+None in class. The before-and-after line goes into item 7 of the code; if the instructor grades the portfolio, the code is scored with Chapter 21's suggested 15-point rubric, inside the portfolio rubric (Chapter 20).
 
 ## Accessibility and alternatives
 Students who cannot attend may do the check with a classmate by message or with the instructor in office hours, or apply the test to their own draft with the printed strip and record one revision. Drafts may be shared on paper or read from a screen; the strip is available as an accessible document.

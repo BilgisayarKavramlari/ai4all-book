@@ -13,7 +13,7 @@
 3. Ask one person which version they would want to receive, and why.
 4. Write one sentence on what you learned about your own tone.
 
-This mirrors Tuesday's demonstration (section 10.3).
+This mirrors the concept session's demonstration (section 10.3).
 
 [COMPASS: ch10-lab2 — the demonstration email in three tones, with markers]
 
@@ -28,7 +28,7 @@ The same points read very differently across tones; writers often predict their 
 Ungraded. The three versions can serve as A7's "at least one iteration."
 
 ## Accessibility and alternatives
-By-hand route needs no device; the demonstration email is on eLearning in print and screen-reader formats.
+By-hand route needs no device; the demonstration email is on your course site in print and screen-reader formats.
 
 ## Safety and privacy
 Placeholders for names and contact details; no confidential workplace content.

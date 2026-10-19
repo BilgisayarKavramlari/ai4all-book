@@ -8,7 +8,7 @@
 
 **How the boxes work.** A *worked example* shows a full solution. A *faded example* gives you the first step and leaves the rest to you; the answers are in Appendix E. A *Your Turn* box is a step of the pre-lab, the lab or A13.
 
-**Time:** the Core sections take about 22 minutes at a steady pace (150 words a minute); the whole Core package, with the Opening Case, section 19.8, your guide and one other, the Case Study, the Summary and answering the Warm-up and Check Yourself, about 52. Allow more if you read more slowly or in a second language. With R16's required part (4), the pre-lab (12) and A13 at home (64, including its brief and the fairness runs): **about 2 hours 12 minutes for the week**, 7 minutes less if your workflow describes no people. Faded examples, Review Questions A–C, the Spaced Review and the Case Study Questions are final-exam practice; Discussion Questions are for class. The other five guides, the Ethics Lens, Career Connection, From the Field, the Deep sections and Labs 19.2–19.3 are optional. Only Core sections are examinable. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
+**Time:** the Core sections take about 22 minutes at a steady pace (150 words a minute); the whole Core package, with the Opening Case, section 19.8, your guide and one other, the Case Study, the Summary and answering the Warm-up and Check Yourself, about 52. Allow more if you read more slowly or in a second language. Add about 4 minutes for the recommended part of the model-card paper (Further Reading), about 12 for the pre-lab and about 64 for A13 at home, including its brief and the fairness runs (7 minutes less if your workflow describes no people). Faded examples, Review Questions A–C, the Spaced Review and the Case Study Questions are practice for a final review; Discussion Questions are for class. The other five guides, the Ethics Lens, Career Connection, From the Field, the Deep sections and Labs 19.2–19.3 are optional. Only Core sections are examinable. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
 
 **The question of this chapter:** *What changes when you bring AI into your own field, and how do you show that your workflow is ready to use?* The Chapter Summary answers it.
 
@@ -153,18 +153,18 @@ Name your A13 task's verification authority, and one check you can do yourself.
 
 *Featuring Marcus.*
 
-Before you test a tool, ask whether you may give it the input. Chapter 12 called this the **data gate**: a check, made before any quality test, of whether a tool's data terms fit the class of the input. An input's **data class** is its row in Chapter 12's table, which is built on UT Dallas's three classes (Public, Controlled and Confidential Data). Here are the table's rows, unchanged.
+Before you test a tool, ask whether you may give it the input. Chapter 12 called this the **data gate**: a check, made before any quality test, of whether a tool's data terms fit the class of the input. An input's **data class** is its row in Chapter 12's table, which is built on a generic three-level classification (public; internal or confidential; restricted or legally protected). Here are the table's rows, unchanged.
 
-| Input | Consumer terms (for example, a free tier) | Institutional terms (for example, a university-provided tool) |
+| Input | Consumer terms (for example, a free tier) | Institutional terms (for example, a tool your institution provides or approves) |
 |---|---|---|
-| Public Data | Yes | Yes |
+| Public information | Yes | Yes |
 | Your own non-sensitive work; material your course provides; de-identified data (names and identifiers removed) | Yes, if you accept the tool's training and retention terms | Yes |
-| Personal data about other people (names, contact details), and Controlled Data | No | Only if the part needs it and the university's rules allow it; ask OIT if unsure |
-| Confidential Data, including FERPA and HIPAA records | No | No, in this course |
+| Personal data about other people (names, contact details), and internal or confidential information | No | Only if the part needs it and your institution's or employer's rules allow it; ask your institution's IT office if unsure |
+| Restricted or legally protected information, including FERPA and HIPAA records | No | No, at this book's floor |
 
-*The rows are this book's reading of course guidance, built on UTD's three classes; in this book, an input's data class is its row. The university's own pages decide any case the table does not cover.* (OIT is UT Dallas's Office of Information Technology.)
+*The rows are this book's reading, built on a generic three-level classification; in this book, an input's data class is its row. Your institution's or employer's own classification decides; this table is a starting floor.*
 
-**The table is the course floor.** A field rule can still say no to an input the table allows: a placement policy, an institutional review board protocol, a consent form, HIPAA's (the Health Insurance Portability and Accountability Act's) own de-identification standard or an employer's policy.
+**The table is a starting floor.** A field rule can still say no to an input the table allows: a placement policy, an institutional review board protocol, a consent form, HIPAA's (the Health Insurance Portability and Accountability Act's) own de-identification standard or an employer's policy.
 
 Every field has such records. **Protected health information** falls under HIPAA; **education records**, a school's records about a student, under FERPA (the Family Educational Rights and Privacy Act). Research with people runs under **informed consent**, a participant's agreement after being told what happens to their data, approved by an **institutional review board** (IRB), a committee that approves and oversees research with people. Clients' files fall under contracts and professional duties.
 
@@ -173,7 +173,7 @@ Chapter 15's habits apply: **de-identification**, removing names and obvious ide
 ::: {.callout-note title="Worked Example: Marcus's Inputs"}
 **Field:** Nursing. *(Constructed example.)*
 
-- **His textbook's drug tables and his own notes:** course material and his own work. They pass the floor, and he uses the university-provided tool.
+- **His textbook's drug tables and his own notes:** course material and his own work. They pass the floor, and he uses a tool his institution provides.
 - **A detail from his placement, even without names:** the floor would allow de-identified data, but his placement's rule says no information about patients goes into any outside tool. **Blocked.**
 
 He builds practice cases from the textbook instead.
@@ -248,7 +248,7 @@ Write one rule that applies to your A13 task, with its source, its date and what
 
 [Core]{.path}
 
-*Featuring Marcus. This example mirrors Tuesday's demonstration.*
+*Featuring Marcus. This example mirrors the concept session's demonstration.*
 
 A **prototype** is the smallest working version of a workflow, built so that someone can run it, check it and change it; it is not a finished product. A build needs no programming:
 
@@ -268,7 +268,7 @@ The build answers the field guide: inputs pass the data gate and your field's ru
 ![A13 may reuse A11's design; it is graded on what A11 could not show: a build, runs and a peer test.](../figures/out/color/f19-09-a11-a13.svg){#fig-19-9 fig-alt="Two lanes: A11 step map, action table, paper dry run (reused, no credit unless revised); A13 build, three runs, safeguards, peer test, card (new)."}
 
 ::: {.callout-note title="Worked Example: Marcus's Pharmacology Review, Written Out"}
-**Field:** Nursing. *(Constructed example; university-provided tool.)* A three-step prompt chain. Steps 1 and 3 are templates; {TABLE}, {QUESTIONS} and {MY ANSWERS} are placeholders.
+**Field:** Nursing. *(Constructed example; a tool his institution provides.)* A three-step prompt chain. Steps 1 and 3 are templates; {TABLE}, {QUESTIONS} and {MY ANSWERS} are placeholders.
 
 ```
 Step 1. You are helping a nursing student review for an exam. Using only
@@ -289,14 +289,14 @@ Table: {TABLE}
 **His check point:** after step 3, he compares every mark with the table himself. **Inputs:** typical, one drug class; different, a table that mixes US and metric units; edge, two drugs whose names look alike. On the edge run, question 7 swaps the two names; his check point catches it.
 :::
 
-![Each part of Marcus's workflow gets its own decision, and one part stays with no AI.](../figures/out/color/f19-10-marcus-fit.svg){#fig-19-10 fig-alt="Fit matrix: three parts by university tool, consumer tool and no AI; chosen: tool for questions and marks, no AI for answers."}
+![Each part of Marcus's workflow gets its own decision, and one part stays with no AI.](../figures/out/color/f19-10-marcus-fit.svg){#fig-19-10 fig-alt="Fit matrix: three parts by institution's tool, consumer tool and no AI; chosen: tool for questions and marks, no AI for answers."}
 
 ::: {.callout-note title="Faded Example: A Lab-Report Checker"}
 **Field:** Chemistry. A chemistry major builds a template that checks a lab report's calculations against the raw data she pastes in. Facts: her reports compute concentrations in moles per liter from volumes in milliliters and masses in grams, and a percent yield; her instructor says milliliter-to-liter slips are the most common error. **Step 1 (filled):** the template asks the tool to list every number in the results section next to the calculation it should come from. **Her three test inputs (typical, different, edge):** _____
 :::
 
 ::: {.callout-important title="Your Turn (Lab 19.1)"}
-In Thursday's lab, build your prototype and run your three inputs.
+In the lab session, build your prototype and run your three inputs.
 :::
 
 ::: {.callout-tip title="Check Yourself 19.5"}
@@ -314,7 +314,7 @@ Your own tests share your blind spots. A **peer test** is a test in which a pers
 
 **Four safeguards** travel with every prototype:
 
-1. **The data gate,** passed: the course floor, then your field's rules (section 19.3).
+1. **The data gate,** passed: the table's floor, then your field's rules (section 19.3).
 2. **A people point**, and a **hard gate**, one the system enforces, where an error would fall on other people (Chapter 14).
 3. **One field rule,** applied, with its source and date (section 19.4).
 4. **A fairness check** when your workflow describes or affects people: a small **paired-input test**, a test that runs inputs identical except for one cue linked to a group, many times each, counts the outputs by a rule written before any run, and compares the counts (Chapter 16). Name the cue, such as a name. With three runs each, any gap is a **lead**, a gap worth a bigger test but not a conclusion. If no group cue enters, say so in one line.
@@ -352,7 +352,7 @@ In the lab, peer-test a partner's prototype from another field, and have yours t
 
 *Featuring Marcus.*
 
-Week 13's reading, R16, introduced the **model card**: a short document published with a model that states what it is for and not for, how it was evaluated, including results by group where relevant, and its known limits (after Mitchell et al., 2019). Its nine sections are model details, intended use, factors, metrics, evaluation data, training data, quantitative analyses, ethical considerations, and caveats and recommendations. Its central argument: report results for each group and condition, not one overall number.
+A 2019 paper by Mitchell and colleagues (Further Reading) introduced the **model card**: a short document published with a model that states what it is for and not for, how it was evaluated, including results by group where relevant, and its known limits (after Mitchell et al., 2019). Its nine sections are model details, intended use, factors, metrics, evaluation data, training data, quantitative analyses, ethical considerations, and caveats and recommendations. Its central argument: report results for each group and condition, not one overall number.
 
 A **workflow card** is this book's five-field version for a student workflow. Write *not for* first, so that no one relies on the workflow where it was never tested:
 
@@ -371,7 +371,7 @@ A workflow is ready only for the uses its card states: outside them there is no 
 
 - **Not for:** patient care; real dose calculations; anyone's grades.
 - **For:** my own exam review, from my textbook's drug tables.
-- **Tested on:** three tables (typical, different, edge) and Hana's peer test; university-provided tool; model name and date recorded.
+- **Tested on:** three tables (typical, different, edge) and Hana's peer test; a tool my institution provides; model name and date recorded.
 - **Results:** typical and different, all 10 marks right; edge, question 7 swapped two look-alike names, caught at my check point; after the revision, all 10 right.
 - **Limits and safeguards:** one tool and one model; combination drugs not tested; I check every mark; no group cue enters.
 :::
@@ -395,7 +395,7 @@ Write your workflow card, with the *not for* line first.
 
 [Studio]{.path}
 
-A13 is one record. Before Thursday, write your field answers and three test inputs; in the lab, build, run and peer-test; at home, check, revise, rerun, and write the card and the defense. Full-mark results include "this step stays with a person" and "the edge input failed, and the card now excludes it."
+A13 is one record. Before the lab session, write your field answers and three test inputs; in the lab, build, run and peer-test; at home, check, revise, rerun, and write the card and the defense. Full-mark results include "this step stays with a person" and "the edge input failed, and the card now excludes it."
 
 The record: task and field answers → the build → three runs with checks → safeguards → peer test → revision and rerun → workflow card → defense (one result and one limit from your card) → AI Use Declaration.
 
@@ -404,8 +404,8 @@ The record: task and field answers → the build → three runs with checks → 
 ::: {.callout-note title="Worked Example: Marcus's A13, All Nine Parts (Abridged)"}
 *(Constructed.)*
 
-1. **Task and field answers:** weekly pharmacology review; done when every mark is checked. Authority: the textbook's table. Data: course material (passes); placement data blocked. Rule: the syllabus (declare AI). Cell: check point; he agrees, since nothing reaches a patient.
-2. **Build:** the three-step chain in section 19.5, written out; university-provided tool; model name as shown; date.
+1. **Task and field answers:** weekly pharmacology review; done when every mark is checked. Authority: the textbook's table. Data: course material (passes); placement data blocked. Rule: his course syllabus (declare AI). Cell: check point; he agrees, since nothing reaches a patient.
+2. **Build:** the three-step chain in section 19.5, written out; a tool his institution provides; model name as shown; date.
 3. **Runs:** typical (cardiac drugs) 10/10 marks right; different (mixed units) 10/10; edge (look-alike names) question 7 swapped the names. Check: the table; verdict contradicted.
 4. **Safeguards:** gate passed; check point (Marcus, every mark); rule applied (declaration); no group cue enters.
 5. **Peer test:** Hana picked the cardiac table and was confused by the abbreviations (Hana's sentence-frame record quoted).
@@ -430,16 +430,16 @@ The record: task and field answers → the build → three runs with checks → 
 
 Each guide answers the five questions of @fig-19-3 for one field, adds a fairness question and a short real case, and ends with a career note. Read the guide nearest your major and one other; the rest are optional. The guides are reference material: exam items supply any field facts they need. Rules are dated as of October 2026 and change; check the issuing body's page before you rely on one.
 
-**Which guide is yours?** At UT Dallas, by school (as of the 2026 catalog):
+**Which guide is yours?** Find your major's broad field of study (names of majors vary by institution):
 
-- **Naveen Jindal School of Management:** accounting, business administration, finance, marketing, information systems, healthcare management → Business (healthcare management: read Health too).
-- **School of Behavioral and Brain Sciences:** psychology, cognitive science, child learning and development → Social science; speech, language, and hearing sciences → Health; neuroscience → Natural science (and Health, if you are pre-health).
-- **School of Economic, Political and Policy Sciences:** economics, political science, criminology, sociology, public policy → Social science; public health → Health.
-- **Bass School of Arts, Humanities, and Technology:** history, literature, philosophy, animation and games, media arts and design, visual and performing arts → Arts and humanities.
-- **School of Natural Sciences and Mathematics:** biology, chemistry, physics, mathematics, geosciences → Natural science. Pre-health students: read Health too.
-- **Erik Jonsson School of Engineering and Computer Science:** engineering → Engineering; computer science → Engineering, where coursework code is a check point unless it is safety-relevant.
-- **School of Interdisciplinary Studies:** healthcare studies → Health; education (teacher certification) → Education; interdisciplinary studies → the guide for the field you are considering.
-- **Undecided:** the guide for the field you are considering.
+- **Business:** accounting, business administration, finance, marketing, management, information systems → Business (health-care management: read Health too).
+- **Health:** nursing, public health, speech-language pathology and audiology, health-care studies → Health. Pre-health students in another major: read Health too.
+- **Arts and humanities:** history, literature, languages, philosophy, media arts and design, animation and games, visual and performing arts → Arts and humanities.
+- **Social sciences:** psychology, cognitive science, child development, economics, political science, criminology, sociology, public policy → Social science.
+- **Natural sciences and mathematics:** biology, chemistry, physics, mathematics, earth and environmental sciences, neuroscience → Natural science.
+- **Engineering and computing:** engineering → Engineering; computer science → Engineering, where coursework code is a check point unless it is safety-relevant.
+- **Education:** teacher preparation and education studies → Education.
+- **Interdisciplinary or undecided:** the guide for the field you are considering.
 
 If your major sits between two guides, read both and note one difference.
 
@@ -451,7 +451,7 @@ If your major sits between two guides, read both and note one difference.
 
 **What to verify, and who can confirm it:** in accounting and finance, source documents, the ledger, the audit trail and a forecast's stated conditions; a licensed certified public accountant (CPA) for professional opinions. In marketing, the client's brief, the brand guide and evidence for every product claim; a typical edge case is a claim such as "clinically proven," which needs proof the tool cannot supply.
 
-**Data cautions:** customer and client data under contracts (Chapter 15); employer confidential data; Controlled Data. Lucía drafts replies only in her employer's approved tool.
+**Data cautions:** customer and client data under contracts (Chapter 15); employer confidential data; other internal or confidential information. Lucía drafts replies only in her employer's approved tool.
 
 **Field rules, nearest first:**
 
@@ -524,7 +524,7 @@ If your major sits between two guides, read both and note one difference.
 
 - **Course and lab rules, the IRB protocol and the consent form** decide where participants' answers may go.
 - **The federal rule for research with people** generally requires informed consent (45 CFR 46.116); a change to an approved study, such as adding an AI tool, needs IRB approval first (45 CFR 46.108(a)(3)(iii)).
-- **UT Dallas's IT pages:** OIT's guidelines keep FERPA and HIPAA information out of generative AI tools (UT Dallas OIT, n.d.); the Information Security Office's 2026 guidelines for faculty and staff keep it out of personally obtained tools (UT Dallas Information Security Office, 2026). In this course, it stays out of every tool (section 19.3).
+- **Your institution's IT and information-security guidelines** may say which tools, if any, may receive FERPA or HIPAA information; ask your institution's IT office. At this book's floor, it stays out of every tool (section 19.3).
 - **For survey research,** a task force of the American Association for Public Opinion Research (AAPOR) asks researchers to disclose which tasks used AI, how many human respondents took part, and how humans checked the work (Rothschild et al., 2026).
 
 **Fairness question:** does the tool flatten the variation between groups that your study is about?
@@ -627,29 +627,29 @@ Read such data with Chapter 12's questions: one company's users, one tool, one p
 
 [Deep]{.path}
 
-R16 proposed model cards in 2019. How are they written in practice? A study of 32,111 model cards on Hugging Face, a public site that hosts AI models, found that the training section was the most often filled and that environmental impact, limitations and evaluation were the least often filled (Liang et al., 2024). In the authors' preprint, the evaluation section was filled in 15.4% of cards and limitations in 17.4%. In other words, the sections a user most needs, how the model was tested and where it fails, are the ones most often missing.
+Mitchell et al. (2019) proposed model cards. How are they written in practice? A study of 32,111 model cards on Hugging Face, a public site that hosts AI models, found that the training section was the most often filled and that environmental impact, limitations and evaluation were the least often filled (Liang et al., 2024). In the authors' preprint, the evaluation section was filled in 15.4% of cards and limitations in 17.4%. In other words, the sections a user most needs, how the model was tested and where it fails, are the ones most often missing.
 
-The rest of R16 explains *factors* (the groups and conditions results should be reported for) and *quantitative analyses* (results broken down by those factors), with its example cards in Figures 2 and 3. If you read all of R16, compare its example cards with the cards you open in Lab 19.2. Chapter 17 (Deep) places model cards among other transparency documents, such as datasheets for datasets.
+The rest of the model-card paper explains *factors* (the groups and conditions results should be reported for) and *quantitative analyses* (results broken down by those factors), with its example cards in Figures 2 and 3. If you read the whole paper, compare its example cards with the cards you open in Lab 19.2. Chapter 17 (Deep) places model cards among other transparency documents, such as datasheets for datasets.
 
 ## Hands-on Labs {.unnumbered}
 
-The labs say what to do, not which buttons to press. Full lab sheets are on eLearning, and everything you need to do them is printed here. Never put personal or confidential information into a workflow you test. Inputs may be in any language, with English glosses for your peer. In Compass (optional): lab pages ch19-lab1 to ch19-lab3, with notes for current tools.
+The labs say what to do, not which buttons to press. Full lab sheets are on your course site, and everything you need to do them is printed here. Never put personal or confidential information into a workflow you test. Inputs may be in any language, with English glosses for your peer. In Compass (optional): lab pages ch19-lab1 to ch19-lab3, with notes for current tools.
 
-### Lab 19.1: Discipline Sprint (Studio · 75 minutes · Thursday, in class) {.unnumbered}
+### Lab 19.1: Discipline Sprint (Studio · 75 minutes · in the lab session) {.unnumbered}
 
-**Before Thursday (about 12 minutes):** for one recurring task from your major or intended career, write on the pre-lab sheet your guide (your "field" for pairing), your field answers (verification authority; data class and gate, with any field rule that changes it; one written rule with its source and date; your map cell) and your three test inputs, typical, different and edge, written out in full. Bring two or three more inputs inside your scope for your peer test. These are the Your Turns of sections 19.1–19.4. *Alternative route:* choose your provided scenario (posted by Tuesday) and classify its four inputs instead.
+**Before the lab session (about 12 minutes):** for one recurring task from your major or intended career, write on the pre-lab sheet your guide (your "field" for pairing), your field answers (verification authority; data class and gate, with any field rule that changes it; one written rule with its source and date; your map cell) and your three test inputs, typical, different and edge, written out in full. Bring two or three more inputs inside your scope for your peer test. These are the Your Turns of sections 19.1–19.4. *Alternative route:* choose your provided scenario (posted by your instructor before the lab) and classify its four inputs instead.
 
 1. **Briefing (5 min).** The five-part frame (@fig-19-3), your row of the map (@fig-19-2), the four safeguards (@fig-19-11) and the peer-test rules: run only within the stated scope, use no personal data, record what happens, and do not fix the prototype while you test it. Your instructor pairs students by guide from the pre-lab sheets.
-2. **Build and run (30 min, individual, in mixed-field teams of 3–4).** Build your prototype in a university-provided tool, or use the provided outputs (no-device route). Run your three inputs. Record each output, the tool kind, the model name if shown, and the date. *Checkpoint at minute 20:* at least one run recorded.
+2. **Build and run (30 min, individual, in mixed-field teams of 3–4).** Build your prototype in a tool your institution provides or approves, or use the provided outputs (no-device route). Run your three inputs. Record each output, the tool kind, the model name if shown, and the date. *Checkpoint at minute 20:* at least one run recorded.
 3. **Peer test (20 min, in pairs from different guides).** Your partner picks one of the inputs you brought and runs your prototype with only your written instructions. You watch and record, using the sentence frame in section 19.6. Swap at minute 10. If no partner from another guide is available, your instructor confirms it on your sheet, and a same-guide peer counts in full.
 4. **Share and critique (10 min).** Each team places its members' cells on the class poster of the map and discusses one cell where two fields disagreed.
 5. **Exit (10 min).** Write one change you will make, and one use your card will exclude. Photograph your sheet: it records the lab runs and the peer test for A13.
 
-**If you missed the lab:** ask any classmate from another guide to run your prototype before Monday, or use the instructor's office hours as your peer test, and record which you did.
+**If you missed the lab:** ask any classmate from another guide to run your prototype before A13 is due, or use the instructor's office hours as your peer test, and record which you did.
 
 ### Lab 19.2: Read a Real Model Card (Check It · 20 minutes · optional) {.unnumbered}
 
-Open two published model cards from two different providers (links in Compass and on eLearning). For each, mark which of R16's nine sections it fills, partly fills or leaves out. Write one "not for" line that one of the cards should have had, and say what evidence would support it.
+Open two published model cards from two different providers (links in Compass and on your course site). For each, mark which of the model card's nine sections it fills, partly fills or leaves out. Write one "not for" line that one of the cards should have had, and say what evidence would support it.
 
 ### Lab 19.3: Cross-Field Swap (Explore · 20 minutes · optional) {.unnumbered}
 
@@ -724,7 +724,7 @@ discipline · Discipline × Use Map · field guide · informed consent · instit
 
 <!-- Each item: objective · LO · revised Bloom level. Odd-numbered answers, Check Yourself keys and faded-example keys → appendix/answers.md (Appendix E, via docs/production/handoff/ch19.md); even-numbered → private/ch19-answers-even.md. MC keys rotated: A1 b, A3 d, A4 a, A6 c, A7 d, A9 b, A10 a, A11 c (2 each of a–d). Option lengths checked by script: the key is the longest option in at most two items. Distractor sources: A1 a M1, c M5, d over-gating; A3 a M2 (a tool's check), b M5, c M2; A4 b/c/d M3; A6 a/b M4 reversed, d M1; A7 a/b double credit, c misreading of reuse; A9 a M5, c grading, d certification; A10 b/c M6, d M6 (card = safety); A11 a/b over-reading, d cue misconception (Ch. 16). Review A, B and C, the Spaced Review, all faded examples, the Discussion Questions and the Case Study Questions are final-exam practice (D24, amended). -->
 
-*Everything in this package except the Application Assignment is final-exam practice (or optional discussion); it is not part of this week's time.*
+*Everything in this package except the Application Assignment is practice for a final review (or optional discussion); it is not part of the chapter's time estimate.*
 
 ### Review Questions A: Terms and Concepts {.unnumbered}
 
@@ -740,9 +740,9 @@ discipline · Discipline × Use Map · field guide · informed consent · instit
    (c) A careful general reader, who can usually confirm a result in most fields.\
    (d) The source or person the field accepts as able to confirm a result.
 4. *(O2 · LO5 · Apply)* Chapter 12's table allows de-identified data under consumer terms. A nursing student's placement policy forbids any patient information in outside tools. May the student paste a de-identified case from placement into a free chat tool?\
-   (a) No: the table is the course floor, and the placement rule can still say no.\
+   (a) No: the table is a starting floor, and the placement rule can still say no.\
    (b) Yes: de-identified data passes the table, so the placement rule falls away.\
-   (c) Yes, if the student uses a university-provided tool instead of a free one.\
+   (c) Yes, if the student uses an institution-approved tool instead of a free one.\
    (d) Yes, if the student also removes the patient's age and the date of care.
 5. *(O2 · LO5 · Understand)* Why is de-identification "a start, not a guarantee"? Give one example from a field.
 6. *(O3 · LO5 · Apply)* Which rule should a student read first, and why?\
@@ -803,11 +803,11 @@ discipline · Discipline × Use Map · field guide · informed consent · instit
 
 ### Application Assignment: A13 Domain Workflow Prototype {.unnumbered}
 
-**Due:** Monday, April 26, 2027, 11:59 p.m., on eLearning. *(O4–O6 · LO6; LO5, LO2 · Create)* About 12 minutes before Thursday's lab and about 64 minutes after it, including about 6 minutes to read this brief and rubric and about 7 minutes for the fairness runs if your workflow describes people.
+**Due:** when your instructor sets it. *(O4–O6 · LO6; LO5, LO2 · Create)* About 12 minutes before the lab session and about 64 minutes after it, including about 6 minutes to read this brief and rubric and about 7 minutes for the fairness runs if your workflow describes people.
 
 **A11 and A13.** A11 is a design tested on paper, for any recurring task; oversight is what is graded. A13 (Chapter 19) is a working prototype in your own discipline, run on three real inputs with a peer test. You may start A13 from your A11 design, but A13 is graded only on the new build, runs and peer test. In this book, that means the build, the runs and the peer test, **with the checks, safeguards, card and defense that belong to them.** Mark any part you reuse "from A11"; it earns points only if you revised it for the build and a run or the peer test shows it working on the build.
 
-**Real inputs** means actual tasks from your field (your own work, course material, public or constructed data). Use a university-provided tool such as Microsoft Copilot Chat (as of October 2026), or a free tier whose terms pass your data gate. Switch off or simulate every send, publish, payment and deletion. **No personal, confidential, patient, student or client data:** a submission that contains any is returned for resubmission before it is graded.
+**Real inputs** means actual tasks from your field (your own work, course material, public or constructed data). Use a tool your institution provides or approves (for example, an enterprise chat assistant with data protection), or a free tier whose terms pass your data gate. Switch off or simulate every send, publish, payment and deletion. **No personal, confidential, patient, student or client data:** a submission that contains any is returned for resubmission before it is graded.
 
 **What to submit:**
 
@@ -836,7 +836,7 @@ Valid results that can earn full marks: "a fixed template is enough"; "this step
 | **Defense (0.5)** | 0.5: all three: 80–100 words (± 10), one result and one limit cited, clear to a non-specialist | 0.4: two of the three | 0.2: one | 0: none |
 | **AI Use Declaration (1)** | 1: all five elements | 0.75: four elements | 0.5: two or three elements | 0: zero or one element |
 
-**Alternative assignment** (for students who prefer not to use an AI tool, who cannot pass a data gate with their own task, or whose task involves data they may not share). Choose one of **seven provided field scenarios**, one per field guide, posted on eLearning by Tuesday, April 20; each has four provided inputs and three dated outputs (model and date labeled), one per kind of input. Your pre-lab: classify the four inputs and write the field answers for the scenario. Then work forward: write the build that would run the scenario; check the provided outputs; design the safeguards; have a peer from another guide work through your build with one provided input of their choosing; revise the build; write the card, defense and declaration. The rubric reads this way:
+**Alternative assignment** (for students who prefer not to use an AI tool, who cannot pass a data gate with their own task, or whose task involves data they may not share). Choose one of **seven provided field scenarios**, one per field guide, posted on your course site before the lab session; each has four provided inputs and three dated outputs (model and date labeled), one per kind of input. Your pre-lab: classify the four inputs and write the field answers for the scenario. Then work forward: write the build that would run the scenario; check the provided outputs; design the safeguards; have a peer from another guide work through your build with one provided input of their choosing; revise the build; write the card, defense and declaration. The rubric reads this way:
 
 - **Build and field design:** your written build and the field answers for the scenario.
 - **Test runs:** 1.5 = the four inputs classified as typical, different or edge, each with a reason, plus one input you add with its predicted output; 1 = one of these parts missing; 0.5 = two missing; 0 = none.
@@ -859,7 +859,7 @@ For three weeks, collect one dated item from your field each week: an AI rule, a
 
 ## Further Reading and Compass Links {.unnumbered}
 
-- **R16 (required in part):** Mitchell et al. (2019), "Model cards for model reporting." Read the abstract and Figure 1 (the one-page summary of the nine sections), about 500 words, about 4 minutes. Figure 2 (an example card) and the rest are recommended. Question: which of the nine sections would most change how you use a model?
+- **Recommended:** Mitchell et al. (2019), "Model cards for model reporting." Start with the abstract and Figure 1 (the one-page summary of the nine sections), about 500 words, about 4 minutes; Figure 2 (an example card) and the rest are suggested if you want more. Question: which of the nine sections would most change how you use a model?
 - Assael et al. (2022), on Ithaca: the human-and-model evaluation (Opening Case).
 - Szymanski et al. (2026), the A-Lab Author Correction: one page that shows how a field corrects a claim.
 - Bisbee et al. (2024), on synthetic survey respondents: why averages are not enough.
@@ -918,7 +918,7 @@ Reuter, E. (2021, June 23). Popular sepsis prediction model works "substantially
 
 Rothschild, D., Marlar, J., Amaya, A., Barari, S., Buskirk, T., Cobb, C., Gennai, J., Hillygus, D., Korlakai Vinayak, R., Krupenkin, M., Lee, S., Steiger, D., & Webb, B. (2026, May 8). *Responsible AI integration in survey research* [Task force report]. American Association for Public Opinion Research. https://aapor.org/wp-content/uploads/2026/05/Responsible-AI-Integration-In-Survey-Research.pdf
 
-Şeker, Ş. E. (2016). Duygu analizi (Sentimental analysis). *YBS Ansiklopedi, 3*(3), 22–36.
+Şeker, Ş. E. (2016). Duygu analizi (Sentimental analysis). *YBS Ansiklopedi, 3*(3), 21–36.
 
 Springer Nature. (n.d.). *Artificial intelligence (AI)* [Editorial policy]. Nature Portfolio. Retrieved October 18, 2026, from https://www.nature.com/nature-portfolio/editorial-policies/ai
 
@@ -939,10 +939,6 @@ Texas S.B. 1188, 89th Leg., Reg. Sess. (Tex. 2025) (Tex. Health & Safety Code §
 Tierney, A. A., Gayre, G., Hoberman, B., Mattern, B., Ballesca, M., Kipnis, P., Liu, V., & Lee, K. (2024). Ambient artificial intelligence scribes to alleviate the burden of clinical documentation. *NEJM Catalyst Innovations in Care Delivery, 5*(3). https://doi.org/10.1056/CAT.23.0404
 
 Tierney, A. A., Gayre, G., Hoberman, B., Mattern, B., Ballesca, M., Wilson Hannay, S. B., Castilla, K., Lau, C. S., Kipnis, P., Liu, V., & Lee, K. (2025). Ambient artificial intelligence scribes: Learnings after 1 year and over 2.5 million uses. *NEJM Catalyst Innovations in Care Delivery, 6*(5). https://doi.org/10.1056/CAT.25.0040
-
-UT Dallas Information Security Office. (2026). *Artificial intelligence (AI) usage guidelines*. https://infosecurity.utdallas.edu/information-hub/artificial-intelligence-ai-usage-guidelines/
-
-UT Dallas Office of Information Technology. (n.d.). *Initial guidelines for gen AI*. Retrieved October 18, 2026, from https://oit.utdallas.edu/about/oit-ai-studio/initial-guidelines/
 
 Wang, R. E., Ribeiro, A. T., Robinson, C. D., Loeb, S., & Demszky, D. (2025). *Tutor CoPilot: A human-AI approach for scaling real-time expertise* (EdWorkingPaper No. 24-1054; November 2025 version). Annenberg Institute at Brown University. https://doi.org/10.26300/81nh-8262
 

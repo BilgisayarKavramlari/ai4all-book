@@ -13,7 +13,7 @@
 3. Stop when you find an output that looks right but is wrong.
 4. Record the prompt, the output, the test that exposed the error, the tool and the date.
 
-[COMPASS: ch01-lab3 — class gallery of edges]
+[COMPASS: ch01-lab3 — gallery of example edges]
 
 ## Expected observations
 Errors appear with exact counts, quotations and page numbers, niche facts and long calculations without a calculator feature (as of late 2026; results vary by tool and date).

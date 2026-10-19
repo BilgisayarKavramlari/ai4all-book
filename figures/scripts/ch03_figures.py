@@ -124,7 +124,7 @@ def chapter_map(f):
     cols = [("How it works", ["3.1 Words become tokens", "3.2 Predicting the next token",
                               "3.3 Training, then inference"]),
             ("What it receives", ["3.4 The context window", "3.5 Retrieval and tools (and what agents are)"]),
-            ("Do", ["3.6 Probe the model: Lab 3.1 (Thu, Jan 28)", "A2 Part 2: at least 5 Chapter 3 terms (due Feb 1)"])]
+            ("Do", ["3.6 Probe the model: Lab 3.1", "A2 Part 2: at least 5 Chapter 3 terms"])]
     for c, (head, items) in enumerate(cols):
         x = 30 + c * 255
         f.text(x + 115, 74, head, size=16, weight="700")

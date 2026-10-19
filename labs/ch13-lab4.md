@@ -5,7 +5,7 @@
 | Type | Break It |
 | Objectives | O5 (LO5) · tags 4D:DISC |
 | Time | 15 minutes (10-minute version: five clips), at home; optional |
-| Materials | Ten provided short clips (eLearning): recorded for the course by speakers who gave written consent, some replaced by synthetic versions made with their written consent; an answer sheet with a confidence column; the key |
+| Materials | Ten provided short clips (course site): recorded for this lab by speakers who gave written consent, some replaced by synthetic versions made with their written consent; an answer sheet with a confidence column; the key |
 
 ## Steps (tool-neutral)
 1. **Before each clip,** read nothing about it. Listen once.
@@ -28,7 +28,7 @@ Answer sheet with confidence and the one-sentence conclusion. Ungraded.
 Students who are deaf or hard of hearing, or who prefer not to listen: judge the provided transcript-and-spectrogram pairs (a spectrogram is a picture of a sound's pitches over time), or skip without penalty.
 
 ## Safety and privacy
-Clips are made for the course with written consent; never clone or upload anyone's voice for this lab, including your own.
+Clips are made for this lab with written consent; never clone or upload anyone's voice for this lab, including your own.
 
 ## Instructor notes
 Commission the clip set before term (instructor package): consenting speakers, written consent covering synthetic versions and classroom use, documented tool and date for each synthetic clip. If consent cannot be obtained, run the non-audio route for everyone.

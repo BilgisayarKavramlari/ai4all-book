@@ -1,0 +1,480 @@
+# Source: Epoch AI (2026), Data on AI models (notable models), https://epoch.ai/data/ai-models, CSV downloaded 2026-10-18 (page updated Oct. 16, 2026). CC BY 4.0: "free to use, distribute, and reproduce provided the source and authors are credited." Subset: models since 2010 with a training-compute estimate.
+model,organization,publication_date,training_compute_flop,accessibility
+Feedforward NN,University of Montreal / Université de Montréal,2010-05-13,350000000000000.0,
+iCCCP,Massachusetts Institute of Technology (MIT),2010-06-13,1080000000000000.0,Unreleased
+Pooling CNN (NORB),University of Bonn,2010-09-15,1456277227200000.0,Unreleased
+Pooling CNN (Caltech 101),University of Bonn,2010-09-15,1221124128768000.0,Unreleased
+RNN LM,Johns Hopkins University,2010-09-26,5.396e+16,
+Deep Autoencoders,University of Toronto,2011-04-29,3.672864e+16,
+High Performance CNN (NORB),"IDSIA,SUPSI",2011-07-16,2.57985e+16,Unreleased
+CNN Committee (NIST),IDSIA,2011-09-18,2.6e+16,Unreleased
+CNN Committee (MNIST),IDSIA,2011-09-18,5.2e+16,Unreleased
+CNN committee (traffic sign),IDSIA,2011-10-03,991981425600000.0,Unreleased
+Dropout (MNIST),University of Toronto,2012-06-03,6039370800000000.0,Unreleased
+Dropout (ImageNet),University of Toronto,2012-06-03,2.731968e+17,Unreleased
+Dropout (CIFAR),University of Toronto,2012-06-03,4268700000000000.0,Unreleased
+Unsupervised High-level Feature Learner,Google,2012-07-12,6e+17,
+LSTM LM,RWTH Aachen University,2012-09-09,1.66e+16,
+AlexNet,University of Toronto,2012-09-30,4.7e+17,
+DNN EM segmentation,"IDSIA,SUPSI",2012-12-03,4.78e+17,Unreleased
+DistBelief Speech,Google,2012-12-03,3.114e+17,
+DistBelief NNLM,Google,2013-01-16,2.612736e+18,
+ReLU-Speech,"Google,University of Toronto,New York University (NYU)",2013-05-26,1.2773376e+17,
+Hierarchical Scene Labeling (Stanford Background),New York University (NYU),2013-08-01,2.3774688e+17,Unreleased
+RNTN,Stanford University,2013-10-01,1.422e+16,Unreleased
+RCTM,University of Oxford,2013-10-01,9331200000000000.0,
+Word2Vec (large),Google,2013-10-16,3.888e+16,
+Visualizing CNNs,New York University (NYU),2013-11-12,5.32e+17,
+TransE,"Universite de Technologie de Compiègne – CNRS,Google",2013-12-05,1.340928e+18,
+DQN,DeepMind,2013-12-19,2846883840000000.0,
+Image generation,University of Amsterdam,2013-12-20,475200000000000.0,
+GANs,University of Montreal / Université de Montréal,2014-06-10,5.184e+17,
+SPPNet,"Microsoft,Xi’an Jiaotong University,University of Science and Technology of China (USTC)",2014-06-18,3.411072e+18,
+SmooCT,University College London (UCL),2014-07-01,6.9e+16,
+ACF-WIDER,Chinese Academy of Sciences,2014-07-15,76380000000000.0,Unreleased
+RNNsearch-50*,"Jacobs University Bremen,University of Montreal / Université de Montréal",2014-09-01,1.5552e+18,
+VGG19,University of Oxford,2014-09-04,1.1e+19,
+VGG16,University of Oxford,2014-09-04,1.2291e+19,
+Seq2Seq LSTM,Google,2014-09-10,5.6e+19,
+SPN-4+KN5,"Singapore University of Technology & Design,DSO National Laboratories",2014-09-14,4.4e+16,Unreleased
+GoogLeNet / InceptionV1,"Google,University of Michigan,University of North Carolina",2014-09-17,1.51e+18,
+TA-CNN,Chinese University of Hong Kong (CUHK),2014-11-29,1.0854e+16,Unreleased
+SNM-skip,Google,2014-12-03,2.97600000001e+20,
+Fractional Max-Pooling,University of Warwick,2014-12-18,1e+17,
+ADAM (CIFAR-10),"University of Amsterdam,OpenAI,University of Toronto",2014-12-22,624979800000000.0,Unreleased
+"MSRA (C, PReLU)",Microsoft Research,2015-02-06,2.397403008e+19,
+genCNN + dyn eval,"Chinese Academy of Sciences,Huawei Noah's Ark Lab,Dublin City University",2015-03-17,3.4153451e+16,Unreleased
+TC-DNN-BLSTM-DNN,Carnegie Mellon University (CMU),2015-04-06,1.9410191999999997e+17,Unreleased
+U-Net,University of Freiburg,2015-05-18,5.0832252e+16,Open weights (unrestricted)
+DCNN,"University of Maryland,Rutgers University",2015-08-07,4.8098691e+17,Unreleased
+AlphaGo Fan,DeepMind,2015-10-01,3.8e+20,Unreleased
+SAF R-CNN,"Beijing Institute of Technology,Sun Yat-sen University,Panasonic R&D,National University of Singapore",2015-10-28,1.2311081250000001e+19,Unreleased
+Inception v3,"Google,University College London (UCL)",2015-12-02,1e+20,
+ResNet-152 (ImageNet),Microsoft,2015-12-10,1.041408e+19,
+ResNet-101 (ImageNet),Microsoft,2015-12-10,7.004e+18,Open weights (unrestricted)
+"Variational (untied weights, MC) LSTM (Large)",University of Cambridge,2015-12-16,5886144000000000.0,Unreleased
+AlphaGo Lee,DeepMind,2016-01-27,1.9e+21,Unreleased
+Named Entity Recognition model,Carnegie Mellon University (CMU),2016-03-04,9.69408e+16,
+R-FCN,"Tsinghua University,Microsoft Research",2016-06-21,7.1935776e+17,
+ResNet-200,Microsoft Research Asia,2016-09-17,2.9741645e+19,Unreleased
+Pointer Sentinel-LSTM (medium),"MetaMind Inc,Salesforce",2016-09-26,7490000000000000.0,Unreleased
+GNMT,Google,2016-09-26,6.620000000001e+21,Hosted access (no API)
+Xception,Google,2016-10-07,4.36e+20,
+SPIDER2,"Griffith University,University of Iowa,Dezhou University",2016-10-28,1.822e+16,Open weights (non-commercial)
+VD-LSTM+REAL Large,"Salesforce Research,Stanford University",2016-11-04,2.13e+16,Unreleased
+NASv3 (CIFAR-10),Google Brain,2016-11-05,2.2e+21,
+NAS with base 8 and shared embeddings,Google Brain,2016-11-05,1.05e+16,Unreleased
+BIDAF,"University of Washington,Allen Institute for AI",2016-11-05,3.4686144e+18,Open weights (unrestricted)
+ResNeXt-101 (64×4d),"University of California San Diego,Facebook",2016-11-16,1.2e+19,Open weights (unrestricted)
+PolyNet,Chinese University of Hong Kong (CUHK),2016-11-17,6.4e+19,
+HR-ResNet101,Carnegie Mellon University (CMU),2016-12-13,7.077e+18,Open weights (unrestricted)
+EnhanceNet,Max Planck Institute for Intelligent Systems,2016-12-23,1.3079231999999998e+17,Open weights (unrestricted)
+DeepStack,"University of Alberta,Charles University,Czech Technical University",2017-01-06,1.446336e+19,
+MoE-Multi,"Jagiellonian University,Google Brain",2017-01-23,9.393905664e+19,Unreleased
+Transformer,"Google Research,Google Brain",2017-06-12,7.4245248e+18,Unreleased
+DeepLoc,"Technical University of Denmark,University of Copenhagen",2017-07-07,5.781024e+17,Hosted access (no API)
+JFT,"Google Research,Carnegie Mellon University (CMU)",2017-07-10,8.43e+20,
+ConvS2S (ensemble of 8 models),Meta AI,2017-07-25,5.64e+19,
+RetinaNet-R101,Facebook AI Research,2017-08-07,2.065392e+18,
+AWD-LSTM - 3-layer LSTM (tied) + continuous cache pointer (WT2),Salesforce Research,2017-08-07,2.97e+17,Unreleased
+OpenAI TI7 DOTA 1v1,OpenAI,2017-08-11,6.046095222592002e+20,
+EI-REHN-1000D,Korea Advanced Institute of Science and Technology (KAIST),2017-08-14,1.06e+16,Unreleased
+Libratus,Carnegie Mellon University (CMU),2017-08-19,5.51e+20,Unreleased
+GL-LWGC-AWD-MoS-LSTM + dynamic evaluation (WT2),Ben-Gurion University of the Negev,2017-08-29,4.56e+17,Unreleased
+PyramidNet,Korea Advanced Institute of Science and Technology (KAIST),2017-09-06,2340000000000000.0,Open weights (unrestricted)
+ISS,"Duke University,Microsoft",2017-09-15,3400000000000000.0,Unreleased
+AWD-LSTM+WT+Cache+IOG (WT2),NTT Communication Science Laboratories,2017-09-26,3180000000000000.0,Unreleased
+AlphaGo Zero,DeepMind,2017-10-18,6.49439910290227e+20,Unreleased
+AlphaGo Master,DeepMind,2017-10-19,3.4100000001e+20,Unreleased
+Fraternal dropout + AWD-LSTM 3-layer (WT2),"Jagiellonian University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),University of Montreal / Université de Montréal",2017-10-31,3.06e+17,Unreleased
+"AWD-LSTM-MoS + dynamic evaluation (WT2, 2017)",Carnegie Mellon University (CMU),2017-11-10,3.36e+18,Unreleased
+AlphaZero,DeepMind,2017-12-05,1.0600000001e+20,Unreleased
+QRNN,Salesforce Research,2018-02-01,6.8866472e+17,Unreleased
+ELMo,"University of Washington,Allen Institute for AI",2018-02-01,3300100000000010.0,
+IMPALA,DeepMind,2018-02-05,1.68e+20,Unreleased
+4 layer QRNN (h=2500),Salesforce Research,2018-03-22,5.9158815e+17,Unreleased
+YOLOv3,University of Washington,2018-04-08,1.3416380824e+19,Unreleased
+ResNeXt-101 32x48d,Facebook,2018-05-02,8.74395e+21,Open weights (non-commercial)
+Dropout-LSTM+Noise(Bernoulli) (WT2),"Columbia University,New York University (NYU),Princeton University",2018-05-03,1.27e+17,Unreleased
+aLSTM(depth-2)+RecurrentPolicy (WT2),"University of Manchester,Alan Turing Institute",2018-05-22,7.296e+16,Unreleased
+GPT-1,OpenAI,2018-06-01,1.7578125e+19,Open weights (unrestricted)
+FTW (For The Win),DeepMind,2018-07-03,3.49e+19,Unreleased
+Big-Little Net (speech),IBM,2018-07-10,4.290048e+17,Open weights (unrestricted)
+Big-Little Net,IBM,2018-07-10,2.46048e+17,Open weights (unrestricted)
+Big Transformer for Back-Translation,"Facebook AI Research,Google Brain",2018-08-28,4.7808e+20,Open weights (unrestricted)
+(ensemble): AWD-LSTM-DOC (fin) × 5 (WT2),"NTT Communication Science Laboratories,Tohoku University",2018-08-30,6.66e+17,Open weights (unrestricted)
+Transformer + Simple Recurrent Unit,"ASAPP,Cornell University,Google,Princeton University",2018-09-17,1.1e+19,Unreleased
+LSTM+NeuralCache,"KU Leuven,ESAT - PSI,Apple",2018-09-24,982800000000000.0,Unreleased
+Transformer (Adaptive Input Embeddings) WT103,Facebook AI Research,2018-09-28,4.47e+19,Open weights (unrestricted)
+BERT-Large,Google,2018-10-11,2.85e+20,Open weights (unrestricted)
+TrellisNet,"Carnegie Mellon University (CMU),Bosch Center for Artificial Intelligence,Intel Labs",2018-10-15,2.78e+18,Unreleased
+Mesh-TensorFlow Transformer 4.9B (language),Google Brain,2018-11-05,1.617408e+20,Unreleased
+Mesh-TensorFlow Transformer 2.9B (translation),Google Brain,2018-11-05,6.84288e+19,Unreleased
+Fine-tuned-AWD-LSTM-DOC (fin),Samsung R&D Institute Russia,2018-11-12,5.188e+16,Unreleased
+Multi-cell LSTM,University of Hyderabad,2018-11-15,2006640000000000.0,Unreleased
+StyleGAN,Nvidia,2018-12-12,3.93e+16,Open weights (non-commercial)
+Transformer-XL (257M),"Carnegie Mellon University (CMU),Google Brain",2019-01-09,3.7832771e+20,Open weights (unrestricted)
+Hanabi 4 player,"DeepMind,University of Oxford,Carnegie Mellon University (CMU),Google Brain",2019-02-01,4.3e+18,Unreleased
+GPT-2 (1.5B),OpenAI,2019-02-14,1.920000000001e+21,Open weights (unrestricted)
+KataGo,Jane Street,2019-02-27,2.32e+19,Open weights (unrestricted)
+SciBERT,Allen Institute for AI,2019-03-26,8.926848e+19,Open weights (unrestricted)
+Cross-lingual alignment,"Tel Aviv University,Massachusetts Institute of Technology (MIT)",2019-04-04,2.56e+18,Open weights (unrestricted)
+WeNet (Penn Treebank),Amazon,2019-04-08,7.30000001e+17,Unreleased
+BERT-Large-CAS (PTB+WT2+WT103),Amazon,2019-04-20,1.5405e+20,Unreleased
+MuseNet,OpenAI,2019-04-25,2.208301056e+20,Unreleased
+AWD-LSTM-DRILL + dynamic evaluation† (WT2),IDIAP,2019-05-14,4.08e+17,Open weights (unrestricted)
+DLRM-2020,Facebook AI,2019-05-31,4e+18,Unreleased
+XLNet,"Carnegie Mellon University (CMU),Google Brain",2019-06-01,6.19e+21,Open weights (unrestricted)
+Transformer-XL Large + Phrase Induction,"Massachusetts Institute of Technology (MIT),University of Illinois Urbana-Champaign (UIUC)",2019-06-04,3.7848651e+20,Unreleased
+AWD-LSTM + MoS + Partial Shuffled,University of Texas at Austin,2019-06-10,3.15e+17,Open weights (non-commercial)
+RoBERTa Large,"Facebook,University of Washington",2019-07-01,8.5067e+21,Open weights (unrestricted)
+Pluribus,Facebook AI Research,2019-07-11,6.6e+16,Unreleased
+trRosetta,"Nankai University,University of Washington,Tianjin University,Harvard University",2019-08-22,3.8047968e+19,Open weights (unrestricted)
+UDSMProt,Fraunhofer Heinrich Hertz Institute,2019-09-04,6.37e+17,Open weights (unrestricted)
+Megatron-LM (8.3B),Nvidia,2019-09-17,9.1e+21,Unreleased
+Megatron-LM (1.2B),Nvidia,2019-09-17,1.1304e+21,Unreleased
+Megatron-BERT,Nvidia,2019-09-17,2.2e+22,Unreleased
+DistilBERT,Hugging Face,2019-10-02,1.24416e+19,Open weights (unrestricted)
+AlphaX-1,"Facebook AI Research,Brown University",2019-10-02,8.89344e+17,Unreleased
+T5-11B,Google,2019-10-23,3.3e+22,Open weights (unrestricted)
+T5-3B,Google,2019-10-23,9.0000000001e+21,Open weights (unrestricted)
+AlphaStar,DeepMind,2019-10-30,1.0773400001e+23,Unreleased
+Base LM + kNN LM + Continuous Cache,"Stanford University,Facebook AI Research",2019-11-01,3.05292e+19,Unreleased
+XLM-RoBERTa,Facebook AI,2019-11-05,2.076e+22,Open weights (non-commercial)
+Sandwich Transformer,"Allen Institute for AI,Facebook AI Research",2019-11-10,2.3504093e+19,Unreleased
+CamemBERT,"Facebook,INRIA,Sorbonne University",2019-11-10,8.3e+20,Open weights (unrestricted)
+Noisy Student (L2),"Carnegie Mellon University (CMU),Google",2019-11-11,2.612e+22,Unreleased
+MuZero,DeepMind,2019-11-19,4.8e+19,Unreleased
+Transformer-XL DeFINE (141M),"University of Washington,Allen Institute for AI",2019-11-27,1.74276e+18,Unreleased
+MMLSTM (WT-2),"Beijing University of Posts and Telecommunications,University of West London",2019-12-05,1.938e+17,Unreleased
+MMLSTM (PTB),"Beijing University of Posts and Telecommunications,University of West London",2019-12-05,5.8298782e+16,Unreleased
+OpenAI Five Rerun,OpenAI,2019-12-13,1.3e+22,Unreleased
+OpenAI Five,OpenAI,2019-12-13,6.7e+22,Unreleased
+DD-PPO,"Georgia Institute of Technology,Facebook AI Research,Oregon State University,Simon Fraser University",2019-12-19,7.8e+20,Unreleased
+AlphaFold,DeepMind,2020-01-15,1e+20,Unreleased
+ContextNet + Noisy Student,Google,2020-01-19,8.16e+21,Unreleased
+Meena,Google Brain,2020-01-28,1.12e+23,Unreleased
+TaLK Convolution,Carleton University,2020-02-08,2.6990346e+19,Unreleased
+ALBERT-xxlarge,"Toyota Technological Institute at Chicago,Google",2020-02-09,2.39e+21,Open weights (unrestricted)
+Turing-NLG,Microsoft,2020-02-13,1.57e+22,Unreleased
+FFN SwiGLU,Google,2020-02-14,3.3687317e+19,Unreleased
+Feedback Transformer,"LORIA,University of Lorraine,Facebook AI Research",2020-02-21,7.690547e+18,Unreleased
+TransformerXL + spectrum control,"University of California Los Angeles (UCLA),JD.com",2020-03-11,2.6289761e+19,Unreleased
+Tensor-Transformer(1core)+PN (WT103),University of California (UC) Berkeley,2020-03-17,1.58e+18,Open weights (unrestricted)
+ELECTRA,"Stanford University,Google,Google Brain",2020-03-23,3.1e+21,Open weights (unrestricted)
+MetNet,Google,2020-03-24,9.510912e+18,Unreleased
+Once for All,"MIT-IBM Watson AI Lab,Massachusetts Institute of Technology (MIT),IBM",2020-04-29,6.237e+20,Open weights (unrestricted)
+UnifiedQA,"Allen Institute for AI,University of Washington",2020-05-02,1.65e+19,Open weights (unrestricted)
+DETR,Facebook,2020-05-26,4e+20,Open weights (unrestricted)
+GPT-3 175B (davinci),OpenAI,2020-05-28,3.14e+23,API access
+GShard (dense),Google,2020-06-30,4.765e+22,Unreleased
+DeLighT,"University of Washington,Allen Institute for AI,Facebook AI Research",2020-08-03,3.8016e+18,Unreleased
+ERNIE-GEN (large),Baidu,2020-08-06,2e+20,Open weights (non-commercial)
+ProBERTa,"University of Illinois Urbana-Champaign (UIUC),Reed College",2020-09-01,9.72e+18,Open weights (non-commercial)
+LUKE,"University of Washington,National Institute of Informatics",2020-10-02,1.8144e+22,Open weights (unrestricted)
+mT5-XXL,"Google,Google Research",2020-10-20,8.2e+22,Open weights (unrestricted)
+Conformer + Wav2vec 2.0 + Noisy Student,"Google,Google Research,Google Brain",2020-10-20,7.6e+21,Unreleased
+German ELECTRA Large,"deepset,Bayerische Staatsbibliothek Muenchen",2020-10-21,1.42829568e+21,Open weights (unrestricted)
+wave2vec 2.0 LARGE,Facebook,2020-10-22,3.87072e+21,Open weights (unrestricted)
+ViT-Huge/14,"Google Brain,Google Research",2020-10-22,4.262e+21,Open weights (unrestricted)
+KEPLER,"Tsinghua University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),HEC,CIFAR AI Research,Princeton University,University of Montreal / Université de Montréal",2020-11-23,1.66e+21,Unreleased
+AlphaFold 2,DeepMind,2020-11-30,2.99e+21,Open weights (unrestricted)
+CPM-Large,"Tsinghua University,Beijing Academy of Artificial Intelligence / BAAI",2020-12-01,2.6052e+20,Open weights (unrestricted)
+ESM1b,"Facebook AI Research,New York University (NYU)",2020-12-15,5.1e+21,Open weights (unrestricted)
+DensePhrases,"Korea University,Princeton University",2020-12-23,2.09952e+18,Open weights (unrestricted)
+CT-MoS (WT2),"Google,National Tsing Hua University",2020-12-25,5.4e+17,Unreleased
+ERNIE-Doc (247M),Baidu,2020-12-31,3.0302798e+19,Open weights (unrestricted)
+DALL-E,OpenAI,2021-01-05,4.7e+22,API access
+CLIP (ViT L/14@336px),OpenAI,2021-01-05,1.05e+22,Open weights (unrestricted)
+Switch,Google,2021-01-11,8.22e+22,Open weights (unrestricted)
+DeiT-B,"Meta AI,Sorbonne University",2021-01-15,7.884e+19,Open weights (unrestricted)
+DLWP,"University of Washington,Microsoft Research",2021-02-09,5.6845152e+18,Unreleased
+MSA Transformer,"Facebook AI Research,University of California (UC) Berkeley,New York University (NYU)",2021-02-13,5.49e+21,Open weights (unrestricted)
+SRU++ Large,ASAPP,2021-02-24,2.1173704e+19,Open weights (unrestricted)
+Meta Pseudo Labels,"Google Brain,Google AI",2021-03-01,4.79e+22,Unreleased
+M6-T,Alibaba,2021-03-05,5.5e+21,Unreleased
+Generative BST,Facebook AI Research,2021-03-05,1.449e+22,Open weights (unrestricted)
+PLUG,Alibaba,2021-04-19,3.5997696e+22,Hosted access (no API)
+ProtT5-XL-U50,"Technical University of Munich,Med AI Technology,Nvidia,Oak Ridge National Laboratory,Google,Seoul National University",2021-05-04,1.8704498688e+22,Open weights (non-commercial)
+ProtBERT-BFD,"Technical University of Munich,Nvidia,Seoul National University,Google,Oak Ridge National Laboratory,Med AI Technology",2021-05-04,3.9e+22,Open weights (unrestricted)
+ADM,OpenAI,2021-05-11,6.2e+21,Open weights (non-commercial)
+MedBERT,"Peng Cheng Laboratory,University of Texas at Houston",2021-05-20,9.47e+18,Unreleased
+Transformer local-attention (NesT-B),"Google Cloud,Google Research",2021-05-26,2.40576e+19,Open weights (unrestricted)
+CogView,"Tsinghua University,Alibaba DAMO Academy",2021-05-26,2.68e+22,Open weights (unrestricted)
+ByT5-XXL,"Google,Google Research",2021-05-28,8.1e+22,Open weights (unrestricted)
+ViT-G/14,"Google Brain,Google Research",2021-06-08,5.85e+22,Unreleased
+EMDR,"Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),McGill University,DeepMind",2021-06-09,1.91e+21,Open weights (unrestricted)
+CoAtNet,"Google,Google Research,Google Brain",2021-06-09,4.27e+22,Unreleased
+DeBERTa,Microsoft,2021-06-10,2.588e+22,Open weights (unrestricted)
+Denoising Diffusion Probabilistic Models (LSUN Bedroom),University of California (UC) Berkeley,2021-06-11,7.840125000000001e+19,Open weights (unrestricted)
+ALIGN,Google Research,2021-06-11,2.598670000001e+22,Unreleased
+StyleGAN3-T,"Nvidia,Aalto University",2021-06-21,1.70208e+21,Open weights (non-commercial)
+StyleGAN3-R,"Nvidia,Aalto University",2021-06-21,2.42784e+21,Open weights (non-commercial)
+EfficientNetV2-XL,"Google,Google Brain",2021-06-23,9.56e+19,Open weights (unrestricted)
+Fold2Seq,"IBM,Texas A&M",2021-06-24,1.4e+17,Unreleased
+Adaptive Input Transformer + RD,"Microsoft Research Asia,Soochow University",2021-06-28,8.58e+19,Unreleased
+ERNIE 3.0,Baidu,2021-07-05,2.25e+22,Open weights (unrestricted)
+Codex,OpenAI,2021-07-07,7.344e+22,API access
+HuBERT,Facebook AI Research,2021-07-27,5.54e+21,Open weights (unrestricted)
+GOAT,DeepMind,2021-07-27,2.412e+22,Unreleased
+SEER,"Facebook AI Research,INRIA",2021-07-29,1.8e+22,Open weights (non-commercial)
+YOLOX-X,Megvii Inc,2021-08-06,6.34275e+20,Open weights (unrestricted)
+Zidong Taichu,"Chinese Academy of Sciences,Wuhan AI Computing Center",2021-08-11,8.016e+20,Open weights (unrestricted)
+Jurassic-1-Jumbo,AI21 Labs,2021-08-11,3.7e+23,API access
+DNABERT,Northeastern University,2021-08-15,1.07e+20,Open weights (unrestricted)
+XLMR-XXL,Facebook AI Research,2021-08-17,3.366e+22,Open weights (unrestricted)
+FLAN 137B,Google Research,2021-09-03,2.047e+24,Unreleased
+PermuteFormer,Peking University,2021-09-06,2.775e+18,Unreleased
+HyperCLOVA 204B,NAVER,2021-09-10,2.0000000001e+23,Hosted access (no API)
+PLATO-XL,Baidu,2021-09-20,9.9e+21,Open weights (unrestricted)
+Turing ULRv5,Microsoft,2021-09-28,2.8983951e+22,Hosted access (no API)
+AlphaFold-Multimer,"Google DeepMind,DeepMind",2021-10-04,4.35e+21,Open weights (unrestricted)
+Megatron-Turing NLG 530B,"Microsoft,Nvidia",2021-10-11,8.586e+23,Unreleased
+Yuan 1.0,Inspur,2021-10-12,3.5380000000001e+23,API access
+base LM+GNN+kNN,"Shannon.AI,Nanjing University,Nanyang Technological University,Zhejiang University (ZJU)",2021-10-17,5.2587456e+19,Open weights (unrestricted)
+S4,Stanford University,2021-10-31,7.8328627e+19,Open weights (unrestricted)
+Projected GAN,Heidelberg University,2021-11-01,1.05e+19,Open weights (unrestricted)
+CodeT5-base,"Salesforce,Nanyang Technological University",2021-11-01,1.56e+21,Open weights (unrestricted)
+Masked Autoencoders ViT-H,Facebook AI Research,2021-11-11,4.6e+20,Open weights (non-commercial)
+Swin Transformer V2 (SwinV2-G),Microsoft Research Asia,2021-11-18,1.1e+21,Open weights (unrestricted)
+BASIC-L,Google,2021-11-19,4.12e+22,Unreleased
+Florence,Microsoft,2021-11-22,4.831e+22,Unreleased
+NÜWA,"Microsoft Research,Peking University",2021-11-24,7.24598784e+21,Unreleased
+Student of Games,DeepMind,2021-12-06,3.6679273004682866e+22,Unreleased
+Gopher (280B),DeepMind,2021-12-08,6.31e+23,Unreleased
+GLaM,Google,2021-12-13,3.6363112434e+23,Unreleased
+Contriever,"Meta AI,University College London (UCL),PSL University,Université Grenoble Alpes",2021-12-16,1.57e+20,Open weights (non-commercial)
+XGLM-7.5B,"Meta AI,Facebook AI Research",2021-12-20,2.25e+22,Open weights (non-commercial)
+ERNIE 3.0 Titan,"Baidu,Peng Cheng Laboratory",2021-12-23,1.0421e+24,Hosted access (no API)
+Detic,"Meta AI,University of Texas at Austin",2022-01-07,2.34399744e+19,Open weights (unrestricted)
+InstructGPT 175B,OpenAI,2022-01-27,3.19181e+23,API access
+AlphaCode,DeepMind,2022-02-02,2.38010000000001e+23,Unreleased
+RETRO-7B,DeepMind,2022-02-07,1.68e+22,Unreleased
+GPT-NeoX-20B,EleutherAI,2022-02-09,9.31627008e+22,Open weights (unrestricted)
+ProteinBERT,"Hebrew University of Jerusalem,Ben-Gurion University of the Negev,Deep Trading",2022-02-10,6.5e+19,Open weights (unrestricted)
+LaMDA,Google,2022-02-10,3.55e+23,Unreleased
+ST-MoE,"Google,Google Brain,Google Research",2022-02-17,2.9e+23,Unreleased
+FourCastNet,"Nvidia,NERSC, Lawrence Berkeley National Laboratory,University of Michigan,Rice University,California Institute of Technology,Purdue University",2022-02-22,3.4504704e+20,Unreleased
+PolyCoder,Carnegie Mellon University (CMU),2022-02-26,1.1e+21,Open weights (unrestricted)
+Statement Curriculum Learning,OpenAI,2022-03-02,1.7901648e+22,API access
+ViT-G (model soup),"University of Washington,Columbia University,Google,Meta AI,Tel Aviv University",2022-03-10,3.4e+21,Open weights (non-commercial)
+GPT-3.5 (davinci-002),OpenAI,2022-03-15,2.578e+24,API access
+"Segatron-XL large, M=384 + HCP","Microsoft Research,University of Waterloo",2022-03-21,2.65e+19,Unreleased
+Make-A-Scene,Meta AI,2022-03-24,6.4172851e+21,Unreleased
+Chinchilla,DeepMind,2022-03-29,5.76e+23,Unreleased
+PaLM (540B),Google Research,2022-04-04,2.5272e+24,Unreleased
+DALL·E 2,OpenAI,2022-04-06,3.3695784e+23,API access
+BERT-RBP,Waseda University,2022-04-07,1.4e+20,Open weights (non-commercial)
+Stable Diffusion (LDM-KL-8-G),"Runway,Ludwig Maximilian University of Munich,Heidelberg University",2022-04-13,5.0000000000000004e+22,Open weights (unrestricted)
+Sparse all-MLP,Meta AI,2022-04-14,5.32224e+20,Unreleased
+Flamingo,DeepMind,2022-04-29,2.18972000000001e+23,Unreleased
+OPT-175B,Meta AI,2022-05-02,4.3e+23,Open weights (non-commercial)
+UL2,"Google Research,Google Brain",2022-05-10,1.2e+23,Open weights (unrestricted)
+Gato,DeepMind,2022-05-12,4.02e+21,Unreleased
+Imagen,Google Brain,2022-05-23,1.46e+22,API access
+Tranception,"University of Oxford,Harvard Medical School,Cohere",2022-05-27,7.24e+21,Open weights (unrestricted)
+GPT-2 Medium (FlashAttention),"Stanford University,University at Buffalo",2022-05-27,8.9280922e+20,Open weights (unrestricted)
+DITTO,"Tsinghua University,Apple,Westlake University,Chinese University of Hong Kong (CUHK)",2022-06-06,3.31776e+18,Unreleased
+CoCa,Google Research,2022-06-14,7.3e+22,Unreleased
+Parti,Google Research,2022-06-22,5.09607936e+23,Unreleased
+ProGen2-xlarge,"Salesforce Research,Columbia University,Johns Hopkins University",2022-06-27,1.35e+22,Open weights (unrestricted)
+Minerva (540B),Google,2022-06-29,2.7415e+24,Unreleased
+CodeT5-large,Salesforce,2022-07-05,2.72e+21,Open weights (unrestricted)
+NLLB,Meta AI,2022-07-06,1.751113728e+22,Open weights (unrestricted)
+BLOOM-176B,"Hugging Face,BigScience",2022-07-11,3.65664e+23,Open weights (restricted use)
+ESM2-15B,"Meta AI,New York University (NYU),Stanford University,Massachusetts Institute of Technology (MIT)",2022-07-21,7.35000000001e+22,Open weights (unrestricted)
+OmegaPLM,"Massachusetts Institute of Technology (MIT),Westlake University",2022-07-22,1.03514112e+22,Unreleased
+AlexaTM 20B,Amazon,2022-08-02,2.04374016e+23,API access
+GLM-130B,Tsinghua University,2022-08-04,3.5490054945e+23,Open weights (non-commercial)
+BlenderBot 3,"McGill University,Meta AI,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms)",2022-08-10,4.3e+23,Open weights (non-commercial)
+BEIT-3,Microsoft,2022-08-22,7e+19,Open weights (unrestricted)
+PaLI,Google,2022-09-14,1.69e+23,Unreleased
+Whisper,OpenAI,2022-09-21,4.2072663e+21,Open weights (unrestricted)
+DiffDock,Massachusetts Institute of Technology (MIT),2022-10-04,7.2e+19,Open weights (unrestricted)
+AlphaTensor,DeepMind,2022-10-05,7.1414784e+20,Unreleased
+GenSLM,"University of Chicago,Nvidia,Harvard University,Cerebras Systems,Technical University of Munich,California Institute of Technology",2022-10-11,1.42e+21,Open weights (unrestricted)
+U-PaLM (540B),Google,2022-10-20,2.53e+24,Unreleased
+Flan-PaLM 540B,Google,2022-10-20,2.540000000001e+24,Unreleased
+eDiff-I,Nvidia,2022-11-02,5.46e+19,Unreleased
+Mogrifier RLSTM (WT2),DeepMind,2022-11-03,1.4e+17,Unreleased
+InternImage,"Shanghai AI Lab,Tsinghua University,Nanjing University,SenseTime,Chinese University of Hong Kong (CUHK)",2022-11-10,2.408e+21,Open weights (unrestricted)
+EVA-01,"Beijing Academy of Artificial Intelligence / BAAI,Huazhong University of Science and Technology,Zhejiang University (ZJU),Beijing Institute of Technology",2022-11-14,1.501e+22,Open weights (unrestricted)
+Galactica,Meta AI,2022-11-16,3.24e+23,Open weights (non-commercial)
+Fusion in Encoder,Samsung,2022-11-18,1.3e+20,Unreleased
+AR-LDM,"Alibaba,University of Waterloo,Vector Institute",2022-11-20,5.1e+20,Unreleased
+Discriminator Guidance,"Korea Advanced Institute of Science and Technology (KAIST),NAVER",2022-11-28,2.1570000001e+20,Open weights (non-commercial)
+Vega v2,"Wuhan University,JD Explore Academy,Shanghai AI Lab,Nanyang Technological University,Washington University in St Louis,Chongqing University of Posts and Telecommunications,University of Sydney",2022-12-04,7.76e+22,Unreleased
+CaLM,University of Oxford,2022-12-19,2.9e+19,Unreleased
+Hybrid H3-2.7B,"Stanford University,University at Buffalo",2022-12-28,6.48e+21,Open weights (unrestricted)
+VALL-E,Microsoft,2023-01-05,1.01e+19,Unreleased
+DreamerV3,"DeepMind,University of Toronto",2023-01-10,2.2032e+20,Unreleased
+Nucleotide Transformer,"Nvidia,Technical University of Munich,InstaDeep",2023-01-15,8.08e+21,Open weights (non-commercial)
+Ankh_large,"Technical University of Munich,Columbia University",2023-01-16,6.5e+21,Open weights (non-commercial)
+DDPM-IP (CelebA),Utrecht University,2023-01-27,3.5e+20,Open weights (unrestricted)
+BLIP-2 (Q-Former),Salesforce Research,2023-01-30,1.20000000001e+21,Open weights (unrestricted)
+ViT-22B,Google,2023-02-10,1.93248e+23,Unreleased
+LLaMA-65B,Meta AI,2023-02-24,5.5e+23,Open weights (non-commercial)
+DiT-XL/2,"New York University (NYU),University of California (UC) Berkeley",2023-03-02,6e+20,Open weights (non-commercial)
+AudioGen,"Meta AI,Hebrew University of Jerusalem",2023-03-05,9.5e+21,Open weights (non-commercial)
+GPT-4 (Mar 2023),OpenAI,2023-03-15,2.1e+25,API access
+Falcon-40B,Technology Innovation Institute,2023-03-15,2.4e+23,Open weights (unrestricted)
+PanGu-Σ,Huawei Noah's Ark Lab,2023-03-20,4.67e+23,Unreleased
+SigLIP 400M,Google DeepMind,2023-03-27,4.9467301e+21,Open weights (unrestricted)
+VideoMAE V2,"Nanjing University,Shenzhen Institute of Advanced Technology,Shanghai AI Lab",2023-03-29,9.7e+21,Open weights (unrestricted)
+BloombergGPT,"Bloomberg,Johns Hopkins University",2023-03-30,2.36e+23,Unreleased
+Segment Anything Model,Meta AI,2023-04-05,7.8e+21,Open weights (unrestricted)
+Incoder-6.7B,"Facebook AI Research,University of Washington,University of California (UC) Berkeley,Carnegie Mellon University (CMU),Toyota Technological Institute at Chicago",2023-04-09,3.00001e+21,Open weights (non-commercial)
+DINOv2,"Facebook AI Research,INRIA",2023-04-14,7.41851136e+21,Open weights (unrestricted)
+LLaVA,"University of Wisconsin Madison,Microsoft Research,Columbia University",2023-04-17,7.8049e+22,Open weights (unrestricted)
+StarCoder,"Hugging Face,ServiceNow,Northeastern University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),Carnegie Mellon University (CMU),Johns Hopkins University,Leipzig University,ScaDS.AI,Queen Mary University of London,Roblox,Sea AI Lab,Technion - Israel Institute of Technology,Monash University,CSIRO,Data61,McGill University,Saama,University of British Columbia (UBC),Massachusetts Institute of Technology (MIT),Technical University of Munich,IBM,University of Vermont,UnfoldML,SAP,University of Notre Dame,Columbia University,New York University (NYU),University of Allahabad,Discover Dollar,Toloka,Telefonica,Stanford University,Weizmann Institute of Science,Alan Turing Institute,Wellesley College,EleutherAI,Forschungszentrum Julich",2023-05-09,8.46e+22,Open weights (restricted use)
+PaLM 2,Google,2023-05-10,7.34e+24,API access
+InstructBLIP,"Salesforce Research,Hong Kong University of Science and Technology (HKUST),Nanyang Technological University",2023-05-11,1.94e+20,Open weights (non-commercial)
+ONE-PEACE,"Alibaba,Huazhong University of Science and Technology",2023-05-18,1.8e+20,Open weights (unrestricted)
+PaLI-X,Google Research,2023-05-29,5.6e+23,Unreleased
+GPT-4 (Jun 2023),OpenAI,2023-06-13,2.1e+25,API access
+HyenaDNA,"Stanford University,Harvard University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),University of Montreal / Université de Montréal",2023-06-27,1.811e+21,Open weights (restricted use)
+Pangu-Weather,Huawei,2023-07-05,3.98e+22,Open weights (non-commercial)
+xTrimoPGLM -100B,"Tsinghua University,BioMap Research",2023-07-06,6.2e+23,Unreleased
+InternLM,"Shanghai AI Lab,SenseTime",2023-07-06,9.984e+23,Unreleased
+Claude 2,Anthropic,2023-07-11,3.866e+24,API access
+Llama 2-70B,Meta AI,2023-07-18,8.1e+23,Open weights (restricted use)
+Llama 2-7B,Meta AI,2023-07-18,8.4e+22,Open weights (restricted use)
+AudioLM,Google Research,2023-07-26,3.9e+18,Unreleased
+GGNN,"Westlake University,Tsinghua University,Toyota Technological Institute at Chicago",2023-08-05,7.56e+21,Unreleased
+PeptideBERT,Carnegie Mellon University (CMU),2023-08-28,4.9e+16,Open weights (unrestricted)
+Jais,"Cerebras Systems,Mohamed bin Zayed University of Artificial Intelligence (MBZUAI),Inception G42",2023-08-29,4.8946763e+22,Open weights (unrestricted)
+Swift,Intel Labs,2023-08-30,5.337e+16,Unreleased
+Falcon-180B,Technology Innovation Institute,2023-09-06,3.76e+24,Open weights (restricted use)
+Amazon Titan,Amazon,2023-09-28,4.8e+24,API access
+FinGPT-13B,"University of California Los Angeles (UCLA),Columbia University,New York University (NYU)",2023-10-07,1.6e+23,Open weights (unrestricted)
+RoseTTAFold All-Atom (RFAA),"University of Washington,Seoul National University,University of Sheffield",2023-10-09,2.14e+20,Open weights (unrestricted)
+CODEFUSION (Python),"Microsoft,Microsoft Research",2023-10-26,7.92e+18,Unreleased
+ChatGLM3-6B,Z.ai (Zhipu AI),2023-10-27,5.04e+22,Open weights (restricted use)
+Skywork-13B,Kunlun Inc.,2023-10-30,2.5e+23,Open weights (restricted use)
+Yi-34B,01.AI,2023-11-02,6.1e+23,Open weights (restricted use)
+Grok-1,xAI,2023-11-04,2.90000000001e+24,Open weights (unrestricted)
+LLaVA 1.5,"University of Wisconsin Madison,Microsoft Research",2023-11-05,7.807e+22,Open weights (restricted use)
+CogVLM-17B,"Tsinghua University,Z.ai (Zhipu AI),Beihang University",2023-11-06,6.331e+22,Open weights (restricted use)
+RoFormer,Zhuiyi Technology,2023-11-08,2.162688e+18,Unreleased
+MultiBand Diffusion,"Meta AI,Hebrew University of Jerusalem,LORIA",2023-11-08,2.6e+19,Open weights (unrestricted)
+Volcano 13B,"Korea University,Korea Advanced Institute of Science and Technology (KAIST),LG",2023-11-13,4.56e+22,Open weights (non-commercial)
+SPHINX (Llama 2 13B),"Shanghai AI Lab,Chinese University of Hong Kong (CUHK),ShanghaiTech University",2023-11-13,3.04e+22,Open weights (restricted use)
+GraphCast,Google DeepMind,2023-11-14,2.1000000000000002e+22,Open weights (non-commercial)
+Nemotron-3-8B,Nvidia,2023-11-15,1.8e+23,Open weights (restricted use)
+Inflection-2,Inflection AI,2023-11-22,1.001e+25,Hosted access (no API)
+Qwen-72B,Alibaba,2023-11-30,1.3e+24,Open weights (restricted use)
+Gemini 1.0 Ultra,Google DeepMind,2023-12-06,5.0000000001e+25,API access
+Llama Guard,Meta AI,2023-12-07,1.6e+23,Open weights (restricted use)
+Mixtral 8x7B,Mistral AI,2023-12-11,7.74e+23,Open weights (unrestricted)
+VILA-13B,"Nvidia,Massachusetts Institute of Technology (MIT)",2023-12-12,2.3003136e+21,Open weights (non-commercial)
+FunSearch,Google DeepMind,2023-12-14,3.87e+23,Open weights (unrestricted)
+CogAgent,"Tsinghua University,Z.ai (Zhipu AI)",2023-12-14,6.707e+22,Open weights (restricted use)
+nekomata-14b,rinna,2023-12-21,2.5562e+23,Open weights (restricted use)
+GQA-8-XXL,Google Research,2023-12-23,3.4912896e+22,Unreleased
+Qwen1.5-72B,Alibaba,2024-02-04,1.3e+24,Open weights (restricted use)
+Stable Diffusion 3,Stability AI,2024-02-22,5.0000000000000004e+22,API access
+MegaScale (Production),"ByteDance,Peking University",2024-02-23,3.9e+24,Unreleased
+Aramco Metabrain AI,Saudi Aramco,2024-03-04,1.05e+25,Unreleased
+Inflection-2.5,Inflection AI,2024-03-07,8.000001e+24,Hosted access (no API)
+MM1-30B,Apple,2024-03-14,4.86e+23,Unreleased
+DBRX,Databricks,2024-03-27,2.6e+24,Open weights (restricted use)
+Reka Core,Reka AI,2024-04-15,8.400010000000001e+24,API access
+Llama 3-70B,Meta AI,2024-04-18,7.861e+24,Open weights (restricted use)
+GenCast,Google DeepMind,2024-05-01,8.169984e+20,Open weights (non-commercial)
+VILA1.5-13B,"Nvidia,Massachusetts Institute of Technology (MIT)",2024-05-03,2.3003136e+21,Open weights (non-commercial)
+AlphaFold 3,"Google DeepMind,Isomorphic Labs",2024-05-08,4.1405645e+22,Open weights (non-commercial)
+Yi-Large,01.AI,2024-05-13,1.8e+24,API access
+Octo-Base,"University of California (UC) Berkeley,Stanford University,Carnegie Mellon University (CMU),DeepMind",2024-05-20,5.85e+20,Open weights (unrestricted)
+ALLaM adapted 70B,Saudi Data and Artificial Intelligence Authority,2024-05-21,1.062e+24,Unreleased
+Qwen2-72B,Alibaba,2024-06-07,3.02e+24,Open weights (unrestricted)
+OpenVLA,"Stanford University,University of California (UC) Berkeley,Toyota Research Institute,Google DeepMind,Massachusetts Institute of Technology (MIT),Physical Intelligence",2024-06-13,1.1e+23,Open weights (unrestricted)
+Nemotron-4 340B,Nvidia,2024-06-14,1.8e+25,Open weights (unrestricted)
+DeepSeek-Coder-V2 236B,DeepSeek,2024-06-17,1.2852e+24,Open weights (restricted use)
+Claude 3.5 Sonnet,Anthropic,2024-06-20,2.700000000000001e+25,API access
+ESM3 (98B),"EvolutionaryScale,University of California (UC) Berkeley",2024-06-25,1.07e+24,Unreleased
+Llama 3.1-405B,Meta AI,2024-07-23,3.8e+25,Open weights (restricted use)
+AFM-server,Apple,2024-07-29,4.3e+24,Hosted access (no API)
+AFM-on-device,Apple,2024-07-29,4.5126e+23,Hosted access (no API)
+LLaVA-OV-72B,"ByteDance,Nanyang Technological University,Chinese University of Hong Kong (CUHK),Hong Kong University of Science and Technology (HKUST)",2024-08-06,3.036551985824e+24,Open weights (unrestricted)
+Grok-2,xAI,2024-08-13,2.96e+25,API access
+DeepSeek-V2.5,DeepSeek,2024-09-06,1.7892e+24,Open weights (restricted use)
+Qwen2.5-32B,Alibaba,2024-09-17,3.51e+24,Open weights (unrestricted)
+Qwen2.5-72B,Alibaba,2024-09-19,7.8e+24,Open weights (unrestricted)
+Qwen2.5 Instruct (72B),Alibaba,2024-09-19,7.8516e+24,Open weights (restricted use)
+Telechat2-115B,China Telecom,2024-09-20,6.9e+24,Open weights (restricted use)
+Llama 3.2 11B,Meta AI,2024-09-24,5.79e+23,Open weights (restricted use)
+Movie Gen Video,Meta AI,2024-10-04,1.65e+24,Unreleased
+RDT-1B,Tsinghua University,2024-10-10,4.06e+22,Open weights (unrestricted)
+Llama-3.1-Nemotron-70B-Instruct,"Nvidia,Meta AI",2024-10-12,7.929e+24,Open weights (restricted use)
+CHAI-1,Chai discovery,2024-10-15,7.7605724e+21,Open weights (non-commercial)
+Yi-Lightning,01.AI,2024-10-16,1.5e+24,API access
+NVLM-X 72B,Nvidia,2024-10-22,3.0398181e+24,Unreleased
+NVLM-H 72B,Nvidia,2024-10-22,3.02e+24,Unreleased
+NVLM-D 72B,Nvidia,2024-10-22,3.02e+24,Open weights (non-commercial)
+Doubao-pro,ByteDance,2024-10-28,2.505e+25,API access
+Hunyuan-Large,Tencent,2024-11-06,3.49237e+24,Open weights (restricted use)
+Amazon Nova Pro,Amazon,2024-12-03,6.000010000000001e+24,API access
+Llama 3.3 70B,Meta AI,2024-12-06,6.8649768e+24,Open weights (restricted use)
+EXAONE 3.5 32B,LG AI Research,2024-12-09,1.25e+24,Open weights (non-commercial)
+DeepSeek-V3,DeepSeek,2024-12-24,3.3e+24,Open weights (restricted use)
+Eurus-2-7B-PRIME,"Tsinghua University,University of Illinois Urbana-Champaign (UIUC),Shanghai AI Lab,Peking University,Shanghai Jiao Tong University,CUHK Shenzhen Research Institute",2025-01-02,4.01915904e+20,Open weights (unrestricted)
+Eagle 2,"Nvidia,Nanjing University,Tsinghua University,Hong Kong Polytechnic University,Johns Hopkins University,New York University (NYU)",2025-01-20,4.7156e+22,Open weights (non-commercial)
+DeepSeek-R1,DeepSeek,2025-01-20,3.5e+24,Open weights (unrestricted)
+Grok 3,xAI,2025-02-17,3.5e+26,API access
+Claude 3.7 Sonnet,Anthropic,2025-02-24,3.35e+25,API access
+GPT-4.5,OpenAI,2025-02-27,3.8e+26,API access
+QwQ-32B,Alibaba,2025-03-06,3.51e+24,Open weights (unrestricted)
+Hunyuan-TurboS,Tencent,2025-03-11,5.4e+24,API access
+EXAONE Deep 32B,LG AI Research,2025-03-16,1.26e+24,Open weights (non-commercial)
+DeepSeek-V3 (Mar 2025),DeepSeek,2025-03-24,3.3e+24,Open weights (restricted use)
+Llama 4 Scout,Meta AI,2025-04-05,4.08e+24,Open weights (restricted use)
+Llama 4 Maverick,Meta AI,2025-04-05,2.244000000001e+24,Open weights (restricted use)
+Llama 4 Behemoth (preview),Meta AI,2025-04-05,5.18400000000001e+25,Unreleased
+Pangu Ultra,Huawei,2025-04-10,1.0692e+25,Hosted access (no API)
+Qwen3-235B-A22B,Alibaba,2025-04-29,4.752e+24,Open weights (unrestricted)
+Seed1.5-VL,ByteDance,2025-05-11,1.388556e+24,API access
+DeepSeek-R1 (May 2025),DeepSeek,2025-05-28,4.020010000000001e+24,Open weights (unrestricted)
+FGN,Google DeepMind,2025-06-12,9.618950880000001e+21,Unreleased
+Grok 4,xAI,2025-07-09,5.0000000000001e+26,API access
+Kimi K2,Moonshot,2025-07-11,2.976e+24,Open weights (restricted use)
+EXAONE 4.0 (32B),LG AI Research,2025-07-15,2.69000000000001e+24,Open weights (non-commercial)
+Qwen3-Coder-480B-A35B,Alibaba,2025-07-22,1.575e+24,Open weights (unrestricted)
+Qwen3-235B-A22B-Thinking (Jul 2025),Alibaba,2025-07-25,4.752e+24,Open weights (unrestricted)
+Qwen3-235B-A22B (Jul 2025),Alibaba,2025-07-25,4.752e+24,Open weights (unrestricted)
+GLM-4.5,"Z.ai (Zhipu AI),Tsinghua University",2025-07-28,4.42e+24,Open weights (unrestricted)
+gpt-oss-120b,OpenAI,2025-08-05,4.94e+24,Open weights (unrestricted)
+gpt-oss-20b,OpenAI,2025-08-05,5.49e+23,Open weights (unrestricted)
+GPT-5,OpenAI,2025-08-07,6.6e+25,API access
+LongCat-Flash,Meituan Inc,2025-09-01,3.726e+24,Open weights (unrestricted)
+Qwen3-Max,Alibaba,2025-09-05,1.512e+25,API access
+AgentFounder-30B,Alibaba,2025-09-16,6.5367e+23,Open weights (unrestricted)
+Qwen3-Omni-30B-A3B,Alibaba,2025-09-22,3.6e+22,Open weights (unrestricted)
+GLM-4.6,"Z.ai (Zhipu AI),Tsinghua University",2025-09-30,4.42e+24,Open weights (unrestricted)
+Ling-1T,Ant Group,2025-10-10,6.000001e+24,Open weights (unrestricted)
+Kimi K2 Thinking,Moonshot,2025-11-06,4.2e+24,Open weights (restricted use)
+Olmo 3,Allen Institute for AI,2025-11-20,1.1e+24,Open weights (unrestricted)
+Nemotron 3-Nano-30B-A3B,Nvidia,2025-12-15,4.8e+23,Open weights (restricted use)
+GLM-4.7,Z.ai (Zhipu AI),2025-12-22,4.42e+24,Open weights (unrestricted)
+Solar Open 100B,Upstage,2025-12-31,1.4e+24,Open weights (restricted use)
+K-EXAONE,LG AI Research,2025-12-31,1.52e+24,Open weights (restricted use)
+Kimi K2.5,Moonshot,2026-02-02,5.8e+24,Open weights (unrestricted)
+GLM-5,Z.ai (Zhipu AI),2026-02-12,6.84e+24,Open weights (unrestricted)
+Composer 2,Cursor,2026-03-19,2.32e+25,API access
+MolmoAct 2,"Allen Institute for AI,University of Washington,National University of Singapore,University of Pennsylvania,Johns Hopkins University,Amazon,Cortex AI",2026-04-05,1.1e+22,Open weights (unrestricted)
+EXAONE 4.5,LG AI Research,2026-04-09,3.85e+24,Open weights (restricted use)
+MiMo-V2.5-Pro,Xiaomi Corp,2026-04-23,6.804e+24,Open weights (unrestricted)
+DeepSeek-V4-Pro,DeepSeek,2026-04-24,9.702e+24,Open weights (unrestricted)
+DeepSeek-V4-Flash,DeepSeek,2026-04-24,2.496e+24,Open weights (unrestricted)
+Composer 2.5,Cursor,2026-05-18,3.87e+25,API access
+Nemotron 3 Ultra,Nvidia,2026-06-04,6.6e+24,Open weights (unrestricted)
+Solar Open2 250B,Upstage,2026-06-28,1.05e+24,Open weights (unrestricted)
+LongCat-2.0,Meituan Inc,2026-06-29,1.008e+25,Open weights (unrestricted)
+Inkling,Thinking Machines,2026-07-15,1.1e+25,Open weights (unrestricted)
+Kimi K3,Moonshot,2026-07-16,2.0001e+25,Open weights (non-commercial)
+A.X K2,SK Telecom,2026-07-29,1.8e+24,Open weights (unrestricted)
+K-EXAONE 2.0,LG AI Research,2026-07-31,3.55e+24,Open weights (unrestricted)
+Motif-3,Motif Technologies,2026-08-07,1.1e+24,Open weights (unrestricted)
+GLM-5.3-Flash,Z.ai (Zhipu AI),2026-08-20,3.24e+24,Open weights (unrestricted)
+WeatherNext 3,"Google DeepMind,Google Research",2026-09-03,2.0725198384e+23,Hosted access (no API)
+GPT-6 Astra,OpenAI,2026-09-03,9.4e+26,API access
+DeepSeek V4.1 Flash,DeepSeek,2026-09-09,4.32e+24,Open weights (unrestricted)

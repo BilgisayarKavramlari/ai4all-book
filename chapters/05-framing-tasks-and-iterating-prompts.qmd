@@ -8,7 +8,7 @@
 
 This chapter covers the first two decisions of the AI Work Loop from Chapter 1. **Frame:** what is the task, what does a good result look like, and which parts should AI do at all? **Prompt:** what does the tool need to receive, and how do you improve a prompt on purpose instead of by luck?
 
-**Time:** at 150 words per minute, about 32 minutes for the Core sections (5.1 to 5.5) and about 53 minutes for the whole Core package (adding section 5.6, the Opening Case, the Summary, the Lab 5.1 page and the A3 brief); longer if English is not your first language. Assignment A3 then takes about 60 to 70 minutes at home (see its brief), and the Your Turn in 5.3 about 5 minutes; the Your Turns in 5.1 and 5.2 are done in Thursday's lab. Reading R2 is recommended this week rather than required. Worked examples show every step, faded examples leave some steps for you (each has a hint; answers are in Appendix E), and Your Turn and Check Yourself boxes are ungraded practice.
+**Time:** at 150 words per minute, about 32 minutes for the Core sections (5.1 to 5.5) and about 53 minutes for the whole Core package (adding section 5.6, the Opening Case, the Summary, the Lab 5.1 page and the A3 brief); longer if English is not your first language. Assignment A3 then takes about 60 to 70 minutes at home (see its brief), and the Your Turn in 5.3 about 5 minutes; the Your Turns in 5.1 and 5.2 are done in the Lab 5.1 session. The AI Fluency course module in Further Reading is recommended, not required. Worked examples show every step, faded examples leave some steps for you (each has a hint; answers are in Appendix E), and Your Turn and Check Yourself boxes are ungraded practice.
 
 **The question of this chapter:** *Is getting good results from AI mainly a matter of finding the right words?* Keep your answer in mind. The Chapter Summary returns to it.
 
@@ -421,9 +421,9 @@ In Lab 5.1, swap your latest prompts with a partner and score each other's outpu
 
 [Studio]{.path}
 
-*Studio sections are hands-on work for the Thursday lab and your weekly assignment.*
+*Studio sections are hands-on work for the lab session and the chapter's assignment.*
 
-Thursday's lab turns sections 5.1 to 5.5 into a record: your **iteration log**, a record of each prompt version: what changed, the prediction, the results of each run and the decision to keep or revert. The log is the core of assignment A3 (brief and rubric at the end of this chapter).
+Lab 5.1 turns sections 5.1 to 5.5 into a record: your **iteration log**, a record of each prompt version: what changed, the prediction, the results of each run and the decision to keep or revert. The log is the core of assignment A3 (brief and rubric at the end of this chapter).
 
 ![A strong log shows one change, one prediction and one score at a time.](../figures/out/color/f5-13-log-template.svg){#fig-5-13 fig-alt="Log table: version, part changed, prediction, run 1, run 2, keep. Rows v2 (figures), v3 (product rule), a frame row; an empty row for you."}
 
@@ -507,7 +507,7 @@ The pattern still fits section 5.2: when a business builds AI into its own softw
 
 ## Hands-on Labs {.unnumbered}
 
-Lab 5.1 is Thursday's in-class lab and starts A3. Labs 5.2 and 5.3 are optional and can be done at home or in Compass, which is optional and ungraded. The labs say what to do, not which buttons to press.
+Lab 5.1 is the in-class lab and starts A3. Labs 5.2 and 5.3 are optional and can be done at home or in Compass, which is optional and ungraded. The labs say what to do, not which buttons to press.
 
 Every run uses a **fresh, temporary chat**: start a new conversation, and where the tool offers a temporary or private mode that is not saved to memory, use it, so earlier chats cannot shape the test. Current steps for each tool are in Compass. Never put personal or confidential information into a prompt.
 
@@ -515,14 +515,14 @@ Every run uses a **fresh, temporary chat**: start a new conversation, and where 
 
 *(O1–O6 · LO2 · Apply, Analyze, Evaluate)* Teams of three or four; every log is individual.
 
-1. **Briefing (10 min).** Open the log template (eLearning or @fig-5-13). Your instructor pairs you for the peer swap. If you have no task of your own, pick one from the eLearning task bank.
+1. **Briefing (10 min).** Open the log template (on your course site, or @fig-5-13). Your instructor pairs you for the peer swap. If you have no task of your own, pick one from the task bank on your course site.
 2. **Frame (10 min).** Write your frame card with a rung for each part. A teammate reads your criteria and marks any they could not score.
 3. **Versions 1 to 3 (20 min).** Write v1 from your frame card. Run it once in a fresh, temporary chat and score it. Write v2 and v3, one change each, with a prediction before each run.
 4. **Peer swap (15 min).** Run your partner's v3 in a fresh chat, without asking them anything, and score the output against their criteria. Tell them what was missing. **This swap counts as the A3 peer swap**: record what it revealed and the change it led to. Swapping your final prompt again is optional.
 5. **Share and critique (15 min).** Each team shows the one change that mattered most and one that did not.
 6. **Exit (5 min).** Finish the sentence: "My prompt works for … but I have not tested …"
 
-**At home (A3):** second runs of v1 to v3, v4 with two runs, one run each on a different and an edge input, then the verification note, reflection and declaration. **If it does not work:** if a tool refuses or errors, record that as a result and try a smaller task; if you cannot use a tool, start the alternative assignment's audit with the dated sample log on eLearning.
+**At home (A3):** second runs of v1 to v3, v4 with two runs, one run each on a different and an edge input, then the verification note, reflection and declaration. **If it does not work:** if a tool refuses or errors, record that as a result and try a smaller task; if you cannot use a tool, start the alternative assignment's audit with the provided dated sample log.
 
 ### Lab 5.2: Same Task, Two Rungs (Compare · 30 minutes · optional) {.unnumbered}
 
@@ -588,7 +588,7 @@ Neither is neutral, and whoever writes the criteria decides whose interests are 
 
 **Telling people.** If an AI system speaks to people on your behalf, they deserve to know, and to know how to reach a person. Chapter 10 covers disclosing AI use at work, Chapter 17 discusses transparency, and Chapter 18 discusses the rules that increasingly require it.
 
-**What goes into a prompt.** Context makes prompts better, and it is also where private information leaks. Lucía used constructed figures, not real students' finances. In this course, personal or confidential data does not go into public AI tools (course guidance); Chapter 15 explains why.
+**What goes into a prompt.** Context makes prompts better, and it is also where private information leaks. Lucía used constructed figures, not real students' finances. In this book's work, personal or confidential data does not go into public AI tools; Chapter 15 explains why.
 
 ## Career Connection {.unnumbered}
 
@@ -734,11 +734,11 @@ Come back to these a few days after reading, without looking back.
 
 ### Application Assignment: A3 — Prompt and Iteration Log {.unnumbered}
 
-**Due:** Monday, February 8, 2027, 11:59 p.m., on eLearning. *(O6 · LO2, LO4 · Create)* Started in Thursday's lab (frame card, v1 to v3 with one run each, the peer swap).
+**Due:** when your instructor sets it. *(O6 · LO2, LO4 · Create)* Started in the Lab 5.1 session (frame card, v1 to v3 with one run each, the peer swap).
 
 **Time at home, counted from the requirements: about 60 to 70 minutes.** Second runs of v1 to v3 (3 runs) and v4 (2 runs), plus one run each on a different and an edge input (2 runs): 7 runs, about 10 minutes; scoring about 7 outputs against your criteria, about 20 minutes; writing v4 and its prediction, about 5 minutes; the verification note, about 10 minutes; the reflection and declaration, about 15 minutes.
 
-**Choose a task:** a real task from your major, a job or daily life that you would actually use AI for. Use **no personal or confidential data**, yours or anyone else's (course guidance), and no data from an employer unless you use that employer's approved tool under its rules. The eLearning task bank has options.
+**Choose a task:** a real task from your major, a job or daily life that you would actually use AI for. Use **no personal or confidential data**, yours or anyone else's, and no data from an employer unless you use that employer's approved tool under its rules. The task bank on your course site has options.
 
 **What to submit:**
 
@@ -746,7 +746,7 @@ Come back to these a few days after reading, without looking back.
 2. **At least four prompt versions.** v1 is the first prompt you write from your frame card, an honest first attempt. Each later version makes **one** change, names the prompt part it changes (or says "frame"), and states a prediction before the run.
 3. **Test record:** run every version at least twice, each time in a fresh, temporary chat. Run the final version once more on a **different** and once on an **edge** input (your usual input counts as typical). Score each output against each criterion: met, partly met or not met. Save outputs or excerpts with the tool name and date. Two runs is a minimum; your results are evidence for your task, tool and date, not proof.
 4. **Peer swap test:** the in-lab swap counts. Record what your classmate found when running your v3 without explanation, and the change it led to in a later version. Swapping your final prompt again is optional.
-5. **Verification note:** for each number or fact you relied on in the final output, say how you checked it. In week 3 that means: recompute every total; compare each fact with the source you supplied, your textbook or your course notes. Chapter 8 adds more methods.
+5. **Verification note:** for each number or fact you relied on in the final output, say how you checked it. At this point in the book that means: recompute every total; compare each fact with the source you supplied, your textbook or your course notes. Chapter 8 adds more methods.
 6. **Reflection (3–5 sentences):** the change that mattered most and why, one change that did not help, and when and why you stopped.
 7. **AI Use Declaration:** tools, purpose, what you accepted, rejected or revised, how you verified it, and where your own judgment shaped the result.
 
@@ -760,9 +760,9 @@ Come back to these a few days after reading, without looking back.
 | **Verification (2)** | 2: peer swap recorded with what it revealed and the change it led to; every relied-on number or fact checked with a named method | 1.5: peer swap recorded; most numbers and facts checked | 1: peer swap record or claim checks missing | 0: neither |
 | **Declaration and judgment (2)** | 2: all five declaration elements; reflection names the most and least useful change, with reasons and a stopping decision | 1.5: all five elements; a general reflection | 1: two to four elements, or no reflection | 0: missing, or only one element |
 
-**Formats.** A table with the columns of @fig-5-13 or the eLearning template. Saved text is enough; screenshots are optional. Compass offers the same template (optional and ungraded).
+**Formats.** A table with the columns of @fig-5-13 or the template on your course site. Saved text is enough; screenshots are optional. Compass offers the same template (optional and ungraded).
 
-**Alternative assignment: an iteration audit** (for students who prefer not to use AI tools, who have no suitable device, or for whom the peer swap is a barrier). Use the dated log on eLearning: six versions of one prompt with real outputs, model names and dates.
+**Alternative assignment: an iteration audit** (for students who prefer not to use AI tools, who have no suitable device, or for whom the peer swap is a barrier). Use the provided dated log (on your course site): six versions of one prompt with real outputs, model names and dates.
 
 1. Write your own frame card for its task, with a rung for each part.
 2. Label each change by prompt part, and say whether it changed one thing or several.
@@ -782,7 +782,7 @@ Come back to these a few days after reading, without looking back.
 
 ### Mini-Project (optional): One Task, Three Weeks {.unnumbered}
 
-*(O1, O2, O4 · LO2, LO7 · Evaluate)* Pick one task you do every week, such as reading notes, lab write-ups or work emails. For three weeks, write a frame card and an iteration-log entry each time you use AI on it. At the end, write half a page: did your criteria or your rungs change, and why? The record can become revision evidence in your term portfolio (Chapter 20).
+*(O1, O2, O4 · LO2, LO7 · Evaluate)* Pick one task you do every week, such as reading notes, lab write-ups or work emails. For three weeks, write a frame card and an iteration-log entry each time you use AI on it. At the end, write half a page: did your criteria or your rungs change, and why? The record can become revision evidence in your portfolio (Chapter 20).
 
 ### Case Study Questions {.unnumbered}
 
@@ -794,7 +794,7 @@ Come back to these a few days after reading, without looking back.
 
 ## Further Reading and Compass Links {.unnumbered}
 
-- Reading R2 (recommended this week): Anthropic Academy, *AI Fluency: Framework & Foundations*, module 2, "The AI Fluency Framework" (Anthropic, n.d.-a). Recommended next: modules 4 (Delegation) and 5 (Description).
+- Anthropic Academy, *AI Fluency: Framework & Foundations*, module 2, "The AI Fluency Framework" (Anthropic, n.d.-a), recommended. Suggested next: modules 4 (Delegation) and 5 (Description).
 - Dakan and Feller (2025): the AI Fluency framework itself, version 1.1, a short document of about ten pages with the three modalities and the 4D competencies.
 - Zamfirescu-Pereira et al. (2023): "Why Johnny can't prompt," a readable study of how people new to prompting work, with many quoted prompts.
 - Meincke et al. (2025a): a short report on how much prompt wording and scoring standards matter, with clear figures.
@@ -847,7 +847,7 @@ Schulhoff, S., Ilie, M., Balepur, N., Kahadze, K., Liu, A., Si, C., Li, Y., Gupt
 
 Sclar, M., Choi, Y., Tsvetkov, Y., & Suhr, A. (2024). Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting. In *The Twelfth International Conference on Learning Representations (ICLR 2024)*. https://arxiv.org/abs/2310.11324
 
-Şeker, Ş. E. (2014). Beş neden yöntemi (5 whys) [The 5 Whys method]. *YBS Ansiklopedi, 1*(4), 5–6. <!-- Pages as in the entry's own printed citation line; the issue contents list p. 5 (author-only item in the handoff). -->
+Şeker, Ş. E. (2014). Beş neden yöntemi (5 whys) [The 5 Whys method]. *YBS Ansiklopedi, 1*(4), 5. <!-- Pages as in the entry's own printed citation line; the issue contents list p. 5 (author-only item in the handoff). -->
 
 Shi, F., Chen, X., Misra, K., Scales, N., Dohan, D., Chi, E. H., Schärli, N., & Zhou, D. (2023). Large language models can be easily distracted by irrelevant context. *Proceedings of the 40th International Conference on Machine Learning, PMLR 202*, 31210–31227.
 

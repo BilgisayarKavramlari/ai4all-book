@@ -36,4 +36,4 @@ Recall can be spoken and recorded instead of written. Any reading format works.
 No data leaves your notes.
 
 ## Instructor notes
-Good opener for Tuesday's review in week 5 (Chapters 4 and 8 week): ask a few students to share their predicted-versus-recalled pattern.
+Good opener for a later concept session (for example, when the class reaches Chapter 8): ask a few students to share their predicted-versus-recalled pattern.

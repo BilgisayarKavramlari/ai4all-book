@@ -138,7 +138,7 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Consistency check | Asking the same question in several new chats and comparing the answers. | Tutarlılık kontrolü |
 | Stated confidence | The certainty an output expresses in words or numbers, such as "I'm 95% sure" or "definitely." | Beyan edilen güven |
 | Calibration (of a model) | How closely a model's stated confidence matches its accuracy. | Kalibrasyon (modelin) |
-| Calibration gap | Your predicted score minus your actual score, across a set of answers; divided by the number of questions, your average confidence minus the share you got right. A positive gap means you were overconfident. | Kalibrasyon farkı |
+| Calibration gap | The difference between stated (or predicted) confidence and the share correct. In A4 (Ch. 7), the sum of your confidences compared with your score; in A5 (Ch. 8), the average confidence of the claims rated 80% or higher minus the share of them supported, in percentage points, leaving out not-checkable, not-checked and cannot-verify rows and counting partly supported as not supported. | Kalibrasyon farkı |
 | Expected calibration error (Deep) | The average gap between confidence and accuracy across confidence groups, giving larger groups more weight. | Beklenen kalibrasyon hatası |
 | Performance (during practice) | How well you do a task while practicing, often with help; it can differ from what you have learned. | Performans (alıştırma sırasında) |
 | Learning (durable) | A lasting change in what you can do without help, shown later and in new situations. | Kalıcı öğrenme |
@@ -229,7 +229,7 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Verification cost | The time and effort needed to confirm that an output meets your criteria. | Doğrulama maliyeti |
 | No-AI baseline | The time a part of a task takes you without any AI tool, done well enough to meet your criteria. | Yapay zekâsız başlangıç ölçüsü |
 | Data terms | The parts of a tool's terms and its options that say what happens to what you type and upload. | Veri koşulları |
-| Data class | The category an institution assigns to information by how much harm its release could cause; UTD's policy names three: Public Data, Controlled Data and Confidential Data. | Veri sınıfı |
+| Data class | The category an institution assigns to information by how much harm its release could cause; this book uses three generic levels: public; internal or confidential; restricted or legally protected. Your institution's or employer's own classification decides. | Veri sınıfı |
 | Data gate | A check, made before any quality test, of whether a tool's data terms fit the class of the input. | Veri kapısı |
 | Bake-off | A side-by-side test of two or more tools, and where possible no AI, on the same part of a task. | Karşılaştırmalı deneme (bake-off) |
 | Fit matrix | A table whose rows are the parts of a task and whose columns are the tools you tested plus no AI; each cell holds a fit decision, its rung and its reason. | Uyum matrisi |
@@ -423,3 +423,4 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Institutional review board (IRB) | A committee that approves and oversees research with people. | Kurumsal etik kurul (IRB) |
 | Licensure | Permission from a state body to practice a profession. | Mesleki ruhsat (lisans) |
 | Scope of practice | What the members of a licensed profession may do. | Uygulama kapsamı |
+| Terms of service | The contract a provider sets for using its tool. | Hizmet koşulları |

@@ -4,8 +4,8 @@
 |---|---|
 | Type | Studio (Build and Test) |
 | Objectives | O5 (LO2, LO3) · tags 4D:DESC, 4D:DISC · UNESCO: AI techniques and applications, Create |
-| Time | 30 minutes (10-minute version available), at home first (optional); a team that finishes Chapter 5's A3 sprint early may start it in class on Thursday, February 4, 2027 |
-| Materials | Any AI chat tool available to you (university-provided or a free tier) that can open a fresh, temporary chat; your final A3 prompt from Chapter 5, or the provided sample prompt (eLearning); the library entry template (book Figure 6.10, eLearning) |
+| Time | 30 minutes (10-minute version available), at home first (optional); a team that finishes Chapter 5's A3 sprint early may start it in class during the Lab 5.1 session |
+| Materials | Any AI chat tool available to you (one your institution provides or approves, or a free tier) that can open a fresh, temporary chat; your final A3 prompt from Chapter 5, or the provided sample prompt (course site); the library entry template (book Figure 6.10, course site) |
 
 ## Steps (tool-neutral)
 1. **Fixed and changing parts (5 min).** Take your final prompt from assignment A3 (your Chapter 5 prompt and iteration log), or the provided sample. Underline what stays the same every time you would use it (task, audience, constraints, output format, any in-context examples) and circle what changes (the material).
@@ -34,10 +34,10 @@ If every input passes on the first try, your edge input is not hard enough: choo
 The first entry of the optional personal prompt library (Application Assignment, Chapter 6). Self-check against the library rubric (Task, Process: tests, Process: revision). Ungraded.
 
 ## Accessibility and alternatives
-No-device or opt-out route: the alternative assignment (repair the provided sample library) without running a tool. A screen-reader-friendly version of the entry template (plain table) is on eLearning. Placeholders can be written in any consistent form; braces are only a convention.
+No-device or opt-out route: the alternative assignment (repair the provided sample library) without running a tool. A screen-reader-friendly version of the entry template (plain table) is on the course site. Placeholders can be written in any consistent form; braces are only a convention.
 
 ## Safety and privacy
 No personal or confidential data in templates or test inputs, yours or anyone else's; use constructed or public material. Do not store the template with real inputs inside it. Use a fresh, temporary chat so that earlier chats and memory do not shape the test (Chapter 6, section 6.5). Save outputs as text excerpts.
 
 ## Instructor notes
-Students who finish the A3 sprint early can start steps 1–2 in class and test at home. Collect two or three anonymized edge inputs that broke templates for a short discussion in week 4.
+Students who finish the A3 sprint early can start steps 1–2 in class and test at home. Collect two or three anonymized edge inputs that broke templates for a short discussion in a later session.

@@ -5,7 +5,7 @@
 | Type | Check It (optional, recommended) |
 | Objectives | O2, O4 (LO3) · tags 4D:DISC, 4D:DIL |
 | Time | 20 minutes, at home or in Compass |
-| Materials | A small constructed dataset (different from the chapter's event log) and a dated AI analysis of it with one hidden error, both on eLearning (instructor package); the six places (F11.12) |
+| Materials | A small constructed dataset (different from the chapter's event log) and a dated AI analysis of it with one hidden error, both on your course site (instructor package); the six places (F11.12) |
 
 ## Steps (tool-neutral)
 1. Read the AI analysis once and list the claims a decision would rest on.

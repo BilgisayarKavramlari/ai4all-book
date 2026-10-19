@@ -2,17 +2,17 @@
 
 | Field | Value |
 |---|---|
-| Type | Studio (Thursday in-class lab, Jan 28, 2027) |
+| Type | Studio (in-class lab session) |
 | Objectives | O1, O2, O3, O4, O5 (LO1, LO3) · tags UNESCO:TECH-U, 4D:DISC |
 | Time | 45 minutes in class, teams of 3–4 (jigsaw: each person does one part, then the team puts the parts together); every write-up is individual |
-| Materials | Any chat tool available to the student (university-provided or free tier); the student's **A2 Part 1 draft**; the provided long public-domain text with three placed facts, the list of dated events and the list of less famous parent–child pairs (eLearning); the probe record template (section 3.6, figure F3.8); dated sample outputs for the no-device route |
+| Materials | Any chat tool available to the student (one the student's institution provides or approves, or a free tier); the student's **A2 Part 1 draft**; the provided long public-domain text with three placed facts, the list of dated events and the list of less famous parent–child pairs (course site); the probe record template (section 3.6, figure F3.8); dated sample outputs for the no-device route |
 
 ## Student page
 
 ### Timing
 | Minutes | Step |
 |---|---|
-| 0–5 | Briefing. Each member takes one probe. Teams of three skip probe 2 (sampling), which was shown in Tuesday's demonstration and can be done at home in Lab 3.3. |
+| 0–5 | Briefing. Each member takes one probe. Teams of three skip probe 2 (sampling), which is shown in the concept-session demonstration and can be done at home in Lab 3.3. |
 | 5–20 | Each student runs their probe: prediction, prompt, result, conclusion. |
 | 20–27 | The team pools the probe records and agrees on one sentence per probe. |
 | 27–30 | Quick debrief (one question, below). |
@@ -39,7 +39,7 @@ Which probe result surprised your team, and which section of the chapter explain
 The team's probe records (shared, ungraded) and each student's A2 Part 2 draft (individual; scored later with the single A2 rubric in Chapter 2).
 
 ### If this doesn't work, or you prefer not to use AI tools
-Analyze the dated sample outputs on eLearning for every probe instead of running prompts. Paper version of probe 2: roll dice to pick tokens from a printed score table (each token's score is a range of dice numbers). The probe record template is available as a screen-reader-friendly table. This route is scored the same way.
+Analyze the dated sample outputs on the course site for every probe instead of running prompts. Paper version of probe 2: roll dice to pick tokens from a printed score table (each token's score is a range of dice numbers). The probe record template is available as a screen-reader-friendly table. This route is scored the same way.
 
 ### Safety and privacy
 No personal or confidential information in any prompt. Use the provided texts for probes 3 and 4. Use a temporary chat or switch memory off where the tool allows.
@@ -55,4 +55,4 @@ Probe 1: results vary by tool and word; many current tools answer short words co
 3. Turn one probe result into a labeled link between a Chapter 3 term and a Chapter 2 term. (create)
 
 ### Preparation
-Prepare the long text (about 3,000 words, public domain) with three planted facts; 5–6 dated events from the last few months; a list of 10 less famous parent–child pairs with sources. Generate and date the sample outputs one week before the lab. Remind students on Tuesday to bring their A2 Part 1 draft. Probe results differ by tool; the point is the method, not a specific outcome.
+Prepare the long text (about 3,000 words, public domain) with three planted facts; 5–6 dated events from the last few months; a list of 10 less famous parent–child pairs with sources. Generate and date the sample outputs one week before the lab. Remind students in the concept session to bring their A2 Part 1 draft. Probe results differ by tool; the point is the method, not a specific outcome.

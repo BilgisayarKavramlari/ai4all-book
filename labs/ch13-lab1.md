@@ -5,7 +5,7 @@
 | Type | Studio |
 | Objectives | O3 (LO5) · tags 4D:DIL, 4D:DISC |
 | Time | 25 minutes (10-minute version available), at home; optional |
-| Materials | Your own drawing, chart, or photo of an object or a public place with **no people in it and not your home or anything that shows where you live**, or the provided image (eLearning: a constructed city-street drawing, dated); any AI tool that accepts images, chosen after the data gate; for the audio extension, the provided clip and script (recorded for the course by a consenting speaker) |
+| Materials | Your own drawing, chart, or photo of an object or a public place with **no people in it and not your home or anything that shows where you live**, or the provided image (course site: a constructed city-street drawing, dated); any AI tool that accepts images, chosen after the data gate; for the audio extension, the provided clip and script (recorded for this lab by a consenting speaker) |
 
 ## Steps (tool-neutral)
 1. **Choose an image (2 min).** No person may be identifiable in it, including you, and it must not show your home or where you live.

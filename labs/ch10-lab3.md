@@ -5,7 +5,7 @@
 | Type | Check It |
 | Objectives | O3 (LO4) · tags 4D:DISC |
 | Time | 20–30 minutes, at home (optional) |
-| Materials | A paragraph you wrote before this course (100–200 words, not confidential); any AI tool |
+| Materials | A paragraph you wrote before you started this book (100–200 words, not confidential); any AI tool |
 
 ## Steps (tool-neutral)
 1. Copy your paragraph into a document and keep the original.

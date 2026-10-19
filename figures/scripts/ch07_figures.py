@@ -34,7 +34,7 @@ def chapter_map(f):
     cols = [("Evidence", ["7.1 Practice scores are not learning", "7.2 Retrieval practice",
                           "7.3 Feeling ready is not being ready"]),
             ("Use", ["7.4 Scaffold or crutch", "7.5 Setting up tutor mode"]),
-            ("Do", ["7.6 Lab 7.1: tutor-mode session (Thu, Feb 11)", "A4: tutor-mode dialogue and reflection (due Feb 15)"])]
+            ("Do", ["7.6 Lab 7.1: tutor-mode session", "A4: tutor-mode dialogue and reflection"])]
     for c, (head, items) in enumerate(cols):
         x = 30 + c * 255
         f.text(x + 115, 66, head, size=16, weight="700")

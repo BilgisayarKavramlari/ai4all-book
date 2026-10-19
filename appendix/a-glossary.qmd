@@ -137,7 +137,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 ## C {.unnumbered .unlisted}
 
 **Calibration gap** · Ch. 7 (also 8)
-:   Your predicted score minus your actual score, across a set of answers; divided by the number of questions, your average confidence minus the share you got right. A positive gap means you were overconfident.
+:   The difference between stated (or predicted) confidence and the share correct. In A4 (Ch. 7), the sum of your confidences compared with your score; in A5 (Ch. 8), the average confidence of the claims rated 80% or higher minus the share of them supported, in percentage points, leaving out not-checkable, not-checked and cannot-verify rows and counting partly supported as not supported.
 
 **Calibration (of a model)** · Ch. 8
 :   How closely a model's stated confidence matches its accuracy.
@@ -247,7 +247,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 ## D {.unnumbered .unlisted}
 
 **Data class** · Ch. 12
-:   The category an institution assigns to information by how much harm its release could cause; UTD's policy names three: Public Data, Controlled Data and Confidential Data.
+:   The category an institution assigns to information by how much harm its release could cause; this book uses three generic levels: public; internal or confidential; restricted or legally protected. Your institution's or employer's own classification decides.
 
 **Data gate** · Ch. 12
 :   A check, made before any quality test, of whether a tool's data terms fit the class of the input.
@@ -1175,6 +1175,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Terms of service** · Ch. 18
 :   The contract a provider sets for using its tool.
 
+**Terms of service** · Ch. 18
+:   The contract a provider sets for using its tool.
+
 **Tertiary source** · Ch. 9
 :   A source that collects and condenses secondary ones, such as an encyclopedia, an index or a study guide.
 
@@ -1463,7 +1466,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Hatadan zarara zincir | Failure-to-harm chain |
 | Hayalet yazar | Ghostwriter |
 | HIPAA (sağlık bilgisi gizliliği yasası) | HIPAA |
-| Hizmet koşulları | Terms of service |
+| Hizmet koşulları | Terms of service; Terms of service |
 | Hukuk / yasa | Law |
 | Hukuki sorumluluk | Liability |
 | (Mahkeme) hükmü | Holding |

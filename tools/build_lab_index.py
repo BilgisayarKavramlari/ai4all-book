@@ -21,7 +21,7 @@ What it derives
              minutes before class" or "then a ... check" clause.
   status     "Optional" if the title, Type or Time says optional, or the lab is Deep
              or belongs to a Deep chapter (6, 13, 17; decision D20); otherwise
-             "Required" ("in class" added when the header says so).
+             "Required" ("in a lab session" added when the header says so).
   tools      short phrases matched in the Materials and AI tools fields (see TOOL_RULES);
              "No device or AI account needed" and no-device routes are reported as stated.
   compass    every row's "In Compass (optional)" column reads "link to be added";
@@ -138,7 +138,7 @@ def status(chapter, title, fields):
     deep = bool(re.search(r"\bDeep\b", title + " " + fields.get("Type", "")))
     optional = bool(re.search(r"\boptional\b(?! if)", text, re.I)) or deep or chapter in DEEP_CHAPTERS
     if not optional:
-        return "Required, in class" if re.search(r"in class|Thursday lab|Tuesday|Thursday", text) else "Required"
+        return "Required, in a lab session" if re.search(r"in class|class session|lab session", text) else "Required"
     out = "Optional"
     if re.search(r"recommended", text):
         out += ", recommended"
@@ -246,21 +246,21 @@ def render(rows):
         "# Compass Lab Index {#sec-appendix-b}",
         "",
         f"This index lists every hands-on lab in the book: {len(rows)} labs in Chapters 1 to 21, "
-        f"{n_req} of them required (each is run in a class session) "
+        f"{n_req} of them required (each is designed for a lab session) "
         f"and {len(rows) - n_req} optional. Chapters 22 and 23 have no labs. Each row repeats what the lab's own "
         "page states: its time, whether it is required, and what you need. The full steps, expected "
         "observations and debrief questions are in the chapter's Hands-on Labs section and in the lab sheet.",
         "",
         "**How to read the table.** *Time* is the lab sheet's own estimate; where a shorter version exists, "
-        "it is named. *Status* follows the lab sheet and the syllabus: required labs are part of a class "
-        "session; optional labs are practice. Labs in Deep chapters (6, 13 and 17) and labs marked Deep are "
+        "it is named. *Status* follows the lab sheet: required labs are designed for a lab session, "
+        "and optional labs are practice. Labs in Deep chapters (6, 13 and 17) and labs marked Deep are "
         "not examinable (decision D20). *What you need* names the kinds of tools, never a product: tool "
         "neutrality is a rule of this book, and current tools and click paths live in Compass. "
         "\"No-device route stated\" means the lab sheet offers a way to do it without your own device or "
         "an AI account, usually with printed, dated sample outputs.",
         "",
-        "**Compass.** Compass, the book's digital companion, is optional, free and ungraded for UT Dallas "
-        "students; grades and submissions stay in eLearning, and every lab can be done from the book. Each "
+        "**Compass.** Compass, the book's digital companion, is optional and never part of a course grade; "
+        "no student data moves between a course and Compass, and every lab can be done from the book. Each "
         "row's last column will carry a short link to the lab's Compass page; until the links exist, it reads "
         "\"In Compass (optional): link to be added\".",
         "",

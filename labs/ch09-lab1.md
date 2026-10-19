@@ -4,8 +4,8 @@
 |---|---|
 | Type | Studio (in class) |
 | Objectives | O2, O3, O4, O6 (LO3; O6 also LO4) · tags 4D:DISC, 4D:DIL |
-| Time | 75 minutes, Thursday, February 25, 2027 (briefing 10 · practice 45 · share 15 · exit 5), plus about 15 minutes before class |
-| Materials | Your A6 question, purpose and claim; two of your three sources (up to two may come from your Chapter 8 Lab 8.2 record); one AI summary (at least five sentences) of one of them, an abstract or an open-access article of at most 1,500 words, with tool, date and prompt (or the provided dated summary on eLearning, whose original then counts as one of your three sources); the team source pack (four sources on one shared question: a gray report, a preprint, a news story, a peer-reviewed article, with one printed claim); the A6 sheet (F9.15). Tools: a university-provided tool such as Microsoft Copilot Chat (as of October 2026) or a free tier |
+| Time | 75 minutes in the lab session (briefing 10 · practice 45 · share 15 · exit 5), plus about 15 minutes before class |
+| Materials | Your A6 question, purpose and claim; two of your three sources (up to two may come from your Chapter 8 Lab 8.2 record); one AI summary (at least five sentences) of one of them, an abstract or an open-access article of at most 1,500 words, with tool, date and prompt (or the provided dated summary on the course site, whose original then counts as one of your three sources); the team source pack (four sources on one shared question: a gray report, a preprint, a news story, a peer-reviewed article, with one printed claim); the A6 sheet (F9.15). Tools: a tool your institution provides or approves (for example, an enterprise chat assistant with data protection) or a free tier |
 
 ## Steps (tool-neutral)
 Never put personal or confidential information into a prompt, and never upload a paywalled or confidential document to a public tool.
@@ -31,7 +31,7 @@ Lateral reading often turns gray literature and polished websites from "rely on 
 Individual: A6 items 3 and 4 started in class (graded with the A6 rubric in Chapter 9). The team's table is shared but ungraded.
 
 ## Accessibility and alternatives
-No-device route: the printed source pack and the provided dated AI summary (alternative assignment). Screen-reader-friendly A6 sheet and source pack on eLearning. Sources in any language are fine, with an English translation or explanation of each passage cited.
+No-device route: the printed source pack and the provided dated AI summary (alternative assignment). Screen-reader-friendly A6 sheet and source pack on the course site. Sources in any language are fine, with an English translation or explanation of each passage cited.
 
 ## Safety and privacy
 No personal, confidential or patient data; open-access or library-licensed sources only; no uploads of paywalled PDFs to public tools (Chapters 15 and 18).

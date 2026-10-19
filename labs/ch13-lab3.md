@@ -5,7 +5,7 @@
 | Type | Check It |
 | Objectives | O4 (LO5) · tags 4D:DISC |
 | Time | 20 minutes (10-minute version available), at home; optional |
-| Materials | The provided image file with content credentials (eLearning; no people in it); a public content-credential viewer; one image you made yourself with no people in it |
+| Materials | The provided image file with content credentials (course site; no people in it); a public content-credential viewer; one image you made yourself with no people in it |
 
 ## Steps (tool-neutral)
 1. **Inspect (6 min).** Open the provided file in a credential viewer. Record what the credential says (captured, edited, generated with what) and who signed it.

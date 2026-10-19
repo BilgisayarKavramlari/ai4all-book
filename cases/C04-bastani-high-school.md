@@ -9,7 +9,7 @@ A field experiment by a team led by researchers at the University of Pennsylvani
 
 ## Timeline
 - Fall semester 2023–24: four sessions per grade; each session = teacher review → assisted practice (randomized) → closed-book, closed-laptop exam with problems paired to the practice problems; practice and exam both counted toward grades.
-- July 2024: working paper on SSRN, "Generative AI Can Harm Learning" (written July 15, 2024, per the SSRN record as reported by EdTech Hub; the SSRN page now carries the PNAS title) (first posting date not confirmed on SSRN; on the refresh list). The repository syllabus is being updated to cite the PNAS version for R3.
+- July 2024: working paper on SSRN, "Generative AI Can Harm Learning" (written July 15, 2024, per the SSRN record as reported by EdTech Hub; the SSRN page now carries the PNAS title) (first posting date not confirmed on SSRN; on the refresh list). The book cites the PNAS version.
 - June 25, 2025: *PNAS* article, 122(26), e2422633122.
 - August 20, 2025: *PNAS* correction, 122(34), e2518204122 (affiliation of Osbert Bastani; no change to findings).
 
@@ -39,7 +39,7 @@ For a school: give students guarded tools with accurate reference material, and 
 2. Explain the error-carryover argument for "copying rather than learning."
 3. Why do students' perceptions matter for how they should use AI while studying?
 4. GPT Base was told to act as a tutor. What did GPT Tutor add, and which addition might matter most?
-5. Which limits stop you from generalizing this result to a college course in your major in 2027?
+5. Which limits stop you from generalizing this result to a college course in your major today?
 6. Where on the failure-to-harm chain does the harm sit, and why is it not labeled on the tree?
 
 ## Sources (at least 2, one primary; with access date)

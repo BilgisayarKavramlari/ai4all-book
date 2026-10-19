@@ -301,7 +301,7 @@ def what_to_cite(f):
     f.arrow(312, 292, 368, 340, label="yes", label_dy=12, size=13)
     f.box(370, 306, 400, 74, "Cite the source, and cite the AI chat", role="verified", kind="step", size=15,
           sub="APA 2025: company, date, chat title, [Generative AI chat], tool, link", sub_size=13)
-    f.box(40, 404, 730, 52, "In this course, declare AI use either way (AI Use Declaration, Chapter 1)",
+    f.box(40, 404, 730, 52, "In this book's assignments, declare AI use either way (AI Use Declaration, Chapter 1)",
           role="neutral", kind="human", size=14)
     f.text(400, 484, "Diamonds = decisions · thick (hatched in print) = do not · green = cite · rounded = your "
            "declaration", size=13, color=muted)

@@ -1,20 +1,20 @@
 # The Tool Ecosystem and Task–Tool Fit {#sec-ch12}
 
-<!-- Status: DRAFT v2 (2026-10-18): four independent reviews applied (docs/editorial/ch12-dev-memo.md), Mode B voice pass. Blueprint v0.2 (approved under D19). Featured student: Sam only (docs/characters.md); all AI outputs are constructed examples unless a model and date are given. Tools in worked examples are "Tool A" (a chat assistant under institutional terms) and "Tool B" (a chat assistant under consumer terms, with web search and a calculation feature); never the named university tool.
+<!-- Status: DRAFT v2 (2026-10-18): four independent reviews applied (docs/editorial/ch12-dev-memo.md), Mode B voice pass. Blueprint v0.2 (approved under D19). Featured student: Sam only (docs/characters.md); all AI outputs are constructed examples unless a model and date are given. Tools in worked examples are "Tool A" (a chat assistant under institutional terms) and "Tool B" (a chat assistant under consumer terms, with web search and a calculation feature); never a named institutional tool.
 Case C09 facts: numbers from the 2023 HBS working paper (read in full, build/ch12/src/bcg.txt); peer-review status from the 2026 Organization Science abstract (Crossref); the journal body is not read (open item in the handoff). Retainment: measured only in the inside-frontier creative experiment (WP p. 10, App. C); outside-frontier "less questioning" is the authors' statement. The gap between the two AI groups on the outside task is significant only at the 10% level (WP p. 14; Table 4 F-tests p = 0.082–0.095).
-Data classes: UTD's three classes as named in UTDBP3096 (read 2026-10-18). Numbers in text come from data/ch12_*.csv or the cited sources. Not marked done: final review and the author's voice edit are pending. -->
+Data classes: the book's generic three-level classification (public · internal or confidential · restricted or legally protected; D27, D-12.8). Numbers in text come from data/ch12_*.csv or the cited sources. Not marked done: final review and the author's voice edit are pending. -->
 
 ![Chapter 12 at a glance. This chapter strengthens Frame (which tool, if any, fits this part of the task?) and Verify (test the fit before you rely on it).](../figures/out/color/f12-01-chapter-map.svg){#fig-12-1 fig-alt="Chapter map: what a tool is (12.1–12.3), testing and deciding (12.4–12.8), practice (12.9, labs, case); Work Loop with Frame highlighted."}
 
 **Chapter 12 at a glance.** You can reach many AI tools: chat assistants, AI inside email and documents, AI search, coding assistants, tools built for one field, models you run yourself. Rankings say which is "best." This chapter shows why that question has no general answer: a tool fits a *part of a task*, with *your input*, at *a cost you accept*, on *a date*, or it does not. You will learn to describe a tool, read studies of tool effects, count the full cost, check data terms, test tools side by side, record decisions in a fit matrix, and keep your work portable.
 
-**Time:** about 36 minutes for the Core sections, and about 48 minutes for the whole Core package (with the Opening Case, the Check Yourself boxes, section 12.9 and the Summary; the Case Study is read together in Tuesday's class); longer if English is not your first language. The required Review Questions A (items 1, 2, 3, 6, 8 and 11) and Spaced Review items 1 and 2 take about 10 minutes. A10 takes about 13 minutes before Thursday's lab and about 60 minutes after it, including about 7 minutes to read its brief and rubric. In all, the week comes to about 2.2 hours (about 131 minutes) outside class. The recommended reading, R10 (Brynjolfsson, Li & Raymond, 2025), adds about 15 minutes if you read its introduction and its section on how often agents followed the tool's suggestions. Core sections are examinable; Studio sections are hands-on work; Deep sections and the two short cases are optional. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
+**Time:** about 36 minutes for the Core sections, and about 48 minutes for the whole Core package (with the Opening Case, the Check Yourself boxes, section 12.9 and the Summary; the Case Study is designed to be read together in the concept session); longer if English is not your first language. The required Review Questions A (items 1, 2, 3, 6, 8 and 11) and Spaced Review items 1 and 2 take about 10 minutes. A10 takes about 13 minutes before the lab session and about 60 minutes after it, including about 7 minutes to read its brief and rubric. The recommended reading, Brynjolfsson, Li and Raymond (2025), adds about 15 minutes if you read its introduction and its section on how often agents followed the tool's suggestions. Core sections are examinable; Studio sections are hands-on work; Deep sections and the two short cases are optional. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
 
 **The question of this chapter:** *Which AI tool should you use?* The Chapter Summary answers it.
 
 ## Opening Case: A Study You Met in Chapter 1 {.unnumbered}
 
-Chapter 1 described an experiment with consultants at Boston Consulting Group (BCG), a management consulting firm. (If you read R9, recommended in Chapter 11, you also saw its hardest task.) It holds two findings you have not met yet.
+Chapter 1 described an experiment with consultants at Boston Consulting Group (BCG), a management consulting firm. (If you read the sections of the study recommended in Chapter 11, you also saw its hardest task.) It holds two findings you have not met yet.
 
 In 2023, 758 BCG consultants took part in a preregistered experiment, meaning the researchers wrote down their plan and measures before collecting results (Dell'Acqua et al., 2023, 2026). After a first task without AI, each consultant was randomly assigned to one of three groups: no AI; GPT-4, a large language model; or GPT-4 plus a short **prompt-engineering overview**, videos and documents on how to prompt it well. Everyone with AI used the same model, in the version available at the end of April 2023, with the provider's default options: its default *system prompt* (instructions the provider adds, which users do not see) and its default *temperature* (an option that changes how often less likely words are picked) (Dell'Acqua et al., 2023).
 
@@ -48,7 +48,7 @@ Answer from what you know today. You will come back to these in the Chapter Summ
 
 1. A model is ranked first on a public leaderboard. Will it be the best tool for a task in your major?
 2. Consultants used one AI tool, with the same options, on two tasks from the same kind of work. Could the tool help on one and hurt on the other?
-3. A free AI tool and your university's AI tool give the same answer to your question. Name one thing that could still differ between them.
+3. A free AI tool and a tool your institution provides give the same answer to your question. Name one thing that could still differ between them.
 
 For each answer, write how sure you are, from 0 to 100%.
 :::
@@ -123,10 +123,10 @@ A **domain tool** is a tool built for one field, often given that field's record
 
 **How the model is reached.** A closed model is used only through a service, its developer's or a partner's; whose terms cover you depends on who runs the tool you use, not who built the model. An **open-weight model** is a model whose settings (parameters), called its weights, can be downloaded and run under a *license*, the terms that say what you may do with it; Meta (July 2024) and OpenAI (August 2025) released such models (Meta, 2024; OpenAI, 2025). A **local model** is an open-weight model run on hardware that you or your institution control, so your input need not go to the model's provider. It needs a capable computer, and its quality varies by task (Deep 12.A).
 
-::: {.callout-note title="What you can reach at UT Dallas (as of October 2026)"}
-The University of Texas at Dallas (UTD) offers a university-provided tool such as Microsoft Copilot Chat (as of October 2026). Its Office of Information Technology (OIT) lists it for all students, at no cost, with enterprise data protection when you sign in with your UTD account (The University of Texas at Dallas, Office of Information Technology [OIT], n.d.-a). The list changes, so check it each term.
+::: {.callout-note title="What your institution provides"}
+Many colleges, universities and employers provide or approve AI tools for their students or staff, often at no cost to you and under institutional terms: for example, an enterprise chat assistant with data protection when you sign in with your institution's account. Your institution's IT office is the place to find which tools it provides or approves, and for which data. The list changes, so check it each term and note the date you read it.
 
-*In Compass (optional) and on eLearning:* notes on the tools you can reach this term.
+*In Compass (optional) and on your course site:* notes on the tools you can reach this term.
 :::
 
 ::: {.callout-note title="Worked Example: Sam Sorts His Tools"}
@@ -148,7 +148,7 @@ The University of Texas at Dallas (UTD) offers a university-provided tool such a
 :::
 
 ::: {.callout-important title="Your Turn (feeds A10)"}
-List the tools you can reach, starting with a university-provided one, with each tool's kind, what it receives, and where it runs. This becomes A10's tool column.
+List the tools you can reach, starting with one your institution provides or approves, if any, with each tool's kind, what it receives, and where it runs. This becomes A10's tool column.
 :::
 
 ::: {.callout-tip title="Check Yourself 12.2"}
@@ -167,11 +167,11 @@ Studies of AI tools at work often seem to disagree because they measure differen
 
 | Study | Setting and users | Tool and date | Measure | Result |
 |---|---|---|---|---|
-| R10: customer support (Brynjolfsson et al., 2025) | Real chats at one software firm; more than 5,000 agents, about 1,600 of them with the tool | A domain tool: an assistant built on a GPT-family model, further trained on the firm's past support chats, giving reply suggestions; rolled out mostly from November 2020 to February 2021 | Issues resolved per hour | Higher productivity, most for less experienced agents (Chapter 1). Agents followed about 38% of suggestions on average; gains were larger for those who followed more |
+| Customer support (Brynjolfsson et al., 2025) | Real chats at one software firm; more than 5,000 agents, about 1,600 of them with the tool | A domain tool: an assistant built on a GPT-family model, further trained on the firm's past support chats, giving reply suggestions; rolled out mostly from November 2020 to February 2021 | Issues resolved per hour | Higher productivity, most for less experienced agents (Chapter 1). Agents followed about 38% of suggestions on average; gains were larger for those who followed more |
 | Coding, lab task (Peng et al., 2023) | 95 freelance developers recruited, 70 finished; one designed task, a small web server | A coding assistant; 2022 | Time to finish | 55.8% faster with the tool, within a wide plausible range (21% to 89%) |
 | Coding, own projects (Becker et al., 2025) | 16 experienced developers; 246 real tasks on projects they knew well | AI coding tools of early 2025 | Time per task, AI allowed or not, assigned at random per task | 19% *longer* with AI allowed |
 
-In R10, the tool was built for the job and many users were new to it. The lab task was small and well defined, and its authors included researchers at the tool's maker, which is worth knowing, though it does not make the result wrong. In the third study, experts worked on large projects they knew well.
+In the customer-support study, the tool was built for the job and many users were new to it. The lab task was small and well defined, and its authors included researchers at the tool's maker, which is worth knowing, though it does not make the result wrong. In the third study, experts worked on large projects they knew well.
 
 The third study answers the prediction. The developers forecast that AI would cut their time by 24%, and afterwards believed it had cut it by about 20%; measured, their tasks took 19% longer (Becker et al., 2025). Its authors at METR (Model Evaluation and Threat Research, a nonprofit) caution against generalizing beyond early-2025 tools in this setting. In February 2026 they reported that a new round pointed toward a speedup, but judged it unreliable, because many developers who did not want to work without AI declined to take part (METR, 2026).
 
@@ -209,7 +209,7 @@ Which study in this section has the setting closest to your A10 task? Name one w
 
 In other words, a fast tool is cheap only if its output is quick to check. So always compare against a **no-AI baseline**: the time a part of the task takes you without any AI tool, done well enough to meet your criteria. An honest estimate is enough; time it only if the part is short.
 
-*In Compass (optional) and on eLearning:* current price forms and limits, by tool and term.
+*In Compass (optional) and on your course site:* current price forms and limits, by tool and term.
 
 ![The price is the smallest part of what a tool costs you.](../figures/out/color/f12-08-cost.svg){#fig-12-8 fig-alt="Above a line: price and limits. Below it: checking time, learning time, the data you give up, switching cost; beside it, a no-AI baseline."}
 
@@ -251,18 +251,18 @@ Before you ask whether a tool is good at a part, ask whether you may give it the
 2. **Retention and access.** How long is your input kept (its *retention*), and who can see it: the provider's reviewers, your institution's administrators?
 3. **Whose contract.** Are you covered by **consumer terms**, which you accept as an individual, or by **institutional terms**, a contract between the provider and your university or employer, which often promises not to train on your data?
 
-**One question about your input:** what is its **data class**, the category an institution assigns to information by how much harm its release could cause? UTD's information security policy names three classes (The University of Texas at Dallas, n.d.). **Public Data** is meant for the public, such as press releases, public websites and published papers. **Controlled Data** is not created for the public but could be released under Texas public-records law, such as UTD email and UTD ID numbers. **Confidential Data** is private by law, such as Social Security numbers, medical information and education records. Two laws stand behind many such records: FERPA (the Family Educational Rights and Privacy Act) protects students' education records, and HIPAA (the Health Insurance Portability and Accountability Act) protects health information held by most health care providers and health plans.
+**One question about your input:** what is its **data class**, the category an institution assigns to information by how much harm its release could cause? Institutions name and draw their classes differently, often in three or four levels; this book uses three. **Public** information is meant for anyone, such as press releases, public websites and published papers. **Internal or confidential** information is not meant for the public, though its release would usually cause limited harm, such as internal email, unpublished drafts and student or employee ID numbers. **Restricted or legally protected** information is protected by law, contract or policy, and its release could seriously harm people, such as Social Security numbers, medical information and education records. In the United States, two laws stand behind many such records: FERPA (the Family Educational Rights and Privacy Act) protects students' education records, and HIPAA (the Health Insurance Portability and Accountability Act) protects health information held by most health care providers and health plans.
 
-Put together, the answers form a **data gate**: a check, made before any quality test, of whether a tool's data terms fit the class of the input. In this course, the gate works as in the table.
+Put together, the answers form a **data gate**: a check, made before any quality test, of whether a tool's data terms fit the class of the input. In this book, the gate works as in the table.
 
-| Input | Consumer terms (for example, a free tier) | Institutional terms (for example, a university-provided tool) |
+| Input | Consumer terms (for example, a free tier) | Institutional terms (for example, a tool your institution provides or approves) |
 |---|---|---|
-| Public Data | Yes | Yes |
+| Public information | Yes | Yes |
 | Your own non-sensitive work; material your course provides; de-identified data (names and identifiers removed) | Yes, if you accept the tool's training and retention terms | Yes |
-| Personal data about other people (names, contact details), and Controlled Data | No | Only if the part needs it and the university's rules allow it; ask OIT if unsure |
-| Confidential Data, including FERPA and HIPAA records | No | No, in this course |
+| Personal data about other people (names, contact details), and internal or confidential information | No | Only if the part needs it and your institution's rules allow it; ask its IT office if unsure |
+| Restricted or legally protected information, including FERPA and HIPAA records | No | No, for any work in this book |
 
-*The rows are this book's reading of course guidance, built on UTD's three classes; in this book, an input's data class is its row. The university's own pages decide any case the table does not cover.*
+*The rows are this book's reading of common guidance, built on three generic classes; in this book, an input's data class is its row. Your institution's or employer's own classification decides; this table is a starting floor. A field rule (a placement policy, an IRB (institutional review board) protocol, a consent form, HIPAA's de-identification standard, an employer's policy) can still say no to an input the table allows.*
 
 A tool that fails the gate is out for that part, however good its outputs. Often you can pass by changing the input: remove the names, use placeholders, or describe the problem without the confidential details.
 
@@ -273,7 +273,7 @@ A tool that fails the gate is out for that part, however good its outputs. Often
 - **OpenAI**'s individual plans let users turn off training on their chats, though a thumbs-up or thumbs-down can still make that conversation usable; by default, it does not train on its business, education and API services' data (OpenAI, n.d.-a, n.d.-b).
 - **Microsoft** says that with enterprise data protection, Copilot Chat prompts and responses are not used to train the underlying models; web search queries fall under separate terms (Microsoft, 2026).
 
-At UTD, OIT asks you to check for the protection badge and to contact OIT about which data a tool may receive (OIT, n.d.-b).
+If your institution provides a tool, its IT office can tell you how to confirm that you are signed in under institutional terms (some tools show a protection badge) and which data the tool may receive.
 :::
 
 ::: {.callout-note title="Worked Example: Thank-You Emails"}
@@ -285,11 +285,11 @@ The drafting does not need the names. So Sam gives Tool A a template with placeh
 :::
 
 ::: {.callout-note title="Faded Example: Survey Comments"}
-**Field:** Public health. A student has 300 comments from a survey published by a city health department, with no names or other identifiers. She can use a free consumer tool whose terms allow training by default, with an opt-out, and a university-provided tool. **Data class (filled):** Public Data. **Can each tool receive it, and is there any reason to opt out anyway?** _______________________
+**Field:** Public health. A student has 300 comments from a survey published by a city health department, with no names or other identifiers. She can use a free consumer tool whose terms allow training by default, with an opt-out, and a tool her institution provides. **Data class (filled):** public. **Can each tool receive it, and is there any reason to opt out anyway?** _______________________
 :::
 
 ::: {.callout-important title="Your Turn (in Lab 12.1)"}
-In Thursday's lab, answer the three questions for two tools, citing the page or card you read and its date.
+In the lab session, answer the three questions for two tools, citing the page or card you read and its date.
 :::
 
 ::: {.callout-tip title="Check Yourself 12.5"}
@@ -324,7 +324,7 @@ The **edge input** often matters most, because it is where a tool is likely to f
 ![A fair bake-off changes only the tool.](../figures/out/color/f12-11-bake-off.svg){#fig-12-11 fig-alt="Process: same frame and criteria, same prompt, same three test inputs, fresh chats in Tool A, Tool B and no AI; score correctness, polish, time."}
 
 ::: {.callout-note title="Worked Example 1: The Datasheet Bake-off"}
-*Constructed example; mirrors Tuesday's demo.* Part: a one-page summary of a public motor datasheet. **Criteria:** C1 every number matches the datasheet, with units; C2 values given in metric units, correctly converted; C3 missing values marked "not given"; C4 one page, as a table. **Inputs:** typical, a metric datasheet; different, a US-unit datasheet from another maker; edge, a datasheet that does not list stall torque.
+*Constructed example; mirrors the concept session's demonstration.* Part: a one-page summary of a public motor datasheet. **Criteria:** C1 every number matches the datasheet, with units; C2 values given in metric units, correctly converted; C3 missing values marked "not given"; C4 one page, as a table. **Inputs:** typical, a metric datasheet; different, a US-unit datasheet from another maker; edge, a datasheet that does not list stall torque.
 
 | Input | Tool A (pasted text) | Tool B (with web search) |
 |---|---|---|
@@ -455,7 +455,7 @@ Name one thing you would lose if your main AI tool disappeared tomorrow, and how
 
 [Studio]{.path}
 
-A10 is one record in this chapter's order. You bring a real task split into parts, with the frame and three test inputs for the part you test; in the lab you read data terms with your team and run your bake-off; at home you finish. The record: task and frame → data class → tools → data gate for each tool (three questions, cited) → runs on three test inputs → scores (correctness with independent checks, polish, time) → cost row with a no-AI baseline → matrix decisions with rungs and reasons → re-test trigger → judgment → AI Use Declaration.
+A10 is one record in this chapter's order. You bring a real task split into parts, with the frame and three test inputs for the part you test; in the lab you read data terms with your team and run your bake-off; afterward you finish. The record: task and frame → data class → tools → data gate for each tool (three questions, cited) → runs on three test inputs → scores (correctness with independent checks, polish, time) → cost row with a no-AI baseline → matrix decisions with rungs and reasons → re-test trigger → judgment → AI Use Declaration.
 
 Valid results that can earn full marks include "neither tool fits this part," "the tools tied," "no AI was faster once checking was counted" and "the gate blocked the better tool."
 
@@ -498,17 +498,17 @@ Many releases called "open" provide only the third: the weights, under a license
 
 ## Hands-on Labs {.unnumbered}
 
-The labs say what to do, not which buttons to press. Full lab sheets are on eLearning. Use a university-provided tool such as Microsoft Copilot Chat (as of October 2026) where you can. You never need to create a new account: dated outputs of a second tool are provided. Use only Public Data, your own non-sensitive work or the provided material; never put personal data about other people, Controlled Data or Confidential Data into a prompt.
+The labs say what to do, not which buttons to press. Full lab sheets are on your course site. Use a tool your institution provides or approves (for example, an enterprise chat assistant with data protection) where you can. You never need to create a new account: dated outputs of a second tool are provided. Use only public information, your own non-sensitive work or the provided material; never put personal data about other people, internal or confidential information, or restricted or legally protected information into a prompt.
 
-*In Compass (optional) and on eLearning:* step-by-step notes for current tools and the lab pages for Labs 12.1 to 12.3.
+*In Compass (optional) and on your course site:* step-by-step notes for current tools and the lab pages for Labs 12.1 to 12.3.
 
-### Lab 12.1: Tool Bake-off (Studio · 75 minutes · Thursday, in class) {.unnumbered}
+### Lab 12.1: Tool Bake-off (Studio · 75 minutes · lab session) {.unnumbered}
 
-**Before Thursday (about 13 minutes):** split your A10 task into two or three parts; for the part you will test, write the frame with 3–4 success criteria and three test inputs (typical, different, edge); name the input's data class (section 12.5).
+**Before the lab (about 13 minutes):** split your A10 task into two or three parts; for the part you will test, write the frame with 3–4 success criteria and three test inputs (typical, different, edge); name the input's data class (section 12.5).
 
 1. **Briefing (10 min).** Fit belongs to a task and a tool together (@fig-12-3); the data gate (@fig-12-9); the bake-off rules (@fig-12-11); correctness and polish scored separately (@fig-12-10), with polish on the 1-to-5 scale.
-2. **Terms jigsaw (12 min).** In a *jigsaw*, each team member studies one piece and teaches it to the others. Each member reads one tool's dated terms card (the cards include a university-provided tool) and answers the three data-terms questions; the team fills one gate table.
-3. **Runs (33 min, individual).** Run your prompt in two tools, or one tool and your own no-AI work, on your three inputs. Score each output as you go. Check the typical input's correctness with an independent check. If time runs short, finish the edge input at home.
+2. **Terms jigsaw (12 min).** In a *jigsaw*, each team member studies one piece and teaches it to the others. Each member reads one tool's dated terms card (the cards include one tool under institutional terms) and answers the three data-terms questions; the team fills one gate table.
+3. **Runs (33 min, individual).** Run your prompt in two tools, or one tool and your own no-AI work, on your three inputs. Score each output as you go. Check the typical input's correctness with an independent check. If time runs short, finish the edge input afterward.
 4. **Share and critique (15 min).** Each team shows one output whose polish and correctness disagreed, and one gate decision.
 5. **Exit (5 min).** Name one part of your task you will keep on the floor (no AI), and why.
 
@@ -522,7 +522,7 @@ Rerun the final prompt from your Chapter 5 assignment (A3) on its test inputs, i
 
 ## Case Study: How the Consultants Who Got It Right Worked {.unnumbered}
 
-This case, read together in Tuesday's class, asks a new question of the BCG experiment: how did the consultants who got the outside task right use the tool?
+This case, designed to be read together in the concept session, asks a new question of the BCG experiment: how did the consultants who got the outside task right use the tool?
 
 **The trap, in two lines.** The task asked for a recommendation to a company's chief executive: which brand had the most potential for growth. The spreadsheet looked complete, but the interview notes held details that pointed to a different answer from the one the authors expected AI to give when prompted with the exercise instructions, the data and the interviews (Dell'Acqua et al., 2023).
 
@@ -587,9 +587,9 @@ Two providers, one lesson, as of October 2026: a retirement is a re-test trigger
 
 ## From the Field {.unnumbered}
 
-**Disclosure:** I am a founder of OptiWisdom, which develops software for businesses, including AI tools.
+**Disclosure:** I am a founder of OptiWisdom, which develops software for businesses, including AI tools. OptiScorer was developed at OptiWisdom, a company I founded, under my management.
 
-In 2020 I wrote an encyclopedia entry about a scoring engine, a product that predicts numbers such as the chance that a customer will leave or will pay late (Şeker, 2020). Read it as what it is: a vendor's argument, from 2020, for a ready-made, automated service over models built by hand for each project. Then test it with this chapter's lens.
+In 2020 I wrote an encyclopedia entry about OptiScorer, a scoring engine: a product that predicts numbers such as the chance that a customer will leave or will pay late (Şeker, 2020). Read it as what it is: a vendor's argument, from 2020, for a ready-made, automated service over models built by hand for each project. Then test it with this chapter's lens.
 
 The entry describes three periods of machine-learning practice. First, until the late 1990s and early 2000s, nearly every project was coded from scratch. Then came libraries and no-code tools; the entry names KNIME, RapidMiner and SPSS Modeler. Then came automated machine learning, which tries many algorithms and their options automatically. The entry gives several reasons a business might prefer an automated service. A hand-built model ages as conditions and data change, so it must be rebuilt at intervals. A person doing the analysis by hand sees the data. One model rarely fits a whole business. Experts are scarce. And a central update can bring new algorithms to many businesses at once, going live only where they perform better (Şeker, 2020).
 
@@ -603,7 +603,7 @@ The entry describes three periods of machine-learning practice. First, until the
 
 **Return to the Opening Case.** Why did the overview group do no better on the outside task? The overview raised scores and copying inside the frontier; it did not make the tool able to do the one task, and those who did worse questioned the output less (section 12.1). The gap between the AI groups was small: a warning from one task, not a law. How would you have noticed the wrong recommendations? By scoring correctness separately from quality, with an independent check against the interview notes (section 12.6).
 
-**Revisit your Warm-up.** (1) Will the top-ranked model be best for your task? *Not necessarily: a ranking scores other people's questions; only a bake-off on your inputs shows fit (sections 12.1, 12.6; Deep 12.B).* (2) Could one tool help on one task and hurt on another? *Yes: in the BCG study, the same tool with the same options did both (section 12.1).* (3) What could differ between a free tool and a university tool that give the same answer? *Their data terms: whether your input is used for training, how long it is kept, and whose contract covers it (section 12.5).* Compare these with your confidence ratings.
+**Revisit your Warm-up.** (1) Will the top-ranked model be best for your task? *Not necessarily: a ranking scores other people's questions; only a bake-off on your inputs shows fit (sections 12.1, 12.6; Deep 12.B).* (2) Could one tool help on one task and hurt on another? *Yes: in the BCG study, the same tool with the same options did both (section 12.1).* (3) What could differ between a free tool and a tool your institution provides that give the same answer? *Their data terms: whether your input is used for training, how long it is kept, and whose contract covers it (section 12.5).* Compare these with your confidence ratings.
 
 You can now explain fit, differentiate tools, attribute differences between studies, evaluate cost and data terms gate first, conduct a fair bake-off, and produce a fit matrix with rungs, reasons and re-test triggers.
 
@@ -700,13 +700,13 @@ Come back to these a few days after reading, without looking back. They connect 
 
 ### Application Assignment: A10 Tool and Task Fit Matrix {.unnumbered}
 
-**Due:** Monday, April 5, 2027, 11:59 p.m., on eLearning. *(O6 · LO2, LO5 · Create)* You start it in Thursday's lab (section 12.9). Expect about 13 minutes before the lab and about 60 minutes after it, including reading this brief and rubric.
+**Due:** when your instructor sets it. *(O6 · LO2, LO5 · Create)* You start it in the lab session (section 12.9). Expect about 13 minutes before the lab and about 60 minutes after it, including reading this brief and rubric.
 
 **Choose one route.** All three can earn full marks, and none needs a new account.
 
-- **Route A, two tools:** your own task, in two tools (a university-provided tool such as Microsoft Copilot Chat, as of October 2026, where you can).
+- **Route A, two tools:** your own task, in two tools (one your institution provides or approves, where you can).
 - **Route B, one tool and no AI:** your own task, in one tool and done by you without AI.
-- **Route C, provided outputs:** the provided task on eLearning, with its provided inputs and the dated outputs of two tools. Use the provided task in every column, not your own.
+- **Route C, provided outputs:** the provided task on your course site, with its provided inputs and the dated outputs of two tools. Use the provided task in every column, not your own.
 
 **What to submit:**
 
@@ -719,7 +719,7 @@ Come back to these a few days after reading, without looking back. They connect 
 7. **Judgment (80–100 words):** which option you would use for each part and why; one sentence comparing your result with the section 12.3 study whose setting is closest to yours; what remains uncertain.
 8. **AI Use Declaration, with all five elements:** (1) the tools you used; (2) for what purpose; (3) which outputs you accepted, rejected or revised; (4) how you verified them; (5) where your own judgment shaped the work. If you used no AI tools, say so.
 
-**Privacy:** follow the section 12.5 table: no personal data about other people and no Controlled Data in a consumer tool, and no Confidential Data in any tool. Valid results that can earn full marks include "neither tool fits," "the tools tied," "no AI was faster once checking was counted" and "the gate blocked the better tool."
+**Privacy:** follow the section 12.5 table: no personal data about other people and no internal or confidential information in a consumer tool, and no restricted or legally protected information in any tool. Valid results that can earn full marks include "neither tool fits," "the tools tied," "no AI was faster once checking was counted" and "the gate blocked the better tool."
 
 **Rubric (10 points)**
 
@@ -748,8 +748,8 @@ For three weeks, log each AI use: the part of the task, the tool, your predictio
 
 ## Further Reading {.unnumbered}
 
-- Dell'Acqua et al. (2023), sections 3.2 and 3.3: the outside task and the centaur and cyborg patterns, in the authors' words (R9).
-- Brynjolfsson, Li and Raymond (2025), the introduction and section VI.A on adherence (R10, recommended).
+- Dell'Acqua et al. (2023), sections 3.2 and 3.3: the outside task and the centaur and cyborg patterns, in the authors' words (recommended).
+- Brynjolfsson, Li and Raymond (2025), the introduction and section VI.A on adherence (recommended).
 - Becker et al. (2025) and METR (2026): a randomized study of experienced developers, and its authors' own account of why the next round was hard to measure.
 - Chen, Zaharia and Zou (2024): how the same named models changed between March and June 2023.
 - Magesh et al. (2025), open access: a preregistered test of legal research tools.
@@ -809,12 +809,6 @@ Peng, S., Kalliamvakou, E., Cihon, P., & Demirer, M. (2023). *The impact of AI o
 
 Randazzo, S., Lifshitz, H., Kellogg, K. C., Dell'Acqua, F., Mollick, E., Candelon, F., & Lakhani, K. R. (2025). *Cyborgs, centaurs and self-automators: The three modes of human-GenAI knowledge work and their implications for skilling and the future of expertise* (Harvard Business School Working Paper No. 26-036). https://ssrn.com/abstract=4921696
 
-Şeker, Ş. E. (2020). OptiScorer: Otomatik makine öğrenmesi ile skorlama [OptiScorer: Scoring with automated machine learning]. *YBS Ansiklopedi, 8*(1), 11–22.
+Şeker, Ş. E. (2020). OptiScorer: Otomatik makine öğrenmesi ile skorlama [OptiScorer: Scoring with automated machine learning]. *YBS Ansiklopedi, 8*(1), 1–13.
 
 Singh, S., Nan, Y., Wang, A., D'Souza, D., Kapoor, S., Üstün, A., Koyejo, S., Deng, Y., Longpre, S., Smith, N. A., Ermis, B., Fadaee, M., & Hooker, S. (2025). The leaderboard illusion. In *Advances in Neural Information Processing Systems 38* (pp. 86910–86964). https://doi.org/10.52202/085713-2620
-
-The University of Texas at Dallas. (n.d.). *UTDBP3096: Information security and acceptable use*. Policy Navigator. Retrieved October 18, 2026, from https://policy.utdallas.edu/utdbp3096
-
-The University of Texas at Dallas, Office of Information Technology. (n.d.-a). *OIT AI tools matrix*. Retrieved October 18, 2026, from https://atlas.utdallas.edu/TDClient/30/Portal/KB/Article/1552/OIT-AI-Tools-Matrix
-
-The University of Texas at Dallas, Office of Information Technology. (n.d.-b). *Artificial intelligence (AI) and generative AI (Gen AI) tools available at UTD*. Retrieved October 18, 2026, from https://atlas.utdallas.edu/TDClient/30/Portal/KB/Article/1384/Artificial-Intelligence-AI-and-Generative-AI-Gen-AI-Tools-Available-at-UTD

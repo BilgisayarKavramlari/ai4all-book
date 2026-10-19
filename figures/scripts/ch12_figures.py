@@ -207,7 +207,7 @@ def cost(f):
 def data_gate(f):
     muted = MUTED[f.mode]
     f.box(20, 130, 200, 170, "Data class of the input", role="neutral", kind="step", size=15,
-          sub="UTD: Public, Controlled or Confidential Data; also: personal data about others; your own work",
+          sub="Public · internal or confidential · restricted or legally protected; also: personal data about others; your own work",
           sub_size=13)
     f.arrow(222, 215, 248, 215)
     f.box(250, 140, 210, 150, "Do the tool's data terms allow this class?", role="neutral", kind="decision", size=14)

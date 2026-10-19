@@ -5,7 +5,7 @@
 | Type | Compare |
 | Objectives | O2, O3 (LO2, LO3) · tags 4D:DESC, 4D:DISC |
 | Time | 40 minutes (10-minute version available), at home or in Compass (optional) |
-| Materials | Any AI chat tool that can open a fresh, temporary chat; the provided document (a constructed 12-page store policy with shipping, returns, warranty and gift-card sections, dated), three provided questions with answer keys, and two provided in-context examples (eLearning); a scoring sheet |
+| Materials | Any AI chat tool that can open a fresh, temporary chat; the provided document (a constructed 12-page store policy with shipping, returns, warranty and gift-card sections, dated), three provided questions with answer keys, and two provided in-context examples (course site); a scoring sheet |
 
 ## Steps (tool-neutral)
 The three questions are labeled as test inputs (Chapter 5): question 1 is **typical** (its answer is in one short, clear section); question 2 is **different** (it needs two sections); question 3 is the **edge** input (its answer sits in the middle of the document, in a footnote).
@@ -36,7 +36,7 @@ If all versions score the same, your tool may handle this short document well; n
 Scoring sheet and a three-sentence conclusion. Ungraded; can support a library entry's "In-context examples: used / not used" field.
 
 ## Accessibility and alternatives
-No-device route: dated sample outputs (model name and date) for all versions on eLearning; score them against the keys. Screen-reader-friendly plain-text versions of the document and scoring sheet.
+No-device route: dated sample outputs (model name and date) for all versions on the course site; score them against the keys. Screen-reader-friendly plain-text versions of the document and scoring sheet.
 
 ## Safety and privacy
 Use only the provided document; it is constructed and contains no real customer data. Fresh, temporary chats for each version.

@@ -339,7 +339,7 @@ def risk_sheet(f):
     muted = MUTED[f.mode]
     ink = INK[f.mode]
     f.text(400, 22, "The rules-and-rights risk (one A12 risk, Chapter 15's template)", size=18, weight="700")
-    rows = [("1 Scratch list", "prompts a–e on the data-flow map: terms, syllabus, data classes, policies, one law"),
+    rows = [("1 Scratch list", "prompts a–e on the data-flow map: terms, course rules, data classes, policies, one law"),
             ("2 Choose", "the rule with the highest stakes; name its layer"),
             ("3 The risk", "risk of breaking [a named rule] or of [a named person] losing [a named right]"),
             ("4 Evidence", "D: the rule's own text opened, section cited · I: give the reason"),

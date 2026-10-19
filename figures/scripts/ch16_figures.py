@@ -97,7 +97,7 @@ def chapter_map(f):
                                     "16.3 What \"fair\" can mean"]),
             ("Test and fix", ["16.4 Paired-input tests", "16.5 Mitigation and its limits",
                               "16.6 Who decides?"]),
-            ("Practice", ["16.7 Bias probe and fairness row", "Lab 15.1 station 3 (Thursday)",
+            ("Practice", ["16.7 Bias probe and fairness row", "Lab 15.1 station 3",
                           "A12 (Chapter 15)"])]
     for c, (head, items) in enumerate(cols):
         x = 30 + c * 255

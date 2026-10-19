@@ -7,7 +7,7 @@ Computed numbers come only from data/ch02_*.csv (figures/scripts/ch02_experiment
 
 **Chapter 2 at a glance.** In Chapter 1 you saw what artificial intelligence (AI) tools can and cannot do. This chapter looks one level inside. You will see how a machine learns from examples, why the examples matter more than almost anything else, and how a model can score well for the wrong reasons. Chapter 3 then looks inside the language models behind today's chat tools.
 
-**Time:** about 30 minutes of Core reading (longer if English is not your first language), plus about 15 minutes for the paper task at the end of section 2.5. This week you also read Chapter 3, so the Core path is deliberately short. The boxes work as in Chapter 1: a worked example shows every step, a faded example leaves some steps for you, and Your Turn and Check Yourself boxes are ungraded practice. Answers to odd-numbered end-of-chapter questions are in Appendix E. Core sections are for everyone, Studio sections are hands-on work, and Deep sections are optional.
+**Time:** about 30 minutes of Core reading (longer if English is not your first language), plus about 15 minutes for the paper task at the end of section 2.5. The boxes work as in Chapter 1: a worked example shows every step, a faded example leaves some steps for you, and Your Turn and Check Yourself boxes are ungraded practice. Answers to odd-numbered end-of-chapter questions are in Appendix E. Core sections are for everyone, Studio sections are hands-on work, and Deep sections are optional.
 
 **The question of this chapter:** *Does the machine really learn, or does it only find the easiest way to get the right answer?* Keep it in mind. The Chapter Summary answers it.
 
@@ -326,7 +326,7 @@ What answer to Q2 would make you most worried, given the Opening Case? _________
 :::
 
 ::: {.callout-important title="Your Turn"}
-Find a performance claim about an AI system in the news or on a product page (or use one from the dated claim bank on eLearning). Apply the three questions. What would you need to know before trusting it?
+Find a performance claim about an AI system in the news or on a product page (or use one from the dated claim bank on your course site). Apply the three questions. What would you need to know before trusting it?
 :::
 
 ### Putting it together: diagnose the data {.unnumbered}
@@ -345,7 +345,7 @@ Sections 2.3 to 2.5 described six data problems. Each tends to leave a different
 One more remedy applies to all of them: **document the data.** Researchers have proposed that every dataset come with a **datasheet** that answers questions such as why it was created, who and what is in it, how it was collected and labeled, and what it should not be used for (Gebru et al., 2021). Lab 2.3 asks you to write one.
 
 ::: {.callout-important title="Paper Task: Diagnose It (Core, about 15 minutes, ungraded)"}
-This task gives everyone the reasoning of the optional build-and-break labs, without any software. Write your answers; they prepare you for the week's concept check. Answers to items 1, 3 and 5 are in Appendix E.
+This task gives everyone the reasoning of the optional build-and-break labs, without any software. Write your answers; they prepare you for a concept check. Answers to items 1, 3 and 5 are in Appendix E.
 
 For each scenario, name **one or more** problems from the table above, or **none**, and a first remedy.
 
@@ -393,9 +393,9 @@ There is a surprising connection, too. Sam's parts sorter scores three possible 
 
 [Studio]{.path}
 
-*Studio sections are hands-on work for the Thursday lab and your weekly assignment.*
+*Studio sections are hands-on work for the lab session and the chapter's assignment.*
 
-This week's studio artifact, A2, is a concept map of 15 terms from Chapters 2 and 3. A concept map is not a list of definitions. It is a set of terms connected by **labeled links**, so that each pair of terms and its link reads as a true sentence. You start it this week with at least 7 terms from this chapter and finish it after Chapter 3.
+This chapter's studio artifact, A2, is a concept map of 15 terms from Chapters 2 and 3. A concept map is not a list of definitions. It is a set of terms connected by **labeled links**, so that each pair of terms and its link reads as a true sentence. You start it now with at least 7 terms from this chapter and finish it after Chapter 3.
 
 ![A concept map is a set of labeled links between terms.](../figures/out/color/f2-12-concept-map.svg){#fig-2-12 fig-alt="Five terms linked by labeled arrows, e.g., model 'is trained on' training data; test set 'checks' predictions."}
 
@@ -424,7 +424,7 @@ Start A2: choose at least 7 terms from this chapter's term pool (end of chapter)
 
 [Deep]{.path}
 
-*Deep sections are optional and not on the exams.*
+*Deep sections are optional and are not meant for exams.*
 
 The term "artificial intelligence" appeared in a 1955 proposal for a summer research workshop at Dartmouth College, held in 1956 (McCarthy et al., 1955/2006). The first wave relied mainly on rules and logic written by people, which led to the expert systems of the 1970s and 1980s (Russell & Norvig, 2021). Separately, in 1997 IBM's Deep Blue defeated world chess champion Garry Kasparov through very fast search and hand-tuned chess knowledge, not modern machine learning (Campbell et al., 2002).
 
@@ -458,7 +458,7 @@ The step size, called the **learning rate**, matters. Too small, and learning ta
 
 ## Hands-on Labs {.unnumbered}
 
-These three labs are optional and recommended; do them at home or in Compass, which is optional and ungraded. They describe what to do, not which buttons to press; the Compass pages list current free tools. Use a free, no-code tool that trains an image classifier in the browser. Photograph objects only: no people, no faces, no personal documents.
+These three labs are optional and recommended; do them at home or in Compass, which is optional and never part of a course grade. They describe what to do, not which buttons to press; the Compass pages list current free tools. Use a free, no-code tool that trains an image classifier in the browser. Photograph objects only: no people, no faces, no personal documents.
 
 ### Lab 2.1: Train a Classifier (Build · 25 minutes · optional) {.unnumbered}
 
@@ -470,7 +470,7 @@ These three labs are optional and recommended; do them at home or in Compass, wh
 4. Test it on 10 **new** photos per object that you did not use in training. Record how many it gets right for each class.
 5. Write two sentences: what did the model seem to learn, and where did it go wrong?
 
-**If this doesn't work:** use the printed card version on eLearning. Sort the cards first by rules you write, then by "examples" from a provided training pile, and compare.
+**If this doesn't work:** use the printed card version on your course site. Sort the cards first by rules you write, then by "examples" from a provided training pile, and compare.
 
 ### Lab 2.2: Break It with Data (Break It · 25 minutes · optional) {.unnumbered}
 
@@ -488,7 +488,7 @@ Retrain your Lab 2.1 model several times, changing only the training data. Use t
 
 Compare your table with the table in section 2.4. Small datasets and different tools vary, so your numbers will differ from the book's. You will likely see a similar pattern; if not, try to explain why. If you have time, repeat one run to see how much the results change by chance.
 
-**If this doesn't work:** use the provided results table on eLearning and answer the same questions. A screen-reader route uses a provided tabular dataset in an accessible spreadsheet.
+**If this doesn't work:** use the provided results table on your course site and answer the same questions. A screen-reader route uses a provided tabular dataset in an accessible spreadsheet.
 
 ### Lab 2.3: Write a Datasheet (Audit · 20 minutes · optional) {.unnumbered}
 
@@ -496,7 +496,7 @@ Compare your table with the table in section 2.4. Small datasets and different t
 
 For your Lab 2.1 dataset, answer six questions in a few lines each: Why was it created? What is in it, and what is missing? How was it collected? Who labeled it, and how? What should it not be used for? Who looks after it? Then answer a seventh: **Where did my photos go, and who can see them?** Look in the tool's settings or help pages for where photos are stored.
 
-**If this doesn't work:** write the datasheet for the provided card dataset on eLearning.
+**If this doesn't work:** write the datasheet for the provided card dataset on your course site.
 
 ## Case Study: The Recruiting Tool, Revisited {.unnumbered}
 
@@ -655,7 +655,7 @@ biased labels · class · class imbalance · datasheet · deep learning · discr
 
 Come back to these a few days after reading, without looking back. They connect Chapter 2 to Chapter 1.
 
-1. *(Chapter 1 · LO4 · Remember)* What are the three zones of the course AI policy? In which zone is asking an AI tool to brainstorm ideas?
+1. *(Chapter 1 · LO4 · Remember)* What are the three zones of the book's AI policy? In which zone is asking an AI tool to brainstorm ideas?
 2. *(O4 · LO3 · Apply)* Apply the Verify step from Chapter 1 to the "97% accurate" art-style detector. What would you check first?
 3. *(O3 · LO1 · Analyze)* Is the 99.9% fraud model "fluent but wrong" in the Chapter 1 sense? Explain what is similar and what is different.
 4. *(O3 · LO5 · Analyze)* Which step of the AI Work Loop would most likely have caught the recruiting tool's problem, and how?
@@ -671,14 +671,14 @@ Come back to these a few days after reading, without looking back. They connect 
 
 ### Application Assignment: A2 — Concept Map of 15 Terms {.unnumbered}
 
-**Due:** Monday, February 1, 2027, 11:59 p.m., on eLearning. *(O5 · LO1 · Create)* A2 has two parts. **Part 1** (at home, after this chapter): at least 7 Chapter 2 terms with worked definitions and links. **Part 2** (started in Thursday's "Probe the model" lab, section 3.6): at least 5 Chapter 3 terms, linked to your Chapter 2 terms. Bring your Part 1 draft to Thursday's lab. Expect about 45–60 minutes in all outside class. One rubric (below) scores the finished map.
+**Due:** when your instructor sets it, on your course site. *(O5 · LO1 · Create)* A2 has two parts. **Part 1** (at home, after this chapter): at least 7 Chapter 2 terms with worked definitions and links. **Part 2** (started in the "Probe the model" lab, section 3.6): at least 5 Chapter 3 terms, linked to your Chapter 2 terms. Bring your Part 1 draft to that lab session. Expect about 45–60 minutes in all outside class. One rubric (below) scores the finished map.
 
 **What to submit:**
 
 1. A concept map, or an equally valid table of terms and labeled links, with **15 terms**: at least 7 from the Chapter 2 pool and at least 5 from the Chapter 3 pool. A term that appears in both pools counts once, for either chapter.
 2. For each term, a **worked definition**: a definition in your own words, with one concrete example.
 3. **Labeled links**: every term has at least one link, and there are at least 14 links in all. Each link reads as a true sentence (term → link → term), such as "a model *is trained on* training data."
-4. **Verification:** for each definition, note where you checked it (the chapter's own definition or a cited source). Then take **one AI-generated definition**, either your own (save the prompt and output) or the dated one provided on eLearning, and correct it, explaining what was wrong or missing.
+4. **Verification:** for each definition, note where you checked it (the chapter's own definition or a cited source). Then take **one AI-generated definition**, either your own (save the prompt and output) or the dated one provided on your course site, and correct it, explaining what was wrong or missing.
 5. An **AI Use Declaration** (tools, purpose, what you accepted, rejected or revised, how you verified it, and where your judgment mattered) and two sentences on which link was hardest to label and why.
 
 **Term pool, Chapter 2:** rule-based system · machine learning · training data · example · feature · label · class · model · parameter · supervised learning · error · inference · sample · population · sampling bias · proxy · noisy labels · biased labels · class imbalance · recall · shortcut · overfitting · test set · deep learning · generative AI. Any other Core Key Term of Chapter 2 also counts. **Chapter 3:** listed at the end of Chapter 3.
@@ -695,7 +695,7 @@ Come back to these a few days after reading, without looking back. They connect 
 
 **Formats.** A hand-drawn or digital map, or a structured table with columns *term*, *definition*, *example*, *linked to*, *link label*. Both are scored the same way. A map tool is not required.
 
-**Alternative assignment** (for students who prefer not to use AI tools, or for whom drawing a map is a barrier). Audit the dated, AI-generated glossary of pool terms provided on eLearning. For 15 of its entries, mark each definition correct, incomplete or wrong, write a corrected worked definition in your own words with an example, and add a table of at least 14 labeled links. Same rubric, read this way:
+**Alternative assignment** (for students who prefer not to use AI tools, or for whom drawing a map is a barrier). Audit the dated, AI-generated glossary of pool terms provided on your course site. For 15 of its entries, mark each definition correct, incomplete or wrong, write a corrected worked definition in your own words with an example, and add a table of at least 14 labeled links. Same rubric, read this way:
 
 - **Task:** 15 audited terms, with the same chapter split.
 - **Links:** your links table.
@@ -705,7 +705,7 @@ Come back to these a few days after reading, without looking back. They connect 
 
 ### Mini-Project (optional): Audit a Public Dataset {.unnumbered}
 
-*(O3 · LO5 · Evaluate)* Over the next three weeks, choose one public dataset from your field (your instructor or the eLearning list can suggest one). Write its datasheet using the questions in section 2.5, name the two data problems you think are most likely, and say how you would test for each. The audit can become a piece of your term portfolio (Chapter 20).
+*(O3 · LO5 · Evaluate)* Over the next three weeks, choose one public dataset from your field (your instructor or a list on your course site can suggest one). Write its datasheet using the questions in section 2.5, name the two data problems you think are most likely, and say how you would test for each. The audit can become a piece of your portfolio (Chapter 20).
 
 ### Case Study Questions {.unnumbered}
 
@@ -717,7 +717,7 @@ Come back to these a few days after reading, without looking back. They connect 
 
 ## Further Reading and Compass Links {.unnumbered}
 
-- Reading R1 (recommended): Wolfram (2023), the sections on what a model is and on neural nets (about 15 minutes).
+- Recommended: Wolfram (2023), the sections on what a model is and on neural nets (about 15 minutes).
 - Gebru et al. (2021): the original "datasheets for datasets" proposal, with the full list of questions.
 - Geirhos et al. (2020): a readable review of shortcut learning, with many examples.
 - Gray and Suri (2019): the people behind data labeling and other on-demand AI work.

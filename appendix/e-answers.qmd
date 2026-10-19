@@ -98,6 +98,34 @@ This appendix gives model answers to the odd-numbered end-of-chapter questions a
 3. Training (in the invented-fact test, fine-tuning raised scores in the trained direction only; for real celebrities the authors suggest training text runs mostly one way) and scoring (the right reverse answer scored no higher than a random name) explain the curse; the context window explains why the reversal worked once the fact was in the prompt.
 5. Example: ask the question in both directions, in new chats; put the source fact in the prompt when you have it; check the answer against an official or reference source (for drugs, a drug database or a pharmacist); record the tool, model and date. Full credit: a two-direction test plus an independent check.
 
+### Review Questions A {.unnumbered}
+1. **(b)** As one or more tokens, each represented by a number. (a) and (c) are M1 (the model does not receive letters or syllables); (d) is M2 (no stored list of facts is consulted).
+3. **(c)** The tokenizer splits many Turkish words into several pieces, so the same content needs more tokens. (a) confuses length with processing; (b) is M1; (d) is false (counts for a given tokenizer are fixed).
+5. **(d)** At each step a token is picked with some chance, so the two runs can follow different paths. (a) is M3; (b) is M4 (the model does not learn from the conversation); (c) is M2.
+7. **(a)** It makes the highest-scoring tokens get picked more often. (b) confuses likely with true; temperature does not change facts or the context window, so (c) and (d) are wrong.
+9. **(c)** Correcting a model during inference does not change its settings; the correction stayed in the old conversation. (a) and (b) are versions of M4 (the chat trains or stores facts in the model); (d) is the second half of M4 (knowledge is not "complete up to" the cutoff, and the cutoff is not why the correction disappeared).
+11. **(d)** Retrieval changed what the model received; the pages, and the way the response uses them, can still be wrong. (a) is M6; (b) confuses retrieval with training (the settings do not change, so nothing is reflected "exactly"); (c) is false: the response is still produced token by token and can differ from the pages.
+13. It adds the exact result of a calculation the model requests to the context window. It does not change the model's settings or how it predicts, and it cannot fix a wrong calculation request or a wrong use of the result in the text.
+15. Instruction tuning trains the pretrained model further so that it follows instructions; its examples are prompts paired with good responses written by people (in the best-known recipe; newer recipes also use AI-generated examples).
+
+### Review Questions B (model answers) {.unnumbered}
+1. Most likely Hindi: in the book's measurement it needs 1.7 times (newer tokenizer) to 5.6 times (older tokenizer) as many tokens as English for the same text, more than Turkish (1.5–2.0×) or Spanish (1.2–1.5×). The company should check the token count for its own text with the tokenizer that the chosen tool uses (or the price per unit of content in each language).
+3. Claim 1: supported only if the registrar's page says so and is current; check the page itself. Claim 2: unsupported (no source), and it does not matter for the decision. Claim 3: unsupported for now: a 2017 blog post is neither official nor current; check the registrar's current fee page (the claim may turn out contradicted). Before acting: confirm the deadline and fee on official pages, and ask the registrar if anything is unclear.
+
+### Review Questions C (scoring guidance) {.unnumbered}
+1. Strong answers disagree or qualify: sources change what the model receives, but retrieved pages can be wrong or outdated, the wrong passages can be retrieved, information in a long context can be used unevenly (Liu et al., 2024), and the response can go beyond what the sources say. Strong answers name at least two checks.
+3. Either position, scored on reasoning: Petrov et al. (2023) and the book's measurement (cost, slower processing, less text in a fixed context); who pays the difference; practical options (pricing by content, better tokenizers). Strong answers separate the technical cause from the fairness question.
+
+### Spaced Review {.unnumbered}
+1. Search, generation, search-then-generate (Chapter 1, @fig-1-4). Retrieval is the search-then-generate lane.
+3. A sample is the examples we actually have; the population is everything the model will meet in the real world (Chapter 2).
+5. The model keeps learned settings; for text that appeared often, the settings can make an exact continuation very likely, so the model reproduces it token by token. That is still producing likely tokens, not looking up a stored record.
+
+### Case Study Questions {.unnumbered}
+1. Test 1: models fine-tuned on invented "A is B" facts often completed them in the trained direction but almost never in reverse (the largest GPT-3 model's score for the right reverse name was no higher than for a random name). Test 2: GPT-4 named the right parent in 79% of the mother and father questions about 1,000 celebrities (1,573 pairs) but named the famous child for only 33% of the pairs, even with up to ten tries.
+3. Training (in the invented-fact test, fine-tuning raised scores in the trained direction only; for real celebrities the authors suggest training text runs mostly one way) and scoring (the right reverse answer scored no higher than a random name) explain the curse; the context window explains why the reversal worked once the fact was in the prompt.
+5. Example: ask the question in both directions, in new chats; put the source fact in the prompt when you have it; check the answer against an official or reference source (for drugs, a drug database or a pharmacist); record the tool, model and date. Full credit: a two-direction test plus an independent check.
+
 ## Chapter 4 — How and Why AI Fails {#sec-appendix-e-ch04 .unnumbered}
 
 ### Faded Examples {.unnumbered}
@@ -427,10 +455,10 @@ Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter qu
 
 ### Review Questions A {.unnumbered}
 1. **(c)** Fit is judged part by part, so test it on the next part before relying on it. (a) M1/M6: past fit does not carry to a new part; (b) M2: prompting skill does not settle fit; (d) M1: a ranking measures other people's questions.
-3. **(a)** It receives the field's records and formats, but its fit to your task still has to be tested. (b) M1: a vendor's test is not your independent check; (c) M1: in a 2024 test, legal tools still hallucinated on 17% to 33% of queries; (d) M5: patient information is Confidential Data, which goes to no tool in this course.
+3. **(a)** It receives the field's records and formats, but its fit to your task still has to be tested. (b) M1: a vendor's test is not your independent check; (c) M1: in a 2024 test, legal tools still hallucinated on 17% to 33% of queries; (d) M5: patient information is restricted or legally protected information, which goes to no tool for work in this book.
 5. Any three of section 12.3's five questions: What was the setting (a designed task or real work)? What was measured, and was the tool given at random? Who used it? Which tool, and when? Who ran the study (here, the vendor)?
 7. Any two of: usage limits; checking time (verification cost); learning time; data you give up under its terms; switching cost. Example: a free tier's limit can split the work over two days, or its consumer terms may allow training on what you type.
-9. **(b)** They are a contract with your school or employer, often promising no training on your data. (a) M5: Confidential Data such as education records goes to no tool in this course; (c) M4: institutional terms come from the institution's contract, not your payment; (d) M5: retention differs by plan and provider; shorter retention does not make any input acceptable.
+9. **(b)** They are a contract with your school or employer, often promising no training on your data. (a) M5: restricted or legally protected information such as education records goes to no tool for work in this book; (c) M4: institutional terms come from the institution's contract, not your payment; (d) M5: retention differs by plan and provider; shorter retention does not make any input acceptable.
 11. **(d)** Polished output can hide errors: in the BCG study, quality ratings rose as correctness fell. (a) polish matters to readers, so it is scored, but separately; (b) many criteria can be checked by anyone against a source; (c) M3 reversed: polish is not evidence either way.
 13. Drift (in a tool or model over time). Triggers (any two): a model update or retirement; a change in price or terms; a new kind of input; a change of device, account, job or school.
 
@@ -459,7 +487,7 @@ Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter qu
 - 12.4 (§12.4) (1) Price, limits, checking time, learning time, data given up, switching cost. (2) Writing it yourself (12 min against 15); verification cost decided it. (3) Without it you cannot tell whether a tool saves anything once checking is counted.
 - 12.5 (§12.5) (1) Training; retention and access; whose contract; the input's data class. (2) Either kind: it is your own non-sensitive work, but use consumer terms only if you accept their training and retention terms. (3) Remove names; use placeholders; describe without confidential details.
 - 12.6 (§12.6) (1) Frame and criteria, prompt, test inputs, fresh chats with memory and standing instructions off, records. (2) Correctness (C1, checked against the source) and polish; a high polish score hid the error. (3) It is where a tool is likely to fill a gap with something invented.
-- 12.7 (§12.7) (1) Use; use with a named check; use only as a lead; do not use. (2) "Do not use: blocked": a medical note is Confidential Data, which goes to neither kind of tool in this course; the gate is a veto, so the score does not matter. (3) Predicted: not tested; tested once: one run only.
+- 12.7 (§12.7) (1) Use; use with a named check; use only as a lead; do not use. (2) "Do not use: blocked": a medical note is restricted or legally protected information, which goes to neither kind of tool for work in this book; the gate is a veto, so the score does not matter. (3) Predicted: not tested; tested once: one run only.
 - 12.8 (§12.8) (1) The definition in bold; the same named model's behavior changed on one narrow task, which shows a name is no guarantee but not how much every task drifts. (2) Any four: chat history, standing instructions, memory, files in one service, habits, licenses that end. (3) Re-run your bake-off from your own files when the model changes; keeping prompts and test inputs outside the tool makes it quick.
 - 12.9 (§12.9) (1) Gate first, because a blocked tool is out whatever its quality. (2) Any two: neither tool fits; the tools tied; no AI was faster; the gate blocked the better tool.
 
@@ -468,7 +496,7 @@ Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter qu
 - 12.2 (design): image editor's AI feature: domain tool; receives her image; edits image regions; provider's service under consumer terms. AI search: receives pages it retrieves; answers with links; consumer terms. Font-pairing website: suggests from a fixed list, so it may not be an AI tool at all; consumer terms. Two differences that matter for a poster: whether the tool receives her image, and whether its suggestions are generated or chosen from a fixed list.
 - 12.3 (education): users = about 400 first-year university students in one statistics course; tool and date = an AI tutor tool, fall 2025. Differences: age (ninth graders), subject, class size, whether homework is graded, whether the teacher designed the prompts.
 - 12.4 (accounting): no AI 10 × 15 = 150 min; licensed tool 10 × (1 + 8) = 90 min; free tool 10 × (1 + 12) = 130 min. Lower total: the licensed tool; verification cost decided it.
-- 12.5 (public health): Public Data, so both tools may receive it; opting out of training on the consumer tool is optional under the table.
+- 12.5 (public health): public information, so both tools may receive it; opting out of training on the consumer tool is optional under the table.
 - 12.6 (sociology): edge input: Tool 1 put the five non-fitting answers under "Other" (meets the criterion); Tool 2 forced each into a theme (fails it). Verdict per input: both fine on typical answers; Tool 2 is not fit for data with answers outside the themes.
 - 12.7 (education): (2) questions: Tool 1 and Tool 2 both "use only as a lead" · automation (two unanswerable questions each); no AI "use" · floor (15 minutes, reliable). (3) Answer key: both tools "do not use" · — (checking means answering every question anyway); no AI "use" · floor.
 - 12.8 (nursing): further triggers: a new device or account (the shared lab computer: memory and standing instructions may differ); a change in the tool's terms; a new kind of input.
@@ -524,9 +552,9 @@ Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter qu
 5. Investigators traced the calls through phone-network records, with an industry traceback group and two call-blocking companies, to a Texas company and a carrier; researchers attributed the voice to one AI tool, which the state could not confirm (Johnson, 2024). In this case, records, not listening, identified the calls.
 
 ### Optional artifact: keys to the two provided test items {.unnumbered}
-*(Read only after your test record is written. Items are on eLearning only.)*
+*(Read only after your test record is written. Items are on your course site only.)*
 - **Item P1 (a public-domain photo of a library building, captioned with the building's name and the year it opened):** authentic as captioned. Earliest version: the library's own digital archive record of the photo, with the same caption and date; outside sources: the library's history page gives the same opening year. Verdict: supported. Remaining uncertainty: the exact date the photo was taken.
-- **Item P2 (an image of a flooded underpass in Port Calder, a fictional town, shared as "this morning"; on eLearning, with the same neutral band as every item, "COURSE SAMPLE — may be real or generated"):** generated. Signals: the credential names an AI image tool (a lead); earliest version: the dated search-results sheet shows no earlier copy and no match; outside sources: the sheet shows no news, weather or official report of the flood, and Port Calder appears in no gazetteer. Verdict: contradicted as a photo of a real flood. Remaining uncertainty: none about the claim.
+- **Item P2 (an image of a flooded underpass in Port Calder, a fictional town, shared as "this morning"; on the course site, with the same neutral band as every item, "COURSE SAMPLE — may be real or generated"):** generated. Signals: the credential names an AI image tool (a lead); earliest version: the dated search-results sheet shows no earlier copy and no match; outside sources: the sheet shows no news, weather or official report of the flood, and Port Calder appears in no gazetteer. Verdict: contradicted as a photo of a real flood. Remaining uncertainty: none about the claim.
 
 ## Chapter 14 — Agentic Workflows and Human Oversight {#sec-appendix-e-ch14 .unnumbered}
 
@@ -549,7 +577,7 @@ Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter qu
 3. Strong answers disagree: an agent's explanation is text the model produces; in the Opening Case the agent's message said the rollback could not work, and the user later said it did. Evidence comes from a log the system writes and from independent checks. They grant that an explanation can point to where to look. Weak answers treat the apology as a confession or call the agent a liar.
 
 ### Spaced Review {.unnumbered}
-1. Chapter 12's data gate: a check, made before any quality test, of whether a tool's data terms fit the class of the input. Members' phone numbers fall in Chapter 12's row 'Personal data about other people (names, contact details), and Controlled Data': no under consumer terms; under institutional terms only if the part needs it and the university's rules allow it (ask OIT if unsure). Otherwise remove the numbers from the input.
+1. Chapter 12's data gate: a check, made before any quality test, of whether a tool's data terms fit the class of the input. Members' phone numbers fall in Chapter 12's row 'Personal data about other people (names, contact details), and internal or confidential data': no under consumer terms; under institutional terms only if the part needs it and your institution's rules allow it (ask your institution's IT office if unsure). Otherwise remove the numbers from the input.
 3. It triggers an action: an automated decision (Chapter 11). The decision owner is the named person or body who set up the agent and answers for its result, for example the club's treasurer or officers; someone still answers, but only afterward.
 
 ### Case Study Questions {.unnumbered}
@@ -571,7 +599,7 @@ Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter qu
 - **14.1 events office:** (1) the template staff fill in by hand: staff fix and run every step, so no AI system is involved (a workflow run by people); (3) the chat tool for wording: a chat assistant; (4) the welcome-week system: an agent, since the model chooses which vendors to contact; what it may send is a separate permissions question.
 - **14.2 hotel booking:** pass 2: plan, tool call (booking site), observation (prices); pass 3: plan, tool call (compare), observation (one hotel); pass 4: plan, tool call (booking tool with the saved card), observation (confirmation). The approval gate belongs before pass 4's tool call: it pays and cannot easily be undone.
 - **14.3 report agent:** 0.9^8 ≈ 0.43: about 43 of 100 weekly reports would have no error, so more than half would contain at least one; add check points at the riskiest steps or cut steps.
-- **14.4 Lucía's chatbot, action 2:** an answer about a classmate's own taxes cannot be undone once acted on, and the classmate bears an error: keep it with a person (the chatbot points to a tax professional or the university's tax office), or route it to an approval gate; it should not answer automatically.
+- **14.4 Lucía's chatbot, action 2:** an answer about a classmate's own taxes cannot be undone once acted on, and the classmate bears an error: keep it with a person (the chatbot points to a tax professional or the institution's tax office), or route it to an approval gate; it should not answer automatically.
 - **14.5 social-media agent, fix 2:** a named officer approves; the approver sees the full post as it will appear, the account, the time, any images and their sources, and can edit or reject.
 - **14.6 café:** write: only a new categorized copy of the export; send: only to the owner, not directly to the accountant, until she checks; pay: nothing.
 - **14.7 data-cleaning log:** line 3 needs a person's check: removing 61 of 480 readings above 50 may delete real values (a hidden assumption, Chapter 11). A stop point should have fired at line 4 or 5: the same action repeated with no change ("same plan twice with no change → stop and hand back").
@@ -591,7 +619,7 @@ Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter qu
 
 ### Faded examples {.unnumbered}
 - **15.1, group project:** stored: chat history and memory, until deleted (and backups); seen by: reviewers if a chat is flagged, and everyone in the group chat; reused: may train future models unless the student opts out; out: the group chat. Boundary: between the pasted input and the tool. Under the section 12.5 table, classmates' names and phone numbers do not go into a consumer tool: use placeholders.
-- **15.2, twenty-five essays:** quasi-identifiers: street, sibling's first name, after-school job. Step 3: usually yes; the teacher's own notes, without those details, are enough to find themes (and the essays may be education records, Confidential Data in the table).
+- **15.2, twenty-five essays:** quasi-identifiers: street, sibling's first name, after-school job. Step 3: usually yes; the teacher's own notes, without those details, are enough to find themes (and the essays may be education records, restricted or legally protected data in the table).
 - **15.3, email assistant:** remove sending: the assistant drafts and the manager sends (or it reads only mail from known senders). It can still summarize and draft. A person still checks every draft and summary, because injected text can still change them.
 - **15.4, front desk:** the general manager's number in the staff directory, or in person; the front-office manager approves; no refund until both confirm.
 - **15.5, Marcus:** Risk B: medium ("plausible in ordinary use"; the lab file is a planted lead) · medium (lost quiz points, undoable with effort) · I. Risk C: low ("no sign"; multi-factor login) · low (only textbook content) · D for the stated terms or I with that reason; either evidence mark is accepted with the reason.
@@ -611,11 +639,11 @@ Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter qu
 3. Legs: the shared drive (private data), competitors' public pages (untrusted content), posting in the team chat (a way out). Layers (any two): least privilege (no drive access for research), an approval gate before posts, labels for page content, a reviewed log. Remove the drive access first: the task does not need private data. The summary still needs a person's check, since injected text can still change it.
 
 ### Review Questions C {.unnumbered}
-1. Strong answers disagree: de-identified is not anonymous (quasi-identifiers: about 87% likely unique on three facts; inference of personal attributes up to 85% on a first guess), and the section 12.5 table keeps Confidential Data out of every tool in the course. They grant that minimization and placeholders lower risk a great deal. Weak answers say "no names, no problem" or "nothing can be shared."
+1. Strong answers disagree: de-identified is not anonymous (quasi-identifiers: about 87% likely unique on three facts; inference of personal attributes up to 85% on a first guess), and the section 12.5 table keeps restricted or legally protected data out of every tool in any work with this book. They grant that minimization and placeholders lower risk a great deal. Weak answers say "no names, no problem" or "nothing can be shared."
 
 ### Spaced Review {.unnumbered}
 1. An injected instruction acts with whatever access the tool has; with only the access its step needs (read-only, no sending), an injected "send this file" cannot run (Ch. 14).
-3. Personal data about other people: "No" for consumer terms; an institutional tool only if the part needs it and the university's rules allow it (section 12.5). Better: remove names and numbers first.
+3. Personal data about other people: "No" for consumer terms; an institutional tool only if the part needs it and your institution's rules allow it (section 12.5). Better: remove names and numbers first.
 
 ### Case Study Questions {.unnumbered}
 1. One map: input = two programs' source code and a meeting transcript; tool at the provider; storage on outside servers (could not be retrieved, reported); reuse depending on the terms. The harm sat in the input and storage boxes, past the trust boundary.
@@ -741,7 +769,7 @@ Overall 364 of 400 (91.0%); Spanish first-year questions 28 of 40 (70.0%), hidde
 
 ### Faded examples {.unnumbered}
 
-- **18.1 A patient leaflet.** The free tool's terms say uploads may train its models, so the leaflet's text could be reused beyond the class; if the placement allowed it at all, use the university-provided tool, whose terms differ, or summarize from your own notes.
+- **18.1 A patient leaflet.** The free tool's terms say uploads may train its models, so the leaflet's text could be reused beyond the class; if the placement allowed it at all, use the tool her school provides, whose terms differ, or summarize from your own notes.
 - **18.2 Two ways to get books.** Use B: keeping a permanent library of pirated copies, including books never used for training, was a separate use with no transformative purpose; factor 1 leans against fair use. The court found use A fair and use B not.
 - **18.3 A product description.** Her rewritten and added sentences can be protected as her own expression if original; the tool's unchanged text cannot. If registered, the company identifies the AI-generated text and claims only her contribution.
 - **18.4 A listing.** By this book's reading, the agent (and the agency that posted the listing), who relied on and published the AI draft, is responsible; a check of the draft's numbers against the appraisal before posting would have caught it.
@@ -760,7 +788,7 @@ Overall 364 of 400 (91.0%); Spanish first-year questions 28 of 40 (70.0%), hidde
 
 ### Review Questions B {.unnumbered}
 
-1. Course: the syllabus and UTDSP5017 decide whether AI may be used for this study task; university: the data classes and approved tools; terms: a free consumer tool may train on uploads and keep them; copyright: uploading the whole chapter makes a copy of a protected work, which needs permission or an exception. A respectful route: flashcards from your own notes, short passages in a university-provided tool if the course allows it, or the publisher's own study tools. Full credit: four layers with a rule each, and a route.
+1. Course: the course's AI rule (and the institution's AI policy) decides whether AI may be used for this study task; institution: the data classes and approved tools; terms: a free consumer tool may train on uploads and keep them; copyright: uploading the whole chapter makes a copy of a protected work, which needs permission or an exception. A respectful route: flashcards from your own notes, short passages in a tool the institution provides or approves if the course allows it, or the publisher's own study tools. Full credit: four layers with a rule each, and a route.
 3. By this book's reading, the property-management company, as deployer, is responsible; link 2 failed (fee answers never checked against the lease); the disclaimer does not move the duty to check (inferred). Check: test fee and policy answers against the lease before launch and after each change; route lease questions to a person.
 
 ### Review Questions C {.unnumbered}
@@ -813,7 +841,7 @@ Overall 364 of 400 (91.0%); Spanish first-year questions 28 of 40 (70.0%), hidde
 ### Check Yourself {.unnumbered}
 **19.1** (1) What counts as correct and who confirms it; protected data; written rules; who bears an error (§19.1). (2) Health coursework includes placement work whose words can reach a patient, so the field's rules raise the floor to an approval gate; in business, a check point by the writer suffices (§19.1).
 **19.2** (1) The source or person a field accepts as able to confirm a result, e.g., the datasheet or standard in engineering, the archive record in history (§19.2). (2) In this book's reading: trained people are epigraphy's verification authority, and the model's first suggestion was still wrong in about 38% of restorations; experts choose among ranked suggestions (§19.2).
-**19.3** (1) The §12.5 table is the course floor; a field rule (placement policy, IRB protocol, consent form, HIPAA's de-identification standard, an employer's policy) can still say no (§19.3). (2) Any two: health information (HIPAA); education records (FERPA); research-participant data (informed consent, IRB); client files (contracts, professional duties) (§19.3).
+**19.3** (1) The §12.5 table is a starting floor; a field rule (placement policy, IRB protocol, consent form, HIPAA's de-identification standard, an employer's policy) can still say no (§19.3). (2) Any two: health information (HIPAA); education records (FERPA); research-participant data (informed consent, IRB); client files (contracts, professional duties) (§19.3).
 **19.4** (1) Syllabus and instructor, program, placement or employer, professional code and licensing board, journals and funders, law; start nearest because those rules are the most specific to your work, you can ask their writers, and they are often the strictest (§19.4). (2) Who checks, who discloses, and what data may go in (§19.4).
 **19.5** (1) It is the smallest working version, built to be run, checked and changed, and tested on three inputs; it claims nothing beyond them (§19.5). (2) The design (step map, action table, people points); A11 already graded them, so they earn points only if revised for the build and a run or the peer test shows them working on it (§19.5, A13 brief).
 **19.6** (1) They read your words as a non-specialist and do not share your blind spots about what the outputs should mean (§19.6). (2) When it describes or affects people; with three runs each, any gap is a lead, worth a bigger test, not a conclusion (§19.6).
@@ -856,7 +884,7 @@ Overall 364 of 400 (91.0%); Spanish first-year questions 28 of 40 (70.0%), hidde
 ### Review Questions A {.unnumbered}
 1. **(b)** A foundation for showing the competencies that prepare graduates for work and careers. (a) M3: self-reported skills are not the definition; (c) and (d) narrow it to a test score or to tools.
 3. **(a)** About 78 million jobs, or 7% of the jobs in the report's dataset (170 − 92). (b) gives the gross figure (M4); (c) adds created and displaced (that is churn, 22%); (d) is the displaced figure.
-5. A table that lists each entry with the course outcome it shows, the NACE competency it gives evidence of, and where the checks are. In A14 each row also has a one-line revision note and a privacy status.
+5. A table that lists each entry with the book's learning outcome it shows, the NACE competency it gives evidence of, and where the checks are. In A14 each row also has a one-line revision note and a privacy status.
 7. A revision trace records versions and what changed, who or what proposed it, and why; a verification trail records the checks behind a result: sources or recalculations, verdicts and what remained uncertain.
 9. Tools used; purpose; what you accepted, rejected or revised; how you verified it; where your judgment shaped the work.
 11. **(b)** The decision chain: asked, produced, kept/changed/rejected and why, checked, decided. (a) M6: leaves out every link; (c) cites a rule instead of evidence; (d) admits no ownership of the work.
@@ -867,7 +895,7 @@ Overall 364 of 400 (91.0%); Spanish first-year questions 28 of 40 (70.0%), hidde
 
 ### Review Questions C {.unnumbered}
 1. Strong answers take a position and use §20.2: one exact, dated, attributed sentence can show awareness of the field (the WEF's 2025 estimate from employers' 2024 expectations, all trends combined), but such numbers say nothing about the student and are easily misquoted as AI numbers; most portfolios are stronger without one. Weak answers treat the numbers as facts or reject all forecasts.
-3. Strong answers use the rubric: it scores structure and explanation, not accent, fluency or speed, and three minutes is a limit, not a pace; an alternative route exists through ARC (a recorded presentation plus a live conversation, or one written answer where ARC approves). They may still argue that live questioning disadvantages some students and propose further supports.
+3. Strong answers use the rubric: it scores structure and explanation, not accent, fluency or speed, and three minutes is a limit, not a pace; an alternative route exists with an approved accommodation through the institution's disability or accessibility office (a recorded presentation plus a live conversation, or one written answer where the accommodation allows it). They may still argue that live questioning disadvantages some students and propose further supports.
 
 ### Spaced Review {.unnumbered}
 1. The confusion is a finding: record it (step 3 unclear to a non-specialist), change the instructions, rerun with a new input, and show before, after, reason and check; if it goes beyond A13 as submitted, it is the portfolio's row-3 further change.
@@ -907,7 +935,7 @@ Overall 364 of 400 (91.0%); Spanish first-year questions 28 of 40 (70.0%), hidde
 ### Review Questions B {.unnumbered}
 
 1. "Protect patient privacy" — slogan; "The pharmacy's handbook: no patient data in unapproved software" — policy (employer); "Before I ask an AI tool about a drug interaction, I remove anything that identifies a customer, and I check the answer in the pharmacy's reference" — personal commitment (add a "because"); "The pharmacy's chatbot runs model X (as of March 2027)" — dated tool note; "Know and respect existing rules (ACM 2.3)" — professional code; "Be careful" — slogan. Rewrite, for example: *Before I rely on a dose or interaction from an AI tool, I check it in the pharmacy's reference and initial the check, because last month I caught an AI answer with the wrong maximum dose.*
-3. Fixed line, for example: *When a draft involves anything from students' records, I use only the office's approved tool and note the tool in the file, because last term my own draft with a student's ID number ended up in a free tool's history.* Boundaries line: *This code works inside the course's zones (section 1.5), the university's data classes and the office's written AI rule; where one is stricter, it wins; when a rule is unclear, I ask the office manager.*
+3. Fixed line, for example: *When a draft involves anything from students' records, I use only the office's approved tool and note the tool in the file, because last term my own draft with a student's ID number ended up in a free tool's history.* Boundaries line: *This code works inside my course's AI rules, my institution's data classes and the office's written AI rule; where one is stricter, it wins; when a rule is unclear, I ask the office manager.*
 
 ### Review Questions C {.unnumbered}
 

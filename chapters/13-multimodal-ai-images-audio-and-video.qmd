@@ -4,7 +4,7 @@
 
 ![Chapter 13 at a glance. An optional chapter that strengthens the Verify step of the AI Work Loop, then Disclose.](../figures/out/color/f13-01-chapter-map.svg){#fig-13-1 fig-alt="Chapter map: how media is made (13.1–13.3), signals and limits (13.4–13.6), checking (13.7–13.8, labs, case); Work Loop with Verify highlighted."}
 
-**Chapter 13 at a glance.** This is an optional chapter. You read it alongside Chapter 12, and nothing in it is on an exam. Chapter 8 taught you to check a claim in a text. This chapter asks what changes when the claim is a picture, a voice or a video, and what does not.
+**Chapter 13 at a glance.** This is an optional chapter. It pairs well with Chapter 12, and the book does not treat it as exam material. Chapter 8 taught you to check a claim in a text. This chapter asks what changes when the claim is a picture, a voice or a video, and what does not.
 
 **Time, at a steady pace (150 words a minute); allow more if you read more slowly or are reading in a second language:**
 
@@ -12,7 +12,7 @@
 - **Full route, about 57 minutes:** everything from this page through the Case Study, not counting the labs. About 66 minutes with the Ethics Lens, Career Connection, From the Field and Summary.
 - **Extra, all optional:** Your Turn boxes, the four labs (15–35 minutes each), the end-of-chapter questions (about 15 minutes to read, an hour to answer) and the verification protocol (about 80–100 minutes).
 
-Week 10's required reading is Chapter 12, which already fills the week. Read the fast route this week if you have time, otherwise in week 11, and the rest before week 12, when Chapter 15 returns to this chapter's opening case. Worked examples show every step, faded examples leave some steps for you, and Your Turn and Check Yourself boxes are ungraded practice. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
+If you are reading it alongside Chapter 12, start with the fast route and read the rest before Chapter 15, which returns to this chapter's opening case. Worked examples show every step, faded examples leave some steps for you, and Your Turn and Check Yourself boxes are ungraded practice. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
 
 ::: {.callout-note title="Plain words for this chapter"}
 - **Token:** a unit of text (a word, part of a word, or a symbol) that a language model receives and produces (Chapter 3). **Context window:** the space for everything a language model receives in one turn, measured in tokens (Chapter 3).
@@ -52,7 +52,7 @@ Here is the puzzle. **The employee doubted an email, but believed a video call. 
 
 ## Learning Objectives {.unnumbered}
 
-Each objective names the course outcome it serves: LO1 is the outcome on explaining what AI systems are, how they work in outline and how they fail; LO5 is the outcome on applying privacy, security, fairness, transparency and human-oversight principles; LO3 is the outcome on verifying outputs. Framework tags refer to the AI Fluency framework (Dakan & Feller, 2025), the UNESCO (United Nations Educational, Scientific and Cultural Organization) AI Competency Framework for Students, and the AI4K12 initiative's "Five Big Ideas in AI."
+Each objective names the book's learning outcome it serves: LO1 is the outcome on explaining what AI systems are, how they work in outline and how they fail; LO5 is the outcome on applying privacy, security, fairness, transparency and human-oversight principles; LO3 is the outcome on verifying outputs. Framework tags refer to the AI Fluency framework (Dakan & Feller, 2025), the UNESCO (United Nations Educational, Scientific and Cultural Organization) AI Competency Framework for Students, and the AI4K12 initiative's "Five Big Ideas in AI."
 
 After this chapter you will be able to:
 
@@ -88,7 +88,7 @@ Three consequences follow. First, the model receives a grid of patches, shrunk f
 ::: {.callout-note title="Worked Example: Hana's Streetcar"}
 *Constructed example.* Let's take a scan of a drawing. For the zine's history issue, Hana drew a 1920s Dallas streetcar by hand, working from a public archive photo. They want a quick description of the scan.
 
-**Step 1 — The data gate first.** Hana's drawings are their work, and they do not want them used for training. They read the data terms of two tools and choose a university-provided tool such as Microsoft Copilot Chat (as of October 2026), whose terms say prompts are not used to train its foundation models (Chapter 12). They remove the scan's location data. The data gate is passed.
+**Step 1 — The data gate first.** Hana's drawings are their work, and they do not want them used for training. They read the data terms of two tools and choose a tool their institution provides or approves (for example, an enterprise chat assistant with data protection), whose terms say prompts are not used to train its foundation models (Chapter 12). They remove the scan's location data. The data gate is passed.
 
 **Step 2 — What the model received.** A scan resized to roughly 1,500 image tokens, plus the prompt. Not the file's date, not their name, not the paper texture.
 
@@ -459,19 +459,19 @@ The optional artifact below asks you to write and test your own protocol. It ass
 
 ## Hands-on Labs {.unnumbered}
 
-All four labs are optional and can be done at home. The labs say what to do, not which buttons to press. In Compass (optional): current tool steps for reverse image search and for reading content credentials. **Rules for every lab:** no item may show an identifiable person, including you, and no photo may show your home or where you live; run the data gate (Chapter 12) before you upload anything, remembering that an uploaded file and its location data reach the provider; never generate an image, voice or video of a real person (the only exception is Lab 13.4's clips, made for the course with the speakers' written consent).
+All four labs are optional and can be done at home. The labs say what to do, not which buttons to press. In Compass (optional): current tool steps for reverse image search and for reading content credentials. **Rules for every lab:** no item may show an identifiable person, including you, and no photo may show your home or where you live; run the data gate (Chapter 12) before you upload anything, remembering that an uploaded file and its location data reach the provider; never generate an image, voice or video of a real person (the only exception is Lab 13.4's clips, made for these labs with the speakers' written consent).
 
 ### Lab 13.1: Describe It, Then Check (Studio · 25 minutes · optional) {.unnumbered}
 
 *(O3 · LO5 · Evaluate)* *10-minute version: steps 1–3.*
 
-1. **Choose an image (2 min):** your own drawing, chart, or photo of an object or a public place, with no people and not your home, or a provided image (eLearning).
+1. **Choose an image (2 min):** your own drawing, chart, or photo of an object or a public place, with no people and not your home, or a provided image (on your course site).
 2. **Data gate (5 min):** check the tool's terms on training with uploads, and remove location data if you can; if you did Lab 12.2, reuse your notes.
 3. **Your alt text first (5 min):** one sentence of purpose, then your alt text.
 4. **Tool draft and check (8 min):** ask a tool for alt text; mark each claim keep, fix or cut against the image.
 5. **Decide (5 min):** which version should a screen-reader user get, and why?
 
-*Audio extension (optional, 10 more minutes):* transcribe the provided clip, recorded for the course by a consenting speaker, and mark every word that differs from the provided script.
+*Audio extension (optional, 10 more minutes):* transcribe the provided clip, recorded for this lab by a consenting speaker, and mark every word that differs from the provided script.
 
 ### Lab 13.2: Trace an Image (Check It · 35 minutes · optional) {.unnumbered}
 
@@ -487,7 +487,7 @@ All four labs are optional and can be done at home. The labs say what to do, not
 
 ### Lab 13.4: The Ear Test (Break It · 15 minutes · optional) {.unnumbered}
 
-*(O5 · LO5 · Evaluate)* *10-minute version: five clips.* Ten provided short clips, recorded for the course by speakers who consented, some replaced by synthetic versions made with their written consent. Before each, write your answer (real or synthetic) and your confidence. Then score yourself. Compare the share of synthetic clips you caught with the 73% of deepfakes caught in Mai et al. (2023), and compare your average confidence with your accuracy (Chapter 7's calibration of your own confidence: how closely your confidence matches how often you are right). One sentence: what does this mean for a phone call asking you to act? *Non-audio route:* judge the provided transcript-and-spectrogram pairs (a spectrogram is a picture of a sound's pitches over time), or skip without penalty.
+*(O5 · LO5 · Evaluate)* *10-minute version: five clips.* Ten provided short clips, recorded for this lab by speakers who consented, some replaced by synthetic versions made with their written consent. Before each, write your answer (real or synthetic) and your confidence. Then score yourself. Compare the share of synthetic clips you caught with the 73% of deepfakes caught in Mai et al. (2023), and compare your average confidence with your accuracy (Chapter 7's calibration of your own confidence: how closely your confidence matches how often you are right). One sentence: what does this mean for a phone call asking you to act? *Non-audio route:* judge the provided transcript-and-spectrogram pairs (a spectrogram is a picture of a sound's pitches over time), or skip without penalty.
 
 ## Case Study: The Meeting, Revisited {.unnumbered}
 
@@ -632,7 +632,7 @@ This chapter is optional and not examinable. The questions below follow the exam
 
 ### Spaced Review {.unnumbered}
 
-Come back to these a few days after reading. Items 1 to 4 come from the chapters you read before this one; item 5 connects to Chapter 12, which you read this week.
+Come back to these a few days after reading. Items 1 to 4 come from the chapters you read before this one; item 5 connects to Chapter 12, which pairs with this chapter.
 
 1. *(Chapter 11 · LO3 · Understand)* Automation bias is the tendency to over-rely on automated output. A detector reports "92% likely real" for a clip with no known source. How could automation bias lead someone to share it?
 2. *(Chapter 11 · LO3 · Analyze)* A proxy is a clue that stands in for something else. How is "it looks realistic" a proxy for "it is real," and why can the proxy fail?
@@ -650,7 +650,7 @@ Come back to these a few days after reading. Items 1 to 4 come from the chapters
 
 ### Application Assignment (optional): Verification Protocol {.unnumbered}
 
-*(O6 · LO5, LO3 · Create)* Optional and ungraded unless your instructor chooses to give feedback; it is not one of the course's graded weekly assignments. It assumes sections 13.4–13.5 or the recap at the start of 13.7. **Time:** about 80–100 minutes, any time in weeks 10 to 12 (allow more if you work more slowly or are working in a second language): about 5 minutes to read this brief and rubric, 10 for scope and triggers, 10 for channels and checks, 12–18 for each of three test items, 5 for the disclosure rule, 8 for the revision and its re-check, and 7 for the declaration. A one-page template is on eLearning. It can serve as evidence in the risk review (A12, Chapter 15) and in your personal code of practice (Chapter 21).
+*(O6 · LO5, LO3 · Create)* Optional and ungraded unless your instructor chooses to give feedback; it is not one of the book's numbered portfolio assignments (A1–A14). It assumes sections 13.4–13.5 or the recap at the start of 13.7. **Time:** about 80–100 minutes, at any time before you reach Chapter 15 (allow more if you work more slowly or are working in a second language): about 5 minutes to read this brief and rubric, 10 for scope and triggers, 10 for channels and checks, 12–18 for each of three test items, 5 for the disclosure rule, 8 for the revision and its re-check, and 7 for the declaration. A one-page template is on your course site. It can serve as evidence in the risk review (A12, Chapter 15) and in your personal code of practice (Chapter 21).
 
 **What to build:**
 
@@ -658,7 +658,7 @@ Come back to these a few days after reading. Items 1 to 4 come from the chapters
 2. **Triggers:** at least four signals that start your protocol.
 3. **Pause and channel rule:** what you do first, and the out-of-band channels you will use, named by role, never by real numbers or addresses.
 4. **Checks by stakes:** which checks you run, in which order, and where you stop for low, medium and high stakes, with what each provenance signal can and cannot show.
-5. **Test record:** apply the protocol to the two provided dated items on eLearning (no people in them; not the Lab 13.2 items) and to one item of your own. Your own item should be one whose origin you can prove, so you can check your verdict against the truth: for example, an image you made, with the original file and when and where you made it; it must show no person's face or voice. For each item: triggers fired, checks run, findings, verdict and remaining uncertainty, and time spent. The keys to the provided items are in Appendix E; read them only after your record is written.
+5. **Test record:** apply the protocol to the two provided dated items on your course site (no people in them; not the Lab 13.2 items) and to one item of your own. Your own item should be one whose origin you can prove, so you can check your verdict against the truth: for example, an image you made, with the original file and when and where you made it; it must show no person's face or voice. For each item: triggers fired, checks run, findings, verdict and remaining uncertainty, and time spent. The keys to the provided items are in Appendix E; read them only after your record is written.
 6. **Revision:** one change you made after the test, and why.
 7. **Disclosure rule:** what you will say, and where, when media you share or deliver was generated or altered.
 8. **AI Use Declaration:** tools, purpose, what you accepted, rejected or revised, how you verified it, and where your own judgment shaped the work.

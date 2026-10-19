@@ -5,7 +5,7 @@
 | Type | Check It (optional, paper) |
 | Objectives | O2 (LO5) · tags 4D:DISC |
 | Time | 15 minutes |
-| Materials | Lab sheet with eight constructed uses (eLearning; printed) |
+| Materials | Lab sheet with eight constructed uses (on your course site; printed) |
 
 ## The eight uses (constructed)
 1. A student makes flashcards from her own textbook for personal study.
@@ -31,7 +31,7 @@ Uses 3, 7 and 8 share Ross's features (same purpose or market as the original; c
 None (optional practice). Notes in Appendix E (Lab notes).
 
 ## Accessibility and alternatives
-Accessible table version on eLearning.
+Accessible table version on your course site.
 
 ## Safety and privacy
 Constructed uses only. Not legal advice.

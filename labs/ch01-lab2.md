@@ -4,8 +4,8 @@
 |---|---|
 | Type | Explore + Reflect |
 | Objectives | O3, O5, O6 (LO1, LO4, LO7) · tags 4D:DISC, 4D:DIL, UNESCO:HCM-A |
-| Time | 45 minutes, Thursday lab (group share optional if time is short) |
-| Materials | Free or university-provided AI tool; your three tasks from the 1.3 Your Turn; the A1 template (Figure 1.14) |
+| Time | 45 minutes, lab session (group share optional if time is short) |
+| Materials | A free AI tool or one your institution provides or approves; your three tasks from the 1.3 Your Turn; the A1 template (Figure 1.14) |
 
 ## Steps (tool-neutral)
 1. Bring the three tasks you listed in the 1.3 Your Turn (one you expect inside the frontier, one outside, one unsure).
@@ -30,7 +30,7 @@ Inside-frontier tasks mostly pass with light checking; outside-frontier tasks pr
 Lab notes that become A1 parts 1–3. Scored as part of A1 (see the chapter's A1 rubric).
 
 ## Accessibility and alternatives
-Students without AI access, or who prefer not to use it, use the provided dated outputs on eLearning for three tasks and design the tests. Screen-reader-friendly template in Compass and on eLearning.
+Students without AI access, or who prefer not to use it, use the provided dated outputs on the course site for three tasks and design the tests. Screen-reader-friendly template in Compass and on the course site.
 
 ## Safety and privacy
 No personal, patient, client or institutional data. Use public or invented content.

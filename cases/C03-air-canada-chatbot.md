@@ -34,7 +34,7 @@ Finding of negligent misrepresentation, with all five elements found: duty of ca
 Frame: decide which policy questions a chatbot may answer and which go to a person. Verify: test every policy answer against the policy page with known-answer questions before launch and after each policy change. Decide: where the chatbot and the page disagree, the page wins and the chatbot is corrected. Disclose: tell customers what the chatbot is and where the binding policy lives (whether a disclaimer changes responsibility was not before the tribunal; Chapter 18).
 
 ## Each appearance in the book has one job (Decision 7, ch04 blueprint)
-Chapter 4: facts (Opening Case), failure-to-harm chain (4.7), tree label and better workflow (Case Study). Chapter 10 (week 7, reading R7): disclosure and communication at work. Chapter 18: liability and governance.
+Chapter 4: facts (Opening Case), failure-to-harm chain (4.7), tree label and better workflow (Case Study). Chapter 10 (a recommended reading): disclosure and communication at work. Chapter 18: liability and governance.
 
 ## Questions
 See the Chapter 4 Case Study Questions.

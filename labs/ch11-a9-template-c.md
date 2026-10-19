@@ -1,6 +1,6 @@
 # A9 Scenario C — Your Own Choice Among Options (template)
 
-*Use this template before Thursday's lab (about 10 minutes). Options, not people: never rank real candidates, employees, classmates, patients or customers. Use only your own data, and put it only into a university-provided tool such as Microsoft Copilot Chat (as of October 2026), or work without AI (the alternative assignment).*
+*Use this template before the lab session (about 10 minutes). Options, not people: never rank real candidates, employees, classmates, patients or customers. Use only your own data, and put it only into a tool your institution provides or approves (for example, an enterprise chat assistant with data protection), or work without AI (the alternative assignment).*
 
 **1. Decision statement** (one sentence): what you are choosing, by when, and who owns the choice.
 

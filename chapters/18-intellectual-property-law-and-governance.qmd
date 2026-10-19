@@ -6,7 +6,7 @@
 
 **Chapter 18 at a glance.** Every AI use happens under rules: laws, terms and policies. This chapter covers copyright in training and output, responsibility for AI errors, EU and U.S. regulation, and one A12 risk (Chapter 15).
 
-**Time:** about 16 minutes for the Core sections 18.1–18.5 and about 29 minutes for the whole Core package (this page, the Opening Case, the Warm-up, sections 18.1–18.6 with Check Yourself, the Summary), at a steady pace (150 words a minute), with about 5 minutes of answering; allow more if you read more slowly or are reading in a second language. Your Turns are Lab 15.1 step 6 prompts. Faded examples, Review Questions A–C, the Spaced Review and the Case Study Questions are final-exam practice; Discussion Questions are for class; R14 and R15 are recommended. The Case Study, Ethics Lens, Career Connection, From the Field, the Deep sections and Labs 18.1–18.3 are optional. Legal citations in parentheses are not examinable. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
+**Time:** about 16 minutes for the Core sections 18.1–18.5 and about 29 minutes for the whole Core package (this page, the Opening Case, the Warm-up, sections 18.1–18.6 with Check Yourself, the Summary), at a steady pace (150 words a minute), with about 5 minutes of answering; allow more if you read more slowly or are reading in a second language. Your Turns are Lab 15.1 step 6 prompts. Faded examples, Review Questions A–C, the Spaced Review and the Case Study Questions are final-exam practice; Discussion Questions are for class or a study group; the two recommended readings in Further Reading are optional. The Case Study, Ethics Lens, Career Connection, From the Field, the Deep sections and Labs 18.1–18.3 are optional. Legal citations in parentheses are not examinable. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
 
 **The question of this chapter:** *Who sets the rules for AI — on training data, on outputs, on mistakes and on risky uses — and how do you find the ones that apply to you?* The Chapter Summary answers it.
 
@@ -36,7 +36,7 @@ After this chapter you will be able to:
 - **O2 — Analyze** a training-data dispute with the four fair-use factors, using the 2025–2026 decisions. *(LO5 · AI Fluency: Discernment · UNESCO: ethics of AI, Understand)*
 - **O3 — Determine** which parts of an AI-assisted work copyright can protect and what to disclose when registering it. *(LO5, LO4 · AI Fluency: Diligence, Description · UNESCO: ethics of AI, Apply)*
 - **O4 — Judge** whether a disclaimer or an oversight step moves responsibility for an AI system's error. *(LO5 · AI Fluency: Diligence · UNESCO: human-centred mindset, Apply)*
-- **O5 — Apply** the EU AI Act's risk tiers, and a dated U.S. or Texas rule, to an AI use. *(LO5 · AI Fluency: Discernment · UNESCO: ethics of AI, Apply)*
+- **O5 — Apply** the EU AI Act's risk tiers, and a dated U.S. federal, state or city rule, to an AI use. *(LO5 · AI Fluency: Discernment · UNESCO: ethics of AI, Apply)*
 
 ::: {.callout-note title="Warm-up (ungraded)"}
 Answer from what you know today.
@@ -56,13 +56,13 @@ For each answer, write how sure you are, from 0 to 100%.
 
 Several layers of rules apply to every AI use at once. **Law** is the set of rules made by a government and enforced by courts or agencies: **statutes** (passed by a legislature), **regulations** (made by an agency, or adopted by the EU), **executive orders** (a president's or governor's instructions to government) and **case law** (court decisions that later courts follow). **Jurisdiction** is the area, such as a country, a state or a city, whose law applies.
 
-Closer to you are **agreements**: a tool's **terms of service** (the contract a provider sets for using its tool), a **license** (permission to use something on stated conditions) and contracts. Closest is your organization's **policy**: the written rules of your course, university or employer. **Governance** is the rules, roles and checks that decide how AI may be used and who is responsible for it. The **Regulation Map** pictures these layers.
+Closer to you are **agreements**: a tool's **terms of service** (the contract a provider sets for using its tool), a **license** (permission to use something on stated conditions) and contracts. Closest is your organization's **policy**: the written rules of your course, your institution or your employer. **Governance** is the rules, roles and checks that decide how AI may be used and who is responsible for it. The **Regulation Map** pictures these layers.
 
 ![Every AI use sits under several layers of rules at once.](../figures/out/color/f18-03-regulation-map.svg){#fig-18-3 fig-alt="Regulation Map: five law boxes (EU, U.S. federal law, executive policy, states, cities), terms, contracts and your policy pointing to your AI use."}
 
-**The nearest layer.** UT Dallas policy UTDSP5017 (March 2025) lets each instructor permit, partly permit or prohibit AI use in the syllabus; where permitted, students cite and verify AI output (The University of Texas at Dallas, 2025). This course's three zones (Chapter 1) are its choice. Which data may enter which tool follows the university's data classes (the table in section 12.5).
+**The nearest layer.** Your institution may have a policy on AI in academic work, and your instructor sets the rule for each course: AI permitted, partly permitted or prohibited; where it is permitted, you may be asked to cite and verify AI output. Chapter 1's three zones are one way a course can state that rule. Which data may enter which tool follows your institution's data classes (the table in section 12.5 is a starting floor; your institution's own classification decides).
 
-**Privacy law, applied to you.** **FERPA** (the Family Educational Rights and Privacy Act) protects students' education records, such as grades (U.S. Department of Education, n.d.). A tutor or student employee who sees them may share them only as the university's rules allow; in this course, that means no AI tool (the table in section 12.5). **HIPAA** (the Health Insurance Portability and Accountability Act) protects health information held by health plans, most health-care providers and the companies that handle it for them (U.S. Department of Health and Human Services, n.d.); in a clinical placement, patient information falls under it and the placement's rules. Other people's personal data may need their consent before you share it. Many states have privacy laws for businesses; Texas's, the Texas Data Privacy and Security Act (in force since July 1, 2024), does not apply to state agencies such as a public university (Texas Department of Information Resources, n.d.).
+**Privacy law, applied to you.** **FERPA** (the Family Educational Rights and Privacy Act) protects students' education records, such as grades (U.S. Department of Education, n.d.). A tutor or student employee who sees them may share them only as the institution's rules allow; treat them as restricted, legally protected data (the table in section 12.5), which stays out of AI tools unless those rules expressly allow a tool for it. **HIPAA** (the Health Insurance Portability and Accountability Act) protects health information held by health plans, most health-care providers and the companies that handle it for them (U.S. Department of Health and Human Services, n.d.); in a clinical placement, patient information falls under it and the placement's rules. Other people's personal data may need their consent before you share it. Many states also have privacy laws for businesses; whether one reaches a public body, such as a public college, depends on the state's law, so check its text before you rely on it.
 
 **A working rule.** Follow the strictest rule that applies, and when a rule is unclear, ask its owner in writing and keep the answer.
 
@@ -79,7 +79,7 @@ A bakery owner asks Hana for menu illustrations "like the ones an image generato
 ![Hana's menu job touches copyright, a contract and Hana's own rule.](../figures/out/color/f18-04-map-hana.svg){#fig-18-4 fig-alt="Regulation Map with U.S. federal law, contracts and organization policy highlighted, each with a note for Hana's menu job."}
 
 ::: {.callout-note title="Faded Example: A Patient Leaflet"}
-**Field:** Health. A nursing student wants an AI tool to summarize a hospital's patient leaflet for a class presentation. Facts: the leaflet was handed out on the ward during her clinical placement, so it is a placement document; it says "© [hospital]"; the placement's rules forbid taking placement documents off site; she planned to use a free tool whose terms (constructed) say uploads may be used to train its models; the university offers a university-provided tool such as Microsoft Copilot Chat (as of October 2026).
+**Field:** Health. A nursing student wants an AI tool to summarize a hospital's patient leaflet for a class presentation. Facts: the leaflet was handed out on the ward during her clinical placement, so it is a placement document; it says "© [hospital]"; the placement's rules forbid taking placement documents off site; she planned to use a free tool whose terms (constructed) say uploads may be used to train its models; her school provides a tool it approves (for example, an enterprise chat assistant with data protection).
 
 **Policy layer (filled):** the placement rule forbids taking the leaflet off site, so the plan stops here unless the placement says otherwise.
 
@@ -243,7 +243,7 @@ The Act also reaches providers abroad whose systems are sold or used in the EU.
 ::: {.callout-warning title="Status box: as of October 2026 (check the current status)"}
 1. **EU:** an amending law, Regulation (EU) 2026/1744, moved the high-risk duties to December 2, 2027 for listed uses and August 2, 2028 for regulated products; transparency duties apply from August 2, 2026 (for systems already on the market, the marking duty from December 2, 2026).
 2. **U.S. federal:** no single AI law; existing laws apply, such as copyright, consumer protection and the federal ban on job discrimination (Title VII of the Civil Rights Act). A December 2025 presidential order set up a federal challenge to state AI laws (Executive Order 14365).
-3. **Texas:** the state's AI law (TRAIGA, the Texas Responsible Artificial Intelligence Governance Act, in force January 1, 2026) bans some intentional uses, such as manipulating people toward self-harm, and requires a "governmental agency" and health-care providers to tell people they are dealing with AI; its exclusion of universities covers another term, so whether that duty reaches public universities is unsettled (this book's reading). A 2025 law (Senate Bill 1964) requires state agencies to disclose public-facing AI unless a reasonable person would already know; because Texas law's definition of "state agency" includes public universities, this book reads the duty as covering them (Texas S.B. 1964, 2025).
+3. **Texas (one state's example):** the state's AI law (TRAIGA, the Texas Responsible Artificial Intelligence Governance Act, in force January 1, 2026) bans some intentional uses, such as manipulating people toward self-harm, and requires a "governmental agency" and health-care providers to tell people they are dealing with AI. A 2025 law (Senate Bill 1964) requires state agencies to disclose public-facing AI unless a reasonable person would already know (Texas S.B. 1964, 2025). For public institutions in Texas, such as public colleges and universities, the two laws differ: TRAIGA's exclusion of universities covers another term, so whether its disclosure duty reaches them is unsettled, while Texas law's definition of "state agency" includes public universities, so this book reads S.B. 1964's duty as covering them (this book's reading). In another state, look up your state's own rules.
 4. **New York City:** since July 5, 2023, an employer using an automated hiring tool needs a yearly bias audit, a published summary and notice to candidates (Local Law 144; New York City Department of Consumer and Worker Protection, n.d.).
 :::
 
@@ -267,7 +267,7 @@ The Act also reaches providers abroad whose systems are sold or used in the EU.
 :::
 
 ::: {.callout-important title="Your Turn (Lab 15.1, step 6, prompt e; about 1 minute)"}
-If your workflow were used in the EU, which tier would it fall in? Name one U.S. or Texas rule that may apply, with its date.
+If your workflow were used in the EU, which tier would it fall in? Name one U.S. rule (federal, state or city) that may apply, with its date.
 :::
 
 ::: {.callout-tip title="Check Yourself 18.5"}
@@ -280,7 +280,7 @@ If your workflow were used in the EU, which tier would it fall in? Name one U.S.
 
 A12's register (Chapter 15) has five risks; this chapter supplies the **rules-and-rights risk**: "risk of breaking [a named rule] or of [a named person] losing [a named right]," with the rule's own text as evidence. A **right** is something a law or agreement lets a person control or claim, such as copyright or privacy. You draft it in Lab 15.1, step 6 (minutes 49–54), and finish it at home in about 3 minutes.
 
-1. **Scratch list:** your answers to prompts a–e on your data-flow map (@fig-18-14). Where to look: the tool's terms; the syllabus and UTDSP5017; the university's data classes; an employer's, client's or placement's policy; one law from this chapter.
+1. **Scratch list:** your answers to prompts a–e on your data-flow map (@fig-18-14). Where to look: the tool's terms; your course's AI rule and your institution's AI policy; your institution's data classes; an employer's, client's or placement's policy; one law from this chapter.
 2. **Choose** the rule with the **highest stakes** (whose breach would harm people most or be hardest to undo); name its layer and write the risk, with who is harmed.
 3. **Evidence:** D only if you opened the rule's own text for this tool and data and cite its section; for a law, I with a reason is acceptable ("read this chapter's summary, not the statute"). A provided scenario's rules paragraph (section 15.7) counts as the rule's text.
 4. **Rate, mitigate, ask:** likelihood and impact (Chapter 15's anchors); a mitigation with a risk owner; the rule's owner with your question. End: "This records which rules to check and whom to ask; it is not a legal opinion."
@@ -353,13 +353,13 @@ Laws on synthetic media protect the people shown and the public; they do not set
 
 ## Hands-on Labs {.unnumbered}
 
-The labs say what to do, not which buttons to press. Use a university-provided tool such as Microsoft Copilot Chat (as of October 2026) where you can; no lab needs one. Never put personal or confidential information into a prompt. The A12 risk is drafted in Lab 15.1, step 6 (Chapter 15); these labs are optional.
+The labs say what to do, not which buttons to press. Use a tool your institution provides or approves (for example, an enterprise chat assistant with data protection) where you can; no lab needs one. Never put personal or confidential information into a prompt. The A12 risk is drafted in Lab 15.1, step 6 (Chapter 15); these labs are optional.
 
-*In Compass (optional) and on eLearning:* step-by-step notes for current tools and the lab sheets.
+*In Compass (optional) and on your course site:* step-by-step notes for current tools and the lab sheets.
 
 ### Lab 18.1: Read the Terms (Explore · 20 minutes · optional) {.unnumbered}
 
-For one AI tool you use, find on the provider's own pages what its terms say about (1) who holds rights in outputs, (2) whether your inputs may train its models, (3) what you may not use it for, and (4) how the terms can change. Record the page, the section and the date. Compare with a classmate's tool. Change nothing in your account during the lab. **Deliverable (ungraded):** a four-row table, one row per question, each with a quoted phrase under 15 words or a paraphrase, the section and the date. **Accessibility:** a printed set of dated, glossed excerpts from two providers' terms is on eLearning if you prefer not to search.
+For one AI tool you use, find on the provider's own pages what its terms say about (1) who holds rights in outputs, (2) whether your inputs may train its models, (3) what you may not use it for, and (4) how the terms can change. Record the page, the section and the date. Compare with a classmate's tool. Change nothing in your account during the lab. **Deliverable (ungraded):** a four-row table, one row per question, each with a quoted phrase under 15 words or a paraphrase, the section and the date. **Accessibility:** a printed set of dated, glossed excerpts from two providers' terms is on your course site if you prefer not to search.
 
 ### Lab 18.2: Fair-Use Factor Sort (Check It · 15 minutes · optional) {.unnumbered}
 
@@ -414,7 +414,7 @@ The law answers narrower questions. In *Bartz*, the settled claims concerned pir
 | Designer or illustrator | Copyright in AI-assisted work, registration disclosure, client contracts (Hana) | Which parts of this deliverable did a person author? |
 | Compliance or risk analyst | EU AI Act tiers for products sold in Europe; governance records | Which tier is this use in, and who owns the record? |
 | Software engineer | Model licenses and terms; records of training-data sources | What does the license let us do, and for how long? |
-| Health administrator | HIPAA (section 18.1) and Texas TRAIGA's disclosure duty for health-care providers | How do patients learn they are talking with AI? |
+| Health administrator | HIPAA (section 18.1) and state disclosure duties for health-care providers, such as Texas TRAIGA's | How do patients learn they are talking with AI? |
 | Journalist or publisher | Licensing deals and lawsuits over training data | Was this archive licensed for training? |
 
 ## From the Field {.unnumbered}
@@ -445,10 +445,10 @@ affirmed · appeals court · authorship (in copyright) · case law · copyright 
 
 Items 6 and 11 are short answers.
 
-1. *(O1 · LO5 · Apply)* Your course syllabus prohibits AI for an essay; your part-time employer allows a tool for work emails. You want to use the tool for the essay. What applies?\
-   (a) The employer's rule, because an employer's policy outranks a course syllabus.\
+1. *(O1 · LO5 · Apply)* Your course's AI rule prohibits AI for an essay; your part-time employer allows a tool for work emails. You want to use the tool for the essay. What applies?\
+   (a) The employer's rule, because an employer's policy outranks a course's rule.\
    (b) No rule, because no law forbids using AI to help write an essay.\
-   (c) The syllabus: for coursework, the course's rule is the one that applies.\
+   (c) The course's rule: for coursework, it is the rule that applies.\
    (d) Both equally, so you may choose whichever rule you prefer.
 2. *(O2 · LO5 · Understand)* A photo is posted online with no copyright notice. What follows?\
    (a) It is probably protected anyway, because copyright arises when a work is fixed.\
@@ -505,7 +505,7 @@ Items 6 and 11 are short answers.
 
 ### Review Questions B: Case Questions {.unnumbered}
 
-1. *(O1, O3 · LO5 · Apply)* A student wants to upload a full chapter of a copyrighted textbook to a free consumer AI tool to make flashcards. Walk the layers (course, university, terms, copyright) and the data-flow map, name the rule at each layer, and propose a route that respects them.
+1. *(O1, O3 · LO5 · Apply)* A student wants to upload a full chapter of a copyrighted textbook to a free consumer AI tool to make flashcards. Walk the layers (course, institution, terms, copyright) and the data-flow map, name the rule at each layer, and propose a route that respects them.
 2. *(O2 · LO5 · Analyze)* A start-up trains a model on a newspaper's articles, without a license, to produce news summaries that it sells to the newspaper's readers. Reason through factors 1 and 4 using *Ross*, *Bartz* and *Kadrey*. What facts would change your answer?
 3. *(O4 · LO5 · Evaluate)* A property-management company's chatbot tells a tenant there is no pet fee; the lease says $50 a month. The chat window carries a disclaimer. Who is responsible, by this book's reading, which link failed, and what check would have helped?
 4. *(O5 · LO5 · Apply)* Classify on the EU tiers: a tool that ranks video job interviews for an employer in France; a museum's audio-guide chatbot; a call-center tool that infers employees' emotions from their voices. Then name the U.S. rule, with its date, for a Texas public hospital's patient chatbot and for a New York City employer's video-interview scoring tool.
@@ -530,18 +530,18 @@ Come back to these a few days after reading, without looking back. They connect 
 1. *(Ethics · O2 · LO5 · Evaluate)* Should artists be able to opt out of AI training, or should developers have to ask first?
 2. *(Career · O1 · LO5 · Analyze)* Which rules in your intended field govern AI use, and who owns them?
 3. *(Interdisciplinary · O3 · LO5 · Analyze)* Compare how copyright treats a photograph, a recipe and a dataset. Bring one cited source.
-4. *(Policy · O5 · LO5 · Evaluate)* Should Texas or the federal government set AI rules for Texas employers? Why?
+4. *(Policy · O5 · LO5 · Evaluate)* Should your state or the federal government set AI rules for employers in your state? Why?
 5. *(Personal · O1 · LO4 · Apply)* Describe a time a rule close to you (a course, a job, a club) was stricter than the law. Why might that be?
 
 ### Application Assignment: A12's Rules-and-Rights Risk {.unnumbered}
 
-This week's artifact is **A12, the responsible AI risk review**, in section 15.7. This chapter adds one required risk to its register: the **rules-and-rights risk**, drafted in Lab 15.1, step 6, and finished at home in about 3 minutes. *(O1, O3, O4, O5 · LO5 · Apply, Evaluate)* Chapter 15's rubric grades it under "Register," and its mitigation under "Plan."
+This chapter's artifact is **A12, the responsible AI risk review**, in section 15.7. This chapter adds one required risk to its register: the **rules-and-rights risk**, drafted in Lab 15.1, step 6, and finished at home in about 3 minutes. *(O1, O3, O4, O5 · LO5 · Apply, Evaluate)* Chapter 15's rubric grades it under "Register," and its mitigation under "Plan."
 
 **Write it in Chapter 15's template:** "risk of breaking [a named rule] or of [a named person] losing [a named right]," with the rule's layer and who is harmed; likelihood and impact by Chapter 15's anchors; the evidence, **D only if you opened the rule's own text for the tool and data your workflow uses and cite its section** (for a law, I with a reason is acceptable; a provided scenario's rules paragraph counts as the rule's text); a mitigation of a named kind with a risk owner by role; the rule's owner with your question; and the not-a-legal-opinion line (section 18.6).
 
 ### Mini-Project (optional): A Policy Comparison Note {.unnumbered}
 
-Compare two rules that govern **the same AI use**: two universities' published student AI guidance; two employers' or professional bodies' published AI policies in your field; or two jurisdictions' laws for one use (for example, the EU AI Act and Texas TRAIGA for a public agency's chatbot). In 600–800 words: (1) the use and why it matters in your field; (2) each rule's owner, **scope** (whom and what it covers), date and primary source with section numbers; (3) a side-by-side table: who it covers, what it requires or forbids, disclosure, oversight and **enforcement** (who checks and what happens if the rule is broken); "none stated" is an acceptable cell; (4) where they agree, differ or leave gaps; (5) which you would follow if both applied, and why; (6) one question for each rule's owner; (7) an AI Use Declaration (tools, purpose, what you accepted, rejected or revised, how you verified it, where your judgment shaped the work). The note says it is not legal advice. Expect about 3 to 4 hours. Without time for your own sources, use the provided pair of dated policy excerpts on eLearning.
+Compare two rules that govern **the same AI use**: two universities' published student AI guidance; two employers' or professional bodies' published AI policies in your field; or two jurisdictions' laws for one use (for example, the EU AI Act and Texas TRAIGA for a public agency's chatbot). In 600–800 words: (1) the use and why it matters in your field; (2) each rule's owner, **scope** (whom and what it covers), date and primary source with section numbers; (3) a side-by-side table: who it covers, what it requires or forbids, disclosure, oversight and **enforcement** (who checks and what happens if the rule is broken); "none stated" is an acceptable cell; (4) where they agree, differ or leave gaps; (5) which you would follow if both applied, and why; (6) one question for each rule's owner; (7) an AI Use Declaration (tools, purpose, what you accepted, rejected or revised, how you verified it, where your judgment shaped the work). The note says it is not legal advice. Expect about 3 to 4 hours. Without time for your own sources, use the provided pair of dated policy excerpts on your course site.
 
 **Self-check rubric (10 points).**
 
@@ -563,11 +563,10 @@ Compare two rules that govern **the same AI use**: two universities' published s
 
 ## Further Reading {.unnumbered}
 
-- U.S. Copyright Office (2025), *Copyright and Artificial Intelligence, Part 2: Copyrightability*, R14 (recommended): read the Executive Summary, pages ii–iii (about 5 minutes).
-- R15 (recommended): this chapter's status box in section 18.5 is the summary; the primary texts are Texas H.B. 149 (2025), sections 552.051–552.057, and the EU AI Act, Article 5, Article 50 and Annex III (about 10 minutes for the sections named).
+- U.S. Copyright Office (2025), *Copyright and Artificial Intelligence, Part 2: Copyrightability* (recommended): read the Executive Summary, pages ii–iii (about 5 minutes).
+- The primary texts behind the status box in section 18.5 (recommended; the box is the summary): Texas H.B. 149 (2025), sections 552.051–552.057, and the EU AI Act, Article 5, Article 50 and Annex III (about 10 minutes for the sections named).
 - *Thomson Reuters v. Ross* (3d Cir. 2026): the appeals opinion is short and readable; sections on the four factors.
 - Office of the New York State Comptroller (2025): how a city enforced its hiring-tool law.
-- The University of Texas at Dallas (2025), UTDSP5017: the university's policy on generative AI in academic work.
 - Regulation (EU) 2024/1689, Article 5 and Annex III: the lists of banned and high-risk uses, short enough to read whole.
 - Open Source Initiative (2024): what "open" should mean for AI, in a short definition.
 
@@ -637,17 +636,11 @@ Regulation (EU) 2026/1744 of the European Parliament and of the Council of 8 Jul
 
 TAKE IT DOWN Act, Pub. L. No. 119-12 (2025).
 
-Texas Department of Information Resources. (n.d.). *Texas Data Privacy and Security Act*. Retrieved October 18, 2026, from https://dir.texas.gov/technology-legislation/texas-data-privacy-and-security-act
-
 Texas H.B. 149, 89th Leg., Reg. Sess. (2025) (Texas Responsible Artificial Intelligence Governance Act), enrolled. https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00149F.htm
 
 Texas S.B. 1964, 89th Leg., Reg. Sess. (2025), enrolled; Tex. Gov't Code §§ 2054.003(13), 2054.707. https://capitol.texas.gov/tlodocs/89R/billtext/html/SB01964F.htm
 
 *Thaler v. Perlmutter*, No. 23-5233 (D.C. Cir. March 18, 2025), cert. denied, No. 25-449 (U.S. March 2, 2026).
-
-The University of Texas at Dallas. (2025, March 24). *UTDSP5017: Generative AI use in academic work*. Policy Navigator. Retrieved October 18, 2026, from https://policy.utdallas.edu/utdsp5017
-
-The University of Texas at Dallas. (n.d.). *UTDBP3096: Information security and acceptable use*. Policy Navigator. Retrieved October 18, 2026, from https://policy.utdallas.edu/utdbp3096
 
 *Thomson Reuters Enterprise Centre GmbH v. Ross Intelligence Inc.*, No. 1:20-cv-613-SB (D. Del. February 11, 2025) (memorandum opinion, D.I. 770). https://www.ded.uscourts.gov/sites/ded/files/opinions/20-613_5.pdf
 

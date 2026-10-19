@@ -4,7 +4,7 @@
 |---|---|
 | Type | Classify |
 | Objectives | O1 (LO1) · tags UNESCO:TECH-U, 4D:DISC |
-| Time | 20 minutes, Tuesday, February 16, 2027, in class, run with the syllabus demonstration (asking for sources on a niche topic); or at home |
+| Time | 20 minutes, in class, run with the instructor's live demonstration in the concept session (asking for sources on a niche topic); or at home |
 | Materials | The printed card set (ten dated failure cards: eight for class, two for home) and two blank cards; Figure 4.2 (Failure Taxonomy Tree) and Figure 4.9 (failure-to-harm chain) |
 
 ## Steps (tool-neutral)
@@ -14,7 +14,7 @@
 4. Write one sentence per card explaining the label, and compare with another team. Where you disagree, decide what evidence would settle it.
 5. At home, label cards 9 and 10.
 
-Students only label. Checking whether the demo's sources exist is Thursday's work (Chapter 8, A5).
+Students only label. Checking whether the demo's sources exist comes later, in Chapter 8's verification lab (A5).
 
 [COMPASS: ch04-lab1 — interactive "label this case" version of Signature 5]
 
@@ -31,7 +31,7 @@ Students only label. Checking whether the demo's sources exist is Thursday's wor
 | 8 | A company chatbot gives a wrong return policy; the company has not said how the chatbot works | Hallucination, inferred (generation not confirmed) |
 | 9 (home) | An employee pastes an AI-drafted contract clause without reading it; the clause is wrong | Hallucination (documented if the drafting tool is known) + chain link 2, no check (documented) |
 | 10 (home) | A student mistypes a number into a spreadsheet; no AI involved | Not an AI failure: neither tree nor chain |
-| Blank × 2 | Two demo outputs (typically invented or misattributed sources) | Generation confirmed (the class watched); whether the output is wrong is unchecked until Thursday, so hallucination is inferred until then |
+| Blank × 2 | Two demo outputs (typically invented or misattributed sources) | Generation confirmed (the class watched); whether the output is wrong is unchecked until the Chapter 8 lab, so hallucination is inferred until then |
 
 ## Expected observations
 Most teams agree on cards 1–3 and 5–7. Disagreements cluster on cards 4, 8 and the demo cards, which is the point: the evidence decides documented vs. inferred, and human failures go on the chain.
@@ -45,7 +45,7 @@ Most teams agree on cards 1–3 and 5–7. Disagreements cluster on cards 4, 8 a
 Ungraded. The team's labeled card set and one-sentence reasons.
 
 ## Accessibility and alternatives
-Printable card set and a screen-reader-friendly table on eLearning. Students who miss class label all ten printed cards at home; the instructor posts the two demo cards after class.
+Printable card set and a screen-reader-friendly table on the course site. Students who miss class label all ten printed cards at home; the instructor posts the two demo cards after class.
 
 ## Instructor notes
-Fill the blank cards with two demo outputs that include a source; leave the check for Thursday. Card 10 tests whether students over-apply the tree. Time: 20 minutes inside Tuesday's demonstration slot (syllabus: demo 20 min).
+Fill the blank cards with two demo outputs that include a source; leave the check for the Chapter 8 verification lab. Card 10 tests whether students over-apply the tree. Time: about 20 minutes, run inside the concept session's live demonstration.

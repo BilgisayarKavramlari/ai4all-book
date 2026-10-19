@@ -1,0 +1,6 @@
+# Published per-prompt estimates and their system boundaries. Google: Elsworth et al. (2025, arXiv:2508.15734) and Google Cloud blog (2025, Aug 21): median Gemini Apps text prompt 0.24 Wh (full serving stack) vs 0.10 Wh counting active TPU/GPU only; blog footnote: "The data and claims have not been verified by an independent third-party." Epoch AI (You, 2025, Feb): typical GPT-4o query about 0.3 Wh (estimate; long inputs or reasoning outputs can use much more). de Vries (2023, Joule): about 2.9 Wh per request, early-2023 assumptions [VERIFY].
+estimate,wh_per_prompt,boundary,who,year,status,as_of
+Google median text prompt (active chips only),0.10,active accelerators only,Google (developer),2025,reported,2026-10-18
+Google median text prompt (full stack),0.24,"chips, host, idle capacity, data-center overhead",Google (developer),2025,reported,2026-10-18
+Typical GPT-4o query,0.3,estimated from hardware and token counts,Epoch AI (outside),2025,measured,2026-10-18
+Early chatbot request,2.9,estimated from 2023 hardware assumptions,de Vries (outside),2023,measured,2026-10-18

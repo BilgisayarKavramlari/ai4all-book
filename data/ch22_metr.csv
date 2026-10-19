@@ -1,0 +1,28 @@
+# Source: METR (2026), Time Horizon 1.1 raw results, https://metr.org/assets/benchmark_results_1_1.yaml, downloaded 2026-10-18 (page "no longer actively updated", last updated 2026-09-08). Horizons in minutes of skilled-human task time. METR: estimates above 16 h are unreliable with the current task suite. Doubling time (METR fit, excluding p50 > 16 h): from 2023 on 128.7 days (CI 104.4-158.0); all time 187.8 days. License: [VERIFY]
+model,provider,release_date,p50_min,p50_ci_low,p50_ci_high,p80_min,is_sota,above_16h_flag,as_of
+GPT-2,OpenAI,2019-02-14,0.1,0.0,0.1,0.0,True,False,2026-10-18
+davinci-002,OpenAI,2020-05-28,0.1,0.1,0.2,0.1,True,False,2026-10-18
+GPT-3.5 Turbo Instruct,OpenAI,2022-03-15,0.6,0.3,1.1,0.3,True,False,2026-10-18
+GPT-4,OpenAI,2023-03-14,4.0,1.9,8.0,0.9,True,False,2026-10-18
+GPT-4 (Nov 2023),OpenAI,2023-11-06,4.0,1.9,8.4,0.8,True,False,2026-10-18
+Claude 3 Opus,Anthropic,2024-03-04,4.0,1.7,8.8,0.6,False,False,2026-10-18
+GPT-4 Turbo,OpenAI,2024-04-09,3.7,2.0,6.7,0.9,False,False,2026-10-18
+GPT-4o,OpenAI,2024-05-13,7.0,4.0,12.9,1.3,True,False,2026-10-18
+Claude 3.5 Sonnet (Jun 2024),Anthropic,2024-06-20,11.4,5.5,22.4,1.7,True,False,2026-10-18
+o1-preview,OpenAI,2024-09-12,20.3,11.7,33.4,4.4,True,False,2026-10-18
+Claude 3.5 Sonnet (Oct 2024),Anthropic,2024-10-22,20.5,10.1,40.8,2.6,True,False,2026-10-18
+o1,OpenAI,2024-12-05,38.8,21.2,65.0,7.1,True,False,2026-10-18
+Claude 3.7 Sonnet,Anthropic,2025-02-24,60.4,33.0,104.2,12.1,True,False,2026-10-18
+o3,OpenAI,2025-04-16,119.7,74.6,190.9,30.0,True,False,2026-10-18
+Claude Opus 4,Anthropic,2025-05-22,100.4,60.0,163.5,20.4,False,False,2026-10-18
+Claude Opus 4.1,Anthropic,2025-08-05,100.5,59.3,159.5,23.5,False,False,2026-10-18
+GPT-5,OpenAI,2025-08-07,203.0,112.6,405.6,38.3,True,False,2026-10-18
+Gemini 3 Pro,Google,2025-11-18,224.3,139.6,379.2,54.1,True,False,2026-10-18
+GPT-5.1-Codex-Max,OpenAI,2025-11-19,223.7,134.3,396.2,50.6,False,False,2026-10-18
+Claude Opus 4.5,Anthropic,2025-11-24,293.0,161.7,623.7,49.4,True,False,2026-10-18
+GPT-5.2,OpenAI,2025-12-11,352.2,198.1,815.2,66.0,True,False,2026-10-18
+Claude Opus 4.6,Anthropic,2026-02-05,718.8,316.7,3633.8,69.9,True,False,2026-10-18
+GPT-5.3-Codex,OpenAI,2026-02-05,349.5,194.9,816.4,54.7,False,False,2026-10-18
+Gemini 3.1 Pro,Google,2026-02-19,384.1,233.5,694.8,89.8,False,False,2026-10-18
+GPT-5.4,OpenAI,2026-03-05,341.7,186.6,768.8,53.9,False,False,2026-10-18
+Claude Mythos Preview (early),Anthropic,2026-04-07,1044.8,508.9,3304.3,185.9,True,True,2026-10-18

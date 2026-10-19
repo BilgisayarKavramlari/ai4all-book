@@ -390,7 +390,7 @@ def midterm_map(f):
     f.text(400, 468, "Boxes = the AI Work Loop's steps · text = chapters whose Chapter Map highlighted that step, "
            "with their key diagram · italic = a second highlight or Deep · thick = this chapter", size=13,
            color=muted, width=780)
-    f.text(400, 506, "Midterm: Core sections of Chapters 1–10. Chapter 6 is Deep and not examined.", size=13,
+    f.text(400, 506, "Review scope: Core sections of Chapters 1–10. Chapter 6 is Deep and not examined.", size=13,
            weight="700")
 
 

@@ -5,7 +5,7 @@
 | Type | Check It (optional, at home) |
 | Objectives | O2 (LO5, LO3) · tags 4D:DISC |
 | Time | 20 minutes |
-| Materials | data/ch16_lab_disagg.csv (constructed: 400 questions to a campus help chatbot, each with the question's language, the asker's year and whether staff graded the answer correct), on eLearning; any spreadsheet; template in Compass (optional) |
+| Materials | data/ch16_lab_disagg.csv (constructed: 400 questions to a campus help chatbot, each with the question's language, the asker's year and whether staff graded the answer correct), on your course site; any spreadsheet; template in Compass (optional) |
 
 ## Steps (tool-neutral)
 1. Open the file and count the rows (400; the first line is a note, not a question).
@@ -26,7 +26,7 @@ Overall 364 of 400 (91.0%); English 262 of 280 (93.6%), Spanish 102 of 120 (85.0
 None (optional practice). Answers in Appendix E (Lab notes).
 
 ## Accessibility and alternatives
-The file is plain CSV; an accessible table version is on eLearning. A calculator and tally by hand also work (use the counts above as a check).
+The file is plain CSV; an accessible table version is on your course site. A calculator and tally by hand also work (use the counts above as a check).
 
 ## Safety and privacy
 Constructed data; no real students.

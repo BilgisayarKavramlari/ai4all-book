@@ -159,7 +159,7 @@ def chapter_map(f):
             f.text((xs[i] + xs[i + 1]) / 2, y, "→", size=14, color=muted)
     f.text(400, 410, "This chapter strengthens Frame (before a task: which of your commitments apply?), then "
            "Disclose (a code is something you can show).", size=13, color=muted, width=780)
-    f.text(400, 440, "Read Part A by Tue Apr 27; Part B by Tue May 4. Short case: the ACM Code of Ethics (2018).",
+    f.text(400, 440, "Read Part A before the portfolio workshop; Part B after the portfolio. Short case: the ACM Code of Ethics (2018).",
            size=13, weight="700", color=INK[f.mode])
 
 
@@ -307,7 +307,7 @@ def final_map(f):
                    italic=("second" in it or "Deep" in it))
     f.text(400, 468, "Boxes = the AI Work Loop's steps · text = chapters whose Chapter Map highlighted that step, "
            "with their key diagram · italic = a second highlight or a Deep chapter", size=13, color=muted, width=780)
-    f.text(400, 506, "Final: Core sections of the whole book, weighted to weeks 9–14. Chapters 13, 17, 22 and 23 "
+    f.text(400, 506, "A review of Chapters 8–20 before a final review of the Core sections. Chapters 13, 17, 22 and 23 "
            "are Deep and not examined.", size=13, weight="700", width=780)
 
 
@@ -341,10 +341,10 @@ CARD_BLANK = principles_card(
 CARD_HANA = principles_card(
     lines=HANA_LINES, highlight="commitments", title="Hana's code turns values into triggers for creative work",
     scope="Scope: Hana, freelance illustrator who runs a small zine · constructed example",
-    boundaries="Boundaries: my client contracts, the course's zones (§1.5) and the rules of the zine collective I "
+    boundaries="Boundaries: my client contracts, my course's AI rules and the rules of the zine collective I "
                "belong to; where one is stricter, it wins; I ask the client or the collective.",
     review="by the first week of next term · triggers: a new contract, a tool-terms change, a zine form change",
-    notes="Dated note: the university-provided tool's terms say prompts are not used to train its foundation models (as of October 2026)",
+    notes="Dated note: the terms of the tool my school provides say prompts are not used to train its foundation models (as of October 2026)",
     note="Constructed example from Hana's details in Chapters 13 and 18; reasons shortened.")
 MARCUS_LINES = [
     "Before I paste or upload anything into an AI tool, I check it holds no information about a patient, even unnamed.",
@@ -356,10 +356,10 @@ MARCUS_LINES = [
 CARD_MARCUS = principles_card(
     lines=MARCUS_LINES, highlight="boundaries", title="Marcus's patient line is stricter than any rule he is under",
     scope="Scope: Marcus, nursing student, clinical placement and night shifts · constructed example",
-    boundaries="Boundaries: the course's zones (§1.5), the university's data rules, my placement site's rules; "
+    boundaries="Boundaries: my course's AI rules, my institution's data rules, my placement site's rules; "
                "where one is stricter, it wins; when unclear, I ask my clinical instructor.",
     review="by the start of my next placement · triggers: a new site's rules, a new tool, a mistake I make",
-    notes="Dated note: the university provides Microsoft Copilot Chat to all students (as of October 2026)",
+    notes="Dated note: my university provides an enterprise chat assistant to all students (as of October 2026)",
     note="Constructed example; reasons are on Marcus's full page. Line 1 is stricter than any rule he is under.")
 LADDER_CODE = delegation_ladder(
     highlight="agency",
@@ -367,7 +367,7 @@ LADDER_CODE = delegation_ladder(
     note="A commitment for the top rung: an approval gate before consequential actions (Chapter 14).")
 MAP_CODE = regulation_map(
     highlight=["contract", "org", "terms"],
-    notes={"contract": "client clause: written OK first", "org": "course zones (§1.5) + Hana's code",
+    notes={"contract": "client clause: written OK first", "org": "course AI rules + Hana's code",
            "terms": "tool terms (see Hana's dated note)"},
     title="Hana's code sits inside the rules nearest them",
     note="Strictest rule wins; ask its owner (section 18.1). As of October 2026 · not legal advice.")

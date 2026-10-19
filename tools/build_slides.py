@@ -117,6 +117,8 @@ CW = SW - 2 * MX              # content width
 TOP = 1.62                    # content top (below title)
 BOTTOM = 6.85                 # content bottom (above footer)
 LS = 1.18                     # line spacing (multiple of size, exact points)
+WRAP_SAFETY = 0.985           # wrap as if lines were 1.5 % shorter: PowerPoint and the preview round font
+                              # metrics differently, and a line that fits by a hair often wraps there
 
 BODY = 26                     # default body size
 BODY_MIN = 24                 # floor for body text students must read
@@ -157,6 +159,7 @@ class Ctx:
     visible: list = field(default_factory=list)   # (slide_no, text) for checks
     notes_all: list = field(default_factory=list)  # (slide_no, notes text)
     minutes: list = field(default_factory=list)    # (session, minutes, slide_no)
+    used_figures: list = field(default_factory=list)
     font_sans: str = SANS
     font_serif: str = SERIF
 
@@ -206,7 +209,7 @@ def wrap_para(p: Para, width_pt: float, family: str, scale: float):
     """Greedy wrap; returns number of lines."""
     size = p.size * scale
     indent = bullet_indent(p, size)
-    avail = width_pt - indent
+    avail = (width_pt - indent) * WRAP_SAFETY
     tokens = []
     for text, b, i, _ in p.runs:
         for w in re.split(r"(\s+)", text):
@@ -288,6 +291,15 @@ def shape(ctx, slide, x, y, w, h, fill=None, line=None, lw=1.25, kind="rect", da
     return sp
 
 
+def to_back(sp):
+    """Move a shape behind the title placeholder (full-slide backgrounds)."""
+    el = sp._element
+    tree = el.getparent()
+    tree.remove(el)
+    tree.insert(2, el)
+    return sp
+
+
 def arrow(ctx, slide, x1, y1, x2, y2, color=INK, lw=1.75):
     c = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, E(x1), E(y1), E(x2), E(y2))
     c.line.color.rgb = rgb(color)
@@ -335,7 +347,7 @@ def text(ctx, slide, x, y, w, h, paras, *, sp=None, min_scale=None, anchor="t", 
     tf.vertical_anchor = {"t": MSO_ANCHOR.TOP, "m": MSO_ANCHOR.MIDDLE, "b": MSO_ANCHOR.BOTTOM}[anchor]
     for k, p in enumerate(paras):
         para = tf.paragraphs[0] if k == 0 else tf.add_paragraph()
-        size = round(p.size * scale * 2) / 2
+        size = int(p.size * scale * 2 + 1e-6) / 2  # round down so the fitted text still fits
         para.alignment = {"l": PP_ALIGN.LEFT, "c": PP_ALIGN.CENTER, "r": PP_ALIGN.RIGHT}[p.align]
         para.line_spacing = Pt(size * LS)
         para.space_after = Pt(p.space_after * size if k < len(paras) - 1 else 0)
@@ -374,7 +386,7 @@ def set_title(ctx, slide, title, x=MX, y=0.5, w=CW, h=0.95, size=36, color=NAVY,
     ph = slide.shapes.title
     ph.left, ph.top, ph.width, ph.height = E(x), E(y), E(w), E(h)
     text(ctx, slide, x, y, w, h, [P(title, size=size, bold=True, color=color)], sp=ph,
-         font=ctx.font_serif, anchor=anchor, bg=bg, floor=min_size)
+         font=ctx.font_serif, anchor=anchor, bg=bg, floor=min_size, record=False)
     return ph
 
 
@@ -415,12 +427,12 @@ def takeaway(ctx, slide, s, y=6.02, h=0.78, x=MX, w=CW):
          floor=20)
 
 
-def footer(ctx, slide, dark=False):
+def footer(ctx, slide, dark=False, x=MX, bg=WHITE):
     d = ctx.spec["deck"]
     col = PALE if dark else MUTED
-    bg = NAVY if dark else WHITE
+    bg = NAVY if dark else bg
     label = f"AI for All · Ch {d['chapter']} · {d.get('short_title', d['title'])}"
-    text(ctx, slide, MX, 7.02, 9.5, 0.36, [P(label, size=12, color=col)], bg=bg, record=False)
+    text(ctx, slide, x, 7.02, min(9.5, SW - MX - 1.6 - x), 0.36, [P(label, size=12, color=col)], bg=bg, record=False)
     text(ctx, slide, SW - MX - 1.5, 7.02, 1.5, 0.36, [P(str(ctx.slide_no), size=12, color=col, align="r")],
          bg=bg, record=False)
 
@@ -466,6 +478,7 @@ def figure_png(ctx, fig_id: str):
             im = im.crop(box)
         im.save(png, optimize=True)
         tmp.unlink()
+    ctx.used_figures.append(svg.stem)
     return png, alt_text(svg.stem)
 
 
@@ -513,18 +526,24 @@ def alt_text(file_id: str) -> str | None:
 NOTE_ORDER = ["say", "background", "questions", "misconceptions", "activity", "book"]
 
 
+def reflow(t: str) -> str:
+    """YAML block text -> PowerPoint notes text: single line breaks become spaces, blank lines stay."""
+    paras = re.split(r"\n\s*\n", (t or "").strip())
+    return "\n".join(" ".join(line.strip() for line in p.splitlines() if line.strip()) for p in paras)
+
+
 def build_notes(ctx, s: dict) -> str:
     n = s.get("notes") or {}
     if isinstance(n, str):
         n = {"say": n}
     parts = []
-    say = (n.get("say") or "").strip()
+    say = reflow(n.get("say"))
     wc = len(say.split())
-    if not s.get("_reveal_cont"):
+    if not s.get("_reveal_cont") and not ctx.spec["deck"].get("draft"):
         if wc < 80 or wc > 200:
             ctx.warn(f"NOTES 'say' has {wc} words (standard: 80–200)")
     parts.append("SAY\n" + say)
-    bg = (n.get("background") or "").strip()
+    bg = reflow(n.get("background"))
     qs = n.get("questions") or []
     ms = n.get("misconceptions") or []
     if bg or qs or ms:
@@ -534,16 +553,16 @@ def build_notes(ctx, s: dict) -> str:
         if qs:
             block.append("Likely student questions:")
             for q in qs:
-                block.append(f"  Q: {q['q'].strip()}\n  A: {q['a'].strip()}")
+                block.append(f"• Q: {reflow(q['q'])}\n   A: {reflow(q['a'])}")
         if ms:
             block.append("Misconceptions to watch for:")
             for m in ms:
-                block.append(f"  {m['m'].strip()}\n  How to address it: {m['fix'].strip()}")
+                block.append(f"• {reflow(m['m'])}\n   How to address it: {reflow(m['fix'])}")
         parts.append("\n".join(block))
-    elif not s.get("_reveal_cont") and s["layout"] not in ("title",):
+    elif not s.get("_reveal_cont") and s["layout"] not in ("title",) and not ctx.spec["deck"].get("draft"):
         ctx.warn("NOTES missing 'background'")
     mins = s.get("minutes")
-    act = (n.get("activity") or "").strip()
+    act = reflow(n.get("activity"))
     sess = s.get("_session_label", "")
     tline = "TIMING AND ACTIVITY\n"
     tline += f"{mins:g} min" if isinstance(mins, (int, float)) else "no class time (reference)"
@@ -552,8 +571,8 @@ def build_notes(ctx, s: dict) -> str:
     if act:
         tline += "\n" + act
     parts.append(tline)
-    book = (n.get("book") or "").strip()
-    if not book:
+    book = reflow(n.get("book"))
+    if not book and not ctx.spec["deck"].get("draft"):
         ctx.warn("NOTES missing 'book' pointer")
     parts.append("BOOK\n" + book)
     return "\n\n".join(parts)
@@ -562,7 +581,7 @@ def build_notes(ctx, s: dict) -> str:
 # --------------------------------------------------------------------------- layouts
 def L_title(ctx, slide, s):
     d = ctx.spec["deck"]
-    shape(ctx, slide, 0, 0, SW, SH, fill=NAVY)
+    to_back(shape(ctx, slide, 0, 0, SW, SH, fill=NAVY))
     shape(ctx, slide, 0, SH - 0.22, SW, 0.22, fill=AI_FILL)
     has_fig = bool(s.get("figure"))
     tw = 7.3 if has_fig else 11.5
@@ -592,8 +611,8 @@ def L_session_plan(ctx, slide, s):
         x = MX + i * (cw + gap)
         y0, y1 = TOP, BOTTOM
         shape(ctx, slide, x, y0, cw, y1 - y0, fill=WHITE, line=SOFT_STROKE, kind="round", radius=0.15)
-        shape(ctx, slide, x, y0, cw, 1.0, fill=NAVY, kind="rect")
-        text(ctx, slide, x + 0.2, y0 + 0.05, cw - 0.4, 0.9,
+        shape(ctx, slide, x, y0, cw, 0.9, fill=NAVY, kind="rect")
+        text(ctx, slide, x + 0.2, y0 + 0.02, cw - 0.4, 0.86,
              [P(col["heading"], size=24, bold=True, color=WHITE, space_after=0.1),
               P(col.get("sub", ""), size=18, color=PALE)], bg=NAVY, anchor="m", floor=16)
         blocks = col["blocks"]
@@ -604,11 +623,11 @@ def L_session_plan(ctx, slide, s):
         cur = bx
         for k, b in enumerate(blocks):
             ww = bw * float(b.get("min", 0)) / total
-            shape(ctx, slide, cur, y0 + 1.15, max(0.02, ww - 0.03), 0.16,
+            shape(ctx, slide, cur, y0 + 1.0, max(0.02, ww - 0.03), 0.13,
                   fill=[NAVY, AI_FILL, OK, SOFT_STROKE, RISK, PALE][k % 6])
             cur += ww
-        top = y0 + 1.45
-        rh = (y1 - 0.15 - top) / len(blocks)
+        top = y0 + 1.22
+        rh = (y1 - 0.08 - top) / len(blocks)
         for k, b in enumerate(blocks):
             yy = top + k * rh
             shape(ctx, slide, x + 0.2, yy + 0.08, 1.15, min(0.5, rh - 0.12), fill=SOFT, line=NAVY, lw=1,
@@ -616,10 +635,10 @@ def L_session_plan(ctx, slide, s):
             text(ctx, slide, x + 0.2, yy + 0.08, 1.15, min(0.5, rh - 0.12),
                  [P(f"{b.get('min', '')} min", size=17, bold=True, color=NAVY, align="c")], anchor="m",
                  bg=SOFT, inset=0.02, floor=14)
-            paras = [P(b["label"], size=21, bold=True, space_after=0.05)]
+            paras = [P(b["label"], size=20, bold=True, space_after=0.0)]
             if b.get("detail"):
-                paras.append(P(b["detail"], size=17, color=MUTED))
-            text(ctx, slide, x + 1.5, yy, cw - 1.7, rh, paras, anchor="t", floor=15)
+                paras.append(P(b["detail"], size=16, color=MUTED))
+            text(ctx, slide, x + 1.5, yy, cw - 1.65, rh, paras, anchor="m", floor=14, inset=0.02)
 
 
 def L_objectives(ctx, slide, s):
@@ -634,7 +653,8 @@ def L_objectives(ctx, slide, s):
     nrow = -(-len(items) // ncol)
     gap = 0.25
     cw = (CW - gap * (ncol - 1)) / ncol
-    rh = (BOTTOM - y - gap * (nrow - 1)) / nrow
+    bottom = 5.8 if s.get("takeaway") else BOTTOM
+    rh = (bottom - y - gap * (nrow - 1)) / nrow
     for k, it in enumerate(items):
         r, c = (k % nrow, k // nrow)
         x = MX + c * (cw + gap)
@@ -646,11 +666,13 @@ def L_objectives(ctx, slide, s):
              anchor="m", bg=NAVY, inset=0.0)
         text(ctx, slide, x + 0.4 + d, yy + 0.05, cw - d - 0.6, rh - 0.1, [P(it["text"], size=24)], anchor="m",
              floor=CARD_MIN)
+    if s.get("takeaway"):
+        takeaway(ctx, slide, s["takeaway"])
 
 
 def L_section(ctx, slide, s):
-    shape(ctx, slide, 0, 0, SW, SH, fill=SOFT)
-    shape(ctx, slide, 0, 0, 4.4, SH, fill=NAVY)
+    to_back(shape(ctx, slide, 0, 0, 4.4, SH, fill=NAVY))
+    to_back(shape(ctx, slide, 0, 0, SW, SH, fill=SOFT))
     text(ctx, slide, 0.3, 1.9, 3.8, 1.9, [P(str(s.get("number", "")), size=88, bold=True, color=AI_FILL, align="c",
                                           font=ctx.font_serif)], anchor="m", bg=NAVY, floor=48)
     if s.get("tag"):
@@ -683,8 +705,14 @@ def L_concept(ctx, slide, s, badge=None):
     fig = s.get("figure")
     bl = bullets_paras(s.get("bullets"), size=s.get("size", BODY))
     if fig:
-        frac = s.get("figure_width", 0.55)
-        fw = CW * frac
+        frac = s.get("figure_width", "auto")
+        if frac == "auto":
+            path, _ = figure_png(ctx, fig)
+            with Image.open(path) as im:
+                aspect = im.width / im.height
+            fw = min(CW * 0.62, aspect * (bottom - TOP)) if bl else CW
+        else:
+            fw = CW * frac
         tw = CW - fw - 0.35
         if s.get("figure_side", "right") == "right":
             tx, fx = MX, MX + tw + 0.35
@@ -756,9 +784,10 @@ def L_compare(ctx, slide, s):
         shape(ctx, slide, x, TOP, cw, hh, fill=hf, line=border, lw=3 if thick else 1.5, dash=dashed)
         text(ctx, slide, x + 0.15, TOP, cw - 0.3, hh, [P(col["heading"], size=24, bold=True, color=ht, align="c")],
              anchor="m", bg=hf, floor=18)
-        paras = bullets_paras(col.get("bullets"), size=col.get("size", 24))
+        csize = col.get("size", s.get("size", 24))
+        paras = bullets_paras(col.get("bullets"), size=csize)
         if col.get("text"):
-            paras = [P(col["text"], size=col.get("size", 24))] + paras
+            paras = [P(col["text"], size=csize)] + paras
         text(ctx, slide, x + 0.2, TOP + hh + 0.15, cw - 0.4, bottom - TOP - hh - 0.25, paras, floor=CARD_MIN)
     if s.get("takeaway"):
         takeaway(ctx, slide, s["takeaway"])
@@ -796,7 +825,8 @@ def L_worked(ctx, slide, s):
         else:
             shape(ctx, slide, MX, yy, sw_, rh, fill=SOFT, kind="round", radius=0.1)
             text(ctx, slide, MX + 0.3, yy, sw_ - 0.4, rh,
-                 [P(f"Step {k + 1} · {st['label']} — coming next", size=20, color=MUTED)], anchor="m", bg=SOFT)
+                 [P(f"Step {k + 1} · {st['label']} — coming next", size=20, color=MUTED)], anchor="m", bg=SOFT,
+                 record=False)
     if fig:
         picture(ctx, slide, fig, MX + sw_ + 0.3, y, CW - sw_ - 0.3, bottom - y, alt=s.get("alt"))
     if final and s.get("result"):
@@ -809,14 +839,30 @@ def L_quiz(ctx, slide, s):
     set_title(ctx, slide, s.get("answer_title", "Answer") + (": " + s["title"] if s.get("title") else "")
               if ans else s.get("title_prefix", "Quick check") + (": " + s["title"] if s.get("title") else ""))
     y = TOP
-    qsize = 26 if ans else 30
-    qh = 1.3 if not ans else 1.0
-    text(ctx, slide, MX, y, CW, qh, [P(s["question"], size=qsize, bold=not ans, color=INK if not ans else MUTED)],
-         floor=22)
-    y += qh + 0.1
     opts = s.get("options") or []
+    if not opts and not ans:
+        bottom_q = BOTTOM - (0.95 if s.get("instruction") else 0)
+        shape(ctx, slide, MX, y + 0.2, CW, bottom_q - y - 0.4, fill=SOFT, kind="round", radius=0.15)
+        shape(ctx, slide, MX, y + 0.2, 0.12, bottom_q - y - 0.4, fill=NAVY)
+        text(ctx, slide, MX + 0.5, y + 0.2, CW - 0.9, bottom_q - y - 0.4, [P(s["question"], size=34, bold=True)],
+             anchor="m", bg=SOFT, floor=26)
+        if s.get("instruction"):
+            text(ctx, slide, MX, BOTTOM - 0.8, CW, 0.7, [P(s["instruction"], size=22, italic=True, color=MUTED)],
+                 anchor="m", floor=18)
+        return
     key = s.get("answer")
     bottom = BOTTOM - (0.95 if (ans and s.get("explanation")) or (not ans and s.get("instruction")) else 0)
+    # a long question shrinks (30 -> 24 pt; answer slide 22 -> 18 pt) before the options drop below 0.6 in
+    qsize, qmin = (22, 18) if ans else (30, 24)
+    room = bottom - y - 0.3 - len(opts) * 0.72 + (0.12 if opts else 0) if opts else bottom - y - 1.5
+    while True:
+        qh = paras_height([P(s["question"], size=qsize, bold=not ans)], (CW - 0.1) * 72, ctx.font_sans, 1.0) / 72 + 0.15
+        if qh <= room or qsize <= qmin:
+            break
+        qsize -= 1
+    text(ctx, slide, MX, y, CW, qh, [P(s["question"], size=qsize, bold=not ans, color=INK if not ans else MUTED)],
+         floor=qmin)
+    y += qh + 0.15
     if opts:
         gap = 0.12
         rh = min(1.0, (bottom - y - gap * (len(opts) - 1)) / len(opts))
@@ -840,8 +886,8 @@ def L_quiz(ctx, slide, s):
             text(ctx, slide, MX + 0.2, yy, 0.9, rh, [P(lt, size=24, bold=True, color=NAVY)], anchor="m", bg=fill)
             lab_w = (text_width(label, ctx.font_sans, 18, True) / 72 + 0.45) if label else 0
             lw_ = lab_w + 0.25 if label else 0
-            text(ctx, slide, MX + 1.1, yy, CW - 1.3 - lw_, rh, [P(o, size=24, color=col)], anchor="m", bg=fill,
-                 floor=CARD_MIN)
+            text(ctx, slide, MX + 1.1, yy, CW - 1.3 - lw_, rh, [P(o, size=24 if not ans else 22, color=col)],
+                 anchor="m", bg=fill, floor=18)
             if label:
                 lx = MX + CW - 0.2 - lab_w
                 shape(ctx, slide, lx, yy + (rh - 0.5) / 2, lab_w, 0.5, fill=NAVY, kind="round", radius=0.2)
@@ -940,7 +986,7 @@ def L_lab(ctx, slide, s):
         text(ctx, slide, MX, y - 0.05, CW, 0.6, [P(f"**Goal:** {s['goal']}", size=24)], floor=20)
         y += 0.65
     side = s.get("side") or []
-    lw_ = CW * (0.6 if side else 1.0)
+    lw_ = CW * (0.64 if side else 1.0)
     steps = s["steps"]
     n = len(steps)
     gap = 0.1
@@ -954,8 +1000,8 @@ def L_lab(ctx, slide, s):
         text(ctx, slide, MX + 0.12, yy + (rh - d) / 2, d, d, [P(str(k + 1), size=17, bold=True, color=WHITE, align="c")],
              anchor="m", bg=NAVY, inset=0)
         mw = 1.05 if st.get("min") else 0
-        text(ctx, slide, MX + 0.25 + d, yy, lw_ - d - 0.4 - mw, rh, [P(st["text"], size=21)], anchor="m",
-             floor=CARD_MIN - 2)
+        text(ctx, slide, MX + 0.25 + d, yy, lw_ - d - 0.4 - mw, rh, [P(st["text"], size=20)], anchor="m",
+             floor=18, inset=0.03)
         if mw:
             text(ctx, slide, MX + lw_ - mw - 0.1, yy, mw, rh, [P(f"{st['min']} min", size=17, bold=True, color=NAVY,
                                                                  align="r")], anchor="m", inset=0.02)
@@ -995,7 +1041,7 @@ def L_assignment(ctx, slide, s):
         y += 0.7
     lw_ = CW * 0.47
     parts = s.get("parts", [])
-    text(ctx, slide, MX, y, lw_, 0.45, [P("What to submit", size=22, bold=True, color=NAVY)])
+    text(ctx, slide, MX, y, lw_, 0.5, [P("What to submit", size=22, bold=True, color=NAVY)])
     paras = [P(f"**{k + 1}.** {p}", size=21, space_after=0.35) for k, p in enumerate(parts)]
     bottom = BOTTOM - (0.6 if s.get("note") else 0)
     text(ctx, slide, MX, y + 0.5, lw_, bottom - y - 0.5, paras, floor=CARD_MIN - 2)
@@ -1003,7 +1049,7 @@ def L_assignment(ctx, slide, s):
     if rub:
         tx = MX + lw_ + 0.35
         tw = CW - lw_ - 0.35
-        text(ctx, slide, tx, y, tw, 0.45, [P(s.get("rubric_title", "Rubric"), size=22, bold=True, color=NAVY)])
+        text(ctx, slide, tx, y, tw, 0.5, [P(s.get("rubric_title", "Rubric"), size=22, bold=True, color=NAVY)])
         table(ctx, slide, tx, y + 0.5, tw, bottom - y - 0.5,
               [["Criterion", "Pts", "Full credit"]] + [[r["criterion"], str(r["points"]), r["full"]] for r in rub],
               col_frac=[0.27, 0.11, 0.62], size=17)
@@ -1018,10 +1064,11 @@ def table(ctx, slide, x, y, w, h, rows, col_frac, size=18, min_size=15):
     sz = size
     while True:
         heights = []
-        for r in rows:
+        for ri, r in enumerate(rows):
             hmax = 0
-            for c, cell in enumerate(r):
-                hh = paras_height([P(cell, size=sz)], (widths[c] - 0.16) * 72, ctx.font_sans, 1.0) / 72 + 0.14
+            for c, cell in enumerate(r):  # header row and first column are set in bold (measure them bold)
+                hh = paras_height([P(cell, size=sz, bold=(ri == 0 or c == 0))], (widths[c] - 0.16) * 72,
+                                  ctx.font_sans, 1.0) / 72 + 0.14
                 hmax = max(hmax, hh)
             heights.append(hmax)
         if sum(heights) <= h or sz <= min_size:
@@ -1073,7 +1120,7 @@ def L_key_terms(ctx, slide, s):
     bottom = BOTTOM - (0.6 if s.get("note") else 0)
     while True:
         x, y = MX, TOP
-        h = size * 0.0275 + 0.3
+        h = size * LS / 72 + 0.3
         place = []
         for t in terms:
             w = text_width(plain(t), ctx.font_sans, size, True) / 72 + 0.5
@@ -1130,13 +1177,141 @@ def L_references(ctx, slide, s):
         pPr.set("indent", str(-int(Pt(28))))
 
 
+LOOP_STEPS = [  # wording of the book's signature diagram 1 (figures/out/color/f1-02-ai-work-loop.svg)
+    ("Frame", "What is the task? Should AI be in it?"),
+    ("Prompt", "Give task, context, limits, format"),
+    ("Verify", "Check against something other than the tool"),
+    ("Decide", "Keep, change or reject; own the result"),
+    ("Disclose", "Say what you used and how"),
+]
+
+
+def work_loop(ctx, slide, x, y, w, h, highlight=None, notes=None):
+    """Signature diagram 1 drawn natively: five rounded (human) boxes around a hexagon (the AI tool).
+    highlight: step name or list of names, drawn dark with a thick border (as in the book)."""
+    import math
+    hl = {highlight} if isinstance(highlight, str) else set(highlight or [])
+    notes = notes or {}
+    bw = min(2.75, w * 0.36)
+    bh = min(1.15 if bw >= 2.7 else 1.3, h * 0.24)  # narrow boxes (bullets at left) wrap to one more line
+    cx, cy = x + w / 2, y + h / 2 + 0.05
+    rx, ry = (w - bw) / 2, (h - bh) / 2
+    angles = [-90, -18, 54, 126, 198]
+    centers = [(cx + rx * math.cos(math.radians(a)), cy + ry * math.sin(math.radians(a))) for a in angles]
+
+    def edge(c, toward):
+        dx, dy = toward[0] - c[0], toward[1] - c[1]
+        tx = (bw / 2 + 0.08) / abs(dx) if dx else 1e9
+        ty = (bh / 2 + 0.08) / abs(dy) if dy else 1e9
+        t = min(tx, ty)
+        return c[0] + dx * t, c[1] + dy * t
+
+    for k in range(5):
+        a, b = centers[k], centers[(k + 1) % 5]
+        p1, p2 = edge(a, b), edge(b, a)
+        arrow(ctx, slide, p1[0], p1[1], p2[0], p2[1], color=INK, lw=2.25)
+    hw, hh = min(2.9, w * 0.34), min(1.25, h * 0.27)
+    shape(ctx, slide, cx - hw / 2, cy - hh / 2, hw, hh, fill=AI_FILL, line=AI_STROKE, lw=1.75, kind="hex")
+    text(ctx, slide, cx - hw / 2 + 0.35, cy - hh / 2, hw - 0.7, hh,
+         [P("The AI tool", size=18, bold=True, align="c", space_after=0.1),
+          P("produces drafts; you make every decision", size=15, align="c")], anchor="m", bg=AI_FILL, floor=15)
+    for k, (name, sub) in enumerate(LOOP_STEPS):
+        bx, by = centers[k][0] - bw / 2, centers[k][1] - bh / 2
+        on = name in hl
+        fill, tc = (NAVY, WHITE) if on else (WHITE, INK)
+        shape(ctx, slide, bx, by, bw, bh, fill=fill, line=NAVY_DARK if on else "#3A3A3A", lw=3.5 if on else 1.5,
+              kind="round", radius=0.2)
+        text(ctx, slide, bx + 0.1, by, bw - 0.2, bh,
+             [P(f"{k + 1}. {name}", size=22, bold=True, color=tc, align="c", space_after=0.1),
+              P(notes.get(name, sub), size=15, color=tc, align="c")], anchor="m", bg=fill, floor=15)
+
+
+def L_loop(ctx, slide, s):
+    kicker(ctx, slide, s.get("kicker"))
+    set_title(ctx, slide, s["title"])
+    bottom = 5.85 if s.get("takeaway") else BOTTOM
+    bl = bullets_paras(s.get("bullets"), size=s.get("size", 24))
+    if bl:
+        tw = CW * 0.4
+        text(ctx, slide, MX, TOP, tw, bottom - TOP, bl, floor=20)
+        work_loop(ctx, slide, MX + tw + 0.3, TOP - 0.1, CW - tw - 0.3, bottom - TOP + 0.05, s.get("highlight"),
+                  s.get("step_notes"))
+    else:
+        work_loop(ctx, slide, MX + 1.0, TOP - 0.1, CW - 2.0, bottom - TOP + 0.05, s.get("highlight"),
+                  s.get("step_notes"))
+    ctx.visible.append((ctx.slide_no, "Work Loop diagram"))
+    if s.get("takeaway"):
+        takeaway(ctx, slide, s["takeaway"])
+
+
+def L_matrix(ctx, slide, s):
+    """2 x 2 (or n x m) matrix: col_headers, row_headers, cells[r][c] = {title, text, role}."""
+    kicker(ctx, slide, s.get("kicker"))
+    set_title(ctx, slide, s["title"])
+    bottom = 5.85 if s.get("takeaway") else BOTTOM
+    bl = bullets_paras(s.get("bullets"), size=s.get("size", 24))
+    x0 = MX
+    if bl:
+        tw = CW * 0.38
+        text(ctx, slide, MX, TOP, tw, bottom - TOP, bl, floor=20)
+        x0 = MX + tw + 0.35
+    cols, rows = s["col_headers"], s["row_headers"]
+    rw = 1.45
+    hh = 0.5
+    gw = (MX + CW - x0 - rw)
+    cw_ = (gw - 0.15 * (len(cols) - 1)) / len(cols)
+    ch = (bottom - TOP - hh - 0.15 * (len(rows) - 1) - 0.05) / len(rows)
+    for c, head in enumerate(cols):
+        text(ctx, slide, x0 + rw + c * (cw_ + 0.15), TOP, cw_, hh, [P(head, size=22, bold=True, align="c")], anchor="b")
+    for r, head in enumerate(rows):
+        yy = TOP + hh + 0.05 + r * (ch + 0.15)
+        text(ctx, slide, x0, yy, rw - 0.1, ch, [P(head, size=22, bold=True, align="r")], anchor="m", floor=18)
+        for c in range(len(cols)):
+            cell = s["cells"][r][c]
+            role = cell.get("role", "neutral")
+            hf, ht, border = ROLE_STYLE[role]
+            xx = x0 + rw + c * (cw_ + 0.15)
+            shape(ctx, slide, xx, yy, cw_, ch, fill=hf, line=border, lw=3.5 if role == "risk" else 1.5)
+            paras = [P(cell["title"], size=24, bold=True, color=ht, align="c", space_after=0.25)]
+            if cell.get("text"):
+                paras.append(P(cell["text"], size=20, color=ht, align="c"))
+            text(ctx, slide, xx + 0.12, yy, cw_ - 0.24, ch, paras, anchor="m", bg=hf, floor=16)
+    if s.get("takeaway"):
+        takeaway(ctx, slide, s["takeaway"])
+
+
+def L_lanes(ctx, slide, s):
+    """Rows of book-grammar flows: rows = [{label, nodes: [{label, kind, role, dashed}]}]."""
+    kicker(ctx, slide, s.get("kicker"))
+    set_title(ctx, slide, s["title"])
+    bottom = 5.85 if s.get("takeaway") else BOTTOM
+    if s.get("caption"):
+        ch_ = paras_height([P(s["caption"], size=18, italic=True)], (CW - 0.1) * 72, ctx.font_sans, 1.0) / 72 + 0.12
+        bottom -= ch_ + 0.08
+        text(ctx, slide, MX, bottom + 0.06, CW, ch_, [P(s["caption"], size=18, italic=True, color=MUTED)],
+             anchor="m", floor=16)
+    rows = s["rows"]
+    gap = 0.22
+    rh = (bottom - TOP - gap * (len(rows) - 1)) / len(rows)
+    lw_ = s.get("label_width", 2.7)
+    for k, r in enumerate(rows):
+        yy = TOP + k * (rh + gap)
+        text(ctx, slide, MX, yy, lw_ - 0.15, rh, [P(r["label"], size=22, bold=True)], anchor="m", floor=18)
+        flow(ctx, slide, r["nodes"], MX + lw_, yy, CW - lw_, rh)
+    if s.get("takeaway"):
+        takeaway(ctx, slide, s["takeaway"])
+
+
 LAYOUTS = {
     "title": L_title, "session_plan": L_session_plan, "objectives": L_objectives, "section": L_section,
     "concept": L_concept, "figure": L_figure, "compare": L_compare, "worked": L_worked, "quiz": L_quiz,
     "tps": L_tps, "timeline": L_timeline, "lab": L_lab, "assignment": L_assignment, "key_terms": L_key_terms,
-    "exit_ticket": L_exit_ticket, "references": L_references, "deep": L_deep,
+    "exit_ticket": L_exit_ticket, "references": L_references, "deep": L_deep, "loop": L_loop,
+    "matrix": L_matrix, "lanes": L_lanes,
 }
-WORD_LIMIT_EXEMPT = {"references", "assignment", "session_plan", "lab", "key_terms", "title", "objectives"}
+WORD_LIMIT = 50  # visible words below the title (kicker, footer and "coming next" placeholders not counted)
+WORD_LIMIT_EXEMPT = {"references", "assignment", "session_plan", "lab", "key_terms", "title", "objectives", "quiz",
+                     "loop", "lanes"}
 
 
 # --------------------------------------------------------------------------- expansion
@@ -1220,21 +1395,26 @@ def new_presentation(ctx_fonts=(SERIF, SANS)):
 
 
 # --------------------------------------------------------------------------- checks
-NUM_RE = re.compile(r"(?<![\w§.])[−\-+]?\d[\d,]*(?:\.\d+)?\s?%?")
+NUM_RE = re.compile(r"(?<![\w§.])[−\-+]?\d[\d,]*(?:\.\d+)?(?: ?%)?")
 
 
 def number_check(ctx, slides_text, sources_text):
     """Warn about numbers on slides or in notes that do not occur in the source files."""
     norm_src = sources_text.replace("−", "-").replace(" ", "").replace(" ", " ")
-    nums_src = set(m.group(0).replace(" ", "").lstrip("+-") for m in NUM_RE.finditer(norm_src))
+    nums_src = set()
+    for m in NUM_RE.finditer(norm_src):
+        tok = m.group(0).replace(" ", "").lstrip("+-").rstrip(",")
+        nums_src.update({tok, tok.rstrip("%"), tok.rstrip("%").replace(",", "")})
     flagged = {}
     for sn, t in slides_text:
         t = t.replace("−", "-")
         for m in NUM_RE.finditer(t):
-            tok = m.group(0).replace(" ", "").lstrip("+-")
-            after = t[m.end():m.end() + 8].lower()
+            tok = m.group(0).replace(" ", "").lstrip("+-").rstrip(",")
+            after = t[m.end():m.end() + 9].lower()
             if re.match(r"\s*(min|minute|slide|of\b)", after):
                 continue
+            if re.match(r"\s*percent", after):
+                tok = tok + "%"
             base = tok.rstrip("%")
             try:
                 val = float(base.replace(",", ""))
@@ -1247,6 +1427,43 @@ def number_check(ctx, slides_text, sources_text):
             flagged.setdefault(tok, set()).add(sn)
     for tok, sl in sorted(flagged.items()):
         ctx.warnings.append(f"NUMBER NOT IN SOURCES: '{tok}' on slides {sorted(sl)}")
+
+
+def normalize_zip(path: Path):
+    """Rewrite the .pptx with fixed timestamps so identical specs give byte-identical decks."""
+    import zipfile
+    with zipfile.ZipFile(path) as z:
+        items = [(i.filename, z.read(i.filename)) for i in z.infolist()]
+    tmp = path.with_suffix(".tmp")
+    with zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as z:
+        for name, data in items:
+            zi = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0))
+            zi.compress_type = zipfile.ZIP_DEFLATED
+            z.writestr(zi, data)
+    tmp.replace(path)
+
+
+def prune_assets(ctx, chapter: int):
+    """Remove this chapter's PNGs in slides/assets that no deck uses any more.
+
+    A PNG is kept while this deck uses it or any spec in slides/specs (or the gallery) names a figure id
+    that matches it, because decks also borrow figures from other chapters (e.g. the AI Work Loop) and
+    several decks may be built at the same time."""
+    if ctx.spec["deck"].get("draft"):
+        return
+    used = set(ctx.used_figures)
+    ids = set()
+    for y in list((ROOT / "slides" / "specs").glob("*.yaml")) + [ROOT / "slides" / "template" / "gallery.yaml"]:
+        try:
+            ids.update(re.findall(r"\bfigure:\s*[\"']?(f\d+-[\w-]+)", y.read_text(encoding="utf-8")))
+        except OSError:
+            pass
+    for png in (ROOT / "slides" / "assets").glob(f"f{chapter}-*.png"):
+        if png.stem not in used and not any(png.stem.startswith(i) for i in ids):
+            try:
+                png.unlink()
+            except OSError:
+                pass
 
 
 # --------------------------------------------------------------------------- main build
@@ -1267,11 +1484,14 @@ def build(spec_path: Path, preview=False, out=None, fonts=None, quiet=False):
         before = len(ctx.visible)
         fn(ctx, slide, s)
         dark = s["layout"] == "title"
-        if s["layout"] != "title":
-            footer(ctx, slide, dark=False)
+        if s["layout"] == "section":
+            footer(ctx, slide, x=5.0, bg=SOFT)
+        elif s["layout"] != "title":
+            footer(ctx, slide)
         words = sum(len(t.split()) for sn, t in ctx.visible[before:] if sn == ctx.slide_no)
-        if s["layout"] not in WORD_LIMIT_EXEMPT and words > 50:
-            ctx.warn(f"{words} words on slide (guide: about 40)")
+        limit = s.get("max_words", WORD_LIMIT)  # max_words: a deliberate, commented exception in the spec
+        if s["layout"] not in WORD_LIMIT_EXEMPT and words > limit:
+            ctx.warn(f"{words} words on slide below the title (guide: about 40; warning above {limit})")
         notes = build_notes(ctx, s)
         slide.notes_slide.notes_text_frame.text = notes
         ctx.notes_all.append((ctx.slide_no, notes))
@@ -1300,14 +1520,16 @@ def build(spec_path: Path, preview=False, out=None, fonts=None, quiet=False):
     out = out or ROOT / "slides" / "out" / f"ch{int(d['chapter']):02d}-{d['slug']}.pptx"
     out.parent.mkdir(parents=True, exist_ok=True)
     prs.save(out)
+    normalize_zip(out)
+    prune_assets(ctx, int(d["chapter"]))
     # report
     tot = {}
     for sess, m, _ in ctx.minutes:
         tot[sess] = tot.get(sess, 0) + m
-    print(f"wrote {out.relative_to(ROOT)} · {len(prs.slides)} slides")
+    print(f"wrote {out.relative_to(ROOT) if out.is_relative_to(ROOT) else out} · {len(prs.slides)} slides")
     for k, v in tot.items():
         target = d.get("sessions", {}).get(k, {}).get("minutes")
-        flag = "" if not target or abs(v - target) <= 2 else f"  <-- target {target}"
+        flag = "" if (not target or abs(v - target) <= 2 or d.get("draft")) else f"  <-- target {target}"
         print(f"  session {k}: {v:g} min{flag}")
     if ctx.warnings:
         print(f"{len(ctx.warnings)} warning(s):")

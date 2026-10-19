@@ -1,7 +1,7 @@
 # AI for All: Career-Ready AI Skills — textbook repository
 
-Author: Şadi Evren Şeker. Book language: American English. Audience: UT Dallas undergraduates in every major, no prerequisites.
-Course: CS 2V95.001, Spring 2027 (Tue/Thu 2:30–3:45 pm, AD 3.218). The book parallels the 15-week syllabus in docs/syllabus.md.
+Author: Şadi Evren Şeker. Book language: American English. Audience: undergraduates in every major at any college or university, and self-learners; no prerequisites.
+Independence (D27, docs/production/independence-rules.md): the book names no university (no UT Dallas, no Haliç), no course code, term, dates, schedule, enrollment or syllabus, so any instructor can adopt it. A suggested 15-week pacing appears only in "How to Use This Book". The author's own course plan (docs/syllabus.md) is internal planning, never book content.
 Talk to the author in Turkish; write book content in English.
 
 ## Context (read first)
@@ -40,7 +40,7 @@ student-reader (non-CS reader panel), subject-expert-reviewer, pedagogy-reviewer
 - No anthropomorphic verbs for models. Define every acronym at first use in each chapter.
 - Figures: meaning never by color alone; at most 9 boxes; title states the finding; alt text required.
 - Tool neutrality: tool-specific click paths go to Compass notes.
-- Compass (OptiWisdom) is optional, free and ungraded for UTD students; never imply grades or student data go to Compass.
+- Compass (OptiWisdom) is optional and never part of a course grade; never imply grades or student data go to Compass.
 - Log substantive AI assistance in docs/ai-use-log.md.
 - The author makes the final voice edit. Never mark a chapter "done" yourself.
 

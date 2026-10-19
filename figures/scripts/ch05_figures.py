@@ -144,8 +144,8 @@ def chapter_map(f):
     f.text(400, 30, "Chapter 5 at a glance", size=22, weight="700")
     cols = [("Frame", ["5.1 Frame before you prompt", "5.2 How much to hand over: the Delegation Ladder"]),
             ("Prompt", ["5.3 The anatomy of a prompt", "5.4 Iterate on purpose"]),
-            ("Test and do", ["5.5 One result is not evidence", "5.6 Lab 5.1: iteration sprint (Thu, Feb 4)",
-                             "A3: prompt and iteration log (due Feb 8)"])]
+            ("Test and do", ["5.5 One result is not evidence", "5.6 Lab 5.1: iteration sprint (in class)",
+                             "A3: prompt and iteration log"])]
     for c, (head, items) in enumerate(cols):
         x = 30 + c * 255
         f.text(x + 115, 70, head, size=16, weight="700")

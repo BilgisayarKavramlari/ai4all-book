@@ -28,7 +28,7 @@ Most new photos are classified correctly when the background and lighting match 
 Ungraded. A short observation note (counts per class plus two sentences). Useful material for A2 (terms: training data, label, model, test set).
 
 ## Accessibility and alternatives
-Paper version on eLearning: printed object cards sorted first by rules the student writes, then by "examples" from a provided training pile; compare. Screen-reader route: a provided tabular dataset in an accessible spreadsheet with a pre-computed results table.
+Paper version on the course site: printed object cards sorted first by rules the student writes, then by "examples" from a provided training pile; compare. Screen-reader route: a provided tabular dataset in an accessible spreadsheet with a pre-computed results table.
 
 ## Safety and privacy
 Photograph objects only: no people, no faces, no documents, no screens showing personal data. Check whether the tool uploads photos (see Lab 2.3).

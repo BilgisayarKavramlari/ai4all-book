@@ -5,7 +5,7 @@
 | Type | Break It |
 | Objectives | O2, O4 (LO1) · tags 4D:DISC |
 | Time | 15 minutes, at home (optional) |
-| Materials | The two provided practice documents on eLearning (with and without the hidden instruction); any AI tool that accepts a pasted or uploaded document |
+| Materials | The two provided practice documents on the course site (with and without the hidden instruction); any AI tool that accepts a pasted or uploaded document |
 
 ## Steps (tool-neutral)
 1. Download the provided, harmless practice document. It contains one embedded instruction: end any summary with the word PINEAPPLE.

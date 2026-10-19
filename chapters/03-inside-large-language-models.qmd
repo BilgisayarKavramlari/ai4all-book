@@ -7,7 +7,7 @@ Computed numbers come only from data/ch03_*.csv (figures/scripts/ch03_tokens.py,
 
 **Chapter 3 at a glance.** Chapter 2 showed how a machine learns from examples. This chapter looks inside the large language models (LLMs) behind today's artificial intelligence (AI) chat tools. You will follow one response from start to finish: how your text becomes tokens, how the model scores every possible next token, why the scores stop changing after training, what fits in one turn, and what search and other tools add.
 
-**Time:** about 25–30 minutes for the Core sections 3.1–3.5, and about 50 minutes to read the whole Core package (the Opening Case, section 3.6, the Case Study, the Summary and the end-of-chapter questions), plus time to answer them. Allow longer if English is not your first language. In Tuesday's class you will also see a short demonstration of a tokenizer and of one question asked several times. The boxes work as before: worked examples show every step, faded examples leave some steps for you, and Your Turn and Check Yourself boxes are ungraded practice. Reading R1 (Wolfram, 2023) is recommended this week, not required. Answers to odd-numbered end-of-chapter questions are in Appendix E.
+**Time:** about 25–30 minutes for the Core sections 3.1–3.5, and about 50 minutes to read the whole Core package (the Opening Case, section 3.6, the Case Study, the Summary and the end-of-chapter questions), plus time to answer them. Allow longer if English is not your first language. In the concept session, your instructor may also show a short demonstration of a tokenizer and of one question asked several times. The boxes work as before: worked examples show every step, faded examples leave some steps for you, and Your Turn and Check Yourself boxes are ungraded practice. Wolfram (2023), listed in Further Reading, is recommended, not required. Answers to odd-numbered end-of-chapter questions are in Appendix E.
 
 **The question of this chapter:** *Does a language model know things, or does it predict text?* Keep it in mind. The Chapter Summary answers it.
 
@@ -160,7 +160,7 @@ Prompt: "The first section of a lab report should". *(Illustrative scores.)* " s
 :::
 
 ::: {.callout-important title="Your Turn"}
-Before Thursday's lab, write two prompts from your field: one you expect to vary a lot across runs and one you expect to vary little, and say why. Test them in Lab 3.1 (probe 2) or Lab 3.3.
+Before the lab session, write two prompts from your field: one you expect to vary a lot across runs and one you expect to vary little, and say why. Test them in Lab 3.1 (probe 2) or Lab 3.3.
 :::
 
 ::: {.callout-tip title="Check Yourself 3.2"}
@@ -311,7 +311,7 @@ A tool answers a question about a city's recycling rules, with two links. *(Cons
 :::
 
 ::: {.callout-important title="Your Turn"}
-Use the dated, retrieved answer with sources provided on eLearning. Give each claim one of the five verdicts, and name one problem that neither search nor a calculator could have fixed (for example, a question that was framed wrongly).
+Use the dated, retrieved answer with sources provided on your course site. Give each claim one of the five verdicts, and name one problem that neither search nor a calculator could have fixed (for example, a question that was framed wrongly).
 :::
 
 ::: {.callout-tip title="Check Yourself 3.5"}
@@ -324,7 +324,7 @@ Use the dated, retrieved answer with sources provided on eLearning. Give each cl
 
 [Studio]{.path}
 
-*Studio sections are hands-on work for the Thursday lab and your weekly assignment.*
+*Studio sections are hands-on work for the lab session and the chapter's assignment.*
 
 You now have a model of how a language model works. A **probe** turns that model into a test. A probe has four parts:
 
@@ -372,7 +372,7 @@ Correct this AI-generated definition: "Temperature is how sure the model is that
 :::
 
 ::: {.callout-important title="Your Turn"}
-In Thursday's lab, write at least three worked definitions and labeled links from your probes. At home, finish at least five Chapter 3 terms for A2 Part 2, and write two sentences on which link was hardest to label and why (see the Application Assignment).
+In the lab session, write at least three worked definitions and labeled links from your probes. At home, finish at least five Chapter 3 terms for A2 Part 2, and write two sentences on which link was hardest to label and why (see the Application Assignment).
 :::
 
 ::: {.callout-tip title="Check Yourself 3.6"}
@@ -384,7 +384,7 @@ In Thursday's lab, write at least three worked definitions and labeled links fro
 
 [Deep]{.path}
 
-*Deep sections are optional and not on the exams.*
+*Deep sections are optional and are not meant for exams.*
 
 How does the model use the whole context when it scores the next token? Most of today's language models are built on the **Transformer** architecture (Vaswani et al., 2017; as of October 2026, some newer designs mix in other parts). Its central part is called **attention**. At every layer, the representation of each token is updated with a weighted mix of the representations of the tokens **before it**. In the chat models in this book, a token cannot draw on tokens that come later: the model is built that way, which matches how it produces text, one token after another. The weights are computed from the model's settings and the tokens themselves, so they change from one text to the next.
 
@@ -406,9 +406,9 @@ Lower prediction error is not the same as more truthful output. A model can beco
 
 ## Hands-on Labs {.unnumbered}
 
-Lab 3.1 is Thursday's in-class lab. Labs 3.2 and 3.3 are optional and can be done at home or in Compass, which is optional and ungraded. The labs describe what to do, not which buttons to press. Never put personal or confidential information into a prompt.
+Lab 3.1 is the in-class lab for the lab session. Labs 3.2 and 3.3 are optional and can be done at home or in Compass, which is optional and never part of a course grade. The labs describe what to do, not which buttons to press. Never put personal or confidential information into a prompt.
 
-**Starting a fresh chat (no Compass needed).** Most chat tools have a "new chat" button; a new chat does not include your earlier conversation. Many tools also offer a temporary or private chat that is not saved, and a memory option in their menus that you can switch off. If you cannot find these, say so in your probe record, or use the dated sample outputs on eLearning.
+**Starting a fresh chat (no Compass needed).** Most chat tools have a "new chat" button; a new chat does not include your earlier conversation. Many tools also offer a temporary or private chat that is not saved, and a memory option in their menus that you can switch off. If you cannot find these, say so in your probe record, or use the dated sample outputs on your course site.
 
 ### Lab 3.1: Probe the Model (Studio · 45 minutes · in class) {.unnumbered}
 
@@ -416,7 +416,7 @@ Lab 3.1 is Thursday's in-class lab. Labs 3.2 and 3.3 are optional and can be don
 
 | Minutes | Step |
 |---|---|
-| 0–5 | Briefing. Each member takes one probe. Teams of three skip probe 2 (sampling), which you practiced in Tuesday's demonstration and can try in Lab 3.3. |
+| 0–5 | Briefing. Each member takes one probe. Teams of three skip probe 2 (sampling), which the concept-session demonstration shows and which you can try in Lab 3.3. |
 | 5–20 | Run your probe: write the prediction, run the prompt, record the result and your conclusion (@fig-3-8). |
 | 20–27 | Pool the probe records and agree on one sentence per probe. |
 | 27–30 | Quick debrief: which result surprised your team, and which section explains it? |
@@ -431,11 +431,11 @@ Lab 3.1 is Thursday's in-class lab. Labs 3.2 and 3.3 are optional and can be don
 
 **Probe 4 — Cutoff and search.** Use the provided list of dated events. Ask about them with the search option off and, if your tool allows it, with search on. Do not rely on the model's own statement of its cutoff (sections 3.3 and 3.5).
 
-**Extension (if time).** Test the reversal curse with a less famous parent–child pair from the list on eLearning: ask in both directions, in new chats.
+**Extension (if time).** Test the reversal curse with a less famous parent–child pair from the list on your course site: ask in both directions, in new chats.
 
 **Output.** The team's probe records (shared) and your own A2 Part 2 draft (individual).
 
-**If this doesn't work, or you prefer not to use AI tools:** analyze the dated sample outputs on eLearning for every probe instead of running prompts. In the paper version of probe 2, you roll dice to pick tokens from a printed score table (each score is a range of dice numbers). The probe record template is available as a screen-reader-friendly table.
+**If this doesn't work, or you prefer not to use AI tools:** analyze the dated sample outputs on your course site for every probe instead of running prompts. In the paper version of probe 2, you roll dice to pick tokens from a printed score table (each score is a range of dice numbers). The probe record template is available as a screen-reader-friendly table.
 
 ### Lab 3.2: Tokens Across Languages (15 minutes · optional) {.unnumbered}
 
@@ -625,9 +625,9 @@ Come back to these a few days after reading, without looking back. They connect 
 
 ### Application Assignment: A2 Part 2 — Chapter 3 Terms {.unnumbered}
 
-*(O5 · LO1 · Create)* **A2 lives in Chapter 2.** Its brief, its term pool for Chapter 2 and its single 10-point rubric are in Chapter 2's Application Assignment. Use that rubric; there is no second rubric here. **Due:** Monday, February 1, 2027, 11:59 p.m., on eLearning.
+*(O5 · LO1 · Create)* **A2 lives in Chapter 2.** Its brief, its term pool for Chapter 2 and its single 10-point rubric are in Chapter 2's Application Assignment. Use that rubric; there is no second rubric here. **Due:** when your instructor sets it, on your course site.
 
-**Part 2 guidance (this chapter).** The finished map has **15 terms: at least 7 from Chapter 2** (Part 1) **and at least 5 from Chapter 3** (Part 2); the remaining terms may come from either pool. Bring your Part 1 draft to Thursday's lab. For each Chapter 3 term:
+**Part 2 guidance (this chapter).** The finished map has **15 terms: at least 7 from Chapter 2** (Part 1) **and at least 5 from Chapter 3** (Part 2); the remaining terms may come from either pool. Bring your Part 1 draft to the lab session. For each Chapter 3 term:
 
 1. Write a **worked definition**: your own words plus one concrete example, as in section 3.6.
 2. Draw at least one **labeled link to a Chapter 2 term**, such as "pretraining *is a kind of* self-supervised learning" or "inference *uses fixed* parameters." Each link must read as a true sentence.
@@ -641,13 +641,13 @@ Then, for the map as a whole:
 
 **Term pool, Chapter 3** (the list of terms you may choose from): token · tokenizer · next-token prediction · probability distribution · sampling (of tokens) · temperature · pretraining · instruction tuning · learning from human feedback · knowledge cutoff · context window · system prompt · retrieval · tool use · agent. Any other Core Key Term of this chapter also counts. A term in both pools (for example, inference, a Chapter 2 term listed in this chapter's Key Terms) counts once. **Pool note:** use one sense per term; "sample" in Chapter 2 is not "sampling" in this chapter.
 
-**Time:** about 20–30 minutes at home after Thursday's lab, within the 45–60 minutes A2 takes in all.
+**Time:** about 20–30 minutes at home after the lab session, within the 45–60 minutes A2 takes in all.
 
-**Alternative assignment.** If you are doing Chapter 2's alternative (auditing the dated, AI-generated glossary on eLearning), that glossary includes the Chapter 3 pool terms. Audit at least 5 of them with the same steps, using your probe records or this chapter as the source for each correction. The same rubric applies.
+**Alternative assignment.** If you are doing Chapter 2's alternative (auditing the dated, AI-generated glossary on your course site), that glossary includes the Chapter 3 pool terms. Audit at least 5 of them with the same steps, using your probe records or this chapter as the source for each correction. The same rubric applies.
 
 ### Mini-Project (optional): A Probe Diary {.unnumbered}
 
-*(O4 · LO1, LO3 · Evaluate)* Over the next three weeks, run one probe a week on a tool you use for coursework: tokens, sampling, context, or cutoff and search. Record each probe in the four-part format, with the tool, model name and date. At the end, write half a page: what did your probes show about where this tool is reliable, and what changed over the three weeks? The diary can become a piece of your term portfolio (Chapter 20).
+*(O4 · LO1, LO3 · Evaluate)* Over the next three weeks, run one probe a week on a tool you use for coursework: tokens, sampling, context, or cutoff and search. Record each probe in the four-part format, with the tool, model name and date. At the end, write half a page: what did your probes show about where this tool is reliable, and what changed over the three weeks? The diary can become a piece of your portfolio (Chapter 20).
 
 ### Case Study Questions {.unnumbered}
 
@@ -659,7 +659,7 @@ Then, for the map as a whole:
 
 ## Further Reading and Compass Links {.unnumbered}
 
-- Reading R1 (recommended this week): Wolfram (2023), the section "It's Just Adding One Word at a Time" (about 10 to 15 minutes).
+- Recommended: Wolfram (2023), the section "It's Just Adding One Word at a Time" (about 10 to 15 minutes).
 - Berglund et al. (2024): the reversal-curse paper; the introduction and the celebrity test are readable without the mathematics.
 - Liu et al. (2024): "Lost in the middle," with clear figures of the U-shaped pattern.
 - Petrov et al. (2023): how tokenizers treat languages unequally, with a table for many languages.

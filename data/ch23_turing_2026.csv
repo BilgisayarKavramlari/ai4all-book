@@ -1,0 +1,10 @@
+# Jones, C. R., & Bergen, B. K. (2026). Large language models pass a standard three-party Turing test. PNAS 123(21), e2524472123. Published values from the abstract (read via Crossref, 2026-10-18).
+# Two randomized, controlled, preregistered tests on independent populations; 5-minute simultaneous conversations with a human and a system; percent of games in which the interrogator judged the system to be the human.
+# Order of the no-persona values (38%, 36%) follows the abstract's "the same models" (GPT-4.5, then LLaMa-3.1) [VERIFY against the article's figure].
+system,prompt,judged_human_pct
+GPT-4.5,persona prompt,73
+LLaMa-3.1-405B,persona prompt,56
+GPT-4.5,no persona prompt,38
+LLaMa-3.1-405B,no persona prompt,36
+ELIZA,baseline,23
+GPT-4o,baseline,21

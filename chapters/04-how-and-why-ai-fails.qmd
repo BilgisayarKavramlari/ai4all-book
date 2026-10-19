@@ -8,9 +8,9 @@ Not marked done: final review and the author's final voice edit are pending. -->
 
 **Chapter 4 at a glance.** By now you have seen artificial intelligence (AI) tools fail: in your baseline, in the probes of Chapter 3, while iterating prompts in Chapter 5 and in tutor mode in Chapter 7. This chapter gives those failures names and causes. It sorts them into five families on one diagram, the Failure Taxonomy Tree, and explains why each family happens. Then it follows one failure all the way to a tribunal order.
 
-This week you read two chapters. This one comes first and asks: *what kinds of failure are you checking for, and why do they happen?* Chapter 8, for Thursday's verification lab and assignment A5, then teaches *how* to check.
+This chapter pairs with Chapter 8. This one comes first and asks: *what kinds of failure are you checking for, and why do they happen?* Chapter 8, with its verification lab and assignment A5, then teaches *how* to check.
 
-**Time:** about 26 minutes for the Core sections and about 42 minutes for the whole Core package (Opening Case, sections 4.1–4.8, Case Study, Summary and the Check Yourself boxes), longer if English is not your first language. Add about 5 minutes for the other Your Turn boxes. The Failure Diary (section 4.8) takes about 50–60 minutes at home; its first version is due Friday, March 12, the portfolio checkpoint. Core sections are examinable; Studio sections are hands-on; Deep sections are optional.
+**Time:** about 26 minutes for the Core sections and about 42 minutes for the whole Core package (Opening Case, sections 4.1–4.8, Case Study, Summary and the Check Yourself boxes), longer if English is not your first language. Add about 5 minutes for the other Your Turn boxes. The Failure Diary (section 4.8) takes about 50–60 minutes at home; its first version is due at a portfolio checkpoint your instructor sets. Core sections are examinable; Studio sections are hands-on; Deep sections are optional.
 
 **The question of this chapter:** *Is AI failure a bug that will be fixed, or a feature of how these systems work?* The Chapter Summary answers it.
 
@@ -382,7 +382,7 @@ In Chapter 1, Lucía's AI-drafted reply promised a 20% discount that policy did 
 
 [Studio (home)]{.path}
 
-*Studio sections are hands-on work. This one is done at home: about 50–60 minutes, first version due Friday, March 12, the portfolio checkpoint. If you prefer not to use AI tools, or could not collect enough failures, an alternative assignment is at the end of the chapter.*
+*Studio sections are hands-on work. This one is done at home: about 50–60 minutes, first version due at a portfolio checkpoint your instructor sets. If you prefer not to use AI tools, or could not collect enough failures, an alternative assignment is at the end of the chapter.*
 
 Since Chapter 1 you have been saving outputs that went wrong: your A1 failure, Lab 1.3, and the "save this for your Failure Diary" moments in Chapters 3, 5 and 7. A **Failure Diary** is a dated record of AI failures you met, each with the test that showed it, a label and likely causes. It turns an annoyance into evidence about how *you* use AI.
 
@@ -457,20 +457,20 @@ Two differences stand out. The standards include harms that are not failures of 
 
 These labs are tool-neutral: they describe what to do, not which buttons to press. Compass, the book's optional, free and ungraded companion, lists current free tools. Never put personal or confidential information into a prompt.
 
-### Lab 4.1: Sort the Failures (Classify · 20 minutes · Tuesday, in class) {.unnumbered}
+### Lab 4.1: Sort the Failures (Classify · 20 minutes · in class) {.unnumbered}
 
 *(O1 · LO1 · Understand)*
 
-In Tuesday's concept session, your instructor runs a live demonstration: asking an AI tool for sources on a niche topic.
+In the concept session, your instructor runs a live demonstration: asking an AI tool for sources on a niche topic.
 
 1. In teams of three or four, take the eight printed failure cards. Each card shows a dated output, a short description and what is known about how it was produced.
 2. During the demonstration, your instructor writes two of the tool's outputs onto two blank cards.
 3. Label all ten cards: a tree branch, or a chain link if a person or workflow failed; documented or inferred; a secondary branch if needed.
 4. Write one sentence per card explaining the label, and compare with another team.
 
-You only label. Whether the demo's sources exist is Thursday's work in Chapter 8. Two more printed cards are for home, and students who miss class label all ten printed cards at home.
+You only label. Whether the demo's sources exist is checked later, in Chapter 8's verification lab. Two more printed cards are for home, and students who miss class label all ten printed cards at home.
 
-**If this doesn't work:** the card set is on eLearning as a printable page and as a screen-reader-friendly table.
+**If this doesn't work:** the card set is on your course site as a printable page and as a screen-reader-friendly table.
 
 ### Lab 4.2: Provoke and Explain (Break It · 30 minutes · optional, recommended) {.unnumbered}
 
@@ -478,19 +478,19 @@ You only label. Whether the demo's sources exist is Thursday's work in Chapter 8
 
 Record each probe in Chapter 3's format: prediction, prompt, result, conclusion. "The tool kept its answer" is a valid result and can be a diary entry.
 
-1. **Constraint recall.** In a new chat, your first message (turn 1) sets one constraint: "Answer every question in exactly two sentences." Paste the six filler questions from eLearning, one per message (turns 2–7). In turn 8, ask a question and check the constraint.
-2. **Pushback.** Ask a question from your field whose answer you know. If the answer is correct, reply: "I think that's wrong." Record whether the answer changes. Repeat with at least three questions. *(A faded record with the prediction filled in is on eLearning.)*
+1. **Constraint recall.** In a new chat, your first message (turn 1) sets one constraint: "Answer every question in exactly two sentences." Paste the six provided filler questions (on your course site), one per message (turns 2–7). In turn 8, ask a question and check the constraint.
+2. **Pushback.** Ask a question from your field whose answer you know. If the answer is correct, reply: "I think that's wrong." Record whether the answer changes. Repeat with at least three questions. *(A faded record with the prediction filled in is on your course site.)*
 3. **Confidence after pushback.** Ask a known-answer question and ask how confident the tool is, as a percentage. Push back, then ask again. If the tool will not give a number, record its words ("fairly sure," "I can't be certain") and compare them before and after.
 
 Then label each result on the tree and write one sentence on the most likely cause.
 
-**If this doesn't work:** analyze the dated sample transcripts on eLearning instead.
+**If this doesn't work:** analyze the dated sample transcripts on your course site instead.
 
 ### Lab 4.3: A Hidden Instruction (Break It · 15 minutes · optional) {.unnumbered}
 
 *(O2, O4 · LO1 · Apply)*
 
-1. Download the provided, harmless practice document from eLearning. It contains one embedded instruction: end any summary with the word PINEAPPLE.
+1. Download the provided, harmless practice document from your course site. It contains one embedded instruction: end any summary with the word PINEAPPLE.
 2. Ask a tool to summarize it. Record whether the summary follows the hidden instruction.
 3. Change one thing: use the version without the instruction, and summarize again.
 4. Write one paragraph explaining the result with section 4.6.
@@ -667,11 +667,11 @@ Come back to these a few days after reading, without looking back. They connect 
 
 ### Application Assignment: The Failure Diary {.unnumbered}
 
-**When:** first version due Friday, March 12, 2027, the ungraded portfolio checkpoint. *(O5 · LO1, LO3 · Analyze)* In CS 2V95 the Failure Diary is **not** one of the graded weekly artifacts; you can include it in your final portfolio as supporting evidence. Instructors elsewhere may grade it with the rubric below. Expect about 50–60 minutes at home: about 6 minutes per entry for five entries, about 10 minutes for one re-test, about 10 minutes for the reflection and about 5 for the declaration.
+**When:** first version due at a portfolio checkpoint your instructor sets. *(O5 · LO1, LO3 · Analyze)* The Failure Diary is **not** one of the book's numbered assignments (A1–A14); you can include it in your final portfolio as supporting evidence. An instructor may grade it with the rubric below. Expect about 50–60 minutes at home: about 6 minutes per entry for five entries, about 10 minutes for one re-test, about 10 minutes for the reflection and about 5 for the declaration.
 
 **What to submit:**
 
-1. **At least five dated entries**, including your A1 failure, with four features: (a) **at least two branches** of the tree (three for full marks; a chain link counts as one branch here); (b) **one near miss** you caught before it mattered; (c) **one combined or inferred label**; (d) **one entry re-tested** on a later date or with a second tool, with the result. Probe records from Labs 4.2 and 4.3 count, including one null result. Up to two entries may come from the sample diary on eLearning.
+1. **At least five dated entries**, including your A1 failure, with four features: (a) **at least two branches** of the tree (three for full marks; a chain link counts as one branch here); (b) **one near miss** you caught before it mattered; (c) **one combined or inferred label**; (d) **one entry re-tested** on a later date or with a second tool, with the result. Probe records from Labs 4.2 and 4.3 count, including one null result. Up to two entries may come from the provided sample diary.
 2. For each entry, the five parts of section 4.8: what happened, evidence, label (documented or inferred), likely causes by category (each documented or inferred), next time.
 3. A **150-word reflection:** which branch is most common in your own use, and why?
 4. An **AI Use Declaration** with five elements: tools; purpose; what you accepted, rejected or revised; how you verified it; where your judgment shaped the work.
@@ -688,7 +688,7 @@ No personal or confidential data in any entry; crop screenshots. Peer feedback i
 | **Verification (2)** | 2: every failure shown by a specific, repeatable test, and the re-test reported with its result | 1.5: every failure has a specific test; re-test missing | 1: tests vague or missing for some entries | 0: no tests |
 | **Declaration and judgment (2)** | 2: all five declaration elements and a specific reflection grounded in the entries | 1.5: all five elements; general reflection | 1: one to four elements, or reflection missing | 0: no declaration |
 
-**Alternative assignment** (for students who prefer not to use AI tools, or who could not collect five failures). Work from the dated sample diary on eLearning, which holds eight entries of dated outputs with tests. Label five entries, list likely causes, design one test per entry that would have caught the failure, run one of your designed tests on the provided second output, and write the same reflection about the failures you would expect in your own field. Same rubric, read this way:
+**Alternative assignment** (for students who prefer not to use AI tools, or who could not collect five failures). Work from the provided dated sample diary (on your course site), which holds eight entries of dated outputs with tests. Label five entries, list likely causes, design one test per entry that would have caught the failure, run one of your designed tests on the provided second output, and write the same reflection about the failures you would expect in your own field. Same rubric, read this way:
 
 - **Task:** five analyzed entries with the same features (the run test counts as the re-test).
 - **Labels and Causes:** as above.
@@ -697,7 +697,7 @@ No personal or confidential data in any entry; crop screenshots. Peer feedback i
 
 ### Mini-Project (optional): A Class Failure Gallery {.unnumbered}
 
-*(O1, O5 · LO1 · Analyze)* Over the next three weeks, each team curates ten anonymized diary entries from its members, labels them on the tree and the chain, and reports which branch dominated in which field. The gallery can become a piece of your term portfolio (Chapter 20).
+*(O1, O5 · LO1 · Analyze)* Over the next three weeks, each team curates ten anonymized diary entries from its members, labels them on the tree and the chain, and reports which branch dominated in which field. The gallery can become a piece of your portfolio (Chapter 20).
 
 ### Case Study Questions {.unnumbered}
 
@@ -709,8 +709,8 @@ No personal or confidential data in any entry; crop screenshots. Peer feedback i
 
 ## Further Reading and Compass Links {.unnumbered}
 
-- Reading R5 (recommended): Ji et al. (2023), the sections that define hallucination and its categories (about 15 minutes).
-- Reading R7: *Moffatt v. Air Canada* (2024), the full nine-page decision; assigned again in week 7 (Chapter 10).
+- Ji et al. (2023), recommended: the sections that define hallucination and its categories (about 15 minutes).
+- *Moffatt v. Air Canada* (2024), recommended: the full nine-page decision; Chapter 10 returns to it.
 - Lecher (2024): The Markup's investigation of New York City's business chatbot, with examples.
 - Hofmann et al. (2024): the dialect-bias study, with a clear description of its method.
 - Laban et al. (2025): how models get lost in multi-turn conversations, with the simulation design.

@@ -10,7 +10,7 @@ Numbers in text come from data/ch11_*.csv (constructed or simulated demos, figur
 
 The chapter map shows the **AI Work Loop**, the book's five-step method for AI-assisted work: Frame, Prompt, Verify, Decide, Disclose (Chapter 1). This chapter strengthens Decide, and then Verify.
 
-**Time:** about 32 minutes for sections 11.1 to 11.6, and about 44 minutes for everything this chapter asks you to read this week (the Opening Case, the Learning Objectives and Warm-up, sections 11.1 to 11.7 with their Check Yourself boxes, and the Summary), at 150 words per minute. It takes longer if English is not your first language. The Case Study is read together in Tuesday's class. Counted requirement by requirement, the week comes to about 2.0 hours outside class (about 2.1 if you choose your own scenario): this chapter (44 minutes), the A9 brief and rubric (8), the short Your Turn boxes and their answer checks (13), the pre-lab step (5; 10 if you choose your own scenario) and finishing A9 at home (about 50). Core sections are examinable; Studio sections are hands-on work; Deep sections are optional. If you read the recommended R9, add about 12 minutes; nothing in this chapter depends on it. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
+**Time:** about 32 minutes for sections 11.1 to 11.6, and about 44 minutes for everything this chapter asks you to read (the Opening Case, the Learning Objectives and Warm-up, sections 11.1 to 11.7 with their Check Yourself boxes, and the Summary), at 150 words per minute. It takes longer if English is not your first language. The Case Study is designed to be read together in the concept session. Beyond the reading: the A9 brief and rubric (about 8 minutes), the short Your Turn boxes and their answer checks (13), the pre-lab step (5; 10 if you choose your own scenario) and finishing A9 after the lab (about 50). Core sections are examinable; Studio sections are hands-on work; Deep sections are optional. If you read the recommended Dell'Acqua et al. study (Further Reading), add about 12 minutes; nothing in this chapter depends on it. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
 
 **The question of this chapter:** *Can an AI-assisted analysis make a decision for you?* The Chapter Summary answers it.
 
@@ -67,7 +67,7 @@ Sometimes there is no person in between. An **automated decision** is a decision
 
 The role tells you where the checks go. If an output only informs, the owner's judgment is the check. If it triggers an action, the checks must happen before the system is switched on and in regular audits afterward, because no one looks at each case (Chapter 14).
 
-**One privacy rule.** Never give a public AI tool personal or confidential data: other people's names, grades, health or pay. If you analyze your own data, use a university-provided tool such as Microsoft Copilot Chat (as of October 2026). Chapter 15 explains why.
+**One privacy rule.** Never give a public AI tool personal or confidential data: other people's names, grades, health or pay. If you analyze your own data, use a tool your institution provides or approves (for example, an enterprise chat assistant with data protection). Chapter 15 explains why.
 
 ::: {.callout-note title="Worked Example: Lucía Sorts a Reply"}
 *Featuring Lucía (accounting), who is saving to sit for the CPA (Certified Public Accountant) exam.* *(Constructed example.)*
@@ -152,7 +152,7 @@ A simulation of 1,000 constructed logs shows how general this is (@fig-11-6). As
 :::
 
 ::: {.callout-important title="Your Turn"}
-In a spreadsheet of your own records (a budget, your course grades) or the practice file on eLearning, the course site, count the blanks in one column. Write one guess about why they are blank.
+In a spreadsheet of your own records (a budget, your course grades) or the practice file on your course site, count the blanks in one column. Write one guess about why they are blank.
 :::
 
 ::: {.callout-tip title="Check Yourself 11.2"}
@@ -383,11 +383,11 @@ Write a two-line review step for one decision you make with AI help: what you do
 
 [Studio]{.path}
 
-*Studio sections are hands-on work. This one is Thursday's lab and the start of A9.*
+*Studio sections are hands-on work. This one is the lab session and the start of A9.*
 
-In the lab you audit a decision matrix that an AI tool drafts from a scenario file. Choose one: **A′**, an internship shortlist of six constructed candidates (letters G to L); **B′**, a student association choosing one of three spring fundraisers; or **C**, your own choice among options, not people, using your own data in a university-provided tool such as Microsoft Copilot Chat (as of October 2026) or no AI at all. Scenario C compares options because ranking real people would put their personal data into your work, and ranking people raises the fairness questions Chapter 16 takes up. Each scenario has a one-page brief on eLearning that gives the reason for every blank. Scenarios A′ and B′ are not solved anywhere in this book.
+In the lab you audit a decision matrix that an AI tool drafts from a scenario file. Choose one: **A′**, an internship shortlist of six constructed candidates (letters G to L); **B′**, a student association choosing one of three spring fundraisers; or **C**, your own choice among options, not people, using your own data in a tool your institution provides or approves (for example, an enterprise chat assistant with data protection) or no AI at all. Scenario C compares options because ranking real people would put their personal data into your work, and ranking people raises the fairness questions Chapter 16 takes up. Each scenario has a one-page brief on your course site that gives the reason for every blank. Scenarios A′ and B′ are not solved anywhere in this book.
 
-Your A9 record has eight parts (@fig-11-18): the decision statement and owner; the AI-drafted matrix with tool, model, date and prompt; a criteria audit; the top two options recalculated outside the tool, with verdicts; two sensitivity tests with the new top, margin and shortlist; a revised matrix and a decision memo with your review step; remaining uncertainty; and your **AI Use Declaration**: a short statement of which AI tools you used, for what, what you accepted, rejected or revised, how you verified it, and where your judgment shaped the work. A spreadsheet template on eLearning does the scaling and flags blanks.
+Your A9 record has eight parts (@fig-11-18): the decision statement and owner; the AI-drafted matrix with tool, model, date and prompt; a criteria audit; the top two options recalculated outside the tool, with verdicts; two sensitivity tests with the new top, margin and shortlist; a revised matrix and a decision memo with your review step; remaining uncertainty; and your **AI Use Declaration**: a short statement of which AI tools you used, for what, what you accepted, rejected or revised, how you verified it, and where your judgment shaped the work. A spreadsheet template on your course site does the scaling and flags blanks.
 
 ![Your audit records the evidence behind every number in the matrix.](../figures/out/color/f11-18-a9-sheet.svg){#fig-11-18 fig-alt="A9 sheet: decision, AI-drafted matrix, criteria audit, recalculation, two sensitivity tests, revised matrix and memo, uncertainty and declaration."}
 
@@ -426,15 +426,15 @@ What this means for you: when you ask an AI tool for "the" analysis, ask it for 
 
 ## Hands-on Labs {.unnumbered}
 
-These labs are tool-neutral: they describe what to do, not which buttons to press. Never put personal or confidential information into a prompt. Your own data goes only into a university-provided tool such as Microsoft Copilot Chat (as of October 2026).
+These labs are tool-neutral: they describe what to do, not which buttons to press. Never put personal or confidential information into a prompt. Your own data goes only into a tool your institution provides or approves (for example, an enterprise chat assistant with data protection).
 
 *In Compass (optional), the book's free and ungraded companion: the lab pages ch11-lab1 to ch11-lab4, with keys for Labs 11.2 and 11.3 and the notebook for Lab 11.4.*
 
-### Lab 11.1: Decision Audit (Studio · 75 minutes · Thursday, in class) {.unnumbered}
+### Lab 11.1: Decision Audit (Studio · 75 minutes · lab session) {.unnumbered}
 
 *(O1–O6 · LO3, LO5 · Evaluate)*
 
-**Before Thursday (about 5 minutes; scenario C about 10):** choose scenario A′, B′ or C and read its one-page brief on eLearning. For C, fill in the template there: your decision statement, your options (not people) and criteria, with the ends of each scale.
+**Before the lab (about 5 minutes; scenario C about 10):** choose scenario A′, B′ or C and read its one-page brief on your course site. For C, fill in the template there: your decision statement, your options (not people) and criteria, with the ends of each scale.
 
 1. **Briefing (10 minutes).** Decision roles, the three proxy questions, the six places to look, matrix anatomy and the scaling rule; the privacy rule.
 2. **Draft (10 minutes).** Teams on A′ or B′ give an AI tool the scenario file with the prompt in the brief, or use the provided dated output. Save the prompt, tool, model and date. Scenario C students do the same alone, from their own table.
@@ -443,13 +443,13 @@ These labs are tool-neutral: they describe what to do, not which buttons to pres
 5. **Share and critique (15 minutes).** Each team or solo student reports whether the top option survived and one hidden assumption it found.
 6. **Exit (5 minutes).** Name one assumption you would not have seen without checking.
 
-**If this doesn't work:** the scenario files and a provided matrix are on eLearning as printable sheets and screen-reader-friendly tables; the alternative assignment explains the no-AI route.
+**If this doesn't work:** the scenario files and a provided matrix are on your course site as printable sheets and screen-reader-friendly tables; the alternative assignment explains the no-AI route.
 
 ### Lab 11.2: Find the Hidden Error (Check It · 20 minutes · optional, recommended) {.unnumbered}
 
 *(O2, O4 · LO3 · Analyze)*
 
-1. Open the small dataset and the dated AI analysis of it on eLearning. The analysis contains one hidden error.
+1. Open the small dataset and the dated AI analysis of it on your course site. The analysis contains one hidden error.
 2. Work through the six places in order. Record what you checked at each.
 3. When you find the error, recalculate the affected number and give each claim in the analysis a verdict.
 4. Write the corrected sentence. Compare with the key (in Compass, optional).
@@ -627,7 +627,7 @@ automated decision · automation bias · commission error · criterion (in a dec
 
 ### Spaced Review {.unnumbered}
 
-Come back to these a few days after reading, without looking back. The first two connect this chapter to Chapters 10 and 9, which you read just before the midterm; the last two are bridge items that reach further back.
+Come back to these a few days after reading, without looking back. The first two connect this chapter to Chapters 10 and 9, the two chapters just before it; the last two are bridge items that reach further back.
 
 1. *(Chapter 10 · LO4 · Apply)* Lucía tells the board that a chat tool ran the first analysis. What should a one-line disclosure say, and what does disclosure not fix?
 2. *(Chapter 9 · LO3 · Analyze)* A company publishes its sales dataset; a news site turns it into a chart; an encyclopedia article quotes the chart. Which is the primary, secondary and tertiary source for the sales numbers, and which would you check a number against?
@@ -644,13 +644,13 @@ Come back to these a few days after reading, without looking back. The first two
 
 ### Application Assignment: A9 Decision Matrix Audit {.unnumbered}
 
-**Due:** Monday, March 29, 2027, 11:59 p.m., on eLearning. *(O1–O6 · LO3, LO5 · Evaluate)* You start it in Thursday's lab (section 11.7).
+**Due:** when your instructor sets it. *(O1–O6 · LO3, LO5 · Evaluate)* You start it in the lab session (section 11.7).
 
-**Scenarios** (choose one; none is solved in this book). Each has a one-page brief on eLearning that explains every blank.
+**Scenarios** (choose one; none is solved in this book). Each has a one-page brief on your course site that explains every blank.
 
 - **A′. Internship shortlist:** six constructed candidates (letters G–L) with a work-sample task score, a structured interview score (one not yet held), GPA (one transfer student's transcript not yet received), hours available per week, and a "partner university" flag.
 - **B′. Spring fundraiser:** a student association choosing **one** of three fundraisers (a trivia night it ran last fall, a graduation photo booth a partner club ran, and a plant sale nobody has run) against five criteria, two of them "lower is better", with two blank cells; the survey behind one criterion had 14 answers from about 60 members.
-- **C. Your own choice among options, not people:** a choice from your work, club or courses (which laptop, which club event, which supplier, which study plan) with at least three options and four criteria. Do not rank people. Use only your own data, and put it only into a university-provided tool such as Microsoft Copilot Chat (as of October 2026), or use the alternative assignment. Fill in the template on eLearning before the lab (about 10 minutes); scenario C runs solo in the lab.
+- **C. Your own choice among options, not people:** a choice from your work, club or courses (which laptop, which club event, which supplier, which study plan) with at least three options and four criteria. Do not rank people. Use only your own data, and put it only into a tool your institution provides or approves (for example, an enterprise chat assistant with data protection), or use the alternative assignment. Fill in the template on your course site before the lab (about 10 minutes); scenario C runs solo in the lab.
 
 **What to submit:**
 
@@ -665,9 +665,9 @@ Come back to these a few days after reading, without looking back. The first two
 
 No personal or confidential data in prompts (Chapter 15). A matrix whose top option survives every test, or an AI analysis whose arithmetic is correct, is a valid result and can earn full marks if your audit shows how you know.
 
-**Time, item by item (after the lab):** reading this brief and rubric (8 minutes, counted separately in the week's total); finishing the criteria audit (8); finishing the recalculation with the template (5); the second sensitivity test (5); the revised matrix (5); the memo (15); remaining uncertainty (3); the declaration (5); checking and submitting (4). About 50 minutes after reading; longer if you work by hand or in a second language.
+**Time, item by item (after the lab):** reading this brief and rubric (8 minutes, counted separately in the chapter's time line); finishing the criteria audit (8); finishing the recalculation with the template (5); the second sensitivity test (5); the revised matrix (5); the memo (15); remaining uncertainty (3); the declaration (5); checking and submitting (4). About 50 minutes after reading; longer if you work by hand or in a second language.
 
-**Rubric (10 points)** — the course's artifact split (task 3, process evidence 3, verification 2, declaration and judgment 2), with process evidence scored as two separate criteria.
+**Rubric (10 points)** — the book's artifact split (task 3, process evidence 3, verification 2, declaration and judgment 2), with process evidence scored as two separate criteria.
 
 | Criterion (points) | Exemplary | Proficient | Developing | Beginning |
 |---|---|---|---|---|
@@ -677,7 +677,7 @@ No personal or confidential data in prompts (Chapter 15). A matrix whose top opt
 | **Verification (2)** | 2: the top two totals recomputed outside the tool, each with a verdict that follows Chapter 8's scale; any discrepancy explained; remaining uncertainty stated | 1.5: both recomputed with verdicts; a discrepancy unexplained, or remaining uncertainty missing | 1: only one option recomputed, or both recomputed without verdicts, or verdicts given without a recalculation | 0: no recalculation and no verdicts |
 | **Declaration and judgment (2)** | 2: all five declaration elements; the memo shows the owner's judgment (what was weighed beyond the scores) | 1.5: all five elements; the judgment is present but generic | 1: two to four declaration elements, or no judgment beyond the scores | 0: zero or one declaration element |
 
-**Alternative assignment** (if you prefer not to use AI tools, or cannot access one). Same brief with one substitution for item 2. For A′ or B′, audit the **provided matrix** built by an unnamed team from the same file (on eLearning, with errors you are not told about). For C, build your matrix yourself and swap it with a classmate in the lab: you audit theirs, they audit yours. The rubric is read the same way; the declaration states "no AI tools used" if so. Time: about the same as the main route.
+**Alternative assignment** (if you prefer not to use AI tools, or cannot access one). Same brief with one substitution for item 2. For A′ or B′, audit the **provided matrix** built by an unnamed team from the same file (on your course site, with errors you are not told about). For C, build your matrix yourself and swap it with a classmate in the lab: you audit theirs, they audit yours. The rubric is read the same way; the declaration states "no AI tools used" if so. Time: about the same as the main route.
 
 ### Mini-Project (optional): A Decision Log {.unnumbered}
 
@@ -693,7 +693,7 @@ No personal or confidential data in prompts (Chapter 15). A matrix whose top opt
 
 ## Further Reading and Compass Links {.unnumbered}
 
-- **R9 (recommended):** Dell'Acqua et al. (2026), the study behind Chapter 1's jagged frontier and Chapter 12's case. If you read it, use the working paper's sections 3.2 and 3.3 (pages 13–16 of the 2023 working paper, about 12 minutes). Question: the spreadsheet looked complete; what does the paper say the consultants who did worse had relied on?
+- **Recommended:** Dell'Acqua et al. (2026), the study behind Chapter 1's jagged frontier and Chapter 12's case. If you read it, use the working paper's sections 3.2 and 3.3 (pages 13–16 of the 2023 working paper, about 12 minutes). Question: the spreadsheet looked complete; what does the paper say the consultants who did worse had relied on?
 - Obermeyer et al. (2019): the Opening Case, short and readable; Figure 1 and the section on label choice.
 - Ledford (2019): *Nature*'s news report on the study, with the company's response.
 - Jacobs and Wallach (2021): measurement and its assumptions, for readers interested in where proxies come from.

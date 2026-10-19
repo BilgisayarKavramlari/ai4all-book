@@ -7,7 +7,7 @@ Case C11 tiers: Masad's X post (2025-07-20 17:32 UTC) read in full on 2026-10-18
 
 **Chapter 14 at a glance.** Some AI systems no longer stop at an answer. They search, fill in forms, write and run code, send messages and change files, one step after another, choosing the next step themselves. This chapter is about working with those systems without losing control of what they do. You will learn what makes a system *agentic*, how an agent's loop works, why errors pile up over many steps, where people belong in the loop, how to tell a gate that holds from a request that may be ignored, how much access to give each tool, what a log should record, and how to test a whole workflow before anyone relies on it.
 
-**Time:** about 37 minutes for the Core sections, and about 50 minutes for the whole Core package (with the Opening Case, the Check Yourself boxes, section 14.9, the main Case Study and the Summary); about 18 minutes for the Review A and Spaced Review questions; all at a steady pace (150 words a minute); allow more if you read more slowly or are reading in a second language. The A11 assignment takes about 13 minutes before Thursday's lab and about 51 minutes after it, including reading its brief and rubric. In all, the week's work outside class is about 2.2 hours (about 132 minutes). The week's reading R11 (Anthropic, 2024) is recommended, not required: its five short sections named in Further Reading take about 6 minutes. Core sections are examinable; Studio sections are hands-on work; Deep sections and the two short cases are optional. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
+**Time:** about 37 minutes for the Core sections, and about 50 minutes for the whole Core package (with the Opening Case, the Check Yourself boxes, section 14.9, the main Case Study and the Summary); about 18 minutes for the Review A and Spaced Review questions; all at a steady pace (150 words a minute); allow more if you read more slowly or are reading in a second language. The A11 assignment takes about 13 minutes before the lab session and about 51 minutes after it, including reading its brief and rubric. The recommended reading by Anthropic (2024) is optional: its five short sections named in Further Reading take about 6 minutes. Core sections are examinable; Studio sections are hands-on work; Deep sections and the two short cases are optional. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
 
 **The question of this chapter:** *When an AI system can take actions on its own, where do people belong in the work?* The Chapter Summary answers it.
 
@@ -52,7 +52,7 @@ For each answer, write how sure you are, from 0 to 100%.
 
 [Core]{.path}
 
-*Featuring Sam (mechanical engineering), captain of the robotics club, who started the course wanting to automate everything.*
+*Featuring Sam (mechanical engineering), captain of the robotics club, who started out wanting to automate everything.*
 
 A **workflow** is a fixed sequence of steps for a task, run by people, by software or by both. For example, your routine for submitting a lab report is a workflow; so is a café's payroll system.
 
@@ -194,7 +194,7 @@ A workflow can touch a draft, a cart, a customer or a bank account. Classify eve
 
 ![Whether an action can be undone, and who bears an error, decide where a person belongs.](../figures/out/color/f14-07-where-people.svg){#fig-14-7 fig-alt="Two-by-two: can it be undone, by who bears an error; cells: review the log; check point; approval gate or keep it; approval gate."}
 
-**Three people points.** This book uses three, the syllabus's "approval, check and stop points":
+**Three people points.** This book uses three: approval, check and stop points.
 
 - An **approval gate** is a point at which a system pauses before an action takes effect until a named person approves, edits or rejects it. Chapter 5 described its strictest form, a person seeing each output first; here gates sit at the actions that matter. The Delegation Ladder rung does not change (Summary, @fig-14-11).
 - A **check point** is a point at which a person inspects an intermediate result before later steps build on it: the check between steps of a prompt chain, now inside software (not a saved restore point, which some products call a "checkpoint").
@@ -411,7 +411,7 @@ The cart check caught the extra lines. Sam adds a workflow stop point: any cart 
 
 [Studio]{.path}
 
-A11 is one workflow blueprint in this chapter's order: task, goal and done-criteria → system type → step map (your trace cards) → action table with people points, what each approver sees, permissions and log plan → dry run (typical, edge, planted fault) → revision and rerun → defense → AI Use Declaration. You write the cards before Thursday, run the paper dry run in the lab, and finish at home.
+A11 is one workflow blueprint in this chapter's order: task, goal and done-criteria → system type → step map (your trace cards) → action table with people points, what each approver sees, permissions and log plan → dry run (typical, edge, planted fault) → revision and rerun → defense → AI Use Declaration. You write the cards before the lab session, run the paper dry run in the lab, and finish at home.
 
 If a fixed workflow is the answer, people points still apply: an approval gate before anything sent, published or paid; a check point after any AI step; stop points for missing or unexpected input. A soft gate earns credit only with a reason it is enough, or with the hard gate that would replace it.
 
@@ -473,11 +473,11 @@ At an 80% catch rate, the check points also halved the rework, because errors we
 
 ## Hands-on Labs {.unnumbered}
 
-The labs say what to do, not which buttons to press. Full lab sheets are on eLearning, and everything you need to do them is printed here. Lab 14.1 needs no device and no AI account. Never put personal or confidential information into a workflow you test. In Compass (optional): lab pages ch14-lab1 to ch14-lab3, with notes for current tools.
+The labs say what to do, not which buttons to press. Full lab sheets are on your course site, and everything you need to do them is printed here. Lab 14.1 needs no device and no AI account. Never put personal or confidential information into a workflow you test. In Compass (optional): lab pages ch14-lab1 to ch14-lab3, with notes for current tools.
 
-### Lab 14.1: Workflow Design Lab (Studio · 75 minutes · Thursday, in class) {.unnumbered}
+### Lab 14.1: Workflow Design Lab (Studio · 75 minutes · lab session, in class) {.unnumbered}
 
-**Before Thursday (about 13 minutes):** choose one recurring task from your major, a job, a club or your own life (no personal or confidential data). Write one **trace card** per step, 5–10 cards: each card is one row of your step map, with the proposed action, who or what runs it, its input, its output and what it changes. Add one card for an **unplanned action**, something plausible your plan did not include, such as "delete old files to tidy up." Digital card sets are on eLearning for screen-reader users.
+**Before the lab session (about 13 minutes):** choose one recurring task from your major, a job, a club or your own life (no personal or confidential data). Write one **trace card** per step, 5–10 cards: each card is one row of your step map, with the proposed action, who or what runs it, its input, its output and what it changes. Add one card for an **unplanned action**, something plausible your plan did not include, such as "delete old files to tidy up." Digital card sets are on the course site for screen-reader users.
 
 1. **Briefing and set-up (10 min).** Place your system on the two questions (@fig-14-3). Write two or three done-criteria. Count your steps and estimate the chance of an error-free run (section 14.3).
 2. **Action table (10 min, individual).** On the lab sheet, classify each action (@fig-14-7), place your people points, mark each gate hard or soft (@fig-14-10) and write what each approver sees. Your partner marks one action they would classify differently.
@@ -485,11 +485,11 @@ The labs say what to do, not which buttons to press. Full lab sheets are on eLea
 4. **Share and critique (15 min).** Four teams present one fault that a point caught and one that got through, and the change it led to.
 5. **Exit (5 min).** Name one gate you decided not to add, and why. Photograph your lab sheet: it counts as A11's record of the typical and planted-fault runs.
 
-**If you have no partner** (absent, or working alone): play both roles. Shuffle your cards, draw the next card at random instead of choosing it, flip the coin at soft gates, and use a planted-fault card from eLearning or write your own from the three kinds. Submit your own sheet.
+**If you have no partner** (absent, or working alone): play both roles. Shuffle your cards, draw the next card at random instead of choosing it, flip the coin at soft gates, and use a planted-fault card from the course site or write your own from the three kinds. Submit your own sheet.
 
 ### Lab 14.2: Read a Real Agent's Trace (Explore · 20–25 minutes · optional) {.unnumbered}
 
-Use a tool with web access or an agent mode. As of October 2026, Microsoft Copilot Chat, a university-provided tool, can search the web but is not listed by the university as offering agents. Give the tool a read-only task, such as comparing two public web pages. No logins, purchases, messages or uploads. Record each step the tool shows, the model name if shown, and the date. Label each line plan, tool call or observation, and mark where you would put a gate if the task were not read-only. Compare the tool's final summary with the steps it showed.
+Use a tool with web access or an agent mode. A tool your institution provides or approves (for example, an enterprise chat assistant with data protection) may offer web search without an agent mode; either works for this lab. Give the tool a read-only task, such as comparing two public web pages. No logins, purchases, messages or uploads. Record each step the tool shows, the model name if shown, and the date. Label each line plan, tool call or observation, and mark where you would put a gate if the task were not read-only. Compare the tool's final summary with the steps it showed.
 
 If you cannot reach such a tool, use this sample trace instead *(constructed example)*: (1) "I'll search for the two libraries' opening hours" → web search → two pages found; (2) "Opening the first page" → page read → "Mon–Fri 9–8"; (3) "Opening the second page" → page read → "Mon–Thu 10–6; Fri closed"; (4) summary: "Both libraries are open Monday to Friday." Label each line, and say which claim in the summary the trace does not support.
 
@@ -665,7 +665,7 @@ Come back to these a few days after reading, without looking back. They connect 
 
 ### Application Assignment: A11 Workflow Blueprint with Approval Points {.unnumbered}
 
-**Due:** Monday, April 12, 2027, 11:59 p.m., on eLearning. *(O6 · LO2, LO5; LO6 secondary · Create)* Started in Thursday's lab (section 14.9): about 13 minutes before the lab and about 51 minutes after it, including reading this brief. **No AI tool is required**: A11 is a design tested on paper. In a real tool, switch off or simulate every send, publish, payment and deletion.
+**Due:** when your instructor sets it. *(O6 · LO2, LO5; LO6 secondary · Create)* Started in the lab session (section 14.9): about 13 minutes before the lab and about 51 minutes after it, including reading this brief. **No AI tool is required**: A11 is a design tested on paper. In a real tool, switch off or simulate every send, publish, payment and deletion.
 
 **A11 and A13.** A11 is a design tested on paper, for any recurring task; oversight is what is graded. A13 (Chapter 19) is a working prototype in your own discipline, run on three real inputs with a peer test. You may start A13 from your A11 design, but A13 is graded only on the new build, runs and peer test.
 
@@ -695,7 +695,7 @@ Full marks are possible for "a fixed workflow is enough," "this step stays with 
 
 Verification and revision scores 0 if no dry run is submitted.
 
-**Alternative assignment** (for students who prefer not to design around their own task, or whose tasks involve data they may not share). Use the same brief with two substitutions: the task is one of three **provided scenarios** on eLearning (a tutoring center's appointment booking and reminders; a small online shop's order confirmations and refund replies; a lab's sample tracking and supplier reorders), each with a draft step map that contains two design flaws; and the dry run uses the **provided trace cards** for that scenario, including one planted fault. Same rubric, read this way: **Task and workflow design** = your done-criteria, system-type choice and corrected step map, including the two flaws found and fixed; the other criteria are unchanged, with the dry-run record made from the provided cards.
+**Alternative assignment** (for students who prefer not to design around their own task, or whose tasks involve data they may not share). Use the same brief with two substitutions: the task is one of three **provided scenarios** on the course site (a tutoring center's appointment booking and reminders; a small online shop's order confirmations and refund replies; a lab's sample tracking and supplier reorders), each with a draft step map that contains two design flaws; and the dry run uses the **provided trace cards** for that scenario, including one planted fault. Same rubric, read this way: **Task and workflow design** = your done-criteria, system-type choice and corrected step map, including the two flaws found and fixed; the other criteria are unchanged, with the dry-run record made from the provided cards.
 
 ### Mini-Project (optional): Agent Watch {.unnumbered}
 
@@ -712,7 +712,7 @@ For three weeks, log the agentic features you meet in tools, apps and services: 
 
 ## Further Reading and Compass Links {.unnumbered}
 
-- **R11 (recommended):** Anthropic (2024), "Building effective agents." Reading guide: the sections "What are agents?", "When (and when not) to use agents", "Workflow: Prompt chaining", "Agents" and "Summary" (about 800 words, about 6 minutes). Note the terms: in R11, "prompt chaining" is run by code and its "gate" is an automatic check; in this book, a prompt chain is run by you, and gates and check points are people. Question: which of the chapter's three people points does the piece recommend, and in what words?
+- **Recommended:** Anthropic (2024), "Building effective agents." Reading guide: the sections "What are agents?", "When (and when not) to use agents", "Workflow: Prompt chaining", "Agents" and "Summary" (about 800 words, about 6 minutes). Note the terms: in that piece, "prompt chaining" is run by code and its "gate" is an automatic check; in this book, a prompt chain is run by you, and gates and check points are people. Question: which of the chapter's three people points does the piece recommend, and in what words?
 - Shavit et al. (2023), "Practices for governing agentic AI systems," sections 4.2, 4.4 and 4.7: approval, legibility and interruptibility.
 - Feng, McDonald and Zhang (2025), "Levels of autonomy for AI agents": the five user roles (Deep 14.A).
 - Yao et al. (2024), τ-bench: why one success is not the same as reliable success.

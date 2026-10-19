@@ -206,7 +206,7 @@ def frame(f):
     f.box(300, 150, 200, 90, "Your task, in your field", role="highlight", kind="human", size=16)
     parts = [(40, 40, "Typical uses", "your row of the use map"),
              (540, 40, "What to verify", "and who can confirm it"),
-             (20, 290, "Data cautions", "the course floor and your field's records"),
+             (20, 290, "Data cautions", "the table's floor and your field's records"),
              (300, 300, "Field rules", "nearest first, dated"),
              (580, 290, "Career note", "how employers ask about it")]
     for x, y, lab, sub in parts:
@@ -250,8 +250,8 @@ def rules_nearest(f):
 # ---------------------------------------------------------------- F19.9 A11 -> A13
 def a11_a13(f):
     muted = MUTED[f.mode]
-    f.text(200, 30, "A11 (week 11): designed on paper", size=15, weight="700")
-    f.text(600, 30, "A13 (week 13): built and tested", size=15, weight="700")
+    f.text(200, 30, "A11: designed on paper", size=15, weight="700")
+    f.text(600, 30, "A13: built and tested", size=15, weight="700")
     left = ["Step map", "Action table and people points", "Dry run on paper"]
     right = ["Build: template, chain or configured tool", "Three runs: typical, different, edge",
              "Safeguards built in", "Peer test from another field", "Workflow card and defense"]
@@ -271,7 +271,7 @@ def a11_a13(f):
 # ---------------------------------------------------------------- F19.10 Marcus's fit matrix
 MARCUS_FIT = fit_matrix(
     parts=["1. Practice questions from a drug table", "2. Answers, closed-book", "3. Marks against the table"],
-    options=["University tool", "Consumer tool", "No AI"],
+    options=["Institution's tool", "Consumer tool", "No AI"],
     cells={(0, 0): {"decision": "Use, then check", "rung": "augmentation", "mark": "inside", "state": "chosen"},
            (0, 1): {"decision": "Passes the gate; not chosen", "rung": None, "mark": None, "state": "tested",
                     "note": "training on by default"},
@@ -291,7 +291,7 @@ MARCUS_FIT = fit_matrix(
 def safeguards(f):
     muted = MUTED[f.mode]
     f.box(300, 160, 200, 90, "Your prototype", role="ai", kind="ai", size=17)
-    items = [(40, 40, "Data gate passed", "the course floor, then your field's rules", "step"),
+    items = [(40, 40, "Data gate passed", "the table's floor, then your field's rules", "step"),
              (540, 40, "A people point", "hard where an error falls on others", "human"),
              (40, 300, "One field rule applied", "with its source and date", "step"),
              (540, 300, "Fairness check", "a small paired-input test, or why no group cue enters", "step")]
@@ -331,7 +331,7 @@ def peer_test(f):
 # ---------------------------------------------------------------- F19.13 Model card -> workflow card
 def card_mapping(f):
     muted, ink = MUTED[f.mode], INK[f.mode]
-    f.text(170, 30, "Model card (R16: nine sections)", size=15, weight="700")
+    f.text(170, 30, "Model card (nine sections)", size=15, weight="700")
     f.text(600, 30, "Workflow card (five fields)", size=15, weight="700")
     groups = [(["Intended use (out-of-scope uses)"], "Not for"),
               (["Intended use"], "For"),
@@ -359,7 +359,7 @@ def marcus_card(f):
     f.text(400, 26, "Workflow card: pharmacology review (Marcus, constructed)", size=16, weight="700")
     rows = [("Not for", "patient care; real dose calculations; anyone's grades", "highlight"),
             ("For", "my own exam review, from my textbook's drug tables", "neutral"),
-            ("Tested on", "3 tables (typical, different, edge) + Hana's peer test; university tool, model shown, "
+            ("Tested on", "3 tables (typical, different, edge) + Hana's peer test; institution's tool, model shown, "
                           "date", "neutral"),
             ("Results", "typical and different: all marks right; edge: one name swap, caught; after revision, all right",
              "neutral"),
@@ -453,7 +453,7 @@ MARCUS_FLOW = data_flow_map(
     highlight="input",
     annotate={"input": "textbook tables and his own notes only", "storage": "institutional terms",
               "recipients": "only Marcus"},
-    note="Placement data never enters, even without names: the course floor allows de-identified data, and his "
+    note="Placement data never enters, even without names: the table's floor allows de-identified data, and his "
          "placement rule says no.")
 SAM_LOOP = agent_loop(
     highlight=["tool", "check"],

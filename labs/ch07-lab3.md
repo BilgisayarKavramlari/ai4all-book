@@ -5,7 +5,7 @@
 | Type | Compare |
 | Objectives | O3, O4 (LO4) · tags 4D:DEL, 4D:DESC, 4D:DISC |
 | Time | 20 minutes, at home or in Compass (optional) |
-| Materials | An AI chat tool (a university-provided tool such as Microsoft Copilot Chat, as of October 2026, by default) that can open a fresh, temporary chat; two questions of similar difficulty from the same section of a course you are taking this term, with answers you can check; your tutor-mode setup (section 7.5) |
+| Materials | An AI chat tool (by default, one your institution provides or approves, for example an enterprise chat assistant with data protection) that can open a fresh, temporary chat; two questions of similar difficulty from the same section of a course you are taking this term, with answers you can check; your tutor-mode setup (section 7.5) |
 
 ## Steps (tool-neutral)
 1. **Tutor mode first:** in a fresh chat, paste your setup and work through question 1.
@@ -24,10 +24,10 @@ Answer mode is faster and usually involves no recall by you. Tutor mode takes lo
 3. When would answer mode be the right choice for you? (evaluate)
 
 ## Deliverable and rubric
-Ungraded. This mirrors Tuesday's class demonstration and can be a rehearsal for Lab 7.1.
+Ungraded. This mirrors the demonstration in the section 7.5 Worked Example and can be a rehearsal for Lab 7.1.
 
 ## Accessibility and alternatives
-No-device route: compare the dated answer-mode/tutor-mode transcript pair on eLearning.
+No-device route: compare the dated answer-mode/tutor-mode transcript pair on your course site.
 
 ## Safety and privacy
 Course questions only; no personal data. If the tool gives a wrong explanation, save it for your Failure Diary (Chapter 4).

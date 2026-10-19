@@ -5,7 +5,7 @@
 | Type | Check It (optional, at home) |
 | Objectives | Ch. 21 O1, O3 (LO7, LO5) · tags 4D:DISC, 4D:DIL |
 | Time | 20 minutes |
-| Materials | The provided sample sheet: a "code of AI ethics for students" produced by an AI model, with the model name and the date of generation (instructor package, eLearning). Optional: a university-provided tool such as Microsoft Copilot Chat (as of October 2026) to generate your own sample, with no personal data |
+| Materials | The provided sample sheet: a "code of AI ethics for students" produced by an AI model, with the model name and the date of generation (instructor package, course site). Optional: a tool your institution provides or approves (for example, an enterprise chat assistant with data protection) to generate your own sample, with no personal data |
 
 ## Steps (tool-neutral)
 1. Read the sample code. Count its lines.

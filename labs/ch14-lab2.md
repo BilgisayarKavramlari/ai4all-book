@@ -5,7 +5,7 @@
 | Type | Explore (home, optional) |
 | Objectives | O2, O5 (LO2, LO5) · tags 4D:DISC |
 | Time | 20–25 minutes |
-| Materials | A tool with web access or an agent mode, if you can reach one (as of October 2026, Microsoft Copilot Chat, a university-provided tool, can search the web but is not listed by the university as offering agents); no new account needed; or the printed sample trace below |
+| Materials | A tool with web access or an agent mode, if you can reach one (a tool your institution provides or approves, for example an enterprise chat assistant with data protection, may offer web search without an agent mode; either works); no new account needed; or the printed sample trace below |
 
 ## Steps (tool-neutral)
 1. Give the tool a **read-only** task, such as "compare the opening hours listed on these two public library pages." No logins, purchases, messages, uploads or form submissions.
@@ -14,7 +14,7 @@
 4. Mark where you would put an approval gate, a check point and a stop point if the task were not read-only.
 5. Compare the tool's final summary with the steps it showed. Does the summary claim anything the steps do not show?
 
-In Compass (optional): ch14-lab2, where current tools show their steps; also on eLearning.
+In Compass (optional): ch14-lab2, where current tools show their steps; also on the course site.
 
 ## Expected observations
 Tools differ in how much of their trace they show. Some summaries describe steps more smoothly than the visible trace supports, which is section 14.7's point about logs and summaries.

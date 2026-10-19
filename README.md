@@ -1,6 +1,6 @@
 # AI for All: Career-Ready AI Skills
 
-Textbook for CS 2V95.001, UT Dallas, Spring 2027. Author: Şadi Evren Şeker.
+An open textbook on career-ready AI skills for undergraduates in every major and for self-learners; usable by any instructor at any institution. Author: Şadi Evren Şeker.
 
 - Working rules for Claude: CLAUDE.md
 - First-run prompts, in order: prompts/01 → 04

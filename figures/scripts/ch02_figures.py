@@ -19,7 +19,7 @@ def chapter_map(f):
                        "2.6 Where generative AI fits"]),
             ("Diagnose", ["2.3 A model learns its sample", "2.4 Labels and balance",
                           "2.5 Right for the wrong reasons"]),
-            ("Do", ["2.7 A2: concept map of 15 terms (due Feb 1)", "Labs 2.1–2.3 (optional)"])]
+            ("Do", ["2.7 A2: concept map of 15 terms", "Labs 2.1–2.3 (optional)"])]
     for c, (head, items) in enumerate(cols):
         x = 30 + c * 255
         f.text(x + 115, 74, head, size=16, weight="700")

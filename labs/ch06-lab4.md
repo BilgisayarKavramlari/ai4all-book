@@ -5,7 +5,7 @@
 | Type | Audit |
 | Objectives | O4 (LO2) · tags 4D:DIL, 4D:DESC |
 | Time | 15 minutes (10-minute version: memory or saved notes only), at home or in Compass (optional) |
-| Materials | An AI tool you use that has standing instructions, project spaces or memory, or the provided sample memory list (eLearning); the audit sheet |
+| Materials | An AI tool you use that has standing instructions, project spaces or memory, or the provided sample memory list (course site); the audit sheet |
 
 ## Steps (tool-neutral)
 1. **Find the layers (3 min).** Open your tool's standing instructions (in its options), project files and memory list (Compass shows where for current tools). If your tool has none of these, use the provided sample memory list.
