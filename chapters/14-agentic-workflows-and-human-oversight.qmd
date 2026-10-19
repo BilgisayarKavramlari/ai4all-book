@@ -58,7 +58,7 @@ A **workflow** is a fixed sequence of steps for a task, run by people, by softwa
 
 Two questions separate AI systems: **who fixes the next step?** and **who runs each step?** Four kinds follow.
 
-| | Chat assistant | Prompt chain | Automated workflow | Agent |
+| Question | Chat assistant | Prompt chain | Automated workflow | Agent |
 |---|---|---|---|---|
 | Who fixes the next step? | You, each turn | You, in advance | People, in advance | The model, as it goes |
 | Who runs each step? | You | You | Software | Software |

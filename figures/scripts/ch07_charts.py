@@ -23,6 +23,7 @@ for fam in ("Source Sans 3", "Source Sans Pro"):
         break
 plt.rcParams.update({"font.size": 12, "axes.spines.top": False, "axes.spines.right": False,
                      "svg.fonttype": "none"})
+plt.rcParams["font.sans-serif"] = ["Source Sans 3", "STIXGeneral", "DejaVu Sans"]  # no system-font fallback in print (D29)
 
 STYLE = {
     "color": {"ink": "#1D1D1F", "muted": "#5C5C66",

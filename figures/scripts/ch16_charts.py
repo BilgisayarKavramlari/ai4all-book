@@ -24,6 +24,7 @@ for fam in ("Source Sans 3", "Source Sans Pro"):
         break
 plt.rcParams.update({"font.size": 12, "axes.spines.top": False, "axes.spines.right": False,
                      "svg.fonttype": "none", "svg.hashsalt": "ch16"})
+plt.rcParams["font.sans-serif"] = ["Source Sans 3", "STIXGeneral", "DejaVu Sans"]  # no system-font fallback in print (D29)
 
 STYLE = {
     "color": {"main": "#1C3D6E", "accent": "#FCE38A", "risk": "#C2410C", "ok": "#4CAF84", "ink": "#1D1D1F",
@@ -188,7 +189,7 @@ def f16_14(mode):
         ax.text(i + w / 2, aug + 0.8, f"{aug:g}", ha="center", fontsize=9.5, color=s["ink"])
     ax.set_xticks(range(len(rows)), [r["company"] + ("\n(named in 2018)" if r["named_in_2018_paper"] == "yes"
                                                      else "\n(not named)") for r in rows], fontsize=10)
-    ax.set_ylim(0, 40)
+    ax.set_ylim(0, 48)  # headroom so the legend clears the tallest bar labels
     ax.set_ylabel("Error for darker-skinned women (%)")
     ax.legend(handles=[Patch(facecolor=s["risk"], hatch=s["risk_hatch"], edgecolor=s["ink"], label="May 2017 (original audit)"),
                        Patch(facecolor=s["main"], hatch=s["hatch"], edgecolor=s["ink"], label="August 2018 (re-test)")],

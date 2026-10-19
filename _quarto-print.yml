@@ -1,0 +1,12 @@
+# Print interior profile for IngramSpark (decision D29):
+#   quarto render --profile print --to typst
+# Output goes to _book-print/. No cover page (the cover is a separate file), grayscale figures
+# and theme, and nothing at the page edge, so no bleed is needed. Convert the result to
+# PDF/X-1a with tools/make-print-pdfx.sh.
+project:
+  output-dir: _book-print
+
+print-edition: true
+
+filters:
+  - tools/print-gray-figures.lua

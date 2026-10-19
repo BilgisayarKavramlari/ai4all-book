@@ -225,3 +225,39 @@ Gereken iş: aynı görselden kalite ≈90 olan bir RGB JPEG üretmek (ör. `cov
 | 5. Tam kapak (arka + sırt + ön) | EKSİK | ISBN alınıp sayfa sayısı kesinleşince Ingram şablonunu isteyin (8.5 × 11, Paperback, 50 lb White, B&W). Sırt ≈ 2.55" (tahmin). Sarmal kapağı CMYK ve PDF/X olarak, 0.125" taşma payı ve barkodla üretin |
 | 6a. Kitap metninde D2D / iki cilt | HATA | `back/colophon.qmd:7` ve `:23`'ü IngramSpark ve tek cilde göre yeniden yazın; `:9`'daki "grayscale" ifadesini gerçek çıktıyla tutarlı hale getirin |
 | 6b. İç belgelerde D2D / iki cilt | EKSİK | `docs/decisions.md` (D3–D5) içine IngramSpark ve tek cilt kararını ekleyin; CLAUDE.md, `_quarto.yml` yorumu, skill'ler ve docs/ içindeki atıfları güncelleyin; publisher-d2d skill'inin yerine Ingram karşılığını yazın |
+
+---
+
+## Düzeltmeler (19 Ekim 2026)
+
+Yazarın onayıyla yapılan düzeltmeler. ISBN, yayıncı adı ve tam (sarmal) kapak yazara bırakıldı.
+
+**Yeni üretim komutları (karar D29):**
+
+```bash
+quarto render --profile print --to typst   # baskı iç dosyası -> _book-print/AI-for-All.pdf
+tools/make-print-pdfx.sh                   # PDF/X-1a:2001 -> _book-print/AI-for-All-interior-PDFX1a.pdf
+quarto render --to epub                    # EPUB -> _book/AI-for-All.epub
+quarto render --to typst                   # ekran PDF'i (renkli, kapaklı) -> _book/AI-for-All.pdf
+```
+
+| Madde | Önceki durum | Yapılan | Yeni durum |
+|---|---|---|---|
+| 1b–1c. Kapak iç dosyada | HATA | Baskı profili (`_quarto-print.yml`, `print-edition: true`) kapak sayfasını koymuyor | HAZIR (kapak yok) |
+| 1b. Sayfa sayısı | 1135 | Gövde yazısı tasarımdaki Source Serif 4'e geçti; baskıda 10 pt ve daha dar kenar boşlukları (iç 2.3 cm = 0.91", dış 2 cm, üst/alt 2.5 cm) | **1109 sayfa (çift)**. Ingram'ın 8.5 × 11, 50 lb white için azami sayfa sayısı doğrulanmalı (ikincil kaynaklar 1,050–1,200 diyor) |
+| 1d. Fontlar | Gömülü, ama Apple sistem fontları (.SFNS, Lucida Grande, Symbol) yedek olarak giriyordu | Typst'te gövde/başlık/kod fontları açıkça ayarlandı; şekillerde ve grafiklerde yedek font STIX (SIL OFL); bir şekilde "⊃" yazıyla değiştirildi | HAZIR: yalnızca Source Serif 4, Source Sans 3, JetBrains Mono, New Computer Modern Math, Font Awesome; hepsi gömülü |
+| 1e. Raster görseller | 2 adet RGB, 191 ppi | Şekil 17.8 600 dpi ile yeniden üretildi | HAZIR: gri, 720 ve 1033 ppi |
+| 1f. Renkler | RGB/ICC, 654 sayfa | Baskıda gri şekiller (`tools/print-gray-figures.lua`) ve gri tema; Ghostscript dönüşümü DeviceGray | HAZIR: PDF/X dosyasında DeviceRGB, ICCBased ve CMYK sıfır |
+| 1g. Trim'e uzaklık | Alt 0.557" | Yeni düzen ölçüldü | Sol 0.785", sağ 0.525", alt 0.549" (≥0.5"). Üstteki 0.17" ölçümü bölüm sayfasındaki büyük "I" harfinin font kutusu; mürekkep 1" altında |
+| 1h. Gutter | ≈1.18" | Baskıda iç kenar 2.3 cm | 0.91" (Ingram'ın kalın kitap için 0.875" alt sınırının üstünde) |
+| 1i. Taşma payı | 51 sayfa kenara değiyor | Baskıda bölüm sayfalarının tam sayfa zemini ve başlık kutularının kenara uzanan biçimi kaldırıldı (heading-style 1); başlık sayfası bandı kapalı | HAZIR: kenarda mürekkep yok; taşma payı gerekmiyor |
+| 1j. PDF/X-1a:2001 | Değil | `tools/make-print-pdfx.sh` (Ghostscript 10.08, `tools/pdfx/PDFX_def_ai4all.ps`, CGATS TR 001 çıktı niyeti, saydamlık düzleştirme, bağlantı açıklamaları kaldırıldı) ve `tools/pdfx/add_trimbox.py` (her sayfaya TrimBox) | Yapısal olarak HAZIR: PDF 1.3, GTS_PDFXVersion = PDF/X-1a:2001, OutputIntent var, 1109 sayfanın hepsinde TrimBox, Annots/SMask/Group yok. Acrobat Preflight ya da callas ile resmî doğrulama yapılmadı |
+| 2c. Künye "working draft" | HATA | Künye: "First edition, 2027 (edition 2027.1)", telif satırı, lisans; Publisher ve ISBN alanları "[to be added]" | HAZIR (ISBN ve yayıncı yazarda) |
+| 3a. EPUBCheck | 436 hata | EPUB için `tools/epub-strip-div-alt.lua` | HAZIR: 0 hata, 0 uyarı |
+| 3b. Ace | 4 ihlal | Erişilebilirlik meta verisi (`_quarto.yml`); 3 tablonun boş başlık hücresi dolduruldu (Bölüm 7, 14, 21) | HAZIR: Ace "pass", 0 ihlal |
+| 3d. EPUB içi kapak | 4,1 MP | `cover/cover-epub-inner.jpg` 1400 × 2240 (3,14 MP) | HAZIR |
+| 2d. dc:rights | Yoktu | `_quarto.yml` epub `rights` | HAZIR |
+| 4. E-kitap kapağı | PNG | `cover/cover-ebook.jpg` 1600 × 2560, RGB, JPG | HAZIR |
+| 6a–6b. D2D ve iki cilt | HATA/EKSİK | Künye IngramSpark ve tek cilt; `docs/decisions.md` D29 (D3 ve D5'in yerini alır, D4 iki ISBN); CLAUDE.md, `_quarto.yml` yorumu ve üç skill güncellendi | HAZIR (eski karar satırları "superseded" notuyla tarihçe olarak duruyor) |
+
+**Hâlâ yazarda:** ISBN'ler (baskı ve EPUB), yayıncı/imprint adı, tam kapak (Ingram kapak şablonu son sayfa sayısıyla: 1109 sayfa, 8.5 × 11, paperback, 50 lb white, B&W).

@@ -26,6 +26,7 @@ for fam in ("Source Sans 3", "Source Sans Pro"):
         break
 plt.rcParams.update({"font.size": 12, "axes.spines.top": False, "axes.spines.right": False,
                      "svg.fonttype": "none", "svg.hashsalt": "ch17"})
+plt.rcParams["font.sans-serif"] = ["Source Sans 3", "STIXGeneral", "DejaVu Sans"]  # no system-font fallback in print (D29)
 
 STYLE = {
     "color": {"main": "#1C3D6E", "accent": "#FCE38A", "risk": "#C2410C", "ok": "#4CAF84", "ink": "#1D1D1F",
@@ -45,7 +46,8 @@ def read(name):
 def save(fig, fid, mode):
     out = os.path.join(ROOT, "figures", "out", mode, f"{fid}.svg")
     os.makedirs(os.path.dirname(out), exist_ok=True)
-    fig.savefig(out, bbox_inches="tight", metadata={"Date": None})
+    # dpi sets the resolution of embedded rasters (the occlusion maps): >=300 ppi in print.
+    fig.savefig(out, bbox_inches="tight", dpi=600, metadata={"Date": None})
     plt.close(fig)
 
 
@@ -74,7 +76,7 @@ def f17_8(mode):
             if r["model"] == key:
                 grid[int(r["row"]), int(r["col"])] = max(0.0, float(r["occlusion_logodds"]))
                 part[int(r["row"]), int(r["col"])] = r["is_part_pixel"] == "1"
-        ax.imshow(grid, cmap=s["cmap"], vmin=0, vmax=vmax)
+        ax.imshow(grid, cmap=s["cmap"], vmin=0, vmax=vmax, interpolation="nearest")
         for (i, j), p in np.ndenumerate(part):
             if p:
                 ax.add_patch(Rectangle((j - 0.5, i - 0.5), 1, 1, fill=False, edgecolor=s["ink"], linewidth=1.6))

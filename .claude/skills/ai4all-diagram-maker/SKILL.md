@@ -5,7 +5,7 @@ description: Turns AI for All figure placeholders into Mermaid or SVG sources an
 
 # AI for All — diagram maker
 
-The print edition (Draft2Digital Print) has black-and-white interiors. Every figure therefore ships in two renders: color for EPUB and web, grayscale for print. Design for grayscale first.
+The print edition (IngramSpark paperback, D29) has a black-and-white interior. Every figure therefore ships in two renders: color for EPUB and web, grayscale for print. Design for grayscale first.
 
 ## Inputs
 docs/visual-guide.md and docs/design-system.md (palette, shape grammar, fonts, sizes), the chapter text around `[FIG n.m: …]`.

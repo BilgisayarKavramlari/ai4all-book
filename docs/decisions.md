@@ -8,9 +8,9 @@ Decisions made by the author. Proposals become decisions only when the author ap
 |---|---|---|---|
 | D1 | License | CC BY-NC-SA 4.0 for the book; a separate written license from the author to OptiWisdom for use in Compass | Dual licensing keeps the open edition unchanged |
 | D2 | Title | Keep *AI for All: Career-Ready AI Skills*; keep the subtitle prominent on the cover | Run a U.S. trademark (USPTO) search before the cover is final, because of name similarity with the AI4ALL nonprofit and a UConn course |
-| D3 | Publication model | **Start with Draft2Digital**: EPUB 3 ebook and D2D Print paperback (print at cost). Open-web edition later. Second edition: consider a peer-reviewed or open-access publisher | Ebook price (free vs. low price) not decided yet |
-| D4 | ISBN | Author's own ISBNs, not D2D's free ISBN; at least three: ebook, print Volume 1, print Volume 2 | Confirm the current price before buying |
-| D5 | Volumes | Two print volumes: Volume 1 = Parts I–II (Ch. 1–10, to the midterm); Volume 2 = Parts III–VI (Ch. 11–23) | Each volume has its own ISBN |
+| D3 | Publication model | *(Superseded by D29: IngramSpark.)* **Start with Draft2Digital**: EPUB 3 ebook and D2D Print paperback (print at cost). Open-web edition later. Second edition: consider a peer-reviewed or open-access publisher | Ebook price (free vs. low price) not decided yet |
+| D4 | ISBN | *(Amended by D29: two ISBNs, paperback and EPUB.)* Author's own ISBNs, not D2D's free ISBN; at least three: ebook, print Volume 1, print Volume 2 | Confirm the current price before buying |
+| D5 | Volumes | *(Superseded by D29: one volume.)* Two print volumes: Volume 1 = Parts I–II (Ch. 1–10, to the midterm); Volume 2 = Parts III–VI (Ch. 11–23) | Each volume has its own ISBN |
 | D6 | Certification | Two levels: "AI for All Certified — Foundations" and "— Practitioner"; issued by OptiWisdom, not UTD credit; no UTD logo | |
 | D7 | Compass MVP (January 8, 2027) | Part I pages, Chapter 1–4 quizzes and lab pages, interactive versions of three signature diagrams. The tutor-mode assistant comes later in the term | Assistant needs privacy work first (FERPA, KVKK, retention) |
 | D8 | Illustration | In-house figure system (Mermaid/SVG, docs/visual-guide.md); a freelance illustrator only for the 12 signature diagrams and the chapter maps; contract by mid-November 2026 | Funded outside any grant (see D10) |
@@ -408,3 +408,10 @@ The author asked the editor to make suitable choices for open items and to escal
 - Raw downloaded datasets (e.g., data/ch22_compute.csv) and computational inputs (the Turkish abstract in figures/scripts/ch03_tokens.py) are not converted; they do not print in the book.
 - About the Author follows the author's 2026-10-19 notes: no graduating universities named; postdoctoral research at The University of Texas at Dallas in big data analytics may be named (author's explicit exception to D27 for the biography).
 - A one-line thank-you page to R. follows the title page (front/thanks.qmd).
+
+## D29 — IngramSpark, one paperback volume, separate print build (author, 2026-10-19)
+
+- First release through IngramSpark: an EPUB 3 ebook and one paperback volume (8.5 × 11 in, black-and-white interior, 50 lb white paper). Supersedes D3 (Draft2Digital) and D5 (two volumes); D4 becomes two ISBNs (paperback, EPUB), which the author supplies with the publisher name.
+- The print interior is a separate build: `quarto render --profile print --to typst` → `_book-print/` (no cover page, grayscale figures from figures/out/gray/, grayscale theme, no element at the trim edge, so no bleed), then `tools/make-print-pdfx.sh` converts it to PDF/X-1a:2001 (DeviceGray, transparency flattened). The screen PDF (`quarto render --to typst` → `_book/`) keeps the color cover and theme.
+- The full wrap cover (back + spine + front) is made from Ingram's cover template once the ISBN and final page count are known (author item).
+- Preflight: docs/production/INGRAM_PREFLIGHT.md.

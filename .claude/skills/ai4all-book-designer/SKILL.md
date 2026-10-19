@@ -5,7 +5,7 @@ description: Creates and applies the AI for All design system - trim size, page 
 
 # AI for All — book designer
 
-Goal: one design system, two outputs — a print interior PDF (grayscale, for Draft2Digital Print) and a reflowable EPUB 3 (color).
+Goal: one design system, two outputs — a print interior PDF (grayscale, for the IngramSpark paperback; decision D29) and a reflowable EPUB 3 (color).
 
 ## Step 1 — decisions for the author (do not decide alone)
 Present a table with options, trade-offs and an estimated page count for each:

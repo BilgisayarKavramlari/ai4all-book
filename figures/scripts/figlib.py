@@ -14,7 +14,7 @@ import html
 import math
 import os
 
-FONT = "'Source Sans 3', 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif"
+FONT = "'Source Sans 3', 'Source Sans Pro', STIXGeneral, sans-serif"  # STIX (OFL) for symbols; no system fallback
 
 # role -> (fill, stroke, text) per mode.  Palette F (decisions.md G4).
 ROLES = {

@@ -311,7 +311,7 @@ def summary_card(f):
              "Diagnose: who is in the sample, and who is missing?",
              "Diagnose: noisy vs. biased labels; always score the small class",
              "Judge: tested on new examples, in real conditions, for every class?",
-             "Place: AI ⊃ machine learning ⊃ deep learning ⊃ generative AI ⊃ large language models"]
+             "Place, widest first: AI, machine learning, deep learning, generative AI, large language models"]
     for i, c in enumerate(cards):
         x = 20 + (i % 3) * 258
         y = 50 + (i // 3) * 150

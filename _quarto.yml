@@ -1,6 +1,7 @@
 # AI for All: Career-Ready AI Skills — Quarto book project
-# Outputs: print interior PDF via Typst (grayscale, Draft2Digital Print) and EPUB 3 (color); HTML for the open web edition.
-# Trim size, volumes, fonts and callout styles are NOT decided yet (see docs/design-options.md).
+# Outputs: screen PDF via Typst (color, with cover) -> _book/; print interior for the IngramSpark paperback
+# (quarto render --profile print --to typst -> _book-print/, then tools/make-print-pdfx.sh; decision D29);
+# EPUB 3 (color); HTML for the open web edition later. One volume, 8.5 x 11 in.
 # Values marked "placeholder" change when docs/design-system.md is written.
 
 project:
@@ -13,7 +14,7 @@ book:
   title: "AI for All"
   subtitle: "Career-Ready AI Skills"
   author: "Sadi Evren Seker"
-  edition: "2027.1 (draft)"
+  edition: "2027.1"
   chapters:
     - index.qmd
     - front/thanks.qmd
@@ -86,5 +87,14 @@ format:
       - typst/typst-show.typ    # cover page, US Letter, palette, copyright block
   epub:
     toc: true
-    cover-image: cover/cover-epub.png
+    cover-image: cover/cover-epub-inner.jpg   # 1400 x 2240 (under Ingram's 3.2 MP EPUB image limit)
     number-sections: true
+    rights: "Copyright 2027 Sadi Evren Seker. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)."
+    accessModes: [textual, visual]
+    accessModeSufficient: [textual]
+    accessibilityFeatures: [alternativeText, longDescription, tableOfContents, readingOrder, structuralNavigation, displayTransformability]
+    accessibilityHazards: [none]
+    accessibilitySummary: "This EPUB is structured with headings and a navigable table of contents. Every figure has alternative text, complex figures have long descriptions, meaning is never carried by color alone, and tables have header rows. The text can be read without the images."
+    filters:
+      - path: tools/epub-strip-div-alt.lua
+        at: post-render
