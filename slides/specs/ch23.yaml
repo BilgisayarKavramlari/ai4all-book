@@ -1,0 +1,1070 @@
+# Lecture deck spec — Chapter 23: Philosophical Debates: Minds, Meaning and Responsibility (Deep chapter, optional)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch23.yaml --preview
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only.
+#
+# Chapter 23 is Deep: optional and not examinable (decision D20), the book's final chapter, with no place of its own in
+# the suggested pacing ("Deep chapters for any point after Part I"). So this is a SHORT optional-enrichment deck: one
+# "opt" segment of about 45 minutes with no session target (a short cut of about 15 minutes is named on slide 2),
+# then reference slides. No assignment slide (the position paper is optional and ungraded unless an instructor
+# scores it), no exit ticket; the four labs are optional and are pointed to from slide 2.
+#
+# NEUTRALITY (decisions D-23.2, D-23.3, D-23.12): every debate is shown with two strong sides, in their holders'
+# terms; slides and notes present the strongest version of each side and the reasoning standard, never a correct
+# side. No opinion is attributed to the author: the chapter's "Author's view" boxes are placeholders, so the deck has
+# no author's-view slide. The one published passage (HermAI, §23.4) appears only in instructor background, with the
+# chapter's D16 disclosure, exactly as the chapter frames it. Anthropic's model-welfare work carries the book's
+# Claude disclosure (D-23.5).
+# Every number and quotation below comes from the files under deck.sources.
+
+deck:
+  chapter: 23
+  slug: philosophical-debates-minds-meaning-and-responsibility
+  title: "Philosophical Debates: Minds, Meaning and Responsibility"
+  short_title: Philosophical Debates (optional)
+  author: Şadi Evren Şeker
+  sessions:
+    opt: {label: "Optional session · Deep chapter, not examinable · use only if time allows"}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/23-philosophical-debates-minds-meaning-and-responsibility.qmd
+    - labs/ch23-lab1.md
+    - labs/ch23-lab2.md
+    - labs/ch23-lab3.md
+    - labs/ch23-lab4.md
+    - figures/longdesc/ch23.md
+    - appendix/answers.md
+    - docs/blueprints/ch23-blueprint.md
+    - docs/decisions.md
+
+slides:
+
+# ======================================================================= OPTIONAL SESSION
+- layout: title
+  session: opt
+  minutes: 0
+  subtitle: "Optional enrichment · Deep chapter, not on exams"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading (optional): Chapter 23, fast route about 23 min"
+  figure: f23-01-chapter-map
+  notes:
+    say: |
+      Use this deck only if time allows. Chapter 23 is the book's last chapter, and it is a Deep chapter: optional,
+      and nothing in it is on an exam. Earlier chapters taught you to use AI tools well. This one asks questions no
+      checklist settles. Can a machine understand what it says? Could one be conscious, and would that matter? When
+      an AI system is involved in a harm, who is responsible? Is generated work creative, and whose is it? What
+      happens to the meaning people find in work? And should the long-term future of AI worry us? Informed people
+      disagree about all six. The chapter does not settle them, and neither will this session. What you get is a
+      method for disagreement. On the AI Work Loop, the chapter highlights Decide, who answers for a judgment, with
+      Disclose second: whose view is whose.
+    background: |
+      HOW TO TEACH THIS CHAPTER. The chapter's rule: every debate has two strong sides from primary sources; the book's
+      own voice takes no side; marks and model answers go to the reasoning standard, never to a side (D-23.12: "no key
+      names a correct side"; the rubric says "No side earns more points"). Keep that stance in class: present each
+      side at its strongest and do not reveal or imply your own position as the answer. The chapter's "Author's view"
+      boxes are placeholders ("to be added by the author before publication") and hold no view, so this deck has no
+      author's-view slide; do not fill them in for the author. Decision D20: Deep chapters (6, 13, 17, 22, 23) are
+      not examinable. Featured students: Elif (psychology, İzmir) and Hana (they/them; media arts and design); all their
+      work is constructed. Case C30 (Turing, Searle, Bender et al., with Jones & Bergen, 2026).
+    questions:
+      - q: "Will any of this be on the final?"
+        a: "No. Chapter 23 is Deep and not examinable (D20). Its review questions follow the exam format, so they are good practice for reasoning the exams do test."
+      - q: "What do you think the right answer is?"
+        a: "Say that the chapter, and this session, take no side; the goal is that each student can state both sides at their strongest and label their own view separately (§23.1, §23.8)."
+    activity: "On screen while students settle, if the instructor chooses to run the optional session."
+    book: "Chapter 23 opening page, @fig-23-1 (chapter map)."
+
+- layout: session_plan
+  minutes: 1
+  title: "How to use this optional chapter"
+  columns:
+    - heading: "Optional session · about 45 min"
+      sub: "Only if time allows · short cut: slides 4–6, 25–26"
+      blocks:
+        - {min: 7, label: "Start and opening case", detail: "A 1950 question, a 2026 test"}
+        - {min: 5, label: "Mapping an argument · §23.1", detail: "Claim, reasons, objections"}
+        - {min: 5, label: "Understanding · §23.2", detail: "Room, parrots, critics"}
+        - {min: 5, label: "Consciousness · §23.3", detail: "Two sides, one shared rule"}
+        - {min: 9, label: "Responsibility · §23.4", detail: "The gap, replies, two cases"}
+        - {min: 8, label: "Creativity, work, risk · §23.5–23.7", detail: "Three questions; dated claims"}
+        - {min: 6, label: "Your position · §23.8", detail: "Paper, last question, summary"}
+    - heading: "Self-study routes (book times)"
+      sub: "At home, any time · ungraded"
+      blocks:
+        - {min: 23, label: "Fast route", detail: "Opening case, 23.1, 23.8 recap, Summary"}
+        - {min: 68, label: "Full route", detail: "Everything through the Case Study"}
+        - {min: 25, label: "Labs 23.1 and 23.4", detail: "Map it · Who answers?"}
+        - {min: 30, label: "Labs 23.2 and 23.3", detail: "Steelman check · imitation game on paper"}
+        - {min: 55, label: "Position paper, short", detail: "Full version about 2 hours; all optional"}
+  notes:
+    say: |
+      Here is how this optional chapter fits. It adds nothing required to any part of the course. If we have spare
+      time, we run the session on the left, about forty-five minutes, or a short cut of about fifteen: the opening
+      case and its chart, how to map an argument, and the closing question with the summary. If not, the right-hand
+      column is for you. The fast route takes about 23 minutes and stands on its own. The full route takes about
+      an hour and ten minutes. Four optional labs take about 25 to 30 minutes each, and none needs an AI tool except
+      the steelman check, which also has printed outputs. And there is an optional position paper, short or full. It is
+      ungraded unless your instructor chooses to give feedback, and either side of any debate can earn full marks.
+    background: |
+      The minutes on the left are this deck's slide timings (about 45 in total); no session slot is reserved for them.
+      Short cut of about 15 minutes: slides 4–6 (opening case, chart, map grammar), then slides 25–26 (A Last Question
+      and the summary). Possible uses: a spare concept-session slot after Chapter 21, a discussion group, office
+      hours, or self-study with these notes posted on your course site. Book times (chapter time line): fast route
+      about 23 minutes; full route about 68 (about 77 with Ethics Lens, Career Connection, From the Field and
+      Summary); labs 23.1 and 23.4 about 25 minutes, 23.2 and 23.3 about 30; position paper about 55 minutes (short)
+      or about 2 hours (115–125 minutes, full); alternative argument audit about 65 minutes, no AI use and no
+      personal position required. CONFLICT NOTE: the blueprint (v0.2) gives older times (fast about 20, full about
+      57, Lab 23.4 about 20, short paper about 50, audit 55–60); the chapter text governs. Section 23.4 also reads
+      well beside Chapter 14, and 23.5 beside Chapter 18.
+    questions:
+      - q: "Do I have to take a side in the position paper?"
+        a: "No. “Undecided, because…” is a position if you give the because, and the argument audit needs no personal position at all (§23.8, Application Assignment)."
+    activity: "Say which column applies to your class; do not read the blocks."
+    book: "Chapter 23 time paragraph; Hands-on Labs 23.1–23.4; Application Assignment (optional): Position Paper."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 23 · learning objectives (optional chapter)"
+  title: "After this chapter you can…"
+  items:
+    - {code: "O1", text: "**Explain** Turing, Searle and “stochastic parrots”: claimed and not"}
+    - {code: "O2", text: "**Analyze** an argument into claim, reasons, objections, premises"}
+    - {code: "O3", text: "**Distinguish** evidence about behavior from claims about minds"}
+    - {code: "O4", text: "**Evaluate** who can answer for a harm involving AI"}
+    - {code: "O5", text: "**Evaluate** a dated claim on work or risk by its evidence"}
+    - {code: "O6", text: "**Create** a position paper with your view labeled"}
+  notes:
+    say: |
+      Six things this chapter lets you do. First, explain what three famous texts claimed, and just as important,
+      what they did not claim: Turing's imitation game, Searle's Chinese Room and the "stochastic parrots" critique.
+      Second, take any argument apart into its claim, its reasons, the objections to it and the premises it leaves
+      unstated. Third, keep evidence about what a system does apart from claims about its understanding,
+      consciousness or moral status. Fourth, work out who can answer for a harm in which an AI system was involved.
+      Fifth, read a claim about AI and work, or about long-term risk, by who made it, on what evidence, and whether it
+      is a forecast. Sixth, write a position paper that states two strong sides fairly and keeps your own view in
+      its own labeled paragraph.
+    background: |
+      Full wording and tags in the chapter: O1 Explain (LO5, LO1; AI Fluency Discernment; UNESCO AI techniques and
+      applications, Understand); O2 Analyze (LO5; Discernment); O3 Distinguish (LO5, LO3); O4 Evaluate (LO5;
+      Diligence; UNESCO Ethics of AI, Apply); O5 Evaluate (LO5, LO3; UNESCO Human-centred mindset, Apply); O6 Create
+      (LO5, LO4; Diligence). LO5 is the book's outcome on applying privacy, security, fairness, transparency and
+      human-oversight principles. The chapter's question: when informed people disagree about whether AI understands,
+      feels, creates or endangers us, how do you take a position you can defend, and what does any answer change
+      about who answers for AI's work?
+    activity: "Optional: ask students to answer Warm-up item 3 silently (who answers for a wrongly booked room, and how sure are you, 0–100%); they revisit it at the end."
+    book: "Chapter 23, Learning Objectives; Warm-up."
+
+- layout: timeline
+  minutes: 2.5
+  kicker: "Opening case · C30 · a 1950 question, a 2026 test (book figure: storyboard)"
+  title: "A 1950 question, a 2026 test"
+  events:
+    - {label: "1950", text: "Turing: replace the question with a game", tier: "confirmed"}
+    - {label: "Prediction", text: "Judges ≤ 70% right after 5 minutes", tier: "confirmed"}
+    - {label: "May 2026", text: "PNAS: two preregistered studies", tier: "confirmed"}
+    - {label: "Persona", role: ai, text: "GPT-4.5 judged human in 73% of 254 games", tier: "confirmed"}
+    - {label: "Reading", text: "Each side reads it as support", tier: "inferred"}
+  takeaway: "Predict: without the persona prompt, how often?"
+  notes:
+    say: |
+      In 1950 the mathematician Alan Turing opened a paper with the question "Can machines think?" He did not try to
+      answer it: he thought "machine" and "think" were too loose. Instead he proposed a game. An interrogator types
+      questions to two hidden players, a person and a machine, and must decide which is which. He also predicted that
+      in about fifty years an average interrogator would have at most a 70 percent chance of telling them apart after
+      five minutes. In May 2026 two cognitive scientists published a test of that game in PNAS. Each participant
+      chatted for five minutes with a person and an AI system at once. When GPT-4.5 was prompted to adopt a humanlike
+      persona, it was judged to be the human in 73 percent of 254 games, more often than the real person. So has
+      anything about understanding been settled? Before the chart, predict: without the persona prompt, how often?
+    background: |
+      Tiers as the chapter states them (Case Study): the classic texts and the 2026 test are primary sources
+      (confirmed); news coverage would be reported and is not needed; the book's readings are inferred. Jones & Bergen
+      (2026), PNAS 123(21): two randomized, preregistered studies (methods published before data collection);
+      three-party version (one interrogator, two hidden partners); persona = a young, introverted person who uses
+      slang. LLaMa-3.1 with the persona prompt: 56%. A third study with 15-minute games: LLaMa-3.1 56%, GPT-5 59%.
+      The authors conclude that these systems pass a standard three-party Turing test ("pass" is their word; keep it
+      attributed) and report that interrogators judged mostly by style and social and emotional cues. The storyboard
+      @fig-23-2 places seven dated texts from 1950 to 2026 (all confirmed). CONFLICT NOTE: blueprint rows still say "a
+      2025 test" (the arXiv preprint); the chapter's PNAS 2026 version governs.
+    questions:
+      - q: "Didn't Turing say that passing the game means a machine thinks?"
+        a: "No. He proposed the game in place of the question and treated sustained, satisfactory answers as the evidence to use; he did not claim the machines of his day think (Case Study table; Check Yourself 23.2)."
+    activity: "Narrate. Leave the takeaway's prediction on screen; take a quick show of hands: about the same as with the prompt, or much less?"
+    book: "Opening Case 'A 1950 Question, a 2026 Test'; @fig-23-2; Predict-first box in §23.2."
+
+- layout: figure
+  minutes: 2.5
+  kicker: "§23.2 · Predict first, answered · Jones & Bergen (2026) · book figure"
+  title: "How a system was told to present itself changed the result"
+  figure: f23-07-turing-2026
+  takeaway: "The authors: a measure of how people tell humans from machines"
+  notes:
+    say: |
+      Here is the answer. Without the persona prompt, the same two models were judged human only 36 and 38 percent
+      of the time, against 73 and 56 percent with it. The baselines, ELIZA and an older chat model, scored 23 and 21
+      percent. ELIZA was a 1966 program that followed scripted pattern-matching rules, and its author reported that
+      some users were hard to convince it was not human. Reading far more understanding into a program's output than
+      it warrants was later named the ELIZA effect, one form of anthropomorphism. Now hold two readings side by side.
+      For Turing, sustained, satisfactory answers in the game are the evidence to use. For Searle, as we will see,
+      such evidence cannot settle understanding. The authors themselves describe the test as a measure of how people
+      tell humans from machines.
+    background: |
+      @fig-23-7 values (published; data/ch23_turing_2026.csv): GPT-4.5 persona 73%, LLaMa-3.1 persona 56%, GPT-4.5 no
+      persona 36%, LLaMa-3.1 no persona 38% (order confirmed from the PNAS full text and Table 1), ELIZA 23%, GPT-4o
+      21%; the 50% line marks being chosen as often as the real human. ELIZA: Weizenbaum (1966); "ELIZA effect":
+      Hofstadter (1995). In the Case Study the book reads the drop from 73% to 36% as fitting Bender and colleagues'
+      warning that people read meaning into fluent text (inferred). The chapter's conclusion is about where the dispute
+      lies, not who wins: each side can read the same result as support, a sign that the dispute is about a premise,
+      not data. Time-sensitive: GPT-4o was retired from ChatGPT in January 2026 (book-wide refresh note).
+    misconceptions:
+      - m: "M1 'If you cannot tell a machine's answers from a person's, it understands.'"
+        fix: "Show that a one-line persona prompt moved the result from 36% to 73%, and that judges relied on style and social cues. Do not overcorrect to 'behavior tells us nothing': some argue it is the only evidence we have about anyone, including other people (Turing's reply)."
+    questions:
+      - q: "So did the machines pass the Turing test or not?"
+        a: "By the authors' account, yes: persona-prompted models pass a standard three-party test. What that shows about understanding is exactly what the two sides dispute (Case Study)."
+    activity: "Ask: 'What changed between the 73% bar and the 36% bar, and what stayed the same?' (Only the prompt changed.)"
+    book: "§23.2 Predict-first box and @fig-23-7; Case Study; Review A6."
+
+# ----------------------------------------------------------------------- 23.1
+# Redrawn natively from the template map @fig-23-3: the book map's labels fall to about 8 pt at slide size.
+- layout: compare
+  minutes: 2
+  kicker: "§23.1 · Deep · signature diagram: the argument map (book figure: map template)"
+  title: "A map shows how reasoning is built, not who is right"
+  size: 24
+  columns:
+    - heading: "+ FOR (reasons)"
+      role: soft
+      bullets: ["Arrowhead: supports", "Unstated premise: dashed, inferred"]
+    - heading: "− AGAINST (objections)"
+      role: soft
+      bullets: ["Flat bar: opposes", "Hits the claim, or denies a premise"]
+    - heading: "Map fairly"
+      role: neutral
+      bullets: ["Steelman each side", "No straw man", "The book takes no side"]
+  takeaway: "An objection that denies a premise shows where people part ways"
+  notes:
+    say: |
+      One tool for all six debates. An argument map is a diagram of an argument: the claim at the top, the reasons
+      that support it on one side, the objections against it on the other, and lines showing what bears on what. A
+      premise is a statement an argument relies on. Some are stated; others are only assumed, and finding those
+      unstated premises is often where a disagreement turns out to live. In a map, an unstated premise is drawn
+      dashed, because it is your reconstruction. Reasons end in an arrowhead: they support. Objections end in a flat
+      bar: they oppose. An objection can oppose the whole claim or deny one premise, and the second kind tells you
+      exactly where two people part ways. To map fairly you need the steelman of each view: the strongest fair
+      version, one its own holders would accept. Its opposite, a weak version built to be knocked down, is a straw man.
+    background: |
+      Signature: argument_map() in figures/scripts/ch23_figures.py (decision D-23.1): rectangles only; reasons left
+      with arrowheads, objections right with flat bars; an objection can end on the premise it denies; at most 4 + 4
+      items (9 boxes); dashed = inferred only; footer "A map shows the structure of an argument, not who is right".
+      Side is carried by position, label, glyph and line end, never by color, which is why both columns here share one
+      color. The chapter's rule for every debate: each side at its strongest, from its own primary sources; the book's
+      voice takes no side; the author's own view is kept apart in labeled boxes, and those boxes are placeholders
+      except one published passage in §23.4 (instructor note on slide 14). A campus-policy map, for example, may show
+      that both sides accept the same facts and differ only on which value comes first.
+    questions:
+      - q: "Isn't a steelman just being nice to the other side?"
+        a: "No: it is a reasoning standard. If you defeat only a weak version, you have not answered the view its holders actually hold (Check Yourself 23.1, item 3)."
+    activity: "Optional: the §23.1 Your Turn: one claim about AI heard this week; write its claim, one stated reason and one unstated premise."
+    book: "§23.1, @fig-23-3; Check Yourself 23.1; Lab 23.1."
+
+# Final reveal: 56 counted words, of which 8 are step numbers and dash separators (prose about 48, including the
+# classmate's sentence): claim, reason, unstated premise and objections together are the map being built (deliberate
+# exception to the 40-word guide, as in Chapter 1's worked example).
+- layout: worked
+  minutes: 1.5
+  max_words: 58
+  kicker: "§23.1 · worked example · constructed: Elif maps a seminar claim"
+  title: "Elif maps a seminar claim"
+  context: "A classmate: “AI tutors can’t understand students, so they can’t help them.”"
+  steps:
+    - {label: "Claim", text: "AI tutors cannot help students"}
+    - {label: "Stated reason", text: "Prediction, not understanding (contested)"}
+    - {label: "Unstated premise", text: "Only what understands can help (dashed)"}
+    - {label: "Objections", text: "Feedback helps anyway; a study can test it"}
+  reveal: [2, 4]
+  result: "The disagreement sits in what help requires"
+  notes_reveal:
+    - minutes: 1.5
+      say: |
+        Elif is a first-year psychology student whose program runs a seminar on minds and machines. In the seminar a
+        classmate says: "AI tutors can't understand students, so they can't help them." Step one, the claim: AI
+        tutors cannot help students. Step two, the stated reason: AI tools produce text by prediction, not by
+        understanding. Is that true? That is the next section's question, so Elif marks it "contested" and moves on.
+        Now ask the class: for the conclusion to follow from that reason, what must the classmate also assume, without
+        saying it?
+      background: |
+        Worked Example "Elif Maps a Seminar Claim" (§23.1), constructed; the seminar is a constructed course. The
+        "contested" mark is the chapter's word: the reason's truth is §23.2's question. Elif's map is @fig-23-4.
+      activity: "Pause after step 2; take two or three suggestions for the unstated premise."
+      book: "§23.1 Worked Example; @fig-23-4."
+    - minutes: 1.5
+      say: |
+        Step three: the classmate must assume that only something that understands a student can help that student.
+        The claim never says so, so Elif draws it dashed: it is her reconstruction. Step four, objections. One denies
+        that unstated premise: practice questions and feedback can help a learner whether or not their source
+        understands anything; Chapter 7 showed when they help and when they become a crutch. Another opposes the
+        claim directly: whether a tool helps is a question a study can test. So the disagreement does not sit where it
+        first seemed to, in whether machines understand. It sits in a premise about what help requires.
+      background: |
+        @fig-23-4: AGAINST 2 denies FOR 2 (the dashed premise); AGAINST 1 opposes the claim. Faded Example "A Jobs
+        Op-Ed" (homework): key in Appendix E (reason 2: companies always cut costs; an unstated premise such as
+        "writing ad copy is most of what marketing jobs involve"; an objection from the team's other tasks). Lab 23.1
+        maps a constructed op-ed, "AI tutors should replace office hours", with a model map for working alone.
+      questions:
+        - q: "Couldn't the classmate be right after all?"
+          a: "Yes; the map does not decide that. It shows which premise to examine: whether only understanding can help. That is a question evidence can address (§23.1)."
+      activity: "Ask: 'Which would you check first, the stated reason or the unstated premise, and how?'"
+      book: "§23.1 Worked Example; Faded Example 'A Jobs Op-Ed'; Appendix E."
+  notes:
+    book: "§23.1 Worked Example 'Elif Maps a Seminar Claim'."
+
+# ----------------------------------------------------------------------- 23.2
+# Redrawn natively from @fig-23-6 (Chinese Room map): the book map's labels fall to about 8 pt at slide size.
+- layout: compare
+  minutes: 2.5
+  kicker: "§23.2 · Deep · Searle (1980), redrawn from the book’s map"
+  title: "The Chinese Room: where each reply parts ways"
+  size: 24
+  columns:
+    - heading: "+ FOR: Searle’s premises"
+      role: soft
+      bullets: ["1 A program manipulates form (syntax)", "2 Form is not meaning (semantics)", "3 The person understands no Chinese"]
+    - heading: "− AGAINST: replies"
+      role: soft
+      bullets: ["**Systems:** the whole understands; denies 3", "**Robot:** add the world; accepts 2", "**Brain simulator:** opposes the claim"]
+  takeaway: "Not claimed: that machines can never think"
+  notes:
+    say: |
+      Thirty years after Turing, the philosopher John Searle answered with a thought experiment. A person who knows no
+      Chinese is locked in a room with an English rulebook. Chinese questions come in; by matching symbols to symbols
+      by their shapes, the person sends back answers good enough to convince native speakers. Yet the person
+      understands none of it. Searle's target: the claim that running the right program would, by itself, be
+      understanding. His argument: a program manipulates symbols by their form, called syntax; understanding needs
+      meaning, called semantics; and syntax alone is not enough. The replies part ways at different places. The
+      systems reply says the whole system, person plus rules plus papers, understands: it denies that premise three is
+      about the right thing. The robot reply accepts premise two and adds connections to the world.
+    background: |
+      Elif's three-premise reconstruction (Worked Example "Elif Maps the Chinese Room"; @fig-23-6). Searle's answers:
+      to the systems reply, the person could memorize the rules and still not understand; to the robot reply, camera
+      signals would reach the person as more symbols. The book reads the robot reply as an early form of Harnad's
+      (1990) symbol grounding problem (inferred). Robot reply mapped as accepting premise 2 (Searle's "tacitly
+      concedes", D-23.13). Searle allowed that machines with the right causal powers, such as brains, can think (Case
+      Study table). Turing side, for balance: Turing answered nine objections; the objection from consciousness (a
+      machine must feel, not only produce words) he answered by noting that we grant other people minds on the
+      evidence of behavior (@fig-23-5). Elif, who writes in English and thinks in Turkish, finds the robot reply most
+      interesting, labeled a reflection, not evidence.
+    misconceptions:
+      - m: "M2 'The Chinese Room proves no computer could ever understand.'"
+        fix: "Searle did not claim that; only that running a program is not by itself enough. And do not let the class swing to 'so the replies win': the map shows which premise each side denies."
+    questions:
+      - q: "Isn't the systems reply obviously right? Neurons don't understand either."
+        a: "Present it at its strongest, then Searle's answer: memorize the rules and you are the whole system, still without Chinese. Which premise you find stronger is the disagreement (§23.2)."
+    activity: "Ask: 'Which premise does the systems reply deny, and which does the robot reply accept?' (the §23.2 Your Turn asks the same for Bender and Koller)."
+    book: "§23.2, @fig-23-5, @fig-23-6; Worked Example 'Elif Maps the Chinese Room'; Check Yourself 23.2, item 2; Review A3."
+
+- layout: compare
+  minutes: 2.5
+  kicker: "§23.2 · Deep · the current debate (book figure: map of “stochastic parrots”)"
+  title: "Stochastic parrots and their critics: what does meaning need?"
+  size: 22
+  columns:
+    - heading: "Form is not meaning"
+      role: soft
+      bullets: ["Bender & Koller (2020): octopus", "Bender et al. (2021): “stochastic parrots”"]
+    - heading: "Meaning from relations"
+      role: soft
+      bullets: ["Conceptual role (Piantadosi & Hill, 2022)", "Othello: an internal board (Li et al., 2023)"]
+    - heading: "Between them"
+      role: neutral
+      bullets: ["Formal vs. functional competence", "NLP researchers split almost in half"]
+  takeaway: "A claim about meaning, not usefulness"
+  notes:
+    say: |
+      Fluent language models brought the question back. Bender and Koller argued in 2020 that a system trained only
+      on linguistic form cannot learn meaning, because meaning links form to something outside language: what a
+      speaker intends and what the words are about. Their illustration is an octopus that taps an undersea cable,
+      learns to impersonate one islander, and fails when asked for help with something in the world. A year later,
+      Bender and colleagues called a language model a stochastic parrot: a system that stitches together sequences of
+      linguistic form guided by probabilities, without reference to meaning. On the other side, Piantadosi and Hill
+      argue that meaning can come from relations among concepts, which a model's internal states could capture. One
+      study offers evidence: a model trained only on lists of Othello moves developed an internal representation of
+      the board.
+    background: |
+      Bender, Gebru, McMillan-Major & Shmitchell (2021) was mainly about the risks of ever-larger models (costs,
+      huge undocumented training data, people's readiness to read meaning into fluent text); the parrot claim was one
+      strand. Li et al. (2023): changing the internal representation changed the model's predictions. Between the
+      sides: Mitchell & Krakauer (2023) survey both and suggest machines may show modes of understanding different
+      from ours; Mahowald et al. (2024) separate formal competence (rules and patterns; strong) from functional
+      competence (using language to reason and act; uneven); Michael et al. (2022) survey: NLP researchers split
+      almost exactly in half on whether a text-only model could understand language in some non-trivial sense;
+      Shanahan (2024): "knows" and "believes" are handy but can mislead. The book avoids those verbs in its own
+      voice: a style choice, not a verdict (§23.2). Author's-view box here: placeholder only.
+    misconceptions:
+      - m: "M3 ''Stochastic parrots' means models only copy text and are useless.'"
+        fix: "The claim is about meaning, not usefulness, and generated text is produced, not retrieved (Chapter 3). Do not let it slide into 'so they understand': usefulness and understanding are separate questions."
+    questions:
+      - q: "Does the Othello result prove that models understand?"
+        a: "It is evidence the conceptual-role side cites: an internal representation built from move lists alone. Whether such a representation is meaning is the disputed premise (@fig-23-8: conceptual role denies FOR 1)."
+    activity: "Your Turn (§23.2): in two sentences, which premise of Bender and Koller do Piantadosi and Hill deny, and what do they put in its place? Key in Appendix E."
+    book: "§23.2, @fig-23-8; Your Turn (octopus argument); Review A5; Case Study table."
+
+# ----------------------------------------------------------------------- 23.3
+- layout: compare
+  minutes: 2.5
+  kicker: "§23.3 · Deep · consciousness and moral status: contested"
+  title: "Could an AI system be conscious? Two sides, one shared rule"
+  size: 22
+  columns:
+    - heading: "Side A: take it seriously"
+      role: soft
+      bullets: ["Indicators from theories (Butlin)", "AI welfare near-term (Long)", "Precaution (Birch)"]
+    - heading: "Both sides accept"
+      role: neutral
+      bullets: ["A self-report is a claim to check"]
+    - heading: "Side B: skeptical"
+      role: soft
+      bullets: ["Biological naturalism (Seth)", "Mental talk misleads (Shanahan)", "“Seemingly conscious” (Suleyman)"]
+  takeaway: "Disputed: could the right computation be enough?"
+  notes:
+    say: |
+      Understanding is one question; feeling is another. Phenomenal consciousness is experience: there is something it
+      is like to be that system. Moral status is being something whose interests matter for their own sake. Start
+      with what both sides share: a system's statements about itself, such as "I feel lonely," are produced the way
+      all its text is produced, so they are claims to check. Side A: in 2023, nineteen researchers derived indicator
+      properties from leading theories of consciousness and checked AI designs against them; no current system had
+      them, but there were no obvious technical barriers. A 2024 report calls AI welfare a near-term issue, and Birch
+      argues for proportionate precautions without waiting for certainty. Side B: Seth argues consciousness likely
+      depends on being a living organism, and Suleyman warns that the near-term danger is AI that only seems
+      conscious.
+    background: |
+      Butlin et al. (2023) assume computational functionalism as a working hypothesis; the journal version (2026,
+      Trends in Cognitive Sciences) presents the method as informing credences, degrees of belief. Long et al. (2024):
+      a realistic chance that some systems will be conscious or robustly agentic soon; three steps: acknowledge,
+      assess, prepare policies. Seth (2025, BBS): real artificial consciousness unlikely on current paths. Suleyman
+      (August 2025), chief executive of Microsoft AI: model welfare "premature, and frankly dangerous" (his words);
+      asked companies not to build systems that claim feelings. Interested sources on both sides: Suleyman's company
+      sells AI products; Anthropic, which also sells them, let two models end a rare subset of persistently abusive
+      chats (August 15, 2025), citing uncertainty about moral status. DISCLOSURE (D-23.5): this book was drafted with
+      Anthropic's Claude models, an interest the chapter declares. Label: contested. Author's-view box: placeholder.
+    misconceptions:
+      - m: "M4 'If a chatbot says it feels something, it does; if it is 'just code', the question is silly.'"
+        fix: "Both halves fail: a self-report is a claim to check (both sides accept this), and serious researchers on both sides treat the question as open."
+    questions:
+      - q: "Why should the views of company leaders count less?"
+        a: "They need not count less, but they must be labeled: an interested source has a stake in the answer. The chapter labels one on each side (Check Yourself 23.3, item 3)."
+    activity: "Ask: 'What would count as evidence about the system, not about people's beliefs?' (the §23.3 Your Turn)."
+    book: "§23.3, @fig-23-9, @fig-23-11; Short case 1 (Anthropic and Suleyman); How This Book Was Written."
+
+- layout: quiz
+  minutes: 1.5
+  kicker: "Quick check · §23.3 worked example · constructed sort"
+  title: "what kind of evidence?"
+  question: "Elif’s seminar: for each statement, what kind of evidence is it?"
+  option_tags: ["(1)", "(2)", "(3)", "(4)"]
+  options:
+    - "A chatbot: “Sometimes I feel lonely between conversations”"
+    - "A company lets models end abusive chats, citing welfare"
+    - "Butlin et al. (2023): no current system is conscious"
+    - "67% of 300 U.S. adults gave ChatGPT some chance"
+  answer: ["Self-report", "Interested source", "Theory-based", "Public belief"]
+  legend: "Kind of evidence"
+  instruction: "Label each one alone (1 min), then compare with a neighbor"
+  explanation: "About the system: (3), and weakly (1). About a company or people: (2), (4)"
+  notes:
+    say: |
+      A quick sort, from Elif's seminar. For each of the four statements, ask: what kind of evidence is it, and
+      evidence about what? The first is a chatbot's own sentence, a constructed output. The second is a company's
+      policy on its own models. The third is the conclusion of the 2023 indicators report. The fourth is a survey of
+      people. Label each one on your own, then compare with your neighbor. A hint: for each, ask whether it tells you
+      something about the system, about a company, or about people.
+    background: |
+      Worked Example "Elif Sorts Four Statements" (§23.3), constructed. Item 4 is Colombatto & Fleming (2024): a July
+      2023 survey of 300 U.S. adults; 67% gave ChatGPT some possibility of phenomenal consciousness, and more frequent
+      users were more likely to do so (@fig-23-10: 33% "definitely not"). Item 2 is Anthropic (2025); the book's Claude
+      disclosure applies (D-23.5).
+    activity: "1 min alone, 30 s with a neighbor, then the answer slide."
+    book: "§23.3 Worked Example 'Elif Sorts Four Statements'; @fig-23-10."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      One: a self-report, a claim to check. It shows what the system produced, not what it experiences. Two: a policy
+      by an interested source. It shows what the company decided and says, not what is true about its models. Three:
+      a theory-based assessment. It is the strongest evidence here about systems, and it is strongest where you accept
+      the theories it uses. Four: a measure of public belief, evidence about people, not about the system. So only
+      three and one are about systems at all, and one is weak evidence that both sides discount. The same sort works
+      on the faded example: a companion robot's brochure that says residents feel understood, that it enjoys their
+      company, and that independent testers measured less loneliness.
+    background: |
+      Chapter's result line: item 3 is the strongest evidence about systems and rests on contested theories; item 1 is
+      about a system too but weak; items 2 and 4 are evidence about a company and about people. Faded key (Appendix
+      E): (b) a self-report produced by the system (via its makers), a claim to check; (c) a measured result about
+      residents if the testers are independent: evidence about people's loneliness, not the robot's mind. Odd review
+      items for practice: A7 (define the two kinds of consciousness question; Appendix E). A8 is even (instructor-only
+      key).
+    activity: "Reveal; ask which item the class split on most."
+    book: "§23.3 Worked Example; Faded Example 'A Companion Robot's Brochure'; Appendix E."
+
+# ----------------------------------------------------------------------- 23.4
+- layout: loop
+  minutes: 1.5
+  kicker: "§23.4 · Deep · the AI Work Loop: Decide, with Disclose second"
+  title: "Two questions, kept apart"
+  highlight: Decide
+  size: 22
+  step_notes:
+    Frame: "Should AI be in it?"
+    Prompt: "Task, context, limits"
+    Verify: "Check against another source"
+    Decide: "Who answers for a judgment?"
+    Disclose: "Second: whose view is whose"
+  bullets:
+    - "**Practice rule:** you answer for your own use"
+    - "Decision owners and approval gates assign duties"
+    - "**Open question:** can anyone be *justly* blamed for what no one foresaw?"
+  takeaway: "A rule that assigns duties does not settle the philosophy"
+  notes:
+    say: |
+      Chapters 4, 14 and 17 each left a question here. Can responsibility get lost between builders, deployers and
+      users? Who answers when no one can explain a decision? This section keeps two questions apart. The first is a
+      practice rule. In a course that uses this book, and in most workplaces, you answer for your own use of AI:
+      work you submit or send is yours. Organizations name a decision owner and put approval gates before actions that
+      matter. That is the Decide step of the Work Loop. But a rule that assigns duties does not settle the
+      philosophical question: when a system acts in ways no one could foresee, can anyone be justly held responsible
+      for what it does? That question is open, and the next slide shows both sides.
+    background: |
+      Decision D-23.3: the practice rule (Chapter 10 ownership; decision owners, Chapter 11; approval gates, Chapter 14)
+      is kept apart from the open question; the Summary states method only. Disclose is the chapter's second
+      highlight (whose view is whose). THE ONE PUBLISHED AUTHOR PASSAGE (§23.4 box, decisions D-23.2 and D-23.7), for
+      instructor reference only, never as the author's verdict on the gap. The chapter prints it with this disclosure:
+      "I am a founder of OptiWisdom, which develops software for businesses, including AI tools. See 'How This Book Was
+      Written.'" The passage paraphrases a 2026 article on explainable AI (Şeker & Arslanhan, 2026, the HermAI
+      framework): when people cannot understand how an opaque model reached a decision, trust, accountability and
+      fairness suffer. The chapter adds that it ties accountability to understanding a decision and takes no side
+      between Matthias and his critics. CONFLICT NOTE: the blueprint cites a 2025 manuscript without the disclosure;
+      the chapter (D-23.7) governs.
+    questions:
+      - q: "If I follow the rule, am I off the hook morally?"
+        a: "The rule says what you answer for in practice. Whether blame is always fair when no one could foresee the outcome is the open question on the next slide (Check Yourself 23.4, item 1)."
+    activity: "Optional: the §23.4 Your Turn: one forward-looking responsibility a group could assign before its next tool-assisted project."
+    book: "§23.4 opening and 'The practice rule'; box 'The author's view (partial, from a published article)'; Check Yourself 23.4."
+
+# Redrawn natively from @fig-23-13 (map of the gap), with Elish added as the chapter's text does.
+- layout: compare
+  minutes: 2.5
+  kicker: "§23.4 · Deep · the gap and four replies (book figure: map of the gap)"
+  title: "Matthias’s responsibility gap and four replies"
+  size: 22
+  columns:
+    - heading: "The gap (Matthias, 2004)"
+      role: soft
+      bullets: ["Blame needs control and foresight", "Learning systems remove foresight", "So: stop using them, or accept a gap"]
+    - heading: "Four replies"
+      role: soft
+      bullets: ["**No new gap:** practices stretch (Tigard)", "**Design:** meaningful human control", "**Many hands:** an older problem", "**Crumple zone:** blame lands nearby (Elish)"]
+  takeaway: "Each reply answers a different question"
+  notes:
+    say: |
+      The philosopher Andreas Matthias argued in 2004 that this is a real problem. We usually hold a machine's maker
+      or operator responsible because they control it and can foresee what it will do. Learning systems act in ways
+      their makers cannot predict, even in principle, so those grounds weaken. Society must either stop using such
+      systems or accept a responsibility gap. Four replies. Tigard says there is no new gap: responsibility is a
+      flexible practice that can stretch to new cases. A design reply rejects Matthias's either-or: build systems
+      under meaningful human control, so outcomes trace to a person who understood what they were doing. A third
+      points to an older problem, many hands: when many people each contribute a little, it is hard to say who is
+      responsible. And Elish warns that blame can land on the person nearest the system: a moral crumple zone.
+    background: |
+      Santoni de Sio & Mecacci (2021) distinguish four gaps (@fig-23-12): culpability (can anyone fairly be blamed?),
+      moral accountability (can anyone explain and answer?), public accountability (can officials or companies be
+      called to account?) and active responsibility (does anyone see preventing harm as their job?); the gaps can arise
+      even with systems that do not learn. Thompson (1980) coined "many hands" for public officials; Nissenbaum (1996)
+      showed how computing makes it worse. Elish's crumple zone: the front part of a car built to crush in a crash;
+      she does not deny the gap, her warning is about who ends up blamed (so @fig-23-13 does not draw her). Forward-
+      looking responsibility (the book's wording): a duty assigned in advance to prevent harm, as opposed to blame
+      afterward. Whether decision owners and gates also make after-the-fact blame fair is part of the debate.
+    misconceptions:
+      - m: "M5 'When an AI system causes harm, either the machine is to blame or no one is.'"
+        fix: "Show the replies and the four gaps. Do not swing to 'always the user': blame can land unfairly on the nearest person (Elish)."
+    questions:
+      - q: "Isn't Tigard just saying the gap is not a problem?"
+        a: "His strongest form: our practices of holding people responsible are dynamic and have stretched before; nothing about learning systems puts them beyond that. Matthias's strongest form: blame without control and foresight is not fair. The disputed premise is whether blame needs both (Faded Example 'A Plan on the Responsibility Gap')."
+    activity: "Ask: 'Which reply denies a premise of Matthias, and which offers a third option?' (Tigard denies premise 1; meaningful human control offers a third option.)"
+    book: "§23.4, @fig-23-12, @fig-23-13; Check Yourself 23.4, item 2; Review A9."
+
+# Final reveal: 62 counted words, of which 11 are step numbers, dash separators and arrows (prose about 50): the four
+# gaps and the fixes on one slide are the point of the example (deliberate exception to the guide, as in Chapter 1).
+- layout: worked
+  minutes: 1.5
+  max_words: 64
+  kicker: "§23.4 · worked example · constructed: an AI agent double-books a clinic room"
+  title: "Who answers for a lost appointment?"
+  steps:
+    - {label: "Chain", text: "Wrong output → missed at approval → relied on → loss"}
+    - {label: "Blame, explain", text: "200 bookings in ten minutes; only the vendor can examine"}
+    - {label: "Public, active", text: "No route to complain; no one prevents a repeat"}
+    - {label: "Fixes", text: "Decision owner; conflicts shown first; logs in contract"}
+  reveal: [2, 4]
+  result: "Blaming only the staff member: a moral crumple zone (Elish)"
+  notes_reveal:
+    - minutes: 1.5
+      say: |
+        A campus health clinic uses an AI scheduling assistant from an outside vendor. It is an agent: a system in
+        which the model chooses its own steps and tool calls. It double-books a counseling room, and a student's
+        appointment is lost. Four parties: the vendor that built it, the clinic office that deployed it, the staff
+        member who approved the week's schedule, and the student. Step one, Chapter 4's chain: the output was wrong;
+        the weekly approval did not catch it; the clinic relied on the schedule; an appointment was lost. Step two,
+        the first two gaps. Culpability: the staff member had 200 bookings to check in ten minutes. Moral
+        accountability: only the vendor could examine why the assistant double-booked.
+      background: |
+        Worked Example "A Double-Booked Clinic Room" (§23.4), constructed, including the 200 bookings in ten minutes.
+        Each link of the failure-to-harm chain is one step by which an AI error becomes a harm (Chapter 4). Spaced
+        Review item 5 asks whether such an approval is a real gate (Appendix E: no; a real gate gives time, evidence
+        with conflicts shown first, and the power to say no; Chapter 14).
+      activity: "Pause after step 2; ask: 'Could anyone fairly be blamed for missing this?'"
+      book: "§23.4 Worked Example; Spaced Review 5."
+    - minutes: 1.5
+      say: |
+        Step three, the other two gaps. Public accountability: the student does not know where to complain. Active
+        responsibility: no one's job is to prevent a repeat. Step four, forward-looking fixes, duties assigned in
+        advance: the clinic office names a decision owner for scheduling; the approval gate shows conflicts first;
+        the vendor contract requires logs. Now the hard part. On Elish's view, blaming the staff member alone would
+        make them a moral crumple zone. Whether anyone is fully culpable remains a fair question to debate, and the
+        chapter leaves it open. Matthias would point to the missing foresight; Tigard would say our practices can
+        stretch to assign blame here too.
+      background: |
+        Chapter's result line: "on Elish's view, blaming the staff member alone would make them a moral crumple zone;
+        whether anyone is fully culpable remains a fair question to debate." Faded Example "A Paralegal's Clause"
+        (homework; key in Appendix E). Lab 23.4 "Who Answers?" applies the four gaps to a constructed hospital
+        discharge summary that omits an allergy; its model judgment gives both Matthias's and Tigard's readings.
+        From the Field (actor-network theory, Şeker, 2014; not commercial, no disclosure needed) suggests listing every
+        actor, human and not; the chapter adds that "actant" is an analytic term, not a claim that machines bear moral
+        responsibility.
+      questions:
+        - q: "So who is to blame?"
+          a: "In practice, the people with assigned duties answer: the decision owner and whoever approved. Whether that blame is fair depends on what they could control and foresee; that is the open question (Chapter Summary, Warm-up revisit 3)."
+      activity: "Ask each pair to name one forward-looking duty and its owner by role."
+      book: "§23.4 Worked Example; Faded Example 'A Paralegal's Clause'; Lab 23.4; From the Field."
+  notes:
+    book: "§23.4 Worked Example 'A Double-Booked Clinic Room'."
+
+# Redrawn natively from @fig-23-14 (failure-to-harm chain): the book figure's labels fall to about 7 pt at slide size.
+- layout: concept
+  minutes: 2
+  kicker: "Short case 2 · Tempe, Arizona, 2018 · content note: a death (book figure: chain, redrawn)"
+  title: "Tempe 2018: every link documented"
+  size: 24
+  bullets:
+    - "**NTSB (confirmed):** operator distracted by her phone; complacency not addressed"
+    - "**Legal outcome (reported):** no charges against the company; operator pleaded guilty"
+  flow_height: 2.1
+  flow:
+    - {label: "1 Never classified as a pedestrian", kind: ai, size: 22}
+    - {label: "2 Braking left to the operator", kind: human, size: 22}
+    - {label: "3 Complacency not addressed", kind: step, size: 22}
+    - {label: "4 A pedestrian was killed", kind: step, role: risk, size: 22}
+  takeaway: "Where did the law place responsibility? The NTSB?"
+  notes:
+    say: |
+      A real chain in which to test Elish's idea. In March 2018 a test vehicle operated by Uber's self-driving unit,
+      with a human operator on board, struck and killed a pedestrian in Tempe, Arizona. The National Transportation
+      Safety Board found that the system detected the pedestrian 5.6 seconds before impact but never classified her as
+      a pedestrian or predicted her path; that the design relied on the operator, not the system, for emergency
+      braking; and that the probable cause was the operator's failure to monitor the road because she was looking at
+      her phone. Contributing factors included the company's inadequate safety risk assessment, its ineffective
+      oversight of operators and its failure to address automation complacency. Prosecutors declined to charge the
+      company; the operator later pleaded guilty to endangerment. Where did each place responsibility?
+    background: |
+      Tiers: NTSB (2019), report HAR-19/03 (confirmed: findings, probable cause; contributing factors also include the
+      company's inadequate safety culture, the pedestrian's crossing outside a crosswalk and the state's insufficient
+      oversight of testing). Legal outcome reported (Associated Press, July 2023): no criminal charges against the
+      company; the operator pleaded guilty to endangerment. Chapter 18 covers liability. Labels: every chain link
+      documented; tree branch "other" (a perception system's misclassification), documented (D-23.4). The victim is
+      not named in the book; do not add names or press details. Handle calmly: a person died. Case Study Question 4
+      asks students to argue both ways whether this is a moral crumple zone.
+    questions:
+      - q: "Wasn't the operator simply at fault?"
+        a: "The NTSB named her distraction as the probable cause. It also found that the design relied on her alone for braking and that the company did not address complacency. Whether her conviction fits Elish's crumple zone can be argued both ways (Case Study Question 4)."
+    activity: "Ask: 'Argue it both ways in one sentence each: a moral crumple zone, or not?'"
+    book: "Case Study, Short case 2; @fig-23-14; Case Study Question 4."
+
+# ----------------------------------------------------------------------- 23.5
+# Redrawn natively from @fig-23-15 (three questions): the panels' sub-labels fall below 15 pt at slide size.
+- layout: compare
+  minutes: 1.5
+  kicker: "§23.5 · Deep · creativity and authorship (book figure: three questions)"
+  title: "“Creative”, “author” and “owner” answer different questions"
+  size: 24
+  columns:
+    - heading: "Creative?"
+      role: soft
+      bullets: ["New, surprising, valuable (Boden, 2004)", "About the work"]
+    - heading: "Whose choices?"
+      role: soft
+      bullets: ["Authorship, philosophical sense", "A prompt makes few (Chiang, 2024)"]
+    - heading: "Who answers?"
+      role: human
+      bullets: ["Ownership (Chapter 10)", "Explain, defend, stand behind it"]
+  takeaway: "Legal authorship is a fourth question (Chapter 18)"
+  notes:
+    say: |
+      When a system produces a poem or an image, three different questions hide in "is it creative, and whose is
+      it?" Is the output creative? The cognitive scientist Margaret Boden defines creativity as producing ideas or
+      artifacts that are new, surprising and valuable. On that test, the case for generated output is that it can
+      pass: in two experiments, non-expert readers could not tell AI-generated poems from poems by well-known poets,
+      and rated the AI poems higher on qualities such as rhythm. The case against has two parts. The writer Ted
+      Chiang argues that art is made of many choices by someone with something to say, and a short prompt supplies
+      very few of them. The second part is collective, on the next slide. And who answers for the work is a third
+      question: ownership, being able to explain, defend and stand behind it.
+    background: |
+      Porter & Machery (2024): readers' accuracy 46.6%, below chance; the authors suggest shared but flawed heuristics
+      (simpler AI poems were easier to follow; human complexity was taken for machine-made incoherence). Runco & Jaeger
+      (2012): "standard definition", original and effective. The book extends Chiang's point: a generated image could
+      be new and valuable to its viewer and still not be anyone's creative act. Legal authorship (Chapter 18): in U.S.
+      copyright law only a human can be an author; as of October 2026 a federal appeals court has held that a work
+      listed as made by an AI system alone could not be registered, and the Supreme Court declined review. Worked
+      Example: Hana's three questions on a bakery owner's generated cover image get three different answers.
+      Author's-view box: placeholder.
+    questions:
+      - q: "If readers prefer the AI poems, doesn't that settle it?"
+        a: "That is the strongest point for one side. The other side answers that valuing a work and calling it creative may be two judgments, and the authors themselves suggest readers used flawed rules of thumb (Hana's plan, §23.8)."
+    activity: "Your Turn (§23.5): one generated item you have seen; one line each: creative? whose choices? who answers?"
+    book: "§23.5, @fig-23-15; Worked Example 'Hana's Three Questions'; Faded Example 'A Chord Progression'; Check Yourself 23.5."
+
+- layout: figure
+  minutes: 1.5
+  kicker: "§23.5 · Doshi & Hauser (2024) · randomized experiment · book figure"
+  title: "Model ideas raised rated novelty and made stories more alike"
+  figure: f23-16-doshi-hauser
+  takeaway: "One experiment, cited by both sides"
+  notes:
+    say: |
+      Here is a study each side can cite. In a randomized experiment, 293 writers wrote short stories; some received
+      story ideas from a language model, one idea or five. Six hundred evaluators rated the stories. With model ideas,
+      stories were rated more novel and more useful, with the largest gains for writers who scored as less creative
+      on a test: novelty up 5.4 percent with one idea and 8.1 with five; usefulness up 3.7 and 9.0. That is the case
+      for. But the same experiment found that stories written with model ideas were more similar to one another: up
+      10.7 and 8.9 percent of the range. The authors write that this resembles a social dilemma: each writer is better
+      off, while the pool of new work grows narrower.
+    background: |
+      @fig-23-16 values are published (data/ch23_doshi_hauser.csv): increases versus writers with no AI ideas;
+      similarity as a share of the no-AI range; higher similarity = less collective variety. Doshi & Hauser (2024),
+      Science Advances 10, eadn5290. The chapter uses the study on both sides of §23.5: rated novelty for the case
+      for, similarity for the collective part of the case against; Hana's plan (§23.8) cites it as an objection.
+    questions:
+      - q: "Is more similar always bad?"
+        a: "The study measures similarity, not harm. The authors frame it as a social dilemma for the pool of new work; whether that matters is part of the value question each side answers differently."
+    activity: "Ask: 'Which bar would each side point to first?'"
+    book: "§23.5, @fig-23-16."
+
+# ----------------------------------------------------------------------- 23.6–23.7
+- layout: compare
+  minutes: 3
+  kicker: "§23.6–23.7 · Deep · work and long-term risk: dated claims"
+  title: "Work and long-term risk: date it, label its status"
+  size: 22
+  columns:
+    - heading: "Work and meaning"
+      role: soft
+      bullets: ["A: meaning at stake, by redesign", "B: less paid work, no loss?", "Measured: tasks changed first"]
+    - heading: "Long-term risk"
+      role: soft
+      bullets: ["A: extinction risk a priority", "B: a normal technology", "Survey: 38–51% gave ≥ 10% (forecast)"]
+  takeaway: "Measured, reported or forecast? And when?"
+  notes:
+    say: |
+      Two debates where dates matter most. Work and meaning: one side holds that AI can enrich or diminish the meaning
+      people find in work, depending on how tasks are redesigned and by whom. The other side, from Keynes in 1930 to
+      Danaher, asks whether much less paid work would be a loss at all. The evidence: in Denmark, researchers ruled out
+      effects on earnings or hours larger than 2 percent two years after ChatGPT's launch, while tasks changed. Long-
+      term risk: in 2023 a one-sentence statement, signed by Hinton, Bengio and AI company leaders, called extinction
+      risk from AI a global priority. Narayanan and Kapoor answer that AI is a normal technology whose effects arrive
+      slowly; Gebru and Torres argue the framing draws attention from present harms. In a 2023 survey, 38 to 51
+      percent of researchers gave at least a 10 percent chance to extreme outcomes: forecasts, not measurements.
+    background: |
+      Evidence status (Chapter 22, defined again in §23.6): measured, reported, forecast, the book's inference. Three
+      measured studies (@fig-23-17, not directly comparable): one firm, +15% issues resolved per hour, about +30% for
+      less experienced agents (Brynjolfsson, Li & Raymond, 2025); Denmark, effects larger than 2% ruled out, a bound,
+      not proof of zero; some adopters moved to better-paid occupations (Humlum & Vestergaard, revised March 2026); U.S.
+      payroll to June 2026, workers aged 22–25 in exposed occupations 19% below peers' pace, descriptive, not causal,
+      smaller with education controls (Brynjolfsson, Chandar & Chen, revised August 12, 2026). Risk: CAIS (May 2023,
+      paraphrased; signatories are interested sources too); Bengio et al. (2024, Science); Grace et al. (2024): 2,778
+      published AI researchers. Between them: International AI Safety Report (second edition February 3, 2026; 100+
+      experts; 30+ countries and organizations) records disagreement and recommends no policy. Calm register: if the
+      topic makes a student anxious, that is a reasonable response to an unsettled question.
+    misconceptions:
+      - m: "M6 'Long-term AI risk is either science fiction or settled fact.'"
+        fix: "Informed people disagree, mainly about how fast capability gains become real effects and whether such systems can be kept under control; neither side's forecast can be checked today."
+    questions:
+      - q: "Thousands of researchers signed or answered surveys; isn't that evidence?"
+        a: "A signature list shows who holds a view, not that it is true; survey answers are forecasts (@fig-23-19; Check Yourself 23.7, item 1)."
+    activity: "Optional: Faded Example 'An Entry-Level Jobs Post' (“Stanford proved it”): did they prove AI caused it? Key in Appendix E."
+    book: "§23.6, @fig-23-17; §23.7, @fig-23-18, @fig-23-19; Worked Examples 'Hana Reads Two Headlines' and 'Elif Maps the Statement and Its Critics'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · Review A11 · Chapter 22’s labels"
+  title: "evidence status"
+  question: "Give the evidence status of each claim"
+  option_tags: ["(a)", "(b)", "(c)"]
+  options:
+    - "A developer’s launch post on its model’s abilities"
+    - "A researcher survey’s estimate of the chance of extreme outcomes"
+    - "A study of national earnings records"
+  answer: ["Reported", "Forecast", "Measured"]
+  legend: "Evidence status"
+  instruction: "Measured · reported · forecast: label each (45 seconds)"
+  explanation: "Status says who checked a claim so far, not whether it is true"
+  notes:
+    say: |
+      A quick check with Chapter 22's labels, defined again in this chapter. Measured means tested, run or checked by
+      someone other than the developer, with a method you can read. Reported means stated by a developer, or by an
+      outlet citing them. Forecast means a statement about the future, by anyone. Label each of the three claims on
+      your own. The trap is the second one: it comes from researchers, it has a number, and it still is not a
+      measurement.
+    background: |
+      Review Questions A11 (O5 · LO5, LO3 · Apply), odd-numbered; key in Appendix E: (a) reported (the developer's own
+      claim); (b) forecast (estimates about the future); (c) measured (independent researchers, a method you can
+      read). Review A12 is even (instructor-only key).
+    activity: "45 s alone, then the answer slide."
+    book: "Review A11; §23.6 'What the evidence says, dated'."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      (a) Reported: it is the developer's own claim about its model. (b) Forecast: researchers' estimates about the
+      future, however expert and however many of them. That is why the chapter calls the 2023 survey results
+      forecasts. (c) Measured: independent researchers with national records and a method you can read, like the
+      Danish study. Notice what the status does not say. A measured result can still be described too broadly, as in
+      Hana's second headline, "Study: AI has no effect on jobs," when the study ruled out effects larger than 2
+      percent and also found tasks changing. And a forecast is not wrong for being a forecast; it just cannot be
+      checked yet.
+    background: |
+      Worked Example "Hana Reads Two Headlines" (§23.6): the first headline cites no study (an unsourced claim); the
+      second is a measured result described too broadly. Hana's dated sentence: "As of March 2026, a Danish study found
+      no effect of chatbots on earnings or hours larger than 2% two years after launch, while tasks changed (Humlum &
+      Vestergaard, 2026); I found no study of illustrators."
+    activity: "Reveal; ask one student to rewrite the second headline as one dated, exact sentence."
+    book: "Appendix E (Review A11); §23.6 Worked Example 'Hana Reads Two Headlines'."
+
+# ----------------------------------------------------------------------- 23.8
+# Redrawn natively from @fig-23-20 (position-paper card): eight boxes, labels below 15 pt at slide size.
+- layout: compare
+  minutes: 1.5
+  kicker: "§23.8 · Studio · the optional position paper (book figure: paper card)"
+  title: "A position paper keeps your view in its own labeled box"
+  size: 22
+  columns:
+    - heading: "The sides"
+      role: soft
+      bullets: ["The question, a map", "Side A, side B at their strongest", "Hardest objection, your reply"]
+    - heading: "My view: …"
+      role: human
+      bullets: ["Its own labeled paragraph", "What would change it", "“Undecided, because…” counts"]
+    - heading: "Check, declare"
+      role: soft
+      bullets: ["Attributions checked in the source", "AI Use Declaration"]
+  takeaway: "No side earns more points than the other"
+  notes:
+    say: |
+      Section 23.8 builds the chapter's optional assignment. A position paper takes a side on a contested question
+      after stating both sides fairly. Its parts: the question in one sentence; a map; each side at its strongest,
+      from a primary source; the objection you find hardest, with your reply; your view, in its own labeled paragraph;
+      what evidence would change it; and a declaration of any AI use. "Undecided, because…" is a position, if you give
+      the because. One warning: tools can produce plausible summaries of famous arguments, attributed to the right
+      person, that say something the person never wrote. So treat each attributed sentence as a claim and check it in
+      the source. An AI tool's "yes" is never a source.
+    background: |
+      Suggested rubric (10 points): both sides fairly 3; sources and attribution 2; argument map 2; your view, labeled
+      2; declaration 1. "No side earns more points than the other, and 'undecided, because…' can earn full marks."
+      Short version about 55 minutes (about 750-word excerpts per side; 300–400 words); full version 115–125 minutes
+      (600–900 words). Alternative: argument audit (about 65 minutes; no AI use; "Your assessment, labeled"). Hana's
+      plan (Worked Example) is a constructed character's view, labeled as hers; it never stands in for the author's
+      (D-23.2). Lab 23.2 Steelman Check: split a tool's summary of the Chinese Room into attributed claims and give
+      each a Chapter 8 verdict against a paraphrase sheet; a common slip is saying the robot reply denies premise 2.
+      The instructor package supplies a source pack of library links (never copies).
+    questions:
+      - q: "Can I use an AI tool to write it?"
+        a: "A tool may help you brainstorm objections, declared; every claim attributed to a philosopher or study must be checked in the source itself (Application Assignment, part 6)."
+    activity: "Point to the faded example ('A Plan on the Responsibility Gap') as a 10-minute start at home; key in Appendix E."
+    book: "§23.8, @fig-23-20, @fig-23-21; Worked Example 'Hana's Plan'; Application Assignment; Lab 23.2."
+
+- layout: tps
+  minutes: 3
+  kicker: "Chapter Summary · A Last Question"
+  title: "A last question"
+  prompt:
+    - "Suppose the sides agree: some AI system understands, feels or creates."
+    - "What changes in what you owe people your work affects? And the system?"
+  phases:
+    - {name: "Think", min: 1, text: "Write it alone"}
+    - {name: "Pair", min: 1, text: "Steelman your partner first"}
+    - {name: "Share", min: 1, text: "The premise you still dispute"}
+  notes:
+    say: |
+      The chapter ends with a real question, not an answer. Suppose that one day the sides agree: some AI system
+      understands, or feels, or creates. What, if anything, would then change about what you owe to the people your
+      work affects? And what would change about what you owe to the system? Take a minute to write your answer. Then,
+      with a partner, do something harder than arguing: state your partner's view until they agree you have it right.
+      That is the steelman habit from section 23.1. Finally, two pairs share not their answers but the premise they
+      still disagree about. There is no correct answer here, and I am not going to give you mine.
+    background: |
+      Chapter Summary, box "A Last Question" (a real open question; no five-character closing, D-23.3). The Pair phase
+      mirrors the Mini-Project (each partner first states the other's side until the other agrees it is fair).
+      Debrief on method only: did the pair find a disputed premise? Did anyone confuse a practice duty (owed to
+      people, whatever the answer) with the open question? Keep your own position out of the debrief (D-23.12).
+    activity: "1 min write, 1 min pair (steelman first), 1 min share: premises only, not verdicts."
+    book: "Chapter Summary, 'A Last Question'; Mini-Project (optional): A Structured Debate."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Explain:** what each classic text claimed, and did not"}
+    - {code: "O2", text: "**Analyze:** claim, reasons, objections, unstated premises"}
+    - {code: "O3", text: "**Distinguish:** behavior evidence from claims about minds"}
+    - {code: "O4", text: "**Evaluate:** who can answer for a harm, and how fairly"}
+    - {code: "O5", text: "**Evaluate:** dated claims by evidence status"}
+    - {code: "O6", text: "**Create:** a position paper, view labeled"}
+  takeaway: "Strongest sides, the disputed premise, your view labeled"
+  notes:
+    say: |
+      Back to the opening puzzle. The 2026 test gave Turing's game a result, and each side reads it as support: as
+      the evidence Turing asked for, as beside Searle's point, or as a sign of how readily people read meaning into
+      fluent text. The dispute is about a premise, not the data. The method is the same for all six debates: state
+      each side at its strongest, from its own texts; map the arguments and find the premise in dispute; keep evidence
+      about a system's behavior apart from claims about its mind; give every claim about the future its date and its
+      status; and put your own view in its own labeled paragraph, with what would change it. And keep two things
+      apart: the practice rule that you answer for your own use, and the open question of whether blame can always
+      be fair.
+    background: |
+      Chapter Summary and @fig-23-22: understanding (is behavior enough evidence?); consciousness (can computation be
+      enough, and what counts as evidence?); responsibility (can anyone be justly held responsible when no one could
+      foresee?); creativity (new, surprising and valuable, or someone's choices?); work (which tasks change, and who
+      decides?); long-term risk (how fast do effects arrive, can systems be controlled, what comes first?). Warm-up
+      revisit: (1) whether a partner you cannot tell from a person understands is the disputed question; (2) "I am
+      afraid of being switched off" is evidence of what the system produced, a claim to check; (3) in practice the
+      people with assigned duties answer; whether that blame is fair depends on control and foresight. Elif learned
+      that the loudest claim is rarely where the disagreement sits; Hana added "what would change my mind" to the
+      code of practice from Chapter 21.
+    activity: "Ask students to look at their Warm-up item 3 answer and confidence: did it change, and why?"
+    book: "Chapter Summary, @fig-23-22; Warm-up revisit."
+
+- layout: key_terms
+  minutes: 0.5
+  title: "Key terms (Deep · not on exams)"
+  size: 20
+  terms:
+    - "argument map"
+    - "steelman"
+    - "straw man"
+    - "imitation game (Turing test)"
+    - "AI welfare"
+    - "Chinese Room argument"
+    - "systems reply"
+    - "symbol grounding problem"
+    - "stochastic parrot"
+    - "ELIZA effect"
+    - "anthropomorphism"
+    - "phenomenal consciousness"
+    - "moral status"
+    - "AGI"
+    - "indicator property"
+    - "computational functionalism"
+    - "interested source"
+    - "existential risk"
+    - "responsibility gap"
+    - "problem of many hands"
+    - "moral crumple zone"
+    - "position paper"
+    - "meaningful human control"
+    - "forward-looking responsibility"
+    - "creativity"
+    - "meaningful work"
+  notes:
+    say: |
+      These are the chapter's key terms. None of them is on an exam, because the whole chapter is Deep. If you keep
+      only three pairs from this list, keep these. Steelman and straw man: the strongest fair version of a view, and a
+      weak version built to be knocked down. Phenomenal consciousness and moral status: experience, and having
+      interests that matter for their own sake. And the responsibility gap and the moral crumple zone: whether anyone
+      can be justly blamed when no one could foresee a system's behavior, and the warning that blame can land on the
+      person nearest the system. Each pair separates two questions people often run together.
+    background: |
+      Key Terms list from the chapter (26 terms); "indicator property (of consciousness)" and "artificial general
+      intelligence (AGI)" are shortened on the slide. Reused from earlier chapters: authorship (in copyright),
+      Chapter 18; evidence status (measured, reported, forecast, the book's inference), Chapter 22; labor-market
+      forecast, Chapter 20; ownership (of a text), Chapter 10. CONFLICT NOTE: the blueprint lists 22 key terms; the
+      chapter adds straw man, computational functionalism, interested source and position paper. Examinable scope:
+      Core sections only (D20).
+    activity: "Optional 30-second pair self-test on the three pairs."
+    book: "Chapter Summary, Key Terms; glossary."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: references
+  session: after
+  title: "References"
+  per_slide: 13
+  refs:
+    - "Anthropic. (2025, August 15). *Claude Opus 4 and 4.1 can now end a rare subset of conversations*."
+    - "Associated Press. (2023, July 28). *Backup driver pleads guilty to endangerment…* [News report]."
+    - "Bankins, S., & Formosa, P. (2023). AI for meaningful work. *Journal of Business Ethics, 185*(4), 725–740."
+    - "Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the dangers of stochastic parrots. *FAccT 2021*, 610–623."
+    - "Bender, E. M., & Koller, A. (2020). Climbing towards NLU. *ACL 2020*, 5185–5198."
+    - "Bengio, Y., Hinton, G., et al. (2024). Managing extreme AI risks amid rapid progress. *Science, 384*(6698), 842–845."
+    - "Birch, J. (2024). *The edge of sentience*. Oxford University Press."
+    - "Boden, M. A. (2004). *The creative mind: Myths and mechanisms* (2nd ed.). Routledge."
+    - "Brynjolfsson, E., Chandar, B., & Chen, R. (2026). *Canaries in the coal mine?* (Working paper, rev. August 12, 2026)."
+    - "Brynjolfsson, E., Li, D., & Raymond, L. (2025). Generative AI at work. *Quarterly Journal of Economics, 140*(2)."
+    - "Butlin, P., Long, R., et al. (2023). *Consciousness in artificial intelligence* (arXiv:2308.08708)."
+    - "Butlin, P., Long, R., et al. (2026). Identifying indicators of consciousness in AI systems. *Trends in Cognitive Sciences, 30*(6)."
+    - "Center for AI Safety. (2023, May 30). *Statement on AI extinction risk*."
+    - "Chiang, T. (2024, August 31). Why A.I. isn’t going to make art. *The New Yorker*."
+    - "Colombatto, C., & Fleming, S. M. (2024). Folk psychological attributions of consciousness to LLMs. *Neuroscience of Consciousness*, niae013."
+    - "Danaher, J. (2019). *Automation and utopia*. Harvard University Press."
+    - "Doshi, A. R., & Hauser, O. P. (2024). Generative AI enhances individual creativity… *Science Advances, 10*(28), eadn5290."
+    - "Elish, M. C. (2019). Moral crumple zones. *Engaging Science, Technology, and Society, 5*, 40–60."
+    - "Gebru, T., & Torres, É. P. (2024). The TESCREAL bundle. *First Monday, 29*(4)."
+    - "Grace, K., et al. (2024). *Thousands of AI authors on the future of AI* (arXiv:2401.02843, v3)."
+    - "Harnad, S. (1990). The symbol grounding problem. *Physica D, 42*(1–3), 335–346."
+    - "Hofstadter, D. R. (1995). *Fluid concepts and creative analogies*. Basic Books."
+    - "Humlum, A., & Vestergaard, E. (2026). *Still waters, rapid currents* (NBER WP 33777, rev. March 2026)."
+    - "International AI Safety Report. (2026). *International AI safety report 2026* (Y. Bengio, Chair)."
+    - "Jones, C. R., & Bergen, B. K. (2026). LLMs pass a standard three-party Turing test. *PNAS, 123*(21), e2524472123."
+    - "Keynes, J. M. (1963). Economic possibilities for our grandchildren. In *Essays in persuasion* (Original 1930)."
+    - "Li, K., et al. (2023). Emergent world representations. *ICLR 2023*."
+    - "Long, R., Sebo, J., et al. (2024). *Taking AI welfare seriously* (arXiv:2411.00986)."
+    - "Mahowald, K., et al. (2024). Dissociating language and thought in LLMs. *Trends in Cognitive Sciences, 28*(6), 517–540."
+    - "Matthias, A. (2004). The responsibility gap. *Ethics and Information Technology, 6*(3), 175–183."
+    - "Michael, J., et al. (2022). *What do NLP researchers believe?* (arXiv:2208.12852)."
+    - "Mitchell, M., & Krakauer, D. C. (2023). The debate over understanding in AI’s LLMs. *PNAS, 120*(13)."
+    - "Narayanan, A., & Kapoor, S. (2025, April). *AI as normal technology*. Knight First Amendment Institute."
+    - "National Transportation Safety Board. (2019). *Collision… Tempe, Arizona, March 18, 2018* (NTSB/HAR-19/03)."
+    - "Nissenbaum, H. (1996). Accountability in a computerized society. *Science and Engineering Ethics, 2*(1), 25–42."
+    - "Piantadosi, S. T., & Hill, F. (2022). *Meaning without reference in large language models* (arXiv:2208.02957)."
+    - "Porter, B., & Machery, E. (2024). AI-generated poetry is indistinguishable… *Scientific Reports, 14*, 26133."
+    - "Runco, M. A., & Jaeger, G. J. (2012). The standard definition of creativity. *Creativity Research Journal, 24*(1)."
+    - "Santoni de Sio, F., & Mecacci, G. (2021). Four responsibility gaps with AI. *Philosophy & Technology, 34*(4)."
+    - "Santoni de Sio, F., & van den Hoven, J. (2018). Meaningful human control. *Frontiers in Robotics and AI, 5*, 15."
+    - "Searle, J. R. (1980). Minds, brains, and programs. *Behavioral and Brain Sciences, 3*(3), 417–424."
+    - "Şeker, Ş. E. (2014). Aktör ağ teorisi [Actor network theory]. *YBS Ansiklopedi, 1*(1), 14–15."
+    - "Şeker, Ş. E., & Arslanhan, Z. (2026). Hermai. *Artificial Intelligence Theory and Applications, 6*(1), 56–74."
+    - "Seth, A. K. (2025). Conscious AI and biological naturalism. *Behavioral and Brain Sciences, 49*, e315."
+    - "Shanahan, M. (2024). Talking about large language models. *Communications of the ACM, 67*(2), 68–79."
+    - "Suleyman, M. (2025, August 19). *Seemingly conscious AI is coming*."
+    - "Thompson, D. F. (1980). The problem of many hands. *American Political Science Review, 74*(4), 905–916."
+    - "Tigard, D. W. (2021). There is no techno-responsibility gap. *Philosophy & Technology, 34*(3), 589–607."
+    - "Turing, A. M. (1950). Computing machinery and intelligence. *Mind, 59*(236), 433–460."
+    - "Weizenbaum, J. (1966). ELIZA. *Communications of the ACM, 9*(1), 36–45."
+  notes:
+    say: |
+      Reference slides; not presented. These are the sources cited on the slides and in the speaker notes, in short
+      APA form taken from the chapter's reference list, which was fact-checked. Students do not need to read them. For
+      anyone who wants to go further, the chapter's Further Reading starts with Turing (1950), sections 1 and 6;
+      Searle (1980), the thought experiment and the replies; Bender and Koller (2020) for the octopus; and Mitchell and
+      Krakauer (2023), a short, balanced survey. Each debate's two sides are paired there, for example Long et al. with
+      Seth, and Narayanan and Kapoor with the International AI Safety Report.
+    background: |
+      Full entries, all authors, titles and URLs are in the chapter's References; entries here are shortened with "…"
+      or "et al." to fit the slide. Every source cited on a slide or in these notes is listed. The instructor package's
+      source pack gives library links (never copies) to one passage per side for each debate.
+    activity: "Not presented."
+    book: "Chapter 23, References; Further Reading and Compass Links."

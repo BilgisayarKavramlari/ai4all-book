@@ -1,0 +1,995 @@
+# Lecture deck spec — Chapter 22: The State of the Art: Current Developments (Deep chapter, optional enrichment)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch22.yaml --preview
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates of
+# sessions, enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only.
+#
+# Chapter 22 is Deep (22.1–22.7) and Studio (22.8): optional and not examinable (D20); it adds no required class time
+# and has no graded artifact (the essay is optional and self-checked). So this is a SHORT deck framed as enrichment
+# (Chapter 6 and 13 pattern): a 25-minute segment ("seg") an instructor can run in any session after Chapter 21 (or any
+# time after Chapter 14), self-study slides ("self", no class time), reference slides ("after").
+# Chapter 22's own rule: every dated fact carries its date. Every time-sensitive claim on a slide names its date or
+# says "as of October 2026"; evidence vocabulary as the chapter defines it: measured · reported · reported (compiled) ·
+# outside estimate · forecast · the book's inference; "trace first" for a claim that names no source. Case facts keep
+# the chapter's tiers (confirmed · reported · inferred). Hana (they/them) examples are constructed.
+# Even-numbered review items are instructor-only and never appear; quick checks use a faded example (key in Appendix E).
+# Every number and quotation comes from the files under deck.sources; the builder flags any number it cannot find.
+
+deck:
+  chapter: 22
+  slug: the-state-of-the-art-current-developments
+  title: "The State of the Art: Current Developments"
+  short_title: State of the Art (optional)
+  author: Şadi Evren Şeker
+  sessions:
+    seg: {label: "optional 25-minute enrichment segment", minutes: 25}
+    self: {label: "self-study slides (not part of the 25-minute segment)"}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/22-the-state-of-the-art-current-developments.qmd
+    - labs/ch22-lab1.md
+    - labs/ch22-lab2.md
+    - labs/ch22-lab3.md
+    - labs/ch22-lab4.md
+    - figures/longdesc/ch22.md
+    - appendix/answers.md
+    - docs/blueprints/ch22-blueprint.md
+
+slides:
+
+# ======================================================================= 25-MINUTE SEGMENT
+- layout: title
+  session: seg
+  minutes: 0
+  subtitle: "Optional enrichment · Deep chapter · not on exams"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Written as of October 2026; parts will have aged"
+    - "Use as a 25-minute segment or for self-study"
+  figure: f22-01-chapter-map
+  notes:
+    say: |
+      This deck is optional enrichment, and you can say so plainly: Chapter 22 is a Deep chapter, nothing in it is on an
+      exam, and there is no graded artifact. It is different from every other chapter. The earlier chapters taught what
+      stays true for years: how models are built, how they fail and how to check them. This one is about what changes
+      every few months: what AI systems can do now, what they cost, and who says so. It was written in October 2026, so
+      some of its facts will be out of date by the time you see these slides. That is the point. Here is the chapter's
+      question: when you read that AI "can now" do something, how do you tell what was measured, what was only claimed
+      and what is a guess about the future, and how long will the answer stay true?
+    background: |
+      HOW TO USE THIS DECK. Chapter 22 is Deep in 22.1–22.7 and Studio in 22.8; not examinable (D20); its review
+      questions are exam-format practice only. Best read after Chapter 21; anyone who has read Chapter 14 can follow it.
+      Three ways to use the deck: (1) a 25-minute segment, slides 1–19 (through the summary), in any session with spare
+      time near the end of a course; a 15-minute short cut is slides 1–11 (opening case, the three tags, the quick check)
+      plus the summary; (2) self-study: post the deck with its notes on your course site beside the chapter's fast route;
+      (3) the slides after the summary support the optional labs and the optional essay. BEFORE PRESENTING: every dated
+      fact here is as of October 2026, the chapter's own dating; it is rewritten each edition (written for edition
+      2027.1). If you present later, say so, and consider running one aging check (slide on §22.8) live on a box value.
+      Work Loop highlight: Verify, with Decide second (the map on this slide). Featured student: Hana (they/them), a
+      media arts and design student who runs a small zine; all of Hana's files and outputs are constructed. Compass is
+      optional and never part of a course grade.
+    questions:
+      - q: "Is any of this on an exam?"
+        a: "No. Chapter 22 is a Deep chapter: optional and not examinable (D20). Its method, dating and tagging claims, helps in every chapter that asks you to verify."
+      - q: "Why read a chapter that will be out of date?"
+        a: "Because the method lasts while the facts age. Each section teaches a way of reading current developments and keeps its dated facts in one box marked “As of October 2026”; the last section asks what has already aged. Review Question C2 asks you to take a position on exactly this."
+    activity: "On screen while you introduce the segment; say “optional, not on exams” and “as of October 2026” once, clearly."
+    book: "Chapter 22 opening page, @fig-22-1; 'Chapter 22 at a glance' (fast and full routes)."
+
+- layout: session_plan
+  minutes: 1
+  title: "Two ways through Chapter 22"
+  columns:
+    - heading: "In class · 25-minute segment"
+      sub: "optional enrichment, not on exams"
+      blocks:
+        - {min: 2.5, label: "Opening case: two gold medals", detail: "Same score, different checks"}
+        - {min: 8.5, label: "Three tags for every claim", detail: "Date, status, who could check"}
+        - {min: 5.5, label: "Reasoning models and agents", detail: "Gains, limits, 50% vs. 80%"}
+        - {min: 2, label: "Energy: what a figure counts", detail: "The system boundary"}
+        - {min: 5, label: "What has already aged?", detail: "Aging check; summary"}
+    - heading: "On your own · self-study"
+      sub: "at 150 words per minute"
+      blocks:
+        - {min: 27, label: "Fast route", detail: "Opening, 22.1, 22.8 with recap, Summary"}
+        - {min: 66, label: "Full route", detail: "Everything through the Case Study"}
+        - {min: 25, label: "Lab 22.1: tag a launch post", detail: "Optional; printed, no account needed"}
+        - {min: 90, label: "Essay: what has aged?", detail: "Optional; self-check rubric"}
+  notes:
+    say: |
+      There are two ways through this chapter. In class, if we take twenty-five minutes, we cover the core method and a
+      few of its applications: an opening case about two gold medals at a mathematics olympiad, the three tags the chapter
+      adds to every claim about AI, what changed with reasoning models and agents, why two honest energy figures for one
+      prompt can differ, and how to check whether a dated claim has aged. On your own, the chapter offers a fast route of
+      about 27 minutes, which stands on its own, and a full route of about 66 minutes. Four labs are optional, from 20 to
+      30 minutes each, and the chapter ends with an optional essay, "What has already aged?"
+    background: |
+      Chapter time paragraph (150 words a minute; allow more in a second language): fast route about 27 minutes (opening
+      page, Opening Case, Warm-up, 22.1 with its box, 22.8 with its recap box, Summary); full route about 66 minutes
+      (about 73 with Ethics Lens, Career Connection, From the Field and Summary). Extra, all optional: Warm-up and Check
+      Yourself about 10 minutes; eight faded examples about 2 minutes each; labs 20–30 minutes each (22.1 Tag a Launch
+      Post 25; 22.2 Trace an Energy Number 30; 22.3 Read a Log Chart 20; 22.4 What Has Aged? 30); the end-of-chapter
+      questions about 8 minutes to read and 45–50 to answer; the optional essay about 90 minutes (75–110). CONFLICT NOTE:
+      the blueprint's older figures (fast route ~20 min, full ~53, essay ~80 min, Lab 22.4 25 min) are superseded by the
+      chapter v2 numbers used here.
+    questions:
+      - q: "Should I write the essay?"
+        a: "Only if you want to: it is optional, with a 10-point rubric for checking your own work. If your course uses the portfolio (Chapter 20) and you finish it before the portfolio is due, it can serve as portfolio evidence."
+    activity: "Point to the right column; say where the slides and the fast route are posted."
+    book: "Chapter 22 time paragraph; Hands-on Labs; Application Assignment (optional): What Has Already Aged?"
+
+- layout: objectives
+  minutes: 0.5
+  kicker: "Chapter 22 · learning objectives (optional chapter)"
+  title: "After this chapter you can…"
+  items:
+    - {code: "O1", text: "**Distinguish** measured, reported and forecast claims, each dated"}
+    - {code: "O2", text: "**Explain** what reasoning models do differently, and their limits"}
+    - {code: "O3", text: "**Interpret** a dated trend chart on a log axis"}
+    - {code: "O4", text: "**Compare** open-weight and closed models beyond scores"}
+    - {code: "O5", text: "**Evaluate** an energy or discovery claim: what it counts, who checked"}
+    - {code: "O6", text: "**Judge** which dated claims have aged"}
+  notes:
+    say: |
+      Six objectives, in the order of the chapter. The first is the method the whole chapter rests on: telling measured
+      claims from reported ones and from forecasts, each with the date it was made. The next four apply it: what a
+      reasoning model does differently from an earlier chat model and what outside tests show; how to read a trend chart
+      whose axis grows by multiples; how far open-weight models trail closed ones, and what matters besides scores; and
+      how to judge a claim about energy use or a scientific discovery by what it counts and who checked it. The last
+      objective turns the method on the chapter itself: which of its claims have already aged? None of these is examined.
+    background: |
+      Chapter wording and tags: O1 Distinguish measured, reported and forecast claims about an AI development, each with
+      its as-of date (LO1, LO3; AI Fluency: Discernment); O2 Explain what a reasoning model does differently from an
+      earlier chat model and what outside evidence shows about its gains and limits (LO1; AI4K12: Learning); O3 Interpret
+      a dated trend chart: a logarithmic axis, data points and a fitted trend line (LO1); O4 Compare open-weight and
+      closed models on the measured capability gap and on what each lets users inspect and control (LO1; Delegation); O5
+      Evaluate a claim about AI's energy use or a scientific discovery by what it counts and who checked it (LO1, LO3;
+      Discernment, Diligence; UNESCO: Ethics of AI); O6 Judge which claims in a dated account have aged and what that
+      means for work in your field (LO1; Diligence; UNESCO: Human-centred mindset, Apply).
+    activity: "Do not read the list; point to O1 as the habit the segment builds and O6 as where it ends."
+    book: "Chapter 22, Learning Objectives; Warm-up (three questions, revisited in the Summary)."
+
+# About 56 words incl. labels and status pills: four tagged events are the case (deliberate exception).
+- layout: timeline
+  minutes: 2.5
+  max_words: 58
+  kicker: "Opening case · International Mathematical Olympiad (IMO), July 2025 · pill = status (last: case tier)"
+  title: "Two gold medals, three kinds of grading"
+  events:
+    - {label: "Jul 19 · OpenAI", text: "Experimental model, 35 of 42; ex-medalists graded, per OpenAI", tier: "reported"}
+    - {label: "Jul 21 · DeepMind", text: "Gemini Deep Think, 35 of 42; IMO coordinators graded", tier: "measured"}
+    - {label: "Same week", text: "Seed Prover, 30 of 42; proofs checked in Lean", tier: "proofs measured"}
+    - {label: "Not covered", role: risk, text: "Computing used; whether people helped", tier: "tier: reported (AFP)"}
+  takeaway: "Puzzle: which 35 would you cite, and how?"
+  notes:
+    say: |
+      Every July, secondary-school students from more than 100 countries sit the International Mathematical Olympiad: six
+      proof problems over two days. In 2025, AI developers tested their systems on the same problems. On Saturday, July
+      19, OpenAI said an experimental model had solved five of the six problems, 35 of 42 points, a gold-medal score;
+      according to OpenAI, three former medalists graded the proofs. The IMO did not grade or certify them. On Monday,
+      July 21, Google DeepMind announced that an advanced Gemini Deep Think had also scored 35 of 42, and here the IMO's
+      own coordinators had graded and certified the proofs by the criteria used for students. A third kind of check came
+      the same week: proofs checked line by line by a computer program. And the IMO's president said the organizers could
+      not check the computing used or whether people helped. The puzzle: both 35-point statements may well be true. Which
+      would you cite, how would you phrase it, and how long would your sentence stay accurate?
+    background: |
+      Tiers and statuses exactly as the chapter states them. OpenAI's result: reported (Wei, 2025, as reproduced by
+      Willison, 2025); only Google had entered the competition, so the IMO did not grade or certify OpenAI's proofs
+      (Davies, 2025); Reuters reported the IMO had asked cooperating companies to publish on July 28, and OpenAI said an
+      IMO board member allowed it to publish after the closing ceremony (Reuters, 2025). DeepMind: its post is the
+      confirmed record of what DeepMind says, and the score was graded by the IMO's coordinators, so the capability claim
+      is measured, with the limit the post itself states: the IMO's review does not extend to validating the system,
+      processes or underlying model (Google DeepMind, 2025). AFP (2025), reported: the IMO president's caution; of 641
+      students from 112 countries, about 10% won gold and five scored a perfect 42. ByteDance said the IMO had confirmed
+      Seed Prover's 30 of 42, after people translated the problems into Lean by hand and the system worked for about
+      three days (ByteDance Seed, 2025); the proof checker confirmed each proof's validity, while the score is the
+      developer's report, hence the pill "proofs measured". The fourth pill is a case tier, not a status: that the
+      organizers could not check these things is a fact reported by AFP. Harmonic's Aristotle also reported a gold-medal-level result
+      with formally verified proofs (Achim et al., 2025; Case Study). CONFLICT NOTE: Reuters' student counts differ from
+      AFP's; the chapter uses AFP's and the blueprint records both.
+    misconceptions:
+      - m: "M1 “A developer's announcement tells you what AI can now do.”"
+        fix: "Do not swing to “the announcement is false”: OpenAI's result may well be true. The point is that it is unchecked by an outside source until one checks it; the next slides give the vocabulary."
+    activity: "Narrate; do not read the cards. Take two quick answers to the puzzle (which would you cite?) and park them for the worked example."
+    book: "Opening Case 'Two Gold Medals, Three Kinds of Grading'; @fig-22-2 (storyboard); Case Study 'Two Gold Medals, Revisited'."
+
+- layout: compare
+  minutes: 2
+  kicker: "§22.1 · reading a dated claim (book figure @fig-22-4, redrawn)"
+  title: "Every capability claim needs three tags"
+  size: 24
+  columns:
+    - heading: "1 · As-of date"
+      role: soft
+      text: "When it was made or measured, **not** when you read it"
+    - heading: "2 · Evidence status"
+      role: neutral
+      text: "Who has checked it so far"
+    - heading: "3 · Who could check it"
+      role: soft
+      text: "The outside source that could make it measured"
+  takeaway: "Trace first: no source named, no status yet"
+  notes:
+    say: |
+      News about AI arrives as capability claims: statements that a system can now do something, such as "solves olympiad
+      problems" or "completes two-hour software tasks." On its own, a capability claim is incomplete. To use one, you
+      need three tags. First, the as-of date: when the claim was made or measured, not when you read it. A claim true in
+      2024 may be false in 2026, so write the date into your sentence: "As of July 2025, …". Second, the evidence status:
+      who has checked it so far. Third, who could check it: for a reported claim, name the outside source that could move
+      it to measured, such as the competition, an evaluation group, peer reviewers or a replication. One rule comes before
+      all three: trace first. A claim with no source, from a sales page, a newsletter or a speaker, has no status yet;
+      trace it to where it came from, or write "no source given."
+    background: |
+      Definitions (§22.1): capability claim; as-of date; evidence status (who has checked a claim so far; it does not say
+      whether the claim is true: a reported claim can be true, and a measured one can be measured badly or on the wrong
+      task); outside evaluation (a test of a system run by an outside source). Statuses apply to claims about what a
+      system can do or what it uses (a score, an energy figure). A fact about an event or a page (a prize was awarded, a
+      paper passed peer review, a page stopped being updated) takes a case tier instead. The redrawn figure @fig-22-4 also
+      prints the crosswalk with case tiers; it is on the next slide's notes.
+    questions:
+      - q: "If a claim is reported, does that mean it is probably false?"
+        a: "No. The status says who checked it, not whether it is true. A reported claim can be true; it simply has not been checked by an outside source yet."
+    activity: "Ask: “Name one AI claim you saw this week. Which of the three tags can you fill right now?” (Your Turn §22.1.)"
+    book: "§22.1, @fig-22-4; Check Yourself 22.1; Your Turn §22.1."
+
+- layout: compare
+  minutes: 2
+  kicker: "§22.1 · evidence status and its two variants"
+  title: "Status says who checked a claim, not whether it is true"
+  size: 22
+  columns:
+    - heading: "Measured"
+      role: verified
+      bullets:
+        - "An outside source tested it; method readable"
+        - "Variant: **outside estimate** from stated assumptions"
+    - heading: "Reported"
+      role: soft
+      bullets:
+        - "The developer, or an outlet citing it"
+        - "Variant: **reported (compiled)** by a tracker"
+    - heading: "Forecast"
+      role: soft
+      bullets:
+        - "About the future, whoever makes it"
+        - "Kept apart: **the book’s inference**"
+  takeaway: "Ask who ran the test, not who printed it"
+  notes:
+    say: |
+      Here are the statuses. Measured means tested, run or checked by someone other than the developer, with a method you
+      can read: a competition's own graders, an evaluation group such as METR, or a program that checks proofs. Reported
+      means stated by the developer, or by a news outlet citing the developer: a launch post, a system card, a benchmark
+      table in an announcement. The developer's page is the primary source for what the developer claims, but it is not
+      an outside source. A forecast is a statement about the future, and a forecast by a careful outside body is still a
+      forecast. Two variants. When a tracker such as the AI Index compiles scores, many of them were reported by
+      developers, so the tag is "reported (compiled)". When an outside body such as the International Energy Agency
+      calculates a figure from stated assumptions, it is an "outside estimate": check its assumptions.
+    background: |
+      §22.1 and the box "Two kinds of labels, two questions." CROSSWALK: case tiers (confirmed, reported, inferred; since
+      Chapter 5) ask whether a fact is in the primary record; the evidence status asks who checked the capability. The two
+      can differ for the same sentence: DeepMind's blog post is the confirmed record of what DeepMind says, and the score
+      it describes was graded by the IMO's coordinators, so the capability claim is measured. "Reported" appears in both
+      lists with different meanings: as a tier, a named outlet says so; as a status, only the developer vouches for the
+      capability. OpenAI's gold-medal claim, as Reuters relayed it, is reported in both senses. METR = Model Evaluation
+      and Threat Research, a nonprofit; AI Index = Stanford HAI's annual report; Epoch AI = a research group tracking AI
+      trends; IEA = International Energy Agency. The book's inference is marked "this book reads …" and drawn dashed in
+      figures. CONFLICT NOTE: the blueprint listed the AI Index and the IEA among "measured" examples; the chapter v2
+      tags them "reported (compiled)" and "outside estimate". The deck follows the chapter.
+    misconceptions:
+      - m: "M1 “A developer's announcement tells you what AI can now do.”"
+        fix: "Use the crosswalk: the developer's page is a primary source for what the developer claims, and it passes Chapter 8's independent check (no AI tool produced it), but it is not an outside source."
+    activity: "Ask: “The AI Index prints a developer's score. Measured or reported?” (Reported (compiled): ask who ran the test.)"
+    book: "§22.1, box 'Two kinds of labels, two questions', @fig-22-4; Review Questions A1, A3."
+
+# The book figure has nine boxes and is too dense at slide size: five of its events redrawn natively; notes list all nine.
+# About 53 words incl. dates and status pills (deliberate exception: the tags are the content).
+- layout: timeline
+  minutes: 1
+  max_words: 56
+  kicker: "§22.1 · the Capability Timeline, five of its nine events (book figure @fig-22-3, redrawn)"
+  title: "The Capability Timeline: date, claim, status"
+  events:
+    - {label: "Jul 2025", text: "IMO gold-level score, experimental model", tier: "reported: developer"}
+    - {label: "Jul 2025", text: "IMO gold-level score, natural language", tier: "measured: IMO"}
+    - {label: "Feb 2026", text: "Agents’ 50% horizon about 12 hours", tier: "measured: METR"}
+    - {label: "Apr 2026", text: "Data-center electricity up 17% in 2025", tier: "outside estimate: IEA"}
+    - {label: "By 2030", role: soft, text: "Data-center electricity about doubles", tier: "forecast: IEA"}
+  takeaway: "Full figure: five of nine rest on an outside source"
+  notes:
+    say: |
+      This is the chapter's new signature diagram, the Capability Timeline, shown here with five of its nine events. It
+      puts the three tags on a time line: each box carries a date, a short claim and a status tag. Read it from left to
+      right. The two olympiad results of July 2025: one reported by its developer, one measured by the IMO's coordinators.
+      Agents' time horizons in February 2026, measured by METR. The IEA's estimate that data-center electricity rose 17%
+      in 2025: an outside estimate. And a box for 2030, after "now", October 2026: a forecast, whoever makes it. In the
+      book's version, a filled corner square means an outside source, an open square means reported, and a light fill
+      means forecast. Five of its nine milestones rest on an outside source. The diagram is built from a data file, so the
+      next edition can redraw it with new events.
+    background: |
+      @fig-22-3 (long description in figures/longdesc/ch22.md): Jul 2025 OpenAI (reported: the developer); Jul 2025
+      Gemini Deep Think (measured: IMO coordinators); Jan 2026 Erdős problem 728 (measured: proof checker); Feb 2026
+      agents' 50% horizon about 12 hours (measured: METR); Apr 2026 data-center electricity up 17% in 2025 (outside
+      estimate: IEA); May 2026 a model disproves a 1946 geometry conjecture (reported: the developer, with an outside
+      preprint); May 2026 open-weight models about four months behind (measured: Epoch AI); Jul 2026 two systems claim 42
+      of 42 at IMO 2026 (reported: the developers, via AFP); by 2030 data-center electricity about doubles (forecast:
+      IEA). Count: four measured plus one outside estimate, three reported, one forecast. The signature is reused in
+      §22.8 (@fig-22-17) with an "aged" mark (folded corner), never shown by color alone.
+    activity: "Ask: “Which box do you expect to age first, and why?” (Discussion Question 4). Take one answer."
+    book: "§22.1, @fig-22-3 (Capability Timeline); @fig-22-17 in §22.8."
+
+# Last reveal 64 words as counted (labels, context and result included): two tagged statements side by side are
+# the point (deliberate exception, as in ch01's side-by-side answers).
+- layout: worked
+  minutes: 1
+  max_words: 66
+  kicker: "§22.1 · worked example · tagging the olympiad statements"
+  title: "Tagging the two 35-point statements"
+  context: "Three tags each, then a better sentence."
+  steps:
+    - {label: "Claim A", text: "“OpenAI model won gold”, July 19, 2025"}
+    - {label: "Tags A", text: "Reported, per OpenAI; could check: IMO coordinators"}
+    - {label: "Claim B", text: "“Gemini Deep Think: 35 of 42”, July 21, 2025"}
+    - {label: "Tags B", text: "Measured by IMO coordinators; not: computing, human help"}
+  reveal: [2, 4]
+  result: "Put the status in the sentence: “…according to the company”"
+  notes_reveal:
+    - minutes: 1
+      say: |
+        Let's tag the two statements from the opening case. Claim A: "An OpenAI model won gold at the 2025 IMO." Date:
+        July 19, 2025. Status: reported. According to OpenAI, three former medalists graded the proofs, and the IMO did not
+        grade or certify them. Who could check it? The IMO's own coordinators, by the same criteria they use for students'
+        work. So a better sentence says who graded it: OpenAI reported that an experimental model scored 35 of 42 on the
+        2025 problems, graded by three former medalists, according to the company; the IMO did not certify the result.
+        Before the next step, ask yourself: what changes for Claim B?
+      background: |
+        Worked Example 'Tagging the Olympiad Statements' (§22.1), with its sources: Wei (2025) for OpenAI's account and
+        Davies (2025) for the IMO not certifying it. A reported claim is not a false claim; it may well be true.
+      activity: "Pause after Tags A; ask the class to predict Claim B's status."
+      book: "§22.1 Worked Example 'Tagging the Olympiad Statements'."
+    - minutes: 1
+      say: |
+        Claim B: "Google DeepMind's Gemini Deep Think scored 35 of 42." Date: July 21, 2025. Status: measured, because the
+        IMO's coordinators graded and certified the proofs. But a measured claim still has edges: the check did not cover
+        the system itself, the computing it used or any human involvement. DeepMind's own post says the IMO's review does
+        not extend to validating its system. So the better sentence: "In July 2025, an advanced Gemini Deep Think scored 35
+        of 42, a gold-medal score, as graded by the IMO's coordinators; the organizers could not check the computing used."
+        Notice that both sentences carry a date, a status and a source. That is all the method asks.
+      background: |
+        Better sentence for Claim B as printed, with its sources (Google DeepMind, 2025; AFP, 2025). Case Study Question 2
+        asks students to write both sentences themselves.
+      activity: "Ask: “Which of the two would you cite in a report, and how would you phrase the other?”"
+      book: "§22.1 Worked Example; Case Study Question 2."
+  notes:
+    book: "§22.1 Worked Example 'Tagging the Olympiad Statements'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §22.1 faded example (constructed)"
+  title: "tag a sales page"
+  question: "A software company’s sales page, dated March 2026: “Our support agent resolves 80% of customer tickets with no human help.” It links to no study. What is the claim’s status?"
+  options:
+    - "Measured: it gives an exact success rate"
+    - "Reported: the seller’s own page, no method given"
+    - "Forecast: it promises results for buyers"
+    - "Contradicted: sellers usually exaggerate"
+  answer: b
+  instruction: "Decide alone in 20 seconds, then vote"
+  explanation: "Reported (March 2026). Could check: an outside evaluator, or your own trial on stated tickets"
+  notes:
+    say: |
+      A quick check on the method. Here is a constructed sales page, dated March 2026. It says the company's support agent
+      resolves 80% of customer tickets with no human help, and it links to no study. Decide alone: what is the claim's
+      status? Four options: measured, because it gives an exact rate; reported, because it is the seller's own page with
+      no method; forecast, because it promises results; or contradicted, because sellers exaggerate. Take twenty seconds,
+      then vote. Remember the two questions from the last slides: who checked the claim, and could anyone check it?
+    background: |
+      Faded Example 'A Sales Page' (§22.1), constructed; key in Appendix E. Options (a), (c) and (d) mirror the
+      distractor logic of Review A2, which is even-numbered and instructor-only: A2 itself is not shown.
+    activity: "20 s alone, then hands for a, b, c, d."
+    book: "§22.1 Faded Example 'A Sales Page'; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (b), reported: it is the seller's own page, dated March 2026, and it gives no method. An exact number
+      does not make a claim measured; only an outside check does. It is not a forecast either: it describes what the agent
+      does now. And "contradicted" is a verdict, which needs evidence against the claim; we have none, only no evidence
+      for it. Who could check it? An outside evaluator, or your own trial, measuring the share of tickets closed with no
+      human help and no reopening, on a stated set of tickets and dates. A better sentence: "The company's March 2026 sales
+      page says its agent resolves 80% of tickets without human help; it gives no method or outside test."
+    background: |
+      Appendix E, faded example 22.1. Contrast with "trace first": a claim that names no source (a newsletter, a speaker)
+      has no status until traced; here the source is the seller itself, so the claim is reported.
+    misconceptions:
+      - m: "M1 “A developer's announcement tells you what AI can now do.”"
+        fix: "Ask students who chose (a): what would have made it measured? (An outside test with a readable method.) And for (d): reported is not the same as false."
+    activity: "Ask one student who chose (a) to explain; then show the better sentence."
+    book: "Appendix E (Chapter 22, faded examples)."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "§22.2 · reasoning models (book figure @fig-22-5, redrawn) · as of October 2026"
+  title: "Reasoning models spend more computation at answer time"
+  size: 24
+  bullets:
+    - "**Test-time compute:** extra tokens first, which cost time and money"
+    - "Largest gains where answers can be checked: math, code"
+    - "Top scores on three hard tests rose 18.8 to 67.3 points, 2023–2024 (reported, compiled)"
+  flow:
+    - {label: "Prompt", kind: human}
+    - {label: "Model", kind: ai}
+    - {label: "Reasoning tokens", kind: ai, dashed: true}
+    - {label: "Answer", kind: step}
+  takeaway: "The step text is generated: a claim to check, not a record"
+  notes:
+    say: |
+      Chapter 3 described how some tools produce extra reasoning tokens before the answer. Providers now sell whole model
+      families built to do this by default. A reasoning model is the providers' name for a model trained to produce many
+      intermediate tokens, often hidden, before its final answer; the name is a provider term, not a claim that the model
+      reasons as a person does. The idea is test-time compute: more computation at the moment of answering. A model that
+      produces 5,000 tokens before answering does far more computation than one that produces 50, and every token is
+      computed and usually billed. Outside tests show the largest gains where answers can be checked automatically:
+      mathematics, science questions with one right answer, code that passes its tests. But the step-by-step text is
+      generated like any other text, so it is a claim to check, not a record of how the answer was produced.
+    background: |
+      Box "As of October 2026: reasoning models": MMMU +18.8, GPQA +48.9, SWE-bench +67.3 points (4.4% to 71.7%, this
+      book's subtraction), 2023 to 2024; reported (compiled), AI Index 2025 (Stanford HAI, 2025; @fig-22-7). SWE-bench
+      Verified: about 60% to near 100% in one year, close to its ceiling; reported (compiled), AI Index 2026. Timing, not a
+      measured cause: other changes, such as better agent software, arrived at the same time. Training: DeepSeek published
+      in Nature how it trained such models with reinforcement learning, rewarding answers a program could check (R1-Zero;
+      R1 added written examples); confirmed: the peer-reviewed paper, September 2025 (Guo et al., 2025). Live dispute:
+      Apple researchers reported accuracy collapsing beyond a difficulty level on puzzle families (Shojaee et al.,
+      NeurIPS 2025); a comment on arXiv, later corrected by its author, argued some failures came from output-length limits
+      and the grading method (Lawsen, 2025); not settled. Reading reasoning text to catch misbehavior: a "new and fragile
+      opportunity" (Korbak et al., July 2025); the book found no later statement that changes that judgment (book's
+      reading). Worked example (constructed): Hana's streetcar date; the reasoning mode gave the right year with an
+      unfindable "1921 city ordinance" step; Hana cites the archive, not the tool.
+    questions:
+      - q: "If it shows its steps, can I trust the answer more?"
+        a: "Not for facts. The steps are generated text: in Hana's example the year was right and one cited step could not be found. Check the answer against a primary source, as with any output (Chapter 17)."
+    activity: "Ask: “Where would you expect the biggest gains: a math proof, a historical date, or a drug dose?” Then show the next slide."
+    book: "§22.2, @fig-22-5, @fig-22-7; box 'As of October 2026: reasoning models'; Worked Example 'Hana's Archive Date'; Check Yourself 22.2."
+
+# Book chart @fig-22-6 redrawn as three cards so the six values stay legible at slide size.
+- layout: compare
+  minutes: 1.5
+  kicker: "§22.2 · PersonQA, OpenAI (2025a), book figure @fig-22-6 redrawn · reported: the developer’s own test, April 2025"
+  title: "Newer was not more factual about people in one 2025 test"
+  size: 24
+  columns:
+    - heading: "o1 (older)"
+      role: soft
+      bullets: ["Accurate: **47%**", "Invented facts: **16%**"]
+    - heading: "o3 (newer)"
+      role: risk
+      bullets: ["Accurate: **59%**", "Invented facts: **33%**"]
+    - heading: "o4-mini (newer, smaller)"
+      role: soft
+      bullets: ["Accurate: **36%**", "Invented facts: **48%**"]
+  takeaway: "One test of one kind of question, not a rule about reasoning models"
+  notes:
+    say: |
+      Writing out steps is not the same as getting facts right. In one developer's own 2025 test of questions about
+      public figures, called PersonQA, its newer reasoning model o3 was accurate in 59% of answers, more than the older o1
+      at 47%. But o3 also invented facts in 33% of answers, against 16% for o1. The smaller o4-mini was accurate in 36% and
+      invented facts in 48%. The developer said the newer model makes more claims overall, right and wrong, and that more
+      research was needed. Two cautions. This is one test of one kind of question, so it is not a rule about reasoning
+      models. And it is the developer's own test: reported, not measured. In August 2025 the same developer reported that
+      its next reasoning model made far fewer factual errors than o3 on its own tests. Also reported.
+    background: |
+      OpenAI (2025a), o3 and o4-mini system card, Table 4, April 16, 2025: o1 accuracy 0.47, hallucination rate 0.16; o3
+      0.59 and 0.33; o4-mini 0.36 and 0.48 (@fig-22-6). OpenAI (2025b), GPT-5 system card, August 2025: far fewer factual
+      errors than o3 on its own tests, graded partly by another model; reported. Faded example (constructed): a tutoring
+      service's page, September 2026, says its reasoning model "doesn't hallucinate drug doses"; status reported; key in
+      Appendix E: an outside test on dose questions with known answers from a primary drug reference; meanwhile check
+      every dose against the reference.
+    misconceptions:
+      - m: "M2 “Newer reasoning models make fewer factual errors.”"
+        fix: "Point to o1 vs. o3. Then block the opposite overreach: not “reasoning models are worse”; outside benchmarks show large gains on math and code, and errors depend on the task."
+    activity: "Ask: “What would you write in your clippings file about this chart?” (Date, status, one test.)"
+    book: "§22.2, @fig-22-6; box 'As of October 2026: reasoning models'; Faded Example 'A Tutor's Promise'."
+
+- layout: figure
+  minutes: 2.5
+  kicker: "§22.3 · METR Time Horizon 1.1 · measured · as of October 2026"
+  title: "Agents: hours at 50% success, far shorter at 80%"
+  figure: f22-08-horizons
+  notes:
+    say: |
+      Chapter 14 introduced METR's way of measuring agents: give them tasks that take skilled people a known time, and
+      find the task length at which an agent succeeds half the time. That length is the 50% time horizon; the 80% horizon
+      is the length it completes four times in five. Three habits for reading this chart. Read the axis: it is
+      logarithmic, so each step up is a multiple, about four times, and a straight rising line means steady doubling.
+      Separate data from trend: the points are measurements; the dotted line is a fitted trend, and past the last point it
+      is a forecast drawn in the shape of data. Compare 50% with 80%: as of October 2026, the strongest agents reached 50%
+      horizons of several hours, but their 80% horizons were only about one to one and a half hours. Half the time is not
+      reliably.
+    background: |
+      Box "As of October 2026: agents" (METR, 2026; raw data, Time Horizon 1.1): Gemini 3.1 Pro (Google, February 2026)
+      about 6.4 h / 1.5 h; GPT-5.4 (OpenAI, March 2026) about 5.7 h / 0.9 h; Claude Opus 4.6 (Anthropic, February 2026)
+      about 12 h / 1.2 h, 50% range about 5 to 60 hours; measured. Claude Mythos Preview, early version (April 2026): about
+      17 h / 3.1 h, above the 16 hours METR calls unreliable, so the book leaves it out of the trend. METR's fit: the 50%
+      horizon doubled about every 129 days (range 104–158) from 2023 on; a measured trend, any extension a forecast.
+      Saturation: METR's own task set is near its ceiling for the strongest agents. METR's page says it is "no longer
+      actively updated" (last update September 8, 2026; confirmed, checked October 18, 2026). OSWorld (computer-use
+      agents): best agent success about 12% to about 66%, reported (compiled), AI Index 2026; people completed over 72%
+      in the original study (Xie et al., 2024). Tool protocol (December 2025): the Model Context Protocol moved into a
+      new Linux Foundation-hosted foundation with AGENTS.md and goose; adoption figures are company claims. Lab 22.3
+      prints the data table: GPT-4 (March 2023) 4.0 min; GPT-5 (August 2025) 203.0 min. Sources: METR (2026); Kwa et al.
+      (2025) for the first version; Linux Foundation (2025) for the tool protocol.
+    questions:
+      - q: "So an agent can now do my eight-hour job?"
+        a: "No. A 50% horizon of hours means tasks of that length on METR's software and research tasks succeed about half the time; four-in-five success holds only for tasks of about an hour, and your task is a different task that needs its own trial (Faded Example 'The Maintenance Agent')."
+    misconceptions:
+      - m: "M3 “A high benchmark score means the system will do my task reliably.”"
+        fix: "Point from the filled to the open markers (50% vs. 80%), then to METR's own caveats: estimates above 16 hours are unreliable and the page is no longer updated. Your own test settles fit (Chapters 12, 14)."
+    activity: "Ask a volunteer to find one model's filled and open marker and read both off the axis."
+    book: "§22.3, @fig-22-8, @fig-22-9; box 'As of October 2026: agents'; Worked Example 'Hana Reads the Horizon Chart'; Lab 22.3."
+
+- layout: compare
+  minutes: 2
+  kicker: "§22.6 · the system boundary (book figure @fig-22-15, redrawn) · per median or typical text prompt"
+  title: "A per-prompt energy figure depends on what it counts"
+  size: 22
+  columns:
+    - heading: "Active chips only"
+      role: soft
+      bullets: ["**0.10 Wh**", "Google, August 2025", "Reported"]
+    - heading: "Full serving system"
+      role: soft
+      bullets: ["**0.24 Wh**: adds host, idle capacity, cooling", "Google, August 2025", "Reported"]
+    - heading: "Another provider"
+      role: neutral
+      bullets: ["**About 0.3 Wh**", "Epoch AI, February 2025", "Outside estimate"]
+  takeaway: "Two honest numbers can describe the same prompt: compare boundaries first"
+  notes:
+    say: |
+      Energy is where the boundary matters most. Totals are large; single questions are small; both can be true at once.
+      A per-prompt figure depends on its system boundary: which parts of the system an estimate counts. Google published
+      two figures in August 2025 for the same median text prompt to its Gemini apps: 0.10 watt-hours counting only the
+      active AI chips, and 0.24 counting the full serving system, with the host computer, idle capacity kept ready and the
+      building's cooling and power. Google presents the larger figure as the fuller view. An outside estimate by Epoch AI
+      for a typical query to another provider's model is about 0.3 watt-hours. To put that in scale: a 50-watt laptop uses
+      0.24 watt-hours in about 17 seconds. So when two energy figures disagree, compare their boundaries, their year and
+      their model before you compare their numbers.
+    background: |
+      Box "As of October 2026: scale and its costs": Google's two figures, reported; its blog says the data have not been
+      verified by an independent third party (Elsworth et al., 2025; Google Cloud, 2025). Epoch AI, February 2025 (You,
+      2025): about 0.3 Wh, other assumptions about 0.1 to 4 Wh, a long input of about 10,000 tokens about 2.5 Wh; outside
+      estimate from stated assumptions; a commonly cited figure of about 3 Wh came from early-2023 assumptions, in Epoch's
+      account. THIS BOOK'S CALCULATION (an illustration, not anyone's measured footprint): 30 prompts a day, 50-watt
+      laptop: 0.24 Wh gives 7.2 Wh, about 9 minutes; 0.10 Wh gives 3.0 Wh, about 4 minutes; 0.3 Wh gives 9.0 Wh, about 11
+      minutes; a long reasoning answer at ten times the full-stack figure (2.4 Wh, the book's assumption) gives 72 Wh,
+      about 86 minutes. TOTALS: world data centers about 485 TWh in 2025 and about 950 TWh expected by 2030 (outside
+      estimate, then forecast; IEA, 2026b); about 415 TWh in 2024, about 1.5% of world electricity (IEA, 2025). Warm-up 3
+      answer: a fraction of a watt-hour for a short prompt, seconds to under a minute of a laptop; long inputs and long
+      reasoning answers several watt-hours. CONFLICT NOTE: the blueprint's "2023 estimate ~2.9 Wh" appears in the chapter
+      as "about 3 Wh".
+    misconceptions:
+      - m: "M5 “One chat question uses a huge amount of energy” / “AI's energy use is negligible.”"
+        fix: "Hold both numbers up: a fraction of a watt-hour per prompt and hundreds of terawatt-hours in total. Small per prompt and large in total can both be true."
+    activity: "Revisit Warm-up question 3: ask how many guessed “less than one minute of a laptop” and how sure they were."
+    book: "§22.6, @fig-22-15, @fig-22-14; Worked Example 'This Book's Calculation'; Check Yourself 22.6; Lab 22.2."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "§22.8 · Studio · the aging check (book figure @fig-22-18, redrawn)"
+  title: "An aging check asks what a dated claim describes today"
+  size: 24
+  bullets:
+    - "**Three things can change:** the facts, the status, or only the names"
+    - "*Contradicted* here means “no longer true today”, not “wrong when written”"
+  flow:
+    - {label: "Old claim", kind: human}
+    - {label: "Today’s best source", kind: human}
+    - {label: "Verdict for today", kind: step}
+    - {label: "What changed", kind: step}
+    - {label: "Next check", kind: human}
+  takeaway: "A check with no date or trigger for the next one is easy to forget"
+  notes:
+    say: |
+      Every box in this chapter will age. An aging check is a check of a dated claim against the best current source.
+      What does that source say today? What is your verdict on the old claim as a description of today, on Chapter 8's
+      five-point scale? And what changed? Three things can: the facts, when a number or a policy moved; the status, when a
+      reported claim was measured or a measurement was withdrawn; or only the names, when the products are new and the
+      pattern is the same. One subtlety: in an aging check, "contradicted" means no longer true as a description of today,
+      not wrong when it was written. The last step is to decide when to check again, because a claim keeps aging after
+      today's check.
+    background: |
+      §22.8 is Studio. The book's own example: in 2014 the author wrote an encyclopedia entry (Şeker, 2014), drawing on a
+      table by Fichman, Dos Santos and Zheng (2014); one of its twelve rows described a shift to real-time
+      question-and-answer systems, machines that can talk with users, with Siri and IBM Watson as the examples. Read in
+      October 2026: the direction held, the examples aged. Verdict: partly supported; what changed: only the names (and the
+      technology behind them); next check: the next edition. Hana's re-check (constructed): a fall 2025 column claim that
+      agents complete about 50-minute tasks half the time (METR, March 2025) is contradicted today for the strongest
+      agents (the facts changed); a claim that METR's chart is updated as new models come out is contradicted by the page
+      itself (no longer actively updated, September 8, 2026). Faded example: the IEA's 945 TWh base case (2025) against
+      about 950 TWh (2026 report): supported, still a forecast. Verdicts (Chapter 8): supported, partly supported,
+      unsupported, contradicted, cannot verify.
+    activity: "Ask: “A reported 2025 claim has now been checked by an outside test, with the same numbers. Which of the three things changed?” Take answers; the section's definition settles it."
+    book: "§22.8, @fig-22-18, @fig-22-17; From the Field; Worked Example 'Hana Re-Checks the Column'; Check Yourself 22.8."
+
+# Last reveal 70 words as counted (labels, context and result included): the four steps of one aging check are the
+# point (deliberate exception, as in ch01's five-step worked example).
+- layout: worked
+  minutes: 1
+  max_words: 72
+  kicker: "§22.8 · a claim you can check yourself · old claim from July 2025"
+  title: "The olympiad, a year later"
+  context: "Old claim (July 2025): best measured AI score at the IMO, 35 of 42."
+  steps:
+    - {label: "Today’s source", text: "AFP on IMO 2026, July 2026"}
+    - {label: "It says", text: "Two firms claim 42 of 42; no IMO statement"}
+    - {label: "Verdict", text: "Partly supported: higher scores reported, not measured"}
+    - {label: "Changed, next", text: "The facts; next: an IMO statement or IMO 2027"}
+  reveal: [2, 4]
+  result: "Book’s inference: the olympiad may no longer separate top systems"
+  notes_reveal:
+    - minutes: 1
+      say: |
+        Let's run one aging check on the opening case. The old claim, from July 2025: the best measured AI score at the
+        olympiad was 35 of 42, while five students scored a perfect 42. Today's source: the news agency AFP's report on
+        the 2026 olympiad in Shanghai, July 2026. It says two Chinese companies, Huawei and Xiaohongshu, said their
+        systems scored 100%, a perfect 42. Xiaohongshu said its answers were submitted to the IMO's organizers for grading
+        and that human help was prohibited, and the companies received the problems after the students had sat the exam.
+        Seven of 666 students had full marks, citing the official scoreboard. The report contained no statement from the
+        IMO. Before I show the verdict: what is the status of the 42-point claims?
+      background: |
+        AFP (2026), reported. A venture investor said four other models also scored 42 in his own informal test, with no
+        published method, so that result is not measured. The 2026 claims are company statements carried by a news
+        agency: reported in both senses (tier and status).
+      activity: "Pause after step 2; take one answer to the status question."
+      book: "§22.8, 'A claim you can check yourself: the olympiad, a year later'."
+    - minutes: 1
+      say: |
+        Verdict for today: partly supported. 35 of 42 may no longer be the best AI score, but the higher scores are
+        reported, not yet measured. What changed: the facts, as reported. Next check: an IMO statement on the 2026 grading,
+        or the 2027 olympiad. And then one more step, clearly labeled: this book reads these reports as a sign that by
+        2026 the olympiad may no longer separate the strongest systems, which is how benchmarks age. That is the book's
+        inference, not a measurement. Notice the pattern: date, status and source again, plus a date for the next check.
+      background: |
+        Book's inference, marked as such in §22.8. Related, Short case 1 (Case Study): on October 17–18, 2025, a senior
+        executive posted that a model had found solutions to ten open Erdős problems; the problem list's maintainer replied
+        that "open" meant only that he knew of no solution, and the model's output pointed to existing papers; the posts
+        were mostly deleted (The Decoder, 2025). Chain link 2, "checked before use?", failed. Since then: problem #728
+        solved with AI help and checked in Lean (January 2026; Sothanaphan, 2026); a May 20, 2026 geometry result checked by
+        nine outside mathematicians in a preprint (Alon et al., 2026). The pattern moved from an unchecked post to checked
+        proofs.
+      activity: "Ask: “When would you check this again, and what would you look for?”"
+      book: "§22.8; @fig-22-17; Case Study, Short case 1; Case Study Question 4."
+  notes:
+    book: "§22.8, 'the olympiad, a year later'."
+
+- layout: objectives
+  minutes: 1.5
+  kicker: "Chapter summary (book figure @fig-22-20, summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Date it, status it,** name who could check"}
+    - {code: "O2", text: "**Reasoning:** gains where answers are checkable; errors remain"}
+    - {code: "O3", text: "**Half the time** is not reliably; trend lines are not data"}
+    - {code: "O4", text: "**Open vs. closed:** months apart in 2026; access differs more"}
+    - {code: "O5", text: "**Count the boundary;** the field settles discoveries"}
+    - {code: "O6", text: "**Check what aged:** facts, status or names"}
+  takeaway: "The method lasts; the facts in the boxes age (as of October 2026)"
+  notes:
+    say: |
+      Back to the chapter's question: how do you tell what was measured, what was only claimed and what is a guess about
+      the future, and how long will the answer stay true? The answer is a habit more than a fact. Give every capability
+      claim a date, a status and the name of who could check it. Separate data from trend lines. Compare figures only when
+      they count the same things. And re-check what you rely on, because claims age. Now the Warm-up. "Matches PhD
+      experts": ask for the date, the status, and the test. Do written-out steps mean fewer factual errors? Not
+      necessarily. And one text question's electricity: a fraction of a watt-hour, seconds of a laptop, while the totals
+      are large.
+    background: |
+      Chapter Summary and @fig-22-20 (six cards: date it, status it, who could check, half the time is not reliably,
+      count the boundary, check what aged). Section summary: 22.1 three tags; trace first; compiled scores and outside
+      estimates have their own tags. 22.2 more computation at answer time; scores rose most where answers can be checked;
+      factual errors remain and depend on the task. 22.3 horizons grew fast; 80% several times shorter. 22.4 generators
+      now produce sound with video (Veo 3, May 20, 2025, Google, 2025; Sora 2, September 30, 2025, Lanz, 2025; both
+      reported by the developers);
+      realism is a reported quality, so Chapter 13's checks matter more. 22.5 the measured open–closed gap is months.
+      22.6 compute and electricity growth rest on outside estimates; whether scale keeps paying off is a forecast. 22.7
+      the field's own checks settle a discovery. 22.8 aging check.
+    activity: "End of the 25-minute segment. Point to the fast route, the optional labs and the optional essay."
+    book: "Chapter Summary, @fig-22-20; 'Back to the Warm-up'."
+
+# ======================================================================= SELF-STUDY
+- layout: compare
+  session: self
+  kicker: "§22.5 · open and closed models (book figure @fig-22-11, redrawn) · measured gaps"
+  title: "Open-weight models: a few months behind (2026)"
+  size: 22
+  columns:
+    - heading: "Score gap"
+      role: soft
+      bullets: ["Leaderboard: 8% (Jan 2024) → 1.7% (Feb 2025)", "AI Index 2025"]
+    - heading: "Time gap"
+      role: soft
+      bullets: ["3.5 months (Oct 2025)", "About 4 months (May 2026)", "Epoch AI"]
+    - heading: "Beyond scores"
+      role: neutral
+      bullets: ["Own hardware; study, adapt", "Not shown: training data", "License decides use"]
+  takeaway: "Only a trial on your task settles fit"
+  notes:
+    say: |
+      Chapter 12 set out the choice: a closed model is used only through a service; an open-weight model's settings,
+      called weights, can be downloaded and run under a license. This chapter adds the dated, measured question: how far
+      behind the best closed models are the best open-weight ones? Two outside trackers answer it differently. The AI
+      Index compiled a score gap from a crowd-vote leaderboard: about 8% in January 2024, 1.7% in February 2025. Epoch AI
+      measures a time gap: 3.5 months on average as of October 2025, about four months in 2026. But scores are not the
+      whole difference. Open weights let an institution run a model on its own hardware, so inputs need not leave it; they
+      do not reveal the training data, and the license still decides what you may do.
+    background: |
+      Box "As of October 2026: open and closed": Chatbot Arena gap, measured by the leaderboard's votes, compiled by the
+      AI Index 2025 (Stanford HAI, 2025); Epoch AI time gap 3.5 months (90% range 1.1–5.3), as of October 30, 2025, and
+      Epoch adds the current gap likely looks larger than it is (Emberson, 2025); about four months since January 2026,
+      Epoch AI, May 29, 2026 (Edwards & Emberson, 2026). Epoch's cautions: the gap varies, sometimes closes completely,
+      its range is wide. Release reasons (safety, cost, openness) are reported, some are forecasts. Lock-in (Chapter 12):
+      the effort and cost that keep you on a tool after a better fit appears. Worked example (constructed): Hana's zine
+      collective plans a ten-scan alt-text trial with an open-weight model on a member's computer, only for scans whose
+      artists said yes, every draft checked by the artist.
+    questions:
+      - q: "“Open models are a year behind, so they are useless.” True?"
+        a: "Trace first: that newsletter names no source. The trackers measured months, not a year (as of 2025–2026). “Useless for serious work” is a separate judgment about fit that no tracker measures (Faded Example 'A Year Behind')."
+    activity: "Self-study. Your Turn §22.5: one reason to prefer each kind of model for one task of yours, apart from scores."
+    book: "§22.5, @fig-22-11; box 'As of October 2026: open and closed'; Check Yourself 22.5; Review A9."
+
+- layout: concept
+  kicker: "§22.6 · scale and its costs (book figures @fig-22-12, @fig-22-13, @fig-22-14)"
+  title: "The trend is documented; whether it continues is a forecast"
+  size: 24
+  bullets:
+    - "**Outside estimates:** training compute about 4.3× a year, 2010–2026 (book’s fit, Epoch AI data)"
+    - "**Reported, 2024:** smaller gains from scaling up pretraining"
+    - "**Forecasts:** compute, data and power to 2030; data centers about 950 TWh by 2030 (IEA, 2026)"
+  takeaway: "What would move a forecast: outside tests of the next systems"
+  notes:
+    say: |
+      Chapter 3 described scaling: language models predicted text better, smoothly, as their size, data and training
+      compute grew. Training compute is the total computation used to train a model, counted in FLOP, the individual
+      arithmetic steps. Epoch AI's estimates show it growing several times a year for over a decade; this book's fit to
+      Epoch's data gives about 4.3 times a year from 2010 to 2026. That growth is well documented. Whether it continues
+      is not. In late 2024, Reuters reported that researchers at several developers saw smaller gains than expected from
+      simply scaling up pretraining, and developers then reported gains from computation at answer time instead. People
+      who expect scaling to keep paying off point to continuing benchmark gains; people who expect it to slow point to
+      limits of data, chips and power. Both are forecasts.
+    background: |
+      Box "As of October 2026: scale and its costs": this book's fit to 478 models in Epoch AI's data, downloaded October
+      18, 2026 (Epoch AI, 2026), close to Epoch's 4–5 times a year for frontier models; outside estimates, the fit is the
+      book's calculation. Hu and Tong (2024), Reuters: a co-founder of one AI company said results from scaling pretraining
+      had plateaued (reported). Forecasts: Epoch AI (Sevilla et al., 2024) estimated training runs of about 2 × 10^29 FLOP,
+      roughly 10,000 times its estimate for GPT-4, would likely be feasible by 2030, power the first limit and chip
+      manufacturing the next; Villalobos et al. (2024): datasets about the size of the whole stock of public human-written
+      text between 2026 and 2032 if trends continued. Electricity: IEA 2026 edition, about 485 TWh in 2025 (up 17%;
+      AI-focused data centers up about 50%), about 950 TWh by 2030, around 3% of world electricity then (IEA, 2026a,
+      2026b); accelerated servers projected to grow about 30% a year against about 9% for conventional ones (IEA, 2025);
+      U.S. 176 TWh (4.4%) in 2023, 325–580 TWh in 2028 in the report's scenarios (Shehabi et al., 2024; U.S. Department of
+      Energy, 2024). Rule: IEA editions are never mixed in one sentence. Debates about general AI and long-term risk are
+      in Chapter 23.
+    misconceptions:
+      - m: "M4 “Progress will keep accelerating” / “AI has hit a wall” as certainties."
+        fix: "Both are forecasts. Point to what would move each: dated outside tests of the next systems, on tasks not seen in training (@fig-22-13)."
+    activity: "Self-study. Faded Example 'The Council Meeting': tag the traced “100,000 homes” figure (IEA, 2025; an outside estimate for a typical AI-focused data center)."
+    book: "§22.6, @fig-22-12, @fig-22-13, @fig-22-14; Check Yourself 22.6; Ethics Lens 'Who Pays for the Frontier'."
+
+# About 55 words: three discovery claims at three stages of the field's checks (deliberate exception).
+- layout: compare
+  max_words: 60
+  kicker: "§22.7 · AI and science (book figure @fig-22-16) · announcement → paper → data → the field"
+  title: "The field’s checks, not the announcement, settle a discovery"
+  size: 22
+  columns:
+    - heading: "Accepted"
+      role: verified
+      bullets: ["AlphaFold: blind CASP test, 2020", "Years of use by other labs", "Nobel Prize, 2024 (confirmed)"]
+    - heading: "Disputed"
+      role: soft
+      bullets: ["GNoME, 2023: 2.2 million structures predicted stable (reported)", "2024 critique: “scant evidence” of new, useful ones"]
+    - heading: "Proof-checked"
+      role: neutral
+      bullets: ["Erdős #728, January 2026: checked in Lean", "A checker confirms the proof, not the problem’s translation"]
+  takeaway: "A machine-checked proof is fast; replication and critique take years"
+  notes:
+    say: |
+      Claims that an AI system made a discovery are among the most consequential and the slowest to settle. A discovery
+      moves through four steps: an announcement, a paper, the paper's data, and then the field's own checks: peer review,
+      replication, critique by specialists and, in mathematics, proof checking. AlphaFold did well in a blind community
+      test in 2020; years of use by other laboratories followed; in 2024 two of its developers shared the Nobel Prize in
+      Chemistry. The recognition came after the checks. GNoME's 2023 paper reported 2.2 million crystal structures
+      predicted to be stable; two materials chemists then found "scant evidence" of compounds at once new, credible and
+      useful, while calling the approach promising. In mathematics, a proof assistant such as Lean checks every step of a
+      formal proof, quickly; it does not confirm that the formal statement says what the problem meant.
+    background: |
+      Box "As of October 2026: AI and science": Nobel 2024, half for computational protein design, half for protein
+      structure prediction (Nobel Prize Outreach, 2024), confirmed; CASP: predictions compared with measured, unpublished
+      structures (Jumper et al., 2021). GNoME (Merchant et al., 2023): 2.2 million predicted stable, 736 already made
+      independently in laboratories (reported: the developers' paper); critique (Cheetham & Seshadri, 2024; measured: an
+      outside critique). Erdős #728: AI-assisted, checked in Lean and written up, January 2026 (Sothanaphan, 2026),
+      measured. May 20, 2026: OpenAI reported an internal reasoning model disproved a 1946 Erdős conjecture in geometry;
+      checked by nine outside mathematicians in a preprint (Alon et al., 2026), not yet peer-reviewed. Chapter 19's A-Lab
+      case: the same field corrected an automated claim through a published correction. Worked example (constructed):
+      Hana's "first AI-discovered pigment" headline: partly supported; next check, the journal version.
+    misconceptions:
+      - m: "M6 “If an AI system made a discovery, the science is settled.”"
+        fix: "Contrast AlphaFold and GNoME. Block the overreach too: not “AI cannot contribute”; the field's checks settle it."
+    activity: "Self-study. Your Turn §22.7: how far through the four steps has one AI-and-science headline gone?"
+    book: "§22.7, @fig-22-16; box 'As of October 2026: AI and science'; Case Study, Short case 2; Check Yourself 22.7; Review A11."
+
+- layout: lab
+  kicker: "Lab 22.1 · optional · at home · about 25 min · printed, no account needed"
+  title: "Tag a launch post"
+  goal: "Tag eight claims from a constructed launch post, then compare one with an outside test"
+  steps:
+    - {text: "**Tag** each claim: as-of date, status, who could check (trace first)", min: 12}
+    - {text: "**Compare** claim 4 with the outside excerpt: which number would you cite?", min: 5}
+    - {text: "**Rewrite** claims 3 and 8 so a reader sees their status", min: 5}
+  side:
+    - {heading: "Materials", text: "Fictional company and model; a fictional nonprofit’s test page; both dated"}
+    - {heading: "Deliverable", text: "Tag table and two rewrites; ungraded; answer notes on the sheet"}
+    - {heading: "Other labs", text: "22.2 energy boundary · 22.3 log chart · 22.4 what has aged"}
+  notes:
+    say: |
+      Lab 22.1 is optional and done at home in about 25 minutes, with no account and no internet. You get a constructed
+      launch post, dated March 3, 2027, for a fictional model, with eight claims, and one page from a fictional outside
+      evaluation dated March 20, 2027. Tag each claim: its date, its status and who could check it, tracing first where a
+      claim names no source. Then compare claim 4, the developer's account of someone else's test, with the excerpt itself.
+      Finally rewrite two claims so a reader sees their status. Watch claim 8: "It never makes up citations." What test
+      could ever show "never"?
+    background: |
+      labs/ch22-lab1.md, answer notes: claims 1, 2, 3, 5, 7 reported (March 3, 2027); claim 4, reported as the developer's
+      account, traced to the excerpt, which measured 58% on 120 tasks (the post says 64%): cite the excerpt; claim 6 a
+      forecast (about 2028); claim 8 reported, and no finite test can show "never". Other optional labs: 22.2 Trace an
+      Energy Number (30 min; boundary table for 0.10, 0.24 and 0.3 Wh; no figure counts training or making the hardware);
+      22.3 Read a Log Chart (20 min; from 4.0 to 203.0 minutes in 29 months is about 5.7 doublings, roughly one every 5
+      months, against METR's fitted 129 days; the table replaces the chart for screen-reader users); 22.4 What Has Aged?
+      (30 min; five rows from the boxes; an offline "then and now" packet). Lab rules: provided materials are printed and
+      dated; where you use an AI tool, use one your institution provides or approves, or a free tier, and never let a
+      tool's answer stand in for a source you opened.
+    activity: "Self-study; not part of the 25-minute segment."
+    book: "Hands-on Labs, Lab 22.1; labs/ch22-lab1.md to ch22-lab4.md."
+
+- layout: assignment
+  kicker: "Optional essay · O1, O5, O6 · self-check rubric, or feedback if your instructor gives it"
+  title: "What has already aged?"
+  due: "Optional · about 90 minutes · alternative: the offline “then and now” packet"
+  parts:
+    - "Three dated claims from one section’s box"
+    - "Status table: then, now, the source you opened today"
+    - "Aging verdicts and what changed"
+    - "Essay, 500–700 words, for one task in your field"
+    - "Revision after a skeptical reread; AI Use Declaration"
+  rubric_title: "Rubric · 10 points"
+  rubric:
+    - {criterion: "Task: the essay", points: 3, full: "Aged and held, with reasons; one field task; a forecast judged or dated"}
+    - {criterion: "Process: status table", points: 1.5, full: "Three claims, then and now, source opened today"}
+    - {criterion: "Process: revision", points: 1.5, full: "Change after a skeptical reread, tied to a verdict"}
+    - {criterion: "Verification", points: 2, full: "Three verdicts, each on a named source opened today"}
+    - {criterion: "Declaration", points: 2, full: "All five elements, each specific"}
+  note: "Full marks possible for “nothing has aged yet; I will check again on [date]”."
+  notes:
+    say: |
+      The chapter ends with an optional essay that turns the method on the chapter itself. Choose one section's "As of
+      October 2026" box and three dated claims from it. For each, find today's best source and fill a status table: its
+      status then, its status now, and the source you opened. Give each an aging verdict on the five-point scale and say
+      what changed: the facts, the status or only the names. Then write 500 to 700 words on what has aged, what has held,
+      and what that means for one named task in your field. Revise once after a skeptical reread, and add your AI Use
+      Declaration. One rule worth noticing: "nothing has aged yet, for these reasons; I will check again on a date" can
+      earn full marks.
+    background: |
+      Application Assignment (optional), chapter v2: time about 90 minutes (75–110): read brief 4, choose claims 6, check
+      30, status table 6, verdicts 6, essay 30, revision 6, declaration 4. Rubric 10 points, four levels (Exemplary,
+      Proficient, Developing, Beginning); when a submission fits parts of two levels, give the lower level whose
+      description fully applies. Verification scores 0 if verdicts rest only on an AI tool's answer. Alternative (about 75
+      minutes): the provided "then and now" packet (under 1,200 words), essay 400–600 words, same rubric with two changes.
+      If the course uses the portfolio (Chapter 20) and the essay is finished before the portfolio is due, it can serve
+      as portfolio evidence. Mini-Project (optional): a four-week dated log of one development. CONFLICT NOTE: the
+      blueprint gave about 80 minutes (65–95) and an alternative of about 70; the chapter's 90 (75–110) and 75 are used.
+    questions:
+      - q: "Can I use an AI tool to find today's sources?"
+        a: "Yes, to help you find them; the source you open is the evidence, and verdicts that rest only on a tool's answer score 0 on Verification."
+    activity: "Self-study."
+    book: "Application Assignment (optional): What Has Already Aged?; Lab 22.4; Mini-Project (optional)."
+
+- layout: key_terms
+  title: "Key terms"
+  terms:
+    - "aging check"
+    - "as-of date"
+    - "capability claim"
+    - "computer-use agent"
+    - "evidence status"
+    - "FLOP"
+    - "forecast"
+    - "measured (claim)"
+    - "outside estimate"
+    - "outside evaluation"
+    - "reasoning model"
+    - "reported (claim)"
+    - "scaling (of AI models)"
+    - "system boundary (of an energy estimate)"
+    - "test-time compute"
+    - "time horizon (of an agent)"
+    - "tool protocol"
+    - "training compute"
+  note: "Definitions: Chapter 22 and the glossary. The whole chapter is optional and not on exams."
+  notes:
+    say: |
+      These are the chapter's key terms. None is examined, because the chapter is Deep, but the first group is a
+      vocabulary you can use in any chapter that asks you to verify: capability claim, as-of date, evidence status,
+      measured, reported, forecast, outside estimate and outside evaluation. If you remember three, remember these: an
+      as-of date is when a claim was made or measured, not when you read it; the evidence status says who has checked a
+      claim so far, not whether it is true; and an aging check asks what a dated claim describes today and what changed:
+      the facts, the status or only the names.
+    background: |
+      Key Terms list from the chapter (18 terms). CONFLICT NOTE: the blueprint listed 16 (no "outside estimate", no "tool
+      protocol"); the draft notes add tool protocol, and chapter v2 adds outside estimate; the chapter list is used.
+      Glossed in the chapter but not key terms: logarithmic axis, doubling time, extrapolation, terawatt-hour, preprint,
+      data center, proof assistant (Lean), saturation, reported (compiled).
+    activity: "Self-study."
+    book: "Chapter Summary, Key Terms; glossary."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: references
+  session: after
+  title: "References"
+  per_slide: 12
+  refs:
+    - "Agence France-Presse. (2025, July 22). Humans beat AI gold-level score at top maths contest. *Citizen Digital*."
+    - "Agence France-Presse. (2026, July 23). AI catches up with humans to score 100pc at top maths contest. *The Standard*."
+    - "Achim, T., et al. (2025). *Aristotle: IMO-level automated theorem proving* (arXiv:2510.01346)."
+    - "Alon, N., et al. (2026). *Remarks on the disproof of the unit distance conjecture* (arXiv:2605.20695)."
+    - "ByteDance Seed. (2025, July 23). *ByteDance Seed Prover achieves silver medal score in IMO 2025*."
+    - "Cheetham, A. K., & Seshadri, R. (2024). Artificial intelligence driving materials discovery? *Chem. Mater., 36*(8), 3490–3495."
+    - "Davies, P. (2025, July 22). Did Google DeepMind or OpenAI win gold at the world’s most prestigious math competition? *Euronews*."
+    - "Edwards, J., & Emberson, L. (2026, May 29). *Open models lag state-of-the-art closed models by 4 months*. Epoch AI."
+    - "Elsworth, C., et al. (2025). *Measuring the environmental impact of delivering AI at Google scale* (arXiv:2508.15734)."
+    - "Emberson, L. (2025, October 30). *Open-weight models lag state-of-the-art by around 3 months on average*. Epoch AI."
+    - "Epoch AI. (2026). *Data on AI models* [Data set; retrieved October 18, 2026]."
+    - "Fichman, R. G., Dos Santos, B. L., & Zheng, Z. (2014). Digital innovation as a fundamental and powerful concept in the information systems curriculum. *MIS Quarterly, 38*(2), 329–354."
+    - "Google. (2025, May 20). *Fuel your creativity with new generative media models and tools* [Blog post]."
+    - "Google Cloud. (2025, August 21). *Measuring the environmental impact of AI inference* [Blog post]."
+    - "Google DeepMind. (2025, July 21). *Advanced version of Gemini with Deep Think officially achieves gold-medal standard at the International Mathematical Olympiad*."
+    - "Guo, D., et al. (2025). DeepSeek-R1 incentivizes reasoning in LLMs through reinforcement learning. *Nature, 645*, 633–638."
+    - "Hu, K., & Tong, A. (2024, November 15). OpenAI and others seek new path to smarter AI as current methods hit limitations. *Reuters*."
+    - "International Energy Agency. (2025). *Energy and AI*."
+    - "International Energy Agency. (2026a, April 16). *Data centre electricity use surged in 2025…* [News release]."
+    - "International Energy Agency. (2026b). *Key questions on energy and AI* [Executive summary]."
+    - "Jumper, J., et al. (2021). Highly accurate protein structure prediction with AlphaFold. *Nature, 596*(7873), 583–589."
+    - "Korbak, T., et al. (2025). *Chain of thought monitorability: A new and fragile opportunity for AI safety* (arXiv:2507.11473)."
+    - "Kwa, T., et al. (2025). *Measuring AI ability to complete long software tasks* (arXiv:2503.14499; v1, March 2025)."
+    - "Lanz, J. A. (2025, September 30). OpenAI reveals Sora 2 with TikTok-style social app that puts you in the videos. *Decrypt*."
+    - "Lawsen, A. (2025). *Comment on The illusion of thinking* (arXiv:2506.09250)."
+    - "Linux Foundation. (2025, December 9). *Linux Foundation announces the formation of the Agentic AI Foundation* [Press release]."
+    - "Merchant, A., et al. (2023). Scaling deep learning for materials discovery. *Nature, 624*(7990), 80–85."
+    - "METR. (2026). *Time horizons* [Web page and raw data, Time Horizon 1.1; retrieved October 18, 2026]."
+    - "Nobel Prize Outreach. (2024). *The Nobel Prize in Chemistry 2024* [Summary]."
+    - "OpenAI. (2025a, April 16). *OpenAI o3 and o4-mini system card*."
+    - "OpenAI. (2025b, August 13). *GPT-5 system card*."
+    - "Reuters. (2025, July 21). Google and OpenAI’s AI models win milestone gold at global math competition. *CP24* (Reuters wire)."
+    - "Şeker, Ş. E. (2014). Ağ etkisi, Moore yasası ve dijitalleşmenin yenilik ile ilişkisi. *YBS Ansiklopedi, 1*(1)."
+    - "Sevilla, J., et al. (2024, August 20). *Can AI scaling continue through 2030?* Epoch AI."
+    - "Shehabi, A., et al. (2024). *2024 United States data center energy usage report* (LBNL-2001637). Lawrence Berkeley National Laboratory."
+    - "Shojaee, P., et al. (2025). The illusion of thinking. In *Advances in Neural Information Processing Systems 38 (NeurIPS 2025)*."
+    - "Sothanaphan, N. (2026). *Resolution of Erdős problem #728: A writeup of Aristotle’s Lean proof* (arXiv:2601.07421)."
+    - "Stanford HAI. (2025). *AI Index Report 2025*."
+    - "Stanford HAI. (2026). *AI Index Report 2026*."
+    - "The Decoder. (2025, October 18). Leading OpenAI researcher announced a GPT-5 math breakthrough that never happened."
+    - "U.S. Department of Energy. (2024, December 20). *DOE releases new report evaluating increase in electricity demand from data centers*."
+    - "Villalobos, P., et al. (2024). *Will we run out of data? Limits of LLM scaling based on human-generated data* (arXiv:2211.04325)."
+    - "Wei, A. (2025, July 19). [Thread on X about OpenAI’s IMO 2025 result] (reproduced in Willison, 2025)."
+    - "Willison, S. (2025, July 19). *OpenAI’s gold medal performance on the International Math Olympiad* [Blog post]."
+    - "Xie, T., et al. (2024). OSWorld. In *Advances in Neural Information Processing Systems 37 (NeurIPS 2024)*."
+    - "You, J. (2025, February 7). *How much energy does ChatGPT use?* Epoch AI."
+  notes:
+    say: |
+      Reference slides; not presented. These are the sources cited on the slides and in the speaker notes, in short APA
+      form, taken from the chapter's reference list. Students do not need to read them. For a student who wants more, the
+      chapter suggests the AI Index Report 2026, read from its top takeaways; METR's time-horizons page with its caveats;
+      Epoch AI's open data on AI models; the executive summaries of the IEA's two energy reports; Google DeepMind's
+      olympiad announcement read beside AFP's report of the IMO president's caution; and Cheetham and Seshadri (2024), six
+      pages on how a field checks a discovery claim.
+    background: |
+      Full entries with URLs are in the chapter's References section. Every dated source here is as of October 2026; the
+      chapter is rewritten each edition from its boxes and data files. Sources the chapter cites but this deck does not
+      (for example Mai et al., 2023; Pew Research Center, 2025; Moore, 1965, 1975) are in the chapter's list.
+    activity: "Not presented."
+    book: "Chapter 22, References; Further Reading and Compass Links."
