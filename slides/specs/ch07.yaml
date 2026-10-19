@@ -1,0 +1,1704 @@
+# Lecture deck spec — Chapter 7: Learning with AI: Tutor, Not Answer Machine
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch07.yaml --preview
+# Two sessions of about 75 minutes (D27: no institution, course, term or dates on slides or in notes). Session 1,
+# concept: opening case, §7.1–7.5, the demonstration "answer mode versus Socratic mode" and the Case Study, which the
+# chapter says is read together in class. Session 2, lab: Lab 7.1 (briefing 5 · dialogue 25 · closed-book 10 · score and
+# verify 10 · annotate 20 · exit 5), which starts A4.
+# Opening case C04 (Bastani et al., 2025) is a published, peer-reviewed study: its design and results are confirmed
+# (primary record); the copying mechanism is the authors' interpretation (reported); "what differed was who produced
+# the answers" is the book's reading (inferred). Every number below comes from deck.sources.
+# Conflicts noted (the deck follows the chapter): the blueprint's test wording "who recalled and produced the answer"
+# was replaced in the chapter by "who produced the answer in this turn: you, from your own memory, or the tool?"
+# (D-7.e); the blueprint's Your Turn dialogue (music, cadences) became a business break-even dialogue; the blueprint
+# cites Nickow et al. 2020, the chapter 2024.
+
+deck:
+  chapter: 7
+  slug: learning-with-ai-tutor-not-answer-machine
+  title: "Learning with AI: Tutor, Not Answer Machine"
+  short_title: "Learning with AI: Tutor, Not Answer Machine"
+  week: 4
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Session 1 · concept session, about 75 min", minutes: 75}
+    thu: {label: "Session 2 · lab session, about 75 min", minutes: 75}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/07-learning-with-ai-tutor-not-answer-machine.qmd
+    - labs/ch07-lab1.md
+    - labs/ch07-lab2.md
+    - labs/ch07-lab3.md
+    - figures/longdesc/ch07.md
+    - appendix/answers.md
+    - docs/blueprints/ch07-blueprint.md
+
+slides:
+
+# ======================================================================= SESSION 1 · CONCEPT
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "Concept session and lab session · about 75 minutes each"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Read Chapter 7 before the lab session"
+  figure: f7-08-scaffold-crutch
+  notes:
+    say: |
+      Put this slide up while students arrive. Chapter 5 asked which parts of a task to hand to an AI tool, and its
+      third question was: is this skill yours to build? This chapter is about the tasks where the answer is yes: studying,
+      practicing and learning something new, whatever your major. The picture on the right is the idea of the chapter.
+      Two students meet the same practice question and get the same reply from the tool, with worked steps and the
+      answer. In the top row the student skips the attempt and copies the reply. In the bottom row the student attempts
+      first, then compares, redoes and explains it back. Same tool, same reply; only one of them builds the skill. By
+      the lab session you will run a tutor-mode session on a concept from your own major and measure what stuck.
+    background: |
+      The title figure is @fig-7-8 (scaffold versus crutch), a new reusable diagram (D-7.b), drawn natively at readable
+      size on the §7.4 slide. In the book's suggested reading order Chapter 7 comes after Chapter 5 and before Chapter
+      4, so the deck does not rely on Chapter 4 terms; sycophancy and model calibration are defined in one clause and
+      pointed forward. Recommended before the concept session: the open-access paper behind the Opening Case (Bastani
+      et al., 2025), its Significance statement and Table 1, about 10 minutes. Lee et al. (2025) is used through its
+      abstract, discussed in class (Further Reading).
+    activity: "On screen before class starts."
+    book: "Chapter 7 opening page, @fig-7-1 (chapter map) and @fig-7-8."
+
+- layout: session_plan
+  minutes: 2
+  title: "Two sessions at a glance"
+  columns:
+    - heading: "Session 1 · Concept session"
+      sub: "75 min · evidence, live demonstration, quick checks"
+      blocks:
+        - {min: 13, label: "Objectives and opening case", detail: "Better with the tool, worse without it"}
+        - {min: 38, label: "Concept core, §7.1–7.5", detail: "Five sections, five quick checks"}
+        - {min: 18, label: "Demonstration", detail: "Answer mode versus Socratic mode"}
+        - {min: 4, label: "Case Study", detail: "How strong is the evidence?"}
+        - {min: 2, label: "Before the lab", detail: "Concept, source, three questions"}
+    - heading: "Session 2 · Lab session"
+      sub: "75 min · teams of 3–4, individual A4"
+      blocks:
+        - {min: 6, label: "Briefing", detail: "Warm-up, Lab 7.1, A4 brief"}
+        - {min: 45, label: "Your session", detail: "Dialogue 25 · closed-book 10 · score 10"}
+        - {min: 20, label: "Annotate and share", detail: "Code turns S or C; one of each to the class"}
+        - {min: 5, label: "Exit step", detail: "Summary, key terms, exit ticket"}
+  notes:
+    say: |
+      Here is the plan for the chapter. In this concept session we start with a real experiment from a high school in Türkiye, where students who did
+      better with an AI tool did worse without it. Then five short sections explain why: what practice scores measure,
+      how memory is built, why feeling ready misleads, how to tell a scaffold from a crutch, and how to set a tool up as
+      a tutor. In the middle you will watch, and take part in, a live comparison of answer mode and tutor mode. We end
+      by judging how strong the evidence is. In the lab session you run your own tutor-mode session on a concept from
+      your major, check yourself without the tool, and start A4, due when your instructor sets it. Before the lab you
+      need about fifteen minutes of preparation; I will show you what at the end.
+    background: |
+      Chapter time: about 31 minutes for §7.1–7.6 and about 45 minutes for everything the chapter asks students to
+      read, plus the short Your Turns (8), the pre-lab Your Turn in §7.5 (15) and finishing A4 at home (about 55).
+      Session 1 holds the demonstration "answer mode versus Socratic mode" (the §7.5 Worked Example run live) and the
+      Case Study, which the chapter says is read together in class. Session 2's minutes follow the Lab 7.1 sheet
+      (briefing 5 · dialogue 25 · closed-book 10 · score and verify 10 · annotate 20 · exit 5); with the warm-up they
+      add up to about 75.
+    questions:
+      - q: "Do I need to read the whole chapter before this session?"
+        a: "No. Read Chapter 7 and do the pre-lab Your Turn in §7.5 before the lab session. The study's Significance statement and Table 1 are a recommended 10-minute read."
+    activity: "Point to both columns; say when A4 is due in your course."
+    book: "Chapter 7 time paragraph; §7.6; Hands-on Labs, Lab 7.1."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 7 · learning objectives"
+  title: "By the end of the lab you will be able to…"
+  items:
+    - {code: "O1", text: "**Explain** why scores while using AI can overstate learning"}
+    - {code: "O2", text: "**Explain** how retrieval practice builds memory, and why it feels hard"}
+    - {code: "O3", text: "**Distinguish** scaffold from crutch, turn by turn"}
+    - {code: "O4", text: "**Set up** a tutor-mode session with keyed questions"}
+    - {code: "O5", text: "**Judge** your learning: predicted versus actual score"}
+    - {code: "O6", text: "**Produce** A4, a tutor-mode dialogue and reflection"}
+  notes:
+    say: |
+      Six objectives for the chapter. The first two are about evidence: why a score earned with a tool's help can hide
+      how little you learned, and why recalling from memory works better than rereading even though it feels worse.
+      The third is a skill you will use for the rest of your studies: looking at one turn of a conversation with a tool
+      and saying whether it was a scaffold or a crutch, and why. The fourth and fifth are what you do in the lab: set
+      up a tool as a tutor, then judge what you learned by predicting your score and checking it without the tool. The
+      sixth is A4. Notice that none of these asks you to stop using AI to study. They ask you to use it so that you
+      still learn.
+    background: |
+      Full wording and tags in the chapter: O1 explain (LO4; UNESCO human-centred mindset, Understand), using the
+      design, measures and limits of the experiment in Türkiye; O2 explain retrieval practice with generation and
+      spacing (LO4); O3 distinguish scaffolding from crutch use turn by turn and justify each label (LO4; AI Fluency
+      Delegation, Discernment); O4 set up a session: setup prompt, attempt-first rule, course source with an answer
+      key, closed-book questions (LO4, LO2; Description, Delegation); O5 judge learning by comparing predicted and
+      actual closed-book scores (LO4); O6 produce A4 (LO4; Diligence; UNESCO ethics of AI, Apply).
+    activity: "Ask students to star the objective they expect to be hardest; revisit in the lab session."
+    book: "Chapter 7, Learning Objectives."
+
+- layout: loop
+  minutes: 1.5
+  kicker: "§7 · signature diagram 1: the AI Work Loop"
+  title: "This chapter: Frame and Verify"
+  highlight: ["Frame", "Verify"]
+  step_notes:
+    Frame: "Is the goal the output, or the skill?"
+    Verify: "Check your learning, not only the tool’s answer"
+  takeaway: "When you are learning, verify yourself, without the tool"
+  notes:
+    say: |
+      Here is the AI Work Loop from Chapter 1 with this chapter's two steps highlighted. Frame gets one new question: is
+      the goal here the output, or the skill? At work the output is often the goal: a reply sent, a report done. In a
+      course the assignment usually exists so that you build a skill you can use without the tool. When the skill is
+      the goal, a tool that hands you the answer can finish the task and skip the learning. Verify changes meaning too.
+      So far, verifying meant checking the tool's output against something other than the tool. When you are learning,
+      there is a second thing to check: your own ability to produce the answer without the tool. That is what the
+      closed-book checks in the lab are for.
+    background: |
+      The chapter map (@fig-7-1) highlights Frame and Verify in its Work Loop strip; there is no separate Work Loop
+      figure in Chapter 7 (D-7.h). Chapter 5's Delegation Ladder asked a third question, "is this skill yours to
+      build?", with a pointer to Chapter 7; Deep 7.B returns to it with the ladder (@fig-7-14).
+    misconceptions:
+      - m: "Elif's starting worry: 'using AI to study is cheating.'"
+        fix: "Not a separate misconception in the blueprint; say now that study help is permitted (Chapter 1's zones) and that §7.4 shows the cost of crutch use is learning, not misconduct."
+    activity: "Ask: 'Name one assignment this term where the skill, not the output, is the point.' Take one answer."
+    book: "Chapter 7 at a glance; @fig-7-1; Chapter 5 (Delegation Ladder, third question)."
+
+- layout: timeline
+  minutes: 3
+  kicker: "Opening Case · Bastani et al. (2025), PNAS"
+  title: "A math experiment in a high school in Türkiye"
+  events:
+    - {label: "Fall 2023–24", text: "Nearly 1,000 students, about fifty classes", tier: "confirmed"}
+    - {label: "Part 1", text: "A teacher reviews a topic", tier: "confirmed"}
+    - {label: "Part 2", role: ai, text: "Practice: only this part differed", tier: "confirmed"}
+    - {label: "Part 3", role: risk, text: "Closed-book exam for all", tier: "confirmed"}
+  takeaway: "Four 90-minute sessions; practice and exam both graded"
+  notes:
+    say: |
+      Tell it as a story. In the fall semester of the 2023–24 school year, a team led by researchers at the University
+      of Pennsylvania worked with a large high school in Türkiye. Nearly 1,000 students in about fifty 9th-, 10th- and
+      11th-grade classes took part, using tools built on GPT-4, the OpenAI model of the time. The study used the
+      school's own math review sessions: four sessions of 90 minutes each, together about 15 percent of the semester's
+      math. Every session had three parts in the same order. A teacher reviewed a topic, such as counting arrangements,
+      and solved examples on the board. Students practiced on their own; only this part differed between classes. Then
+      everyone took a closed-book, closed-laptop exam, with each problem paired with a very similar practice problem.
+      Both parts counted toward grades, so everyone had a reason to try.
+    background: |
+      Bastani, Bastani, Sungu, Ge, Kabakcı and Mariman (2025), PNAS 122(26), e2422633122, open access; read in full by
+      the chapter author (PMC12232635). Tier: everything on this slide is confirmed in the published study. The school
+      places students in regular classrooms at random; the researchers assigned whole classrooms to conditions with a
+      procedure that balanced observable characteristics such as earlier grades, so the groups were alike on average
+      (honors classrooms excluded). The paper does not name the school; neither does the book. Chapter 1 gave the
+      two-sentence headline; Chapter 7 keeps its promise with the full design.
+    questions:
+      - q: "Why does it matter that the exam came right after practice, in the same session?"
+        a: "It means the study measured short-term learning only. It also means nothing else happened between practice and exam, so differences point to the practice condition (Case Study Question 1)."
+    activity: "Narrate; do not read the cards. Ask: 'Which part would you change if you wanted to test the tool?' (Only part 2.)"
+    book: "Opening Case; @fig-7-3 (session storyboard); Case Study Question 1."
+
+- layout: compare
+  minutes: 2.5
+  kicker: "Opening Case · three ways to practice (book figure: the session, redrawn)"
+  title: "Same review, same exam; three ways to practice"
+  size: 24
+  columns:
+    - heading: "Control"
+      role: soft
+      bullets: ["Course books and notes", "No devices"]
+    - heading: "GPT Base"
+      role: ai
+      bullets: ["Chat built like ChatGPT", "Told to act as a tutor"]
+    - heading: "GPT Tutor"
+      role: ai
+      bullets: ["Same model and chat", "Teachers’ solutions; hints, not answers"]
+  takeaway: "Groups were alike on average before the study began"
+  notes:
+    say: |
+      Three conditions. In the control classes, students practiced with their course books and notes and had no
+      devices. In the GPT Base classes, each student had a laptop with a chat interface built to work like ChatGPT. Its
+      hidden instructions told GPT-4 to act as a tutor and help the student solve the current problem. In the GPT Tutor
+      classes, students had the same interface and the same model, but the hidden instructions also contained the
+      teachers' worked solutions, common student mistakes, and an instruction to give hints instead of the answer.
+      Notice the detail that matters later: even GPT Base was told to act as a tutor. Ask the class to predict before
+      the next slide: which group did best during practice, and which did best on the exam without any tool?
+    background: |
+      Hidden instructions here means text the model receives with every message that students do not see (Chapter 5's
+      setup idea). GPT Tutor's problem-specific hints and solutions were written by two part-time teachers; the authors
+      call this construction labor-intensive (Ethics Lens). The yellow hexagons follow the book's grammar for AI
+      components; the control card is pale and each card names its condition in words. The slide redraws @fig-7-3.
+    questions:
+      - q: "Was the control group doing nothing?"
+        a: "No. They practiced the same problems with books and notes. The comparison is with normal, active practice, not with no practice (Case Study Question 1)."
+    misconceptions:
+      - m: "M5a 'Once a tool is in tutor mode, my learning is taken care of.'"
+        fix: "Plant it now: GPT Base had also been told to act as a tutor. Calling it a tutor was not enough (§7.5)."
+    activity: "Students write a one-line prediction for practice and for the exam (20 s)."
+    book: "Opening Case; @fig-7-3."
+
+- layout: figure
+  minutes: 3
+  kicker: "Opening Case · results (Bastani et al., 2025, Table 1)"
+  title: "Better with the tool, worse without it"
+  figure: f7-02-bastani-results
+  takeaway: "Puzzle: how can they do better with it, worse without it, and not notice?"
+  notes:
+    say: |
+      Here is what happened. During practice, GPT Base students scored 48 percent higher than the control group, and
+      GPT Tutor students 127 percent higher. On the exam right after, without any tool, GPT Base students scored 17
+      percent lower than the control group. That difference was statistically significant: by the study's test,
+      unlikely to be due to chance alone. GPT Tutor students' exam scores were not measurably different from the
+      control group's. One more finding makes the case unsettling: when surveyed, the GPT Base students did not report
+      that they had learned less or done worse on the exam. They did not notice. So here is the puzzle for this chapter:
+      how can students who did better with a tool end up worse without it, and not notice? Compare with your
+      prediction.
+    background: |
+      Table 1 values on a 100-point normalized grade (@fig-7-2): control means 28.4 (practice) and 32.1 (exam); GPT Base
+      +13.7 points in practice (+48%) and −5.4 on the exam (−17%); GPT Tutor +36.1 (+127%) and −0.4 (about −1%, not
+      significant). The thin lines are one standard error, a measure of how uncertain each estimate is. GPT Tutor
+      students believed they had done significantly better on the exam than the control group, although they had not
+      (§7.3). Tier: results confirmed (published study). The chapter's answer to the puzzle (§7.1–7.3 and Summary) is
+      partly the authors' evidence (reported) and partly the book's reading (inferred); keep that distinction when you
+      answer it in the lab session.
+    questions:
+      - q: "So the tutor version did not help learning either?"
+        a: "On this exam it showed no measurable harm and no measurable gain over practice with books and notes. Chapter 1 called it 'largely avoided the harm'; Chapter 7 adds that it did not raise exam scores above the control group."
+    misconceptions:
+      - m: "M1 'If I scored well while using AI, I learned it.'"
+        fix: "Point at the two GPT Base bars: up in practice, down on the exam."
+    activity: "Pose the puzzle; students write one guess. Return to it on the summary slide in the lab session."
+    book: "Opening Case; §7.1 and @fig-7-2; Worked Example 'Reading the Results Two Ways'."
+
+# ----------------------------------------------------------------------- 7.1
+- layout: section
+  minutes: 0.5
+  number: "7.1"
+  tag: "Core"
+  title: "Practice scores are not learning"
+  idea: "How well you do with help says little about what you can do alone."
+  meta: "Book §7.1 · performance, learning, overreliance"
+  notes:
+    say: |
+      First idea. Teachers, sports coaches and employers all see it: how well someone does while being helped says
+      little about what they can do alone. A driving student with an instructor's hand near the wheel, a student with a
+      solution manual open, a new employee with a colleague at the next desk. Psychologists make this distinction
+      precise, and it explains the first half of the puzzle. In this section you get two words, performance and
+      learning, and a third word for what the GPT Base students did, overreliance. You will also see what students in
+      the experiment actually typed into the tool.
+    background: |
+      Section 7.1 is Core. Source for the distinction: Soderstrom and Bjork (2015), Perspectives on Psychological
+      Science, an integrative review: conditions that raise performance during practice can leave less learning, and
+      conditions that slow practice can leave more. Overreliance is defined in this chapter; Chapter 4 (next in the reading order)
+      places it on the failure-to-harm chain as a use failure, not on the Failure Taxonomy Tree.
+    misconceptions:
+      - m: "M1 'If I scored well while using AI, I learned it.'"
+        fix: "Name it aloud now; the next slide gives the two definitions that refute it."
+    activity: "Transition slide."
+    book: "§7.1 Practice Scores Are Not Learning."
+
+- layout: concept
+  minutes: 2
+  kicker: "§7.1 · Soderstrom & Bjork (2015)"
+  title: "Performance is not learning"
+  size: 26
+  bullets:
+    - "**Performance:** how well you do while practicing, often with help"
+    - "**Learning:** a lasting change in what you can do without help"
+    - "They can move in opposite directions"
+    - "**Overreliance:** something people do, not the output"
+  takeaway: "Practice score = performance; the exam without the tool = learning"
+  notes:
+    say: |
+      Two definitions. Performance is how well you do a task while practicing, often with help. Learning is a lasting
+      change in what you can do without help, shown later and in new situations. The two can move in opposite
+      directions. In the experiment, the practice score was performance with the tool; the exam score, minutes later
+      and without any tool, was the closest thing the study had to learning. GPT Base raised the first number and
+      lowered the second. The pattern has a name: overreliance, relying on a tool's output more than the task or the
+      evidence warrants, so that your own checking or skill-building drops out. It is something people do, not
+      something the output does. A correct answer can still be overrelied on: the output is fine, and the skill is
+      still not built.
+    background: |
+      Definitions are the book's (§7.1; glossary). Recall @fig-1-13 in Chapter 1: the same output can leave the skill
+      built or not built. Worked Example "Reading the Results Two Ways" (education research): relative change versus
+      percentage points; 13.7 ÷ 28.4 ≈ 0.48; 5.4 ÷ 32.1 ≈ 0.17; the large relative numbers come partly from low
+      averages. Faded example (constructed language app): 85% inside the app with hints, 70% on paper; a week later
+      61% versus 64%; the paper quiz a week later is closest to learning (Appendix E).
+    questions:
+      - q: "If the answer the tool gave me is correct, how can relying on it be a problem?"
+        a: "Because the problem is not in the output but in what you did with it. If the assignment exists to build a skill, a correct answer you copied leaves the skill unbuilt (Review A4)."
+    misconceptions:
+      - m: "M1 'If I scored well while using AI, I learned it.'"
+        fix: "Use the takeaway: which number in the experiment was performance, which was closest to learning?"
+    activity: "Ask for one example from students' own lives where help raised a practice score (the §7.1 Your Turn)."
+    book: "§7.1 definitions, overreliance; Worked Example 'Reading the Results Two Ways'; Faded Example 'A Language App'."
+
+- layout: figure
+  minutes: 2
+  kicker: "§7.1 · what students typed (Bastani et al., 2025)"
+  title: "Unrestricted tool: more students asked for the answer"
+  figure: f7-09-message-types
+  takeaway: "The authors’ word for the GPT Base pattern: a crutch"
+  notes:
+    say: |
+      The study also shows what students actually did. The researchers grouped students' messages by type. In the GPT
+      Base classes, students most often asked for the answer or simply repeated the question text. In the first
+      session, 56 percent of GPT Base students' very first messages did this, and 67 percent of their first messages on
+      each problem, compared with 42 and 37 percent in GPT Tutor classes. In the GPT Tutor classes, students
+      increasingly attempted answers and asked for help. The authors' word for the GPT Base pattern was a crutch:
+      something you lean on instead of building your own strength. Section 7.4 makes that word precise and gives you a
+      test you can apply to any conversation, including your own.
+    background: |
+      Values from the paper's "Student Engagement" section (@fig-7-9; longdesc). The figure's source line notes that
+      GPT Tutor also offered suggested prompts, which the authors note may explain part of the first-message gap; say
+      this if a student asks whether the tool, rather than the students, caused the difference. Tier: the counts are
+      confirmed (published study); "crutch" as a description is the authors' wording.
+    questions:
+      - q: "Could the difference come from the tool's interface rather than the students?"
+        a: "Partly, possibly: GPT Tutor offered suggested prompts, and the authors say that may explain part of the first-message gap. The trend toward attempts in GPT Tutor classes is a separate finding."
+    activity: "Ask: 'What was the most common first message in your last study chat?'"
+    book: "§7.1, @fig-7-9."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §7.1"
+  title: "points or percent?"
+  question: "A tool raises a practice average of 20 points by 10 points. State the change in percentage points and as a relative change."
+  instruction: "Write both numbers (45 seconds), then compare with a neighbor"
+  model_answer:
+    - "**+10 percentage points:** from 20 to 30."
+    - "**+50% relative change:** 10 ÷ 20."
+  notes:
+    say: |
+      Quick check, not graded. This is the arithmetic behind the Opening Case's big numbers, and you will need it in
+      the lab when you compare scores. Write two numbers: the change in percentage points, and the change relative to
+      the starting average. Take forty-five seconds, then compare with your neighbor. While they work, remind them of
+      the worked example in the book: GPT Base added 13.7 points to a practice average of 28.4, which is why the
+      headline says 48 percent. Same idea, simpler numbers. Ask one pair that disagrees to explain both answers.
+    background: |
+      Review Questions A3 (O1 · LO4 · Apply). Key (Appendix E): +10 percentage points (from 20 to 30); a relative
+      increase of 50% (10 ÷ 20). Percentage point = the simple difference between two percentages (Chapter 1 term,
+      reused). Check Yourself 7.1 item 3 asks the same for 13.7 on 28.4.
+    activity: "45 s individual, then pairs; then the answer slide."
+    book: "§7.1; Review Questions A3; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The change is plus 10 percentage points, from 20 to 30, and the relative change is plus 50 percent, because 10
+      divided by 20 is one half. Both are correct; they answer different questions. Relative change makes a gain on a
+      low average look large: ten points look bigger next to twenty than next to eighty. That is part of why the
+      experiment's percentages, plus 48 and plus 127 in practice, sound so large; the control group's practice
+      average was only 28.4 points. When you read any claim about scores, ask which kind of number it is, and which
+      score it is: practice with the tool, or a check without it.
+    background: |
+      Worked Example "Reading the Results Two Ways", step 3: the exam is the number that measures learning, because it
+      was taken without the tool.
+    activity: "Reveal; move on."
+    book: "§7.1; Appendix E (Review A3)."
+
+# ----------------------------------------------------------------------- 7.2
+- layout: section
+  minutes: 0.5
+  number: "7.2"
+  tag: "Core"
+  title: "Retrieval practice: the work that builds memory"
+  idea: "Recalling from your own memory builds it more than rereading."
+  meta: "Book §7.2 · predict first: Plan A or Plan B?"
+  notes:
+    say: |
+      Before we look at evidence, predict. You have one week before a test. Plan A: read the chapter four times. Plan
+      B: read it once, then test yourself three times. After a week, which plan leaves you remembering more? And which
+      plan would feel better while you do it? Write your answer and how sure you are, from 0 to 100 percent. Keep the
+      number; we use it in section 7.3. This was the second question of the chapter's Warm-up, and it matters for every
+      major: whether you are learning drug classes, accounting rules or the dates of a war, one habit stands out.
+    background: |
+      Warm-up question 2 (Chapter 7). The prediction-before-evidence move is from the blueprint (§5): answered with
+      @fig-7-4 (Roediger & Karpicke, 2006, Experiment 2).
+    misconceptions:
+      - m: "M2 'If studying feels easy and smooth, it is working; struggle means I am doing it wrong.'"
+        fix: "Collect the hands for Plan A first; most classes split or lean to A. The next slide shows the reversal."
+    activity: "Hands for Plan A, then Plan B; students write a confidence rating (20 s)."
+    book: "§7.2 opening; Warm-up question 2."
+
+- layout: figure
+  minutes: 3
+  kicker: "§7.2 · Roediger & Karpicke (2006), Experiment 2"
+  title: "Rereading won after 5 minutes; testing yourself won after a week"
+  figure: f7-04-retrieval-rk2006
+  takeaway: "The rereaders predicted they would remember the most"
+  notes:
+    say: |
+      In a study published in 2006, two psychologists at Washington University in St. Louis ran almost exactly this
+      comparison with 180 undergraduates. Students learned a short prose passage. One group studied it in four
+      five-minute periods, about 14 read-throughs. A second group studied three times and recalled it once. A third
+      studied once, about 3 read-throughs, then recalled it three times, writing everything they could remember,
+      without feedback. After 5 minutes, rereading won: 83 percent recalled, against 71 for the group that tested
+      itself. After a week, the order reversed: 40 percent for rereading, 61 for testing. And asked how well they would
+      remember in a week, the rereaders gave the most confident predictions. If your test is in five minutes, rereading
+      may serve you. Most tests are not.
+    background: |
+      Roediger and Karpicke (2006), Psychological Science 17(3). Experiment 2: 180 students, 30 per group, final recall
+      after 5 minutes or one week; middle group 78% and 56%. Right panel: predicted recall in a week on a 1–7 scale,
+      4.8, 4.2 and 4.0 for the three groups (@fig-7-4 long description). A major review of ten common techniques rated
+      practice testing and spreading practice over time high in usefulness, rereading and highlighting low (Dunlosky et
+      al., 2013). Optional Lab 7.2 (Reread or Retrieve?) lets students run a small version on themselves.
+    questions:
+      - q: "Does this mean I should never reread?"
+        a: "No. Rereading won after 5 minutes. For a test days or weeks away, self-testing does more for the same time. Many students combine them: read once, then test yourself."
+      - q: "Didn't the testing group just spend more time?"
+        a: "No; the groups had the same total time (four 5-minute periods), divided differently between studying and recalling."
+    misconceptions:
+      - m: "M2 'If studying feels easy and smooth, it is working.'"
+        fix: "Point at the right panel: the method that felt best predicted the most and recalled the least after a week."
+    activity: "Compare with the class's hands from the previous slide."
+    book: "§7.2, @fig-7-4; Check Yourself 7.2 item 1; Lab 7.2."
+
+- layout: compare
+  minutes: 2
+  kicker: "§7.2 · book figure: retrieve, generate, space (redrawn)"
+  title: "Three habits that feel harder and last longer"
+  size: 24
+  columns:
+    - heading: "Retrieve"
+      role: human
+      bullets: ["Recall from memory, then check", "Stronger a week later"]
+    - heading: "Generate"
+      role: soft
+      bullets: ["Produce the answer yourself", "Remembered better than reading"]
+    - heading: "Space"
+      role: soft
+      bullets: ["Spread sessions over days", "Beats cramming"]
+  takeaway: "A desirable difficulty helps only if you can meet it, or see the answer after"
+  notes:
+    say: |
+      This is retrieval practice: recalling information from your own memory, for example by self-testing, which
+      strengthens it more than restudying. It is one example of a desirable difficulty: a condition that makes learning
+      feel harder and slower but improves long-term memory, provided you can meet it with effort. A problem that needs
+      knowledge you do not have yet, with no answer afterward, is simply a difficulty. Guessing before you study can
+      help, though, if you then see the right answer. Two related effects point the same way. The generation effect:
+      what you produce yourself is remembered better than what you only read. And spacing: spreading study over
+      separate sessions beats massing it in one. One warning about words: retrieval practice is something you do;
+      Chapter 3's retrieval is something an AI system does.
+    background: |
+      Bjork (1994); Bjork and Bjork (2011) on desirable difficulties; Kornell, Hays and Bjork (2009) on unsuccessful
+      retrieval attempts followed by the answer, which is one reason A4 starts with questions; Slamecka and Graf (1978)
+      on the generation effect; Cepeda et al. (2006) on spacing. Contrast box in §7.2: retrieval (Chapter 3: the system
+      searches a collection and adds passages to the context window) versus retrieval practice (you recall); generative
+      AI (the tool produces content) versus the generation effect (you produce it). That is why the chapter's key
+      question is "who produced the answer: you, from your own memory, or the tool?" The slide redraws @fig-7-5.
+    questions:
+      - q: "What is the difference between retrieval practice and retrieval in an AI system?"
+        a: "Retrieval practice is you recalling from your own memory. Retrieval in an AI system (Chapter 3) is the system searching a collection and adding passages to the context window (Check Yourself 7.2 item 2)."
+    misconceptions:
+      - m: "M2 '…struggle means I am doing it wrong.'"
+        fix: "Struggle you can meet is the point; but do not overcorrect: a difficulty with no way through and no answer afterward is just a difficulty."
+    activity: "Point to Elif's notebook example in the book: retrieve, generate, space, check against the glossary."
+    book: "§7.2, @fig-7-5, contrast box 'Two Meanings of Retrieval and Generation'; Worked Example 'Elif's Vocabulary Notebook'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §7.2"
+  title: "desirable difficulties"
+  question: "Which statement about desirable difficulties is most accurate?"
+  options:
+    - "Struggle means you are studying the wrong way, so make it easier."
+    - "If studying feels easy, it is working, because ease means you understand."
+    - "A difficulty helps when you can meet it with effort, or see the answer afterward."
+    - "Desirable difficulties raise scores during practice, because they keep you alert."
+  answer: c
+  instruction: "Answer on your own (30 seconds), then vote"
+  explanation: "(a) and (b) are M2; (d) is M1: desirable difficulties often lower practice scores"
+  notes:
+    say: |
+      Quick check, not graded. Read all four options before you choose. Two of them share one belief about how studying
+      should feel; one is about scores during practice. Give it thirty seconds, then vote. If students choose (d), it is
+      a useful mistake: ask them what happened to the testing group's score after five minutes in the 2006 experiment.
+      It was lower. Desirable difficulties tend to make practice look worse and later recall better, which is exactly
+      why people avoid them.
+    background: |
+      Review Questions A7 (O2 · LO4 · Understand). Key (Appendix E): (c), from Bjork and Bjork (2011) and Kornell, Hays
+      and Bjork (2009). (a) and (b) are M2 (struggle means you are doing it wrong; ease means it is working); (d) is M1
+      (practice scores taken as the measure of learning).
+    activity: "30 s individual, then vote; then the answer slide."
+    book: "§7.2; Review Questions A7; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (c): a difficulty helps when you can meet it with effort, or when you see the answer afterward.
+      Options (a) and (b) are the same misconception from two sides: that struggle is a sign of bad studying and ease a
+      sign of good studying. The 2006 experiment showed the opposite after a week. Option (d) gets the timing wrong:
+      desirable difficulties often lower your score during practice, and pay off later. So when self-testing feels
+      worse than rereading, that feeling is not evidence that it is working less. Keep that in mind in the lab, when
+      the tutor-mode session will feel slower than asking for answers.
+    background: |
+      Check Yourself 7.2 item 3: a hard question is a desirable difficulty when you can meet it with effort or see the
+      right answer afterward; one that needs knowledge you do not yet have, with no answer or feedback, is simply a
+      difficulty.
+    activity: "Reveal; move on."
+    book: "§7.2; Appendix E (Review A7)."
+
+# ----------------------------------------------------------------------- 7.3
+- layout: section
+  minutes: 0.5
+  number: "7.3"
+  tag: "Core"
+  title: "Feeling ready is not being ready"
+  idea: "Predict, then check: the gap is evidence about your learning."
+  meta: "Book §7.3 · metacognition and calibration"
+  notes:
+    say: |
+      Now the second half of the puzzle: why did the GPT Base students not notice? The rereaders in 2006 were the most
+      confident group. The GPT Base students did not perceive that they had learned less. Both findings point to the
+      same gap: between how ready you feel and how ready you are. In this section you learn to measure that gap on
+      yourself with three numbers and one subtraction. It is the most useful number you will produce in the lab, more
+      useful than your score. Keep your confidence rating from the Plan A and Plan B prediction; you will use it.
+    background: |
+      Metacognition (Flavell, 1979): knowing about and monitoring your own thinking and learning. Calibration (of your
+      own confidence) is sense-labeled in the glossary; Chapter 8 uses calibration (of a model) for a tool. One habit
+      serves both: predict, then check (contrast box in §7.3).
+    misconceptions:
+      - m: "M3 'I can tell how well I have learned something.'"
+        fix: "Name it; the evidence on the next slides (rereaders, physics students, GPT Base students) refutes it three times."
+    activity: "Transition slide."
+    book: "§7.3 Feeling Ready Is Not Being Ready."
+
+- layout: matrix
+  minutes: 2.5
+  kicker: "§7.3 · book figure: feeling ready (redrawn)"
+  title: "How ready you feel and how ready you are"
+  size: 22
+  bullets:
+    - "**Calibration:** confidence matches results"
+    - "**Predicted:** ratings summed ÷ 100"
+    - "**Gap:** predicted − actual"
+  col_headers: ["Are ready", "Are not ready"]
+  row_headers: ["Feel ready", "Do not feel ready"]
+  cells:
+    - - {title: "Calibrated", text: "good", role: verified}
+      - {title: "Overconfident", text: "the risk corner", role: risk}
+    - - {title: "Underconfident", text: "more ready than you think", role: neutral}
+      - {title: "Calibrated", text: "keep studying", role: soft}
+  takeaway: "Ease feels like learning; effort feels like failure"
+  notes:
+    say: |
+      Calibration of your own confidence is how closely your confidence matches how often you are actually right,
+      across many answers. One answer cannot show it; a set can. Here is how to measure it. Rate your confidence in each
+      answer from 0 to 100 percent. Add the ratings and divide by 100: that is your predicted score. Check your answers
+      and count the right ones. The gap is predicted minus actual. Positive means overconfident; negative,
+      underconfident. Why does feeling ready mislead? In a 2019 experiment, 149 Harvard physics students each had one
+      active class, working on problems, and one polished lecture. They learned more in the active class but rated
+      their learning lower there. The authors' reading: they took the effort as a sign of poor learning.
+    background: |
+      Deslauriers et al. (2019), PNAS 116(39): 149 students in introductory physics; the authors' interpretation of the
+      rating gap is reported tier. Example from §7.3: ratings 40% + 30% + 50% = 120%, a predicted score of 1.2 out of 3.
+      Divided by the number of questions, the gap is average confidence minus the share correct, the form Chapter 8
+      uses. GPT Tutor students believed they had done significantly better on the exam than the control group, although
+      they had not (Bastani et al., 2025). The grid rebuilds @fig-7-6; the risk corner has a thick border and the word
+      "overconfident" as well as color.
+    questions:
+      - q: "Why can't one answer show calibration?"
+        a: "A single 80% answer is either right or wrong; calibration is about whether, across many answers rated 80%, about 80% are right (Check Yourself 7.3 item 1)."
+    misconceptions:
+      - m: "M3 'I can tell how well I have learned something.'"
+        fix: "The physics students had the evidence of their own experience and still rated the wrong class higher."
+    activity: "Students compute their gap on the Warm-up (answers: no, Plan B, no) as the §7.3 Your Turn, at home."
+    book: "§7.3, @fig-7-6, contrast box 'Two Meanings of Calibration'; Check Yourself 7.3."
+
+# About 80 words (counted with the footer) on the final reveal: five steps of one calibration check, with the numbers, are the point of the
+# example (deliberate exception to the 40-word guide).
+- layout: worked
+  minutes: 1.5
+  kicker: "§7.3 · worked example · nursing · constructed"
+  title: "Marcus predicts, then checks"
+  context: "After a night shift, a chat tool explains acid–base balance clearly; he feels he has it."
+  steps:
+    - {label: "Predict", text: "three textbook questions: 100%, 100%, 90% → 2.9"}
+    - {label: "Check", text: "1 of 3, against the textbook key"}
+    - {label: "Gap", text: "2.9 − 1 = +1.9: strongly overconfident"}
+    - {label: "Read it", text: "he recognized it, but could not yet produce it"}
+    - {label: "Change", text: "answer one question before any explanation"}
+  reveal: [2, 5]
+  result: "The gap is evidence about your learning, often more useful than the score"
+  notes_reveal:
+    - minutes: 1.5
+      say: |
+        Here is the method on a real-looking case. Marcus, a third-year nursing student, studies between night shifts.
+        After a shift he asks a chat tool to explain acid–base balance. The explanation is clear, and he feels he has
+        it. He then takes three practice questions from his textbook's end-of-section set, closes the tool and the
+        book, and rates his confidence: 100, 100 and 90 percent. His predicted score is 2.9 out of 3. He scores the
+        answers against the textbook key: one right out of three. Ask the class: what is his gap, and what does a gap
+        that size tell him? Give them twenty seconds before you reveal the rest.
+      background: |
+        Worked Example "Marcus Predicts, Then Checks" (constructed; textbook practice problems only). Marcus never
+        enters patient information into an AI tool (docs/characters.md; every Marcus example says so). He identified
+        one case of respiratory acidosis (low pH, meaning more acidic blood, and high carbon dioxide) but mixed up the
+        two metabolic cases.
+      activity: "Pause after 'Check'; students compute the gap (20 s)."
+      book: "§7.3 Worked Example 'Marcus Predicts, Then Checks'."
+    - minutes: 1.5
+      say: |
+        His gap is 2.9 minus 1, plus 1.9: strongly overconfident. What does it tell him? He recognized the explanation
+        when he read it, but he could not yet produce it. Recognizing and producing feel alike while you read; only a
+        closed-book check separates them. What does he change? Next time, he answers one question before he asks for
+        any explanation. Notice that the useful result here is not the score of 1 out of 3. It is the gap, because the
+        gap tells him that his feeling of readiness is not yet a reliable guide, and that is exactly what he needs to
+        know before an exam. In the lab you compute your own gap twice.
+      background: |
+        Faded example (business, price elasticity) key in Appendix E: actual 2 of 3; gap 2.55 − 2 = +0.55, overconfident
+        overall; the gap comes mostly from question 3 (85% confident, wrong), a "why" question.
+      misconceptions:
+        - m: "M3 'I can tell how well I have learned something.'"
+          fix: "Marcus felt ready at 2.9 out of 3 and scored 1."
+      activity: "Reveal; one follow-up comment."
+      book: "§7.3 Worked Example; Faded Example 'A Business Calibration Check'."
+  notes:
+    book: "§7.3 Worked Example 'Marcus Predicts, Then Checks'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §7.3"
+  title: "compute a gap"
+  question: "Your confidence ratings on three questions are 70%, 70% and 60%, and you get one right. What is your calibration gap?"
+  instruction: "Compute it alone (45 seconds), then check with a neighbor"
+  model_answer:
+    - "**Predicted score:** (70% + 70% + 60%) ÷ 100 = 2.0 out of 3."
+    - "**Gap:** 2.0 − 1 = +1, so you were overconfident by one question."
+  notes:
+    say: |
+      Quick check: the arithmetic you will do twice in the lab. Three ratings, 70, 70 and 60 percent, and one right
+      answer. Add the ratings and divide by 100 to get your predicted score, then subtract the number you got right.
+      Say whether the result means overconfident or underconfident. Forty-five seconds alone, then check with your
+      neighbor. Walk around and look for students who average the ratings instead of summing them; both give the same
+      verdict, but on the lab sheet the predicted score is the sum divided by 100.
+    background: |
+      Check Yourself 7.3 item 3 (answer in §7.3 and Appendix E's Check Yourself keys). Book-wide format (D-7.f): a
+      0–100% rating per question, summed and divided by 100 into a predicted score; calibration gap = predicted −
+      actual, judged on a set. Review A14 is the same kind of item; its key is instructor-only.
+    activity: "45 s alone, then pairs; the answer slide."
+    book: "§7.3; Check Yourself 7.3 item 3."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The predicted score is 70 plus 70 plus 60 percent, divided by 100, which is 2.0 out of 3. You got one right, so the gap is 2.0 minus
+      1, plus 1: you were overconfident by about one question. A positive gap means more sure than your results justify.
+      Remember that three questions are a small set; one surprise can move the gap a lot. That is why the A4 record asks
+      for two checks, right after the session and at least two days later, and why the reflection asks what the two
+      gaps tell you together, not what one of them proves.
+    background: |
+      A4 reflection item (c): your calibration gaps and what they tell you; "three questions are a signal, not proof"
+      (§7.6, A4 brief).
+    activity: "Reveal; move on."
+    book: "§7.3; §7.6."
+
+# ----------------------------------------------------------------------- 7.4
+- layout: section
+  minutes: 0.5
+  number: "7.4"
+  tag: "Core"
+  title: "Scaffold or crutch"
+  idea: "Who produced the answer in this turn: you, from your own memory, or the tool?"
+  meta: "Book §7.4 · the test for every turn"
+  notes:
+    say: |
+      You now know why recalling and producing matter, and why you might not notice when you skip them. This section
+      turns that into a test you can apply to any conversation with a tool, one turn at a time. Elif volunteers at a
+      peer-tutoring center, and she has noticed that students she simply gives the answer to often come back with the
+      same question. That is one person's impression, not evidence. Research gives it a name and a test. The test is on
+      the slide; it is the most important sentence of the chapter. Read it aloud with me.
+    background: |
+      Elif's peer-tutoring observation is a fictional anecdote, never used as evidence (blueprint §6; the chapter says
+      so). The test wording is book-wide (D-7.e): "Who produced the answer in this turn: you, from your own memory, or
+      the tool?" It replaced the blueprint's "who recalled and produced", which let a tool "recall"; use the chapter's
+      wording.
+    misconceptions:
+      - m: "M4 'AI help is either always good for learning or always bad for it.'"
+        fix: "Announce that the same AI reply can be either; the next slide shows it."
+    activity: "Class reads the test aloud once."
+    book: "§7.4 Scaffold or Crutch."
+
+- layout: lanes
+  minutes: 2
+  kicker: "§7.4 · book figure: scaffold versus crutch (redrawn)"
+  title: "The same reply builds skill only after your attempt"
+  label_width: 1.9
+  rows:
+    - label: "Crutch"
+      nodes:
+        - {label: "Practice question", kind: step}
+        - {label: "You skip the attempt", kind: human, role: neutral}
+        - {label: "Same reply", kind: ai}
+        - {label: "You copy it", kind: human, role: neutral}
+        - {label: "Nothing produced", kind: step, role: risk}
+    - label: "Scaffold"
+      nodes:
+        - {label: "Practice question", kind: step}
+        - {label: "You attempt first", kind: human}
+        - {label: "Same reply", kind: ai}
+        - {label: "You redo and explain", kind: human}
+        - {label: "Skill built", kind: step, role: verified}
+  caption: "Same reply in both rows: worked steps and the answer."
+  takeaway: "A scaffold is withdrawn as you improve; a crutch stays"
+  notes:
+    say: |
+      In 1976, three researchers described how a tutor helps a child build something the child could not yet build
+      alone, and called it scaffolding. A scaffold is temporary support that lets you do what you cannot yet do alone,
+      withdrawn as you improve, like the frame around a building under construction. Its opposite, in this book, is a
+      crutch: help that does the part of the work you needed to do yourself, and that you keep depending on. Look at the
+      two rows. The tool's reply is identical. In the top row it arrives before any attempt, so it does the recalling
+      and producing for you. In the bottom row it arrives after your attempt, so it works as feedback. The difference is
+      not in the help. It is in who produced the answer.
+    background: |
+      Wood, Bruner and Ross (1976), Journal of Child Psychology and Psychiatry. The slide rebuilds @fig-7-8 (D-7.b,
+      reusable in Chapters 10, 19, 21) with labels at slide size: hexagon = the AI reply, rounded = you, thick border =
+      risk; each end box also says its result in words. The caption calls it Chapter 1's two paths (@fig-1-13) turn by
+      turn. In the book the crutch row has a dashed "no attempt" arrow; the slide uses a labeled box instead, since
+      dashes on slides mean inferred.
+    questions:
+      - q: "So is a worked solution from the tool good or bad?"
+        a: "Neither in itself. After you attempted the same question, it is feedback: S. Before any attempt, it does the producing for you: C (Check Yourself 7.4 item 2; Review A10)."
+    misconceptions:
+      - m: "M4 'AI help is either always good for learning or always bad for it.'"
+        fix: "Same reply, two rows, two results: what changed was the student's attempt."
+    activity: "Ask: 'In your last study chat, which row were you in?'"
+    book: "§7.4, @fig-7-8; Check Yourself 7.4."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§7.4 · two rules settle the harder cases"
+  title: "Coding a turn: S for scaffold, C for crutch"
+  size: 24
+  columns:
+    - heading: "Requests"
+      role: soft
+      bullets: ["Sets up your attempt: **S**", "Asks for the answer: **C**"]
+    - heading: "Tool’s answer or solution"
+      role: soft
+      bullets: ["After you tried the same question: **S**", "Before any attempt: **C**"]
+    - heading: "Neither"
+      role: neutral
+      bullets: ["“OK, thanks”: uncoded"]
+  takeaway: "In the lab you will code at least six of your own turns"
+  notes:
+    say: |
+      Most turns are easy to code with the test. Two rules settle the harder ones. Requests: a request that sets up
+      your own attempt, such as "ask me a question" or "give me another problem and don't tell me the answer", counts as
+      S, for scaffold. A request for the answer counts as C, for crutch. Feedback: a tool's answer or worked solution
+      counts as S only after you attempted the same question; an answer to a question you have not attempted counts as
+      C. Turns that do neither, such as "OK, thanks", are left uncoded. In the lab you will code at least six turns of
+      your own dialogue this way, each with a one-line reason that names the rule you used.
+    background: |
+      Rules from §7.4 (D-7.e): requests that set up an attempt are S; requests for the answer are C; a tool's answer or
+      worked solution is S only after an attempt at the same question; uncoded turns do neither. Review A11 (odd) asks
+      for the test and the request rule; it is the lab session's warm-up. Lab 7.1 step 1 restates the rules for the briefing.
+    questions:
+      - q: "What if I phrase my attempt as a question, like 'Is it 1?'"
+        a: "If it is your own prediction or answer, it is an attempt: S. Elif's turn 7 in the worked example is exactly this borderline case."
+    activity: "Ask for one example of an S request from students' own chats."
+    book: "§7.4, the two rules."
+
+# The final reveal is about 90 words counted with the footer: seven turns coded with their reasons are the point of the
+# worked example (deliberate exception to the 40-word guide).
+- layout: worked
+  minutes: 1.5
+  kicker: "§7.4 · worked example · intro statistics · constructed"
+  title: "Elif’s dialogue, coded turn by turn"
+  context: "Standard deviation versus standard error"
+  steps:
+    - {label: "Turns 1–2", text: "“Just tell me…”; the tool answers · C, C"}
+    - {label: "Turn 3, Elif", text: "“10 ÷ 25 = 0.4?” · S: her attempt"}
+    - {label: "Turn 4, tool", text: "“What does the formula take of n?” · S: a hint"}
+    - {label: "Turn 5, Elif", text: "“The square root: 10 ÷ 5 = 2” · S: she produces"}
+    - {label: "Turns 6–7", text: "“Predict: n = 100?” “10 ÷ 10 = 1?” · S, S"}
+  reveal: [2, 5]
+  result: "Same tool: a crutch for two turns, then a scaffold"
+  notes_reveal:
+    - minutes: 1.5
+      say: |
+        Here is a constructed dialogue from Elif's introductory statistics course. Turn 1: "Just tell me the difference
+        between standard deviation and standard error." A request for the answer with no attempt: C. Turn 2: the tool
+        gives both definitions and the formula, standard error equals standard deviation divided by the square root of
+        n, the number of scores. It answers a question she has not attempted: C. Turn 3: Elif stops herself and tries
+        her textbook's example: 25 students, standard deviation 10. Is the standard error 10 divided by 25, 0.4? She
+        produced an attempt: S, even though it is wrong. Ask the class to code turns 4 to 7 before you reveal them.
+      background: |
+        Worked Example "Elif's Dialogue, Coded" (constructed; intro statistics, Elif's course per docs/characters.md).
+        Turn texts are shortened on the slide; full wording in the book's table. Her attempt is wrong (she divided by n,
+        not by the square root of n); it is still S, because the code asks who produced, not whether it is right.
+      activity: "Pairs code turns 4–7 (40 s) before the reveal."
+      book: "§7.4 Worked Example 'Elif's Dialogue, Coded'."
+    - minutes: 1
+      say: |
+        Turn 4: the tool asks, "Look at what you divided by. What does the formula take of n?" A hint after her attempt
+        at the same question: S. Turn 5: "The square root: 10 divided by 5 is 2. So class averages would vary by about 2
+        points from sample to sample, but single scores by about 10." She produces and explains: S. Turn 6: "Now
+        predict: what happens to the standard error if n is 100?" It sets up her next attempt: S. Turn 7: "It gets
+        smaller? 10 divided by 10 is 1?" Phrased as a question, but it is her own prediction: S, borderline. Same tool,
+        same topic: two crutch turns, then a scaffold. And she still checks her final explanation against her textbook.
+      background: |
+        Faded example (Marcus's acid–base dialogue) key in Appendix E: turns 4, 5 and 6 all S. Your Turn
+        (break-even, business) is the next quick check; its key is in Appendix E.
+      misconceptions:
+        - m: "M4 'AI help is either always good or always bad for learning.'"
+          fix: "One dialogue held both kinds of turn; Elif's choice at turn 3 changed which."
+      activity: "Reveal; ask which turn did the most for her learning (turn 5)."
+      book: "§7.4 Worked Example; Faded Example 'Marcus's Dialogue'."
+  notes:
+    book: "§7.4 Worked Example 'Elif's Dialogue, Coded'."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§7.4 · read with Chapter 1’s three zones"
+  title: "Crutch turns cost learning; outsourcing breaks the rules"
+  size: 24
+  columns:
+    - heading: "Crutch turns while you study"
+      role: neutral
+      bullets: ["Permitted study help", "**Costs you learning**; not misconduct"]
+    - heading: "The tool’s work submitted as yours"
+      role: risk
+      bullets: ["**Outsourcing**", "Chapter 1’s not-acceptable zone"]
+  takeaway: "Closed-book check: can you explain, defend or redo it without the tool?"
+  notes:
+    say: |
+      Does this make crutch turns cheating? No. Read this section with Chapter 1's three zones. Crutch turns while you
+      study, where the tool produces what you were meant to produce, are permitted study help. They cost you learning;
+      they are not misconduct. The tool's work submitted as your own in graded work is something else: outsourcing,
+      which is in Chapter 1's not-acceptable zone. A closed-book check puts Chapter 1's test into practice: if you
+      cannot explain, defend or redo the work without the tool, you outsourced it. This matters for A4. A4 documents how
+      you studied; it is not a confession. Coding your own turns as C does not lower your grade; an honest record is
+      what earns the marks.
+    background: |
+      The two-row table is from §7.4 (blueprint §3); Chapter 1's assistance and outsourcing definitions are reused, not
+      repeated. Elif's starting worry ("using AI to study is cheating") is answered here rather than treated as a
+      separate misconception (blueprint §4). AI use during A4's closed-book checks is not acceptable: the checks play
+      the role of an exam (D-7.c).
+    questions:
+      - q: "If I code many C turns in A4, will that look bad?"
+        a: "No. A4 grades the record and the reflection, not how you studied. Crutch turns while studying are not misconduct (§7.4, A4 brief)."
+    activity: "Ask pairs: 'AI writes my problem-set answers; I submit them.' Which row? (Outsourcing.)"
+    book: "§7.4 table 'What crutch turns mean under the course policy'; Chapter 1 §1.5."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "§7.4 · Lee et al. (2025), CHI"
+  title: "Trusting the tool more went with thinking less"
+  size: 24
+  bullets:
+    - "319 knowledge workers, 936 tasks, self-reported"
+    - "More confidence in AI: less critical thinking"
+    - "More self-confidence: more critical thinking"
+    - "An association, not a cause"
+  takeaway: "Asked for the answer, GPT Base was correct only 51% of the time"
+  notes:
+    say: |
+      A study we discuss through its abstract. In a survey published in 2025, 319 knowledge workers
+      described 936 tasks in which they used generative AI. They reported less critical thinking in tasks where they
+      were more confident that AI could do the work, and more where they were more confident in their own ability.
+      These are self-reports from people at work, and an association, not a cause. But they fit the warning from
+      Chapter 1's Jagged Frontier Map, seen from the learner's side: inside the tool's frontier it can do the task for
+      you, so it can quietly replace your learning; outside it, only your own skill catches its errors. And the errors
+      are real: asked for the answer, GPT Base gave a correct one only 51 percent of the time.
+    background: |
+      Lee et al. (2025), Proceedings of CHI 2025 (abstract discussed in class; Further Reading). The 51% figure: the
+      researchers asked GPT Base each practice problem ten times with the students' most common message, "What is the
+      answer?" (Case Study; Bastani et al., 2025). @fig-7-7 reuses Signature 2 (the Jagged Frontier Map) with two notes:
+      inside, the tool can do the task for you; outside, only your skill catches its errors. It is not shown here
+      because its labels are small at slide size; point students to it in the book.
+    questions:
+      - q: "Does this survey show that AI makes people think less?"
+        a: "No. It is self-report and an association: people who trusted AI more on a task reported less critical thinking on it. It fits the warning but does not prove a cause."
+    misconceptions:
+      - m: "M5b 'If the tutor says my answer is right, it is right.'"
+        fix: "Preview with the 51%: a tool that is often wrong when asked for answers can also be wrong about yours."
+    activity: "Read the study's main finding aloud (abstract) and ask: 'Where on the frontier is your hardest course?'"
+    book: "§7.4 (Lee et al., 2025; @fig-7-7); Case Study (51%); Further Reading."
+
+- layout: quiz
+  minutes: 1.5
+  kicker: "Quick check · §7.4 · business · constructed"
+  title: "code the turns"
+  question: "Code each turn S (scaffold) or C (crutch), and name the rule."
+  option_tags: ["(1)", "(2)", "(3)", "(4)", "(5)", "(6)"]
+  options:
+    - "Student: “What is a break-even point?”"
+    - "Tool: “What do you think happens to profit when sales just cover all costs?”"
+    - "Student: “Profit would be zero, I think.”"
+    - "Tool: “Yes. Now try one: fixed costs $1,000; $5 earned per sale…”"
+    - "Student: “Just tell me.”"
+    - "Tool: “200 sales.”"
+  answer: ["C", "S", "S", "S", "C", "C"]
+  legend: "S = scaffold · C = crutch"
+  instruction: "Code alone (60 seconds), then compare with a neighbor"
+  explanation: "(4) is feedback after an attempt, then a new problem that sets up another attempt"
+  notes:
+    say: |
+      Your turn, from the book. Six turns of a business student's conversation about break-even points. Code each one S
+      or C, and for each, name the rule you used: a request that sets up an attempt, a request for the answer, feedback
+      after an attempt at the same question, or an answer to a question the student did not attempt. One minute alone,
+      then compare with your neighbor. Expect disagreement on turn 4, which does two things at once, and on turn 1,
+      which sounds like an innocent question. Ask a pair that disagreed on turn 4 to explain both readings.
+    background: |
+      Chapter 7 §7.4 Your Turn (business; constructed). Full turn 4: "Yes. Now try one: fixed costs are $1,000, and
+      each sale earns $5 above its own cost. How many sales to break even?" Key (Appendix E, Faded examples and Your
+      Turn): (1) C, a request for the answer with no attempt; (2) S, sets up the student's attempt; (3) S, the student
+      produces an answer; (4) S, feedback after an attempt at the same question, then a new problem; (5) C, a request
+      for the answer; (6) C, answers a question the student did not attempt. Accept either code for (4) if the reason
+      applies the rules.
+    activity: "60 s alone, 30 s with a neighbor; then the answer slide."
+    book: "§7.4 Your Turn; Appendix E."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      Here is the key. Turn 1 is C: it asks for the answer with no attempt, even though it sounds like an ordinary
+      question. Turn 2 is S: the tool sets up the student's attempt. Turn 3 is S: the student produces an answer, with
+      a hedge, and it is right. Turn 4 is S: "Yes" is feedback after an attempt at the same question, and the new
+      problem sets up another attempt; accept C only if someone gives a reason that applies the rules. Turn 5 is C, a
+      request for the answer, and turn 6 is C, the tool answering a problem the student never tried. The conversation
+      started well and ended as a crutch: 1,000 divided by 5 is a calculation the student could have produced.
+    background: |
+      The same pattern as Marcus's turn 9 in the §7.6 worked example: tired, he typed "just tell me" and coded it C;
+      the idea he missed on both checks was the one he let the tool answer.
+    activity: "Reveal; ask who changed a code after talking to a neighbor."
+    book: "§7.4; Appendix E (Your Turn key)."
+
+# ----------------------------------------------------------------------- 7.5
+- layout: section
+  minutes: 0.5
+  number: "7.5"
+  tag: "Core"
+  title: "Setting up tutor mode"
+  idea: "Calling it a tutor was not enough: the setup has to keep you working."
+  meta: "Book §7.5 · today’s demonstration"
+  notes:
+    say: |
+      How do you make a tool behave more like GPT Tutor than GPT Base? Two designs with evidence behind them shared two
+      features. GPT Tutor's hidden instructions asked for hints instead of answers and supplied the teachers' correct
+      solutions. A Harvard physics tutor that outperformed an in-class active-learning lesson also had expert solutions
+      in its instructions. Both kept students doing the work, and both supplied accurate reference material. Remember
+      that even GPT Base had been told to act as a tutor. You cannot rebuild a research system, but you can set up a
+      session with the same features. That is this section, and then we try it live.
+    background: |
+      Kestin et al. (2025), Scientific Reports 15, Article 17458 (Case Study, Study 2). Tutor mode: a way of using an AI
+      tool in which it is set up to respond with questions and hints and to wait for your attempts; answer mode: the
+      default, in which it produces the answer or finished work you ask for; Socratic questioning: teaching by asking
+      questions that lead the learner to reason the answer out (§7.5 definitions).
+    misconceptions:
+      - m: "M5a 'Once a tool is in tutor mode, my learning is taken care of.'"
+        fix: "GPT Tutor matched, but did not beat, the control on the exam; keep that in view before the demonstration."
+    activity: "Transition slide."
+    book: "§7.5 Setting Up Tutor Mode."
+
+- layout: compare
+  minutes: 2
+  kicker: "§7.5 · book figure: tutor mode on the Anatomy of a Prompt (redrawn)"
+  title: "A tutor-mode setup changes three parts of your prompt"
+  size: 22
+  columns:
+    - heading: "Role · changed"
+      role: human
+      bullets: ["A tutor who asks questions"]
+    - heading: "Constraints · changed"
+      role: human
+      bullets: ["Wait for my attempt", "One hint at a time", "No full answer early"]
+    - heading: "Output · changed"
+      role: human
+      bullets: ["One question per turn", "Explain it back"]
+    - heading: "Context · as always"
+      role: soft
+      bullets: ["Course, level, your source"]
+  takeaway: "The task stays the same"
+  notes:
+    say: |
+      In the six-part anatomy from Chapter 5, a tutor-mode setup changes three parts most. The role becomes a tutor who
+      responds with questions and hints, not lectures. The constraints say: ask me to try each step before you explain
+      it; give one hint at a time; do not give the full answer unless I ask after two attempts; if my answer is wrong,
+      say so. The output format is one short question or hint per turn, ending with a request to explain the idea back
+      in your own words. The context, as always, names your course, your level and the source you will check against.
+      If English is not your first language, the context can ask for simple English, or you can run the dialogue in
+      your first language. The task does not change.
+    background: |
+      Signature 6 (Anatomy of a Prompt, Chapter 5) reused in @fig-7-10 with role, constraints and output format
+      highlighted; redrawn here as four cards, each naming whether it changed. Elif's full setup is in the §7.5 Worked
+      Example (it mirrors this demonstration). The chemistry faded example misses two elements: the attempt-first
+      constraint and the source to check against (Appendix E). Agency is not an agent (box in §7.5): a tutor-mode
+      session is augmentation, turn by turn.
+    questions:
+      - q: "Can I write the setup in my own language?"
+        a: "Yes. The dialogue may be in any language; for A4, give an English gloss for each turn you annotate, and answer the closed-book questions in the language of your course."
+    misconceptions:
+      - m: "M5a 'Once a tool is in tutor mode, my learning is taken care of.'"
+        fix: "The setup only creates the chance to attempt; you still have to attempt."
+    activity: "Students copy the four headings; they write their own setup before the lab."
+    book: "§7.5, @fig-7-10; Worked Example 'Elif Switches to Tutor Mode'; Faded Example 'A Chemistry Setup'."
+
+- layout: lab
+  minutes: 18
+  kicker: "Demonstration · live · 18 min · mirrors Lab 7.3"
+  title: "Answer mode versus Socratic mode"
+  goal: "Count who produced what in each chat"
+  steps:
+    - {text: "**Answer mode:** one request; we read the reply together", min: 3}
+    - {text: "**Tutor mode:** the §7.5 setup, a fresh chat; you attempt each step on paper", min: 8}
+    - {text: "Count your own productions in each chat; code four turns S or C", min: 4}
+    - {text: "One closed-book question: rate, answer, check the source", min: 3}
+  side:
+    - {heading: "Materials", text: "Dated answer-mode and tutor-mode transcripts on your course site"}
+    - {heading: "Watch for", text: "The answer given anyway; agreement with a wrong attempt"}
+    - {heading: "Privacy", role: risk, text: "Course content only; no personal data in the prompt"}
+  notes:
+    say: |
+      Now the demonstration, and you take part. First answer mode: I send one ordinary request, "Explain the difference
+      between standard deviation and standard error with an example," and we read the reply together. Then tutor mode:
+      a fresh chat with the setup from section 7.5. Each time the tool asks you to try a step, you write your attempt
+      on paper before I type the class's answer. Then count, for each chat, how many times you produced something from
+      your own memory, and code four turns S or C. Last, one closed-book question on each version, rating your
+      confidence first, scored against the textbook. If the tool gives the answer despite the setup, or agrees with a
+      wrong attempt, that is a finding, not a failure of the demonstration.
+    background: |
+      The demonstration "answer mode versus Socratic mode" is the §7.5 Worked Example run live (blueprint §1). Instructor
+      package: the answer-mode/tutor-mode transcript pair (one general-education concept, model name and date, at least
+      8 student turns in the tutor transcript, including one request for the answer and one tool error or
+      over-agreement only if it occurs naturally; never staged without saying so), needed for this session. Use a tool
+      your institution provides or approves, in a fresh, temporary chat. If the
+      live tool fails, run the dated pair. Lab 7.3 (optional) is the same comparison at home on two questions of similar
+      difficulty. The demonstration takes about 20 minutes (18 here plus the setup slide).
+    questions:
+      - q: "Tutor mode was much slower. Isn't that a waste of time?"
+        a: "It is slower by design: the attempts are the recalling and producing that build memory (§7.2). Answer mode is the right choice when the output, not the skill, is the goal (Lab 7.3 debrief question 3)."
+    misconceptions:
+      - m: "M5b 'If the tutor says my answer is right, it is right.'"
+        fix: "If the tool agrees with a wrong class attempt, stop and check it against the textbook in front of everyone."
+    activity: |
+      3 + 8 + 4 + 3 min. Instructor drives the tool on the projector; students attempt on paper. If there is no network,
+      read the dated pair aloud in two voices.
+    book: "§7.5 Worked Example 'Elif Switches to Tutor Mode'; Lab 7.3; instructor package, Chapter 7."
+
+- layout: compare
+  minutes: 2
+  kicker: "§7.5 · three limits"
+  title: "Tutor mode is a setup, not a lock"
+  size: 22
+  columns:
+    - heading: "Not a lock"
+      role: soft
+      bullets: ["The tool may still give the answer", "Answer mode is one request away"]
+    - heading: "Can be wrong"
+      role: risk
+      bullets: ["Keep your course source open"]
+    - heading: "Can agree with you"
+      role: risk
+      bullets: ["**Sycophancy:** agrees with a wrong attempt", "Score against your source"]
+  takeaway: "Built-in study modes: a setup someone else wrote; same limits"
+  notes:
+    say: |
+      Three limits. First, a setup is text the model receives, not a lock. The tool may still produce the answer, and
+      answer mode is one request away. Second, the tool can be wrong, so keep your course source open. Third, "check my
+      answer" relies on the model's output about your attempt, and that output can agree with a wrong attempt. Chapter 4
+      calls this sycophancy: output that agrees with your stated view even when the evidence points the other
+      way. So score your answers against your course source, not against the tool's verdict. Several chat tools now
+      include a built-in study or learning mode. As far as the book could find in October 2026, none had been tested in
+      a published experiment on learning.
+    background: |
+      Dates (§7.5): Claude's learning mode since April 2025 for education accounts and since August 2025 for everyone;
+      ChatGPT's study mode since July 29, 2025; Gemini's Guided Learning since August 6, 2025 (Anthropic, 2025;
+      Engadget, 2025; OpenAI, 2025; Google, 2025). Tool names are in the notes only (tool neutrality); current steps
+      live in Compass (optional, never part of a course grade). Sycophancy is defined here in one clause; Chapter 4 owns it (a leaf of
+      overconfidence on the Failure Taxonomy Tree).
+    questions:
+      - q: "If my tool has a built-in study mode, do I still need my own setup?"
+        a: "You can use it, but it is a setup someone else wrote. Add your source and the attempt-first rule if it lacks them, and score against your source either way."
+    misconceptions:
+      - m: "M5b 'If the tutor says my answer is right, it is right.'"
+        fix: "GPT Tutor's accuracy came from teacher-supplied solutions; your tool has no such key unless you bring one."
+    activity: "Ask: 'What did the tool do in our demonstration that breaks one of these limits?'"
+    book: "§7.5 'Three limits', built-in modes paragraph; Check Yourself 7.5 item 3."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §7.5"
+  title: "what GPT Tutor had"
+  question: "Even GPT Base was told to act as a tutor. What did GPT Tutor have that GPT Base lacked, and why does it matter?"
+  instruction: "Two sentences, then compare with a neighbor (1 min)"
+  model_answer:
+    - "**What it had:** the teachers’ worked solutions, and an instruction to give hints instead of the answer."
+    - "**Why it matters:** withholding answers kept the recalling and producing with the student; the solutions made its feedback accurate."
+  notes:
+    say: |
+      Last check for today, open-ended. Two sentences: what GPT Tutor had that GPT Base lacked, and why that matters.
+      One minute, then compare with your neighbor. Look for answers that stop at "it was told to be a tutor"; that is
+      exactly what GPT Base was also told. The strong answer has two parts, one about who did the work and one about
+      accuracy. If you have time, connect it to the demonstration: which of these two features did our tutor-mode
+      setup copy, and which one did we have to supply ourselves by keeping the textbook open?
+    background: |
+      Review Questions A13 (O4 · LO4 · Understand). Model answer in Appendix E: GPT Tutor's instructions also contained
+      the teachers' worked solutions and an instruction to give hints instead of the answer; withholding answers kept
+      the recalling and producing with the student, and the supplied solutions made its feedback accurate.
+    activity: "1 min write and compare; then the answer slide."
+    book: "§7.5; Review Questions A13; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      Here is a model answer. GPT Tutor's hidden instructions also contained the teachers' worked solutions and an
+      instruction to give hints instead of the answer. Withholding answers kept the recalling and producing with the
+      student, which is what builds memory; the supplied solutions made its feedback accurate, which matters because
+      GPT Base was correct only about half the time when asked for answers. Our setup copies the first feature with an
+      attempt-first constraint. The second we supply ourselves: the course source with an answer key, which is why A4
+      needs keyed questions.
+    background: |
+      Check Yourself 7.5 item 1: what GPT Tutor and the Harvard physics tutor had in common: both kept students doing
+      the work and supplied accurate reference material.
+    activity: "Reveal; one student reads their answer."
+    book: "§7.5; Appendix E (Review A13)."
+
+# ----------------------------------------------------------------------- Case Study
+# About 55 words counted with the footer: three studies side by side is the point of the in-class Case Study
+# (deliberate exception).
+- layout: compare
+  minutes: 4
+  kicker: "Case Study · read together in class"
+  title: "How strong is the evidence? Three studies"
+  size: 20
+  columns:
+    - heading: "Türkiye · math"
+      role: soft
+      bullets: ["~1,000 students, 4 sessions", "Base 17% lower; Tutor no different", "Peer-reviewed (PNAS)"]
+    - heading: "Harvard · physics"
+      role: soft
+      bullets: ["194 students, 2 lessons", "Gains more than double (immediate)", "Peer-reviewed"]
+    - heading: "Nigeria · English"
+      role: neutral
+      bullets: ["1,328 randomized, 759 assessed", "+0.23 SD in English, 6 weeks", "Working paper"]
+  takeaway: "Enough to reject both “AI harms learning” and “AI tutors work” as rules"
+  notes:
+    say: |
+      The Case Study asks how much one study, or three, should change what you do. Study 1 is our Opening Case:
+      published in PNAS, classrooms balanced, the exam outcome preregistered, independent graders. Study 2: in fall
+      2023, 194 Harvard physics students each had one lesson with a custom AI tutor and one active-learning lesson in
+      class; on tests right after, median gains with the tutor were more than double, in a median of 49 minutes against
+      about 60. Study 3: a six-week after-school English program in nine public schools in Benin City, Nigeria, using
+      Microsoft Copilot with teacher support; participants scored 0.23 standard deviations higher in English. But only
+      759 of 1,328 randomized students took the final assessment, and it is a working paper. All used GPT-4-class
+      models; what differed was what students were set up to do.
+    background: |
+      Two terms (Case Study): peer-reviewed = checked by independent experts before publication; working paper = not;
+      SD = standard deviation, a difference measured against how spread out scores are (0.2–0.3 SD is a modest gain).
+      Study 1: preregistered September 2023; analyzed every assigned classroom, including five sessions where the
+      planned condition could not run; error-carryover argument (GPT Base correct 51% of the time; its errors lowered
+      practice scores but showed no carryover to paired exam problems; the authors read this as copying: reported tier).
+      Study 2 (Kestin et al., 2025): crossover, tutor instructions with step-by-step solutions; limits: two lessons,
+      immediate tests, expert-written solutions. Study 3 (De Simone, Tiberti, Barron Rodriguez, et al., 2025, World
+      Bank working paper updated December 2025): June–July 2024, twelve 90-minute sessions; volunteers chosen by lottery;
+      0.31 SD total includes AI and digital-skills questions only participants were taught; about 0.21 SD on the
+      school's end-of-year English exam; more students missing from the control group. "What they share" is the book's
+      reading (inferred). Instructor package: the comparison table and the five Case Study Questions as a handout.
+    questions:
+      - q: "Which study is the strongest evidence about lasting learning?"
+        a: "None measures long-term learning. A common strong answer: Türkiye has the strongest design; Harvard is randomized but two lessons with immediate tests; Nigeria runs longest but randomized volunteers, lost many students and is a working paper (Case Study Question 3, Appendix E)."
+      - q: "So will AI tutors replace teachers?"
+        a: "Review C3 asks exactly this. All three tools depended on teachers or expert-written solutions; the studies are short and single-subject. Separate 'AI can do parts of tutoring well in some conditions' from 'replace teachers'."
+    misconceptions:
+      - m: "M4 'AI help is either always good for learning or always bad for it.'"
+        fix: "Point at the takeaway; then warn against the overcorrection 'design is all that matters': three short studies, few subjects, one period."
+    activity: "4 min: present the three cards (2), then Case Study Question 5 aloud: which problem was in the output, which in the use? (2)"
+    book: "Case Study 'How Strong Is the Evidence?' (table); Case Study Questions 1, 3, 5; Appendix E."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "Before the lab · about 15 minutes"
+  title: "Bring a concept, a keyed source and three questions"
+  size: 24
+  bullets:
+    - "Read Chapter 7, §7.1–7.6"
+    - "A new concept; a source with **keyed questions**"
+    - "Answer three check questions now; rate each 0–100%"
+    - "Write your tutor-mode setup"
+  takeaway: "Practice on neighboring problems, never on your check questions"
+  notes:
+    say: |
+      Before the lab session, about fifteen minutes plus the reading. Read Chapter 7, sections 7.1 to 7.6. Then do the Your
+      Turn at the end of section 7.5. Choose a concept that is new to you from a course you are taking this term, and a
+      course source with keyed questions: questions that come with an answer key, like your textbook's end-of-section
+      or practice questions. Copy three of them. These are your check questions. Answer them now without notes, write
+      "don't know" if you must, rate each from 0 to 100 percent, and do not look at the key. If the source has more
+      keyed questions on the same idea, pick three parallel ones for the delayed check. Write your tutor-mode setup.
+      And plan to practice on neighboring problems, never on your check questions.
+    background: |
+      §7.5 Your Turn: Prepare for the lab. In history or literature, study-guide identification items keyed to a
+      page work too. No keyed questions: write three from the source's headings or learning objectives and look up the
+      answers after the lab's closed-book step. Instructor package: keyed-question guidance by field, needed before the concept session ends.
+      Why keep check questions out of the dialogue: otherwise the check measures memory of the dialogue (Lab 7.1
+      instructor notes; Check Yourself 7.6 item 2).
+    questions:
+      - q: "My course has no textbook questions. What do I use?"
+        a: "Publisher practice quizzes, problem sets with posted solutions, or study-guide items keyed to pages. If none exist, write three questions from the source's headings and look up the answers after the closed-book step (§7.5 Your Turn)."
+    activity: "Leave this slide up as students pack."
+    book: "§7.5 Your Turn (prepare for the lab); §7.6; Lab 7.1 'Before the lab'."
+
+# ======================================================================= SESSION 2 · LAB
+- layout: section
+  session: thu
+  minutes: 0
+  number: "Lab"
+  tag: "Lab"
+  title: "Practice lab: a tutor-mode session"
+  idea: "A small experiment on yourself: predict, then check."
+  meta: "Book §7.6 · Lab 7.1 · starts A4"
+  notes:
+    say: |
+      Welcome back. Today you run a small experiment on yourself. Sit with your team of three or four; you can help
+      each other with setups and scoring, but every dialogue and every record is individual. Take out your pre-lab
+      sheet: your concept, your source with an answer key, your three check questions with your first answers and
+      confidence ratings, and your tutor-mode setup. If you did not prepare, use the warm-up minutes to choose a concept
+      and three keyed questions; section 7.5's Your Turn tells you how. We start with a two-minute warm-up from memory.
+    background: |
+      Lab 7.1 (Studio, 75 minutes): teams of 3–4; every dialogue and record individual; about 15 minutes before the lab
+      and about 55 at home to finish A4. Materials: a tool your institution provides or approves that can open a fresh,
+      temporary chat; the A4 record sheet (@fig-7-12, on your course site); the peer-tutor
+      question script and the dated transcript pair for the no-device route.
+    activity: "Teams form while this slide is up; students take out their pre-lab sheets."
+    book: "§7.6 The Tutor-Mode Session; Lab 7.1 (labs/ch07-lab1.md)."
+
+- layout: quiz
+  minutes: 1.5
+  kicker: "Lab session · warm-up from memory"
+  title_prefix: "Warm-up"
+  title: "the test for every turn"
+  question: "State the test this chapter uses to code a turn as scaffold or crutch, and the rule for a request turn."
+  instruction: "No notes, no screens: write it, then check with your team"
+  model_answer:
+    - "**Test:** who produced the answer in this turn: you, from your own memory, or the tool?"
+    - "**Requests:** one that sets up your own attempt is S; a request for the answer is C."
+  notes:
+    say: |
+      Warm-up, from memory: no notes, no screens. Write the test this chapter uses to code a turn as scaffold or
+      crutch, and the rule for a request turn. Then check with your team. Notice what you are doing: retrieval practice,
+      two days after you met the idea, which is the habit section 7.2 recommends. If anyone is stuck, give a hint: the
+      test is a question about who did something, and it names two candidates. You will apply this test to at least six
+      turns of your own dialogue in about an hour.
+    background: |
+      Review Questions A11 (O3 · LO4 · Remember). Key (Appendix E): ask of each turn who produced the answer in this
+      turn: you, from your own memory, or the tool? A request that sets up your own attempt is S; a request for the
+      answer is C. (Feedback is S only after an attempt at the same question.)
+    activity: "1 min write, 30 s team check; then the answer slide."
+    book: "§7.4; Review Questions A11; Appendix E."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      Here is the answer. The test: who produced the answer in this turn: you, from your own memory, or the tool? The
+      request rule: a request that sets up your own attempt, like "give me another problem and don't tell me the
+      answer", is S; a request for the answer is C. And the feedback rule, for completeness: the tool's answer or
+      solution counts as S only after you attempted the same question. Today, the most useful turns to look for in your
+      own transcript are the ones where you asked for the answer. Note their turn numbers as you go; it is much easier
+      than finding them afterward.
+    background: |
+      Lab 7.1 step 2: "Note the turn numbers where you asked for answers."
+    activity: "Reveal; move straight to the briefing."
+    book: "§7.4; Lab 7.1 step 2."
+
+- layout: lab
+  minutes: 2
+  kicker: "Lab 7.1 · teams of 3–4 · individual record"
+  title: "Your tutor-mode session: the plan"
+  goal: "Measure what stuck: predict, then check, without the tool"
+  steps:
+    - {text: "**Dialogue:** fresh chat, your setup, neighboring problems; attempt first", min: 25}
+    - {text: "**Closed-book:** devices away; rate, then answer your three questions", min: 10}
+    - {text: "**Score and verify:** key, predicted score, gap; check one tool statement", min: 10}
+    - {text: "**Annotate:** code six turns; bring one S and one C to the class", min: 20}
+    - {text: "**Exit:** one change before your delayed check", min: 5}
+  side:
+    - {heading: "Deliverable", text: "A4 record started: dialogue, codes, immediate check"}
+    - {heading: "No tool, or prefer not to use AI?", text: "Peer-tutor script with a classmate, or self-explain a textbook worked example"}
+    - {heading: "Privacy", role: risk, text: "No personal, confidential or patient data; remove names from transcripts"}
+  notes:
+    say: |
+      Here is the plan. Dialogue, twenty-five minutes: open a fresh, temporary chat, paste your setup, and work on
+      neighboring problems from the same section, never on your three check questions. Attempt before every hint, aim
+      for at least ten of your own turns, and note where you asked for answers. Closed-book, ten minutes: devices and
+      notes away; rate your confidence for each check question, then answer. Score and verify, ten minutes: score
+      against the key, compute your predicted score and gap, and check one of the tool's explanations, hints or
+      verdicts against your source. Annotate, twenty minutes: code at least six turns, and pick one scaffold and one
+      crutch turn for the class. Exit: one change before your delayed check.
+    background: |
+      Lab 7.1 steps 1–6 (briefing 5 is this slide plus the warm-up and A4 brief). Expected observations (lab sheet):
+      most students ask for an answer at least once, often when tired or stuck; many tools give away the answer despite
+      the setup at some point; immediate closed-book scores are usually lower than students predict after a smooth
+      dialogue (a positive gap); delayed scores are often lower again while predictions get closer; some students find
+      the tool marked a wrong attempt as correct, and the key catches it. If the output does not follow the setup,
+      record that as a result and restate the constraint once; if a tool refuses or errors, try a smaller concept.
+      Students who miss the lab run steps 2–5 at home by Friday.
+    questions:
+      - q: "The tool keeps giving me the answer anyway. What do I do?"
+        a: "Record it as a result, code those turns, restate the constraint once and continue. If it happened despite your setup, save it for your Failure Diary (Chapter 4)."
+    misconceptions:
+      - m: "M5a 'Once a tool is in tutor mode, my learning is taken care of.'"
+        fix: "The closed-book step is there because the setup guarantees nothing; only your check shows what stuck."
+    activity: "2 min briefing; start the 25-min dialogue timer after the A4 slide."
+    book: "§7.6; Lab 7.1 (labs/ch07-lab1.md); @fig-7-11."
+
+- layout: assignment
+  minutes: 1.5
+  kicker: "Assignment A4 · O6 · LO4"
+  title: "A4: tutor-mode dialogue and reflection"
+  due: "When your instructor sets it · on your course site · individual"
+  parts:
+    - "Setup, keyed source, check questions with first answers"
+    - "Dialogue: 10+ of your turns, on other problems"
+    - "Six turns coded; two tool statements checked"
+    - "Closed-book: right after, and 2+ days later"
+    - "Reflection (200–300 words) and declaration"
+  rubric_title: "Rubric · 10 points"
+  rubric:
+    - {criterion: "Task", points: 3, full: "All parts; attempt-first setup"}
+    - {criterion: "Annotation", points: 1.5, full: "Six turns, rule-based reasons"}
+    - {criterion: "Closed-book", points: 1.5, full: "Both checks, gaps"}
+    - {criterion: "Verification", points: 2, full: "Two checks vs. your source"}
+    - {criterion: "Reflection", points: 1.5, full: "(a)–(e), specific"}
+    - {criterion: "Declaration", points: 0.5, full: "All five elements"}
+  note: "Your closed-book scores do not affect your grade: an honest 1 of 3 with a clear reflection can earn full marks."
+  notes:
+    say: |
+      Here is what you submit. Your setup, the concept and your keyed source; your three check questions with
+      your first answers and confidence; the full dialogue, with the tool and date and at least ten of your own turns,
+      on neighboring problems; at least six turns coded S or C with a one-line reason; the closed-book record, right
+      after the session and again at least two days later, each with ratings, answers, score, predicted score and gap;
+      two of the tool's statements checked against your source; a reflection of 200 to 300 words; and your AI Use
+      Declaration. The rubric is out of ten. Two things to stress: your scores do not affect your grade, and using AI
+      during the closed-book checks is not acceptable, because those checks play the role of an exam.
+    background: |
+      Full brief and four-level rubric in the chapter (D-7.g): Task 3, Annotation 1.5, Closed-book record 1.5,
+      Verification 2, Reflection 1.5, Declaration 0.5; "when a submission fits parts of two levels, give the lower
+      level whose description fully applies." Reflection items: (a) dialogue performance versus closed-book scores; (b)
+      immediate versus delayed; (c) calibration gaps; (d) one S and one C turn by number; (e) one concrete change. The
+      dialogue may be in any language with English glosses of annotated turns. Remove names and identifiers from the
+      exported transcript. Alternative assignment (about 70 minutes): a classmate following the peer-tutor script, or
+      self-explaining a textbook worked example (Chi et al., 1989), plus annotating the dated transcript pair; same
+      rubric.
+    questions:
+      - q: "My source has only three keyed questions. What do I use for the delayed check?"
+        a: "Use the same three and say so in the record (A4 item 5)."
+      - q: "Can I look at the key before the delayed check?"
+        a: "You score the immediate check against the key, so you will have seen it; that is why parallel questions are better when your source has them. Note it in your reflection."
+    activity: "Point to the note: scores are evidence, not the grade."
+    book: "Application Assignment A4 (brief, rubric, alternative assignment); §7.6."
+
+- layout: concept
+  minutes: 25
+  kicker: "Lab 7.1 · step 2 · dialogue · 25 min, alone"
+  title: "Run your session: attempt before every hint"
+  size: 24
+  bullets:
+    - "Fresh, temporary chat; paste your setup"
+    - "Neighboring problems only, not your check questions"
+    - "Aim for 10+ of your own turns"
+    - "Note the turns where you asked for the answer"
+  flow:
+    - {label: "Before", kind: human, role: neutral}
+    - {label: "During", kind: ai}
+    - {label: "Right after", kind: step}
+    - {label: "2+ days later", kind: step}
+    - {label: "Reflect", kind: human, role: verified}
+  takeaway: "Tired or stuck? Stop and come back, rather than “just tell me”"
+  notes:
+    say: |
+      Twenty-five minutes, on your own. This slide stays up while you work. The strip at the bottom is the whole
+      session: before, which you did at home; during, which is now; right after, the closed-book check in twenty-five
+      minutes; at least two days later, the delayed check at home; and the reflection. Open a fresh, temporary chat and
+      paste your setup. Work on neighboring problems from the same section, not on your check questions: if you
+      practice on them, the check measures your memory of the dialogue, not your learning. Attempt before every hint. If
+      you are tired or stuck and about to type "just tell me", note the turn number. That turn will be useful in your
+      reflection.
+    background: |
+      @fig-7-11 (session protocol) redrawn as a flow strip. Marcus's worked record (§7.6, constructed): 24 turns, 12 his
+      own, on the section's worked examples; at turn 9, tired after a night shift, he typed "just tell me" and coded it
+      C; right after: ratings 90, 80, 80, predicted 2.5, actual 2 of 3, gap +0.5; three days later: 70, 60, 70,
+      predicted 2.0, actual 2 of 3, gap 0.0; the idea he missed both times was the one he let the tool answer at turn 9.
+      Circulate; most students need help choosing a neighboring problem that is not one of their check questions.
+    questions:
+      - q: "Can I ask the tool to check my answer?"
+        a: "Yes, but its verdict is not your score. Score against your course source; the tool can agree with a wrong attempt (§7.5)."
+    misconceptions:
+      - m: "M5b 'If the tutor says my answer is right, it is right.'"
+        fix: "When a student reports 'it said I was right', ask them to show the key."
+    activity: "25 min. At minute 20, give a five-minute warning; then devices away."
+    book: "§7.6, @fig-7-11; Lab 7.1 step 2; Worked Example 'Marcus's Record'."
+
+- layout: concept
+  minutes: 10
+  kicker: "Lab 7.1 · step 3 · closed-book check · 10 min"
+  title: "Devices and notes away"
+  size: 28
+  bullets:
+    - "Rate each check question first: 0–100%"
+    - "Then answer, in the language of your course"
+    - "Extended time? This step can move to the end"
+  takeaway: "Your score is evidence about you, not your grade"
+  notes:
+    say: |
+      Devices and notes away, including the tool and your textbook. For each of your three check questions, first
+      write your confidence, from 0 to 100 percent, and only then answer it. Rating first matters: once you have worked
+      the answer out, your rating measures something else. Answer in the language of your course, even if your
+      dialogue was in another language. Your score does not affect your grade, so there is no reason to look anything
+      up; a low score with a clear reflection can earn full marks. Students with testing accommodations get extended
+      time, and you can take this step at the end of the period instead.
+    background: |
+      Lab 7.1 step 3. AI use during the closed-book checks is not acceptable: the checks play the role of an exam
+      (A4 brief; D-7.c). Lab instructor note: remind students that scores are not graded, so there is no reason to
+      look anything up during the closed-book step.
+    activity: "10 min, silent. Walk the room; collect nothing."
+    book: "§7.6 step 3; Lab 7.1 step 3; A4 item 5."
+
+- layout: concept
+  minutes: 10
+  kicker: "Lab 7.1 · step 4 · score and verify · 10 min"
+  title: "Score against the key, not the tool’s verdict"
+  size: 24
+  bullets:
+    - "Score each answer against your source’s key"
+    - "Predicted score = sum of ratings ÷ 100"
+    - "Gap = predicted − actual"
+    - "Check one tool explanation, hint or verdict against your source"
+  takeaway: "Tool wrong, or gave the answer anyway? Save it for your Failure Diary (Chapter 4)"
+  notes:
+    say: |
+      Ten minutes. Score your three answers against the key in your source, not against anything the tool said. Then
+      the arithmetic: add your three ratings and divide by 100 for your predicted score, and subtract the number you got
+      right. That is your gap. A teammate may check your scoring, or you may keep your answers private and score
+      yourself; both are fine. Then verify one thing the tool produced: an explanation, a hint or a verdict on your
+      attempt, checked against your source. If the tool was wrong, or gave you the answer despite your setup, save it
+      for your Failure Diary. Chapter 4 starts there, so you will arrive with an entry.
+    background: |
+      Lab 7.1 step 4; A4 item 6 asks for at least two checks against the source (one in the lab, one or more at home);
+      Verification criterion (2 points). Failure Diary prompt (book-wide, Chapters 3, 5 and 7); the Diary's first
+      version is due at a portfolio checkpoint your instructor sets. Debrief question 3: did the tool ever say a wrong
+      answer was right, and how did you find out?
+    questions:
+      - q: "My gap is zero. Did I do it right?"
+        a: "Possibly: a zero gap right after is common for students who rate cautiously. The delayed check is the more telling one; Marcus was +0.5 right after and 0.0 three days later."
+    activity: "10 min; teammates may swap sheets for scoring."
+    book: "§7.6 step 3; Lab 7.1 step 4; A4 item 6."
+
+- layout: compare
+  minutes: 13
+  kicker: "Lab 7.1 · step 5 · annotate · 13 min"
+  title: "Code at least six turns, with the rule"
+  size: 24
+  columns:
+    - heading: "S · scaffold"
+      role: verified
+      bullets: ["You produced the answer", "You set up your own attempt", "Feedback after your attempt"]
+    - heading: "C · crutch"
+      role: risk
+      bullets: ["You asked for the answer", "Tool answered before you tried"]
+    - heading: "Uncoded"
+      role: neutral
+      bullets: ["“OK, thanks”"]
+  takeaway: "Team: pick one S turn and one C turn to show the class"
+  notes:
+    say: |
+      Annotate. Code at least six turns of your dialogue S or C, each with a one-line reason that names the rule. S:
+      you produced the answer, you asked for something that sets up your own attempt, or the tool gave feedback after
+      your attempt at the same question. C: you asked for the answer, or the tool answered a question you had not
+      attempted. Turns like "OK, thanks" stay uncoded. Mark any factual error you found. If your dialogue is in another
+      language, give a short English gloss for each turn you annotate. In the last three minutes, each team picks one
+      scaffold turn and one crutch turn to show the class, ideally ones that were hard to code.
+    background: |
+      Lab 7.1 step 5 (20 minutes in the lab sheet = 13 here plus the 7-minute share). Annotation criterion (1.5 points):
+      at least six turns, each reason applying the §7.4 rules to that turn. Faded example (history, periodization) key
+      in Appendix E: turn 5 C (she asks the tool to produce the list she needed to recall); turn 8 C plus a factual
+      error (copied dates without attempting or checking); check the textbook, correct the notes, mark the error, save
+      it for the Failure Diary. Lab instructor note: collect anonymized scaffold and crutch turns for the review at the
+      start of the next concept session.
+    misconceptions:
+      - m: "M4 'AI help is either always good or always bad.'"
+        fix: "Ask teams whose dialogues contain only S or only C turns to look again; most contain both."
+    activity: "13 min; at minute 10, teams choose their two turns."
+    book: "§7.6; Lab 7.1 step 5; Faded Example 'An Annotation Sheet'."
+
+- layout: tps
+  minutes: 7
+  kicker: "Share and critique · 7 min"
+  title: "What did your session show?"
+  prompt:
+    - "One S and one C turn: who produced it?"
+    - "Where was your prediction most off?"
+    - "Did the tool call a wrong answer right?"
+  phases:
+    - {name: "Think", min: 1, text: "Pick your examples"}
+    - {name: "Team", min: 2, text: "Agree on two turns"}
+    - {name: "Share", min: 4, text: "Report; class checks the codes"}
+  notes:
+    say: |
+      Share and critique. Each team shows its scaffold turn and its crutch turn, and says who produced the answer in
+      each. The rest of us critique the code, not the person: does the reason name a rule, and does the rule fit the
+      turn? Then two quick questions for anyone willing to share: where did your prediction differ most from your
+      result, and did the tool ever say a wrong answer was right? Nobody has to share a score. What we are looking for is
+      patterns: how many of us asked for the answer at least once, and when.
+    background: |
+      Lab 7.1 debrief questions 1–3 (analyze, evaluate, evaluate). What to listen for: reasons that cite correctness
+      instead of who produced ("C because it was wrong" should be "S: she produced it, and it was wrong"); tool
+      verdicts accepted without the key; check questions worked in the dialogue (the check then measures memory of the
+      dialogue). Expected: most students asked for an answer at least once, often when tired or stuck.
+    misconceptions:
+      - m: "M5b 'If the tutor says my answer is right, it is right.'"
+        fix: "Ask for a show of hands: whose tool agreed with a wrong attempt? The key caught it."
+    activity: "Think 1 · team 2 · share 4. Tally on the board how many asked for an answer at least once."
+    book: "Lab 7.1 debrief; §7.4–7.6."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Explain:** performance with AI can overstate learning"}
+    - {code: "O2", text: "**Explain:** retrieve, generate, space; harder, longer-lasting"}
+    - {code: "O3", text: "**Distinguish:** who produced it, you or the tool?"}
+    - {code: "O4", text: "**Set up:** attempt-first tutor mode with a keyed source"}
+    - {code: "O5", text: "**Judge:** predict, then check; find your gap"}
+    - {code: "O6", text: "**Produce:** A4, a session record and reflection"}
+  takeaway: "Learn or only finish? Both happen; who produces the answers is partly up to you"
+  notes:
+    say: |
+      Back to the opening puzzle. The GPT Base students did better with the tool because, in most conversations, the tool
+      produced the answers. The most likely reason they did worse without it, consistent with the authors' evidence
+      that students copied, is that they had done less of the recalling and producing that builds memory. One likely
+      reason they did not notice: smooth help feels like learning. And the chapter's question, can a chatbot help you
+      learn or only help you finish? Both have been observed. In this book's reading, what differed was who produced
+      the answers, the students from their own memory or the tool, and that is partly up to you, as your session today
+      showed.
+    background: |
+      Chapter Summary. Tiers: the copying evidence is the authors' interpretation (reported); "what differed was who
+      produced the answers" is the book's reading (inferred); the hedges "most likely", "consistent with" and "one
+      likely reason" are the chapter's. Warm-up revisit: (1) no; (2) Plan B; (3) no, a tool can agree with a wrong
+      answer. From the Field (author's 2015 entry on pair programming, Şeker, 2015): when an AI tool drives and you
+      only watch, you are in the "watching the master" seat; tutor mode keeps you at the keyboard (present-day
+      connection marked as the book's).
+    activity: "Ask two students: 'What was your first guess about the puzzle, and was it right?'"
+    book: "Chapter Summary, @fig-7-15; Warm-up revisit; From the Field."
+
+- layout: key_terms
+  minutes: 1
+  title: "Key terms"
+  terms:
+    - "performance (during practice)"
+    - "learning (durable)"
+    - "overreliance"
+    - "retrieval practice"
+    - "desirable difficulty"
+    - "generation effect"
+    - "spacing (spaced practice)"
+    - "metacognition"
+    - "calibration (of your own confidence)"
+    - "calibration gap"
+    - "scaffold"
+    - "crutch"
+    - "tutor mode"
+    - "answer mode"
+    - "Socratic questioning"
+    - "keyed questions"
+    - "sycophancy (Ch. 4)"
+    - "cognitive offloading (Deep)"
+  note: "Definitions: Chapter 7 and the glossary. Also: assistance and outsourcing (Ch. 1), retrieval (Ch. 3)."
+  notes:
+    say: |
+      These are the chapter's key terms; questions on terms and concepts ask for exactly these. Make sure you can
+      define each in a sentence of your own words. Pay attention to the pairs, because they are where students lose points:
+      performance and learning; scaffold and crutch; tutor mode and answer mode; retrieval practice, which you do, and
+      retrieval, which an AI system does; and calibration of your own confidence versus a model's calibration, which
+      Chapter 8 introduces. Quick self-test as you pack: cover the slide and define three for your neighbor. Cognitive
+      offloading is marked Deep: optional and not on the exam.
+    background: |
+      Key Terms list from the chapter. Examinable scope is Core sections only (D20); Deep sections and Deep chapters
+      are optional and not examinable.
+    activity: "30-second pair self-test."
+    book: "Chapter Summary, Key Terms; glossary."
+
+- layout: exit_ticket
+  minutes: 3
+  questions:
+    - "One change you will make before your delayed check"
+    - "Learn or only finish? Answer in one sentence, with evidence"
+    - "Which turn did the most for your learning, and who produced it?"
+  instruction: "3 min · index card or your course site · not graded"
+  notes:
+    say: |
+      Last three minutes: the exit ticket. First, from the lab sheet: one change you will make before your delayed
+      check, which is at least two days from now. Second, the chapter's question in one sentence: can a chatbot help
+      you learn, or only help you finish? Use evidence from this chapter, the experiment or your own session. Third, which
+      turn did the most for your learning today, and who produced the answer in it? Before you go: the delayed check
+      must be at least two days after today, before A4 is due. Next in the book's reading order are hallucination and
+      uncertainty, Chapters 4 and 8, and you start with your Failure Diary entry.
+    background: |
+      Question 1 is Lab 7.1 step 6; question 3 is Lab 7.1 debrief question 1. The book's suggested reading order puts
+      Chapters 4 and 8 next (A5, the claim verification table). Lab 7.2 is a good opener for the next concept session's
+      review (lab sheet).
+    activity: "3 min; collect cards at the door or close the online form at the end of the session."
+    book: "Lab 7.1 step 6 and debrief; Chapter 4 opening (Failure Diary)."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: deep
+  session: after
+  kicker: "Deep 7.A · tutors before chatbots · VanLehn (2011)"
+  title: "Going deeper: step-based feedback came close to human tutors"
+  figure: f7-13-vanlehn
+  takeaway: "What mattered: feedback on each step of *your* work"
+  notes:
+    say: |
+      Use this slide only if there is time or a student asks whether tutoring by computer can work at all. The idea of a
+      tutor that never tires is older than chatbots. In a 2011 review of experiments comparing tutoring with no
+      tutoring, Kurt VanLehn found an average effect of 0.79 standard deviations for human tutoring. Computer tutors
+      built before generative AI that gave feedback only on students' final answers averaged 0.31. Those that gave
+      feedback on each step of a solution averaged 0.76, close to human tutors. As this book reads it, feedback on each
+      step of your own work is what mattered, and it is what tutor mode tries to keep. A tool that hands over final
+      answers gives even less than the weakest systems in that review, which at least responded to the student's own
+      answer.
+    background: |
+      Deep 7.A (optional, not examinable, D20). Bloom (1984) reported tutored students about two standard deviations
+      above classroom students (the "2 sigma problem"); VanLehn (2011) argued Bloom's tutoring was combined with mastery
+      learning, so the 2-sigma effect cannot be credited to tutoring alone. Substep-based tutors averaged 0.40 and did
+      not do reliably better than step-based ones. Nickow et al. (2024): 89 randomized tutoring experiments, preschool
+      to grade 12, pooled effect about 0.29 SD, largest when teachers or paraprofessionals tutored. The last sentence of
+      the say is the book's reading (inferred). Deep 7.B (cognitive offloading; FAA, 2013 on manual flying) is not on a
+      slide.
+    activity: "Optional; not part of the 75-minute plan."
+    book: "Deep 7.A Tutors Before Chatbots, @fig-7-13; Deep 7.B."
+
+- layout: references
+  title: "References"
+  per_slide: 7
+  refs:
+    - "Anthropic. (2025, April 2). *Introducing Claude for Education*. https://www.anthropic.com/news/introducing-claude-for-education"
+    - "Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *PNAS, 122*(26), e2422633122. https://doi.org/10.1073/pnas.2422633122"
+    - "Bjork, E. L., & Bjork, R. A. (2011). Making things hard on yourself, but in a good way: Creating desirable difficulties to enhance learning. In M. A. Gernsbacher et al. (Eds.), *Psychology and the real world* (pp. 56–64). Worth."
+    - "Bjork, R. A. (1994). Memory and metamemory considerations in the training of human beings. In J. Metcalfe & A. P. Shimamura (Eds.), *Metacognition: Knowing about knowing* (pp. 185–205). MIT Press."
+    - "Bloom, B. S. (1984). The 2 sigma problem: The search for methods of group instruction as effective as one-to-one tutoring. *Educational Researcher, 13*(6), 4–16. https://doi.org/10.3102/0013189X013006004"
+    - "Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., & Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. *Psychological Bulletin, 132*(3), 354–380. https://doi.org/10.1037/0033-2909.132.3.354"
+    - "Chi, M. T. H., Bassok, M., Lewis, M. W., Reimann, P., & Glaser, R. (1989). Self-explanations: How students study and use examples in learning to solve problems. *Cognitive Science, 13*(2), 145–182. https://doi.org/10.1207/s15516709cog1302_1"
+    - "De Simone, M., Tiberti, F., Barron Rodriguez, M., et al. (2025). *From chalkboards to chatbots: Evaluating the impact of generative AI on learning outcomes in Nigeria* (Policy Research Working Paper No. 11125; updated December 2025). World Bank."
+    - "De Simone, M. E., Tiberti, F., Mosuro, W., et al. (2025, January 9). From chalkboards to chatbots: Transforming learning in Nigeria, one prompt at a time. *Education for Global Development* [World Bank blog]."
+    - "Deslauriers, L., McCarty, L. S., Miller, K., Callaghan, K., & Kestin, G. (2019). Measuring actual learning versus feeling of learning in response to being actively engaged in the classroom. *PNAS, 116*(39), 19251–19257. https://doi.org/10.1073/pnas.1821936116"
+    - "Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2013). Improving students' learning with effective learning techniques. *Psychological Science in the Public Interest, 14*(1), 4–58. https://doi.org/10.1177/1529100612453266"
+    - "Engadget. (2025, August 14). *Anthropic brings Claude's learning mode to regular users and devs*."
+    - "Flavell, J. H. (1979). Metacognition and cognitive monitoring: A new area of cognitive–developmental inquiry. *American Psychologist, 34*(10), 906–911. https://doi.org/10.1037/0003-066X.34.10.906"
+    - "Google. (2025, August 6). *Guided Learning in Gemini: From answers to understanding*. https://blog.google/outreach-initiatives/education/guided-learning/"
+    - "Kestin, G., Miller, K., Klales, A., Milbourne, T., & Ponti, G. (2025). AI tutoring outperforms in-class active learning: An RCT introducing a novel research-based design in an authentic educational setting. *Scientific Reports, 15*, Article 17458. https://doi.org/10.1038/s41598-025-97652-6"
+    - "Kornell, N., Hays, M. J., & Bjork, R. A. (2009). Unsuccessful retrieval attempts enhance subsequent learning. *Journal of Experimental Psychology: Learning, Memory, and Cognition, 35*(4), 989–998. https://doi.org/10.1037/a0015729"
+    - "Lee, H.-P., Sarkar, A., Tankelevitch, L., et al. (2025). The impact of generative AI on critical thinking. In *Proceedings of the 2025 CHI Conference on Human Factors in Computing Systems* (Article 1121). ACM. https://doi.org/10.1145/3706598.3713778"
+    - "Nickow, A., Oreopoulos, P., & Quan, V. (2024). The promise of tutoring for PreK–12 learning: A systematic review and meta-analysis of the experimental evidence. *American Educational Research Journal, 61*(1), 74–107. https://doi.org/10.3102/00028312231208687"
+    - "OpenAI. (2025, July 29). *Introducing study mode*. https://openai.com/index/chatgpt-study-mode/"
+    - "Roediger, H. L., III, & Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. *Psychological Science, 17*(3), 249–255. https://doi.org/10.1111/j.1467-9280.2006.01693.x"
+    - "Şeker, Ş. E. (2015). Eşli programlama [Pair programming]. *YBS Ansiklopedi, 2*(1), 19–21."
+    - "Slamecka, N. J., & Graf, P. (1978). The generation effect: Delineation of a phenomenon. *Journal of Experimental Psychology: Human Learning and Memory, 4*(6), 592–604. https://doi.org/10.1037/0278-7393.4.6.592"
+    - "Soderstrom, N. C., & Bjork, R. A. (2015). Learning versus performance: An integrative review. *Perspectives on Psychological Science, 10*(2), 176–199. https://doi.org/10.1177/1745691615569000"
+    - "VanLehn, K. (2011). The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems. *Educational Psychologist, 46*(4), 197–221. https://doi.org/10.1080/00461520.2011.611369"
+    - "Wood, D., Bruner, J. S., & Ross, G. (1976). The role of tutoring in problem solving. *Journal of Child Psychology and Psychiatry, 17*(2), 89–100. https://doi.org/10.1111/j.1469-7610.1976.tb00381.x"
+  notes:
+    say: |
+      Reference slides; not presented in class. These are the sources cited on the slides and in the speaker notes, in
+      short APA form copied from the chapter's reference list. Students do not need to read them; the chapter is
+      written to be understandable without them. Two are suggested readings: Bastani et al. (2025), which is open
+      access, and Lee et al. (2025), the abstract. If a student wants to go further, point them to Roediger and
+      Karpicke (2006), a short and clear experiment, and to Bjork and Bjork (2011), a readable essay on desirable
+      difficulties written for a general audience.
+    background: |
+      Full entries (all authors, URLs, the PNAS correction note for Bastani et al.: an author affiliation only) are in
+      the chapter's References section, fact-checked (docs/factcheck/ch07.csv). Long author lists are shortened with
+      "et al." here for space. The chapter cites the peer-reviewed PNAS version of Bastani et al. (D-7.d).
+    activity: "Not presented."
+    book: "Chapter 7, References; Further Reading and Compass Links."

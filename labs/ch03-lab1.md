@@ -5,7 +5,7 @@
 | Type | Studio (in-class lab session) |
 | Objectives | O1, O2, O3, O4, O5 (LO1, LO3) · tags UNESCO:TECH-U, 4D:DISC |
 | Time | 45 minutes in class, teams of 3–4 (jigsaw: each person does one part, then the team puts the parts together); every write-up is individual |
-| Materials | Any chat tool available to the student (one the student's institution provides or approves, or a free tier); the student's **A2 Part 1 draft**; the provided long public-domain text with three placed facts, the list of dated events and the list of less famous parent–child pairs (course site); the probe record template (section 3.6, figure F3.8); dated sample outputs for the no-device route |
+| Materials | Any chat tool available to the student (one the student's institution provides or approves, or a free tier); the student's **A2 Part 1 draft**; the provided long public-domain text with three placed facts, the list of dated events and the list of less famous parent–child pairs (companion files); the probe record template (section 3.6, figure F3.8); dated sample outputs for the no-device route |
 
 ## Student page
 
@@ -39,7 +39,7 @@ Which probe result surprised your team, and which section of the chapter explain
 The team's probe records (shared, ungraded) and each student's A2 Part 2 draft (individual; scored later with the single A2 rubric in Chapter 2).
 
 ### If this doesn't work, or you prefer not to use AI tools
-Analyze the dated sample outputs on the course site for every probe instead of running prompts. Paper version of probe 2: roll dice to pick tokens from a printed score table (each token's score is a range of dice numbers). The probe record template is available as a screen-reader-friendly table. This route is scored the same way.
+Analyze the dated sample outputs in the companion files for every probe instead of running prompts. Paper version of probe 2: roll dice to pick tokens from a printed score table (each token's score is a range of dice numbers). The probe record template is available as a screen-reader-friendly table. This route is scored the same way.
 
 ### Safety and privacy
 No personal or confidential information in any prompt. Use the provided texts for probes 3 and 4. Use a temporary chat or switch memory off where the tool allows.

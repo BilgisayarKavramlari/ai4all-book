@@ -1,0 +1,223 @@
+# Layout gallery: one example of every layout in tools/build_slides.py.
+# Build: python3 tools/build_slides.py --template  ->  slides/template/layout-gallery.pptx
+# Text here describes the layouts only; it is not course content. draft: true switches off the notes checks.
+deck:
+  chapter: 0
+  slug: layout-gallery
+  title: Layout Gallery
+  short_title: Layout gallery
+  draft: true
+  sessions:
+    tue: {label: "Tuesday concept session", minutes: 75}
+    thu: {label: "Thursday practice lab", minutes: 75}
+
+slides:
+- layout: title
+  session: tue
+  title: "Layout gallery for AI for All lecture decks"
+  subtitle: "Week N · Tue and Thu"
+  meta: ["CS 2V95.001 · Spring 2027", "Instructor name", "Reading: Chapter N"]
+  figure: f1-02-ai-work-loop-frame
+  notes: {say: "layout: title. Navy background, optional figure on a white card at right.", book: "—"}
+
+- layout: session_plan
+  title: "session_plan: the week at a glance"
+  columns:
+    - heading: "Tuesday · Concept session"
+      sub: "75 min"
+      blocks:
+        - {min: 10, label: "Opening case", detail: "Detail line"}
+        - {min: 35, label: "Concept core", detail: "Detail line"}
+        - {min: 20, label: "Demonstration", detail: "Detail line"}
+        - {min: 10, label: "Concept check", detail: "Detail line"}
+    - heading: "Thursday · Practice lab"
+      sub: "75 min"
+      blocks:
+        - {min: 10, label: "Lab briefing"}
+        - {min: 45, label: "Group practice"}
+        - {min: 15, label: "Share and critique"}
+        - {min: 5, label: "Exit step"}
+  notes: {say: "layout: session_plan. Two columns of timed blocks; the colored strip is decorative, minutes are written as text.", book: "—"}
+
+- layout: objectives
+  kicker: "objectives"
+  title: "objectives: up to six coded cards"
+  items:
+    - {code: "O1", text: "**Verb** and a short objective in plain words"}
+    - {code: "O2", text: "**Verb** and a short objective in plain words"}
+    - {code: "O3", text: "**Verb** and a short objective in plain words"}
+    - {code: "O4", text: "**Verb** and a short objective in plain words"}
+  takeaway: "Optional takeaway bar (used on the summary slide)"
+  notes: {say: "layout: objectives.", book: "—"}
+
+- layout: section
+  number: "N.1"
+  tag: "Core"
+  title: "section: divider for a subsection"
+  idea: "The one core idea of the subsection, in one sentence."
+  meta: "Book §N.1 · signature diagram if any"
+  notes: {say: "layout: section.", book: "—"}
+
+- layout: concept
+  kicker: "concept"
+  title: "concept: bullets, optional figure, optional flow and takeaway"
+  bullets: ["First bullet, at most about 12 words", "Second bullet", ["A sub-bullet"]]
+  flow:
+    - {label: "Human step", kind: human}
+    - {label: "AI component", kind: ai}
+    - {label: "Step", kind: step}
+    - {label: "Uncertain output", kind: step, dashed: true}
+  takeaway: "Takeaway bar: the one sentence to remember"
+  notes: {say: "layout: concept with flow strip.", book: "—"}
+
+- layout: concept
+  kicker: "concept with figure"
+  title: "concept: bullets beside a book figure"
+  figure: f1-07-jagged-frontier
+  bullets: ["Figure width is automatic (up to 62%)", "Alt text comes from figures/longdesc"]
+  notes: {say: "layout: concept with figure.", book: "—"}
+
+- layout: figure
+  kicker: "figure"
+  title: "figure: one book figure, as large as possible"
+  figure: f1-06-frontier-results
+  caption: "Optional caption line (source, date)"
+  takeaway: "Optional takeaway bar"
+  notes: {say: "layout: figure.", book: "—"}
+
+- layout: compare
+  kicker: "compare"
+  title: "compare: two or three cards with role colors"
+  columns:
+    - {heading: "verified", role: verified, bullets: ["Role colors come from figlib", "Headings say the meaning in words"]}
+    - {heading: "neutral, dashed", role: neutral, dashed: true, bullets: ["Dashed = conditional or inferred"]}
+    - {heading: "risk", role: risk, bullets: ["Risk cards get a thick border"]}
+  takeaway: "Optional takeaway bar"
+  notes: {say: "layout: compare.", book: "—"}
+
+- layout: matrix
+  kicker: "matrix"
+  title: "matrix: a 2 × 2 grid, optional bullets"
+  bullets: ["Optional definitions at left"]
+  col_headers: ["Column A", "Column B"]
+  row_headers: ["Row 1", "Row 2"]
+  cells:
+    - - {title: "Good", text: "detail", role: verified}
+      - {title: "Danger", text: "detail", role: risk}
+    - - {title: "Neutral", text: "detail", role: neutral}
+      - {title: "Soft", text: "detail", role: soft}
+  notes: {say: "layout: matrix.", book: "—"}
+
+- layout: lanes
+  kicker: "lanes"
+  title: "lanes: rows of book-grammar flows"
+  rows:
+    - label: "Row label"
+      nodes: [{label: "You", kind: human, role: neutral}, {label: "AI step", kind: ai, dashed: true}, {label: "Check", kind: human, role: risk}]
+    - label: "Row label"
+      nodes: [{label: "You", kind: human, role: neutral}, {label: "Step", kind: step}, {label: "Result", kind: human, role: verified}]
+  caption: "Optional caption, including a legend for dashed outlines"
+  notes: {say: "layout: lanes.", book: "—"}
+
+- layout: loop
+  kicker: "loop"
+  title: "loop: signature diagram 1, drawn natively"
+  highlight: Verify
+  bullets: ["highlight: one step or a list", "Optional bullets at left"]
+  notes: {say: "layout: loop.", book: "—"}
+
+- layout: timeline
+  kicker: "timeline"
+  title: "timeline: a case as a story"
+  events:
+    - {label: "Event 1", text: "What happened", tier: confirmed}
+    - {label: "Event 2", role: ai, text: "What the AI system did", tier: reported}
+    - {label: "Event 3", text: "The book's reading", tier: inferred}
+  takeaway: "Tier pills: confirmed · reported · inferred (dashed)"
+  notes: {say: "layout: timeline.", book: "—"}
+
+- layout: worked
+  kicker: "worked example"
+  title: "worked: steps revealed across slides"
+  context: "Context line: who, field, situation"
+  steps:
+    - {label: "Step one", text: "What you do"}
+    - {label: "Step two", text: "What you do"}
+    - {label: "Step three", text: "What you do"}
+  reveal: [1, 3]
+  result: "Rule or answer, shown on the last reveal"
+  notes: {say: "layout: worked.", book: "—"}
+
+- layout: quiz
+  title: "multiple choice"
+  question: "Question text from the chapter's Check Yourself or an odd-numbered review item?"
+  options: ["Option a", "Option b", "Option c", "Option d"]
+  answer: b
+  instruction: "Answer alone, then vote"
+  explanation: "Why the distractors fail"
+  notes: {say: "layout: quiz (question slide).", book: "—"}
+  answer_notes: {say: "layout: quiz (answer slide).", book: "—"}
+
+- layout: quiz
+  title: "open question"
+  question: "An open Check Yourself question?"
+  instruction: "Write, then compare"
+  model_answer: ["Model answer, first sentence.", "Second sentence."]
+  notes: {say: "layout: quiz, open.", book: "—"}
+  answer_notes: {say: "answer.", book: "—"}
+
+- layout: tps
+  title: "tps: think · pair · share"
+  prompt: ["The main prompt", "A second prompt line"]
+  notes: {say: "layout: tps.", book: "—"}
+
+- layout: lab
+  session: thu
+  kicker: "lab"
+  title: "lab: briefing with timed steps"
+  goal: "One-line goal"
+  steps:
+    - {text: "Step with a time", min: 5}
+    - {text: "**Bold** step", min: 10}
+    - {text: "Step without a time"}
+  side:
+    - {heading: "Deliverable", text: "What students hand in"}
+    - {heading: "Privacy", role: risk, text: "Data rule"}
+    - {heading: "No-device route", text: "Alternative"}
+  notes: {say: "layout: lab.", book: "—"}
+
+- layout: assignment
+  kicker: "assignment"
+  title: "assignment: brief, due date, rubric"
+  due: "Mon, date, 11:59 p.m. on eLearning"
+  parts: ["Part one", "Part two", "Part three"]
+  rubric:
+    - {criterion: "Task", points: 3, full: "Full-credit descriptor"}
+    - {criterion: "Process", points: 3, full: "Full-credit descriptor"}
+    - {criterion: "Verification", points: 2, full: "Full-credit descriptor"}
+    - {criterion: "Declaration", points: 2, full: "Full-credit descriptor"}
+  note: "Grading note"
+  notes: {say: "layout: assignment.", book: "—"}
+
+- layout: key_terms
+  title: "key_terms: chips"
+  terms: ["term one", "term two", "a longer term (with a gloss)", "deep term (Deep)"]
+  note: "(Deep) terms are drawn muted"
+  notes: {say: "layout: key_terms.", book: "—"}
+
+- layout: exit_ticket
+  questions: ["First question?", "Second question?", "Third question?"]
+  instruction: "3 min · index card or eLearning · ungraded"
+  notes: {say: "layout: exit_ticket.", book: "—"}
+
+- layout: deep
+  session: after
+  kicker: "deep"
+  title: "deep: one optional going-deeper slide"
+  bullets: ["Same as concept, with a badge"]
+  notes: {say: "layout: deep.", book: "—"}
+
+- layout: references
+  title: "References"
+  refs: ["Author, A. (2025). *Title in italics*. Publisher.", "Author, B., & Author, C. (2024). Article title. *Journal, 1*(2), 3–4."]
+  notes: {say: "layout: references.", book: "—"}

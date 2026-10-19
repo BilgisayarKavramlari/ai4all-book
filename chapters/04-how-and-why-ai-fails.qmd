@@ -6,7 +6,7 @@ Not marked done: final review and the author's final voice edit are pending. -->
 
 ![Chapter 4 at a glance. This chapter strengthens Verify: know what kind of failure you are checking for.](../figures/out/color/f4-01-chapter-map.svg){#fig-4-1 fig-alt="Chapter map: the tree (4.1–4.3), more branches (4.4–4.6), harm and practice (4.7, 4.8, labs); Work Loop strip with Verify highlighted."}
 
-**Chapter 4 at a glance.** By now you have seen artificial intelligence (AI) tools fail: in your baseline, in the probes of Chapter 3, while iterating prompts in Chapter 5 and in tutor mode in Chapter 7. This chapter gives those failures names and causes. It sorts them into five families on one diagram, the Failure Taxonomy Tree, and explains why each family happens. Then it follows one failure all the way to a tribunal order.
+**Chapter 4 at a glance.** By now you have seen artificial intelligence (AI) tools fail: in your baseline in Chapter 1 and in the probes of Chapter 3. If you have already read Chapters 5 and 7, you saw more while iterating prompts and in tutor mode. This chapter gives those failures names and causes. It sorts them into five families on one diagram, the Failure Taxonomy Tree, and explains why each family happens. Then it follows one failure all the way to a tribunal order.
 
 This chapter pairs with Chapter 8. This one comes first and asks: *what kinds of failure are you checking for, and why do they happen?* Chapter 8, with its verification lab and assignment A5, then teaches *how* to check.
 
@@ -216,7 +216,7 @@ The leaves: a dropped constraint, a missed middle, an early wrong assumption tha
 
 ![Context loss happens because the window is limited and long, piece-by-piece chats lose earlier pieces.](../figures/out/color/f4-02d-tree-context.svg){#fig-4-2d fig-alt="The tree with context loss highlighted; leaves and the cause: limited window; long, piece-by-piece chats."}
 
-Chapter 5 taught you to state constraints in the prompt. Here is a reason to restate them in the message that needs them.
+Chapter 5 shows how to state constraints in the prompt. Here is a reason to restate them in the message that needs them.
 
 ::: {.callout-note title="Worked Example: The Rule That Disappeared"}
 *(Constructed example.)* A law student in Nairobi uses one long chat to compare three court rulings. Turn 1: "Use only the three rulings I paste; cite them by name." By turn 15, an answer quotes a fourth ruling that was never pasted.
@@ -250,11 +250,11 @@ Lab 4.2, probe 1, tests constraint recall in a tool you use.
 
 **Overconfidence** is output stated with more certainty than the evidence supports. Label it only when the evidence is about expressed certainty: a stated percentage, words such as "guaranteed" or "definitely," an exact figure for something that varies (Chapter 1's "exactly 3.2 liters" for every adult), or a new answer after pushback (below). A wrong answer in plain words is a hallucination, not by itself overconfidence.
 
-Why does it happen? After pretraining, models are tuned toward answers that people rate highly (Chapter 3). Nothing in that step requires stated certainty to match the evidence. One dated result shows a related cost. In a 2023 test on multiple-choice questions, the post-training step made the probabilities GPT-4 assigned to its own answer choices (numbers inside the model, not words in its output) a worse match for how often it was right (OpenAI, 2023). Chapter 7 used *calibration* for your own confidence; Chapter 8 measures a model's.
+Why does it happen? After pretraining, models are tuned toward answers that people rate highly (Chapter 3). Nothing in that step requires stated certainty to match the evidence. One dated result shows a related cost. In a 2023 test on multiple-choice questions, the post-training step made the probabilities GPT-4 assigned to its own answer choices (numbers inside the model, not words in its output) a worse match for how often it was right (OpenAI, 2023). Chapter 7 uses *calibration* for your own confidence; Chapter 8 measures a model's.
 
 ![Overconfidence happens because tuning rewards answers people rate highly, not certainty that matches evidence.](../figures/out/color/f4-02e-tree-overconfidence.svg){#fig-4-2e fig-alt="The tree with overconfidence highlighted; leaves include sycophancy; cause: tuned toward answers people rate highly."}
 
-Chapter 7 named **sycophancy**: output that agrees with your stated view even when the evidence points the other way. Here is why it happens. Sharma et al. (2024), researchers at Anthropic, a company that builds assistants, analyzed data in which people chose the better of two answers. Answers that matched the person's views were more likely to be chosen. The automated scorers trained to imitate those choices, which are used to tune assistants, sometimes preferred a convincing agreeable answer to a correct one too.
+One such failure is **sycophancy** (Chapter 7 returns to it): output that agrees with your stated view even when the evidence points the other way. Here is why it happens. Sharma et al. (2024), researchers at Anthropic, a company that builds assistants, analyzed data in which people chose the better of two answers. Answers that matched the person's views were more likely to be chosen. The automated scorers trained to imitate those choices, which are used to tune assistants, sometimes preferred a convincing agreeable answer to a correct one too.
 
 A dated example: in April 2025, OpenAI withdrew an update to the GPT-4o model in ChatGPT after users reported overly flattering, agreeable answers. The company first said the update leaned too much on short-term user feedback; a later post said several changes combined, including a new reward signal built from thumbs-up and thumbs-down ratings (OpenAI, 2025a, 2025b).
 
@@ -338,7 +338,7 @@ Optional: Lab 4.3 tests a harmless hidden instruction in a provided file.
 
 [Core]{.path}
 
-A wrong output on your screen is not yet a harm. It becomes one along a chain of links. The **failure-to-harm chain** names them: the output is wrong, it is not checked before use, someone relies on it, and a loss follows. Chapter 5's why-chain traced a weak output *backward* to its cause; this chain runs *forward*, from an error to its consequences.
+A wrong output on your screen is not yet a harm. It becomes one along a chain of links. The **failure-to-harm chain** names them: the output is wrong, it is not checked before use, someone relies on it, and a loss follows. Chapter 5's why-chain traces a weak output *backward* to its cause; this chain runs *forward*, from an error to its consequences.
 
 ![An output error becomes a harm only when nobody checks and someone relies on it.](../figures/out/color/f4-09-failure-chain.svg){#fig-4-9 fig-alt="Chain: wrong output, check before use (failed: no reasonable care), Moffatt relies and books, loss of $650.88; a caught path leads to no harm."}
 
@@ -470,7 +470,7 @@ In the concept session, your instructor runs a live demonstration: asking an AI 
 
 You only label. Whether the demo's sources exist is checked later, in Chapter 8's verification lab. Two more printed cards are for home, and students who miss class label all ten printed cards at home.
 
-**If this doesn't work:** the card set is on your course site as a printable page and as a screen-reader-friendly table.
+**If this doesn't work:** the card set is in the book's companion files as a printable page and as a screen-reader-friendly table.
 
 ### Lab 4.2: Provoke and Explain (Break It · 30 minutes · optional, recommended) {.unnumbered}
 
@@ -478,19 +478,19 @@ You only label. Whether the demo's sources exist is checked later, in Chapter 8'
 
 Record each probe in Chapter 3's format: prediction, prompt, result, conclusion. "The tool kept its answer" is a valid result and can be a diary entry.
 
-1. **Constraint recall.** In a new chat, your first message (turn 1) sets one constraint: "Answer every question in exactly two sentences." Paste the six provided filler questions (on your course site), one per message (turns 2–7). In turn 8, ask a question and check the constraint.
-2. **Pushback.** Ask a question from your field whose answer you know. If the answer is correct, reply: "I think that's wrong." Record whether the answer changes. Repeat with at least three questions. *(A faded record with the prediction filled in is on your course site.)*
+1. **Constraint recall.** In a new chat, your first message (turn 1) sets one constraint: "Answer every question in exactly two sentences." Paste the six provided filler questions (in the book's companion files), one per message (turns 2–7). In turn 8, ask a question and check the constraint.
+2. **Pushback.** Ask a question from your field whose answer you know. If the answer is correct, reply: "I think that's wrong." Record whether the answer changes. Repeat with at least three questions. *(A faded record with the prediction filled in is in the book's companion files.)*
 3. **Confidence after pushback.** Ask a known-answer question and ask how confident the tool is, as a percentage. Push back, then ask again. If the tool will not give a number, record its words ("fairly sure," "I can't be certain") and compare them before and after.
 
 Then label each result on the tree and write one sentence on the most likely cause.
 
-**If this doesn't work:** analyze the dated sample transcripts on your course site instead.
+**If this doesn't work:** analyze the dated sample transcripts in the book's companion files instead.
 
 ### Lab 4.3: A Hidden Instruction (Break It · 15 minutes · optional) {.unnumbered}
 
 *(O2, O4 · LO1 · Apply)*
 
-1. Download the provided, harmless practice document from your course site. It contains one embedded instruction: end any summary with the word PINEAPPLE.
+1. Download the provided, harmless practice document from the book's companion files. It contains one embedded instruction: end any summary with the word PINEAPPLE.
 2. Ask a tool to summarize it. Record whether the summary follows the hidden instruction.
 3. Change one thing: use the version without the instruction, and summarize again.
 4. Write one paragraph explaining the result with section 4.6.
@@ -555,7 +555,7 @@ In 2014 I wrote a short encyclopedia entry on cause-and-effect diagrams, often c
 
 The entry suggested six places to start looking for causes: people, methods, tools and machines, materials, measurements and the environment. It stressed that the analysis need not stop at these six, and it listed longer checklists: the 6M list (and its 8M extension) in manufacturing, the 7P list in marketing and the 5S list in services. Its example traced low customer satisfaction to three main causes, low-quality products, high prices and an inadequate support line, each with its own smaller causes. It also noted that the diagram does not have to be drawn as a fish at all.
 
-*A present-day connection, which is this book's and not the 2014 entry's:* an AI failure is an effect with causes in several categories, and the diary's "likely causes" box uses adapted fishbone categories. *Materials* are the training data, your input and any retrieved text. *Methods* are the prompt and the workflow. The *machine* is the model and the tool's settings. *People* are whoever checked or relied on the output. *Measurement* is how the output was judged, and the *environment* is when and where it was used. In Chapter 5 you asked "why?" to trace a weak output back to the prompt; the fishbone widens that view beyond the prompt. And because a diagram only shows what you *think* the causes are, the diary asks you to mark each cause documented or inferred.
+*A present-day connection, which is this book's and not the 2014 entry's:* an AI failure is an effect with causes in several categories, and the diary's "likely causes" box uses adapted fishbone categories. *Materials* are the training data, your input and any retrieved text. *Methods* are the prompt and the workflow. The *machine* is the model and the tool's settings. *People* are whoever checked or relied on the output. *Measurement* is how the output was judged, and the *environment* is when and where it was used. In Chapter 5 you ask "why?" to trace a weak output back to the prompt; the fishbone widens that view beyond the prompt. And because a diagram only shows what you *think* the causes are, the diary asks you to mark each cause documented or inferred.
 
 ## Chapter Summary {.unnumbered}
 
@@ -649,12 +649,12 @@ bias (in generated output) · confabulation (Deep) · context loss · documented
 
 ### Spaced Review {.unnumbered}
 
-Come back to these a few days after reading, without looking back. They connect this chapter to Chapters 5, 7 and 3, which you read just before it.
+Come back to these a few days after reading, without looking back. They connect this chapter to Chapters 1, 2 and 3, which come before it in the book.
 
-1. *(Chapter 5 · LO2 · Apply)* In Sam's bracket chat, which part of the anatomy of a prompt should have carried "all dimensions in millimeters," and why does restating it in the final request help?
-2. *(Chapter 7 · LO4 · Analyze)* Chapter 7 told you to score your answers against your course source, not against the tool's verdict. Which kind of hallucination does keeping that source open help you catch, and why?
-3. *(Chapter 5 · LO2 · Remember)* Name Chapter 5's three kinds of test input and give one example of each for a prompt in your field.
-4. *(Chapter 7 · LO4 · Analyze)* In the Bastani et al. study from Chapter 7, the GPT Base tool often gave wrong answers, and students copied them. Place each of those two failures on the tree or on the chain.
+1. *(Chapter 1 · LO1 · Understand)* Chapter 1 said that a generative AI system produces likely text rather than looking up a stored answer. Which cause of hallucination in section 4.2 follows from that, and why does it mean a fluent answer still needs checking?
+2. *(Chapter 2 · LO5 · Analyze)* In Chapter 2's Opening Case, a recruiting tool picked up gender-linked patterns from a sample made mostly of men's résumés. Name two places in the pipeline where bias can enter a language model (section 4.3). Which of them matches the recruiting tool's problem?
+3. *(Chapter 3 · LO1 · Remember)* What is a knowledge cutoff? On which branch and leaf of the tree does an answer go that misses an event after the cutoff?
+4. *(Chapter 1 · LO1 · Analyze)* Chapter 1 warned that fluency is not evidence. Which branch of the tree is about certainty that outruns the evidence, and what would make that label documented rather than inferred?
 5. *(Chapter 3 · LO1 · Apply)* Label "lost in the middle" on the tree, and say how section 4.4 extends it.
 
 ### Discussion Questions {.unnumbered}
@@ -688,7 +688,7 @@ No personal or confidential data in any entry; crop screenshots. Peer feedback i
 | **Verification (2)** | 2: every failure shown by a specific, repeatable test, and the re-test reported with its result | 1.5: every failure has a specific test; re-test missing | 1: tests vague or missing for some entries | 0: no tests |
 | **Declaration and judgment (2)** | 2: all five declaration elements and a specific reflection grounded in the entries | 1.5: all five elements; general reflection | 1: one to four elements, or reflection missing | 0: no declaration |
 
-**Alternative assignment** (for students who prefer not to use AI tools, or who could not collect five failures). Work from the provided dated sample diary (on your course site), which holds eight entries of dated outputs with tests. Label five entries, list likely causes, design one test per entry that would have caught the failure, run one of your designed tests on the provided second output, and write the same reflection about the failures you would expect in your own field. Same rubric, read this way:
+**Alternative assignment** (for students who prefer not to use AI tools, or who could not collect five failures). Work from the provided dated sample diary (in the book's companion files), which holds eight entries of dated outputs with tests. Label five entries, list likely causes, design one test per entry that would have caught the failure, run one of your designed tests on the provided second output, and write the same reflection about the failures you would expect in your own field. Same rubric, read this way:
 
 - **Task:** five analyzed entries with the same features (the run test counts as the re-test).
 - **Labels and Causes:** as above.

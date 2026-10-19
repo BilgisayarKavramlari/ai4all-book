@@ -1,0 +1,1510 @@
+# Lecture deck spec — Chapter 21: Your Personal AI Code of Practice
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch21.yaml --preview
+# Every number and quotation comes from deck.sources; the builder flags any number it cannot find there.
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only.
+#
+# Chapter 21 has no concept session of its own (book plan: D23, D25). Its class time is (keys are internal):
+#   tue    = the portfolio workshop (Chapter 20's Lab 20.1), minutes 50–65: the code peer check (Lab 21.1), 15 min.
+#            The Chapter 20 deck hands over at its "50–65" section slide and takes back at minute 65.
+#   may4   = a 10-minute final-review segment (the Final Bridge's even items), run at the start of a later session
+#            (in the book's suggested plan, before the second defense session) or posted on the course site.
+#            Even answers are instructor-only (README), so that segment shows the prompts only.
+# Two further segments carry minutes as estimates but belong to no scheduled session:
+#   parta  = Part A in brief (read at home before the workshop): code of practice, triggers, four required lines,
+#            own evidence, boundaries, how codes age, the brief and rubric. For office hours, a recording, or a
+#            short recap if the instructor finds time.
+#   review = final-exam review segment: Part B (Case Study, Ethics Lens, Summary, Last Words), the Final Bridge
+#            (Chapters 8 to 20) with odd items only, and Spaced Review 1 and 3 (Chapters 20 and 19), each answer on
+#            the next slide (Appendix E).
+
+deck:
+  chapter: 21
+  slug: your-personal-ai-code-of-practice
+  title: Your Personal AI Code of Practice
+  short_title: Your Personal AI Code of Practice
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Portfolio workshop (Lab 20.1), minutes 50–65 · code peer check, Lab 21.1 (15 min)", minutes: 15}
+    parta: {label: "Part A in brief · read at home before the workshop; for office hours or a recording (no session time)"}
+    may4: {label: "Final-review segment · 10 min at the start of a later session, or posted on the course site", minutes: 10}
+    review: {label: "Final-exam review segment · Part B and Final Bridge (self-study or extra review; no session time)"}
+  sources:
+    - chapters/21-your-personal-ai-code-of-practice.qmd
+    - chapters/20-your-ai-portfolio-and-career-narrative.qmd
+    - labs/ch21-lab1.md
+    - labs/ch21-lab2.md
+    - labs/ch21-lab3.md
+    - labs/ch20-lab1.md
+    - figures/longdesc/ch21.md
+    - appendix/answers.md
+    - docs/blueprints/ch21-blueprint.md
+    - docs/decisions.md
+
+slides:
+
+# ======================================================================= PORTFOLIO WORKSHOP · LAB 20.1 MINUTES 50–65
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "Code peer check in the portfolio workshop · final review"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Part A before the workshop"
+    - "Part B and Final Bridge before the final review"
+  figure: f21-11-principles-card
+  notes:
+    say: |
+      This deck has two short moments in class. The first is now, minute fifty of the portfolio workshop: fifteen
+      minutes to check each other's code of practice. The second comes later: ten minutes of final review on the
+      Final Bridge. Everything else in Chapter 21 you read at home. The picture on the right is the card your code
+      should fit on: a scope line, five to seven commitments written as "when, I, because", a boundaries line, a
+      review date with review triggers, and dated notes for tool facts. For the next fifteen minutes you need only
+      two things on the table: your three commitments and your boundaries line, the workshop draft from Part A. Put
+      your A14 draft aside; you will need it again at minute sixty-five.
+    background: |
+      Chapter 21 is read in two parts (D23, D25): Part A (opening page, Opening Case, Objectives, Warm-up,
+      21.1–21.4 with Check Yourself) before the workshop, about 29 minutes reading plus 7 answering, and the
+      workshop draft (three commitments and a boundaries line) about 15 minutes; finishing the code (21.5, the
+      brief, the rest of the code) about 27–29 minutes of portfolio-assembly time, before the portfolio is due; Part
+      B (Case Study, Summary, Last Words) before the final review, about 7 minutes; final-exam practice about 70
+      minutes, the Final Bridge about 40. The figure is the blank principles card (@fig-21-11). The chapter map
+      highlights Frame, with Disclose second. Note: the chapter text still gives calendar dates for these steps,
+      pending the D27 assembly pass; this deck names the steps only.
+    questions:
+      - q: "I did not write a workshop draft. What do I do?"
+        a: "Write two commitments now in the 'when, I, because' form from your A1 goals or a Failure Diary entry, and a boundaries line; your partner tests those."
+    activity: "On screen at minute 50 while partners swap drafts."
+    book: "Chapter 21 opening page and time table; @fig-21-11; Lab 21.1."
+
+- layout: session_plan
+  minutes: 0
+  title: "Chapter 21 in class and at home"
+  columns:
+    - heading: "Workshop · min 50–65"
+      sub: "Lab 21.1 inside Lab 20.1 · pairs"
+      blocks:
+        - {min: 1, label: "Brief", detail: "Three test questions"}
+        - {min: 4, label: "Read aloud", detail: "Each partner’s draft"}
+        - {min: 6, label: "Test", detail: "Moment · action · reason"}
+        - {min: 1, label: "Name one line", detail: "The weakest"}
+        - {min: 3, label: "Revise, record", detail: "Item 7 of the brief"}
+    - heading: "Final review · 10 min"
+      sub: "Before a defense session, or online"
+      blocks:
+        - {min: 1, label: "Chapters 8–20 on one loop", detail: "Where each chapter sits"}
+        - {min: 7, label: "Final Bridge, even items", detail: "From the instructor key"}
+        - {min: 2, label: "Final exam practice", detail: "Three kinds of items"}
+    - heading: "At home"
+      sub: "Code due with the portfolio"
+      blocks:
+        - {min: 36, label: "Part A", detail: "Before the workshop"}
+        - {min: 15, label: "Workshop draft", detail: "3 lines + boundaries"}
+        - {min: 28, label: "Finish the code", detail: "Before the portfolio"}
+        - {min: 7, label: "Part B", detail: "Before the review"}
+        - {min: 40, label: "Final Bridge", detail: "Exam practice"}
+  notes:
+    say: |
+      Here is how Chapter 21 fits into the end of the book. Today, minutes fifty to sixty-five of the workshop, you
+      read your draft aloud to your partner, your partner tests each line with three questions, names the one line
+      that most needs work, and you revise it and record the change. The finished code is due with your portfolio,
+      when your instructor sets it. Later, ten minutes of final review go through the Final Bridge items whose
+      answers are not in Appendix E. At home, Part B is short, about seven minutes, and the Final Bridge takes about
+      forty. If your course has a final exam, the Final Bridge is the practice for it.
+    background: |
+      Chapter 21 time table (Part A about 29 min reading + 7 answering; workshop draft about 15; finishing the code
+      about 27–29, portfolio-assembly time; Part B about 7; final-exam practice about 70, Final Bridge about 40).
+      Lab 21.1 steps on the lab sheet: read aloud 2 min each (4), test 3 min each (6), name one line (1), revise and
+      record (4) = 15. This deck takes 1 minute from "revise and record" for a brief at the start; students finish
+      the written record at home if needed (it is item 7 of the brief). The "28" for finishing the code is the
+      midpoint of the chapter's 27–29 minutes.
+    activity: "Skip in class (0 min); for reference and for the course-site copy of the deck."
+    book: "Chapter 21 time table; Lab 21.1; Final Bridge introduction."
+
+- layout: objectives
+  minutes: 0
+  kicker: "Chapter 21 · learning objectives"
+  title: "After this chapter you will be able to…"
+  items:
+    - {code: "O1", text: "**Distinguish** your code from policy, a profession’s code, a slogan, a tool note"}
+    - {code: "O2", text: "**Write** commitments as triggers from your own evidence"}
+    - {code: "O3", text: "**Judge** a draft with the trigger test and the rules that bind you"}
+    - {code: "O4", text: "**Plan** how your code ages: review date, triggers, dated notes"}
+    - {code: "O5", text: "**Produce** your code for the final portfolio"}
+  notes:
+    say: |
+      Five objectives. Today's peer check practices objective three: judging a draft with the trigger test and
+      against the rules that bind you, then revising the lines that fail. The code you submit with your portfolio
+      is objective five. Objectives one, two and four are in Part A, which you read before the workshop, and they
+      are practiced in the Review Questions: telling a personal commitment from a policy, a professional code, a
+      slogan or a dated tool note; writing commitments as triggers; and planning how a code ages. The chapter's
+      question ties them together: when your course's rules end, which of them will you keep, and how will you know
+      when to change them?
+    background: |
+      Full objectives with tags (chapter): O1 Distinguish (Understand; LO7, LO4); O2 Write (Apply; LO5, LO4); O3
+      Judge (Evaluate; LO5); O4 Plan (Create; LO7); O5 Produce (Create; LO7, LO4, LO5). The Final Bridge is review,
+      not an objective (blueprint).
+    activity: "Reference; 0 min in class."
+    book: "Chapter 21, Learning Objectives; the chapter's question."
+
+- layout: section
+  minutes: 0
+  number: "50–65"
+  tag: "Lab"
+  title: "Code peer check"
+  idea: "Read it aloud; test every line: moment, action, reason."
+  meta: "Lab 21.1 inside Lab 20.1 · Book §21.2, §21.3, §21.5 · 15 minutes"
+  notes:
+    say: |
+      Minute fifty. For the next fifteen minutes you work on the code-of-practice draft you wrote for Part A: three
+      commitments in the "when, I, because" form and a boundaries line. Your partner reads it aloud, because reading
+      aloud shows quickly whether a moment is one you would notice. Then your partner tests each commitment with
+      three questions, checks the boundaries line, and names one line to revise. You rewrite it and record it before
+      and after, with the question it failed and the question it now passes. That record is item 7 of your code's
+      brief. No device and no AI account are needed; please do not put anyone else's draft into an AI tool.
+    background: |
+      Lab 21.1 (labs/ch21-lab1.md): Studio, 15 minutes, a named slot of Lab 20.1 (minutes 50–65); objectives Ch. 21
+      O3, O5 (LO5, LO7); materials: the workshop draft, the printed trigger-test strip (instructor package), a pen.
+      Pairs inside the workshop team; use your own draft only.
+    activity: "Hand out the trigger-test strips while pairs form."
+    book: "Lab 21.1; §21.5 (peer check paragraph)."
+
+# Native redraw of @fig-21-4 (the book figure's diamond labels fall below 15 pt at slide size).
+- layout: concept
+  minutes: 1
+  kicker: "§21.2 · the trigger test (book figure, redrawn)"
+  title: "A line becomes a commitment only if it passes three tests"
+  size: 26
+  bullets:
+    - "**Moment:** would I notice it then?"
+    - "**Action:** could someone trace it afterward?"
+    - "**Reason:** does “because” point to my own evidence?"
+  flow:
+    - {label: "A line in your draft", kind: step}
+    - {label: "Moment?", kind: step}
+    - {label: "Action?", kind: step}
+    - {label: "Reason?", kind: step}
+    - {label: "Commitment", kind: human, role: verified}
+  takeaway: "A no at any question → rewrite; the new line takes the test again"
+  notes:
+    say: |
+      One minute on the test you will apply. A line in your draft passes three questions. Moment: would I notice it
+      at the time, from something I can see, such as "I am about to send, upload or publish", "the input contains a
+      person's data", or "a tool I set up can act for others"? Action: could I or someone else tell afterward that I
+      did it, from a mark in a log, a saved check or a line in a declaration? Reason: does the "because" point to my
+      own evidence, something from my own work, such as a Failure Diary entry or a graded assignment? A no at any
+      question means rewrite, and a rewritten line takes the test again. Listeners, mark each commitment with a tick
+      or a cross for each question.
+    background: |
+      §21.2 and @fig-21-4. Commitment: a line that states an action you will take. Trigger (in a code of practice):
+      the observable situation that tells you a commitment applies now. Own evidence: something from your own work
+      that shows why the line matters to you (Failure Diary, graded assignments, lab records, the optional Chapter 13
+      protocol log); a rule can be part of the reason only together with your own evidence. Check Yourself 21.2 (1):
+      "When I use AI, I am careful" fails moment and action, and has no reason.
+    misconceptions:
+      - m: "M1 'A code of practice is a list of good values: be honest, be responsible.'"
+        fix: "Values become the 'because', not the line. Do not overcorrect into 'values do not matter': each commitment keeps a reason."
+    activity: "1 min; then start the read-aloud."
+    book: "§21.2, @fig-21-4; Check Yourself 21.2."
+
+- layout: lab
+  minutes: 14
+  kicker: "Lab 21.1 · on screen while you work"
+  title: "Read aloud, test, revise one line"
+  goal: "Every commitment passes moment, action and reason"
+  steps:
+    - {text: "Partner A reads A’s draft aloud; then B reads B’s", min: 4}
+    - {text: "Listener ticks or crosses each line: **moment · action · reason**", min: 6}
+    - {text: "Boundaries: “Which rule is stricter here, and whom would you ask?”"}
+    - {text: "Listener names the one line that most needs work", min: 1}
+    - {text: "Rewrite it; record before, after, failed and passed questions", min: 3}
+  side:
+    - {heading: "Deliverable", text: "Item 7 of your code: the trigger-test record and one revised line"}
+    - {heading: "Can’t attend?", text: "Check with a classmate by message, or in office hours, or self-test with the strip"}
+    - {heading: "Privacy", role: risk, text: "Your own draft only; no one else’s data"}
+  notes:
+    say: |
+      Go. Partner A reads A's draft aloud, then B reads B's: two minutes each. Then test: the listener goes line by
+      line and marks moment, action and reason with a tick or a cross, three minutes each. Read the boundaries line
+      too and ask: which rule is stricter here, and whom would you ask? Then the listener names the one line that
+      most needs work and says which question it failed. In the last three minutes, each writer rewrites that line
+      and records it before and after, with the question it failed and the question it now passes. If a line passes
+      all three on the first try, that is a valid result: record it unchanged and say so. At minute sixty-five we go
+      back to Chapter 20 for the defense rehearsal.
+    background: |
+      Lab 21.1 expected observations: most first drafts have at least one line that fails moment ("when I use AI…"),
+      action ("I am careful…") or reason (a rule with no evidence of why it matters to the writer). Boundaries lines
+      often name the course and forget a job, a placement or a client; "which rule is stricter here?" brings these
+      out. Debrief questions (folded into Lab 20.1's share-and-critique, if time): Which test question did your draft
+      fail most often, and why? Did your boundaries line name a rule you had forgotten? Rubric link: without a
+      trigger-test record (item 7), the first criterion is scored at Proficient at most; the Revision criterion (1
+      point) needs one before-and-after with the question failed and the question passed. The lab sheet gives 4
+      minutes to revise and record; this plan uses 3 because of the 1-minute brief.
+    questions:
+      - q: "My partner says 'before I submit coursework' is not a moment. Is it?"
+        a: "Yes, if you would notice it at the time: submitting is a visible moment. 'When I use AI' is the classic fail, because it covers everything and you would not notice it as special."
+      - q: "Can my reason be 'because the course rules say so'?"
+        a: "Not on its own: a rule says what you must do, not why the line matters to you; pair it with your own evidence (Check Yourself 21.2, item 2)."
+    misconceptions:
+      - m: "M2 'My code is my own rule, so where I disagree with a course or employer rule, my code decides.'"
+        fix: "Ask the boundaries question for every draft: the stricter rule wins; a personal code may be stricter, never looser."
+    activity: |
+      Read aloud 4 (2 each) · test 6 (3 each) · name one line 1 · revise and record 3. Call each switch aloud. At
+      minute 65 switch back to the Chapter 20 deck ("Defense rehearsal").
+    book: "Lab 21.1; §21.2–21.3, §21.5; Application Assignment item 7 and rubric."
+
+# ======================================================================= PART A IN BRIEF (reference)
+- layout: section
+  session: parta
+  minutes: 0
+  number: "Part A"
+  tag: "Core"
+  title: "Your code, in brief"
+  idea: "When your course’s rules end, which will you keep, and how will you know when to change them?"
+  meta: "Book Opening Case, §21.1–21.4 · read before the workshop"
+  notes:
+    say: |
+      These slides summarize Part A, which you read at home before the workshop. Use them to review, or if you
+      missed the reading. Throughout the book, your course has given you rules for working with AI. When the
+      course ends, no one will tell you when to use them. Part A helps you choose the ones you will keep and write them
+      as a short personal AI code of practice. It answers four questions: what a personal code is, compared with
+      other kinds of rules; how to write a commitment so that you recognize when it applies; how your code sits
+      inside the rules that bind you; and how a code ages. All four are Core and examinable.
+    background: |
+      Part A is Core and examinable (D20). Segment timing if presented: about 15 minutes. Workshop draft = the 21.2
+      and 21.3 Your Turns (three commitments, at least two of them required lines, and a boundaries line); the 21.1
+      Your Turn was folded into the 21.2 draft (D25).
+    activity: "Reference segment; no scheduled class time."
+    book: "Chapter 21 Part A box; §21.1–21.4."
+
+- layout: timeline
+  minutes: 1.5
+  kicker: "Opening case · ACM Code of Ethics (2018)"
+  title: "A profession rewrites its rules"
+  events:
+    - {label: "1992", text: "The code’s previous version", tier: "confirmed"}
+    - {label: "Two years", text: "Drafts published for comment", tier: "confirmed"}
+    - {label: "Jun 22, 2018", text: "ACM Council adopts it", tier: "confirmed"}
+    - {label: "Its own limit", text: "“Not an algorithm for solving ethical problems”", tier: "confirmed"}
+  takeaway: "About 26 years to update, and it still asks for judgment"
+  notes:
+    say: |
+      In June 2018 the Association for Computing Machinery, ACM, a professional society for people who work in
+      computing, adopted a new version of its Code of Ethics and Professional Conduct. The ACM Council approved it on
+      June 22, 2018. The version it replaced dated from 1992, about 26 years earlier. ACM described the update as a
+      two-year process, with drafts published for comment. Why update? In 1992 many people saw computing work as
+      purely technical; by 2018 it could affect people's lives in ways that may not be intended or even predictable.
+      The new code names machine learning. And it says what it is not: in its own words, it is not an algorithm for
+      solving ethical problems; it is a basis for ethical decision-making. Puzzle: if a profession's code needs
+      judgment and revision, what should your own code contain, and how will you know it is out of date?
+    background: |
+      Case C21 (ACM, 2018a, booklet; ACM, 2018b, press release of July 17, 2018). All facts here are confirmed in the
+      primary record. The co-chairs' example: a reading app can meet the requirement of enlarging text for readers
+      with impaired vision and still fail them if the instructions for doing so are printed in tiny type. Principle
+      2.5: extraordinary care with the risks of machine-learning systems; a system whose future risks cannot be
+      reliably predicted needs frequent reassessment in use, or should not be deployed. Audience: current and
+      aspiring computing professionals, instructors, students, and anyone whose computing affects others. Status:
+      as of October 2026, the 2018 code is still current (ACM's code page as archived July 9, 2026). The quotation
+      is the chapter's single quotation from the ACM sources.
+    misconceptions:
+      - m: "M3 'Once written, a code is finished.'"
+        fix: "Even a profession revised its code; principle 2.5 asks for frequent reassessment. Do not overcorrect into 'rewrite it weekly': commitments change rarely, tool notes often."
+    activity: "Pose the puzzle; Part A's sections answer it."
+    book: "Opening Case 'A Profession Rewrites Its Rules', @fig-21-2."
+
+- layout: section
+  minutes: 0
+  number: "21.1"
+  tag: "Core"
+  title: "Why a personal code"
+  idea: "Policy and a profession’s code bind you anyway; your code is the part you choose to keep."
+  meta: "Book §21.1"
+  notes:
+    say: |
+      Many fields now have rules about AI: an employer's, a client's, a profession's. None of them will tell you
+      which habits from this book to keep. That choice is yours. A personal AI code of practice is a short set of
+      commitments you choose for how you will use AI in your own work, each written so that you recognize when it
+      applies, with a date to review it. In your course the artifacts, rubrics and declarations were scaffolds,
+      temporary support withdrawn as you improve. Your code is the part you keep when the scaffolding comes down.
+      The two goals you set in A1 are a good place to start.
+    background: |
+      §21.1. Scaffold (Chapter 7): temporary support that lets you do what you cannot yet do alone, withdrawn as you
+      improve. In EU law, a "code of practice" can also be a voluntary document AI companies sign (Deep 21.B; the
+      EU's General-Purpose AI Code of Practice was published July 10, 2025); not the sense used here.
+    activity: "Reference."
+    book: "§21.1 Why a Personal Code."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§21.1 · five kinds of text that look alike"
+  title: "Only one of them is your commitment"
+  size: 22
+  columns:
+    - heading: "Binds you anyway"
+      role: neutral
+      bullets: ["**Policy:** your instructor, employer, client", "**Professional code:** e.g., ACM"]
+    - heading: "Not a commitment"
+      role: soft
+      bullets: ["**Slogan:** “use AI responsibly”", "**Dated tool note:** true as of a date"]
+    - heading: "Yours"
+      role: human
+      bullets: ["**Commitment:** a moment, an action, a reason"]
+  takeaway: "A slogan has no moment and no action"
+  notes:
+    say: |
+      Your code sits next to four other kinds of text that look similar but do different jobs. Policy: rules someone
+      with authority over your work sets, such as your instructor, an employer or a client. A professional code of
+      ethics: principles a profession sets for its members, such as the ACM code. A slogan: a good intention with no
+      moment or action attached, such as "use AI responsibly." A dated tool note: a fact about a tool or a rule, true
+      as of a date, such as which tool your school provides. Marcus sorted six lines from his notes: two were
+      his own commitments, one about patient information and one about stopping a study session when he types
+      "just tell me." The policy and the ACM principle bind him anyway; his code does not replace them.
+    background: |
+      §21.1 and Worked Example "Marcus Sorts His Notes" (nursing; constructed). Check Yourself 21.1 (Appendix E): a
+      commitment names a moment you would notice and an action someone can trace, with your own evidence as the
+      reason; a slogan has neither moment nor action. Policy and a profession's code bind you whether or not you
+      write them down; your code adds your own commitments inside them. Dated tool note example: which chat tool a school
+      provides to its students, written "as of" a month and year (the chapter's example still names one
+      institution's tool, pending the D27 assembly pass). Faded example (marketing
+      student) and Lab 21.2 (generated "code of AI ethics", optional) practice the sorting; generated codes tend to
+      be lists of slogans and none can pass the reason question for the student.
+    misconceptions:
+      - m: "M1 'A code of practice is a list of good values.'"
+        fix: "Sort two slogans and two commitments aloud; the difference is the moment and the action."
+    activity: "Ask: 'Is \"be transparent\" a commitment?' (No: a slogan.)"
+    book: "§21.1, @fig-21-3, Worked Example 'Marcus Sorts His Notes'; Check Yourself 21.1; Lab 21.2."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Review Questions A1 · §21.1"
+  title: "which line is yours?"
+  question: "Which line is a personal commitment?"
+  options:
+    - "“Use AI ethically and responsibly in all of my work, every single day.”"
+    - "“AI use during examinations is not acceptable in this course.”"
+    - "“Before I submit work, I list every AI use in my declaration.”"
+    - "“Our school provides a chat assistant to students (as of October 2026).”"
+  answer: c
+  instruction: "Answer on your own, then check"
+  explanation: "(a) is a slogan; (b) is policy; (d) is a dated tool note"
+  notes:
+    say: |
+      Exam-format practice. Four lines, and only one is a personal commitment. Use the sorting from the last slide:
+      which one is a slogan, which is policy, which is a dated tool note? Then check the remaining one with the first
+      two test questions: is there a moment you would notice, and an action someone could trace afterward? Note that
+      the commitment in this item has no "because"; in your own code it would need one, but the item asks only
+      about the kind of line. Commit to an answer before you look.
+    background: |
+      Review Questions A1 (O1 · LO7 · Understand). Key (Appendix E): (c). (a) slogan (M1); (b) policy; (d) dated
+      tool note (M4). Option (d) is reworded on the slide to name no institution or product (D27); the chapter's
+      item still names one, pending the assembly pass.
+    activity: "30 s, then the answer slide."
+    book: "§21.1; Review Questions A1; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (c): "Before I submit work, I list every AI use in my declaration." It names a moment you would
+      notice, submitting, and an action someone could trace, the declaration. Option (a) is a slogan: it sounds
+      strong, with "every single day," but it has no moment and no action. Option (b) is policy: it binds you, but
+      someone else set it. Option (d) is a dated tool note: a fact true as of a date, which belongs in your code's
+      dated notes, not among the commitments. To finish (c) as a line in your own code, add a "because" that points
+      to your own evidence.
+    background: |
+      Appendix E (Chapter 21, Review A1).
+    activity: "Self-check."
+    book: "§21.1–21.2; Appendix E."
+
+- layout: section
+  minutes: 0
+  number: "21.2"
+  tag: "Core"
+  title: "Commitments as triggers"
+  idea: "A line helps only if you notice the moment it applies."
+  meta: "Book §21.2 · workshop draft, part 1"
+  notes:
+    say: |
+      "Be honest about AI" is easy to agree with and easy to forget, because nothing tells you when it applies. So
+      the chapter asks for one form: when a moment I will notice, I take an action I or someone else can trace,
+      because of my own evidence. The "when" is the trigger: the observable situation that tells you a commitment
+      applies now. Psychologists call a plan in this "if this situation arises, I will respond this way" form an
+      implementation intention, and reviews of many tests find that such plans help people act on goals they already
+      hold. No study the book found tested AI use, so applying this to your code is the book's inference.
+    background: |
+      §21.2. Gollwitzer and Sheeran (2006); Sheeran et al. (2025): reviews of hundreds of tests find that such plans
+      help people act on goals they already hold, more so in the explicit if-then form. Applying it to codes is the
+      book's inference (Deep 21.A, optional, gives effect sizes and limits). Three senses of "trigger" in the book:
+      in a code of practice (this chapter), re-test trigger (Chapter 12), trigger in a verification protocol (Chapter
+      13, Deep).
+    activity: "Reference."
+    book: "§21.2 Commitments as Triggers; Deep 21.A."
+
+# About 59 words on the last reveal: three value → trigger pairs are the example (deliberate exception).
+- layout: worked
+  minutes: 1.5
+  kicker: "§21.2 · worked example · Hana (they/them), constructed"
+  title: "Hana’s values become triggers"
+  context: "Hana (they/them), freelance illustrator"
+  steps:
+    - {label: "“Respect artists”", text: "Client job, before AI images → written agreement · because: clause, bakery draft"}
+    - {label: "“Protect my work”", text: "Before an upload → check terms, log tool, date · because: terms differed"}
+    - {label: "“Be honest”", text: "Before an invoice → list AI use · because: clients ask"}
+  reveal: [1, 3]
+  result: "The value becomes the “because”"
+  notes_reveal:
+    - minutes: 0.75
+      say: |
+        Here is the method on one person. Hana starts from three values, the kind most people would write first.
+        Take "respect artists." As a commitment: before I use any AI image generation on a client job, I get the
+        client's written agreement, because my contract clause requires it and a bakery client once arrived with a
+        generated draft. Check it. Moment: any client job, before generation; Hana would notice that. Action: the
+        agreement on file, which someone could check. Reason: the clause together with Hana's own evidence, the
+        bakery job. Notice a detail: an earlier draft began "When a client's brief mentions AI images." That
+        trigger would miss briefs that say nothing about AI. A trigger must cover the whole rule it cites.
+      background: |
+        §21.2 Worked Example "Hana's Values Become Triggers" (constructed; Hana uses they/them; major Media Arts and
+        Design, D26). The bakery job and the contract clause come from Chapter 18; the tool-terms comparison from
+        Chapter 13.
+      activity: "Ask: 'Which of the three questions would the earlier draft fail?' (Moment: it misses some jobs.)"
+      book: "§21.2 Worked Example; @fig-21-5."
+    - minutes: 0.75
+      say: |
+        The other two follow the same pattern. "Protect my work": before I upload a drawing to any tool, I check its
+        data terms and log the tool and the date, because comparing two tools' terms showed me how much they differ.
+        Moment: the upload. Trace: the log line. Reason: Hana's own comparison. "Be honest": before I send an
+        invoice, I list any AI use in its notes, because clients already ask me about these tools. Moment: the
+        invoice. Trace: the notes. Reason: what clients have asked. Hana then adds two more lines: one on tracing
+        images before they are printed, a verification line, and a risk line about contributors' scans and tools
+        that train on uploads. Five lines in all, covering the four required kinds.
+      background: |
+        Hana's full card (@fig-21-5, longdesc): five commitments; boundaries (client contracts, the course's zones,
+        the zine collective's rules; ask the client or the collective); review by the first week of next term;
+        triggers: a new contract, a change in a tool's terms, a change to the zine's form; dated note: the
+        school-provided tool's terms say prompts are not used to train its foundation models (as of October
+        2026). Faded example (student teacher; two of ten AI-stated curriculum facts wrong in his A5) is home
+        practice; model answer in Appendix E.
+      misconceptions:
+        - m: "M1 'A code of practice is a list of good values.'"
+          fix: "Show that each value survives, as the reason, not as the line."
+      activity: "Ask students to rewrite one of their own values the same way."
+      book: "§21.2 Worked Example; @fig-21-5; Faded Example 'A Student Teacher's Values'."
+  notes:
+    book: "§21.2 Worked Example 'Hana's Values Become Triggers'."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§21.2 · four required lines, then the rest"
+  title: "Every code covers four things"
+  size: 22
+  columns:
+    - heading: "Verification"
+      role: verified
+      text: "Check numbers, names, dates before others rely on them"
+    - heading: "Data"
+      role: neutral
+      text: "What goes into which tool"
+    - heading: "Disclosure"
+      role: neutral
+      text: "Say what AI did before you send or submit"
+    - heading: "One of"
+      role: soft
+      text: "Delegation, or risk, or fairness"
+  takeaway: "Five to seven in all: a line you cannot recall will not help"
+  notes:
+    say: |
+      Every code written with this chapter has at least one commitment each on verification, data and disclosure, and a fourth
+      on delegation and oversight, or risk, or fairness, whichever your work most needs. Then add others, up to
+      seven in all, by the stakes in your field and by what your own record shows you forget. Why not more? Because a
+      line you cannot recall at the moment it matters will not help you. Each course method suggests a trigger: the
+      Verification Funnel, before you send anything with a number, a name or a date others will rely on; the data
+      gate, before you paste anything that is not Public Data; approval gates, when a workflow can send, pay, publish
+      or delete; fairness checks, when an output will describe, score or sort people.
+    background: |
+      §21.2 tables: AI Work Loop (1), Delegation Ladder (5), Verification Funnel (8), data gate (12), approval gates
+      (14), Risk Heat Map (15), fairness checks (16), disclosure (10), each with a cue and a commitment; plus the
+      definitions table (Verification Funnel, independent check, primary source, stakes, data class, data gate, hard
+      gate, risk owner, paired-input test). Check Yourself 21.2 (3): verification, data, disclosure, and one on
+      delegation and oversight, or risk, or fairness. Rubric: all four required lines present for full "Grounding"
+      credit (4); one missing drops to Developing (2).
+    misconceptions:
+      - m: "M6 'The more rules in my code, the safer.'"
+        fix: "Five to seven; recall at the moment matters. Do not overcorrect into 'fewer is better': the four required lines stay."
+    activity: "Ask students which fourth line their work most needs, and why."
+    book: "§21.2 'Where triggers come from' table; 'Four required lines, then the rest'; Check Yourself 21.2."
+
+- layout: concept
+  minutes: 1
+  kicker: "§21.2 · own evidence"
+  title: "Your “because” comes from your own record"
+  size: 26
+  bullets:
+    - "Search your Failure Diary, graded work, lab records"
+    - "Find a moment that cost time, a grade or a correction"
+    - "A rule can be part of the reason, not all of it"
+  takeaway: "“Two of ten AI-stated dates in my A5 were wrong” beats “AI makes mistakes”"
+  notes:
+    say: |
+      The third test question asks whether your reason points to your own evidence: something from your own work
+      that shows why the line matters to you. Where do you find it? Open your Failure Diary, your graded assignments
+      and your lab records, and look for a moment that cost you time, a grade or a correction: two wrong dates in
+      your A5 table, a planted fault your A11 dry run missed, a lab where a tool's answer changed between runs. If
+      you wrote the optional Chapter 13 verification protocol, its log counts too. A rule can be part of the reason,
+      but only together with your own evidence. "Because AI tools make mistakes" is true of everyone; it is not your
+      evidence.
+    background: |
+      §21.2 "Your own evidence". Review A12 (even; key not shown) practices the reason question; Check Yourself 21.2
+      (2): a rule says what you must do, not why the line matters to you. Lab 21.2's point: a generated code can
+      never pass the reason question for you, because the tool has no access to your evidence. The alternative
+      assignment (four role briefs on the course site) treats the brief's three dated incidents as "your own evidence".
+    questions:
+      - q: "What if I prefer not to describe my own practice?"
+        a: "Use the alternative assignment: write the code for a role from one of four role briefs; the brief's incidents count as your evidence (Application Assignment, Alternative)."
+    activity: "Ask students to name one moment from their own record in one line."
+    book: "§21.2 'Your own evidence'; Check Yourself 21.2; Application Assignment."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Review Questions A3 · §21.2"
+  title: "fourteen commitments"
+  question: "A classmate’s code has fourteen commitments, one for every chapter. What is the main problem?"
+  options:
+    - "None: more commitments make a person’s work safer than a short list of lines could."
+    - "A code may contain only the four required lines and nothing more."
+    - "Codes longer than five lines break the course’s written policy."
+    - "Fourteen lines are hard to recall, so many will not come to mind when needed."
+  answer: d
+  instruction: "Answer on your own, then check"
+  explanation: "(a) is the misconception itself; (b) misstates the rule (5–7, four required); (c) invents a rule"
+  notes:
+    say: |
+      One more exam-format item, on how long a code should be. Read all four options. Two of them invent or misstate
+      a rule, so check each one against what the chapter actually requires: how many commitments, and which lines
+      are required. One option states the misconception directly; if it sounds reasonable to you, that is the
+      reason the item exists. Ask yourself what a code is for: a line helps only if it comes to mind at the moment it
+      matters. Commit to an answer before you look.
+    background: |
+      Review Questions A3 (O3 · LO5 · Evaluate). Key (Appendix E): (d) (M6). (a) is M6 itself; (b) misstates the
+      rule (5–7 with four required); (c) invents a rule.
+    activity: "30 s, then the answer slide."
+    book: "§21.2; Review Questions A3; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (d): fourteen lines are hard to recall, so many will not come to mind when needed. A code works
+      at the moment of action, under some pressure, so it has to be short enough to remember. Option (a) is the
+      misconception itself: more rules feel safer, but a rule that does not come to mind does not fire. Option (b)
+      misstates the rule: the chapter asks for five to seven commitments, four of which are required kinds. Option (c)
+      invents a rule: there is no five-line limit. The fix for the classmate: keep the lines their own record shows
+      they need, and cover the four required kinds.
+    background: |
+      Appendix E (Chapter 21, Review A3). Rubric, Commitments as triggers: "eight or more" commitments scores
+      Proficient (3.5) at most.
+    activity: "Self-check."
+    book: "§21.2; Appendix E; Application Assignment rubric."
+
+- layout: section
+  minutes: 0
+  number: "21.3"
+  tag: "Core"
+  title: "Your code inside the rules that bind you"
+  idea: "Your code adds to the rules that bind you; it never loosens them."
+  meta: "Book §21.3 · workshop draft, part 2"
+  notes:
+    say: |
+      Your code is not the only set of rules you are under. Chapter 18 described the layers: law; what you agree to,
+      such as terms of service, licenses and contracts; and your organization's policy, the written rules of your
+      course, school or employer. Its working rule applies here unchanged: follow the strictest rule that
+      applies, and when a rule is unclear, ask its owner in writing and keep the answer. So your code may be
+      stricter than any rule you are under, never looser. If your code says "drafting with AI is fine" and an
+      assignment says no, the assignment wins.
+    background: |
+      §21.3; §18.1 "follow the strictest rule that applies". Rule's owner: the person or office that can say what a
+      rule means (instructor, manager, client, clinical instructor). This chapter is not legal advice.
+    activity: "Reference."
+    book: "§21.3; Chapter 18 §18.1."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "§21.3 · the boundaries line · Marcus (nursing), constructed"
+  title: "Name the rules, say the stricter wins, name the owner"
+  size: 24
+  bullets:
+    - "This code works inside [the rules I am under]"
+    - "Where one of them is stricter, it wins"
+    - "When a rule is unclear, I ask [its owner, by role]"
+  takeaway: "Marcus: course zones, data classes, placement rules · ask my clinical instructor"
+  notes:
+    say: |
+      Write this into your code as a boundaries line, with three parts. One: the rules you are under, cited, not
+      copied: "the course's zones, section 1.5," not a restatement of them as if they were law. Two: where one of
+      them is stricter, it wins. Three: when a rule is unclear, whom you ask, by role. Here is Marcus's: this code
+      works inside the course's zones, the institution's data classes and my placement site's rules; where one of
+      them is stricter, it wins; when a rule is unclear, I ask my clinical instructor. His first commitment, no
+      information about a patient in any AI tool, even without a name, is stricter than any of these rules. That is
+      allowed: a personal line may be stricter, never looser.
+    background: |
+      §21.3 Worked Example "Marcus's Boundaries Line" (constructed). His reason is his own: his A12 data-flow map
+      showed that what he pastes is stored under the provider's rules. What if a rule seems wrong? ACM principle 2.3,
+      paraphrased: rules judged unethical should be challenged; consider challenging through existing channels before
+      breaking a rule; anyone who breaks one must consider the consequences and accept responsibility. Your code is
+      not a reason to skip a rule, a review or a person's approval. Check Yourself 21.3: (1) the assignment applies;
+      (2) the three parts. Rubric "Fit with the rules that bind you" (2): 0 if a commitment is looser than a rule you
+      are under.
+    questions:
+      - q: "What if my code is stricter than my employer's rule? Is that unprofessional?"
+        a: "No: a personal code may be stricter, never looser (Review C2 asks for a position). Being stricter about patient information, for example, is within your own control."
+    misconceptions:
+      - m: "M2 'My code is my own rule, so where I disagree with a rule, my code decides.'"
+        fix: "Stricter wins; ask the owner. Do not overcorrect into 'rules can never be questioned': ACM 2.3 says challenge through existing channels first."
+    activity: "Ask: 'Name one rule you are under that your course does not set.'"
+    book: "§21.3, Worked Example 'Marcus's Boundaries Line', @fig-21-8; Check Yourself 21.3."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Review Questions A7 · §21.3"
+  title: "stricter than every rule"
+  question: "Which statement about a personal line that is stricter than every rule you are under is accurate?"
+  options:
+    - "It must be removed, because a code may not go beyond the rules."
+    - "It is allowed only if your employer approves it in writing first."
+    - "It turns into a rule that binds your classmates once it is graded."
+    - "It is allowed: a personal code may be stricter, but never looser."
+  answer: d
+  instruction: "Answer on your own, then check"
+  explanation: "(a) and (b) misstate the rule; (c) a personal code binds no one else"
+  notes:
+    say: |
+      This item checks the boundaries rule in the direction students often forget. We usually ask whether a code is
+      looser than a rule. Here the line is stricter than every rule you are under. Is that allowed, does it need
+      permission, and does it bind anyone else? Think of Marcus's patient line: no information about a patient in
+      any AI tool, even without a name, which is stricter than the course, the institution and his placement. Read
+      all four options and commit.
+    background: |
+      Review Questions A7 (O3 · LO5 · Understand). Key (Appendix E): (d). (a) and (b) misstate the rule; (c) a
+      personal code binds no one else. Distractors from M2 (chapter comment).
+    activity: "30 s, then the answer slide."
+    book: "§21.3; Review Questions A7; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (d): it is allowed, because a personal code may be stricter than the rules you are under, but
+      never looser. Option (a) gets the rule backwards: going beyond the rules in the stricter direction is exactly
+      what a personal code may do. Option (b) invents a permission step; you do not need approval to hold yourself to
+      a higher standard. Option (c) is wrong because a personal code binds no one but you; grading it does not make
+      it a rule for others. The one case to watch is the opposite: a line looser than a rule you are under scores
+      zero on the "fit" criterion.
+    background: |
+      Appendix E (Chapter 21, Review A7). Rubric "Fit with the rules that bind you": 0 if a commitment is looser than
+      a rule you are under.
+    activity: "Self-check."
+    book: "§21.3; Appendix E."
+
+- layout: section
+  minutes: 0
+  number: "21.4"
+  tag: "Core"
+  title: "How codes age"
+  idea: "Keep what changes slowly apart from what changes fast, and set a date to look again."
+  meta: "Book §21.4 · part of finishing your code"
+  notes:
+    say: |
+      The ACM code went from 1992 to 2018 without an update. Your code will age faster, because tools change every
+      few months. Section 21.4 gives three habits. Keep tool facts out of your commitments and in dated notes. Set a
+      review date and review triggers that send you back earlier. And keep marks: brief notes of when a commitment
+      applied and what you did, so that your review rests on evidence. A code you never check behaves like what
+      Chapter 14 called a soft gate: text that asks for an action but cannot make it happen.
+    background: |
+      §21.4. Soft gate (Chapter 14): an instruction in the context asking the model to ask first or not to act, which
+      the model receives as text and may not follow; here, an unread code is text you wrote, with nothing that makes
+      you act on it. ACM principle 2.5 asks for a similar habit for systems whose future risks cannot be reliably
+      predicted.
+    activity: "Reference."
+    book: "§21.4 How Codes Age."
+
+# Native redraw of @fig-21-9 (the book figure's example text is too small at slide size).
+- layout: compare
+  minutes: 1
+  kicker: "§21.4 · three shelf lives (book figure, redrawn)"
+  title: "Commitments last years; tool facts last months"
+  size: 22
+  columns:
+    - heading: "Commitments · years"
+      role: human
+      text: "Before I send, I check each number, name and date"
+    - heading: "Practices · 1–2 years"
+      role: neutral
+      bullets: ["Prompt template", "Checklist", "Review routine"]
+    - heading: "Tool notes · months"
+      role: soft
+      bullets: ["Tool, model, price", "Data terms, settings", "“As of [month year]”"]
+  takeaway: "Tool names go in dated notes"
+  notes:
+    say: |
+      This book dates its own content in three layers, and your code can do the same. Commitments should last
+      years: "before I send anything others will rely on, I check every claim that carries a number, a name or a
+      date." Practices, such as a prompt template, a checklist or a review routine, last a year or two. Tool notes,
+      such as which tool, which model, its price, its data terms or a setting, last months. So keep tool facts out of
+      your commitments and in dated notes, each written with the date it was true: "as of" a month and year. This is
+      not a ban on naming tools. It is about putting the name where it can age without breaking the commitment.
+    background: |
+      §21.4 and @fig-21-9 (source: the book's own dating rule, not a measured result). Check Yourself 21.4 (1): tool
+      facts change in months, commitments should last years; a dated note keeps the fact and its date together.
+      Review A9 (odd): tool's name and price go in a dated note because tool facts change in months while commitments
+      should last years. Rubric "Review plan and dated notes": one tool fact inside a commitment = 1.5 of 2.
+    misconceptions:
+      - m: "M4 'A good code names the exact tools and settings I use.'"
+        fix: "Move the tool into a dated note. Do not overcorrect into 'never name a tool': tools may be named, in dated notes."
+    activity: "Ask: 'Which line of your draft names a tool?' Move it."
+    book: "§21.4, @fig-21-9; Check Yourself 21.4; Review A9."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§21.4 · a review plan (book figure: review cycle)"
+  title: "A date, triggers, and marks to reread"
+  size: 22
+  columns:
+    - heading: "Review date"
+      role: human
+      text: "≤ 6 months, or before your next job, placement or term"
+    - heading: "Review triggers"
+      role: neutral
+      bullets: ["Model update or retirement", "New price, terms, input", "New job, school or rule", "A failure you met"]
+      size: 20
+    - heading: "Marks"
+      role: soft
+      text: "When a line applied, and what you did"
+  takeaway: "At review: keep, revise or retire each line"
+  notes:
+    say: |
+      Three parts of a review plan. A review date: the date by which you reread your whole code and keep, revise or
+      retire each line. The chapter asks for one no more than six months ahead, and before a new job, internship,
+      clinical placement or term, whichever comes first. Review triggers: events that send you back before the
+      date. Chapter 12's re-test triggers all apply: a model update or retirement, a change in price or terms, a new
+      kind of input, a change of job or school. Add two more: a new rule from someone who binds you, and a failure
+      you met. Marks: a brief note each time a commitment applies. At your review, the marks show which lines did
+      their job and which never came up.
+    background: |
+      §21.4 and @fig-21-10. Check Yourself 21.4 (2): a new kind of input is a re-test trigger and so a review
+      trigger; do not wait for the date. Hana's plan (worked example): review the first week of next term; triggers:
+      a new client contract, a change in a tool's data terms, a change to the zine's submission form; marks: a line
+      in the job log each time a commitment applies. Faded example (co-op engineering student; model being retired)
+      in Appendix E. Mini-Project (optional): a six-week code log, like a check sheet (From the Field: Şeker, 2014,
+      check sheet).
+    questions:
+      - q: "My firm adopts a new AI tool two months before my review date. Wait?"
+        a: "No. A new tool is a review trigger: reread your marks, then keep, revise or retire lines now (Review A6's logic)."
+    misconceptions:
+      - m: "M3 'Once written, a code is finished.'"
+        fix: "Point to the triggers column: the world sends you back before the date."
+    activity: "Students write their review date on their draft now."
+    book: "§21.4, @fig-21-10, Worked Example 'Hana's Review Plan'; Check Yourself 21.4."
+
+- layout: assignment
+  minutes: 1.5
+  kicker: "Application Assignment · O5 · LO7, LO4, LO5 · 15 of the portfolio’s 100"
+  title: "Your personal AI code of practice"
+  due: "With the portfolio, when your instructor sets it · one page; card about 300 words"
+  parts:
+    - "Scope line: who you are in this code, and the date"
+    - "5–7 commitments “When…, I…, because…” incl. the four required lines"
+    - "Boundaries line; review date and two or more triggers"
+    - "Dated notes (optional); trigger-test record with one revised line"
+    - "AI Use Declaration for the code"
+  rubric_title: "Rubric · 15 points"
+  rubric:
+    - {criterion: "Triggers", points: 5, full: "5–7 lines; all pass the recorded test"}
+    - {criterion: "Own evidence", points: 4, full: "Every reason yours; four required lines"}
+    - {criterion: "Fit with rules", points: 2, full: "Rules cited; stricter wins; owner named"}
+    - {criterion: "Review plan", points: 2, full: "Date within limit; ≥ 2 triggers; tool facts in notes"}
+    - {criterion: "Revision", points: 1, full: "Before/after; question failed and passed"}
+    - {criterion: "Declaration", points: 1, full: "All five elements"}
+  note: "Drafting help is permitted with disclosure, but every line must be yours to explain in your defense."
+  notes:
+    say: |
+      Here is what you submit with the portfolio. One page. A scope line: who you are in this code, such as
+      a student in your major, a job, freelance work or a club, and the date. Five to seven commitments in the "when,
+      I, because" form, including the four required lines. A boundaries line. A review plan: a date no more than six
+      months ahead, or before your next job, placement or term, and at least two review triggers. Optional dated
+      notes. The trigger-test record from today, with one revised line. And an AI Use Declaration for the code. It
+      is worth fifteen of the portfolio's hundred points. In your defense you may be asked to explain one line: why
+      that moment, how you would show you acted, what evidence stands behind it.
+    background: |
+      Application Assignment (chapter). AI use: following the book's three zones (§1.5), drafting help is permitted with disclosure
+      and verification; feedback and grammar-only edits are permitted and listed; every commitment must be the
+      student's own and each "because" must point to their own evidence; the brief is the explicit permission §10.2's
+      table asks for. Without a trigger-test record (item 7), the first criterion is scored at Proficient at most. A
+      true "no AI tools used" declaration scores 1. Never include personal or confidential data about anyone else.
+      Alternative assignment: write the code for a role from one of four role briefs on the course site (hospital unit
+      clerk, marketing intern, lab research assistant, freelance translator); the brief's incidents count as your
+      own evidence. Time: workshop draft about 15 minutes; finishing about 27–29 minutes (about 42–44 in all).
+    questions:
+      - q: "Can I ask an AI tool to write my code?"
+        a: "Drafting help is permitted with disclosure, but no tool can supply your own evidence, so a generated line cannot pass the reason question for you (Lab 21.2). You must be able to defend every line without a tool."
+    activity: "Point at 'Triggers' (5) and 'Own evidence' (4): nine of fifteen points."
+    book: "Application Assignment: Your Personal AI Code of Practice (brief, rubric, alternative); §21.5, @fig-21-11."
+
+# ======================================================================= FINAL-REVIEW SEGMENT · 10 MINUTES
+- layout: section
+  session: may4
+  minutes: 0
+  number: "Review"
+  tag: "Review"
+  title: "Final review: Chapters 8 to 20"
+  idea: "Ten minutes on the items whose answers are not in Appendix E."
+  meta: "Final Bridge · even items · then the session continues"
+  notes:
+    say: |
+      As promised in Chapter 21, the first ten minutes today are final review. You answered the Final Bridge at
+      home: ten items on Chapters 8 to 18, on ideas Chapter 21 does not practice again. The odd-numbered answers are
+      in Appendix E. The even-numbered ones we go through now, quickly; I will also post the key on the course site.
+      Have your own answers in front of you. Before the items, one slide that shows where every chapter from 8 to 20
+      sits on the AI Work Loop, because exam practice is weighted toward these chapters.
+    background: |
+      Final Bridge introduction (chapter): the final covers the Core sections of the whole book in three parts
+      (terms and concepts, a case, interpretive questions); Chapter 10's Midterm Bridge reviewed Chapters 1 to 7;
+      Chapters 19 and 20 are practiced in Chapter 21's Spaced Review; odd answers in Appendix E; the instructor
+      posts the rest and reviews them in a 10-minute slot. In the book's suggested pacing this slot opens the second
+      defense session; an instructor who needs that time for defenses can post these three slides as the review
+      instead. The even-item key is an instructor-package asset. Note: the chapter text still dates this slot, pending
+      the D27 assembly pass.
+    activity: "On screen as students arrive."
+    book: "Final Bridge: Chapters 8 to 20 (introduction)."
+
+# About 55 words: the five Work Loop steps with their chapters redraw @fig-21-14; labels are the content (deliberate exception).
+- layout: compare
+  minutes: 1
+  kicker: "Final Bridge · Chapters 8–20 on one loop (book figure, redrawn)"
+  title: "Where each chapter put its weight"
+  size: 20
+  columns:
+    - heading: "Frame"
+      role: neutral
+      bullets: ["12 fit matrix", "19 Discipline × Use Map"]
+    - heading: "Prompt"
+      role: neutral
+      bullets: ["15 data-flow map"]
+    - heading: "Verify"
+      role: neutral
+      bullets: ["8 Funnel", "9 source ladder", "16 Bias Lifecycle"]
+    - heading: "Decide"
+      role: neutral
+      bullets: ["11 proxy trap", "14 Approval Gates", "18 Regulation Map"]
+    - heading: "Disclose"
+      role: neutral
+      bullets: ["10 voice spectrum", "20 Portfolio Anatomy"]
+  header_height: 0.75
+  takeaway: "Core sections only · Deep chapters (6, 13, 17, 22, 23) are not examined"
+  notes:
+    say: |
+      Here are Chapters 8 to 20 on the five steps of the AI Work Loop, with the key diagram of each chapter's main
+      highlight. Frame: Chapter 12's task and tool fit matrix, and Chapter 19's Discipline × Use Map. Prompt: Chapter
+      15's data-flow map. Verify: Chapter 8's Verification Funnel, Chapter 9's source ladder and Chapter 16's Bias
+      Lifecycle. Decide: Chapter 11's proxy-variable trap, Chapter 14's Agent Loop with Approval Gates and Chapter
+      18's Regulation Map. Disclose: Chapter 10's voice and ownership spectrum and Chapter 20's Portfolio Anatomy.
+      If you can draw each of these diagrams from memory and say what question it answers, you are well prepared for
+      the terms-and-concepts items. Deep chapters and Deep sections are not examined.
+    background: |
+      @fig-21-14 and the chapter's table list every highlight, main and second: Verify second 11, 12, 14, 20; 13
+      (Deep, not examined); 17 (second; Deep). Decide second 8, 10, 15 (Risk Heat Map), 16. Disclose second 9, 18,
+      19; 17 (Deep, not examined); 13 (second; Deep). Only main highlights are shown on the slide to keep labels
+      legible. Examinable scope: Core sections only (D20); Deep chapters 6, 13, 17, 22, 23 and all Deep sections are
+      not examinable. The long description calls Chapter 19's diagram a "discipline × use heat map"; the chapter's
+      table says "Discipline × Use Map", used here.
+    activity: "1 min; point, do not read."
+    book: "Final Bridge, @fig-21-14 and its table."
+
+# About 56 words: five exam prompts must be legible for a 7-minute oral review (deliberate exception).
+- layout: concept
+  minutes: 7
+  kicker: "Final Bridge · even items · key from the instructor"
+  title: "Five items to review together"
+  size: 22
+  bullets:
+    - "**FB2** (Ch. 9): which drift type?"
+    - "**FB4** (Ch. 12): does a top ranking mean fit?"
+    - "**FB6** (Ch. 14): 15 steps at 98%; where does a person go?"
+    - "**FB8** (Ch. 18): chatbot 60 days, policy 30; who answers?"
+    - "**FB10** (Ch. 10): can a co-drafted message be mine?"
+  takeaway: "Check your answer against the key; reread “Missed it?”"
+  notes:
+    say: |
+      Take out your answers to the even-numbered items. I will read each prompt, ask two of you for your answer and
+      reason, then give the key. About eighty seconds each. FB2, Chapter 9: an AI summary says a study "shows that
+      more sleep raises grades"; which drift type is it? FB4, Chapter 12: a tool tops a public ranking, so is it the
+      best fit for your lab reports? FB6, Chapter 14: a fifteen-step workflow, each step right 98 percent of the
+      time; what share of runs finish with no error, and where would you put a person? FB8, Chapter 18: who answers
+      to the customer when the chatbot is wrong, and does the label move that? FB10, Chapter 10: use the voice and
+      ownership spectrum. If you missed one, reread the section the item names.
+    background: |
+      Even-item answers are instructor-only (slides/README.md; book rule): read them from private/ch21-answers-even.md
+      or your posted key, never put them on a slide or in this deck. "Missed it?" pointers (chapter): FB2 sections
+      9.4 and 9.5; FB4 12.1 and 12.6; FB6 14.3 and 14.4 (Chapter 14's calculation, steps independent); FB8 18.4; FB10
+      10.2. Item formats: FB2 and FB4 are multiple choice (Bridge A), FB6 and FB8 case questions (Bridge B), FB10
+      interpretive (Bridge C). With five items in 7 minutes that is about 80 seconds each, so take one student
+      answer per item if the room is slow.
+    activity: "7 min: about 80 seconds per item; cold-call two students per item."
+    book: "Final Bridge FB2, FB4, FB6, FB8, FB10 and their 'Missed it?' sections."
+
+- layout: compare
+  minutes: 2
+  kicker: "Final-exam practice · the Final Bridge’s three parts"
+  title: "Three kinds of items, Core sections only"
+  size: 22
+  columns:
+    - heading: "Bridge A"
+      role: soft
+      bullets: ["Terms and concepts", "Multiple choice"]
+    - heading: "Bridge B"
+      role: soft
+      bullets: ["Case questions", "Short written parts"]
+    - heading: "Bridge C"
+      role: soft
+      bullets: ["Interpretive questions", "Take a position"]
+  takeaway: "No AI tool during an exam: it shows what you can do yourself"
+  notes:
+    say: |
+      Two minutes on how to use what is left. The Final Bridge, like the review items at the end of every chapter,
+      comes in three kinds. Bridge A: terms and concepts, in multiple-choice form; the key terms lists are your
+      study guide. Bridge B: case questions with several short written parts; practice them by writing every part,
+      including the documented-or-inferred tag and the named owner, which are the parts most often missed. Bridge C:
+      interpretive questions where you take a position and support it with the book's ideas. Only Core sections are
+      examinable; Deep sections are not. And if your course has an exam, no AI tool is used during it: an exam shows
+      what you can do yourself.
+    background: |
+      Final Bridge structure (chapter): Bridge A terms and concepts (FB1–FB5), Bridge B case questions (FB6–FB8),
+      Bridge C interpretive questions (FB9–FB10). Exam practice in the book: faded examples, Review Questions A, the
+      Spaced Review, Case Study questions and the Final Bridge (D23, D24). Exam format, weights, date and length are
+      set by the instructor; the deck states none. AI use during examinations is in the book's "not acceptable" zone
+      (§1.5).
+    questions:
+      - q: "Is Chapter 21 itself examinable?"
+        a: "Its Core sections are: 21.1–21.4 (Part A). Part B's Case Study is practice; Deep 21.A and 21.B are not examinable."
+    activity: "2 min; then continue with the session's main business."
+    book: "Final Bridge introduction and structure; §1.5."
+
+# ======================================================================= REVIEW SEGMENT · PART B AND FINAL BRIDGE
+- layout: section
+  session: review
+  minutes: 0
+  number: "Part B"
+  tag: "Core"
+  title: "What a profession’s code can and cannot do"
+  idea: "A code is a basis for judgment, not a procedure — and it needs readers."
+  meta: "Case Study (C21), Ethics Lens, Summary, Last Words · read before the final review"
+  notes:
+    say: |
+      This is the final-exam review segment: Part B of Chapter 21 and the Final Bridge items whose answers are in
+      Appendix E, each answer on the next slide. Use it on your own or in an office-hours review. Part B returns to
+      the ACM code with two questions. How is a profession's code built, and what does it say it cannot do? And does
+      a code change what people do? Then the chapter closes the book: five students' first lines and the last words.
+      If you run this segment in a group, it takes about half an hour.
+    background: |
+      Part B: Case Study, Chapter Summary, Last Words (about 7 minutes reading), plus the End-of-Chapter Package with
+      the Final Bridge (final-exam practice, about 70 minutes; Final Bridge about 40). Minutes in this segment are
+      estimates for an optional group review (about 30 min), outside any planned session.
+    activity: "Optional review segment."
+    book: "Part B box; Case Study; Final Bridge."
+
+- layout: compare
+  minutes: 2
+  kicker: "Case Study (C21) · ACM Code of Ethics, 2018 · confirmed"
+  title: "How the code is built, and what it says it cannot do"
+  size: 22
+  columns:
+    - heading: "Built"
+      role: neutral
+      bullets: ["Principles + guidelines", "Four sections, incl. compliance", "2.5: reassess unpredictable systems"]
+    - heading: "Its own limit"
+      role: soft
+      bullets: ["A basis for decisions, not a procedure", "Taken as a whole; needs judgment"]
+    - heading: "Your decision"
+      role: human
+      bullets: ["How often you review", "One principle as your trigger"]
+  takeaway: "No AI output, nothing failed: no tree label"
+  notes:
+    say: |
+      How the code is built: principles stated as responsibilities, each followed by guidelines that say what it
+      means in practice. Section 1 holds general ethical principles, such as avoid harm, be honest and trustworthy,
+      respect privacy. Section 2 adds professional responsibilities, including respecting existing rules, 2.3,
+      giving thorough evaluations of systems and their risks, 2.5, and disclosing when a task is beyond one's
+      competence, 2.6. Section 3 is for leaders. Section 4 is about compliance. What it says it cannot do: the
+      Preamble calls it a basis for ethical decision-making, not a procedure; several principles may apply with
+      different weight, and applying them takes judgment. Your decision: how often you will review your code, and
+      which ACM principle you would turn into a commitment of your own.
+    background: |
+      Case Study (confirmed: ACM, 2018a). Section 4: members should uphold the code; violations are treated as
+      inconsistent with ACM membership and may be reported to the ACM; ACM has an Enforcement Policy. Section 3
+      example: taking care when modifying or retiring systems people depend on (3.6). The book reads the 26-year gap
+      as a reminder that codes age more slowly than the fields they guide (inferred tier). Labels: no AI output was
+      produced and nothing failed, so no Failure Taxonomy Tree label and no failure-to-harm chain link; a governance
+      document used as a model. Case Study Q1 (Appendix E): in 1992 many saw computing as purely technical and the
+      web was in its infancy; by 2018 computing could affect lives in ways not intended or predictable. Q3 example
+      commitment from 2.5: when a tool I rely on is updated, I re-run my three test inputs before using it again.
+    questions:
+      - q: "If the code admits it can't decide for me, what is it for?"
+        a: "It gives principles, reasons and guidelines that support judgment; Review C1 asks you to argue that triggers support judgment rather than replace it."
+    activity: "Ask each student to name the principle they would turn into a trigger."
+    book: "Case Study 'What a Profession's Code Can and Cannot Do'; Case Study Questions 1–4."
+
+- layout: compare
+  minutes: 2
+  kicker: "Ethics Lens · McNamara et al. (2018)"
+  title: "Does reading a code change answers?"
+  size: 22
+  columns:
+    - heading: "The study"
+      role: neutral
+      bullets: ["105 developers, 63 students", "Eleven scenarios", "One group asked to consider the ACM code"]
+    - heading: "Found"
+      role: soft
+      bullets: ["No significant difference from control"]
+    - heading: "Did not test"
+      role: neutral
+      bullets: ["Codes as triggers", "Codes people chose", "Training or enforcement"]
+  takeaway: "Risk: ethics washing, fine principles that change nothing"
+  notes:
+    say: |
+      Does a code change what people do? Researchers at North Carolina State University tested one version of that
+      question. They gave 105 professional software developers and 63 software engineering students eleven short
+      scenarios about ethical choices at work. One group was asked to consider the ACM code before answering; a
+      control group was not. They found no significant difference in the answers. What does that show? That being
+      asked to consider the code before a decision did not change answers in this setting. It does not show that
+      codes never work: the study did not test codes written as triggers, codes people chose themselves, training, or
+      codes with enforcement behind them. Still, it is a warning: ethics washing, good principles that make a person
+      look responsible without changing what they do.
+    background: |
+      McNamara, Smith and Murphy-Hill (2018), ESEC/FSE 2018. Ethics Lens second risk: a code used as cover; "my
+      code allows it" is not an answer to a client, patient or instructor who was not asked; the boundaries line and
+      the declaration point outward. Two protective habits: write lines that can be checked (moment, traceable
+      action, reason), and keep marks and review them. Review A10 (even; key not shown) asks what the study
+      reported.
+    misconceptions:
+      - m: "M5 'Writing a code makes me act ethically.'"
+        fix: "Use the study: being asked to consider a code did not change answers. Do not overcorrect into 'codes are useless': if-then plans help people act on goals they hold (Deep 21.A); write triggers and keep marks."
+    activity: "Ask: 'What would you need to see to believe your own code works?' (Marks.)"
+    book: "Ethics Lens 'A Code No One Reads'."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "Chapter Summary · five codes, first lines (constructed)"
+  title: "Five students, five first commitments"
+  size: 22
+  bullets:
+    - "**Lucía:** check every promise in an AI draft against policy"
+    - "**Marcus:** no patient information in any AI tool"
+    - "**Elif:** paired-input test before relying on a scoring tool"
+    - "**Sam:** hard gate and named person before spend, send, delete"
+    - "**Hana:** written agreement before AI images on client jobs"
+  notes:
+    say: |
+      The book's five students close their arcs with one line each from their codes, each tied to their own
+      evidence. Lucía, accounting: before an AI-drafted reply reaches a customer, she checks every promise in it
+      against the written policy, because a draft once offered a discount the policy did not allow, back in Chapter
+      1. Marcus, nursing: no information about a patient in any AI tool, because his data-flow map showed what he
+      pastes is stored under someone else's rules. Elif, psychology: a paired-input test before she relies on a tool
+      that scores students, because her 15-run test could show only a lead. Sam, mechanical engineering: a hard gate
+      and a named person before any spend, send or delete, because his agent once placed a $312 order. Hana: written
+      agreement before AI images on a client job.
+    background: |
+      Chapter Summary box "Five Codes, First Lines" (constructed examples, each in the student's own words). Each
+      covers a different required kind: verification (Lucía), data (Marcus), fairness (Elif), delegation and
+      oversight (Sam), and Hana's line combines a client rule with own evidence. Hana uses they/them.
+    activity: "Ask: 'Which of the five is closest to your own first line?'"
+    book: "Chapter Summary, box 'Five Codes, First Lines'."
+
+# ----------------------------------------------------------------------- Final Bridge, odd items
+- layout: section
+  minutes: 0
+  number: "Bridge"
+  tag: "Review"
+  title: "Final Bridge: odd items"
+  idea: "Answer without notes, then check on the next slide."
+  meta: "FB1, FB3, FB5, FB7, FB9 + Spaced Review 1, 3 · answers from Appendix E"
+  notes:
+    say: |
+      Now five Final Bridge items whose answers are in Appendix E: three multiple-choice items from Bridge A, one
+      case question from Bridge B, and one interpretive question from Bridge C. Answer each without notes
+      before you look at the next slide. If you miss one, reread the section named under the item. The even items,
+      whose answers your instructor posts, were reviewed in the ten-minute final review. Allow about forty
+      minutes for all ten items at home. After the five Bridge items come the two odd Spaced Review items, which
+      cover Chapters 19 and 20.
+    background: |
+      Final Bridge (chapter): ten items spaced over Chapters 8 to 18; odd answers in Appendix E; even answers posted
+      by the instructor. MC keys for odd items: FB1 c, FB3 b, FB5 a.
+    activity: "Optional review segment."
+    book: "Final Bridge: Chapters 8 to 20."
+
+- layout: quiz
+  minutes: 1.5
+  kicker: "Final Bridge FB1 · Chapter 8 · LO3"
+  title: "a tool’s own “yes”"
+  question: "You ask a chat tool whether a source it cited exists, and it answers, “Yes, it is a real article.” What does that answer count as?"
+  options:
+    - "An independent check, because you asked a second question in a new turn."
+    - "The primary source, because the tool named the article and its authors."
+    - "No evidence: a tool’s own “yes” is never a source; check an index or open the work."
+    - "An expert’s check, because the tool was trained on most of the published research in the field."
+  answer: c
+  instruction: "Answer without notes · Missed it? Reread §8.2 and §8.3"
+  explanation: "(a) the same tool is not independent; (b) naming is not the record; (d) a model is not an expert"
+  notes:
+    say: |
+      Chapter 8, the Verification Funnel. Recall the definitions: an independent check is evidence that no AI tool
+      produced; a primary source is the original record a claim comes from; an expert is a person with the knowledge
+      to judge the claim. Now apply them to a tool's answer about its own citation. Which of the three stages, if
+      any, does that answer reach? Be careful with option (a): asking again feels like checking, so ask yourself
+      whether the evidence came from outside the tool. Commit, then check.
+    background: |
+      FB1 (Chapter 8 · LO3 · Understand). Key (Appendix E): (c). Book-wide rule (chapter brief): an AI tool's own
+      "yes" is never a source.
+    activity: "1 min, then the answer slide."
+    book: "§8.2–8.3; Final Bridge FB1; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (c): a tool's own "yes" is no evidence; it is never a source. To check that a cited article
+      exists, search an index or open the work itself. Option (a) is tempting, but a second question to the same tool
+      is not independent: the evidence still comes from the tool. Option (b) confuses naming a source with the
+      record itself; the primary source is the article, which you have not seen. Option (d) treats a model as an
+      expert; an expert is a person who can judge the claim, and training data is not judgment. This is the single
+      most useful habit from Chapter 8.
+    background: |
+      Appendix E (Final Bridge FB1): (a) a second question to the same tool is not independent; (b) the tool's naming
+      is not the record; (d) a model is not an expert.
+    activity: "Self-check."
+    book: "§8.2–8.3; Appendix E."
+
+- layout: quiz
+  minutes: 1.5
+  kicker: "Final Bridge FB3 · Chapter 11 · LO3"
+  title: "three methods agree"
+  question: "A tool computes a club’s dollars per volunteer hour from a log with two blank hour cells; three ways of handling the blanks pick the same “best” event. What does that agreement show?"
+  options:
+    - "The result is reliable: three different ways of handling the blanks reached the same answer."
+    - "Little on its own: each way of handling a blank is an assumption, and all can be wrong."
+    - "The blanks do not matter, because functions such as AVERAGE leave empty cells out."
+    - "The tool made an error, because an analysis may not use a log with missing values."
+  answer: b
+  instruction: "Answer without notes · Missed it? Reread §11.2"
+  explanation: "(a) agreement is not evidence of correctness; (c) leaving blanks out is itself a choice; (d) overcorrects"
+  notes:
+    say: |
+      Chapter 11, data and decisions. A club's log has two blank hour cells, and three different ways of handling
+      them all pick the same best event. It feels like strong evidence. Before you choose, ask what each way of
+      handling a blank actually assumes about the missing hours, and whether three assumptions agreeing makes any of
+      them true. Remember Lucía's fundraiser: the real hours were on the paper sign-in sheets, and they changed the
+      answer. Write your letter down before you look; on an exam, a multiple-choice item gives you no second try.
+    background: |
+      FB3 (Chapter 11 · LO3 · Understand). Key (Appendix E): (b). Lucía's A9 (Chapter 11, reused in Chapter 20): two
+      unlogged book-swap shifts reversed which fundraiser looked best.
+    activity: "1 min, then the answer slide."
+    book: "§11.2; Final Bridge FB3; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (b): the agreement shows little on its own, because each way of handling a blank is an
+      assumption, and all of them can be wrong. Option (a) treats agreement among methods as evidence that they are
+      right; it is not, if they share the same blind spot. Option (c) hides a choice: leaving empty cells out of an
+      average is itself one way of handling the blanks. Option (d) overcorrects: an analysis can use a log with
+      missing values, as long as you state how you handled them and check what you can, for example against the
+      paper sign-in sheets.
+    background: |
+      Appendix E (Final Bridge FB3): (a) agreement among methods is not evidence that they are right; (c) leaving
+      blanks out is itself a choice; (d) overcorrects.
+    activity: "Self-check."
+    book: "§11.2; Appendix E."
+
+- layout: quiz
+  minutes: 1.5
+  kicker: "Final Bridge FB5 · Chapter 16 · LO5"
+  title: "three fairness measures"
+  question: "Why can a screening tool, in general, not give two groups equal selection rates, error rates and precision at once?"
+  options:
+    - "When it makes errors and the groups’ base rates differ, the three cannot all hold."
+    - "The developers chose one definition and never tested the other two."
+    - "Fairness definitions apply only to tools that take a protected characteristic as an input."
+    - "Any tool trained on past data is biased against every group equally."
+  answer: a
+  instruction: "Answer without notes · Missed it? Reread §16.3"
+  explanation: "(b) assumes a better choice would fix it; (c) and (d) are unrelated misreadings"
+  notes:
+    say: |
+      Chapter 16, fairness. The question says "in general": not for one badly built tool, but for any screening tool
+      that makes errors. Recall the three measures: selection rates, error rates and precision, compared between two
+      groups. What property of the two groups makes it impossible to equalize all three at once? If you are
+      unsure, think about what happens when one group has a higher share of qualified people than the other. Write
+      your letter down, then check it on the next slide.
+    background: |
+      FB5 (Chapter 16 · LO5 · Understand). Key (Appendix E): (a). (b) is Chapter 16's M4 (a better choice would fix
+      it). The slide shortens the book's option (b) (drops "on their data") and the question stem ("equal selection rates, equal error rates and equal
+      precision at the same time") to fit; the meaning is unchanged.
+    activity: "1 min, then the answer slide."
+    book: "§16.3; Final Bridge FB5; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (a): when a tool makes errors and the groups' base rates differ, the three measures cannot all
+      hold at once. The base rate is the share of each group that actually meets the criterion. With different base
+      rates, equalizing one measure pulls another apart. So choosing a fairness definition is a decision, with a
+      decision owner, not a bug to fix. Option (b) is Chapter 16's misconception that a better choice by the
+      developers would make the conflict go away. Options (c) and (d) are unrelated misreadings: fairness measures
+      apply whatever the inputs, and bias is not spread equally.
+    background: |
+      Appendix E (Final Bridge FB5). Chapter 16 owns fairness measurement.
+    activity: "Self-check."
+    book: "§16.3; Appendix E."
+
+# About 50 words on the answer slide: a five-part case answer (a)–(e) is the model a Bridge B case answer follows.
+- layout: quiz
+  minutes: 3
+  kicker: "Final Bridge FB7 · Chapter 15 · LO5 · case question"
+  title: "the treasurer’s spreadsheet"
+  question: "A treasurer pastes members’ data (names removed; ZIP code, birth date, major, payment status) into a free chat tool. Trace the flow, say why removing names was not enough, rate one risk, give one mitigation with an owner, and say why the tree does not apply."
+  instruction: "Write five short parts, (a)–(e) · Missed it? Reread §15.1, §15.2, §15.5, §15.6"
+  model_answer:
+    - "**(a)** Treasurer → sheet → free chat tool (its terms) → output → treasurer"
+    - "**(b)** ZIP code, birth date, major together can identify a person"
+    - "**(c)** e.g., medium likelihood and impact; inferred unless terms read"
+    - "**(d)** Avoid: a spreadsheet filter, no AI tool; owner: treasurer"
+    - "**(e)** No AI output was wrong: an input-side harm"
+  notes:
+    say: |
+      A Bridge B case question from Chapter 15. A student club's treasurer pastes a spreadsheet of members into a free
+      chat tool to find who has not paid dues. Names were removed; ZIP code, birth date, major and payment status
+      remain. Five parts: trace the data flow; explain why removing names was not enough; rate one risk on the Risk
+      Heat Map and say whether the rating is documented or inferred; propose one mitigation, avoid, reduce, detect or
+      accept, with a risk owner; and say in one sentence why the Failure Taxonomy Tree does not apply. Write five
+      short lines, one per part. Three minutes.
+    background: |
+      FB7 (Chapter 15 · LO5 · Analyze). Model answer in Appendix E. Quasi-identifiers (§15.2): ZIP code, birth date
+      and major together can identify a person without a name. Input-side rule (chapter brief): for privacy leaks by
+      users, use the data-flow map and the heat map, and say the tree does not apply because no output was wrong.
+    activity: "3 min writing, then the answer slide."
+    book: "§15.1, §15.2, §15.5, §15.6; Final Bridge FB7; Appendix E."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      Here is a model answer. (a) The flow: treasurer, spreadsheet with ZIP code, birth date, major and payment
+      status, a free chat tool under its consumer terms, where storage and possible review or reuse depend on the
+      terms, then the output list back to the treasurer. (b) ZIP code, birth date and major are quasi-identifiers:
+      together they can identify a person without a name. (c) For example, medium likelihood and medium impact for
+      members' data kept or reused under the tool's terms, inferred unless the terms were read and quoted. (d) Avoid:
+      do the lookup with a filter in the spreadsheet, no AI tool; risk owner the treasurer or the club president.
+      Or reduce: only a tool the institution's data classes allow, with only the columns needed. (e) No AI output was
+      wrong; the harm is on the input side.
+    background: |
+      Appendix E (Final Bridge FB7), full text. Scoring hint for self-check: each of the five parts must be present;
+      the documented/inferred tag in (c) and the named owner in (d) are the parts most often missed.
+    activity: "Self-check part by part."
+    book: "§15.1–15.6; Appendix E."
+
+- layout: quiz
+  minutes: 2
+  kicker: "Final Bridge FB9 · Chapter 18 · LO5 · interpretive"
+  title: "who owns the image?"
+  question: "“I wrote the prompt, so I own the image the tool made.” Agree or disagree, using authorship."
+  instruction: "Take a position in three sentences · Missed it? Reread §18.3"
+  model_answer:
+    - "**Disagree.** As of October 2026, U.S. copyright protects what a person authors; output from a prompt alone is not protected."
+    - "Your own expression, selection, arrangement and changes can be."
+    - "The tool’s terms may assign the provider’s rights to you: a different question."
+  notes:
+    say: |
+      A Bridge C interpretive item from Chapter 18. Take a position on the statement "I wrote the prompt, so I own the
+      image the tool made," and support it with the idea of authorship. Three sentences: your position, the reason
+      from authorship, and one distinction a strong answer makes. Hint for that distinction: there are two different
+      questions here, one about the law of copyright and one about the contract between you and the tool's
+      provider. Write your answer before you look.
+    background: |
+      FB9 (Chapter 18 · LO5 · Evaluate). Model answer (Appendix E): Disagree; as of October 2026, the U.S. Copyright
+      Office's position (2025 report) is that U.S. copyright protects what a person authors; output a tool produces
+      from a prompt is not protected, though your own expression, selection, arrangement and changes can be; writing
+      the prompt does not make you the author; the tool's terms may assign whatever rights the provider has, a
+      different question. Legal status is dated and on the refresh list; not legal advice.
+    activity: "2 min writing, then the answer slide."
+    book: "§18.3; Final Bridge FB9; Appendix E."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      A strong answer disagrees and separates two questions. Copyright: as of October 2026, the U.S. Copyright
+      Office's position, in its 2025 report, is that U.S. copyright protects what a person authors. Output a tool
+      produces from a prompt is not protected, though your own expression, selection, arrangement and changes can
+      be. Writing the prompt does not make you the author of the image. Terms: the tool's terms may assign to you
+      whatever rights the provider has, but that is a contract between you and the provider; it cannot create a
+      copyright the law does not grant. Strong answers use human authorship and keep terms and copyright apart.
+    background: |
+      Appendix E (Final Bridge FB9); Chapter 18 Check Yourself 18.3: authorship requires a human who created the
+      expression; prompts alone are not enough control; terms cannot create a copyright the law does not grant.
+    activity: "Self-check."
+    book: "§18.3; Appendix E."
+
+# Chapters 19 and 20 are practiced in the Spaced Review, not the Final Bridge (chapter); odd items only.
+- layout: quiz
+  minutes: 2
+  kicker: "Spaced Review 1 and 3 · Chapters 20 and 19 · LO7, LO6"
+  title_prefix: "Spaced review"
+  title: "Chapters 19 and 20"
+  question: "(1) What does an entry’s AI Use Declaration show that the artifact alone does not? (3) Write one safeguard from your A13 workflow as a trigger."
+  instruction: "Two short answers, no notes · Missed it? Reread §20.3 and §19.6"
+  model_answer:
+    - "**1.** What the AI did and what you did: tools, purpose, accepted, rejected or revised, how verified, where your judgment shaped it"
+    - "**3.** e.g., *Before my flashcards go into my deck, I check each against my textbook page, because my A13 peer test found an error*"
+  notes:
+    say: |
+      The Final Bridge stops at Chapter 18 because Chapter 21 practices Chapters 19 and 20 in its Spaced Review.
+      Here are the two odd-numbered Spaced Review items. The first goes back to Chapter 20's Portfolio Anatomy:
+      what does an entry's AI Use Declaration show a reader that the artifact alone cannot? The second goes back to
+      Chapter 19: take one safeguard from your own A13 domain workflow and rewrite it as a commitment in the "when,
+      I, because" form, with your own evidence as the reason. That second item is also a good way to find a sixth or
+      seventh line for your code. Write both answers without notes, then check them on the next slide.
+    background: |
+      Spaced Review items 1 (Chapter 20 · LO7 · Understand; section 20.3) and 3 (Chapter 19 · LO6 · Apply; section
+      19.6). Items 2 and 4 are even (instructor-only key). Chapter 21's Final Bridge introduction: "Chapters 19 and
+      20 are practiced in this chapter's Spaced Review." Both stems are shortened on the slide.
+    activity: "2 min writing, then the answer slide."
+    book: "Spaced Review 1 and 3; §20.3; §19.6; Appendix E."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      Item 1: the declaration shows what the AI did and what you did for that entry: the tools and purpose; what you
+      accepted, rejected or revised; how you verified it; and where your own judgment shaped the work. The artifact
+      alone shows only the result. Item 3 has many good answers. Any safeguard from your A13 workflow counts, if it
+      is written in the "when, I, because" form with your own evidence. The book's constructed example: before my
+      study workflow's flashcards go into my review deck, I check each card against my textbook page, because my
+      A13 peer test found an error. Check your own line with the trigger test: moment, action, reason.
+    background: |
+      Appendix E (Chapter 21, Spaced Review 1 and 3). The item 3 example is constructed (Appendix E); the slide
+      shortens it. The slide drops "In the Portfolio Anatomy" from item 1's stem to fit.
+    activity: "Self-check; apply the trigger test to your item-3 line."
+    book: "Appendix E (Chapter 21, Spaced Review)."
+
+# ----------------------------------------------------------------------- Closing
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "Which rules will you keep, and when will you change them?"
+  items:
+    - {code: "O1", text: "Your code adds to policy and a profession’s code"}
+    - {code: "O2", text: "When…, I…, because… my own evidence"}
+    - {code: "O3", text: "Moment, action, reason; stricter rule wins"}
+    - {code: "O4", text: "Dated notes, a review date, triggers, marks"}
+    - {code: "O5", text: "One page, in your portfolio, defended live"}
+  takeaway: "Before you close the book: put your review date in your calendar"
+  notes:
+    say: |
+      The chapter's question: when your course's rules end, which of them will you keep, and how will you know when to
+      change them? Keep the ones your own work showed you need, written as commitments with triggers you will
+      recognize at the moment of use: a few, chosen by the stakes in your field, each with your own evidence as its
+      reason. Your code sits inside the rules that bind you and never loosens them. Give it a review date and review
+      triggers, keep tool facts in dated notes, and keep marks, because a code that is never used or reviewed
+      protects no one. The book's last words: the tools will change; the five decisions of the AI Work Loop, and who
+      answers for the work, stay with you. Put your review date in your calendar.
+    background: |
+      Chapter Summary and @fig-21-13; Last Words (the book began with five decisions, Frame, Prompt, Verify, Decide,
+      Disclose; Part VI, Chapters 22 and 23, is optional reading). Warm-up revisit: (1) a rule passes if it names a
+      moment you would notice and an action someone could trace; (2) whichever your own evidence supports; (3)
+      disagree: tool names belong in dated notes. Last Words contains an optional author note placeholder (author
+      item).
+    activity: "Optional: read the last paragraph of Last Words aloud."
+    book: "Chapter Summary, @fig-21-13; Last Words; Warm-up revisit."
+
+- layout: key_terms
+  title: "Key terms"
+  terms:
+    - "personal AI code of practice"
+    - "commitment (in a code of practice)"
+    - "trigger (in a code of practice)"
+    - "trigger test"
+    - "own evidence (in a code of practice)"
+    - "professional code of ethics"
+    - "review date"
+    - "dated note"
+    - "implementation intention (Deep)"
+  note: "Definitions: Chapter 21 and the glossary. (Deep) terms are optional and not on exams."
+  notes:
+    say: |
+      The key terms of Chapter 21. Bridge A–style items ask for terms and concepts, so make sure you can define each
+      in one sentence of your own. Pay special attention to the sense labels: "trigger in a code of practice" is not
+      the same as Chapter 12's re-test trigger, and Review A5 asks exactly that difference. A trigger in a code tells
+      you one of your commitments applies now; a re-test trigger is an event that should make you test a tool's fit
+      again, and in a code, the re-test triggers become review triggers for the whole code. Implementation intention
+      is a Deep term: optional, and not examined.
+    background: |
+      Key Terms list from the chapter. Review A5 (odd; Appendix E): a trigger in a code tells you one of your
+      commitments applies now; a re-test trigger (Chapter 12) is an event that should make you test a tool's fit
+      again; in a code, Chapter 12's re-test triggers become review triggers.
+    activity: "Self-test: define three terms aloud."
+    book: "Chapter Summary, Key Terms; glossary; Review A5."
+
+- layout: exit_ticket
+  minutes: 2
+  questions:
+    - "Write one commitment. Could someone check afterward that you followed it?"
+    - "Your review date, and what would send you back sooner?"
+    - "Which line would you show an employer, with which entry?"
+  instruction: "Ungraded · keep the answers with your code"
+  notes:
+    say: |
+      Three questions to close the book's last core chapter, ungraded. The first returns to the Warm-up: write one
+      commitment from your code, and ask whether someone else could check afterward that you followed it. If not,
+      your moment or your action needs work. The second asks for your review date and one event that would send you
+      back sooner. The third is the career question from Discussion Question 2: which line of your code would you
+      show an employer, and which portfolio entry shows it in use? Two lines of your code and one entry make a better
+      answer to "how do you use AI?" than the word "carefully."
+    background: |
+      Question 1 revisits Warm-up item 1; question 3 is Discussion Question 2 and the Career Connection's "In an
+      interview" paragraph.
+    activity: "2 min; keep the answers with your code."
+    book: "Warm-up; Discussion Question 2; Career Connection."
+
+- layout: deep
+  minutes: 0
+  kicker: "Deep 21.A · why if-then plans help, and their limits"
+  title: "Going deeper: the evidence behind “when, I, because”"
+  size: 24
+  bullets:
+    - "2006: 94 tests, average d = 0.65"
+    - "2025: 642 tests, d about 0.27–0.66"
+    - "Independent 2021 review: g = 0.34, publication bias signs"
+    - "No study tested AI use: an inference"
+  takeaway: "If-then plans help with goals you hold; they do not choose them"
+  notes:
+    say: |
+      Optional, for students who ask whether triggers really work. The "when, I, because" form borrows from research
+      on implementation intentions, plans that link a goal to a cue. Gollwitzer and Sheeran combined 94 independent
+      tests in 2006 and reported an average effect size of 0.65, between medium and large by common conventions. A
+      larger review in 2025 combined 642 tests and reported effects from about 0.27 to 0.66, larger with the explicit
+      if-then form, high motivation and rehearsal. An independent 2021 meta-analysis of if-then plans combined with
+      mental contrasting found a smaller effect, 0.34, and signs of publication bias. Both larger reviews include the
+      theory's originators. And no study tested AI use or codes of practice.
+    background: |
+      Deep 21.A (optional, not examinable). Effect size: a standard way to say how large a difference is. Studies
+      concern goals people already held (exercising, studying, health screening). Rehearsal here means repeating or
+      picturing a plan soon after forming it; the nearest habit is reading commitments aloud in the peer check and
+      rereading them often (book's inference). Gollwitzer (1999) introduced the term. Wang et al. (2021): 21 studies.
+    activity: "Optional; not part of any class plan."
+    book: "Deep 21.A Why If-Then Plans Help, and Their Limits."
+
+- layout: references
+  title: "References"
+  per_slide: 5
+  refs:
+    - "Association for Computing Machinery. (2018a). *ACM code of ethics and professional conduct* [Booklet]. https://www.acm.org/binaries/content/assets/about/acm-code-of-ethics-booklet.pdf"
+    - "Association for Computing Machinery. (2018b, July 17). *ACM releases updated code of ethics* [Press release]."
+    - "European Commission. (2025, July 10). *The General-Purpose AI Code of Practice*."
+    - "Gollwitzer, P. M. (1999). Implementation intentions: Strong effects of simple plans. *American Psychologist, 54*(7), 493–503."
+    - "Gollwitzer, P. M., & Sheeran, P. (2006). Implementation intentions and goal achievement: A meta-analysis of effects and processes. *Advances in Experimental Social Psychology, 38*, 69–119."
+    - "McNamara, A., Smith, J., & Murphy-Hill, E. (2018). Does ACM’s code of ethics change ethical decision making in software development? *ESEC/FSE 2018*, 729–733."
+    - "Sheeran, P., Listrom, O., & Gollwitzer, P. M. (2025). The when and how of planning. *European Review of Social Psychology, 36*(1), 162–194."
+    - "Wang, G., Wang, Y., & Gai, X. (2021). A meta-analysis of the effects of mental contrasting with implementation intentions on goal attainment. *Frontiers in Psychology, 12*, 565202."
+  notes:
+    say: |
+      Reference slides; not presented. These are the sources cited on the slides and in the speaker notes, in short
+      APA form, from Chapter 21's reference list. Students do not need to read them. If a student wants to go
+      further, the chapter recommends the ACM booklet's Preamble and principles 2.3 and 2.5, about five minutes, and
+      the short McNamara study behind the Ethics Lens. The Final Bridge items draw on Chapters 8 to 18, whose
+      sources are in those chapters' own reference lists. Full entries with DOIs are in the chapter.
+    background: |
+      Full entries in the chapter's References (fact-checked; open checks in docs/factcheck/ch21.csv per the chapter
+      status comment). The From the Field entry (Şeker, 2014, Kontrol sayfası) is mentioned in one note only.
+    activity: "Not presented."
+    book: "Chapter 21, References; Further Reading and Compass Links."

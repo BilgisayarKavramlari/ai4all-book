@@ -1,0 +1,1543 @@
+# Lecture deck spec — Chapter 1: Why AI Changes Study and Work
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch01.yaml --preview
+# Every number and quotation below comes from the sources listed under deck.sources (the fact-checked chapter,
+# its labs, the figure long descriptions and Appendix E); the builder flags any number it cannot find there.
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only
+# (the keys tue and thu are internal: tue = concept session, thu = lab session).
+
+deck:
+  chapter: 1
+  slug: why-ai-changes-study-and-work
+  title: Why AI Changes Study and Work
+  short_title: Why AI Changes Study and Work
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Concept session (about 75 min)", minutes: 75}
+    thu: {label: "Lab session, Lab 1.2 (about 75 min)", minutes: 75}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/01-why-ai-changes-study-and-work.qmd
+    - labs/ch01-lab1.md
+    - labs/ch01-lab2.md
+    - labs/ch01-lab3.md
+    - figures/longdesc/ch01.md
+    - appendix/answers.md
+    - docs/blueprints/ch01-blueprint.md
+
+slides:
+
+# ======================================================================= CONCEPT SESSION
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "Concept session and lab session"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading: Chapter 1"
+    - "Recommended: AI Fluency, module 1"
+  figure: f1-02-ai-work-loop-frame
+  notes:
+    say: |
+      Put this slide up while students arrive. Welcome them to AI for All. Tell them this material is for every
+      major and needs no programming. The picture on the right is the AI Work Loop: five decisions a person makes
+      around every AI-assisted task, namely Frame, Prompt, Verify, Decide and Disclose. The tool sits in the middle as a
+      hexagon because it produces drafts; the rounded boxes around it are human decisions. Every chapter of the book
+      opens with this loop and highlights the step that chapter strengthens. In this chapter the highlighted step is Frame:
+      deciding what the task really is and whether AI belongs in it at all. Tell them that by the end of the lab session they will have
+      tested three of their own tasks and found at least one failure, which becomes their first assignment, A1.
+    background: |
+      Chapters and lab sheets are on your course site. Compass, the book's digital
+      companion, is optional and never part of a course grade; no student data moves between a course and Compass. The figure
+      uses the book's fixed shape grammar: rounded box = human decision, hexagon = AI component. The same drawing returns
+      at the start of every chapter with a different step highlighted.
+    questions:
+      - q: "Do I need to pay for an AI tool?"
+        a: "No. The book is tool-independent: use a tool your institution provides or approves, or a free tier; no paid subscription is needed."
+    activity: "On screen before class starts."
+    book: "Chapter 1 opening page and @fig-1-2a (AI Work Loop, Frame highlighted)."
+
+- layout: session_plan
+  minutes: 2
+  title: "Chapter 1 at a glance"
+  columns:
+    - heading: "Session 1 · Concept session"
+      sub: "75 min · ideas, live comparison, quick checks"
+      blocks:
+        - {min: 3, label: "Welcome and objectives", detail: "How your course runs"}
+        - {min: 6, label: "Opening case", detail: "5,172 support agents and an AI assistant"}
+        - {min: 36, label: "Concept core, §1.1–1.6", detail: "Generation, evidence, frontier, fluency, zones, loop"}
+        - {min: 20, label: "Lab 1.1: same question, two answers", detail: "The live demonstration, done by you"}
+        - {min: 8, label: "Quick checks", detail: "Four short checks, answers shown"}
+        - {min: 2, label: "Before the lab session", detail: "Reading and your three tasks"}
+    - heading: "Session 2 · Lab session"
+      sub: "75 min · teams of 3–4, individual artifact"
+      blocks:
+        - {min: 10, label: "Lab briefing", detail: "Warm-up, Lab 1.2 steps, A1 brief"}
+        - {min: 45, label: "Lab 1.2: your baseline", detail: "Frame, run, verify three tasks; find a failure"}
+        - {min: 15, label: "Share and critique", detail: "Which predictions failed, which tests worked"}
+        - {min: 5, label: "Exit step", detail: "Summary, key terms, exit ticket"}
+  notes:
+    say: |
+      Here is how this chapter works, and how every chapter works. The concept session is where we look at a real case,
+      build the ideas, and you try things live. The lab session is the practice lab: in teams of three or four you apply the
+      ideas to a realistic task and start the chapter's artifact, which you submit on your course site when your
+      instructor sets it. Group work happens in class, but every artifact is individual. If this is the first meeting
+      of your course, keep the welcome short and get to the case quickly. In the lab session you will need three tasks from your own
+      life or major; I will tell you how to choose them at the end of today. The quick checks today are ungraded:
+      they are practice, and you will see the answers right away.
+    background: |
+      Suggested session flow: the concept session is opening case 10, concept core 35, one or two live
+      demonstrations 20, concept check 10; the lab session is lab briefing 10, group practice 45, share and critique
+      15, exit step 5. For this chapter the "demonstration" slot is Lab 1.1, which the chapter places in the concept
+      session (20 minutes). If your course runs two 75-minute sessions a week, this fits; adjust to your class size. The minutes on this slide are the timings written into the notes of each slide; they add up to
+      about 75 per session. Whether participation or artifacts are graded, and whether they may be revised, is your
+      instructor's decision.
+    questions:
+      - q: "Is the lab session graded?"
+        a: "That is your instructor's decision. The lab produces your A1 draft, which your instructor may grade."
+      - q: "Can we submit as a team?"
+        a: "No. In the book's design, group work happens in class and each artifact is individual."
+    activity: "Point to the two columns; do not read every block. Say when A1 is due (your instructor sets it)."
+    book: "Chapter 1 time paragraph; How to Use This Book, suggested pacing."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 1 · learning objectives"
+  title: "By the end of the lab you will be able to…"
+  items:
+    - {code: "O1", text: "**Explain** how a generative AI tool produces an answer, and why answers differ"}
+    - {code: "O2", text: "**Explain** why AI gains at work were uneven, using three studies"}
+    - {code: "O3", text: "**Judge** whether AI fits a task by testing it; fluent ≠ correct"}
+    - {code: "O4", text: "**Judge** assistance versus outsourcing under the three-zone policy"}
+    - {code: "O5", text: "**Apply** the AI Work Loop to a task from your major"}
+    - {code: "O6", text: "**Produce** your AI use baseline (assignment A1)"}
+  notes:
+    say: |
+      These are the six things you should be able to do by the end of the chapter. Notice the verbs. Two are "explain":
+      you will understand what these tools do and what the evidence says about them. Two are "judge": you will decide
+      whether a task suits AI, and whether a particular use is help or outsourcing. One is "apply": you will run the
+      AI Work Loop on a task from your own major. The last is "produce": you will make your own baseline, which is
+      assignment A1. I will come back to this list in the lab session so you can check yourself. You do not need to memorize
+      it now; it is printed at the start of Chapter 1.
+    background: |
+      Full wording in the chapter, with tags: O1 explain generation vs. look-up, including search-then-generate tools
+      (LO1); O2 explain uneven gains with three studies (LO1); O3 judge fitness by testing, fluent vs. correct (LO1;
+      AI Fluency Delegation, Discernment); O4 judge assistance vs. outsourcing under the three-zone policy (LO4); O5
+      apply the AI Work Loop to a task from your major (LO4; Description, Diligence); O6 produce the baseline with an
+      AI Use Declaration (LO4, LO7; Diligence). LO1–LO7 are the book's seven learning outcomes; section 1.7 lists
+      them in plain language. Framework tags refer to the UNESCO AI Competency Framework for Students and the AI
+      Fluency framework.
+    questions:
+      - q: "What are the 'LO' codes I see in the book?"
+        a: "The book's seven learning outcomes, LO1–LO7. Section 1.7 lists them in plain language; A1 asks you to tie each of your two goals to one of them."
+    activity: "Ask students to star the objective they think will be hardest; revisit in the lab session."
+    book: "Chapter 1, Learning Objectives; §1.7 box with LO1–LO7 in plain language."
+
+- layout: timeline
+  minutes: 3
+  kicker: "Opening case · Brynjolfsson, Li & Raymond (2025)"
+  title: "5,172 support agents get an AI assistant"
+  events:
+    - {label: "Before", text: "Agents answer customer chats on their own", tier: "confirmed"}
+    - {label: "The tool", role: ai, text: "Suggests replies; agents use, change or ignore them", tier: "confirmed"}
+    - {label: "Rollout", text: "A few agents at a time, over several months", tier: "confirmed"}
+    - {label: "Comparison", text: "With vs. without the tool, in the same weeks", tier: "confirmed"}
+  takeaway: "Same weeks, same seasons: a fair comparison"
+  notes:
+    say: |
+      Tell it as a story. Picture a customer-support center for a large software company: agents answer chat messages
+      from business customers all day. Some have worked there for years; others started last month. The company, a
+      Fortune 500 firm that sells business-process software, gave its agents an AI assistant. During each chat it
+      suggested replies, and the agent could use them, change them or ignore them. The company did not switch it on
+      for everyone at once; because training sessions were limited, it reached agents a few at a time over several
+      months. That gave three economists an unusual chance: they could compare agents who had the assistant with
+      similar agents who did not have it yet, in the same weeks. Ask: why does "the same weeks" matter? Because both
+      groups faced the same busy seasons, so a difference between them points to the tool.
+    background: |
+      Source: Brynjolfsson, Li and Raymond (2025), The Quarterly Journal of Economics 140(2). The study followed
+      5,172 agents. Fortune 500 means one of the 500 largest US companies by revenue. The study does not name the
+      company, and neither does the book; do not guess it. Attribution tier: everything on this slide is confirmed in
+      the primary record (the published study). The research design is a staggered rollout analyzed as a
+      difference-in-differences comparison (Deep 1.A, optional). One caveat the authors address: managers chose which
+      agents attended each training session, so the researchers checked that groups were on similar paths before the
+      tool arrived, and report a small randomized pilot with similar results.
+    questions:
+      - q: "Why not just compare the same agents before and after they got the tool?"
+        a: "A before-and-after comparison mixes the tool's effect with everything else that changed over time, such as seasons. Comparing with agents who did not have it yet, in the same weeks, cancels those changes out (Appendix E, Review A5)."
+    activity: "Narrate; do not read the cards. Ask the 'same weeks' question and take one or two answers."
+    book: "Opening Case; Case Study 'The Support Center, Revisited'; Deep 1.A for the method."
+
+- layout: figure
+  minutes: 3
+  kicker: "Opening case · results"
+  title: "Same tool, uneven gains"
+  figure: f1-05-support-gains
+  takeaway: "Puzzle: why did the newest agents gain most — and what does that mean for you?"
+  notes:
+    say: |
+      Here is what happened. On average, access to the assistant raised the number of issues an agent resolved per
+      hour by 15 percent. But the average hides the most interesting part. Less experienced and lower-skilled agents
+      improved by about 30 percent, and the quality of their work went up too. The most experienced, highest-skilled
+      agents gained only a little speed, and their quality dropped slightly. So here is the puzzle for this chapter: the
+      same tool, given to the same team, helped the newest people a lot and the most skilled people hardly at all. Why?
+      And a second question: if a tool helps beginners most at work, what does that mean for you, a beginner in many
+      subjects, while you are still learning? Ask them to keep both questions; we answer them at the end of the lab session.
+    background: |
+      Further documented results (Brynjolfsson et al., 2025): customers were more polite and less likely to ask for a
+      manager, although overall customer satisfaction scores did not change significantly. The researchers found
+      signs that the assistant helped agents learn, and that agents' written English improved, especially for
+      international agents. Gains were largest for moderately rare problems. The chart shows no single figure for the
+      most experienced agents because the study reports a small speed gain and a small quality decline, not one
+      number. The authors' explanation (reported tier: the authors' interpretation) is that the assistant, trained on
+      past chats with extra weight on top performers, carried skilled agents' habits to newcomers; they call their
+      results consistent with this idea rather than proof of it.
+    questions:
+      - q: "Does this mean AI will make experience worthless?"
+        a: "Not from this evidence. Experts gained little and lost a little quality; experience still matters for judging outputs, especially on tasks outside the frontier (§1.3; Appendix E, Review C1 guidance)."
+    misconceptions:
+      - m: "M3 'AI helps everyone the same.'"
+        fix: "Point at the three bars: the same tool gave about +30% to one group and a slight quality dip to another. Averages can mislead."
+    activity: "Pose the puzzle; ask students to write a one-line guess. Return to it on the summary slide in the lab session."
+    book: "Opening Case; §1.2 Study 1 and @fig-1-5; Chapter Summary (puzzle answered)."
+
+# ----------------------------------------------------------------------- 1.1
+- layout: section
+  minutes: 0.5
+  number: "1.1"
+  tag: "Core"
+  title: "Same question, different answers"
+  idea: "A generative model writes likely text. It does not look up a stored answer."
+  meta: "Book §1.1 · Lab 1.1 today"
+  notes:
+    say: |
+      First idea of the chapter. You have probably asked an AI tool a question and taken the answer at face value. In
+      this section we look at what actually happens when you press enter. The short version is on the slide: a
+      generative model writes likely text; it does not look up a stored answer. That one sentence explains why two
+      tools give different answers, why the same tool can answer differently twice, and why a confident answer can
+      still be wrong. In about twenty minutes you will test this yourself in Lab 1.1. Keep your phone or laptop handy,
+      and if you prefer not to use AI, there are sample outputs on your course site you can use instead.
+    background: |
+      Section 1.1 is Core. It introduces four terms (generative AI system, prompt, output, model), the
+      one-piece-at-a-time picture of generation, and three tool types (search engine, generative model,
+      search-then-generate). Chapter 2 shows how training works; Chapter 3 shows what happens inside a language model
+      (tokens, sampling); keep today's explanation at the level of the chapter and point forward rather than going
+      deeper.
+    misconceptions:
+      - m: "M1 'The AI looks the answer up' / 'it knows things.'"
+        fix: "Use the book's wording: the model produces text one piece at a time, each piece a likely continuation. Avoid verbs like 'knows' or 'thinks' yourself."
+    activity: "Transition slide."
+    book: "§1.1 Same Question, Different Answers."
+
+- layout: compare
+  minutes: 2
+  kicker: "§1.1 · Two models, one provider, Oct 17, 2026"
+  title: "Same prompt, same day, different answers"
+  size: 28
+  columns:
+    - heading: "Both answers"
+      role: soft
+      bullets: ["Practice problems, not rereading", "Confident tone", "No word on how sure"]
+    - heading: "Only Answer A"
+      role: neutral
+      bullets: ["Timed practice exams"]
+    - heading: "Only Answer B"
+      role: neutral
+      bullets: ["Flashcards and spaced review"]
+  takeaway: "Prompt: “Three good study strategies for a chemistry exam?”"
+  notes:
+    say: |
+      Here is a small experiment from the book. The same question went to two models made by the same company on the
+      same day: "What are three good study strategies for a chemistry exam?" Both were asked to answer in at most 120
+      words. The answers overlap: both say practice problems instead of just rereading. But they are not the same.
+      Only one suggests timed practice exams; only the other suggests flashcards and spaced review. And notice the
+      tone: both sound confident, and neither says how sure it is. That is your first clue about what these tools are.
+      If they were looking up one stored answer, you would expect the same answer twice. They are not doing that.
+    background: |
+      Answer A came from Claude Haiku 5.5 and Answer B from Claude Sonnet 5.5, collected October 17, 2026; real,
+      unedited outputs (@fig-1-3). The full text of both answers is in the figure's long description
+      (figures/longdesc/ch01.md), if you want to show or read them. The book labels every model output with model name
+      and date because outputs change across models and over time. Tool neutrality: the book does not endorse a
+      provider; in class, any two tools (or one tool in two new conversations) make the same point.
+    questions:
+      - q: "Which answer is right?"
+        a: "Both give reasonable study advice; that is not the point. The point is that the same question produced different content with equal confidence, and neither stated its uncertainty."
+    activity: "Ask: 'Would you have noticed the difference if you only saw one answer?'"
+    book: "§1.1 and @fig-1-3 (full text in the long description)."
+
+- layout: concept
+  minutes: 3
+  kicker: "§1.1 · how generation works"
+  title: "A model writes likely text, piece by piece"
+  size: 24
+  bullets:
+    - "A **model** turns your **prompt** into an **output**"
+    - "One piece at a time: a word or part of a word"
+    - "Each piece is a likely continuation, not a looked-up fact"
+    - "Why answers differ: chance in each pick; different models"
+  flow:
+    - {label: "Your prompt", kind: human}
+    - {label: "Model", kind: ai}
+    - {label: "Output", kind: step}
+  takeaway: "*Likely* is not the same as *true*"
+  notes:
+    say: |
+      Let's name the parts. A generative AI system is software that produces new content, such as text, images or
+      code, in response to an input. The input you give it is a prompt; what comes back is the output. Inside is a
+      model: a trained mathematical function that turns a prompt into an output. Now the key idea: the model does not
+      look up a stored answer. It produces text one small piece at a time, usually a word or part of a word, and each
+      piece is chosen because it is a likely continuation of what came before. So why did the two answers differ? Ask
+      the same tool twice and it picks each piece with some chance. Ask two tools and they run different models,
+      trained on different data, with different hidden instructions. Likely is not the same as true.
+    background: |
+      Definitions are the book's (§1.1; glossary). The model's internal settings were adjusted by training on huge
+      amounts of existing text and then tuned to follow instructions and give answers people prefer. The sampling step
+      (picking each piece with some chance) is explained in Chapter 3; training in Chapter 2. A common comparison is
+      "autocomplete on your phone, but much bigger." It holds for the basic step (both predict what comes next) and
+      breaks on scale: far more training text, much more of the conversation used as context, and extra training to
+      follow instructions.
+    questions:
+      - q: "If it is just predicting words, how can it write working code or a good summary?"
+        a: "Scale. The same prediction step, trained on vastly more text and tuned to follow instructions, can produce summaries, explanations and code that phone autocomplete never could (§1.1). Producing likely text is powerful; it is just not the same as checking truth."
+      - q: "Can it repeat text it was trained on?"
+        a: "Sometimes, almost word for word (§1.1). Either way, it is producing likely text, not checking whether it is true."
+    misconceptions:
+      - m: "M1 'It knows things.'"
+        fix: "Model the language: 'the model produces', 'the model generates a likely answer'. Gently correct 'it knows' or 'it thinks' when students use them."
+    activity: "Optional: ask one student to read the prompt aloud and the class to predict the next word; note how many different 'likely' words come up."
+    book: "§1.1 (definitions; 'Why did the two answers differ?'; autocomplete comparison)."
+
+- layout: lanes
+  minutes: 2
+  kicker: "§1.1 · three kinds of tools (book figure: search vs. generation)"
+  title: "Search points to sources; generation writes new text"
+  rows:
+    - label: "Search engine"
+      nodes:
+        - {label: "Your query", kind: human, role: neutral}
+        - {label: "Finds existing pages", kind: step}
+        - {label: "You choose a source", kind: human, role: neutral}
+    - label: "Generative model"
+      nodes:
+        - {label: "Your prompt", kind: human, role: neutral}
+        - {label: "Writes new text", kind: ai, dashed: true}
+        - {label: "Verify every claim", kind: human, role: risk}
+    - label: "Search, then generate"
+      nodes:
+        - {label: "Your prompt", kind: human, role: neutral}
+        - {label: "Searches, then writes", kind: ai, dashed: true}
+        - {label: "Check each claim vs. its page", kind: human, role: risk}
+  caption: "Dashed outline = output may be wrong. Only about half of generated sentences were fully supported by their citations (Liu et al., 2023)."
+  takeaway: "Links show which pages were retrieved, not that each sentence matches them"
+  notes:
+    say: |
+      Compare three kinds of tools. A search engine finds documents that already exist and shows you a ranked list of
+      links; you decide which one to open, and you can see who wrote it. A generative model writes new text for your
+      prompt; no human author stands behind those words, so you check every claim. As of October 2026, many tools do
+      both: they search the web first, then generate an answer with links to the pages they retrieved. Useful, but the
+      answer text is still generated. The links show which pages the tool retrieved; they do not prove that each
+      sentence matches its page. In a 2023 study of generative search engines, only about half of the generated
+      sentences were fully supported by their citations. And the AI summary at the top of a search page? That belongs
+      in the third row, not the first.
+    background: |
+      Liu, Zhang and Liang (2023), Findings of EMNLP 2023, evaluated verifiability in generative search engines. The
+      chapter's table: search engine, check whether the source you open is reliable; generative model with no search,
+      check every claim; search-then-generate tool, including AI summaries on search pages, check whether each claim
+      matches the page it links to. In the figure, the dashed outline means the output may be wrong; the hexagon is the
+      AI component; rounded boxes are you. "As of October 2026" is a dated statement in the chapter; tool features
+      change quickly.
+    questions:
+      - q: "If it gives me links, isn't it basically a search engine?"
+        a: "No. The links show what was retrieved; the sentences are still generated, and about half were fully supported in the 2023 study. Check each claim you use against its page."
+    misconceptions:
+      - m: "M1 '…and if it shows sources, the text came from them.'"
+        fix: "Contrast row 1 and row 3 of the figure: in row 3 a model writes the text after retrieving pages, so each claim still needs checking against its page."
+    activity: "Ask for a show of hands: who has used an AI summary on a search page this week?"
+    book: "§1.1 'Search, generation, and tools that do both', @fig-1-4 and the table under it."
+
+- layout: lab
+  minutes: 20
+  kicker: "Lab 1.1 · in class now · compare"
+  title: "Same question, two answers"
+  goal: "See how answers differ, and how sure they sound"
+  steps:
+    - {text: "Choose three questions: one factual, one practical, one from your major", min: 3}
+    - {text: "Ask each in two tools, or twice in one tool in new conversations", min: 8}
+    - {text: "For each pair, record: what is the same · what differs · any sources? · how certain?", min: 7}
+    - {text: "Save the full outputs; you reuse them in §1.4 and in A1", min: 2}
+  side:
+    - {heading: "Deliverable", text: "Comparison table for three questions (feeds A1)"}
+    - {heading: "Only one tool, or no AI?", text: "Run each question three times in new conversations, or compare the two sample outputs on your course site"}
+    - {heading: "Privacy", role: risk, text: "No personal, confidential or institutional data in prompts"}
+  notes:
+    say: |
+      Now you try it; this is the live demonstration, done by you. Work alone or with a neighbor for twenty minutes.
+      Choose three questions: one factual, one practical and one from your own major. Ask each question in two
+      different tools, or twice in the same tool in new conversations. For each pair, write down what is the same,
+      what differs, whether either gives sources, and how certain each sounds. Then save the full outputs, not only
+      your notes, because you will use them again in section 1.4 and in your A1 baseline. If you have only one tool,
+      run each question three times. If you prefer not to use AI, use the two sample outputs on your course site. One rule
+      today and in every lab: no personal, confidential or institutional data in your prompts.
+    background: |
+      From labs/ch01-lab1.md. Expected observations: answers overlap but differ in wording, order and sometimes
+      content; few state their uncertainty. If two runs are identical, suggest a more open question; identical
+      answers are possible and also worth noting. Common problem: students compare only length; prompt them to compare
+      claims. Collect two striking pairs for discussion. Mini-rubric: Exceeds = three complete pairs, differences
+      classified (content vs. wording), sources checked; Meets = three pairs with differences and certainty recorded.
+      Use only free tools or tools your institution provides or approves; check what is available before the session
+      (as of October 2026, for example, some institutions provide an enterprise chat assistant with data protection). Screen-reader users can use the plain-text sample outputs.
+    questions:
+      - q: "Both of my answers were identical. Did I do it wrong?"
+        a: "No. Identical answers happen and are worth noting. Try a more open question, or a third run in a new conversation."
+    misconceptions:
+      - m: "M1 'If the answers differ, one tool must be broken.'"
+        fix: "Different answers are expected from a system that picks each piece with some chance; ask which differences are in content and which only in wording."
+    activity: |
+      3 min choose questions; 8 min run; 7 min record; 2 min save. Circulate; at minute 18 ask two students to read out a
+      striking pair. Debrief questions (lab sheet): Were the differences in content or only wording? Which answer would
+      you trust more, and what is your reason besides how it sounds? Did any answer cite a source; did you open it?
+    book: "Hands-on Labs, Lab 1.1; labs/ch01-lab1.md."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §1.1"
+  title: "two tools, two plans"
+  question: "A classmate pastes the same prompt into two tools and gets two different study plans. Which explanation is best?"
+  options:
+    - "One of the tools is broken."
+    - "One tool looked up a better stored answer than the other."
+    - "The tools run different models and each picks words with some chance."
+    - "The second tool corrected the first tool’s mistakes."
+  answer: c
+  instruction: "Answer on your own (30 seconds), then vote: hands, cards or a poll"
+  explanation: "(b) assumes models look up stored answers; (a) and (d) assume there is one right answer to correct"
+  notes:
+    say: |
+      Quick check, ungraded. Read the question and the four options on your own and commit to an answer before anyone
+      votes. This is the kind of question you may meet on a quiz or exam, so it is worth practicing the habit
+      of choosing and then justifying. Give them thirty seconds. Then take a vote by hands or a quick poll. Before
+      you reveal the answer, ask one student who chose (b) and one who chose (c) to explain their reasoning in one
+      sentence each; the contrast between "looked up" and "picks with some chance" is the whole point of section 1.1.
+    background: |
+      Item: Review Questions A1 (O1 · LO1 · Understand). Key and distractor logic from Appendix E: (c) is correct;
+      (a) and (d) assume one "right" answer exists to be corrected; (b) assumes models look up stored answers. The
+      distractors come from misconception M1.
+    activity: "30 s individual, then vote. Then show the answer slide."
+    book: "§1.1; Review Questions A1; Appendix E (Chapter 1)."
+  answer_notes:
+    say: |
+      The answer is (c). Two things happen at once: the two tools run different models, trained on different data and
+      given different hidden instructions, and each one picks every piece of its answer with some chance. Option (b)
+      is the tempting one, because it matches how a search engine works, but a generative model does not retrieve a
+      stored answer; it writes likely text. Options (a) and (d) both assume there is one correct answer that a working
+      tool would produce. Ask: so what should your classmate do instead of declaring a tool broken? Compare the two
+      answers, check the claims that matter against a source, and decide what to keep. That is the Verify and Decide
+      part of the loop you will meet in section 1.6.
+    background: |
+      Appendix E, Review B1 model answer: the tool is not broken; generative tools produce likely text and pick each
+      piece with some chance, so two runs can differ; different tools also run different models. The classmate should
+      compare, check what matters against a source, and decide (Verify and Decide).
+    activity: "Reveal; take one follow-up comment."
+    book: "§1.1; Appendix E (Review A1, Review B1)."
+
+# ----------------------------------------------------------------------- 1.2
+- layout: section
+  minutes: 0.5
+  number: "1.2"
+  tag: "Core"
+  title: "What the evidence says about AI at work"
+  idea: "The gains were real, and the people who started lower gained more."
+  meta: "Book §1.2 · three studies"
+  notes:
+    say: |
+      You will hear many claims about AI and jobs: that it will replace everyone, or that it is all hype. In this
+      book we treat such claims the way a scientist treats any claim: we ask for evidence. This section looks at
+      three studies of real or realistic work: customer support, professional writing and management consulting. They
+      measured different things, so we cannot add their numbers together. But they share one pattern, and it is on the
+      slide: the gains were real, and the people who started lower gained more. Then we look at why that pattern does
+      not mean what many students first think it means for their own studying.
+    background: |
+      The three studies: Brynjolfsson, Li and Raymond (2025, QJE), customer support, staggered rollout; Noy and Zhang
+      (2023, Science), professional writing, randomized; Dell'Acqua et al. (2023 working paper; 2026 Organization
+      Science version), consulting at Boston Consulting Group (BCG), randomized. Recommended readings:
+      Noy & Zhang, Dell'Acqua et al., and Brynjolfsson et al. Students are not assumed to have read them.
+    misconceptions:
+      - m: "M3 'AI helps everyone the same.'"
+        fix: "Preview the pattern: in all three studies the gains differed by starting level."
+    activity: "Transition slide."
+    book: "§1.2 What the Evidence Says About AI at Work."
+
+- layout: compare
+  minutes: 3
+  kicker: "§1.2 · three studies, one pattern"
+  title: "Real gains, unevenly spread"
+  size: 26
+  columns:
+    - heading: "Customer support"
+      role: soft
+      bullets: ["5,172 agents", "Issues per hour **+15%**", "Newer agents **about +30%**"]
+    - heading: "Professional writing"
+      role: soft
+      bullets: ["Random assignment", "Time **−40%**, quality **+18%**", "Gap between writers narrowed"]
+    - heading: "Management consulting"
+      role: soft
+      bullets: ["385 consultants", "Quality **more than +40%**", "Below average **+43%**, above **+17%**"]
+  takeaway: "Different measures: compare the pattern, not the numbers"
+  notes:
+    say: |
+      Three studies, side by side. In customer support, productivity meant issues resolved per hour: up 15 percent on
+      average and about 30 percent for less experienced agents. In professional writing, college-educated professionals
+      did writing tasks like those in their jobs; chance decided who got ChatGPT. With access, time fell by about 40
+      percent, graders rated quality about 18 percent higher, and the gap between weaker and stronger writers
+      narrowed. In consulting, 385 consultants worked on realistic tasks; some were randomly given GPT-4. Graders rated
+      their work more than 40 percent higher, and consultants who started below average improved by 43 percent
+      against their own earlier scores, compared with 17 percent for those above average. Different measures, so do
+      not compare the numbers directly. Compare the pattern.
+    background: |
+      Random assignment makes the groups alike, on average, in everything except the tool; the control group is the
+      comparison group without the tool. Noy & Zhang (2023): tasks were press releases, short reports, analysis plans
+      and delicate emails, designed for the experiment; graders scored overall, writing and content quality and
+      originality, not factual accuracy, so the study shows faster, better-rated drafts, not more accurate ones.
+      Dell'Acqua et al. (2023): 758 BCG consultants in two experiments; the 385 here worked on tasks the researchers
+      judged inside the AI's capability (e.g., designing a new shoe for an underserved market, segmenting the market,
+      drafting a press release). The other experiment (373 consultants, outside the frontier) is in §1.3.
+    questions:
+      - q: "What is a control group and why does random assignment matter?"
+        a: "The control group is the comparison group without the tool. Random assignment uses chance to decide who gets the tool, which makes the groups alike on average in everything except the tool, so a difference can be attributed to the tool (Check Yourself 1.2)."
+      - q: "Did the writing study show the AI drafts were more accurate?"
+        a: "No. It did not separately measure factual accuracy; it shows faster drafts with higher quality ratings."
+    misconceptions:
+      - m: "M3 'AI helps everyone the same.'"
+        fix: "Point to the third line of each card: who gained most differed by starting level in every study."
+    activity: "Optional faded example from the book (Study 2: how were the groups formed? one limit?) as a 1-minute pair check."
+    book: "§1.2 Studies 1–3, the comparison table, Worked and Faded Examples 'Reading the Evidence'."
+
+- layout: compare
+  minutes: 2
+  kicker: "§1.2 · the learner’s question (book figure: faster vs. learning)"
+  title: "Working faster is not the same as learning"
+  size: 26
+  columns:
+    - heading: "Tool answers; you hand it in"
+      role: risk
+      bullets: ["Output delivered", "**Skill not built**"]
+    - heading: "You reason; the tool assists"
+      role: verified
+      bullets: ["Output delivered", "**Skill built**"]
+    - heading: "Evidence (Bastani et al., 2025)"
+      role: soft
+      bullets: ["Unrestricted chatbot: better practice, worse exam", "Hints only: no harm, no gain"]
+      size: 22
+  header_height: 1.15
+  takeaway: "The assignment can be done while the learning is not"
+  notes:
+    say: |
+      Here you need to be careful. If AI helps beginners most at work, you might conclude that you, as a beginner,
+      should lean on it as much as possible while you study. That conclusion does not follow. At work, the goal of a
+      support chat is to solve the customer's problem; if the suggestion solves it, the job is done. In a course, an
+      assignment exists so that you build a skill you can use without the tool: on an exam, in an interview, or when
+      the tool gives you something wrong. There is evidence for this difference. In a study of high school math
+      students in Türkiye, students who practiced with unrestricted access to a chatbot did better during practice,
+      but worse on an exam without the tool than students who practiced with books and notes. A version designed to
+      give hints instead of answers showed no measurable harm, and no gain either.
+    background: |
+      Bastani et al. (2025), PNAS 122(26), e2422633122 (a recommended reading, used in Chapter 7). Describe it exactly:
+      high school mathematics students in Türkiye; the comparison group practiced with books and notes; the exam at
+      the end of the session was taken without the tool. The hint-based version showed no measurable harm on the exam
+      but did not raise exam scores above the comparison group. Chapter 7 studies tutoring versus answer mode
+      in depth; do not go further today.
+    questions:
+      - q: "So should I not use AI to study?"
+        a: "That is not the conclusion. Uses that help you do the thinking (explanations, quizzing yourself, feedback on your draft) are permitted; uses that do the thinking for you can leave you unable to do it on the exam. Section 1.5 and Chapter 7 make this precise."
+    misconceptions:
+      - m: "M3 '…since novices gain most at work, I should lean on it while I am learning.'"
+        fix: "Contrast the two goals: output at work, skill in a course. Then give the Bastani result: better in practice, worse on the exam without the tool."
+    activity: "Ask: 'Name one assignment this term where the output is not the point.' Take two answers."
+    book: "§1.2 'Working faster is not the same as learning', @fig-1-13; Chapter 7."
+
+# ----------------------------------------------------------------------- 1.3
+- layout: section
+  minutes: 0.5
+  number: "1.3"
+  tag: "Core"
+  title: "The jagged frontier"
+  idea: "How hard a task looks tells you little about how well AI will do it."
+  meta: "Book §1.3 · signature diagram 2"
+  notes:
+    say: |
+      All three studies measured gains on tasks the AI handled well. This section is about tasks it does not handle
+      well, and about the surprising shape of the boundary between the two. Researchers call it the jagged
+      technological frontier. The idea on the slide is the one to remember: how hard a task looks to you tells you
+      little about how well the tool will do it. Some tasks that look hard are fine; some that look easy fail. That is
+      why, by the end of this section, you will have a method rather than a list: you find the frontier for your task
+      by testing it.
+    background: |
+      The Jagged Frontier Map is signature diagram 2 of the book; it returns in Chapters 7, 12 and 19. The image comes
+      from Dell'Acqua et al. (2023); Chapter 12 examines the consulting study in full.
+    misconceptions:
+      - m: "M2 'AI is equally good at everything' — or 'there is a fixed list of things it is good at, and newer models handle everything.'"
+        fix: "Announce that this section replaces the list with a test."
+    activity: "Transition slide."
+    book: "§1.3 The Jagged Frontier."
+
+- layout: figure
+  minutes: 2
+  kicker: "§1.3 · Dell’Acqua et al. (2023)"
+  title: "Inside the frontier, AI helped; outside it, results got worse"
+  figure: f1-06-frontier-results
+  takeaway: "Outside: roughly 19 percentage points fewer correct answers, from one task"
+  notes:
+    say: |
+      Back to the consultants. The left panel is the first experiment: on tasks inside what the AI could do, consultants
+      with AI completed more tasks, worked faster and produced work rated more than 40 percent higher. The right panel
+      is the second experiment: 373 consultants got a task the researchers designed to be outside what the AI could do
+      reliably at the time. It was a brand-growth recommendation for a hypothetical company. The spreadsheet looked
+      complete, but interview notes held details that changed the right answer. About 85 percent of consultants without
+      AI got it right, compared with about 60 to 70 percent of those with AI: roughly 19 percentage points fewer. The
+      tool did not just fail to help; it made results worse. Those who did worse tended to adopt the AI's output
+      without questioning it.
+    background: |
+      Dell'Acqua et al. (2023), HBS Working Paper 24-013 (also Organization Science, 2026). Inside panel: 18 tasks,
+      385 consultants; tasks completed +12.2%, speed +25.1%, human-graded quality more than +40%, all against the
+      control group. A percentage point is the simple difference between two percentages (e.g., 85% minus 66%). Note
+      for the instructor: the chapter text says "about 85%" correct without AI, while the figure's source line and long
+      description say "about 84%"; say "about 85%" as in the text, or avoid the exact figure. Emphasize the limit: the
+      outside result comes from a single task, so treat it as a warning sign rather than a precise measurement.
+    questions:
+      - q: "How can AI help make results worse?"
+        a: "The authors found that consultants who did worse tended to adopt the AI's output without questioning it. Because the result comes from one designed task with consultants at one firm, treat it as a warning sign, not a precise measurement (Appendix E, Review A9)."
+    misconceptions:
+      - m: "M2 'AI is equally good at everything.'"
+        fix: "Same people, same tool, opposite effects depending on the task."
+    activity: "Ask: 'What made the outside task hard for the tool?' (Answer: details in interview notes that changed the right answer.)"
+    book: "§1.3 opening paragraphs and @fig-1-6."
+
+- layout: concept
+  minutes: 3
+  kicker: "§1.3 · signature diagram: the Jagged Frontier Map"
+  title: "The frontier is jagged, and it moves"
+  figure: f1-07-jagged-frontier
+  size: 22
+  bullets:
+    - "Hard-looking tasks can sit inside; easy-looking ones outside"
+    - "It moves with **the task**, **the tool**, **the date**"
+    - "Test a case where you know the answer"
+  notes:
+    say: |
+      Here is the image the researchers used. Imagine all the tasks you could give an AI tool, arranged by how hard
+      they look to a person. You might expect a smooth line: easy tasks inside the tool's ability, hard tasks outside.
+      The real boundary zigzags. Rewriting a paragraph in a different tone, summarizing an article you paste in, and
+      generating ideas are usually inside. Exact quotations with page numbers from a book the tool was not given, exact
+      letter counts without a calculator or code feature, and facts about a small local organization without web search
+      are usually outside. Three things move the frontier for you: the task, the tool, and the date. So the only
+      reliable way to find it is to test: give the tool a version of the task where you already know the answer.
+    background: |
+      The examples in the figure are illustrative as of October 2026; results vary by tool and date, and the chapter
+      tells students to test their own tasks. The chapter's table adds: often inside = drafting an outline on a
+      familiar topic, explaining a standard concept in simpler words; often outside = recent events when the tool does
+      not search, details that depend on information the tool was never given, long calculations without a calculator
+      feature. Newer models move the frontier, but testing keeps finding new edges: a new model can fix one failure and
+      still miss a task that looks easier.
+    questions:
+      - q: "Won't the next model fix all of this?"
+        a: "Newer models move the frontier, but it stays jagged; a new model can fix one failure and miss another. Testing on a known answer is quick and protects you in the meantime (Appendix E, Review C3 guidance)."
+      - q: "Why not just memorize a list of what AI is good at?"
+        a: "The list changes with the task, the tool and the date. A test on a case where you know the answer works for any tool on any date (Check Yourself 1.3)."
+    misconceptions:
+      - m: "M2 '…there is a fixed list of things it is good at, and newer models handle everything.'"
+        fix: "Stress the three movers (task, tool, date) and the testing method; a list is a starting guess, not an answer."
+    activity: "Ask students to name one task from their week and guess which side it is on; write two guesses on the board."
+    book: "§1.3, @fig-1-7, the inside/outside table and the three bullets (task, tool, date)."
+
+- layout: compare
+  minutes: 2
+  kicker: "§1.3 · worked example · constructed for teaching"
+  title: "One change, two results: Hana’s quotations"
+  size: 26
+  columns:
+    - heading: "Test A · essay pasted in"
+      role: verified
+      bullets: ["All three quotations found", "One page number off by one", "**Inside**, with checking"]
+    - heading: "Test B · essay only named"
+      role: risk
+      bullets: ["Two quotations not in the essay", "Third real; page number wrong", "**Outside**, this tool, this date"]
+  takeaway: "Change one thing; then you know the cause"
+  notes:
+    say: |
+      Here is the testing method in action. Hana, an arts and technology student with a history minor, wants three
+      exact quotations with page numbers from an essay for a history paper. They test the same request twice, changing
+      only one thing: what the tool is given. In Test A the essay is pasted into the prompt. Hana searches the essay
+      for each quotation: all three appear, and one page number is off by one. Verdict: inside the frontier, with
+      checking. In Test B Hana only names the essay. Two of the quotations do not appear anywhere in it; the third
+      exists but the page number is wrong. Verdict: outside the frontier, for this tool, on this date. Because only
+      one thing changed, Hana knows what made the difference: giving the tool the source.
+    background: |
+      Constructed example for teaching (§1.3 Worked Example "One Change, Two Results"). Hana uses they/them pronouns
+      (book character rules). The colors on the slide follow the book's palette, and each card also says its verdict in
+      words. The faded example that follows in the book (Sam's pump: 450 liters per minute to gallons per hour) asks
+      which gallon (US or imperial) and whether one correct answer proves reliability; it is good homework.
+    questions:
+      - q: "Test A worked. Can Hana trust the tool for quotations now?"
+        a: "Only with checking: one page number was still off. And one success does not prove reliability; the faded example asks what to test next."
+    misconceptions:
+      - m: "M2 'AI is equally good at everything.'"
+        fix: "The same request was inside or outside depending only on whether the source was given."
+    activity: "Ask: 'What was the one thing that changed?' Then point students to Sam's faded example for homework."
+    book: "§1.3 Worked Example 'One Change, Two Results'; Faded Example 'Design the Test'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §1.3"
+  title: "the jagged frontier"
+  question: "Which description of the jagged frontier is most accurate?"
+  options:
+    - "A fixed list of tasks AI can do."
+    - "A boundary that newer models will soon remove."
+    - "An uneven, shifting boundary that you find by testing."
+    - "The line between tasks that are easy and hard for people."
+  answer: c
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) and (b) treat it as fixed or vanishing; (d) describes difficulty for people, not for the tool"
+  notes:
+    say: |
+      Second quick check. Read all four options before you choose. This one tests the idea, not a number, so think
+      about the three words we used: uneven, moving, tested. Give them thirty seconds and then vote. If many students
+      choose (d), that is useful: it shows the intuition the frontier image is designed to break, namely that what is
+      hard for a person is hard for the tool. Ask someone who picked (d) to say why, then ask someone who picked (c)
+      to respond using an example from the map, such as exact letter counts, which look easy but often fail.
+    background: |
+      Item: Review Questions A7 (O3 · LO1 · Understand). Key from Appendix E: (c). (a) and (b) treat the frontier as
+      fixed or about to disappear; (d) describes difficulty for people, not for the tool. Distractors map to
+      misconception M2.
+    activity: "30 s individual, then vote."
+    book: "§1.3; Review Questions A7; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (c): an uneven, shifting boundary that you find by testing. Uneven, because tasks that look equally
+      hard to a person can fall on different sides. Shifting, because the task, the tool and the date all move it.
+      Found by testing, because no fixed list survives the next update. Option (b) deserves a word: newer models do
+      move the frontier, but so far it stays jagged, and a new model can fix one failure and still miss a task that
+      looks easier. Close with the habit: before you rely on a tool for a kind of task, test it on a case where you
+      already know the right answer, and note the tool and the date.
+    background: |
+      Spaced Review item 1 (Appendix E) applies the same habit: if a friend says the newest model never makes mistakes
+      with numbers, ask them to test it on several number tasks where they already know the answer, including exact
+      counts and long calculations, and to note the tool and the date.
+    activity: "Reveal; one follow-up comment."
+    book: "§1.3; Appendix E (Review A7, Spaced Review 1)."
+
+# ----------------------------------------------------------------------- 1.4
+- layout: section
+  minutes: 0.5
+  number: "1.4"
+  tag: "Core"
+  title: "Fluent is not the same as correct"
+  idea: "Fluency is not evidence."
+  meta: "Book §1.4 · the most important habit in this chapter"
+  notes:
+    say: |
+      Testing tells you whether a tool can do a task. But how do you notice a failure in the first place, when every
+      answer sounds equally sure? That is this section. In this book, fluent means smooth, confident and well
+      organized: text that sounds like an expert wrote it. Fluent text is easy to trust, and that is exactly the
+      problem. The idea on the slide is, in the book's words, the most important habit in this chapter: fluency is not
+      evidence. We will practice spotting the red flags, and we will name the first three kinds of failure you will
+      meet.
+    background: |
+      Section 1.4 introduces three first failure terms (hallucination, outdated information, overconfidence) as a
+      preview; Chapter 4 provides the full Failure Taxonomy Tree, and Chapter 8 owns detection and verification
+      methods. Keep today at the level of recognizing red flags.
+    misconceptions:
+      - m: "M4 'If it sounds confident and fluent, it is probably right.'"
+        fix: "This whole section is the refutation; name the misconception aloud before the next slide."
+    activity: "Transition slide."
+    book: "§1.4 Fluent Is Not the Same as Correct."
+
+# About 55 words: the two quoted answers side by side are the point of this slide (deliberate exception).
+- layout: compare
+  minutes: 2
+  max_words: 60
+  kicker: "§1.4 · constructed example · not health advice"
+  title: "Which answer would you trust?"
+  columns:
+    - heading: "Answer A"
+      role: neutral
+      text: "About 2.7 L (women) or 3.7 L (men) a day from drinks and food; needs vary."
+      size: 22
+    - heading: "Answer B"
+      role: neutral
+      text: "“Exactly 3.2 L a day, regardless of climate or activity” (2019 Global Hydration Institute study)."
+      size: 22
+    - heading: "Red flags in B"
+      role: risk
+      bullets: ["Exact number for what varies", "No conditions", "Unfindable source"]
+      size: 22
+  takeaway: "B sounds more precise and deserves less trust"
+  notes:
+    say: |
+      Two answers to the same question: how much water should an adult drink per day? Give students fifteen seconds to
+      pick the one they would trust, then ask for hands. Many pick B, because it sounds more precise: it has a year, an
+      organization and one exact figure for everyone. It is the one you should trust less. Walk through the red flags:
+      an exact number for something that varies; words that remove all conditions, like "regardless of climate or
+      activity"; and a source you cannot find. Search for the "Global Hydration Institute." If you cannot find it, the
+      claim fails its first test. Answer A also gives numbers, but it names a real source, states the conditions and
+      tells you where to check. Those are good signs.
+    background: |
+      Constructed example written for teaching; not a real model output and not health advice (§1.4). Answer A's
+      reference values are from the Institute of Medicine (2005), Dietary Reference Intakes for Water (U.S. National
+      Academies): total water from drinks and food. The "Global Hydration Institute" and its 2019 study are invented
+      inside the example; that is the point. Check Yourself 1.4 asks students to name two red flags in Answer B.
+    questions:
+      - q: "Answer A has numbers too. Why is that fine?"
+        a: "It names a real source you can check, states that needs vary with body size, activity, climate and diet, and tells you where to check. Precision is not the problem; precision without conditions or a findable source is."
+    misconceptions:
+      - m: "M4 'If it sounds confident and fluent, it is probably right.'"
+        fix: "Make the vote visible first; the gap between the popular choice and the better one is the lesson."
+    activity: "15-second silent choice, show of hands, then reveal the red-flag column."
+    book: "§1.4 (Answers A and B, red flags)."
+
+- layout: matrix
+  minutes: 3
+  kicker: "§1.4 · first failure words (book figure: fluent vs. correct)"
+  title: "Sounding right and being right are different"
+  size: 22
+  bullets:
+    - "**Hallucination:** fluent, but unsupported by the input or by facts"
+    - "**Outdated information:** once correct, no longer"
+    - "**Overconfidence:** more certain than the evidence"
+  col_headers: ["Correct", "Wrong"]
+  row_headers: ["Sounds fluent", "Sounds halting"]
+  cells:
+    - - {title: "Useful", text: "still verify", role: verified}
+      - {title: "Dangerous", text: "nothing warns you", role: risk}
+    - - {title: "Useful", text: "needs editing", role: neutral}
+      - {title: "Easy to spot", text: "reject it", role: soft}
+  takeaway: "Fluent and wrong: nothing warns you"
+  notes:
+    say: |
+      Here is the idea as a two-by-two grid. Fluent and correct is useful, and you still verify. Halting and correct
+      is useful but needs editing. Halting and wrong is easy to spot. The dangerous corner is fluent and wrong, because
+      nothing on the surface warns you. Professionals have been caught there: in 2023 a federal judge in New York
+      sanctioned two lawyers and their firm for filing a brief citing court decisions that ChatGPT had made up, and they
+      kept defending them when questioned. Three words for now. Hallucination: fluent output not supported by the
+      model's input or by facts. Outdated information: once correct, but no longer. Overconfidence: stated with more
+      certainty than the evidence supports, like Answer B.
+    background: |
+      Why fluency is not evidence (§1.4): a generative model is trained to produce likely text and then tuned to give
+      answers people rate highly; neither step checks whether the answer is true. Mata v. Avianca, Inc. (S.D.N.Y.
+      2023), sanctions order of June 22, 2023; "sanctioned" means penalized; a brief is a written legal argument;
+      Chapter 8 studies the case. Some researchers use "confabulation" for some of these errors (Farquhar et al.,
+      2024); the book uses "hallucination" because it is more common. Outdated information arises because training
+      data ends at a cutoff date and the tool did not search for newer information, or found old pages. The grid
+      rebuilds the book's figure (@fig-1-9); the risk corner is marked by a thick border and the word "Dangerous" as
+      well as color.
+    questions:
+      - q: "Isn't 'hallucination' anthropomorphic?"
+        a: "It is a metaphor, which is why the book defines it precisely (fluent output not supported by the input or by facts) and notes the alternative term 'confabulation'. Use the definition, not the image."
+    misconceptions:
+      - m: "M4 'If it sounds confident and fluent, it is probably right.'"
+        fix: "Use the lawyers: trained professionals, fluent made-up citations, real sanctions."
+    activity: "Point to Elif's worked example in the book (tracing the 'Stanford study, 13%' statistic) as reading before the lab session."
+    book: "§1.4, @fig-1-9, the three terms; Worked Example 'Tracing a Confident Statistic'; Chapter 8 (Mata v. Avianca)."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §1.4"
+  title: "fluency"
+  question: "What does “fluent” mean in this book, and why is fluency not evidence?"
+  instruction: "Write one sentence for each part, then compare with a neighbor (1 min)"
+  model_answer:
+    - "**Fluent:** smooth, confident and well organized; it sounds like an expert wrote it."
+    - "**Not evidence:** the model was trained to produce likely text and tuned toward answers people rate highly. Neither step checks truth."
+  notes:
+    say: |
+      This check is open-ended. Write one sentence for each part of the question: what fluent means, and why it is not
+      evidence. Then compare with your neighbor. You have one minute. While they write, walk around and look for
+      answers that stop at "because it can be wrong"; the stronger answer explains why a confident tone carries no
+      information about truth. The reason is in how these models are made: they are trained to produce likely text and
+      then tuned toward answers people rate highly. Neither of those steps checks whether the answer is true.
+    background: |
+      Check Yourself 1.4, item 1. The answer is in §1.4: fluent = smooth, confident and well organized, text that
+      sounds like an expert wrote it; fluency is not evidence because training produces likely text and tuning
+      rewards answers people rate highly, and neither step checks truth, so a confident tone is not evidence of
+      accuracy.
+    activity: "1 min write and compare, then show the answer slide."
+    book: "§1.4; Check Yourself 1.4."
+  answer_notes:
+    say: |
+      Here is a model answer. Fluent means smooth, confident and well organized: text that sounds like an expert wrote
+      it. Fluency is not evidence because of how the text is produced: the model was trained to produce likely text
+      and then tuned to give answers people rate highly. Neither step checks whether the answer is true. So the
+      confidence you hear in an answer tells you about the training, not about the facts. Ask students to check their
+      own sentence against both parts. Then connect forward: if tone tells you nothing, you need a check against
+      something other than the tool, which is the Verify step of the loop we meet in section 1.6.
+    background: |
+      The same section gives the practical consequence: look for red flags (exact numbers for things that vary, words
+      that remove all conditions, a source you cannot find) and check claims against something other than the tool.
+      Chapter 4 explains why failures happen; Chapter 8 owns verification methods. Keep this check at the level of the
+      definition and the reason.
+    activity: "Reveal; one or two students read their sentence."
+    book: "§1.4; Check Yourself 1.4."
+
+# ----------------------------------------------------------------------- 1.5
+- layout: section
+  minutes: 0.5
+  number: "1.5"
+  tag: "Core"
+  title: "Your judgment, your responsibility"
+  idea: "AI use is not prohibited; unacknowledged, unverified or outsourced use is not acceptable."
+  meta: "Book §1.5 · the three-zone policy"
+  notes:
+    say: |
+      You now know that AI output can be uneven, fluent and wrong. So when is it acceptable to use it, especially in a
+      course? Students arrive here with two opposite worries. Some think any use of AI is cheating. Others think
+      anything is fine as long as the result is good. Both are wrong, and this book replaces them with a clear
+      policy. If your instructor or institution sets a different AI policy, that policy decides. The principle is on the slide: AI use is not prohibited; unacknowledged, unverified or intellectually
+      outsourced AI use is not acceptable. Read it twice. Every word matters: unacknowledged means not disclosed;
+      unverified means not checked; outsourced means the tool did the thinking you were supposed to do.
+    background: |
+      The principle is stated in §1.5 as the book's policy. The three-zone
+      table in §1.5 includes one data row: entering personal or confidential data
+      (yours or anyone else's) into a public AI tool is not acceptable. Chapter 10 owns disclosure in prose and at
+      work; Chapter 15 explains the data rule in detail.
+    misconceptions:
+      - m: "M5 'Using AI in a course is cheating' — or 'anything goes if I disclose it.'"
+        fix: "Name both halves of the misconception now; the next two slides refute each."
+    activity: "Ask for a quick hand count: 'Before today, who thought any AI use in a course was cheating?'"
+    book: "§1.5 Your Judgment, Your Responsibility."
+
+- layout: compare
+  minutes: 2
+  kicker: "§1.5 · the book’s policy (book figure: three zones)"
+  title: "Three zones of AI use"
+  columns:
+    - heading: "Permitted"
+      role: verified
+      bullets: ["Brainstorming", "Explanations", "Study help", "Feedback on your draft"]
+      size: 22
+    - heading: "With disclosure and verification"
+      role: neutral
+      dashed: true
+      bullets: ["Drafting", "Coding support", "Source synthesis", "Case and data work"]
+      size: 22
+    - heading: "Not acceptable"
+      role: risk
+      bullets: ["Undisclosed outsourcing", "Fabricated sources", "AI use in exams", "Private data in public tools"]
+      size: 22
+  header_height: 1.05
+  takeaway: "Disclosure makes middle-zone uses acceptable, never the off-limits ones"
+  notes:
+    say: |
+      In practice, uses fall into three zones. Permitted: brainstorming, explanations of concepts, study help, feedback
+      on your own draft, formatting, testing prompts. Permitted with disclosure and verification: drafting, coding
+      support, source synthesis, case analysis, data and decision work, provided you disclose, verify and can explain
+      the result. Not acceptable: undisclosed outsourcing, fabricated sources, unsupported claims, submitting work you do
+      not understand, any AI use during examinations, and entering personal or confidential data into a public AI tool.
+      The middle column has a dashed border because it is acceptable only under conditions: you disclose, you
+      verify, and you can explain the result. And the right-hand uses stay off-limits even if you disclose them.
+    background: |
+      Every major artifact carries an AI Use Declaration: tools used and purpose; outputs accepted, rejected or revised;
+      how they were verified; where your own judgment shaped the work. Middle-zone uses must be described in detail;
+      permitted-zone uses are listed briefly. Disclosure is a professional habit, like a scientist reporting methods,
+      not a confession. Fabricated sources remain unacceptable even if admitted. AI use during an exam is not allowed
+      because the exam exists to show what you can do yourself. The slide rebuilds the book's figure (@fig-1-11) with
+      shortened labels: "private data in public tools" stands for the book's "personal or confidential data in public
+      tools"; the book's zone also lists unsupported claims and submitting work you do not understand. The dashed
+      border marks "acceptable only under conditions"; each zone is also named in words, so color is not needed.
+    questions:
+      - q: "Is grammar checking with AI allowed?"
+        a: "Yes: feedback on your own draft and formatting are in the permitted zone; list it briefly in your declaration."
+      - q: "Can I use AI on a take-home exam if I disclose it?"
+        a: "Not where AI is not allowed. Any AI use during examinations is not acceptable, and disclosure does not change that (§1.5)."
+    misconceptions:
+      - m: "M5 '…anything goes if I disclose it.'"
+        fix: "Point at the right-hand zone: these stay off-limits even if disclosed."
+    activity: "Ask students to place 'asking AI to quiz me before an exam' (permitted: study help)."
+    book: "§1.5, @fig-1-11 and the zone table."
+
+- layout: compare
+  minutes: 2
+  kicker: "§1.5 · where the line is"
+  title: "Assistance or outsourcing?"
+  size: 28
+  columns:
+    - heading: "Assistance"
+      role: verified
+      bullets: ["Helps you think", "Explains a concept you then write up yourself"]
+    - heading: "Outsourcing"
+      role: risk
+      bullets: ["Replaces your thinking", "Its answer pasted in as yours, even if correct"]
+  takeaway: "Test: could you explain, defend or redo it without the tool?"
+  notes:
+    say: |
+      The key distinction. Assistance helps you do the thinking; outsourcing replaces it. Asking a tool to explain a
+      concept that you then use in your own words is assistance. Pasting its answer in as your own work is
+      outsourcing, even if the answer is correct. The test is what you can do afterward: if you cannot explain, defend
+      or redo the work without the tool, you outsourced it. Drafting is the tricky case. It sits in the middle zone,
+      but it depends on the assignment's purpose. If the assignment exists to build a skill in writing or reasoning
+      itself, like a reflection essay, then having AI draft it is outsourcing unless your instructor explicitly allows
+      it. If the writing serves another purpose, like a newsletter for your project, AI drafting with disclosure and
+      verification can be fine.
+    background: |
+      Recall the support agents (§1.5 closing paragraph): at work the goal was to solve the customer's problem; in a
+      course, the "customer" is your future self, who needs the skill. The book's worked example sorts a student
+      teacher's four uses (fraction ideas: permitted; parent newsletter: disclose and verify; reflection essay
+      submitted unchanged: not acceptable; feedback on her own draft: permitted). The faded example (Marcus, nursing)
+      ends with a real patient's case pasted into a public tool: not acceptable.
+    questions:
+      - q: "If I edit the AI draft a lot, is it still outsourcing?"
+        a: "It depends on the purpose. For an assignment that exists to build your own writing or reasoning, an AI first draft is outsourcing unless allowed, even with edits (Appendix E logic for Review B4). Ask before you start, not after."
+    misconceptions:
+      - m: "M5 'Using AI in a course is cheating.'"
+        fix: "The left column is fully permitted; the policy wants students to use AI as assistance."
+    activity: "Ask pairs to place 'AI writes my reflection essay; I edit two sentences and declare it' (outsourcing, if AI drafting was not allowed)."
+    book: "§1.5 'Assistance versus outsourcing', 'Where drafting ends and outsourcing begins'; Worked and Faded Examples."
+
+- layout: quiz
+  minutes: 1.5
+  kicker: "Quick check · §1.5"
+  title: "sort the uses"
+  question: "Sort each use: P (permitted), D (disclose and verify) or N (not acceptable)"
+  option_tags: ["(i)", "(ii)", "(iii)", "(iv)"]
+  options:
+    - "Asking for an explanation of a concept you then write up in your own words"
+    - "An AI-drafted club newsletter that you verified and disclosed"
+    - "Citing a source you never opened"
+    - "An AI-drafted reflection essay, with a declaration, when AI drafting is not allowed"
+  answer: ["P", "D", "N", "N"]
+  legend: "P = permitted · D = disclose and verify · N = not acceptable"
+  instruction: "Write P, D or N for each, then compare with a neighbor"
+  explanation: "Disclosure cannot rescue (iv): the essay exists to build your own reflection"
+  notes:
+    say: |
+      Last check for today. Four uses; label each P, D or N. Work alone for forty-five seconds, then compare with your
+      neighbor. Where you disagree, decide which zone-table row settles it. Expect the most disagreement on the last
+      one, the reflection essay with a declaration. Students who think "anything goes if I disclose it" will put D.
+      Let that disagreement happen before you show the answer; it is the clearest test of the difference between
+      drafting for another purpose and outsourcing a skill the assignment is meant to build.
+    background: |
+      Item: Review Questions A13, items (i), (ii), (iii) and (vi) of the book's six (renumbered (i)–(iv) here).
+      Appendix E key for the full item: (i) P · (ii) D · (iii) N · (iv) P · (v) N · (vi) N. The two items left out
+      are grammar feedback on your own essay (P) and entering a friend's medical details into a public chatbot (N);
+      use them if time allows.
+    activity: "45 s alone, 30 s with a neighbor, then show the answer slide."
+    book: "§1.5; Review Questions A13; Appendix E."
+  answer_notes:
+    say: |
+      Here is the key. The explanation you then write up in your own words is permitted: it is assistance. The
+      newsletter is in the middle zone: drafting for a practical purpose, acceptable because it was verified and
+      disclosed. Citing a source you never opened is not acceptable: an unsupported claim, and close to a fabricated
+      source. The reflection essay is not acceptable either, even with a declaration, because the essay exists to
+      build your own reflection and AI drafting was not allowed. Disclosure makes middle-zone uses acceptable; it does
+      not move a use out of the right-hand zone. If time allows, add the two items left out: grammar feedback on your
+      own essay is permitted; a friend's medical details in a public chatbot is not acceptable.
+    background: |
+      The same logic answers Review B4 (personal reflection essay drafted by AI, two sentences edited, declared):
+      outsourcing, because the assignment exists to build the student's own reflection and AI drafting was not
+      allowed. Personal and confidential data never goes into a public tool (the book's data rule; Chapter 15).
+    activity: "Reveal; ask who changed an answer after talking to a neighbor."
+    book: "§1.5; Appendix E (Review A13)."
+
+# ----------------------------------------------------------------------- 1.6
+- layout: section
+  minutes: 0.5
+  number: "1.6"
+  tag: "Core"
+  title: "The AI Work Loop"
+  idea: "Five human decisions around every AI-assisted task."
+  meta: "Book §1.6 · signature diagram 1"
+  notes:
+    say: |
+      You now have the pieces: what the tools produce, where they help, where they fail, and what the rules are. This
+      last section puts the pieces into one method, which you will use from here on. Every time you use
+      AI on a task that matters, you make five decisions, whether you notice them or not. The book names them so you
+      can make them on purpose. Together they form the AI Work Loop. You saw it on the title slide; now we walk
+      through it, step by step, on a real-looking task.
+    background: |
+      The AI Work Loop is signature diagram 1; it opens every chapter with that chapter's step highlighted. Chapter 1
+      highlights Frame, because the first decision is whether and how to use AI at all. Chapter 5 is devoted to the
+      Prompt step; Chapter 8 to Verify; Chapter 10 to Disclose.
+    activity: "Transition slide."
+    book: "§1.6 The AI Work Loop."
+
+- layout: loop
+  minutes: 2
+  kicker: "§1.6 · signature diagram 1: the AI Work Loop"
+  title: "Five decisions you make every time"
+  takeaway: "Drawn as a circle: verifying often sends you back to Frame or Prompt"
+  notes:
+    say: |
+      One. Frame: decide what the task really is, what a good result looks like, and whether AI belongs in it at all.
+      Is it likely inside the frontier? What would you lose by delegating it? Two. Prompt: give the tool what it needs:
+      the task, the context, the limits, the format. Three. Verify: check the output against something other than the
+      tool: a source, a calculation, your own knowledge, an expert. Fluency is not evidence. Four. Decide: choose what
+      to keep, change or reject, and take responsibility for the result. The tool produces options; you decide. Five.
+      Disclose: say what you used and how, in the way your context requires: an AI Use Declaration here, a note to a
+      manager or client at work. It is a circle because the steps feed each other.
+    background: |
+      Example of the loop feeding back (§1.6): verification often sends you back to framing ("this task is outside the
+      frontier; I need another approach") or to prompting ("I left out the key limit"). The figure's grammar: rounded
+      boxes are human decisions; the central hexagon is the tool, which produces drafts while you make every
+      decision. The section is ordered after §1.5 so the Declaration is taught before the Disclose step.
+    questions:
+      - q: "Do I really need all five steps for a quick question?"
+        a: "The loop is for tasks that matter. For a quick low-stakes question the steps can take seconds, but they are still decisions: framing tells you whether you need to verify at all."
+    activity: "Have the class say the five steps aloud once, in order."
+    book: "§1.6, @fig-1-2 and the numbered list."
+
+# The final reveal of this worked example is about 75 words: five loop steps on one slide is the point
+# of the example (deliberate exception to the 40-word guide).
+- layout: worked
+  minutes: 1.5
+  max_words: 90
+  kicker: "§1.6 · worked example · business"
+  title: "The loop on an upset customer’s email"
+  context: "Lucía, customer support: an order arrived broken, again; the customer wants a refund."
+  steps:
+    - {label: "Frame", text: "Keep the customer. Drafting: inside. The refund decision: not the tool’s."}
+    - {label: "Prompt", text: "Apologize; free express replacement or a refund; promise nothing else."}
+    - {label: "Verify", text: "The draft offers a 20% discount: not asked for, not allowed."}
+    - {label: "Decide", text: "Delete it, add the order number, send under your name."}
+    - {label: "Disclose", text: "Company rule: reviewed AI drafts need no note."}
+  reveal: [2, 5]
+  result: "The tool produces options; you decide and answer for them"
+  notes_reveal:
+    - minutes: 1.5
+      say: |
+        Let's run the loop on a real-looking task. Put yourself in Lucía's place: she works part-time in customer
+        support. A customer writes that her order arrived broken, for the second time; she is angry and asks for a
+        refund. Frame first: the goal is to solve the problem and keep the customer. A good reply apologizes, states the
+        fix clearly and follows company policy. Drafting a calm reply is likely inside the frontier. Deciding the refund
+        is not the tool's job: it depends on policy and on this customer's history. Then the prompt: a short, polite
+        reply; apologize; offer a replacement shipped by express at no cost; say a refund is also available if she
+        prefers; do not promise anything else; under 120 words. Notice that the policy details come from the employee,
+        not the tool. Ask: what could still go wrong?
+      background: |
+        Worked example in §1.6, with figure @fig-1-12 (five-step strip). The full prompt in the book: "Draft a short,
+        polite reply to a customer whose order arrived broken for the second time. Apologize, offer a replacement
+        shipped by express at no cost, and say a refund is also available if she prefers. Do not promise anything
+        else. Keep it under 120 words." Lucía is one of the book's five recurring fictional students (accounting).
+      activity: "Pause after Prompt; take two predictions of what could go wrong."
+      book: "§1.6 Worked Example 'The AI Work Loop on an Upset Customer's Email', @fig-1-12."
+    - minutes: 1.5
+      say: |
+        Here is what went wrong. Verify: the draft is good, but it promises "a 20% discount on your next order." The
+        prompt did not ask for that, and policy does not allow it. That sentence is invented, and it sounds perfectly
+        natural, which is why it would slip through without a check. Decide: delete the discount line, add the order
+        number, and send it under your own name, because you are responsible for what it says. Disclose: this company's
+        rule says AI-drafted customer messages are fine if a person reviews them, so no further note is needed. Another
+        company might have a different rule, so you check. The lesson in the bar at the bottom: the tool produces
+        options; you decide, and you answer for what you send.
+      background: |
+        Check Yourself 1.6 item 2 asks which step caught the error (Verify) and what it was (an invented 20% discount
+        that the prompt did not ask for and policy did not allow). The faded example that follows (Marcus rewriting a
+        hospital medication leaflet at a sixth-grade reading level) leaves Verify, Decide and Disclose for students;
+        Review B5 (pharmacy handout) is the same pattern, model answer in Appendix E.
+      questions:
+        - q: "Why not just add 'no discounts' to the prompt?"
+          a: "That is a good revision (loop back to Prompt), but it does not remove the need to Verify: a different invented promise could appear. The loop is a circle for exactly this reason."
+      misconceptions:
+        - m: "M4 'If it sounds confident and fluent, it is probably right.'"
+          fix: "The invented discount is fluent and plausible; only a check against policy caught it."
+      activity: "Ask: 'Which step caught the error?' before revealing the bottom bar."
+      book: "§1.6 Worked Example; Check Yourself 1.6; Faded Example 'The Loop on a Patient Leaflet'."
+  notes:
+    book: "§1.6 Worked Example."
+
+- layout: concept
+  minutes: 2
+  kicker: "Before the lab session"
+  title: "Bring three tasks of your own"
+  size: 24
+  bullets:
+    - "Read Chapter 1 (Core: about 35–50 minutes); recommended: AI Fluency, module 1"
+    - "List three tasks: one **inside**, one **outside**, one **unsure**"
+    - "For each, write a test that shows which side it is on"
+    - "Keep your Lab 1.1 outputs"
+  takeaway: "Your three tasks become the lab and your A1"
+  notes:
+    say: |
+      Before the lab session, three things. First, read Chapter 1. The core sections take about 35 to 50 minutes; the
+      activities add 20 to 30 if you do them at home. A recommended extra is module 1 of the AI Fluency
+      course. Second, and most important: do the Your Turn at the end of section 1.3. List three tasks from your own
+      week: one you expect to be inside the frontier, one outside, and one you are unsure about. For each, write a test
+      that would show which side it is on, ideally a version where you already know the right answer. Bring the list
+      to the lab session; it is the task list for Lab 1.2 and the start of your A1. Third, keep your Lab 1.1 outputs; you
+      will mark them sentence by sentence.
+    background: |
+      Recommended reading: Anthropic Academy, AI Fluency: Framework & Foundations, module 1, "Introduction to AI Fluency"
+      (Anthropic, n.d.). The §1.4 Your Turn uses a saved Lab 1.1 output:
+      students mark each sentence checked-and-correct, checked-and-wrong, or not checked. Students who have never
+      used AI write "I have not used AI yet" for current habits and run their three tasks for the first time in Lab
+      1.2; students who prefer not to use AI at all use the alternative assignment (§1.7, A1).
+    questions:
+      - q: "What if I can't think of a task that is outside the frontier?"
+        a: "Use the patterns in §1.3: exact quotations with page numbers from a text the tool was not given, exact counts in a long text, or facts about a small local organization without web search."
+    activity: "Leave this slide up as students pack."
+    book: "Chapter 1 time paragraph; §1.3 Your Turn; §1.4 Your Turn; §1.7."
+
+# ======================================================================= LAB SESSION
+- layout: section
+  session: thu
+  minutes: 0
+  number: "Lab"
+  tag: "Lab"
+  title: "Lab session: your baseline"
+  idea: "Test three real tasks, find one failure, start A1."
+  meta: "Book §1.7 · Lab 1.2 · A1 due when your instructor sets it"
+  notes:
+    say: |
+      Welcome back. Today is the lab session, and it has one goal: by the end of the session you will have tested
+      three of your own tasks, documented at least one failure, and started your first assignment, A1. Find your team
+      of three or four now; you work together, but each of you produces your own baseline. Take out the list of three
+      tasks you made after the concept session: one inside the frontier, one outside, one unsure. If you did not make the list, take
+      two minutes during the warm-up to write it; section 1.3 has examples. We start with a two-minute warm-up from
+      memory.
+    background: |
+      Suggested lab session flow: lab briefing 10, group practice in teams of 3–4 for 45, share and critique 15, exit step
+      5. Section 1.7 is a Studio section: hands-on work for the lab and the chapter assignment. A1 is due when your
+      instructor sets it, on your course site.
+    activity: "Form teams of 3–4 while this slide is up."
+    book: "§1.7 Your Baseline: Where You Start; Hands-on Labs, Lab 1.2."
+
+- layout: quiz
+  minutes: 2
+  kicker: "Lab session · warm-up from memory"
+  title_prefix: "Warm-up"
+  title: "the AI Work Loop"
+  question: "Name the five steps of the AI Work Loop in order. Why is it drawn as a circle?"
+  instruction: "No notes, no screens: write it, then check with your team"
+  model_answer:
+    - "**Frame → Prompt → Verify → Decide → Disclose**"
+    - "A circle because the steps feed each other: verifying often sends you back to framing or prompting."
+  notes:
+    say: |
+      Warm-up, from memory, no notes and no screens. Write the five steps of the AI Work Loop in order, and one
+      sentence on why it is drawn as a circle rather than a straight line. Then check with your team. Retrieval like
+      this, a couple of days after first meeting an idea, is one of the most effective ways to make it stick, which is
+      why the book uses spaced review and why we start the lab this way. If anyone gets stuck, give a hint: the first
+      step is the one highlighted on the chapter's opening page, and the last one is about what you tell other people.
+    background: |
+      Check Yourself 1.6, items 1 and 3. Answers in §1.6: Frame, Prompt, Verify, Decide, Disclose; drawn as a circle
+      because the steps feed each other: verification often sends you back to framing ("this task is outside the
+      frontier") or to prompting ("I left out the key limit").
+    activity: "1 min write, 1 min team check, then show the answer slide."
+    book: "§1.6; Check Yourself 1.6."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      Here are the five steps: Frame, Prompt, Verify, Decide, Disclose. It is drawn as a circle because the steps feed
+      each other. Verification often sends you back to framing, when you realize a task is outside the frontier and
+      you need another approach, or to prompting, when you realize you left out a key limit. Today you will live
+      through exactly that. In Lab 1.2 you frame each task before you touch a tool, you run it, you verify with a real
+      test, and if a test fails you have found the most valuable thing in the lab: a documented failure. Ask: in
+      the concept session's customer email, which step caught the error? (Verify: an invented 20% discount.)
+    background: |
+      Lab 1.2 maps to the loop: step 2 (Frame: write what a good result looks like before using AI), step 3 (Prompt and
+      run), step 4 (Verify with a test), step 5 (Decide: document at least one failure), and the A1 declaration
+      (Disclose).
+    activity: "Reveal; connect each step to a Lab 1.2 step."
+    book: "§1.6; Lab 1.2."
+
+- layout: lab
+  minutes: 3
+  kicker: "Lab 1.2 · teams of 3–4 · individual baseline"
+  title: "Your baseline: test three real tasks"
+  goal: "Find where your judgment is needed: at least one documented failure"
+  steps:
+    - {text: "Bring your three tasks: inside · outside · unsure"}
+    - {text: "**Frame:** write what a good result looks like, first", min: 5}
+    - {text: "Run each task; save the prompt and the output", min: 15}
+    - {text: "**Verify** each: notes, a source, a calculation, a classmate", min: 15}
+    - {text: "Document a failure; if all passed, make a task harder", min: 5}
+    - {text: "Share one surprise; start your A1 draft", min: 5}
+  side:
+    - {heading: "Deliverable", text: "Lab notes that become A1, parts 1–3"}
+    - {heading: "Privacy", role: risk, text: "No personal, patient, client or institutional data. Use public or invented content."}
+    - {heading: "No tool, or prefer not to use AI?", text: "Use the dated sample outputs on your course site for three tasks and design the tests"}
+  notes:
+    say: |
+      Here is the lab. You have 45 minutes. Step one, take out your three tasks. Step two, Frame: before you use any
+      tool, write what a good result would look like for each task. This is the step people skip, and it is the one
+      that lets you judge the output later. Step three, run each task and save exactly what you asked and what came
+      back. Step four, Verify each output with a test: your notes, a source, a calculation, or a classmate who knows the
+      topic. Step five, document at least one failure. If everything worked, make one task harder until something
+      fails; a failed test is a success in this lab, because it shows where your judgment is needed. Last, share one
+      surprise with your team, then start your A1 draft.
+    background: |
+      From labs/ch01-lab2.md (O3, O5, O6; LO1, LO4, LO7). Expected observations: inside-frontier tasks mostly pass with
+      light checking; outside-frontier tasks produce confident errors. Instructor notes from the lab sheet: circulate
+      during step 4, because most students need help designing a test; keep the group share to 5 minutes or skip it.
+      Accessibility: a screen-reader-friendly template is in Compass and on your course site. The deliverable is scored as
+      part of A1, not separately. Optional Lab 1.3 (Find the Edge, 30 min at home) is for students who want more:
+      find one output that looks right but is wrong and record prompt, output, test, tool and date.
+    questions:
+      - q: "What counts as a test?"
+        a: "Anything other than the tool itself: your notes, an original source, your own calculation, the word-processor's search function for a count, or a classmate who knows the topic. Asking the same tool 'are you sure?' is not a test."
+      - q: "Everything I tried worked. Now what?"
+        a: "Make one task harder or remove information from the prompt until something fails (lab step 5), for example ask for exact quotations from a text you did not paste in."
+    misconceptions:
+      - m: "M2 'AI is equally good at everything.'"
+        fix: "Ask each team which of their predictions about inside/outside was wrong; there is usually at least one."
+    activity: "3 min briefing on this slide; the 45 min of practice run while the baseline slide is on screen."
+    book: "§1.7; Hands-on Labs, Lab 1.2; labs/ch01-lab2.md."
+
+- layout: assignment
+  minutes: 2
+  kicker: "Assignment A1 · O6 · LO4, LO7"
+  title: "A1: AI use baseline and personal goals"
+  due: "When your instructor sets it · on your course site · 1–2 pages · individual"
+  parts:
+    - "Three real tasks: what you asked, what came back, what you did"
+    - "One documented failure and the test that showed it"
+    - "Two goals: specific, observable, tied to an LO"
+    - "An AI Use Declaration for the baseline itself"
+  rubric_title: "Rubric · 10 points"
+  rubric:
+    - {criterion: "Task", points: 3, full: "Three real, varied tasks, clearly described"}
+    - {criterion: "Process", points: 3, full: "Prompt, output and action shown for every task"}
+    - {criterion: "Verification", points: 2, full: "A real failure and the specific test"}
+    - {criterion: "Declaration", points: 1, full: "All five elements"}
+    - {criterion: "Goals", points: 1, full: "Two goals, specific, observable, tied to an LO"}
+  note: "Graded on completeness and process, never on how much AI you used before; not used for academic-integrity purposes."
+  notes:
+    say: |
+      Here is what you submit when your instructor sets the date. A1 is one to two pages with four parts: your three real tasks with what you
+      asked, what came back and what you did with it; one documented failure and the test that showed it; two personal
+      goals for your work with this book, each specific, observable and tied to a learning outcome; and an AI Use Declaration for the
+      baseline itself. The rubric is out of ten: three for the tasks, three for process evidence, two for verification,
+      one for the declaration and one for the goals. Two things to stress. A1 is graded on completeness and the
+      quality of your process, never on how much AI you used before. And it is not used for any academic-integrity
+      purpose: the three-zone policy applies from now on.
+    background: |
+      Full four-level rubric in the chapter (Application Assignment A1); e.g., Verification 2 = real failure with the
+      specific test, 1.5 = test vague, 1 = failure claimed without a test, 0 = none. The book's artifact rubric is
+      10 points (task 3, process evidence 3, verification 2, declaration and judgment 2); A1 splits the last 2 into
+      Declaration 1 and Goals 1. Alternative assignment (little access to AI, or prefer not to use it): interview someone
+      in a field of interest about how they use or avoid AI, then analyze one dated AI output provided on your course site;
+      same rubric, read for the interview. Late-work and revision rules are your instructor's decision.
+    questions:
+      - q: "What if I have never used AI?"
+        a: "That is a good starting point. Write 'I have not used AI yet' for current habits and run your three tasks for the first time in Lab 1.2 (§1.7)."
+      - q: "Will an honest baseline that shows heavy past use hurt me?"
+        a: "No. A1 is never graded on how much you used AI before, and the baseline is not used for any academic-integrity purpose (§1.7)."
+    activity: "Point to the Verification row: 'the test that showed it' is what earns the 2 points."
+    book: "§1.7; Application Assignment A1 (rubric, grading note, alternative assignment)."
+
+- layout: concept
+  minutes: 47
+  kicker: "§1.7 · on screen during group practice"
+  title: "Your baseline: three tasks, one failure, two goals"
+  figure: f1-14-baseline-template
+  size: 21
+  bullets:
+    - "Weak goal: “Get better at AI.”"
+    - "Stronger: “Within six weeks, check every statistic an AI tool gives me against an original source (LO3).”"
+    - "Honest beats impressive"
+  notes:
+    say: |
+      This is the template for your baseline, and it stays on the screen while you work. Three task boxes, each with
+      what you asked, what came back and what you did. One documented failure: the output, why it was wrong, and the
+      test that showed it. Two goals, each tied to a learning outcome. And the AI Use Declaration at the bottom. A word
+      on goals, because they are where students lose the last point. "Get better at AI" is not a goal you can check. A
+      useful goal is specific, observable and tied to a learning outcome, like the example on the slide: within six weeks,
+      check every statistic an AI tool gives me against an original source before I use it, LO3. Why honest? Because
+      athletes record their real starting times; an impressive baseline tells you nothing about your progress.
+    background: |
+      Second stronger goal in the book: "By the end of the term, design one AI-assisted workflow for a real task in my nursing
+      courses, with a step where I verify medical facts (LO6)." The book's sample baseline (Elif, psychology): summary
+      of a reading (inside; revised after comparing with notes), a statistic on international students (unsure; no
+      source found, not used), a keyword count in a 30-page report (outside; the tool's number was wrong, checked with
+      the word processor's search). Her declaration lists tools and date, accepted/revised/rejected outputs, how each was
+      verified, and that her judgment decided what to keep. The documented failure becomes the first entry in the
+      Failure Diary (Chapter 4).
+    questions:
+      - q: "Can my goal be about using AI less?"
+        a: "Yes, if it is specific, observable and tied to an outcome, for example an LO4 goal about telling assistance from outsourcing in your own coursework."
+    activity: |
+      2 min to introduce, then 45 min group practice (Lab 1.2). Circulate during the Verify step; most students need help
+      designing a test. At minute 40 give a 5-minute warning for 'share one surprise'.
+    book: "§1.7 'Writing a useful goal', @fig-1-14, Worked Example 'A Sample Baseline', Faded Example 'Write the Declaration'."
+
+- layout: tps
+  minutes: 15
+  kicker: "Share and critique · 15 min"
+  title: "What did your tests show?"
+  prompt:
+    - "Which inside / outside prediction was wrong?"
+    - "Which test was most useful, and why?"
+    - "What would you change in your Frame step?"
+  phases:
+    - {name: "Think", min: 2, text: "One line each"}
+    - {name: "Team", min: 5, text: "Pick the best surprise and test"}
+    - {name: "Share", min: 8, text: "Report; class critiques tests"}
+  notes:
+    say: |
+      Time to share and critique. On your own, answer the three questions in one line each: which of your inside or
+      outside predictions was wrong, which test was most useful and why, and what you would change in your Frame step
+      next time. Then, as a team, pick your best surprise and your best test. In the last eight minutes each team
+      reports, and the rest of us critique the test, not the person: would that test really catch the error? Is there a
+      cheaper or stronger one? This is the habit this book builds: deciding on evidence, not on how an answer
+      sounds.
+    background: |
+      Debrief questions come from labs/ch01-lab2.md. What to listen for: tests that rely on asking the same tool again
+      (not a test); tests that compare against a source the student opened (strong); counts checked with a search
+      function (strong). Collected failures feed Chapter 4's Failure Diary; the optional Lab 1.3 adds a class gallery
+      of edges in Compass (optional, ungraded).
+    misconceptions:
+      - m: "M4 'If it sounds confident and fluent, it is probably right.'"
+        fix: "When a team reports a confident wrong output, ask what on the surface warned them. Usually nothing did."
+    activity: "Think 2 · team 5 · share 8. Call on teams with different kinds of tests."
+    book: "Lab 1.2 debrief; §1.3–1.4."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Explain:** generation writes likely text, even when it cites sources"}
+    - {code: "O2", text: "**Explain:** gains from AI at work are real but uneven"}
+    - {code: "O3", text: "**Judge:** test a task; the frontier is jagged and moves"}
+    - {code: "O3", text: "**Judge:** fluent is not the same as correct"}
+    - {code: "O4", text: "**Judge:** assistance vs. outsourcing (three zones)"}
+    - {code: "O5", text: "**Apply:** Frame → Prompt → Verify → Decide → Disclose"}
+  takeaway: "At work, a faster result can be the goal. In a course, the goal is the skill."
+  notes:
+    say: |
+      Back to the puzzle from the concept session. Why did the assistant help the newest agents most? The authors' evidence suggests it
+      carried the habits of top performers to people who did not have them yet; the most experienced agents already
+      worked that way, so they gained little, and their quality dipped slightly. The second question matters just as
+      much. At work, a faster result can be the goal. In a course, the goal is the skill, and a tool that helps
+      beginners produce better output does not automatically help them learn. The card shows what you can do now:
+      explain how generation works and why gains are uneven, judge tasks by testing, tell fluent from correct, judge
+      assistance versus outsourcing, and apply the AI Work Loop.
+    background: |
+      Chapter Summary in the book. Attribution: the explanation of the puzzle is the authors' interpretation
+      (reported tier), which they describe as consistent with their results rather than proof. Revisit the Warm-up
+      questions from the chapter's opening: where did your last AI answer really come from; is your "task AI does
+      badly" a fixed fact or something you could test; what did you guess about AI use in your course?
+    activity: "Ask two students: 'What was your guess about the puzzle in the concept session, and was it right?'"
+    book: "Chapter Summary, @fig-1-15; Warm-up revisit."
+
+- layout: key_terms
+  minutes: 1
+  title: "Key terms"
+  terms:
+    - "AI Use Declaration"
+    - "AI Work Loop"
+    - "assistance"
+    - "outsourcing"
+    - "baseline"
+    - "generative AI system"
+    - "model"
+    - "prompt"
+    - "output"
+    - "fluent"
+    - "hallucination"
+    - "overconfidence"
+    - "frontier (jagged technological frontier)"
+    - "productivity"
+    - "control group"
+    - "random assignment"
+    - "percentage point"
+    - "difference-in-differences (Deep)"
+    - "staggered rollout (Deep)"
+  note: "Definitions: Chapter 1 and the glossary. (Deep) terms are optional and not on exams."
+  notes:
+    say: |
+      These are the key terms for the chapter. They may appear on a quiz or exam that asks for terms and
+      concepts, so make sure you can define each one in a sentence in your own words. A quick self-test: cover the
+      slide and define three of them for your neighbor. Pay special attention to the pairs: assistance and outsourcing;
+      fluent and correct; control group and random assignment. The two terms marked Deep come from an optional
+      section on how economists measure effects; they are not on the exams, but they help you read any study about AI
+      at work.
+    background: |
+      Key Terms list from the chapter (19 terms). Definitions are in the chapter text and docs/glossary.md, worded
+      identically. Examinable scope is Core sections only; Deep sections are not examinable (book decision D20).
+    activity: "30-second pair self-test: each partner defines two terms."
+    book: "Chapter Summary, Key Terms; glossary."
+
+- layout: exit_ticket
+  minutes: 3
+  questions:
+    - "Why does “AI helps beginners most at work” not mean “beginners should let AI do their coursework”?"
+    - "Which task surprised you, and what test showed it?"
+    - "Which Work Loop step will you watch most in A1?"
+  instruction: "3 min · index card or online form · ungraded"
+  notes:
+    say: |
+      Last three minutes: the exit ticket. Answer the three questions on an index card or in an online form; it is
+      not graded, and it tells me what to reteach next time. The first question checks the most important idea of
+      the chapter. The second and third are about you: what surprised you in your own tests, and which step of the loop
+      you will watch most closely while you write A1. Before you leave: A1 is due when your instructor sets it, on your course site,
+      and next we open with another case, the Amazon recruiting tool, and ask how machines learn from data.
+    background: |
+      Question 1 is Check Yourself 1.2, item 3. Good answer (§1.2): at work, the goal is the output, so faster is
+      better; in a course, an assignment exists to build a skill you can use without the tool, so if the tool produces
+      the reasoning the assignment is done but the learning is not; evidence: the Türkiye mathematics study (Bastani et
+      al., 2025). Next: Chapter 2, opening case the Amazon recruiting tool; how machines learn
+      from data, then what a language model is.
+    activity: "3 min; collect cards at the door or close the online form when time is up."
+    book: "§1.2 (question 1); §1.7; Chapter 2."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: deep
+  session: after
+  kicker: "Deep 1.A · how economists measured the effect"
+  title: "Going deeper: a staggered rollout as an experiment"
+  figure: f1-16-staggered-rollout
+  size: 22
+  bullets:
+    - "Groups got the tool at different times"
+    - "Compare recently treated with not-yet-treated, in the same weeks: **difference-in-differences**"
+    - "Works only if groups were on parallel paths before"
+  takeaway: "Ask of any AI study: compared with whom? Measured how? In what setting?"
+  notes:
+    say: |
+      Use this slide only if there is time or a student asks how anyone can know the assistant caused the 15 percent
+      gain. The assistant did not reach every agent on the same day: it arrived a few at a time over several months, a
+      staggered rollout. At any moment, some agents had the tool and similar agents did not yet. The analysis compares
+      the change in performance for agents who just received it with the change, over the same weeks, for agents
+      still waiting. Anything that affected everyone, like a seasonal rush, shows up in both groups and cancels out.
+      That is a difference-in-differences comparison. It works only if, without the tool, the groups would have moved
+      in parallel; researchers check that the groups were on similar paths before the tool arrived.
+    background: |
+      Deep 1.A (optional, not examinable). The check matters here because managers chose which agents attended each
+      training session. The authors report several checks, including similar effects across groups that started at
+      different times and a small randomized pilot with similar results (Brynjolfsson et al., 2025). Limits: one
+      company, one kind of job, one tool; productivity measured as issues resolved per hour (a different measure, such
+      as long-term customer loyalty, might tell a different story). The writing and consulting studies used random
+      assignment but designed tasks. The figure is schematic (three waves over eight months), not the study's actual
+      schedule.
+    questions:
+      - q: "Is a randomized experiment always better?"
+        a: "Random assignment makes groups alike on average, but those studies used tasks designed for the experiment, which may differ from real jobs. Each design trades realism against control (Deep 1.A)."
+    activity: "Optional; not part of the 75-minute plan."
+    book: "Deep 1.A How Economists Measure AI's Effect at Work, @fig-1-16."
+
+- layout: references
+  title: "References"
+  per_slide: 5
+  refs:
+    - "Anthropic. (n.d.). *AI fluency: Framework & foundations* [Online course]. Anthropic Academy."
+    - "Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *PNAS, 122*(26), e2422633122. https://doi.org/10.1073/pnas.2422633122"
+    - "Brynjolfsson, E., Li, D., & Raymond, L. (2025). Generative AI at work. *The Quarterly Journal of Economics, 140*(2), 889–942. https://doi.org/10.1093/qje/qjae044"
+    - "Dell’Acqua, F., McFowland, E., III, Mollick, E., et al. (2023). *Navigating the jagged technological frontier* (Harvard Business School Working Paper No. 24-013). https://ssrn.com/abstract=4573321"
+    - "Farquhar, S., Kossen, J., Kuhn, L., & Gal, Y. (2024). Detecting hallucinations in large language models using semantic entropy. *Nature, 630*, 625–630. https://doi.org/10.1038/s41586-024-07421-0"
+    - "Institute of Medicine. (2005). *Dietary reference intakes for water, potassium, sodium, chloride, and sulfate*. The National Academies Press. https://doi.org/10.17226/10925"
+    - "Liu, N. F., Zhang, T., & Liang, P. (2023). Evaluating verifiability in generative search engines. In *Findings of EMNLP 2023* (pp. 7001–7025). https://doi.org/10.18653/v1/2023.findings-emnlp.467"
+    - "*Mata v. Avianca, Inc.*, 678 F. Supp. 3d 443 (S.D.N.Y. 2023)."
+    - "Noy, S., & Zhang, W. (2023). Experimental evidence on the productivity effects of generative artificial intelligence. *Science, 381*(6654), 187–192. https://doi.org/10.1126/science.adh2586"
+  notes:
+    say: |
+      Reference slide; not presented in class. These are the sources cited on the slides and in the speaker notes, in
+      short APA form, copied from the chapter's reference list. Students do not need to read them; the chapter is
+      written to be fully understandable without them. If a student wants to go further, point them to Brynjolfsson,
+      Li and Raymond (2025) first: the book notes that its introduction is readable without economics training. The
+      Dell'Acqua study also appeared in 2026 in Organization Science; the full entry is in the chapter. Noy and Zhang
+      (2023) is short, and Bastani et al. (2025) previews Chapter 7.
+    background: |
+      Full entries (including the 2026 Organization Science version of Dell'Acqua et al. and all authors) are in the
+      chapter's References section, which was fact-checked (docs/factcheck/ch01.csv). Recommended readings: Anthropic AI Fluency, Bastani et al., Mata v. Avianca, Noy & Zhang, Dell'Acqua et al. and
+      Brynjolfsson et al. (the 2023 NBER version).
+    activity: "Not presented."
+    book: "Chapter 1, References; Further Reading and Compass Links."

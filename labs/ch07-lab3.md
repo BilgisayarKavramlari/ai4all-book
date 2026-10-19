@@ -27,7 +27,7 @@ Answer mode is faster and usually involves no recall by you. Tutor mode takes lo
 Ungraded. This mirrors the demonstration in the section 7.5 Worked Example and can be a rehearsal for Lab 7.1.
 
 ## Accessibility and alternatives
-No-device route: compare the dated answer-mode/tutor-mode transcript pair on your course site.
+No-device route: compare the dated answer-mode/tutor-mode transcript pair in the companion files.
 
 ## Safety and privacy
 Course questions only; no personal data. If the tool gives a wrong explanation, save it for your Failure Diary (Chapter 4).

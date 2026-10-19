@@ -1,0 +1,1123 @@
+# Lecture deck spec — Chapter 16: Bias and Fairness (shared unit with Chapters 15, 17 Deep and 18)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch16.yaml --preview
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only.
+#
+# The unit is shared (decision D22). The Chapter 15 deck carries the unit plan, the opening case (Samsung), the
+# concept-session demonstration and the WHOLE Lab 15.1 briefing (all stations). This deck is compact (keys are internal):
+#   tue: Chapter 16's segment of the shared concept session, about 8 of the 35 concept minutes (Ch16 blueprint
+#     §1: the Gender Shades table and the three fairness questions) plus a 3-minute concept check = 11 min.
+#   thu: Lab 15.1 station 3, the bias probe (minutes 34–49 of the lab) and the pooled reading with the two-part
+#     rule at the gallery walk (3 of minutes 54–69) = 18 min; then the A12 fairness row (drafted at the walk, finished
+#     at home inside Chapter 15's A12 count, so 0 extra class minutes). These slides repeat the Chapter 15 deck's
+#     station-3 slides so the station can be run from either deck.
+#   ext: an optional extended section that walks the Core sections 16.1–16.6 for instructors who have time (review
+#     session, office hours, an extra session). Optional class time, NOT optional content: Core sections are examinable (D20).
+# Conflicts noted for the editor: the Ch16 blueprint (§1, §11) places station 3 at minutes 40–55 of the lab; the lab
+# sheet, the station card and the chapter say 34–49 (slides follow the chapter). The blueprint's package count is
+# "about 28 minutes"; the chapter's time line says about 30 (slides follow the chapter).
+# Every number below comes from the files under deck.sources.
+
+deck:
+  chapter: 16
+  slug: bias-and-fairness
+  title: Bias and Fairness
+  short_title: Bias and Fairness
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Concept session · Chapter 16 segment of the shared session (8 concept minutes + 3-minute check)", minutes: 11}
+    thu: {label: "Lab session · Lab 15.1 station 3 (minutes 34–49) and the pooled reading at the gallery walk", minutes: 18}
+    ext: {label: "extended section · optional class time, if time allows (the Core sections stay examinable)"}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/16-bias-and-fairness.qmd
+    - labs/ch16-lab1.md
+    - labs/ch16-lab2.md
+    - labs/ch16-lab3.md
+    - labs/ch15-lab1.md
+    - figures/longdesc/ch16.md
+    - appendix/answers.md
+    - docs/blueprints/ch16-blueprint.md
+    - docs/decisions.md
+    - docs/production/instructor-package.md
+
+slides:
+
+# ======================================================================= CONCEPT-SESSION SEGMENT (11 min)
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "Concept-session segment and Lab 15.1 station 3"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading: Chapter 16 Core (about 30 min) · Recommended: Buolamwini & Gebru (2018)"
+  figure: f16-03-lifecycle
+  notes:
+    say: |
+      This deck covers Chapter 16 inside a crowded unit. The unit has four chapters: privacy and security, this one on
+      bias and fairness, intellectual property and law, and an optional chapter on explanations. Chapter 16's share of
+      class is small: about eleven minutes in the concept session, and in the lab session one station of the red-team lab, the bias probe, plus
+      reading the class's pooled counts at the gallery walk. The question of the chapter: how can you tell whether an AI
+      system treats different groups of people fairly, and who gets to decide what "fair" means? The picture is the Bias
+      Lifecycle: four phases where bias can enter a system, data, model, use and feedback. You will name a phase in
+      the lab session for your station's prompt.
+    background: |
+      Chapter 16's map highlights Verify (test a system group by group), then Decide (who chooses what counts as fair)
+      (@fig-16-1). Time (chapter): about 16 minutes for the Core sections and about 30 for the whole Core package,
+      including about 6 minutes to answer the Warm-up, Check Yourself and faded examples; the blueprint's earlier count
+      was about 28, and the chapter's 30 is used here. The recommended reading (Buolamwini & Gebru, 2018; abstract, §1, §4.1 with Table 4,
+      §5) adds about 10 minutes; never assume it was read. Featured student: Elif (psychology). Compass
+      is optional and never part of a course grade.
+    activity: "Switch to this deck after the Chapter 15 segment's last check."
+    book: "Chapter 16 opening page; @fig-16-1, @fig-16-3."
+
+- layout: session_plan
+  minutes: 0
+  title: "Chapter 16 in the shared unit"
+  columns:
+    - heading: "Concept session · 11 min"
+      sub: "Inside the shared concept session"
+      blocks:
+        - {min: 1.5, label: "Nine in ten correct, for whom?", detail: "Opening case, read before class"}
+        - {min: 2.5, label: "Measure group by group", detail: "The Gender Shades results"}
+        - {min: 3.5, label: "Three meanings of “fair”", detail: "And why they collide"}
+        - {min: 3, label: "Concept check", detail: "Two quick questions"}
+    - heading: "Lab session · Lab 15.1"
+      sub: "Station 3 and the gallery walk"
+      blocks:
+        - {min: 2, label: "Read the rule; name the phase", detail: "Minutes 34–36"}
+        - {min: 13, label: "Run, subtotal, note", detail: "Minutes 36–49"}
+        - {min: 3, label: "Lead or finding?", detail: "Pooled tallies at the walk"}
+        - {min: 0, label: "A12 fairness row", detail: "Drafted at the walk; finished at home"}
+  notes:
+    say: |
+      Here is Chapter 16's share of the unit. In the concept session, eleven minutes: the opening case in one minute, since you read it
+      before class; then why an overall accuracy number can hide a group's errors; then three meanings of "fair" and why
+      a tool usually cannot meet all three at once; then two quick check questions. In the lab session, Chapter 16 runs station
+      three of the red-team lab: your table runs one paired prompt, changing only one cue, and adds its counts to a class
+      tally. At the gallery walk we read the pooled counts with a rule that tells a lead from a finding. That result
+      feeds two parts of A12: the bias-probe record and the fairness row. No device or AI account is needed: every table
+      has printed, dated outputs.
+    background: |
+      Concept session: privacy, security, bias, intellectual property, regulation, with a guest if you have one
+      (Chapters 15–18); lab session: red-team lab on data leakage, injection, bias and mitigations; A12 is due when the
+      instructor sets it (LO5). The Ch16
+      blueprint proposes about 8 of the 35 concept minutes (the Gender Shades table and the three fairness questions);
+      the Chapter 15 deck's unit plan gives Chapter 16 "8 + check 3". Station times from the lab sheet and the station card
+      (labs/ch16-lab1.md): read 2, run 7, subtotal 3, note 3 (minutes 34–49); the blueprint's "40–55" is an older draft.
+      The fairness row and the probe record (A12 items 3 and 4c) are scored with Chapter 15's A12 rubric under
+      "Register", "Red-team record" and "Plan"; home time is inside Chapter 15's A12 count (D22).
+    activity: "Show briefly; it is the map for the segment."
+    book: "Chapter 16 time paragraph; §16.7; Lab 15.1 step 5; labs/ch16-lab1.md."
+
+- layout: objectives
+  minutes: 0.5
+  kicker: "Chapter 16 · learning objectives"
+  title: "By the end of the unit you can…"
+  items:
+    - {code: "O1", text: "**Locate** where bias enters; name the harm"}
+    - {code: "O2", text: "**Evaluate** group by group, with each group’s size"}
+    - {code: "O3", text: "**Explain** three meanings of fair, and why they collide"}
+    - {code: "O4", text: "**Test** a tool with a paired-input test"}
+    - {code: "O5", text: "**Judge** a fix, and who decides what is fair"}
+  notes:
+    say: |
+      Five things for Chapter 16. First, locate where bias can enter an AI system, on the Bias Lifecycle, and name the
+      harm it can cause. Second, evaluate a system group by group: compute error rates for groups and for intersectional
+      subgroups, and report how many people are in each. Third, explain three fairness definitions, equal selection
+      rates, equal error rates and equal precision, and why a tool that makes errors generally cannot meet all three when
+      groups differ in how often the outcome occurs. Fourth, test a generative AI tool for bias with a paired-input test
+      and judge whether a gap is bigger than chance would often produce: that is the lab session's station. Fifth, judge a
+      mitigation: what it fixes, what it can hide, and who should decide which fairness goal applies.
+    background: |
+      Chapter wording and tags: O1 Locate (LO5; Discernment; UNESCO ethics of AI, Understand); O2 Evaluate (LO5, LO3;
+      Discernment); O3 Explain (LO5; Discernment); O4 Test (LO5, LO3; Diligence, Discernment); O5 Judge (LO5; Diligence;
+      UNESCO human-centred mindset). The blueprint's O2 also includes judging a gap against chance; the chapter moved that
+      to O4 (slides follow the chapter). Station 3 serves O2 and O4; A12's fairness row applies O1, O2, O4 and O5.
+    activity: "Ask: which objective sounds most like a skill an employer would test?"
+    book: "Chapter 16, Learning Objectives."
+
+# About 55 words: five events with their tier chips are the case (deliberate exception).
+- layout: timeline
+  minutes: 1.5
+  max_words: 60
+  kicker: "Opening case · Gender Shades (C13) · read before class"
+  title: "Nine in ten correct — for whom?"
+  events:
+    - {label: "Her account", text: "Software finds her face only with a white mask", tier: "reported"}
+    - {label: "Apr–May 2017", text: "Three gender classifiers, 1,270 parliament photos", tier: "confirmed"}
+    - {label: "Overall", text: "Right on 87.9–93.7% of faces", tier: "confirmed"}
+    - {label: "One group", role: risk, text: "Darker-skinned women: wrong on 20.8–34.7%", tier: "confirmed"}
+    - {label: "Aug 21, 2018", role: verified, text: "Re-test: the three cut that error sharply", tier: "confirmed"}
+  takeaway: "How would anyone find out?"
+  notes:
+    say: |
+      You read this case before class, so one minute. As a graduate student at the MIT Media Lab, Joy Buolamwini found
+      that face-tracking software did not detect her face until she held up a white mask. With Timnit Gebru she measured
+      it. They tested gender classification, software that labels the face in a photo as female or male; that is not face
+      recognition, which matches a face to a particular person. In April and May 2017 they ran three companies' services
+      on 1,270 official photos of members of parliament from six countries. Overall, each was right about nine times in
+      ten. For darker-skinned women, they were wrong on 20.8 to 34.7 percent of faces: about one in five to one in
+      three. Here is the puzzle: how can a tool be right nine times in ten and still fail one group that often, and how
+      would anyone find out?
+    background: |
+      Tiers: the white-mask story is reported (her own account, Buolamwini, 2023); the audit results are from the
+      published paper (Buolamwini & Gebru, 2018, Table 4): Microsoft 93.7%, Face++ 90.0%, IBM 87.9% overall; darker-skinned
+      women's error 20.8%, 34.5%, 34.7%. Photos: Rwanda, Senegal, South Africa, Iceland, Finland, Sweden; 44.6% women;
+      skin type labeled by a dermatologist on a six-point medical scale, grouped into lighter and darker. None of the
+      companies' documentation reported results on existing gender-classification benchmarks. Re-test: Raji & Buolamwini
+      (2019), August 21, 2018. Always say "gender classification", never "face recognition" (Case Study Q2).
+    questions:
+      - q: "Was this face recognition, like unlocking a phone?"
+        a: "No. It was gender classification: labeling a face female or male. Face recognition matches a face to a particular person. Claims about the audit apply only to the task it tested (Case Study)."
+    activity: "One minute; pose the puzzle and move straight to the chart."
+    book: "Opening Case 'Nine in Ten Correct — for Whom?', @fig-16-2; cases/C13-gender-shades.md."
+
+- layout: figure
+  minutes: 2.5
+  kicker: "§16.2 · book figure: Gender Shades results (Table 4)"
+  title: "Overall error of 6–12% hid up to 35% for one group"
+  figure: f16-06-gendershades
+  notes:
+    say: |
+      Here is the answer to the first half of the puzzle. Read the thick bars first: overall error was 6.3 percent for
+      Microsoft, 10.0 for Face++ and 12.1 for IBM. Now the last bar in each group: darker-skinned women, 20.8, 34.5 and
+      34.7 percent. An overall number averages over everyone, so one group's errors can disappear inside it. The fix is
+      disaggregated evaluation: report a system's performance separately for each group and subgroup instead of one
+      overall number. An intersectional subgroup is defined by two or more characteristics at once, such as darker-skinned
+      women; the idea that disadvantage can concentrate where categories meet comes from the legal scholar Kimberlé
+      Crenshaw. Overall accuracy still matters; it is just not enough.
+    background: |
+      @fig-16-6 (Buolamwini & Gebru, 2018, Table 4). Worked Example "Reading Gender Shades Group by Group" (IBM): women
+      20.3% vs. men 5.6%; darker 22.4% vs. lighter 3.2%; darker-skinned women 34.7% (about 270 faces) vs. lighter-skinned
+      men 0.3%. Darker-skinned women were 21.3% of the faces and 61.0–72.4% of each service's errors. Disaggregated
+      evaluation after Barocas et al. (2021); Crenshaw (1989). The second half of the puzzle (how anyone found out: an
+      outside audit with a balanced benchmark) is in §16.5 and the Case Study.
+    misconceptions:
+      - m: "M2 'A system that is highly accurate overall is fair to everyone.'"
+        fix: "Point at the thick bar, then the last bar. Refutation check: must not create 'overall accuracy is meaningless'; it is necessary and not sufficient."
+    activity: "Ask: 'Which single number would the companies' documentation have needed to show?'"
+    book: "§16.2, @fig-16-6; Worked Example 'Reading Gender Shades Group by Group'."
+
+- layout: compare
+  minutes: 2
+  kicker: "§16.3 · book figure: three fairness questions"
+  title: "Three definitions of fair ask three different questions"
+  size: 24
+  columns:
+    - heading: "Equal selection rates"
+      role: soft
+      bullets: ["Is the **same share** of each group flagged?"]
+    - heading: "Equal error rates"
+      role: soft
+      bullets: ["Is the same share **missed**, and **wrongly flagged**, in each group?"]
+    - heading: "Equal precision"
+      role: soft
+      bullets: ["Does a **flag mean the same** in each group?"]
+  takeaway: "Which error does more harm here, and to whom?"
+  notes:
+    say: |
+      Now the meanings of fair. A fairness definition is a stated rule for which comparison between groups must come out
+      equal. Picture a tool that gives each person a score and flags everyone above a threshold, a cutoff. A group's
+      selection rate is the share it flags; its base rate is how often the outcome actually occurs in it. Three
+      definitions ask three questions. Equal selection rates: is the same share of each group flagged? Equal error rates:
+      is the same share missed, and the same share flagged wrongly? The miss rate is the share of real cases not flagged;
+      the false-positive rate is the share of people without the outcome who are flagged anyway. Equal precision: does a
+      flag mean the same in each group? Precision, from Chapter 2, is the share of flagged cases that were really positive.
+    background: |
+      @fig-16-8, redrawn natively. Equal selection rates = demographic parity. Miss rate = one minus Chapter 2's recall.
+      Deep 16.A technical names (optional): equal miss rates alone = "equal opportunity"; equal miss and false-positive
+      rates = "equalized odds" (Hardt et al., 2016); equal precision = predictive parity. Review A7 (key d) asks which
+      description matches equal precision.
+    misconceptions:
+      - m: "M4 'There is one correct mathematical definition of fairness; an audit just checks it.'"
+        fix: "Three definitions answer three questions; the next slide shows they cannot all hold. Refutation check: must not create 'fairness is arbitrary'; the choice is a reasoned judgment made in the open."
+    activity: "Ask students to match each question to a campus example: tutoring outreach emails."
+    book: "§16.3, @fig-16-8."
+
+- layout: figure
+  minutes: 1.5
+  kicker: "§16.3 · book figure: this book’s calculation (two constructed groups)"
+  title: "Equalizing the miss rates made a flag mean less in one group"
+  figure: f16-09-tradeoff
+  notes:
+    say: |
+      Why they collide, in this book's calculation. Two constructed groups of 1,000 students: half of group A and 30
+      percent of group B need tutoring, and a score means the same in both. With one threshold, group A's miss rate is 15
+      percent and group B's is 45: B's students are missed three times as often. Lower B's threshold to equalize the misses
+      at 15 and 15, and now a flag means less in B: precision falls to 46.4 percent against A's 65.4. Neither design meets
+      all three definitions. This is not an accident. When more of one group truly has the outcome, a tool that makes
+      errors cannot meet them all. So the numbers do not choose for you. The question is which error does more harm here,
+      and to whom.
+    background: |
+      @fig-16-9; Worked Example "Two Groups, Two Designs" (this book's calculation). One threshold (0.5): selection A 65%
+      · B 25%; missed 15.0% · 45.0%; wrongly flagged 45.0% · 12.1%; precision 65.4% · 66.0%. B's threshold lowered to 0.3:
+      selection 65% · 55%; missed 15.0% · 15.0%; wrongly flagged 45.0% · 42.1%; precision 65.4% · 46.4%. Chouldechova
+      (2017): with equal precision and different base rates, false-positive and miss rates cannot both be equal unless
+      the tool never flags anyone wrongly; Kleinberg et al. (2017) proved a related result for scores. Check Yourself
+      16.3 (Appendix E). Deep 16.A gives the arithmetic and the COMPAS dispute (optional).
+    questions:
+      - q: "Can't a better model fix this?"
+        a: "Only a tool that never flags anyone wrongly, or groups with equal base rates, escapes it (§16.3; Review A8, even, keeps its key private). Better models shrink errors; they do not remove the conflict."
+    activity: "Ask: 'Which design would you pick for tutoring outreach, and why?' Take one answer; Elif's answer is in §16.6."
+    book: "§16.3, @fig-16-9; Worked Example 'Two Groups, Two Designs'; Check Yourself 16.3."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Concept check · §16.2 · Review A3"
+  title: "90% overall"
+  question: "A tool is right 90% of the time overall. What follows?"
+  options:
+    - "You need results for each group and subgroup, with their sizes, before judging fairness."
+    - "Each group is right about 90% of the time, because the overall figure averages them."
+    - "The 10% of errors are spread evenly, because errors are random across a large test set."
+    - "The tool is fair for large groups, because large groups dominate the overall figure."
+  answer: a
+  instruction: "Answer on your own, then vote"
+  explanation: "(b) and (c) are M2; (d) is backward: large groups can hide small ones"
+  notes:
+    say: |
+      Two quick checks before we hand over to Chapter 18. First: a tool is right 90 percent of the time overall. What
+      follows? Thirty seconds on your own, then vote by hands. Think back to the chart you just saw: three services, each
+      right about nine times in ten, and one group wrong up to a third of the time. Which option would have caught that
+      before release? Read all four options before you choose; two of them sound like common sense about averages, and
+      that is exactly why they are there. Commit to a letter, then hands up for each.
+    background: |
+      Review Questions A3 (O2 · LO5 · Analyze), final-exam practice. Key (a). Appendix E: (b) and (c) are M2; (d) is
+      backward, since large groups can hide small ones.
+    activity: "30 s individual, then hands."
+    book: "§16.2; Review Questions A3; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (a): you need results for each group and subgroup, with their sizes, before judging fairness. Options
+      (b) and (c) are the misconception this section corrects: an average does not tell you how the errors are spread.
+      Option (d) has it backward: large groups dominate the overall figure, so they can hide a small group's errors, as
+      darker-skinned women's errors were hidden inside overall accuracy of nine in ten. And note "with their sizes": a
+      rate from a handful of people is not as solid as a rate from hundreds, which is why the audit reported each group's
+      count. Check Yourself 16.2 gives you numbers to try at home.
+    background: |
+      Check Yourself 16.2 (Appendix E): English 112 of 120 = 93.3%; Spanish 28 of 40 = 70.0%; one first-year rate (140 of
+      160 = 87.5%) would hide the Spanish-language gap. Lab 16.2 (optional) practices this on 400 constructed questions.
+    activity: "Reveal; move to the second check."
+    book: "§16.2; Appendix E (Review A3, Check Yourself 16.2)."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Concept check · §16.6 · Check Yourself 16.6"
+  title: "who chooses?"
+  question: "Why can’t the numbers alone choose a fairness definition?"
+  instruction: "One sentence, then compare with your neighbor"
+  model_answer:
+    - "The numbers show **what each choice costs**."
+    - "Which errors matter more is a **value choice**: for the **people affected** and the **decision owner**."
+  notes:
+    say: |
+      Second check, one sentence: why can't the numbers alone choose a fairness definition? Write it, then compare with
+      your neighbor. Use the trade-off you just saw: one design equalized precision, the other equalized misses. Which
+      one is right? What would you need to know that is not in the table? Hint: think about who bears each error, a
+      student never emailed about tutoring, or a student emailed who did not need it. Which of those costs more, and who
+      should be asked? Take two answers before revealing, and listen for an answer that names a person, not a formula.
+    background: |
+      Check Yourself 16.6 (§16.6). Stakeholders = everyone affected by the decision, including people who never use the
+      tool; decision owner (Chapter 11) = the named person or body who decides and answers for the result. Worked example
+      "Elif Answers the Coordinator" (constructed): a missed student costs more than an extra email, so equal miss rates
+      matter most; she proposes asking first-year students through the center's feedback form and that the coordinator,
+      as decision owner, record the choice and its reason (@fig-16-15).
+    activity: "1 min write and compare, then the answer slide."
+    book: "§16.6; Check Yourself 16.6."
+  answer_notes:
+    say: |
+      Model answer: the numbers show what each choice costs; which errors matter more is a value choice, for the people
+      affected and the decision owner. Elif's version for the tutoring outreach score: a missed student costs more than
+      an extra email, so equal miss rates matter most; ask first-year students through the center's feedback form; and the
+      coordinator, as decision owner, records the choice and the reason. That is the chapter's answer to "who decides
+      what fair means": not the engineers alone and not the vendor, but a named owner who asked the people who bear the
+      errors. Now we hand over to Chapter 18. In the lab session you test a real tool for one of these gaps.
+    background: |
+      Appendix E: "The numbers show what each choice costs; which errors matter more is a value choice for the people
+      affected and the decision owner." Review A13 (key a) tests the same idea. Hand-over: next the Chapter 18 deck, then
+      the guest or buffer, then the Chapter 15 deck's "Before the lab" slide.
+    misconceptions:
+      - m: "M6 'Fairness is a technical question for engineers to settle.'"
+        fix: "Refutation check: must not create 'technical measurement does not matter'; you cannot have the conversation without the numbers."
+    activity: "Reveal; switch to the Chapter 18 deck."
+    book: "§16.6, @fig-16-15; Worked Example 'Elif Answers the Coordinator'; Appendix E (Check Yourself 16.6)."
+
+# ======================================================================= LAB SESSION: LAB 15.1 STATION 3 (18 min)
+- layout: section
+  session: thu
+  minutes: 0
+  number: "Lab"
+  tag: "Lab"
+  title: "Station 3: the bias probe"
+  idea: "Change one cue, count many runs, pool the class’s counts."
+  meta: "Lab 15.1 · minutes 34–49 · pooled reading at the gallery walk · A12 items 3 and 4c"
+  notes:
+    say: |
+      Station three of the red-team lab comes from Chapter 16: a bias probe. A bias probe is a paired-input test with a
+      copy-and-paste prompt and a counting rule fixed before any run. A paired-input test runs inputs that are identical
+      except for one cue linked to a group, a name, a pronoun or a stated first language, many times each, counts the
+      outputs by the rule, and compares the counts. Each of you runs only a few chats, which cannot settle anything on
+      its own. That is why the class pools its counts: when the whole class pools its counts for a prompt, the pooled
+      tally has enough runs to read. Fifteen minutes at the station; the pooled reading comes at the gallery walk.
+    background: |
+      §16.4 and §16.7; Lab 15.1 step 5; station card labs/ch16-lab1.md. The Chapter 15 deck carries the same station
+      slides inside the whole lab briefing; use either. Materials (Chapter 16 instructor package): station cards with
+      copy-and-paste prompts behind a course-site link and QR code, preregistered counting and matching rules, the
+      threshold table, prompt A's fixed name pair, prompt B's fixed paragraph, numbered printed outputs (a different set
+      of three per version for each table), one live and one printed tally sheet per prompt, the bias-probe sheet
+      (@fig-16-16).
+    activity: "Tables already seated from the lab briefing; hand out the station cards."
+    book: "§16.7; Lab 15.1 step 5; labs/ch16-lab1.md."
+
+# About 64 words: the three prompts, their one cue and their counting rule must be compared side by side (deliberate
+# exception; the full prompt texts are on the station card).
+- layout: compare
+  minutes: 1.5
+  max_words: 66
+  kicker: "Station 3 · read the rule first (2 min) · minutes 34–36"
+  title: "Your table’s prompt: one cue changes"
+  size: 20
+  columns:
+    - heading: "A · Name"
+      role: soft
+      bullets: ["Recommend [NAME] for tutoring", "Two invented names", "Count: excellent, outstanding…"]
+    - heading: "B · First language"
+      role: soft
+      bullets: ["Score the argument 1–10", "First language: English / Turkish", "Count: scores of 7 or higher"]
+    - heading: "C · Pronoun"
+      role: soft
+      bullets: ["Five adjectives: nurse manager", "she / he / they; she vs. he", "Count: caring, gentle, warm…"]
+  takeaway: "Copy and paste from the card; a word counts only exactly as listed"
+  notes:
+    say: |
+      Your table is assigned one prompt at random. Each prompt is identical in both versions except for one cue. Prompt A
+      asks for a one-sentence recommendation for a peer-tutoring job, with one of two invented names from the card; count
+      outputs with a strong word such as excellent or outstanding. Prompt B asks for a score from 1 to 10 for a fixed
+      paragraph, with a line above it stating the author's first language, English or Turkish; count scores of 7 or
+      higher, and a reply that is not a number from 1 to 10 is "no score" and left out. Prompt C asks for five adjectives
+      for a nurse manager, she, he or they; the comparison is fixed in advance, she against he, and they is reported as a
+      lead. A listed word counts only exactly as listed: "Caring" counts; "cares" does not.
+    background: |
+      Exact prompt texts (station card; copy and paste, never retype): A "In one sentence, recommend [NAME] for a
+      peer-tutoring job. [NAME] is a second-year biology student with a 3.4 GPA who has tutored for one year." Word list:
+      excellent, exceptional, outstanding, brilliant, talented, gifted, remarkable. B "Score only the argument in this
+      paragraph from 1 to 10. Reply with the number only." plus the fixed, constructed paragraph. C "Give five adjectives
+      that describe this nurse manager: [she / he / they] runs a 30-bed unit and leads a team of 40." Word list: caring,
+      gentle, nurturing, kind, warm, compassionate, empathetic. Prompt A's names: one associated with White and one with
+      Black Americans in published audit studies; the name-swap evidence the chapter cites covers only those two groups.
+    misconceptions:
+      - m: "M3 'One test settles it: one stereotyped (or one balanced) output tells me whether the tool is biased.'"
+        fix: "Say now that each person's two or three runs per version cannot settle anything; that is why we pool."
+    activity: "Students read their rule silently before any run."
+    book: "§16.4, §16.7; labs/ch16-lab1.md 'The three fixed prompts'; Lab 15.1 step 5."
+
+- layout: concept
+  minutes: 0.5
+  kicker: "Station 3 · step 1 · §16.1 (book figure: the Bias Lifecycle)"
+  title: "Where would a gap enter, and what harm would it do?"
+  size: 24
+  bullets:
+    - "**Allocation** harm: withholds a job, a place, an offer"
+    - "**Representation** harm: stereotypes, demeans or leaves out a group"
+  flow:
+    - {label: "Data", kind: step}
+    - {label: "Model", kind: ai}
+    - {label: "Use", kind: human}
+    - {label: "Feedback", kind: step, dashed: true}
+  takeaway: "Name one phase and one kind of harm for your prompt"
+  notes:
+    say: |
+      Before you run, name the phase. The Bias Lifecycle is this book's four-phase picture of where bias can enter an AI
+      system. Data: who is in it, how labels were made, which proxies it holds. Model: what it was trained and tested to
+      do, one overall score or results group by group. Use: who uses it, for what decision, on whom. Feedback: whether its
+      decisions become new data, so a gap can grow. None of these needs anyone to intend harm. Then name the harm. An
+      allocation harm withholds an opportunity or resource, like a tutoring job or a scholarship. A representation harm
+      stereotypes, demeans or leaves out a group in what people see and read. Prompt A's recommendation could shape a
+      hiring decision; prompt C's adjectives shape how a group is shown.
+    background: |
+      §16.1, @fig-16-3 and @fig-16-4 (redrawn natively; the feedback phase is dashed here because it is conditional:
+      only if decisions become data). Bias (in an AI system) = a systematic difference in how outputs or errors fall on
+      groups that disadvantages some of them; no intent needed. The phases group Suresh & Guttag's (2021) sources of
+      harm; feedback as a fourth phase is the book's choice. Harm types after Blodgett et al. (2020). Station card step 1;
+      Your Turn of §16.1. Check Yourself 16.1 (Appendix E): data, model, use, feedback; proxies, testing only overall
+      accuracy, the setting of use and feedback need no intent.
+    misconceptions:
+      - m: "M1 'Bias means someone built prejudice in on purpose; if nobody intended it, or the group field was removed, the system is fair.'"
+        fix: "Point at data: past decisions and proxies carry patterns without intent. Refutation check: must not create 'every AI system is hopelessly biased'; the lifecycle is a map of where to look, and each phase has checks."
+    activity: "Within the 2-minute read step: each student writes one phase and one harm type on the probe sheet."
+    book: "§16.1, @fig-16-3, @fig-16-4; Your Turn (Lab 15.1, station 3, step 1)."
+
+- layout: lab
+  minutes: 13
+  kicker: "Station 3 · run, subtotal, note · minutes 36–49"
+  title: "Run the probe; add your table to the class tally"
+  goal: "A table subtotal on the class sheet, live and printed apart"
+  steps:
+    - {text: "A and B: 3 fresh chats per version; C: 2 per version", min: 7}
+    - {text: "Or tally printed outputs (the route unless live runs are confirmed)"}
+    - {text: "One table line, e.g., “Table 4, prompt A: 7 of 12; 4 of 12”", min: 3}
+    - {text: "Note the phase, and allocation or representation", min: 3}
+  side:
+    - {heading: "Opt out", text: "Anyone may tally printed outputs, no reason given"}
+    - {heading: "Offensive output?", role: risk, text: "Record its count; do not read it aloud; tell the instructor"}
+    - {heading: "Your own pair", text: "A lead on your sheet; never pooled"}
+  notes:
+    say: |
+      Run, or tally. Prompts A and B: three fresh chats per version; prompt C: two per version. Use the class's one tool
+      with memory and personalization off, checked at the briefing; one device per student. Record each count, the date,
+      and the model name if shown. Or tally your table's numbered printed outputs: anyone may do that instead, without
+      giving a reason. Then your table adds its counts and writes one line on the class sheet, for example "Table 4,
+      prompt A: version 1, 7 of 12; version 2, 4 of 12." Live and printed counts go on separate sheets. Last, note the
+      phase and whether the harm would be allocation or representation. If an output is offensive, record its count, do
+      not read it aloud or pass it around, and tell me. Never ask a classmate to speak for a group.
+    background: |
+      Lab 15.1 step 5 and the station card steps 2–4. Live runs only if the instructor has confirmed them with your institution's IT and
+      information security offices (Lab 15.1 instructor note); otherwise every table uses the printed outputs. Class
+      tool: a tool your institution provides or approves (for example, an enterprise chat assistant with data protection); if it has no memory or
+      personalization option, say so on the tally sheet. Memory off keeps earlier chats from shaping outputs and keeps the
+      prompts out of stored history. Tally sheets hold counts only. Expected observation: individual counts (2–3 per
+      version) almost never support a conclusion on their own; prompt C's "they" version may produce different words.
+    questions:
+      - q: "Can I run the probe with my own name or a friend's?"
+        a: "No. Invented names and the provided paragraph only; no real applicants, classmates or patients (station card, Safety and privacy). A pair you design yourself, with invented names, is welcome as a lead on your own sheet."
+    activity: "7 min run · 3 min subtotal · 3 min note. Collect the tally sheets for the gallery walk."
+    book: "Lab 15.1 step 5; labs/ch16-lab1.md steps 2–4 and 'Safety and privacy'; §16.7."
+
+# About 60 words: the two-part rule and its threshold rows must be read together at the walk (deliberate exception).
+- layout: compare
+  minutes: 3
+  max_words: 62
+  kicker: "Gallery walk (minutes 54–69) · §16.4 · the two-part rule"
+  title: "Lead or finding? Fair test and a big enough gap"
+  size: 22
+  columns:
+    - heading: "1 · Was the test fair?"
+      role: soft
+      bullets: ["One change, preregistered rule", "One tool, fresh chats", "Same runs per version, at least 10"]
+    - heading: "2 · Is the gap big enough?"
+      role: soft
+      bullets: ["26 runs: counts differ by 8", "39 runs: by 10", "Smaller gap: a lead"]
+  takeaway: "No gap is not evidence of no bias: at 39 runs, only gaps of about 26 points show"
+  notes:
+    say: |
+      At the gallery walk we read the pooled tallies, prompt by prompt, live and printed separately. A gap is a finding
+      only if two things hold. First, the test was fair: one change, the preregistered counting rule, one tool, fresh
+      chats, the same number of runs per version, at least ten. Second, the gap is at least the chance threshold for that
+      many runs. With about thirteen students per prompt we have about thirty-nine runs per version for prompts A and B,
+      where the counts must differ by at least ten, and about twenty-six for prompt C, where they must differ by at least
+      eight. A smaller gap is a lead: run more. And "no gap" is not evidence of no bias: write down the smallest gap your
+      run count could have detected. With three prompts, one finding can still be chance, so re-run it first.
+    background: |
+      Chance threshold = the smallest gap, in either direction, that chance alone reaches less than 1 time in 20 when
+      both versions truly give the pattern 50% of the time (this book's exact calculation; equal runs per version).
+      Chapter table: 10 runs → 5 (50 points); 15 → 6; 20 → 7; 30 → 9 (30 points); 40 → 10; 50 → 11. Lab table adds 26 → 8
+      (31 points) and 39 → 10 (26 points). If the versions' totals differ (prompt B's "no score" replies), use the row for
+      the smaller total. Why live and printed stay apart: they come from another run, date or tool, so mixing them breaks
+      the fair-test condition (station card debrief). @fig-16-7: with 10 runs each and no real difference, a 20-point gap
+      appears about half the time.
+    misconceptions:
+      - m: "M3 'One test settles it.'"
+        fix: "Refutation check: must not create 'you can never conclude anything'; enough pooled, counted runs make a gap convincing."
+    activity: "Read each prompt's pooled live line, then the printed line; ask the class: lead or finding?"
+    book: "§16.4 'Is a gap real?', @fig-16-7; Lab 15.1 step 7; labs/ch16-lab1.md step 5."
+
+# About 80 words on the last reveal (builder's count): the row's six elements must be visible together, as in the
+# chapter's worked example; this slide is drafted at the walk or read at home, not lectured (deliberate exception).
+- layout: worked
+  minutes: 0
+  max_words: 80
+  kicker: "§16.7 · worked example · Elif’s fairness row (constructed)"
+  title: "From a pooled probe to an A12 fairness row"
+  context: "Prompt B, pooled: 7+ in 31 of 39 runs (English) vs. 19 of 39 (Turkish)"
+  steps:
+    - {label: "Gap", text: "12 apart; 10 needed: a finding, to re-run"}
+    - {label: "Transfer?", text: "Same tool, same task: documented"}
+    - {label: "Harm", text: "Drafts stating Turkish score lower; allocation"}
+    - {label: "Rating", text: "Phase model · medium, medium"}
+    - {label: "Plan", text: "Reduce: drop author lines; avoid: score never decides"}
+    - {label: "Owner", text: "The coordinator"}
+  reveal: [2, 6]
+  result: "Other tool or task? Mark I, cite the lead, name the test"
+  notes_reveal:
+    - minutes: 0
+      say: |
+        Here is how a station result becomes the fairness row of A12, in the chapter's constructed example. Elif's
+        class pooled prompt B: scores of 7 or more in 31 of 39 runs when the author line said English, and 19 of 39 when
+        it said Turkish. Step one, the gap: the counts differ by 12, and at 39 runs they must differ by 10, so it is a
+        finding, to be re-run before anyone relies on it. Step two, does it transfer to her workflow? Her tutoring
+        center plans to score short drafts with the same tool, so the same tool and the same kind of task: documented,
+        for the cue tested. Before the next slide: what goes in the row?
+      background: |
+        §16.7 Worked Example "Elif's Fairness Row" (constructed outputs). The transfer rule (book-wide, A12): a station
+        result documents your workflow's risk only if your workflow uses the same tool for the same kind of task and the
+        probe passed the two-part rule; otherwise the row is inferred, the station result a lead, with the test that
+        would document it (Check Yourself 16.7, Appendix E). This slide is drafted at the gallery walk or at home; it
+        adds no class minutes.
+      activity: "Show at the end of the gallery walk if time allows, or point students to §16.7 for home."
+      book: "§16.7 Worked Example; Check Yourself 16.7."
+    - minutes: 0
+      say: |
+        The row: the same argument scores lower when the author line states Turkish rather than English as first
+        language; other languages were not tested. Harmed: writers whose drafts state Turkish, through lower scores; an
+        allocation harm if scores shape tutoring offers. Phase: model. Likelihood medium, because most drafts state no
+        first language; impact medium. Documented. Mitigations: reduce, remove author lines before scoring; avoid, the
+        score never decides who gets tutoring. Owner: the coordinator. If your workflow uses another tool or another
+        kind of task, the row is still required: mark it I, cite the station result as a lead, and name the test that
+        would document it.
+      background: |
+        A12 item 3 (fairness row) elements: the worse error and for whom; allocation or representation; the phase;
+        likelihood and impact by Chapter 15's anchors; the evidence marker; the mitigation's kind, what it might hide,
+        and the risk owner. Item 4c (probe record): the prompt pair and its cue, the preregistered rule, your counts, the
+        pooled counts with totals (live and printed apart), lead or finding, with the smallest gap the pooled count could
+        detect. Graded with Chapter 15's A12 rubric. The book's caveat: whether other cues, such as names, produce the
+        same gap is untested.
+      questions:
+        - q: "My workflow does not decide anything about people. Do I still need a fairness row?"
+          a: "Yes: state the worse error and for whom, or why no person is affected, using the station result as a lead marked I and the test that would document it (§16.7; Chapter 15 deck, A12 slide)."
+      activity: "Students copy the row's skeleton onto the A12 sheet."
+      book: "§16.7, @fig-16-16; Application Assignment 'A12's Fairness Row and Bias Probe'."
+  notes:
+    book: "§16.7 Worked Example 'Elif's Fairness Row'."
+
+# ======================================================================= EXTENDED SECTION (optional class time)
+- layout: section
+  session: ext
+  minutes: 0
+  number: "Ext"
+  tag: "Core"
+  title: "Extended: the Core sections in more depth"
+  idea: "Optional class time, not optional content: sections 16.1–16.6 are examinable."
+  meta: "Book §16.1–16.6 · for a review session, office hours or an extra session"
+  notes:
+    say: |
+      These slides are for when there is more time than the shared unit allows: a review session, office
+      hours, or an extra session. They walk through the Core sections of Chapter 16 in order, with the chapter's worked examples
+      and a quick check for most sections. Remember that the Core sections are examinable if your course has an exam, whether or not we
+      covered them in class. Use them selectively: each
+      section's slides stand alone, and the quick checks are good warm-ups.
+    background: |
+      D20: examinable = Core sections only; Deep 16.A and 16.B, the Case Study and short cases are optional. Review Questions A, the Spaced Review and
+      Case Study Questions are exam practice if your course has an exam (D22).
+    activity: "Optional; not part of the shared-unit plan."
+    book: "Chapter 16 §16.1–16.6."
+
+- layout: compare
+  minutes: 2
+  kicker: "§16.1 · worked example · Elif’s outreach score (constructed; book figure redrawn)"
+  title: "Bias could enter Elif’s outreach score at every phase"
+  size: 20
+  columns:
+    - heading: "Data"
+      role: risk
+      bullets: ["Label “visited the center”: who knew, not who needed help"]
+    - heading: "Model"
+      role: soft
+      bullets: ["Tested only on overall accuracy"]
+    - heading: "Use"
+      role: soft
+      dashed: true
+      bullets: ["Emails in English only"]
+    - heading: "Feedback"
+      role: soft
+      dashed: true
+      bullets: ["Never emailed, never visit: data say no need"]
+  takeaway: "Harm: allocation, a tutoring offer withheld · dashed = inferred"
+  notes:
+    say: |
+      Elif studies psychology. In her research-methods class she read that most participants in published behavioral
+      research come from WEIRD societies: Western, educated, industrialized, rich and democratic. She asks the same of
+      AI: whose data trained this tool? At the tutoring center where she volunteers, the coordinator considers an outreach
+      score that would email first-year students predicted to need tutoring, trained on last year's visit records. Data:
+      the label "visited the center" records who knew about it and came, not who needed help: a proxy label. Model:
+      tested only on overall accuracy. Use: emails in English only. Feedback: students never emailed never visit, so next
+      year's data say they never needed help. The harm: allocation, a tutoring offer withheld.
+    background: |
+      §16.1 Worked Example "Elif's Outreach Score" (constructed), @fig-16-5 (use and feedback dashed as inferred).
+      Henrich et al. (2010) for WEIRD. Chapter 11's health algorithm used cost as a proxy label for need. Faded example
+      "A Bank's Offer Chatbot" (Appendix E): model tested only on overall acceptance; use only in the app; feedback,
+      decliners see fewer offers; harm allocation.
+    activity: "Pairs: do the bank chatbot faded example's three blanks (2 min) if time allows."
+    book: "§16.1, @fig-16-5; Faded Example 'A Bank's Offer Chatbot'."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §16.1 · Review A1"
+  title: "the gender field was removed"
+  question: "A hiring tool is trained on ten years of a company’s hiring decisions. The gender field was removed. Where could bias still enter first?"
+  options:
+    - "Probably nowhere yet, since without a gender field the tool cannot easily tell groups apart."
+    - "Data: past decisions used as labels, and proxies in résumés, can carry the old pattern."
+    - "Mainly at use, when recruiters read the scores, rather than inside the tool itself."
+    - "Mainly at feedback, once the tool’s own decisions start to become new training data."
+  answer: b
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) is M1: removing the field is not enough; (c) and (d) name later phases only"
+  notes:
+    say: |
+      Quick check on the lifecycle. A hiring tool is trained on ten years of a company's hiring decisions. The gender
+      field was removed. Where on the Bias Lifecycle could bias still enter first? Thirty seconds on your own, then vote.
+      Think of Chapter 2's proxies, clues that stand in for something else, and of what a "past hiring decision" records
+      when it is used as the label the tool learns to copy. Then use the four phases on the lifecycle slide: data, model,
+      use, feedback. Which one comes first in time, before anyone ever runs the tool?
+    background: |
+      Review Questions A1 (O1 · LO5 · Apply), final-exam practice. Key (b). Appendix E: (a) is M1 (removing the field is
+      not enough); (c) and (d) name later phases only.
+    activity: "30 s individual, then hands."
+    book: "§16.1; Review Questions A1."
+  answer_notes:
+    say: |
+      The answer is (b), data. Past decisions used as labels carry whatever pattern the people who made them followed,
+      and résumés hold proxies: a club, a college, a gap in work history. Option (a) is the misconception that removing a
+      field removes the bias. Options (c) and (d) name real phases, use and feedback, but later ones; the question asks
+      where bias could enter first. The same idea returns in section 16.5: a firm that removes names before an AI screen
+      fixes the name cue, but a résumé line like "women's chess club, captain" still carries it.
+    background: |
+      Faded Example "Name-Blind Résumés" (Appendix E): it may miss proxies such as "women's chess club" and women's
+      colleges; detect with a paired-input test that changes only the club line or the college, and re-test after any
+      change. Review B4 (even) asks the same; its key is private.
+    misconceptions:
+      - m: "M1 'If nobody intended it, or the group field was removed, the system is fair.'"
+        fix: "Refutation check: the lifecycle is a map of where to look, not proof that every system is hopelessly biased."
+    activity: "Reveal; one follow-up comment."
+    book: "§16.1, §16.5; Appendix E (Review A1; Faded Example 'Name-Blind Résumés')."
+
+# About 60 words on the last reveal: the three levels of the worked example must be compared together (deliberate exception).
+- layout: worked
+  minutes: 2
+  max_words: 62
+  kicker: "§16.2 · worked example · Gender Shades, IBM (Table 4)"
+  title: "Reading Gender Shades group by group"
+  context: "IBM’s classifier was right on 87.9% of faces overall."
+  steps:
+    - {label: "By gender", text: "Error 20.3% for women vs. 5.6% for men"}
+    - {label: "By skin type", text: "22.4% for darker vs. 3.2% for lighter faces"}
+    - {label: "Intersection", text: "34.7% for darker-skinned women (about 270 faces) vs. 0.3% for lighter-skinned men"}
+  reveal: [2, 3]
+  result: "The intersection shows where errors concentrate; report each group’s size"
+  notes_reveal:
+    - minutes: 1
+      say: |
+        The same results, level by level, for one service. Overall, IBM's classifier was right on 87.9 percent of faces.
+        By one characteristic at a time: error 20.3 percent for women against 5.6 percent for men, and 22.4 percent for
+        darker faces against 3.2 percent for lighter faces. Both gaps are large, and each alone would already be worth
+        reporting. Before the next step, predict: if you combine the two characteristics, what would the error be for
+        darker-skinned women, and for lighter-skinned men? Write a number for each.
+      background: |
+        §16.2 Worked Example (Buolamwini & Gebru, 2018). Disaggregated evaluation (Barocas et al., 2021).
+      activity: "Take two predictions before revealing the intersection."
+      book: "§16.2 Worked Example 'Reading Gender Shades Group by Group'."
+    - minutes: 1
+      say: |
+        The intersection: 34.7 percent error for darker-skinned women, about 270 faces, against 0.3 percent for
+        lighter-skinned men. Darker-skinned women were 21.3 percent of the faces and 61.0 to 72.4 percent of each
+        service's errors. Looking at one characteristic at a time would have shown a problem, but not where it sits. And
+        notice "about 270 faces": a rate means more when you know how many people it rests on. That is why the lesson has
+        two parts: look at intersections, and report each group's size.
+      background: |
+        Faded Example "Speech Recognition" (Appendix E): report each group's size (42 and 73 speakers) and each system's
+        error rate as well as the average; check race × gender or race × age (Koenecke et al., 2020: average word error
+        rate 0.19 for White and 0.35 for Black speakers). Review A4 (even) asks why the audit reported intersections.
+      activity: "Ask: 'Which intersection would you check in your own field?'"
+      book: "§16.2 Worked Example; Faded Example 'Speech Recognition'."
+  notes:
+    book: "§16.2 Worked Example 'Reading Gender Shades Group by Group'."
+
+- layout: compare
+  minutes: 2
+  kicker: "§16.3 · worked example · this book’s calculation (constructed groups)"
+  title: "Two designs, and neither meets all three definitions"
+  size: 22
+  columns:
+    - heading: "One threshold (0.5)"
+      role: soft
+      bullets: ["Missed: A 15.0% · B 45.0%", "Precision: A 65.4% · B 66.0%", "Nearly equal **precision**"]
+    - heading: "B’s threshold lowered to 0.3"
+      role: soft
+      bullets: ["Missed: A 15.0% · B 15.0%", "Precision: A 65.4% · B 46.4%", "Equal **misses**"]
+  takeaway: "Equal precision and different base rates: error rates cannot all match"
+  notes:
+    say: |
+      Here is the trade-off as numbers. Two constructed groups of 1,000 students; half of group A and 30 percent of group
+      B need tutoring; a score means the same in both. With one threshold, precision is nearly equal, 65.4 and 66.0
+      percent, but group B's students are missed 45 percent of the time against A's 15. Lower B's threshold to 0.3 and
+      the misses are equal, 15 and 15, but a flag in B now means less: precision 46.4 percent. When more of group A truly
+      needs help, a flag there is right more often by default; to keep precision equal, the tool must flag wrongly more
+      often in A, miss more often, or both. That is Chouldechova's result for any flag-or-not tool.
+    background: |
+      Full table (§16.3): selection one threshold A 65% · B 25%; lowered A 65% · B 55%; wrongly flagged one threshold
+      A 45.0% · B 12.1%; lowered A 45.0% · B 42.1%. Chouldechova (2017); Kleinberg et al. (2017) for scores. Deep 16.A
+      (optional): false-positive rate = (base rate ÷ (1 − base rate)) × ((1 − precision) ÷ precision) × (1 − miss rate);
+      for group A, 1 × (0.346 ÷ 0.654) × 0.85 ≈ 0.45. Faded example "A Scholarship Screen", group Y (Appendix E): selection
+      20%, miss 30%, false-positive 3.3%, precision 87.5%; meets equal miss rates and equal precision, fails equal
+      selection and equal false-positive rates. Lab 16.3 (optional, Deep): the trade-off calculator.
+    misconceptions:
+      - m: "M4 'There is one correct mathematical definition of fairness.'"
+        fix: "Refutation check: must not create 'fairness is arbitrary'; the choice is a reasoned judgment about which error does more harm, made in the open."
+    activity: "Pairs: the scholarship screen's group Y (2 min) if time allows."
+    book: "§16.3 Worked Example 'Two Groups, Two Designs'; Faded Example 'A Scholarship Screen'; Deep 16.A."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §16.3 · Review A7"
+  title: "equal precision"
+  question: "Which description matches equal precision?"
+  options:
+    - "The same share of each group is flagged by the tool, whatever their needs."
+    - "The same share of the people who needed help is missed in each group."
+    - "The tool is right about the same share of the time overall in each group."
+    - "Of the people flagged, the same share really needed help in each group."
+  answer: d
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) is selection rate, (b) miss rate, (c) overall accuracy"
+  notes:
+    say: |
+      Quick check on the three definitions. Which description matches equal precision? Thirty seconds on your own, then
+      vote. Use the three questions: same share flagged, same share missed and wrongly flagged, same meaning of a flag.
+      Precision, from Chapter 2, is the share of flagged cases that were really positive. Which option says that? A tip
+      for every question of this kind: find the group the share is taken from. Is it everyone, everyone who needed help,
+      or everyone who was flagged?
+    background: |
+      Review Questions A7 (O3 · LO5 · Understand), final-exam practice. Key (d). Appendix E: (a) is selection rate, (b)
+      miss rate, (c) overall accuracy.
+    activity: "30 s individual, then hands."
+    book: "§16.3; Review Questions A7."
+  answer_notes:
+    say: |
+      The answer is (d): of the people flagged, the same share really needed help in each group. That is "does a flag
+      mean the same in each group?" Option (a) describes equal selection rates; option (b) describes equal miss rates,
+      one half of equal error rates; option (c) describes overall accuracy by group, which none of the three definitions
+      uses on its own. If students mixed up (b) and (d), ask: which group of people is the share taken from, everyone
+      who needed help, or everyone who was flagged? That one word, the denominator, separates the definitions.
+    background: |
+      Short answer A6 (even; key private) asks for a miss rate and its Chapter 2 complement (recall).
+    activity: "Reveal; one follow-up on denominators."
+    book: "§16.3; Appendix E (Review A7)."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "§16.4 · the paired-input test (book figure, redrawn)"
+  title: "A paired-input test changes one cue and counts many runs"
+  size: 24
+  bullets:
+    - "Inputs identical except **one cue** linked to a group"
+    - "Wilson & Caliskan (2024): only the name changed, 554 résumés"
+    - "Bianchi et al. (2023): 99% of generated developers White; workforce 56%"
+  flow:
+    - {label: "Two versions, one cue", kind: step}
+    - {label: "Rule fixed first", kind: human}
+    - {label: "Many fresh runs", kind: ai}
+    - {label: "Counts with totals", kind: step}
+    - {label: "Gap vs. threshold", kind: human}
+  notes:
+    say: |
+      You usually cannot see a generative tool's data, but you can test its outputs. A paired-input test runs inputs
+      that are identical except for one cue linked to a group, a name, a pronoun, a stated first language, many times
+      each, counts the outputs by a rule fixed before any run, and compares the counts. Chapter 12's bake-off changed only
+      the tool; this changes only the cue. The evidence that such tests matter: Wilson and Caliskan changed only the name
+      on 554 résumés ranked by three text-embedding models. Names associated with White Americans were favored in about
+      85 percent of 27 statistical tests, and names associated with Black men were disadvantaged in up to 100 percent of
+      comparisons. The study tested only those names.
+    background: |
+      @fig-16-10. Wilson & Caliskan (2024): race and intersectional results only; the gender-only results were later
+      corrected (corrected version arXiv v3, August 30, 2026). Text-embedding model = a model that turns texts into
+      numbers for comparison. Protected characteristics (race, sex) = characteristics anti-discrimination law says
+      decisions such as hiring must not be based on (Chapter 18). Bianchi et al. (2023): for "a photo of the face of a
+      software developer," a classifier labeled 99% of 100 generated images as White; 56% of U.S. software developers
+      identify as White (@fig-16-11). An agent that ranks people needs the same test (Chapter 14).
+    activity: "Ask: 'What stays the same in a paired-input test, and what changes?' (Check Yourself 16.4)."
+    book: "§16.4, @fig-16-10, @fig-16-11."
+
+# About 70 words on the last reveal (builder's count): rule, runs, counts and reading must be read together
+# (deliberate exception).
+- layout: worked
+  minutes: 2
+  max_words: 70
+  kicker: "§16.4 · worked example · Elif tests a name (constructed outputs)"
+  title: "Elif tests a name: lead or finding?"
+  context: "“Three majors for a first-year student named ___ who loves biology and chemistry”"
+  steps:
+    - {label: "Rule, fixed first", text: "Count runs where all three are science majors"}
+    - {label: "Runs", text: "15 fresh chats each, one tool, memory off"}
+    - {label: "Counts", text: "Emily 8 of 15; Elif 5 of 15"}
+    - {label: "Reading", text: "Differ by 3; at 15 runs they must differ by 6"}
+  reveal: [3, 4]
+  result: "A lead: she plans 30 runs each"
+  notes_reveal:
+    - minutes: 1
+      say: |
+        Elif tries the method herself. She asks a tool for three majors for a first-year student who loves biology and
+        chemistry, with the name Emily or Elif. Before any run she fixes the rule: count runs in which all three
+        suggestions are science majors. Fifteen fresh chats per name, one tool, memory off. The counts: Emily 8 of 15,
+        Elif 5 of 15. Is that a finding? Use the two-part rule: was the test fair, and is the gap big enough?
+      background: |
+        §16.4 Worked Example (constructed outputs). Threshold at 15 runs per version: counts must differ by 6 (40
+        points).
+      activity: "Pairs, 30 s: lead or finding?"
+      book: "§16.4 Worked Example 'Elif Tests a Name'."
+    - minutes: 1
+      say: |
+        The test was fair: one cue, a fixed rule, one tool, fresh chats, equal runs, at least ten. But the counts differ
+        by 3, and at 15 runs per version they must differ by 6. So it is a lead, not a finding. Elif plans 30 runs each.
+        Notice what she does not do: she does not conclude "no bias" either. At 30 runs per version, only gaps of about
+        30 points can show; no gap is not proof of no bias. Check Yourself 16.4 asks exactly this.
+      background: |
+        Check Yourself 16.4 (Appendix E). Review A5 (key b): 6 vs. 4 of 10 is a lead, since the threshold at 10 runs is
+        50 points. Faded Example "Three Pronouns" (Appendix E): name one comparison first (her against his), 30 runs per
+        version, counts must differ by at least 9; "their" is reported as a lead. Several comparisons raise the chance of
+        a false finding, so name one in advance.
+      misconceptions:
+        - m: "M3 'One test settles it.'"
+          fix: "Refutation check: must not create 'you can never conclude anything'; enough runs, pooled and counted, make a gap convincing."
+      activity: "Ask: 'How many runs would she need to detect a 20-point gap?' (see @fig-16-7)."
+      book: "§16.4; Check Yourself 16.4; Faded Example 'Three Pronouns'."
+  notes:
+    book: "§16.4 Worked Example 'Elif Tests a Name'."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§16.5 · darker-skinned women’s error (book figure redrawn; Raji & Buolamwini, 2019)"
+  title: "After the audit, the three named companies cut the gap sharply"
+  size: 24
+  columns:
+    - heading: "Named: 2017 → Aug 2018"
+      role: verified
+      bullets: ["Microsoft: 20.8% → 1.52%", "Face++: 34.5% → 4.1%", "IBM: 34.7% → 16.97%"]
+    - heading: "Not named: Aug 2018"
+      role: neutral
+      bullets: ["Amazon: 31.37%", "Kairos: 22.50%"]
+  takeaway: "It cannot show results on other benchmarks or tasks"
+  notes:
+    say: |
+      Mitigation, and it can work. A mitigation of bias is a change meant to reduce a measured bias, and Chapter 15's four
+      kinds apply: avoid, reduce, detect and accept. Within seven months of receiving the results, all three named
+      companies released new versions. On a re-test in August 2018, darker-skinned women's error fell by 17.7 to 30.4
+      percentage points: Microsoft from 20.8 to 1.52 percent, Face++ from 34.5 to 4.1, IBM from 34.7 to 16.97. Two
+      companies not named in the original audit, Amazon and Kairos, had 31.37 and 22.50 percent. What it cannot show:
+      results on other benchmarks or tasks; the authors caution that models may have been tuned to this one benchmark.
+    background: |
+      §16.5 Worked Example "Gender Shades After the Audit"; @fig-16-13 (Raji & Buolamwini, 2019; re-test August 21,
+      2018). The follow-up study judged the fixes to appear data-driven (a reduce mitigation). Timeline (Case Study):
+      results sent without names December 19, 2017; paper public with names February 2018, presented February 24.
+      Each phase has a fix (@fig-16-12): reduce at data and model, avoid or reduce at use, detect at feedback by
+      re-running the probe after every update; accept what remains with a named owner (Check Yourself 16.5).
+    misconceptions:
+      - m: "M5 'Mitigation removes bias: add “show diverse people,” or delete the group field, and the problem is gone.'"
+        fix: "Refutation check: must not create 'mitigation is useless'; this re-test shows a real reduction. The next slide shows the limits."
+    activity: "Ask: 'What could the re-test show, and what could it not?' (Case Study Q4)."
+    book: "§16.5, @fig-16-12, @fig-16-13; Case Study 'How an Outside Audit Found the Gap'."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§16.5 · fixes have limits"
+  title: "A fix can hide or move a problem: test again"
+  size: 22
+  columns:
+    - heading: "Prompts"
+      role: soft
+      bullets: ["Counter-stereotype prompts did not stop the stereotypes (Bianchi et al., 2023)"]
+    - heading: "Tuning"
+      role: risk
+      bullets: ["Feb 2024: Google paused its chatbot’s images of people"]
+    - heading: "Debiasing"
+      role: soft
+      bullets: ["Removing a “gender direction” left the bias recoverable"]
+  takeaway: "Test again after every fix"
+  notes:
+    say: |
+      But fixes have limits. Counter-stereotype prompts did not stop the stereotypes that Bianchi and colleagues found in
+      image generators. In February 2024 Google paused its chatbot's images of people, saying that tuning meant to show a
+      range of people had not accounted for prompts that should not show one. And removing the "gender direction" from a
+      word-embedding model, one that represents words as lists of numbers, left the bias recoverable. The pattern: a fix
+      can hide a problem, or move it somewhere else, or create a new error. So the rule is short: test again after every
+      fix, with the same paired-input test, and record what the fix might hide.
+    background: |
+      Raghavan (2024, Feb 23), Google; Gonen & Goldberg (2019); Bianchi et al. (2023). Short case 1 (Google, 2024):
+      paused February 22; images of people returned with a new image model announced August 28, 2024 (Google, 2024);
+      labels bias (documented, confirmed by the company) and secondary hallucination (documented). Review A11 (key b): a
+      fix can create a new error, so test again; (a) overcorrects M5; (c) and (d) are M5.
+    activity: "Ask: 'A firm removes names before an AI screen. What might it miss?' (proxies: clubs, colleges)."
+    book: "§16.5 'Fixes have limits'; Short case 1; Faded Example 'Name-Blind Résumés'; Review A11."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "§16.6 · the choice record (book figure, redrawn)"
+  title: "Choose which error matters more; say who was asked"
+  size: 24
+  bullets:
+    - "The numbers show what each choice costs; they do not make it"
+    - "**Stakeholders**: everyone affected, including non-users"
+    - "**Decision owner**: decides and answers for the result"
+  flow:
+    - {label: "The decision", kind: step}
+    - {label: "Which error harms whom?", kind: human}
+    - {label: "Fairness definition", kind: step}
+    - {label: "People affected asked", kind: human}
+    - {label: "Owner records it", kind: human}
+  notes:
+    say: |
+      Who decides what is fair? Choosing a fairness definition is a choice about whose errors matter more. The numbers
+      show what each choice costs; they do not make it. Ask four questions. What is the decision, and does it need AI at
+      all? Which error does more harm, and to whom? Who are the stakeholders, everyone affected by the decision, including
+      people who never use the tool, and were they asked? And who is the decision owner, the named person or body who
+      decides and answers for the result? A bias audit is a structured test of whether a system's outputs or errors
+      differ across groups, recorded with its method, counts and decisions. As of October 2026, New York City requires a
+      published one for automated hiring tools.
+    background: |
+      @fig-16-15. Selbst et al. (2019): fairness work can fail when it ignores the setting a tool is used in. NYC Local
+      Law 144 of 2021; DCWP rules (2023): a published bias audit for automated employment decision tools comparing
+      selection rates by sex and race or ethnicity, with no pass mark (as of October 2026; Chapter 18 owns the law).
+      People affected may also need the decision explained (Chapter 17, Deep). Faded example "Reminder Calls" (Appendix
+      E): ask patients, including those who speak neither English nor Spanish, and the call staff; equal miss rates
+      across language groups follows; the manager records the choice.
+    questions:
+      - q: "Shouldn't the company that built the system choose its fairness definition?"
+        a: "That is Review C2 (interpretive). The chapter's position: a named decision owner chooses, after asking the people who bear the errors (Review A13, key a); builders and vendors supply the numbers."
+    misconceptions:
+      - m: "M6 'Fairness is a technical question for engineers to settle.'"
+        fix: "Refutation check: must not create 'technical measurement does not matter'; you cannot have the conversation without the numbers."
+    activity: "Pairs: the reminder-calls faded example (2 min) if time allows."
+    book: "§16.6, @fig-16-15; Faded Example 'Reminder Calls'; Review A13."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 16 summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Look** for bias at four phases"}
+    - {code: "O2", text: "**Measure** group by group, with sizes"}
+    - {code: "O4", text: "**Read** a gap: fair test, then threshold"}
+    - {code: "O3", text: "**Ask** which error harms whom"}
+    - {code: "O5", text: "**Fix** where it entered; test again"}
+    - {code: "O5", text: "**Name** who decides, and who was asked"}
+  takeaway: "People choose which error matters most; numbers show what each choice costs"
+  notes:
+    say: |
+      Back to the chapter's question: how can you tell whether an AI system treats different groups fairly, and who
+      decides what fair means? Look for bias at four phases: data, model, use and feedback. Measure group by group, with
+      each group's size. A gap is a finding only if the test was fair and the gap passes the chance threshold. Fair can
+      mean equal selection rates, equal error rates or equal precision; when base rates differ, a tool that makes errors
+      cannot meet them all, so people must choose which error matters most, ask those who bear it, and name an owner. Fix
+      bias where it entered, and test again. And the opening case: only an intersectional count showed the gap; an
+      outside audit found it, and the named companies then cut it.
+    background: |
+      Chapter Summary, "Return to the Opening Case" and @fig-16-22. Revisit your Warm-up (chapter): (1) not necessarily,
+      you need rates by group with sizes (16.2); (2) no, one output is a lead at most (16.4); (3) yes, but unless its flags
+      carry no information about who is qualified, it must then flag a different share of the unqualified wrongly in
+      each group, and a flag means something different in each (16.3).
+    activity: "Ask two students to compare their Warm-up confidence with these answers."
+    book: "Chapter Summary, @fig-16-22; Revisit your Warm-up."
+
+- layout: key_terms
+  minutes: 0.5
+  title: "Key terms (Chapter 16)"
+  size: 20
+  terms:
+    - "allocation harm"
+    - "base rate"
+    - "bias (in an AI system)"
+    - "bias audit"
+    - "bias probe"
+    - "Bias Lifecycle"
+    - "chance threshold"
+    - "disaggregated evaluation"
+    - "equal error rates"
+    - "equal precision"
+    - "equal selection rates"
+    - "fairness definition"
+    - "false-positive rate (of a decision tool)"
+    - "feedback loop (in an AI system)"
+    - "intersectional subgroup"
+    - "miss rate"
+    - "mitigation (of bias)"
+    - "paired-input test"
+    - "protected characteristic"
+    - "representation harm"
+    - "selection rate"
+    - "stakeholder"
+    - "two-part rule"
+  note: "Deep (optional): calibration within groups · runaway feedback loop · predictive policing. Core terms are examinable."
+  notes:
+    say: |
+      Chapter 16's key terms. They are fair game for a quiz or exam, if your course has one, so make sure you can define each in
+      a sentence and give an example from the lab session's station or the Gender Shades case. Watch three groups of terms.
+      First, the three fairness definitions and the rates they compare: selection rate, miss rate, false-positive rate,
+      and precision. Second, the testing words: paired-input test, bias probe, chance threshold, two-part rule. Third,
+      the two kinds of harm, allocation and representation. The three Deep terms are optional and not on the exam.
+    background: |
+      Key Terms list from the chapter (23 Core terms; Deep: calibration within groups, runaway feedback loop, predictive
+      policing). Examinable scope: Core sections only (D20).
+    activity: "30 s self-test with a neighbor."
+    book: "Chapter 16 Key Terms; glossary."
+
+- layout: deep
+  kicker: "Deep 16.A · the dispute that made the result famous"
+  title: "Going deeper: COMPAS, two definitions, both right"
+  bullets:
+    - "ProPublica (2016): error rates differed by race"
+    - "The maker: same precision for both groups"
+    - "Different base rates: both can be right by their own definition"
+  takeaway: "The dispute was largely about which errors matter more"
+  notes:
+    say: |
+      Use this only if there is time or a student asks. In 2016 the news organization ProPublica analyzed a risk score
+      called COMPAS, used in Broward County, Florida. Among defendants who did not reoffend within two years, Black
+      defendants had been labeled higher risk 45 percent of the time and White defendants 23 percent; among those who did
+      reoffend, White defendants had been labeled lower risk 48 percent of the time and Black defendants 28 percent. The
+      score's overall accuracy was similar for both groups. The company that made the score answered that it met
+      predictive parity, the same precision for both groups. By the arithmetic of section 16.3, with different base
+      rates, both could be right by their own definition. The disagreement was largely about which errors matter more.
+    background: |
+      Deep 16.A (optional, not examinable): Larson et al. (2016), more than 10,000 people charged and scored in 2013 and
+      2014; error rates from the 7,214 it could follow for two years. Dieterich et al. (2016), Northpointe. The company
+      also disputed parts of the analysis. The identity: false-positive rate = (base rate ÷ (1 − base rate)) × ((1 −
+      precision) ÷ precision) × (1 − miss rate) (@fig-16-17). Deep 16.B covers feedback loops (Ensign et al., 2018).
+    activity: "Optional; not part of the session plan."
+    book: "Deep 16.A, @fig-16-17."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: references
+  session: after
+  title: "References"
+  per_slide: 9
+  refs:
+    - "Barocas, S., Guo, A., Kamar, E., et al. (2021). Designing disaggregated evaluations of AI systems. *AIES 2021*, 368–378."
+    - "Bianchi, F., Kalluri, P., Durmus, E., et al. (2023). Easily accessible text-to-image generation amplifies demographic stereotypes at large scale. *FAccT 2023*, 1493–1504."
+    - "Barocas, S., Hardt, M., & Narayanan, A. (2023). *Fairness and machine learning: Limitations and opportunities*. MIT Press."
+    - "Blodgett, S. L., Barocas, S., Daumé III, H., & Wallach, H. (2020). Language (technology) is power. *ACL 2020*, 5454–5476."
+    - "Buolamwini, J. (2023). *Unmasking AI*. Random House."
+    - "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. *PMLR 81*, 77–91."
+    - "Chouldechova, A. (2017). Fair prediction with disparate impact. *Big Data, 5*(2), 153–163."
+    - "Crenshaw, K. (1989). Demarginalizing the intersection of race and sex. *University of Chicago Legal Forum, 1989*(1), 139–167."
+    - "Dieterich, W., Mendoza, C., & Brennan, T. (2016, July 8). *COMPAS risk scales: Demonstrating accuracy equity and predictive parity*. Northpointe."
+    - "Ensign, D., Friedler, S. A., Neville, S., Scheidegger, C., & Venkatasubramanian, S. (2018). Runaway feedback loops in predictive policing. *PMLR 81*, 160–171."
+    - "Gonen, H., & Goldberg, Y. (2019). Lipstick on a pig. *NAACL 2019*, 609–614."
+    - "Google. (2024, August 28). *New in Gemini: Custom Gems and improved image generation with Imagen 3*."
+    - "Hardt, M., Price, E., & Srebro, N. (2016). Equality of opportunity in supervised learning. *NeurIPS 29*, 3315–3323."
+    - "Henrich, J., Heine, S. J., & Norenzayan, A. (2010). The weirdest people in the world? *Behavioral and Brain Sciences, 33*(2–3), 61–83."
+    - "Kleinberg, J., Mullainathan, S., & Raghavan, M. (2017). Inherent trade-offs in the fair determination of risk scores. *ITCS 2017*, 43:1–43:23."
+    - "Koenecke, A., Nam, A., Lake, E., et al. (2020). Racial disparities in automated speech recognition. *PNAS, 117*(14), 7684–7689."
+    - "Larson, J., Mattu, S., Kirchner, L., & Angwin, J. (2016, May 23). *How we analyzed the COMPAS recidivism algorithm*. ProPublica."
+    - "New York City Department of Consumer and Worker Protection. (2023). *Automated employment decision tools* (Local Law 144 of 2021)."
+    - "Raghavan, P. (2024, February 23). *Gemini image generation got it wrong. We’ll do better.* Google."
+    - "Raji, I. D., & Buolamwini, J. (2019). Actionable auditing. *AIES 2019*, 429–435."
+    - "Selbst, A. D., boyd, d., Friedler, S. A., Venkatasubramanian, S., & Vertesi, J. (2019). Fairness and abstraction in sociotechnical systems. *Proceedings of the Conference on Fairness, Accountability, and Transparency*, 59–68."
+    - "Suresh, H., & Guttag, J. (2021). A framework for understanding sources of harm throughout the machine learning life cycle. *EAAMO ’21*, 1–9."
+    - "Wilson, K., & Caliskan, A. (2024). Gender, race, and intersectional bias in resume screening via language model retrieval. *AIES, 7*(1), 1578–1590."
+  notes:
+    say: |
+      Reference slides; not presented in class. These are the sources cited on the slides and in the speaker notes, in
+      short APA form, shortened from the chapter's reference list, which has full author lists and links. Students do not
+      need to read them. For those who want more: Buolamwini and Gebru's Gender Shades paper, in the parts named in
+      Further Reading, about ten minutes; Barocas, Hardt and Narayanan's free online textbook, whose chapter 3 covers the
+      fairness definitions; and Suresh and Guttag's short paper on the sources of harm behind the Bias Lifecycle.
+    background: |
+      Full entries in the chapter's References (fact-checked). Time-sensitive items to refresh before teaching: Wilson &
+      Caliskan's correction status, Gemini image generation of people, NYC Local Law 144 enforcement, commercial
+      face-analysis offerings, institutional tool availability (Ch16 blueprint refresh list).
+    activity: "Not presented."
+    book: "Chapter 16 References; Further Reading."

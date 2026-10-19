@@ -16,9 +16,9 @@ Never put personal or confidential information into a workflow you test.
 4. **Share and critique (15 min).** Four teams present one fault a point caught, one that got through, and the change it led to.
 5. **Exit (5 min).** Write one gate you decided not to add, and why (approval fatigue). Photograph your lab sheet.
 
-**No partner** (absent or working alone): play both roles; shuffle your cards and draw the next one at random instead of choosing; flip the coin at soft gates; use a fault card from the course site or write one of the three kinds; submit your own sheet.
+**No partner** (absent or working alone): play both roles; shuffle your cards and draw the next one at random instead of choosing; flip the coin at soft gates; use a fault card from the companion files or write one of the three kinds; submit your own sheet.
 
-In Compass (optional): ch14-lab1, with the card template and the A11 sheet; also on the course site.
+In Compass (optional): ch14-lab1, with the card template and the A11 sheet; also in the companion files.
 
 ## Expected observations
 Most first designs gate the obvious payment or send action but miss the unplanned-action card. Coin flips at soft gates show quickly why an instruction is not a gate. Hidden-instruction faults are usually caught only where a person checks the content of a result, not where they approve an action by its title. Several students find that their task needs no agent at all: a fixed workflow or a prompt chain fits. All are valid results.

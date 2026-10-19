@@ -5,7 +5,7 @@
 | Type | Break It |
 | Objectives | O5 (LO5) · tags 4D:DISC |
 | Time | 15 minutes (10-minute version: five clips), at home; optional |
-| Materials | Ten provided short clips (course site): recorded for this lab by speakers who gave written consent, some replaced by synthetic versions made with their written consent; an answer sheet with a confidence column; the key |
+| Materials | Ten provided short clips (companion files): recorded for this lab by speakers who gave written consent, some replaced by synthetic versions made with their written consent; an answer sheet with a confidence column; the key |
 
 ## Steps (tool-neutral)
 1. **Before each clip,** read nothing about it. Listen once.

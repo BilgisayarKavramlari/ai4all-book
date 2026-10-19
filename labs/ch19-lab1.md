@@ -18,7 +18,7 @@ Never put personal, confidential, patient, student or client information into a 
 
 **Missed the lab:** ask any classmate from another guide to run your prototype before A13 is due, or use the instructor's office hours as your peer test; record which. **Alternative route:** use your provided scenario (posted by your instructor before the lab session) and its inputs.
 
-In Compass (optional): ch19-lab1, with the A13 template and the peer-test card; also on your course site.
+In Compass (optional): ch19-lab1, with the A13 template and the peer-test card; also in the companion files.
 
 ## Expected observations
 Most first builds pass the typical input. The edge input is where field knowledge shows: look-alike names in health, units in engineering, sarcasm or negation in survey text, missing values in lab data. Peer testers from other fields most often stumble on unexplained abbreviations and on outputs that give no reason. Several students find that a fixed template or "no AI" fits one of their parts best; that is a valid result.

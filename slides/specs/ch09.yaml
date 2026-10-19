@@ -1,0 +1,1762 @@
+# Lecture deck spec — Chapter 9: Sources, Evidence and Reading with AI
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch09.yaml --preview
+# Two sessions of about 75 minutes (D27: no institution, course, term or dates on slides or in notes). Session 1,
+# concept: opening case, §9.1–9.7 and the demonstration "an AI summary versus the original abstract". Session 2, lab:
+# Lab 9.1 (briefing 10 · jigsaw 15 · summary check 15 · trace 15 · share 15 · exit 5), which starts A6. A6 asks for
+# three sources (D-9.8); the deck follows the chapter.
+# Case C06 (Deloitte–DEWR) facts keep the chapter's tiers: confirmed = the department's pages and report PDFs,
+# AusTender, Senate Hansard; reported = a named outlet or person; inferred = the book's reading.
+
+deck:
+  chapter: 9
+  slug: sources-evidence-and-reading-with-ai
+  title: Sources, Evidence and Reading with AI
+  short_title: Sources, Evidence and Reading with AI
+  week: 6
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Session 1 · concept session, about 75 min", minutes: 75}
+    thu: {label: "Session 2 · lab session, about 75 min", minutes: 75}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/09-sources-evidence-and-reading-with-ai.qmd
+    - labs/ch09-lab1.md
+    - labs/ch09-lab2.md
+    - labs/ch09-lab3.md
+    - figures/longdesc/ch09.md
+    - appendix/answers.md
+    - docs/blueprints/ch09-blueprint.md
+
+slides:
+
+# ======================================================================= SESSION 1 · CONCEPT
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "Concept session and lab session · about 75 minutes each"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Read Chapter 9 before the lab session"
+  figure: f9-08b-source-ladder
+  notes:
+    say: |
+      Put this slide up while students arrive. In Chapter 8 you learned to check a claim: split an output into claims,
+      take each through the Verification Funnel and give a verdict. This chapter asks two questions the funnel leaves open.
+      First: how directly does a source record the claim you need, and who is behind it? A source can be real and still
+      be a weak record of that claim. Second: does a summary say what its source says? More and more of your reading now
+      arrives through AI tools that search, condense and cite for you. The picture on the right is this chapter's main
+      tool, the source ladder. By the end of the lab you will place sources on it, read laterally, trace one claim upstream and
+      check one AI summary sentence by sentence. That is A6.
+    background: |
+      The chapter map (@fig-9-1) highlights Verify ("how directly does a source record the claim?") and then Disclose
+      ("cite what you read"). The title figure is the source ladder (@fig-9-8b), shown at readable size on slide 11.
+      Chapter 9 owns the ladder, lateral reading and summary fidelity; it reuses Chapter 8's definitions (claim,
+      independent check, primary source) word for word and Chapter 8's verdict scale (book-wide rules).
+    activity: "On screen before class starts."
+    book: "Chapter 9 opening page, @fig-9-1 and @fig-9-8b."
+
+- layout: session_plan
+  minutes: 2
+  title: "Two sessions at a glance"
+  columns:
+    - heading: "Session 1 · Concept session"
+      sub: "75 min · case, ideas, live summary check"
+      blocks:
+        - {min: 10, label: "Opening case", detail: "A government report and its references"}
+        - {min: 34, label: "Concept core, §9.1–9.7", detail: "Ladder, status, lateral reading, tracing, summaries, AI search, citing"}
+        - {min: 20, label: "Demonstration", detail: "An AI summary versus the original abstract"}
+        - {min: 9, label: "Quick checks", detail: "Seven short checks, answers shown"}
+        - {min: 2, label: "Before the lab", detail: "Question, two sources, one AI summary"}
+    - heading: "Session 2 · Lab session"
+      sub: "75 min · teams of 3–4, individual A6"
+      blocks:
+        - {min: 10, label: "Briefing", detail: "Warm-up, Lab 9.1, A6 brief"}
+        - {min: 45, label: "Lab 9.1: source audit", detail: "Jigsaw · summary check · trace"}
+        - {min: 15, label: "Share and critique", detail: "Use decisions that changed; drift found"}
+        - {min: 5, label: "Exit step", detail: "Summary, key terms, exit ticket"}
+  notes:
+    say: |
+      Here is the plan for the chapter. Today is the concept session: a real case about a government report, then the
+      ideas in seven short sections, and a live demonstration in which we check an AI summary against the abstract it
+      summarizes, sentence by sentence. The quick checks are not graded and you see the answers at once. In the lab
+      session you work in teams of three or four in the source audit, and you start A6, your source reliability review,
+      due when your instructor sets it. Before the lab you need about fifteen minutes of preparation: a question, two
+      sources and one AI summary. I will show you exactly what to bring at the end of today.
+    background: |
+      Session 1 holds the demonstration "an AI summary versus the original abstract"; Session 2 follows Lab 9.1
+      (briefing 10 · jigsaw 15 · summary check 15 · trace 15 · share 15 · exit 5). A6 asks for three sources (D-9.8).
+      Chapter time: about 35 min for Core sections, about 50 min for the whole Core package; A6 about 15 min before the
+      lab and about 65 min after it.
+    questions:
+      - q: "How many sources does A6 need?"
+        a: "Three, with a required mix: at least one rung-4 source, one found through an AI search answer or research report, and one gray literature, news or website (A6 brief)."
+    activity: "Point to both columns; say when A6 is due in your course."
+    book: "Chapter 9 time paragraph; §9.8; Application Assignment A6."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 9 · learning objectives"
+  title: "By the end of the lab you will be able to…"
+  items:
+    - {code: "O1", text: "**Differentiate** sources by type and status, claim by claim"}
+    - {code: "O2", text: "**Evaluate** a source: its rung, and who is behind it"}
+    - {code: "O3", text: "**Trace** a claim upstream to its origin or a dead end"}
+    - {code: "O4", text: "**Judge** a summary against its original, sentence by sentence"}
+    - {code: "O5", text: "**Critique** what an AI search answer or report leaves unchecked"}
+    - {code: "O6", text: "**Produce** A6, your source reliability review"}
+  notes:
+    say: |
+      Six objectives. The first two are about judging a source: what kind of source it is for a particular claim, how
+      directly it records that claim, and who is behind it. The third is about following a claim back through the
+      chain of people who retold it. The fourth is the one we demonstrate live today: judging whether a summary, by an
+      AI tool or by a person, says what the original says. The fifth applies all of that to AI search answers and
+      long research reports. And the sixth is A6, which puts them together. Notice that every objective is a judgment
+      you make; none of them can be handed to a tool.
+    background: |
+      Full wording and tags in the chapter: O1 differentiate by type (primary, secondary, tertiary) and status
+      (peer-reviewed, preprint, corrected, retracted) (LO3; AI Fluency Discernment); O2 evaluate with the ladder and
+      lateral reading, decide use (LO3; UNESCO human-centred mindset, Apply); O3 trace at least two hops (LO3); O4 judge
+      fidelity (LO3); O5 critique AI search and research reports (LO3); O6 produce A6 (LO3, LO4).
+    activity: "Ask students to star the objective they expect to find hardest."
+    book: "Chapter 9, Learning Objectives."
+
+- layout: timeline
+  minutes: 4
+  kicker: "Opening Case · Deloitte review for Australia's DEWR"
+  title: "A government report and its references"
+  events:
+    - {label: "2024–2025", text: "Firm reviews a welfare IT system", tier: "confirmed"}
+    - {label: "Aug 14, 2025", text: "Department publishes the report", tier: "confirmed"}
+    - {label: "Aug 22", role: risk, text: "Outside reader’s errors reported", tier: "reported"}
+    - {label: "Oct 3", role: ai, text: "Corrected version; AI use disclosed", tier: "confirmed"}
+    - {label: "Oct 8", text: "A$97,587.11 repaid", tier: "confirmed"}
+  takeaway: "Who checked the references? An outside reader, after publication"
+  notes:
+    say: |
+      Tell it as a story. Australia's Department of Employment and Workplace Relations runs rules that can pause or cut
+      a person's welfare payment when they miss required activities. The department found that the IT system behind
+      those rules did not always follow the law. It commissioned an independent review from the consulting firm
+      Deloitte, under a contract worth A$439,142. The report was published on August 14,
+      2025. A week later a newspaper reported citation errors raised by Chris Rudge, a health and welfare law researcher.
+      The first one he noticed credited a Sydney law professor with a book that does not exist. On October 3 the
+      department said the firm had confirmed some references were incorrect, and published a corrected version that
+      disclosed AI use. On October 8 the firm repaid the final installment of its fee.
+    background: |
+      Tiers as in the chapter. Confirmed: contract A$439,142 (AusTender, 2024); work Dec 2024–Jun 2025 (DEWR, 2026);
+      cover dated July 4, 2025, published August 14, 2025 (DEWR, 2025a, 2026); Oct 3 statement and corrected version
+      dated Sep 26 (DEWR, 2025b, 2026); AI disclosure: a tool chain built on Azure OpenAI GPT-4o used in the technical
+      work comparing code with business rules (DEWR, 2026, pp. 48, 147); A$97,587.11 repaid Oct 8, as a Department of
+      Finance official told a Senate committee (Parliament of Australia, 2025). Reported: Australian Financial Review,
+      Aug 22 (Karp, 2025); Rudge to the Associated Press: "full of fabricated references", up to 20 errors, a made-up
+      quotation attributed to a Federal Court judge (McGuirk, 2025). The AP wrote "originally published in July"; the
+      department's statements give August 14 (Case Study Question 3). Name the scholar only if asked; the slides say "a
+      Sydney law professor".
+    questions:
+      - q: "Did the AI make up the references?"
+        a: "No public source says so. The corrected report disclosed that an AI tool chain was used in the technical work; whether it produced the incorrect references is inferred, and the book marks it that way (Case Study)."
+    misconceptions:
+      - m: "M1 'A source that looks professional, comes from a famous organization or has a long reference list is reliable.'"
+        fix: "A global firm, a government publisher and a long reference list, and still references that did not hold up. Brand is a cue, not evidence."
+    activity: "Narrate; do not read the cards. Ask: 'Before the outside reader, who could have checked?'"
+    book: "Opening Case 'A Government Report and Its References'; @fig-9-2."
+
+- layout: compare
+  minutes: 3
+  kicker: "Opening Case · how this account is built"
+  title: "Confirmed, reported, inferred"
+  size: 22
+  columns:
+    - heading: "Confirmed · the record"
+      role: verified
+      bullets: ["Dates", "AI disclosure", "Fee repaid"]
+    - heading: "Reported · named outlet or person"
+      role: soft
+      bullets: ["Up to 20 errors", "Nonexistent book", "Made-up quotation"]
+    - heading: "Inferred · the book’s reading"
+      role: neutral
+      dashed: true
+      bullets: ["Did AI produce the errors?", "What checks ran?"]
+  header_height: 1.1
+  takeaway: "Puzzle: what did the reader check? Could it have been checked earlier?"
+  notes:
+    say: |
+      Notice how this account is built, because this whole chapter is about how accounts are built. Some facts come from
+      the government's own records: the dates, the AI disclosure in the corrected report, the repayment. Those are
+      confirmed. Others come from what a named person or outlet reported: the number of errors, the nonexistent book,
+      the made-up quotation. And some questions no source answers: whether the AI tool chain produced the incorrect
+      references, and what checks the firm or the department ran. Anything said about that is inferred, and the
+      dashed border marks it. So here is the puzzle for this chapter: what did the outside reader check, and could it have
+      been checked before the report was published?
+    background: |
+      Book-wide attribution tiers: confirmed (primary record), reported (named outlet or person, including the authors'
+      own interpretation), inferred (the book's reading). Dashed outline = inferred (book-wide figure rule). Deloitte told
+      the AP the matter had been resolved directly with the client; the department said the report's substance and
+      recommendations were unchanged (McGuirk, 2025; reported). Case Study Question 2 asks for one fact of each tier
+      (answer key is in the even-numbered private file; do not show).
+    questions:
+      - q: "Isn't the newspaper report good enough to call it confirmed?"
+        a: "It is a named outlet, which is why it counts as reported, not as rumor. 'Confirmed' is reserved for the primary record: here, the department's own statements and the two report versions."
+    activity: "Ask students to guess the tier of 'the report was published on August 14' before revealing it (confirmed)."
+    book: "Opening Case (last two paragraphs); Case Study; Case Study Question 2."
+
+# ----------------------------------------------------------------------- 9.1
+- layout: section
+  minutes: 0.5
+  number: "9.1"
+  tag: "Core"
+  title: "How directly does a source record the claim?"
+  idea: "Never “is this a good source?”, always “a good source for this claim?”"
+  meta: "Book §9.1 · the source ladder"
+  notes:
+    say: |
+      First idea. Every source answers some questions well and others badly. A court judgment is the best record of what
+      the court said, and a poor record of what the public thinks about it. So the question is never "is this a good
+      source?" but "is this a good source for this claim?" In this section you get the vocabulary for that: three types
+      of source, and a ladder of four rungs that says how directly a source records one claim. You will place five
+      sources on it with Elif, and then decide what rung a claim needs. It is the same idea as Chapter 8's stopping
+      rule: the stakes decide how far you go.
+    background: |
+      Chapter 8 definitions reused word for word (book-wide): claim; independent check (evidence no AI tool produced:
+      a source with an author or publisher you can name, or your own recalculation); primary source (the original record
+      a claim comes from). Ladder rules are a book-wide decision (D-9.1).
+    misconceptions:
+      - m: "M8 'A document has one type, whatever the claim.'"
+        fix: "Preview the next slide: the Deloitte report is primary for one claim and secondary for another."
+    activity: "Transition slide."
+    book: "§9.1 How Directly Does a Source Record the Claim?"
+
+- layout: compare
+  minutes: 2
+  kicker: "§9.1 · book figure: source types (redrawn)"
+  title: "Type depends on the claim"
+  size: 22
+  columns:
+    - heading: "Primary · the record"
+      role: verified
+      bullets: ["Study, dataset, law, court record", "Annual report, transcript"]
+    - heading: "Secondary · reports on records"
+      role: soft
+      bullets: ["Review article, textbook", "News story about a study"]
+    - heading: "Tertiary · condenses"
+      role: soft
+      bullets: ["Encyclopedia, index", "Study guide"]
+  takeaway: "Deloitte report: primary for what the department was told; secondary for what a court said"
+  notes:
+    say: |
+      Three types. A primary source is the record itself: the study, the dataset, the law, the court record. Outside
+      science, too: a company's annual report is the record of what the company reported, and an interview transcript is
+      the record of what was said. A secondary source reports on or interprets primary sources: a review article, a
+      textbook, a news story about a study. A tertiary source collects and condenses secondary ones: an encyclopedia,
+      an index, a study guide. Now the important part: type depends on the claim. The Deloitte report is the primary
+      record of what the department was told by its reviewers. For what a court said, it is only secondary; the court's
+      own record is the source. That is why the made-up quotation could have been caught.
+    background: |
+      @fig-9-3 redrawn as three cards; the book figure also sets AI output apart (not a source type; a lead). Primary is
+      green in the figure and here, and the heading says "the record", so color is not the only cue. Review A1 (key a)
+      tests this: a court's record is primary for what the court said; a report quoting it is secondary.
+    questions:
+      - q: "Is a textbook ever primary?"
+        a: "Yes, for a claim about what the textbook says, for example how it defines a term. For a claim about what studies found, it is secondary (type depends on the claim)."
+    misconceptions:
+      - m: "M8 'A document has one type, whatever the claim.'"
+        fix: "Use the takeaway: one report, two claims, two types."
+    activity: "Ask: 'A course's own rules page: primary or secondary, for what claim?' (Primary for the course rules.)"
+    book: "§9.1 'Three types', 'Type depends on the claim', @fig-9-3."
+
+- layout: compare
+  minutes: 3
+  kicker: "§9.1 · book figure, redrawn"
+  title: "The source ladder: how directly, for one claim"
+  size: 22
+  columns:
+    - heading: "Rung 4 · is the record"
+      role: verified
+      bullets: ["The study: “this study found”", "Systematic review: “what studies show”"]
+    - heading: "Rung 3 · cites the record"
+      role: soft
+      bullets: ["Page, table or DOI", "Or a narrower part"]
+    - heading: "Lower rungs"
+      role: neutral
+      bullets: ["2: too vague to find", "1: no source"]
+  takeaway: "AI output is below the ladder: a lead, not evidence"
+  notes:
+    say: |
+      Here is the ladder. A source's rung says how directly it records the claim, judged from the source alone. Rung 4:
+      it is the record of this claim, such as the study for "this study found", or a systematic review for "what studies
+      show"; a systematic review searches for every study on a question with a written plan. Rung 3: it cites the
+      specific record with details you can find, such as a page or a DOI, or it records a narrower part of the claim.
+      Rung 2: it names a source too vaguely to find, like "a recent Harvard study". Rung 1: no source. Two rules keep it
+      honest. A citation lifts a source only if the cited record holds this claim. And opening the cited record does not
+      raise this source's rung; it gives you a second source with its own rung. AI output is not on the ladder at all.
+    background: |
+      Exact rules (§9.1; D-9.1): "A citation lifts a source only if the cited record holds this claim, or a narrower part
+      of it about the same population and outcome; otherwise rate the source as if that citation were missing."
+      "Opening the cited record does not raise this source's rung." DOI = Digital Object Identifier. The ladder measures
+      how checkable a source is for one claim, not the strength of a body of evidence (Deep 9.A, GRADE). @fig-9-8b
+      redrawn; rung 4 is green and says "is the record" in words.
+    questions:
+      - q: "A blog cites a study by DOI, but the study is on mice and the claim is about people. Rung?"
+        a: "Rate it as if that citation were missing, because the cited record does not hold this claim: rung 1 if it gives no other source (Check Yourself 9.1, item 2; Marcus's supplement site)."
+    misconceptions:
+      - m: "M7 'A primary source always beats a secondary one.'"
+        fix: "For 'what studies show', one experiment is only rung 3 (a narrower part); the systematic review, a secondary source by type, is rung 4."
+    activity: "Say the two rules aloud twice; students will use both in the lab's jigsaw."
+    book: "§9.1 'The source ladder', the two rules, @fig-9-8b."
+
+# The final reveal is about 70 words: five items placed on the ladder, with their rungs, are the point of the example
+# (deliberate exception to the 40-word guide).
+- layout: worked
+  minutes: 1
+  kicker: "§9.1 · worked example · Elif"
+  title: "Five items, one claim: sleep after study helps memory"
+  context: "Elif’s essay claim, as a general finding. Rung needed: 3, and 4 if she can."
+  steps:
+    - {label: "One experiment", text: "a narrower part: rung 3"}
+    - {label: "Systematic review", text: "the record of “what studies show”: rung 4"}
+    - {label: "News story naming the review", text: "findable citation: rung 3"}
+    - {label: "Encyclopedia, no references", text: "rung 1"}
+    - {label: "An AI answer", text: "below the ladder: a lead"}
+  reveal: [2, 5]
+  result: "She cites the review itself"
+  notes_reveal:
+    - minutes: 1
+      say: |
+        Let's place five items with Elif, a psychology student from İzmir. Her essay claims, as a general finding, that
+        sleeping after study improves memory. First, a journal article reporting one experiment. It is a primary source,
+        but for a claim about studies in general it records only a narrower part: rung 3. Second, a systematic review of
+        many sleep studies: the record of "what studies show", rung 4. Notice what just happened: the secondary source is
+        higher than the primary one for this claim. Ask the class to place the remaining three before you reveal them: a
+        news story that names the review, its journal and year; an encyclopedia entry with no references; an AI answer.
+      background: |
+        Worked Example "Elif's Five Items" (constructed list of real item types). Rung-needed guide (§9.1 table):
+        background for a class discussion 2 or 3; a central essay claim 3, and 4 if you can; a number or quotation you
+        repeat 4; a decision about health, money or rights 4 plus an expert (Chapter 8, stage 3).
+      activity: "Pause; students place items 3–5 on their own (30 s)."
+      book: "§9.1 Worked Example 'Elif's Five Items'."
+    - minutes: 1
+      say: |
+        The news story names the review findably, with journal and year: rung 3. The encyclopedia entry has no
+        references: rung 1. And the AI answer is below the ladder: it is a lead to the review, not evidence of anything
+        except what the tool produced. The rung needed for a central essay claim is 3, and 4 if you can. So Elif does not
+        cite the news story or the AI answer; she uses them to find the review and cites the review itself. That is the
+        everyday payoff of the ladder: it tells you which of the things you found is the one to read and cite.
+      background: |
+        Faded example (Marcus's hand-hygiene sources, rung needed 3) keys in Appendix E: hospital newsletter quoting "a
+        recent study" = rung 2, does not meet the need; blog with no sources = rung 1, does not meet it.
+      misconceptions:
+        - m: "M7 'A primary source always beats a secondary one.'"
+          fix: "The single experiment (primary) sits below the review (secondary) for this claim."
+      activity: "Reveal; one follow-up comment."
+      book: "§9.1 Worked Example; Faded Example 'Marcus's Hand-Hygiene Sources'."
+  notes:
+    book: "§9.1 Worked Example 'Elif's Five Items'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §9.1"
+  title: "the highest rung"
+  question: "For the claim “studies agree that regular exercise lowers blood pressure,” which source is on the highest rung?"
+  options:
+    - "One well-run experiment with 40 participants."
+    - "A news story that names a review but not where it appeared."
+    - "A systematic review that pooled many trials."
+    - "An AI answer that names the systematic review."
+  answer: c
+  instruction: "Answer alone (30 seconds), then vote"
+  explanation: "(a) records a narrower part (rung 3); (b) is too vague to find (rung 2); (d) is below the ladder"
+  notes:
+    say: |
+      Quick check, not graded. Read the claim carefully: it is about what studies agree on, not about one study. Then read
+      all four options before you choose. Thirty seconds alone, then a vote. Before you reveal, ask one student who chose
+      (a) to explain. The pull toward (a) is the belief that a primary source always wins; a well-run experiment sounds
+      like the best evidence. Ask what claim that experiment is the record of. Then ask what claim the systematic
+      review is the record of, and let the two answers sit side by side before you show the key.
+    background: |
+      Review Questions A7 (O2 · LO3 · Analyze). Key (Appendix E): (c), the record of "what studies show" (rung 4). (a) M7:
+      one experiment records a narrower part (rung 3); (b) M1: a mention borrows a review's authority but names it too
+      vaguely to find (rung 2); (d) M6: AI output is below the ladder.
+    activity: "30 s alone, vote, then the answer slide."
+    book: "§9.1; Review Questions A7; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (c), the systematic review that pooled many trials. For a claim about what studies agree on, the
+      review is the record of the claim: rung 4. The single experiment is a primary source, but for this claim it
+      records only a narrower part: rung 3. The news story borrows the review's authority but does not say where it
+      appeared, so you cannot find it: rung 2. And the AI answer is below the ladder, even though it names the right
+      review; it is a lead you follow, not a source you cite. If you picked (a), keep the idea "type depends on the
+      claim" in mind; you will use it again in the lab.
+    background: |
+      Same logic as Check Yourself 9.1, item 3: a systematic review can be a more direct record than one experiment for
+      claims about many studies.
+    activity: "Reveal; move on."
+    book: "§9.1; Appendix E (Review A7)."
+
+# ----------------------------------------------------------------------- 9.2
+- layout: section
+  minutes: 0.5
+  number: "9.2"
+  tag: "Core"
+  title: "How research gets checked"
+  idea: "Peer-reviewed means “checked by a few experts before publication”, not “proven”."
+  meta: "Book §9.2 · status: peer review, preprints, corrections"
+  notes:
+    say: |
+      Type is half of judging research. The other half is status: has anyone outside the authors checked it, and has it
+      changed since? Three words do most of the work: peer review, preprint, and correction or retraction. Students often
+      arrive with two opposite beliefs: that peer-reviewed means proven, and that a preprint is worthless. Both are
+      wrong, and this section replaces them with something more useful: status is one input to your judgment, not a
+      verdict. The idea on the slide is the one to remember.
+    background: |
+      Status vocabulary (§9.2): peer review, preprint, correction, retraction, abstract. Refutation check from the
+      blueprint: the text must not create "peer review means nothing"; it is the best routine filter available, and
+      still a filter.
+    misconceptions:
+      - m: "M2 'Peer-reviewed means proven; a preprint is worthless.'"
+        fix: "Name both halves now; the next slide corrects each without overcorrecting."
+    activity: "Quick hands: 'Who thinks peer-reviewed means proven?'"
+    book: "§9.2 How Research Gets Checked."
+
+- layout: compare
+  minutes: 2.5
+  kicker: "§9.2 · status is one input, not a verdict"
+  title: "Peer review, preprints, corrections"
+  size: 22
+  columns:
+    - heading: "Peer review"
+      role: soft
+      bullets: ["A few experts advise before publication", "Rarely sees the raw data"]
+    - heading: "Preprint"
+      role: neutral
+      bullets: ["Posted before review", "Look for a reviewed version; compare"]
+    - heading: "Correction · retraction"
+      role: risk
+      bullets: ["Work can change or be withdrawn", "Check a retraction database"]
+  takeaway: "A preprint can be right; a peer-reviewed article can be retracted"
+  notes:
+    say: |
+      Peer review: before a journal publishes an article, an editor usually sends it to a few experts, who advise whether
+      the work is sound. It is meant to filter out weak work, and it misses things: reviewers rarely see the raw data or
+      re-run the analysis, and it does not catch deliberate fraud. A former editor of The BMJ called it a flawed process
+      that is likely to stay central because there is no obvious alternative. A preprint is posted before any review, on
+      a server such as arXiv; it is fast, but no outside expert has checked it, so look for a reviewed version and
+      compare the conclusions. And published work changes: a correction fixes part of an article; a retraction
+      withdraws it. Reports change too: the Deloitte report now exists in three versions.
+    background: |
+      Smith (2006), J R Soc Med. Crossref acquired the Retraction Watch database in 2023 and made it openly available
+      (Hendricks, 2023). Peer review usually checks whether the question matters and the method fits, whether conclusions
+      follow from results shown, whether key earlier work is cited; it usually does not re-run analyses, catch deliberate
+      fraud or guarantee later studies will agree (§9.2 table). Marcus's worked example: preprint "reduces infections"
+      became, in the published version, "associated with fewer infections in one hospital". LK-99 faded example (July
+      2023 superconductor preprints; most labs could not reproduce; Garisto, 2023a, 2023b). Deloitte versions: July 4,
+      2025 (published Aug 14), Sep 26 (published Oct 3), and the Feb 3, 2026 update.
+    questions:
+      - q: "Can I cite a preprint in A6?"
+        a: "Yes, with care: say it is a preprint, look for a reviewed version, and compare the conclusions (Review A3)."
+    misconceptions:
+      - m: "M2 'Peer-reviewed means proven; a preprint is worthless.'"
+        fix: "Use the bottom bar; then Marcus's example: the reviewed version narrowed the claim. Do not swing to 'peer review means nothing'."
+    activity: "Optional: ask what changed between Marcus's preprint and the published version (a dropped caveat came back)."
+    book: "§9.2, the peer-review table; Worked Example 'Marcus Checks a Study's Status'; Faded Example LK-99."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §9.2"
+  title: "a preprint on your side"
+  question: "A preprint supports your argument. What is the best response?"
+  options:
+    - "Leave it out until it is published, since unreviewed work should not be cited."
+    - "Treat it as reliable, since a well-known lab wrote it."
+    - "Cite it if an AI search tool also returns it near the top."
+    - "Find a reviewed version, compare conclusions, and say it is a preprint."
+  answer: d
+  instruction: "Answer alone, then vote"
+  explanation: "(a) treats preprints as worthless (M2); (b) trusts reputation (M1); (c) treats a tool’s ranking as evidence (M6)"
+  notes:
+    say: |
+      Second quick check. A preprint supports the argument you want to make, which is exactly the situation where you
+      are most tempted to stop checking. Four options: leave it out, trust the lab, trust the search ranking, or do
+      something with it. Thirty seconds alone, then vote. If students split between (a) and (d), let one from each side
+      speak: the disagreement is the M2 misconception in action, the belief that a preprint is either worthless or as
+      good as published work.
+    background: |
+      Review Questions A3 (O1 · LO3 · Apply). Key (Appendix E): (d). (a) M2: preprints can be cited with care; (b) M1:
+      reputation is not a check; (c) M6: a tool's ranking is not evidence.
+    activity: "30 s alone, vote, answer slide."
+    book: "§9.2; Review Questions A3; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (d): find a reviewed version, compare conclusions, and say it is a preprint. That keeps both truths:
+      a preprint can be right, and no outside expert has checked it yet. Option (a) throws away possibly good work; in
+      fast-moving fields preprints are how findings first appear. Option (b) replaces a check with a reputation, the
+      peripheral cue we saw in the Opening Case. Option (c) treats a ranking as evidence; an AI tool's ordering of
+      results says nothing about whether the study holds up. When the reviewed version exists, read both abstracts: did
+      the conclusion change?
+    background: |
+      Check Yourself 9.2, item 2: the two things to check are a reviewed version and whether its conclusion changed.
+    activity: "Reveal; move on."
+    book: "§9.2; Appendix E (Review A3)."
+
+# ----------------------------------------------------------------------- 9.3
+- layout: section
+  minutes: 0.5
+  number: "9.3"
+  tag: "Core"
+  title: "Who is behind it? Read laterally"
+  idea: "Leave the page early to learn who is behind it."
+  meta: "Book §9.3 · gray literature · lateral reading · SIFT"
+  notes:
+    say: |
+      The ladder tells you how directly a source records a claim. It does not tell you whether the people behind the
+      source have a stake in the answer. That is a separate question, and it decides how you use the source. Much of
+      what you read is gray literature: reports by governments, companies, charities and consulting firms, published
+      outside journals and books, often valuable and current, rarely peer-reviewed, sometimes paid for by someone with a
+      stake. The Deloitte report is commissioned gray literature. The skill for this question has a name, lateral
+      reading, and the best evidence for it comes from watching professional fact-checkers.
+    background: |
+      Gray literature (§9.3): material published outside journals and books (theses, conference papers and preprints are
+      often counted too). The Deloitte report's own pages say the work was advisory and not an audit under Australian
+      auditing standards (DEWR, 2026, p. 2). Its two brand names are a cue that it is probably careful, not evidence that
+      a particular reference is right.
+    misconceptions:
+      - m: "M9 'Who is behind a source changes its rung.'"
+        fix: "Say it now: the rung records directness; who is behind it feeds the use decision. Two separate judgments."
+    activity: "Transition slide."
+    book: "§9.3 Who Is Behind It? Read Laterally."
+
+- layout: lanes
+  minutes: 2.5
+  kicker: "§9.3 · Wineburg & McGrew (2019) · book figure: lateral reading (redrawn)"
+  title: "Fact-checkers learned more about a site by leaving it"
+  label_width: 2.4
+  rows:
+    - label: "Vertical reading"
+      nodes:
+        - {label: "Stay on the page", kind: human, role: neutral}
+        - {label: "Judge its looks", kind: step}
+        - {label: "Often taken in", kind: human, role: risk}
+    - label: "Lateral reading"
+      nodes:
+        - {label: "Leave early", kind: human, role: neutral}
+        - {label: "Ask outside sources", kind: step}
+        - {label: "Faster, more accurate", kind: human, role: verified}
+  caption: "Small think-aloud study: 10 fact-checkers, 10 historians, 25 Stanford undergraduates."
+  takeaway: "Lateral reading: leave early; see what outside sources say about who is behind it"
+  notes:
+    say: |
+      Researchers at Stanford asked people to evaluate unfamiliar websites while thinking aloud: ten professional
+      fact-checkers, ten historians with PhDs and twenty-five Stanford undergraduates. The historians and students often
+      stayed on the page and were taken in by official-looking logos, domain names and the site's description of itself.
+      That is vertical reading: judging a page by its own look and its own claims. The fact-checkers did something
+      different. After a quick scan, often within about half a minute, they left the page, opened new tabs and searched
+      for what others said about who was behind it. They reached more accurate judgments in a fraction of the time. That
+      is lateral reading.
+    background: |
+      Wineburg & McGrew (2019), Teachers College Record: a small think-aloud study (10 fact-checkers, 10 historians, 25
+      Stanford undergraduates). Keep the hedges: small sample; "often". Outside source (book-wide term, D-9.4): a source
+      not written or paid for by whoever is behind the page being checked. A site's own About page passes Chapter 8's
+      independent check (no AI tool produced it) but is not an outside source. Further reading: McGrew et al. (2019),
+      Breakstone et al. (2021). The slide redraws @fig-9-6 natively so its labels stay readable; the risk card has a
+      thick border and the words "often taken in", the better result is green and says "faster, more accurate".
+    questions:
+      - q: "Isn't leaving a page before reading it lazy?"
+        a: "You come back to read it carefully once you know who is behind it. The fact-checkers judged more accurately in less time; the chapter's Warm-up answer is 'leave early to read laterally, then read the source itself carefully'."
+    misconceptions:
+      - m: "M3 'To judge a website, read it carefully: its About page, its design, a .org address.'"
+        fix: "Point at the upper row: that is what the historians and students did, and it is what misled them."
+    activity: "Ask: 'What is the first thing you look at on an unfamiliar site?' Take two answers."
+    book: "§9.3, @fig-9-6; Check Yourself 9.3."
+
+- layout: compare
+  minutes: 2
+  kicker: "§9.3 · SIFT (Caulfield) and the use decision"
+  title: "Two judgments, one use decision"
+  size: 22
+  columns:
+    - heading: "SIFT, four moves"
+      role: soft
+      bullets: ["**S**top", "**I**nvestigate the source", "**F**ind better coverage", "**T**race to the original"]
+    - heading: "Use decision"
+      role: human
+      bullets: ["Rely on it", "Use with a caveat", "Use only as a lead", "Do not use"]
+  takeaway: "“Rely on it” needs both: the rung you need, and no reason to distrust who is behind it"
+  notes:
+    say: |
+      Mike Caulfield, a researcher in digital literacy, built a short routine for this kind of checking: four moves
+      called SIFT. Stop: before you read or share, ask whether you know this source and what you want from it.
+      Investigate the source: leave the page and look it up in outside sources. Find better coverage: search for the
+      claim itself and see whether trusted sources report it. Trace claims, quotes and media to the original context,
+      which is our next section. Lateral reading feeds your use decision: rely on it, use it with a caveat, use it only
+      as a lead, or do not use it. "Rely on it" needs both judgments: a rung that meets your need, and nothing in your
+      outside sources that gives you reason to distrust who is behind it.
+    background: |
+      Caulfield (2019); Caulfield & Wineburg (2023). D-9.5: lateral reading feeds the use decision; the rung records
+      directness. Marcus's supplement site (constructed): it cites a mouse study by DOI for a claim about people, so rate
+      it as if the citation were missing (rung 1); a news story reports the site is run by the supplement's maker; a
+      government health site says evidence in people is limited; use decision: do not use. An AI tool's answer about who
+      is behind a site is a lead, not a source (Chapter 8). From the Field (§9.3 tie): brand and a long reference list
+      are peripheral cues (Elaboration Likelihood Model; Şeker, 2014).
+    questions:
+      - q: "If a source is on rung 4 but paid for by an interested company, can I rely on it?"
+        a: "Not on the rung alone. Use it with a caveat or as a lead, and look for an outside record (Review A15, key c). Its rung does not move."
+    misconceptions:
+      - m: "M9 'Who is behind a source changes its rung.'"
+        fix: "Funding goes in the use-decision column, not the rung column."
+    activity: "Ask pairs to give Marcus's supplement site a rung and a use decision (30 s)."
+    book: "§9.3 SIFT, 'How the two judgments combine'; Worked Example 'Marcus and the Supplement Site'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §9.3"
+  title: "lateral reading"
+  question: "Which of these is lateral reading?"
+  options:
+    - "Reading the site’s About page and references closely."
+    - "Searching for what outside sources say about who runs the site."
+    - "Checking that the site’s address ends in .org or .edu."
+    - "Asking an AI tool whether the site is reliable and accepting the answer."
+  answer: b
+  instruction: "Answer alone, then vote"
+  explanation: "(a) and (c) are vertical reading (M3); (d) treats a tool’s answer as a source (M6)"
+  notes:
+    say: |
+      Third quick check. Four things people do to judge a website. Only one of them is lateral reading as the
+      fact-checkers did it. Think about the word "outside": which option takes you away from the page and the tool, to
+      what others say about who runs it? Thirty seconds alone, then vote. If anyone picks (d), ask what Chapter 8 said
+      about an AI tool's own answer: a lead, never a source. If anyone picks (a), ask what the historians in the Stanford
+      study did, and where it got them.
+    background: |
+      Review Questions A5 (O2 · LO3 · Understand). Key (Appendix E): (b). (a) and (c) M3: vertical reading; (d) M6: a
+      tool's answer is a lead, not a source.
+    activity: "30 s alone, vote, answer slide."
+    book: "§9.3; Review Questions A5; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (b): searching for what outside sources say about who runs the site. Options (a) and (c) are vertical
+      reading: they judge the site by its own pages and its own address, which is exactly what took the historians and
+      students in. A .org address can be registered by anyone. Option (d) hands the judgment to a tool; you can ask an AI
+      tool for leads about who is behind a site, but then you open the outside sources yourself. In the lab you get five
+      minutes of lateral reading per source in the jigsaw; that is plenty if you leave the page early.
+    background: |
+      Lab 9.2 (optional, 20 min) practices this on three sites from published lateral-reading studies, with an answer
+      key on your course site and in Compass.
+    activity: "Reveal; mention optional Lab 9.2."
+    book: "§9.3; Appendix E (Review A5); Lab 9.2."
+
+# ----------------------------------------------------------------------- 9.4
+- layout: section
+  minutes: 0.5
+  number: "9.4"
+  tag: "Core"
+  title: "Trace the claim upstream"
+  idea: "Many sources repeating a claim is not one record showing it."
+  meta: "Book §9.4 · citation tracing · drift"
+  notes:
+    say: |
+      Claims travel. A study becomes a press release, the press release becomes a news story, and the news story becomes
+      part of an AI answer. At each step someone retells the claim, and a retelling can change it. In this section you
+      learn to follow a claim from where you met it, hop by hop, back to where it first appeared. At every hop you run
+      Chapter 8's three checks: does the cited work exist, do its details match, and does it say what is claimed? What is
+      new is the number of hops, and the fact that the sources along the way are usually written by people, not by AI.
+    background: |
+      Citation tracing (§9.4) and the four drift types (dropped caveat, broadened claim, cause from correlation, changed
+      number). Drift vocabulary is book-wide (D-9.3). Hop chains are drawn with `hop_chain` (D-9.6).
+    misconceptions:
+      - m: "M4 'If many sources repeat a claim, it must have a solid origin.'"
+        fix: "Announce the goldfish: a claim repeated everywhere, with no study at the end."
+    activity: "Transition slide."
+    book: "§9.4 Trace the Claim Upstream."
+
+- layout: compare
+  minutes: 2
+  kicker: "§9.4 · book figure: retellings"
+  title: "Four ways a retelling drifts"
+  size: 22
+  columns:
+    - heading: "Dropped caveat"
+      role: soft
+      bullets: ["“in mice” disappears"]
+    - heading: "Broadened claim"
+      role: soft
+      bullets: ["“students” becomes “people”"]
+    - heading: "Cause from correlation"
+      role: soft
+      bullets: ["“linked to” becomes “causes”"]
+    - heading: "Changed number"
+      role: soft
+      bullets: ["rounded, swapped, wrong group"]
+  takeaway: "People drift too: about a quarter of citations in medical articles fell short"
+  notes:
+    say: |
+      When a claim changes as it is retold, the book calls it drift, and four types are common. A dropped caveat: a limit
+      disappears, such as "in mice" or "in one hospital". A broadened claim: the sample, place or time is widened, so
+      "students" becomes "people". Cause from correlation: "linked to" becomes "causes". A correlation means two things
+      vary together, which does not show that one causes the other. And a changed number: a value is rounded, swapped or
+      attached to the wrong group. People drift in scholarly writing too: a 2015 review pooled 28 studies and estimated
+      that about a quarter of citations in medical journal articles did not fully support the statement they were
+      attached to.
+    background: |
+      Jergas & Baethge (2015), PeerJ: 28 studies pooled. @fig-9-4 shows the retelling chain (study → preprint → journal
+      article → press release → news story → AI summary) with dashed arrows where drift has been documented; it is
+      text-dense, so the four drift types are drawn as cards here. Four cards in one row is allowed by the compare
+      layout's width.
+    questions:
+      - q: "Isn't rounding harmless?"
+        a: "Often it is; record it and decide. It becomes drift when the rounded value changes the meaning, for example when a minority is reported as 'most'."
+    activity: "Ask for one example of each type from news students saw recently."
+    book: "§9.4 drift types; @fig-9-4; Check Yourself 9.4, item 2."
+
+- layout: lanes
+  minutes: 2.5
+  kicker: "§9.4 · worked example · Elif and the goldfish (book figure: the trace)"
+  title: "Repeated everywhere, with no study at the end"
+  label_width: 1.6
+  rows:
+    - label: "Hops 1–2"
+      nodes:
+        - {label: "AI answer: no source", kind: ai}
+        - {label: "Many news articles", kind: step}
+        - {label: "Cite a 2015 report", kind: step}
+    - label: "Hops 3–4"
+      nodes:
+        - {label: "Consumer survey cites a statistics site", kind: step}
+        - {label: "Its listed sources: no research found", kind: step}
+        - {label: "Verdict: unsupported", kind: human, role: risk}
+  caption: "Microsoft Canada (2015) report; BBC inquiry (Maybin, 2017). Constructed walk-through of a documented trail."
+  takeaway: "Write instead: the claim has no traceable study behind it"
+  notes:
+    say: |
+      Here is a documented trail. Elif finds a claim in an AI answer: people now have shorter attention spans than
+      goldfish, about eight seconds. Hop 1: the AI answer gives no source; it is below the ladder, a lead. Hop 2: many
+      news articles repeat it; they exist, and they cite a 2015 report by Microsoft Canada. Hop 3: the report exists. It
+      was a consumer survey, and for the eight-second figure it cites a statistics website. Hop 4: a BBC journalist asked
+      the two organizations that website listed as its sources; neither could find any research behind the figure. The
+      verdict on Chapter 8's scale is unsupported: no evidence at the stage reached. What Elif writes instead: a widely
+      repeated claim with no traceable study behind it.
+    background: |
+      Worked Example "Elif and the Goldfish" (a constructed walk-through of a documented trail). The 2015 Microsoft
+      Canada report surveyed 2,000 Canadians, plus brain-activity measurements on 112 people; Statistic Brain was its
+      source for the figure; the BBC journalist's attempts to reach the website came to nothing (Maybin, 2017). Many
+      stories repeating a claim are not one record showing it. Faded example (most startups fail) key in Appendix E: BLS
+      survival data count establishments, and closing is not always failing; often partly supported.
+    questions:
+      - q: "Why 'unsupported' and not 'contradicted'?"
+        a: "Contradicted needs evidence that says otherwise. The trail simply ends with no record, so the verdict is unsupported (Review A9)."
+    misconceptions:
+      - m: "M4 'If many sources repeat a claim, it must have a solid origin.'"
+        fix: "Count the news articles, then count the studies at the end: zero."
+    activity: "Ask before revealing hop 4: 'What would you expect to find at the end?'"
+    book: "§9.4 Worked Example 'Elif and the Goldfish', @fig-9-7; Faded Example 'Most Startups Fail'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §9.4"
+  title: "thirty stories, no study"
+  question: "A claim appears in thirty news stories, but tracing finds no study behind it. Which verdict fits?"
+  options:
+    - "Unsupported: no evidence for it at the stage reached."
+    - "Supported, because so many independent stories agree on it."
+    - "Contradicted, because no study could be found."
+    - "Cannot verify, because news stories are not records."
+  answer: a
+  instruction: "Answer alone, then vote"
+  explanation: "(b) is M4; (c) needs evidence that says otherwise; (d) is for evidence you cannot reach"
+  notes:
+    say: |
+      Fourth check, and it uses Chapter 8's verdict scale, so recall the five verdicts before you answer: supported,
+      partly supported, unsupported, contradicted, cannot verify. Thirty news stories feel like a lot of evidence. But
+      what does each of them rest on? Thirty seconds alone, then vote. The distractors are close: one confuses
+      repetition with evidence, one confuses "not found" with "shown false", and one confuses "no record exists" with
+      "a record exists that I cannot reach". Ask one student who chose (b) to say what the thirty stories rest on.
+    background: |
+      Review Questions A9 (O3 · LO3 · Apply). Key (Appendix E): (a). (b) M4: repetition is not a record; (c) Chapter 8
+      verdict scale: contradicted needs evidence that says otherwise; (d) "cannot verify" means the evidence may exist
+      but you cannot reach it.
+    activity: "30 s alone, vote, answer slide."
+    book: "§9.4; Review Questions A9; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (a): unsupported, no evidence for it at the stage you reached. Thirty stories that all trace back to
+      nothing are one gap repeated thirty times, not thirty pieces of evidence. Contradicted would need a record that
+      says otherwise. Cannot verify would mean the evidence exists or may exist but you cannot reach it, like a private
+      memo. When a trail ends without an origin, write that honestly, as Elif did: the claim has no traceable study
+      behind it. In the lab your trace may end the same way, and that is a valid result for A6.
+    background: |
+      Lab 9.1 expected observations: traces of statistics found through AI answers often end in a dead end.
+    activity: "Reveal; move on."
+    book: "§9.4; Appendix E (Review A9)."
+
+# ----------------------------------------------------------------------- 9.5
+- layout: section
+  minutes: 0.5
+  number: "9.5"
+  tag: "Core"
+  title: "Reading with AI: summary fidelity"
+  idea: "A summary is new text generated from the original, not the original made shorter."
+  meta: "Book §9.5 · today's demonstration"
+  notes:
+    say: |
+      You paste an article into an AI tool and ask for a summary. What comes back looks like the article, only shorter.
+      It is not. Chapter 3 showed that a language model produces text one token at a time, scoring every possible next
+      token given everything in its context window. A summary is produced the same way: it is new text generated from the
+      pasted original, not a set of sentences cut out of it. So it can say more, less or something different. Predict
+      now, and write it down: will a three-sentence AI summary of a study claim more, less or the same as the study? And
+      would a human science writer do better?
+    background: |
+      §9.5 recalls Chapter 3's terms with glosses: token (a word or piece of a word), context window (the text the model
+      receives in one turn); @fig-9-11 reuses Signature 4 (LLM anatomy) with the pasted-text slot highlighted. Summary
+      fidelity: how closely a summary's claims match what the original supports. Chapter 8 asks whether one passage
+      supports one claim; Chapter 9 asks whether a summary represents a whole source (D-8.4).
+    misconceptions:
+      - m: "M5 'An AI summary is the original made shorter and neutral.'"
+        fix: "Collect the predictions; most students say 'the same'. The next slide shows the evidence."
+    activity: "Students write their prediction (10 s)."
+    book: "§9.5 Reading with AI: Summary Fidelity; @fig-9-11."
+
+- layout: figure
+  minutes: 2
+  kicker: "§9.5 · Peters & Chin-Yee (2025)"
+  title: "Most models’ summaries claimed more than the abstracts"
+  figure: f9-09-peters-summaries
+  takeaway: "People do it too: check any summary against its original"
+  notes:
+    say: |
+      Here is the evidence. In a 2025 study, two researchers had ten language models produce 4,900 summaries of research
+      abstracts and articles from leading medical and science journals. Most of the models produced conclusions broader
+      than the originals'. Compared with summaries of the same articles written by experts for a medical newsletter, the
+      models' summaries had nearly five times the odds of containing broad generalizations. And newer models in the test
+      tended to overgeneralize more, not less, as of 2025. But people do it too. A study of 462 press releases about
+      health research from 20 UK universities found that about a third or more contained exaggerated advice,
+      exaggerated causal claims, or claims about humans drawn from animal research. So the lesson is not "trust humans,
+      distrust AI". It is: check any summary against its original.
+    background: |
+      Peters & Chin-Yee (2025), Royal Society Open Science (open access); comparison summaries from NEJM Journal Watch.
+      In the chart, the original abstracts' generalized-conclusion share is about 20%; one model sits just below it.
+      Results are model-specific and dated. Sumner et al. (2014), BMJ: 462 press releases, 20 UK universities, 2011.
+      Deep 9.B (optional): prompts asking for accuracy made generalizations more likely (odds ratio 1.90); temperature 0
+      lowered the odds by 76% relative to 0.7.
+    questions:
+      - q: "Would a better prompt fix it?"
+        a: "Not reliably. In the same study, prompts asking for accuracy made generalized conclusions more likely (Deep 9.B, optional). A careful prompt does not replace a check against the original."
+    misconceptions:
+      - m: "M5 'An AI summary is the original made shorter and neutral.'"
+        fix: "Point at the bars above the abstracts' line; then refute the overcorrection with the press releases."
+    activity: "Compare with the class's predictions from the previous slide."
+    book: "§9.5, @fig-9-9; Check Yourself 9.5, item 2."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "§9.5 · the fidelity check"
+  title: "Check a summary sentence by sentence"
+  size: 26
+  bullets:
+    - "Find the supporting passage in the original"
+    - "Give Chapter 8’s verdict"
+    - "Not supported? Name the drift type, if one fits"
+    - "Then: was a key result omitted?"
+  flow:
+    - {label: "Summary sentence", kind: step}
+    - {label: "Passage in original", kind: step}
+    - {label: "Verdict + drift", kind: human}
+  takeaway: "A link turned into a cause: unsupported, drift “cause from correlation”"
+  notes:
+    say: |
+      Here is the method you use in the demonstration in a moment, in the lab and in A6. For each sentence of a summary:
+      one, find the passage in the original that supports it. Two, give a verdict on Chapter 8's scale. Three, if the
+      verdict is not "supported", name the drift type when one fits. A sentence with no basis in the original at all is
+      simply unsupported; one that says the opposite is contradicted. If a sentence turns a link the original reports
+      into a cause, the verdict is unsupported, because the design cannot show cause, and the drift is "cause from
+      correlation". Then check the summary as a whole for an omitted key result: a finding that changes the picture but
+      is missing.
+    background: |
+      D-9.3 (book-wide): each summary sentence gets Chapter 8's verdict; if not "supported", name one of the four drift
+      types when one fits; "added content" and "contradiction" are not separate drift types. Good uses while reading:
+      explain a term, find the methods section, list questions to read for, translate a passage, with the original open.
+      Do not upload a paywalled or confidential document to a public tool (Chapters 15 and 18).
+    misconceptions:
+      - m: "M5 'An AI summary is the original made shorter and neutral.'"
+        fix: "The check assumes nothing: every sentence must earn its verdict from a passage."
+    activity: "Point at the flow strip; keep the slide brief."
+    book: "§9.5 'The fidelity check'; Check Yourself 9.5, item 3."
+
+# The final reveal is about 75 words: the three coded summary sentences, quoted with their verdicts, and the fix are
+# the point of the example and mirror the demonstration that follows (deliberate exception to the 40-word guide).
+- layout: worked
+  minutes: 1
+  kicker: "§9.5 · worked example · constructed"
+  title: "Elif checks a summary of a sleep study"
+  context: "Original: 120 students at one university; more sleep reported, more words recalled; sleep measured by survey."
+  steps:
+    - {label: "“In one study of 120 students, those who slept more recalled more words.”", text: "Supported"}
+    - {label: "“People who sleep after learning remember more.”", text: "Partly supported · broadened claim"}
+    - {label: "“Sleep causes better recall.”", text: "Unsupported · cause from correlation"}
+  reveal: [1, 3]
+  result: "Fix: “In this one study, more sleep was linked to better recall; the design cannot show cause.”"
+  notes_reveal:
+    - minutes: 1
+      say: |
+        Before the live demonstration, a model of what we will do. The original reports three things: 120 students at
+        one university learned word lists; students who reported sleeping at least seven hours between learning and the
+        test recalled more words; and sleep was measured by survey, so students were not assigned to sleep or stay awake.
+        The first summary sentence: "In one study of 120 students, those who slept more recalled more words." Find the
+        passage: claims one and two. Verdict: supported. Now look at the next two summary sentences in your book or on
+        the next slide, and code them yourself before I reveal them.
+      background: |
+        Worked Example "Elif Checks a Summary" (constructed: study and summary invented for teaching; it mirrors
+        the concept session's demonstration).
+      activity: "30 s: students code sentences 2 and 3."
+      book: "§9.5 Worked Example 'Elif Checks a Summary'."
+    - minutes: 1
+      say: |
+        Sentence two: "People who sleep after learning remember more." Partly supported: the link holds, but "students at
+        one university" became "people". Drift: broadened claim. Sentence three: "Sleep causes better recall."
+        Unsupported, and the drift is cause from correlation. Not contradicted: the original does not say the opposite;
+        its design simply cannot show cause. Omitted key result: none. And the correction: "In this one study, more sleep
+        was linked to better recall; the design cannot show that sleep caused it." Notice that the fix is shorter and
+        less exciting. Faithful summaries usually are.
+      background: |
+        Faded example (Marcus's public-health summary) key in Appendix E: sentence 2 contradicted (the rise was larger in
+        urban counties), the verdict is enough; sentence 3 unsupported, cause from correlation. Review A10 (even) is
+        instructor-only; do not show its key.
+      misconceptions:
+        - m: "M5 'An AI summary is the original made shorter and neutral.'"
+          fix: "Two of three sentences claimed more than the original."
+      activity: "Reveal; go straight into the demonstration."
+      book: "§9.5 Worked Example; Faded Example 'Marcus's Public-Health Summary'."
+  notes:
+    book: "§9.5 Worked Example 'Elif Checks a Summary'."
+
+- layout: lab
+  minutes: 18
+  kicker: "Demonstration · live, done by you · 18 min"
+  title: "An AI summary versus the original abstract"
+  goal: "Code every sentence of a real, dated summary"
+  steps:
+    - {text: "Read the abstract; list its claims and its limits", min: 4}
+    - {text: "Read the AI summary (model, date and prompt shown)", min: 2}
+    - {text: "Pairs: passage, verdict and drift for each sentence", min: 7}
+    - {text: "Omitted key result? Write a corrected summary", min: 3}
+    - {text: "Class tally: which drift type appeared most?", min: 2}
+  side:
+    - {heading: "Materials", text: "The dated summary and its abstract, on your course site and printed"}
+    - {heading: "Valid result", text: "“The summary was faithful” is a finding"}
+    - {heading: "Rule", role: risk, text: "Never upload a paywalled or confidential document to a public tool"}
+  notes:
+    say: |
+      Now the live demonstration, and you do it. On screen and on the handout is an open-access abstract and an AI
+      summary of it, with the tool, the model, the date and the prompt. First, read the abstract and list its claims and
+      its limits: who was studied, how, and what the design can and cannot show. Then read the summary. In pairs, code
+      every sentence: the passage that supports it, a verdict, and a drift type if one fits. Then decide whether a key
+      result was omitted and write a corrected summary. In the last two minutes we tally the class's drift types on the
+      board. If the summary turns out faithful, that is a finding too; do not invent problems.
+    background: |
+      Instructor package (Chapter 9): "Dated AI summary of an open-access abstract, with model, date and prompt, plus the
+      abstract", needed for this session; also Lab 9.1's provided summary and the A6 alternative. Generate it before
+      class with a tool your institution provides or approves, record model and date, and keep the
+      prompt simple (Lab 9.3 uses "summarize in three sentences"). Expected observations (Lab 9.1): summaries of short
+      abstracts are often faithful in most sentences; broadened claims and dropped caveats are the most common drift
+      types. The demonstration takes about 20 minutes (18 + the worked example).
+    questions:
+      - q: "What if our pair disagrees on 'partly supported' versus 'unsupported'?"
+        a: "Go back to the passage. If part of the sentence is in the original and part is not, it is partly supported; if nothing in the original supports it, unsupported (Chapter 8's scale)."
+    misconceptions:
+      - m: "M5 'An AI summary is the original made shorter and neutral.'"
+        fix: "In the tally, point to any sentence that claims more than the abstract; also credit faithful sentences so the lesson is 'check', not 'distrust'."
+    activity: |
+      4 + 2 + 7 + 3 + 2 min. Circulate during the pair coding; collect two sentences with different verdicts for the
+      tally. If there is no device or AI, everyone works from the printed pair.
+    book: "§9.5; Lab 9.3 (the same task at home); instructor package, Chapter 9."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §9.5"
+  title: "summaries in tests"
+  question: "Which statement fits the evidence in section 9.5?"
+  options:
+    - "AI summaries condense the original, so they rarely add claims of their own."
+    - "Human summaries of studies are faithful, so only AI summaries need checking."
+    - "Newer models’ summaries overgeneralize less than older ones’."
+    - "Both AI summaries and press releases often overstated studies in tests."
+  answer: d
+  instruction: "Answer alone, then vote"
+  explanation: "(a) is M5; (b) is M5 in reverse; (c) newer models tended to overgeneralize more (as of 2025)"
+  notes:
+    say: |
+      Fifth quick check, right after the demonstration. Four statements about summaries; only one matches the two
+      studies in section 9.5. Think about both studies, not only the AI one: what did the press-release study find about
+      human writers? And what did the 2025 study find about newer models? Thirty seconds alone, then vote. Option (c)
+      is the tempting one, because most people assume each new model fixes the last one's problems. Ask a student who
+      chose (b) what the press-release study found.
+    background: |
+      Review Questions A11 (O4 · LO3 · Understand). Key (Appendix E): (d). (a) M5; (b) M5 in reverse: Sumner et al.
+      (2014) found exaggeration in press releases; (c) Peters and Chin-Yee (2025) found newer models tended to
+      overgeneralize more (as of 2025).
+    activity: "30 s alone, vote, answer slide."
+    book: "§9.5; Review Questions A11; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (d): both AI summaries and press releases often overstated studies in tests. Option (a) is the
+      misconception this section corrects: a summary is generated text, and it can add claims. Option (b) swings the
+      other way: university press releases, written by people and approved by scientists, also exaggerated. Option (c)
+      is the surprise of the 2025 study: newer models in that test tended to overgeneralize more, not less, and the
+      result is dated and specific to the models tested. Same lesson as the demonstration: check any summary against
+      its original.
+    background: |
+      Check Yourself 9.5, item 2 asks for one limit of Peters and Chin-Yee's finding: specific to the models and
+      prompts tested, and dated (2025).
+    activity: "Reveal; move on."
+    book: "§9.5; Appendix E (Review A11)."
+
+# ----------------------------------------------------------------------- 9.6
+- layout: section
+  minutes: 0.5
+  number: "9.6"
+  tag: "Core"
+  title: "AI search and research reports"
+  idea: "A link shows where text may have come from, not that the page supports the sentence."
+  meta: "Book §9.6 · Chapter 1's search-then-generate lane"
+  notes:
+    say: |
+      Many tools now search before they answer. In Chapter 1's terms, this is the search-then-generate lane: the system
+      retrieves pages, adds passages from them to the context window, then produces an answer with links. The links look
+      like citations, and that is the trap. A link shows where text may have come from; it does not show that the page
+      supports the sentence beside it. Chapter 1 reported one test: in 2023, only about half of the sentences from
+      generative search engines were fully supported by their citations. This section adds two newer findings and a
+      four-check routine for the long research reports some tools now produce.
+    background: |
+      Liu et al. (2023), Findings of EMNLP (Chapter 1). Retrieval (Chapter 3) adds text to the context window but does
+      not change how the answer is produced (Spaced Review item 4).
+    misconceptions:
+      - m: "M6 'If an AI search answer shows citations, they back up the answer, and I can cite the AI tool as my source.'"
+        fix: "Name both halves; this section refutes the first, 9.7 the second."
+    activity: "Transition slide."
+    book: "§9.6 AI Search and Research Reports."
+
+- layout: figure
+  minutes: 1.5
+  kicker: "§9.6 · Tow Center for Digital Journalism (2025)"
+  title: "Wrong source details for 37% to 94% of excerpts"
+  figure: f9-12-tow-search
+  takeaway: "Wrong answers were rarely hedged: few said “I could not find it”"
+  notes:
+    say: |
+      In a 2025 test, researchers at Columbia University's Tow Center gave eight AI search tools the same 200 excerpts
+      from news articles, chosen so that an ordinary Google search found the original in its top three results. They
+      asked each tool once for the article's headline, publisher, date and web address. Together, the tools answered
+      more than 60% of the 1,600 queries incorrectly. Error rates ranged from 37% for one tool to 94% for another, as
+      tested in February 2025. And most presented wrong answers confidently, rarely hedging with words such as "may" or
+      "I could not find". A second 2025 study, by public broadcasters, found significant sourcing problems in 31% of
+      AI assistants' answers to news questions.
+    background: |
+      Jaźwińska & Chandrasekar (2025), Columbia Journalism Review / Tow Center; dated February 2025; tool-specific. The
+      chart shows three of the eight tools (37%, 67%, 94%) and a dashed line for "more than 60%" across all eight.
+      Short case 2 (Case Study): EBU/BBC study, journalists at 22 public-service media organizations in 18 countries
+      rated more than 2,700 answers from four assistants; 45% had at least one significant issue; 31% had a significant
+      sourcing problem (Fletcher & Verckist, 2025). Tool names are omitted on slides (tool neutrality).
+    questions:
+      - q: "Which tool was best?"
+        a: "The book does not rank products; results were for February 2025 and change with versions. The lesson holds for any tool: open the cited page and check the sentence against it."
+    misconceptions:
+      - m: "M6 'If an AI search answer shows citations, they back up the answer…'"
+        fix: "Even finding the right article failed often; a link is a claim about a source."
+    activity: "Ask: 'What would hedging have looked like?'"
+    book: "§9.6, @fig-9-12; Case Study short case 2."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§9.6 · research-report tools (book figure: four checks)"
+  title: "A report with 40 citations still needs four checks"
+  size: 22
+  columns:
+    - heading: "Types"
+      role: soft
+      bullets: ["Which rungs, for which claims?"]
+    - heading: "Support"
+      role: soft
+      bullets: ["Does each page say its sentence?"]
+    - heading: "Missing"
+      role: soft
+      bullets: ["Dates, opposing evidence, primary sources?"]
+    - heading: "Faithfulness"
+      role: soft
+      bullets: ["Does the synthesis match the sources?"]
+  takeaway: "More sources, not better ones"
+  notes:
+    say: |
+      Some products, often marketed as "deep research", go further: they run many searches, retrieve many pages and
+      produce a long report with dozens of citations. They change coverage and speed, not the checks. A report with 40
+      citations still needs four. Types: which rungs are the sources on, for the claims they support? Support: does each
+      cited page say what its sentence claims? Missing evidence: are dates, counter-evidence and primary sources present?
+      Faithfulness: does the report's synthesis say what its sources say? In the book's four-day-workweek example, a
+      report claimed trials "raised productivity", while the organizer's own wording was "reported by most participating
+      firms": a broadened claim, found only by the faithfulness check.
+    background: |
+      Google, OpenAI and Perplexity each announced such a tool between December 11, 2024 and February 14, 2025 (Google,
+      2024; OpenAI, 2025; Perplexity, 2025); as of October 2026 current tools are listed in Compass (optional, free,
+      never part of a course grade). Worked Example "The Four-Day Workweek Report" (constructed; real study types). Faded example
+      (readmissions report) key in Appendix E.
+    misconceptions:
+      - m: "M1 'A long reference list makes a source reliable.'"
+        fix: "Forty citations is volume, not quality (Review A13)."
+    activity: "Ask which check would have caught the Deloitte quotation (support, then tracing to the court's record)."
+    book: "§9.6 four checks, @fig-9-13; Worked and Faded Examples."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §9.6"
+  title: "thirty citations"
+  question: "An AI research report on a health question gives 30 citations. What is the best first step?"
+  options:
+    - "Trust it, because 30 citations show that it covered the topic widely."
+    - "Check each source’s rung and whether it says what its sentence claims."
+    - "Ask the same tool to confirm that every one of its citations is correct."
+    - "Count how many of the citations come from well-known organizations."
+  answer: b
+  instruction: "Answer alone, then vote"
+  explanation: "(a) and (d) treat volume and names as quality (M1); (c) a tool’s own yes is never a source (M6)"
+  notes:
+    say: |
+      Sixth quick check. Thirty citations on a health question: the stakes are high, and the report looks thorough.
+      Which first step actually tests it? Thirty seconds alone, then vote. Watch for option (c), asking the tool to
+      confirm its own citations, which is Chapter 8's lesson from the Mata case in a new form. And option (d) is the
+      peripheral cue from the Opening Case: famous names instead of a check. Ask a student who chose (d) what a
+      well-known organization's name would have told them about the Deloitte references.
+    background: |
+      Review Questions A13 (O5 · LO3 · Analyze). Key (Appendix E): (b). (a) M1: volume is not quality; (c) M6: a tool's
+      own "yes" is never a source (Chapter 8); (d) M1: well-known names are cues, not checks.
+    activity: "30 s alone, vote, answer slide."
+    book: "§9.6; Review Questions A13; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (b): check each source's rung and whether it says what its sentence claims. Those are the first two
+      of the four checks; missing evidence and faithfulness follow. Thirty citations show that the tool retrieved many
+      pages, not that the pages support the sentences. Asking the same tool to confirm its own citations is not a check;
+      its yes comes from the same kind of process that produced the citations. And well-known names are cues. For a
+      health question, the rung needed is 4, plus an expert if a decision depends on it, so in practice you open the
+      citations behind the claims you will use.
+    background: |
+      Rung-needed table (§9.1): a decision about health, money or rights needs rung 4 plus an expert (Chapter 8, stage 3).
+    activity: "Reveal; move on."
+    book: "§9.6; Appendix E (Review A13)."
+
+# ----------------------------------------------------------------------- 9.7
+- layout: section
+  minutes: 0.5
+  number: "9.7"
+  tag: "Core"
+  title: "Cite what you read, and cite AI correctly"
+  idea: "A reference list is a promise: these are the sources I used, and you can check them."
+  meta: "Book §9.7 · APA 2025 guidance · the AI Use Declaration"
+  notes:
+    say: |
+      Last section today. A reference list is a promise to your reader: these are the sources I used, and you can check
+      them. Four rules keep that promise when AI is part of your research. They answer questions students ask every
+      term: do I cite the AI tool that found my sources? Can I copy a citation from an AI answer? How do I cite an AI
+      chat if I quote it? And what does the book's policy require on top of a style guide? Disclosing AI use in the
+      text of your writing, and at work, is Chapter 10's topic.
+    background: |
+      Book-wide boundary: Chapter 9 owns reference-list citation of sources and of AI output (APA 2025 guidance);
+      Chapter 10 owns disclosure in prose and at work. D-9.2: cite the source you read, not the tool that found it; never
+      cite a source you have not opened; cite a shared AI chat only when you quote or paraphrase AI output; an AI tool is
+      never an author; the AI Use Declaration is required even where a style guide requires no citation.
+    activity: "Transition slide."
+    book: "§9.7 Cite What You Read, and Cite AI Correctly."
+
+- layout: compare
+  minutes: 2
+  kicker: "§9.7 · four rules (book figure: what to cite)"
+  title: "Cite the source you read, not the tool that found it"
+  size: 22
+  columns:
+    - heading: "1 · Source, not tool"
+      role: verified
+      bullets: ["Cite what you read, not the AI"]
+    - heading: "2 · Opened, or not cited"
+      role: risk
+      bullets: ["Never copy an AI citation"]
+    - heading: "3 · Quoting AI output"
+      role: soft
+      bullets: ["Cite the chat; company as author"]
+    - heading: "4 · Declare"
+      role: human
+      bullets: ["Declaration, every time"]
+  takeaway: "Fabricated sources: never acceptable, even if disclosed"
+  notes:
+    say: |
+      Rule 1: cite the source you read, not the tool that found it. APA's style team says that when you use AI the way
+      you use a search engine, you cite the sources you then read, not the AI. Rule 2: never cite a source you have not
+      opened, and never copy a citation from an AI answer into your reference list; Chapter 8 showed how often they fail.
+      Rule 3: when you quote or paraphrase AI output itself, cite it in your style guide's format; APA's September 2025
+      guidance names the company as the author and cites a shared chat by date, title, a bracketed description, the tool
+      and the link. Whatever the style, an AI tool is never an author. Rule 4, the book's policy: an AI Use Declaration every
+      time, even where a style guide requires no citation.
+    background: |
+      McAdoo et al. (2025a, 2025b), APA Style blog posts on generative AI; Modern Language Association (2025): a
+      description of what the tool generated in the title slot, the tool as container, the company as publisher. The
+      book's constructed APA example: "OpenAI. (2027, February 23). *Summary of a sleep and memory study* [Generative AI
+      chat]. ChatGPT. https://chatgpt.com/share/…". Declaration elements (Chapter 1): tools; purpose; accepted, rejected
+      or revised; how verified; where your judgment shaped the work. Elif's worked example: she cites the review and the
+      experiment she read, and one AI chat because she quotes one of its summary sentences; she does not cite the AI
+      search. The Deloitte corrected report disclosed AI use; whether that was enough is Chapter 10's question.
+    questions:
+      - q: "I used an AI tool to find three articles and read them. What goes in my reference list?"
+        a: "The three articles. Not the tool. The declaration says you used it to find sources (Check Yourself 9.7, item 1; Review A12 is instructor-only)."
+    misconceptions:
+      - m: "M6 '…and I can cite the AI tool as my source.'"
+        fix: "Rule 1: the AI found it; you read it; you cite what you read."
+    activity: "Ask pairs to fix Marcus's error 2 (an article copied from an AI answer, never opened)."
+    book: "§9.7 four rules, @fig-9-14; Worked Example 'Elif's Reference List'; Faded Example 'Marcus's Two Errors'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §9.7"
+  title: "when to cite an AI chat"
+  question: "When do you cite an AI chat itself in your reference list, and what does the book’s policy require even when you do not?"
+  instruction: "Two sentences, then compare with a neighbor"
+  model_answer:
+    - "**Cite the chat** only when you quote or paraphrase the AI output itself; otherwise cite the sources you read."
+    - "**Always declare:** tools, purpose, what you accepted, rejected or revised, how you verified, your judgment."
+  notes:
+    say: |
+      Last check for today, open-ended. Two parts: when do you cite an AI chat itself in your reference list, and what
+      does the book's policy require even when you do not? Write two sentences, then compare with your neighbor. While they
+      write, walk around and look for answers that say "always cite the AI": that is the M6 misconception in its second
+      form. The stronger answer distinguishes using AI to find sources, where you cite the sources, from quoting AI
+      output, where you cite the chat.
+    background: |
+      Check Yourself 9.7, items 2 and 3 (answers in §9.7): cite an AI chat when you quote or paraphrase its output; the
+      course requires a declaration because the reader can judge the work only if they know what the tools did and what
+      the student did.
+    activity: "1 min write and compare, then the answer slide."
+    book: "§9.7; Check Yourself 9.7."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      Here is a model answer. You cite the chat only when you quote or paraphrase the AI output itself, as Elif does when
+      she quotes one summary sentence as an example of a broadened claim. Otherwise you cite the sources you read. And
+      the book's policy always requires an AI Use Declaration, with all five elements: tools, purpose, what you accepted,
+      rejected or revised, how you verified it, and where your judgment shaped the work. The reason is simple: your
+      reader can judge your work only if they know what the tools did and what you did. A6 item 7 is that declaration.
+    background: |
+      A6 rubric, "References, declaration and judgment (2)": references correct (any quoted or paraphrased AI output
+      cited); all five declaration elements; judgment naming what each source is relied on for and what remains uncertain.
+    activity: "Reveal; one student reads their sentence."
+    book: "§9.7; Check Yourself 9.7; A6 items 5 and 7."
+
+- layout: concept
+  minutes: 2
+  kicker: "Before the lab · about 15 minutes"
+  title: "Bring a question, two sources and one summary"
+  size: 24
+  bullets:
+    - "Write your A6 question, purpose and claim"
+    - "Find two of your three sources (Lab 8.2 may supply two)"
+    - "One short open-access text, plus an AI summary of it"
+    - "Summary: at least five sentences; tool, date, prompt"
+  takeaway: "No tool? Use the provided summary; its original counts as a source"
+  notes:
+    say: |
+      Before the lab session, about fifteen minutes. Write your A6 question, your purpose and the claim you most need to
+      support. Find two of your three sources; your Lab 8.2 record from Chapter 8 may supply up to two. One of them
+      should be an abstract or an open-access article of at most 1,500 words: bring an AI summary of it, at least five
+      sentences, with the tool, the date and the prompt. If you cannot, or prefer not to use AI, use the provided summary
+      on your course site; its original then counts as one of your three sources. Use only open-access or library-licensed
+      sources, and do not upload a paywalled PDF to a public tool. Read section 9.8 before class.
+    background: |
+      Lab 9.1, before the lab. A6 mix: at least one rung-4 source, at least one found through an AI search answer or
+      research report, at least one gray literature, news or website. A tool your institution provides or approves, or a
+      free tier. Sources in any language are fine, with an English translation or
+      explanation of each passage cited.
+    questions:
+      - q: "Can my question be from another course?"
+        a: "Yes: from your major or a course you are taking (A6 item 1)."
+    activity: "Leave this slide up as students pack."
+    book: "§9.8; Lab 9.1 (before the lab); A6 brief."
+
+# ======================================================================= SESSION 2 · LAB
+- layout: section
+  session: thu
+  minutes: 0
+  number: "Lab"
+  tag: "Lab"
+  title: "Practice lab: the source audit"
+  idea: "Rate, read laterally, trace, check a summary: start A6."
+  meta: "Book §9.8 · Lab 9.1 · starts A6"
+  notes:
+    say: |
+      Welcome back. Today is the source audit lab, and by the end of it you will have started A6: three items of it done
+      in class, the summary check and the trace. Sit with your team of three or four. You need your question, your two
+      sources and your AI summary from home, or the provided summary from your course site. Each team also gets a source pack:
+      four sources on one shared question, a gray report, a preprint, a news story and a peer-reviewed article. We start
+      with a two-minute warm-up from memory, then a short briefing, then forty-five minutes of practice.
+    background: |
+      Lab session flow (Lab 9.1): briefing 10 · team jigsaw 15 · summary check 15 · trace 15 · share 15 · exit
+      5. Materials (instructor package): four-source team packs on one shared question, printable and screen-reader
+      friendly; A6 sheet template (@fig-9-15); provided dated summary; press-release/study pairs for the A6 alternative.
+    activity: "Form teams of 3–4; hand out source packs face down."
+    book: "§9.8 The Source Audit; Lab 9.1."
+
+- layout: quiz
+  minutes: 2
+  kicker: "Lab session · warm-up from memory (Chapters 4 and 8)"
+  title_prefix: "Warm-up"
+  title: "label the Deloitte references"
+  question: "Label an incorrect reference in a published report on the tree when no record says how it was produced. Why is the label inferred?"
+  instruction: "No notes: write it, then check with your team"
+  model_answer:
+    - "**Hallucination · invented facts or sources, inferred:** the reference is shown to be wrong, but no record shows it was generated."
+    - "Chapter 4 used the same reasoning for the Air Canada chatbot (Moffatt)."
+  notes:
+    say: |
+      Warm-up, from memory. Take the Deloitte case. Some published references were incorrect: that is confirmed. Label
+      an incorrect reference on the Failure Taxonomy Tree when no record says how it was produced, and say why the label
+      is inferred rather than documented. Bonus: which Chapter 4 case used the same reasoning? Write it, then check with
+      your team. This matters for your A6 and for every case you meet: the strength of a label depends on what the
+      record shows, not on what seems likely.
+    background: |
+      Spaced Review 3 (Chapter 4 · LO1 · Analyze); key in Appendix E. Case Study labels: tree, hallucination, leaf
+      "invented facts or sources", inferred (dashed); chain link 1 documented (incorrect references reached the
+      published report); link 2 "checked before use?" failed, documented, with what checks ran not on record (inferred)
+      (@fig-9-19, @fig-9-20; the chain has links, not stages, as in Chapter 4).
+    activity: "1 min write, 1 min team check, then the answer slide."
+    book: "Spaced Review 3; Case Study 'The Deloitte Report, Revisited'; Appendix E."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      Here is the answer. Hallucination, leaf "invented facts or sources", inferred. The references are shown to be
+      wrong, but no record shows that they were generated by the AI tool chain; the corrected report says only that AI
+      was used in the technical work. Chapter 4 used the same reasoning for the Air Canada chatbot. On the chain, link 2,
+      "checked before use?", failed and is documented, because the incorrect references reached the published report;
+      what checks actually ran is not on the record. Two checkpoints existed: the firm's review and the department's
+      acceptance. Today you are the checkpoint for your own sources.
+    background: |
+      Case Study "Where the checks were": checking the nonexistent book outside the report caught the first error;
+      tracing the quotation to the court's own record would have caught the second (for "what the court said", the
+      report was only secondary). Case Study Question 4 (even) is instructor-only.
+    activity: "Reveal; connect to the opening puzzle."
+    book: "Case Study; @fig-9-19, @fig-9-20; Appendix E (Spaced Review 3)."
+
+- layout: lab
+  minutes: 3
+  kicker: "Lab 9.1 · teams of 3–4 · individual A6"
+  title: "Source audit: the plan"
+  goal: "Rate, read laterally, check, trace: A6 items 2–4"
+  steps:
+    - {text: "**Jigsaw:** one source each from the pack; rung, then five minutes of lateral reading; use decision", min: 15}
+    - {text: "**Summary check:** your summary, sentence by sentence; swap and check two verdicts", min: 15}
+    - {text: "**Trace:** one claim from your sources, two hops or to a dead end", min: 15}
+    - {text: "**Share:** a use decision that changed; one coded sentence", min: 15}
+  side:
+    - {heading: "Deliverable", text: "A6 items 3 and 4 started; team table not graded"}
+    - {heading: "No device or AI?", text: "Printed pack and the provided summary"}
+    - {heading: "Rule", role: risk, text: "No personal data; no paywalled uploads to public tools"}
+  notes:
+    say: |
+      Here is the plan. Jigsaw, fifteen minutes: each member takes one source from the pack, opens it, finds the printed
+      claim and places the source on the ladder; then five minutes of lateral reading with outside sources, and a use
+      decision. Compare as a team: did any use decision change after lateral reading? Summary check, fifteen minutes,
+      individually: your own AI summary against its original, sentence by sentence, then swap and check two of a
+      teammate's verdicts. Trace, fifteen minutes: one claim from one of your own sources, at least two hops or to a dead
+      end, with Chapter 8's three checks at each hop. Then we share. Recap the two ladder rules before you start: a
+      citation lifts a source only if the cited record holds this claim; opening the record does not raise the rung.
+    background: |
+      Lab 9.1 steps 2–5 and briefing content: the ladder and its two rules, lateral reading and the use decision, the
+      drift types, the upload rule. Expected observations: lateral reading often turns gray literature and polished sites
+      from "rely on it" into "use with a caveat" or "only as a lead" without changing their rung; summaries of short
+      abstracts are often faithful in most sentences; traces of statistics found through AI answers often end in a dead
+      end. Teams of three share the fourth source. Students who miss class: the printed source pack and screen-reader
+      table on your course site.
+    misconceptions:
+      - m: "M9 'Who is behind a source changes its rung.'"
+        fix: "When a team lowers a rung after lateral reading, ask them to move the change to the use-decision column."
+    activity: "3 min briefing; hand out the packs; start the 15-min jigsaw timer."
+    book: "§9.8; Lab 9.1 (labs/ch09-lab1.md)."
+
+- layout: assignment
+  minutes: 2
+  kicker: "Assignment A6 · O6 · LO3, LO4"
+  title: "A6: source reliability review"
+  due: "When your instructor sets it · on your course site · individual"
+  parts:
+    - "Question, purpose, the claim you most need"
+    - "Three sources: type, status, both rungs, outside-source log, use decision"
+    - "One claim traced two hops (in the lab)"
+    - "One AI summary checked sentence by sentence"
+    - "References, a 100–150-word judgment, declaration"
+  rubric_title: "Rubric · 10 points"
+  rubric:
+    - {criterion: "Task", points: 3, full: "Mix met; rungs justified"}
+    - {criterion: "Outside log", points: 1.5, full: "Four outside sources"}
+    - {criterion: "Trace", points: 1.5, full: "Checks at every hop"}
+    - {criterion: "Verification", points: 2, full: "Passages, verdicts, drift"}
+    - {criterion: "References etc.", points: 2, full: "Correct; five elements"}
+  note: "A faithful summary, or a source that keeps its use decision, is a valid result and can earn full credit."
+  notes:
+    say: |
+      Here is what you submit. Your question, purpose and claim. Three sources: at least one on rung 4 for your
+      claim, at least one found through an AI search answer or research report, and at least one gray literature, news
+      or a website. For each: type and status, its rung and the rung you need with a justification, an outside-source
+      log, and a use decision. The traced claim and the summary check you start today. Then references, a short
+      judgment of what you would rely on and what remains uncertain, and your declaration. The rubric is out of ten. Two
+      results that students think are failures are not: a faithful summary, and a source that kept its use decision.
+    background: |
+      Full brief and four-level rubric in the chapter: Task 3; Outside-source log 1.5 (two outside sources for the
+      source you knew least about and one for each of the others, four in all); Citation trace 1.5; Verification 2;
+      References, declaration and judgment 2. Up to two sources from Lab 8.2. About 15 min before the lab and 65 after.
+      Alternative assignment: AI-found source becomes a library-database or search-engine find; summary check uses the
+      dated summary on your course site or a university press release against its study.
+    questions:
+      - q: "Does a site's own About page count in the outside-source log?"
+        a: "No. It is the site describing itself; the rubric's Proficient level names this as a common error. Use sources not written or paid for by whoever is behind the page."
+    activity: "Point to the outside-source log row: four entries, none from the source itself."
+    book: "Application Assignment A6 (brief, rubric, alternative); §9.8."
+
+- layout: concept
+  minutes: 15
+  kicker: "Lab 9.1 · step 2 · team jigsaw · 15 min"
+  title: "Jigsaw: one source each, then compare"
+  size: 24
+  bullets:
+    - "Open your source; find the printed claim"
+    - "Rung for the claim, and the rung needed"
+    - "Five minutes of lateral reading: who is behind it?"
+    - "Use decision; did it change?"
+  flow:
+    - {label: "Rung (the source alone)", kind: step}
+    - {label: "Outside sources", kind: human}
+    - {label: "Use decision", kind: human, role: verified}
+  notes:
+    say: |
+      Fifteen minutes. Each member takes one source from the pack: the gray report, the preprint, the news story or the
+      peer-reviewed article. Open it and find the printed claim. Give the source a rung for that claim, judged from the
+      source alone, and note the rung the team's purpose needs. Then leave the page: five minutes of lateral reading,
+      searching what outside sources say about who is behind it. Make a use decision. In the last four minutes, compare
+      as a team. Which use decision changed after lateral reading? Did anyone change a rung because of who was behind a
+      source? If so, move that change to the use-decision column.
+    background: |
+      Lab 9.1 step 2. Instructor package: four-source packs (gray report, preprint, news story, peer-reviewed article)
+      on one shared question, each with one printed claim. Watch for teams rating the preprint rung 1 because it is
+      unreviewed (status is not the rung) and for teams using the site's own About page as an outside source. Debrief
+      question 1 (evaluate): which source's use decision changed most, and what did the outside source show?
+    misconceptions:
+      - m: "M2 'A preprint is worthless.'"
+        fix: "The preprint can be rung 4 for 'this study found'; its status goes into the use decision with a caveat."
+    activity: "15 min. At minute 11, tell teams to compare."
+    book: "Lab 9.1 step 2; §9.1–9.3."
+
+- layout: lanes
+  minutes: 15
+  kicker: "Lab 9.1 · step 3 · summary check · 15 min, individual"
+  title: "Your summary, sentence by sentence"
+  rows:
+    - label: "Each sentence"
+      nodes:
+        - {label: "Find the passage", kind: step}
+        - {label: "Verdict (Chapter 8)", kind: human, role: neutral}
+        - {label: "Drift type, if one fits", kind: human, role: neutral}
+    - label: "Whole summary"
+      nodes:
+        - {label: "Omitted key result?", kind: step}
+        - {label: "Corrected summary", kind: human, role: verified}
+    - label: "Swap"
+      nodes:
+        - {label: "Check two of a teammate’s verdicts", kind: human, role: neutral}
+  caption: "Drift types: dropped caveat · broadened claim · cause from correlation · changed number."
+  takeaway: "“The summary was faithful” is a valid result"
+  notes:
+    say: |
+      Fifteen minutes, on your own. Take the AI summary you brought, or the provided one, and its original. For every
+      sentence: locate the passage that supports it, give Chapter 8's verdict, and name a drift type if one fits. Then
+      look at the summary as a whole: is a key result missing? Write a corrected summary. In the last four minutes, swap
+      with a teammate and check two of each other's verdicts. Disagreements are useful: go back to the passage. This is
+      A6 item 4, so write it in the A6 sheet now rather than on scrap paper.
+    background: |
+      Lab 9.1 step 3 and A6 item 4: for each summary sentence, the supporting passage (location in the original,
+      paraphrased), verdict, drift type if one fits; omitted key result; corrected summary; tool, model if shown, date and
+      prompt. Verification criterion (2 points). Debrief question 2 (analyze): which drift type was most common in the
+      class, and why? Expected: broadened claims and dropped caveats.
+    misconceptions:
+      - m: "M5 'An AI summary is the original made shorter and neutral.'"
+        fix: "Ask students who found no problems to show the passage for each sentence; 'faithful' must be earned too."
+    activity: "15 min individual (11 + 4 swap)."
+    book: "Lab 9.1 step 3; §9.5; A6 item 4."
+
+- layout: concept
+  minutes: 15
+  kicker: "Lab 9.1 · step 4 · trace · 15 min, individual"
+  title: "Trace one claim: two hops, or to a dead end"
+  size: 24
+  bullets:
+    - "At every hop: **exists? matches? says it?**"
+    - "Where did it change? Which drift type?"
+    - "End: a verdict and your replacement sentence"
+  flow:
+    - {label: "Your source", kind: step}
+    - {label: "Hop 1", kind: step}
+    - {label: "Hop 2", kind: step}
+    - {label: "Origin or dead end", kind: step, dashed: true}
+  takeaway: "A dead end is a valid result: unsupported"
+  notes:
+    say: |
+      Fifteen minutes, on your own. Pick one claim from one of your own sources, ideally a number or a "studies show"
+      claim, and trace it upstream at least two hops, or until the trail ends. At every hop run Chapter 8's three checks:
+      does the cited work exist, do its details match, and does it say what is claimed? Note where the claim changed, and
+      which drift type it was. The book's retellings figure (@fig-9-4) shows the usual path a research claim travels downstream, from study
+      to AI summary; your trail runs the other way, upstream. End with a verdict on Chapter 8's scale and the sentence you
+      would write instead. A dead end is a valid result: the verdict is unsupported.
+    background: |
+      Lab 9.1 step 4 and A6 item 3; Citation trace criterion (1.5): two or more hops or a dead end, the three checks at
+      every hop, a verdict following Chapter 8's rule, a replacement sentence. The dashed last box means the trail may end
+      without an origin. @fig-9-4 (not on the slide; its labels are too small at slide size): study → preprint → journal
+      article → press release → news story → AI summary, dashed arrows where drift has been documented. Debrief question
+      3 (apply): where did your trace end, and what verdict does Chapter 8's rule give?
+    questions:
+      - q: "My source cites a paywalled study. Is that a dead end?"
+        a: "Try your library first; it can usually get the original. If you truly cannot reach it, the hop's verdict is 'cannot verify', with the reason in the uncertainty line."
+    misconceptions:
+      - m: "M4 'If many sources repeat a claim, it must have a solid origin.'"
+        fix: "When students stop at the third news story that agrees, send them one hop further up."
+    activity: "15 min individual. Circulate; most students need help choosing a claim that has a citation trail."
+    book: "Lab 9.1 step 4; §9.4, @fig-9-4; A6 item 3."
+
+- layout: tps
+  minutes: 9
+  kicker: "Share and critique · 15 min with the case"
+  title: "What changed, and what did you find?"
+  prompt:
+    - "A use decision that changed after lateral reading"
+    - "One summary sentence: verdict and drift type"
+    - "Where did your trace end?"
+  phases:
+    - {name: "Think", min: 1, text: "Pick one of each"}
+    - {name: "Team", min: 3, text: "Choose what to show"}
+    - {name: "Share", min: 5, text: "Report; class critiques"}
+  notes:
+    say: |
+      Share and critique. Each team shows two things: one source whose use decision changed after lateral reading, with
+      the outside source that changed it, and one summary sentence with its verdict and drift type. If time allows, one
+      trace and where it ended. Critique the check, not the person. Was that outside source really outside, not written
+      or paid for by whoever is behind the page? Does the verdict follow from the passage? Was the drift type the best
+      fit? I will tally the drift types on the board so we can see which was most common today.
+    background: |
+      Lab 9.1 step 5 and debrief questions 1–3. What to listen for: rung changes driven by funding (M9; move them to the
+      use decision); "contradicted" used for a sentence the original simply does not support (should be unsupported);
+      outside-source logs that use a site's own pages.
+    misconceptions:
+      - m: "M9 'Who is behind a source changes its rung.'"
+        fix: "Ask the team to say the rung and the use decision separately."
+    activity: "Think 1 · team 3 · share 5; tally drift types."
+    book: "Lab 9.1 step 5 and debrief."
+
+- layout: compare
+  minutes: 6
+  kicker: "Case Study · answer to the puzzle"
+  title: "Where the Deloitte checks were"
+  size: 22
+  columns:
+    - heading: "The nonexistent book"
+      role: soft
+      bullets: ["Does not exist", "Caught outside the report"]
+    - heading: "The made-up quotation"
+      role: soft
+      bullets: ["Report is secondary here", "Court record would catch it"]
+    - heading: "Three versions"
+      role: neutral
+      bullets: ["Jul 2025 · Sep 2025 · Feb 2026", "Cite the version you read"]
+  takeaway: "The checks were simple; whether anyone ran them is not on the record"
+  notes:
+    say: |
+      Back to the opening puzzle. What did the outside reader check? Whether a cited work existed, by going outside the
+      report to what he knew of his colleague's field: that is lateral reading and Chapter 8's first citation check. The
+      made-up quotation attributed to a judge would have been caught by tracing it to the court's own record, because for
+      "what the court said" the report was only a secondary source. Could it have been checked before publication? The
+      checks were simple; whether anyone ran them is not on the record. And a lesson for your own citing: the report now
+      exists in three versions, so if you cite a report, say which version you read.
+    background: |
+      Case Study "Where the checks were": the misquotation concerned Amato v Commonwealth; the corrected report replaced
+      it and describes the case as resolved by consent orders (reported, and visible in the two versions). Versions:
+      original dated July 4, 2025 (published Aug 14, 2025); corrected, dated September 26, 2025 (published Oct 3, 2025);
+      February 3, 2026 update (changes to a handful of footnote citations to one book, not to findings or
+      recommendations; keeps the September date on its cover). Case Study Question 5 key (Appendix E): find which version
+      you read, check whether passages you relied on changed, cite the version used with its date, and open any of the
+      report's references you used. Ethics Lens: the framework affects people the department itself describes as often
+      among the most vulnerable (DEWR, 2025a).
+    questions:
+      - q: "Who should have checked: the firm or the department?"
+        a: "Review C1 asks exactly this. Strong answers say both, with different checks: the author opens every reference and traces legal quotations; the client runs an acceptance check proportional to the stakes (Appendix E guidance)."
+    activity: "6 min: present (2), then take Review C1 as a quick class discussion (4)."
+    book: "Case Study 'The Deloitte Report, Revisited'; Chapter Summary; Review C1; Ethics Lens."
+
+# ----------------------------------------------------------------------- exit
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Differentiate:** type and status, claim by claim"}
+    - {code: "O2", text: "**Evaluate:** the rung, then who is behind it"}
+    - {code: "O3", text: "**Trace:** hop by hop, to an origin or a dead end"}
+    - {code: "O4", text: "**Judge:** every summary sentence against a passage"}
+    - {code: "O5", text: "**Critique:** types, support, missing, faithfulness"}
+    - {code: "O6", text: "**Produce:** A6, your source reliability review"}
+  takeaway: "Trust what an AI tool says a source says? Not without opening the source."
+  notes:
+    say: |
+      The chapter's question was: can you trust what an AI tool tells you a source says? Not without opening the source.
+      AI tools can find and condense sources quickly, but in tests from 2023 to 2025 their citations often did not
+      support their sentences, they often named the wrong source for a quoted excerpt, and their summaries often stated
+      broader conclusions than the originals; each finding is dated and specific to the tools tested. How directly a
+      source records your claim, and who is behind it, are separate judgments you make with the ladder and by reading
+      laterally. Both stay with you, and your reference list should show what you actually read.
+    background: |
+      Chapter Summary and Warm-up revisit: (1) every reference in a long professional report? Not guaranteed; about a
+      quarter of citations in medical journals did not fully support their statements (§9.4); (2) an AI summary claimed
+      more, in one 2025 study; (3) leave early to read laterally, then read the source carefully.
+    activity: "Ask two students to compare their Warm-up confidence ratings with the answers."
+    book: "Chapter Summary, @fig-9-18; Warm-up revisit."
+
+- layout: key_terms
+  minutes: 1
+  title: "Key terms"
+  terms:
+    - "source ladder"
+    - "rung needed"
+    - "secondary source"
+    - "tertiary source"
+    - "systematic review"
+    - "meta-analysis"
+    - "peer review"
+    - "preprint"
+    - "correction"
+    - "retraction"
+    - "gray literature"
+    - "vertical reading"
+    - "lateral reading"
+    - "outside source"
+    - "use decision"
+    - "citation tracing"
+    - "drift (in a retelling)"
+    - "summary fidelity"
+    - "omitted key result"
+    - "AI search"
+    - "research-report tool"
+    - "abstract"
+    - "open access"
+    - "GRADE (Deep)"
+  note: "Definitions: Chapter 9 and the glossary. Also from Chapter 8: claim · independent check · primary source."
+  notes:
+    say: |
+      These are the chapter's key terms; questions on terms and concepts ask for exactly these, so make sure you can
+      define each one in a sentence of your own words. Pay attention to the pairs, because exams like pairs: vertical and
+      lateral reading; independent check and outside source, which are not the same thing; peer review and preprint;
+      correction and retraction; the rung of a source and the rung you need. Quick self-test as you pack: cover the slide
+      and define three for your neighbor. GRADE is marked Deep: optional and not on the exam.
+    background: |
+      Key Terms list from the chapter (24 plus three from Chapter 8). Examinable scope is Core sections only (D20); Deep
+      sections are optional and not examinable.
+    activity: "30-second pair self-test."
+    book: "Chapter Summary, Key Terms; glossary."
+
+- layout: exit_ticket
+  minutes: 3
+  questions:
+    - "Name one source you would not rely on for your A6 claim, and why"
+    - "Which drift type did you find most, and where?"
+    - "What will you check first in the rest of A6?"
+  instruction: "3 min · index card or your course site · not graded"
+  notes:
+    say: |
+      Last three minutes: the exit ticket. First, from the lab sheet: name one source you would not rely on for your A6
+      claim, and why. Use the words of this chapter: its rung, who is behind it, or both. Second, which drift type you
+      found most, and where. Third, what you will check first in the rest of A6. Before you go: note when A6 is due in
+      your course. Chapter 10 comes next: writing with AI while keeping your own voice, and disclosure at work, with an
+      airline chatbot case; it also offers a review bridge back to Chapters 1 to 9.
+    background: |
+      Question 1 is Lab 9.1 step 6 (exit). Chapter 10 owns disclosure in prose and at work (Moffatt v. Air Canada) and
+      contains a review bridge to the Core sections of Chapters 1–9 (book-wide rule).
+    activity: "3 min; collect cards or close the online form at the end of the session."
+    book: "Lab 9.1 step 6; Chapter 10 opening."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: deep
+  session: after
+  kicker: "Deep 9.A · grading a body of evidence"
+  title: "Going deeper: GRADE rates certainty across studies"
+  size: 24
+  bullets:
+    - "Randomized trials start **high**; observational studies **low**"
+    - "Down for five problems, such as inconsistent results"
+    - "Up for three reasons, such as a very large effect"
+    - "Four levels: high · moderate · low · very low"
+  takeaway: "“A study found” is weaker than “the evidence shows”"
+  notes:
+    say: |
+      Use this only if there is time or a nursing or health student asks. The ladder asks how directly one source records
+      one claim. Health researchers ask a different question: across all the studies, how sure can we be about the
+      answer? The GRADE system rates a body of evidence at one of four levels: high, moderate, low or very low. Evidence
+      from randomized trials starts high, and from observational studies starts low. The rating moves down for five
+      kinds of problem: limitations in the studies, inconsistent results, evidence that does not directly match the
+      question, imprecise estimates, and signs that unfavorable results went unreported. It can move up, mainly for
+      observational evidence, for three reasons. Marcus meets this as evidence-based practice.
+    background: |
+      Deep 9.A (optional, not examinable). GRADE = Grading of Recommendations Assessment, Development and Evaluation
+      (Balshem et al., 2011; Guyatt et al., 2008). Up-grading reasons: a very large effect, a dose–response pattern, or
+      biases that would have hidden the effect. Early GRADE papers said "quality" of evidence; later ones "certainty".
+      This explains M7: a systematic review or meta-analysis is usually stronger on a broad question than any single
+      study. @fig-9-16 shows the scheme; Deep 9.B (summary faithfulness measures) is not on a slide.
+    activity: "Optional; not part of the 75-minute plan."
+    book: "Deep 9.A Grading a Body of Evidence, @fig-9-16."
+
+- layout: references
+  title: "References"
+  per_slide: 8
+  refs:
+    - "AusTender. (2024). *Contract notice CN4118426: Department of Employment and Workplace Relations* [Contract with Deloitte Touche Tohmatsu; updated 2025]. Australian Government. https://www.tenders.gov.au/"
+    - "Balshem, H., Helfand, M., Schünemann, H. J., et al. (2011). GRADE guidelines: 3. Rating the quality of evidence. *Journal of Clinical Epidemiology, 64*(4), 401–406. https://doi.org/10.1016/j.jclinepi.2010.07.015"
+    - "Breakstone, J., Smith, M., Wineburg, S., et al. (2021). Students' civic online reasoning: A national portrait. *Educational Researcher, 50*(8), 505–515. https://doi.org/10.3102/0013189X211017495"
+    - "Caulfield, M. (2019, June 19). *SIFT (the four moves)*. Hapgood. https://hapgood.us/2019/06/19/sift-the-four-moves/"
+    - "Caulfield, M., & Wineburg, S. (2023). *Verified: How to think straight, get duped less, and make better decisions about what to believe online*. University of Chicago Press."
+    - "Department of Employment and Workplace Relations. (2025a, August 14). *Secretary's statement in response to the independent assurance review*. Australian Government."
+    - "Department of Employment and Workplace Relations. (2025b, October 3). *Secretary statement on progress under the Targeted Compliance Framework Integrity Assurance program*. Australian Government."
+    - "Department of Employment and Workplace Relations. (2026). *Targeted Compliance Framework assurance review – Final report* [Report prepared by Deloitte; versions dated July 4, 2025 and September 26, 2025; updated February 3, 2026]. Australian Government."
+    - "Fletcher, J., & Verckist, D. (2025). *News integrity in AI assistants: An international PSM study*. European Broadcasting Union and BBC."
+    - "Garisto, D. (2023a, August 4). Claimed superconductor LK-99 is an online sensation, but replication efforts fall short. *Nature, 620*(7973), 253. https://doi.org/10.1038/d41586-023-02481-0"
+    - "Garisto, D. (2023b, August 16). LK-99 isn't a superconductor: How science sleuths solved the mystery. *Nature, 620*(7975), 705–706. https://doi.org/10.1038/d41586-023-02585-7"
+    - "Google. (2024, December 11). *Try Deep Research and our new experimental model in Gemini, your AI assistant* [Blog post]."
+    - "Guyatt, G. H., Oxman, A. D., Vist, G. E., et al. (2008). GRADE: An emerging consensus on rating quality of evidence and strength of recommendations. *BMJ, 336*(7650), 924–926. https://doi.org/10.1136/bmj.39489.470347.AD"
+    - "Hendricks, G. (2023, September 12). *News: Crossref and Retraction Watch*. Crossref."
+    - "Jaźwińska, K., & Chandrasekar, A. (2025, March 6). AI search has a citation problem. *Columbia Journalism Review*."
+    - "Jergas, H., & Baethge, C. (2015). Quotation accuracy in medical journal articles—a systematic review and meta-analysis. *PeerJ, 3*, e1364. https://doi.org/10.7717/peerj.1364"
+    - "Karp, P. (2025, August 22). Deloitte accused of erroneous citations, leading to suspected AI use in major report on welfare. *Australian Financial Review*."
+    - "Liu, N. F., Zhang, T., & Liang, P. (2023). Evaluating verifiability in generative search engines. In *Findings of EMNLP 2023* (pp. 7001–7025). https://doi.org/10.18653/v1/2023.findings-emnlp.467"
+    - "Maybin, S. (2017, March 10). *Busting the attention span myth*. BBC News. https://www.bbc.com/news/health-38896790"
+    - "McAdoo, T., Denneny, S., & Lee, C. (2025a, September 9). *Citing generative AI in APA Style: Part 1—Reference formats*. APA Style Blog."
+    - "McAdoo, T., Denneny, S., & Lee, C. (2025b, September 9). *Citing generative AI in APA Style: Part 2—AI as a search engine and AI integrated into common software*. APA Style Blog."
+    - "McGrew, S., Smith, M., Breakstone, J., Ortega, T., & Wineburg, S. (2019). Improving university students' web savvy: An intervention study. *British Journal of Educational Psychology, 89*(3), 485–500. https://doi.org/10.1111/bjep.12279"
+    - "McGuirk, R. (2025, October 7). *Deloitte to partially refund Australian government for report with apparent AI-generated errors*. Associated Press."
+    - "Modern Language Association. (2025, August 13). *How do I cite generative AI in MLA style? (Updated and revised)*. MLA Style Center."
+    - "OpenAI. (2025, February 2). *Introducing deep research*. https://openai.com/index/introducing-deep-research/"
+    - "Parliament of Australia. (2025, October 8). *Finance and Public Administration Legislation Committee: Estimates, Finance portfolio* [Committee Hansard]."
+    - "Perplexity. (2025, February 14). *Introducing Perplexity Deep Research* [Blog post]."
+    - "Peters, U., & Chin-Yee, B. (2025). Generalization bias in large language model summarization of scientific research. *Royal Society Open Science, 12*(4), 241776. https://doi.org/10.1098/rsos.241776"
+    - "Şeker, Ş. E. (2014). Detaylandırma olasılık modeli [Elaboration likelihood model]. *YBS Ansiklopedi, 1*(1), 15–16."
+    - "Smith, R. (2006). Peer review: A flawed process at the heart of science and journals. *Journal of the Royal Society of Medicine, 99*(4), 178–182. https://doi.org/10.1177/014107680609900414"
+    - "Sumner, P., Vivian-Griffiths, S., Boivin, J., et al. (2014). The association between exaggeration in health related science news and academic press releases. *BMJ, 349*, g7015. https://doi.org/10.1136/bmj.g7015"
+    - "Wineburg, S., & McGrew, S. (2019). Lateral reading and the nature of expertise: Reading less and learning more when evaluating digital information. *Teachers College Record, 121*(11), 1–40. https://doi.org/10.1177/016146811912101102"
+  notes:
+    say: |
+      Reference slides; not presented in class. These are the sources cited on the slides and in the speaker notes, in a
+      short APA form copied from the chapter's reference list. The government report exists in three versions, so its
+      entry names all three. If a student wants to go further, point them first to Peters and
+      Chin-Yee (2025), which is open access, and to Wineburg and McGrew (2019) for the fact-checker study in the
+      participants' own words. Caulfield and Wineburg's book is a student-friendly guide to lateral reading.
+    background: |
+      Entries are copied from the chapter's References section (fact-checked, docs/factcheck/ch09.csv); long author
+      lists are shortened with "et al." and long government URLs are left out for space (they are in the chapter).
+    activity: "Not presented."
+    book: "Chapter 9, References; Further Reading and Compass Links."

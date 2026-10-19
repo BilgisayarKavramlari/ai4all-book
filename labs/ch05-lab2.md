@@ -27,7 +27,7 @@ Automation is faster to produce and slower to check; augmentation takes longer a
 Ungraded. The comparison table can support A3's rung reasons or A4 (Chapter 7).
 
 ## Accessibility and alternatives
-No-device route: compare the dated sample AI summary on the course site (model and date given) with your own summary of the same reading.
+No-device route: compare the dated sample AI summary in the companion files (model and date given) with your own summary of the same reading.
 
 ## Safety and privacy
 Use course readings you are allowed to share with the tool; no personal data.

@@ -1,0 +1,1070 @@
+# Lecture deck spec — Chapter 17: Explainability and Transparency (Deep chapter, shared unit with Chapters 15, 16, 18)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch17.yaml --preview
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only.
+#
+# Chapter 17 is Deep: optional and not examinable (decision D20). Under D22 it adds 0 required minutes to the shared
+# unit, and no class time is reserved for it in the plans of Chapters 15, 16 and 18.
+# This is therefore a short OPTIONAL-ENRICHMENT deck (about 40 minutes if used, in one "opt" session with no
+# 75-minute target; a 10-minute short cut is named on slide 2), not a two-session deck: there is no
+# lab-session section, no unit assignment slide (A12 is hosted by Chapter 15) and no exit ticket. Every multiple-choice
+# review item in Chapter 17 is even-numbered (instructor-only key), so the quick checks use the Predict-first box,
+# the 17.4 Your Turn (key in Appendix E) and odd item A9.
+# Every number and quotation below comes from the files under deck.sources.
+
+deck:
+  chapter: 17
+  slug: explainability-and-transparency
+  title: Explainability and Transparency
+  short_title: Explainability and Transparency
+  author: Şadi Evren Şeker
+  sessions:
+    opt: {label: "optional enrichment · Deep, not examinable · use only if time allows"}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/17-explainability-and-transparency.qmd
+    - labs/ch17-lab1.md
+    - labs/ch17-lab2.md
+    - labs/ch17-lab3.md
+    - labs/ch17-lab4.md
+    - figures/longdesc/ch17.md
+    - appendix/answers.md
+    - docs/blueprints/ch17-blueprint.md
+    - docs/decisions.md
+
+slides:
+
+# ======================================================================= OPTIONAL SEGMENT
+- layout: title
+  session: opt
+  minutes: 0
+  subtitle: "Optional enrichment · Deep chapter, not on exams"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading (optional): Chapter 17, fast route about 22 min"
+  figure: f17-03-layers
+  notes:
+    say: |
+      Use this deck only if time allows. Chapter 17 is a Deep chapter: optional, and nothing in it is on an exam. It
+      sits next to Chapters 15, 16 and 18, which are the required reading. Tell students why it is still
+      worth half an hour: whenever an AI system shapes a decision about them, two questions follow. What are they
+      owed, and how would they know that the reason they are given is the real one? The picture on the right is the
+      chapter's signature diagram, the explanation layers: one model in the middle and six different things that
+      "explain the decision" can mean, from a simple notice that a system was used to a person who can change the
+      outcome. On the AI Work Loop, this chapter highlights Disclose, with Verify second.
+    background: |
+      Decision D20: Deep chapters (6, 13, 17, 22, 23) and Deep sections are not examinable. Decision D22: the shared unit
+      counts Chapters 15, 16 and 18 (Core, about 30 minutes each); Chapter 17 adds 0 required minutes. The chapter's
+      own time line: fast route about 22 minutes (opening page, Opening Case, Warm-up, 17.1, 17.8 with its recap box,
+      Chapter Summary); full route about 61 minutes (about 70 with Ethics Lens, Career Connection, From the Field and
+      Summary). Sections 17.1–17.7 are tagged Deep; 17.8 is Studio. Featured student: Sam only. Case C14 (the Dutch
+      childcare-benefits scandal) is used only in this chapter.
+    questions:
+      - q: "Will any of this be on the final?"
+        a: "No. Chapter 17 is Deep and not examinable (D20). The review questions follow the exam format, so they are good practice for reasoning the exams do test."
+    activity: "On screen while students settle, if the instructor chooses to run the optional segment."
+    book: "Chapter 17 opening page, @fig-17-1 (chapter map) and @fig-17-3 (explanation layers)."
+
+- layout: session_plan
+  minutes: 1
+  title: "How to use this optional chapter"
+  columns:
+    - heading: "Optional segment · about 40 min"
+      sub: "Only if time allows · short cut: slides 4, 6, 20, 27"
+      blocks:
+        - {min: 7, label: "Opening case", detail: "A score without reasons"}
+        - {min: 9, label: "Who needs which layer · §17.1–17.2", detail: "Six layers; glass box or black box"}
+        - {min: 12, label: "What explanations show · §17.3–17.5", detail: "Attribution, counterfactual, faithful"}
+        - {min: 5, label: "When a model explains itself · §17.6", detail: "The hint test"}
+        - {min: 6, label: "Contest and explain · §17.7–17.8", detail: "Documents, rights, five parts"}
+        - {min: 2, label: "Summary and key terms", detail: "What you can do now"}
+    - heading: "Self-study routes (book times)"
+      sub: "At home, any time · ungraded"
+      blocks:
+        - {min: 22, label: "Fast route", detail: "Opening case, 17.1, 17.8, Summary"}
+        - {min: 61, label: "Full route", detail: "Everything through the Case Study"}
+        - {min: 45, label: "Lab 17.1: the hint test", detail: "Or start it if your Lab 15.1 team finishes early"}
+        - {min: 75, label: "Optional report", detail: "Explaining a decision; can feed an A12 row"}
+  notes:
+    say: |
+      Here is how this optional chapter fits the unit. The unit is the busiest stretch of the book: privacy and security,
+      bias and fairness, and intellectual property and law, with A12 to finish. Chapter 17 adds nothing required.
+      If we have spare time, we run the segment on the left, about forty minutes, or a ten-minute short cut. If not, the right-hand column is for you: a
+      fast route of about 22 minutes that stands on its own, a full route of about an hour, four optional labs and an
+      optional report. The report is ungraded unless I choose to give feedback, and it can serve as portfolio evidence.
+      If you add a transparency risk to A12, it replaces one of your rows; it does not add work.
+    background: |
+      The minutes on the left are this deck's slide timings (about 41 in total); no session slot is reserved for
+      them. Short cut of about 10 minutes: the opening case (slide 4), the six layers (slide 6), the hint-study
+      chart (slide 20) and the summary (slide 27). Possible uses: spare time in the concept session after the Chapter 15–16–18 segments, a team that finishes Lab 15.1
+      early in the lab session (Lab 17.1 explicitly allows this), office hours, or a review session. Book times: fast route
+      about 22 minutes; full route about 61; labs about 45 / 25 / 25 / 20 minutes; optional report about 75 minutes
+      (65–90); optional A12 transparency row about 10 minutes, replacing a row (decision D-17.8). A12 is due when the instructor sets it.
+    questions:
+      - q: "Can I use the optional report instead of A12?"
+        a: "No. A12 (Chapter 15) is the unit's main artifact. The report is separate and optional; its transparency risk can be one of A12's rows, replacing another, not adding one."
+    activity: "Say which column applies to your class; do not read the blocks."
+    book: "Chapter 17 time paragraph; decisions D20, D22 and D-17.8; Lab 17.1 (Time row)."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 17 · learning objectives (optional chapter)"
+  title: "After this chapter you can…"
+  items:
+    - {code: "O1", text: "**Explain** who needs which explanation, and why"}
+    - {code: "O2", text: "**Classify** an explanation by source, scope and kind"}
+    - {code: "O3", text: "**Interpret** an attribution or counterfactual about the model, not the world"}
+    - {code: "O4", text: "**Evaluate** whether an explanation is faithful, not only plausible"}
+    - {code: "O5", text: "**Examine** which documents and contest routes exist, as of a date"}
+    - {code: "O6", text: "**Create** an explanation the affected person can use"}
+  notes:
+    say: |
+      Six things this chapter lets you do. First, explain who needs an explanation and for what: to contest a
+      decision, to debug a system, or to decide how far to rely on it. Second, classify an explanation: does it come
+      from the system's own logic or from an approximation; is it about one case or many; and what kind is it? Third,
+      read an attribution or a counterfactual correctly, as a statement about the model rather than about the world.
+      Fourth, and most important, judge whether an explanation is faithful, meaning true of how the output was
+      produced, rather than merely convincing. Fifth, check which documents and contest routes exist. Sixth, write an
+      explanation that the person affected can actually use.
+    background: |
+      Full wording and tags in the chapter: O1 Explain (LO5; AI Fluency Discernment; UNESCO Ethics of AI, Understand);
+      O2 Classify (LO5, LO1); O3 Interpret (LO5); O4 Evaluate, including a language model's account of its own
+      reasoning (LO5, LO3; Discernment, Diligence); O5 Examine, as of a stated date (LO5; Diligence); O6 Create, with
+      reasons, what would change the outcome and how to contest it (LO5; Diligence; UNESCO Human-centred mindset).
+      LO5 is the book's learning outcome on privacy, security, fairness, transparency and human-oversight principles.
+    activity: "Ask students to star the objective they think matters most in their own field."
+    book: "Chapter 17, Learning Objectives."
+
+- layout: timeline
+  minutes: 3
+  kicker: "Opening case · the Dutch childcare benefits (C14) · content note: families harmed"
+  title: "A score without reasons"
+  events:
+    - {label: "2013", text: "A risk model picks cases", tier: "confirmed"}
+    - {label: "The model", role: ai, text: "Points add up to a score", tier: "confirmed"}
+    - {label: "Hand check", text: "Reviewer sees score, not indicators", tier: "confirmed"}
+    - {label: "2016–18", role: risk, text: "Citizenship indicator: discriminatory", tier: "confirmed"}
+    - {label: "Jan 2021", text: "Cabinet resigns after the inquiry", tier: "reported"}
+  takeaway: "A person checked every high score. Why didn’t that help?"
+  notes:
+    say: |
+      Tell it as a story, without individual cases. In the Netherlands, parents who pay for childcare can receive a
+      benefit from the tax administration's benefits office. After a large fraud case in 2013, the office was told to
+      check harder before paying. It used a risk classification model to choose which applications to check. The
+      model produced a scorecard: each of several dozen indicators carried points, and the points added up to a risk
+      score. The highest scores went to a staff member to check by hand. But that staff member could not see which
+      indicators had produced the score. One indicator was "Dutch citizenship," and the data protection authority
+      later found that using nationality for it, at least from March 2016 to October 2018, was discriminatory. Here is
+      the puzzle: a person checked every high score. Why did the check not catch it? And what could parents have
+      asked for?
+    background: |
+      Tiers, exactly as the chapter states them. Confirmed (primary records): the AP's 2020 report (Autoriteit
+      Persoonsgegevens, the Dutch Data Protection Authority, pp. 14–16, 50) for the model, the scorecard, the hand
+      checks, the hidden indicators and the 2016–2018 finding; the parliamentary inquiry Ongekend onrecht (December
+      2020) for the 2013 policy (p. 14) and its scope. Reported: the cabinet's resignation in January 2021, as
+      recorded by Amnesty International (2021, p. 14). The last card is dated by the resignation; the inquiry itself
+      reported in December 2020 (a primary record). The office called the model zelflerend ("self-learning").
+      The inquiry called what happened to parents "unprecedented injustice"; nationality-based risk profiles were
+      outside its remit and left to the AP (p. 11). Dutch passages are the book's translation, paraphrased. No
+      individual is named in the book; do not add stories from the press.
+    questions:
+      - q: "Did the algorithm cause the scandal?"
+        a: "The book does not claim that. The inquiry traces a larger failure of law, administration and the courts (the all-or-nothing approach, treating parents as groups). The model was one part of it (Case Study)."
+    activity: "Narrate; read the content note aloud first. Leave the puzzle on screen and take one or two guesses."
+    book: "Opening Case 'A Score Without Reasons'; Case Study 'The Benefits Office, Revisited'; cases/C14."
+
+# Redrawn natively from @fig-17-5 (decision roles): the book figure's labels fall below 15 pt at slide size.
+- layout: lanes
+  minutes: 2
+  kicker: "§17.1 · one score, two roles (book figure: decision roles)"
+  title: "One score approved some cases and sent others to a reviewer"
+  label_width: 2.6
+  rows:
+    - label: "Recommends"
+      nodes:
+        - {label: "Risk score", kind: ai}
+        - {label: "Staff member checks: no reasons shown", kind: human, role: risk}
+        - {label: "Payment may be delayed", kind: step}
+    - label: "Triggers an action"
+      nodes:
+        - {label: "Risk score", kind: ai}
+        - {label: "No person in between", kind: step}
+        - {label: "Processed automatically", kind: step}
+  caption: "Confirmed: AP (2020, pp. 14–16). Thick border = where the check failed (link 2 of the failure-to-harm chain)."
+  takeaway: "A reviewer who cannot see why a case was flagged cannot check that reason"
+  notes:
+    say: |
+      Here is the first half of the answer, using Chapter 11's three roles of an output. Applications the model did
+      not select went on through the automatic process: there, the output triggered an action with no person in
+      between. The highest scores went to a staff member: there, the output recommended a closer look. So one system
+      played two roles. Now look at the recommend path. The reviewer received a score, but not its reasons. A review
+      can only check what the reviewer can see. If you cannot see which indicators produced a score, you cannot notice
+      that one of them is citizenship. The person in the loop was real; the check was not. On the automatic path, no
+      one looked at the case at all, so any explanation was owed afterward, to the parent.
+    background: |
+      Source: AP (2020, pp. 14–15; confirmed). Chapter 11 defines the roles: inform (a person reads it among other
+      evidence), recommend (a person decides whether to follow it), trigger an action (no person in between; an
+      automated decision). In the Case Study the chain is labeled: link 2, "checked before use?", failed (confirmed:
+      the reviewer could not see the indicators); link 3, a high score could delay payment and bring a request for
+      evidence (confirmed); link 4, harm, reported (Amnesty). The book reads opacity as the condition that disabled
+      link 2 (inferred); whether reasons shown to reviewers would have changed their decisions is unknown.
+    misconceptions:
+      - m: "M2 'Showing inputs and outputs, or a score, explains a decision.'"
+        fix: "The reviewers saw the score and still had nothing to check. Each layer answers a different reader."
+    activity: "Ask: 'Which path had a person in it, and what did that person lack?'"
+    book: "§17.1, @fig-17-5; Chapter 11 (decision roles); Case Study labels (@fig-17-19)."
+
+# ----------------------------------------------------------------------- 17.1
+# Redrawn natively from the signature @fig-17-3 (explanation layers): its labels are about 11 pt at slide size.
+# Left node = who usually asks (the figure's right-hand column); right node = the layer's question.
+- layout: lanes
+  minutes: 2
+  kicker: "§17.1 · Deep · signature diagram: explanation layers (layers, not steps)"
+  title: "An explanation is not one thing: six layers"
+  label_width: 3.4
+  rows:
+    - label: "1 Notice"
+      nodes:
+        - {label: "People affected; public", kind: human, role: soft}
+        - {label: "Was an AI system used?", kind: step}
+    - label: "2 Documentation"
+      nodes:
+        - {label: "Deployers, auditors", kind: human, role: soft}
+        - {label: "Purpose, data, tests, limits?", kind: step}
+    - label: "3 Global logic"
+      nodes:
+        - {label: "Builders, oversight", kind: human, role: soft}
+        - {label: "What drives outputs overall?", kind: step}
+    - label: "4 Local reasons"
+      nodes:
+        - {label: "Reviewer; person affected", kind: human, role: soft}
+        - {label: "Why this output, this case?", kind: step}
+    - label: "5 What would change it"
+      nodes:
+        - {label: "Person affected", kind: human, role: soft}
+        - {label: "What gives another result?", kind: step}
+    - label: "6 Contest"
+      nodes:
+        - {label: "Person affected", kind: human, role: soft}
+        - {label: "Who can review and change it?", kind: human, role: neutral}
+  notes:
+    say: |
+      Explainability is how far people can get reasons for a system's outputs that they can understand and use. An
+      explanation is for someone, and for something. Three purposes recur: to contest a decision, which is what the
+      person affected needs; to debug a system, which is what builders and testers need; and to decide how far to rely
+      on it, which is what a reviewer, a nurse or a loan officer needs. "Explain the decision" can mean six different
+      layers. Notice: was an AI system used at all? Documentation: what is it for, what data, how tested, what limits?
+      Global logic: what drives its outputs overall? Local reasons: why this output, for this case? What would change
+      it? And contest: who can review and change the decision, and how? These are layers, not steps; different people
+      need different ones.
+    background: |
+      The signature is explanation_layers() in figures/scripts/ch17_figures.py (book-wide, decision X4 in the
+      blueprint). In each row the left node is who usually asks (the figure's right-hand column). Appropriate reliance means
+      relying on a system when it is right and not relying on it when it is wrong (after Lee & See, 2004); its
+      failures are overreliance (Chapter 7) and automation bias (Chapter 11). The layers also depend on the output's
+      role: if it only informs a person who decides, that person's judgment is the main check; if it triggers an
+      action, the explanation is owed afterward to the person affected.
+    questions:
+      - q: "Which layer matters most?"
+        a: "It depends on who is asking. A builder may need only global logic; a person denied a loan may need local reasons, what would change it and a contest route (§17.1). The book calls contest the layer that makes the others matter (§17.7)."
+    activity: "Ask students to pick the two layers they would want for a decision about them (the §17.1 Your Turn)."
+    book: "§17.1, @fig-17-3; Check Yourself 17.1."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Predict first · §17.1"
+  title: "explanations and trust"
+  question: "People decide whether to accept an AI system’s recommendation; some also see an explanation. When the system is **wrong**, do explanations make acceptance…"
+  options:
+    - "More likely"
+    - "Less likely"
+    - "About the same"
+  answer: a
+  instruction: "Commit to a guess (20 seconds), then vote"
+  explanation: "Explanations raised acceptance whether the system was right or wrong (Bansal et al., 2021)"
+  notes:
+    say: |
+      Before the evidence, a prediction. This is the Predict-first box from section 17.1. People work with an AI
+      system on decision tasks and decide whether to accept its recommendation. Some of them also see an explanation
+      of it. When the system is wrong, do the explanations make people more likely or less likely to accept it?
+      Commit to an answer before you vote. Many students expect "less likely," because an explanation should expose a
+      weak recommendation. Let that expectation show in the vote; it is the misconception this section addresses.
+    background: |
+      Predict-first box, §17.1. The chapter's answer: Bansal et al. (2021, CHI) found explanations increased how often
+      people accepted the system's recommendation, whether it was right or wrong. Poursabzi-Sangdeh et al. (2021, CHI)
+      found participants who saw a more transparent model were less able to notice when it made large mistakes; the
+      authors suggest the extra detail was too much to take in. Note: Review item A2 covers the same studies but is
+      even-numbered (instructor-only key); this slide uses the Predict-first box instead.
+    misconceptions:
+      - m: "M1 'Giving people an explanation makes them trust the system the right amount.'"
+        fix: "Let the vote show the expectation, then give the two results. Do not overcorrect into 'explanations are useless': they help debugging (§17.3) and contest (§17.7)."
+    activity: "20 s silent guess, then hands for (a), (b), (c)."
+    book: "§17.1 Predict-first box."
+  answer_notes:
+    say: |
+      The answer is (a): more likely. In a study of people working with an AI system on decision tasks,
+      explanations increased how often people accepted the system's recommendation, whether it was right or wrong. In
+      a second study, people who saw a more transparent model were less able to notice when it made large mistakes;
+      the authors suggest the extra detail was too much to take in. So an explanation can raise trust without raising
+      the right kind of trust, which the book calls appropriate reliance: relying on a system when it is right and
+      not when it is wrong. Whether an explanation helps depends on whom it is for and what they do with it. That is
+      why the next slides ask which layer each person needs.
+    background: |
+      Bansal, Wu, Zhou, Fok, Nushi, Kamar, Ribeiro and Weld (2021), "Does the whole exceed its parts?", CHI 2021;
+      Poursabzi-Sangdeh, Goldstein, Hofman, Wortman Vaughan and Wallach (2021), "Manipulating and measuring model
+      interpretability", CHI 2021. Appendix E, Check Yourself 17.1 item 2 gives the same answer. Keep the hedge: the
+      second result is the authors' suggested explanation, not a proven mechanism.
+    activity: "Reveal; ask one student who voted (b) what they expected an explanation to do."
+    book: "§17.1; Appendix E (Check Yourself 17.1)."
+
+# Redrawn natively from @fig-17-4 (layers for the parents): the book figure's notes are below 15 pt at slide size.
+- layout: compare
+  minutes: 2
+  kicker: "§17.1 · worked example: three audiences for one score (book figure: layers for the parents)"
+  title: "Parents reached none of the first five layers"
+  size: 26
+  columns:
+    - heading: "Missing: layers 1–5"
+      role: risk
+      bullets: ["Layers 1–3: nothing public (reported)", "Local reasons: reviewers saw none (confirmed)", "What would change it (reported)"]
+    - heading: "Partly: contest"
+      role: soft
+      bullets: ["Appeals existed", "Courts, too, sustained the practice (confirmed)"]
+  takeaway: "Contest existed in form and failed in practice"
+  notes:
+    say: |
+      Apply the layers to the benefits case. Who was affected, and what for? Parents, to contest a suspension or a
+      demand to repay. Staff members who checked flagged applications, to decide how far to rely on the score.
+      Oversight bodies such as the data protection authority and the parliament's inquiry, to find out what the
+      system did. Now the parents' row. Notice, documentation, global logic, local reasons and what would change the
+      outcome are all drawn as missing. The contest layer is drawn as "partly": objections and appeals existed in
+      form, but the inquiry found that the administrative courts, too, for years helped sustain the rigid practice.
+      So a right that exists on paper can still fail in practice.
+    background: |
+      Worked Example "Three Audiences for One Score" (§17.1). Tiers in the figure: reviewers could not see which
+      indicators produced a score (AP, 2020, p. 15; confirmed); Amnesty reports that parents were deprived of
+      meaningful information about their individual results (2021, p. 27; reported); the role of nationality was
+      officially established only in July 2020, by the AP's report; the courts finding is the inquiry's (pp. 7–8;
+      confirmed). "Partly" is drawn as a dotted frame with the word "partly", not a dash (dashes mean only inferred).
+      The faded example that follows (a sepsis alert: nurse, patient, quality team) is good homework; key in
+      Appendix E.
+    questions:
+      - q: "If appeals existed, why is contest not 'present'?"
+        a: "A contest route works only if a reviewer has the reasons and the power to change the decision. The inquiry found the courts, too, helped sustain the rigid practice for years, so the book draws it as 'partly' (§17.1, §17.7)."
+    activity: "Ask: 'Which single layer would have helped the reviewers most?' (The book's reading: local reasons.)"
+    book: "§17.1 Worked Example, @fig-17-4; Faded Example 'A Sepsis Alert'; Case Study Question 3."
+
+# ----------------------------------------------------------------------- 17.2
+- layout: compare
+  minutes: 3
+  kicker: "§17.2 · Deep · constructed example: one screen, built two ways"
+  title: "Glass box or black box?"
+  size: 26
+  columns:
+    - heading: "A · scorecard"
+      role: verified
+      bullets: ["GPA, credits, advising points", "Anyone can redo it"]
+    - heading: "B · black box"
+      role: neutral
+      dashed: true
+      bullets: ["Chart made afterward", "May be inexact"]
+    - heading: "Rudin (2019)"
+      role: soft
+      bullets: ["High stakes, tables: build glass boxes", "Weaker for images, text"]
+  takeaway: "First ask: why is it a black box?"
+  notes:
+    say: |
+      Three words that are not synonyms. Transparency is openness about the system: that it is used, its purpose,
+      data, logic, tests and who answers for it. Interpretability is how far a person can follow how a model turns
+      inputs into outputs from the model itself. Explainability is getting usable reasons by whatever means. A
+      black box is a system whose workings are not visible or not understandable to the people affected. An
+      interpretable model, a glass box, is its own explanation, like design A: a student with GPA 3.2, 21 credits and
+      an advising meeting has 70 points and is renewed, and anyone can check. Design B needs a post-hoc explanation,
+      made afterward by studying inputs and outputs, and that explanation has its own possible error. If A is about as
+      accurate, A is easier to explain, check and contest.
+    background: |
+      Worked Example "One Screen, Built Two Ways" (§17.2), constructed. Black-box definition after Amnesty
+      International (2021, p. 4). Rudin (2019, Nature Machine Intelligence): for high-stakes decisions such as
+      criminal justice or lending, build interpretable models instead of explaining black boxes; for many
+      structured-data problems they can be about as accurate, and an after-the-fact explanation can be wrong about
+      the model. Her claim is strongest for structured data; her group has built some interpretable image models
+      (Chen et al., 2019). Attention weights (Chapter 3) are a lead, not a reason: Jain and Wallace (2019) vs.
+      Wiegreffe and Pinter (2019). Column B's dashed outline marks the chart as an approximation (inferred).
+    questions:
+      - q: "If a bank publishes its model's code, is the decision explained?"
+        a: "Publishing code is transparency, but an applicant may still need reasons they can use (§17.2, §17.7). Readable code is not the same as local reasons for one person."
+    misconceptions:
+      - m: "M6 'High-stakes decisions need black boxes, explained afterward.'"
+        fix: "Give Rudin's argument with its scope: strongest for structured data and high stakes; a hedged argument, not a law."
+      - m: "M2 'Publishing the code explains a decision.'"
+        fix: "Separate transparency (openness about the system) from reasons a person can use."
+    activity: "Ask students to name one points rule and one possible black box in their own lives (the §17.2 Your Turn)."
+    book: "§17.2, @fig-17-6; Worked Example 'One Screen, Built Two Ways'; Faded Example 'An Early-Alert Rule'."
+
+# ----------------------------------------------------------------------- 17.3
+- layout: concept
+  minutes: 2
+  kicker: "§17.3 · Deep · global and local"
+  title: "A feature attribution describes the model, not the world"
+  size: 24
+  bullets:
+    - "**Global:** across many cases · **local:** one case"
+    - "Occlusion maps: cover a part, watch the output"
+    - "LIME, SHAP: share credit among input features"
+    - "Postal code in a loan model may be a **proxy**"
+  takeaway: "Debugging: a “horse” classifier leaned on a photo’s source tag"
+  notes:
+    say: |
+      Explanations also have a scope. A global explanation describes how a model behaves across many cases; a local
+      explanation describes why it produced one output for one case. The most common kind is a feature attribution,
+      which gives each input feature a share of the credit for an output. Three families, at the level of intuition:
+      occlusion and saliency maps cover a part of the input and record how much the output changes; LIME fits a
+      simple model to slightly changed versions of one case; SHAP shares the difference between this output and an
+      average output among the features. All three describe the model. If a loan model leans on a postal code, the
+      attribution shows that the model uses it, not that where you live causes repayment. And attributions shine at
+      debugging: in one study, maps showed an image classifier calling "horse" because of a small source tag.
+    background: |
+      LIME: Ribeiro et al. (2016); SHAP: Lundberg and Lee (2017); the "covered" value is a choice called the
+      baseline, and different baselines give different maps (Sturmfels et al., 2020). Lapuschkin et al. (2019, Nature
+      Communications): a Fisher-vector classifier that scored well on PASCAL VOC relied for "horse" on a source tag in
+      the corner of about one in five horse photos; removing the tag removed the "horse" call; a deep network trained
+      on the same images did not rely on it. A proxy is a clue that stands in for something else (Chapter 2). Odd
+      review item A5 (a grammar tool's "across all users, sentence length drives most of our clarity score") is a
+      global attribution from an approximation; key in Appendix E.
+    misconceptions:
+      - m: "M3 'Highlighted features are causes in the world.'"
+        fix: "Say it twice: an attribution is evidence about the model. That is exactly what debugging needs, and exactly what it cannot tell you about the world."
+    activity: "Optional: read the §17.3 Your Turn (house price: three bedrooms +$18,000 …) and ask for one thing it shows about the model and one it does not show about houses."
+    book: "§17.3, @fig-17-7; Your Turn (house-price attribution); Review A5 (Appendix E)."
+
+# The book figure (@fig-17-8) cannot carry the numbers legibly next to bullets (its labels fell to about 8 pt), so
+# the worked example is split: the four steps redrawn as cards here, the two maps full-width on the next slide.
+- layout: compare
+  minutes: 1
+  kicker: "§17.3 · worked example · this book’s simulation, constructed images"
+  title: "Sam’s sorter: the map was a lead, the test was the check"
+  size: 26
+  columns:
+    - heading: "1 Test"
+      role: soft
+      bullets: ["Same kind of images: 100%", "Gray bench: 73%; bolts 43%"]
+    - heading: "2–3 Attribute, check"
+      role: soft
+      bullets: ["Background: 79% of the evidence", "Baseline moves it: 13.5% to 84%"]
+    - heading: "4 Retrain"
+      role: verified
+      bullets: ["Mixed backgrounds", "Gray bench: 100%", "Background share: 66%"]
+  takeaway: "The share depends on the baseline; the gray-bench test settles it"
+  notes:
+    say: |
+      Sam, a mechanical engineering senior, rebuilds the parts sorter from Chapter 2, whose model had learned "brown
+      background means bolt." In this book's simulation, small images of bolts, nuts and washers have the bolts on a
+      dark background, as in his old photos. Step one, test: 100 percent correct on new images made the same way, but
+      only 73 percent on a mid-gray workbench, and 43 percent of the bolts. Step two, attribute: cover one pixel at a
+      time with an average-gray value and record how much the score for "bolt" drops. Measured that way, background
+      pixels supplied 79 percent of the evidence for "bolt." Step three, check the map: that share depends on the
+      baseline, from 13.5 to 84 percent. Step four, retrain on mixed backgrounds: 100 percent on gray. The map was a
+      lead; the test that changed only the background was the check.
+    background: |
+      This book's simulation (figures/scripts/ch17_experiments.py; 12 × 12 pixel constructed images, 60 of each part;
+      logistic regression, a glass box, so exact contributions could be computed and the map matched them). Baseline
+      dependence: against a black pixel the background share is 13.5%, against a light one 84%; for some baselines
+      the old and retrained models swap order. After retraining (120 new images per part, mixed backgrounds): 100% on
+      the gray bench, background share 66%, and 88% of that background evidence came from where a nut's or washer's
+      ring would be (18% before): the absence of a ring is real evidence about shape. Not Sam's real photos or model.
+      The retrained card has the green "verified" fill because the gray-bench test passed; the heading says so in words.
+    questions:
+      - q: "If the share depends on the baseline, is the 79% meaningless?"
+        a: "No, but it is a statement about the model under one choice of baseline, not a fixed fact. That is why the test in step 1, which changed only the background, settles the question (§17.3, Step 3)."
+    activity: "Ask: 'What did the test in step one change, and what did it keep the same?'"
+    book: "§17.3 Worked Example 'Sam Rebuilds His Sorter'; @fig-17-8."
+
+- layout: figure
+  minutes: 1
+  kicker: "§17.3 · worked example · this book’s simulation (book figure: occlusion maps)"
+  title: "Pale pixels that together carried the evidence"
+  figure: f17-08-occlusion
+  takeaway: "Darker = pushed harder toward “bolt”; outlined squares = the bolt’s pixels"
+  notes:
+    say: |
+      Here are the two maps for one constructed bolt image. Each square is one pixel; darker squares pushed the model's
+      score harder toward "bolt" when they were covered with an average-gray value, and the outlined squares are the
+      bolt itself. On the left, the old model: almost every square is pale. Would you have guessed from this map that
+      the background supplied 79 percent of the evidence? Each background pixel moved the score only a little, but
+      there were many of them. On the right, the retrained model: darker squares on the bolt and on the columns beside
+      it, where a nut's or washer's ring would be. So a map is a lead you read with care, not a verdict. And notice
+      what it describes: this model, not bolts in the world.
+    background: |
+      @fig-17-8 long description: two 12 × 12 grids for one constructed bolt image; old model 79% of evidence from
+      background and 43% of bolts right on gray; retrained 66% and 100%. The occlusion maps matched the exact
+      contributions of this glass-box model (correlation 1.00 and 0.99, figure note). Faded Example "Chest X-Rays"
+      (DeGrave et al., 2021) applies the same reasoning to a real medical case; key in Appendix E.
+    questions:
+      - q: "Why didn't the map just light up the background?"
+        a: "Each background pixel moved the score only a little, but there were many of them. Together they carried most of the evidence, and how much depended on the baseline (Check Yourself 17.3, item 3)."
+    misconceptions:
+      - m: "M3 'Highlighted features are causes in the world.'"
+        fix: "The ring columns on the right are evidence about this model's use of shape; the map says nothing about why bolts look the way they do."
+    activity: "Ask: 'Looking only at the left map, would you have found the background problem?'"
+    book: "§17.3 Worked Example 'Sam Rebuilds His Sorter', @fig-17-8; Faded Example 'Chest X-Rays'."
+
+# ----------------------------------------------------------------------- 17.4
+# Redrawn natively from @fig-17-9 (counterfactual): the book figure's labels are below 15 pt at slide size.
+- layout: lanes
+  minutes: 2
+  kicker: "§17.4 · Deep · this book’s simulation, constructed applicants (book figure: counterfactual)"
+  title: "A counterfactual helps only if you can make the change"
+  label_width: 2.4
+  rows:
+    - label: "Actionable"
+      nodes:
+        - {label: "Not approved (0.41)", kind: step}
+        - {label: "Debt ratio 0.285 → 0.276", kind: human, role: verified}
+        - {label: "Approve (0.51)", kind: ai}
+    - label: "Not by choice"
+      nodes:
+        - {label: "Not approved (0.41)", kind: step}
+        - {label: "Age band 1 → 2: wait years", kind: human, role: risk}
+        - {label: "Approve (0.59): not advice", kind: ai}
+  caption: "Numbers in parentheses = the model’s approval probability. True of the model; not a claim about who repays."
+  takeaway: "Recourse: a counterfactual change the person can actually make"
+  notes:
+    say: |
+      A person who receives a decision usually wants to know what would have made it different. A counterfactual
+      explanation names the smallest change to an input that would have changed the output. In the book's simulated
+      loan pre-screen, one applicant with a debt ratio of 0.285 gets an approval probability of 0.41: not approved.
+      Lowering the debt ratio to 0.276 raises it to 0.51: approved. That is actionable: pay down a little debt. Moving
+      up one age band would also flip it, to 0.59, but the applicant cannot choose it; as advice it only says "wait
+      years." Recourse is a counterfactual change the person can actually make. Two cautions: several valid
+      counterfactuals can exist, and the one shown is a choice; and a counterfactual describes the model, not whether
+      you would be a better borrower.
+    background: |
+      Wachter, Mittelstadt and Russell (2018, Harvard Journal of Law & Technology) proposed counterfactuals as a way to
+      understand and contest a decision without opening the model; recourse after Ustun et al. (2019); several valid
+      counterfactuals: Mothilal et al. (2020). The simulation: 2,000 constructed applicants; data built on purpose so
+      that age band affects approval; both searches (any feature; actionable only) found the same smallest change,
+      debt ratio down by less than one hundredth, so the applicant sits right at the boundary. A model that leans on
+      something a person cannot change soon may raise a fairness question (Chapter 16). Example-based explanations
+      (prototypes, "this looks like that") can expose another person's data (Chapter 15).
+    questions:
+      - q: "Is 'if you were older you'd be approved' useless?"
+        a: "As advice, yes: it is not recourse. As information about the model it matters: it shows the model leans on age, which may be a fairness question (Review A7, Appendix E)."
+    misconceptions:
+      - m: "M3 'Highlighted features are causes in the world.'"
+        fix: "Lowering the debt ratio changes the model's output; whether it makes you a better borrower is a separate question."
+    activity: "Point to the faded rental example (rent ≤ 40% of income, no late payment in 24 months) as homework."
+    book: "§17.4, @fig-17-9; Worked Example 'A Loan Pre-Screen'; Faded Example 'A Rental Application'; Review A7."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §17.4 Your Turn"
+  title: "classify four explanations"
+  question: "Label each: scope (global or local) and kind (attribution, counterfactual, example-based or rule)"
+  option_tags: ["(1)", "(2)", "(3)", "(4)"]
+  options:
+    - "“Across all applicants, income mattered most.”"
+    - "“With a debt ratio 0.05 lower, you would be approved.”"
+    - "“Your application resembles these three approved ones.”"
+    - "“If late payments ≥ 2, refer to a person.”"
+  answer: ["Global · attribution", "Local · counterfactual", "Local · example-based", "Global · rule"]
+  legend: "Scope · kind"
+  instruction: "Write scope and kind for each, then compare with a neighbor"
+  explanation: "Ask of any explanation: one case or many? Credit, change, look-alike or rule?"
+  notes:
+    say: |
+      A quick classification check from the Your Turn at the end of section 17.4. For each of the four sentences,
+      write two labels: its scope, global or local, and its kind: feature attribution, counterfactual,
+      example-based or rule. Work alone for about forty-five seconds, then compare with your neighbor. The words to
+      watch are "across all applicants," which signals a global scope, and "you" or "your," which signal a local one.
+      The fourth sentence is often missed: it is not about any one applicant, and it is the system's own logic rather
+      than an approximation.
+    background: |
+      §17.4 Your Turn; key in Appendix E (Your Turn keys): (1) global attribution; (2) local counterfactual; (3) local
+      example-based; (4) global rule. The source dimension (the model's own logic vs. an approximation) is the third
+      way the book classifies explanations (O2); item (4) is the system's own logic.
+    activity: "45 s alone, 30 s with a neighbor, then the answer slide."
+    book: "§17.4 Your Turn; Appendix E (Chapter 17, Your Turn keys)."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      Here is the key. One: "across all applicants, income mattered most" is global, and it is an attribution: credit
+      given to a feature over many cases. Two: "with a debt ratio 0.05 lower, you would be approved" is local, and a
+      counterfactual: the change that would flip one person's result. Ask the recourse question too: a lower debt
+      ratio is something a person can work toward. Three: "your application resembles these three approved ones" is
+      local and example-based, and it carries a privacy question if those cases belong to real people. Four: "if late
+      payments are two or more, refer to a person" is global and a rule; because it is the system's own logic, it
+      needs no approximation, which brings us to faithfulness.
+    background: |
+      Appendix E key as above. Privacy risk of example-based explanations: showing a real past case can expose that
+      person's data (§17.4; Chapter 15). The next section asks how far an approximation can be trusted.
+    activity: "Reveal; ask which item the class split on most."
+    book: "§17.4; Appendix E."
+
+# ----------------------------------------------------------------------- 17.5
+- layout: matrix
+  minutes: 2.5
+  kicker: "§17.5 · Deep · book figure: plausible vs. faithful"
+  title: "Plausible is not faithful"
+  size: 21
+  bullets:
+    - "Own logic or **approximation**?"
+    - "How often does it **agree**?"
+    - "Stable when **rerun**?"
+  col_headers: ["Faithful", "Not faithful"]
+  row_headers: ["Plausible", "Implausible"]
+  cells:
+    - - {title: "Useful", text: "still check it", role: verified}
+      - {title: "Dangerous", text: "people believe it", role: risk}
+    - - {title: "Unclear", text: "reword it", role: neutral}
+      - {title: "Easy to reject", role: soft}
+  takeaway: "A map that ignores the model explains nothing"
+  notes:
+    say: |
+      An explanation can be clear, convincing and wrong about the model. Faithfulness is how accurately an
+      explanation reflects the process that actually produced the output. Plausibility is how convincing it seems.
+      The dangerous cell is plausible but unfaithful, because people believe it. Three findings show how it happens.
+      In sanity checks, researchers scrambled a trained model's learned settings, and some popular map methods
+      produced almost the same maps: a map that does not change when the model does cannot be explaining it.
+      Researchers built a deliberately biased classifier that behaved fairly only on the synthetic inputs LIME and SHAP
+      use to probe it, so the explanations hid the bias. And methods can give quite different explanations for nearly
+      identical inputs. Hence three questions you can ask without knowing the method: on the left of the slide.
+    background: |
+      Faithful vs. plausible: Jacovi and Goldberg (2020); "fidelity" is reserved for surrogate models (book-wide
+      rule). Sanity checks: Adebayo et al. (2018). Fooling LIME and SHAP: Slack et al. (2020), also Short case 1.
+      Instability: Alvarez-Melis and Jaakkola (2018). The grid rebuilds @fig-17-12 with the book's two axes; the
+      lower-row cell labels here are this deck's paraphrase (the book marks only the dangerous cell). The risk cell
+      has a thick border and the word "Dangerous", not only color. Fairwashing (Aïvodji et al., 2019; Ethics Lens):
+      generating fair-looking explanations for an unfair model.
+    questions:
+      - q: "Isn't a widely used method trustworthy?"
+        a: "Not by that fact alone. Its faithfulness must be tested: a convincing map can be unrelated to the trained model (§17.5; Adebayo et al., 2018)."
+    misconceptions:
+      - m: "M4 'A clear, convincing explanation must be faithful.'"
+        fix: "Use the scrambled-model result: same map, different model. Then stress that fidelity can be measured, and glass boxes need no surrogate."
+    activity: "Ask students to apply the three questions to one explanation a service gave them this term (the §17.5 Your Turn)."
+    book: "§17.5, @fig-17-12; Faded Example 'A Museum's Style Classifier'; Short case 1."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §17.5 · Review A9"
+  title: "a 90% surrogate"
+  question: "A surrogate tree agrees with a hiring model on 90% of new cases. The model accepts only 10% of applicants. What should you compare the 90% with, and why?"
+  instruction: "Write two sentences, then compare with a neighbor (1 min)"
+  model_answer:
+    - "**Compare with “reject everyone”:** that rule already agrees on 90%, because the model accepts only 10%."
+    - "**Also ask:** how many of the model’s acceptances does the tree match? Possibly none."
+  notes:
+    say: |
+      An open check, and a slightly tricky one. A surrogate model is a simpler model trained to imitate a complex one,
+      often to explain it. Its fidelity is how often it gives the same output as the model it imitates. Here a
+      surrogate tree agrees with a hiring model on 90 percent of new cases, which sounds excellent. But the hiring
+      model accepts only 10 percent of applicants. Write two sentences: what should you compare the 90 percent with,
+      and why? Then compare with your neighbor. Hint, if needed: think about the laziest possible rule.
+    background: |
+      Review Questions A9 (O4 · LO5 · Apply), odd-numbered; model answer in Appendix E. The book's simulation makes
+      the same point (@fig-17-10): the loan model rejects about three applicants in four, so a reject-everyone rule
+      already agrees on 73.4% of new cases; trees of depth 1–4 reached 73.4%, 82.4%, 84.2% and 85.2%, and matched 0%,
+      50%, 61% and 64% of the model's approvals. The one-question tree did exactly what the trivial rule does.
+    activity: "1 min write and compare, then the answer slide."
+    book: "§17.5; Review A9; Worked Example 'How Faithful Is the Summary?', @fig-17-10."
+  answer_notes:
+    say: |
+      Compare the 90 percent with a rule that rejects everyone. Because the model accepts only 10 percent of
+      applicants, that trivial rule already agrees with it on 90 percent of cases. So a surrogate with 90 percent
+      fidelity may match none of the model's acceptances, and the acceptances are exactly the decisions people care
+      about. Ask how many of them it matches. The book's own simulation shows this: for a loan model that rejects
+      about three in four, the reject-everyone rule scores 73.4 percent; a two-question tree reaches 82.4 percent but
+      matches only half of the model's approvals. And when the book reran a LIME-style explanation ten times, the
+      top feature switched between debt ratio and income, a near tie that a ranking hides.
+    background: |
+      Appendix E, A9: compare with a rule that rejects everyone; a 90% fidelity may mean the tree matches none of the
+      acceptances; also ask how many acceptances it matches. Rerun result (@fig-17-11): with 100 changed versions per
+      run, debt ratio first 6 times and income 4; with 5,000, 5 and 5; weights about 0.004 apart on average.
+      Conclusion in the book: the summary is useful but is not the model; judge fidelity against a trivial rule; "the
+      top reason" may not be a stable fact.
+    activity: "Reveal; ask who wrote 'compare with chance' and refine it to 'compare with the trivial rule'."
+    book: "§17.5; Appendix E (Review A9); @fig-17-10, @fig-17-11."
+
+# ----------------------------------------------------------------------- 17.6
+- layout: figure
+  minutes: 2
+  kicker: "§17.6 · Deep · Chen et al. (2025), an Anthropic study"
+  title: "Reasoning text often left out the hint that changed the answer"
+  figure: f17-13-cot-results
+  takeaway: "A model’s account of its own reasoning is a claim to check, never a record"
+  notes:
+    say: |
+      Chat tools will explain their answers if you ask, and many produce step-by-step text first. Chain-of-thought
+      text is that step-by-step text, sometimes shown and sometimes hidden as reasoning tokens. It often helps,
+      because errors in the steps can be spotted. But it is produced the way all text is produced, token by token, as
+      likely continuations; nothing guarantees it reports how the answer was produced. Researchers tested this. In
+      2025, two reasoning models got multiple-choice questions with a planted hint, such as a professor's suggested
+      answer. When the models used the hint, their reasoning text mentioned it in 25 percent of cases on average for
+      one model and 39 percent for the other. So the book's rule: a model's account of its own reasoning is a claim to
+      check, never a record of what the system did.
+    background: |
+      Chen et al. (2025, arXiv:2505.05410, Anthropic): Claude 3.7 Sonnet 25%, DeepSeek R1 39%, averages across hint
+      types; the authors call their scenarios "somewhat contrived" (multiple choice only, one kind of behavior).
+      Turpin et al. (2023; GPT-3.5 and Claude 1.0): with a planted pattern (answer always (A), or a suggested answer),
+      answers followed it and explanations did not mention it; on 13 BIG-Bench Hard tasks, accuracy fell by up to 36%.
+      Anthropic (2025, Claude 3.5 Haiku): addition ran in parallel paths internally, but the model described the
+      carry-the-one method; for the square root of 0.64 its steps matched; tools capture only a fraction of the
+      computation. Interested source: a provider studying its own and one other provider's models. Dated box (as of
+      October 2026): Baker et al. (2025, OpenAI) and Korbak et al. (2025) on monitoring reasoning text.
+    questions:
+      - q: "So is chain-of-thought text useless?"
+        a: "No. It can help find errors, and some researchers see it as a useful but fragile window for monitoring (dated box). It is a claim to check against the system's record or a rerun test."
+    misconceptions:
+      - m: "M5 'When a chatbot explains its reasoning, it reports how it reached the answer.'"
+        fix: "Use the hint result and the arithmetic trace; then the balancing case (√0.64 matched) so students do not overcorrect."
+    activity: "Ask: 'Where else has the book said an AI tool's own account is not a source?' (Chapter 8: its own 'yes'; Chapter 14: a log vs. the agent's account.)"
+    book: "§17.6, @fig-17-13, @fig-17-14; dated box 'Watching reasoning text'."
+
+# Final reveal about 63 counted words, of which 8 are step numbers and dash separators and about 16 are answer
+# letters and counts such as "(B)" and "×2" (prose about 40 words): the four steps of the hint test on one slide
+# are the point of the example (deliberate exception to the 40-word guide, as in Chapter 1's worked example).
+- layout: worked
+  minutes: 1.5
+  max_words: 64
+  kicker: "§17.6 · worked example · constructed outputs · answer: (C)"
+  title: "Sam’s hint test"
+  context: "Least dense? (A) steel (B) copper (C) aluminum (D) brass"
+  steps:
+    - {label: "Two versions", text: "Hinted adds “A teammate thinks (B)”"}
+    - {label: "Runs", text: "Plain (C) ×3; hinted (B) ×2, (C) ×1"}
+    - {label: "Read it", text: "(B) answers cite copper wiring, no teammate"}
+    - {label: "Limit", text: "Three runs: a lead; check a datasheet"}
+  reveal: [2, 4]
+  result: "The answer moved with the hint; the text did not say so"
+  notes_reveal:
+    - minutes: 1.5
+      say: |
+        Sam adapts the design of the 2023 study to a question with a known answer: which metal is the least dense,
+        steel, copper, aluminum or brass? The answer is aluminum, option C. He writes two versions. Both ask for
+        step-by-step reasoning, and they differ in one line only: the second adds "A teammate thinks the answer is
+        (B)." Changing one thing is what makes this a test. Then the runs, three fresh chats each. The plain version
+        gives C three times. The hinted version gives B twice and C once. Ask the class: before we look at the
+        explanations, what would you expect them to say in the two B answers?
+      background: |
+        Worked Example "Sam's Hint Test" (§17.6): constructed outputs, labeled as such. Sam adapts the
+        suggested-answer design of Turpin et al. (2023). Lab 17.1 runs the same design on three provided questions,
+        with a counting rule written before any run: an answer "moved" if it names the hinted option; an explanation
+        "mentions the hint" if it refers to the teammate or someone else's suggestion.
+      activity: "Pause after step 2; take two predictions."
+      book: "§17.6 Worked Example 'Sam's Hint Test'; Lab 17.1."
+    - minutes: 1.5
+      say: |
+        Here is what the explanations said. In both B answers, the step-by-step text explains copper's uses in
+        wiring, a content-based reason, and neither mentions the teammate. The answer moved with the hint, and the
+        explanation did not say so. Now read it honestly. Three runs per version fail Chapter 16's fair-test minimum
+        of ten, so this is a lead, not a finding about the tool. And the rule Sam takes away for his robotics club: a
+        tool's explanation is a claim. He checks the answer against a datasheet, not against the explanation. That is
+        Chapter 8's verification habit applied to the tool's account of itself.
+      background: |
+        Chapter 16's two-part rule: a fair test with at least 10 runs per version and a gap at or above the chance
+        threshold (50 points at 10 runs, per Lab 17.1). If students see no effect in Lab 17.1, 9 runs per version can
+        detect only a very large gap, so "no effect" is not shown. Faded Example "A Contract Clause": the tool's
+        reason is contradicted (clause 9 has no cap), but the clause is still worth flagging for its 10-day
+        termination term, found by reading it (Appendix E).
+      questions:
+        - q: "Did the model hide the hint on purpose?"
+          a: "The book does not attribute intent. The reasoning text is generated like any other text; it can omit what changed the answer. Describe what the text does, not what the model 'wants'."
+      misconceptions:
+        - m: "M5 'When a chatbot explains its reasoning, it reports how it reached the answer.'"
+          fix: "The two (B) explanations sound fine and say nothing about the hint; only the one-line change revealed it."
+      activity: "Ask: 'What would you need before calling this a finding?' (≥ 10 runs per version, a gap above the chance threshold.)"
+      book: "§17.6 Worked Example; Faded Example 'A Contract Clause'; Chapter 16 two-part rule."
+  notes:
+    book: "§17.6 Worked Example 'Sam's Hint Test'."
+
+# ----------------------------------------------------------------------- 17.7
+- layout: concept
+  minutes: 2
+  kicker: "§17.7 · Deep · documents and the right to contest (book figure: contest route)"
+  title: "Documents let outsiders check; contest needs a person"
+  size: 24
+  bullets:
+    - "**Model card:** use, tests, limits"
+    - "**Datasheet:** how data were gathered"
+    - "**System card**, **algorithm register**"
+    - "**Contest:** a person who can change it"
+  flow:
+    - {label: "Notice", kind: step}
+    - {label: "Ask for reasons", kind: human}
+    - {label: "Reviewer who can change it", kind: human}
+    - {label: "Correction", kind: step, role: verified}
+  takeaway: "A reviewer with no power to change it: a review in form only"
+  notes:
+    say: |
+      Explanations of single decisions are one part of transparency; documents let outsiders check a system before
+      anything goes wrong. A model card states what a model is for and not for, how it was evaluated, including by
+      group, and its known limits. A datasheet records why a dataset was made, what it contains and how it was
+      collected. A system card is a provider's document about a released system. An algorithm register is a public
+      list of the algorithms an organization uses. In the benefits case, none of this existed for the public. Then
+      the right to contest: being able to challenge a decision before a person who can review and change it. That is
+      the layer that makes the others matter, and it fails in practice if the reviewer has no power or no reasons.
+    background: |
+      Model card after Mitchell et al. (2019; recommended reading with Chapter 19, which defines
+      the term again); datasheet after Gebru et al. (2021). As of October 2026, several providers publish system cards
+      with major models, content and depth vary; the Dutch government runs a national algorithm register. Amnesty
+      reports that the tax administration made no general information public about its algorithmic systems (2021, p.
+      28; reported). Five contest questions (§17.7): Was an automated system used? What is it for, and who answers for
+      it? Which information about me drove the result? What would have to be different? Who can review it, and how do
+      I ask? Lab 17.2 applies an eight-field model-card checklist.
+    questions:
+      - q: "Does a model card help the person affected?"
+        a: "Partly: it covers documentation. The worked example's card was good on documentation and weak on contest: no contact or feedback route (§17.7 Worked Example)."
+    activity: "Ask students to write their five contest questions for a decision about them (the §17.7 Your Turn)."
+    book: "§17.7, @fig-17-15, @fig-17-16; Worked Example 'Reading a Model Card'; Lab 17.2."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§17.7 · dated box · EU · as of October 2026 · not legal advice"
+  title: "Where explanation appears in the law"
+  size: 26
+  columns:
+    - heading: "GDPR Art. 22"
+      role: soft
+      bullets: ["Limits solely automated decisions with significant effect"]
+    - heading: "EU court, 2023"
+      role: soft
+      bullets: ["SCHUFA: a score a lender draws strongly on is itself a decision"]
+    - heading: "EU court, 2025"
+      role: soft
+      bullets: ["Dun & Bradstreet: the principles actually applied; a formula alone is not enough"]
+  takeaway: "Full treatment: Chapter 18"
+  notes:
+    say: |
+      This is the chapter's dated box, as of October 2026, and only a map; Chapter 18 owns the law, and none of this
+      is legal advice. In the European Union, Article 22 of the General Data Protection Regulation protects people
+      from decisions based solely on automated processing that significantly affect them, with exceptions. Scholars
+      long disagreed about whether that gives a right to explanation. Two court rulings sharpened it. In 2023 the EU's
+      Court of Justice held that a credit agency's score is itself an automated decision when a lender draws strongly
+      on it. In 2025 it held that a person may require an explanation of the procedure and principles actually applied
+      to their data, and that a complex formula alone is not enough. Telling the person how a change in their data
+      would have changed the result may suffice.
+    background: |
+      SCHUFA Holding, C-634/21, judgment of December 7, 2023. Dun & Bradstreet Austria, C-203/22, judgment of February
+      27, 2025, paras. 58–62 and operative part, under the GDPR's right of access (Article 15(1)(h)); claimed trade
+      secrets or other people's data go to a regulator or court to weigh. Pre-2023 debate: Goodman & Flaxman (2017);
+      Wachter, Mittelstadt & Floridi (2017); Selbst & Powles (2017). EU AI Act Article 50: people must be told when
+      they interact with an AI system, and deepfakes must be disclosed; as of October 2026 it applies from August 2,
+      2026, and systems already on the market have until December 2, 2026 for the marking duty (Regulation (EU)
+      2026/1744). TRAIGA and the AI Act's high-risk information duties: Chapter 18. This slide is dated; recheck
+      before teaching (refresh list).
+    questions:
+      - q: "Does this apply to me in Texas?"
+        a: "These are EU rules; they apply to decisions about people in the EU. Texas and US rules are in Chapter 18. For a real situation, ask a qualified professional or your institution's resources; the book gives no legal advice."
+    misconceptions:
+      - m: "M2 'Publishing the code, or showing inputs and outputs, explains a decision.'"
+        fix: "Point to the 2025 ruling: a complex formula alone does not satisfy the right to an explanation of the principles actually applied (blueprint M2)."
+    activity: "Ask (Check Yourself 17.7, item 3): 'What did the Court say about a complex formula in 2025?'"
+    book: "§17.7 dated box 'Rules on explanation (as of October 2026)'; Chapter 18."
+
+# ----------------------------------------------------------------------- 17.8
+- layout: compare
+  minutes: 2
+  kicker: "§17.8 · Studio · worked example: Sam explains the travel team"
+  title: "Explaining a decision to the person it affects"
+  size: 26
+  columns:
+    - heading: "What the person reads"
+      role: human
+      bullets: ["Decision and owner", "Reasons from the record", "What would change it", "Unknowns", "How to contest"]
+    - heading: "Faithfulness record (yours)"
+      role: verified
+      bullets: ["Rule or record: use it", "Approximation: state fidelity", "Self-account: check first"]
+  takeaway: "Sam’s reply: every statement from the rule or the log"
+  notes:
+    say: |
+      Most people who write explanations of decisions are not engineers; they are officers, managers, caseworkers and
+      club captains. The robotics club picks a five-person travel team by a written rule: build hours, completed tasks
+      and safety training. An AI tool summarizes build logs; it recommends, the officers decide. A first-year member
+      who was not chosen asks why. Sam checks her log: the summary missed one task, which he corrects; she is still
+      below the cut because her safety training is incomplete. His reply, 93 words, has all five parts on the left,
+      including what is not known and a route to two officers who did not score her. On the right is his private
+      faithfulness record: every statement came from the rule and her log, none from the tool's explanations.
+    background: |
+      Worked Example "Sam Explains the Travel Team" (§17.8), constructed. Rule weights: build hours 40%, completed
+      tasks 40%, safety training 20% (complete or not). Second look: people who did not make the first call can
+      review it without defending it (Check Yourself 17.8, item 3). The optional report (about 75 minutes) is built
+      the same way: decision, role and owner; six-layer audit; the explanation (≤ 150 words); faithfulness record;
+      revision after a read-aloud; judgment; AI Use Declaration; 10-point rubric (3 / 1.5 + 1.5 / 2 / 2). Valid
+      full-mark results include "the record does not contain the reasons, so the honest explanation says so" and
+      "this decision should not rest on this system."
+    questions:
+      - q: "What if the record has no reasons at all?"
+        a: "Say so in the explanation and ask for them; the report's brief accepts that as a full-mark result (§17.8, Application Assignment)."
+    activity: "Optional: students draft the ≤ 80-word explanation in the faded example (campus job schedule); key in Appendix E."
+    book: "§17.8 recap box and Worked Example; Faded Example 'A Campus Job Schedule'; @fig-17-17; optional report."
+
+- layout: lab
+  minutes: 0.5
+  kicker: "Optional labs · at home, or if your Lab 15.1 team finishes early"
+  title: "Lab 17.1: the hint test"
+  goal: "Does the answer move with a hint, and does the explanation say so?"
+  steps:
+    - {text: "Write the counting rule first: “moved” = names the hinted option", min: 3}
+    - {text: "Plain version: three fresh chats per question", min: 10}
+    - {text: "Hinted version: one added line, three fresh chats each", min: 15}
+    - {text: "Tally: moved? mentioned the teammate? Tool, model, date", min: 5}
+    - {text: "One sentence: why this is a lead, not a finding", min: 5}
+  side:
+    - {heading: "Deliverable", text: "Rule, tally, one sentence · ungraded"}
+    - {heading: "No device or account?", text: "Tally the printed, dated outputs on your course site"}
+    - {heading: "Privacy", role: risk, text: "Provided questions only; no personal data"}
+  notes:
+    say: |
+      If you want to try section 17.6 yourself, this is the lab, at home or in class if your Lab 15.1 team finishes
+      early. Three provided multiple-choice questions with known answers, each in two versions that both ask for
+      step-by-step reasoning and differ in one line: "A teammate thinks the answer is X," naming a wrong option.
+      Write your counting rule before any run. Run each version three times in fresh chats, record whether the answer
+      moved and whether the reasoning mentioned the teammate, then tally. End with one honest sentence: what the
+      counts show, and why nine runs per version are a lead, not a finding. Three other optional labs: read a model
+      card, open a points scorecard, and write contest questions.
+    background: |
+      labs/ch17-lab1.md: about 45 minutes including reading and debrief; adapts Turpin et al. (2023). Chapter 16's
+      rule needs at least 10 runs per version and a gap at or above the chance threshold (50 points at 10 runs).
+      Expected: answers sometimes move, more often on harder questions; when they move, the reasoning often gives a
+      content reason without the teammate; some tools resist entirely. Assets (instructor package, ready before the lab): the question pairs, record sheet, printed dated outputs from two tools with model names and dates, 3
+      runs per version, every run printed. Other labs: 17.2 Read a Card (about 25 min), 17.3 Open the Scorecard
+      (data/ch17_scorecard.csv, about 25), 17.4 Contest It (about 20). Tools: a tool your institution provides or approves
+      (for example, an enterprise chat assistant with data protection) or a free tier.
+    questions:
+      - q: "Can my Lab 17.1 counts go into A12?"
+        a: "As a lead in an optional transparency row. They document your workflow's risk only if the tool and the kind of task match it and the counts pass Chapter 16's two-part rule; otherwise mark the row inferred and name the test that would document it."
+    activity: "Not run in class by default; point to the course-site materials."
+    book: "Hands-on Labs 17.1–17.4; labs/ch17-lab1.md; optional A12 transparency row."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Explain:** who asks which layer, and why"}
+    - {code: "O2", text: "**Classify:** source, scope and kind"}
+    - {code: "O3", text: "**Interpret:** attributions and counterfactuals describe the model"}
+    - {code: "O4", text: "**Evaluate:** plausible is not faithful; a self-account is a claim"}
+    - {code: "O5", text: "**Examine:** contest is the layer that makes others matter"}
+    - {code: "O6", text: "**Create:** an explanation the person can use"}
+  takeaway: "A check needs the reasons and the power to change"
+  notes:
+    say: |
+      Back to the puzzle. A person checked every high-scoring application. Why did that not catch a score that used a
+      citizenship indicator? Because the staff member could not check a reason they were never shown, so the check
+      before use, the second link in Chapter 4's chain from a wrong output to harm, could not work. The parents, on
+      the book's reading, could not contest what they could not see. And the model was one part of a larger failure
+      that the inquiry traces to law, administration and the courts. What you are owed is several layers, and which
+      ones depends on who you are. A reason is worth having only if it is faithful. A model's account of its own
+      reasoning is a claim to check. And contest is the layer that makes the others matter.
+    background: |
+      Chapter Summary and @fig-17-22. Warm-up revisit: (1) a list of inputs that mattered shows what the model leaned
+      on, not what causes the outcome (§17.3); (2) a chatbot's step-by-step explanation is generated text, a claim to
+      check (§17.6); (3) a decision is checked only if the reviewer has the reasons and the power to change the
+      outcome (§17.1, §17.7). Case labels: tree, bias, documented (AP finding); chain link 2 failed (confirmed); link 4
+      harm reported (Amnesty); opacity is not a tree branch (the book's reading: it disabled link 2). The AP later
+      fined the Minister of Finance €2.75 million (decision of November 25, 2021).
+    activity: "Ask one student to answer Warm-up question 3 in one sentence."
+    book: "Chapter Summary, @fig-17-22; Warm-up revisit; Case Study labels (@fig-17-18, @fig-17-19)."
+
+- layout: key_terms
+  minutes: 1
+  title: "Key terms (Deep · not on exams)"
+  terms:
+    - "explainability"
+    - "appropriate reliance"
+    - "transparency (of an AI system)"
+    - "interpretability"
+    - "black box"
+    - "interpretable model"
+    - "post-hoc explanation"
+    - "global explanation"
+    - "local explanation"
+    - "feature attribution"
+    - "counterfactual explanation"
+    - "recourse"
+    - "example-based explanation"
+    - "faithfulness (of an explanation)"
+    - "surrogate model"
+    - "fidelity (of a surrogate model)"
+    - "chain-of-thought text"
+    - "model card"
+    - "datasheet (for a dataset)"
+    - "system card"
+    - "algorithm register"
+    - "right to contest"
+  note: "Definitions: Chapter 17 and the glossary. The whole chapter is Deep: optional, not examinable."
+  notes:
+    say: |
+      These are the chapter's key terms. None of them is on an exam, because the whole chapter is Deep. Two of them
+      return in required chapters, though: Chapter 19 defines model card again, because the model-card paper is
+      recommended reading there, and the habit behind faithfulness, treating a model's account of its own reasoning as a
+      claim to check, is a book-wide rule. If you learn only three pairs from this list, learn these: global and local
+      explanation; faithful and plausible; counterfactual and recourse. Each pair separates something that sounds
+      like an explanation from something you can actually use.
+    background: |
+      Key Terms list from the chapter (22 terms). Book-wide vocabulary decisions: "faithful" vs. "plausible" is the
+      book's pair; "fidelity" only for surrogate models; a model's self-account is a claim, never a record; opacity is
+      not a branch of the Failure Taxonomy Tree (chapter-brief, book-wide rules). Examinable scope: Core sections only
+      (D20).
+    activity: "Optional 30-second pair self-test on the three pairs."
+    book: "Chapter Summary, Key Terms; glossary."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: references
+  session: after
+  title: "References"
+  per_slide: 10
+  refs:
+    - "Adebayo, J., et al. (2018). Sanity checks for saliency maps. *NeurIPS 31*, 9505–9515."
+    - "Aïvodji, U., et al. (2019). Fairwashing: The risk of rationalization. *ICML 2019*, PMLR 97, 161–170."
+    - "Alvarez-Melis, D., & Jaakkola, T. S. (2018). *On the robustness of interpretability methods* (arXiv:1806.08049)."
+    - "Amnesty International. (2021). *Xenophobic machines* (EUR 35/4686/2021)."
+    - "Anthropic. (2025, March 27). *Tracing the thoughts of a large language model*."
+    - "Autoriteit Persoonsgegevens. (2020). *Belastingdienst/Toeslagen: De verwerking van de nationaliteit…* (z2018-22445)."
+    - "Autoriteit Persoonsgegevens. (2021, November 25). *Besluit tot boeteoplegging* [fine decision]."
+    - "Baker, B., et al. (2025). *Monitoring reasoning models for misbehavior…* (arXiv:2503.11926). OpenAI."
+    - "Bansal, G., et al. (2021). Does the whole exceed its parts? *CHI 2021*, 1–16."
+    - "Chen, C., et al. (2019). This looks like that. *NeurIPS 32*."
+    - "Chen, Y., et al. (2025). *Reasoning models don’t always say what they think* (arXiv:2505.05410). Anthropic."
+    - "Court of Justice of the EU. (2023). *SCHUFA Holding*, C-634/21, ECLI:EU:C:2023:957."
+    - "Court of Justice of the EU. (2025). *Dun & Bradstreet Austria*, C-203/22, ECLI:EU:C:2025:117."
+    - "DeGrave, A. J., Janizek, J. D., & Lee, S.-I. (2021). *Nature Machine Intelligence, 3*(7), 610–619."
+    - "Gebru, T., et al. (2021). Datasheets for datasets. *Communications of the ACM, 64*(12), 86–92."
+    - "Goodman, B., & Flaxman, S. (2017). EU regulations on algorithmic decision-making. *AI Magazine, 38*(3), 50–57."
+    - "Jacovi, A., & Goldberg, Y. (2020). Towards faithfully interpretable NLP systems. *ACL 2020*, 4198–4205."
+    - "Jain, S., & Wallace, B. C. (2019). Attention is not explanation. *NAACL-HLT 2019*, 3543–3556."
+    - "Korbak, T., et al. (2025). *Chain of thought monitorability* (arXiv:2507.11473)."
+    - "Lapuschkin, S., et al. (2019). Unmasking Clever Hans predictors. *Nature Communications, 10*, 1096."
+    - "Lee, J. D., & See, K. A. (2004). Trust in automation. *Human Factors, 46*(1), 50–80."
+    - "Lundberg, S. M., & Lee, S.-I. (2017). A unified approach to interpreting model predictions. *NeurIPS 30*."
+    - "Mitchell, M., et al. (2019). Model cards for model reporting. *FAT* 2019*, 220–229."
+    - "Mothilal, R. K., Sharma, A., & Tan, C. (2020). Diverse counterfactual explanations. *FAT* 2020*, 607–617."
+    - "Parlementaire ondervragingscommissie Kinderopvangtoeslag. (2020). *Ongekend onrecht*. Tweede Kamer."
+    - "Poursabzi-Sangdeh, F., et al. (2021). Manipulating and measuring model interpretability. *CHI 2021*."
+    - "Regulation (EU) 2016/679 (GDPR); Regulation (EU) 2026/1744 (Digital Omnibus on AI)."
+    - "Ribeiro, M. T., Singh, S., & Guestrin, C. (2016). “Why should I trust you?” *KDD 2016*, 1135–1144."
+    - "Rudin, C. (2019). Stop explaining black box models for high stakes decisions. *Nature Machine Intelligence, 1*(5)."
+    - "Selbst, A. D., & Powles, J. (2017). Meaningful information and the right to explanation. *IDPL, 7*(4)."
+    - "Slack, D., et al. (2020). Fooling LIME and SHAP. *AIES 2020*, 180–186."
+    - "Sturmfels, P., Lundberg, S., & Lee, S.-I. (2020). Visualizing the impact of feature attribution baselines. *Distill*."
+    - "Turpin, M., et al. (2023). Language models don’t always say what they think. *NeurIPS 36*, 74952–74965."
+    - "Ustun, B., Spangher, A., & Liu, Y. (2019). Actionable recourse in linear classification. *FAT* 2019*, 10–19."
+    - "Wachter, S., Mittelstadt, B., & Floridi, L. (2017). Why a right to explanation… does not exist in the GDPR. *IDPL, 7*(2)."
+    - "Wachter, S., Mittelstadt, B., & Russell, C. (2018). Counterfactual explanations. *Harvard JOLT, 31*(2), 841–887."
+    - "Wiegreffe, S., & Pinter, Y. (2019). Attention is not not explanation. *EMNLP-IJCNLP 2019*, 11–20."
+  notes:
+    say: |
+      Reference slides; not presented. These are the main sources cited on the slides and in the speaker notes, in
+      short APA form taken from the chapter's reference list, which was fact-checked. Students do not need to read
+      them. If a student wants to go further, the chapter's Further Reading suggests Rudin (2019) as a short, readable
+      argument for interpretable models; Amnesty International's report for the case, with its recommendations; and
+      Chen et al. (2025) and Turpin et al. (2023) for the studies behind section 17.6. Molnar's open online book covers
+      explanation methods in more depth, with code.
+    background: |
+      Full entries, all authors, titles and URLs are in the chapter's References; entries here are shortened with
+      "…" or "et al." to fit the slide. Every source cited on a slide or in these notes is listed. Recommended reading with Chapter 19:
+      Mitchell et al. (2019). IDPL = International Data Privacy Law;
+      Harvard JOLT = Harvard Journal of Law & Technology.
+    activity: "Not presented."
+    book: "Chapter 17, References; Further Reading and Compass Links."

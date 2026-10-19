@@ -5,7 +5,7 @@
 | Type | Compare |
 | Objectives | O1 (LO1) · tags UNESCO:TECH-U, LM:how-works |
 | Time | 20 minutes, concept session, in class |
-| Materials | Two free AI tools or tools your institution provides or approves, or one tool used in fresh conversations; no account needed with the sample outputs on the course site |
+| Materials | Two free AI tools or tools your institution provides or approves, or one tool used in fresh conversations; no account needed with the sample outputs in the companion files |
 
 ## Steps (tool-neutral)
 1. Choose three questions: one factual, one practical, one from your major.
@@ -35,7 +35,7 @@ Comparison table for three questions (feeds A1).
 | Not yet | One pair or no recording |
 
 ## Accessibility and alternatives
-Screen-reader users can work from the plain-text sample outputs on the course site. Students without a laptop can use a phone browser or the printed sample outputs. Students who prefer not to use AI compare the two provided outputs.
+Screen-reader users can work from the plain-text sample outputs in the companion files. Students without a laptop can use a phone browser or the printed sample outputs. Students who prefer not to use AI compare the two provided outputs.
 
 ## Safety and privacy
 No personal, confidential or institutional data in prompts.

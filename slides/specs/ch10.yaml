@@ -1,0 +1,1797 @@
+# Lecture deck spec — Chapter 10: Writing and Professional Communication: Keeping Your Voice
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch10.yaml --preview
+# Independence rule D27 (docs/production/independence-rules.md): no institution, course code, term, dates, syllabus or
+# learning-system names; sessions are "Session 1 (concept)" and "Session 2 (lab)" with durations only.
+# Chapter 10 is the last chapter before a midterm covering Chapters 1-10 (D20). Session 1 = concept session (Peabody
+# case, demo "one email in three tones"); Session 2 = Lab 10.1 Writing Studio, starting A7. A third, short segment
+# ("rev", about 15 min) carries the chapter's Midterm Bridge (Chapters 1 to 7) for a review session before the
+# midterm (blueprint: the Bridge is used in the pre-midterm review); it can also be posted for self-study.
+# Only odd Midterm Bridge items (keys in Appendix E) get answer slides; even items are shown as practice prompts only
+# (keys are instructor-only, private/ch10-answers-even.md).
+# Case C07 naming rule (blueprint V3): institution, office, roles and the dean only. The reference list keeps the
+# Hustler headlines exactly as published (chapter decision); it is a reference slide, not presented.
+# Every number and quotation below comes from the files under deck.sources; the builder flags any number it cannot find.
+
+deck:
+  chapter: 10
+  slug: writing-and-professional-communication-keeping-your-voice
+  title: "Writing and Professional Communication: Keeping Your Voice"
+  short_title: Keeping Your Voice
+  author: Şadi Evren Şeker
+  sessions:
+    s1: {label: "Session 1 · concept session, about 75 min", minutes: 75}
+    s2: {label: "Session 2 · lab session (Writing Studio), about 75 min", minutes: 75}
+    rev: {label: "Midterm Bridge · review segment, about 15 min (or self-study)", minutes: 15}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/10-writing-and-professional-communication-keeping-your-voice.qmd
+    - labs/ch10-lab1.md
+    - labs/ch10-lab2.md
+    - labs/ch10-lab3.md
+    - figures/longdesc/ch10.md
+    - appendix/answers.md
+    - docs/blueprints/ch10-blueprint.md
+
+slides:
+
+# ======================================================================= SESSION 1 (CONCEPT)
+- layout: title
+  session: s1
+  minutes: 0
+  subtitle: "Concept session and lab session · about 75 minutes each"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading: Chapter 10"
+    - "Suggested: *Moffatt v. Air Canada*, paras. 27–29 · Noy & Zhang (2023)"
+  figure: f10-01-chapter-map
+  notes:
+    say: |
+      Put this slide up while students arrive. This chapter is about writing: emails, cover letters, announcements,
+      the messages you send under your own name. Much of that writing now passes through an AI tool at some point:
+      a grammar check, a translation, a suggested reply, a first draft. Each can help, and each can change what you
+      say and how you sound. The chapter's question is on the opening page: can a message still be yours if an AI
+      tool helped write it? The map on the right shows the plan. The Work Loop strip highlights Disclose, who needs to
+      know how this message was made, and then Decide, whether each sentence deserves to go out under your name. Tell
+      students two practical things now: in the lab session they write a real professional document in the Writing
+      Studio and start A7; and, if your course has a midterm after Chapter 10, this is the last chapter it covers.
+    background: |
+      Plan: Session 1 (concept, about 75 min) covers the Opening Case, §10.1–10.7 and a live demonstration (one email in
+      three tones); Session 2 (lab, about 75 min) runs Lab 10.1 and starts A7, the annotated draft and revision trace
+      (LO2, LO4). Suggested readings with the chapter's guides: Moffatt v. Air Canada (2024), paragraphs 27 to 29 only;
+      Noy and Zhang (2023a), the abstract and the figures on time taken and graded quality (about 8 minutes for both).
+      The chapter uses Peabody as the opening case and Moffatt (the airline chatbot case) in §10.7. Featured student:
+      Elif only (psychology, from İzmir; English is her second language). Chapter time: Core sections about 33 minutes;
+      whole Core package about 60 minutes.
+    questions:
+      - q: "Is this chapter on the midterm?"
+        a: "In the book's plan, a midterm covers the Core sections of Chapters 1 to 10 (decision D20); Deep sections are not examined. Your instructor sets the details."
+    activity: "On screen before class starts."
+    book: "Chapter 10 opening page, @fig-10-1 (chapter map, Disclose highlighted, Decide second); time paragraph; reading guides."
+
+- layout: session_plan
+  minutes: 2
+  title: "Chapter 10 at a glance"
+  columns:
+    - heading: "Session 1 · Concept session"
+      sub: "about 75 min · case, ideas, live demo, quick checks"
+      blocks:
+        - {min: 3, label: "Welcome and objectives", detail: "The last chapter before a midterm"}
+        - {min: 7, label: "Opening case", detail: "Content note; a message to a grieving campus"}
+        - {min: 15, label: "Concept core, §10.1–10.2", detail: "Readers, voice, the spectrum"}
+        - {min: 20, label: "Demo: one email, three tones", detail: "§10.3, run live"}
+        - {min: 28, label: "Concept core, §10.4–10.7", detail: "Pull, K/R/X, detectors, disclosure"}
+        - {min: 2, label: "Before the lab", detail: "Choose your document; write v0"}
+    - heading: "Session 2 · Lab session: Writing Studio"
+      sub: "about 75 min · individual drafts, teams for sharing"
+      blocks:
+        - {min: 10, label: "Lab briefing", detail: "Warm-up, Lab 10.1 steps, A7 brief"}
+        - {min: 45, label: "Frame, draft, annotate", detail: "Optional pair read"}
+        - {min: 15, label: "Share and critique", detail: "One sentence back in your voice"}
+        - {min: 5, label: "Exit step", detail: "Summary, key terms, exit ticket"}
+  notes:
+    say: |
+      Here is the plan for this chapter. Today is the concept session. We start with a real case, a message an office sent after a
+      campus tragedy, and ask why it failed even though it was fluent and honest about the tool. Then we build the
+      ideas: what readers expect, a spectrum for placing any use of AI in writing, how to frame a writing task, what AI
+      help does to your writing, how to judge a draft sentence by sentence, what detectors can and cannot show, and when
+      to disclose. In the middle I will run a live demonstration: one email in three tones. The lab session is the
+      Writing Studio. You bring a real document you will or could send, with your own first notes, and you leave with an
+      annotated draft and the start of A7, due when your instructor sets it. A short midterm review closes the deck.
+    background: |
+      Suggested flow for a concept session: opening case about 10, concept core 35, demonstration 20, concept checks
+      10; for a lab session: briefing 10, practice 45, share and critique 15, exit step 5. Here the opening case block
+      includes the content note and the warm-up; the quick checks are spread through the concept blocks (about 8
+      minutes in total). Session 2 follows Lab 10.1 exactly: briefing 10, frame and draft 15, annotate 20, optional pair
+      read 10, share and critique 15, exit 5. The Midterm Bridge segment at the end of this deck (about 15 minutes) is
+      for a review session before the midterm or for self-study; it is not part of either 75-minute plan.
+    questions:
+      - q: "Is the pair read in the lab required?"
+        a: "No. It is opt-in. If you prefer not to share your document, you read and mark the provided sample draft instead (Lab 10.1, step 4)."
+    activity: "Point to the two columns; give the A7 due date and the midterm date your course uses."
+    book: "Chapter 10 time paragraph; Lab 10.1 (labs/ch10-lab1.md); Application Assignment A7."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 10 · learning objectives"
+  title: "By the end of the lab you will be able to…"
+  items:
+    - {code: "O1", text: "**Differentiate** AI writing uses on the voice and ownership spectrum"}
+    - {code: "O2", text: "**Frame** a writing task: your points, reader, tone, limits"}
+    - {code: "O3", text: "**Judge** every draft sentence: keep, rewrite or reject"}
+    - {code: "O4", text: "**Explain** why a detector score is weak evidence"}
+    - {code: "O5", text: "**Decide** whether and how to disclose; you still answer"}
+    - {code: "O6", text: "**Produce** A7: annotated draft and revision trace"}
+  notes:
+    say: |
+      Six objectives for the chapter. The first is about placing a use: where does grammar help sit, where does a
+      generated draft sit, and what do the readers of this message expect? The second is framing: your own points
+      first, then the reader, the tone and the limits. The third is the core skill of the chapter: deciding, sentence
+      by sentence, whether a draft deserves to go out under your name, with a reason. The fourth is about AI-text
+      detectors and why a score cannot settle who wrote something. The fifth is disclosure at work, and why a
+      disclosure line never moves responsibility off the sender. The sixth is A7, which you start in the lab. Notice
+      that almost every verb is a judgment verb; this chapter is about your decisions, not the tool's features.
+    background: |
+      Chapter wording and tags: O1 Differentiate uses by reader and purpose, place a use on the spectrum and give the
+      Chapter 1 zone for coursework (LO4; AI Fluency Delegation); O2 Frame a professional writing task with your own
+      points first, the reader, the tone and the constraints (LO2; Description); O3 Judge each sentence keep, rewrite
+      or reject with a reason, facts through the Verification Funnel (LO4, LO3; Discernment, Diligence); O4 Explain why
+      an AI-text detector score is weak evidence, how detectors can flag second-language writers (as in a 2023 test),
+      and what process evidence shows (LO4); O5 Decide whether and how to disclose and explain why responsibility stays
+      with the sender (LO4); O6 Produce A7 (LO2, LO4). The blueprint's O1 verb was "Classify"; draft v2 changed it to
+      "Differentiate", which the chapter uses.
+    activity: "Ask students to star the objective they expect to be hardest; revisit on the lab's summary slide."
+    book: "Chapter 10, Learning Objectives."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "Before the case · content note"
+  title: "A content note, then a warm-up"
+  size: 26
+  bullets:
+    - "Today’s case: a message sent after a campus shooting in which three students died"
+    - "No victim is named; we study the message and its review"
+    - "Warm-up: three questions; write how sure you are (0–100%)"
+  takeaway: "We come back to your warm-up answers at the end of the lab"
+  notes:
+    say: |
+      Before the case, a content note. The opening case concerns a message sent after a campus shooting in which
+      three students died. No victim is named in the book or on these slides; what we study is the message and the
+      review it did not get. Now the warm-up. Answer from what you know today, and for each answer write how sure you
+      are, from zero to one hundred percent. One: an office sends a message to students after a tragedy, with a note
+      saying ChatGPT drafted it. Does the note make the message acceptable? Two: you ask a tool to "fix the grammar" in a
+      paragraph you wrote. Can that change what you say? Three: can an AI detector reliably tell whether a person wrote a
+      text? Keep your answers; we compare them with the evidence at the end of the lab session.
+    background: |
+      The content note is the chapter's own (Opening Case) and is listed in the instructor package as a one-line slide
+      for the concept session. Warm-up questions are the chapter's, with a confidence rating. The book's answers (Chapter Summary,
+      not to be revealed now): (1) no, disclosure is necessary where it is expected and never sufficient on its own;
+      (2) light edits often change little, but studies of other writing suggestions found shifts in style and stance,
+      so compare before and after; (3) not reliably enough to decide a case on its own.
+    activity: "Read the content note aloud. Then 90 seconds of silent writing for the three warm-up answers and confidence ratings."
+    book: "Opening Case content note; Warm-up (ungraded); Chapter Summary 'Revisit your Warm-up'."
+
+# About 55 words incl. dates and tier pills: five dated events with tiers are the case (deliberate exception).
+- layout: timeline
+  minutes: 5
+  kicker: "Opening case · Peabody College, Vanderbilt University (2023)"
+  title: "A fluent, disclosed message that still failed"
+  events:
+    - {label: "Feb 13, 2023", text: "Shooting at Michigan State: three students killed", tier: "reported"}
+    - {label: "Feb 16", role: ai, text: "Office email; last line credits ChatGPT", tier: "confirmed"}
+    - {label: "Feb 17", text: "Paper reports; associate dean apologizes", tier: "reported"}
+    - {label: "Feb 18", text: "Dean: usual review skipped", tier: "confirmed"}
+    - {label: "Apr 11", text: "Two deans return after stepping back", tier: "reported"}
+  takeaway: "Puzzle: it named the tool and stayed on topic. Why a failure?"
+  notes:
+    say: |
+      Tell it as a story. On the evening of February 13, 2023, a gunman opened fire on the campus of Michigan State
+      University; three students were killed and five wounded. Three days later, an office at another university wrote
+      to its own community: the equity, diversity and inclusion office of Peabody College, Vanderbilt's college of
+      education. The email spoke about safe and inclusive environments. It referred to shootings in Michigan in the
+      plural, though there had been one. And it ended with a line in small type: a paraphrase of output from ChatGPT,
+      written like a citation of a personal communication. The student paper reported it the next day; the office's
+      associate dean apologized, calling the use of ChatGPT "poor judgment." The dean wrote that the message had skipped
+      the usual layers of review. Here is the puzzle: the message did not hide the tool. Why was it a failure?
+    background: |
+      Tiers exactly as the chapter states them. Reported: the shooting (NPR, 2023); the email's content and the plural
+      "shootings" (Perrotta, 2023; Korn, 2023); the newspaper report, the students' reaction, the associate dean's
+      apology and a spokesperson saying Vanderbilt does not use AI systems to generate its messages (Perrotta, 2023);
+      the two deans stepping back (Lele, 2023) and returning on April 11, 2023 (Lele & Faquih, 2023). Confirmed: the
+      email's own AI line, as quoted by CNN (Korn, 2023), and the dean's statement (Benbow, 2023): the message did not
+      follow the normal processes "providing for multiple layers of review," administrators including herself did not
+      know before it was sent, she was deeply troubled that it missed the need for personal connection and empathy, and
+      her office would review it. Naming rule (blueprint V3): institution, office, roles and Dean Camilla Benbow only;
+      never "Vanderbilt apologized": the apologies came from the office and the dean.
+    questions:
+      - q: "Isn't citing ChatGPT exactly what we are told to do?"
+        a: "Disclosure was the honest part. The book's answer (§10.2, §10.7) is that a disclosure line tells readers how a message was made; it cannot repair a delegation those readers would reject, or a review that did not happen."
+    misconceptions:
+      - m: "M1 'If I disclose that AI wrote it, any use is fine.'"
+        fix: "This case is the counterexample: disclosed, fluent, on topic, and still treated as a failure by its readers and its own dean. Be careful not to imply 'so do not disclose'."
+    activity: "Narrate; do not read the cards. Take two quick guesses at the puzzle and write them on the board."
+    book: "Opening Case; @fig-10-2 (storyboard); Case Study 'The Peabody Message, Revisited'."
+
+# ----------------------------------------------------------------------- 10.1
+- layout: section
+  minutes: 0.5
+  number: "10.1"
+  tag: "Core"
+  title: "Voice, ownership and what readers expect"
+  idea: "Readers judge the sender by what they believe about how a message was made."
+  meta: "Book §10.1 · Liu et al. (2022)"
+  notes:
+    say: |
+      First idea. Before you ask whether a tool can write a message, ask about the people who will read it. This
+      section gives you two words, voice and ownership, and one piece of evidence about readers. The sentence on the
+      slide is the evidence in short form: readers judge the sender, not only the sentences, and they judge partly by
+      what they believe about how the message was made. That is the first part of the answer to our puzzle. The
+      Peabody email's readers were judging the office, not just the words.
+    background: |
+      Section 10.1 is Core. It defines voice (after Matsuda, 2001) and the book's working definition of ownership of a
+      text, and reports Liu, Mittal, Yang and Bruckman (2022). Chapter 5's "role" sets the voice an output takes on;
+      here voice means the writer's own (the chapter states this reconciliation in one sentence).
+    activity: "Transition slide."
+    book: "§10.1 Voice, Ownership and What Readers Expect."
+
+- layout: concept
+  minutes: 2.5
+  kicker: "§10.1 · two words and one study"
+  title: "Your voice, your ownership"
+  size: 24
+  bullets:
+    - "**Voice:** the impression of you that readers form from your choices"
+    - "**Ownership:** you decided what it says and can stand behind every sentence"
+    - "Not legal authorship: that is Chapter 18"
+    - "147 readers trusted writers less when told AI helped (2022)"
+  takeaway: "Ask first: does this message need my own words?"
+  notes:
+    say: |
+      Two words. Voice is the impression of a writer that a reader forms from the writer's choices: words, sentence
+      shapes, stance, what to include. Voice lives partly in the reader; it is what comes across. Ownership, in this
+      book, means you decided what the text says and you can explain, defend and stand behind every sentence and its
+      consequences. It is not legal authorship; who owns words under copyright law is Chapter 18. You can own a message
+      even if a tool suggested some words, and lose ownership of one you typed if you cannot say why it says what it
+      says. Now the evidence. In a 2022 study, 147 crowd workers read emails that had all been written by people; some
+      were labeled as written with AI help. They trusted the writers less when told AI was involved.
+    background: |
+      Liu, Mittal, Yang and Bruckman (2022), CHI '22. Survey: 147 crowd workers (people recruited online for short paid
+      tasks); every email was human-written, only the label changed. Surprise: the researchers had expected the biggest
+      trust drop for personal emails; instead, trust rose as emails became more personal, in every condition. Interviews:
+      ten computer-science students at one university firmly rejected AI help for highly personal messages. The chapter
+      says both parts are small and point in different directions, but share one finding: readers judge the sender by
+      what they believe about how the message was made. Keep that hedge. Voice definition paraphrases Matsuda (2001);
+      Matsuda and Tardy (2007) studied how readers build that impression.
+    questions:
+      - q: "If every email was written by a person, how can AI have mattered?"
+        a: "That is the design's strength: only the label changed, so any difference comes from what readers believed about how the email was made (Deep 10.B makes this point)."
+    activity: "Ask: 'Name one message you would be hurt to learn was AI-written.' Take two answers."
+    book: "§10.1; Check Yourself 10.1."
+
+- layout: compare
+  minutes: 2
+  kicker: "§10.1 · readers’ expectations (book figure: reader bands)"
+  title: "Which messages need your own words?"
+  size: 24
+  columns:
+    - heading: "Own words expected"
+      role: neutral
+      bullets: ["Thank-you note to a mentor", "Apology to a client", "Message after a loss", "Reference letter"]
+    - heading: "Accuracy and clarity first"
+      role: soft
+      bullets: ["Team update", "Meeting summary", "Opening-hours reply", "Lab-safety reminder"]
+  takeaway: "For an apology or a message after a loss, readers want to know a person took the time"
+  notes:
+    say: |
+      Here is the question as two bands. On the left, messages whose readers expect your own words: a thank-you note
+      to a mentor, whose value is that you wrote it; an apology to a client, who wants a person to take responsibility; a
+      message to a colleague whose parent has died, where readers infer care from effort; a reference letter, where the
+      reader relies on your personal judgment. On the right, messages whose readers want accuracy and clarity first: a
+      team update, a meeting summary, a reply about opening hours, a lab-safety reminder for a whole building.
+      The line between the bands is not fixed; messages vary. But notice where the Peabody email sits: a message to a
+      grieving community belongs on the left.
+    background: |
+      Rebuilds the book's figure @fig-10-19 (reader bands) and the 10.1 Worked and Faded Examples. Faded-example keys
+      (Appendix E): lab-safety reminder = accuracy and clarity first (readers need the rule); reference letter = own words
+      (the reader relies on the writer's judgment). The book marks the boundary dashed because messages vary; here both
+      cards are named in words, so color carries no meaning on its own. The Your Turn for 10.1 and 10.2 is done in the
+      concept session (chapter time paragraph): place three messages you sent this month.
+    misconceptions:
+      - m: "M3 'A more polished, professional-sounding draft is a better draft.'"
+        fix: "For the left-hand band, polish is not what readers value; effort and personal judgment are."
+    activity: "Ask students to place one message they sent recently in a band; hands up for left vs. right."
+    book: "§10.1 Worked Example 'What Do These Readers Expect?', Faded Example; @fig-10-19."
+
+# ----------------------------------------------------------------------- 10.2
+- layout: section
+  minutes: 0.5
+  number: "10.2"
+  tag: "Core"
+  title: "The voice and ownership spectrum"
+  idea: "The more wording a tool supplies, the more of your judgment the message needs to stay yours."
+  meta: "Book §10.2 · book-map figure"
+  notes:
+    say: |
+      "Did you use AI?" is too blunt a question for writing. A grammar check and a generated essay are both "using
+      AI," and they are not the same thing. This section gives you a better tool: a spectrum with five positions,
+      ordered by how much of the wording a tool supplies. The finding on the slide is the figure's title: the more of
+      the wording a tool supplies, the more of your judgment the message needs to stay yours. Then we key the spectrum
+      to Chapter 1's three zones.
+    background: |
+      Section 10.2 is Core. The spectrum (@fig-10-3) is drawn by the new reusable voice_spectrum() figure function;
+      positions: 1 your words only, 2 AI as reader, 3 AI as editor, 4 AI as co-drafter, 5 AI as author (sent as is).
+      Chapter 5's Delegation Ladder describes ways of working with AI; the spectrum describes one document.
+    activity: "Transition slide."
+    book: "§10.2 The Voice and Ownership Spectrum."
+
+# About 60 words incl. the five redrawn spectrum boxes (the book figure's labels at slide size; deliberate exception).
+- layout: concept
+  minutes: 3
+  kicker: "§10.2 · the voice and ownership spectrum (book figure @fig-10-3, redrawn)"
+  title: "Five positions, by how much wording the tool supplies"
+  size: 24
+  bullets:
+    - "Left to right: more wording from the tool"
+    - "Accepted as offered? Position 3, not 2"
+    - "Peabody’s “paraphrase”: 4 or 5 (inferred)"
+  flow:
+    - {label: "1 · Your words only", kind: human}
+    - {label: "2 · AI as reader", kind: human}
+    - {label: "3 · AI as editor", kind: ai}
+    - {label: "4 · AI as co-drafter", kind: ai}
+    - {label: "5 · AI as author, sent as is", kind: ai}
+  takeaway: "It measures wording, not worth: position 4 can be fully yours"
+  notes:
+    say: |
+      Walk the five positions. One: your words only, no AI. Two: AI as reader. The tool comments on your draft, and you
+      write every change yourself. Three: AI as editor. The tool supplies new wording in your draft, such as grammar and
+      spelling, whole sentences, or a translation of text you wrote, and you accept or reject each change. If you
+      accept a suggestion as offered, you are at three, not two. Four: AI as co-drafter. The tool drafts from your
+      points, and you rewrite it sentence by sentence. Five: AI as author. The tool drafts and you send it with little or
+      no change. The spectrum measures wording, not worth: a message at position four can be fully yours if you decided
+      what it says and checked every sentence. And Peabody? Its last line said "paraphrase," so it sat at four or five.
+    background: |
+      The slide redraws @fig-10-3 natively so its labels stay legible (rounded = you write the words; hexagon = the tool
+      supplies wording). In the book, bands under the boxes come from §10.1 ("own words expected" vs. "accuracy and clarity first"); the question is
+      always "which position, for these readers?" Peabody placement: positions 4 or 5, inferred (dashed in @fig-10-3b);
+      readers expected the office's own words (inferred). Human ghostwriters (box in §10.2): a communications officer
+      drafting a president's statement is accepted in such genres because someone senior approved the words; the
+      Peabody message was different, in the book's reading (inferred), because readers expected the office's own words
+      and the usual reviewers never saw it.
+    questions:
+      - q: "Leaders' statements are often ghostwritten. Why is that fine and Peabody not?"
+        a: "Readers of such genres accept it because someone senior approved the words. At Peabody, in the book's reading (inferred), readers expected the office's own words and the usual review was skipped (§10.2 box; Check Yourself 10.2 item 3)."
+    activity: "Ask: 'Where did your last AI-assisted message sit?' Students hold up 1–5 fingers."
+    book: "§10.2, @fig-10-3, @fig-10-3b; 'Human ghostwriters' box."
+
+# About 55 words: the policy table needs every position named (deliberate exception).
+- layout: compare
+  minutes: 2.5
+  kicker: "§10.2 · the spectrum in coursework that builds your own skill"
+  title: "Where each position lands in coursework"
+  size: 22
+  header_height: 1.05
+  columns:
+    - heading: "Permitted; list it briefly"
+      role: verified
+      bullets: ["2 · AI as reader", "3 · grammar and spelling only"]
+    - heading: "Ask first (book’s reading)"
+      role: neutral
+      dashed: true
+      bullets: ["3 · rewording", "3 · translating your own text"]
+    - heading: "Outsourcing or not acceptable"
+      role: risk
+      bullets: ["4 · co-drafter: unless explicitly allowed", "5 · sent as is: not acceptable"]
+  takeaway: "Other coursework: 3–5 with disclosure and verification · A7 allows 4"
+  notes:
+    say: |
+      Chapter 1's three zones are the book's policy for coursework, and drafting depends on the purpose of the writing. For
+      coursework that exists to build your own writing or reasoning, like a reflection essay: AI as reader, and grammar
+      and spelling only, are permitted, and you list them briefly in your declaration. Rewording, or translating your own
+      text, is "ask your instructor first"; that is this book's reading, because the policy is silent. Co-drafting is
+      outsourcing unless your instructor explicitly allows it, and sending a tool's text as is, is not acceptable. For
+      other coursework, like a project newsletter, positions three to five are permitted with disclosure and
+      verification, and five only if you can explain every sentence. A7 is that explicit permission: it asks you to
+      co-draft and judge the result. Outside coursework, the zones are not rules; verification always applies.
+    background: |
+      The table in §10.2 has two columns (skill-building coursework vs. other coursework); this slide shows the first
+      column and puts the second in the bar. Rows marked "this book's reading" are grammar-only edits ("formatting"
+      and "feedback") and translation/rewording ("ask your instructor first"); the blueprint lists these as an
+      author-only item to confirm. Asking first can be two sentences (the chapter gives a model
+      request). Worked example: Elif translates her own Turkish paragraph for a psychology essay after her instructor
+      allowed it with a declaration line. Faded-example keys (Appendix E): an engineering student's client status email,
+      sent with two edits = position 5; his required design reflection written by a tool = position 5, not acceptable.
+    questions:
+      - q: "I write my first draft in Spanish. Can I translate it with a tool?"
+        a: "For skill-building coursework, ask your instructor first (the book's reading). If the answer is no, write in English yourself and use the help that remains: feedback on your draft, the writing center (§10.2)."
+    misconceptions:
+      - m: "M1 'If I disclose that AI wrote it, any use is fine.'"
+        fix: "Point at the right card: in skill-building coursework, position 5 is not acceptable even with a declaration."
+    activity: "Pairs place 'a tool writes my required design reflection' (position 5: not acceptable)."
+    book: "§10.2 table 'The spectrum in coursework'; Worked Example 'Elif's Week'; Faded Example; Chapter 1 §1.5."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §10.2"
+  title: "grammar help on a cover letter"
+  question: "A student asks a tool for grammar and spelling corrections only on a cover letter she wrote as a course assignment, and accepts three as offered. Where does this sit?"
+  options:
+    - "Position 3, grammar only: permitted; she lists it briefly in her declaration."
+    - "Position 5: outsourcing, because a tool changed her text."
+    - "Position 1: so little changed that there is nothing to mention."
+    - "Position 4: co-drafting, which needs explicit permission."
+  answer: a
+  instruction: "Answer on your own (30 seconds), then vote"
+  explanation: "(b) overcorrects; (c) skips the brief listing; (d) no new content was drafted"
+  notes:
+    say: |
+      Quick check, ungraded. Read the question and commit to an answer before anyone votes. Notice the detail that
+      matters: she accepted three corrections as offered. Does accepting a suggestion as offered keep her at position
+      two, the reader position, or move her somewhere else? And what does the policy expect her to do about it? Give
+      thirty seconds, then vote. If students split between (a) and (c), ask a student from each side to explain; the
+      disagreement is about whether small help still counts as help worth listing.
+    background: |
+      Item: Review Questions A3 (O1 · LO4 · Apply), options shortened for the slide. Key from Appendix E: (a). (b)
+      overcorrects: the tool supplied very little wording; (c) leaves out the brief listing the policy asks for; (d)
+      misplaces it: no new content was drafted.
+    activity: "30 s individual, then vote. Then show the answer slide."
+    book: "§10.2; Review Questions A3; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (a): position three, grammar only. She accepted changes as offered, so the tool supplied some
+      wording: that is the editor position, not the reader position. In coursework that builds her own writing, grammar
+      and spelling corrections are permitted, and she lists them briefly in her declaration. Option (c) is the common
+      slip: "it was so little, it doesn't count." The policy asks for a brief listing precisely because small help adds
+      up and readers deserve to know. Option (b) overcorrects; grammar help is not outsourcing. Option (d) misplaces it:
+      she did not ask the tool to draft anything.
+    background: |
+      Appendix E key for A3. Related: Review A7 (next section) asks what "polishing" can do to meaning; the answer is
+      not "never use grammar help" but "compare before and after."
+    activity: "Reveal; one follow-up comment."
+    book: "§10.2; Appendix E (Review A3)."
+
+# ----------------------------------------------------------------------- 10.3
+- layout: section
+  minutes: 0.5
+  number: "10.3"
+  tag: "Core"
+  title: "Framing a writing task: your points first"
+  idea: "Write first, so the tool reshapes your content instead of supplying it."
+  meta: "Book §10.3 · signature diagram 6 · live demo"
+  notes:
+    say: |
+      The easiest way to lose your voice is to start with the tool. Ask it to "write an email to my coordinator about
+      rescheduling," and it must supply everything: what you want, how sorry you are, what you propose. It will supply
+      the most common version of each. This section's rule is on the slide: write first. Put down what you want to say
+      before you ask a tool for anything; then the output reshapes your content instead of supplying it. After this,
+      I demonstrate it live.
+    background: |
+      Section 10.3 is Core. It reuses Chapter 5's Anatomy of a Prompt (signature diagram 6) with role, context and
+      constraints highlighted (@fig-10-4), defines tone, reports Kruger, Epley, Parker and Ng (2005), and restates
+      Chapter 1's privacy rule (placeholders; a tool your institution provides or approves).
+    activity: "Transition slide."
+    book: "§10.3 Framing a Writing Task: Your Points First."
+
+- layout: concept
+  minutes: 2.5
+  kicker: "§10.3 · Chapter 5’s anatomy of a prompt, for writing (@fig-10-4)"
+  title: "Write first, then frame the prompt"
+  size: 24
+  bullets:
+    - "**Write first:** your points before any tool"
+    - "**Role:** the output’s voice, not its accuracy"
+    - "**Context:** reader, situation, your points"
+    - "**Constraints:** length, what not to promise"
+    - "Privacy: placeholders such as [PHONE]"
+  takeaway: "Name the reader and the tone; put your own points in the context"
+  notes:
+    say: |
+      Your notes become part of a prompt. Chapter 5's anatomy of a prompt still applies, and for writing three parts
+      carry most of the weight. Role sets the voice and perspective the output takes on, for example "a peer tutor"; it
+      shapes tone and vocabulary, not accuracy. Context holds the reader, your relationship, the situation and your own
+      points. Constraints hold length, what must not be promised or said, and words you would never use. And name the
+      tone you want. Tone is the attitude a message conveys toward its reader and topic: formal or casual, warm or brief,
+      firm or apologetic. Privacy: Chapter 1's rule applies to your own details too. Use placeholders such as [PHONE] or
+      [STUDENT], or a tool your institution provides or approves, and fill the details in yourself.
+    background: |
+      Tool choice (D27 wording): a tool your institution provides or approves, for example an enterprise chat assistant
+      with data protection; name a product only as one dated example among others. The full
+      anatomy (role, task, context, constraints, in-context examples, output format) is Chapter 5; Review A5 checks the
+      role/context distinction and is the lab's warm-up. Faded example (engineering status update) key in Appendix E:
+      role "a project engineer writing to a client"; constraint "do not promise May 24 as certain; it depends on
+      testing."
+    misconceptions:
+      - m: "Chapter 5 confusion: 'The role says who the message is for.'"
+        fix: "Role sets the voice the output takes on; the reader goes in the context, with your own points."
+    activity: "Ask: 'Which part holds the reader?' (Context.) Then move straight into the demo."
+    book: "§10.3, @fig-10-4; Chapter 5 (Anatomy of a Prompt)."
+
+# The worked reveal runs to about 100 words on its last step: the five points and the labeled prompt are the
+# demonstration (deliberate exception, as in Ch. 1's worked example).
+- layout: worked
+  minutes: 4
+  kicker: "Demonstration · §10.3 worked example · constructed"
+  title: "One email, three tones: Elif reschedules"
+  context: "Elif can’t lead Thursday’s 4 p.m. tutoring session: her own statistics exam moved to that slot."
+  steps:
+    - {label: "Her points", text: "Can’t lead Thursday · sorry for the short notice · Fri 2 p.m. or Mon 4 p.m."}
+    - {label: "More points", text: "She tells the two students herself · materials in the shared folder"}
+    - {label: "Prompt", text: "Peer tutor · busy, friendly coordinator · [STUDENTS] · under 120 words"}
+    - {label: "Limits", text: "No reason beyond “my exam moved” · promise nothing unlisted"}
+    - {label: "Output", text: "Three versions: formal, warm, brief"}
+  reveal: [2, 5]
+  result: "The tool reshaped her five points; it did not supply them"
+  notes_reveal:
+    - minutes: 5
+      say: |
+        Now the live demonstration. Here is the situation: Elif, a first-year psychology student who works as a peer
+        tutor, cannot lead Thursday's 4 p.m. tutoring session, because her own statistics exam moved to that slot. Before
+        she opens any tool, she writes her points. One, she cannot lead Thursday's session. Two, she is sorry for the
+        short notice. Three, she proposes Friday at 2 p.m. or Monday at 4 p.m. Four, if the coordinator agrees, she will
+        tell the two students herself. Five, the materials are in the shared folder. Ask the class: what would a tool
+        have supplied if she had started with "write an email to my coordinator"? (Everything: the reason, the apology,
+        the proposal, all in their most common form.)
+      background: |
+        Worked Example "One Email, Three Tones" (§10.3); it mirrors the concept session's demonstration and Lab 10.2. All outputs
+        in the book are constructed examples. The instructor package lists the three-tone demonstration email (Elif's
+        five points; formal, warm, brief) with tool, model and date as a slide asset; run it live in a tool your
+        institution provides or approves if you can, and keep the dated version as a fallback.
+      activity: "Type the five points live, or show them on the board; ask the 'what would the tool have supplied' question."
+      book: "§10.3 Worked Example 'One Email, Three Tones'."
+    - minutes: 5
+      say: |
+        Then the prompt, with its parts labeled. Role: a peer tutor. Task: draft a short email. Context: the reader is
+        the center's coordinator, friendly but busy; my five points; the students' names replaced by [STUDENTS].
+        Constraints: under 120 words; no reason beyond "my exam moved"; promise nothing I did not list. Output format:
+        three versions, formal, warm and brief. Now run it live. While it generates, ask students to predict which
+        version Elif will choose. Then show the outputs. Point out what stayed the same in all three: her five points.
+        What changed is tone, which lives in a few words: greetings, hedges, how the apology is phrased, how the
+        request is put.
+      background: |
+        If the live run fails or the network is down, use the dated demonstration email from the instructor package
+        (tool, model, date) or the book's figure @fig-10-5 on the next slide. Placeholders: the prompt carries
+        [STUDENTS], never real names (Chapter 1 privacy rule; Chapter 15).
+      questions:
+        - q: "Why ask for three versions instead of one?"
+          a: "Three tones make the tone visible as a choice, and the second version counts as A7's required iteration (Lab 10.2 note)."
+      activity: "Run the prompt live; collect predictions (formal/warm/brief) by show of hands before revealing."
+      book: "§10.3 Worked Example; Lab 10.2."
+  notes:
+    book: "§10.3 Worked Example 'One Email, Three Tones'."
+
+- layout: compare
+  minutes: 4
+  kicker: "Demonstration · the book’s version (@fig-10-5, redrawn) · constructed"
+  title: "Same five points, three tones"
+  size: 24
+  columns:
+    - heading: "Formal"
+      role: soft
+      bullets: ["“I am writing to inform you”", "“unable” · “suitable”"]
+    - heading: "Warm · Elif’s choice"
+      role: neutral
+      bullets: ["“I’m so sorry”", "“happy to” · contractions"]
+    - heading: "Brief"
+      role: soft
+      bullets: ["Short sentences", "No extra courtesy"]
+  takeaway: "Elif chose warm, cut a line unlike her, and added her own thanks"
+  notes:
+    say: |
+      Here is the book's version of the same demonstration. Three message cards, the same five points, three tones,
+      with the tone markers listed under each. Elif's choice was the warm version. And here is the part that keeps the
+      message hers: she edited it. She cut "I completely understand if this causes inconvenience," which sounded unlike
+      her, and she added her own thanks. Compare our live outputs with the book's: did our tool use the same kinds of
+      tone markers? Did any version add something she did not say, such as a promise or an extra reason? That is the
+      habit we build in the lab: a draft gets read sentence by sentence before it goes out.
+    background: |
+      @fig-10-5: three message cards (formal, warm, brief) with tone markers under each; constructed examples. The
+      slide shows only the tone markers so they stay legible; the full card texts are in the book figure (show it from
+      the e-book if students want the wording). Elif's edits are the book's.
+    misconceptions:
+      - m: "M3 'A more polished, professional-sounding draft is a better draft.'"
+        fix: "The formal version is the most polished; Elif chose warm because it fit the reader and her relationship."
+    activity: "Ask: 'Which sentence would you cut from our live output, and why?'"
+    book: "§10.3, @fig-10-5."
+
+- layout: tps
+  minutes: 6
+  kicker: "Demonstration · think, pair, share"
+  title: "Which version would you want to receive?"
+  prompt:
+    - "You are the coordinator: which tone would you want?"
+    - "Which words carry the tone?"
+    - "Read one aloud in a flat voice: how does it land?"
+  phases:
+    - {name: "Think", min: 2, text: "Pick one; note two tone words"}
+    - {name: "Pair", min: 2, text: "Read one aloud, flatly"}
+    - {name: "Share", min: 2, text: "Two pairs report"}
+  notes:
+    say: |
+      Now you judge the tone. Imagine you are the coordinator: friendly, busy, responsible for two students who need a
+      session. Which version would you want to receive, and why? Find the two or three words that carry the tone. Then,
+      with your partner, read one version aloud in a flat voice, the way a stranger might hear it. Here is why the
+      flat voice matters. In five experiments, people overestimated how well readers would recognize the tone of their
+      emails, such as sarcasm, because senders hear their own tone in their head. In one experiment, senders who first
+      read their message aloud in a different tone judged better how it would come across. So check tone with a
+      person, or read it flat, before you trust it.
+    background: |
+      Kruger, Epley, Parker and Ng (2005), Journal of Personality and Social Psychology 89(6): five experiments on
+      egocentrism over email; senders overestimated how well readers would recognize their tone. The blueprint flagged
+      percentages as [VERIFY]; the chapter reports no percentages, so do not give any. Lab 10.2 (optional, 20 min at
+      home) repeats this demonstration with the student's own five points and one reader's opinion; its three versions
+      can serve as A7's iteration.
+    questions:
+      - q: "Isn't the 'right' tone always the formal one at work?"
+        a: "No. The version a reader prefers depends on the relationship (Lab 10.2 expected observations). That is why the prompt names the reader."
+    activity: "Think 2 · pair 2 · share 3. Call on one pair who chose formal and one who chose warm or brief."
+    book: "§10.3 (tone; Kruger et al., 2005); Check Yourself 10.3 item 3; Lab 10.2."
+
+# ----------------------------------------------------------------------- 10.4
+- layout: section
+  minutes: 0.5
+  number: "10.4"
+  tag: "Core"
+  title: "What AI help does to your writing"
+  idea: "AI help pulls writing toward common phrasing, so compare before and after."
+  meta: "Book §10.4 · Noy & Zhang (2023)"
+  notes:
+    say: |
+      You have seen that a tool can reshape your points into different tones. This section asks what happens to the
+      writer's own contribution when tools help. Recall Chapter 3: a language model produces likely text, and likely
+      text is the common way of saying something. So when a tool helps, it tends to pull writing toward common phrasing.
+      The habit that follows is on the slide: compare before and after. Keep Elif's demo in mind: her five points stayed
+      the same in every version only because she wrote them first. Now we look at what happens when writers do not
+      start with their own points, or do not look closely at what came back.
+    background: |
+      Section 10.4 is Core. Chapter 1 recall (one sentence): with ChatGPT, professionals' time on job-like writing tasks
+      fell by about 40% and graders' quality ratings rose by about 18%; factual accuracy was not separately measured
+      (Noy & Zhang, 2023a; suggested reading: abstract and figures). This section adds the working paper's editing figure and
+      three studies of AI suggestions.
+    activity: "Transition slide."
+    book: "§10.4 What AI Help Does to Your Writing; reading guide for Noy & Zhang (2023a)."
+
+- layout: concept
+  minutes: 2.5
+  kicker: "§10.4 · the pull toward common phrasing (book figure @fig-10-6, redrawn)"
+  title: "AI help can pull writers toward the same phrasing"
+  size: 24
+  bullets:
+    - "68% sent ChatGPT’s first output unedited (self-reported)"
+    - "Story ideas: rated better, but more alike"
+    - "Autocomplete: Indian writers moved toward Western styles"
+    - "A one-sided assistant shifted writers’ opinions"
+  flow:
+    - {label: "Four writers, four voices", kind: human}
+    - {label: "AI suggestions: likely, common wording", kind: ai}
+    - {label: "Drafts that sound more alike", kind: step, dashed: true}
+  notes:
+    say: |
+      Four findings. First, many people did not edit. In the authors' March 2023 working paper, an earlier version not
+      peer reviewed, 68% of the participants who used ChatGPT reported submitting its first output without editing it,
+      and on average the group's essays scored no higher than ChatGPT's raw output. Second, stories written with a
+      language model's ideas were rated better one by one but were more similar to one another. The word for that is
+      homogenization: becoming more alike. Third, with 118 participants from India and the United States writing with
+      autocomplete suggestions, both wrote faster, and the suggestions moved Indian participants' writing toward Western
+      styles. Fourth, an assistant deliberately set up to argue one side shifted the opinions 1,506 participants wrote
+      and later reported.
+    background: |
+      Noy & Zhang (2023b), March 2023 working paper, not peer reviewed: the 68% is self-reported (tier: reported,
+      working paper). Doshi & Hauser (2024), Science Advances: homogenization of short stories. Agarwal, Naaman &
+      Vashistha (2025), CHI: 118 participants; Americans gained more from each suggestion. Jakesch et al. (2023), CHI:
+      1,506 online participants writing about social media. None of these studies tested a grammar checker: the claim
+      that "polishing" can change what you say is this book's inference, testable in Lab 10.3 (voice fingerprint).
+      Stock phrases (the book's examples, not a measured list): "I am writing to inform you," "I am passionate about," "a
+      unique perspective," "in today's fast-paced world." The flow strip redraws @fig-10-6; its last box is dashed
+      because, for grammar checkers, the pull is the book's inference.
+    questions:
+      - q: "So should I stop using grammar help?"
+        a: "No. Light edits often change very little. The lesson is to compare before and after: a change you did not choose is a change to your voice (§10.4)."
+    misconceptions:
+      - m: "M2 'Asking AI to fix my grammar or polish my English does not change what I say.'"
+        fix: "Name the evidence by tool and sample (story ideas, autocomplete, a one-sided assistant), then say plainly that none tested grammar checkers; the book's inference is to compare."
+    activity: "Ask students which of the book's stock phrases they have seen in a tool's draft this term."
+    book: "§10.4, @fig-10-6; Check Yourself 10.4; Lab 10.3."
+
+# About 70 words: the before/after pair is the point of this slide (deliberate exception to the 40-word guide).
+- layout: compare
+  minutes: 2.5
+  kicker: "§10.4 · worked example · Elif’s summer-program statement · constructed"
+  title: "“Improve my English”: what changed?"
+  size: 21
+  columns:
+    - heading: "Before · Elif’s words"
+      role: neutral
+      text: "“My grandmother forgot the names of her neighbors but remembered every song… I think this is why I want to study memory.”"
+    - heading: "After “improve”"
+      role: soft
+      dashed: true
+      text: "“My passion for psychology stems from a lifelong fascination with the human mind…”"
+    - heading: "Four changes"
+      role: risk
+      bullets: ["Example gone · *voice*", "“I think” gone · *voice*", "Stock phrases · *voice*", "A new promise · *commitment*"]
+  takeaway: "She kept two grammar fixes and restored the rest"
+  notes:
+    say: |
+      Here is the pull in one paragraph. Elif applies to a summer research program. Her own English, from her Turkish
+      notes: in İzmir, her grandmother forgot the names of her neighbors but remembered every song from her youth; "I
+      think this is why I want to study memory. I do not know yet if I will do research or clinical work." After asking a
+      tool to "improve my English," it reads: "My passion for psychology stems from a lifelong fascination with the human
+      mind. Witnessing memory loss in my family inspired me to pursue research that will transform how we understand
+      memory." Four changes. The grandmother and the songs became "memory loss in my family": the example that made it
+      hers is gone. "I think," a hedge, disappeared. Stock phrases were added. And "I do not know yet" became "research
+      that will transform": a promise she never made.
+    background: |
+      Worked Example "Elif's Summer-Program Statement" (§10.4); the "after" version is constructed. The tags in
+      parentheses are the §10.5 reason tags (voice, commitment), previewed here. Faded example key (Appendix E,
+      business paragraph): change 2, "less than we hoped" disappeared and "outstanding success" was added, a stronger
+      claim than the writer made (commitment, accuracy). The dashed outline on the middle card marks the tool's
+      wording as conditional on her review; each card also states its meaning in words.
+    misconceptions:
+      - m: "M3 'A more polished, professional-sounding draft is a better draft.'"
+        fix: "The 'after' version sounds more professional and says less that is true and specific; a reader learns less about Elif."
+    activity: "Ask: 'Which change would a reader of her application notice? Which would you have missed?'"
+    book: "§10.4 Worked Example; Faded Example 'A Business Student's Paragraph'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §10.4"
+  title: "“I only polished my English”"
+  question: "A friend says, “I only asked it to polish my English, so the meaning is exactly the same.” Which reply fits this chapter best?"
+  options:
+    - "That is right: polishing tools change spelling and grammar and leave the meaning."
+    - "Compare before and after, and check that each change still says what you mean."
+    - "Polishing with a tool counts as outsourcing in most courses; avoid it."
+    - "Run the polished version through an AI detector to see if it still sounds like you."
+  answer: b
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) is M2; (c) overcorrects: grammar help is permitted; (d) misuses detectors (M4)"
+  notes:
+    say: |
+      Quick check. This one tests the habit, not a number. Read all four options. Notice that two of them are
+      extremes: "nothing changes" and "never use it." One brings in a tool that we will discuss in a few minutes. Give
+      thirty seconds, then vote. If many students choose (a), connect back to Elif: "improve my English" removed her
+      example and added a promise, while she thought she was only fixing grammar. If many choose (c), remind them of the
+      coursework table: grammar and spelling help is permitted and listed briefly; the issue is not using help but
+      noticing what it changed.
+    background: |
+      Item: Review Questions A7 (O3 · LO4 · Understand), options shortened. Key from Appendix E: (b). Studies of other
+      writing suggestions (autocomplete, story ideas, a one-sided assistant) found shifts in style and stance; that
+      polishing does the same is the book's inference, worth checking. (a) is M2; (c) overcorrects (grammar help is
+      permitted); (d) is M4.
+    activity: "30 s individual, then vote."
+    book: "§10.4; Review Questions A7; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (b): compare before and after, and check that each change still says what you mean. Option (a) is
+      the misconception this section addresses; sometimes it is true, and light edits often change little, but you only
+      know by comparing. Option (c) overcorrects: grammar and spelling help is permitted under Chapter 1's policy and listed
+      briefly. Option (d) brings in a detector, which cannot tell you whether a text sounds like you; that is the next
+      section. If you want to test this on your own writing, Lab 10.3, the voice fingerprint, takes about twenty to thirty
+      minutes: one grammar-only run, one "improve this" run, and you count the changes.
+    background: |
+      Lab 10.3 expected observations: "improve" requests often replace specific examples with general ones, drop hedges
+      and add stock phrases; grammar-only requests usually change much less, but sometimes reword more than asked.
+      "Almost nothing changed" is a valid result.
+    activity: "Reveal; mention Lab 10.3 as optional homework."
+    book: "§10.4; Appendix E (Review A7); Lab 10.3."
+
+# ----------------------------------------------------------------------- 10.5
+- layout: section
+  minutes: 0.5
+  number: "10.5"
+  tag: "Core"
+  title: "Keep, rewrite or reject"
+  idea: "Every sentence earns its place, with a reason."
+  meta: "Book §10.5 · Decide, sentence by sentence"
+  notes:
+    say: |
+      Once a tool has produced a draft, what keeps the message yours is a decision about every sentence. This is
+      Chapter 1's Decide step, keep, change or reject, applied one sentence at a time; for writing, "change" means
+      rewrite. It is the skill you practice in the lab, and it is the center of A7. Every sentence earns its place, and
+      every decision gets a reason. Think back to Peabody: one sentence said "shootings" when there had been one. Whoever
+      introduced that word, a single careful read of each sentence, by the writer or by the reviewers who were skipped,
+      could have caught it.
+    background: |
+      Section 10.5 is Core. It reuses Chapter 8's Verification Funnel for facts in a draft (@fig-10-8) and introduces
+      the annotated draft and the revision trace. Decide is the chapter map's second highlight.
+    activity: "Transition slide."
+    book: "§10.5 Keep, Rewrite or Reject."
+
+- layout: lanes
+  minutes: 2.5
+  kicker: "§10.5 · one decision per sentence (book figure @fig-10-7, redrawn)"
+  title: "Four questions per sentence: K, R or X"
+  rows:
+    - label: "True?"
+      nodes:
+        - {label: "Facts through the funnel", kind: step}
+        - {label: "If no: reject or fix", kind: human, role: risk}
+        - {label: "Tag: accuracy", kind: step}
+    - label: "Says what I mean?"
+      nodes:
+        - {label: "In my voice?", kind: step}
+        - {label: "If no: rewrite", kind: human, role: neutral}
+        - {label: "Tag: voice", kind: step}
+    - label: "Right for this reader?"
+      nodes:
+        - {label: "Tone and audience", kind: step}
+        - {label: "If no: rewrite", kind: human, role: neutral}
+        - {label: "Tag: audience and tone", kind: step}
+    - label: "Can I stand behind it?"
+      nodes:
+        - {label: "Safe to share?", kind: step}
+        - {label: "If no: reject", kind: human, role: risk}
+        - {label: "Tags: commitment, privacy", kind: step}
+  caption: "Yes to all four: keep (K). Record the code and the tag in the annotated draft."
+  notes:
+    say: |
+      Three codes. Keep: it is true, says what you mean, fits the reader, and you can stand behind it. Rewrite: the idea
+      is right, but the words, tone or strength are wrong. Reject: it is untrue, not yours, promises what you cannot
+      deliver, or should not reach this reader. Every decision gets a reason tag: voice, accuracy, audience and tone,
+      commitment, meaning a claim or promise made in your name, or privacy. The tag tells you what to fix. Facts in a
+      draft, names, dates, numbers, policies and quotations, are claims in Chapter 8's sense: take them through the
+      Verification Funnel to a verdict. An AI tool's own "yes" is never a source. Two records make this visible: the
+      annotated draft, every sentence coded and tagged, and the revision trace, from your notes to the tool's draft to
+      your final version.
+    background: |
+      The figure's flow for one sentence: true? (facts through the funnel) → says what I mean, in my voice? → right
+      for this reader? → can I stand behind it, safe to share? A "no" leads to reject or fix (accuracy), rewrite (voice),
+      rewrite (audience and tone), reject (commitment, privacy); four yeses lead to keep. Verdict scale (Chapter 8):
+      supported, partly supported, unsupported, contradicted, cannot verify. In A7 students check the three highest-stakes
+      claims. The Opening Case link: one read of each sentence, by the writer or the skipped reviewers, could have caught
+      "shootings" for one shooting, whoever introduced it.
+    misconceptions:
+      - m: "M3 'A more polished, professional-sounding draft is a better draft.'"
+        fix: "Polish is not one of the tests; truth, meaning, reader fit and standing behind it are."
+    activity: "Students copy the five tags onto the back of their hand-out or a card; they need them in the lab."
+    book: "§10.5, @fig-10-7, @fig-10-8; Check Yourself 10.5."
+
+# About 60 words: three code cards with real sentences are the point of this slide (deliberate exception).
+- layout: compare
+  minutes: 3
+  kicker: "§10.5 · worked example · Elif’s cover letter · constructed"
+  title: "Elif’s cover letter, sentence by sentence"
+  size: 22
+  header_height: 0.9
+  columns:
+    - heading: "K · keep"
+      role: verified
+      bullets: ["“I volunteer at the peer-tutoring center.” *accuracy*: true", "“[PHONE] · [EMAIL]” *privacy*: placeholders"]
+    - heading: "R · rewrite"
+      role: neutral
+      bullets: ["“Passionate about unlocking the mysteries…” *voice*: stock phrase", "“Your lab’s eye-tracking studies…” *accuracy*: contradicted"]
+    - heading: "X · reject"
+      role: risk
+      bullets: ["“A fluent SPSS user…” *commitment*: used it once", "“I have published research…” *accuracy*: not true"]
+  takeaway: "“I kept almost everything” is valid, if each keep has a reason"
+  notes:
+    say: |
+      Here is the method on a real-looking draft. Elif applies for a research-assistant position in a memory lab in her
+      department. Her notes came first; the tool drafted. Keep: "I volunteer at the campus peer-tutoring center," true;
+      and the contact line, which uses placeholders she fills in herself. Rewrite: "I am passionate about unlocking the
+      mysteries of the human mind" is a stock phrase; hers is about tutoring students who could explain a concept on
+      Monday and not on Friday. "Your lab's eye-tracking studies have inspired me" fails on accuracy: the lab's own page,
+      the primary source, lists sleep and memory-test studies, no eye tracking, so the verdict is contradicted. Reject:
+      "a fluent SPSS user" is a commitment she cannot keep, she has used it once; and "I have published research on
+      memory" is simply not true.
+    background: |
+      Worked Example "Elif's Cover Letter" (§10.5): seven sentences in the book, all shown here except sentence 1 ("I am
+      writing to apply for the research assistant position," K, audience: clear and standard). The lab is constructed.
+      Conflict between book files: the blueprint's example plan says "ten sentences coded"; the chapter has seven; follow
+      the chapter. Faded example key (Appendix E, refund reply): (2) R accuracy, the policy page gives 5–10 business
+      days; (3) X commitment; (4) X accuracy and commitment, no credit was approved; (5) K privacy.
+    questions:
+      - q: "Why is the eye-tracking sentence R and not X?"
+        a: "The idea, showing she knows the lab's work, is right; the fact is wrong. She rewrites it with what the lab's page actually lists."
+    activity: "Ask: 'Which of the X sentences would have hurt her most in an interview?' (SPSS: it would be tested on day one.)"
+    book: "§10.5 Worked Example 'Elif's Cover Letter'; Faded Example 'A Refund Reply'."
+
+# ----------------------------------------------------------------------- 10.6
+- layout: section
+  minutes: 0.5
+  number: "10.6"
+  tag: "Core"
+  title: "Second-language writers, polish and detectors"
+  idea: "A detector score is a reason to look at the evidence, never the evidence itself."
+  meta: "Book §10.6 · Liang et al. (2023)"
+  notes:
+    say: |
+      Elif worried about two things: that using AI for her English is cheating, and that her voice would disappear. The
+      spectrum answers the first: grammar help and an instructor-approved translation of her own text sit at positions
+      two and three, where the ideas and examples are hers. The second deserves evidence: a researcher of second-language
+      writing argued that multilingual writers' difficulty with voice in English comes from unfamiliarity with how voice
+      is built in English, not from a lack of voice. Protect the examples and hedges that carry it. And there is a third
+      worry many multilingual students share: that an AI-text detector will flag their honest work. This section takes it
+      on.
+    background: |
+      Section 10.6 is Core. Matsuda (2001), writing about Japanese students writing in English, argued that their
+      difficulty with voice came from unfamiliarity with how voice is built in English, not a lack of voice. Wording
+      rule (blueprint): "multilingual" or "second-language writers"; "non-native" only when reporting the study.
+    activity: "Transition slide."
+    book: "§10.6 Second-Language Writers, Polish and Detectors."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Predict first · §10.6"
+  title_prefix: "Predict"
+  title: "detectors and second-language writers"
+  question: "Seven AI-text detectors read human-written essays. Will they flag essays by non-native English writers more often, less often, or about as often as essays by U.S. eighth graders?"
+  options:
+    - "More often"
+    - "Less often"
+    - "About as often"
+  answer: a
+  instruction: "Commit to a prediction before you see the result"
+  explanation: "TOEFL essays: average false-positive rate 61.3%; eighth graders’ essays: near-perfect accuracy"
+  notes:
+    say: |
+      Predict first. Some instructors and employers use AI-text detectors: tools that give a score for how likely a
+      text is to have been generated by AI. A false positive is a human-written text labeled AI-generated. In a 2023
+      study, researchers ran seven widely used detectors on two sets of essays, all written by people: one set by
+      non-native English writers, written for an English-language test, and one set by U.S. eighth graders. Will the
+      detectors flag the first set more often, less often, or about as often? Commit to an answer and write it down.
+    background: |
+      The prediction prompt is the chapter's (§10.6 "Prediction"). Liang, Yuksekgonul, Mao, Wu and Zou (2023),
+      Patterns 4(7): 91 TOEFL (Test of English as a Foreign Language) essays from a Chinese online forum, 88 essays by
+      U.S. eighth graders; seven detectors as of early 2023. Liang et al. is also cited in Chapter 2 (§2.5).
+    activity: "15 s silent prediction, then hands for each option."
+    book: "§10.6 Prediction."
+  answer_notes:
+    say: |
+      The answer is "more often," and by a wide margin. The detectors classified the eighth graders' essays with
+      near-perfect accuracy. On the TOEFL essays, the average false-positive rate was 61.3%: 97.8% of the essays were
+      flagged by at least one detector, and 19.8% by all seven. Every essay was written by a person. Why? The study's
+      explanation: many detectors score how predictable a text's words are, and writing with a smaller range of
+      vocabulary and more common sentence patterns looks predictable, just like generated text. Ask: if you were a
+      second-language writer and your instructor ran one of these tools, what would you want them to know?
+    background: |
+      Numbers from §10.6 (Liang et al., 2023). The perplexity explanation is in Deep 10.A (optional). Blueprint risk
+      check: state "97.8% of the essays flagged by at least one detector" exactly (not "97.8% false-positive rate").
+    activity: "Reveal; ask how many predicted correctly."
+    book: "§10.6; Deep 10.A (perplexity)."
+
+- layout: figure
+  minutes: 2
+  kicker: "§10.6 · Liang et al. (2023) (@fig-10-10)"
+  title: "89 of 91 human essays flagged by at least one detector"
+  figure: f10-10-liang-essays
+  takeaway: "One test, early-2023 detectors, one essay source: a score alone is weak evidence"
+  notes:
+    say: |
+      Here is the result as 91 squares, one per essay. Eighteen were flagged by all seven detectors, seventy-one by one
+      to six, two by none. Now the limits, because they matter as much as the result. This is one test, seven detectors
+      as of early 2023, with essays from one source. A 2024 study that built its own detectors for one exam's essays
+      reported no bias against non-native writers in its data, and as of 2026 independent tests have found some commercial
+      detectors with near-zero false-positive rates on their test sets while others still fail. OpenAI withdrew its own
+      early classifier in July 2023, citing its low accuracy. Accuracy varies by tool, kind of text and time, so a single
+      score cannot tell you how likely it is to be wrong about this writer and this text.
+    background: |
+      Counts derived from the paper's 97.8% and 19.8% (figure source line). Later evidence: Jiang, Hao, Fauss & Li
+      (2024), Computers & Education; Jabarian & Imas (2025), NBER Working Paper 34223 (an audit with a framework for a
+      maximum acceptable false-positive rate). OpenAI (2023), classifier withdrawn July 20, 2023. Dated claims: "as of
+      2026." The chapter also says rewriting your work with AI to lower a score proves nothing: the score tracks
+      predictability, and the rewrite replaces your wording with the tool's. Do not present the study's rewrite results
+      as advice (they sit in Deep 10.A with the refutation beside them).
+    questions:
+      - q: "So are detectors useless?"
+        a: "Not 'random' either: accuracy varies by tool, text and time, and some recent tools do much better on their test sets. The point is narrower: one score cannot show its own error rate for this writer and this text, so it is a reason to look at the evidence, not the evidence (§10.6)."
+    misconceptions:
+      - m: "M4 'A detector can tell whether I wrote something.'"
+        fix: "Use the 91 squares; then guard against the overcorrection 'detectors are random' (Review A9 option d)."
+    activity: "Point to the two white squares: only 2 of 91 human essays were cleared by all seven detectors."
+    book: "§10.6, @fig-10-10; Check Yourself 10.6 item 2."
+
+- layout: compare
+  minutes: 2.5
+  kicker: "§10.6 · score versus process (book figure redrawn)"
+  title: "Process evidence is stronger than a score"
+  size: 24
+  columns:
+    - heading: "A detector score"
+      role: risk
+      bullets: ["A number about the text", "Tracks how predictable the words are", "Cannot show who wrote it"]
+    - heading: "Process evidence"
+      role: verified
+      bullets: ["Dated notes and drafts", "Version history, revision trace", "Declaration; explaining your choices"]
+  takeaway: "Keep it for every important piece of writing: the honest record of your work"
+  notes:
+    say: |
+      So what is stronger than a score? Process evidence: the record of how you wrote. Your notes, earlier drafts,
+      your document's version history, your revision trace, your declaration, and your ability to explain your choices.
+      Keep it for every important piece of writing, not as a defense but as the honest record of your work. Elif shows
+      the habit. For her psychology essay on sleep and memory, she sets up four habits on day one: dated Turkish notes,
+      version history turned on, two lines of revision trace per session, and a declaration that lists the translation
+      and the grammar check. Nothing has happened, and nothing needs to; it is simply how she works, and it shows her
+      progress. If an unexpected score ever comes, the record is already there.
+    background: |
+      Rebuilds @fig-10-11 natively (labels at slide size). Worked Example "Elif's Habit" (§10.6): a habit before any
+      suspicion (blueprint V18); the high-score scene belongs to an unnamed student (faded example). Faded-example key
+      (Appendix E): Step 2 bring the process evidence; Step 3 offer to explain your choices or write a passage in front
+      of the instructor; Step 4 ask that any decision rest on that evidence and your course's or institution's policy, not the score alone.
+      The A7 reflection names the process evidence the student kept (this section's Your Turn).
+    questions:
+      - q: "What should I do if my essay gets a high 'AI' score?"
+        a: "Ask which tool produced it and what your course's policy says; bring your process evidence; offer to explain your choices; ask that the decision rest on that evidence, not on the score alone (§10.6 faded example; Appendix E)."
+    misconceptions:
+      - m: "M4 '…and if I rewrite it with AI the score goes down, so that proves it is mine.'"
+        fix: "A lower score after an AI rewrite proves nothing about authorship; it moves the text toward position 5 and replaces your voice."
+    activity: "Ask: 'Which of these four habits do you already have?' Hands up per habit."
+    book: "§10.6, @fig-10-11; Worked Example 'Elif's Habit'; Faded Example 'An Unexpected Score'."
+
+# ----------------------------------------------------------------------- 10.7
+- layout: section
+  minutes: 0.5
+  number: "10.7"
+  tag: "Core"
+  title: "Disclosure at work, and who answers for the message"
+  idea: "Disclose when a rule, the reader or fairness asks for it; the sender answers either way."
+  meta: "Book §10.7 · *Moffatt v. Air Canada*, paras. 27–29"
+  notes:
+    say: |
+      Last section of the concept session, and the one the chapter map highlights: Disclose. In a course that uses this
+      book, the AI Use Declaration is the rule. At work, there is often no single form. So you need a way to decide whether to tell
+      readers how AI was involved, and you need to know what disclosure does and does not do. The idea on the slide has
+      two halves; we take them one at a time. First, when to disclose: three questions. Second, what disclosure cannot
+      do: here the airline chatbot case, Moffatt v. Air Canada, does the work. By the end you should be able to finish the
+      opening puzzle in one sentence.
+    background: |
+      Section 10.7 is Core. Disclosure (of AI use) = telling the people who rely on a message how AI was involved in
+      making it, in a form and place they will see. Chapter 9 owns reference-list citation of AI output; Chapter 10
+      owns disclosure in prose and at work. Laws on AI labels: Chapter 18.
+    activity: "Transition slide."
+    book: "§10.7 Disclosure at Work, and Who Answers for the Message."
+
+- layout: concept
+  minutes: 2.5
+  kicker: "§10.7 · the disclosure decision (book figure @fig-10-12, redrawn)"
+  title: "Three questions decide disclosure"
+  size: 24
+  bullets:
+    - "Any yes: disclose where readers will see it"
+    - "Forms: a line, a note to your manager, a log, the declaration"
+    - "All no: no line needed; keep your record"
+  flow:
+    - {label: "A rule requires it?", kind: human}
+    - {label: "Readers expect your words?", kind: human}
+    - {label: "Misled later?", kind: human}
+    - {label: "Any yes: disclose", kind: human, role: verified}
+  notes:
+    say: |
+      Three questions. One: does a rule require it? Your course, your employer, a client's contract or your profession
+      may. For example, the Associated Press's 2023 standards say its staff may experiment with generative AI but do not
+      use it to create publishable content, and they stay accountable for accuracy. Two: do these readers expect your
+      own words? That is section 10.1. Three: would a reasonable reader feel misled on learning about it later? If any
+      answer is yes, disclose, in a form they will see: a line at the end of the message, a note to your manager, a
+      project-log entry, a course's AI Use Declaration, or a citation when you quote AI output, as Chapter 9 shows. If all three
+      are no, no line is needed, and you keep your record.
+    background: |
+      Barrett (2023), Associated Press, "Standards around generative AI" (August 16, 2023). Worked example (§10.7):
+      meeting summary drafted from notes, team policy asks for a note ("Draft summary produced with an AI tool from the
+      meeting notes; checked by [name]"); customer reply template disclosed to the manager, who approves it; reference
+      letter in own words, grammar check listed if asked. Faded example key (Appendix E): the grant paragraph must be
+      disclosed as the foundation's terms ask; check every number against the project records. A7's declaration includes
+      the student's own disclosure decision.
+    misconceptions:
+      - m: "M6 'Disclosure only costs trust, so keeping quiet is the smart move.'"
+        fix: "Point to question 1: rules often require it. The trust penalty is real (Ethics Lens: Schilke & Reimann, 2025), and the chapter's question is who should change that incentive, never advice to hide."
+    activity: "Run the three questions on the Peabody email together: question 2 is a clear yes; disclosure was required, and also not enough."
+    book: "§10.7, @fig-10-12, Worked and Faded Examples 'Three Messages at Work', 'Two More'; Ethics Lens."
+
+# About 58 words: two refutations and the book's marked inference side by side (deliberate exception).
+- layout: compare
+  minutes: 2.5
+  kicker: "§10.7 · what disclosure does not do · Moffatt (2024)"
+  title: "A label does not move responsibility"
+  size: 22
+  columns:
+    - heading: "Not a fix for delegation"
+      role: neutral
+      text: "Peabody disclosed and still skipped its review."
+    - heading: "Not a transfer of the job"
+      role: neutral
+      text: "*Moffatt* (2024): the airline answers for all its website’s information."
+    - heading: "This book’s reading (inferred)"
+      role: soft
+      dashed: true
+      text: "A label says how it was made; it does not make readers the checkers."
+  takeaway: "An email drafted with AI and sent under your name is your email"
+  notes:
+    say: |
+      What disclosure does not do. First, it does not make a delegation acceptable: the Peabody message disclosed its AI
+      help and still missed the review it needed. Second, it does not move responsibility. That is the suggested reading. A
+      tribunal heard an airline argue that it could not be held liable for information given by its website chatbot. The
+      tribunal answered that the airline is responsible for all the information on its website, whether from a static
+      page or a chatbot. The airline did not explain why customers should have to double-check one part of its website
+      against another, and the tribunal saw no reason a customer should know that one section was accurate and another
+      not. The decision does not mention any AI label. The book's reading, marked inferred: a label would not have changed
+      the answer.
+    background: |
+      Moffatt v. Air Canada, 2024 BCCRT 149 (Civil Resolution Tribunal of British Columbia, February 14, 2024): para. 27
+      (responsible for all information on its website), paras. 16–17 (the chatbot's answer linked to the page with the
+      correct policy), para. 28 (no explanation why customers should double-check), para. 29 (no reason a customer
+      should know which section is accurate). A tribunal is a body that decides small disputes. Chapter 4 owns the case's
+      facts and label (D-4.4); this chapter uses it once. The extension to labels is the book's inferred reading, shown
+      dashed. Laws on AI labels: Chapter 18.
+    misconceptions:
+      - m: "M5 'A label on a message moves the job of checking it onto its readers.'"
+        fix: "Use paras. 28–29: customers were not expected to check one part of the website against another; then state the book's inference as an inference."
+    activity: "Ask: 'Who answers for a reply drafted by a tool and sent by a support agent?' (The company, and the agent who sent it.)"
+    book: "§10.7 (Moffatt, paras. 27–29); reading guide; Chapter 4."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §10.7 · Moffatt"
+  title: "a label under the chatbot"
+  question: "A company adds “This reply was generated by AI” under its website chatbot’s answers. What follows, in this chapter’s reading?"
+  options:
+    - "Customers now carry the job of checking every answer against the policy pages."
+    - "The company still answers for its chatbot; the label only tells readers how answers are made."
+    - "A wrong answer becomes acceptable, because the company was honest about the tool."
+    - "The chatbot’s vendor, not the company, becomes responsible for wrong answers."
+  answer: b
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) is M5; (c) is M1; (d) is Chapter 4’s M6"
+  notes:
+    say: |
+      Concept check with the Moffatt reading. Read the four options; each one is a different way of moving responsibility
+      somewhere else. One moves it to customers, one dissolves it through honesty, one moves it to the vendor. Which
+      option keeps it where the tribunal put it? Thirty seconds, then vote. If students hesitate, remind them that the
+      phrase "in this chapter's reading" matters: the tribunal said nothing about labels, so this is an inference from
+      paragraphs 27 to 29. This is also the format of the book's terms-and-concepts items: four plausible options, one that fits the
+      chapter, and distractors built from common misconceptions.
+    background: |
+      Item: Review Questions A11 (O5 · LO4 · Evaluate), options shortened. Key from Appendix E: (b). The company still
+      answers for its chatbot's answers; a label tells readers how answers are made, not who checks them (the book's
+      inferred reading of Moffatt, paras. 27–29). (a) is M5; (c) is M1; (d) is Chapter 4's M6.
+    activity: "30 s individual, then vote."
+    book: "§10.7; Review Questions A11; Appendix E; Moffatt v. Air Canada."
+  answer_notes:
+    say: |
+      The answer is (b). The company still answers for what its chatbot says; the label only tells readers how the
+      answers are made. Option (a) is the misconception this section names: a label does not hand customers the job of
+      checking. Option (c) confuses honesty with correctness; Peabody was honest too. Option (d) is a Chapter 4
+      misconception: buying a tool from a vendor does not move responsibility to the vendor. Here is the sentence to
+      keep: an email drafted with AI and sent under your name is your email. Which brings us back to the puzzle, and to
+      the lab's job: making sure every sentence deserves to go out under your name.
+    background: |
+      Appendix E key for A11. Case Study callback (optional to mention): after an outside reader reported fabricated
+      references in a report Deloitte prepared for Australia's Department of Employment and Workplace Relations, the
+      corrected version disclosed that a generative AI tool chain had been used (confirmed: DEWR, 2026; reported:
+      McGuirk, 2025). The chapter's answer to Chapter 9's question: arriving after the errors, the disclosure repaired
+      nothing that checking each reference would have caught.
+    activity: "Reveal; connect to the opening puzzle."
+    book: "§10.7; Appendix E (Review A11); Case Study 'Callback: was Deloitte's disclosure enough?'."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "Before the lab · about 15 minutes"
+  title: "Bring a real document and your own first draft"
+  size: 24
+  bullets:
+    - "Choose your A7 document: real, 150–300 words"
+    - "Fill in the context card: reader, purpose, stakes, target position"
+    - "Write **v0** before any AI: 80+ words or 6 bullets, dated"
+    - "Any language; placeholders for every personal detail"
+  takeaway: "Your points come first: no v0, no studio"
+  notes:
+    say: |
+      Before the lab, about fifteen minutes, longer if you write in a second language. Choose your A7 document: a real
+      professional document of 150 to 300 words that you will or could send. An email to a professor or an employer, a
+      cover letter, a short memo, a profile summary, a club announcement. Fill in the context card: who reads it, what it
+      is for, what is at stake, whether the reader expects your own words, and the spectrum position you are aiming for,
+      with a reason. Then write v0, your own notes or first draft, before you touch any AI: at least 80 words or six bullet
+      points, in any language, with the date. And finish the chapter: about 33 minutes for the Core sections, plus the
+      two short readings.
+    background: |
+      Lab 10.1 pre-lab ("about 15 minutes; longer if you write in a second language"). A7 items 1–2
+      (chapter, Application Assignment). Chapter time paragraph: Core sections about 33 minutes; whole Core package
+      about 60 minutes; readings about 8 minutes; A7 about 50 minutes at home after the lab. Students who prefer not
+      to use AI also write v0; in the lab they use the provided
+      dated draft or a person's suggested edits as v1.
+    questions:
+      - q: "Can my document be in Turkish or Spanish?"
+        a: "Yes, v0 may be in any language, and v2 is in the language its reader needs; if that is not English, add an English gloss you write yourself (§10.8; A7 privacy and languages note)."
+    activity: "Leave this slide up as students pack."
+    book: "§10.8; Lab 10.1 pre-lab; Application Assignment A7, items 1–2; chapter time paragraph."
+
+# ======================================================================= SESSION 2 (LAB)
+- layout: section
+  session: s2
+  minutes: 0
+  number: "Lab"
+  tag: "Lab"
+  title: "Writing Studio: your document, sentence by sentence"
+  idea: "Draft from your own points, then make every sentence earn its place."
+  meta: "Book §10.8 · Lab 10.1 · A7"
+  notes:
+    say: |
+      Welcome to the Writing Studio. Today has one goal: you turn your own first draft into a document you can stand
+      behind, sentence by sentence, and you leave with most of the in-class parts of A7 done. You work individually on
+      your own document, and you sit with a team of three or four for the warm-up and the share at the end. Take out your
+      context card and your v0. If you did not write v0, take the warm-up minutes to write it now, before you touch any
+      tool: at least six bullet points.
+    background: |
+      Lab 10.1 (Studio, 75 minutes): briefing 10 · practice 45 · share 15 · exit 5. Section 10.8 is Studio. A7 is due
+      when your instructor sets it, on your course site. Materials: the A7 sheet (@fig-10-9), the
+      reason-tag card, provided dated AI drafts for each document type (no-AI route), the sample draft for students who
+      opt out of the pair read; all in print and screen-reader versions (instructor package).
+    activity: "Teams of 3–4 form while this slide is up; students without v0 start writing it."
+    book: "§10.8 The Writing Studio (Lab 10.1 and A7); Lab 10.1."
+
+- layout: quiz
+  minutes: 2
+  kicker: "Lab session · warm-up from memory"
+  title_prefix: "Warm-up"
+  title: "where the reader goes"
+  question: "In a writing prompt, which part holds the reader and your own points?"
+  options:
+    - "Role, because it says who the message is for and in what voice."
+    - "Output format, because it sets the shape the reader receives."
+    - "Constraints, because it lists what the message must and must not say."
+    - "Context, because it holds the background, the reader and the points this task needs."
+  answer: d
+  instruction: "No notes: answer, then check with your team"
+  explanation: "Role sets the voice the output takes on; the reader and your points go in the context"
+  notes:
+    say: |
+      Warm-up, from memory, no notes. This is the question you need for the first step of today's lab, when you write
+      your prompt from v0. Answer alone, then check with your team. Watch for option (a): it is tempting, because a role
+      sounds like it is about people. Retrieval like this, two days after first meeting an idea, is one of the most
+      effective ways to make it stick, which is why every lab starts this way. If anyone gets stuck, give a hint: think of
+      Elif's prompt in the concept session, and where she put "the coordinator, friendly but busy" and her five points.
+    background: |
+      Item: Review Questions A5 (O2 · LO2 · Understand). Key from Appendix E: (d). Context holds the reader, the situation
+      and your own points; role sets the voice the output takes on (Chapter 5). (a) is the role/context confusion; (b) and
+      (c) are other parts.
+    activity: "1 min alone, 1 min team check, then the answer slide."
+    book: "§10.3; Review Questions A5; Appendix E."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      The answer is (d), context. Context holds the background, the reader, your relationship, the situation and your
+      own points from v0. Role sets the voice and perspective the output takes on, such as "a peer tutor"; it shapes tone
+      and vocabulary, not accuracy, and it does not say who reads the message. So when you write your prompt in a few
+      minutes, your v0 goes into the context, labeled as your points, and you name the reader and the tone there too.
+      Constraints carry what must not be promised. Remember Elif's prompt from the demonstration: "promise nothing I did not list."
+    background: |
+      Appendix E key for A5. Lab 10.1 step 2: write a prompt from v0 with the parts of Chapter 5's anatomy labeled (role,
+      task, context with the reader and your own points, constraints, output format); produce v1 and at least one
+      iteration; record tool, model if shown, and date.
+    activity: "Reveal; ask one team to read out their prompt's context line once they have written it."
+    book: "§10.3; Appendix E (Review A5); Lab 10.1 step 2."
+
+- layout: lab
+  minutes: 4
+  kicker: "Lab 10.1 · individual documents · teams for sharing"
+  title: "Writing Studio"
+  goal: "Turn v0 into a draft you can stand behind, sentence by sentence"
+  steps:
+    - {text: "**Frame and draft:** labeled prompt from v0; v1 and one iteration", min: 15}
+    - {text: "**Annotate:** K, R or X with a tag for every sentence; list the claims", min: 20}
+    - {text: "**Pair read (opt-in):** a partner marks two places", min: 10}
+    - {text: "**Share:** one sentence back in your voice; one disclosure decision", min: 15}
+    - {text: "**Exit:** one sentence you rejected, and its tag", min: 5}
+  side:
+    - {heading: "Deliverable", text: "A7 items 1–4 started; the rest at home (about 50 min)"}
+    - {heading: "Privacy", role: risk, text: "Placeholders for every personal detail, yours too. No detector use."}
+    - {heading: "No AI, or prefer not?", text: "Provided dated draft, or a person’s suggested edits, as v1"}
+  notes:
+    say: |
+      Here is the lab. Step one, fifteen minutes: from v0, write a prompt with its parts labeled, role, task, context
+      with the reader and your own points, constraints, output format. Produce v1 and at least one iteration, a second
+      tone or a tighter constraint, and record the tool, the model if shown, and the date. Step two, twenty minutes:
+      annotate v1. Every sentence gets K, R or X, a tag, and a few words of why. List the factual claims and mark the three
+      with the highest stakes. If you write in a second language, compare each v1 sentence with your v0 note: is this what
+      I meant? Step three, optional: a partner reads v0 and v1 without your codes and marks two places where v1 doesn't
+      sound like you or promises something. Then we share.
+    background: |
+      From labs/ch10-lab1.md. Expected observations: tool drafts of short professional documents often add stock
+      phrases ("passionate", "I am writing to inform you"), stronger commitments than the writer made, and generic
+      replacements for specific examples; facts the writer supplied usually survive, but invented specifics (a lab's
+      method, a date) appear in some drafts. Many students keep most sentences after small rewrites; "kept almost
+      everything, with reasons" and "rejected most of v1" are both valid. If a student used the tool only as a reader, they
+      code each of its comments instead. No-device route: printed provided drafts. Codes are letters, never colors.
+    questions:
+      - q: "My v1 is in English but my v0 is in Turkish. How do I annotate?"
+        a: "Code each English sentence, and for each ask 'is this what I meant?' against your own Turkish note; the voice and accuracy tags catch most problems (Lab 10.1 step 3)."
+      - q: "Can I run my draft through a detector to check it?"
+        a: "No lab uses an AI detector (privacy; scores are not evidence; blueprint V14)."
+    misconceptions:
+      - m: "M2 'Asking AI to fix my grammar or polish my English does not change what I say.'"
+        fix: "Ask students who used a 'polish' prompt to count the changes they did not choose."
+    activity: "4 min briefing; then the work-time slide stays up for 45 min (steps 1–3). Pair read is opt-in; offer the sample draft."
+    book: "§10.8; Lab 10.1; labs/ch10-lab1.md."
+
+- layout: assignment
+  minutes: 3
+  kicker: "Assignment A7 · O6 · LO2, LO4"
+  title: "A7: annotated draft and revision trace"
+  due: "When your instructor sets it · individual · co-drafting allowed"
+  parts:
+    - "Context card and v0 (before AI, dated)"
+    - "Labeled prompts with one iteration; v1 annotated K/R/X with tags"
+    - "Fact check: the three highest-stakes claims"
+    - "v2 and a trace of 3+ changes; reflection (100–150 words)"
+    - "AI Use Declaration with your disclosure decision"
+  rubric_title: "Rubric · 10 points"
+  rubric:
+    - {criterion: "Task", points: 3, full: "Real 150–300-word document; card; dated v0; v2 fits"}
+    - {criterion: "Annotated draft", points: 1.5, full: "Every sentence coded and tagged"}
+    - {criterion: "Prompts and trace", points: 1.5, full: "Labeled, dated, one iteration; 3+ changes"}
+    - {criterion: "Verification", points: 2, full: "Three claims to verdicts, source opened"}
+    - {criterion: "Declaration and judgment", points: 2, full: "Five elements; three questions; reflection"}
+  note: "“Only as a reader” and “rejected most of v1” can both earn full marks."
+  notes:
+    say: |
+      Here is A7, due when your instructor sets it. You started it today. Eight parts in the book, grouped here: the context card
+      and v0; your prompts, labeled, with at least one iteration, and v1 annotated sentence by sentence; a fact check of the
+      three highest-stakes claims, each taken through the Verification Funnel to a verdict, with the source you opened;
+      v2, your final document, and a revision trace of at least three changes, from v0 to v1 to v2; a short reflection,
+      100 to 150 words or a two-minute audio recording; and your AI Use Declaration, with your disclosure decision inside
+      it. Two things to stress. In this assignment your instructor explicitly allows co-drafting. And the record is
+      evidence of your judgment, not a count of AI use.
+    background: |
+      Full four-level rubric in the chapter (Application Assignment A7); levels count shortfalls from Exemplary
+      (Proficient one, Developing two or one required part missing, Beginning three or more or two parts missing). Points:
+      Task 3, Annotated draft 1.5, Prompts and revision trace 1.5, Verification 2, Declaration and judgment 2 (the
+      book's artifact split 3/3/2/2 with process evidence divided into annotation and trace). Reflection covers: where your
+      voice is in v2, one change you rejected and why, one part you would not delegate, what process evidence you kept.
+      Disclosure decision: answer the three questions for this reader and write the line you would use, or say why none is
+      needed. Alternative assignment: v1 is the provided dated AI draft (adapted) or a person's suggested edits on v0, with
+      consent; same rubric.
+    questions:
+      - q: "What if v1 has fewer than three factual claims?"
+        a: "Check all of them and say so (A7 item 5)."
+      - q: "I used the tool only to comment on my draft. Is that enough?"
+        a: "Yes. That is the reader-only route: v1 is the tool's list of comments, coded K, R or X, and the trace runs v0 → comment → v2. It can earn full marks."
+    activity: "Point to the Verification row: 'the source you opened' is what earns the 2 points."
+    book: "§10.8; Application Assignment A7 (rubric, alternative assignment)."
+
+# About 70 words: this slide stays up during 45 minutes of studio work as a reference card (deliberate exception).
+- layout: compare
+  minutes: 45
+  kicker: "§10.8 · on screen during studio work (book figure @fig-10-9, redrawn)"
+  title: "Your record makes your judgment visible"
+  size: 22
+  columns:
+    - heading: "Annotation row"
+      role: neutral
+      text: "Sentence · K/R/X · tag · why. Elif: “A fluent SPSS user…” · **X** · *commitment* · “used it once”"
+    - heading: "Trace row"
+      role: neutral
+      text: "v0 “used SPSS in stats lab” → v1 “fluent SPSS user” → v2 “have used SPSS in a statistics course”"
+    - heading: "Fact-check row"
+      role: soft
+      text: "Claim · source you opened · verdict on Chapter 8’s scale"
+  takeaway: "15 min frame and draft · 20 min annotate · 10 min optional pair read"
+  notes:
+    say: |
+      This is the A7 sheet, and it stays on the screen while you work. Three kinds of rows. An annotation row: the
+      sentence, its code, its tag, and why. A trace row: v0, v1, v2, who or what proposed the change, and your reason. A
+      fact-check row: the claim, the source you opened, and the verdict. Here are two of Elif's rows. Annotation: sentence
+      four, "As a fluent SPSS user," reject, commitment, she used it once. Trace: in v0 she wrote "used SPSS in stats lab";
+      the tool's v1 said "fluent SPSS user"; her v2 says "I have used SPSS in a statistics course and am learning more."
+      Proposed by the tool, rejected by Elif, because it was not true. Your rows should be that specific.
+    background: |
+      @fig-10-9 (A7 sheet) and Worked Example "Two of Elif's Rows" (§10.8). Faded example key (Appendix E, partly filled
+      sheet): v2 "Our launch will be two weeks later than planned, on [DATE]." · proposed by the tool, rewritten by the
+      writer · reason: the tone hid bad news from the reader. Timing inside this slide: 15 min frame and draft, 20 min
+      annotate, 10 min optional pair read. Circulate during annotation; most help is needed with tags (students write K
+      without a reason) and with choosing the three highest-stakes claims.
+    questions:
+      - q: "Which claims are 'highest-stakes'?"
+        a: "The ones a reader will rely on and that would hurt someone if wrong: names, dates, numbers, policies, quotations (A7 item 5)."
+    misconceptions:
+      - m: "M3 'A more polished, professional-sounding draft is a better draft.'"
+        fix: "When a student keeps a sentence 'because it sounds good', ask which of the four tests it passed."
+    activity: |
+      15 min frame and draft; 20 min annotate; 10 min optional pair read (or the sample draft). Give a warning at minute
+      40. Collect two striking 'back into your voice' rewrites for the share.
+    book: "§10.8, @fig-10-9, Worked Example 'Two of Elif's Rows', Faded Example 'A Partly Filled Sheet'."
+
+- layout: tps
+  minutes: 15
+  kicker: "Share and critique · 15 min"
+  title: "Back in your voice, and your disclosure decision"
+  prompt:
+    - "Show one sentence rewritten back into your voice"
+    - "Show one disclosure decision: which question decided it?"
+    - "Which reason tag did you use most?"
+  phases:
+    - {name: "Think", min: 2, text: "Pick your sentence and decision"}
+    - {name: "Team", min: 5, text: "Choose the best one"}
+    - {name: "Share", min: 8, text: "Teams report; class critiques"}
+  notes:
+    say: |
+      Time to share and critique. On your own, pick one sentence you rewrote back into your own voice, before and after,
+      and one disclosure decision for your document's reader, with the question that decided it. Then, as a team, choose
+      the best example of each. In the last eight minutes each team shows the class its sentence and its decision, and we
+      critique the decision, not the person: is the rewrite really more specific and true? Would a reasonable reader of
+      this document feel misled later? Does a rule apply that the writer forgot? And which tag did you use most? It says
+      where the tool pulled your writing.
+    background: |
+      Lab 10.1 step 5 and debrief questions: which reason tag did you use most, and what does that say about where the
+      tool pulled your writing? Which claim was highest-stakes, and what verdict did it get? Would you disclose AI use to
+      this document's reader, and why? What to listen for: rewrites that restore a specific example or a hedge (strong);
+      disclosure decisions that rest only on "it would look bad" (push for the three questions).
+    misconceptions:
+      - m: "M6 'Disclosure only costs trust, so keeping quiet is the smart move.'"
+        fix: "If a team decides against disclosure, ask them to answer all three questions aloud; often a rule or the 'misled later' test applies."
+    activity: "Think 2 · team 5 · share 8. Call on teams with different document types."
+    book: "Lab 10.1 steps 5–6 and debrief; §10.7."
+
+- layout: objectives
+  minutes: 1.5
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Place** a use on the spectrum, for these readers"}
+    - {code: "O2", text: "**Write first**, then frame: reader, tone, limits"}
+    - {code: "O3", text: "**Judge** each sentence; facts through the funnel"}
+    - {code: "O4", text: "**Keep** process evidence; a score is weak evidence"}
+    - {code: "O5", text: "**Decide** disclosure with three questions"}
+    - {code: "O6", text: "**Record** it all in A7"}
+  takeaway: "A disclosure line does not change who answers for the message: the sender does"
+  notes:
+    say: |
+      Back to the chapter's question: can a message still be yours if an AI tool helped write it? Yes, when you decided
+      what it says, you can explain and stand behind every sentence, the help is the kind its readers would accept, and
+      you disclose where your course, employer or profession expects it. It stops being yours when the tool's output, not
+      your decision, sets what the message says, especially when readers expect your own words. And back to the opening
+      puzzle: the Peabody message failed because its readers expected the office's own words, it sat near the far end of
+      the spectrum, one wrong detail went out uncaught, and the usual review was skipped. The disclosure line was honest,
+      and not enough. Now check your warm-up answers and confidence ratings from the concept session.
+    background: |
+      Chapter Summary and @fig-10-18. Tiers in the return to the case: readers' expectations (inferred), position near
+      the far end (inferred), the wrong detail (reported), the skipped review (documented: the dean's statement). Warm-up
+      answers: (1) no, disclosure is necessary where expected and never sufficient on its own; (2) light edits often change
+      little, but studies of other suggestions found shifts in style and stance, so compare; (3) not reliably enough to
+      decide a case on its own. Case Study labels: chain link 2, "checked before use?", inappropriate delegation and
+      skipped review (documented); tree secondary: hallucination, a wrong detail with AI origin inferred (dashed).
+    activity: "Ask two students: 'Which warm-up answer changed, and how sure were you before?'"
+    book: "Chapter Summary, @fig-10-18; Warm-up revisit; Case Study 'Failure label'."
+
+- layout: key_terms
+  minutes: 1
+  title: "Key terms"
+  terms:
+    - "voice"
+    - "ownership (of a text)"
+    - "voice and ownership spectrum"
+    - "ghostwriter"
+    - "write first"
+    - "tone"
+    - "homogenization"
+    - "stock phrase"
+    - "annotated draft"
+    - "revision trace"
+    - "AI-text detector"
+    - "false positive"
+    - "process evidence"
+    - "disclosure (of AI use)"
+    - "perplexity (Deep)"
+    - "watermark (Deep)"
+    - "AI-mediated communication (Deep)"
+  note: "Definitions: Chapter 10 and the glossary. (Deep) terms are optional and not on exams."
+  notes:
+    say: |
+      These are the chapter's key terms, and they are fair game for the terms-and-concepts part of a midterm on
+      Chapters 1 to 10. Make sure you can define each in a sentence of your own. Pay attention to the pairs that are
+      easy to mix up: voice and tone; ownership and legal authorship; annotated draft and revision trace; a detector
+      score and process evidence. The three terms marked Deep come from optional sections on how detectors work and on
+      AI-mediated communication; they are not on the exam.
+    background: |
+      Key Terms list from the chapter (17 terms, three Deep). Definitions are in the chapter and docs/glossary.md;
+      "false positive" is new to the glossary (blueprint editor note). The book's exam items come in three parts
+      (terms and concepts, a case, interpretive questions); examinable scope is Core sections only (D20).
+    activity: "30-second pair self-test: each partner defines two terms from the pairs list."
+    book: "Chapter Summary, Key Terms; 'One-page review: the chapter's labels'; glossary."
+
+- layout: exit_ticket
+  minutes: 2.5
+  questions:
+    - "One sentence of v1 you rejected, and its tag"
+    - "Would you disclose AI use to your document’s reader? Which question decided it?"
+    - "Which Chapter 1–10 idea should we review before the midterm?"
+  instruction: "3 min · index card or your course site · ungraded"
+  notes:
+    say: |
+      Last few minutes: the exit ticket. On an index card or on your course site, ungraded. First, one sentence of your
+      v1 that you rejected, and its tag; that is Lab 10.1's exit step. Second, your disclosure decision for this
+      document's reader, and which of the three questions decided it. Third, tell me which idea from Chapters 1 to 10 you
+      most want reviewed before the midterm; I build the review session from these cards. Before you go: check the A7
+      due date and the review and midterm dates on your course site.
+    background: |
+      Question 1 is Lab 10.1 step 6. Question 2 checks O5 (good answer: names the reader and at least one of the three
+      questions; "no line needed" is valid if all three are no and the student keeps a record). Question 3 feeds the review
+      session before a midterm on Chapters 1–10 (D20).
+    activity: "3 min; collect cards at the door or close the online form at the end of the session."
+    book: "Lab 10.1 step 6; §10.7; Midterm Bridge."
+
+# ======================================================================= MIDTERM BRIDGE (review segment)
+- layout: section
+  session: rev
+  minutes: 0.5
+  number: "MB"
+  tag: "Core"
+  title: "Midterm Bridge: Chapters 1 to 7"
+  idea: "Retrieve first, then reread: answer without notes, then check."
+  meta: "Book: End-of-Chapter Package, Midterm Bridge"
+  notes:
+    say: |
+      This short segment is for a review session before the midterm, or for you to do on your own. In the book's plan,
+      the midterm covers the Core sections of Chapters 1 to 10. Chapters 8 and 9 were practiced in Chapter 10's Spaced Review
+      and Case Study, so the Bridge goes further back, to Chapters 1 to 7, where spacing pays most. The rule for the next
+      fifteen minutes is on the slide: answer without notes first, then check. If you miss one, each item tells you which
+      section to reread.
+    background: |
+      Midterm Bridge: last block of Chapter 10's End-of-Chapter Package (blueprint V9): eight items on the Core of
+      Chapters 1–5 and 7, each with "Missed it? Reread §x.y". Odd items (MB1, MB3, MB5, MB7) have keys in Appendix E; even
+      items (MB2, MB4, MB6, MB8) are reviewed by the instructor in the review session (keys in private/ch10-answers-even.md,
+      never on a slide). Compass offers the Bridge with feedback (instructor package). Chapter 6 is Deep and not examined.
+    activity: "Tell students to close notes and laptops for the segment."
+    book: "Chapter 10, End-of-Chapter Package, 'Midterm Bridge: Chapters 1 to 7'."
+
+- layout: loop
+  minutes: 3
+  kicker: "Midterm Bridge · the review map (book figure @fig-10-17, redrawn)"
+  title: "Chapters 1–10 on one loop"
+  size: 22
+  highlight: [Decide, Disclose]
+  step_notes:
+    Frame: "Ch. 1 · 4 (2nd) · 5 · 7"
+    Prompt: "Ch. 3 · 5 · 6 (Deep)"
+    Verify: "Ch. 2 · 3 (2nd) · 4 · 6 (Deep) · 7 · 8 · 9"
+    Decide: "Ch. 8 (2nd) · 10 (2nd)"
+    Disclose: "Ch. 9 (2nd) · 10"
+  takeaway: "Midterm scope: Core of Ch. 1–10 · Ch. 6 is Deep, not examined"
+  notes:
+    say: |
+      Here are Chapters 1 to 10 on one picture: the five steps of the AI Work Loop, and under each, the
+      chapters whose maps highlighted it. Frame: Chapter 1's Work Loop and Jagged Frontier, Chapter 5's Delegation Ladder,
+      Chapter 7's scaffold versus crutch. Prompt: Chapter 3's anatomy of a response and Chapter 5's anatomy of a prompt.
+      Verify, the busiest column: Chapter 2's data-to-prediction pipeline, Chapter 4's Failure Taxonomy Tree and chain,
+      Chapter 7's closed-book check, Chapter 8's Verification Funnel, Chapter 9's source ladder. Decide: keep, change or
+      reject, and this chapter's keep, rewrite or reject. Disclose: cite what you read, and this chapter's spectrum and disclosure
+      decision. Use the map as a study plan: for each column, can you draw its key diagram from memory? The chapter
+      describes the midterm in three parts: terms and concepts, a case, and interpretive questions. The two dark boxes
+      are this chapter's steps.
+    background: |
+      @fig-10-17 and the table in the Midterm Bridge (every main and second highlight; second highlights: Ch. 4 Frame, Ch.
+      3 Verify, Ch. 6 Verify (Deep), Ch. 8 Decide, Ch. 10 Decide, Ch. 9 Disclose). Scope per decision D20: the Core
+      sections of Chapters 1–10; say "Core sections." Format, weights and date are your course's own (D27: none on slides).
+    questions:
+      - q: "Is Chapter 6 on the midterm?"
+        a: "No. Chapter 6 is a Deep chapter and Deep sections are not examined (D20)."
+    activity: "Ask students to pick the column they feel weakest in and write its key diagram from memory (1 min)."
+    book: "Midterm Bridge, @fig-10-17 and its table."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Midterm Bridge · A · Chapter 1"
+  title_prefix: "Bridge MB1"
+  title: "assistance or outsourcing?"
+  question: "Which is assistance rather than outsourcing?"
+  options:
+    - "Pasting a tool’s correct homework answer in as your own work."
+    - "Submitting a reflection a tool wrote, after checking it for errors."
+    - "Copying a tool’s summary of a reading into your notes instead of reading it."
+    - "Asking for an explanation of depreciation, then writing the answer yourself."
+  answer: d
+  instruction: "No notes: answer, then check · missed it? reread §1.5"
+  explanation: "(a), (b) and (c) replace the thinking the work requires"
+  notes:
+    say: |
+      Bridge item one, from Chapter 1. Which of these is assistance rather than outsourcing? Answer without notes. The
+      test from Chapter 1 is what you can do afterward: could you explain, defend or redo the work without the tool? Give
+      thirty seconds, then vote. Notice that two of the wrong options involve a correct or carefully checked output. That
+      is deliberate: on the exam, as in Chapter 1's policy, correctness does not decide whether something was assistance. What
+      decides it is who did the thinking the work exists to build.
+    background: |
+      MB1 (Chapter 1 · LO4 · Understand), options shortened. Key from Appendix E: (d). Asking for an explanation and then
+      writing the answer yourself is assistance: the tool helps you do the thinking. (a), (b) and (c) replace the thinking
+      the work requires (Chapter 1, §1.5).
+    activity: "30 s individual, then vote."
+    book: "Midterm Bridge MB1; Chapter 1 §1.5; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (d): you asked for an explanation of depreciation, then wrote the answer yourself. The tool helped
+      you think; it did not think for you. The other three replace the thinking: pasting a correct answer as your own is
+      outsourcing even though it is correct; a reflection written by a tool is outsourcing even after you check it, because
+      the reflection exists to build your own reflection; and copying a summary instead of reading replaces the reading.
+      Notice that correctness never decides it. If you missed this one, reread section 1.5, especially "assistance versus
+      outsourcing" and the three zones.
+    background: |
+      Same distinction as Chapter 10's spectrum in coursework: position 4 or 5 on skill-building work is outsourcing
+      unless explicitly allowed (§10.2).
+    activity: "Reveal; one follow-up comment."
+    book: "Appendix E (MB1); Chapter 1 §1.5."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Midterm Bridge · A · Chapter 3"
+  title_prefix: "Bridge MB3"
+  title: "same prompt, two answers"
+  question: "Why can the same prompt give two different answers?"
+  options:
+    - "The model looks the answer up in a different database each time."
+    - "Each next token is sampled from the model’s scores, so two runs can pick different tokens."
+    - "The tool updates its settings from your last chat."
+    - "A different answer means the tool has an unfixed error."
+  answer: b
+  instruction: "No notes: answer, then check · missed it? reread §3.2"
+  explanation: "(a) is Chapter 1’s database idea; (c) confuses use with training; (d) is false"
+  notes:
+    say: |
+      Bridge item three, from Chapter 3. You met a version of this question in Chapter 1; now you have Chapter 3's precise
+      language. Answer without notes, then vote. Listen for students who say "it learns from my chat": that is a
+      misconception about training worth correcting before the exam. A good answer on the midterm uses Chapter 3's words,
+      tokens, scores and sampling, rather than Chapter 1's first approximation, "picks each piece with some chance." Both
+      are right; the second is the one a terms-and-concepts item rewards.
+    background: |
+      MB3 (Chapter 3 · LO1 · Understand), options shortened. Key from Appendix E: (b). The model scores every possible
+      next token and one is sampled, so two runs can pick different tokens. (a) is Chapter 1's "database" misconception;
+      (c) confuses inference with training; (d) is false (Chapter 3, §3.2).
+    activity: "30 s individual, then vote."
+    book: "Midterm Bridge MB3; Chapter 3 §3.2; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (b). At each step the model scores every possible next token, and one is sampled from those scores,
+      so two runs can pick different tokens and then continue differently. Option (a) is the oldest misconception in the
+      book: the model does not look anything up in a database. Option (c) mixes up using a model with training it:
+      your chat does not change the model's settings. And (d) is false: different answers are expected behavior, not a
+      bug. If you missed it, reread section 3.2. This also explains why Elif's three tones in the demonstration would come out
+      slightly different if we ran the prompt again.
+    background: |
+      Appendix E key for MB3. Chapter 1 §1.1 gives the first version of this idea ("picks each piece with some chance");
+      Chapter 3 §3.2 gives the token-level mechanism (scores, sampling).
+    activity: "Reveal; one follow-up comment."
+    book: "Appendix E (MB3); Chapter 3 §3.2."
+
+- layout: quiz
+  minutes: 2
+  kicker: "Midterm Bridge · C · Chapter 7"
+  title_prefix: "Bridge MB7"
+  title: "scaffold or crutch?"
+  question: "“If the AI explanation is correct, it does not matter whether I tried the problem first.” Agree or disagree, using scaffold and crutch."
+  instruction: "Write three sentences without notes, then compare · missed it? reread §7.2 and §7.4"
+  model_answer:
+    - "**Disagree.** The same correct explanation is a scaffold after your own attempt and a crutch without one."
+    - "What builds skill is who recalled and produced the answer in that turn: you or the tool."
+    - "Strong answers cite §7.2’s retrieval-practice evidence and give an example from their field."
+  notes:
+    say: |
+      Bridge item seven, an interpretive question like the midterm's interpretive part. Take a position, agree or disagree, and
+      use Chapter 7's two words, scaffold and crutch. Write three sentences without notes: your position, the reason, and
+      one piece of evidence or an example from your field. Then compare with a neighbor. Interpretive items are scored on the
+      reasoning, so a clear position with a reason beats a long answer that never takes a side. If students are unsure
+      how to start, suggest the frame "I disagree, because…" and remind them that Chapter 7 asks who recalled and produced
+      the answer in that turn.
+    background: |
+      MB7 (Chapter 7 · LO4 · Evaluate). Model answer from Appendix E: Disagree. In Chapter 7's terms, the same correct
+      explanation is a scaffold after your own attempt and a crutch without one; what builds skill is who recalled and
+      produced the answer in that turn, you or the tool. Strong answers cite the retrieval-practice evidence from §7.2 and
+      give an example from their field. Connection to Chapter 1: Bastani et al. (2025) on practice with an unrestricted
+      chatbot vs. a hint-based version.
+    activity: "2 min write, then show the model answer."
+    book: "Midterm Bridge MB7; Chapter 7 §7.2, §7.4; Appendix E."
+  answer_minutes: 1.5
+  answer_notes:
+    say: |
+      Here is the model answer. Disagree. In Chapter 7's terms, the same correct explanation is a scaffold when it comes
+      after your own attempt, and a crutch when it replaces the attempt. What builds skill is who recalled and produced the
+      answer in that turn: you or the tool. Strong answers bring in the retrieval-practice evidence from section 7.2 and
+      give an example from their own field. Check your three sentences against that: did you take a position, use both
+      terms, and give a reason that is not just "because it's cheating"? If not, reread sections 7.2 and 7.4. On the
+      midterm, that is the difference between a partial and a full answer.
+    background: |
+      Appendix E key for MB7. Scoring idea for interpretive items: a defensible position, the book's
+      terms used correctly, and evidence or an example.
+    activity: "Students mark their own answer: position ✓, both terms ✓, reason ✓."
+    book: "Appendix E (MB7); Chapter 7 §7.2, §7.4."
+
+# About 54 words: three Bridge items with their reread pointers (deliberate exception).
+- layout: tps
+  minutes: 3.5
+  kicker: "Midterm Bridge · practice without notes"
+  title: "Three more: answer them, then we review them together"
+  prompt:
+    - "MB2 · Shortcut vs. proxy: what do new conditions reveal? (§2.3, §2.5)"
+    - "MB6 · Wrong return deadline, nobody read it: tree and chain labels (§4.1, §4.7)"
+    - "MB8 · Is a higher Delegation Ladder rung a better use? (§5.2)"
+  phases:
+    - {name: "Write", min: 2, text: "One item, no notes"}
+    - {name: "Pair", min: 1.5, text: "Note what to reread"}
+  notes:
+    say: |
+      Three more Bridge items, one each from Chapters 2, 4 and 5. Pick the one you feel least sure about and write your
+      answer without notes. Then compare with a neighbor, and write down the section you need to reread. We go through
+      all three together in class; the answers are not in the back of the book, so this is the place to check them. Item
+      MB4 is the fourth one in the book, a one-line multiple-choice question about the part of a prompt you always need;
+      try it at home.
+    background: |
+      Even-numbered Bridge items: MB2 (Chapter 2 · LO1 · Understand), MB4 (Chapter 5 · LO2 · Understand; multiple
+      choice: which part of a prompt is the one you always need?), MB6 (Chapter 4 · LO1 · Analyze; "if all you have is the
+      email and the store's statement that 'nobody reviewed it'"), MB8 (Chapter 5 · LO2 · Evaluate). Keys are
+      instructor-only (private/ch10-answers-even.md): review them orally in the session; never put them on a slide or post
+      them. MB5 (odd, key in Appendix E) is left for self-study: a business student summarizes three market reports with
+      AI, checks every summary and declares it.
+    activity: "Write 2 · pair 1.5. Then review the even items orally from the private key, if time allows in the review session."
+    book: "Midterm Bridge MB2, MB4, MB6, MB8 (reread pointers in the book)."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: deep
+  session: after
+  kicker: "Deep 10.A · why a score is weak evidence (see @fig-10-15)"
+  title: "Going deeper: base rates and wrong flags"
+  size: 24
+  bullets:
+    - "A weak 2023 classifier: caught 26% of AI texts, flagged 9% of human ones"
+    - "10% of 1,000 texts AI: 81 of 107 flags point at a person"
+    - "A far better tool: 9 of 99"
+  takeaway: "Wrong flags depend on how much writing is AI, which no score shows"
+  notes:
+    say: |
+      Use this slide only if there is time or a student asks why a small false-positive rate still matters. Take the
+      rates OpenAI reported for its own, weak, classifier on a challenge set of English texts: it labeled 26% of
+      AI-written texts "likely AI-written," missing 74%, and mislabeled 9% of human texts. Imagine 1,000 texts, 10% of
+      them AI-written. It would flag 26 of the 100 AI texts and 81 of the 900 human ones: 81 of 107 flags, about three in
+      four, would point at a person. A far better detector, with 90% detection and a 1% false-positive rate, would do far
+      better: only 9 of 99 flags would point at a person. What stays true is that the share of wrong flags depends on how
+      much of the writing is AI, which the person reading the score does not know.
+    background: |
+      Deep 10.A (optional, not examinable). The figure is a computed illustration with assumed shares (5%, 10%, 25% AI
+      text: human share of flagged texts 87%, 76%, 51%), not a study. This is Chapter 2's precision problem in a new place.
+      Vanderbilt University turned off one commercial detector in August 2023, estimating that the vendor's claimed 1%
+      false-positive rate, applied to roughly 75,000 papers submitted in 2022, could have wrongly labeled about 750
+      (Vanderbilt University, 2023). Detection methods (perplexity, classifiers, watermarks; Weber-Wulff et al., 2023
+      judged none of 14 tools reliable) are in the same section; do not present the study's rewrite prompts as advice.
+    questions:
+      - q: "Why not just use the best detector?"
+        a: "Even a far better one leaves some flags pointing at people, and the share depends on how much writing is AI, which the reader of a single score does not know. A score is a reason to look at process evidence (Deep 10.A)."
+    activity: "Optional; not part of the class plans."
+    book: "Deep 10.A, @fig-10-15."
+
+- layout: references
+  title: "References"
+  per_slide: 6
+  refs:
+    - "Agarwal, D., Naaman, M., & Vashistha, A. (2025). AI suggestions homogenize writing toward Western styles and diminish cultural nuances. In *Proceedings of CHI 2025*. ACM. https://doi.org/10.1145/3706598.3713564"
+    - "Barrett, A. (2023, August 16). *Standards around generative AI*. Associated Press."
+    - "Benbow, C. P. (2023). *Statement from Camilla P. Benbow*. Peabody College, Vanderbilt University (archived February 21, 2023)."
+    - "Department of Employment and Workplace Relations. (2026). *Targeted Compliance Framework assurance review – Final report* [Prepared by Deloitte]. Australian Government."
+    - "Doshi, A. R., & Hauser, O. P. (2024). Generative AI enhances individual creativity but reduces the collective diversity of novel content. *Science Advances, 10*(28), eadn5290."
+    - "Jabarian, B., & Imas, A. (2025). *Artificial writing and automated detection* (NBER Working Paper No. 34223)."
+    - "Jakesch, M., Bhat, A., Buschek, D., Zalmanson, L., & Naaman, M. (2023). Co-writing with opinionated language models affects users’ views. In *Proceedings of CHI 2023*. ACM. https://doi.org/10.1145/3544548.3581196"
+    - "Jiang, Y., Hao, J., Fauss, M., & Li, C. (2024). Detecting ChatGPT-generated essays in a large-scale writing assessment. *Computers & Education, 217*, 105070."
+    - "Korn, J. (2023, February 22). *Vanderbilt University apologizes for using ChatGPT to write mass-shooting email*. CNN (via KTVZ)."
+    - "Kruger, J., Epley, N., Parker, J., & Ng, Z.-W. (2005). Egocentrism over e-mail: Can we communicate as well as we think? *Journal of Personality and Social Psychology, 89*(6), 925–936."
+    - "Lele, A. (2023, February 19). *Peabody EDI deans to temporarily step back following ChatGPT-crafted message about MSU shooting*. The Vanderbilt Hustler."
+    - "Lele, A., & Faquih, D. (2023, April 12). *Peabody EDI Deans Nicole Joseph, Hasina Mohyuddin reinstated after utilizing ChatGPT in email about MSU shooting*. The Vanderbilt Hustler."
+    - "Liang, W., Yuksekgonul, M., Mao, Y., Wu, E., & Zou, J. (2023). GPT detectors are biased against non-native English writers. *Patterns, 4*(7), 100779. https://doi.org/10.1016/j.patter.2023.100779"
+    - "Liu, Y., Mittal, A., Yang, D., & Bruckman, A. (2022). Will AI console me when I lose my pet? Understanding perceptions of AI-mediated email writing. In *CHI ’22*. ACM. https://doi.org/10.1145/3491102.3517731"
+    - "Matsuda, P. K. (2001). Voice in Japanese written discourse: Implications for second language writing. *Journal of Second Language Writing, 10*(1–2), 35–53."
+    - "Matsuda, P. K., & Tardy, C. M. (2007). Voice in academic writing. *English for Specific Purposes, 26*(2), 235–249."
+    - "McGuirk, R. (2025, October 7). *Deloitte to partially refund Australian government for report with apparent AI-generated errors*. Associated Press."
+    - "*Moffatt v. Air Canada*, 2024 BCCRT 149 (Civil Resolution Tribunal of British Columbia, February 14, 2024)."
+    - "Noy, S., & Zhang, W. (2023a). Experimental evidence on the productivity effects of generative artificial intelligence. *Science, 381*(6654), 187–192. https://doi.org/10.1126/science.adh2586"
+    - "Noy, S., & Zhang, W. (2023b, March 10). *Experimental evidence on the productivity effects of generative artificial intelligence* [Working paper, not peer reviewed]. MIT."
+    - "NPR. (2023, February 13). *3 students and a suspect are dead after Michigan State University shooting*."
+    - "OpenAI. (2023, January 31; updated July 20, 2023). *New AI classifier for indicating AI-written text*."
+    - "Perrotta, R. (2023, February 17). *Peabody EDI Office responds to MSU shooting with email written using ChatGPT*. The Vanderbilt Hustler."
+    - "Schilke, O., & Reimann, M. (2025). The transparency dilemma: How AI disclosure erodes trust. *Organizational Behavior and Human Decision Processes, 188*, 104405."
+    - "Vanderbilt University. (2023, August 16). *Guidance on AI detection and why we’re disabling Turnitin’s AI detector*. Brightspace at Vanderbilt."
+    - "Weber-Wulff, D., et al. (2023). Testing of detection tools for AI-generated text. *International Journal for Educational Integrity, 19*, 26."
+  notes:
+    say: |
+      Reference slides; not presented in class. These are the sources cited on the slides and in the speaker notes, in
+      short APA form, taken from the chapter's reference list. Students do not need to read them; the chapter is written to
+      be understandable without them. If a student wants to go further, the chapter's own suggestions are Liang et al.
+      (2023), open access, short and readable; Liu et al. (2022), with the participants' own words; and Matsuda (2001), on
+      voice in a second language. The two suggested readings with guides are Moffatt v. Air Canada, paragraphs 27 to 29,
+      and Noy and Zhang (2023a), the abstract and figures.
+    background: |
+      Full entries with URLs are in the chapter's References section (fact-checked; open checks in docs/factcheck/
+      ch10.csv). The Hustler headlines are cited exactly as published (chapter decision), although running text names only
+      the dean (blueprint V3).
+    activity: "Not presented."
+    book: "Chapter 10, References; Further Reading and Compass Links."

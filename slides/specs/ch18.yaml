@@ -1,0 +1,1099 @@
+# Lecture deck spec — Chapter 18: Intellectual Property, Law and Governance (shared unit)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch18.yaml --preview
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only.
+#
+# The unit is shared by Chapters 15, 16, 18 (Core) and 17 (Deep) (decision D22). Chapter 18's class time is small (keys are internal):
+#   tue: about 7 of the 35 concept minutes (Ch. 18 blueprint §1: the Regulation Map and "three courts, three
+#     answers") plus a 3-minute concept check (Review A1) = 10 min, matching the Chapter 15 deck's concept-session plan
+#     ("Ch. 18 · 7 + check 3"; the 10 concept-check minutes are split 4 / 3 / 3 across Ch. 15, 16, 18).
+#     The unit's opening case (Samsung), the demo and the other segments belong to the Ch. 15/16 decks.
+#   thu: Lab 15.1 step 6, minutes 49–54 (the rules-and-rights risk for A12); the lab itself is run from Ch. 15.
+# So the deck has a compact CORE part (sessions tue, 10 min, and thu, 5 min) and an EXTENDED optional part (session
+# ext) that walks the Core sections 18.1–18.6 for instructors who have time (a review session, office hours, an extra session).
+# The extended slides are optional class time, NOT optional content: sections 18.1–18.5 are examinable if your course has an exam.
+# Every legal status line is dated "as of October 2026" (chapter, data/ch18_legal_status.csv); not legal advice.
+# Every number below comes from the files under deck.sources.
+
+deck:
+  chapter: 18
+  slug: intellectual-property-law-and-governance
+  title: Intellectual Property, Law and Governance
+  short_title: IP, Law and Governance
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Concept session · Chapter 18 segment of the shared session (7 concept minutes + 3-minute check)", minutes: 10}
+    thu: {label: "Lab session · Lab 15.1, step 6 (minutes 49–54)", minutes: 5}
+    ext: {label: "extended section · optional class time, if time allows (the Core sections stay examinable)"}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/18-intellectual-property-law-and-governance.qmd
+    - labs/ch18-lab1.md
+    - labs/ch18-lab2.md
+    - labs/ch18-lab3.md
+    - labs/ch15-lab1.md
+    - figures/longdesc/ch18.md
+    - appendix/answers.md
+    - docs/blueprints/ch18-blueprint.md
+    - data/ch18_legal_status.csv
+    - docs/decisions.md
+
+slides:
+
+# ======================================================================= CONCEPT-SESSION SEGMENT (about 7 min)
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "Concept-session segment and Lab 15.1 step 6"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading: Chapter 18 Core (about 29 min) · Recommended: U.S. Copyright Office (2025), Part 2"
+    - "Not legal advice"
+  figure: f18-03-regulation-map
+  notes:
+    say: |
+      This deck covers Chapter 18 inside a crowded unit. The unit has four chapters: privacy and security, bias and
+      fairness, this one on intellectual property, law and governance, and an optional chapter on explanations.
+      Chapter 18's share of class is small: about seven minutes of ideas and a three-minute check in the concept session, and five
+      minutes in the red-team lab session, where you draft one risk for A12. The picture is the Regulation Map: every AI use sits under several layers of
+      rules at once. One sentence before anything else, and it holds for the whole chapter: this is not legal advice.
+      The chapter explains how AI law and policy work so you can ask good questions; for a real decision, ask the
+      person or office that owns the rule.
+    background: |
+      Decision D22 (shared unit): each Core chapter (15, 16, 18) about 30 minutes of whole Core package; Chapter 18's
+      Core package is about 29 minutes (about 16 for Core sections 18.1–18.5), about 5 minutes of answering included.
+      Recommended readings: U.S. Copyright Office (2025), Part 2, and TRAIGA with the EU AI Act (instructor summary);
+      the 18.5 status box is that summary. Faded examples, Review A–C, the Spaced Review and the Case Study
+      Questions count as exam practice if your course has an exam; Deep 18.A–C, labs 18.1–18.3 and the Case Study are optional. Work Loop
+      highlight: Decide (which rules apply; is this use allowed?), Disclose second. Featured student: Hana (they/them).
+    questions:
+      - q: "Will the law details be on the final?"
+        a: "Core sections 18.1–18.5 are examinable (D20); legal citations in parentheses are not, and Review A tests tier reasoning, not dates (chapter time line; package note)."
+    activity: "On screen as the Chapter 18 segment begins (after the Chapter 15 and 16 segments)."
+    book: "Chapter 18 opening page, @fig-18-1 (chapter map), @fig-18-3 (Regulation Map)."
+
+- layout: session_plan
+  minutes: 0
+  title: "Chapter 18 in the shared unit"
+  columns:
+    - heading: "Concept session · 10 min"
+      sub: "Inside the shared concept session"
+      blocks:
+        - {min: 1, label: "Objectives", detail: "Not legal advice"}
+        - {min: 2, label: "Opening case", detail: "Ross: training on summaries"}
+        - {min: 2, label: "Rules in layers", detail: "Nearest first"}
+        - {min: 2, label: "Three courts", detail: "Ross, Bartz, Kadrey"}
+        - {min: 3, label: "Quick check", detail: "Which rule applies?"}
+    - heading: "Lab session · 5 min"
+      sub: "Lab 15.1, step 6 (minutes 49–54)"
+      blocks:
+        - {min: 1, label: "(a) Rules by layer", detail: "On your data-flow map"}
+        - {min: 1, label: "(b) Copies", detail: "Someone else’s work"}
+        - {min: 1, label: "(c) Output", detail: "Who owns it?"}
+        - {min: 1, label: "(d) Errors", detail: "Who is responsible?"}
+        - {min: 1, label: "(e) Tier, dated rule", detail: "A12 risk: finish at home"}
+    - heading: "Extended · optional"
+      sub: "If time allows · still examinable"
+      blocks:
+        - {min: 6, label: "§18.1–18.2", detail: "Privacy law; fair use"}
+        - {min: 9, label: "§18.3–18.4", detail: "Ownership; responsibility"}
+        - {min: 8, label: "§18.5", detail: "Risk tiers; dated status"}
+        - {min: 4, label: "§18.6, summary", detail: "Hana’s risk; key terms"}
+  notes:
+    say: |
+      This slide is for planning; you can skip it in class. Chapter 18 gets about ten minutes in the concept session, inside the
+      session shared with Chapters 15 and 16: objectives, the opening case, the idea that rules come in layers, and
+      why three courts gave three answers about AI training, then a three-minute quick check. In the lab session it gets five minutes of Lab 15.1, step 6:
+      five quick prompts on your data-flow map that turn into one A12 risk, finished at home in about three minutes.
+      The right-hand column is optional class time: if a review session, office hours or an extra session leaves
+      room, those slides walk through the Core sections in more depth. They are optional to present, not optional to
+      learn: sections 18.1 to 18.5 are examinable if your course has an exam.
+    background: |
+      Sources for the split: Chapter 18 blueprint §1 (in class: about 7 of the 35 concept minutes; nothing
+      extra in the lab session); Lab 15.1 step 6 (minutes 49–54, five prompts of about 1 minute; finish at home about 3
+      minutes); Chapter 15 blueprint (Samsung, C12, is the unit's 10-minute opening case; Ch. 15 about 12 and Ch. 16
+      about 8 concept minutes; demo "a prompt injection hidden in a document"). The concept-session minutes here (7 concept + 3
+      check = 10) are the "Ch. 18 · 7 + check 3" block of the Chapter 15 deck's 75 (the 10 concept-check
+      minutes split 4 / 3 / 3); the extended section's minutes (about 27) are not part of any session. A12 (hosted by
+      Chapter 15) is due when the instructor sets it.
+    questions:
+      - q: "Is there a separate Chapter 18 assignment?"
+        a: "No. Chapter 18 adds one required risk to A12's register, the rules-and-rights risk; the Policy Comparison Note is an optional Mini-Project (Application Assignment)."
+    activity: "Instructor planning slide; not shown or shown for 10 seconds."
+    book: "Chapter 18 time line; Application Assignment; Lab 15.1 step 6; decision D22."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 18 · learning objectives"
+  title: "By the end of the unit you can…"
+  intro: "**Not legal advice.** For a real decision, ask the person or office that owns the rule."
+  items:
+    - {code: "O1", text: "**Differentiate** the layers of rules on one AI task"}
+    - {code: "O2", text: "**Analyze** a training dispute with fair use’s four factors"}
+    - {code: "O3", text: "**Determine** what copyright protects in AI-assisted work"}
+    - {code: "O4", text: "**Judge** whether a disclaimer moves responsibility"}
+    - {code: "O5", text: "**Apply** EU risk tiers and a dated U.S. or Texas rule"}
+  notes:
+    say: |
+      Five objectives. First, tell apart the layers of rules that apply to one AI task: law, agreements such as a
+      tool's terms, and your organization's policy. Second, analyze a dispute about training data with the four
+      fair-use factors. Third, decide which parts of an AI-assisted work copyright can protect. Fourth, judge whether a
+      disclaimer such as "AI may make mistakes" moves responsibility for an error; the book's answer is no. Fifth,
+      place an AI use in the EU's risk tiers and name a dated U.S. or Texas rule. And read the line at the top
+      aloud with me: this is not legal advice. If a real decision depends on a rule, ask the rule's owner, in writing,
+      and keep the answer.
+    background: |
+      Full wording and tags (chapter): O1 Differentiate (LO5; AI Fluency Diligence); O2 Analyze (LO5; Discernment);
+      O3 Determine, including what to disclose when registering (LO5, LO4; Diligence, Description); O4 Judge (LO5;
+      Diligence; UNESCO human-centred mindset); O5 Apply (LO5; Discernment). Note: the blueprint's objective table
+      still says "Classify" for O1 and O5; the chapter v2 (which governs) says Differentiate and Apply. The
+      not-legal-advice line appears in the chapter's opening of 18.1 and in every A12 risk ("not a legal opinion").
+    misconceptions:
+      - m: "M6 'If it is legal, it is allowed in my course or job.'"
+        fix: "Preview the working rule: follow the strictest rule that applies; a course or employer can be stricter than the law."
+    activity: "Read the not-legal-advice line aloud."
+    book: "Chapter 18, Learning Objectives; §18.1 first line."
+
+- layout: timeline
+  minutes: 2
+  kicker: "Opening case · Thomson Reuters v. Ross (C15)"
+  title: "Training on a competitor’s summaries"
+  events:
+    - {label: "License", text: "Ross asks to license Westlaw; refused", tier: "confirmed"}
+    - {label: "Memos", text: "About 25,000 memos framed with headnotes", tier: "confirmed"}
+    - {label: "Feb 2025", role: risk, text: "Trial court: not fair use", tier: "confirmed"}
+    - {label: "Sept 2026", role: risk, text: "Appeals court affirms", tier: "confirmed"}
+    - {label: "Oct 2026", text: "Ross plans Supreme Court petition", tier: "reported"}
+  takeaway: "Two 2025 rulings favored AI companies. Why?"
+  notes:
+    say: |
+      Thomson Reuters owns Westlaw, a legal-research service whose editors write headnotes: short summaries of a point
+      of law in a court decision. Ross Intelligence, a start-up, asked to license Westlaw's content for an AI
+      legal-search tool and was refused, because it was a competitor. Ross then had about 25,000 training memos
+      written; the writers used Westlaw headnotes to frame the questions. Ross's tool did not write new text: it
+      returned passages from court decisions. Thomson Reuters sued in 2020. In February 2025 the trial court held that
+      copying 2,243 headnotes to train the tool was not fair use, and on September 29, 2026 the appeals court agreed.
+      The puzzle: in 2025 two other federal judges ruled for AI companies that trained on books. Why the difference?
+    background: |
+      Tiers: confirmed from the two opinions (trial court, D. Del., Feb 11, 2025; Third Circuit, Sept 29, 2026): license
+      refused; memos; not generative; 2,243 headnotes; both rulings. Reported: Ross shut down (announced December
+      2020, offline January 2021; Ambrogi, 2020); as of October 2026, Ross had asked for more time to seek a rehearing
+      and planned to ask the Supreme Court to review the case (Ambrogi, 2026; Davis, 2026). The trial court allowed an
+      immediate appeal on April 4, 2025. Court box (chapter): a holding binds the courts below and is only persuasive
+      elsewhere; the Third Circuit covers Delaware, New Jersey, Pennsylvania and the U.S. Virgin Islands. Labels: an
+      input-side harm; no output was wrong, so the Failure Taxonomy Tree does not apply (data-flow map instead).
+    questions:
+      - q: "Does this ruling make AI training illegal?"
+        a: "No. It binds courts in the Third Circuit, concerns a non-generative tool that competed with the original, and the court said in a footnote (not a holding) that generative models may differ (Case Study)."
+    misconceptions:
+      - m: "M2 'Courts have decided: AI training is legal' (or illegal)."
+        fix: "Set up the puzzle: two results in the same year, both explained by the facts."
+    activity: "Narrate; leave the puzzle on screen and move straight to the layers."
+    book: "Opening Case; box 'How U.S. courts work'; Case Study 'The First Appeals Ruling on AI Training'; @fig-18-2."
+
+# Redrawn natively from the Regulation Map (@fig-18-3): its nine boxes are below 15 pt at slide size. Columns run
+# nearest first, as the section title says; the book figure states the boxes are kinds of rules, not a ranking.
+- layout: compare
+  minutes: 2
+  kicker: "§18.1 · Core · the Regulation Map"
+  title: "Rules come in layers, nearest first"
+  size: 28
+  columns:
+    - heading: "Your organization"
+      role: human
+      bullets: ["Your course’s AI rule", "Institution’s AI policy", "Employer, placement"]
+    - heading: "Agreements"
+      role: soft
+      bullets: ["Terms of service", "Licenses", "Contracts"]
+    - heading: "Law, by jurisdiction"
+      role: neutral
+      bullets: ["EU", "U.S. federal, executive", "States, cities"]
+  takeaway: "Follow the strictest rule that applies; ask its owner in writing"
+  notes:
+    say: |
+      Several layers of rules apply to every AI use at once. Law is made by a government and enforced by courts or
+      agencies: statutes, regulations, executive orders and case law, each from a jurisdiction such as the EU, the
+      U.S., Texas or New York City. Closer to you are agreements: a tool's terms of service, licenses and contracts.
+      Closest is your organization's policy: your course, your institution, your employer. Many institutions let each
+      instructor permit, partly permit or prohibit AI use in a course. The working rule: follow
+      the strictest rule that applies, and when a rule is unclear, ask its owner in writing and keep the answer. So
+      "it's legal" does not mean "it's allowed in my course or job."
+    background: |
+      Definitions as in §18.1: law, statute, regulation, executive order, case law, jurisdiction, terms of service,
+      license, policy, governance (the rules, roles and checks that decide how AI may be used and who is responsible
+      for it). Where AI use is permitted, students cite and verify AI output; the
+      three zones in Chapter 1 are one example of a course rule. Which data may enter which tool follows your institution's data
+      classes (§12.5 table). The book's figure lists five law boxes (EU law; U.S. federal law; U.S. executive orders and
+      policy, which change often; U.S. states, e.g., Texas TRAIGA; cities, e.g., NYC Local Law 144), terms and
+      licenses, contracts, and your organization's policy, all pointing to "your AI use and the people it affects."
+    questions:
+      - q: "Which layer wins if two rules disagree?"
+        a: "For you in practice: follow the strictest rule that applies and ask its owner. The book does not rank the layers legally; it gives a working rule (§18.1)."
+    misconceptions:
+      - m: "M6 'If it is legal, it is allowed in my course or job.'"
+        fix: "Point at the left column: a course or employer rule can forbid what no law forbids."
+    activity: "Ask: 'Name one rule from each column that applies to something you do with AI.'"
+    book: "§18.1, @fig-18-3; Worked Example 'Hana's Menu Job' (@fig-18-4)."
+
+- layout: compare
+  minutes: 2
+  kicker: "§18.2 · Core · book figure: rulings on a scale (as of October 2026)"
+  title: "Three courts, three answers: the facts differed"
+  size: 26
+  columns:
+    - heading: "Ross · appeals, 2026"
+      role: risk
+      bullets: ["Non-generative, competing tool", "**Not fair use**"]
+    - heading: "Bartz · trial, 2025"
+      role: soft
+      bullets: ["Training on books: **fair use**", "Pirated library: **not**"]
+    - heading: "Kadrey · trial, 2025"
+      role: soft
+      bullets: ["**Fair use** on this record", "The authors made the wrong arguments"]
+  takeaway: "No U.S. appeals court has ruled on training a generative model"
+  notes:
+    say: |
+      Here is the answer to the puzzle. Fair use is a U.S. exception decided case by case with four factors: the
+      purpose of the use, including whether it is transformative; the nature of the work; how much was used; and the
+      effect on the market. In Ross, the tool was not generative and served the same purpose as Westlaw, competing with
+      it, so the appeals court called it "minimally transformative, at best" and found market harm. In Bartz v.
+      Anthropic, a trial court held that training a model on books was fair use, but keeping a central library of
+      pirated copies was a separate use and was not. In Kadrey v. Meta, another trial court ruled for Meta only because
+      the authors had made the wrong arguments. Different facts, different answers.
+    background: |
+      Bartz v. Anthropic (N.D. Cal., June 2025): training "exceedingly transformative"; scanning bought books also fair
+      use; the case settled for $1.5 billion, about $3,000 per work before fees and costs, final approval July 2026;
+      as of October 2026, appeals of that order were pending. Kadrey v. Meta (N.D. Cal., June 2025): fair use on the
+      record before the judge, who warned that it would often fail. As of October 2026, no U.S. appeals court had
+      ruled on training a generative model. Ross binds courts in the Third Circuit; Bartz and Kadrey are trial-court
+      rulings binding only their own cases (@fig-18-7 note). The colored card for Ross is also labeled "Not fair use"
+      in words.
+    questions:
+      - q: "So is training on copyrighted books legal?"
+        a: "Not settled. One trial court found training fair use on its facts; as of October 2026 no U.S. appeals court had ruled on generative training, and other countries use other tests (Deep 18.C)."
+    misconceptions:
+      - m: "M2 'Courts have decided: AI training is legal' (or illegal)."
+        fix: "The law is not random either: factors 1 and 4 (same purpose, market harm) explain why Ross lost and Bartz's training won."
+      - m: "M1 'If it is online, it is free to use, to train a model or paste into my project.'"
+        fix: "Copyright arises automatically; uploading a whole protected text to a tool makes a copy that needs permission or an exception."
+    activity: "Ask: 'Which single fact best explains why Ross lost?' (Same purpose, competing with the original.)"
+    book: "§18.2, @fig-18-5, @fig-18-7; Check Yourself 18.2; Worked Example 'Ross, Factor by Factor'."
+
+- layout: quiz
+  minutes: 1.5
+  kicker: "Quick check · §18.1 · Review A1"
+  title: "which rule applies?"
+  question: "Your course’s AI rule prohibits AI for an essay; your part-time employer allows a tool for work emails. You want to use the tool for the essay. What applies?"
+  options:
+    - "The employer’s rule, because an employer’s policy outranks a course’s rule."
+    - "No rule, because no law forbids using AI to help write an essay."
+    - "The course’s rule: for coursework, it is the rule that applies."
+    - "Both equally, so you may choose whichever rule you prefer."
+  answer: c
+  instruction: "Vote in 20 seconds"
+  explanation: "(b) is “legal means allowed”; (a) and (d) misread which layer governs"
+  notes:
+    say: |
+      Quick check to close the concept-session segment. Read the four options and vote in twenty seconds. Your course's AI rule
+      prohibits AI for an essay. Your part-time employer allows an AI tool for work emails. You want to use that tool
+      for the essay. What applies? Watch for option (b): it is the misconception that whatever the law does not forbid
+      is allowed. And watch for (a): an employer's policy governs work for the employer, not your coursework. If the
+      vote splits, do not resolve it yet; ask one student from each side to give a reason in one sentence.
+    background: |
+      Review Questions A1 (O1 · LO5 · Apply), odd-numbered; key in Appendix E: (c). Distractors: (a) and (d) misread
+      which layer governs; (b) is M6 (legal is not the same as allowed). Check Yourself 18.1 is the mirror case (course
+      allows, employer forbids sharing the newsletter: the employer's rule decides, as the strictest that applies).
+    activity: "20 s to read and vote (hands or a poll); if the vote splits, one reason from each side; then the answer slide."
+    book: "§18.1; Review A1; Appendix E."
+  answer_minutes: 1.5
+  answer_notes:
+    say: |
+      The answer is (c). For coursework, the course's rule is the one that applies, and here it says no. The
+      employer's permission covers work emails for the employer; it does not travel to your essay. Option (b) is the
+      tempting one, and it is exactly the mistake this section is about: no law forbids using AI to write an essay,
+      but legal is not the same as allowed. The mirror case is in Check Yourself 18.1: if your course allows AI but
+      the article you want to upload comes from your employer's internal newsletter, the employer's rule decides,
+      because it is the strictest rule that applies. In the lab session you will list one rule from each layer
+      for your own workflow.
+    background: |
+      Appendix E, Check Yourself 18.1: the employer's rule decides (it forbids sharing outside the company); the
+      course's permission and the tool's terms do not override it. Lab 15.1 step 6, prompt (a), asks for one rule in
+      each layer and its owner.
+    activity: "Reveal; take one question; then return to the Chapter 15 deck (guest or buffer, Before the lab)."
+    book: "§18.1; Appendix E (Review A1, Check Yourself 18.1)."
+
+# ======================================================================= LAB SESSION (Lab 15.1, step 6)
+- layout: section
+  session: thu
+  minutes: 0
+  number: "Lab"
+  tag: "Lab"
+  title: "Lab 15.1, step 6: rules and rights"
+  idea: "Five minutes on your data-flow map; one risk for A12."
+  meta: "Book §18.6 · Lab 15.1 minutes 49–54 · A12 due when your instructor sets it"
+  notes:
+    say: |
+      Put this up at minute 49 of the red-team lab, right after the bias station. You have five minutes for Chapter
+      18's part of A12: the rules-and-rights risk. Work on the data-flow map you drew at the start of the lab. You will
+      answer five short prompts, about one minute each, and they become a scratch list of rules. Then you pick the one
+      rule whose breach would harm people most or be hardest to undo, and you write it as a risk. You finish it at home
+      in about three minutes. Remember: this records which rules to check and whom to ask; it is not a legal opinion.
+    background: |
+      Lab 15.1 (labs/ch15-lab1.md): step 5 (station 3, bias) runs 34–49; step 6 (rules and
+      rights) 49–54; step 7 (gallery walk) 54–69; exit 69–75. Materials for step 6: printed excerpts of the course's
+      AI policy, the §12.5 table and one provider's terms (instructor package, Chapter 18: the nine-row risk sheet as
+      an accessible table; one-paragraph rules texts for Chapter 15's three alternative scenarios). A12 is due when the instructor sets it.
+      Chapter 15's rubric scores this risk under "Register" and its mitigation under "Plan."
+    activity: "On screen at minute 49; switch to the next slide immediately."
+    book: "§18.6; Lab 15.1 step 6; Application Assignment (A12's rules-and-rights risk)."
+
+- layout: lab
+  minutes: 5
+  kicker: "Lab 15.1 · step 6 · minutes 49–54 · one A12 risk"
+  title: "Your rules-and-rights risk"
+  goal: "One rule, its layer, its evidence, and whom to ask"
+  steps:
+    - {text: "(a) One rule per layer that may apply, and its owner", min: 1}
+    - {text: "(b) Mark every place you copy someone else’s work", min: 1}
+    - {text: "(c) Who owns the output? Could it copy someone’s work?", min: 1}
+    - {text: "(d) If an output were wrong, who is responsible?", min: 1}
+    - {text: "(e) EU tier, and one dated U.S. or Texas rule", min: 1}
+  side:
+    - {heading: "Write it", text: "“Risk of breaking [rule] or of [person] losing [right]”"}
+    - {heading: "Evidence", role: verified, text: "D: you opened the rule’s own text and cite its section. Else I, with a reason"}
+    - {heading: "No device?", text: "Printed excerpts: course policy, §12.5 table, one provider’s terms"}
+  notes:
+    say: |
+      Five prompts, one minute each, on your map. (a) List one rule in each layer that may apply to your workflow:
+      a law, an agreement such as the tool's terms, and your organization's policy, and who owns each rule. (b) Mark
+      every place your workflow copies someone else's work: an upload, a paste, a stored file. (c) Who owns the output,
+      and could it copy someone else's work? (d) If an output were wrong, who would be responsible? Name the role. (e)
+      If the use were in the EU, which tier would it fall in, and which U.S. or Texas rule may apply, with its date?
+      Then choose the highest-stakes rule and write the risk with the template on the right. Mark D only if you opened
+      that rule's own text for this tool and data and can cite its section.
+    background: |
+      §18.6 steps: scratch list → choose the highest-stakes rule (whose breach would harm people most or be hardest
+      to undo), name its layer and who is harmed → evidence D or I (for a law, I with a reason is acceptable: "read this
+      chapter's summary, not the statute"; a provided scenario's rules paragraph counts as the rule's text) → rate
+      likelihood and impact with Chapter 15's anchors; a mitigation (avoid, reduce, detect, accept) with a risk owner;
+      the rule's owner with your question; last line "This records which rules to check and whom to ask; it is not a
+      legal opinion." A right is something a law or agreement lets a person control or claim, such as copyright or
+      privacy. Worked risk: Hana's zine (extended section).
+    questions:
+      - q: "I didn't open the tool's actual terms. Can I still mark D?"
+        a: "No: D needs the rule's own text for this tool and data, with its section. Mark I and give the reason; the printed provider excerpt or a provided scenario's rules paragraph counts as the rule's text (§18.6)."
+      - q: "Do I need to know the EU dates by heart?"
+        a: "No. Prompt (e) asks you to name a tier and a dated rule from the chapter's status box; Review A tests tier reasoning, not dates."
+    misconceptions:
+      - m: "M4 'If the AI erred, its maker is liable; a disclaimer protects the user.'"
+        fix: "For prompt (d), push for a role in the student's own workflow (deployer or user), not 'the AI company'."
+    activity: |
+      Minute 49–54: call each prompt aloud at one-minute intervals; students write on the map. At minute 54 announce
+      the gallery walk. Students who were absent use the printed excerpts at home (Lab 15.1, accessibility).
+    book: "§18.6, @fig-18-14 (rules on the data-flow map), @fig-18-15 (risk sheet); Lab 15.1 step 6; Check Yourself 18.6."
+
+# ======================================================================= EXTENDED SECTION (optional class time)
+- layout: section
+  session: ext
+  minutes: 0
+  number: "18+"
+  tag: "Core"
+  title: "Extended: the Core sections in more depth"
+  idea: "Optional class time. The Core sections stay examinable."
+  meta: "Book §18.1–18.6 · use any slide if time allows"
+  notes:
+    say: |
+      The slides from here on are an extended section. Use them if a session has spare time, for a review session
+      before an exam, or in office hours; students can also read them as a guide to the chapter. They follow the
+      Core sections in order: privacy law applied to you, fair use factor by factor, who owns AI output, who is
+      responsible when AI is wrong, the EU's risk tiers with dated status slides for the EU and the U.S., and a worked
+      rules-and-rights risk. Tell students plainly: these slides are optional to present, but sections 18.1 to 18.5
+      are Core and examinable, so the reading is not optional.
+    background: |
+      Total about 27 minutes if every slide is used. Pick by need: if students struggle with A12, show Hana's zine
+      risk; if an exam is near, show the quick checks (Review A5, A7, A9 and the tier sort; all odd-numbered or from
+      the chapter's worked example). Dated slides carry "as of October 2026"; recheck them against
+      data/ch18_legal_status.csv and the refresh list before teaching.
+    activity: "Divider; choose which extended slides to use."
+    book: "§18.1–18.6."
+
+- layout: compare
+  minutes: 2
+  kicker: "§18.1 · Core · privacy law, applied to you"
+  title: "Privacy law in a student’s day"
+  size: 24
+  columns:
+    - heading: "FERPA"
+      role: soft
+      bullets: ["Students’ education records", "Tutor or student worker: no AI tool"]
+    - heading: "HIPAA"
+      role: soft
+      bullets: ["Health information", "Clinical placement: its rules too"]
+    - heading: "Others’ data"
+      role: soft
+      bullets: ["Consent may be needed", "Texas TDPSA: businesses, not state agencies"]
+  takeaway: "The §12.5 data classes are your starting floor for choosing a tool"
+  notes:
+    say: |
+      Chapter 18 owns the legal layer of privacy, applied to your situation. FERPA, the Family Educational Rights and
+      Privacy Act, protects students' education records, such as grades. If you are a tutor or a student employee who
+      sees them, you may share them only as your institution's rules allow; unless they expressly allow a tool, that means no AI tool.
+      HIPAA, the Health Insurance Portability and Accountability Act, protects health information held by health
+      plans, most health-care providers and the companies that handle it for them; in a clinical placement, patient
+      information falls under it and the placement's rules. Other people's personal data may need their consent before
+      you share it. And many states have privacy laws for businesses; Texas's does not apply to state agencies such as
+      a public university.
+    background: |
+      §18.1 "Privacy law, applied to you": FERPA (U.S. Department of Education, n.d.); HIPAA (U.S. Department of
+      Health and Human Services, n.d.); Texas Data Privacy and Security Act, in force since July 1, 2024, does not
+      apply to state agencies such as a public university (Texas Department of Information Resources, n.d.). Chapter 15
+      owns data handling (data-flow map, data classes in practice); Chapter 18 owns the legal layer (book-wide rule).
+      The §12.5 data-class table (a generic three-level classification) is a starting floor, and your institution's or employer's own classification decides; a field rule (placement policy, IRB
+      protocol, employer policy) can still say no to an input the table allows.
+    questions:
+      - q: "Can I paste a patient case from my placement into an AI chat tool if I remove the name?"
+        a: "Not without the placement's permission: patient information falls under HIPAA and the placement's rules, and removing a name may not de-identify it (Chapter 15). Use a constructed case instead."
+    activity: "Faded example to assign: 'A Patient Leaflet' (placement rule stops the plan; the terms question is the student's part)."
+    book: "§18.1 'Privacy law, applied to you'; Faded Example 'A Patient Leaflet'; Chapter 15."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §18.2 · Review A5"
+  title: "Bartz v. Anthropic"
+  question: "In *Bartz v. Anthropic* (2025), what did the trial court hold?"
+  options:
+    - "All copying of books for AI was unlawful, whatever the source of the copies."
+    - "All copying of books for AI was lawful, whatever the source of the copies."
+    - "Training was fair use, but keeping a library of pirated copies was not."
+    - "Training was lawful only because the company had bought every book it used."
+  answer: c
+  instruction: "Answer alone, then vote"
+  explanation: "(a) and (b) are “courts have decided”; (d) confuses the scanning holding with training"
+  notes:
+    say: |
+      A check on the details of the fair-use cases. In Bartz v. Anthropic, what did the trial court hold? Answer on
+      your own, then vote. Two of the options say the court decided something about all copying, lawful or unlawful;
+      that is the misconception that "courts have decided" AI training. One option mixes up two separate parts of the
+      ruling. Before you reveal, ask a student to state, in their own words, why keeping a library of pirated copies
+      could be judged differently from training.
+    background: |
+      Review Questions A5 (O2 · LO5 · Analyze), odd-numbered; Appendix E key (c); (a) and (b) are M2; (d) confuses the
+      scanning holding (scanning bought books was also fair use) with training. Faded Example "Two Ways to Get Books"
+      practises the same distinction (use A: bought and scanned; use B: pirated central library).
+    activity: "30 s alone, vote, answer slide."
+    book: "§18.2; Review A5; Faded Example 'Two Ways to Get Books'; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (c). The trial court held that training a model on books was fair use, calling it exceedingly
+      transformative, and scanning books the company had bought was fair use too. But keeping a central library of
+      pirated copies, including books it never used for training, was a separate use, and not fair use. That is why
+      the case settled: for $1.5 billion, about $3,000 per work before fees and costs. Note what the settlement paid
+      for: claims about pirated copies downloaded and kept, not training, which the court had found fair. Whether that
+      outcome is fair to authors is a question the ruling did not ask; the Ethics Lens takes it up.
+    background: |
+      Bartz v. Anthropic, order on fair use June 23, 2025; settlement final approval July 2026; as of October 2026,
+      appeals of that order were pending. Ethics Lens: three positions (permission first; opt-out, as the EU's mining
+      rule allows; pay afterward). Hana opposes training on artists' work without consent; that is Hana's view, stated
+      as theirs.
+    activity: "Reveal; one follow-up comment."
+    book: "§18.2; Appendix E (Review A5); Ethics Lens."
+
+# Redrawn natively from @fig-18-6: the book figure's cell notes are below 15 pt at slide size.
+- layout: compare
+  minutes: 2
+  kicker: "§18.2 · worked example: Ross, factor by factor (book figure: two courts)"
+  title: "Same result on appeal, one factor decided differently"
+  size: 26
+  columns:
+    - heading: "Trial court · Feb 2025"
+      role: soft
+      bullets: ["Purpose: against", "Nature: for", "Amount: **for**", "Market: against"]
+    - heading: "Appeals court · Sept 2026"
+      role: soft
+      bullets: ["Purpose: against", "Nature: slightly for", "Amount: **against**", "Market: against"]
+  takeaway: "Both: not fair use. The footnote is not a holding."
+  notes:
+    say: |
+      Here are the four factors as the two courts weighed them, "for" and "against" meaning for or against fair use.
+      Purpose: against in both; the appeals court called Ross's use "minimally transformative, at best," because it
+      served the same purpose as Westlaw. Nature: for fair use, slightly, because headnotes are more factual than
+      creative. Amount: the one factor decided differently. The trial court found it for Ross, because the outputs did
+      not show headnotes; the appeals court found it against, because whole headnotes were copied and the court
+      decisions themselves are free. Market: against in both; Ross competed with Westlaw and harmed a developing market
+      for licensing headnotes as training data. Result in both courts: not fair use.
+    background: |
+      Thomson Reuters v. Ross (D. Del. Feb 11, 2025; 3d Cir. Sept 29, 2026). The trial court called factor 4 the most
+      important; the appeals court described the training-data licensing market as developing fast. Both courts said
+      the tool was not generative; the appeals court's footnote distinguishing generative models (such as those in
+      Bartz) is not a holding. The headnotes are original enough to be protected, each as a work of its own. Case Study
+      Question 3 asks how the two courts reasoned about factors 3 and 4 (odd: key in Appendix E).
+    questions:
+      - q: "If the result was the same, why does factor 3 matter?"
+        a: "It changes the reasoning future courts can cite: copying whole works you do not need counts against you even if outputs never show them (Case Study Question 3, Appendix E)."
+    activity: "Ask: 'Which factor carries great weight in both opinions?' (Market.)"
+    book: "§18.2 Worked Example 'Ross, Factor by Factor', @fig-18-6; Case Study; Case Study Question 3."
+
+# Redrawn natively from @fig-18-8 (menu layers): the figure's notes are small at slide size.
+- layout: lanes
+  minutes: 2
+  kicker: "§18.3 · Core · worked example: Hana’s menu cover (constructed)"
+  title: "Copyright protects what people author"
+  label_width: 3.3
+  rows:
+    - label: "Generated draft"
+      nodes:
+        - {label: "Owner’s prompts only", kind: ai}
+        - {label: "Not protected", kind: step, role: risk}
+    - label: "Hana’s drawing"
+      nodes:
+        - {label: "Drawn by hand", kind: human}
+        - {label: "Protected", kind: step, role: verified}
+    - label: "Owner’s arrangement"
+      nodes:
+        - {label: "Text and pictures placed", kind: human, role: soft}
+        - {label: "Thin protection at most", kind: step}
+    - label: "Bakery logo"
+      nodes:
+        - {label: "Used as a brand", kind: human, role: soft}
+        - {label: "Trademark (artwork: maybe ©)", kind: step}
+  takeaway: "Terms saying “you own the output” cannot create a copyright"
+  notes:
+    say: |
+      Authorship in copyright is the legal status of having created the expression in a work, and in U.S. law only a
+      human can be an author. In 2025 an appeals court held that a work listed as made by an AI system alone could
+      not be registered, and the Supreme Court declined to review it in 2026. The Copyright Office concluded that, with
+      current technology, prompts alone do not give enough control; your own expression, creative selection or
+      arrangement, and creative changes can be protected, case by case. Hana's menu cover shows the layers: the owner's
+      generated draft is not protected; Hana's hand drawing is; the owner's arrangement has thin protection at most;
+      the logo, as a brand, is the bakery's trademark. And a tool's terms cannot create a copyright the law does not
+      grant.
+    background: |
+      Thaler v. Perlmutter (D.C. Cir. March 18, 2025; cert. denied March 2, 2026). U.S. Copyright Office (2025), Part 2
+      (recommended reading): AI as an assisting tool does not affect protection; purely AI-generated material is not
+      protected. Registration is optional but needed before suing over a U.S. work (17 U.S.C. § 411(a)); with more
+      than a little AI-generated material, identify it and claim only your own part (USCO, 2023). Short phrases and
+      slogans are not protected by copyright at all (37 C.F.R. § 202.1(a)). "Terms cannot create a copyright" is the
+      book's reading. Ownership of a text (Chapter 10: you can explain and stand behind every sentence) is not
+      authorship in copyright. Constructed example; Hana uses they/them.
+    questions:
+      - q: "If I write a really detailed prompt, am I the author?"
+        a: "Per the Copyright Office (2025), prompts alone do not give enough control with current technology. Your own expression, selection, arrangement or changes in the output can be protected, case by case (§18.3)."
+    misconceptions:
+      - m: "M3 'I own whatever the tool makes from my prompt, and the terms say so.'"
+        fix: "Separate contract from copyright; then the balancing fact so students do not overcorrect: AI-assisted work with your own expression can be protected."
+    activity: "Assign the faded example 'A Product Description' (what to disclose when registering)."
+    book: "§18.3, @fig-18-8, @fig-18-9; Worked Example 'Hana's Menu Cover'; Check Yourself 18.3."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §18.3 · Review A7"
+  title: "a four-word slogan"
+  question: "A team writes a four-word slogan with no AI help. Can it register the slogan for copyright?"
+  options:
+    - "No: short phrases and slogans are not protected by copyright; trademark may apply."
+    - "Yes: a person wrote it, so copyright protects it automatically from the moment it was written."
+    - "Yes, but only if the team can prove that no AI tool suggested any of its words."
+    - "No: copyright never protects anything written for business use."
+  answer: a
+  instruction: "Answer alone, then vote"
+  explanation: "(b) and (c) assume any human writing is protected; (d) overcorrects"
+  notes:
+    say: |
+      One more check on what copyright protects. A team writes a four-word slogan with no AI help at all. Can it
+      register the slogan for copyright? This item is useful because it removes AI from the question: it tests
+      whether you know what copyright covers in the first place. Take thirty seconds. Watch for the option that sounds
+      most like the previous slide, the one that says a human author is enough, and for the option that overcorrects.
+      Then ask: if copyright does not protect the slogan, what could protect it?
+    background: |
+      Review Questions A7 (O3 · LO5 · Apply), odd-numbered; Appendix E key (a): short phrases and slogans are not
+      protected by copyright (37 C.F.R. § 202.1(a)); trademark may apply. (b) and (c) are M3; (d) overcorrects.
+    activity: "30 s alone, vote, answer slide."
+    book: "§18.3; Review A7; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (a). Short phrases and slogans are not protected by copyright at all, whoever wrote them. A slogan
+      used as a brand can be protected another way: as a trademark, a word, name, logo or other sign that identifies
+      who offers goods or services, protected for the business that uses it in trade. Option (b) is the natural
+      mistake: human authorship is necessary for copyright, but it is not sufficient; the work also has to be the kind
+      of expression copyright covers. Option (d) overcorrects: plenty of business writing, such as a report or a
+      product description, can be protected.
+    background: |
+      §18.3: a drawn logo's artwork may also have copyright if a person drew it with enough originality. Faded Example
+      "A Product Description": the intern's rewritten and added sentences can be protected if original; the tool's
+      unchanged text cannot; if registered, identify the AI text and claim only her contribution (Appendix E).
+    activity: "Reveal."
+    book: "§18.3; Appendix E (Review A7)."
+
+# The final reveal is about 60 words: the four links from output to responsibility on one slide are the point of
+# the example (deliberate exception to the 40-word guide, as in Chapter 1's worked example).
+- layout: worked
+  minutes: 1.5
+  max_words: 62
+  kicker: "§18.4 · Core · worked example: a return window (constructed)"
+  title: "Who is responsible when AI is wrong?"
+  context: "A shop’s AI assistant answers a returns question."
+  steps:
+    - {label: "Output", text: "“60 days”; the policy says 30"}
+    - {label: "Reliance", text: "Label: “may contain errors.” Day-45 return refused"}
+    - {label: "Link 2", text: "Never checked against the policy"}
+    - {label: "Responsible", text: "The shop, as deployer (book’s reading)"}
+  reveal: [2, 4]
+  result: "A label says how a message was made; it does not hand over the checking"
+  notes_reveal:
+    - minutes: 1.5
+      say: |
+        Liability is legal responsibility to make up for harm or to pay a penalty. Three roles: a provider builds an
+        AI system or puts it on the market (Texas law says developer); a deployer uses it in its own work, such as a
+        company with a website chatbot; a user works with the output. The model is not a legal person and has no
+        duties. Now the case. An online shop's assistant tells a customer the return window is 60 days; the posted
+        policy says 30. The chat window says "AI responses may contain errors." The customer returns the item on day
+        45, and the shop refuses the refund. Ask: who is responsible, and does the label change that?
+      background: |
+        Worked Example "A Return Window" (§18.4), constructed; @fig-18-11 is Chapter 4's failure-to-harm chain for it.
+        Roles figure @fig-18-10: provider, deployer, user and people affected, each with one duty; the model as a
+        hexagon labeled "not a legal person."
+      activity: "Pause; take two answers to 'who is responsible?'"
+      book: "§18.4 Worked Example 'A Return Window', @fig-18-10, @fig-18-11."
+    - minutes: 1.5
+      say: |
+        On Chapter 4's chain, link 2 failed: no one checked the assistant's policy answers against the policy page
+        before launch. Who is responsible? By this book's reading of one decision, the shop, as deployer. In the
+        airline chatbot case from Chapter 4, a British Columbia small-claims tribunal held the airline responsible for
+        its chatbot's wrong answer like any page of its website. That is one decision, not a general rule, which is
+        why the book calls it a reading. And the disclaimer? Whether it would have changed the airline case was not
+        decided. The book's inference: a label tells readers how a message was made; it does not hand them the job of
+        checking it.
+      background: |
+        Moffatt v. Air Canada, 2024 BCCRT 149 (Civil Resolution Tribunal, Feb 14, 2024); Mata v. Avianca (2023, Chapter
+        8): lawyers penalized for filing AI-invented citations unchecked. Oversight is a duty: for high-risk uses the
+        EU AI Act requires systems designed for human oversight and deployers who give that job to competent, trained
+        people with authority; as of October 2026, from December 2, 2027 for listed uses (August 2, 2028 for regulated
+        products). An approval gate (Chapter 14) meets such a duty. Check Yourself 18.4: "the deployer is responsible"
+        rests on one small-claims decision, so it is a reading, not a rule.
+      questions:
+        - q: "Isn't the AI company that built the model responsible?"
+          a: "Providers carry their own duties, but in the book's reading the organization that deploys the tool is responsible for what it tells people, as for any other statement it makes (§18.4)."
+      misconceptions:
+        - m: "M4 'If the AI erred, its maker is liable; a disclaimer protects the user.'"
+          fix: "Walk the chain to link 2: the failure is the shop's missing check, and the label did not move it. Balance: providers are not off the hook; they have their own duties."
+      activity: "Assign the faded listing example (1,850 vs. 1,580 square feet) as practice."
+      book: "§18.4; Check Yourself 18.4; Faded Example 'A Listing'; Chapter 4 (Moffatt), Chapter 8 (Mata)."
+  notes:
+    book: "§18.4 Worked Example 'A Return Window'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §18.4 · Review A9"
+  title: "the airline chatbot"
+  question: "In the airline chatbot case (*Moffatt v. Air Canada*), who was held responsible for the chatbot’s wrong answer?"
+  options:
+    - "The chatbot’s maker, because the model produced the error."
+    - "The airline, which ran the chatbot on its own website."
+    - "The customer, who should have checked the policy page."
+    - "No one, because a chatbot’s statements are not binding."
+  answer: b
+  instruction: "Answer alone, then vote"
+  explanation: "(a) is “its maker is liable”; (c) and (d) contradict the decision"
+  notes:
+    say: |
+      Quick retrieval from Chapter 4, now with Chapter 18's vocabulary. In the airline chatbot case, who was held
+      responsible for the chatbot's wrong answer? Thirty seconds, then vote. When you reveal, use the roles from the
+      previous slide: provider, deployer, user. Ask which role the airline played. And remind students what the book
+      claims and does not claim: the decision is one small-claims ruling in British Columbia, so the book builds a
+      reading on it, not a rule. You met this case in Chapter 4; this time, ask why the outcome matters for any
+      organization that puts a chatbot on its website.
+    background: |
+      Review Questions A9 (O4 · LO5 · Understand), odd-numbered; Appendix E key (b). (a) is M4; (c) and (d)
+      contradict the decision. Moffatt v. Air Canada, 2024 BCCRT 149 (met in Chapter 4).
+    activity: "30 s alone, vote, answer slide."
+    book: "§18.4; Review A9; Appendix E; Chapter 4."
+  answer_notes:
+    say: |
+      The answer is (b): the airline, which ran the chatbot on its own website. In Chapter 18's terms, the airline was
+      the deployer, and the tribunal treated the chatbot's answer like any other page of the airline's website. Not
+      the model's maker, which is option (a), the misconception that the AI's maker is automatically liable. Not the
+      customer: the tribunal did not expect him to double-check one part of the airline's website against another.
+      And statements by a chatbot were not treated as non-binding. Keep the hedge: one decision, one tribunal; the book
+      calls "the deployer is responsible" its reading.
+    background: |
+      Appendix E, A9: (b) the airline, which ran the chatbot. B3 (property-management chatbot, pet fee) is the same
+      pattern: the company as deployer, link 2 failed, the disclaimer does not move the duty to check (inferred).
+    activity: "Reveal."
+    book: "§18.4; Appendix E (Review A9, Review B3)."
+
+# Redrawn natively from @fig-18-12 (tiers): the figure's examples and dates are small at slide size.
+- layout: lanes
+  minutes: 2
+  kicker: "§18.5 · Core · EU AI Act tiers (the book’s grouping) · dates as of October 2026"
+  title: "The EU sets duties by risk; most uses carry none"
+  label_width: 2.6
+  rows:
+    - label: "Prohibited"
+      nodes:
+        - {label: "Emotions from faces at school or work; social scoring", kind: step, role: risk}
+        - {label: "Banned since Feb 2, 2025", kind: step}
+    - label: "High-risk"
+      nodes:
+        - {label: "Admission, grading, test monitoring, CV screening", kind: step}
+        - {label: "Duties from Dec 2, 2027", kind: step}
+    - label: "Transparency"
+      nodes:
+        - {label: "Chatbots, generated content, deepfakes", kind: step}
+        - {label: "Tell, mark, label", kind: step}
+    - label: "Minimal"
+      nodes:
+        - {label: "Spam filters, spell-checkers", kind: step, role: soft}
+        - {label: "No new duties", kind: step, role: soft}
+  takeaway: "It reaches providers abroad whose systems are sold or used in the EU"
+  notes:
+    say: |
+      The EU AI Act sets duties by risk. The book groups its rules into four tiers; the Act itself does not use that
+      word. Prohibited practices are uses the Act bans, such as inferring people's emotions from their faces or
+      voices at work or in education, except for medical or safety reasons, and social scoring. High-risk systems are
+      listed uses such as admission, grading, test monitoring and screening job applicants; providers and deployers
+      carry duties of risk management, documentation and oversight. Transparency duties: people must be told they are
+      talking with AI, generated content must be marked and deepfakes labeled. Minimal risk is most uses, with no new
+      duties beyond supporting AI literacy. And the Act reaches U.S. companies whose systems are sold or used in the
+      EU.
+    background: |
+      Regulation (EU) 2024/1689 as amended by Regulation (EU) 2026/1744 (as of October 2026): prohibitions apply since
+      February 2, 2025; general-purpose AI model duties from August 2, 2025; high-risk duties scheduled from December 2,
+      2027 for listed uses and August 2, 2028 for AI in regulated products; transparency duties from August 2, 2026
+      (marking duty from December 2, 2026 for systems already on the market). A deepfake is synthetic media (images,
+      audio or video generated or substantially altered by AI) that realistically shows a real person, or a real event,
+      saying, doing or happening in a way that did not happen; the label duty also covers realistic fakes of real
+      objects and places. Instructor note (Appendix E): Recital 44 explains the emotion-inference ban by doubts about
+      its scientific basis, the risk of discrimination and the imbalance of power in schools and workplaces.
+    questions:
+      - q: "Does the EU Act matter to a company in Texas?"
+        a: "Yes, if its system is sold or used in the EU (Review A13, key (d))."
+    misconceptions:
+      - m: "M5 'The U.S. has no AI law; the EU Act matters only in Europe.'"
+        fix: "Point at the takeaway (reach), then the next slides (U.S. rules). Balance: most uses are minimal risk."
+    activity: "Ask the 18.5 prediction: which is regulated more tightly, a cheating-flag tool or an emotion-reading tool?"
+    book: "§18.5, @fig-18-12; Check Yourself 18.5; Review A13."
+
+- layout: quiz
+  minutes: 1.5
+  kicker: "Quick check · §18.5 · worked example: four uses on the tiers"
+  title: "place four uses"
+  question: "Which EU AI Act tier is each use in?"
+  option_tags: ["(1)", "(2)", "(3)", "(4)"]
+  options:
+    - "An exam tool that infers students’ emotions from their faces on camera"
+    - "An exam tool that flags possible cheating during tests"
+    - "A help-desk chatbot"
+    - "A spam filter"
+  answer: ["Prohibited", "High-risk", "Transparency", "Minimal"]
+  legend: "Tiers as grouped by the book (as of October 2026)"
+  instruction: "Write a tier for each, then compare with a neighbor"
+  explanation: "Prohibited may not be used at all; high-risk may, with duties"
+  notes:
+    say: |
+      Now apply the tiers. Four uses: an exam tool that infers students' emotions from their faces on camera; an exam
+      tool that flags possible cheating during tests; a help-desk chatbot; and a spam filter. Write a tier next to each,
+      then compare with your neighbor. Most disagreement is usually between the first two, because both are exam tools
+      watching students. The difference is what they do with what they see: one infers emotions, the other flags
+      possible cheating. Ask students who disagree to name what each tier would mean in practice: can the tool be used
+      at all, and with which duties?
+    background: |
+      Worked Example "Four Uses on the Tiers" (§18.5): emotion inference from faces in education, prohibited;
+      cheating flags during tests, high-risk (duties scheduled from December 2, 2027, as of October 2026); help-desk
+      chatbot, transparency (its provider must design it to tell users they are talking with AI); spam filter, minimal.
+      Check Yourself 18.5 asks the same for the first two, with what each means for whether it may be used at all.
+    activity: "45 s alone, 30 s with a neighbor, then the answer slide."
+    book: "§18.5 Worked Example 'Four Uses on the Tiers'; Check Yourself 18.5."
+  answer_notes:
+    say: |
+      Here is the key. The emotion-reading exam tool is a prohibited practice: it may not be used in education at all,
+      except for medical or safety reasons. The cheating-flag tool is high-risk: it may be used, but with duties such as
+      risk management, documentation and human oversight, scheduled, as of October 2026, from December 2, 2027. The
+      help-desk chatbot falls under transparency: its provider must design it so users are told they are talking with
+      AI. The spam filter is minimal risk, with no new duties. Notice that the tier depends on the use, not on the
+      technology: the same camera and the same model can sit in different tiers depending on what they are used for.
+    background: |
+      Appendix E, Check Yourself 18.5. Review A12 (even, instructor-only key) and B4 are similar; do not show A12's key.
+      Review A11 (odd): a résumé-screening tool is high-risk (employment); one deployer duty: use it as instructed, or
+      assign oversight to people with the competence, training and authority.
+    activity: "Reveal; ask which item the class split on."
+    book: "§18.5; Appendix E (Check Yourself 18.5, Review A11)."
+
+# Redrawn natively from the dates chart (@fig-18-19): its axis labels are about 9 pt at slide size.
+- layout: lanes
+  minutes: 1.5
+  kicker: "Legal status as of October 2026 · check the current status · not legal advice"
+  title: "EU AI Act: the high-risk dates moved, the others stayed"
+  label_width: 3.4
+  rows:
+    - label: "Prohibitions, AI literacy"
+      nodes:
+        - {label: "Feb 2, 2025", kind: step}
+        - {label: "Unchanged", kind: step, role: soft}
+    - label: "General-purpose models"
+      nodes:
+        - {label: "Aug 2, 2025", kind: step}
+        - {label: "Unchanged", kind: step, role: soft}
+    - label: "Transparency (Art. 50)"
+      nodes:
+        - {label: "Aug 2, 2026", kind: step}
+        - {label: "Marking: Dec 2, 2026", kind: step, role: soft}
+    - label: "High-risk, listed uses"
+      nodes:
+        - {label: "Was Aug 2026", kind: step}
+        - {label: "Now Dec 2, 2027", kind: step, role: human}
+    - label: "High-risk, in products"
+      nodes:
+        - {label: "Was Aug 2027", kind: step}
+        - {label: "Now Aug 2, 2028", kind: step, role: human}
+  takeaway: "Regulation (EU) 2026/1744 moved only the high-risk dates"
+  notes:
+    say: |
+      This is a dated status slide: it was true as of October 2026, and you should check the current status before
+      relying on it. An amending law in 2026, Regulation 2026/1744, moved the EU AI Act's high-risk duties: for listed
+      uses such as grading or screening job applicants, from August 2026 to December 2, 2027; for AI in regulated
+      products, to August 2, 2028. The other dates stayed: the prohibitions have applied since February 2, 2025; the
+      duties for general-purpose AI models since August 2, 2025; and the transparency duties from August 2, 2026, with
+      the marking duty for systems already on the market from December 2, 2026. A habit that outlasts any date: write
+      down where you read a rule, its section and the date.
+    background: |
+      Status box item 1 (§18.5) and Deep 18.C; data/ch18_legal_status.csv (the single dated legal-status table; refresh
+      list). Deep 18.C: as of October 2026, the right to an explanation of decisions made with high-risk systems (Art.
+      86) was not amended, but the duties for those systems now apply from December 2, 2027, so when the right can be
+      used in practice is a question of interpretation. Deep 18.B: two new prohibitions (non-consensual intimate
+      images of identifiable people; AI-generated child sexual abuse material) scheduled from December 2, 2026. Before
+      teaching, recheck every date on this slide against EUR-Lex. Not legal advice.
+    questions:
+      - q: "Will dates like these be on the exam?"
+        a: "Review A tests tier reasoning, not dates (chapter package note). Know that the dates are set by law and can move, and where to check them."
+    activity: "Point to the line marking October 2026 on the chart."
+    book: "§18.5 status box, item 1; Deep 18.C 'The EU dates', @fig-18-19."
+
+- layout: compare
+  minutes: 2
+  kicker: "Legal status as of October 2026 · check the current status · not legal advice"
+  title: "In the U.S.: existing laws, a state, a city"
+  size: 26
+  columns:
+    - heading: "U.S. federal"
+      role: soft
+      bullets: ["No single AI law", "Dec 2025 order: challenge state AI laws"]
+    - heading: "Texas"
+      role: soft
+      bullets: ["TRAIGA since Jan 1, 2026", "Agencies, health care: disclose AI"]
+    - heading: "New York City"
+      role: soft
+      bullets: ["Local Law 144 since July 5, 2023", "Hiring tools: yearly bias audit"]
+  takeaway: "A rule’s own text decides; a summary is a lead"
+  notes:
+    say: |
+      Another dated slide, as of October 2026. At the federal level the U.S. has no single AI law; existing laws apply,
+      such as copyright, consumer protection and the federal ban on job discrimination, Title VII. A December 2025
+      presidential order set up a federal challenge to state AI laws. Texas's AI law, TRAIGA, has been in force since
+      January 1, 2026: it bans some intentional uses, such as manipulating people toward self-harm, and requires
+      governmental agencies and health-care providers to tell people they are dealing with AI. New York City has
+      required, since July 5, 2023, that an employer using an automated hiring tool have a yearly bias audit, publish
+      a summary and notify candidates. Check each against the rule's own page before you rely on it.
+    background: |
+      Status box items 2–4 (§18.5). Texas nuance (the book's reading): TRAIGA's exclusion of universities covers another
+      term, so whether its disclosure duty reaches public universities is unsettled; Senate Bill 1964 (2025) requires
+      state agencies to disclose public-facing AI unless a reasonable person would already know, and because Texas
+      law's definition of "state agency" includes public universities, the book reads that duty as covering them.
+      Deep 18.C (optional): the Senate voted 99 to 1 in July 2025 to strip a proposed 10-year pause on state AI laws;
+      EO 14179 (January 2025); EO 14281 (April 2025, disparate impact; reported); Colorado replaced its law (SB 26-189,
+      May 2026; duties from January 1, 2027; reported). As of October 2026, Congress had passed no law replacing state
+      AI laws. Short case 2: the State Comptroller found NYC's enforcement of LL144 ineffective (Dec 2025).
+    questions:
+      - q: "Does TRAIGA apply to a public university in Texas?"
+        a: "Unsettled for TRAIGA's disclosure duty, by the book's reading; SB 1964's disclosure duty, by the book's reading, covers public universities. Ask your institution's own offices; this is not legal advice."
+    misconceptions:
+      - m: "M5 'The U.S. has no AI law.'"
+        fix: "No single federal AI law, but existing laws apply, plus state and city rules like these."
+    activity: "Optional: faded example 'Two U.S. Uses' (Texas agency chatbot; NYC résumé screener) as practice."
+    book: "§18.5 status box, items 2–4, @fig-18-13 (U.S. map); Deep 18.C; Short case 2; Faded Example 'Two U.S. Uses'."
+
+# The book's heat-map figure (@fig-18-16) is small at slide size; its content is in the two cards and the notes.
+- layout: compare
+  minutes: 2
+  kicker: "§18.6 · Studio · worked example: Hana’s zine (constructed)"
+  title: "A rules-and-rights risk, written out"
+  size: 28
+  columns:
+    - heading: "The risk · D"
+      role: risk
+      bullets: ["Contributors lose control of their drawings", "Form + terms § 4", "Medium, medium"]
+    - heading: "The plan"
+      role: verified
+      bullets: ["Reduce: no-training tool", "Owner: Hana", "Ask: images too?"]
+  takeaway: "Not a legal opinion: which rules to check and whom to ask"
+  notes:
+    say: |
+      Here is a complete rules-and-rights risk. Hana runs a small zine and plans AI-drafted alt text for contributors'
+      scanned drawings. The submission form permits printing and posting only; the tool's terms, section 4, let
+      uploads train models. The risk: contributors losing their right to decide how copies of their drawings are used,
+      which is copyright. The rule and its layer: the form and the terms, both agreements. Harmed: contributors.
+      Evidence: D, because Hana opened both and can cite the sections. Rating: medium likelihood, medium impact. The
+      mitigation reduces it: a no-training tool and an AI line on the form, owned by Hana as editor; the book's heat
+      map shows the move to low likelihood. And the question for the rule's owner: does the no-training option cover
+      images?
+    background: |
+      Worked Example "Hana's Rules-and-Rights Risk" (§18.6), constructed; the form and terms are invented. @fig-18-16
+      shows the Risk Heat Map move (D, solid outline). Faded Example "A Club's Sign-up Assistant" (Chapter 15's club
+      scenario) is the practice item; Appendix E gives a model answer (members harmed; medium, medium; reduce or avoid;
+      owner: the club's president or data officer; ask the officers and the provider). Every risk ends with the line
+      "This records which rules to check and whom to ask; it is not a legal opinion."
+    questions:
+      - q: "Why is Hana's evidence D but a law can be I?"
+        a: "D needs the rule's own text for this tool and data, with its section cited. For a law you know only from the chapter's summary, I with a reason is acceptable (Check Yourself 18.6)."
+    activity: "Ask students to compare Hana's risk with the one they drafted in the lab: which part is weakest in theirs?"
+    book: "§18.6 Worked Example, @fig-18-16; Faded Example 'A Club's Sign-up Assistant'; Check Yourself 18.6."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Layers:** follow the strictest rule; ask its owner"}
+    - {code: "O2", text: "**Training:** fair use turns on the facts"}
+    - {code: "O3", text: "**Output:** copyright protects what people author"}
+    - {code: "O4", text: "**Errors:** deployers stay responsible (the book’s reading)"}
+    - {code: "O5", text: "**Risk:** EU tiers; U.S. existing laws, a state, a city"}
+    - {code: "A12", text: "**One risk:** a rule, its text, its owner"}
+  takeaway: "Every legal status line has a date: check it before you rely on it"
+  notes:
+    say: |
+      The chapter's question was: who sets the rules for AI, on training data, on outputs, on mistakes and on risky
+      uses, and how do you find the ones that apply to you? Several layers apply at once; follow the strictest and ask
+      its owner. Fair use in training depends on the facts. Copyright protects what people author. In this book's
+      reading, those who deploy and rely on AI are responsible for its errors. The EU sets duties by risk tier; the
+      U.S. relies on existing laws and a few state and city rules. Revisit the Warm-up: a public photo is still
+      protected, and fair use depends on the facts; a prompted image probably has no author if your prompt was your
+      only input; and the deploying company is responsible, disclaimer or not.
+    background: |
+      Chapter Summary and @fig-18-21. Warm-up answers (chapter): (1) not automatically: the photo is still protected,
+      fair use depends on the facts (18.2); (2) probably no one, if the prompt was the only input; your own changes can
+      be protected (18.3); (3) in this book's reading, the deploying company (18.4). Every dated line here is "as of
+      October 2026"; the refresh list holds them.
+    activity: "Ask students to compare the Warm-up answers with their 0–100% confidence ratings."
+    book: "Chapter Summary, @fig-18-21; Warm-up revisit."
+
+- layout: key_terms
+  minutes: 0.5
+  title: "Key terms (1 of 2): rules and copyright"
+  terms:
+    - "law"
+    - "statute"
+    - "case law"
+    - "executive order"
+    - "jurisdiction"
+    - "terms of service"
+    - "license"
+    - "policy (of an organization)"
+    - "governance"
+    - "Regulation Map"
+    - "trial court"
+    - "appeals court"
+    - "holding"
+    - "affirmed"
+    - "copyright"
+    - "public domain"
+    - "infringement"
+    - "fair use"
+    - "transformative (use)"
+    - "authorship (in copyright)"
+    - "registration (copyright)"
+    - "trademark"
+  note: "Definitions: Chapter 18 and the glossary."
+  notes:
+    say: |
+      These are the chapter's key terms, on two slides. This first set is about where rules come from and about
+      copyright. They can appear in Part A of the final, which asks for terms and concepts, so make sure you can define
+      each in a sentence of your own. Focus on pairs that are easy to confuse: a trial court and an appeals court; a
+      holding and a remark in a footnote, which is not a holding; copyright and trademark; authorship in copyright and
+      ownership of a text from Chapter 10. A quick self-test: cover the slide and define three terms for a neighbor.
+    background: |
+      The chapter lists 39 key terms (36 Core, 3 Deep); they are split over two slides here, none omitted. Definitions
+      are worded identically in the chapter and docs/glossary.md. Examinable scope: Core only (D20); legal citations in
+      parentheses are not examinable.
+    activity: "30-second pair self-test."
+    book: "Chapter Summary, Key Terms; box 'How U.S. courts work'; glossary."
+
+- layout: key_terms
+  minutes: 0.5
+  title: "Key terms (2 of 2): responsibility and regulation"
+  terms:
+    - "liability"
+    - "provider (of an AI system)"
+    - "deployer"
+    - "disclaimer"
+    - "EU AI Act"
+    - "prohibited practice"
+    - "high-risk AI system"
+    - "transparency duty"
+    - "deepfake"
+    - "synthetic media"
+    - "FERPA"
+    - "HIPAA"
+    - "right (in the rules-and-rights risk)"
+    - "rules-and-rights risk"
+    - "disparate impact (Deep)"
+    - "opt-out (text and data mining) (Deep)"
+    - "voice cloning (Deep)"
+  note: "Definitions: Chapter 18 and the glossary. (Deep) terms are optional and not on exams."
+  notes:
+    say: |
+      The second set is about responsibility and regulation. The pairs to keep apart: a provider, who builds an AI
+      system or puts it on the market, and a deployer, who uses it in its own work; a prohibited practice, which may not
+      be used at all, and a high-risk system, which may be used with duties; a deepfake and synthetic media more
+      generally; FERPA for education records and HIPAA for health information. And the term you will use in the lab: a
+      rules-and-rights risk, the A12 row that names one rule, its text and its owner. The three terms marked Deep come
+      from optional sections and are not on the exam.
+    background: |
+      Glossary wording: deepfake = synthetic media that realistically shows a real person, or a real event, saying,
+      doing or happening in a way that did not happen; Core chapters define it again at first use (book-wide rule, as
+      Chapter 13 is Deep). Disparate impact, opt-out and voice cloning come from Deep 18.B–18.C.
+    activity: "30-second pair self-test on the provider/deployer and prohibited/high-risk pairs."
+    book: "Chapter Summary, Key Terms; glossary."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: references
+  session: after
+  title: "References"
+  per_slide: 12
+  refs:
+    - "Ambrogi, R. (2020, December 11). Legal research company ROSS to shut down… *LawSites*."
+    - "Ambrogi, R. (2026, October 2). ROSS says it will ask Supreme Court to review 3rd Circuit ruling… *LawSites*."
+    - "*Bartz v. Anthropic PBC*, 787 F. Supp. 3d 1007 (N.D. Cal. 2025); final settlement approval (N.D. Cal. July 20, 2026)."
+    - "Davis, W. (2026, October 12). AI company plans to seek new hearing in copyright battle. *MediaPost*."
+    - "Executive Order No. 14179 (2025); No. 14281 (2025); No. 14365 (2025). *Federal Register, 90*."
+    - "*Kadrey v. Meta Platforms, Inc.*, 788 F. Supp. 3d 1026 (N.D. Cal. 2025)."
+    - "*Mata v. Avianca, Inc.*, 678 F. Supp. 3d 443 (S.D.N.Y. 2023)."
+    - "*Moffatt v. Air Canada*, 2024 BCCRT 149 (Civil Resolution Tribunal, British Columbia)."
+    - "New York City Department of Consumer and Worker Protection. (n.d.). *Automated employment decision tools (AEDT)*."
+    - "Office of the New York State Comptroller. (2025, December 2). *Enforcement of Local Law 144* (Report 2024-N-6)."
+    - "Regulation (EU) 2024/1689 (Artificial Intelligence Act). *OJ L*, 12.7.2024."
+    - "Regulation (EU) 2026/1744 (Digital Omnibus on AI). *OJ L*, 24.7.2026."
+    - "Texas H.B. 149, 89th Leg., R.S. (2025) (TRAIGA); Texas S.B. 1964, 89th Leg., R.S. (2025)."
+    - "Texas Department of Information Resources. (n.d.). *Texas Data Privacy and Security Act*."
+    - "*Thaler v. Perlmutter*, No. 23-5233 (D.C. Cir. 2025), cert. denied (U.S. March 2, 2026)."
+    - "*Thomson Reuters v. Ross Intelligence*, No. 1:20-cv-613-SB (D. Del. Feb. 11, 2025)."
+    - "*Thomson Reuters v. Ross Intelligence*, No. 25-2153 (3d Cir. Sept. 29, 2026)."
+    - "U.S. Copyright Office. (2023). Registration guidance: Works containing AI-generated material. *Fed. Reg., 88*, 16190."
+    - "U.S. Copyright Office. (2025). *Copyright and artificial intelligence, Part 2: Copyrightability*."
+    - "U.S. Department of Education. (n.d.). *FERPA*. U.S. Department of Health and Human Services. (n.d.). *HIPAA Privacy Rule*."
+    - "U.S. Senate. (2025, July 1). Roll call vote 363 (99–1)."
+    - "17 U.S.C. §§ 102, 106, 107, 411(a); 37 C.F.R. § 202.1(a)."
+  notes:
+    say: |
+      Reference slides; not presented. These are the sources cited on the slides and in the speaker notes, in short
+      form from the chapter's reference list, which was fact-checked. Students do not need to read them. If a student
+      wants a primary source, the chapter recommends the Third Circuit's Ross opinion, which is short and readable,
+      especially its sections on the four factors; the Copyright Office's Part 2 executive summary (about five
+      minutes); and Article 5 and Annex III of the EU AI Act, the lists of banned and high-risk uses, short enough to
+      read whole.
+    background: |
+      Full entries with URLs are in the chapter's References. Legal status lines on the slides are "as of October 2026"
+      and are rows in data/ch18_legal_status.csv (refresh list); recheck them before teaching. Recommended readings: U.S. Copyright Office
+      (2025), Part 2; TRAIGA (HB 149, 2025) and the EU AI Act, instructor summary (the chapter's 18.5 status box).
+      Mata and Moffatt are cases the book cites.
+    activity: "Not presented."
+    book: "Chapter 18, References; Further Reading."

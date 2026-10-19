@@ -37,7 +37,7 @@ AI-drafted matrices often score a blank as the lowest value or drop it without a
 Individual: A9 items 2–5 started in the lab session (graded with the A9 rubric in Chapter 11). Team drafts are shared but ungraded.
 
 ## Accessibility and alternatives
-No-device route: printed scenario sheets and the provided matrix (alternative assignment). Screen-reader-friendly CSV files and A9 sheet on your course site. Solo work is available for any student who prefers it.
+No-device route: printed scenario sheets and the provided matrix (alternative assignment). Screen-reader-friendly CSV files and A9 sheet in the companion files. Solo work is available for any student who prefers it.
 
 ## Safety and privacy
 Constructed scenario data only; no real candidates, employees, patients or customers; for scenario C, options not people, your own data only, in a tool your institution provides or approves (Chapter 15).

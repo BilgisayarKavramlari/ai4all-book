@@ -30,7 +30,7 @@ Inside-frontier tasks mostly pass with light checking; outside-frontier tasks pr
 Lab notes that become A1 parts 1–3. Scored as part of A1 (see the chapter's A1 rubric).
 
 ## Accessibility and alternatives
-Students without AI access, or who prefer not to use it, use the provided dated outputs on the course site for three tasks and design the tests. Screen-reader-friendly template in Compass and on the course site.
+Students without AI access, or who prefer not to use it, use the provided dated outputs in the companion files for three tasks and design the tests. Screen-reader-friendly template in Compass and in the companion files.
 
 ## Safety and privacy
 No personal, patient, client or institutional data. Use public or invented content.

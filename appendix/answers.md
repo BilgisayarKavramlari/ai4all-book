@@ -162,8 +162,8 @@
 3. Open. Strong answers name failures typical of their field, place each on the tree or the chain, use Deep 4.B to say what the five branches leave out, and argue for or against an added branch with an example.
 
 ### Spaced Review
-1. The constraints part of the prompt (Chapter 5; also accept output format). Restating it in the final request places it in the newest message, so the output no longer depends on an instruction from many turns earlier (section 4.4).
-3. Typical (the case you expect most often), different (changes something that matters) and edge (unusual but possible, most likely to break the prompt). Examples will vary by field.
+1. Cause 1: the model produces likely text, and nothing in that step checks truth. A token's score measures how well it fits the text so far, not whether the finished sentence is true, so a fluent answer is not evidence of a correct one (Chapter 1); checking stays a separate step (Verify in the AI Work Loop).
+3. The knowledge cutoff is the date after which no text was collected for training (Chapter 3). An answer that misses a later event goes on the hallucination branch, leaf: outdated information.
 5. Context loss (leaf: missed middle of a long input). Section 4.4 adds the loss that comes from long, piece-by-piece conversations, where models commit early.
 
 ### Case Study Questions

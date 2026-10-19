@@ -28,7 +28,7 @@ Many languages need more tokens than English for the same sentence; the ratio de
 Ungraded. Two token counts, the tokenizer name and date, and two sentences of interpretation.
 
 ## Accessibility and alternatives
-Provided translations on the course site for students who use only English. A pre-computed table (data/ch03_tokens.csv) for students without access to a tokenizer page; screen-reader friendly.
+Provided translations in the companion files for students who use only English. A pre-computed table (data/ch03_tokens.csv) for students without access to a tokenizer page; screen-reader friendly.
 
 ## Safety and privacy
 Paste only public or invented sentences.

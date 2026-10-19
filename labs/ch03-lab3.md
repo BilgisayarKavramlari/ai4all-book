@@ -26,7 +26,7 @@ The open prompt varies far more than the prompt with one answer. Even the one-an
 Ungraded. The ten answers and a three-sentence comparison.
 
 ## Accessibility and alternatives
-Dated sample outputs on the course site for students who prefer not to use AI tools. Paper version: roll dice to pick tokens from a printed score table based on section 3.2.
+Dated sample outputs in the companion files for students who prefer not to use AI tools. Paper version: roll dice to pick tokens from a printed score table based on section 3.2.
 
 ## Safety and privacy
 No personal or confidential information in prompts.

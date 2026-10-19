@@ -45,7 +45,7 @@
 
 Thresholds: the smallest gap that chance alone produces less than 1 time in 20 when both versions share a 50% rate, by exact calculation (Chapter 16, D-16.3; values for 25, 26, 35 and 45 runs by this book's calculation with the same method, data/ch15_lab_thresholds.csv).
 
-In Compass (optional): ch15-lab1, with the A12 sheet and heat-map template; also on the course site.
+In Compass (optional): ch15-lab1, with the A12 sheet and heat-map template; also in the companion files.
 
 ## Expected observations
 Labels change the count in some runs and not in others; six runs are too few to say by how much. The canary trace usually finds a box students had not drawn: memory, a shared link, a connector or a log. Some workflows have all three legs; many students remove the outbound leg first. Some pooled bias gaps pass the threshold and some do not; "lead, run more" is a valid result.

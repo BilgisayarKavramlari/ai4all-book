@@ -31,7 +31,7 @@ Most students find that question 2 (what is missing) is harder than expected, an
 Ungraded. A one-page datasheet draft.
 
 ## Accessibility and alternatives
-Write the datasheet for the provided card dataset on the course site. Accessible template in Compass and on the course site.
+Write the datasheet for the provided card dataset in the companion files. Accessible template in Compass and in the companion files.
 
 ## Safety and privacy
 If the tool's settings and help pages are unclear about where images go, delete the project and the photos when you finish.

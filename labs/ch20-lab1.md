@@ -5,7 +5,7 @@
 | Type | Studio (in class) |
 | Objectives | O1, O4, O5, O6 (LO7; LO4, LO5, LO6 secondary) · tags 4D:DIL, 4D:DESC |
 | Time | 75 minutes in class, plus drafts of A14 parts 1–3 and the code-of-practice draft prepared at home |
-| Materials | Your A14 draft (parts 1–3: evidence map rows, one 80–100-word entry, narrative) on paper or on screen; your code-of-practice draft (Chapter 21, Part A); the privacy flow (section 20.6) and the A14 sheet (section 20.9), printed or on your course site; a timer |
+| Materials | Your A14 draft (parts 1–3: evidence map rows, one 80–100-word entry, narrative) on paper or on screen; your code-of-practice draft (Chapter 21, Part A); the privacy flow (section 20.6) and the A14 sheet (section 20.9), printed or in the companion files; a timer |
 | Groups | Pairs inside teams of 3–4; in a team with an odd number, one group of three in which the third person keeps time and asks the follow-up questions, rotating each step; individual records |
 | AI tools | None needed. Never paste a classmate's work into an AI tool |
 
@@ -21,7 +21,7 @@
 
 **No partner** (absent or working alone): read your own entry aloud after a 10-minute break and write down what a stranger would believe; use the privacy flow alone; record a timed rehearsal on your phone and listen once.
 
-In Compass (optional): ch20-lab1, with the A14 sheet and the privacy checklist; also on your course site.
+In Compass (optional): ch20-lab1, with the A14 sheet and the privacy checklist; also in the companion files.
 
 ## Expected observations
 
@@ -29,4 +29,4 @@ The "employer read" usually shows that the AI's part and the student's part are 
 
 ## Accessibility
 
-Paper-only route; screen-reader-friendly sheets on your course site; the rehearsal can be done in writing (two written answers in 5 minutes) for students with an approved accommodation.
+Paper-only route; screen-reader-friendly sheets in the companion files; the rehearsal can be done in writing (two written answers in 5 minutes) for students with an approved accommodation.

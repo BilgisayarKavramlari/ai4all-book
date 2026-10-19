@@ -5,7 +5,7 @@
 | Type | Apply (optional, at home) |
 | Objectives | O1 (LO5) · tags 4D:DIL |
 | Time | 15 minutes |
-| Materials | The Regulation Map (section 18.1; printable from your course site); rules you can read yourself |
+| Materials | The Regulation Map (section 18.1; printable from the companion files); rules you can read yourself |
 
 ## Steps (tool-neutral)
 1. Pick one AI use in your field, job or club (no personal data).
@@ -24,7 +24,7 @@ The nearest layers (course, employer, client, tool terms) usually have readable 
 Ungraded; feeds the optional Mini-Project (policy comparison note).
 
 ## Accessibility and alternatives
-A text version of the map is on your course site.
+A text version of the map is in the companion files.
 
 ## Safety and privacy
 Use only rules you can read yourself; no confidential policies from an employer without permission. Not legal advice.

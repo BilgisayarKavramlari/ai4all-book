@@ -35,7 +35,7 @@ Run 2 lowers the score of the reduced object more than the overall score. Run 3 
 Ungraded. The completed observation table and answers to two debrief questions.
 
 ## Accessibility and alternatives
-Students without a working tool use the provided results table on the course site (from a run of the same procedure) and answer the debrief. Screen-reader route as in Lab 2.1.
+Students without a working tool use the provided results table in the companion files (from a run of the same procedure) and answer the debrief. Screen-reader route as in Lab 2.1.
 
 ## Safety and privacy
 As in Lab 2.1: objects only.

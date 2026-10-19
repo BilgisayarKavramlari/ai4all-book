@@ -1,0 +1,1453 @@
+# Lecture deck spec — Chapter 8: Hallucination, Uncertainty and Verification (lab session)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch08.yaml --preview
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only.
+#
+# Chapter 8 follows Chapter 4 (Ch. 4 and Ch. 8 blueprints): Chapter 4's concept session (its own deck, with the
+# niche-topic source demonstration run as Lab 4.1) comes first; this chapter's verification lab is Lab 8.1 "Ten
+# Claims" (briefing 10 · team check 10 · own claims 30 · share 15 · exit 5 · buffer 5). This deck therefore has one
+# presented session (thu = the lab session, 75 min; the key is internal).
+# The concept recap the lab sheet asks for (funnel, three citation
+# checks, verdict rule) sits in the briefing; signals and calibration sit in the share step, where the class pools
+# its calibration gap. The remaining Core material (8.1–8.5 checks, the Case Study labels, short cases, Deep 8.A) is
+# kept as self-study and review slides in the "after" session (not presented).
+# Every number and quotation comes from the sources under deck.sources; the builder flags any number it cannot find.
+
+deck:
+  chapter: 8
+  slug: hallucination-uncertainty-and-verification
+  title: Hallucination, Uncertainty and Verification
+  short_title: Hallucination, Uncertainty and Verification
+  author: Şadi Evren Şeker
+  sessions:
+    thu: {label: "Lab session · verification lab, Lab 8.1 (75 min)", minutes: 75}
+    after: {label: "self-study, review and reference slides (not presented)"}
+  sources:
+    - chapters/08-hallucination-uncertainty-and-verification.qmd
+    - labs/ch08-lab1.md
+    - labs/ch08-lab2.md
+    - labs/ch08-lab3.md
+    - figures/longdesc/ch08.md
+    - appendix/answers.md
+    - docs/blueprints/ch08-blueprint.md
+
+slides:
+
+# ======================================================================= LAB SESSION · BRIEFING (lab step 1 + buffer)
+- layout: title
+  session: thu
+  minutes: 0
+  subtitle: "Lab session · verification lab, Lab 8.1"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading: Chapter 8"
+    - "Recommended: the Mata sanctions opinion, pp. 1–2"
+  figure: f8-04-verification-funnel
+  notes:
+    say: |
+      Put this slide up while students arrive and form teams of three or four. Today is the second half of the Chapter 4 and Chapter 8 pair.
+      In the concept session on Chapter 4 you named the ways AI tools fail and why. Today is about what you do next: how to
+      check an output before you rely on it. The picture on the right is the chapter's signature diagram, the Verification
+      Funnel; we walk through it in ten minutes. In the AI Work Loop this chapter strengthens Verify, with Decide
+      second, because checking only matters if it changes what you keep, change or reject. Today is a lab, not a lecture. You will check sources from the Chapter 4 demonstration as
+      a team, then three claims from your own output, and you will leave with the first checked rows of A5, your claim
+      verification table. Take out the output you saved before class and your ten A5 rows.
+    background: |
+      Structure of the pair (Chapter 4 and Chapter 8 blueprints): the Chapter 4 concept session comes first
+      (Moffatt opening case; the demonstration, asking for sources on a niche topic, runs as Lab 4.1, where students
+      only label two demo outputs on the tree). Checking those sources happens today, in this lab. If your course
+      runs the two chapters on other days or in another order, adjust the opening lines. The chapter map (@fig-8-1)
+      highlights Verify, with Decide second; the title figure is the Verification Funnel (@fig-8-4), shown legibly as
+      cards on slide 9.
+    questions:
+      - q: "I did not save an output before class. Can I still do the lab?"
+        a: "Yes. Use the dated sample output for your field on your course site; it is also the A5 alternative assignment's starting point (Lab 8.1, If this doesn't work)."
+    activity: "On screen before class. Ask students to sit in teams of 3–4 with their saved output and A5 rows 1–10."
+    book: "Chapter 8 opening page, @fig-8-1 (Chapter Map, Verify highlighted) and @fig-8-4."
+
+- layout: session_plan
+  minutes: 0.5
+  title: "The verification lab at a glance"
+  columns:
+    - heading: "Before the lab · at home"
+      sub: "pre-lab and reading, already done"
+      blocks:
+        - {min: 5, label: "Pre-lab output", detail: "One dated output from your field, two sources"}
+        - {min: 38, label: "Chapter 8 Core package", detail: "Opening Case, 8.1–8.6, Case Study, Summary"}
+        - {min: 18, label: "Your Turn boxes", detail: "A5 rows 1–10 with both confidences"}
+    - heading: "Lab session · Lab 8.1"
+      sub: "75 min · teams of 3–4, individual A5"
+      blocks:
+        - {min: 15, label: "Briefing", detail: "Mata, the funnel, citations, verdicts"}
+        - {min: 10, label: "Team check", detail: "Chapter 4 demo sources, citations first"}
+        - {min: 30, label: "Your own claims", detail: "Three A5 rows, highest stakes first"}
+        - {min: 15, label: "Share and critique", detail: "Verdicts that changed; class calibration gap"}
+        - {min: 5, label: "Exit step", detail: "Summary, key terms, exit ticket"}
+  notes:
+    say: |
+      Here is the plan. The left column is what you did before today: you saved one dated output from your field
+      that names at least two sources, read the chapter, and turned the output into ten A5 rows, each with your own
+      confidence and the tool's stated confidence. If you have not done that yet, you can still work today with the
+      sample output on your course site. The right column is today. A short briefing on the court case and the method; a team
+      check of the sources from the Chapter 4 demonstration; then thirty minutes on three of your own claims; then we share
+      verdicts that changed and pool the class's calibration gap; and a short exit step. A5 is due when your
+      instructor sets it. Group work happens here; your A5 is individual.
+    background: |
+      Lab 8.1 sheet timing: briefing 10 · team check 10 · own claims 30 · share 15 · exit 5 · buffer 5 (75). On this
+      slide the five-minute buffer is folded into the briefing (warm-up and one quick check). Home-time figures are the
+      chapter's own count: about 24 min for Core sections, about 38 min for the whole Core package, Your Turns about
+      18 min, pre-lab 5 min, A5 at home about 37 min. Chapters 4 and 8 together come to about 2.4 h, a documented
+      heavier stretch (book decision D21; D-8.10). If your course spreads them differently, say so.
+    questions:
+      - q: "Why is this stretch so much heavier?"
+        a: "Chapters 4 and 8 carry two Core chapters and A5. The book counts it honestly at about 2.4 hours and treats it as a heavier stretch; A5 asks you to verify eight of your ten claims, not all ten, to keep it manageable."
+    activity: "Point to the two columns; give the A5 due date you have set."
+    book: "Chapter 8 time paragraph; Lab 8.1 (labs/ch08-lab1.md)."
+
+- layout: objectives
+  minutes: 0.5
+  kicker: "Chapter 8 · learning objectives"
+  title: "By the due date you will be able to…"
+  items:
+    - {code: "O1", text: "**Decompose** an output into claims and rank them by stakes"}
+    - {code: "O2", text: "**Apply** the Verification Funnel: a verdict plus remaining uncertainty"}
+    - {code: "O3", text: "**Analyze** a citation for the three ways it can fail"}
+    - {code: "O4", text: "**Evaluate** uncertainty signals and a tool's stated confidence"}
+    - {code: "O5", text: "**Diagnose** a real verification failure on the tree and chain"}
+    - {code: "O6", text: "**Produce** your claim verification table (A5)"}
+  notes:
+    say: |
+      Six objectives, and today's lab touches all of them. You already practiced the first at home: you split your
+      output into claims and ranked them by stakes. Today you apply the funnel to three of those claims, and you
+      analyze citations with three separate checks. In the share step we evaluate signals by pooling the class's
+      confidence against our verdicts. We diagnose one real failure, the fake court cases, on the Chapter 4 tree and
+      chain. And by the A5 due date you produce A5. Notice the verbs. None of them is "trust" and none is "distrust". They are
+      all about doing a check and writing down what you found, including what you could not find.
+    background: |
+      Full wording with tags in the chapter: O1 decompose (LO3; AI Fluency Discernment); O2 apply the funnel (LO3;
+      Discernment, Diligence); O3 analyze a citation (LO3); O4 evaluate signals by comparing stated confidence with
+      results (LO3, LO1; Long & Magerko: how AI works); O5 diagnose on the Failure Taxonomy Tree and failure-to-harm
+      chain and name the stopping stage (LO3, LO1); O6 produce A5 (LO3). LO3 is "verify AI-generated claims, sources
+      and outputs, and document remaining uncertainty" (the book's learning outcomes).
+    activity: "Read the verbs aloud; no discussion."
+    book: "Chapter 8, Learning Objectives."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Warm-up from Chapter 4 · Chapter 4 to Chapter 8"
+  title_prefix: "Warm-up"
+  title: "label it first"
+  question: "A tool invents a reference. Which branch and leaf of the Failure Taxonomy Tree does it go on, and is it intrinsic or extrinsic?"
+  instruction: "From memory, no notes: write it, then check with your team"
+  model_answer:
+    - "**Branch and leaf:** hallucination · invented facts or sources."
+    - "**Usually extrinsic:** your input can neither support nor contradict it. Intrinsic only if it contradicts a source list you supplied."
+  notes:
+    say: |
+      Warm-up from Chapter 4, from memory. A tool invents a reference: which branch and which leaf of the Failure
+      Taxonomy Tree does it go on, and is it an intrinsic or an extrinsic hallucination? Write your answer, then
+      check with your team. This connects the two chapters. In Chapter 4 you learned to name a failure. Today
+      you learn to find it. Naming without finding is guessing; finding without naming makes it hard to learn from.
+      Give them about a minute. If anyone is stuck, give a hint: the branch is the one for fluent output that is not
+      supported by the input or by facts.
+    background: |
+      Spaced Review item 1 (Chapter 4 · LO1 · Apply); key in Appendix E: hallucination, leaf "invented facts or
+      sources"; usually extrinsic, because the user's input can neither support nor contradict it; intrinsic only if
+      it contradicted a source list the user supplied. Book-wide rule: student-facing tree labels start with Chapter 8
+      in reading order; documented/inferred is the one uncertainty pair (solid/dashed).
+    activity: "1 min write and team check; then the answer slide (part of the lab's 5-min buffer)."
+    book: "Spaced Review 1; Chapter 4 (Failure Taxonomy Tree); Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      Here is the answer. An invented reference goes on the hallucination branch, leaf "invented facts or sources".
+      It is usually extrinsic: the input you gave can neither support it nor contradict it, because the reference came
+      from nowhere in your prompt. It would be intrinsic only if you had given the tool a list of sources and it
+      contradicted that list. Now the question for today: a label tells you what kind of failure it would be if the
+      reference is fake. But how do you find out whether it is fake in the first place? That is the whole lab. Keep
+      the label in mind; you will use it in A5, item 7.
+    background: |
+      A5 item 7 asks for one failed claim labeled on the tree (branch and leaf, documented or inferred); if none failed,
+      label the claim that came closest and say why. A failed claim can also go into the Failure Diary (first version
+      due at the portfolio checkpoint your instructor sets, if there is one).
+    activity: "Reveal; move on."
+    book: "Spaced Review 1; Application Assignment A5, item 7."
+
+- layout: timeline
+  minutes: 1.5
+  kicker: "Opening Case · Mata v. Avianca (2023)"
+  title: "Six cases that did not exist"
+  events:
+    - {label: "Mar 1, 2023", text: "Filing cites decisions; the signer reads none", tier: "confirmed"}
+    - {label: "Mar 15", text: "Airline’s lawyers cannot find most cases", tier: "confirmed"}
+    - {label: "Apr 25", role: ai, text: "Excerpts filed: six produced by ChatGPT", tier: "confirmed"}
+    - {label: "Jun 22", role: risk, text: "Bad faith found; $5,000 and letters", tier: "confirmed"}
+  takeaway: "Dismissed as too late; the fake cases were not the reason"
+  notes:
+    say: |
+      Tell it as a story. In 2019 a passenger, Roberto Mata, says a serving cart struck his knee on an Avianca flight;
+      in 2022 he sued. The airline asked the court to dismiss: he had waited too long. On March 1, 2023, his lawyers
+      filed a response full of quotations from court decisions. One lawyer researched and wrote it; a colleague signed
+      it without reading any of the cases. On March 15 the airline's lawyers said they could not find most of them. The
+      judge ordered copies, and on April 25 the lawyers filed excerpts. Six of the decisions did not exist; ChatGPT had
+      produced them. On June 22 the judge found bad faith, meaning dishonesty, not just carelessness, and imposed
+      sanctions: $5,000 and letters to the client and to every real judge named in a fake opinion.
+    background: |
+      All facts confirmed in the primary record: Opinion and Order on Sanctions, ECF 54, and the dismissal, ECF 55, both
+      June 22, 2023 (S.D.N.Y.; Judge P. Kevin Castel). Docket = numbered list of documents; ECF = Electronic Case Files;
+      ¶ = numbered paragraph. Filing ¶ 5; signer did not read the cases ¶ 6; not found ¶ 7; copies ordered ¶ 13
+      (Apr 11–12 in the book figure @fig-8-2, left off this slide); excerpts ¶¶ 20–22; six nonexistent, produced by
+      ChatGPT ¶ 36; truth only from May 25 and bad faith pp. 1–2; $5,000 jointly with the firm and letters pp. 33–34.
+      Background before the filing: flight in August 2019 (Avianca Flight 670), suit filed February 2022, motion to
+      dismiss January 2023 (ECF 55, pp. 1–2; ECF 54, ¶¶ 1, 3). The judge wrote there is
+      "nothing inherently improper" about using a reliable AI tool for assistance (p. 1); the rules make lawyers
+      gatekeepers. Describe people by role (decision D-8.6). Chapter 1 used the case as a teaser.
+    questions:
+      - q: "Did Mata lose because of the fake cases?"
+        a: "No. In a separate opinion the same day (ECF 55), the court dismissed the claim as filed too late under the Montreal Convention. The fake cases led to the sanctions, not to the dismissal."
+    activity: "Narrate; do not read the cards. Ask: 'At which date could a check still have stopped this?'"
+    book: "Opening Case 'Six Cases That Did Not Exist'; @fig-8-2."
+
+- layout: concept
+  minutes: 1
+  kicker: "Opening Case · the puzzle (ECF 54, ¶¶ 12, 45–47)"
+  title: "He asked the tool. It said yes."
+  size: 24
+  bullets:
+    - "His search for “Varghese” found nothing; he cited it (¶ 12)"
+    - "Replies: real, findable in Westlaw and LexisNexis (¶ 45)"
+    - "*When* he asked is disputed (¶¶ 46–47)"
+  flow:
+    - {label: "“Are the cases real?”", kind: human}
+    - {label: "Same kind of tool", kind: ai}
+    - {label: "“Yes, findable”", kind: step, role: risk}
+  takeaway: "Puzzle: what check would have caught them?"
+  notes:
+    say: |
+      Here is the part that matters for us. At a hearing the lawyer who wrote the filing said he had not imagined the
+      tool could make cases up. He had searched for one of them, "Varghese v. China Southern Airlines", found nothing,
+      and cited it anyway. At some point he also asked ChatGPT directly whether the cases were real. The replies said
+      they were, and that they could be found in Westlaw and LexisNexis, two commercial legal research databases. So
+      here is the puzzle for today: when the lawyer asked the tool whether the cases were real, it said yes. What check
+      would have caught them, and when? Keep your answer; you will test it in the share step.
+    background: |
+      ¶ 11 (did not imagine the tool could make up cases), ¶ 12 (searched, could not find, cited anyway), ¶ 45 (replies
+      said real and findable in Westlaw, LexisNexis and the Federal Reporter). The timing of the "is it real?" question
+      is disputed: his own accounts differ and the court found them inconsistent (¶¶ 46–47). Decision D-8.6: always
+      present the timing as disputed, never as a fact. The red box is marked risk by a thick border and the word "yes";
+      color is not the only cue.
+    misconceptions:
+      - m: "M3 'Asking the tool whether its source is real is a check.'"
+        fix: "This slide is the refutation: the lawyer asked; the replies said real. A check needs evidence that no AI tool produced."
+    activity: "Ask for a show of hands: 'Who has ever asked a chatbot whether its own answer was right?'"
+    book: "Opening Case (puzzle); §8.3 'One shortcut never counts'."
+
+- layout: concept
+  minutes: 2.5
+  kicker: "Lab 8.1 · step 1 · read in class"
+  title: "Read the Mata opinion, pp. 1–2, and the handout"
+  size: 24
+  bullets:
+    - "**Pages 1–2:** what must lawyers do?"
+    - "**¶ 12:** what did his own search show?"
+    - "**¶ 26:** what did the clerk find?"
+    - "**¶ 45:** what did the replies say?"
+  takeaway: "The handout explains ECF, ¶, docket and the legal databases"
+  notes:
+    say: |
+      Now read the source yourself, because this is a verification lab and you should not take my summary on trust.
+      You have the first two pages of the sanctions opinion and a one-page handout of three paragraphs, with the legal
+      terms explained. Read with the four questions on the slide. On pages one and two, find what the court says
+      lawyers must do; the word to look for is gatekeeper. In paragraph 12, find what the lawyer's own search showed.
+      In paragraph 26, find what the clerk of the appeals court found. In paragraph 45, find what the tool's replies
+      said. Two and a half minutes. Then we use these three paragraphs as a model of the three checks.
+    background: |
+      The reading is the sanctions opinion, ECF 54 (43 pages; full text in Further Reading; recommended). The lab sheet asks for pp. 1–2 and a
+      glossed handout of ¶¶ 12, 26 and 45 (the blueprint's longer excerpt list was cut to these three in revision).
+      Glosses: docket = the court's numbered list of filings; ECF = Electronic Case Files; ¶ = numbered paragraph;
+      Federal Reporter = the series that publishes federal appeals decisions; Westlaw and LexisNexis = commercial legal
+      research databases. Answers: lawyers must act as gatekeepers who ensure what they file is accurate; ¶ 12 his
+      search found nothing; ¶ 26 no case with a party called Varghese since 2010; ¶ 45 replies said real and findable.
+    questions:
+      - q: "Why read a court opinion in an AI course?"
+        a: "It is a primary source: the court's own record of what happened. Reading it is stage 2 of today's funnel, applied to the case itself."
+    activity: "2.5 min silent reading; take one answer per question only if time allows."
+    book: "Lab 8.1 step 1; Further Reading (Mata sanctions opinion)."
+
+# Three stages on one slide replace the illegible tall book figure (@fig-8-4).
+- layout: compare
+  minutes: 1.5
+  kicker: "§8.2 · signature diagram 8 (redrawn)"
+  title: "Take each claim only as far as its stakes require"
+  size: 26
+  header_height: 1.1
+  columns:
+    - heading: "Stage 1: independent check"
+      role: soft
+      bullets: ["Evidence no AI tool produced", "Named source or own calculation"]
+    - heading: "Stage 2: primary source"
+      role: soft
+      bullets: ["The original record", "High stakes, numbers, quotes, citations"]
+    - heading: "Stage 3: expert"
+      role: human
+      bullets: ["A person with knowledge and access", "Ask for reasons"]
+  takeaway: "Stop when evidence matches stakes; no claim skips stage 1"
+  notes:
+    say: |
+      A quick recap of the method you read. The Verification Funnel is three checks, each outside the tool. Stage 1,
+      an independent check: evidence that no AI tool produced, such as a source with an author or publisher you can
+      name, or your own recalculation. Stage 2, the primary source: the original record a claim comes from, such as
+      the study, the law, the court record. Go there when the stakes are high, when stage-1 sources disagree, or when
+      the claim is a number, a quotation or a citation. Stage 3, an expert: a person with the knowledge and access to
+      judge it; ask for reasons, not just a yes. The bar at the bottom is the stopping rule, the side rail of the book's
+      funnel: stop when the evidence matches the stakes. And every check ends in a verdict and a line of remaining
+      uncertainty.
+    background: |
+      Definitions owned by Chapter 8 and reused word for word in Chapter 9 (D-8.3): claim, stakes, verification
+      ("checking a claim against evidence that no AI tool produced"), independent check, primary source. An AI search
+      tool can help find a source, but the verdict rests on the opened source (D-8.5). Chapter 1's four steps (isolate,
+      find the original, compare, decide) are stages 1 and 2. The funnel is Signature 8; Chapters 9–11 reuse it. The
+      book figure (@fig-8-4) is a tall funnel whose labels are too small at slide size, so the three stages are redrawn
+      here as cards (stage 3 is a person, so its card uses the human color and says "a person"); the stopping rail is the
+      bottom bar.
+    questions:
+      - q: "Is a news story about a study a primary source?"
+        a: "No. It is independent (stage 1), but it is not the study; the study is the primary source (§8.2)."
+    misconceptions:
+      - m: "M6 'Verifying means checking every sentence as far as possible.'"
+        fix: "Point at the bottom bar (the book's side rail): checks are proportional to stakes. But the floor holds: every claim you rely on gets at least stage 1."
+    activity: "Point to each card in turn; no discussion."
+    book: "§8.2, @fig-8-4; Check Yourself 8.2."
+
+- layout: concept
+  minutes: 1
+  kicker: "§8.2 · the book's verdict scale"
+  title: "Five verdicts, each with a line of uncertainty"
+  size: 28
+  bullets:
+    - "**Supported:** evidence says what the claim says"
+    - "**Partly supported:** part holds, part does not"
+    - "**Unsupported:** no evidence at the stage reached"
+    - "**Contradicted:** evidence says otherwise"
+    - "**Cannot verify:** evidence you cannot reach"
+  takeaway: "Plus remaining uncertainty: what you could not check, and why"
+  notes:
+    say: |
+      Each check ends in a verdict on the book's five-point scale. Supported: the evidence says what the claim says.
+      Partly supported: part of it holds and part does not, or is missing, such as a market share that is right but
+      for the wrong year. Unsupported: no evidence for it at the stage you reached; nothing found, or the source does
+      not say it. Contradicted: the evidence says otherwise. Cannot verify: the evidence exists or may exist, but you
+      cannot reach it, such as a company's private memo. Then one line of remaining uncertainty. Notice the difference
+      between unsupported and contradicted: "I could not find it" is not the same as "a record shows it is false."
+      Today's hardest calls will be exactly there.
+    background: |
+      The scale is book-wide (Chapter 8 owns it; D-8.2). Examples in the chapter's table: a population figure matching
+      Statistics Canada's release (supported); a market share right but for 2022, not 2024 (partly); an untraceable
+      customer-loyalty statistic (unsupported); an official page listing different sections (contradicted); a private
+      sales memo (cannot verify). The lab sheet expects disagreement on "unsupported" vs. "contradicted" for an unfound
+      citation; that is the point of the verdict rule on the next slide.
+    questions:
+      - q: "Is 'cannot verify' a failing answer?"
+        a: "No. An honest 'cannot verify', with a reason, is acceptable and a sign of care (Ethics Lens). Inventing a verdict is not."
+    activity: "Ask: 'Which two verdicts will we confuse most today?' (Unsupported and contradicted.)"
+    book: "§8.2 verdict table; @fig-8-4s."
+
+# Redrawn natively from @fig-8-5 (three failures); the book figure adds a Mata example per column.
+- layout: compare
+  minutes: 1.5
+  kicker: "§8.3 · book figure: three failures (redrawn)"
+  title: "Each citation failure needs its own check"
+  size: 28
+  header_height: 1.1
+  columns:
+    - heading: "1 Does it exist?"
+      role: soft
+      bullets: ["Search an index no AI tool made", "**Stage 1**"]
+    - heading: "2 Another work?"
+      role: soft
+      bullets: ["Match each detail to the record", "**Stage 1**"]
+    - heading: "3 Does it say it?"
+      role: soft
+      bullets: ["Open it; find the passage", "**Stage 2**"]
+  takeaway: "Not in two indexes: unsupported. Record against it: contradicted."
+  notes:
+    say: |
+      Citations look like evidence, so they get their own checks. A citation can fail in three ways. One: the work
+      does not exist. Check by searching an index that no AI tool produced: your library catalog, a DOI lookup, a
+      publisher's site, a court's records. Two: it points to another work; the title, number or author belongs to
+      something else. Check by matching every detail to the record. Three: the work exists but does not say what is
+      claimed. Check by opening it and finding the passage. Checks one and two use an index, so they are stage 1;
+      check three opens the work itself, so it is stage 2. Then the verdict rule: if you cannot find it in two indexes,
+      it is unsupported, and you name the indexes; if a record shows it does not exist, or belongs to another work, it
+      is contradicted.
+    background: |
+      Citation rules (D-8.2): an authoritative record shows the work does not exist or its details belong to another
+      work → contradicted; any wrong detail that stops a reader from finding the work → contradicted *as cited*,
+      corrected from the record; not found in two indexes no AI tool produced → unsupported, indexes named (some real
+      works are poorly indexed); found but the passage does not support the claim → unsupported (contradicted if it says
+      the opposite). DOI = Digital Object Identifier. Whether a summary represents a whole source is Chapter 9's
+      question (D-8.4). The slide redraws @fig-8-5 natively; the book figure adds a Mata example per column.
+    questions:
+      - q: "If I can't find it, why not just call it fabricated?"
+        a: "Because some real works are poorly indexed. 'Unsupported, not in [catalog] or [index]' is accurate; 'fabricated' needs a record showing it does not exist (Lab 8.2 debrief)."
+    misconceptions:
+      - m: "M2 'If the output names a source, the claim has been verified.'"
+        fix: "A named source is a pointer until you open it. In one 2023 test, 55% of GPT-3.5's and 18% of GPT-4's references did not exist (§8.3). Not 'AI references are always fake'."
+    activity: "Ask teams to say aloud which stage each check belongs to before you reveal the bottom bar."
+    book: "§8.3, @fig-8-5; Check Yourself 8.3."
+
+# Final reveal about 56 words, of which 8 are the step numbers and dash separators the builder counts: the three
+# checks, the verdict and the stage mapping on one slide are the point of the example (deliberate exception, as in
+# Chapter 1's worked example). Paragraph numbers lead each step ("¶ 26:") so no line breaks between "¶" and its number.
+- layout: worked
+  minutes: 1
+  max_words: 58
+  kicker: "§8.3 · worked example · as cited in the March 1 filing (ECF 54)"
+  title: "Checking “Varghese” with the three checks"
+  steps:
+    - {label: "Exists?", text: "¶ 26: no Varghese case since 2010"}
+    - {label: "Another work?", text: "¶ 28: docket, citation of other cases"}
+    - {label: "Says it?", text: "¶ 29: some quoted decisions lack the words"}
+    - {label: "Verdict", text: "Contradicted: a record shows it does not exist"}
+  reveal: [2, 4]
+  result: "Checks 1–2: an index (stage 1). Check 3: the work (stage 2)."
+  notes_reveal:
+    - minutes: 1
+      say: |
+        Let's run the three checks on the case the lawyer could not find, using the court's own findings as a model.
+        First: does it exist? The clerk of the federal appeals court named in the citation searched the court's
+        records and found no case with a party called Varghese since 2010. That is an index no AI tool produced,
+        searched by the people who keep it. Second: does it point to another work? Its docket number belonged to a
+        different case, and its citation in the Federal Reporter led to a third. Ask the class: after these two checks,
+        what verdict would you already give, and why? Take one answer before you reveal the rest.
+      background: |
+        Worked Example "Checking 'Varghese'" (§8.3), ECF 54 ¶¶ 26, 28, 29. Checks 1 and 2 are stage 1 because they use
+        an index; check 3 is stage 2 because it opens the work (D-8.2). Both findings so far are authoritative records,
+        so the verdict is already contradicted after check 1; the third check matters for the quotations attributed to
+        real decisions.
+      activity: "Pause after step 2; take one predicted verdict."
+      book: "§8.3 Worked Example 'Checking Varghese'."
+    - minutes: 1
+      say: |
+        Third check: does it say it? This one is about the real decisions quoted inside the fake opinion. The court found
+        that some of those real decisions did not contain the quoted words. So even the parts that pointed at real cases
+        failed the passage check. Verdict: contradicted, because a record shows the case does not exist. Notice what
+        did not appear anywhere in this chain of checks: the tool's own answer. Every step used evidence that no AI tool
+        produced: the court's records, the reporter, the decisions themselves. That is the pattern you follow today
+        with your own citations. Index first, then the details, then the passage.
+      background: |
+        The bottom bar restates D-8.2's stage mapping. For the lab: students' own citations will rarely be fake; the
+        common findings are wrong details (failure 2) and passages that do not support the claim (failure 3), especially
+        from tools that retrieve sources (Lab 8.2 expected observations).
+      questions:
+        - q: "What if the tool gives me a link to the source?"
+          a: "A link is a pointer. Open it and run checks 2 and 3: does every detail match, and does the passage say what is claimed? (Review A9 logic; D-8.5)."
+      activity: "Reveal; then go straight to the quick check."
+      book: "§8.3 Worked Example; Check Yourself 8.3."
+  notes:
+    book: "§8.3 Worked Example 'Checking Varghese'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §8.3"
+  title: "is it real?"
+  question: "Why is asking a tool “Is this source real?” not a check?"
+  options:
+    - "A tool that can search the web gives a yes that counts as an independent check, so the question is unnecessary."
+    - "The yes counts only when the tool also supplies a link to the source."
+    - "A yes from a newer model is reliable, while one from an older model is not."
+    - "The answer comes from the same kind of process that produced the source, not from evidence outside it."
+  answer: d
+  instruction: "Answer alone (30 seconds), then vote"
+  explanation: "(a) is M3; (b) treats a link as evidence (M2); (c) trusts a newer model’s word (M4/M5)"
+  notes:
+    say: |
+      Quick check, ungraded. Read all four options before you choose; they are close in length on purpose. This is
+      the kind of item you may meet on a written exam. Thirty seconds alone, then we vote. Before revealing,
+      ask a student who chose (a) and one who chose (d) to explain. Option (a) is the tempting one, because many tools
+      now search the web. The key idea is in the Mata replies: the tool said the cases were real and named databases,
+      and it was wrong.
+    background: |
+      Review Questions A9 (O3 · LO3 · Understand). Key (Appendix E): (d). (a) is M3 (a tool's yes, even with search,
+      is not a source; open what it found); (b) is M2 (a link is a pointer until you open it); (c) is M4/M5 (trusting a
+      newer model's word instead of evidence).
+    activity: "30 s alone, vote, answer slide. Part of the lab's 5-min buffer; skip if the reading ran long."
+    book: "§8.3; Review Questions A9; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (d): the answer comes from the same kind of process that produced the source, not from evidence
+      outside it. A web search inside the tool can help you find a page, which is useful, but then you open the page
+      and judge it yourself; the tool's yes is never the source. A link is a pointer until you open it. And a newer
+      model may make fewer errors, but its word is still not evidence. In A5 the rule is written down: the tool's own
+      yes never counts as a source. If an AI search tool helped you find something, cite the source you opened.
+    background: |
+      Book-wide rule D-8.5: an AI tool's own "yes" is never a source; an AI search tool may help find a source, but the
+      verdict rests on the opened source. Newer tools often do better, though not always: in April 2025 OpenAI reported
+      two newer models making up facts about people more often than an older one on its own test (33% and 48% vs. 16%;
+      §8.3).
+    activity: "Reveal; one follow-up comment."
+    book: "§8.3; Appendix E (Review A9); A5 item 4."
+
+# ======================================================================= LAB SESSION · PRACTICE (lab steps 2–3)
+- layout: lab
+  minutes: 1
+  kicker: "Lab 8.1 · teams of 3–4 · individual A5"
+  title: "Ten Claims: the plan for the next hour"
+  goal: "Check claims outside the tool, citations first"
+  steps:
+    - {text: "**Team check:** Chapter 4 demo sources, one or two claims each", min: 10}
+    - {text: "**Your own claims:** three A5 rows, highest stakes first, then citations", min: 30}
+    - {text: "**Share:** one verdict that changed at the primary source", min: 15}
+    - {text: "**Exit:** one claim you could not verify, and the stage that would settle it", min: 5}
+  side:
+    - {heading: "Deliverable", text: "Team record (ungraded); A5 with three checked rows"}
+    - {heading: "No device, or no AI?", text: "Use the dated sample output on your course site"}
+    - {heading: "Rule", role: risk, text: "No personal or confidential data. The tool’s “yes” is never a source."}
+  notes:
+    say: |
+      Here is the rest of the session. First ten minutes, as a team: take the printout of the Chapter 4 demonstration,
+      the two outputs we wrote on blank cards in Lab 4.1, and check their sources. Each of you takes one or two claims,
+      citations first. Then thirty minutes on your own: three of your A5 rows, starting with your highest-stakes row,
+      then your citations. Those three count toward A5's primary-source minimum if they reach the primary source. Then
+      we share and pool the class's calibration gap. The deliverable today is your team record, which is ungraded, and
+      three checked rows of your A5. One rule throughout: no personal or confidential information in a prompt, and
+      the tool's own yes never counts as a source.
+    background: |
+      From labs/ch08-lab1.md (O2, O3, O6; LO3; Apply). Materials: the Mata opinion pp. 1–2 and the glossed handout; the dated
+      printout of the Chapter 4 demo (the two Lab 4.1 cards); one provided dated output with ten claims and two citations
+      (backup set, with instructor key: two citations, one quotation, three numbers, two dates, a judgment and a
+      prediction); students' A5 rows 1–10 and stage plan. The backup output must be a real dated output generated before
+      the lab (instructor package; Chapter 8 handoff item e). Students who miss class do steps 3 and 5 at home.
+    questions:
+      - q: "Can we split my three claims among the team?"
+        a: "No. The team check is shared; your own three claims are individual because they become rows of your own A5."
+    activity: "1 min. Hand out the demo printout; teams assign claims (one or two each)."
+    book: "Lab 8.1 steps 2–5; §8.6."
+
+- layout: concept
+  minutes: 10
+  kicker: "Lab 8.1 · step 2 · team check · 10 min"
+  title: "Team check: the Chapter 4 demo sources"
+  size: 24
+  bullets:
+    - "One or two claims each, **citations first**"
+    - "Before each check, write your confidence (0–100%)"
+    - "Record: stage · source · verdict · uncertainty"
+    - "Too few claims? Use the backup output"
+  flow:
+    - {label: "Your confidence", kind: human}
+    - {label: "Index: exists? matches?", kind: step}
+    - {label: "Open it: says it?", kind: step}
+    - {label: "Verdict + uncertainty", kind: human, role: verified}
+  notes:
+    say: |
+      Ten minutes, as a team. Each member takes one or two claims from the Chapter 4 demonstration printout, and you
+      start with the citations, because that is where the funnel pays off most visibly. Before each check, write down
+      how confident you are, from 0 to 100 percent. Do not skip this: we pool those numbers later to measure the class's
+      calibration. Then search an index that no AI tool produced: does the work exist, and does every detail match?
+      If the claim needs it, open the work and find the passage. Record the stage you reached, the source, the verdict
+      and one line of uncertainty. If the demonstration outputs gave too few claims, use the backup output on the table. Go.
+    background: |
+      Lab sheet step 2. Expected observations: most teams settle the citations fastest when they search an index first;
+      disagreements cluster on the stopping point (stage 1 vs. 2) and on "unsupported" vs. "contradicted" for an unfound
+      citation; the pooled confidence usually runs above the share supported. Free indexes: library catalog, DOI lookup,
+      scholarly search, public court records (instructor package list for Lab 8.2). Circulate; ask each team which index
+      they used and whether it was produced by an AI tool.
+    questions:
+      - q: "The citation is real but the year is off by one. Supported?"
+        a: "A wrong detail that would stop a reader from finding the work makes it contradicted as cited; correct it from the record. If the work is still easy to find, record it as partly supported and say why (D-8.2; your call, explained in the uncertainty line)."
+    misconceptions:
+      - m: "M4 'If several runs, or several tools, give the same answer, it is correct.'"
+        fix: "If a team checks a claim by asking a second chatbot, stop them: that is not an independent check. Agreement can lower a check's priority; it cannot replace the check."
+    activity: "10 min. Circulate; at minute 8 warn teams to write their verdicts and confidences."
+    book: "Lab 8.1 step 2; §8.2–8.3."
+
+- layout: assignment
+  minutes: 2
+  kicker: "Assignment A5 · O6 · LO3"
+  title: "A5: claim verification table"
+  due: "When your instructor sets it · on your course site · individual"
+  parts:
+    - "Your dated output, prompt and transcript (two sources)"
+    - "Ten one-fact claims: type, stakes, both confidences"
+    - "Eight checked: stage, source, verdict, uncertainty; three at the primary source, every citation"
+    - "Two calibration gaps; one failed claim labeled"
+    - "Reflection (60–100 words) and AI Use Declaration"
+  rubric_title: "Rubric · 10 points"
+  rubric:
+    - {criterion: "Task", points: 3, full: "Dated output; ten rated claims"}
+    - {criterion: "Funnel", points: 1.5, full: "Eight checked; stages fit stakes"}
+    - {criterion: "Confidence", points: 1.5, full: "Both confidences and gaps"}
+    - {criterion: "Verification", points: 2, full: "Verdicts follow the rule"}
+    - {criterion: "Declaration", points: 2, full: "Five elements; reflection"}
+  note: "A mostly-right output and an honest “cannot verify” are valid results. An invented source or verdict is not."
+  notes:
+    say: |
+      Before you work on your own claims, here is what they feed. A5 is due when your instructor sets it. You submit your dated
+      output with the transcript; ten claims, one fact per row, each typed and rated for stakes, with your confidence
+      and the tool's stated confidence; eight of the ten checked, with stage, source, verdict and uncertainty, at least
+      three at the primary source, including every citation. The three you check today count. Then the two calibration
+      gaps, yours and the tool's, one failed claim labeled on the tree, a short reflection and the declaration. The
+      rubric is out of ten. Finding that the output was mostly right is a valid result. Inventing a source or a verdict
+      is not.
+    background: |
+      Full brief and four-level rubric in the chapter (Application Assignment A5): Task 3 (six requirements), Funnel
+      record 1.5 (five), Confidence record 1.5 (four), Verification 2 (five), Declaration and judgment 2 (eight); levels
+      count how many requirements fall short. Ten claims must include at least two citations or quotations and one
+      number; at most two not checkable as true or false. The two unchecked claims each get one line, "not checked" and
+      why. Gap method: claims rated 80% or higher, excluding not checkable, not checked or cannot verify; average
+      confidence minus the share supported ("partly" counts as not). At home about 37 min. Alternative assignment: the
+      dated sample output for the student's field (about 400 words, twelve claims, three citations, stated confidence
+      per claim); same rubric.
+    questions:
+      - q: "Can an AI search tool be my source?"
+        a: "It can help you find a source. You cite the source you opened; the tool's own answer never counts (A5 item 4)."
+      - q: "What if fewer than two of my claims are rated 80% or higher?"
+        a: "Say so; the gap is not computed for that side (A5 item 6). Ten claims give a rough picture, not a measurement."
+    activity: "Point to the Funnel record row: 'three at the primary source, including every citation'."
+    book: "Application Assignment A5 (brief, rubric, alternative); §8.6."
+
+- layout: lanes
+  minutes: 27
+  kicker: "Lab 8.1 · step 3 · your own claims · on screen while you work (book figure: A5 row)"
+  title: "Three of your claims: how far did each get?"
+  rows:
+    - label: "Before checking"
+      nodes:
+        - {label: "Claim, one fact", kind: step}
+        - {label: "Stakes, with a reason", kind: human, role: neutral}
+        - {label: "Your % and the tool’s %", kind: human, role: neutral}
+    - label: "The check"
+      nodes:
+        - {label: "Stage reached", kind: human, role: neutral}
+        - {label: "Source: link or location", kind: step}
+        - {label: "Verdict", kind: human, role: verified}
+    - label: "After"
+      nodes:
+        - {label: "Remaining uncertainty", kind: step}
+        - {label: "Corrected statement", kind: step}
+  caption: "Order: your highest-stakes row first, then your citations (exists? matches? says it?)."
+  takeaway: "A verification table records how far each claim got, not only a verdict"
+  notes:
+    say: |
+      Thirty minutes on your own claims, and this template stays on screen. Start with your highest-stakes row, row 1
+      of your A5, then your citations. For each claim, fill the row from left to right: the claim, its stakes, your
+      confidence and the tool's before checking, the stage you reached, the source with a link or location, the
+      verdict, the remaining uncertainty and, if it was not supported, a corrected statement. Write the uncertainty
+      line now, while you still remember what you could not check. A strong table records how far each claim got, not
+      only a verdict. A weak one says "looks right" ten times and uses the tool's answers as sources. If you finish
+      early, check a fourth claim; it counts at home.
+    background: |
+      Lab sheet step 3 (30 min; 27 here because the A5 brief took 2 and the plan slide 1). The slide redraws the A5 row
+      (@fig-8-13) as three lanes so every field name is legible on screen. Lucía's worked rows in §8.6:
+      claim 4 (18 months) contradicted at stage 2 by the national model rule change from 18 to 30 months in 2023 and her
+      state board's 30-month rule; claim 5 (the "official exam blueprint") contradicted, failure 3; her gap 86 − 50 = 36
+      points. Faded row (claim 3, score of 75): supported; the tool's gap 93 − 50 = 43 points (Appendix E). Constructed
+      examples; CPA facts checked October 2026. Most students need help choosing the stopping point; ask "what would an
+      error cost, and to whom?"
+    questions:
+      - q: "My highest-stakes claim needs an expert. I can't reach one today."
+        a: "Take it as far as you can, give the verdict at the stage you reached, and write in the uncertainty line which expert would settle it and why. That is the exit-ticket question too."
+      - q: "Is a page with no author an independent check?"
+        a: "No. An independent check is evidence no AI tool produced from a source with an author or publisher you can name, or your own recalculation (§8.2)."
+    misconceptions:
+      - m: "M1 'If most of an answer checks out, the rest is probably right too.'"
+        fix: "Remind students who stop after two good rows: in the 2023 biography study only 58% of separate facts were supported, and later facts less often. A correct first claim says little about the fourth."
+    activity: |
+      27 min individual work. Circulate. At minute 15 ask everyone to have at least one complete row with an
+      uncertainty line; at minute 25 give a 2-minute warning and ask each team to choose one claim whose verdict changed
+      at the primary source.
+    book: "§8.6, @fig-8-13, Worked Example 'Two of Lucía's Rows, and Her Gap'; Lab 8.1 step 3."
+
+# ======================================================================= THURSDAY · SHARE (lab step 4)
+- layout: tps
+  minutes: 8
+  kicker: "Lab 8.1 · step 4"
+  title: "What changed at the primary source?"
+  prompt:
+    - "A verdict that changed at the primary source"
+    - "The hardest verdict: what settled it?"
+    - "Mata: which check would have stopped it first?"
+  phases:
+    - {name: "Think", min: 1, text: "Pick your claim"}
+    - {name: "Team", min: 2, text: "Choose one to report"}
+    - {name: "Share", min: 5, text: "Report; critique the check"}
+  notes:
+    say: |
+      Share and critique. Each team reports one claim whose verdict changed when you reached the primary source: what
+      did stage 1 say, what did stage 2 say, and why was stage 1 not enough? Then the hardest verdict you had to choose
+      and what evidence settled it. Critique the check, not the person: was that source really independent? Should the
+      check have gone further, or could it have stopped earlier? Keep the third question for the next slide: in Mata,
+      which of today's checks would have stopped the fake cases first? I will collect your confidences and verdicts
+      from the team check while you talk, to compute the class calibration gap.
+    background: |
+      Debrief questions from labs/ch08-lab1.md: (1) which claim needed the primary source and why stage 1 was not enough
+      (justify); (2) which verdict was hardest and what settled it (evaluate); (3) in Mata, which check would have stopped
+      the fake cases first (analyze). What to listen for: verdicts based on the tool's answer (not a check); stage-1
+      sources that were not independent (no author, copied text); "unsupported" used correctly with indexes named.
+    misconceptions:
+      - m: "M6 'Verifying means checking every sentence as far as possible.'"
+        fix: "When a team took a low-stakes claim to an expert, ask what the stakes justified; when a team stopped a citation at stage 1, ask whether check 3 was needed."
+    activity: "Think 1 · team 2 · share 5. Collect team-check sheets for the pooled gap."
+    book: "Lab 8.1 step 4 and debrief."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Case Study question 3 · Mata"
+  title: "where would the funnel have stopped it?"
+  question: "Which stage of the funnel would have flagged “Varghese,” and which stage would have made it contradicted?"
+  instruction: "Write one sentence for each stage, then compare with your team"
+  model_answer:
+    - "**Stage 1 flags it:** his own search found nothing (¶ 12); one more index makes it unsupported, and a court filing cannot rest on that."
+    - "**Stage 2 contradicts it:** no such case in the court's records; its citation and docket number belong to other cases (¶¶ 26, 28)."
+  notes:
+    say: |
+      Now the third debrief question, as a Case Study question. Which stage of the funnel would have flagged
+      "Varghese", and which stage would have made it contradicted? One sentence for each stage. Think about what the
+      lawyer actually did: he searched once and found nothing. Was that already a stage-1 result? And what would it
+      have taken to turn "I could not find it" into "a record shows it does not exist"? Give them a minute, then take
+      two answers before you show the model answer. This is also the answer to the puzzle from the start of the class.
+    background: |
+      Case Study Question 3 (O5 · LO3 · Analyze); key in Appendix E. A warning signal the signer missed: the April 25
+      affidavit attached only excerpts produced by the tool, and a quick reading would have shown that "Varghese"
+      contradicted itself (Conclusions of Law ¶ 23(b), pp. 29–30), which should have sent him to stage 1.
+    activity: "1 min write; two answers; then the answer slide."
+    book: "Case Study 'The Fake Cases, Revisited'; Case Study Questions 3; Appendix E."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      Here is the model answer. Stage 1 would have flagged it: the lawyer's own search found nothing, and that was a
+      warning he ignored. One more index would have made the verdict unsupported, and a citation in a court filing
+      cannot rest on an unsupported verdict. Stage 2 would have made it contradicted: the court's records hold no such
+      case, and its Federal Reporter citation and docket number belong to other cases. So the answer to today's puzzle
+      is: the very first stage, a search in an index that no AI tool produced, done before filing. Asking the tool was
+      never a check. The next slide shows the same answer on the funnel.
+    background: |
+      Chapter Summary, "Return to the Opening Case". Better workflow in the Case Study: Frame (a chatbot can help
+      brainstorm arguments; it is not a source of law), Verify (every citation opened in a legal research database
+      before filing), Decide (the signer reads the cited authorities), Disclose (follow court rules on AI use where they
+      exist; Chapters 10 and 18).
+    activity: "Reveal; connect to the opening puzzle."
+    book: "Case Study; Chapter Summary; Appendix E (Case Study Q3)."
+
+- layout: lanes
+  minutes: 1
+  kicker: "Case Study · the funnel applied to Mata (book figure, redrawn)"
+  title: "Flagged at stage 1, contradicted at stage 2"
+  label_width: 2.9
+  rows:
+    - label: "Stage 1 · his own search"
+      nodes:
+        - {label: "“Varghese”", kind: step}
+        - {label: "¶ 12: not found", kind: human, role: neutral}
+        - {label: "One more index: unsupported", kind: human, role: neutral}
+    - label: "Stage 2 · court records"
+      nodes:
+        - {label: "¶ 26: no such case", kind: human, role: neutral}
+        - {label: "¶ 28: citation, docket of other cases", kind: human, role: neutral}
+        - {label: "Verdict: contradicted", kind: human, role: risk}
+  caption: "Asking the tool appears nowhere in this funnel: its replies were never a stage."
+  takeaway: "The check that would have caught it cost one more search"
+  notes:
+    say: |
+      Here is the funnel applied to "Varghese". At stage 1, his own search: not found. A second index would have made
+      it unsupported. At stage 2, the court's records: no such case, and the citation and docket number belong to other
+      cases. Verdict: contradicted. Now compare costs, which is the Ethics Lens of the chapter. Producing the fake cases
+      took a few prompts. Exposing them took months of letters, court orders, a hearing and a search by an appeals
+      court's clerk. The cheapest check in the whole story was the one the lawyer had already started and then ignored.
+      That is why stage 1 is the floor for every claim you rely on.
+    background: |
+      @fig-8-4d, redrawn as two lanes so the labels stay legible; the verdict card is marked risk by a thick border and
+      the word "contradicted". Case Study labels: tree, hallucination, leaf "invented facts or sources", documented (¶ 36);
+      secondary overconfidence, leaf "certainty beyond the evidence", documented through the replies' affirmations
+      (¶ 45) and, by the lawyer's account, insistence that "Varghese" existed (¶ 47; reported, from his declaration).
+      Chain: link 2 "checked before use?" failed, documented (¶¶ 6, 12). Ethics Lens: as of October 2026, Charlotin's
+      public database listed more than 2,100 decisions worldwide on filings that relied, or were alleged to rely, on
+      false AI-generated content.
+    questions:
+      - q: "Why does Mata get an overconfidence label when the Chapter 4 Moffatt chatbot did not?"
+        a: "Overconfidence needs evidence about expressed certainty. In Mata the replies affirmed the cases were real and findable in named databases; the Moffatt chatbot gave plain instructions with no such statement (Case Study; book decision on overconfidence labeling)."
+    activity: "Point to the stage-1 note; ask 'How long would one more search have taken?'"
+    book: "Case Study, @fig-8-4d, @fig-8-11, @fig-8-12; Ethics Lens."
+
+- layout: concept
+  minutes: 1
+  kicker: "§8.4 · uncertainty signals (book figure: three runs)"
+  title: "Signals tell you where to look first"
+  size: 28
+  bullets:
+    - "**Stated confidence:** weak, and often too high"
+    - "**Disagreement across fresh runs:** a warning sign"
+    - "**Flip under pushback:** the answer is unstable"
+    - "**Precise detail about something rare:** errors cluster here"
+  takeaway: "Disagreement tells you more than agreement. No signal settles a claim."
+  notes:
+    say: |
+      Before we pool the numbers, one recap from section 8.4. An uncertainty signal is a feature of an output that makes
+      an error more or less likely without settling whether a claim is true. Four are worth recording before you check.
+      Stated confidence, like "95% sure": a weak signal, often too high. Disagreement across fresh runs: ask the same
+      question in new chats; if the answers disagree, treat the claim as unreliable. If they agree, that is weaker
+      evidence, because a model can repeat the same error. A flip under pushback shows the answer is unstable; holding
+      firm is no evidence either way. And precise detail about something rare is where errors cluster. Signals set the
+      order of your checks. They never replace them.
+    background: |
+      §8.4 definitions: uncertainty signal; stated confidence; consistency check (same question, several new chats;
+      temporary chat or memory off, or the runs are not fresh; a search-enabled tool may find the same wrong page).
+      Evidence: disagreement as a warning sign (Manakul et al., 2023); methods like this catch answers that vary, not
+      errors a model repeats (Farquhar et al., 2024); facts about less famous people were supported less often (Min et
+      al., 2023). Pushback test from Chapter 4: a direct question is not a pushback test (book decision on overconfidence labeling). In @fig-8-7, two of
+      three runs agree on the outdated four-section CPA exam at "95% sure"; the disagreeing run was right.
+    questions:
+      - q: "If the tool holds firm when I push back, isn't that a good sign?"
+        a: "No. Holding firm is no evidence either way; in Mata the replies held firm and were wrong (¶ 45). A flip is informative; firmness is not (§8.4)."
+    misconceptions:
+      - m: "M4 'If several runs, or several tools, give the same answer, it is correct.'"
+        fix: "Use @fig-8-7: the two agreeing runs were both outdated. Agreement lowers the priority of a check; it does not replace it. Not 'agreement means nothing'."
+    activity: "Ask: 'Which signal did your demo outputs show?'"
+    book: "§8.4, @fig-8-7; Check Yourself 8.4."
+
+# Redrawn natively from @fig-8-9 (calibration chart): the chart's axis labels fall to about 9 pt at slide size.
+- layout: compare
+  minutes: 1
+  kicker: "§8.5 · 30 constructed answers by stated confidence (book figure: calibration chart, redrawn)"
+  title: "“90–100% sure” was right 9 times in 15"
+  size: 26
+  header_height: 1.1
+  columns:
+    - heading: "50–69% (mean 61%)"
+      role: soft
+      bullets: ["Right: 2 of 5 (40%)", "Gap: about 21 points"]
+    - heading: "70–89% (mean 80%)"
+      role: soft
+      bullets: ["Right: 5 of 10 (50%)", "Gap: about 30 points"]
+    - heading: "90–100% (mean 94%)"
+      role: risk
+      bullets: ["Right: 9 of 15 (60%)", "Gap: about 34 points"]
+  takeaway: "Accuracy rose with confidence, but stayed below it: overconfidence"
+  notes:
+    say: |
+      Calibration of a model is how closely its stated confidence matches its accuracy. Calibration of your own
+      confidence is the same idea for you, across many answers. Two meanings, one habit: predict, then check. These
+      three cards come from a constructed record of 30 answers, grouped by the confidence the tool stated. In the "90 to
+      100% sure" group, the tool's average stated confidence was 94%, but it was right on 9 of 15 answers, 60%: a gap
+      of about 34 points. Confidence did rise with accuracy, as in published tests: 40, then 50, then 60 percent right.
+      But in every group the share right is below the stated confidence. That is overconfidence: output stated with
+      more certainty than the evidence supports. Now we compute the same kind of gap for this class.
+    background: |
+      Constructed data for teaching (@fig-8-9; Worked Example "Reading the Chart"; data/ch08_calibration_toy.csv):
+      groups 50–69% (mean 61%) 2 of 5; 70–89% (mean 80%) 5 of 10; 90–100% (mean 94%) 9 of 15; gaps of about 21, 30
+      and 34 points (figure long description). The book figure draws these as bars below a dashed diagonal of perfect
+      calibration; its labels are too small at slide size, so the numbers are redrawn here as cards (the third card
+      carries the risk border and the word "Gap", not color alone). Deep 8.B computes the expected calibration error
+      for this chart, about 31 points (optional). Overconfidence is Chapter 1's term, a branch of Chapter 4's tree.
+    misconceptions:
+      - m: "M5 'A tool that says it is 90% sure will be right about 9 times in 10.'"
+        fix: "Point at the third card: 9 of 15. Not 'stated confidence is meaningless': the share right still rises from left to right."
+    activity: "Point at the third card; ask what a perfectly calibrated tool's third card would say (right about as often as its mean stated confidence, 94%)."
+    book: "§8.5, @fig-8-9, Worked Example 'Reading the Chart'."
+
+- layout: concept
+  minutes: 2
+  kicker: "Lab 8.1 · step 4 · the class's number"
+  title: "Pool the class calibration gap"
+  size: 28
+  bullets:
+    - "Take the team-check claims rated 80% or higher"
+    - "Average confidence − share supported = the gap"
+    - "“Partly supported” counts as not supported"
+    - "About twenty claims: a rough picture, not a measurement"
+  takeaway: "Was the class more or less overconfident than the tool?"
+  notes:
+    say: |
+      Now ours. From the team check I take every claim you rated 80% or higher before checking. First, your average
+      confidence on those claims. Second, the share of them that were supported; "partly supported" counts as not
+      supported, and claims marked cannot verify are left out. Average confidence minus share supported is the class's
+      calibration gap, in percentage points. With about twenty claims this is a rough picture, not a measurement of
+      anyone. Then the question on the bar: were we more or less overconfident than the tool's stated confidence on the
+      same claims? In A5 you compute exactly this twice, once for yourself and once for the tool.
+    background: |
+      Definitions verbatim (book decision on calibration wording): "Calibration (of your own confidence)" is how closely your confidence in your answers
+      matches how often they are actually correct, across many answers; "Calibration (of a model)" is how closely a
+      model's stated confidence matches its accuracy. Published tests: in 2023, five models' stated confidence fell
+      mostly between 80% and 100% (Xiong et al., 2024); in a 2024 benchmark of short factual questions chosen to be hard
+      for GPT-4, four OpenAI models consistently stated more confidence than their accuracy justified, though higher
+      confidence went with more right answers (Wei et al., 2024). Caution: a tool that says 60% to everything and is
+      right 60% of the time is perfectly calibrated and useless. A4 (Chapter 7) used the same idea of a gap.
+    questions:
+      - q: "If the tool's confidence runs too high, should I ignore it?"
+        a: "No. It is a weak signal you can measure: higher stated confidence did go with more right answers in published tests. Use it to order your checks, never to skip them (Review A13)."
+    misconceptions:
+      - m: "M5 'A tool that says it is 90% sure will be right about 9 times in 10.'"
+        fix: "Show the 90–100% bar: 9 of 15. Then show the class's own number. Not 'stated confidence is meaningless'."
+    activity: "Compute the pooled gap on the board (2 min) while students watch; ask one student to state it in a sentence."
+    book: "§8.5, @fig-8-9, Worked Example 'Reading the Chart'; Lab 8.1 step 4."
+
+# ======================================================================= THURSDAY · EXIT (lab step 5)
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Decompose:** one fact per claim, ranked by stakes"}
+    - {code: "O2", text: "**Apply:** check as far as the stakes require"}
+    - {code: "O3", text: "**Analyze:** exists? matches? says it?"}
+    - {code: "O4", text: "**Evaluate:** signals order your checks; none settles a claim"}
+    - {code: "O5", text: "**Diagnose:** Mata failed at stage 1, link 2"}
+    - {code: "O6", text: "**Produce:** A5, due when your instructor sets it"}
+  takeaway: "True enough to use? Only a check against evidence no AI tool produced decides."
+  notes:
+    say: |
+      The chapter's question was: how do you know when an AI output is true enough to use? Not from the output itself.
+      A fluent answer is a bundle of claims, some right and some not. Signals such as stated confidence or disagreement
+      across runs tell you where to look first, and none of them settles a claim. Only a check against evidence that no
+      AI tool produced does that: an independent check, then the primary source, then an expert, taken as far as the
+      stakes require, with what remains uncertain written down. Back to the warm-up questions in the chapter: does a
+      complete-looking reference show the paper exists? No. Is the tool's yes a check? No. Will ten "90% sure" answers
+      give nine right? Often fewer.
+    background: |
+      Chapter Summary and Warm-up revisit: (1) no; in one 2023 test 55% of GPT-3.5's and 18% of GPT-4's references did
+      not exist (Walters & Wilder, 2023); (2) no, a check needs evidence no AI tool produced; (3) often fewer than nine;
+      in published tests stated confidence tended to run ahead of accuracy. Next chapter's question: how far a particular
+      source deserves trust (Chapter 9).
+    activity: "Read the takeaway aloud; no discussion."
+    book: "Chapter Summary, @fig-8-15, Warm-up revisit."
+
+- layout: key_terms
+  minutes: 0.5
+  title: "Key terms"
+  terms:
+    - "claim"
+    - "stakes"
+    - "verification"
+    - "Verification Funnel"
+    - "independent check"
+    - "primary source"
+    - "verdict"
+    - "remaining uncertainty"
+    - "fabricated citation"
+    - "uncertainty signal"
+    - "stated confidence"
+    - "consistency check"
+    - "calibration (of a model)"
+    - "calibration gap"
+    - "expected calibration error (Deep)"
+  note: "Definitions: Chapter 8 and the glossary. (Deep) terms are optional and not on exams."
+  notes:
+    say: |
+      These are the key terms from Chapter 8; the Chapter 4 terms are on that deck. If your course has a written
+      exam, they are likely to appear in it, so make sure you can define each in a sentence of your own. Pay attention to the
+      pairs: independent check and primary source; unsupported and contradicted, which are verdicts rather than terms
+      but cause most of the confusion; stated confidence and calibration. Quick self-test as you pack: cover the slide
+      and define three for your neighbor. Expected calibration error is marked Deep: it is in an optional section and
+      it is not on the exam.
+    background: |
+      Key Terms list from the chapter (15). Definitions owned by Chapter 8 and reused word for word in Chapter 9
+      (D-8.3): claim, stakes, verification, independent check, primary source, fabricated citation (failure 1 only),
+      uncertainty signal, consistency check, stated confidence. Exam coverage is the instructor's call; the book's
+      review items cover Core sections only (D20).
+    activity: "30-second pair self-test while packing."
+    book: "Chapter Summary, Key Terms; glossary."
+
+- layout: exit_ticket
+  minutes: 3
+  questions:
+    - "One claim you could not verify today, and the stage that would settle it"
+    - "Which signal best predicted the errors your team found?"
+    - "What will you check first in the rest of A5?"
+  instruction: "3 min · index card or your course site · ungraded"
+  notes:
+    say: |
+      Last three minutes: the exit ticket. First, one claim you could not verify today, and the stage that would
+      settle it: an index you could not reach, a primary source behind a paywall, an expert you need to ask. Second,
+      which signal best predicted the errors your team found: stated confidence, disagreement, a flip, or precise detail
+      about something rare. Third, what you will check first in the rest of A5. Before you go: A5 is due when your
+      instructor sets it. Optional practice at home: Lab 8.2, five references, which feeds the source audit in the next
+      chapter. In the next concept session we
+      ask a different question: once a source is real, how far does it deserve trust?
+    background: |
+      Question 1 is the lab sheet's exit step. Next chapter (Chapter 9): concept session on sources and
+      evidence, demo "an AI summary versus the original abstract"; source audit lab; A6. Lab 8.2's record feeds A6 (up to two of A6's three sources may come from it; D-9.8). Lab 8.3 (signals
+      versus truth) is optional.
+    activity: "3 min; collect cards at the door or close the course-site form at the end of the session."
+    book: "Lab 8.1 step 5; Labs 8.2–8.3; Chapter 9."
+
+# ======================================================================= SELF-STUDY AND REVIEW (not presented)
+- layout: section
+  session: after
+  number: "8.1–8.5"
+  tag: "Core"
+  title: "Self-study and review slides"
+  idea: "The Core checks one by one, with quick checks, for home study and review."
+  meta: "Book §8.1–8.5 · Case Study · not presented in the lab session"
+  notes:
+    say: |
+      The slides after this divider are not presented in the lab session. They cover the Core sections the lab only
+      recaps: splitting an answer into claims, the funnel in a worked example, citation rates, signals, calibration and
+      the Case Study labels, each with a quick check and its answer. Post them on your course site with the deck for students
+      who want to review before A5, and reuse them in a review session before any exam.
+      Every quick check uses an odd-numbered review item or a Check Yourself question, so the answers can be shown.
+    background: |
+      Design decision for this deck: the concept session of this pair belongs to Chapter 4 (Ch. 4 and Ch. 8 blueprints),
+      so Chapter 8 has no concept session. The lab sheet's briefing recaps the funnel, the citation checks and the verdict
+      rule; the remaining Core content is here. Even-numbered review answers are instructor-only (private/) and are not
+      used.
+    activity: "Not presented."
+    book: "§8.1–8.5; Case Study; Appendix E."
+
+# Redrawn natively from @fig-8-3 (claim split): the book figure's table text is about 8 pt at slide size.
+- layout: compare
+  kicker: "§8.1 · worked example · constructed (book figure: claim split, redrawn)"
+  title: "One fluent paragraph held six claims"
+  size: 24
+  columns:
+    - heading: "High stakes"
+      role: neutral
+      bullets: ["Four sections, incl. BEC (fact)", "75 to pass each (number)", "All four in 18 months (number)"]
+    - heading: "Medium stakes"
+      role: soft
+      bullets: ["Four hours each (number)", "“Official exam blueprint” (citation)"]
+    - heading: "Low: not checkable"
+      role: soft
+      dashed: true
+      bullets: ["Start with the hardest (judgment)"]
+  takeaway: "One fact per claim · mark and type it · rank by stakes"
+  notes:
+    say: |
+      You verify claims, not answers. A claim is one statement in an output that you might rely on. Some are checkable,
+      true or false, such as a date or a number; others are not checkable as true or false, such as a recommendation,
+      but you still list them because you may rely on them too. Lucía asked a chat tool for an overview of the CPA exam
+      and got one confident paragraph. Split, it holds six claims: four sections, four hours each, a score of 75 to pass,
+      all four within 18 months, a source named "the official exam blueprint", and advice to start with the hardest
+      section. The ones that decide what she studies and when she must finish rank highest. The advice is not checkable.
+      The source needs finding.
+    background: |
+      Worked Example "Lucía's Exam Overview" (constructed; Lucía is accounting, saving for the CPA exam). Evidence for M1:
+      in a 2023 study, ChatGPT biographies split into single facts and checked against Wikipedia were 58% supported;
+      later facts and facts about less famous people were supported less often (Min et al., 2023). "Not supported" is not
+      the same as false. Faded example (steel paragraph) key in Appendix E. Section 8.2 later shows claims 1 and 4
+      contradicted (BEC retired; 18 months became 30). The slide regroups @fig-8-3's six rows by stakes (type in
+      parentheses); the dashed card marks the one claim not checkable as true or false, as the figure's dashed row does.
+    misconceptions:
+      - m: "M1 'If most of an answer checks out, the rest is probably right too.'"
+        fix: "Accuracy varies claim by claim (58% in the 2023 study). Not 'most answers are wrong'."
+    activity: "Self-study."
+    book: "§8.1, @fig-8-3; Worked and Faded Examples; Check Yourself 8.1."
+
+- layout: quiz
+  kicker: "Quick check · §8.1"
+  title: "split the sentence"
+  question: "Split this made-up sentence into claims (you should find four): “A 2019 survey of 4,000 nurses by the American Nurses Association found that 62% worked overtime.”"
+  instruction: "One fact per line; mark each checkable or not"
+  answer_minutes: 0
+  model_answer:
+    - "(1) a survey was done in 2019 · (2) it had 4,000 nurses · (3) it was by the American Nurses Association · (4) 62% worked overtime."
+    - "All four are checkable; the number and the source rank highest because the rest depends on them."
+  notes:
+    say: |
+      Self-check for section 8.1. The sentence is made up for practice, so do not look for the survey; the exercise is
+      the split. One fact per claim. A sentence with a year, a sample size, an organization and a percentage holds at
+      least four separate things you might rely on, and each can be wrong on its own: the survey could be real but from
+      another year, or by another organization, or the percentage could be about something else. Write one fact per
+      line, mark each checkable or not, then compare with the answer slide.
+    background: |
+      Check Yourself 8.1, item 2 (the sentence is constructed in the chapter). Model split from §8.1's rule "one fact per
+      claim": year, sample size, organization, finding. Ranking by stakes is the student's judgment; the number and the
+      source are the natural top rows because a reader would repeat them.
+    activity: "Self-study."
+    book: "§8.1; Check Yourself 8.1."
+  answer_notes:
+    say: |
+      Here is one good split. One: a survey was done in 2019. Two: it had 4,000 nurses. Three: it was by the American
+      Nurses Association. Four: 62% worked overtime. All four are checkable as true or false. For ranking, ask what
+      would be repeated: if you quote the 62%, the number and its source carry the most weight, so they go to the top,
+      and the source points you to the primary record where the year and the sample size can be checked at the same
+      time. If you found three claims, check whether you merged the organization and the year.
+    background: |
+      Same logic as Review B1 (Appendix E): split, mark, rank; a recommendation that follows from a statistic is a
+      separate, not-checkable claim.
+    activity: "Self-study."
+    book: "§8.1; Check Yourself 8.1; Appendix E (Review B1)."
+
+- layout: worked
+  kicker: "§8.2 · worked example · Lucía’s claim 1 · high stakes"
+  title: "Is BEC still on the exam?"
+  context: "“Four sections: AUD, BEC, FAR, REG”"
+  steps:
+    - {label: "Stage 1", text: "Review-course page: exam changed January 2024"}
+    - {label: "Stage 2", text: "NASBA: BEC ended December 15, 2023"}
+    - {label: "Verdict", text: "Contradicted: outdated information"}
+    - {label: "Uncertainty", text: "Checked October 2026; recheck"}
+  reveal: [4]
+  result: "Stage 1 conflicted, so she went on to stage 2"
+  notes_reveal:
+    - say: |
+        A worked example of the funnel. Lucía's claim 1 says the exam has four sections, including BEC. The stakes are
+        high: it decides what she studies. Stage 1: a review-course page with a named publisher says the exam changed in
+        January 2024, which conflicts with the claim. When stage-1 sources disagree with a claim, you go on. Stage 2: the
+        organization that runs the exam with the AICPA states that the last day to take BEC was December 15, 2023, and
+        the exam now has three core sections and one discipline section chosen from three. Verdict: contradicted. Label:
+        outdated information, once correct but no longer, a leaf of hallucination, documented. And the uncertainty line:
+        checked in October 2026; rules change.
+      background: |
+        §8.2 Worked Example (constructed scenario; the exam facts are real, sources NASBA n.d.; AICPA & CIMA 2021; TSBPA
+        n.d.). NASBA = National Association of State Boards of Accountancy; AICPA = American Institute of Certified
+        Public Accountants. The exam now has three core sections (AUD, FAR, REG) and one discipline section chosen from
+        three; the label is outdated information, a leaf of hallucination, documented. Faded example (warfarin and
+        ibuprofen) key: stage 3 when the claim guides a decision for a real patient; for a study note stage 2 is
+        enough; verdict supported (Appendix E). Time-sensitive: CPA rules dated October 2026.
+      activity: "Self-study."
+      book: "§8.2 Worked Example 'Is BEC Still on the Exam?'; Faded Example 'A Drug Interaction'."
+  notes:
+    book: "§8.2 Worked Example."
+
+- layout: quiz
+  kicker: "Quick check · §8.2"
+  title: "how far to check"
+  question: "A student says, “Verifying means taking every claim to an expert.” What is the most accurate response?"
+  options:
+    - "That is right; anything short of an expert’s judgment is not really verification."
+    - "Claims that sound right can skip checking."
+    - "Only citations need checking; numbers and dates can usually be trusted as given."
+    - "Checks follow the stakes; every claim you rely on gets at least stage 1."
+  answer: d
+  answer_minutes: 0
+  explanation: "(a) is M6; (b) is the fluency trap; (c) is M2’s mirror image: numbers often need the primary source"
+  notes:
+    say: |
+      Self-check for section 8.2. Read all four options before you choose. The question is about the stopping rule:
+      how far do you take a claim? Remember the side rail of the funnel and the bottom bar of the funnel slide. One
+      option says everything goes to an expert, one says confident claims can skip checking, one says only citations
+      matter. Only one matches the book's rule that checks follow the stakes while no claim you rely on skips the first
+      stage. Before you look at the answer, think of one claim from your own A5 that could stop at stage 1 and one that
+      must go further. Then check the answer slide.
+    background: |
+      Review Questions A5 (O2 · LO3 · Understand). Key (Appendix E): (d). (a) is M6; (b) is the fluency trap from Chapter
+      1, which M1 extends; (c) is M2's mirror image, since numbers and dates are among the claims that most need the
+      primary source.
+    activity: "Self-study."
+    book: "§8.2; Review Questions A5; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (d): checks follow the stakes, and every claim you rely on gets at least stage 1, an independent
+      check. Taking everything to an expert, option (a), sounds careful but is impossible in practice and wastes the
+      expert's time on low-stakes claims. Option (b) is the fluency trap: sounding right is not evidence. Option (c) gets
+      it backwards: numbers, quotations and citations are exactly the claims the chapter sends to the primary source.
+      In A5, the funnel record criterion asks whether your stages fit your stakes, so write the reason next to each.
+    background: |
+      Stage-2 triggers (§8.2): high stakes, stage-1 sources disagree, or the claim is a number, a quotation or a citation.
+      Stage-3 triggers: sources conflict, applying a rule needs judgment, or someone's health, money or rights depend on
+      the answer.
+    activity: "Self-study."
+    book: "§8.2; Appendix E (Review A5)."
+
+- layout: figure
+  kicker: "§8.3 · Walters & Wilder (2023)"
+  title: "Newer models invented fewer references, but not none"
+  figure: f8-06-citations
+  takeaway: "A named source is a pointer until you open it"
+  notes:
+    say: |
+      Here is the evidence behind citation checking. In 2023, researchers asked ChatGPT to write short literature
+      reviews on 42 topics. Of the references the GPT-3.5 version produced, 55 in 100 did not exist; with GPT-4, 18 in
+      100. Among the references that did exist, 43% from GPT-3.5 and 24% from GPT-4 had substantive errors, such as wrong
+      authors, years or page numbers. Newer tools often do better, though not always. And tools that search real
+      documents first help, but are not a cure: in a 2024 test, legal research tools built that way gave incorrect or
+      misgrounded answers on 17% to 33% of questions. Misgrounded means backed by a source that does not support the
+      answer.
+    background: |
+      Walters & Wilder (2023), Scientific Reports 13, 14045. OpenAI (2025, April 16) system card: two newer models made
+      up facts about people more often than an older one on its own test, 33% and 48% vs. 16%. Magesh et al. (2025),
+      Journal of Empirical Legal Studies, 202 questions. Retrieval is Chapter 3's term. Further reading: Chelli et al.
+      (2024) for medical systematic reviews. Dated results; tool behavior changes.
+    misconceptions:
+      - m: "M2 'If the output names a source, the claim has been verified.'"
+        fix: "Use both bars: fewer fakes with GPT-4, not none, and many real references had errors. Not 'AI references are always fake'."
+    activity: "Self-study."
+    book: "§8.3 (Predict box), @fig-8-6."
+
+- layout: quiz
+  kicker: "Quick check · §8.3"
+  title: "a real author, a wrong title"
+  question: "An output cites a journal article with a real author and a real journal, but the title and pages match nothing in the journal’s archive. Which statement is most accurate?"
+  options:
+    - "The real author’s name shows the citation is reliable."
+    - "Ask the tool if it is real; if it says yes and names the journal, cite it."
+    - "It may not exist or may be another work; match each detail to the record."
+    - "The output named a source, so the claim is verified."
+  answer: c
+  answer_minutes: 0
+  explanation: "(a) and (d) are M2; (b) is M3: the tool’s yes is not a check"
+  notes:
+    say: |
+      Self-check for section 8.3. A real author and a real journal make a citation look solid, and that is exactly why
+      this kind of reference slips through. But the title and pages match nothing in the journal's archive. Before you
+      choose, ask yourself two questions. Which of the three citation failures could this be: a work that does not
+      exist, a work whose details belong to something else, or a real work that does not say what is claimed? And which
+      check comes next, using an index that no AI tool produced? Two of the options rely on the output's own word, in
+      different forms. Choose, then compare with the answer slide.
+    background: |
+      Review Questions A7 (O3 · LO3 · Understand). Key (Appendix E): (c). (a) and (d) are M2 (a named source is a pointer,
+      not evidence); (b) is M3 (the tool's yes, even with a journal name, is not a check). A real name attached to a
+      nonexistent work is common in fabricated references.
+    activity: "Self-study."
+    book: "§8.3; Review Questions A7; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (c). The work may not exist at all, failure 1, or its details may belong to another work, failure
+      2. Match each detail to the record: search the author's publications in the journal's archive and in your library
+      catalog. If a record shows a different article with similar details, the citation is contradicted as cited, and
+      you correct it from the record before using it. If you cannot find it in two indexes, it is unsupported, and your
+      uncertainty line names the indexes. A real author's name is not evidence that this particular article exists.
+    background: |
+      Faded Example "Lucía's Enron Paragraph" (Appendix E): reference 2 is real but with wrong year and journal (Healy &
+      Palepu, 2003, Journal of Economic Perspectives), so contradicted as cited; reference 3 matches nothing, so
+      unsupported, with the indexes named.
+    activity: "Self-study."
+    book: "§8.3; Appendix E (Review A7; Faded Example 8.3)."
+
+- layout: lanes
+  kicker: "§8.4 · constructed example (book figure: three runs, redrawn)"
+  title: "Agreement is not proof; disagreement is a warning"
+  rows:
+    - label: "Run 1"
+      nodes:
+        - {label: "“How many sections?”", kind: human, role: neutral}
+        - {label: "Four, incl. BEC · “95% sure”", kind: ai}
+        - {label: "Agrees with run 2; outdated", kind: step}
+    - label: "Run 2"
+      nodes:
+        - {label: "Same question, new chat", kind: human, role: neutral}
+        - {label: "Four, incl. BEC · “95% sure”", kind: ai}
+        - {label: "Agrees with run 1; outdated", kind: step}
+    - label: "Run 3"
+      nodes:
+        - {label: "Same question, new chat", kind: human, role: neutral}
+        - {label: "Three core + one discipline", kind: ai}
+        - {label: "Disagrees: check first", kind: human, role: risk}
+  caption: "Each fresh run picks its words again (Chapter 3). Use temporary chats, or memory off."
+  takeaway: "Two runs agreed at “95% sure”, and both were outdated"
+  notes:
+    say: |
+      Back to Lucía, before she checked claim 1. She asks the same question in three temporary chats and asks the tool
+      to state its confidence. Runs 1 and 2 repeat the four-section structure, each "95% sure". Run 3 describes three
+      core sections plus a discipline section. Reading the signals: the disagreement flags claim 1 as one to check first.
+      The funnel showed that the agreeing majority was wrong, and that the two "95%" ratings did not make it right. So
+      a consistency check is useful for ordering your work. It is not a vote. Use temporary chats or turn memory off, or
+      the runs are not really fresh.
+    background: |
+      Worked Example "What the Signals Would Have Shown" (constructed). Each run picks its words again with some
+      randomness (Chapter 3). Disagreement → treat as unreliable (Manakul et al., 2023); agreement is weaker evidence
+      because such methods catch answers that vary, not errors a model repeats (Farquhar et al., 2024). Faded example
+      (a quotation, three agreeing runs at "90% sure") key: next stage is 2, the primary source, because quotations need
+      the passage check (Appendix E).
+    misconceptions:
+      - m: "M4 'If several runs, or several tools, give the same answer, it is correct.'"
+        fix: "Point to runs 1 and 2: same answer, same confidence, both outdated."
+    activity: "Self-study."
+    book: "§8.4, @fig-8-7; Worked and Faded Examples."
+
+- layout: quiz
+  kicker: "Quick check · §8.4"
+  title: "the flip"
+  question: "You ask a tool a question whose answer you have not checked. You reply, “I think that’s wrong,” and the tool changes its answer. What does the change tell you, and what do you do next?"
+  instruction: "Two sentences: what it shows, what you do"
+  answer_minutes: 0
+  model_answer:
+    - "**It shows:** the answer is unstable, a warning sign. It does not show which answer is right; you have checked neither."
+    - "**Next:** take the claim through the funnel, at least stage 1, stage 2 if the stakes are high."
+  notes:
+    say: |
+      Self-check for section 8.4. A flip under pushback is one of the four uncertainty signals. But be careful about
+      what it shows. You have not checked either answer, the first one or the new one. Does the new answer become the
+      right one because the tool agreed with you? Does the old one become wrong because you doubted it? Write two
+      sentences: what the flip shows, and what you do next. Then compare with the answer slide. Bonus question: what
+      would it have meant if the tool had held firm instead of changing its answer?
+    background: |
+      Review Questions A11 (O4 · LO3 · Apply); model answer in Appendix E. Chapter 4's pushback test challenges an answer
+      you already know is correct; on an unchecked claim a flip shows instability, and holding firm is no evidence either
+      way (§8.4; book decision on overconfidence labeling).
+    activity: "Self-study."
+    book: "§8.4; Review Questions A11; Appendix E."
+  answer_notes:
+    say: |
+      The flip shows that the answer is unstable, which is a warning sign. It does not show which answer is right,
+      because you have checked neither the first answer nor the second. A tool that changes its answer to agree with
+      you may be producing what you seemed to want, which is the sycophancy leaf you met in Chapter 4. So the next step is
+      the funnel: at least stage 1, and stage 2 if the stakes are high. And the bonus question: had the tool held firm,
+      that would have been no evidence either way. In Mata, the replies held firm and were wrong.
+    background: |
+      Appendix E, Review A11. Sycophancy is a leaf of overconfidence on Chapter 4's tree; label overconfidence only with
+      evidence about expressed certainty (book decision on overconfidence labeling).
+    activity: "Self-study."
+    book: "§8.4; Appendix E (Review A11); Chapter 4 (pushback test)."
+
+- layout: quiz
+  kicker: "Quick check · §8.5"
+  title: "twenty answers at 90%"
+  question: "A tool states “90% sure” on each of 20 answers. Based on the published tests in this chapter, which expectation is most reasonable?"
+  options:
+    - "About 18 will be right; the tool’s stated confidence matches its accuracy."
+    - "Probably fewer than 18; check the high-stakes answers."
+    - "The stated confidence has no relation to which answers are right."
+    - "Fewer than half, because stated confidence runs opposite to accuracy."
+  answer: b
+  answer_minutes: 0
+  explanation: "(a) is M5; (c) overcorrects; (d) reverses the finding: confidence and accuracy rose together"
+  notes:
+    say: |
+      Self-check for section 8.5. Twenty answers, each "90% sure". If the tool were perfectly calibrated, about 18 would
+      be right. What did the published tests in the chapter find? Remember two things at once: stated confidence tended
+      to run ahead of accuracy, and answers stated with higher confidence were still more often right. Two of the options
+      throw away one of those findings; one option ignores both. Choose the option that keeps both findings, and say
+      what you would do with the twenty answers before relying on them.
+    background: |
+      Review Questions A13 (O4 · LO3 · Understand). Key (Appendix E): (b). (a) is M5; (c) overcorrects (higher confidence
+      did go with more right answers); (d) reverses the finding. Sources: Xiong et al. (2024); Wei et al. (2024).
+    activity: "Self-study."
+    book: "§8.5; Review Questions A13; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (b): probably fewer than 18, so check the high-stakes answers. In published tests, stated confidence
+      clustered high and ran ahead of accuracy, but it still rose with accuracy, so it is a weak signal, not a useless
+      one. That rules out (c) and (d). And (a) is the misconception itself. Two cautions from the chapter: ten or twenty
+      questions give a rough picture, not a measurement of the tool; and good calibration is not the same as usefulness.
+      A tool that says 60% to everything and is right 60% of the time is perfectly calibrated and tells you nothing.
+    background: |
+      Faded Example "Lucía's Study Questions" key (Appendix E): 90–100% group 4 of 7 = 57%; gap 94 − 57 = 37 points; the
+      tool's high confidence on accounting questions is overconfident; seven answers give a rough picture.
+    activity: "Self-study."
+    book: "§8.5; Appendix E (Review A13; Faded Example 8.5)."
+
+- layout: compare
+  kicker: "Case Study · labels (Chapter 4's tree and chain)"
+  title: "Mata on the tree and the chain"
+  size: 22
+  columns:
+    - heading: "Tree · primary"
+      role: risk
+      bullets: ["Hallucination", "Invented facts or sources", "**Documented** (¶ 36)"]
+    - heading: "Tree · secondary"
+      role: risk
+      bullets: ["Overconfidence", "Certainty beyond the evidence", "**Documented** (¶ 45)"]
+    - heading: "Chain · link 2"
+      role: risk
+      bullets: ["“Checked before use?” failed", "**Documented** (¶¶ 6, 12)"]
+  takeaway: "The tree labels the output; the chain labels what people did"
+  notes:
+    say: |
+      The Case Study labels the Mata failure with Chapter 4's tools. On the Failure Taxonomy Tree, the primary label is
+      hallucination, leaf invented facts or sources, documented: the record shows the decisions do not exist and were
+      generated by ChatGPT. The secondary label is overconfidence, leaf certainty beyond the evidence, also documented:
+      asked directly, the replies affirmed the cases were real and findable in named databases. On the failure-to-harm
+      chain, link 2, "checked before use?", failed, documented: the signer read none of the cases, and the writer cited
+      one his own search could not find. The tree labels what went wrong in the output; the chain labels what people
+      and workflows did.
+    background: |
+      Book figures @fig-8-11 (tree) and @fig-8-12 (chain), redrawn here as three cards. The insistence that "Varghese"
+      existed (¶ 47) is reported (the lawyer's declaration); ¶ 45 is in the court's findings. Before anyone checked, a
+      firm answer was no evidence either way; the overconfidence label rests on expressed certainty (book decision on overconfidence labeling). Moffatt
+      (Chapter 4) carries no overconfidence label because its chatbot gave plain instructions with no such statement.
+      Case Study Question 1 key in Appendix E.
+    misconceptions:
+      - m: "M3 'Asking the tool whether its source is real is a check.'"
+        fix: "The secondary label exists precisely because the replies affirmed reality; an affirmation is a signal of overconfidence, not evidence."
+    activity: "Self-study."
+    book: "Case Study, @fig-8-11, @fig-8-12; Case Study Questions 1–2; Appendix E."
+
+- layout: compare
+  kicker: "Case Study · short cases (recommended)"
+  title: "Two more fabrications, two different gaps"
+  size: 26
+  columns:
+    - heading: "Expert’s declaration (2025)"
+      role: soft
+      bullets: ["Two articles that do not exist", "Statement excluded, Jan 10, 2025", "Hallucination, documented"]
+    - heading: "Summer reading list (2025)"
+      role: soft
+      bullets: ["10 of 15 titles false (Bell, 2025)", "No review by the paper’s editors", "Link 2 failed, documented"]
+  takeaway: "An expert’s statement is evidence to check, not the end of checking"
+  notes:
+    say: |
+      Two short cases from 2025. In a Minnesota case over a state law on election deepfakes, the state filed a sworn
+      statement by a university expert on AI and misinformation. It cited two academic articles that do not exist and
+      gave the wrong authors for a third. The court's order records that the errors apparently came from his use of
+      GPT-4o in drafting, and the judge excluded the statement. She did not fault the use of AI; she faulted the
+      unchecked citations. In the second case, a newspaper's licensed summer insert paired real authors with books that
+      do not exist: 10 of 15 titles were false, according to the newspaper owner's chief executive. A stage-1 catalog
+      search per title would have flagged them.
+    background: |
+      Kohls v. Ellison (D. Minn. Jan. 10, 2025, ECF 46): AI origin "apparently" GPT-4o, recorded in the order (p. 3);
+      excluded (pp. 8–9); corrected version denied as moot (pp. 11–12). Tree: hallucination, invented facts or sources
+      (documented, p. 3); Case Study Question 4 asks for the chain link. Reading list: Chicago Sun-Times, May 18, 2025;
+      King Features insert; 10 of 15 false per Melissa Bell, CEO of Chicago Public Media (Bell, 2025); newspaper's
+      statement that a freelance writer used AI and it ran without review by its editors (Chicago Sun-Times, 2025); the
+      Philadelphia Inquirer also ran the supplement and the company ended its relationship with the writer (Mihalopoulos,
+      2025; reported). "A stage-1 check would have flagged them" is this book's inference.
+    activity: "Self-study."
+    book: "Case Study, short cases 1–2; Case Study Questions 4–5."
+
+- layout: deep
+  kicker: "Deep 8.A · book figure: two checkers"
+  title: "Going deeper: precision and recall of a checker"
+  size: 24
+  bullets:
+    - "**Precision:** of the flagged, how many were fake?"
+    - "**Recall:** of the fakes, how many were flagged?"
+    - "**A** flags 8 of 20: precision 50%, recall 80%"
+    - "**B** flags all 20: recall 100%, useless"
+  takeaway: "An AI checker is a signal, not a stage"
+  notes:
+    say: |
+      Use this only if a student asks about automatic checkers. Some tools match references against an index with no
+      AI model involved; others are AI models themselves. Chapter 2's Deep section gave two numbers for judging them.
+      Precision: of the references the checker flagged, what share were really fake? Recall: of the references that were
+      really fake, what share did the checker flag? Checker B flags all 20 references, so it catches all 5 fakes: perfect
+      recall, and useless, because you still check all 20. Checker A flags 8 and catches 4 of the 5: precision 50%,
+      recall 80%. Whether that is good enough depends on the stakes. For a court filing, a missed fake is the expensive
+      error.
+    background: |
+      Deep 8.A (optional, not examinable; D20). Constructed checkers (@fig-8-14). Self-checking evidence is mixed:
+      chain-of-verification reduced hallucinations on several tasks (Dhuliawala et al., 2024); without outside feedback,
+      models revising their own reasoning answers often did not improve and sometimes got worse (Huang et al., 2024).
+      This book's inference (D-8.5): an AI checker, including a model checking itself, is an uncertainty signal, not a
+      funnel stage; an index-matching checker does part of stage 1.
+    activity: "Self-study, or 1 minute if a student asks about automatic checkers."
+    book: "Deep 8.A, @fig-8-14."
+
+- layout: references
+  title: "References"
+  per_slide: 9
+  refs:
+    - "Bell, M. (2025, May 29). Lessons (and an apology) from the Sun-Times CEO on that AI-generated book list. *Chicago Sun-Times*."
+    - "Charlotin, D. (2026). *AI hallucination cases* [Database]. Retrieved October 18, 2026, from https://www.damiencharlotin.com/hallucinations/"
+    - "Chicago Sun-Times. (2025, May 20). *Chicago Sun-Times response to May 18 special section*."
+    - "Dhuliawala, S., et al. (2024). Chain-of-verification reduces hallucination in large language models. In *Findings of ACL 2024* (pp. 3563–3578)."
+    - "Farquhar, S., Kossen, J., Kuhn, L., & Gal, Y. (2024). Detecting hallucinations in large language models using semantic entropy. *Nature, 630*, 625–630. https://doi.org/10.1038/s41586-024-07421-0"
+    - "Huang, J., et al. (2024). Large language models cannot self-correct reasoning yet. In *ICLR 2024*. https://arxiv.org/abs/2310.01798"
+    - "*Kohls v. Ellison*, No. 24-cv-3754 (LMP/DLM) (D. Minn. Jan. 10, 2025) (ECF No. 46)."
+    - "Magesh, V., et al. (2025). Hallucination-free? Assessing the reliability of leading AI legal research tools. *Journal of Empirical Legal Studies, 22*(2), 216–242. https://doi.org/10.1111/jels.12413"
+    - "Manakul, P., Liusie, A., & Gales, M. J. F. (2023). SelfCheckGPT: Zero-resource black-box hallucination detection for generative large language models. In *Proceedings of EMNLP 2023* (pp. 9004–9017)."
+    - "*Mata v. Avianca, Inc.*, 678 F. Supp. 3d 443 (S.D.N.Y. 2023) (opinion and order on sanctions, June 22, 2023, ECF 54)."
+    - "*Mata v. Avianca, Inc.*, No. 1:22-cv-01461-PKC (S.D.N.Y. June 22, 2023) (opinion and order granting motion to dismiss, ECF 55)."
+    - "Mihalopoulos, D. (2025, May 20). Syndicated content in Sun-Times special section included AI-generated misinformation. *Chicago Sun-Times*."
+    - "Min, S., et al. (2023). FActScore: Fine-grained atomic evaluation of factual precision in long form text generation. In *Proceedings of EMNLP 2023* (pp. 12076–12100)."
+    - "National Association of State Boards of Accountancy. (n.d.). *Exam transition FAQs*. Retrieved October 18, 2026, from https://nasba.org/examtransitionfaqs"
+    - "OpenAI. (2025, April 16). *OpenAI o3 and o4-mini system card*."
+    - "Walters, W. H., & Wilder, E. I. (2023). Fabrication and errors in the bibliographic citations generated by ChatGPT. *Scientific Reports, 13*, 14045. https://doi.org/10.1038/s41598-023-41032-5"
+    - "Wei, J., et al. (2024). *Measuring short-form factuality in large language models* (arXiv:2411.04368). https://doi.org/10.48550/arXiv.2411.04368"
+    - "Xiong, M., et al. (2024). Can LLMs express their uncertainty? An empirical evaluation of confidence elicitation in LLMs. In *ICLR 2024*. https://arxiv.org/abs/2306.13063"
+  notes:
+    say: |
+      Reference slides; not presented in class. These are the sources cited on the slides and in the speaker notes, in
+      short APA form, taken from the chapter's reference list, where the full entries with all authors are given. The
+      one reading students use in class is the Mata sanctions opinion, pages 1–2. If a student wants to go further,
+      point them first to Walters and Wilder (2023), the open-access citation study behind section 8.3, and to Wei and
+      colleagues (2024) for the calibration charts. Charlotin's database is updated often, so any count from it needs a
+      date.
+    background: |
+      Full entries are in the chapter's References section (fact-checked; docs/factcheck/ch08.csv). Recommended
+      readings: Ji et al. (2023), from Chapter 4, and Mata v. Avianca. "et al." used here for space; the
+      chapter lists all authors.
+    activity: "Not presented."
+    book: "Chapter 8, References; Further Reading and Compass Links."

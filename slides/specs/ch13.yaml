@@ -1,0 +1,839 @@
+# Lecture deck spec — Chapter 13: Multimodal AI: Images, Audio and Video (Deep chapter, optional enrichment)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch13.yaml --preview
+# Chapter 13 is Deep: optional and not examinable (decision D20); it is read alongside Chapter 12 and has no required
+# class time and no graded artifact. So this is a SHORT deck framed as enrichment (Chapter 6 pattern): a 20-minute
+# segment ("seg") an instructor can run in any session, self-study slides ("self", no class time), reference slides.
+# Independence rule D27: no institution, course code, term, dates, syllabus or learning-system names on slides or notes.
+# Safety rules (blueprint §12, lab sheets): no identifiable person in any example or item (the employee, officers and
+# other individuals in the cases stay unnamed); no method for removing or bypassing credentials, watermarks or
+# detectors; never generate a real person's face or voice; lab items carry the same neutral band "COURSE SAMPLE — may be
+# real or generated". No generated imagery appears in the deck. All Hana examples are constructed.
+# Every number and quotation comes from the files under deck.sources; the builder flags any number it cannot find.
+
+deck:
+  chapter: 13
+  slug: multimodal-ai-images-audio-and-video
+  title: "Multimodal AI: Images, Audio and Video"
+  short_title: Multimodal AI (optional)
+  author: Şadi Evren Şeker
+  sessions:
+    seg: {label: "optional 20-minute enrichment segment", minutes: 20}
+    self: {label: "self-study slides (not part of the 20-minute segment)"}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/13-multimodal-ai-images-audio-and-video.qmd
+    - labs/ch13-lab1.md
+    - labs/ch13-lab2.md
+    - labs/ch13-lab3.md
+    - labs/ch13-lab4.md
+    - figures/longdesc/ch13.md
+    - appendix/answers.md
+    - docs/blueprints/ch13-blueprint.md
+
+slides:
+
+# ======================================================================= 20-MINUTE SEGMENT
+# The chapter map is wide, so it sits small on the title card (decorative there; also shown full size in the book).
+- layout: title
+  session: seg
+  minutes: 0
+  subtitle: "Optional enrichment · Deep chapter · not on exams"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Read alongside Chapter 12"
+    - "Use as a 20-minute segment or for self-study"
+  figure: f13-01-chapter-map
+  notes:
+    say: |
+      This deck is optional enrichment, and you can say so plainly: Chapter 13 is a Deep chapter, nothing in it is on
+      an exam, and there is no graded artifact. It answers a question students meet every day: Chapter 8 taught you to
+      check a claim in a text, so what changes when the claim is a picture, a voice or a video, and what does not? The
+      map on the right shows the chapter: how media is made, signals and their limits, and checking. Its Work Loop strip
+      highlights Verify, then Disclose. Give students the chapter's question now; the last slide of the segment answers
+      it: if seeing and hearing are no longer proof, how do you decide what to believe, and what to act on?
+    background: |
+      HOW TO USE THIS DECK. Chapter 13 is Deep throughout except 13.8 (Studio); not examinable (D20); its review
+      questions are exam-format practice only. It is read alongside Chapter 12 and needs no class time of its own. Three
+      ways to use the deck: (1) a 20-minute segment, slides 1–14 (through the summary), in any concept session with spare
+      time, for example after Chapter 12's tool-choice discussion or before Chapter 15, which returns to the opening case;
+      (2) self-study: post the deck with its notes on your course site beside the chapter's fast route; (3) the slides after
+      the summary support the optional labs and the optional verification protocol. Featured student: Hana (they/them),
+      a media arts and design student and freelance illustrator who runs a zine. Compass is optional and never part of a
+      course grade.
+    questions:
+      - q: "Is any of this on an exam?"
+        a: "No. Chapter 13 is a Deep chapter: optional and not examinable (D20). Its habits help with privacy and security work in Chapter 15 and with your own life."
+    activity: "On screen while you introduce the segment; say 'optional, not on exams' once, clearly."
+    book: "Chapter 13 opening page, @fig-13-1; 'Chapter 13 at a glance' (fast and full routes)."
+
+- layout: session_plan
+  minutes: 1
+  title: "Two ways through Chapter 13"
+  columns:
+    - heading: "In class · 20-minute segment"
+      sub: "optional enrichment, not on exams"
+      blocks:
+        - {min: 2.5, label: "Opening case: a fake meeting", detail: "Why a call beat a doubt"}
+        - {min: 3.5, label: "Built, not recorded", detail: "Tokens and generators"}
+        - {min: 4, label: "Who checks; signals", detail: "Alt text, credentials, watermarks"}
+        - {min: 4, label: "Looks and scores", detail: "Predict first; detectors"}
+        - {min: 5, label: "Context before pixels", detail: "Check list; a worked case; summary"}
+    - heading: "On your own · self-study"
+      sub: "at 150 words per minute"
+      blocks:
+        - {min: 24, label: "Fast route", detail: "Opening, 13.7 with recap, 13.8, Summary"}
+        - {min: 57, label: "Full route", detail: "Everything through the Case Study"}
+        - {min: 35, label: "Lab 13.2: trace an image", detail: "Optional; 10-minute version"}
+  notes:
+    say: |
+      There are two ways through this chapter. In class, if we take twenty minutes, we cover the big ideas: a fraud in
+      which a video meeting was fake, how images and sound become tokens and how generators build media, who must check
+      a multimodal output, what provenance signals can and cannot show, why looking and detector scores are weak, and the
+      habit that works instead: context before pixels. On your own, the chapter offers a fast route of about 24 minutes,
+      which stands on its own, and a full route of about 57 minutes. Four labs are optional, from 15 to 35 minutes each.
+      A good plan from the book: read the fast route alongside Chapter 12, and the rest before Chapter 15, which comes
+      back to the opening case.
+    background: |
+      Chapter time paragraph (150 words a minute; allow more in a second language): fast route about 24 minutes (opening
+      page with the plain-words box, Warm-up, Opening Case, 13.7 with its recap of 13.2–13.6, 13.8, Summary); full route
+      about 57 minutes (about 66 with Ethics Lens, Career Connection, From the Field and Summary). Labs: 13.1 Describe It,
+      Then Check 25 min; 13.2 Trace an Image 35; 13.3 Read the Credentials 20; 13.4 The Ear Test 15; each has a 10-minute
+      version. The optional verification protocol takes about 80–100 minutes. Blueprint figures (fast route ~18 min, Lab
+      13.2 30 min, protocol 65–90 min) are superseded by the chapter's draft-v2 numbers used here.
+    questions:
+      - q: "Should I do the verification protocol?"
+        a: "Only if you want to: it is optional and ungraded. It can serve as evidence in the risk review (A12, Chapter 15) and in your personal code of practice (Chapter 21)."
+    activity: "Point to the right column; say where the slides and the fast route are posted."
+    book: "Chapter 13 time paragraph; Hands-on Labs; Application Assignment (optional)."
+
+- layout: objectives
+  minutes: 0.5
+  kicker: "Chapter 13 · learning objectives (optional chapter)"
+  title: "After this chapter you can…"
+  items:
+    - {code: "O1", text: "**Explain** how models receive and generate images and sound"}
+    - {code: "O2", text: "**Distinguish** generated media from a record of an event"}
+    - {code: "O3", text: "**Evaluate** a use by who relies on it and who checks"}
+    - {code: "O4", text: "**Differentiate** a present signal from a missing one"}
+    - {code: "O5", text: "**Assess** media by source, channel and context first"}
+    - {code: "O6", text: "**Create** a personal verification protocol"}
+  notes:
+    say: |
+      Six objectives, in the order of the chapter. The first two are about how media is made: what a model actually
+      receives when you give it a photo or a recording, how generators build new media, and why a realistic picture is
+      not a record of an event. The third is about who must check a multimodal output, such as alt text or a transcript.
+      The fourth is about provenance signals, credentials and watermarks, and the difference between finding one and
+      not finding one. The fifth is the core habit: check the source, the channel and the context before you look closely
+      at the pixels. The sixth is a protocol you write in advance. None of these is examined.
+    background: |
+      Chapter wording and tags: O1 Explain how a multimodal model receives images and sound as tokens, and how
+      generators produce new media (LO1); O2 Distinguish generated or altered media from a record of an event (LO1;
+      Discernment); O3 Evaluate a multimodal use in your field by who relies on the output and which check it needs (LO5);
+      O4 Differentiate what a provenance signal shows when it is present from what its absence shows (LO5); O5 Assess
+      whether media can be trusted, using source, channel and context checks before looks or scores (LO5, LO3); O6 Create
+      a personal verification protocol for media and the requests it carries (LO5). The blueprint notes that the book map
+      lists Chapter 13 under LO6, an inconsistency reported to the editor.
+    activity: "Do not read the list; point to O5 as the habit the segment builds."
+    book: "Chapter 13, Learning Objectives."
+
+# About 59 words incl. labels and tier pills: five tiered events are the case (deliberate exception).
+- layout: timeline
+  minutes: 2.5
+  kicker: "Opening case · Hong Kong, January 2024 · primary record: Hong Kong SAR Government (2024)"
+  title: "A meeting where everyone else was fake"
+  events:
+    - {label: "Email", text: "Phishing email posing as the head office’s finance chief; first doubted", tier: "reported"}
+    - {label: "Video call", role: ai, text: "Pre-recorded; made from public clips, police believe", tier: "confirmed"}
+    - {label: "Messages", text: "Further payment instructions by instant message", tier: "confirmed"}
+    - {label: "Transfers", text: "Five local accounts; about HK$200 million", tier: "confirmed"}
+    - {label: "Later check", text: "Head office contacted; fraud found", tier: "reported"}
+  takeaway: "Puzzle: why did a call overcome a doubt an email had raised?"
+  notes:
+    say: |
+      Tell it as a story, without names. In late January 2024, the Hong Kong police received a fraud report. A finance
+      employee at a multinational company's Hong Kong office had received a phishing email from someone posing as the
+      chief financial officer of the head office in the United Kingdom, inviting him to a group video conference about
+      confidential transactions. According to news reports, he first suspected phishing, because the message spoke of a
+      secret transaction. Then came the call, and the people on screen looked and sounded like colleagues he recognized.
+      As instructed, he authorized transfers to five local bank accounts: about HK$200 million, roughly US$25.6 million.
+      The government later said the conference was pre-recorded. Here is the puzzle: he doubted an email, but believed a
+      video call. Why? And what check would have worked when looking and listening did not?
+    background: |
+      Tiers as the chapter states them. Confirmed (primary record, the government's written reply to the legislature,
+      LCQ9, June 2024): the report, the phishing email, the invitation, the transfers to five local accounts, the loss of
+      about HK$200 million; the conference was pre-recorded; the police believe it was generated from public video clips
+      and voices of the impersonated officer, downloaded from the internet; no real interaction; the fraudster ended the
+      meeting with an excuse and continued by instant messaging. The reply does not say how the police reached their
+      view, and does not name the company or the tools. Reported (CNN, citing the police briefing): the first doubt, why it
+      faded, the US$25.6 million conversion, and that the fraud was discovered when the employee later checked with head
+      office. Reported (CNN, May 2024): the British engineering firm Arup confirmed it was the company; a spokesperson said
+      fake voices and images were used and none of its internal systems were compromised. Naming rule: no individual is
+      named (the employee, the impersonated officer and the police officers stay unnamed; decision D-10.8).
+    questions:
+      - q: "Was it a live deepfake call?"
+        a: "First reports described a call with several people on screen; the government's later reply says it was pre-recorded, with no real interaction. The accounts fit together; the later one is narrower and more exact. Use the primary record for what it states and say 'reported' for the rest."
+    misconceptions:
+      - m: "M2 'A realistic image, voice or video is evidence that what it shows happened.'"
+        fix: "The employee's doubt faded because faces and voices felt like a record. Do not let the lesson slide into M6 ('anything could be fake, so checking is pointless'): the case also shows which check worked."
+    activity: "Narrate; do not read the cards. Take two guesses at the puzzle."
+    book: "Opening Case; @fig-13-2 (storyboard, placed in §13.7); Case Study 'The Meeting, Revisited'."
+
+- layout: lanes
+  minutes: 1.5
+  kicker: "§13.1 · images and sound as tokens (book figure @fig-13-3b, redrawn)"
+  title: "Images and sound arrive as tokens, beside your words"
+  rows:
+    - label: "Your words"
+      nodes:
+        - {label: "Text", kind: human, role: neutral}
+        - {label: "Text tokens", kind: step}
+        - {label: "One context window", kind: step}
+    - label: "An image"
+      nodes:
+        - {label: "Image, shrunk if large", kind: human, role: neutral}
+        - {label: "Patches → image tokens", kind: step}
+        - {label: "One context window", kind: step}
+    - label: "A recording"
+      nodes:
+        - {label: "Audio", kind: human, role: neutral}
+        - {label: "Slices → audio tokens", kind: step}
+        - {label: "One context window", kind: step}
+  caption: "File date, place and camera are not processed by the model in two providers’ tools, but the file still reaches the provider (as of October 2026)."
+  takeaway: "The model works from a resized copy, and its description is a draft"
+  notes:
+    say: |
+      Recall Chapter 3: a language model receives text as tokens. A multimodal model receives or produces more than one
+      kind of data: text, images, audio or video. How does a picture fit into a system built for tokens? It is turned
+      into tokens. A widely used approach cuts an image into small squares called patches, about 14 to 32 pixels on a
+      side, and each patch becomes an image token. Sound can be handled the same way: each short slice becomes an audio
+      token. All of them share one context window with your words. Three consequences. Large images are shrunk first, so
+      small text can be lost. Information stored in the file, such as its date or location, is not part of what the model
+      receives, but the file itself still reaches the provider. And the description is generated, so it can contain
+      errors.
+    background: |
+      Dosovitskiy et al. (2021): patches (16 pixels in the original research); Wang et al. (2023): audio tokens via a
+      codec. Dated box (as of October 2026): one provider counts one image token per 28 × 28-pixel patch, so a 1,000 ×
+      1,000-pixel image costs about 1,296 tokens, and shrinks larger images to a cap; another uses 32 × 32-pixel patches
+      on newer models; both state their models do not process an image's metadata (Anthropic, n.d.; OpenAI, n.d.). Worked
+      example (constructed): Hana's streetcar drawing; the description said "route 3" where the drawing says route 8, in
+      small numerals lost in resizing. Before uploading, Hana runs Chapter 12's data gate and removes location data.
+    misconceptions:
+      - m: "M1 'A model that receives my photo or recording gets all of it, as I do, so its descriptions are faithful.'"
+        fix: "Use the route-number example; then add the check from the M1 row: users of description apps also report real benefits (§13.3), so the lesson is 'a draft to check', not 'useless'."
+    activity: "Ask: 'In a 4,000-pixel photo of a poster, which labels are most at risk?' (The small ones near the edges: faded example 13.1.)"
+    book: "§13.1, @fig-13-3a, @fig-13-3b; dated box; Worked Example 'Hana's Streetcar'; Faded Example 'An Anatomy Poster'."
+
+- layout: lanes
+  minutes: 2
+  kicker: "§13.2 · camera versus generator (book figure @fig-13-6, redrawn)"
+  title: "A camera records an event; a generator builds a plausible picture"
+  rows:
+    - label: "Camera"
+      nodes:
+        - {label: "An event", kind: human, role: neutral}
+        - {label: "Light hits a sensor", kind: step}
+        - {label: "Photo file: a record", kind: human, role: verified}
+    - label: "Generator"
+      nodes:
+        - {label: "Prompt and noise", kind: human, role: neutral}
+        - {label: "Noise removed step by step", kind: ai}
+        - {label: "Image file: no event behind it", kind: step, dashed: true}
+  caption: "Hexagon = AI component · dashed = what the file shows is not a record. Both files can look alike."
+  takeaway: "Realism is not evidence that the scene happened"
+  notes:
+    say: |
+      Now generation. Many image generators are diffusion models: they start from random noise, like static on an old
+      television, and remove it step by step, guided by the prompt, until an image appears. During training the model
+      saw very many captioned images with noise added and learned to predict and remove that noise. Voices can be
+      generated too: in 2023 a research system produced speech in a speaker's voice from a three-second recording. So
+      here is the most important point of the chapter. A camera records light that came from an event. A generator
+      produces what is plausible for a prompt. A generated picture can look exactly like a photograph and record nothing
+      at all. In the opening case, the police believe the raw material was public clips and voices of one executive.
+    background: |
+      Ho et al. (2020) diffusion; Rombach et al. (2022) latent diffusion; other generators predict image tokens one after
+      another (Yu et al., 2022). Wang et al. (2023): a Microsoft research system trained on 60,000 hours of English speech;
+      not a product. Definitions (book-wide, copied verbatim by Core chapters): synthetic media = images, audio or video
+      generated or substantially altered by AI; deepfake = synthetic media that realistically shows a real person, or a
+      real event, saying, doing or happening in a way that did not happen; voice cloning = using AI to produce new speech
+      that imitates a particular person's voice from samples of it. Memorization is rare but real (Carlini et al., 2023);
+      stereotyped outputs (Bianchi et al., 2023; Chapter 16). Hana tested a generator once, with no artist's style named
+      and none of their work uploaded: "Looks like evidence, records nothing" (constructed).
+    questions:
+      - q: "Isn't a generated image just a collage of training images?"
+        a: "Usually not: outputs are new samples. Memorization, reproducing a training image almost exactly, is real but rare, and worked mostly for images that appeared many times in the training data (Carlini et al., 2023)."
+    misconceptions:
+      - m: "M2 'A realistic image, voice or video is evidence that what it shows happened.'"
+        fix: "Point to the two rows: only one has an event behind it, and both files can look alike."
+    activity: "Ask: 'Name one image in your field whose value depends on being a record' (a site photo, an interview recording, a lab image)."
+    book: "§13.2, @fig-13-4, @fig-13-5, @fig-13-6; Check Yourself 13.2."
+
+- layout: compare
+  minutes: 2
+  kicker: "§13.3 · uses that help, and who checks them (book figure @fig-13-7, redrawn)"
+  title: "The person who relies on it often cannot check it"
+  size: 22
+  columns:
+    - heading: "Alt text"
+      role: soft
+      bullets: ["Relies: a screen-reader user", "Can check: rarely", "Checks: the author"]
+    - heading: "Captions"
+      role: soft
+      bullets: ["Relies: viewers who are deaf or hard of hearing", "Checks: the publisher"]
+    - heading: "Transcripts (2023 test)"
+      role: risk
+      bullets: ["About 1% contained invented text", "38% of those were harmful"]
+  takeaway: "So the author must check: purpose first, draft, then every claim"
+  notes:
+    say: |
+      Multimodal tools do useful work every day. Alt text is a short text alternative that tells a reader who cannot see
+      an image what they need to know from it. Closed captions put a video's speech and important sounds on screen.
+      Transcription turns spoken audio into text. Users value these tools: in interviews, visually impaired users of one
+      app valued learning about details they had not known were there, and also met hallucinations, which they checked
+      with their own knowledge or a sighted person. Transcription shows both sides. In a 2023 test, most transcribed
+      speech was highly accurate, but roughly 1% of transcriptions contained invented phrases no one had said, and 38% of
+      those contained harmful content. Hence the rule: the person who relies on the output often cannot check it, so the
+      author must.
+    background: |
+      Koenecke et al. (2024): 13,140 audio segments run through a public speech-recognition service in April and May
+      2023; 187 segments (about 1.4%) reliably produced invented text; 312 transcriptions contained inventions (roughly 1%
+      of transcriptions); 38% of those 312 harmful (violence 19%, false associations 13%, false authority 8%, overlapping);
+      more common for people with aphasia; 12 of the 187 still produced inventions in December 2023. Gonzalez Penuela et
+      al. (2024): 16 blind and low-vision participants, satisfaction about 2.8 of 5. Xie et al. (2025): 14 users of one
+      app. WCAG success criterion 1.1.1 requires a text alternative for non-text content (W3C, 2024). Routine (§13.3):
+      purpose first, tool draft if you like, check every claim against the image or audio, disclose where expected. Hana's
+      alt text (constructed): the tool's draft called an ink drawing a "watercolor photograph" of a "busy" street.
+    misconceptions:
+      - m: "M1 '…so its descriptions and transcripts are faithful.'"
+        fix: "Give the 38% figure with its denominator (312 transcripts with inventions), then the benefits users report."
+    activity: "Ask students for one multimodal use in their field: who relies on it, can they check it, who must?"
+    book: "§13.3, @fig-13-7, @fig-13-8; Worked Example 'Alt Text for the Zine'; Lab 13.1."
+
+# About 58 words: a 3 x 2 grid that redraws the book figure's nine cells (deliberate exception).
+- layout: matrix
+  minutes: 2
+  kicker: "§13.4–13.5 · provenance signals (book figure @fig-13-10, redrawn)"
+  title: "A present signal is a lead; a missing one proves nothing"
+  size: 22
+  col_headers: ["Present and valid", "Missing"]
+  row_headers: ["Content credential", "Watermark", "Platform label"]
+  cells:
+    - - {title: "Signed history", text: "not truth", role: verified}
+      - {title: "Proves nothing", text: "stripped or never added", role: soft}
+    - - {title: "Maker’s tool made it", text: "only with its detector", role: verified}
+      - {title: "Proves nothing", text: "never added or weakened", role: soft}
+    - - {title: "AI use declared", text: "by platform or uploader", role: verified}
+      - {title: "Proves nothing", text: "depends on the above", role: soft}
+  takeaway: "Use signals when you find them; never read their absence as “real”"
+  notes:
+    say: |
+      If looking cannot settle where a file came from, records can help. Provenance is a record of where content came
+      from and how it was changed. Content credentials, under the C2PA standard, are signed statements attached to a file:
+      captured with this camera, edited with this program, generated with this tool, tied to the file by a hash so that a
+      change shows. A valid credential is strong evidence of a file's history, but the standard itself says provenance
+      cannot tell you whether content is true: a real photo of a staged scene can carry a perfect credential. Watermarks
+      are patterns a tool places in the media it produces, which a matching detector can test for. Both go missing: many
+      files never had one, and metadata is often stripped when files are shared. So: present is a lead; missing proves
+      nothing.
+    background: |
+      C2PA founded February 2021 by Adobe, Arm, the BBC, Intel, Microsoft and Truepic (Microsoft, 2021); explainer for
+      specification 2.3 (C2PA, 2026). Stripping on sharing, sometimes to protect privacy (NIST, 2024). Watermark limits
+      (NIST, 2024): exist only where the maker added one; editing can weaken them; open-weight models need not add one;
+      usually checkable only with the maker's detector or a partner's. Google reported in May 2025 that more than 10
+      billion pieces of content had been watermarked with SynthID. Dated example (as of October 2026): one phone maker says
+      its camera app adds credentials to every photo. Safety: describe these limits only as limits; do not demonstrate or
+      explain any way to remove a mark or credential. Worked example (constructed): Hana's zine collective asks every
+      applicant, Hana included, for process evidence, because no signal can show a drawing is hand-made.
+    misconceptions:
+      - m: "M5 'No label, watermark or credential means it is real; a credential means it is true.'"
+        fix: "Walk the two columns: right column 'proves nothing'; left column 'a lead about origin', and for credentials 'history, not truth'."
+    activity: "Ask: 'An image arrives with a credential naming an AI image tool. Can it run as a news photo?' (No: Faded Example 13.4, Photo C.)"
+    book: "§13.4, §13.5, @fig-13-9, @fig-13-10; Check Yourself 13.4–13.5; Lab 13.3."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Predict first · §13.6"
+  title_prefix: "Predict"
+  title: "can you spot a generated face?"
+  question: "People judged faces from a pool of real photos and faces made by a 2020 face generator. What share did they classify correctly, and after training with feedback?"
+  options:
+    - "48.2%, then 59.0%"
+    - "About 75%, then about 90%"
+    - "About 60%, then about 85%"
+    - "About 30%, then about 50%"
+  answer: a
+  instruction: "Write your own confidence (0–100%) before you vote"
+  explanation: "315 people: 48.2%; a trained group of 219: 59.0%; guessing would give 50%"
+  notes:
+    say: |
+      Predict first. Researchers drew faces from a pool of 800: 400 photos of real people and 400 made by a face
+      generator from 2020. Each participant classified 128 of them as real or generated. What share did people classify
+      correctly? And a second group was trained with examples and told after every face whether they were right: what did
+      they reach? Before you vote, write down how confident you are that you could spot a generated face yourself, from
+      zero to one hundred percent. Then vote.
+    background: |
+      Prediction box in §13.6; Nightingale and Farid (2022), PNAS. The chapter's Your Turn asks students to compare their
+      own confidence with the 48.2% result.
+    activity: "15 s: write confidence; then vote by hands."
+    book: "§13.6 Predict first; Your Turn."
+  answer_notes:
+    say: |
+      The answer is (a). 315 participants classified the faces correctly 48.2% of the time, about the same as guessing.
+      A second group of 219, trained with examples and feedback after every face, reached 59.0%: training added about 11
+      percentage points. Voices are hard too: listeners correctly identified 73% of the speech deepfakes they heard, and
+      training helped only a little; the authors note their deepfakes came from older methods. In another experiment,
+      people could not reliably detect deepfake videos and overestimated their own skill. Now compare with the confidence
+      you wrote down. One hopeful finding: across 15,016 participants, crowds judging one set of videos did about as well
+      as a leading detection model, though their errors differed.
+    background: |
+      Nightingale & Farid (2022); Mai et al. (2023), English and Mandarin, 73% of deepfakes identified (529 participants;
+      overall accuracy about 70%); Köbis et al. (2021), 210 people; Groh et al. (2022), 15,016 participants. The "about 11
+      percentage points" is the book's calculation. Lab 13.4 (The Ear Test, optional) repeats this with ten clips recorded
+      for the course by consenting speakers, some replaced by synthetic versions made with their written consent.
+    misconceptions:
+      - m: "M3 'If I look and listen carefully, I will notice a fake.'"
+        fix: "Contrast the class's confidence with 48.2%; keep the hopeful note (crowds, context checks) so it does not turn into M6."
+    activity: "Ask for hands: who was more confident than 48%?"
+    book: "§13.6, @fig-13-11; Lab 13.4."
+
+- layout: compare
+  minutes: 1
+  kicker: "§13.6 · Chandra et al. (2025), Deepfake-Eval-2024 (book figure @fig-13-12, redrawn)"
+  title: "Detectors that aced their own tests fell to near guessing"
+  size: 24
+  columns:
+    - heading: "Own test data"
+      role: soft
+      bullets: ["Nine open-source detectors", "AUC 0.87–1.00"]
+    - heading: "Media flagged in 2024"
+      role: risk
+      bullets: ["Same nine detectors", "AUC 0.43–0.63", "0.5 = guessing"]
+    - heading: "Best commercial tools"
+      role: neutral
+      bullets: ["Video 0.79 · audio 0.93 · images 0.90", "None right 90% of the time"]
+  takeaway: "A look or a score is a lead, not a verdict"
+  notes:
+    say: |
+      What about tools? A deepfake detector gives a score for how likely media is to be generated or altered. A 2025
+      benchmark collected media that users had flagged as possibly AI-made in 2024, real and fake. Detection quality is
+      reported as AUC, where 0.5 means guessing and 1.0 means perfect. Nine open-source detectors had scored between 0.87
+      and 1.00 on their own original test data. On the 2024 media they scored between 0.43 and 0.63. The best of 22
+      commercial tools did better, but none was right 90% of the time. Detectors also make the opposite mistake: a false
+      positive labels a person's real work as AI-made, which can be extremely damaging to that person. And a general chat
+      tool is not a detector: one provider's documentation says its model cannot determine whether an image is
+      AI-generated.
+    background: |
+      Chandra et al. (2025), arXiv v5, Tables 3 and 5: open-source AUC on original test data 0.87–1.00 vs. 0.43–0.63 on
+      Deepfake-Eval-2024 (over 100 hours of video and audio, about 2,000 images); best anonymized commercial tools 0.79
+      video, 0.93 audio (partly credited by the authors to their audio labeling), 0.90 images; trained human analysts are
+      right at least 90% of the time, the authors estimate. Built with TrueMedia.org, closed to the public in January 2025.
+      False positives: NIST (2024). Since November 2025, another provider's chat app can check an uploaded image for that
+      company's own watermark; a "no" proves nothing about other generators. Hana's re-reading of a "97% accuracy" claim
+      asks: tested on what? on work like mine? how often is human work called AI-made? The slide redraws @fig-13-12
+      (paired bars per detector) as three cards so the values stay legible.
+    misconceptions:
+      - m: "M4 'A detector tool, or a chatbot, can settle whether media is fake.'"
+        fix: "Point to the paired bars: the same detectors, different media. A score that changes this much cannot settle one case."
+    activity: "Ask the three questions about any accuracy claim: tested on what? on work like mine? how often is real work flagged?"
+    book: "§13.6, @fig-13-12; Worked Example 'Hana Rereads the 97% Claim'; Check Yourself 13.6."
+
+- layout: concept
+  minutes: 2.5
+  kicker: "§13.7 · the media check list (book figure @fig-13-13, redrawn)"
+  title: "Check the source and the channel before the pixels"
+  size: 24
+  bullets:
+    - "**Out-of-band check:** confirm through a channel you already trust"
+    - "Most misleading media in fact checks used no AI: **cheap fakes**"
+    - "Content clues come last: weak leads"
+  flow:
+    - {label: "Source and channel", kind: human}
+    - {label: "Earliest version", kind: human}
+    - {label: "Outside sources", kind: human}
+    - {label: "Provenance signals", kind: step}
+    - {label: "Content clues", kind: step, dashed: true}
+  takeaway: "In the case, every instruction came through channels the fraudsters controlled"
+  notes:
+    say: |
+      If looks and scores are weak, what works? The same habits that work for text. One: source and channel. Who sent
+      this, and can you reach that person another way? An out-of-band check confirms a request through a separate channel
+      you already trust, such as the number in a company directory, not one the message provides. Two: the earliest
+      version. Reverse image search finds where an image, or a screenshot of one video frame, appeared before. Three:
+      outside sources. Is anyone else reporting the event? Four: provenance signals, read with the two-sided rule. Five:
+      content clues, last. Back to the case: every instruction came through channels the fraudsters controlled, and the
+      fraud came to light when the employee later checked with head office.
+    background: |
+      Out-of-band check, reverse image search, social engineering (manipulating people, rather than breaking into systems,
+      to get money, access or information) and cheap fake (media manipulated without generative AI; Paris & Donovan, 2019)
+      are defined in §13.7. Dufour et al. (2024): in media from published fact checks collected up to November 2023, most
+      misleading media used no AI; context manipulations were the majority; AI-generated images rose quickly from spring
+      2023. Tiers: "discovered when the employee later checked with head office" is reported (CNN); reading it as "a
+      channel the fraudsters did not control", and that a check before the first transfer would likely have exposed the
+      fraud, is the book's inference. These steps are Chapter 8's funnel applied to media (@fig-13-14): the primary source
+      is the original file, or the person reached through a channel you trust. The last box is dashed because clues are
+      weak leads.
+    misconceptions:
+      - m: "M6 'Anything could be fake, so checking is pointless.'"
+        fix: "Cheap fakes need no AI and context checks catch both kinds; and a check through a known channel would likely have exposed the fraud (book's reading)."
+    activity: "Ask: 'Which of these could you run in two minutes on a clip you saw this month?'"
+    book: "§13.7, @fig-13-13, @fig-13-14, @fig-13-2; Check Yourself 13.7."
+
+# Last reveal about 74 words: four check-list steps on one case are the point (deliberate exception).
+- layout: worked
+  minutes: 1
+  kicker: "§13.7 · worked example · constructed"
+  title: "An “1890s photograph” for the zine"
+  context: "A reader emails Hana a “photograph of downtown Dallas in the 1890s” for the history issue."
+  steps:
+    - {label: "Source", text: "Found in a social-media post; no photographer, no archive"}
+    - {label: "Earliest", text: "A 2025 forum post, labeled as made with an image generator"}
+    - {label: "Outside", text: "No public archive or city history shows it"}
+    - {label: "Signals", text: "No credential; a shop sign spells nothing (fits step 2)"}
+  reveal: [2, 4]
+  result: "Contradicted as an 1890s photograph; remaining uncertainty low"
+  notes_reveal:
+    - minutes: 1
+      say: |
+        Here is the check list on a striking image. A zine reader emails Hana a "photograph of downtown Dallas in the
+        1890s" for the history issue. Step one, source and channel: the reader found it in a social-media post, with no
+        photographer and no archive named. Step two, earliest version: a reverse image search finds a 2025 post on an
+        AI-art forum, where the poster labeled it as made with an image generator. Notice what kind of evidence that is:
+        positive evidence about where the image came from, not a hunch from how it looks. Ask the class: is that enough to
+        decide, or would you keep going?
+      background: |
+        Worked Example 'An "1890s Photograph"' (§13.7), constructed; no generated image is shown in the deck or the book.
+        The second worked example ('A Photo That Checks Out') ends supported: an archive photo found on the archive's own
+        website, with the photographer, year and donor in the catalog record; checking also lets you use the real thing
+        with confidence.
+      activity: "Pause after step 2 for one or two answers."
+      book: "§13.7 Worked Example 'An \"1890s Photograph\"'."
+    - minutes: 1
+      say: |
+        Hana keeps going, because the stakes are publication. Step three, outside sources: none of the public archives or
+        city histories Hana checks shows the image. Step four, signals and clues: no credential, which proves nothing on its
+        own, and a shop sign whose letters spell nothing, which fits what step two found. Verdict, on Chapter 8's scale:
+        contradicted as an 1890s photograph. Remaining uncertainty: low. The forum label could be wrong, but the missing
+        archive record and the clues point the same way. Hana thanks the reader and does not use it. Notice the order: the
+        pixels came last, and they only confirmed what the context had shown.
+      background: |
+        Verdicts are Chapter 8's five: supported, partly supported, unsupported, contradicted, cannot verify. Stopping rule:
+        stop when the evidence is strong enough for what depends on the claim; here the stakes are a printed history issue.
+      activity: "Ask: 'Which step settled it?' (Step 2, confirmed by step 3.)"
+      book: "§13.7 Worked Example; Faded Example 'A Voice Message to Accounts Payable'."
+  notes:
+    book: "§13.7 Worked Example 'An \"1890s Photograph\"'."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Explain:** built from tokens and noise, not recorded"}
+    - {code: "O2", text: "**Distinguish:** realism is not evidence of an event"}
+    - {code: "O3", text: "**Evaluate:** who relies on it, who must check"}
+    - {code: "O4", text: "**Differentiate:** signal present = lead; missing = nothing"}
+    - {code: "O5", text: "**Assess:** source, channel, context first; looks last"}
+    - {code: "O6", text: "**Create:** decide your triggers in advance"}
+  takeaway: "Treat a picture, a voice or a video as a claim, not as proof"
+  notes:
+    say: |
+      Back to the chapter's question: if seeing and hearing are no longer proof, how do you decide what to believe, and
+      what to act on? Treat a picture, a voice or a video as a claim, not as proof. Check it the way you check any claim:
+      start with where it came from and through which channel it reached you, look for its earliest version and for outside
+      sources, treat a credential or watermark as a lead when it is present, and use your eyes, ears and detector scores
+      last. When media asks you to act, confirm with the person through a channel you already trust. And decide your
+      triggers in advance, because pressure is when people skip the checks. The puzzle: the call felt like a record; the
+      check that would have worked was a known channel.
+    background: |
+      Chapter Summary and @fig-13-19. Return to the Opening Case (book's wording): the call was more convincing than the
+      email because a face and a voice feel like a record, and generated ones look and sound like one; the check that
+      exposed the fraud, too late, was a later check with head office (reported); the book reads it as one where the same
+      check before the first transfer would likely have prevented the loss (inferred). Warm-up answers: (1) no, the model
+      receives a resized grid of image tokens, not the file's metadata; (2) source, earliest version or outside reports;
+      (3) no, a missing signal proves nothing.
+    activity: "End of the 20-minute segment. Point to the fast route and the optional labs."
+    book: "Chapter Summary, @fig-13-19; Warm-up revisit."
+
+# ======================================================================= SELF-STUDY
+- layout: lab
+  session: self
+  kicker: "Lab 13.2 · optional · at home · 35 min (10-minute version: one item)"
+  title: "Trace an image"
+  goal: "Run the check list on four dated items, then see which step settled each"
+  steps:
+    - {text: "**Source and channel**, then the **earliest version** (reverse search)", min: 14}
+    - {text: "**Outside sources**, then **signals**; content clues last", min: 14}
+    - {text: "**Verdict** on Chapter 8’s scale, with remaining uncertainty"}
+    - {text: "**Open the key:** which step settled each item?", min: 4}
+  side:
+    - {heading: "Items", text: "No people; every item carries the band “COURSE SAMPLE — may be real or generated”"}
+    - {heading: "Safety", role: risk, text: "No identifiable people; never generate a real person; data gate before any upload"}
+    - {heading: "No tool?", text: "Use the printed case packet with searches already gathered"}
+  notes:
+    say: |
+      This lab is optional and done at home. You get four provided, dated items with no people in them, buildings,
+      landscapes and objects, each with a claim attached. Some are authentic as captioned; some are not. For each, run the
+      check list: source and channel, earliest version with a reverse image search, outside sources, provenance signals,
+      and content clues last, about seven minutes per item. Write a verdict and the remaining uncertainty. Only then open
+      the key and note which step settled each item. If a search finds nothing, record "no earlier version found": an
+      absence, not evidence. Then move on to outside sources.
+    background: |
+      From labs/ch13-lab2.md. Materials: authentic, miscaptioned and edited items are built from public-domain originals a
+      reverse search can really find; a generated item shows a fictional, non-local place, comes with a dated
+      search-results sheet instead of a live search, and stays on the course site only (never posted publicly). Every item
+      carries the same neutral band outside the image, "COURSE SAMPLE — may be real or generated"; the real status is only
+      in the key, and credentials (where present) carry the origin. Expected: the miscaptioned and edited items are usually
+      settled at step 2; the generated item at step 3 or 4. Other optional labs: 13.1 Describe It, Then Check (25 min); 13.3
+      Read the Credentials (20 min); 13.4 The Ear Test (15 min, clips made with consenting speakers; non-audio route or skip
+      without penalty). Rules for every lab: no identifiable person, including you; no photo of your home; run the data gate
+      (Chapter 12) before any upload; never generate an image, voice or video of a real person.
+    questions:
+      - q: "Can I use my own photos?"
+        a: "In Labs 13.1 and 13.3, yes: your own drawing, chart, or photo of an object or a public place, with no people and nothing that shows where you live. Lab 13.2 uses only the provided items."
+    activity: "Self-study; not part of the 20-minute segment."
+    book: "Hands-on Labs, Lab 13.2; labs/ch13-lab1.md to ch13-lab4.md."
+
+- layout: compare
+  kicker: "Case study · the meeting, revisited (book figures @fig-13-16, @fig-13-17)"
+  title: "Labels: misuse on the tree, a skipped check on the chain"
+  size: 22
+  columns:
+    - heading: "Tree: other (misuse)"
+      role: soft
+      text: "Fake media made to deceive; **documented**. Not hallucination."
+    - heading: "Chain: link 2 failed"
+      role: risk
+      text: "No check with head office first (**reported**); the loss: **confirmed**."
+    - heading: "Two accounts"
+      role: neutral
+      text: "First reports: a call with several people; the record: pre-recorded. They fit."
+  takeaway: "Use the primary record for what it states; say “reported” for the rest"
+  notes:
+    say: |
+      The Case Study labels the meeting with Chapter 4's tools. On the Failure Taxonomy Tree, it sits on the "other"
+      branch, leaf "misuse, such as fake media made to deceive," and the label is documented: the record states that the
+      police believe the conference was generated from clips and voices to impersonate the officer. It is not
+      hallucination; the media did what its makers intended. On the failure-to-harm chain, link 2, "checked before use?",
+      failed: the transfers followed the instructions, which is confirmed, and no check with head office came before them,
+      which is reported. Link 4, the loss, is confirmed. And the two accounts of the meeting do not conflict: the later one
+      is narrower and more exact.
+    background: |
+      Chapter 4 files misuse under "other"; the chapter brief: the deepfake is an AI output, so it is labeled on the tree
+      as "other (misuse), documented" and on the chain; Chapter 15 adds the payment-control side (data-flow map, heat map).
+      Reported (CNN, May 2024): RTHK, citing police, reported 15 transactions. As of October 2026 the authors found no
+      public report of an arrest or a recovery. Short case 1 (Pentagon image, May 2023): context settled it, not pixels:
+      officials said there was no incident, and an investigator pointed to no first-hand witnesses and no other images;
+      label other (misuse), inferred. Short case 2 (January 2024 robocalls with an AI-generated voice imitating a national
+      political figure): investigators traced the calls through phone-network records; the FCC ruled in February 2024 that
+      AI-generated voices are "artificial" under the robocall law; records, not listening, identified the calls. No
+      individual is named on this slide or in these notes.
+    questions:
+      - q: "Which single rule would most likely have stopped the transfers?"
+        a: "Most likely the out-of-band rule: confirm a money request through a known number before any transfer. Mark it as your reading: the record does not show what such a call would have found (Appendix E, Case Study Question 3)."
+    activity: "Self-study."
+    book: "Case Study 'The Meeting, Revisited', @fig-13-16, @fig-13-17, @fig-13-18; Short cases 1–2."
+
+- layout: assignment
+  kicker: "Optional artifact · O6 · ungraded unless your instructor gives feedback"
+  title: "Your verification protocol"
+  due: "Optional · about 80–100 minutes · a one-page template is provided"
+  parts:
+    - "Scope: three situations, one with media offered as proof"
+    - "Triggers (4+); pause; channels named by role, not number"
+    - "Checks ordered by stakes, with stopping points"
+    - "Test on two provided items and one of your own; revise one rule"
+    - "Disclosure rule; AI Use Declaration"
+  rubric_title: "Self-check rubric · 10 points"
+  rubric:
+    - {criterion: "Task", points: 3, full: "Scope, triggers, rules, checks by stakes, disclosure"}
+    - {criterion: "Process: test", points: 1.5, full: "Three items, each fully recorded"}
+    - {criterion: "Process: revision", points: 1.5, full: "Tied to a result; item re-checked"}
+    - {criterion: "Verification", points: 2, full: "Checks outside the item; signals read both ways"}
+    - {criterion: "Declaration and judgment", points: 2, full: "Five elements; the rule you might skip"}
+  note: "No generated media of real people; no faces or voices in your own item; never test by deceiving anyone."
+  notes:
+    say: |
+      The checks only work if you run them, and the moment you most need them is the moment of pressure. So the chapter
+      ends with a protocol: rules you write in advance for when and how you check media and the requests it carries.
+      Six parts: triggers, such as money or files requested, urgency or secrecy, a new channel, media offered as proof;
+      a pause, such as no action for ten minutes and no reply in the same channel; channels named by role, like "the number
+      on the signed contract," never by real numbers; checks by stakes; a record of the verdict and what remains
+      uncertain; and a disclosure rule for media you share that was generated or altered. The optional artifact asks you
+      to write one, test it on three items, and revise one rule.
+    background: |
+      §13.8 (Studio) and the Application Assignment (optional, ungraded unless the instructor chooses to give feedback;
+      not one of the graded weekly assignments). Time about 80–100 minutes. Test items: P1, a public-domain photo of a
+      library building, authentic as captioned (supported); P2, a generated flooded-underpass image of a fictional town,
+      carrying the same neutral band "COURSE SAMPLE — may be real or generated" (contradicted as a photo of a real flood);
+      keys in Appendix E, read only after the record is written. The police advice in the case mixes a looking test
+      (lead at best) with habits that do not depend on looks: test identity through the conversation's content, verify by
+      phone, use a scam-checking tool or helpline; the book adds that a call counts only if placed to a number you already
+      have. Alternative assignment: the provided no-tool case packet, same rubric.
+    questions:
+      - q: "Why name channels by role instead of writing down the actual numbers?"
+        a: "Numbers change, and a written list of real numbers can be copied or faked; a role points you to the current, trusted listing (Check Yourself 13.8)."
+    activity: "Self-study."
+    book: "§13.8, @fig-13-15; Application Assignment (optional): Verification Protocol; Appendix E keys P1–P2."
+
+- layout: concept
+  kicker: "Ethics Lens · content note: mentions images made without consent, without details"
+  title: "Whose face, whose voice, whose work?"
+  size: 24
+  bullets:
+    - "**People depicted:** intimate images made without consent are the worst case"
+    - "**Artists:** 459 surveyed; most want training works disclosed"
+    - "**Trust:** the liar’s dividend lets real evidence be dismissed"
+  takeaway: "Checking protects the real as well as exposing the fake"
+  notes:
+    say: |
+      The Ethics Lens asks three questions. First, the people depicted. Generated media can place real people's faces
+      and voices in scenes they never took part in; the most harmful case is intimate imagery made without consent. In
+      the United States, a 2025 law requires covered platforms to remove reported nonconsensual intimate images within 48
+      hours. Second, the artists whose work trained the models. In a 2024 survey of 459 artists, most said developers
+      should disclose which artworks are used in training and that outputs should not belong to the model's makers.
+      Third, trust itself. When fakes are common, real evidence can be dismissed: that benefit is called the liar's
+      dividend. Discussion: when, if ever, is it acceptable to generate an image of a real person, and who should decide?
+    background: |
+      TAKE IT DOWN Act, signed May 19, 2025, duty enforceable from May 19, 2026 (as of October 2026; WilmerHale, 2026);
+      Chapters 15 and 18 take it up. Lovato et al. (2024), 459 artists; one survey is not every artist; the concerns are
+      reasoned. Protection tools: Glaze, built with user studies involving more than 1,000 artists (Shan et al., 2023);
+      later researchers showed that, as tested, simple edits could defeat such protections (Hönig et al., 2025); do not
+      name or describe any such edit. What artists can still do: contracts on AI use, disclosure to clients, credentials on
+      their own work, collective rules like Hana's. Liar's dividend: Chesney & Citron (2019). EU AI Act Article 50 marking
+      and deepfake-disclosure duties have applied since August 2, 2026, with a transition to December 2, 2026 for systems
+      already on the market (as of October 2026; Chapter 18). Keep the content note; give no details of any case.
+    activity: "Self-study, or a 5-minute discussion if a class wants it."
+    book: "Ethics Lens 'Whose Face, Whose Voice, Whose Work?'; Discussion Questions 1–2, 5."
+
+- layout: quiz
+  kicker: "Self-check · §13.4–13.5"
+  title: "the two-sided rule"
+  question: "State the two-sided rule for provenance signals, and give two reasons an AI-generated image may carry no watermark."
+  instruction: "Write it from memory, then check"
+  model_answer:
+    - "A signal that is **present and valid** is a lead about where content came from; a **missing** signal proves nothing."
+    - "No watermark: the maker did not add one (for example, an open-weight model); or editing weakened it."
+  notes:
+    say: |
+      A self-check you can do on your own after the segment or the fast route. Write the two-sided rule from memory, in
+      one sentence for each side: what a present signal shows, and what a missing one shows. Then give two reasons an
+      AI-generated image might carry no watermark at all. This is the rule students most often get backward, by reading a
+      missing label as a sign that an image is real. If you can state both sides cleanly, you have the most important
+      idea of sections 13.4 and 13.5.
+    background: |
+      Check Yourself 13.5 items 2–3 and Review A9 (odd; key in Appendix E). A watermark may also be present but unfound,
+      if you lack the maker's detector.
+    activity: "Self-study."
+    book: "§13.5; Check Yourself 13.5; Review Questions A9; Appendix E."
+  answer_minutes: 0
+  answer_notes:
+    say: |
+      Model answer. Present and valid: a lead about where the content came from, and for a content credential, a signed
+      history of the file, not proof that the scene is true. Missing: proves nothing, because credentials are often
+      stripped when files are shared, many files never had one, and watermarks exist only where a maker chose to add one.
+      Two reasons for no watermark: the maker did not add one, for example an open-weight model that anyone can run; or
+      editing weakened or removed it. If your answer said "no watermark, so probably real," reread section 13.5 and the
+      zine collective's rule: it asks every applicant for the same process evidence instead.
+    background: |
+      Appendix E: Check Yourself 13.5 and Review A9. Same rule, one wording everywhere in the book: "a missing signal
+      proves nothing."
+    activity: "Self-study."
+    book: "Appendix E (Check Yourself 13.5; Review A9)."
+
+- layout: key_terms
+  title: "Key terms"
+  terms:
+    - "modality"
+    - "multimodal model"
+    - "image token"
+    - "audio token"
+    - "diffusion model"
+    - "synthetic media"
+    - "deepfake"
+    - "voice cloning"
+    - "alt text"
+    - "closed captions"
+    - "transcription"
+    - "provenance"
+    - "metadata"
+    - "content credentials"
+    - "watermark (media)"
+    - "deepfake detector"
+    - "reverse image search"
+    - "out-of-band check"
+    - "social engineering"
+    - "cheap fake"
+    - "liar’s dividend"
+    - "verification protocol"
+  note: "Definitions: Chapter 13 and the glossary. The whole chapter is optional and not on exams."
+  notes:
+    say: |
+      These are the chapter's key terms. None is examined, because the chapter is Deep, but several return in Core
+      chapters, which define them again in their own text: deepfake, content credentials, watermark and out-of-band check
+      come back in Chapters 15, 16, 18 and 19. If you remember three, remember these: a deepfake is synthetic media that
+      realistically shows a real person or event in a way that did not happen; an out-of-band check confirms a request
+      through a channel you already trust; and a cheap fake is media manipulated without generative AI, often just a real
+      photo with a false caption.
+    background: |
+      Key Terms list from the chapter (22 terms; "transcription (speech recognition)" shortened here). Definitions of
+      deepfake, synthetic media, voice cloning, social engineering and cheap fake are book-wide; Core chapters copy them
+      verbatim (chapter brief).
+    activity: "Self-study."
+    book: "Chapter Summary, Key Terms; glossary."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: references
+  session: after
+  title: "References"
+  per_slide: 7
+  refs:
+    - "Anthropic. (n.d.). *Vision*. Claude Docs. Retrieved October 18, 2026."
+    - "Bianchi, F., et al. (2023). Easily accessible text-to-image generation amplifies demographic stereotypes at large scale. In *FAccT ’23* (pp. 1493–1504)."
+    - "Bond, S. (2023, May 22). Fake viral images of an explosion at the Pentagon were probably created by AI. *NPR*."
+    - "C2PA. (2026). *C2PA and Content Credentials explainer* (Specification version 2.3)."
+    - "Carlini, N., et al. (2023). Extracting training data from diffusion models. In *32nd USENIX Security Symposium* (pp. 5253–5270)."
+    - "Chandra, N. A., et al. (2025). *Deepfake-Eval-2024: A multi-modal in-the-wild benchmark of deepfakes circulated in 2024* (arXiv:2503.02857v5)."
+    - "Chen, H., & Magramo, K. (2024, February 4). Finance worker pays out $25 million after video call with deepfake ‘chief financial officer’. *CNN*."
+    - "Chesney, R., & Citron, D. (2019). Deep fakes: A looming challenge for privacy, democracy, and national security. *California Law Review, 107*, 1753."
+    - "Dosovitskiy, A., et al. (2021). An image is worth 16x16 words: Transformers for image recognition at scale. *ICLR 2021*."
+    - "Dufour, N., et al. (2024). *AMMeBa: A large-scale survey and dataset of media-based misinformation in-the-wild* (arXiv:2405.11697)."
+    - "Federal Communications Commission. (2024a). Declaratory Ruling FCC 24-17, CG Docket No. 23-362."
+    - "Gonzalez Penuela, R. E., Collins, J., Bennett, C., & Azenkot, S. (2024). Investigating use cases of AI-powered scene description applications for blind and low vision people. In *CHI 2024*."
+    - "Google. (2025b, May). *SynthID Detector — a new portal to help identify AI-generated content*."
+    - "Google. (2025c, November 20). *How we’re bringing AI image verification to the Gemini app*."
+    - "Groh, M., Epstein, Z., Firestone, C., & Picard, R. (2022). Deepfake detection by human crowds, machines, and machine-informed crowds. *PNAS, 119*(1), e2110013119."
+    - "Ho, J., Jain, A., & Abbeel, P. (2020). Denoising diffusion probabilistic models. *NeurIPS, 33*, 6840–6851."
+    - "Hong Kong SAR Government. (2024, June 26). *LCQ9: Combating frauds involving deepfake* [Press release]."
+    - "Hönig, R., Rando, J., Carlini, N., & Tramèr, F. (2025). Adversarial perturbations cannot reliably protect artists from generative AI. *ICLR 2025*."
+    - "Johnson, D. B. (2024, February 6). New Hampshire authorities trace Biden AI robocall to Texas-based telecom. *CyberScoop*."
+    - "Köbis, N. C., Doležalová, B., & Soraperra, I. (2021). Fooled twice: People cannot detect deepfakes but think they can. *iScience, 24*(11), 103364."
+    - "Koenecke, A., Choi, A. S. G., Mei, K. X., Schellmann, H., & Sloane, M. (2024). Careless Whisper: Speech-to-text hallucination harms. In *FAccT ’24* (pp. 1672–1681)."
+    - "Lovato, J., Zimmerman, J., Smith, I., Dodds, P., & Karson, J. (2024). Foregrounding artist opinions. *Proceedings of AIES, 7*(1), 905–916."
+    - "Magramo, K. (2024, May 16). British engineering giant Arup revealed as $25 million deepfake scam victim. *CNN*."
+    - "Mai, K. T., Bray, S., Davies, T., & Griffin, L. D. (2023). Warning: Humans cannot reliably detect speech deepfakes. *PLOS ONE, 18*(8), e0285333."
+    - "Microsoft. (2021, February 22). *Technology and media entities join forces to create standards group aimed at building trust in online content*."
+    - "National Institute of Standards and Technology. (2024). *Reducing risks posed by synthetic content* (NIST AI 100-4)."
+    - "Nightingale, S. J., & Farid, H. (2022). AI-synthesized faces are indistinguishable from real faces and more trustworthy. *PNAS, 119*(8), e2120481119."
+    - "OpenAI. (n.d.). *Images and vision*. OpenAI API documentation. Retrieved October 18, 2026."
+    - "Paris, B., & Donovan, J. (2019). *Deepfakes and cheap fakes: The manipulation of audio and visual evidence*. Data & Society."
+    - "Regulation (EU) 2024/1689 (Artificial Intelligence Act), Art. 50; amended by Regulation (EU) 2026/1744."
+    - "Rombach, R., et al. (2022). High-resolution image synthesis with latent diffusion models. In *CVPR* (pp. 10684–10695)."
+    - "Shan, S., et al. (2023). Glaze: Protecting artists from style mimicry by text-to-image models. In *32nd USENIX Security Symposium* (pp. 2187–2204)."
+    - "W3C. (2024). *Web Content Accessibility Guidelines (WCAG) 2.2*."
+    - "Wang, C., et al. (2023). *Neural codec language models are zero-shot text to speech synthesizers* (arXiv:2301.02111)."
+    - "WilmerHale. (2026, June 15). *The TAKE IT DOWN Act goes live* [Client alert]."
+    - "Xie, J., et al. (2025). Beyond visual perception: Insights from smartphone interaction of visually impaired users with large multimodal models. In *CHI 2025*."
+    - "Yu, J., et al. (2022). *Scaling autoregressive models for content-rich text-to-image generation* (arXiv:2206.10789)."
+  notes:
+    say: |
+      Reference slides; not presented. These are the sources cited on the slides and in the speaker notes, in short APA
+      form, taken from the chapter's reference list. Students do not need to read them. For a student who wants more, the
+      chapter suggests the government's reply on deepfake frauds, with the police's advice for checking video calls; NIST
+      (2024), a clear overview of provenance, watermarks and detection and their limits; the C2PA explainer, including what
+      the standard does not claim; Koenecke et al. (2024) on transcription; and Paris and Donovan (2019), the report that
+      named cheap fakes.
+    background: |
+      Full entries with URLs are in the chapter's References section. One reference title names a public figure exactly as
+      published (Johnson, 2024); the slides and notes name no individual. The FCC forfeiture order (FCC, 2024b) is not
+      cited in this deck.
+    activity: "Not presented."
+    book: "Chapter 13, References; Further Reading and Compass Links."

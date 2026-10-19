@@ -28,7 +28,7 @@ The same points read very differently across tones; writers often predict their 
 Ungraded. The three versions can serve as A7's "at least one iteration."
 
 ## Accessibility and alternatives
-By-hand route needs no device; the demonstration email is on your course site in print and screen-reader formats.
+By-hand route needs no device; the demonstration email is in the companion files in print and screen-reader formats.
 
 ## Safety and privacy
 Placeholders for names and contact details; no confidential workplace content.

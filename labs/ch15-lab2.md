@@ -25,4 +25,4 @@ Terms differ between providers and between plans of one provider; some options a
 Ungraded. The record can support A12's privacy row or the Mini-Project.
 
 ## Accessibility and alternatives
-A dated sample record for two tools on the course site replaces the live search.
+A dated sample record for two tools in the companion files replaces the live search.

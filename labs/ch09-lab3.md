@@ -5,7 +5,7 @@
 | Type | Check It |
 | Objectives | O4 (LO3) · tags 4D:DISC |
 | Time | 20 minutes, at home or in Compass (optional) |
-| Materials | One open-access abstract from your field (your library's article database can filter for open access, or use the list on your course site); a tool your institution provides or approves (for example, an enterprise chat assistant with data protection) or a free tier (or the dated sample summaries on your course site); the fidelity-check row of the A6 sheet (F9.15) |
+| Materials | One open-access abstract from your field (your library's article database can filter for open access, or use the list in the companion files); a tool your institution provides or approves (for example, an enterprise chat assistant with data protection) or a free tier (or the dated sample summaries in the companion files); the fidelity-check row of the A6 sheet (F9.15) |
 
 ## Steps (tool-neutral)
 1. Choose one open-access abstract from your field and keep it open.
@@ -29,7 +29,7 @@ Three-sentence summaries of short abstracts are often faithful in most sentences
 Ungraded. The coded summary can be used for A6 item 4 if the abstract belongs to one of your three sources.
 
 ## Accessibility and alternatives
-No-device or opt-out route: code the dated sample summaries on your course site. Screen-reader-friendly fidelity table.
+No-device or opt-out route: code the dated sample summaries in the companion files. Screen-reader-friendly fidelity table.
 
 ## Safety and privacy
 Open-access abstracts only; no paywalled or confidential documents uploaded to public tools.

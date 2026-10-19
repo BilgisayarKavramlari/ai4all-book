@@ -5,7 +5,7 @@
 | Type | Explore (optional, at home) |
 | Objectives | O1, O3 (LO5) · tags 4D:DIL |
 | Time | 20 minutes |
-| Materials | One AI tool you already use (no new account); its provider's own terms and help pages; printed, dated excerpts of two providers' terms on your course site (no-device route); steps for current tools in Compass (optional) |
+| Materials | One AI tool you already use (no new account); its provider's own terms and help pages; printed, dated excerpts of two providers' terms in the companion files (no-device route); steps for current tools in Compass (optional) |
 
 ## Steps (tool-neutral)
 1. Name the tool, the kind of plan you use (free, paid, provided by your institution or employer) and today's date.
@@ -26,7 +26,7 @@ Terms differ by provider and by plan; output-rights clauses usually allocate rig
 Ungraded: a four-row table (question, phrase or paraphrase, section, date).
 
 ## Accessibility and alternatives
-Printed excerpts on your course site; screen-reader-friendly versions; any language with English glosses.
+Printed excerpts in the companion files; screen-reader-friendly versions; any language with English glosses.
 
 ## Safety and privacy
 Change nothing in your account during the lab; no personal data in the table.

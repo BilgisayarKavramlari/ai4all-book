@@ -1,0 +1,1555 @@
+# Lecture deck spec — Chapter 12: The Tool Ecosystem and Task–Tool Fit (concept session and lab session)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch12.yaml --preview
+# Every number and quotation below comes from the sources listed under deck.sources (the fact-checked chapter,
+# its labs, the figure long descriptions, Appendix E and the blueprint); the builder flags any number
+# it cannot find there.
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only
+# (the keys tue and thu are internal: tue = concept session, thu = lab session).
+# The concept session has a 10-minute optional guest-practitioner slot. It is a placeholder: the book says nothing
+# about a guest, so the notes invent nothing and flag the item for the author.
+# Text-dense book diagrams (F12.2, F12.3, F12.5, F12.9, F12.11, F12.12, F12.15, F12.16, F12.17) are redrawn natively;
+# the three data charts (F12.7, F12.10, F12.14) are used as book figures.
+
+deck:
+  chapter: 12
+  slug: the-tool-ecosystem-and-task-tool-fit
+  title: The Tool Ecosystem and Task–Tool Fit
+  short_title: Tool Ecosystem and Task–Tool Fit
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Concept session (75 min)", minutes: 75}
+    thu: {label: "Lab session · practice lab, Lab 12.1 (75 min)", minutes: 75}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/12-the-tool-ecosystem-and-task-tool-fit.qmd
+    - labs/ch12-lab1.md
+    - labs/ch12-lab2.md
+    - labs/ch12-lab3.md
+    - figures/longdesc/ch12.md
+    - appendix/answers.md
+    - docs/blueprints/ch12-blueprint.md
+
+slides:
+
+# ======================================================================= CONCEPT SESSION
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "Concept session and lab session"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading: Chapter 12 · Ch. 13 optional"
+    - "Recommended: Brynjolfsson et al. (2025)"
+  figure: f12-01-chapter-map
+  notes:
+    say: |
+      Put this slide up while students arrive. The question for this chapter sounds simple: which AI tool should you use? You can
+      reach many: chat assistants, AI inside email and documents, AI search, coding assistants, tools built for one
+      field, even models you run yourself. Rankings promise to tell you which is "best". This chapter shows why that
+      question has no general answer. A tool fits a part of a task, with your input, at a cost you accept, on a date,
+      or it does not. The chapter map on the right shows the plan, and its Work Loop strip shows the step we
+      strengthen: Frame, which tool, if any, fits this part of the task, and then Verify, testing the fit before you
+      rely on it. In the lab session you run a bake-off of your own, which starts A10.
+    background: |
+      Two sessions: a concept session ("Tool ecosystems, cost, privacy; optional guest practitioner. Demo: one task in
+      two tools") and a lab session ("Tool bake-off: at least two tools scored on quality, cost, privacy and fit").
+      A10, the tool and task fit matrix, is due when the instructor sets it; LO2, LO5. The Brynjolfsson et al. paper
+      is recommended, not required (about 15 minutes for its introduction and its section on how often agents followed
+      the tool's suggestions). Chapter 13 (multimodal AI) is a Deep chapter: optional and not examinable. Sam
+      (mechanical engineering, robotics club captain) is the chapter's only featured student.
+    questions:
+      - q: "Do I have to buy a tool or make a new account for this chapter?"
+        a: "No. The labs never require a new account; dated outputs of a second tool are provided, and a tool your institution provides or approves is often free to you (for example, an enterprise chat assistant with data protection; Microsoft Copilot Chat is one dated example, as of October 2026)."
+    activity: "On screen before class starts."
+    book: "Chapter 12 opening page; @fig-12-1 (chapter map, Frame highlighted)."
+
+- layout: session_plan
+  minutes: 2
+  title: "Chapter 12 at a glance"
+  columns:
+    - heading: "Concept session"
+      sub: "75 min · a case, a guest, a live demo, quick checks"
+      blocks:
+        - {min: 5, label: "Welcome, warm-up, objectives", detail: "Three predictions with confidence"}
+        - {min: 6, label: "Opening case", detail: "The BCG consultants, revisited"}
+        - {min: 26, label: "Concept core, §12.1–12.8", detail: "Fit, kinds, studies, cost, terms, matrix, drift"}
+        - {min: 19, label: "Live demo and case", detail: "One task in two tools; how the right ones worked"}
+        - {min: 10, label: "Guest practitioner", detail: "How tools are chosen at work"}
+        - {min: 9, label: "Quick checks and next steps", detail: "Five checks; before the lab"}
+    - heading: "Lab session · Practice lab"
+      sub: "75 min · teams of 3–4, individual artifact"
+      blocks:
+        - {min: 10, label: "Warm-up and briefing", detail: "Lab 12.1 steps, A10 brief"}
+        - {min: 45, label: "Lab 12.1: tool bake-off", detail: "Terms jigsaw 12, runs 33"}
+        - {min: 15, label: "Share and critique", detail: "Polish vs. correctness; one gate decision"}
+        - {min: 5, label: "Exit step", detail: "Summary, key terms, exit ticket"}
+  notes:
+    say: |
+      Here is the plan. The first session is the concept session, and it is a full one: a case you partly know, eight
+      short sections, a live demonstration of one task in two tools, a guest practitioner who chooses AI tools at work
+      (if you have one), and five quick checks. The second session is the practice lab: you run a fair bake-off of at least two tools, or one tool and
+      no AI, on a real task of your own, after your team reads the tools' data terms together. That record becomes
+      A10, your tool and task fit matrix, due when your instructor sets it, on your course site. Group work happens in class; A10 is
+      individual. If you can reach only one tool, or prefer not to use AI, there is a route for you.
+    background: |
+      Suggested format for a concept session: opening case 10, concept core 35, demonstrations 20, concept check 10.
+      This deck adds an optional guest practitioner, so the concept core and demo are compressed (26 + 19) to free 10
+      minutes. If you have no guest, give the minutes back to the concept core and the demo. If the guest needs more
+      time, cut the §12.3 quick check and the drift figure first; the Case Study can move to the start of the lab
+      session. Minutes on this slide are the sums of per-slide timings in the notes.
+    questions:
+      - q: "Is A10 a team submission?"
+        a: "No. The team's gate table is shared but ungraded; A10 is individual (Lab 12.1, Deliverable)."
+    activity: "Point to the two columns; give the A10 due date you have set."
+    book: "Chapter 12 time paragraph."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 12 · learning objectives"
+  title: "By the lab session you will be able to…"
+  items:
+    - {code: "O1", text: "**Explain** why fit belongs to a task and a tool together"}
+    - {code: "O2", text: "**Differentiate** tools: what each receives, can do, whose terms"}
+    - {code: "O3", text: "**Attribute** different study results to setting, users, date"}
+    - {code: "O4", text: "**Evaluate** total cost and data terms, the gate first"}
+    - {code: "O5", text: "**Conduct** a fair bake-off: correctness, polish, time apart"}
+    - {code: "O6", text: "**Produce** A10: a fit matrix with a re-test trigger"}
+  notes:
+    say: |
+      Six objectives. Explain: why fit belongs to a task, a tool, a way of using it and a date, not to a tool alone.
+      Differentiate: describe any tool by what it receives, what it can do, where it runs and whose terms cover your
+      input. Attribute: when two studies of AI tools disagree, say which difference in setting, users or date explains
+      it. Evaluate: count a tool's whole cost, not just its price, and check its data terms as a gate before you even
+      look at quality. Conduct: run a fair bake-off, scoring correctness, polish and time separately. Produce: your A10
+      fit matrix. The lab session and A10 use all six, and objective five is the heart of the lab.
+    background: |
+      Full wording and tags in the chapter: O1 explain (LO2; Delegation); O2 differentiate by kind (chat assistant, AI
+      in a productivity suite, AI search, coding assistant, domain tool) and by how the model is reached (closed
+      service, open-weight, local) (LO2); O3 attribute (LO2; Discernment); O4 evaluate total cost and data terms, gate
+      first (LO5, LO2; Diligence); O5 conduct a bake-off on typical, different and edge inputs (LO2; Discernment,
+      Description); O6 produce A10 (LO2, LO5). LO2 = frame a task and improve results through documented iteration; LO5
+      = apply privacy, security, fairness, transparency and oversight principles.
+    activity: "Ask students to star the objective they expect to be hardest."
+    book: "Chapter 12, Learning Objectives."
+
+# The three Warm-up questions, shortened from the chapter's wording; the full wording is in the SAY notes.
+- layout: concept
+  minutes: 2
+  kicker: "Warm-up · ungraded · answer from what you know today"
+  title: "Three predictions, with how sure you are"
+  size: 26
+  bullets:
+    - "Ranked first on a leaderboard: best tool for a task in your major?"
+    - "One tool, same options, two tasks: help on one, hurt on the other?"
+    - "Free tool and your institution’s tool, same answer: what could still differ?"
+  takeaway: "Answer each, plus your confidence (0–100%)"
+  notes:
+    say: |
+      Before anything else, three predictions. Answer each in a few words, and write how sure you are, from zero to
+      one hundred percent. First: a model is ranked first on a public leaderboard. Will it be the best tool for a task
+      in your major? Second: consultants used one AI tool, with the same options, on two tasks from the same kind of
+      work. Could the tool help on one and hurt on the other? Third: a free AI tool and a tool your institution provides give
+      the same answer to your question. Name one thing that could still differ between them. Keep your paper; we come
+      back to these in the lab session, and the comparison with your confidence is the interesting part.
+    background: |
+      The chapter's Warm-up. Answers (Chapter Summary): (1) not necessarily: a ranking scores other people's questions;
+      only a bake-off on your inputs shows fit (§12.1, §12.6; Deep 12.B); (2) yes: in the BCG study the same tool with
+      the same options did both (§12.1); (3) their data terms: training on your input, retention, whose contract
+      (§12.5). Do not reveal now.
+    misconceptions:
+      - m: "M1 'There is one best AI tool: the top-ranked model, or the tool built for my field.' M4/M5 'A free tool costs nothing; every tool treats what I type the same way.'"
+        fix: "Do not correct yet; note how many expect the leaderboard winner to be best."
+    activity: "90 seconds, silent and written."
+    book: "Chapter 12, Warm-up; Chapter Summary 'Revisit your Warm-up'."
+
+- layout: timeline
+  minutes: 3
+  kicker: "Opening case · Dell’Acqua et al. (2023, 2026) · a study you met in Chapter 1"
+  title: "758 consultants, one tool, two kinds of task"
+  events:
+    - {label: "2023", text: "Preregistered, at BCG", tier: "confirmed"}
+    - {label: "Baseline", text: "First task, no AI", tier: "confirmed"}
+    - {label: "Random", role: ai, text: "No AI · GPT-4 · GPT-4 + overview", tier: "confirmed"}
+    - {label: "Two tasks", text: "18 inside; one outside", tier: "confirmed"}
+  takeaway: "Same model and options: only task and training differed"
+  notes:
+    say: |
+      You met this study in Chapter 1. In 2023, 758 consultants at Boston Consulting Group, BCG, a management
+      consulting firm, took part in a preregistered experiment: the researchers wrote down their plan and measures
+      before collecting results. After a first task without AI, each consultant was randomly assigned to one of three
+      groups: no AI; GPT-4, a large language model; or GPT-4 plus a short prompt-engineering overview, videos and
+      documents on how to prompt it well. Everyone with AI used the same model, in its end-of-April 2023 version, with
+      the provider's default options. Chapter 1 gave you the headline: inside the tool's frontier AI raised the work;
+      on one task outside it, consultants with AI were less often correct. Today: two findings from that one outside
+      task that you have not met yet.
+    background: |
+      Source: Dell'Acqua et al. (2023), HBS Working Paper 24-013 (full text read for the chapter); peer-reviewed
+      version Organization Science 37(2), 2026 (abstract read; journal body paywalled). Tier: confirmed in the primary
+      record (the working paper). Inside: 18 subtasks, 385 consultants; outside: one task, 373 consultants (@fig-12-2).
+      Default options = the provider's default system prompt (instructions users do not see) and default temperature
+      (an option that changes how often less likely words are picked). Why a 2023 study still matters: its method (one
+      tool, many tasks, correctness measured apart from how good the work looked), not the model.
+    questions:
+      - q: "GPT-4 from 2023 is old. Why study it?"
+        a: "For the method: one tool, many tasks, and correctness measured separately from how good the work looked (Opening Case). The lesson is about testing fit, not about that model."
+    activity: "Narrate; ask who remembers the Chapter 1 headline (outside: about 85% vs. 60–70% correct)."
+    book: "Opening Case 'A Study You Met in Chapter 1', @fig-12-2; Chapter 1 §1.3."
+
+- layout: compare
+  minutes: 3
+  kicker: "Opening case · the outside task (working paper, Tables 4 and 6)"
+  title: "Two findings you have not met yet"
+  size: 24
+  columns:
+    - heading: "1 · Correct answers"
+      role: soft
+      bullets: ["No AI: about **85%**", "GPT-4: about **70%**", "GPT-4 + overview: about **60%**"]
+    - heading: "2 · Rated quality"
+      role: risk
+      bullets: ["Higher with AI", "**Whether right or wrong**"]
+  takeaway: "Puzzle: why did training not help, and how would you have noticed?"
+  notes:
+    say: |
+      First finding: the group that had been taught to prompt the tool was correct least often. About 85 percent of
+      consultants without AI reached the correct answer. With GPT-4, about 70 percent did; with GPT-4 and the overview,
+      about 60 percent. The gap between the two AI groups is smaller than either group's gap from the no-AI group, and
+      the authors call it significant only at a loose, ten-percent threshold. Second finding: two sets of graders scored
+      how good each recommendation was, from 1 to 10. Recommendations made with AI scored higher than those made
+      without it, whether they were right or wrong. So here is the puzzle. If the overview helped people use the tool,
+      why did that group do no better, and probably worse? And if graders could not tell wrong recommendations from
+      right ones by their quality, how would you have noticed?
+    background: |
+      Working paper Table 4 col. 1: 84.4% correct without AI; 13.9 and 24.5 percentage points lower for the two AI
+      groups (footnote in §12.1). Table 4 F-tests between the AI groups p = 0.082–0.095 (blueprint). Quality: Table 6
+      and Figure 8; rated quality 17.9% and 25.1% above the no-AI average (@fig-12-10). Tier: confirmed (working
+      paper). Wording question (Case Study): the working paper says "19 percentage points" less likely to be correct;
+      the 2026 abstract says "19% less likely"; a 19-point drop from 84% is about a 23% relative drop, so they are not
+      the same claim.
+    misconceptions:
+      - m: "M2 'Once I learn to prompt a tool well, it will handle every task in my workflow.'"
+        fix: "Point at the third bullet: the trained group did worst on this task. Refutation check comes in §12.1: the overview helped inside the frontier."
+      - m: "M3 'If the output looks polished, the tool fits.'"
+        fix: "Point at 'whether right or wrong': polish carried no signal about correctness here."
+    activity: "Ask for a one-line guess at the puzzle; §12.1 and §12.6 answer it."
+    book: "Opening Case; §12.1; §12.6; Case Study 'One wording question'."
+
+# ----------------------------------------------------------------------- 12.1
+- layout: section
+  minutes: 0.5
+  number: "12.1"
+  tag: "Core"
+  title: "Fit belongs to a task and a tool together"
+  idea: "This part, this tool, this way of using it, today."
+  meta: "Book §12.1 · Signature 2 reused"
+  notes:
+    say: |
+      Chapter 1 described the jagged technological frontier: the uneven boundary between tasks an AI tool handles well
+      and tasks it handles poorly, even among tasks that look equally hard. Three things move it for you: the task, the
+      tool and the date. Now add one detail. A frontier is drawn for one tool. A tool that can calculate, receives your
+      files or searches the web has a different frontier. So the book defines task–tool fit: how well one tool, used in
+      one way, meets one task's success criteria within your limits of data and cost, on a given date. Fit belongs to a
+      pairing, not to a tool.
+    background: |
+      Definitions (§12.1; glossary): task–tool fit; jagged technological frontier (Chapter 1 wording reused); percentage
+      point = the simple difference between two percentages. Signature 2 (Jagged Frontier Map) is reused in @fig-12-3.
+    misconceptions:
+      - m: "M1 'There is one best AI tool.'"
+        fix: "Say the definition slowly: part, tool, way of use, date. 'Best tool' leaves three of the four out."
+    activity: "Transition slide."
+    book: "§12.1 Fit Belongs to a Task and a Tool Together."
+
+- layout: compare
+  minutes: 2.5
+  kicker: "§12.1 · worked example · constructed (book figure: one part, two tools)"
+  title: "Sam’s unit conversion: outside one frontier, inside another"
+  size: 24
+  columns:
+    - heading: "Tool A · no calculation"
+      role: risk
+      bullets: ["41 oz-in → **2.9 N·m**", "Ten times too large: **outside**"]
+    - heading: "Tool B · runs code"
+      role: verified
+      bullets: ["41 oz-in → **0.29 N·m**", "Matches: **inside**, one test"]
+  takeaway: "Same part, two tools, one date: fit belongs to the pairing"
+  notes:
+    say: |
+      Meet Sam, mechanical engineering, captain of the robotics club, who checks units on everything since one bad lab
+      grade. He tries two tools on the club's parts order. Tool A is a chat assistant under institutional terms, with no
+      calculation feature. Tool B is a chat assistant under consumer terms that runs calculations in code; he gives it
+      only public information. A motor's stall torque, its twisting force when held still, is listed as 41
+      ounce-inches. Sam needs it in newton-meters, and he already knows the answer: about 0.29. Tool A gives 2.9, ten
+      times too large. Tool B runs the conversion in code and gives 0.29, in one run. Same part, outside Tool A's
+      frontier and inside Tool B's, on this date and on one test. And for the sponsor email, both tools were fine.
+    background: |
+      Worked Example "One Part, Two Tools" (§12.1), constructed; @fig-12-3 shows it on the Jagged Frontier Map (redrawn
+      here as two cards; dashed/risk = outside, thick/verified = inside). The BCG point of §12.1: inside the frontier
+      the overview group scored highest and copied more of the tool's output, and there copying went with better scores
+      (retainment measured only in the inside experiment, App. C); outside, the authors report that those who did worse
+      adopted the output with less questioning. The book's reading (inferred): trusting a capable tool helped on one
+      side and hurt on the other; the overview did not move the frontier. Faded example (history letter) answer: naming
+      the archive is outside for the tool without search; possibly inside for AI search if the catalog page is
+      retrieved and checked.
+    questions:
+      - q: "So is prompting useless?"
+        a: "No. How you use a tool is part of fit; a prompt that makes the tool work through the interview notes might change the result, and only a test would show it (§12.1). The overview helped inside the frontier."
+    misconceptions:
+      - m: "M2 refutation check: 'learning to use AI is harmful'."
+        fix: "The overview raised gains inside the frontier. The same habit helped on one side and hurt on the other."
+    activity: "Your Turn (feeds A10 item 1): split your A10 task into two or three parts and predict, per tool, which side each part falls on."
+    book: "§12.1 Worked Example 'One Part, Two Tools', @fig-12-3; Faded Example 'Two Parts, Two Tools'."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §12.1"
+  title: "“great at everything”"
+  question: "A friend says her AI tool “has been great at everything in my internship so far.” Which reply fits task–tool fit best?"
+  options:
+    - "Then it will probably fit the next task as well, since it has fit every task so far."
+    - "Then keep the same prompts, because skill with a tool usually settles whether it fits."
+    - "Fit is judged part by part, so test it on the next part before relying on it."
+    - "Then it probably ranks near the top of the public leaderboards for models."
+  answer: c
+  instruction: "Answer on your own (30 seconds), then vote"
+  explanation: "(a) past fit does not carry over; (b) skill does not settle fit; (d) rankings test others’ questions"
+  notes:
+    say: |
+      Quick check, ungraded. Read all four replies before you choose. Each wrong option comes from a misconception we
+      named: past success carries over, prompting skill settles fit, or a leaderboard settles it. Thirty seconds, then vote
+      by hands or a poll. Before revealing, ask someone who chose (a) to defend it; it is the most natural thing to say
+      to a friend, and that is exactly why it is worth examining. Then ask: what happened in the BCG study to the
+      consultants whose tool had been great on eighteen subtasks?
+    background: |
+      Item: Review Questions A1 (O1 · LO2 · Understand). Key from Appendix E: (c). (a) M1/M6: past fit does not carry to
+      a new part; (b) M2: prompting skill does not settle fit; (d) M1: a ranking measures other people's questions.
+    activity: "30 s, vote, reveal."
+    book: "§12.1; Review Questions A1; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (c): fit is judged part by part, so test it on the next part before relying on it. The BCG
+      consultants make the case: one tool, the same options, eighteen subtasks where it raised their work, and one task
+      where those using it were less often correct. Their tool had been great at everything so far, too. Option (b) is
+      the trap the overview group fell into: skill with a tool helped inside the frontier and did not move it. And (d):
+      a leaderboard ranks models on other people's questions, not on your next part. The habit to take away is cheap: a
+      known-answer test on the new part, before you rely on it.
+    background: |
+      Check Yourself 12.1 item 3 (Appendix E): copying went with better scores inside the frontier and with less
+      questioning among those who did worse outside it. Review A2 (prompting workshop) is the even-numbered companion
+      item; its answer is instructor-only.
+    activity: "Reveal; one follow-up comment."
+    book: "§12.1; Appendix E (Review A1, Check Yourself 12.1)."
+
+# ----------------------------------------------------------------------- 12.2
+- layout: section
+  minutes: 0.5
+  number: "12.2"
+  tag: "Core"
+  title: "Kinds of AI tools, and what each one receives"
+  idea: "Two tools built on the same model can behave very differently."
+  meta: "Book §12.2 · four questions for any tool"
+  notes:
+    say: |
+      Second idea. This book uses AI tool for the software you use: a model plus what the tool adds to the model's
+      context window, what it can do, where the model runs, and whose terms cover it. Recall from Chapter 3 that the
+      context window is everything a language model receives in one turn. Tools differ mostly in what they put there:
+      retrieval adds passages found by searching the web or your files; tool use lets the model request a calculator or
+      a search and adds the result. That is why two tools built on the same model can behave very differently. The
+      provider is the company or institution that runs the tool.
+    background: |
+      Definitions (§12.2; glossary): AI tool, provider, domain tool, open-weight model, local model; context window,
+      retrieval and tool use in Chapter 3's wording. Media tools are Chapter 13 (Deep); agents (systems in which the
+      model directs its own steps) are Chapter 14.
+    activity: "Transition slide."
+    book: "§12.2 Kinds of AI Tools, and What Each One Receives."
+
+- layout: matrix
+  minutes: 2.5
+  kicker: "§12.2 · book figure: anatomy of a tool"
+  title: "Four questions describe any AI tool"
+  col_headers: ["", ""]
+  row_headers: ["", ""]
+  cells:
+    - - {title: "Receives?", text: "Prompt, files, mail, web", role: soft}
+      - {title: "Can do?", text: "Text, search, code, act", role: soft}
+    - - {title: "Runs where?", text: "Provider, institution, yours", role: soft}
+      - {title: "Whose terms?", text: "Consumer or institutional", role: risk}
+  takeaway: "Kinds: chat · AI in a suite · AI search · coding · domain tool"
+  notes:
+    say: |
+      Four questions for any tool. What does it receive: your prompt, files you upload, your mail and documents, web
+      pages it retrieves? What can it do: produce text, search, run code, act for you? Where does the model run: the
+      provider's service, under your institution's license, or on hardware you or your institution control? And whose
+      terms cover your input? That last box has the thick border because it decides the data gate, which we reach in
+      section 12.5. The kinds on the bottom bar differ mostly in the first box. A chat assistant receives only what you
+      give it. AI in a productivity suite receives your files, maybe more than the part needs. A domain tool, built for
+      one field, receives that field's records, but built for a field is not the same as tested on your task.
+    background: |
+      Rebuilds @fig-12-5 natively. The kinds table in §12.2 with typical fit and risk: chat assistant (receives only
+      what you give it); AI in a productivity suite (may receive more than the part needs); AI search (a link does not
+      show support, Chapter 9); coding assistant (plausible code can still be wrong); domain tool (built for a field is
+      not tested on your task). How the model is reached: closed (only through a service; whose terms cover you depends
+      on who runs the tool you use); open-weight (weights downloadable under a license; Meta, July 2024; OpenAI, August
+      2025); local (an open-weight model on hardware you or your institution control; needs a capable computer, quality
+      varies; Deep 12.A). Box 'What your institution provides': many colleges, universities and employers provide or approve
+      AI tools, often at no cost to you and under institutional terms (for example, an enterprise chat assistant with
+      data protection when you sign in with your institution's account; Microsoft Copilot Chat is one dated example, as
+      of October 2026). Its IT office lists them. The list changes; check each term.
+    questions:
+      - q: "A club runs an open-weight model on its own lab computer. Whose terms cover what members type?"
+        a: "It is a local model; what members type is covered by the model's license and the club's own rules, not a provider's data terms (Check Yourself 12.2 item 3)."
+    activity: "Your Turn (feeds A10's tool column): list the tools you can reach, starting with one your institution provides or approves, with kind, what it receives and where it runs."
+    book: "§12.2, @fig-12-5, kinds table; box 'What your institution provides'; Worked Example 'Sam Sorts His Tools'."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §12.2"
+  title: "built for the field"
+  question: "A clinic buys a documentation tool built for clinical notes. What does “built for the field” tell you?"
+  options:
+    - "It receives the field’s records and formats, but its fit to your task still has to be tested."
+    - "The vendor has tested it on notes like your clinic’s, so a bake-off adds little."
+    - "Its answers are likely to be more accurate than a chatbot’s on most tasks you give it."
+    - "Its terms are likely to be institutional, so patient information can usually be entered."
+  answer: a
+  instruction: "Answer on your own, then vote"
+  explanation: "(b) a vendor’s test is not yours; (c) legal tools still erred; (d) patient data is restricted"
+  notes:
+    say: |
+      Second check. A domain tool, built for one field, sounds like the safe choice for a clinic. Read the four options
+      carefully: three of them turn "built for the field" into a promise it does not make. Thirty seconds, then vote.
+      Watch for (d). It mixes up two questions, the tool's quality and the data gate, and it gets the gate wrong.
+      Whatever the tool's terms, patient information is restricted or legally protected, and for any work in this book it goes to no tool. Ask a
+      student who picked (b) whose test the vendor's test is.
+    background: |
+      Item: Review Questions A3 (O2 · LO2 · Understand). Key from Appendix E: (a). (b) M1: a vendor's test is not your
+      independent check; (c) M1: in a 2024 test, legal research tools still hallucinated on 17% to 33% of queries
+      (short case 1, Magesh et al., 2025); (d) M5: patient information is restricted or legally protected data, which goes to no tool for
+      any work in this book.
+    activity: "30 s, vote, reveal."
+    book: "§12.2; Review Questions A3; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (a). Built for the field tells you what the tool receives: the field's records and formats. It does
+      not tell you how well it fits your task. Short case 1 in the chapter shows the gap: in a 2024 test, AI research
+      tools from two legal publishers hallucinated less than a general chatbot, and still hallucinated on 17 to 33
+      percent of queries. A vendor's own test is evidence about the vendor's setting, not your independent check. And
+      (d) is a data-gate error, not a quality question. So for a domain tool, the questions are the same as for any
+      tool: what does it receive, whose terms cover the input, and what does a bake-off on our own inputs show?
+    background: |
+      Short case 1 (optional, Deep-tagged): Magesh et al. (2025), more than 200 legal questions, March–May 2024; both
+      publishers objected (reported: Ambrogi, 2024). Also Review B1 (museum's five tools), odd answer in Appendix E.
+    activity: "Reveal; one follow-up comment."
+    book: "§12.2; short case 1; Appendix E (Review A3)."
+
+# ----------------------------------------------------------------------- 12.3
+- layout: section
+  minutes: 0.5
+  number: "12.3"
+  tag: "Core"
+  title: "What studies of tool effects show, and why they differ"
+  idea: "A study tells you about its task and users; your test tells you about yours."
+  meta: "Book §12.3 · predict first"
+  notes:
+    say: |
+      Predict first. Experienced developers, working on their own projects, estimate that an AI coding tool will make
+      them faster. Afterwards, they still feel faster. Were they? Write yes or no. Studies of AI tools at work often
+      seem to disagree, and you will hear headlines on both sides: AI makes people much faster; AI slows people down.
+      This section gives you five questions that usually dissolve the disagreement: what was the setting, what was
+      measured and was the tool given at random, who used it, which tool and when, and who ran the study.
+    background: |
+      The five questions (§12.3): setting (designed task or real work); measure and random assignment; users; tool and
+      date; who ran the study. The recommended reading (Brynjolfsson et al., 2025) appears in the comparison table: real chats at one
+      software firm, more than 5,000 agents, about 1,600 with the tool; agents followed about 38% of suggestions on
+      average; gains were larger for those who followed more.
+    misconceptions:
+      - m: "M3 'If the work feels faster, the tool fits.'"
+        fix: "Take the prediction by show of hands; the next slide answers it."
+    activity: "Show of hands on the prediction."
+    book: "§12.3 What Studies of Tool Effects Show, and Why They Differ."
+
+# F12.7 redrawn natively: at slide size the book chart's labels would be about 11 pt.
+- layout: compare
+  minutes: 2
+  kicker: "§12.3 · Becker et al. (2025), METR · 16 developers, 246 tasks (book figure: F12.7)"
+  title: "Developers felt faster; measured, they were slower"
+  size: 30
+  columns:
+    - heading: "Expected, before"
+      role: soft
+      dashed: true
+      text: "**24% less time**"
+    - heading: "Felt, afterwards"
+      role: soft
+      dashed: true
+      text: "**20% less time**"
+    - heading: "Measured"
+      role: risk
+      text: "**19% more time**"
+      bullets: ["+2% to +39%"]
+      size: 30
+  takeaway: "Your feeling of speed is not a measurement"
+  notes:
+    say: |
+      Here is the answer. Sixteen experienced developers worked on 246 real tasks on projects they knew well; for each
+      task, AI was allowed or not, at random. Before the study they forecast that AI would cut their time by 24
+      percent. Afterwards they believed it had cut it by about 20 percent. Measured, their tasks took 19 percent longer
+      with AI allowed, with a confidence interval, the small numbers on the card, from 2 to 39 percent longer. Now compare a 2023 lab study: freelance developers on one small, designed task, a simple web
+      server, finished 55.8 percent faster with a coding assistant. Do the studies contradict each other? No: designed
+      task versus real work, freelancers versus experts on large, familiar projects, 2022 versus early-2025 tools. A
+      study tells you about its task and users; your own test tells you about yours.
+    background: |
+      Becker, Rush, Barnes and Rein (2025), METR (Model Evaluation and Threat Research, a nonprofit): February–June
+      2025; measured +19% (confidence interval +2% to +39%). The authors caution against generalizing beyond early-2025
+      tools in this setting. February 2026 update (METR, 2026): a new round pointed toward a speedup, judged unreliable
+      because many developers who did not want to work without AI declined to take part. Peng et al. (2023): 95
+      freelancers recruited, 70 finished; 55.8% faster, plausible range 21% to 89%; its authors included researchers at
+      the tool's maker (worth knowing; does not make the result wrong). Refutation check (blueprint): M3 must not become
+      "AI always slows experts down".
+    questions:
+      - q: "So AI tools slow experts down?"
+        a: "Not as a rule. This was 16 experts, familiar projects, early-2025 tools, and METR's own 2026 update pointed toward a speedup (judged unreliable). The point is to measure, including checking time."
+    misconceptions:
+      - m: "M3 'If the output looks polished and the work feels faster, the tool fits.'"
+        fix: "Contrast the dashed cards (what they expected and felt) with the solid card (what was measured)."
+    activity: "Ask who predicted 'yes, they were faster'; then point to the measured card."
+    book: "§12.3, the comparison table, @fig-12-7 (the book's chart of these three numbers); Review C3."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §12.3"
+  title: "two coding studies"
+  question: "A 2023 lab study: 55.8% faster with a coding assistant. A 2025 study: experts took 19% longer with AI. Why do the two not contradict each other?"
+  instruction: "One sentence on your own (1 minute), then compare with a neighbor"
+  model_answer:
+    - "They studied **different settings, users and dates**"
+    - "One small designed task, freelancers, a 2022 tool · experts’ own large projects, early-2025 tools"
+  notes:
+    say: |
+      Third check, and it uses the five questions you just learned. Two studies of coding tools seem to say opposite
+      things: one found developers 55.8 percent faster with a coding assistant, the other found experienced developers
+      took 19 percent longer with AI allowed. Write one sentence: why do these two results not contradict each other?
+      Use the five questions: setting, what was measured and whether the tool was given at random, users, tool and
+      date, and who ran the study. One minute on your own, then compare with a neighbor. Many of us have a reflex when
+      two studies disagree: one of them must be wrong. Ask a pair who wrote that what would have to be true for both
+      studies to be right.
+    background: |
+      Item: Check Yourself 12.3 item 2 (Appendix E answer: "They studied different settings, users and dates"), with the
+      two results from the §12.3 comparison table: Peng et al. (2023), 95 freelance developers recruited, 70 finished,
+      one designed task (a small web server), a coding assistant of 2022; Becker et al. (2025), 16 experienced
+      developers, 246 real tasks on projects they knew well, AI coding tools of early 2025. Review Questions A6 asks the
+      same thing as a multiple-choice item; it is even-numbered, so its key stays in the instructor materials and is
+      not shown on a slide.
+    activity: "1 min write alone, 1 min compare in pairs, then the answer slide."
+    book: "§12.3 comparison table; Check Yourself 12.3 item 2; Appendix E."
+  answer_notes:
+    say: |
+      The two studies measured different situations: different settings, users and dates. One gave freelance developers
+      a single small, well-defined task; the other followed experts on large projects they knew well, with newer tools.
+      Neither result has to be wrong for the other to be right. Here is how to use this in A10: your judgment must
+      include one sentence comparing your own result with the study in section 12.3 whose setting is closest to yours,
+      and naming one way your result could differ. Sam did this for the robotics club's code: neither study answered
+      his question, so he planned to time a real club task with and without the tool, counting checking time.
+    background: |
+      Worked Example "Which Study Is Closest to the Club?" (§12.3, constructed reasoning). A10 item 7 (judgment, 80–100
+      words) requires the comparison sentence. Faded example (AI tutor study, constructed) answer in Appendix E: users
+      about 400 first-year university students, fall 2025; differences from a ninth-grade class include age, subject,
+      class size and whether homework is graded.
+    activity: "Reveal; Your Turn: which §12.3 study is closest to your A10 task?"
+    book: "§12.3 Worked Example; Your Turn (feeds A10 judgment)."
+
+# ----------------------------------------------------------------------- 12.4
+- layout: section
+  minutes: 0.5
+  number: "12.4"
+  tag: "Core"
+  title: "What a tool really costs"
+  idea: "A fast tool is cheap only if its output is quick to check."
+  meta: "Book §12.4 · total cost of use"
+  notes:
+    say: |
+      "It's free" is a common reason for choosing a tool, but price is only one part of the cost. This book calls the
+      whole of it the total cost of use: the price, plus usage limits, plus the time you spend checking outputs, plus
+      the time you spend learning the tool, plus what you give up in data, plus the cost of switching later. Price comes
+      in four common forms: a free tier with limits, a paid subscription, an institution or employer license that is free
+      to you but tied to your enrollment or job, and pay per use through an API, where the provider charges per token.
+      The largest cost is often one you never see on a price page.
+    background: |
+      Definitions (§12.4; glossary): total cost of use, verification cost, no-AI baseline. API = application
+      programming interface, a channel through which software, not a person, sends requests (glossed in the chapter).
+      On the BCG outside task, consultants with AI finished faster than those without it, and were more often wrong.
+    misconceptions:
+      - m: "M4 'A free tool costs nothing.'"
+        fix: "List the six parts aloud; ask which ones a free tier can make larger (Review A7: limits, checking time, data terms)."
+    activity: "Transition slide."
+    book: "§12.4 What a Tool Really Costs, @fig-12-8."
+
+- layout: compare
+  minutes: 3
+  kicker: "§12.4 · worked example · constructed numbers · 20 datasheets"
+  title: "The largest cost is often your checking time"
+  size: 22
+  columns:
+    - heading: "No AI (baseline)"
+      role: human
+      bullets: ["10 min each", "**200 min**"]
+    - heading: "Tool A · license"
+      role: verified
+      bullets: ["1 min + 6 checking", "**140 min**"]
+    - heading: "Tool B · free tier"
+      role: neutral
+      bullets: ["1 min + 8 checking", "**180 min**; daily limit"]
+  takeaway: "For the torque calculation, no AI wins: checking means redoing it"
+  notes:
+    say: |
+      Sam's club needs one-page summaries of 20 public motor datasheets. His baseline, no AI, is 10 minutes of reading
+      and typing each: 200 minutes. Tool A, under the institutional license, drafts in a minute and takes 6 minutes to
+      check: 140 minutes. Tool B, a free tier, takes 8 minutes to check its links and stops at a daily limit, so the job
+      spreads over two days: 180 minutes. Tool A costs least, but only because checking a summary is faster than writing
+      one. For the torque calculation the opposite holds: his own spreadsheet takes 5 minutes, and checking any tool's
+      answer means redoing the calculation anyway. Decision: a tool for the summaries, no AI for the calculation. This
+      book calls the checking time the verification cost.
+    background: |
+      Worked Example "Twenty Datasheets" (§12.4), constructed numbers for teaching; a datasheet is a maker's one- or
+      two-page list of a part's ratings. Check Yourself 12.4 item 2 (Appendix E): drafting 1 + checking 14 = 15 min vs.
+      writing 12 min: writing it yourself costs less; verification cost decided it. Faded example (tax-season intern)
+      answer: no AI 150, licensed tool 90, free tool 130 minutes. A no-AI baseline may be an honest estimate; time it
+      only if the part is short.
+    questions:
+      - q: "Why include no AI in every comparison?"
+        a: "Without it you cannot tell whether a tool saves anything once checking is counted (Check Yourself 12.4 item 3)."
+    misconceptions:
+      - m: "M4 'A free tool costs nothing.'"
+        fix: "The free tier was the slower option here, and its limit split the job over two days."
+    activity: "Your Turn (feeds A10's cost row): estimate price form, limits, checking time and your no-AI baseline."
+    book: "§12.4 Worked Example 'Twenty Datasheets'; Faded Example 'A Tax-Season Intern'; Check Yourself 12.4."
+
+# ----------------------------------------------------------------------- 12.5
+- layout: section
+  minutes: 0.5
+  number: "12.5"
+  tag: "Core"
+  title: "Data terms decide which tools you may use"
+  idea: "Ask whether you may give a tool the input before you ask whether it is good."
+  meta: "Book §12.5 · the data gate"
+  notes:
+    say: |
+      Before you ask whether a tool is good at a part, ask whether you may give it the input. A tool's data terms are
+      the parts of its terms and its options that say what happens to what you type and upload. They differ between
+      providers, and often between plans from one provider. Signing in with your institution's account does not make any
+      input fine to paste, and a free consumer tool is not unsafe for everything. This section gives you three
+      questions about the tool, one question about your input, and a gate that combines them.
+    background: |
+      §12.5 is the chapter that owns data terms, data class and the gate (Chapter 15 owns data flows; Chapter 18 the
+      legal layer). The data-class table is a starting floor (your institution's or employer's own classification decides): a field rule (placement policy, IRB protocol, consent
+      form, HIPAA de-identification standard, an employer's policy) can still say no to an input the table allows
+      (book-wide rule; the assembly pass adds this sentence under the table).
+    misconceptions:
+      - m: "M5 'Every AI tool treats what I type the same way, and signing in with my school account makes any data fine to paste.'"
+        fix: "Name both halves now; refutation check: neither 'consumer tools are unsafe for everything' nor 'institutional terms allow anything'."
+    activity: "Transition slide."
+    book: "§12.5 Data Terms Decide Which Tools You May Use."
+
+- layout: compare
+  minutes: 2
+  kicker: "§12.5 · three questions about the tool, one about the input"
+  title: "Read the terms, then classify the input"
+  size: 24
+  columns:
+    - heading: "About the tool"
+      role: soft
+      bullets: ["**Training:** used? default? opt out?", "**Retention, access:** how long, who sees?", "**Whose contract:** consumer or institutional?"]
+    - heading: "About your input"
+      role: risk
+      bullets: ["**Data class:** public · internal or confidential · restricted"]
+  takeaway: "Together they form the data gate, checked before any quality test"
+  notes:
+    say: |
+      Three questions about the tool. Training: is your input used to train or improve the provider's models, is that
+      the default, and can you opt out? Retention and access: how long is your input kept, and who can see it, the
+      provider's reviewers, your institution's administrators? Whose contract: consumer terms, which you accept as an
+      individual, or institutional terms, a contract between the provider and your institution or employer, which often
+      promises not to train on your data. And one question about your input: its data class, the category an
+      institution assigns by how much harm its release could cause. Institutions draw their classes differently; this
+      book uses three. Public information, like published papers. Internal or confidential information, like internal
+      email and ID numbers. Restricted or legally protected information, like Social Security numbers, medical
+      information and education records. Your institution's or employer's own classification decides; this is a
+      starting floor.
+    background: |
+      The three classes are the book's generic classification (D27, D-12.8). FERPA (Family Educational
+      Rights and Privacy Act) protects students' education records; HIPAA (Health Insurance Portability and
+      Accountability Act) protects health information held by most providers and plans. Dated provider examples, as of
+      October 2026: Anthropic asked consumer-plan users from August 28, 2025 to choose whether chats may train its
+      models (kept up to five years if yes, otherwise 30 days; business, education and API services excluded);
+      OpenAI's individual plans let users turn off training, though feedback ratings can make a conversation usable; by
+      default no training on business, education and API data; Microsoft says Copilot Chat prompts and responses under
+      enterprise data protection are not used to train the underlying models. All are time-sensitive (refresh list).
+    questions:
+      - q: "Can I just ask the tool whether it will keep my data private?"
+        a: "No. A tool's own answer is not a source; read its terms page or the dated lab card (§12.5)."
+    misconceptions:
+      - m: "M5 'Every AI tool treats what I type the same way.'"
+        fix: "Terms differ by provider and by plan; the same provider can have consumer and institutional terms."
+    activity: "Ask: 'Which data class is your own lab report with no data about others?' (own non-sensitive work)."
+    book: "§12.5 three questions, data classes, box 'Data terms of three providers (as of October 2026)'."
+
+- layout: matrix
+  minutes: 2.5
+  kicker: "§12.5 · the data gate (the book’s reading of common guidance)"
+  title: "Which terms may receive which input"
+  col_headers: ["Consumer terms", "Institutional terms"]
+  row_headers: ["Public", "Own work", "Personal, internal", "Restricted"]
+  cells:
+    - - {title: "Yes", role: verified}
+      - {title: "Yes", role: verified}
+    - - {title: "Yes, if you accept its terms", role: neutral}
+      - {title: "Yes", role: verified}
+    - - {title: "No", role: risk}
+      - {title: "Only if the part needs it", role: neutral}
+    - - {title: "No", role: risk}
+      - {title: "No, for this book’s work", role: risk}
+  takeaway: "Blocked? Change the input: remove names, use placeholders"
+  notes:
+    say: |
+      Put together, the answers form a data gate: a check, made before any quality test, of whether a tool's terms fit
+      the class of the input. Public information may go to either kind of terms. Your own non-sensitive work, material your
+      course provides, or de-identified data may go to a consumer tool if you accept its training and retention terms,
+      and to an institutional tool. Personal data about other people, and internal or confidential information: no
+      consumer tool; institutional terms only if the part needs it and your institution's rules allow it; ask its IT
+      office if unsure. Restricted or legally protected information, including FERPA and HIPAA records: no tool, for any
+      work in this book. A tool that fails the gate is out for that part,
+      however good its outputs. Often you pass by changing the input. Sam's thank-you emails needed no names, so he gave
+      Tool A a template with placeholders and merged the names by hand.
+    background: |
+      Rebuilds the §12.5 table (row labels shortened: "Own work" = your own non-sensitive work, course material,
+      de-identified data; "Personal, internal" = personal data about other people and internal or confidential
+      information; "Restricted" = restricted or legally protected information). The rows are the book's reading of
+      common guidance on three generic classes; your institution's own classification and pages decide any case the
+      table does not cover. Some tools show a protection badge when you are signed in under institutional terms; your
+      institution's IT office can say which data a tool may receive. Faded example (public survey comments) answer:
+      public information, both tools may receive it; opting out is
+      optional. Check Yourself 12.5 item 3: remove names; use placeholders; describe without confidential details.
+    questions:
+      - q: "My school account is signed in. Can I paste a classmate's grades?"
+        a: "Grades are education records (restricted or legally protected under FERPA): no tool for work in this book, whatever the terms."
+    misconceptions:
+      - m: "M5 refutation check: 'consumer tools are unsafe for everything' or 'institutional terms allow anything'."
+        fix: "Point to row 2 (consumer may be fine) and row 4 (institutional still no)."
+    activity: "Point to each row with one example: a published paper, your lab report, a club contact list, a medical note."
+    book: "§12.5 table and @fig-12-9; Worked Example 'Thank-You Emails'; Faded Example 'Survey Comments'."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §12.5"
+  title: "institutional vs. consumer terms"
+  question: "What usually distinguishes institutional terms from consumer terms?"
+  options:
+    - "Institutional terms let you enter records protected by law, such as education records."
+    - "They are a contract with your school or employer, often promising no training on your data."
+    - "Institutional terms apply when you pay for the tool yourself, as with a subscription."
+    - "Institutional terms usually keep your input for less time, so what you type matters much less."
+  answer: b
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) restricted data goes to no tool; (c) the contract is the institution’s; (d) shorter retention excuses no input"
+  notes:
+    say: |
+      Fourth check, on the third data-terms question: whose contract covers you. Read all four options before you
+      vote; three of them turn institutional terms into something they are not. Thirty seconds, then vote by hands or a
+      poll. Watch for (a), the most dangerous reading. It is the half of misconception M5 that says signing in with your
+      school account makes any data fine to paste. The table on the last slide said otherwise: restricted or legally
+      protected data, such as education records, goes to no tool for work in this book, whatever the terms. Ask a student who picked (d) whether
+      a shorter retention period would make a classmate's grades acceptable input.
+    background: |
+      Item: Review Questions A9 (O4 · LO5 · Understand). Key from Appendix E: (b). (a) M5: restricted data such as
+      education records goes to no tool for work in this book; (c) M4: institutional terms come from the institution's
+      contract, not your payment; (d) M5: retention differs by plan and provider; shorter retention does not make any
+      input acceptable. Review A8 (the best tool fails the gate) is the even-numbered companion item; its key stays in
+      the instructor materials.
+    activity: "30 s, vote, reveal."
+    book: "§12.5; Review Questions A9; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (b): institutional terms are a contract between the provider and your institution or employer, and
+      such contracts often promise not to train on your data. That changes what may go in, but not everything. Under
+      the book's data gate, personal data about other people and internal or confidential information may go to an
+      institutional tool only if the part needs it and your institution's rules allow it, and restricted data goes to no
+      tool at all. And a
+      consumer tool is not unsafe for everything: your own non-sensitive work may go to it if you accept its training
+      and retention terms. In A10 the data gate, item 3, comes before the bake-off record, item 4, and "the gate blocked
+      the better tool" is a valid result.
+    background: |
+      §12.5 (whose contract; the data-class table, the book's reading of common guidance). A10 "Valid results" list
+      includes "the gate blocked the better tool"; the rubric caps Cost and data gate at 0.5 if a gate decision lets an
+      input through against the §12.5 table. Check Yourself 12.5 item 2 (Appendix E): a lab report you wrote, with no
+      data about other people, may go to either kind of terms, consumer terms only if you accept their training and
+      retention terms.
+    activity: "Reveal; one follow-up comment."
+    book: "§12.5; §12.9; Appendix E (Review A9, Check Yourself 12.5); A10 rubric."
+
+# ----------------------------------------------------------------------- 12.6
+- layout: section
+  minutes: 0.5
+  number: "12.6"
+  tag: "Core"
+  title: "Test the fit: a fair bake-off"
+  idea: "A bake-off is fair only if it changes only the tool."
+  meta: "Book §12.6 · live demo now"
+  notes:
+    say: |
+      Now the method. A bake-off, a word borrowed from cooking contests, is a side-by-side test of two or more tools, and
+      where possible no AI, on the same part of a task. It asks one question: on my inputs, which option meets my
+      criteria at the lowest total cost? A bake-off is fair only if it changes only the tool: the same frame and success
+      criteria, written before you start; the same prompt, word for word; the same three test inputs, typical, different
+      and edge; a fresh chat for each run, with memory and standing instructions off; and the tool, model and date
+      recorded for every run. Let's run one.
+    background: |
+      Rules (§12.6; @fig-12-11): test inputs (Chapter 5 wording: a small set of different inputs a prompt is tried on,
+      typical, different, edge); standing instructions and memory defined in Chapter 12's own Core text (book-wide
+      rule): standing instructions = instructions you write once in a tool's options or a project, added to every
+      conversation in that scope; memory = a product feature that saves notes about a user, or draws on past chats, and
+      adds them to later conversations; it adds text and does not train the model. A second run where it is cheap,
+      because outputs vary from run to run (Chapter 3).
+    activity: "Transition slide; open the demo materials."
+    book: "§12.6 Test the Fit: A Fair Bake-off, @fig-12-11."
+
+- layout: lab
+  minutes: 14
+  kicker: "Live demo · one task in two tools (mirrors Worked Example 1)"
+  title: "The datasheet bake-off"
+  goal: "Change only the tool; score three things apart"
+  steps:
+    - {text: "**Frame:** four criteria, e.g., every number matches, with units; missing values say “not given”", min: 3}
+    - {text: "**Same prompt**, three inputs: typical · different (US units) · edge (no stall torque)", min: 4}
+    - {text: "**Score** each output: correctness per criterion · polish 1–5 · time", min: 4}
+    - {text: "**Verdict per input**, not per tool", min: 3}
+  side:
+    - {heading: "On screen", text: "Dated outputs of two tools, with model names and prompts"}
+    - {heading: "Watch", role: risk, text: "The edge input: what did each tool fill in?"}
+    - {heading: "Your role", text: "Score along on paper; vote on each verdict"}
+  notes:
+    say: |
+      The part: a one-page summary of a public motor datasheet. The criteria, written first: every number matches the
+      datasheet, with units; values given in metric, correctly converted; missing values marked "not given"; one page,
+      as a table. Same prompt, three inputs. Typical: a metric datasheet. Different: a US-unit datasheet from another
+      maker. Edge: a datasheet that does not list stall torque. Score along with me on paper: correctness per criterion,
+      polish from 1 to 5, time including checking. In the book's version, Tool A failed the conversion on the US-unit
+      sheet, ten times too large, and Tool B, with web search, filled the missing stall torque from a page about another
+      motor. Both outputs looked finished. Which failure is more dangerous? The invented value, because it looked real.
+    background: |
+      Instructor package: "Concept-session demo: one task in two tools (mirrors the 12.6 Worked Example 1), with dated outputs,
+      model names and prompts" on your course site, needed before the concept session. Present the dated outputs with their model names and
+      dates; if they differ from the book's constructed results, say so and score what you have. Book's constructed
+      table: typical 4/4 both (polish 5; 7 and 9 min); different: Tool A 3/4 (C2 not met) vs. Tool B 4/4; edge: Tool A
+      4/4 ("not given") vs. Tool B 3/4 (C3 not met). Polish anchors: 1 rough, 3 usable after edits, 5 ready to send.
+      Use only public datasheets; do not run a live tool on any personal data.
+    questions:
+      - q: "Why not just pick the tool with the higher total?"
+        a: "Because the failures differ in kind: a unit error a check can catch versus an invented value that looks real. The verdict is per input, and the matrix decides per part (§12.7)."
+    misconceptions:
+      - m: "M3 'If the output looks polished, the tool fits.'"
+        fix: "Point out that every output scored polish 5, including the wrong ones."
+    activity: |
+      3 min criteria · 4 min show outputs · 4 min students score on paper · 3 min class votes a verdict per input.
+      Ask: which score would have caught the edge failure? (correctness, criterion C3, with an independent check
+      against the datasheet).
+    book: "§12.6 Worked Example 1 'The Datasheet Bake-off'; instructor package (concept-session demo)."
+
+- layout: figure
+  minutes: 2
+  kicker: "§12.6 · BCG outside task (working paper, Tables 4 and 6)"
+  title: "With AI, rated quality rose while correct answers fell"
+  figure: f12-10-quality-correctness
+  # No takeaway bar: the chart gets the full height so its labels stay near 14 pt; the lesson is said (SAY) and is the next quiz.
+  notes:
+    say: |
+      Here is why the three scores must stay apart. On the BCG task outside the frontier, recommendations made with AI
+      received quality ratings about 18 to 25 percent above the no-AI average, while the share of correct
+      recommendations fell, by about 14 and 25 percentage points. Judged by quality alone, the worse option looked
+      better. Chapter 11 called the risk automation bias: the tendency to over-rely on automated output, following it
+      when it is wrong. So in your bake-off, correctness is checked per criterion with an independent check, evidence no
+      AI tool produced, such as the source document or your own recalculation. Polish is rated on its own scale. Time
+      includes checking. And the edge input often matters most, because it is where a tool fills a gap with something
+      that was not there.
+    background: |
+      @fig-12-10: rated quality +17.9% and +25.1%; correct answers −13.9 and −24.5 points from 84.4% without AI
+      (Dell'Acqua et al., 2023, Tables 4 and 6, Figure 8). Independent check (Chapter 8 wording): evidence that no AI
+      tool produced: a source with an author or publisher you can name, or your own recalculation or reasoning from
+      known inputs. Worked Example 2 (marketing caption, constructed): on the edge input one tool invented "open daily
+      9–5" with polish 5: the most polished caption was the wrong one. Faded example (sociology) answer: Tool 1 met the
+      edge criterion ("Other"); Tool 2 forced answers into themes.
+    misconceptions:
+      - m: "M3 'If the output looks polished, the tool fits.'"
+        fix: "Two panels, opposite directions. Polish is not evidence either way."
+    activity: "Ask: 'Which panel would a busy manager look at?'"
+    book: "§12.6 'Score three things separately', @fig-12-10; Worked Example 2; Faded Example 'Coding Open-Ended Answers'."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §12.6"
+  title: "correctness and polish"
+  question: "Why should a bake-off score correctness and polish separately?"
+  options:
+    - "Polish is too subjective to measure reliably, so it is best left out of a fair comparison."
+    - "Correctness needs an expert in the field to judge, while polish is something anyone can judge."
+    - "Tools that produce polished output tend to be less accurate, so polish is a warning sign."
+    - "Polished output can hide errors: in the BCG study, quality ratings rose as correctness fell."
+  answer: d
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) polish matters to readers; (b) many criteria are checkable by anyone; (c) polish is no evidence either way"
+  notes:
+    say: |
+      Fifth and last check for today. You have just seen the chart, so focus on the wrong options: each makes a
+      tempting overstatement. Option (c) is the most interesting one: it reverses the misconception instead of fixing it.
+      If polish told you an output was probably wrong, polish would be evidence after all. The lesson is that it tells
+      you nothing about correctness, in either direction. Thirty seconds, then vote, and ask a student who picked (c)
+      what a polished, correct output would mean for their rule.
+    background: |
+      Item: Review Questions A11 (O5 · LO2 · Understand). Key from Appendix E: (d). (a) polish matters to readers, so it
+      is scored, but separately; (b) many criteria can be checked by anyone against a source; (c) M3 reversed: polish is
+      not evidence either way.
+    activity: "30 s, vote, reveal."
+    book: "§12.6; Review Questions A11; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (d): polished output can hide errors, and in the BCG study quality ratings rose as correctness fell.
+      Polish still matters: a correct summary that needs heavy editing costs you time, so you score it, on its own
+      scale. Correctness does not need a field expert for most criteria: anyone can check whether the hours match the
+      pantry's web page or the torque matches the datasheet. And polish is not a warning sign; it is simply not
+      evidence. In the lab session, every output you score gets three separate entries: correctness per criterion with the
+      independent check named, polish from 1 to 5, and time including checking.
+    background: |
+      Check Yourself 12.6 item 2 (Appendix E): correctness (C1, checked against the source) and polish; a high polish
+      score hid the error. A10 item 4 requires the independent check for the typical and edge inputs.
+    activity: "Reveal; connect to A10 item 4."
+    book: "§12.6; Appendix E (Review A11, Check Yourself 12.6)."
+
+# ----------------------------------------------------------------------- 12.7
+- layout: section
+  minutes: 0.5
+  number: "12.7"
+  tag: "Core"
+  title: "Decide with a fit matrix"
+  idea: "Each part gets its own tool, or none."
+  meta: "Book §12.7 · Signature 7 reused"
+  notes:
+    say: |
+      A bake-off tests one part, but real tasks have several, and they rarely fit the same tool. A fit matrix is a table
+      whose rows are the parts of a task and whose columns are the tools you tested plus no AI. Each cell holds a fit
+      decision, its rung and its reason. Four decisions: use; use with a named check; use only as a lead, a starting
+      point you verify elsewhere; or do not use. In the no-AI column, "use" means you do the part yourself. The rung is
+      the step of the Delegation Ladder from Chapter 5: the floor, no AI; automation; augmentation; or agency.
+    background: |
+      Delegation Ladder (Chapter 5; Signature 7): three ways of working with AI over a floor of no AI, ordered by how hard
+      it is to check what the AI contributed before it takes effect. Floor = you do the part; automation = the AI carries
+      out a part you define and you check the output; augmentation = you and the AI shape it together turn by turn;
+      agency = you configure AI to act later on your behalf (Chapter 14). Fit matrix ≠ Chapter 11's decision matrix: the
+      data gate is a veto, and each part gets its own decision, so nothing is added up across parts.
+    activity: "Transition slide."
+    book: "§12.7 Decide with a Fit Matrix; @fig-12-13."
+
+# Native redraw of F12.12: nine cells plus row and column headers, about 70 words, because each cell's decision and
+# its short reason are the content of the worked example (deliberate exception to the 40-word guide).
+- layout: matrix
+  minutes: 3.5
+  max_words: 72
+  kicker: "§12.7 · worked example · constructed (book figure: fit matrix)"
+  title: "Sam’s matrix: one workflow, different fits"
+  col_headers: ["Tool A", "Tool B", "No AI"]
+  row_headers: ["Emails", "Datasheets", "Torque"]
+  cells:
+    - - {title: "Use, with a check", text: "placeholders", role: verified}
+      - {title: "Do not use", text: "blocked: personal data", role: risk}
+      - {title: "Do not use", text: "predicted: slower", role: neutral}
+    - - {title: "Use, with a check", text: "every number, unit", role: verified}
+      - {title: "Only as a lead", text: "invented a value", role: neutral}
+      - {title: "Do not use", text: "10 min vs. 7", role: neutral}
+    - - {title: "Do not use", text: "wrong conversion", role: neutral}
+      - {title: "Use, with a check", text: "tested once", role: neutral}
+      - {title: "Use", text: "floor: fastest", role: verified}
+  takeaway: "Re-test when a tool, its terms or the inputs change"
+  notes:
+    say: |
+      Here is Sam's matrix, decided cell by cell. Sponsor emails: Tool A, use with a named check, using placeholders and
+      checking facts and tone; Tool B is blocked for the contact list, because it is personal data under consumer terms;
+      no AI is predicted to be three times slower and no better. Datasheet summaries: Tool A, use with a check of every
+      number and unit; Tool B only as a lead, because it invented a value on the edge input; no AI loses, 10 minutes
+      each against 7. Torque: Tool A, do not use, wrong conversion; Tool B, use with a check, but tested once, and
+      checking means redoing it; so the winner is the floor, his own spreadsheet. Notice the markers: "predicted" if you
+      did not test a cell, "tested once" if you ran it once. And every decision carries a re-test trigger.
+    background: |
+      Worked Example "Sam's Matrix" (§12.7), constructed; @fig-12-12 and @fig-12-13 (automation for emails and datasheets;
+      floor for torque). Re-test triggers in the example: a new version of either tool; an untested datasheet format; a
+      change in either tool's terms. Chapter 11's sensitivity check reused: change one thing (stakes, time allowed) and
+      see whether a cell flips. Check Yourself 12.7 item 2: a classmate's medical note → "Do not use: blocked", the gate is
+      a veto. Faded example (lesson plan) answers in Appendix E. Spaced Review 1: adding equally weighted scores across
+      parts hides the decisions that matter.
+    questions:
+      - q: "Can I add up the scores and pick one tool for the whole task?"
+        a: "No. The gate is a veto and each part gets its own decision; one total across parts hides them (Spaced Review 1)."
+    activity: "Ask: 'Which cell would flip if the torque value went into a safety-critical design?' (Tool B → do not use or lead only)."
+    book: "§12.7 Worked Example 'Sam's Matrix', @fig-12-12, @fig-12-13; Faded Example 'A Lesson Plan'."
+
+# ----------------------------------------------------------------------- 12.8
+- layout: section
+  minutes: 0.5
+  number: "12.8"
+  tag: "Core"
+  title: "Lock-in, switching and re-testing"
+  idea: "A tool’s name tells you who made it, not how it behaves today."
+  meta: "Book §12.8 · drift and re-test triggers"
+  notes:
+    say: |
+      A fit you tested last month may not hold today, because tools change under you. This book calls this drift, in a
+      tool or model over time: a change in how a named model or tool behaves on the same inputs over time, often after
+      its provider updates it. Careful: Chapter 9's drift was a change in a claim as it is retold; this is a different
+      sense of the same word. And providers also retire models entirely. So the last idea of the chapter is about
+      keeping your fit decisions alive.
+    background: |
+      Definitions (§12.8; glossary): drift (in a tool or model over time), lock-in, re-test trigger. Short case 2
+      (optional): GPT-4o left ChatGPT on February 13, 2026; on October 14, 2026 OpenAI told developers it leaves the API
+      on January 14, 2027 (time-sensitive; refresh list); Anthropic gives at least 60 days' notice before retiring a
+      publicly released model (e.g., Claude Opus 3 retired January 5, 2026).
+    misconceptions:
+      - m: "M6 'A fit I tested once keeps holding, and I can switch tools whenever I like.'"
+        fix: "State it; the next slide gives the evidence."
+    activity: "Transition slide."
+    book: "§12.8 Lock-in, Switching and Re-testing."
+
+- layout: figure
+  minutes: 2
+  kicker: "§12.8 · Chen, Zaharia & Zou (2024) · 1,000 numbers"
+  title: "Same name, March to June 2023: 84% fell to 51%"
+  figure: f12-14-drift
+  # No takeaway bar: the chart gets the full height so its labels stay near 14 pt; the lesson is in the SAY notes.
+  notes:
+    say: |
+      The evidence is direct. Researchers gave the March 2023 and June 2023 versions of two named models the same 1,000
+      numbers, half of them prime, and asked whether each was prime. GPT-4 was correct on about 84 percent in March and
+      51 percent in June, about what guessing scores on a set that is half prime. GPT-3.5 moved the opposite way, from
+      about 50 to 76 percent. Both were sold under the same names; only a dated version label told them apart. One narrow
+      math task does not show how much every task drifts. Lock-in, the effort that keeps you on a tool after a better
+      fit appears, builds up from chat history, standing instructions and memory, files inside one service, habits, and
+      licenses that end. So keep your frames, prompts and test inputs in your own files, and write a re-test trigger.
+    background: |
+      Chen, Zaharia and Zou (2024), Harvard Data Science Review; "think step by step" prompt; the authors trace much of
+      GPT-4's change to the June version no longer working step by step as asked: a change in behavior more than a loss
+      of ability. Re-test triggers (§12.8): a model update or retirement, a change in price or terms, a new kind of
+      input, a change of job or school. Worked example "The Handover Note": Sam leaves prompts, test inputs, criteria,
+      the club's standing instruction and his dated matrix in the club's shared folder, because his institutional access
+      may end when he graduates. Lab 12.3 (optional): rerun the A3 prompt and check whether a trigger has fired.
+    questions:
+      - q: "Does this mean GPT-4 got worse at math?"
+        a: "On this one task, its June version stopped working step by step as asked; the authors call it a change in behavior more than a loss of ability. The point is that a name is no guarantee (Check Yourself 12.8 item 1)."
+    misconceptions:
+      - m: "M6 'A fit I tested once keeps holding.'"
+        fix: "Same name, same inputs, different results three months apart."
+    activity: "Your Turn: name one thing you would lose if your main tool disappeared tomorrow, and how you would keep it."
+    book: "§12.8, @fig-12-14, @fig-12-15; Worked Example 'The Handover Note'; short case 2."
+
+# ----------------------------------------------------------------------- Guest (optional) and Case Study
+- layout: concept
+  minutes: 10
+  kicker: "Guest practitioner · optional"
+  title: "How are AI tools chosen where you work?"
+  size: 24
+  bullets:
+    - "Who decides which tools people use, and on what evidence?"
+    - "Which data may never go into a tool?"
+    - "What makes you re-test or switch?"
+    - "Which work stays with no AI?"
+  takeaway: "Listen for: fit per part · data gate · re-test"
+  notes:
+    say: |
+      Introduce the guest by name and field, using only what the guest has approved. Before the guest speaks, tell
+      students what to listen for: how this person's organization decides which tools people may use, what evidence it
+      asks for, which data may never go into a tool, what makes them re-test or switch, and which parts of their work
+      stay with no AI at all. Students can use the four questions on the slide. Leave the slide up during questions. If
+      there is no guest this session, use the ten minutes for the Career Connection table in the chapter: in pairs,
+      students pick one role, such as an IT procurement analyst or a marketing coordinator, and answer that role's
+      question from the book.
+    background: |
+      [AUTHOR: the guest's name, field and whether the chapter or slides should mention the session are author-only
+      items (blueprint, Author-only item 3). Nothing about the guest is in the book; do not add facts to this slide
+      without the guest's approval.] The
+      questions on the slide are drawn from §12.4–12.8 and the Career Connection table (e.g., IT procurement or vendor
+      analyst: "What would our edge case do to each tool?"; software developer: "Am I faster, or do I only feel
+      faster?"). Ethics Lens prompt for discussion: when a manager or school chooses one tool for everyone, people whose
+      work sits outside its frontier, or whose data its terms do not cover, bear the cost (the book's reading).
+    activity: "About 6 min guest remarks, 4 min student questions. Fallback without a guest: Career Connection pair task."
+    book: "Career Connection; Ethics Lens."
+
+- layout: compare
+  minutes: 5
+  kicker: "Case study · read together · how the right ones worked"
+  title: "Centaurs, cyborgs and self-automators"
+  size: 22
+  columns:
+    - heading: "Centaurs · about 14%"
+      role: verified
+      bullets: ["Divide the work", "≈ a fit matrix in practice"]
+    - heading: "Cyborgs · about 60%"
+      role: neutral
+      bullets: ["Work turn by turn", "≈ augmentation"]
+    - heading: "Self-automators · about 27%"
+      role: risk
+      bullets: ["Hand over the whole task", "≈ automation without its check"]
+  takeaway: "Centaurs most accurate (reported); mapping: book’s reading"
+  notes:
+    say: |
+      We read the Case Study together. How did the consultants who got the outside task right use the tool? The trap:
+      the spreadsheet looked complete, but the interview notes held details that pointed to a different answer from the
+      one the authors expected AI to give. Among those who were correct with AI, the authors describe two patterns.
+      Centaurs, named after the half-human, half-horse creature of Greek myth, divided the work: they decided which parts
+      to give the tool and which to keep. Cyborgs worked with the tool more closely, at the level of sentences and
+      subtasks. A follow-up study of the same task, with 244 consultants, added a third pattern: self-automators, who
+      handed whole workflows to the tool with little review. In the authors' summaries, centaurs were the most accurate.
+    background: |
+      Centaurs and cyborgs: Dell'Acqua et al. (2023), confirmed in the working paper. Shares (about 60% cyborgs, 27%
+      self-automators, 14% centaurs; rounded, so they do not add to exactly 100) and "centaurs most accurate": reported tier, the
+      authors' own summaries (Randazzo et al., 2025; Candelon et al., 2026). The mapping onto the fit matrix and ladder
+      is the book's reading (inferred). Failure labels: on the tree, hallucination (contradicts its input, or wrong
+      reasoning), inferred, because the paper does not report the outputs each consultant saw (@fig-12-18); on the
+      chain, links 2 and 3 documented by the authors' statement that those who did worse adopted the output with less
+      questioning (automation bias); the harm stopped at wrong recommendations in an experiment (@fig-12-19). Limits: one
+      firm, GPT-4 as of April 2023, researcher-designed tasks, one outside task. With AI, ideas on the creative tasks were
+      also less varied (homogenization, Chapter 10).
+    questions:
+      - q: "Which way of working should I adopt?"
+        a: "Defend your own choice with the fit matrix and the ladder. The book reads the centaur pattern as a fit matrix in practice: some parts automated and checked, some kept on the floor."
+    activity: "Ask: 'Which of the three were you in your last AI-assisted assignment?' Show of hands."
+    book: "Case Study 'How the Consultants Who Got It Right Worked', @fig-12-17, @fig-12-18, @fig-12-19; Case Study Questions 2–3."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "Before the lab session · about 13 minutes"
+  title: "Bring a real task, split into parts"
+  size: 24
+  bullets:
+    - "Split your A10 task into two or three parts"
+    - "For the part you test: frame, 3–4 criteria"
+    - "Three test inputs: typical · different · edge"
+    - "Name the input’s data class (§12.5 table)"
+  takeaway: "No personal data about others or restricted data in prompts"
+  notes:
+    say: |
+      Before the lab session, about thirteen minutes. Choose a real task from your studies, your job or a club, with no personal
+      data about other people. Split it into two or three parts. For the part you will test, write the task frame with
+      three or four success criteria, as in Chapter 5, and three test inputs: a typical one, a different one, and an edge
+      case, the unusual but possible input. Then name the input's data class using the section 12.5 table. Read the rest
+      of Chapter 12 too. If you can reach only one tool, or prefer not to use AI, you can do one tool and your own no-AI
+      work, or score the provided outputs on your course site. You never need to create a new account.
+    background: |
+      Chapter time paragraph: Core about 36 min; whole Core package about 48 (the Case Study is read in the concept
+      session); required Review A items 1, 2, 3, 6, 8, 11 and Spaced Review 1–2 about 10; A10 about 13 before the lab and
+      about 60 after, including about 7 to read its brief and rubric; the chapter about 2.2 hours (about 131 minutes). The
+      recommended reading (about 15 minutes) is extra. Instructor package for the lab session: dated terms cards for at least three tools,
+      including a tool your institution provides or approves, with a one-page copy of the §12.5 table; Route C package; the A10 sheet
+      template.
+    questions:
+      - q: "What makes a good edge input?"
+        a: "An unusual but possible case where a tool might fill a gap with something that was not there, like a datasheet that does not list a value, or a notice with no hours (§12.6)."
+    activity: "Leave this slide up as students pack."
+    book: "Lab 12.1 'Before the lab session'; §12.5 table; §12.6; Application Assignment A10."
+
+# ======================================================================= LAB SESSION
+- layout: section
+  session: thu
+  minutes: 0
+  number: "12.9"
+  tag: "Lab"
+  title: "Practice lab: the tool bake-off"
+  idea: "Read the terms, pass the gate, run a fair test, score three things apart."
+  meta: "Book §12.9 · Lab 12.1 · A10 due when your instructor sets it"
+  notes:
+    say: |
+      Welcome back. Today is the tool bake-off. By the end of the session your team will have read the data terms of at
+      least three tools and filled one gate table, and you will have run your own bake-off on your three test inputs,
+      scoring correctness, polish and time for each output. That is A10 items 3 and 4, the heart of the assignment.
+      Teams of three or four for the terms jigsaw; the runs are individual. Take out your task, its parts, your frame
+      and your three test inputs. We start with a two-minute warm-up from memory.
+    background: |
+      Lab 12.1 timing (lab sheet): briefing 10 · terms jigsaw 12 · runs 33 · share 15 · exit 5 (practice 45). Materials:
+      dated terms cards (at least three tools, including a tool your institution provides or approves), the A10 sheet (F12.16), provided
+      dated outputs of a second tool for students who reach only one tool or prefer not to create an account.
+    activity: "Form teams of 3–4; hand out one terms card per member."
+    book: "§12.9 The Tool Bake-off; Lab 12.1; labs/ch12-lab1.md."
+
+- layout: quiz
+  minutes: 2
+  kicker: "Lab session · warm-up from memory"
+  title_prefix: "Warm-up"
+  title: "gate and bake-off"
+  question: "Name the three data-terms questions, and two things that must stay the same in a fair bake-off."
+  instruction: "No notes, no screens: write, then check with your team"
+  model_answer:
+    - "**Terms:** training (default? opt out?) · retention and access · consumer or institutional contract"
+    - "**Same:** frame and criteria · prompt, word for word · three test inputs · fresh chats, memory off · records"
+  notes:
+    say: |
+      Warm-up, from memory, no notes and no screens. Write the three questions you ask about a tool's data terms, and
+      two things that must stay the same in a fair bake-off. One minute to write, one minute to check with your team.
+      You will use both lists in the next forty-five minutes: the terms questions in the jigsaw, the fairness rules in
+      your runs. If someone is stuck, hint: the first terms question is about what the provider does with your input
+      after the chat; the bake-off rules all come down to one sentence, change only the tool.
+    background: |
+      Check Yourself 12.5 item 1 and 12.6 item 1 (Appendix E): training; retention and access; whose contract; the
+      input's data class. Same: frame and criteria, prompt, test inputs, fresh chats with memory and standing
+      instructions off, records.
+    activity: "1 min write, 1 min team check, then the answer slide."
+    book: "§12.5; §12.6; Check Yourself 12.5–12.6."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      Here they are. About the tool: is your input used for training, is that the default, and can you opt out? How long
+      is it kept, and who can see it? Consumer or institutional contract? And the fourth question, about your input: its
+      data class. For the bake-off, everything stays the same except the tool: the frame and criteria, written first; the
+      prompt, word for word; the same three test inputs; a fresh chat for each run with memory and standing instructions
+      off; and the tool, model and date recorded. If your second tool's run would require a new account, stop: use the
+      provided dated outputs instead.
+    background: |
+      Lab 12.1: "You never need to create a new account for this lab." Route C students score the provided outputs.
+    activity: "Reveal; move to the lab slide."
+    book: "§12.5; §12.6; Lab 12.1."
+
+- layout: lab
+  minutes: 4
+  kicker: "Lab 12.1 · teams of 3–4 for terms · runs individual"
+  title: "Tool bake-off: which option fits your part?"
+  goal: "A gate decision per tool, then a fair test"
+  steps:
+    - {text: "**Terms jigsaw:** each member reads one tool’s dated card, answers the three questions; the team fills one gate table", min: 12}
+    - {text: "**Runs:** same prompt on typical, different, edge, in two tools or one tool + no AI; fresh chats; record tool, model, date", min: 20}
+    - {text: "**Score as you go:** correctness per criterion (independent check on typical) · polish 1–5 · time", min: 13}
+  side:
+    - {heading: "Deliverable", text: "A10 items 3–4 started; gate table shared, ungraded"}
+    - {heading: "Privacy", role: risk, text: "Public information, your own work or provided material only"}
+    - {heading: "One tool, or no AI?", text: "Route B (one tool + no AI) or Route C (provided outputs)"}
+  notes:
+    say: |
+      Here is the lab, forty-five minutes of practice. Step one, the terms jigsaw, twelve minutes. In a jigsaw each
+      member studies one piece and teaches it to the others. Each of you takes one tool's dated terms card and answers
+      the three questions; then the team fills one gate table and checks each member's input against it. Step two, the
+      runs, individually. Run the same prompt, word for word, on your three inputs, in two tools for Route A, or in one
+      tool plus your own no-AI work for Route B; Route C students score the provided outputs. Fresh chat each time,
+      memory and standing instructions off, tool, model and date recorded. Score each output as you go, and check the
+      typical input's correctness against the source. If time runs short, finish the edge input at home.
+    background: |
+      From labs/ch12-lab1.md (steps 2–3: jigsaw 12, runs 33; the slide splits the 33 into running 20 and scoring 13 for
+      timing calls only). Expected observations: polish scores cluster high while correctness varies; the edge input is
+      where tools most often fill in something that was not there; tools with search sometimes fill a missing value from
+      a page about something else; some students find no AI faster once checking is counted, or the gate blocks the
+      better tool: all valid. Accessibility: printed terms cards and provided outputs; screen-reader-friendly A10 sheet;
+      inputs in any language with an English gloss of each criterion.
+    questions:
+      - q: "My two tools tied. Is that a weak result?"
+        a: "No. 'The tools tied' is a valid result that can earn full marks if the record shows how you know (§12.9)."
+    misconceptions:
+      - m: "M5 'Signing in with my school account makes any data fine to paste.'"
+        fix: "During the jigsaw, ask each team to find one input their institutional tool should still not receive."
+    activity: "4 min briefing on this slide; the jigsaw slide and the runs slide stay up during the 45 minutes."
+    book: "§12.9; Lab 12.1; labs/ch12-lab1.md."
+
+- layout: assignment
+  minutes: 3
+  kicker: "Assignment A10 · O6 · LO2, LO5"
+  title: "A10: tool and task fit matrix"
+  due: "When your instructor sets it · individual · about 60 min after the lab"
+  parts:
+    - "Task in 2–3 parts, predictions; frame, criteria, data class"
+    - "Tools; data gate per tool, cited and dated"
+    - "Bake-off record: 3 inputs, scores kept apart, checks named"
+    - "Cost row with a no-AI baseline"
+    - "Fit matrix with rungs, reasons, a re-test trigger; judgment; declaration"
+  rubric_title: "Rubric · 10 points"
+  rubric:
+    - {criterion: "Task and design", points: 3, full: "Parts, criteria, class, good inputs"}
+    - {criterion: "Bake-off record", points: 1.5, full: "Every run; scores kept separate"}
+    - {criterion: "Cost and gate", points: 1.5, full: "Cited, dated gate per tool"}
+    - {criterion: "Verification", points: 2, full: "Named checks, typical and edge"}
+    - {criterion: "Matrix, trigger", points: 1, full: "Decision, rung, reason per cell"}
+    - {criterion: "Judgment, declaration", points: 1, full: "Each part; 12.3 link; 5 elements"}
+  note: "Valid results: neither tool fits · the tools tied · no AI was faster · the gate blocked the better tool."
+  notes:
+    say: |
+      Here is what you submit for A10. Eight items, grouped on the slide. Your task in two or three parts, with
+      predictions, and for the part you test, the frame, criteria and data class. The tools, and a data gate for each,
+      citing the page or card you read and its date. The bake-off record: the same prompt on three inputs, every output
+      scored for correctness, polish and time, with the independent check named for the typical and edge inputs. A cost
+      row with a no-AI baseline. The fit matrix, with a decision, rung and reason in every cell, "predicted" and "tested
+      once" marked, and a re-test trigger. An 80-to-100-word judgment and your AI Use Declaration. Three routes, all
+      eligible for full marks, none needing a new account.
+    background: |
+      Full four-level rubric in the chapter: Task and design 3; Bake-off record 1.5; Cost and data gate 1.5 (capped at
+      0.5 if a gate decision lets an input through against the §12.5 table); Verification 2; Matrix and trigger 1;
+      Judgment and declaration 1. Routes: A two tools; B one tool and no AI; C provided outputs (provided task in every
+      column). Alternative assignment (prefer not to use AI): Route C, the no-AI column done and timed, terms from the
+      tools' public pages or the cards; declaration "no AI tools used". Time: about 13 min before the lab, about 60 after
+      (including about 7 for the brief and rubric). Late-work and revision rules are the instructor's call.
+    questions:
+      - q: "Do I need a repeat run?"
+        a: "Only optionally, on the edge input; outputs vary from run to run, so a cell run once is marked 'tested once' (A10 item 4, item 6)."
+    activity: "Point to the Verification row: name the independent check behind each typical and edge score."
+    book: "Application Assignment A10 (routes, items, rubric, alternative assignment); @fig-12-16."
+
+- layout: compare
+  minutes: 12
+  kicker: "Lab 12.1 step 2 · terms jigsaw · on screen for 12 minutes"
+  title: "One card each, one gate table per team"
+  size: 22
+  columns:
+    - heading: "Your card: three answers"
+      role: soft
+      bullets: ["Training? Default? Opt out?", "Kept how long? Seen by whom?", "Consumer or institutional?"]
+    - heading: "Team gate table"
+      role: human
+      bullets: ["One row per tool", "Each member’s input: pass, pass after a change, or blocked"]
+  takeaway: "Cite the card and its date in A10 item 3"
+  notes:
+    say: |
+      Jigsaw time, twelve minutes. Each team member takes one tool's dated terms card. You have about five minutes to
+      answer the three questions from your card, in writing: is input used for training, is that the default, can you
+      opt out; how long is it kept and who can see it; consumer or institutional terms. Then, in turn, teach your tool to
+      the team in one minute. Finally, fill one gate table together: a row per tool, and for each member's input a gate
+      decision, pass, pass after changing the input, or blocked. Disagreements are useful: find the line on the card
+      that settles each one. Every answer you use in A10 needs the card's title and date.
+    background: |
+      Instructor package: dated terms cards for at least three tools, including a tool your institution provides or
+      approves (Microsoft Copilot Chat is one dated example, as of October 2026), with the three questions answered, page
+      titles and dates, and a one-page copy of the §12.5 table (on your course site and printed; needed before the lab
+      session). Cards are time-sensitive: re-check before the session. Lab 12.2
+      (optional) is the full reading sprint from the providers' own pages: about 20 minutes with the cards, up to an
+      hour with full pages, especially in a second language.
+    activity: "5 min read · 4 min teach (1 min each) · 3 min fill the gate table. Circulate; ask each team for one 'blocked' or 'pass after a change'."
+    book: "Lab 12.1 step 2; §12.5; Lab 12.2."
+
+- layout: compare
+  minutes: 33
+  kicker: "Lab 12.1 step 3 · runs · on screen for 33 minutes"
+  title: "Change only the tool; score three things apart"
+  size: 22
+  columns:
+    - heading: "Each run"
+      role: soft
+      bullets: ["Same prompt, word for word", "Fresh chat; memory off", "Tool, model, date"]
+    - heading: "Each output"
+      role: human
+      bullets: ["Correctness per criterion, with its check", "Polish: 1 rough · 3 usable · 5 ready", "Time, including checking"]
+  takeaway: "Finish the edge input at home if time runs short"
+  notes:
+    say: |
+      Runs, thirty-three minutes, individually. Keep this slide in view. For each run: the same prompt, word for word, a
+      fresh chat with memory and standing instructions off, and the tool, the model if shown, and the date written down.
+      For each output: correctness per criterion, with the independent check you used, at least for the typical input
+      today; polish on the 1-to-5 scale, where 1 is rough, 3 usable after edits, 5 ready to send; and time, including
+      the time you spent checking. Start with the typical input, then the edge input, then the different one, so that
+      the two inputs A10 checks most are done first. I will come round; call me when polish and correctness disagree.
+    background: |
+      Order suggestion (typical, edge, different) is a timing choice for this deck, consistent with A10 item 4 (independent
+      checks required for the typical and edge inputs). Worked model row (§12.9, constructed): edge input, Tool B: C1
+      met; C2 met; C3 not met (stall torque filled from a page about another motor; independent check: the maker's
+      datasheet lists none); C4 met; polish 5; 10 min including checking. Faded sheet (biology abstract) answer in
+      Appendix E: on the edge input Tool A meets "no invented results"; Tool B fails it whatever its polish.
+    questions:
+      - q: "What counts as an independent check?"
+        a: "Evidence no AI tool produced: the source document, a page with a named author or publisher, or your own recalculation (Chapter 8). Asking the same tool is not a check."
+    activity: "Time calls at minutes 10 and 25; at minute 30 ask everyone to finish the current output's three scores."
+    book: "Lab 12.1 step 3; §12.6; §12.9 Worked Example 'One of Sam's Rows'; Faded Example 'A Partly Filled Sheet'."
+
+- layout: tps
+  minutes: 15
+  kicker: "Share and critique · 15 min"
+  title: "Where did polish and correctness disagree?"
+  prompt:
+    - "One output: polish high, correctness low?"
+    - "One gate decision: pass, change, or blocked?"
+    - "Change one choice: does a cell flip?"
+  phases:
+    - {name: "Think", min: 2, text: "One line each"}
+    - {name: "Team", min: 5, text: "Pick one output, one gate"}
+    - {name: "Share", min: 8, text: "Show; class critiques"}
+  notes:
+    say: |
+      Share and critique. On your own, one line each: an output whose polish and correctness disagreed, and what a grader
+      who looked only at polish would have concluded; one gate decision from your team's table; and, using Chapter 11's
+      sensitivity check, change one choice, such as the stakes of a part or the time you allow, and say whether any cell
+      of your matrix would flip. Then each team picks one output and one gate decision to show. In the last eight
+      minutes teams present and the class critiques: was the check really independent? Was the edge input really an edge
+      case? Would one more run change the cell?
+    background: |
+      Debrief questions from labs/ch12-lab1.md (evaluate, analyze, apply). Mark untested cells "predicted" and
+      single-run cells "tested once". What to listen for: "checks" that ask the same tool again; edge inputs that are
+      really typical (the rubric's example of a weak element); gate decisions that pass personal data into a consumer
+      tool.
+    misconceptions:
+      - m: "M3 'If the output looks polished, the tool fits.'"
+        fix: "Ask each team for their highest-polish wrong output."
+    activity: "Think 2 · team 5 · share 8."
+    book: "Lab 12.1 step 4 and Debrief; §12.6; §12.7."
+
+- layout: objectives
+  minutes: 2
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Explain:** fit belongs to a part, a tool and a date"}
+    - {code: "O2", text: "**Describe** a tool: receives, can do, runs, terms"}
+    - {code: "O3", text: "**Read** a study by setting, users and date"}
+    - {code: "O4", text: "**Count** the total cost; pass the data gate first"}
+    - {code: "O5", text: "**Run** a fair bake-off: correctness, polish, time"}
+    - {code: "O6", text: "**Decide** cell by cell; re-test when things change"}
+  takeaway: "Which tool? Only for a part, an input and a date"
+  notes:
+    say: |
+      Back to the opening question: which AI tool should you use? There is no general answer, only one for a part of a
+      task, with a given input, on a given date. Check first whether a tool's terms allow your input. Then test the part
+      with the same inputs in two or more tools, and without AI, scoring correctness, polish, time and cost separately.
+      Choose a rung for each part, keep your prompts and test inputs in your own files, and re-test when something
+      changes. Now your warm-up. The top-ranked model? Not necessarily best for your task. One tool helping on one task
+      and hurting on another? Yes, in the BCG study. A free tool and an institution's tool with the same answer? Their data
+      terms can still differ. Compare with your confidence ratings.
+    background: |
+      Chapter Summary and @fig-12-20. The puzzle answered: the overview raised scores and copying inside the frontier but
+      did not make the tool able to do the outside task; those who did worse questioned the output less; you would have
+      noticed by scoring correctness separately, with an independent check against the interview notes. The evidence
+      from 2023 to 2026 shows real gains, real losses and changing results, each specific to its tasks and users.
+    activity: "Ask two students which warm-up answer they changed."
+    book: "Chapter Summary, @fig-12-20; Warm-up revisit."
+
+- layout: key_terms
+  minutes: 1
+  title: "Key terms"
+  terms:
+    - "task–tool fit"
+    - "AI tool"
+    - "provider"
+    - "domain tool"
+    - "open-weight model"
+    - "local model"
+    - "total cost of use"
+    - "verification cost"
+    - "no-AI baseline"
+    - "data terms"
+    - "data class"
+    - "data gate"
+    - "bake-off"
+    - "fit matrix"
+    - "drift (in a tool or model over time)"
+    - "lock-in"
+    - "re-test trigger"
+    - "leaderboard (Deep)"
+  note: "Definitions: Chapter 12 and the glossary. (Deep) terms are optional and not on exams."
+  notes:
+    say: |
+      These are the chapter's key terms; if your course has a written exam they can appear in it. Make sure you can define
+      each one in a sentence. Some come in useful pairs: total cost of use and verification cost, the second being the part of the
+      first that people most often leave out; data terms and data class, one about the tool and one about your input,
+      which together make the data gate; open-weight model and local model. And note the sense label on drift: this is
+      drift in a tool or model over time, not Chapter 9's drift of a claim as it is retold.
+    background: |
+      Key Terms list from the chapter (17 Core terms plus leaderboard, Deep). Examinable scope: Core sections only (D20).
+      Exam format and weighting are the instructor's call.
+    activity: "30-second pair self-test."
+    book: "Chapter Summary, Key Terms; glossary."
+
+- layout: exit_ticket
+  minutes: 2
+  questions:
+    - "Name one part of your task you will keep on the floor (no AI), and why."
+    - "Which data-terms answer surprised your team most?"
+    - "What is your A10 re-test trigger?"
+  instruction: "2 min · index card or your course site · ungraded"
+  notes:
+    say: |
+      Last two minutes: the exit ticket, on an index card or in a course-site form, ungraded. The first question is the
+      lab's own exit step: one part of your task you will keep on the floor, with no AI, and your reason. The second
+      tells me what to clarify about data terms. The third makes sure your matrix has its re-test trigger. Before you
+      leave: A10 is due when your instructor sets it, on your course site. The next chapter is about agentic workflows: systems in which the
+      model chooses its own steps, and how people keep oversight of them.
+    background: |
+      Question 1 = Lab 12.1 step 5. Next chapter (Chapter 14): agentic workflows and human oversight;
+      demo: a multi-step agent and its failure; recommended reading: Anthropic (2024); A11, the workflow blueprint with
+      approval points.
+    activity: "2 min; collect cards at the door or close the course-site form at the end of the session."
+    book: "Lab 12.1 step 5; Chapter 14."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: deep
+  session: after
+  kicker: "Deep 12.B · beyond one study"
+  title: "Going deeper: field data, national data, leaderboards"
+  size: 22
+  bullets:
+    - "Field experiments, 4,867 developers: about 26% more tasks (Cui et al., 2026)"
+    - "Denmark, through 2024: no detectable effect on earnings or hours"
+    - "Leaderboards rank models on other people’s questions"
+  takeaway: "A ranking can start a shortlist; only your bake-off settles fit"
+  notes:
+    say: |
+      Use this slide only if there is time or a student asks about the bigger picture. Three kinds of evidence beyond one
+      study. Field experiments: three companies gave a random subset of developers a coding assistant in normal work in
+      2022 and 2023; pooled across 4,867 developers, those with the tool completed about 26 percent more tasks, with
+      noisy results that varied by firm. National data: in Denmark, surveys of about 25,000 workers linked to official
+      records found no detectable effect of chatbot adoption on earnings or hours through 2024. Large gains in one task
+      need not add up to large changes across a job. Leaderboards: an audit of one crowd-vote leaderboard reported that
+      private testing let a few providers publish only their best score; the operators disputed several claims.
+    background: |
+      Deep 12.B (optional, not examinable). Cui et al. (2026): Microsoft, Accenture and an anonymous firm; tasks counted
+      as pull requests; the tool's parent company was one of the firms and some authors work there; a count is not a
+      quality measure. Humlum and Vestergaard (2026): 11 occupations; effects larger than 2% ruled out; reported time
+      savings about 3%. Singh et al. (2025): 2 million comparisons, 243 models, 42 providers, January 2024–April 2025; 27
+      private versions from one provider in one month; LMArena (2025) responded on May 9, 2025, accepting some
+      recommendations and disputing others (reported). Deep 12.A covers open-weight vs. open-source AI (OSI definition
+      1.0, October 28, 2024).
+    questions:
+      - q: "Should I ignore leaderboards then?"
+        a: "No; a ranking can start a shortlist. It scores models on other people's questions, so only your bake-off settles fit for your part (Deep 12.B)."
+    activity: "Optional; not part of the 75-minute plan."
+    book: "Deep 12.B; Deep 12.A; Warm-up item 1."
+
+- layout: references
+  title: "References"
+  per_slide: 9
+  refs:
+    - "Ambrogi, B. (2024, May 28). *Stanford will augment its study finding that AI legal research tools hallucinate in 17% of queries…* LawSites."
+    - "Anthropic. (2025, August 28). *Updates to consumer terms and privacy policy*."
+    - "Anthropic. (n.d.). *Model deprecations*. Claude Platform Docs. Retrieved October 18, 2026."
+    - "Becker, J., Rush, N., Barnes, B., & Rein, D. (2025). *Measuring the impact of early-2025 AI on experienced open-source developer productivity* (arXiv:2507.09089)."
+    - "Brynjolfsson, E., Li, D., & Raymond, L. R. (2025). Generative AI at work. *The Quarterly Journal of Economics, 140*(2), 889–942."
+    - "Candelon, F., Kellogg, K. C., Lifshitz, H., & Randazzo, S. (2026, January 30). Are you a cyborg, a centaur, or a self-automator? *Fortune*."
+    - "Chen, L., Zaharia, M., & Zou, J. (2024). How is ChatGPT’s behavior changing over time? *Harvard Data Science Review, 6*(2)."
+    - "Cui, K. Z., Demirer, M., Jaffe, S., Musolff, L., Peng, S., & Salz, T. (2026). The effects of generative AI on high-skilled work. *Management Science*."
+    - "Dell’Acqua, F., et al. (2023). *Navigating the jagged technological frontier* (Harvard Business School Working Paper No. 24-013)."
+    - "Dell’Acqua, F., et al. (2026). Navigating the jagged technological frontier. *Organization Science, 37*(2), 403–423."
+    - "Humlum, A., & Vestergaard, E. (2026). *Still waters, rapid currents: Early labor market transformation under generative AI* (NBER Working Paper No. 33777)."
+    - "LMArena. (2025, May 9). *Our response to “The Leaderboard Illusion” writeup*."
+    - "Magesh, V., et al. (2025). Hallucination-free? Assessing the reliability of leading AI legal research tools. *Journal of Empirical Legal Studies, 22*(2), 216–242."
+    - "METR. (2026, February 24). *We are changing our developer productivity experiment design*."
+    - "Microsoft. (2026). *Enterprise data protection in Microsoft Copilot and Microsoft Copilot Chat*. Microsoft Learn."
+    - "Open Source Initiative. (2024, October 28). *The Open Source AI Definition 1.0*."
+    - "OpenAI. (2026, January 29). *Retiring GPT-4o, GPT-4.1, GPT-4.1 mini, and OpenAI o4-mini in ChatGPT*."
+    - "OpenAI. (n.d.-a). *How your data is used to improve model performance*. OpenAI Help Center."
+    - "OpenAI. (n.d.-b). *Enterprise privacy at OpenAI*."
+    - "OpenAI. (n.d.-c). *Deprecations*. OpenAI Developers."
+    - "Peng, S., Kalliamvakou, E., Cihon, P., & Demirer, M. (2023). *The impact of AI on developer productivity: Evidence from GitHub Copilot* (arXiv:2302.06590)."
+    - "Randazzo, S., et al. (2025). *Cyborgs, centaurs and self-automators* (Harvard Business School Working Paper No. 26-036)."
+    - "Singh, S., et al. (2025). The leaderboard illusion. In *Advances in Neural Information Processing Systems 38*."
+  notes:
+    say: |
+      Reference slides; not presented in class. These are the sources cited on the slides and in the speaker notes, in
+      short APA form copied from the chapter's reference list, which was fact-checked and has the full entries, URLs and
+      retrieval dates for every provider page, which matter because
+      terms and model pages change. If a student wants to go further, point them first to the recommended reading,
+      Brynjolfsson, Li and Raymond, introduction and the section on how often agents followed the tool's suggestions,
+      about fifteen minutes. The 2023 working paper by Dell'Acqua and colleagues is the primary record for the
+      case.
+    background: |
+      Full entries in Chapter 12, References (fact-checked; docs/factcheck/ch12.csv), with URLs and full author lists;
+      long titles are shortened here with an ellipsis or "et al.". Provider pages (Anthropic, OpenAI,
+      Microsoft) are time-sensitive and dated "as of October 2026" in the chapter. The recommended reading
+      (Brynjolfsson et al.) is listed there as the 2023 NBER version.
+    activity: "Not presented."
+    book: "Chapter 12, References; Further Reading and Compass Links."

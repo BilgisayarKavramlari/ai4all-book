@@ -13,7 +13,7 @@
 3. Add a check after every step that catches a share c of errors: a step then ends wrong with chance (1 − p)(1 − c), so the whole run is error-free with chance about (1 − (1 − p)(1 − c))^n (Deep 14.B). Find the smallest change, in steps, per-step reliability or catch rate, that brings the chance above 90%.
 4. Write one sentence on which of the simplifications in Deep 14.B (independent steps; no false alarms; a check always finds the first wrong step; no approval fatigue; only the final action irreversible; independent misses) you trust least for your workflow, and why.
 
-In Compass (optional): ch14-lab3, a ready-made calculator with the chapter's simulation; also on the course site.
+In Compass (optional): ch14-lab3, a ready-made calculator with the chapter's simulation; also in the companion files.
 
 ## Expected observations
 Small per-step gains matter a lot for long runs; cutting steps often helps more than polishing them.

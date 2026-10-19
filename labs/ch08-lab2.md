@@ -28,7 +28,7 @@ Results vary by tool, topic and whether the tool searched the web. Niche topics 
 Ungraded. The five-row record; reusable as A5 citation rows and in A6.
 
 ## Accessibility and alternatives
-No-device route: the five dated sample references on your course site. Library staff can help at the reference desk; tell them the references came from an AI tool.
+No-device route: the five dated sample references in the companion files. Library staff can help at the reference desk; tell them the references came from an AI tool.
 
 ## Instructor notes
 Remind students not to submit unchecked AI references in any assignment; this lab is the safe place to find them.

@@ -1,6 +1,6 @@
 # A9 Scenario B′ — Spring Fundraiser (one-page brief)
 
-*Constructed scenario for Chapter 11's A9. File: data/ch11_scenario_b.csv (on your course site as a spreadsheet and a screen-reader-friendly table).*
+*Constructed scenario for Chapter 11's A9. File: data/ch11_scenario_b.csv (in the companion files as a spreadsheet and a screen-reader-friendly table).*
 
 **The decision.** A student association can run **one** fundraiser this spring. The board votes on March 31; the treasurer prepares the analysis and owns the recommendation. The money pays for members' professional-exam study materials.
 

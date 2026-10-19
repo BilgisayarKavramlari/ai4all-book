@@ -5,7 +5,7 @@
 | Type | Break It |
 | Objectives | O4 (LO3) · tags 4D:DISC, LM:how-works |
 | Time | 35 minutes, home, optional |
-| Materials | The keyed question pack for your field on your course site (business, health, engineering, humanities, social science, science; ten questions each); any AI tool; a spreadsheet or paper |
+| Materials | The keyed question pack for your field in the companion files (business, health, engineering, humanities, social science, science; ten questions each); any AI tool; a spreadsheet or paper |
 
 ## Steps (tool-neutral)
 1. Before asking, write your own predicted answer and confidence for each question (your calibration).
@@ -30,7 +30,7 @@ In 2023 tests (Xiong et al., 2024), stated confidence clustered at 80–100%; re
 Ungraded. The table and the three-sentence conclusion.
 
 ## Accessibility and alternatives
-No-device route: dated sample transcripts with stated confidence on your course site. Screen-reader-friendly table template.
+No-device route: dated sample transcripts with stated confidence in the companion files. Screen-reader-friendly table template.
 
 ## Instructor notes
 Packs must have unambiguous keys. Refresh the sample transcripts each term (refresh-list).

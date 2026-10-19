@@ -1,0 +1,1539 @@
+# Lecture deck spec — Chapter 3: Inside Large Language Models (paired with Chapter 2)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch03.yaml --preview
+# Independence rule D27 (docs/production/independence-rules.md): no institution, course code, term, dates, course
+# site names or syllabus references on slides or in notes; sessions are named by type and length only.
+# Suggested pacing (Chapter 3 blueprint "In-class time"): Session 1, the concept session, opens with Chapter 2
+# (slides/specs/ch02.yaml, about 36 min: opening case, Chapter 2 core and checks); this deck covers the SECOND part of
+# Session 1 (about 39 min: Chapter 3 core, a tokenizer demonstration and a repeated-sampling demonstration, Chapter 3
+# checks) and all of Session 2, the lab session (Lab 3.1 "Probe the model", about 75 min).
+# Every number and quotation comes from deck.sources; the builder flags any number it cannot find there.
+
+deck:
+  chapter: 3
+  slug: inside-large-language-models
+  title: Inside Large Language Models
+  short_title: Inside Large Language Models
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Session 1 · concept session, second part (Chapter 3), about 39 min", minutes: 39}
+    thu: {label: "Session 2 · lab session, about 75 min", minutes: 75}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/03-inside-large-language-models.qmd
+    - labs/ch03-lab1.md
+    - labs/ch03-lab2.md
+    - labs/ch03-lab3.md
+    - figures/longdesc/ch03.md
+    - appendix/answers.md
+    - docs/blueprints/ch03-blueprint.md
+    - chapters/02-how-machines-learn-from-data.qmd
+    - docs/decisions.md
+
+slides:
+
+# ======================================================================= SESSION 1 · CONCEPT (second part)
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "Concept session (second part) and lab session"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading: Chapter 3 (before the lab session)"
+    - "Recommended: Wolfram (2023)"
+  figure: f3-03-anatomy
+  notes:
+    say: |
+      We switch from Chapter 2 to Chapter 3 without a break. Chapter 2 showed how a machine learns from examples. This
+      chapter looks inside the large language models behind today's chat tools. The picture is the book's fourth
+      signature diagram, the Anatomy of an LLM Response: everything the model receives sits in a context window on the
+      left; the text becomes tokens; the model scores every possible next token; one token is picked; it is added, and
+      the loop repeats. We build this picture one piece at a time today, with two live demonstrations, and in the lab
+      session you test it yourselves. The chapter strengthens the Prompt step of the AI Work Loop: know what the model actually
+      receives. Its question: does a language model know things, or does it predict text?
+    background: |
+      Chapter 3 is the reading for the lab session; this second half of the concept session introduces it. Time line
+      in the chapter: about 25–30 minutes for Core sections 3.1–3.5 and about 50 minutes for the whole Core package.
+      Wolfram (2023) is recommended, not required (the chapter's Further Reading). Chapter Map: Prompt highlighted,
+      Verify second. Signature 4
+      is `llm_anatomy` in figures/scripts/ch03_figures.py; Compass, the book's optional companion, has an interactive version and a token
+      explorer.
+    activity: "Switch decks; no pause."
+    book: "Chapter 3 opening page, @fig-3-1 (chapter map) and @fig-3-3 (Anatomy of an LLM Response)."
+
+- layout: session_plan
+  minutes: 0.25
+  title: "Two sessions: where we are"
+  columns:
+    - heading: "Session 1 · Concept session"
+      sub: "about 75 min · Chapter 2 done; now Chapter 3"
+      blocks:
+        - {min: 36, label: "Chapter 2 (done)", detail: "Opening case, core, checks, A2 brief"}
+        - {min: 17, label: "Chapter 3 core, §3.1–3.5", detail: "Tokens, next-token scores, training, context, tools"}
+        - {min: 18, label: "Demonstrations", detail: "A tokenizer; one question asked five times"}
+        - {min: 4, label: "Quick checks and before the lab", detail: "Bring your A2 Part 1 draft"}
+    - heading: "Session 2 · Lab session"
+      sub: "about 75 min · teams of 3–4, individual artifact"
+      blocks:
+        - {min: 10, label: "Lab briefing", detail: "Warm-up, the four probes, A2 Part 2"}
+        - {min: 45, label: "Lab 3.1: Probe the model", detail: "Jigsaw probes; start A2 Part 2"}
+        - {min: 15, label: "Share and critique", detail: "Which result surprised you, and why?"}
+        - {min: 5, label: "Exit step", detail: "Summary, key terms, exit ticket"}
+  notes:
+    say: |
+      A ten-second reminder of where we are. Chapter 2 is done for today. The rest of this session is Chapter 3: five
+      core ideas, interrupted by two short live demonstrations, a tokenizer and one question asked five times, and a few
+      quick checks. In the lab session you run your own probes on a chat tool in teams, then turn what you found into
+      Chapter 3 terms for your concept map. That is Part 2 of A2, due when your instructor sets it. Keep the Part 1
+      draft from Chapter 2 with you in the lab, because each Chapter 3 term must link to a Chapter 2 term.
+    background: |
+      Suggested pacing for this pair of chapters: the concept session covers how machines learn from data, then what a
+      language model is (tokens, training and inference, context window, retrieval, tools, agents), with two
+      demonstrations (a tokenizer, repeated sampling) and a concept check that includes 2–3 Chapter 2 items. The
+      Chapter 2 deck runs about 36 minutes; this deck's concept part about 39. The lab session follows the book's
+      standard flow: lab briefing 10 · group practice 45 · share and critique 15 · exit step 5; Lab 3.1 is the 45
+      minutes, with its own internal debrief and exit step.
+    activity: "Point at the second column only; move on."
+    book: "Chapter 3 time paragraph; Lab 3.1."
+
+- layout: objectives
+  minutes: 0.5
+  kicker: "Chapter 3 · learning objectives"
+  title: "After the lab you will be able to…"
+  items:
+    - {code: "O1", text: "**Explain** how a model builds a response, one token at a time"}
+    - {code: "O2", text: "**Explain** training vs. inference: the cutoff; no learning from your chat"}
+    - {code: "O3", text: "**Judge** what a searched or tool-assisted answer still needs checked"}
+    - {code: "O4", text: "**Test** a model with a probe and record the evidence"}
+    - {code: "O5", text: "**Complete** A2 Part 2: Chapter 3 terms linked to Chapter 2"}
+  notes:
+    say: |
+      Five objectives. Two "explain" objectives about the machinery: how a response is built one token at a time inside
+      a context window, and the difference between training and inference, with its two consequences, a knowledge
+      cutoff and the fact that your conversation does not retrain the model. One "judge": what an answer from a tool
+      that searches or runs software still requires you to check. One "test": running a probe, which is a small,
+      recorded experiment on a model. And one "complete": A2 Part 2. Notice that the last two happen in the lab session;
+      the first three happen now.
+    background: |
+      Full wording and tags in the chapter: O1 Explain (LO1; UNESCO AI techniques and applications; AI4K12
+      Representation and reasoning); O2 Explain (LO1; AI4K12 Learning; AI Fluency Delegation); O3 Judge (LO1, LO3;
+      Discernment); O4 Test (LO1, LO3; Discernment); O5 Complete A2 Part 2 (LO1).
+    activity: "No activity."
+    book: "Chapter 3, Learning Objectives."
+
+- layout: timeline
+  minutes: 2
+  kicker: "Opening case · Berglund et al. (2024) · the reversal curse"
+  title: "The model that could not reverse a fact"
+  events:
+    - {label: "Test 1", text: "Fine-tuned on invented “A is B” facts", tier: "confirmed"}
+    - {label: "Reverse it", role: ai, text: "“B is A”: right name essentially never", tier: "confirmed"}
+    - {label: "Test 2", text: "GPT-4: celebrity’s parent, then parent’s child", tier: "confirmed"}
+    - {label: "The limit", text: "Fact in the prompt: reversal worked", tier: "confirmed"}
+  takeaway: "If it “knows” one direction, why not the other?"
+  notes:
+    say: |
+      Here is the puzzle for this chapter. In September 2023 a research team posted a short, surprising result,
+      published at a major machine-learning conference in 2024. They tested GPT-3 and GPT-4 from OpenAI and Meta's
+      Llama-1. First test: they fine-tuned models, meaning extra training on a small new set of texts, with invented
+      facts of the form "A is B", such as "Daphne Barrington is the director of" a made-up film. The models often
+      completed the facts in the direction they were trained on. Asked the other way round, who directed that film,
+      the largest GPT-3 model gave the right name in essentially none of the tests. Second test, real people: GPT-4 was
+      asked for celebrities' mothers and fathers, then for a child of each parent. And the limit: when the fact was
+      written in the prompt itself, the models could reverse it. So if a model "knows" one direction, why not the other?
+    background: |
+      Berglund et al. (2024), ICLR 2024 (posted September 2023). Attribution tier: the test results are confirmed in the
+      primary record (the paper itself). Details: invented facts in three sets of 30, each written in 30 different
+      ways; for the reverse direction the score for the right name was no higher than for a random name. The
+      explanation offered in §3.3 is the researchers' suggestion (reported tier: the authors' interpretation). The
+      chapter's caution: newer models and tools that search may answer both directions, and the paper's best-known
+      example is now repeated widely online, so students should test a less famous pair from the list on the course site.
+    questions:
+      - q: "Why invent facts? Why not test real ones?"
+        a: "So that no model could have seen them before; that isolates what training on 'A is B' does (Case Study Question 2)."
+    misconceptions:
+      - m: "M2 'The model looks up the answer in a database of facts.'"
+        fix: "A store of facts would answer both directions. Ask the class to hold that thought until §3.3."
+    activity: "Narrate; ask for a one-word guess: why might the reverse fail?"
+    book: "Opening Case 'The Model That Could Not Reverse a Fact'; Case Study 'The Reversal Curse, Revisited'."
+
+- layout: compare
+  minutes: 1.25
+  kicker: "Opening case · GPT-4, 2023 · 1,573 celebrity–parent pairs"
+  title: "79% one way, 33% the other"
+  size: 26
+  columns:
+    - heading: "Celebrity → parent"
+      role: verified
+      bullets: ["“Who is X’s mother?”", "Right parent: **79%**"]
+    - heading: "Parent → celebrity"
+      role: risk
+      bullets: ["“Name a child of Y”", "Famous child: **33%**, even with up to ten tries"]
+  takeaway: "Llama-1 models showed the same gap"
+  notes:
+    say: |
+      The second test in numbers. The researchers took 1,000 popular celebrities from a film database and asked GPT-4
+      for each one's mother and father. GPT-4 named the right parent in 79 percent of those questions, which gave 1,573
+      child–parent pairs. Then they turned all 1,573 pairs around and asked for a child of each parent. Even with up to
+      ten tries per question, GPT-4 named the famous child only 33 percent of the time. Llama-1 models showed the same
+      gap. We tend to expect that anyone who can answer one direction can answer the other. This result suggests the
+      model is not consulting a store of facts. By the end of section 3.3 you will be able to explain the gap with two
+      ideas: how a model produces each piece of text, and what its training text contains.
+    background: |
+      Published values (Berglund et al., 2024, section 2.2; @fig-3-13). Confirmed tier (primary record). The paper
+      gives 33% in its text and 28% in a figure note; the book uses 33% (Case Study, What humans did). The celebrity
+      list was accessed in June 2023. The paper does not say how many wrong answers were invented names rather than no
+      answer. Drawn natively here: the book's chart labels use arrows that some preview fonts do not render.
+    questions:
+      - q: "Would today's chat tools fail the same way?"
+        a: "Maybe not: newer models and tools that search may answer both directions. That is evidence too. Test a less famous pair from the list on your course site in the lab (Lab 3.1 extension)."
+    misconceptions:
+      - m: "M2 'The model looks up the answer in a database of facts.'"
+        fix: "79% versus 33% on the same pairs is hard to explain with a lookup table."
+    activity: "Ask for hands: who expected the two numbers to be about the same?"
+    book: "Opening Case; Case Study, @fig-3-13."
+
+# ----------------------------------------------------------------------- 3.1
+- layout: section
+  minutes: 0.25
+  number: "3.1"
+  tag: "Core"
+  title: "Words become tokens"
+  idea: "A model receives numbered tokens, not letters or words."
+  meta: "Book §3.1 · Demonstration 1: a tokenizer"
+  notes:
+    say: |
+      First step of every response, and one most users never see. Before you read on in the book, it asked you for a
+      prediction: take one English paragraph and the same paragraph in Turkish, or another language you know. Which
+      version will cost a language model more pieces of text to process? Hold your guess. In a few minutes we test it
+      live with a tokenizer, and the result has consequences for letter counting, for rare names, for cost and for
+      fairness between languages.
+    background: |
+      Section 3.1 is Core. Terms: token, tokenizer. Featured student: Elif Kaya (she/her), a first-year psychology
+      student from İzmir. The prediction is the chapter's own, answered with a computed figure (data/ch03_tokens.csv,
+      tiktoken 0.8.0).
+    misconceptions:
+      - m: "M1 'The model reads words and letters the way I do.'"
+        fix: "Name it now; the demonstration will show the pieces the model actually receives."
+    activity: "10 seconds: students write 'English' or 'other language' as their prediction."
+    book: "§3.1 Words Become Tokens."
+
+- layout: concept
+  minutes: 1.25
+  kicker: "§3.1 · signature diagram 4, step 1 (book figure: anatomy, tokens)"
+  title: "Step 1: the text becomes numbered tokens"
+  size: 24
+  bullets:
+    - "A **tokenizer** splits text into **tokens**: words, word parts, symbols"
+    - "Each token is a number; the model sees only numbers"
+    - "“ strawberry” = 1 token; “ hydroxychloroquine” = 4"
+  flow:
+    - {label: "Your text", kind: human}
+    - {label: "Tokenizer", kind: step}
+    - {label: "Token numbers", kind: step}
+    - {label: "Model", kind: ai}
+  takeaway: "Rare words split into odd pieces; letters are not directly visible"
+  notes:
+    say: |
+      A language model does not receive letters or words the way you see them. A program called a tokenizer first
+      splits the text into tokens. A token is a unit of text, a word, part of a word or a symbol, that a language model
+      receives and produces. Each token has a number, and the model works only with those numbers. Tokenizers are built
+      from large amounts of text before the model is trained: a common method starts with single characters and keeps
+      merging the pairs that appear together most often. Frequent words end up as one token; rare words are split. In a
+      widely used newer tokenizer, " strawberry" with its leading space is one token, while the drug name
+      " hydroxychloroquine" becomes four pieces. Four consequences: letters are not directly visible, rare names split
+      oddly, length limits and cost are counted in tokens, and the same text costs different amounts in different
+      languages.
+    background: |
+      Tokenizer facts (§3.1): the newer tokenizer has about 200,000 tokens in its list (o200k_base); merging method from
+      Sennrich et al. (2016). " hydroxychloroquine" after a space → " hydro", "xy", "chl", "oroquine"; at the start of
+      a text, five pieces. "İzmir" at the start → "İ", "z", "mir"; after a space → " İz", "mir". Letter counting: one
+      commonly given reason models miscount letters; a 2024 preprint (not peer reviewed) found many models could
+      identify the letters but still miscounted, especially letters appearing more than twice (Fu et al., 2024). Do not
+      overclaim: "the model got it right" is a valid probe result, and many current tools count short words correctly.
+    questions:
+      - q: "So why do some chat tools count the r's in strawberry correctly?"
+        a: "Many current tools do, especially ones that show a reasoning step first or spell the word out. Tokens are one reason for failures, not a guarantee of failure; the lab's probe 1 tests it (§3.1; Lab 3.1 notes)."
+    misconceptions:
+      - m: "M1 'The model reads words and letters the way I do.'"
+        fix: "Show the four pieces of the drug name; the model receives a few numbers, not 18 letters."
+    activity: "Faded example aloud: 'Name one way to check the letter count without trusting the model.' (Count it yourself, or use a word processor or code.)"
+    book: "§3.1, @fig-3-3a; Faded Example 'A Drug Name'."
+
+- layout: lab
+  minutes: 9
+  kicker: "Demonstration 1 · live · a tokenizer"
+  title: "What does the model actually receive?"
+  goal: "See tokens, and test the language prediction"
+  steps:
+    - {text: "Paste “A good name for a coffee shop near campus is”; count the tokens", min: 2}
+    - {text: "Paste “ strawberry”, then “ hydroxychloroquine”; compare the pieces", min: 2}
+    - {text: "A volunteer’s sentence in another language, then its English; compare counts", min: 3}
+    - {text: "Ask: what follows for letter counts, cost and length limits?", min: 2}
+  side:
+    - {heading: "Record", text: "Tokenizer name and date with every count"}
+    - {heading: "Backup", text: "Dated outputs saved in advance; or use Elif’s counts (next slide)"}
+    - {heading: "Privacy", role: risk, text: "No personal text; a sentence anyone may see"}
+  notes:
+    say: |
+      Let's see it live. I paste the coffee-shop prompt from the book into a free tokenizer page: it splits into ten
+      tokens, each with a number. Notice the spaces: a token often includes the space in front of a word. Now
+      "strawberry" with a leading space: one token. The model receives one number, not ten letters. Now the drug name:
+      four pieces, none of them a word. Next, I need a volunteer: give me one ordinary sentence in a language you know
+      well other than English, nothing personal. We paste it, then its English translation, and compare the counts.
+      Before I press the button: who predicts the other language needs more tokens? Finally, what follows? Letter
+      counts can go wrong, rare names cost more tokens, and length limits and prices are counted in tokens, not words.
+    background: |
+      The chapter's time paragraph promises this demonstration. Instructor package: save the tokenizer demonstration
+      and its dated outputs before the concept session (docs/production/instructor-package.md, Chapter 3).
+      Current tokenizer pages are listed in Compass ([COMPASS: tokenizer pages]); stay tool-neutral on screen. Expected
+      results with the book's newer tokenizer (o200k_base): the coffee-shop prompt = ten tokens (@fig-3-3a); " strawberry"
+      = one; " hydroxychloroquine" = four. Short sentences give noisy ratios; a paragraph gives a steadier one (Lab 3.2
+      notes). A tokenizer page may count differently from the book's if it uses another tokenizer; that is the point of
+      recording its name.
+    questions:
+      - q: "Why does my language cost more?"
+        a: "Because the tokenizer was built from text in which your language was rarer, so its words split into more pieces. The gap depends on the tokenizer; newer ones narrow it (§3.1, @fig-3-2)."
+    misconceptions:
+      - m: "M1 'The model reads words and letters the way I do.'"
+        fix: "Point at the pieces on screen: these numbers are all the model receives."
+    activity: |
+      2 min coffee prompt · 2 min strawberry and the drug name · 3 min volunteer sentence (prediction by hands first) ·
+      2 min consequences. If the network fails, use the dated outputs you saved and go straight to Elif's example.
+    book: "§3.1 Your Turn; Lab 3.2; instructor package (Chapter 3)."
+
+- layout: compare
+  minutes: 1
+  kicker: "§3.1 · worked example · psychology (constructed abstract)"
+  title: "Elif’s abstract: fewer words, more tokens"
+  size: 24
+  columns:
+    - heading: "English"
+      role: soft
+      bullets: ["59 words", "68 tokens (newer)", "67 tokens (older)"]
+    - heading: "Turkish"
+      role: soft
+      bullets: ["51 words", "110 tokens (newer)", "155 tokens (older)"]
+    - heading: "What follows"
+      role: neutral
+      bullets: ["About 1.6× to 2.3× the tokens", "Costs more; less fits"]
+  takeaway: "The result depends on the tokenizer: always name it"
+  notes:
+    say: |
+      Here is the book's worked example. Elif writes a short abstract for her research-methods class in English and in
+      Turkish. Count words: English 59, Turkish 51. Turkish adds many endings to one word, so it needs fewer words.
+      Count tokens: with a newer tokenizer, English is 68 tokens and Turkish 110. With an older tokenizer from the same
+      company, 67 and 155. So the Turkish version has fewer words but about 1.6 times as many tokens with the newer
+      tokenizer, and about 2.3 times as many with the older one. What follows? If a tool charges per token, the Turkish
+      version costs more. If a tool takes a fixed number of tokens, less Turkish text fits. And because the result
+      depends on the tokenizer, name it whenever you report a count.
+    background: |
+      Constructed example: the abstract describes an invented study; the Turkish translation is the book's (§3.1).
+      Counts computed by the book with tiktoken 0.8.0 (newer = o200k_base, older = cl100k_base). Elif Kaya: first-year
+      psychology student from İzmir (characters file); the Ethics Lens returns to her ("Whose Language Costs More?").
+    questions:
+      - q: "Fewer words but more tokens: how?"
+        a: "The tokenizer splits many Turkish words into several pieces, so the same content needs more tokens (Review A3, key (c))."
+    activity: "Ask the volunteer from the demo whether their ratio was closer to 1.6 or 2.3, and which tokenizer the page used."
+    book: "§3.1 Worked Example 'Elif's Abstract in Two Languages'."
+
+- layout: figure
+  minutes: 1
+  kicker: "§3.1 · computed by the book (Oct 2026): the UDHR in nine languages"
+  title: "The same text costs more tokens in many languages"
+  figure: f3-02-tokens-languages
+  takeaway: "Older tokenizer: Tamil 9.6×; newer: 2.5×. Narrowed, not closed"
+  notes:
+    say: |
+      The pattern holds for longer texts. The book ran the full Universal Declaration of Human Rights, which exists in
+      many languages, through the same two tokenizers. Each bar shows how many tokens a language needs relative to
+      English. With the older tokenizer, the Tamil version needs 9.6 times as many tokens as English, and Hindi 5.6
+      times. The newer tokenizer narrows the gaps to 2.5 and 1.7 times, but it does not close them. Researchers who
+      compared many tokenizers on 2,000 sentences translated into 200 languages found gaps of up to 15 times. Is that a
+      technical detail or a fairness issue? Keep that question; it is a discussion question at the end of the chapter.
+    background: |
+      Values (data/ch03_tokens.csv; @fig-3-2): English 1.0/1.0; Spanish 1.2/1.5; Turkish 1.5/2.0; Russian 1.4/2.6;
+      Chinese (simplified) 1.2/1.7; Arabic 1.2/2.6; Vietnamese 1.5/2.7; Hindi 1.7/5.6; Tamil 2.5/9.6 (newer/older).
+      Petrov et al. (2023), NeurIPS: same 2,000 sentences in up to 200 languages; the tokenizer used by ChatGPT and GPT-4
+      at the time needed about 1.6× for Italian, 2.6× Bulgarian, 3× Arabic, up to 15× for Shan (a language of
+      Myanmar); consequences: higher cost, slower processing, less text in a fixed context (Short case 2). Ratios vary
+      with the text: the book's own measurement with the same older tokenizer gives 2.6× for Arabic.
+    questions:
+      - q: "Should providers charge the same for the same content in every language?"
+        a: "Open question (Review C3): strong answers separate the technical cause (the tokenizer) from the fairness question (who pays the difference) and consider options such as pricing by content or better tokenizers."
+    activity: "Ask students to find their own language, or the closest one, on the chart."
+    book: "§3.1, @fig-3-2; Case Study Short case 2; Ethics Lens; Review C3."
+
+- layout: quiz
+  minutes: 0.5
+  kicker: "Quick check · §3.1"
+  title: "fewer words, more tokens"
+  question: "Elif’s Turkish abstract had fewer words than the English version but more tokens. Which explanation fits best?"
+  options:
+    - "Turkish words are longer, so each one takes more time to process."
+    - "The model receives Turkish text letter by letter, so every letter is a token."
+    - "The tokenizer splits many Turkish words into several pieces."
+    - "Token counts are random and differ every time."
+  answer: c
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) confuses length with processing; (b) is M1; (d) is false: a given tokenizer always counts the same"
+  notes:
+    say: |
+      Quick check, ungraded. Elif's Turkish abstract had fewer words than the English one but more tokens. Which
+      explanation fits best? Read all four. One of them is the misconception we named at the start of the section,
+      that the model receives letters. Another sounds technical but confuses two different things. Give them twenty
+      seconds and take a vote. If anyone picks (d), ask them what happened in the demonstration when we pasted the
+      same text twice: did the count change?
+    background: |
+      Item: Review Questions A3 (O1 · LO1 · Understand). Key from Appendix E: (c). The slide shortens option (c) ("…so
+      the same content needs more tokens") to fit one line. Distractors: (a) confuses length with processing; (b) is M1;
+      (d) is false (counts for a given tokenizer are fixed).
+    activity: "20 s, then vote."
+    book: "§3.1; Review Questions A3; Appendix E (Chapter 3)."
+  answer_minutes: 0.25
+  answer_notes:
+    say: |
+      The answer is (c): the tokenizer splits many Turkish words into several pieces, so the same content needs more
+      tokens. Option (b) is the misconception from the start of the section: the model never receives letters one by
+      one. Option (a) mixes up the length of a word with how it is processed. Option (d) is simply false: for a given
+      tokenizer, the same text always gives the same count, which is exactly why you should name the tokenizer when
+      you report a count. Now step two: what the model does with those numbers.
+    background: |
+      Appendix E, Chapter 3, Review A3 key and distractor logic.
+    activity: "Reveal; move on."
+    book: "§3.1; Appendix E (Review A3)."
+
+# ----------------------------------------------------------------------- 3.2
+- layout: section
+  minutes: 0.25
+  number: "3.2"
+  tag: "Core"
+  title: "Predicting the next token"
+  idea: "The model scores every possible next token; one is picked with some chance."
+  meta: "Book §3.2 · Demonstration 2: one question, five times"
+  notes:
+    say: |
+      Once the text is a row of numbers, the model has one job: produce scores for what comes next. This section
+      explains the "likely text" idea from Chapter 1 in detail, and it answers a question you met in Chapter 1:
+      why does the same prompt give different answers? Remember Sam's parts sorter from Chapter 2: it scored three
+      possible answers. A language model does the same thing, but over tens or hundreds of thousands of possible next
+      tokens, and then it does it again, and again.
+    background: |
+      Section 3.2 is Core. Terms: probability distribution, sampling (of tokens), next-token prediction, temperature
+      (an option, never a "setting": Chapter 3 terminology rule). Reasoning tokens: some tools first produce extra
+      tokens, sometimes hidden, made the same way; they take up context and count toward cost (OpenAI, 2024, n.d.).
+    misconceptions:
+      - m: "M3 'The same prompt should always give the same answer; a different answer means an error.'"
+        fix: "Announce that the next demonstration produces different answers on purpose."
+    activity: "Transition slide."
+    book: "§3.2 Predicting the Next Token."
+
+- layout: worked
+  minutes: 1
+  kicker: "§3.2 · worked example · signature diagram 4 · illustrative scores"
+  title: "Naming a coffee shop, one token at a time"
+  context: "Prompt: “A good name for a coffee shop near campus is”"
+  # The final reveal is about 60 words: the four steps on one slide are the point of the example
+  # (deliberate exception to the 50-word limit, as in the Chapter 1 worked example).
+  max_words: 65
+  steps:
+    - {label: "Split", text: "ten tokens"}
+    - {label: "Score", text: "“ The” 30% · “ Bean” 16% · “ Brew” 12% · …"}
+    - {label: "Pick", text: "one, with these chances: say “ Bean”"}
+    - {label: "Add and repeat", text: "“… campus is Bean”, then score again"}
+  reveal: [2, 4]
+  result: "Small chances at each step add up to different answers"
+  notes_reveal:
+    - minutes: 1
+      say: |
+        Every token of a response is produced in four steps. One, split the text into tokens. Two, score every
+        possible next token: given the tokens so far, the model produces a score for every token in its list, and the
+        scores are turned into a probability distribution, a set of chances for all possible outcomes that add up to
+        100 percent. In the book's illustration: " The" 30 percent, " Bean" 16, " Brew" 12, " Campus" 9, and twenty
+        other tokens share the rest; a real model also gives tiny chances to thousands more. Pause: what happens next?
+      background: |
+        Illustrative scores chosen by the book, not output from a real model (§3.2): " The" 30%, " Bean" 16%, " Brew"
+        12%, " Campus" 9%, " Common" 6%, " Java" 5%, " Grounds" 4%; twenty other tokens share the remaining 18%. In
+        this chapter "scores" and "chances" describe the same thing.
+      activity: "Ask: 'Which token will be picked?' Most say ' The'. Then reveal."
+      book: "§3.2 four steps; Worked Example 'Naming a Coffee Shop', @fig-3-3b."
+    - minutes: 0.5
+      say: |
+        Three, pick one token according to these chances; that is called sampling. " The" is the most likely single
+        pick, but it is picked only about three times in ten. Suppose " Bean" was picked. Four, add it and repeat: the
+        text is now "near campus is Bean", and the model scores every possible next token again. A response is a long
+        chain of these steps: next-token prediction. And this answers Chapter 1's question: run the same prompt again
+        and a different token may win at step three; every later step starts from different text. Different answers
+        are not a fault; picking with some chance is how text is produced.
+      background: |
+        Unless a tool always takes the top-scoring token, picking with some chance is how text is produced (§3.2). Check
+        Yourself 3.2 items 1 and 2. Faded example: "The first section of a lab report should" → " state" 35%,
+        " describe" 25%, " explain" 15%, " include" 10%; if " describe" is picked, the model next receives "The first
+        section of a lab report should describe".
+      misconceptions:
+        - m: "M3 '…a different answer means an error.'"
+          fix: "Point at step 3: chance is part of the procedure, so variation is expected."
+      activity: "Reveal; read the bottom bar."
+      book: "§3.2 Worked Example; Faded Example 'Finishing a Lab Report Sentence'."
+  notes:
+    book: "§3.2 Worked Example 'Naming a Coffee Shop'."
+
+- layout: lab
+  minutes: 9
+  kicker: "Demonstration 2 · live · repeated sampling"
+  title: "One question, five answers"
+  goal: "See sampling at work: what stays, what changes"
+  steps:
+    - {text: "Send the coffee-shop prompt five times, each in a new chat", min: 3}
+    - {text: "Mark on the board what stays the same and what changes", min: 2}
+    - {text: "Now a prompt with one right answer (a date), five times", min: 2}
+    - {text: "Compare: which varied more, and which step explains it?", min: 2}
+  side:
+    - {heading: "Record", text: "Tool, model name if shown, options, date"}
+    - {heading: "Backup", text: "Dated sample outputs on your course site; dice version of the score table"}
+    - {heading: "Privacy", role: risk, text: "Temporary chat or memory off where the tool allows"}
+  notes:
+    say: |
+      Second demonstration. I send the same open prompt five times, each in a new chat, so that no earlier
+      conversation is included. Watch the first word of each answer: that is step three, the pick, happening live.
+      Let's mark on the board what stays the same and what changes. Now a prompt with one right answer, for example the
+      date of a well-known historical event. Five times again. Which prompt varied more? The open prompt, almost
+      always, because many tokens have similar chances at many steps, so different paths are likely. With one right
+      answer, the top token usually dominates, so wording changes but the answer rarely does, though not never. That is
+      why a single run is weak evidence in both directions.
+    background: |
+      The chapter's time paragraph promises this demonstration (one question asked several times); it previews Lab
+      3.1 probe 2 and optional Lab 3.3
+      (open prompt vs. one-answer prompt, five runs each). Expected observations (Lab 3.1 and 3.3 notes): core content
+      often repeats while wording, order and examples change; the one-answer prompt varies less, occasionally even in
+      the answer. Temperature, if a developer tool exposes it: a low value makes top tokens even more likely, a high
+      value spreads chances out; it changes how a token is picked, not the model's settings. Save dated outputs
+      before the session (instructor package). Paper version: roll dice to pick tokens from a printed score table.
+    questions:
+      - q: "If I set temperature to zero, is the answer correct?"
+        a: "No. Lower temperature makes the top-scoring tokens get picked more often; it does not make the answer more accurate (Review A7). Likely is not the same as true."
+    misconceptions:
+      - m: "M3 'The same prompt should always give the same answer.'"
+        fix: "Five live answers to one prompt; nothing is broken."
+    activity: |
+      3 min five runs (paste into new chats quickly) · 2 min board: same / different · 2 min one-answer prompt · 2 min
+      discussion. Students who prefer not to use AI follow on screen; nobody needs a device.
+    book: "§3.2 'Why two runs differ'; Lab 3.3; Lab 3.1 probe 2."
+
+- layout: figure
+  minutes: 1
+  kicker: "§3.2 · illustrative scores at two temperatures (book figure)"
+  title: "Temperature: how often less likely tokens win"
+  figure: f3-04-temperature
+  takeaway: "Nothing in these steps checks whether the text is true"
+  notes:
+    say: |
+      Many developer tools, and some apps, offer an option called temperature. It does not change the model's settings,
+      only how a token is picked. A low temperature makes the top tokens even more likely; a high temperature spreads the
+      chances out. With the book's illustrative scores, " The" is picked 61 percent of the time at a temperature of 0.5,
+      and 18 percent at 1.5. Now the most important consequence of this section, on the bottom bar. The scores reflect
+      which tokens tend to follow similar text in the training data and, after later training stages, what people
+      rated as good responses. Nothing in these steps checks whether the result is true. That is why a fluent,
+      confident sentence can still be false.
+    background: |
+      @fig-3-4 (illustrative, chosen by the book): " The" 61% vs. 18%; other tokens combined rise from 1% to 35%. The book
+      also simulated ten picks at each temperature: at 0.5, " The" came up eight times; at 1.5, eight different tokens
+      came up, including " Fox" and " Perk". Terminology rule: "settings" = learned parameters; "options" = user
+      controls such as temperature; never call temperature a setting. Chapter 4 explains how failures happen; Chapter 8
+      shows how to check.
+    questions:
+      - q: "Is temperature how sure the model is?"
+        a: "No. It is an option that changes how often less likely tokens are picked. It does not measure confidence or truth (§3.6 Faded Example 'Label and Correct')."
+    misconceptions:
+      - m: "M2 'The model looks up the answer in a database of facts.'"
+        fix: "Scores reflect patterns in text and ratings, not a check against facts; connect to Chapter 1's 'fluent is not the same as correct'."
+    activity: "Ask: 'Which temperature would you want for brainstorming names, and which for a definition?'"
+    book: "§3.2 temperature paragraph, @fig-3-4; 'the most important consequence' paragraph."
+
+- layout: compare
+  minutes: 0.5
+  kicker: "§3.2 · box: two meanings of sampling"
+  title: "Same word, two different ideas"
+  size: 26
+  columns:
+    - heading: "Chapter 2: a sample"
+      role: soft
+      bullets: ["The examples a dataset contains", "Sampling: choosing which go in"]
+    - heading: "Chapter 3: sampling"
+      role: ai
+      bullets: ["Picking the next token", "According to the model’s scores"]
+  takeaway: "In your A2 map: one sense per term, and say which"
+  notes:
+    say: |
+      A warning about vocabulary, because it matters for your concept map. In Chapter 2, a sample is the set of examples
+      a dataset contains, and sampling means choosing which examples go into it, as in the 1936 poll. In this chapter,
+      sampling means picking the next token according to the model's scores. Same word, two different ideas. In your
+      A2 map, use one sense per term and say which. If you link "sampling" to "population", for example, your link is
+      about Chapter 2's sense; if you link "sampling" to "temperature", it is about this chapter's sense. A map that
+      mixes them will contain a false sentence.
+    background: |
+      Box "Two Meanings of Sampling" (§3.2) and the A2 pool note in both chapters ("sample" in Chapter 2 is not
+      "sampling" in Chapter 3). Review A6 asks students to explain both meanings (even item: key not in Appendix E).
+    activity: "Ask one student to say a true link for each sense."
+    book: "§3.2 box 'Two Meanings of Sampling'; A2 pool note."
+
+- layout: quiz
+  minutes: 0.5
+  kicker: "Quick check · §3.2"
+  title: "same prompt, two answers"
+  question: "You send the same prompt twice and get two different answers. Which statement is most accurate?"
+  options:
+    - "The model malfunctioned the second time."
+    - "The model used the first answer to improve the second."
+    - "The model looked up the answer in two different databases."
+    - "A token is picked with some chance at each step, so the runs can differ."
+  answer: d
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) is M3; (b) is M4: the model does not learn from your chat; (c) is M2"
+  notes:
+    say: |
+      Quick check, ungraded. You send the same prompt twice and get two different answers. Which statement is most
+      accurate? You have just seen this happen live, so this should be fast. But read every option: each wrong one
+      hides a misconception you will meet again, including one about learning from your conversation that the next
+      section takes apart. Think about the four steps we just walked through: at which step could two runs part ways?
+      And is there any step where the model consults an outside source? Twenty seconds on your own, then vote.
+    background: |
+      Item: Review Questions A5 (O1 · LO1 · Understand). Key from Appendix E: (d). Distractors: (a) M3; (b) M4 (the
+      model does not learn from the conversation); (c) M2. Option (d) is shortened on the slide from the book's "At each
+      step a token is picked with some chance, so the two runs can follow different paths".
+    activity: "20 s, then vote."
+    book: "§3.2; Review Questions A5; Appendix E."
+  answer_minutes: 0.25
+  answer_notes:
+    say: |
+      The answer is (d): at each step a token is picked with some chance, so the two runs can follow different paths.
+      Option (a) treats variation as a fault. Option (c) treats the model as a lookup system. Option (b) deserves a
+      second look, because many people believe it: that the model used the first answer to improve the second. It did
+      not; a new chat does not even include the first answer, and the model's settings do not change while you use it.
+      That is our next section: training, then inference.
+    background: |
+      Appendix E, Chapter 3, Review A5 key and distractor logic.
+    activity: "Reveal; bridge to §3.3."
+    book: "§3.2; Appendix E (Review A5)."
+
+# ----------------------------------------------------------------------- 3.3
+- layout: section
+  minutes: 0.25
+  number: "3.3"
+  tag: "Core"
+  title: "Training, then inference"
+  idea: "Training changes the settings; inference only uses them."
+  meta: "Book §3.3 · the knowledge cutoff · the reversal curse explained"
+  notes:
+    say: |
+      So far the scores have simply existed. Where do they come from, and why do they not change while you chat?
+      Chapter 2 gave you the two words: training, when a model's settings change, and inference, when a trained model
+      produces outputs for new inputs. This section applies them to chat models, and by the end you can explain the
+      reversal curse from the opening case. One vocabulary rule for the rest of the chapter: "settings" means the
+      model's learned values; controls you can change, such as temperature or search on or off, are called "options".
+    background: |
+      Section 3.3 is Core. Terms: pretraining, instruction tuning, learning from human feedback, knowledge cutoff,
+      memory (product feature). Settings = parameters (Chapter 2); options = user controls (book-wide terminology
+      fixed by Chapter 3).
+    misconceptions:
+      - m: "M4 'It learns from my conversation, and its knowledge is complete up to its cutoff.'"
+        fix: "Name both halves; the next two slides refute each."
+    activity: "Transition slide."
+    book: "§3.3 Training, Then Inference."
+
+- layout: lanes
+  minutes: 1.25
+  kicker: "§3.3 · two phases (book figure: training, then inference)"
+  title: "Training changes the settings; inference only uses them"
+  rows:
+    - label: "Training: settings change"
+      nodes:
+        - {label: "Pretraining: predict the next token", kind: step}
+        - {label: "Instruction tuning: good responses", kind: step}
+        - {label: "Human feedback: people rank", kind: human}
+    - label: "Inference: settings fixed"
+      nodes:
+        - {label: "Your prompt", kind: human}
+        - {label: "Model, settings frozen", kind: ai}
+        - {label: "Response: likely text", kind: step}
+  caption: "Knowledge cutoff: text written after it did not shape the settings"
+  takeaway: "Correcting a model in a chat does not change its settings"
+  notes:
+    say: |
+      Training for a chat model has several stages. The first, pretraining, is self-supervised learning from Chapter 2
+      on very large collections of text: the model is shown text up to a point, scores every possible next token, and
+      the settings are adjusted so the real next token gets a higher score. The real text provides the label, so no
+      person labels anything. After pretraining, the model continues text but does not reliably follow instructions. In
+      the best-known recipe, instruction tuning trains it further on prompts paired with good responses written by
+      people; then, in learning from human feedback, people rank responses, a scoring model is trained on their
+      rankings, and the settings move toward responses that score higher. Then training ends and the settings are
+      fixed. Every time you use the tool, that is inference.
+    background: |
+      Ouyang et al. (2022), NeurIPS: the instruction-tuning and human-feedback recipe. Newer recipes also use examples
+      and feedback produced by AI models (Bai et al., 2022). Drawn natively from @fig-3-5 (the book's version adds a
+      timeline with the knowledge cutoff as a dashed line). Review A12 (why pretraining is "self-supervised") and A15
+      (instruction tuning; key in Appendix E: prompts paired with good responses written by people; newer recipes also
+      use AI-generated examples).
+    questions:
+      - q: "Is learning from human feedback the model learning from my thumbs-up?"
+        a: "Not the model you are using: its settings are fixed during inference. Some providers may use conversations or feedback to train future versions, depending on your account and options (as of October 2026; §3.3)."
+    misconceptions:
+      - m: "M4 'It learns from my conversation.'"
+        fix: "Point at the bottom row: the settings are frozen while you chat."
+    activity: "Ask: 'In which row does your conversation happen?' (Bottom.)"
+    book: "§3.3, @fig-3-5; Review A15; Appendix E."
+
+- layout: compare
+  minutes: 1.25
+  kicker: "§3.3 · three consequences of fixed settings"
+  title: "A cutoff, no learning from your chat, no fact store"
+  size: 22
+  columns:
+    - heading: "Knowledge cutoff"
+      role: soft
+      bullets: ["Later text did not shape the settings", "Not a clean line"]
+    - heading: "No learning from chat"
+      role: soft
+      bullets: ["Corrections stay in this chat", "Memory adds notes, not training"]
+    - heading: "Patterns, not facts"
+      role: soft
+      bullets: ["“A’s mother is B” trains one way", "Hence the reversal curse"]
+  takeaway: "Your chat never retrains the model you are using"
+  notes:
+    say: |
+      Three consequences. One, a knowledge cutoff: the date after which no text was collected for training. Events
+      after it are not in the settings unless a tool adds them to what the model receives. And it is not a clean line:
+      a model's effective cutoff can differ from the reported one. Two, no learning from your chat: correcting a model
+      does not change its settings. The correction stays in the conversation, so it can shape later responses in that
+      chat. A memory feature adds saved notes to later conversations; it does not train the model. Some providers may
+      train future versions on chats, depending on your options, never the one you are using. Three, patterns,
+      not a fact store. During training the model always scores what comes after the text before it. "A's mother is B"
+      raises the score for B after "A's mother is"; it gives no practice producing A after "a child of B is". That is
+      the researchers' suggested explanation of the reversal curse.
+    background: |
+      Cheng et al. (2024, COLM): effective cutoffs can differ from the reported one and between data sources. Memory
+      features and training on user conversations are dated "as of October 2026"; current details by provider are in
+      Compass ([COMPASS: training-data options by provider]); Chapter 15 covers privacy. Reversal curse attribution: for
+      the invented-fact test, training raised scores in the trained direction only; for real celebrities, the
+      researchers suggest training text more often names the celebrity first (reported tier: the authors'
+      interpretation); they also mention tuning GPT-4 to avoid information about individuals. The book notes it cannot
+      explain why untuned Llama-1 base models showed the same gap (inferred tier: the book's own reading). Carlini et
+      al. (2021): a model can repeat training text almost word for word; that is still producing likely tokens.
+    questions:
+      - q: "If my correction does not train the model, why does it get it right later in the same chat?"
+        a: "Because the correction is in the conversation, and the conversation is part of what the model receives at every turn (§3.4)."
+      - q: "Why can it name a celebrity's mother but not the mother's famous child?"
+        a: "Training text more often runs from celebrity to parent, and training only practices continuing text forward, so the reverse continuation gets no practice; once the fact is in the prompt, the reversal works (Check Yourself 3.3 item 3; Case Study Question 3)."
+    misconceptions:
+      - m: "M4 '…its knowledge is complete up to its cutoff.'"
+        fix: "Coverage is uneven before the cutoff too (Cheng et al., 2024)."
+      - m: "M2 'The model looks up the answer in a database of facts.'"
+        fix: "A fact store would answer both directions; patterns learned forward do not."
+    activity: "Worked Example 'Last Week's News' as a 20-second oral check: with search off, what should Elif expect?"
+    book: "§3.3 three consequences; Worked Example 'Last Week's News'; Faded Example 'Which Questions Need Current Information?'."
+
+- layout: quiz
+  minutes: 0.5
+  kicker: "Quick check · §3.3"
+  title: "the correction that did not stick"
+  question: "You correct a chat tool’s mistake. A week later, in a new chat with memory off, it repeats the mistake. Why?"
+  options:
+    - "The correction trained the model, but a new chat starts from an older copy."
+    - "The model stored your correction as a fact, but only for your account."
+    - "Correcting a model during inference does not change its settings."
+    - "Its knowledge is complete up to its cutoff, so it cannot accept new facts."
+  answer: c
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) and (b) are M4: the chat trains or stores facts; (d) is the cutoff half of M4"
+  notes:
+    say: |
+      Quick check, ungraded, and it is a good exam-style item. You correct a chat tool's mistake. A week later, in a new
+      chat with memory turned off, it makes the same mistake. Why? Notice the two details in the question: a new chat,
+      and memory off. They remove the two ways your correction could have reached the model again. Twenty seconds,
+      then vote. Expect some votes for (a) and (b): both sound like how a tool might work, and both assume the chat
+      changed the model.
+    background: |
+      Item: Review Questions A9 (O2 · LO1 · Understand). Key from Appendix E: (c); (a) and (b) are versions of M4 (the
+      chat trains or stores facts in the model); (d) is the second half of M4 (knowledge is not "complete up to" the
+      cutoff, and the cutoff is not why the correction disappeared). Option (d) shortened slightly on the slide.
+    activity: "20 s, then vote."
+    book: "§3.3; Review Questions A9; Appendix E."
+  answer_minutes: 0.25
+  answer_notes:
+    say: |
+      The answer is (c). Correcting a model during inference does not change its settings; the correction stayed in
+      the old conversation. A new chat does not include it, and with memory off no saved note adds it back. Options (a)
+      and (b) both assume the conversation changed or stored something inside the model. Option (d) mixes in the
+      cutoff, which is not why the correction disappeared, and wrongly assumes knowledge is complete up to the cutoff.
+      So where does a correction live? In the context window. That is the next section.
+    background: |
+      Appendix E, Chapter 3, Review A9 key and distractor logic.
+    activity: "Reveal; bridge to §3.4."
+    book: "§3.3; Appendix E (Review A9)."
+
+# ----------------------------------------------------------------------- 3.4
+- layout: section
+  minutes: 0.25
+  number: "3.4"
+  tag: "Core"
+  title: "The context window"
+  idea: "Everything the model receives in one turn must fit, and not all of it is used equally well."
+  meta: "Book §3.4 · diagnostic only; designing context is Chapter 6"
+  notes:
+    say: |
+      The settings are fixed, but the response still depends on what the model receives. When you send a message, the
+      model does not receive only that message. It receives a whole package of text, rebuilt at every turn. A student
+      pastes a long reading; an analyst pastes a report. This section names what is in that package, and gives you one
+      diagnostic habit for long inputs: predict which parts are most likely to be missed, then check those parts. It
+      also explains where your correction from the last quick check actually lives.
+    background: |
+      Section 3.4 is Core and diagnostic only; designing context is the subject of Chapter 6 (Deep). Terms: context
+      window, system prompt ("system prompt" only for the provider's or developer's layer; book-wide terminology).
+    misconceptions:
+      - m: "M5 'If it fits in the context window, the model uses all of it equally well.'"
+        fix: "Name it; the chart in two slides is the refutation."
+    activity: "Transition slide."
+    book: "§3.4 The Context Window."
+
+- layout: compare
+  minutes: 1
+  kicker: "§3.4 · signature diagram 4: the context window"
+  title: "What the model receives in one turn"
+  size: 22
+  columns:
+    - heading: "System prompt"
+      role: neutral
+      bullets: ["From the provider; usually unseen"]
+    - heading: "Conversation"
+      role: soft
+      bullets: ["Earlier prompts and responses"]
+    - heading: "Pasted or retrieved"
+      role: soft
+      bullets: ["Your documents; passages a tool found"]
+    - heading: "Your prompt"
+      role: human
+      bullets: ["The newest message"]
+  takeaway: "Measured in tokens, the response included; resent at every turn"
+  notes:
+    say: |
+      The context window is the space for everything the model receives in one turn, measured in tokens; the response
+      the model writes also counts toward it. It usually holds four kinds of text. A system prompt: instructions from
+      the tool's provider or developer, which you usually do not see. The conversation so far: your earlier prompts and
+      the earlier responses. Pasted or retrieved text: documents you added, or passages a tool found. And your prompt,
+      the newest message. When a tool adds tool results or memory notes, they go into the same window. Every window
+      has a size limit; when a conversation grows past it, tools handle the overflow differently, for example by
+      dropping or shortening older parts.
+    background: |
+      Sizes and overflow methods change often; current numbers are in Compass ([COMPASS: context-window sizes by tool]);
+      no product numbers in Core. From the Field (Şeker & Nizam-Özoğur, 2026): in an LLM-assisted software project,
+      generated code often did not follow project-wide decisions over a long project, so developers restated them in
+      structured prompts; the earlier version links this to the limited context window (a present-day connection
+      drawn by the book). Check Yourself 3.4 item 1 asks for the four kinds of text.
+    questions:
+      - q: "Is the context window the model's memory of all my past chats?"
+        a: "No. It is the space for what the model receives in one turn. The model keeps nothing between turns; the system resends the conversation, and a memory feature, if on, adds saved notes (§3.6 worked correction)."
+    misconceptions:
+      - m: "M4 'It learns from my conversation.'"
+        fix: "The conversation is resent as input every turn; nothing is learned."
+    activity: "Review A14 orally: which is not usually part of the context window? (The model's settings.)"
+    book: "§3.4 four kinds of text, @fig-3-3c; Check Yourself 3.4."
+
+- layout: figure
+  minutes: 1
+  kicker: "§3.4 · Liu et al. (2024): 20 retrieved passages, one with the answer"
+  title: "The middle of a long input was used least reliably (2023 models)"
+  figure: f3-06-lost-middle
+  takeaway: "Predict which parts of a long input may be missed; check them"
+  notes:
+    say: |
+      A common belief is that if text fits in the window, the model uses all of it equally well. A 2023 study tested
+      that directly. Researchers gave models a question and 20 retrieved passages, only one of which held the answer,
+      and moved that passage from first to last. With GPT-3.5-Turbo, 75.8 percent of questions were answered correctly
+      when the answer was first, 63.2 percent when it was last, and 53.8 percent when it was in the middle. That middle
+      score was lower than the 56.1 percent the model reached with no passages at all, answering from its training
+      alone. These were 2023 models, and newer ones may do better. Treat it as a pattern to test, not a law: before you
+      rely on a long input, predict which parts are most likely to be missed, then check them.
+    background: |
+      Liu et al. (2024), TACL 12 ("Lost in the middle"); published values in @fig-3-6: GPT-3.5-Turbo (0613) 75.8, 57.2,
+      53.8, 55.4, 63.2 at positions 1, 5, 10, 15, 20; Claude-1.3 flatter (59.9 to 60.1); closed-book lines 56.1 and
+      48.3. Worked Example (Hana, they/them, a history minor): a digitized 1890s county history; predict the middle
+      question is most at risk; ask each question in a new chat; check against the page; the constructed result: the
+      middle answer gives a date from a different chapter; repeat and ask for a supporting quotation, and search the
+      document for it. Faded: Lucía's 60-message support thread, email change in message 31 (privacy: Chapter 15).
+    questions:
+      - q: "So should I put important things at the start?"
+        a: "That is a design question for Chapter 6. For now, the habit is diagnostic: predict which parts are at risk, then check them against the source. The lab's probe 3 tests your own tool."
+    misconceptions:
+      - m: "M5 'If it fits in the context window, the model uses all of it equally well.'"
+        fix: "Middle position: lower than no passages at all, for that model in 2023."
+    activity: "Ask: 'Where in a 60-message thread is a detail most at risk?' (Lucía's faded example: the middle.)"
+    book: "§3.4, @fig-3-6; Worked Example 'Hana's Long Document'; Faded Example 'A Long Support Thread'; Case Study Short case 1."
+
+# ----------------------------------------------------------------------- 3.5
+- layout: section
+  minutes: 0.25
+  number: "3.5"
+  tag: "Core"
+  title: "Retrieval and tools (and what agents are)"
+  idea: "Search and tools change what the model receives, not how it predicts."
+  meta: "Book §3.5 · the search-then-generate lane from Chapter 1"
+  notes:
+    say: |
+      Last piece of the anatomy. Many AI tools now do more than predict from their settings: they search, or they run
+      a calculator or code. A common belief is that if a tool searched, its answer is correct. To see why that does not
+      follow, look at what search and tools actually add. The short version is on the slide: they change what the model
+      receives, not how it predicts. This is Chapter 1's third lane, search-then-generate, seen from the inside.
+    background: |
+      Section 3.5 is Core. Terms: retrieval (retrieval-augmented generation, RAG; Lewis et al., 2020), tool use
+      (Schick et al., 2023), agent (one paragraph; Chapter 14 owns agents). Chapters 8 and 9 own citation and source
+      checking; here the habit is simpler.
+    misconceptions:
+      - m: "M6 'If the tool searched the web or my files, the answer is correct.'"
+        fix: "Name it; the next slides show what can still go wrong."
+    activity: "Transition slide."
+    book: "§3.5 Retrieval and Tools (and What Agents Are)."
+
+- layout: lanes
+  minutes: 1.25
+  kicker: "§3.5 · what search and tools add (book figures: three lanes; anatomy)"
+  title: "Search and tools change the input, not the machine"
+  rows:
+    - label: "Model alone"
+      nodes:
+        - {label: "Your prompt", kind: human}
+        - {label: "Model: settings only", kind: ai}
+        - {label: "Response", kind: step}
+    - label: "With retrieval"
+      nodes:
+        - {label: "Search finds passages", kind: step}
+        - {label: "Passages added to context", kind: step, role: soft}
+        - {label: "Model writes with them", kind: ai}
+    - label: "With a tool"
+      nodes:
+        - {label: "Model requests a calculation", kind: ai}
+        - {label: "Tool result added to context", kind: step, role: soft}
+        - {label: "Model writes the answer", kind: ai}
+  caption: "Still produced token by token: each addition fixes some problems and leaves others"
+  takeaway: "For each claim: from added text, a tool’s result, or the settings alone?"
+  notes:
+    say: |
+      Retrieval means the system searches a collection, such as the web, a course website or a company's files, and adds
+      the passages it finds to the context window; the model then produces its response with those passages in front
+      of it. That is often called retrieval-augmented generation, RAG. Tool use means the model can produce a request to
+      run other software, such as a calculator; the system runs the tool and adds the result to the context. Instead of
+      producing the digits of a large multiplication token by token, the model requests the calculation and receives
+      the exact result. Neither retrieval nor tools change the model's settings or how it predicts. Both change what the
+      model receives. So the habit: for each claim, ask whether it came from the added text, from a tool's result, or
+      from the settings alone.
+    background: |
+      What you still check (§3.5 table): retrieval: are the passages reliable and current, do they say what the
+      response claims, were the right passages found? Calculator or code tool: was the right calculation requested with
+      the right numbers, is the result used correctly? Pasted documents: was all of it used (§3.4), does the response go
+      beyond it? Agents: some systems repeat model → tool → result steps on their own toward a goal; Anthropic (2024)
+      calls a system an agent when the model directs its own steps and tool use, and a workflow when people fixed the
+      steps in advance (Chapter 14). Review A13 (calculator tool) key in Appendix E.
+    questions:
+      - q: "What makes a system an agent rather than a workflow?"
+        a: "Who decides the steps: in an agent, the model directs its own steps and tool use; in a workflow, people fixed the steps in advance (Anthropic, 2024; Check Yourself 3.5 item 3)."
+    misconceptions:
+      - m: "M6 'If the tool searched, the answer is correct.'"
+        fix: "Retrieved text can be wrong, outdated or misread, and the response can go beyond it; checking citations is Chapters 8–9."
+    activity: "Ask: 'Which row is the AI summary at the top of a search page?' (Retrieval.)"
+    book: "§3.5, @fig-1-4 (repeated), @fig-3-3d and the 'What you still check' table."
+
+- layout: worked
+  minutes: 0.75
+  kicker: "§3.5 · worked example · constructed · five verdicts (Chapter 8)"
+  title: "Marking Elif’s search-then-generate answer"
+  context: "Elif asks a search tool: her scholarship’s GPA rule, semesters left"
+  # The final reveal is about 65 words: four claims with their verdicts on one slide are the point of the
+  # example (deliberate exception to the 50-word limit).
+  max_words: 70
+  steps:
+    - {label: "“3.0 GPA”", text: "office page → supported, if current"}
+    - {label: "“12 credits a semester”", text: "2019 forum → unsupported for now"}
+    - {label: "“Appeal within 30 days”", text: "no link → unsupported"}
+    - {label: "“5 semesters left”", text: "(120 − 45) ÷ 15 = 5 → arithmetic supported"}
+  reveal: [2, 4]
+  result: "A link shows what was retrieved, not that each claim is right"
+  notes_reveal:
+    - minutes: 0.5
+      say: |
+        Here is the habit in action. Elif asks a tool that searches: what grade point average do I need to keep my
+        international student scholarship, and how many semesters are left if I have 45 of 120 credits and take 15 per
+        semester? The response makes four claims. We mark them with the five verdicts this book uses: supported,
+        partly supported, unsupported, contradicted, cannot verify. Claim one, "you need a 3.0 GPA", links to the
+        scholarship office page: supported, if the page says 3.0 and is current. Claim two, "at least 12 credits per
+        semester", links to a 2019 student forum post: old and unofficial, so unsupported for now; check the official
+        page. Ask the class to mark claims three and four.
+      background: |
+        Constructed example (§3.5 Worked Example 'A Search-Then-Generate Answer'). The five-verdict scale is the book's
+        (owned by Chapter 8): supported · partly supported · unsupported · contradicted · cannot verify. GPA = grade
+        point average (define at first use).
+      activity: "30 seconds: pairs mark claims 3 and 4."
+      book: "§3.5 Worked Example; five verdicts."
+    - minutes: 0.25
+      say: |
+        Claim three, "you can appeal a lost scholarship within 30 days", has no link at all: unsupported; ask the
+        office. Claim four, "you have 5 semesters left", came from the calculator tool: 120 minus 45 is 75, divided by
+        15 is 5. The arithmetic is supported. But notice what the tool did not do: it assumes Elif keeps taking 15
+        credits, and the tool did only the arithmetic it was given. A wrong question gets an exact wrong answer. That is
+        the point of the bar: a link shows what was retrieved, not that each claim is right.
+      background: |
+        Faded example (city recycling rules): (1) "Glass every other Monday" [city page, this year] supported if the
+        page says so; (2) "Pizza boxes not accepted" [2018 news article] and (3) "Fines start at $50" [no link] are left
+        for students. Your Turn uses a dated retrieved answer provided on the course site (instructor package: needed
+        by the concept session). Review B3 (registrar's deadline, 2017 blog post) has a model answer in Appendix E.
+      questions:
+        - q: "Name two reasons an answer with sources can still be wrong."
+          a: "The retrieved pages can be wrong or outdated, the wrong passages can be retrieved, information in a long context can be used unevenly, and the response can go beyond what the sources say (Check Yourself 3.5 item 2; Review C1 guidance)."
+      activity: "Reveal; read the bottom bar."
+      book: "§3.5 Worked Example; Faded Example 'Marking a Retrieved Answer'; Review B3; Appendix E."
+  notes:
+    book: "§3.5 Worked Example 'A Search-Then-Generate Answer'."
+
+- layout: quiz
+  minutes: 0.5
+  kicker: "Quick check · §3.5"
+  title: "two links"
+  question: "A tool searched the web and shows two links. Which statement is most accurate?"
+  options:
+    - "The answer is correct because it was searched."
+    - "Retrieval retrained the model on the two pages, so the answer reflects them exactly."
+    - "The response copies the pages word for word."
+    - "Retrieval changed what the model received; the pages, and their use, can still be wrong."
+  answer: d
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) is M6; (b) confuses retrieval with training; (c): the response is still produced token by token"
+  notes:
+    say: |
+      Last quick check for today. A tool searched the web and shows two links. Which statement is most accurate? This
+      one pulls together the whole anatomy: what changes during training, what fills the context window, and how a
+      response is produced. Read every option and name the misconception behind each wrong one before you vote. Twenty
+      seconds. If you hear (b) defended, ask whether the model's settings changed when it searched. If you hear (a),
+      point back to Elif's second claim: it had a link, and the link led to an old forum post.
+    background: |
+      Item: Review Questions A11 (O3 · LO3 · Understand). Key from Appendix E: (d). (a) is M6; (b) confuses retrieval
+      with training (the settings do not change, so nothing is reflected "exactly"); (c) is false: the response is
+      still produced token by token and can differ from the pages. Option (d) shortened slightly on the slide.
+    activity: "20 s, then vote."
+    book: "§3.5; Review Questions A11; Appendix E."
+  answer_minutes: 0.25
+  answer_notes:
+    say: |
+      The answer is (d): retrieval changed what the model received; the pages, and the way the response uses them, can
+      still be wrong. Option (a) is the belief this section set out to break. Option (b) confuses retrieval with
+      training: the settings did not change. Option (c) forgets that the response is still produced token by token, so
+      it can differ from the pages. So the anatomy is complete: context window, tokens, scores, a pick, and the loop.
+      Search and tools only change what goes into the window.
+    background: |
+      Appendix E, Chapter 3, Review A11 key and distractor logic. Spaced Review 1: retrieval is Chapter 1's
+      search-then-generate lane.
+    activity: "Reveal."
+    book: "§3.5; Appendix E (Review A11)."
+
+- layout: concept
+  minutes: 0.75
+  kicker: "Before the lab session"
+  title: "Bring your Part 1 draft and two prompts"
+  size: 26
+  bullets:
+    - "Read Chapter 3 (Core: about 25–30 minutes)"
+    - "Bring your A2 Part 1 draft (Chapter 2 terms)"
+    - "Write two prompts from your field: one that will vary, one that won’t"
+    - "Optional: Wolfram (2023), about 10–15 minutes"
+  takeaway: "In the lab: probe the model, then turn results into terms"
+  notes:
+    say: |
+      Before the lab session, four things. Read Chapter 3: the core sections take about 25 to 30 minutes, the whole
+      core package about 50. Bring your A2 Part 1 draft with your Chapter 2 terms, because in the lab each Chapter 3 term
+      has to link to one of them. Do the Your Turn at the end of section 3.2: write two prompts from your field, one you
+      expect to vary a lot across runs and one you expect to vary little, and say why; you can test them in the lab. And
+      if you want the classic explanation of all this in prose, Wolfram's short book is recommended: the section on
+      producing text one word at a time. In the lab, use a tool you can reach; if you prefer not to use AI, the sample
+      outputs on your course site work just as well.
+    background: |
+      Chapter 3 time line: about 25–30 minutes for Core 3.1–3.5; about 50 minutes for the whole Core package (Opening
+      Case, 3.6, Case Study, Summary, end-of-chapter questions), plus time to answer them; allow longer if English is not
+      the student's first language. Recommended reading: Wolfram (2023), "It's Just Adding One Word at a Time" (about 10–15
+      minutes). Lab 3.1 materials on the course site before the lab session: the long public-domain text (about 3,000 words,
+      three placed facts), 5–6 dated events, 10 less famous parent–child pairs with sources, dated sample outputs for
+      every probe, the dice score table, a screen-reader-friendly probe record (instructor package). Students may use
+      a tool their institution provides or approves, or a free tier.
+    questions:
+      - q: "Which tool should I use in the lab?"
+        a: "Any chat tool you can reach: a tool your institution provides or approves (for example, an enterprise chat assistant with data protection), or a free tier. The book is tool-independent, and the no-device route uses dated sample outputs."
+    activity: "Leave up while students pack."
+    book: "Chapter 3 time paragraph; §3.2 Your Turn; Further Reading (Wolfram, 2023); Lab 3.1 materials."
+
+# ======================================================================= SESSION 2 · LAB
+- layout: section
+  session: thu
+  minutes: 0
+  number: "Lab"
+  tag: "Lab"
+  title: "Practice lab: probe the model"
+  idea: "Turn a guess about a model into evidence, then into terms for your map."
+  meta: "Book §3.6 · Lab 3.1 · A2 Part 2"
+  notes:
+    say: |
+      Welcome back. Today is the practice lab, Probe the model. By the end of the session your team will have run four
+      probes on a chat tool, and you will each have at least three Chapter 3 worked definitions and labeled links for
+      A2 Part 2. Form teams of three or four now. Take out your A2 Part 1 draft; if you do not have it, you can still do
+      the lab, but you will link your Chapter 3 terms to the Chapter 2 pool tonight. We start with a two-minute warm-up
+      from memory: no notes, no screens.
+    background: |
+      Lab-session flow (the book's standard pattern): lab briefing 10 · group practice in teams of 3–4, 45 · share and
+      critique 15 · exit step 5. Section 3.6 is Studio. A2 is due when the instructor sets it; one rubric (Chapter
+      2). Lab 3.1 is a jigsaw: each person runs one probe, then the team puts the parts together; every write-up is
+      individual.
+    activity: "Form teams of 3–4 while this slide is up."
+    book: "§3.6 Probe the Model (A2 Part 2); Hands-on Labs, Lab 3.1."
+
+- layout: quiz
+  minutes: 2
+  kicker: "Lab session · warm-up from memory"
+  title_prefix: "Warm-up"
+  title: "one token at a time"
+  question: "Name the four steps that produce each token of a response. Why can one prompt give two answers?"
+  instruction: "No notes, no screens: write it, then check with your team"
+  model_answer:
+    - "**Split into tokens → score every possible next token → pick one (sampling) → add it and repeat**"
+    - "Two answers: at step 3 a token is picked with some chance, so runs can follow different paths."
+  notes:
+    say: |
+      Warm-up, from memory. Write the four steps that produce each token of a response, in order. Then one sentence:
+      why can the same prompt give two different answers? Then check with your team. Retrieval like this, two days
+      after you first met the idea, is one of the most effective ways to make it stick. A hint if anyone is stuck: the
+      first step happens before the model does anything, and the third step is where chance comes in. These four steps
+      are what your probes test today: probe 1 tests step one, probe 2 tests step three.
+    background: |
+      Check Yourself 3.2 items 1 and 2; Review A4 (order of the four steps; even item, key not in Appendix E, but the
+      answer is in §3.2's numbered list). Answers in §3.2: split the text into tokens; score every possible next token;
+      pick one token (sampling); add it and repeat.
+    activity: "1 min write, 1 min team check, then the answer slide."
+    book: "§3.2; Check Yourself 3.2."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      The four steps: split the text into tokens; score every possible next token; pick one token according to the
+      chances, which is sampling; add it to the text and repeat. Two answers to one prompt: at step three a token is
+      picked with some chance, so a different token may win, and every later step then starts from different text.
+      Today you check these claims against a real tool. And remember: if the tool does something the book predicts it
+      should get wrong, and it gets it right, that is a valid result too. Write it down.
+    background: |
+      Lab 3.1 maps to the anatomy: probe 1 (tokens, §3.1), probe 2 (sampling, §3.2), probe 3 (context, §3.4), probe 4
+      (cutoff and search, §§3.3 and 3.5).
+    activity: "Reveal; map each probe to a step on the board."
+    book: "§3.2; Lab 3.1."
+
+- layout: worked
+  minutes: 1.5
+  kicker: "§3.6 · a probe record (book figure) · constructed result"
+  title: "A probe turns a guess into evidence"
+  steps:
+    - {label: "Prediction", text: "it will miscount r’s in “strawberry” (tokens)"}
+    - {label: "Prompt", text: "“How many times does r appear in strawberry?”"}
+    - {label: "Result", text: "“3”: correct; spelled out first, also 3"}
+    - {label: "Conclusion", text: "wrong for this tool and date; test five more words"}
+  reveal: [2, 4]
+  result: "Also record tool, model, options, date"
+  notes_reveal:
+    - minutes: 0.75
+      say: |
+        Here is the method you use today. A probe has four parts. Prediction: what you expect the model to do, and why,
+        using the chapter. The book's example predicts that the model will miscount the letter r in "strawberry",
+        because it receives tokens, not letters. Prompt: the exact text you send, with the tool, the model name if
+        shown, the options you used, such as search on or off, and the date. Here: "How many times does the letter r
+        appear in the word strawberry? Answer with a number." Before I reveal the result, what do you predict?
+      background: |
+        @fig-3-8 and §3.6. The result in the book is a constructed example, not a dated real output; say so if asked.
+      activity: "Hands: who predicts a wrong count?"
+      book: "§3.6 probe record, @fig-3-8."
+    - minutes: 0.75
+      say: |
+        Result, copied exactly: "3", which is correct, and asked to spell the word letter by letter first, it also said
+        3. Conclusion: the prediction was wrong for this tool on this date. And here is the discipline: one correct
+        answer does not show that the tool counts letters reliably, so the next step is to test five more words. Any
+        result is evidence. If the model gets right something you predicted it would get wrong, record that too. One
+        result is a single data point, so repeat a probe before you draw a strong conclusion.
+      background: |
+        Check Yourself 3.6: the four parts; why a result that proves your prediction wrong is still useful (it tells you
+        about this tool on this date and corrects your own model of the tool). Faded example: a context probe with the
+        prediction filled in (a fact in the middle of a 3,000-word text will be missed more often).
+      questions:
+        - q: "If my probe 'fails' because the tool got it right, did I do the lab wrong?"
+          a: "No. 'The model got it right' is a valid result; explain why it might have (for example, a reasoning step or spelling the word out) and repeat with harder cases (§3.6; Lab 3.1)."
+      activity: "Reveal; read the bottom bar."
+      book: "§3.6; Faded Example 'A Context Probe'; Check Yourself 3.6."
+  notes:
+    book: "§3.6 probe record."
+
+- layout: lab
+  minutes: 3
+  kicker: "Lab 3.1 · teams of 3–4 · jigsaw · individual write-up"
+  title: "Probe the model"
+  goal: "Four probes, pooled; then your own A2 Part 2 terms"
+  steps:
+    - {text: "Briefing: each member takes one probe (teams of 3 skip probe 2)", min: 5}
+    - {text: "Run your probe: prediction, prompt, result, conclusion", min: 15}
+    - {text: "Pool the records; agree on one sentence per probe", min: 7}
+    - {text: "Quick debrief: which result surprised you?", min: 3}
+    - {text: "Alone: 3+ worked definitions and links for A2 Part 2", min: 13}
+    - {text: "Exit: one link you are unsure of; save a surprise for your Failure Diary", min: 2}
+  side:
+    - {heading: "Deliverable", text: "Team probe records (shared) and your A2 Part 2 draft"}
+    - {heading: "Privacy", role: risk, text: "No personal or confidential data; temporary chat or memory off"}
+    - {heading: "No device or no AI?", text: "Dated sample outputs; dice for probe 2"}
+  notes:
+    say: |
+      Here is the lab: 45 minutes. In the first five, each member of your team takes one probe; teams of three skip
+      probe 2, sampling, because we did it together in the concept session. Then fifteen minutes to run your probe and fill in the
+      four parts. Then seven minutes to pool the records and agree on one sentence per probe, and a three-minute
+      debrief: which result surprised your team, and which section explains it? Then, on your own, thirteen minutes to
+      write at least three worked definitions and labeled links for A2 Part 2 from what you found. Last two minutes:
+      write down one link you are unsure of, and save one surprising result for your Failure Diary in Chapter 4. Every
+      write-up is individual. No personal or confidential information in any prompt.
+    background: |
+      From labs/ch03-lab1.md (O1–O5; LO1, LO3). Output: the team's probe records (shared, ungraded) and each student's
+      A2 Part 2 draft (individual; scored with the single A2 rubric). Starting a fresh chat: most tools have a "new
+      chat" button; many offer a temporary chat and a memory switch; if students cannot find them, they note it in the
+      record ([COMPASS: current steps by tool]). No-device and opt-out route: analyze the dated sample outputs for every
+      probe; paper version of probe 2 with dice and a printed score table; screen-reader-friendly probe record. The
+      Failure Diary line is a book-wide rule (Chapters 3, 5 and 7 each add one); the first diary version is due at a portfolio
+      checkpoint the instructor sets.
+    questions:
+      - q: "Our tool has no search option. What do we do for probe 4?"
+        a: "Run it with search off only, using the provided dated events, and record that the tool offers no search. Do not rely on the model's own statement of its cutoff (Lab 3.1)."
+    activity: "3 min briefing on this slide; the probes run while 'The four probes' is on screen."
+    book: "Hands-on Labs, Lab 3.1; labs/ch03-lab1.md."
+
+- layout: assignment
+  minutes: 2.5
+  kicker: "Assignment A2 · Part 2 · O5 · LO1 · one rubric (Chapter 2)"
+  title: "A2 Part 2: add your Chapter 3 terms"
+  due: "When your instructor sets it · individual · the whole 15-term map"
+  parts:
+    - "At least 5 Chapter 3 terms, each with a worked definition"
+    - "Each linked to a Chapter 2 term in a true sentence"
+    - "Each verified against the chapter or a cited source"
+    - "One corrected AI definition in the map (either part)"
+    - "Two sentences on your hardest link; update your declaration"
+  rubric_title: "Rubric · 10 points (whole map)"
+  rubric:
+    - {criterion: "Task", points: 3, full: "15 pool terms, 7+ Ch. 2, 5+ Ch. 3"}
+    - {criterion: "Links", points: 1.5, full: "14+ true links; each Ch. 3 term linked to Ch. 2"}
+    - {criterion: "Definitions", points: 1.5, full: "Own words, fitting example"}
+    - {criterion: "Verification", points: 2, full: "All 15 sourced; one AI definition fixed"}
+    - {criterion: "Declaration", points: 2, full: "Five elements; hardest-link reflection"}
+  note: "Part 2 at home: about 20–30 minutes after the lab. One sense per term: “sampling” here is not Chapter 2’s “sample”."
+  notes:
+    say: |
+      A reminder of what you finish after today. The map has 15 terms: at least 7 from Chapter 2, which is your Part 1,
+      and at least 5 from Chapter 3, Part 2. Each Chapter 3 term needs a worked definition, your own words plus one
+      concrete example, and at least one labeled link to a Chapter 2 term that reads as a true sentence, for example
+      "pretraining is a kind of self-supervised learning", or "inference uses fixed parameters". Verify each definition
+      against the chapter or a cited source and note where. The whole map needs one corrected AI-generated definition;
+      if yours is a Chapter 3 term, a probe result makes excellent evidence. Then two sentences on your hardest link:
+      start from the one you write down at the end of the lab. There is one rubric, the one from Chapter 2.
+    background: |
+      Chapter 3 Application Assignment: A2 lives in Chapter 2; no second rubric. Chapter 3 pool: token, tokenizer,
+      next-token prediction, probability distribution, sampling (of tokens), temperature, pretraining, instruction
+      tuning, learning from human feedback, knowledge cutoff, context window, system prompt, retrieval, tool use, agent;
+      any other Chapter 3 Core Key Term counts; a term in both pools (e.g., inference) counts once. Alternative
+      assignment: audit at least 5 Chapter 3 entries of the dated AI glossary on the course site, with probe records or the
+      chapter as the source for each correction. The rubric's Links criterion requires every Chapter 3 term to be
+      linked to a Chapter 2 term for full credit.
+    questions:
+      - q: "Can my corrected AI definition be from Chapter 2 instead?"
+        a: "Yes. The whole A2 needs one corrected AI-generated definition, in either part (§3.6; Application Assignment)."
+    activity: "Show the worked correction in §3.6 if asked ('context window' defined as memory of all past chats)."
+    book: "§3.6 'From probes to your concept map'; Application Assignment A2 Part 2; Chapter 2 rubric."
+
+- layout: concept
+  minutes: 30
+  kicker: "Lab 3.1 · on screen while teams run and pool the probes"
+  title: "The four probes"
+  size: 24
+  bullets:
+    - "**1 Tokens:** count a letter in a long word; spell, recount"
+    - "**2 Sampling:** one open prompt, five new chats"
+    - "**3 Context:** long text; facts at start, middle, end"
+    - "**4 Cutoff and search:** dated events; search off, then on"
+  takeaway: "Record: tool, model name, options, date"
+  notes:
+    say: |
+      This stays on screen while you work. Probe 1, tokens: ask the model to count a letter in a long word or name;
+      then ask it to spell the word letter by letter first and count again; record whether the tool showed a reasoning
+      step. Probe 2, sampling: one open prompt from your own field, five times, each in a new chat; mark what stays and
+      what changes. Probe 3, context: use the provided long public-domain text with one fact near the start, one in the
+      middle and one near the end; ask about each fact in a new chat with the full text. Probe 4, cutoff and search:
+      ask about the provided dated events with search off and, if your tool allows it, with search on. Do not rely on
+      the model's own statement of its cutoff. Extension, if you finish early: test the reversal curse with a less
+      famous parent–child pair from the list, in both directions.
+    background: |
+      Expected observations (lab sheet, instructor notes): probe 1 varies by tool and word; many current tools answer
+      short words correctly, especially with a reasoning step; longer words or letters appearing more than twice fail
+      more often (Fu et al., 2024). Probe 2: core content often repeats while wording, order and examples change. Probe
+      3: the middle fact is most likely missed or confused, but newer tools may answer all three; either result is
+      evidence. Probe 4: without search, events after the cutoff produce a statement of no information or a plausible
+      but invented answer; with search, answers improve but sources must be checked. Extension: newer tools may answer
+      both directions; a correct answer does not show the curse is gone in general. Circulate during minutes 5–20; most
+      help is needed on writing a prediction with a reason.
+    questions:
+      - q: "Our middle fact was found every time. Is the chapter wrong?"
+        a: "No. Liu et al. measured 2023 models; the chapter calls it a pattern to test, not a law. Record your result as evidence about this tool on this date, and say what would change your mind (§3.4)."
+    misconceptions:
+      - m: "M5 'If it fits in the context window, the model uses all of it equally well.'"
+        fix: "Whatever probe 3 shows, ask teams how many runs they did before concluding."
+    activity: |
+      Lab minutes 0–30: teams assign probes (5), run them (15), pool the records (7), quick team debrief (3). At lab
+      minute 27 ask each team for one surprising result and the section that explains it.
+    book: "Lab 3.1 probes 1–4 and extension; labs/ch03-lab1.md instructor notes."
+
+- layout: lanes
+  minutes: 15
+  kicker: "§3.6 · on screen during the individual write-up (book figure: mini-map)"
+  title: "Attach each new term to a Chapter 2 term"
+  label_width: 3.7
+  rows:
+    - label: "Pretraining"
+      nodes:
+        - {label: "is a kind of", kind: step, role: soft}
+        - {label: "Self-supervised learning", kind: human, role: neutral}
+    - label: "Next-token prediction"
+      nodes:
+        - {label: "uses the next token as its", kind: step, role: soft}
+        - {label: "Label", kind: human, role: neutral}
+    - label: "Knowledge cutoff"
+      nodes:
+        - {label: "marks the end of the", kind: step, role: soft}
+        - {label: "Training data", kind: human, role: neutral}
+    - label: "Context window"
+      nodes:
+        - {label: "is rebuilt at every step of", kind: step, role: soft}
+        - {label: "Inference", kind: human, role: neutral}
+  caption: "Read each row as a sentence: “Pretraining is a kind of self-supervised learning.”"
+  takeaway: "At least three definitions and links from your probes before you leave"
+  notes:
+    say: |
+      Now each of you, on your own, turns the probes into A2 Part 2. Each new term attaches to a Chapter 2 term with a
+      true sentence. Read the rows on the slide aloud: pretraining is a kind of self-supervised learning; next-token
+      prediction uses the real next token as its label; a knowledge cutoff marks the end of the training data; the
+      context window is rebuilt at every step of inference. Use your probe results as evidence: if probe 1 showed a
+      miscount, that is evidence for your definition of token. Write at least three worked definitions and links before
+      you leave. In the last two minutes, write down one link you are unsure of; that becomes your "hardest link"
+      sentences in A2.
+    background: |
+      @fig-3-9 (mini-map), redrawn natively: white Chapter 3 terms on the left in the book, shaded Chapter 2 terms on
+      the right. Worked example in §3.6: definition of token with an example; links pretraining → is a kind of →
+      self-supervised learning, inference → uses fixed → parameters; a corrected AI definition of context window.
+      Faded example: instruction tuning → ___ → supervised learning; temperature → ___ → inference; correct "Temperature
+      is how sure the model is that its answer is true" (start: an option that changes how often less likely tokens are
+      picked; it does not…).
+    questions:
+      - q: "Can a link go from a Chapter 2 term to a Chapter 3 term?"
+        a: "Yes, as long as it reads as a true sentence; the rubric asks that every Chapter 3 term be linked to at least one Chapter 2 term."
+    activity: "Lab minutes 30–45: 13 min individual write-up, 2 min exit step (one unsure link; one Failure Diary entry). Circulate and read links aloud."
+    book: "§3.6 'From probes to your concept map', @fig-3-9; Worked Example 'One Term, Two Links, One Correction'; Faded Example 'Label and Correct'."
+
+- layout: tps
+  minutes: 15
+  kicker: "Share and critique · 15 min"
+  title: "What did your probes show?"
+  prompt:
+    - "Which result surprised you? Which section explains it?"
+    - "What does your probe not show?"
+    - "Which probe tested training; which the context?"
+  phases:
+    - {name: "Think", min: 2, text: "One line each"}
+    - {name: "Team", min: 5, text: "Pick one result to report"}
+    - {name: "Share", min: 8, text: "Report; class critiques the probe"}
+  notes:
+    say: |
+      Time to share and critique. On your own, answer three questions in one line each: which result surprised your
+      team and which section explains it, or fails to; what your probe does not show; and which of your probes tested
+      something that came from training and which tested something in the context window. Then, as a team, pick one
+      result to report. In the last eight minutes each team reports, and the rest of us critique the probe, not the
+      person: was the prediction stated with a reason? How many runs? Would a different word, text or date change the
+      result? This is the habit the book builds: deciding on evidence, not on how an answer sounds.
+    background: |
+      Debrief questions from labs/ch03-lab1.md ("Further debrief questions": what your probe does not show; training vs.
+      context window; turn one result into a labeled link). What to listen for: conclusions drawn from one run (weak);
+      probes that trusted the model's own statement of its cutoff (not a test); correct answers recorded honestly as
+      evidence (strong); probe 4 results that distinguish search on from search off (strong).
+    misconceptions:
+      - m: "M6 'If the tool searched, the answer is correct.'"
+        fix: "When a team reports a searched answer to probe 4, ask whether they opened the source."
+      - m: "M3 'A different answer means an error.'"
+        fix: "When a team reports varied answers to probe 2, ask which step explains it."
+    activity: "Think 2 · team 5 · share 8. Call on teams that ran different probes."
+    book: "Lab 3.1 debrief; §§3.1–3.5."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 3 summary (book figure: summary card)"
+  title: "Does a language model know things, or predict text?"
+  items:
+    - {code: "O1", text: "**Explain:** tokens → scores → pick one → add and repeat"}
+    - {code: "O2", text: "**Explain:** training changes settings; inference only uses them"}
+    - {code: "O2", text: "**Explain:** a knowledge cutoff; your chat does not retrain it"}
+    - {code: "O3", text: "**Judge:** search and tools change the input, not the machine"}
+    - {code: "O4", text: "**Test:** prediction, prompt, result, conclusion"}
+    - {code: "O5", text: "**Complete:** A2 Part 2, linked to Chapter 2"}
+  takeaway: "Mechanically, it predicts text; whether that is “knowing” is debated (Chapter 23)"
+  notes:
+    say: |
+      Back to the chapter's question: does a language model know things, or does it predict text? Mechanically, it
+      predicts text, one token at a time, in four steps: split the text into tokens, score every possible next token,
+      pick one, add it and repeat. Its scores come from settings adjusted during training, applied to whatever is in the
+      context window. What looks like knowledge comes from patterns in the training text, from the context and from
+      tools. Whether that adds up to "knowing" is a real debate, taken up in Chapter 23. And the reversal curse fits
+      this picture: training ran in one direction; once the fact was in the context, the reverse question could be
+      answered. Check your warm-up from the concept session: no, no, and not necessarily.
+    background: |
+      Chapter Summary, including "Revisit your Warm-up": (1) the model receives tokens, each a number, not letters;
+      (2) a correction does not fix the model for everyone: inference does not change the settings; memory features
+      only add text to later conversations; some providers may train a future version on conversations, depending on
+      account and options, never the model you are talking to; (3) a searched answer is not necessarily correct.
+      Reversal curse attribution: invented-fact test = training effect (confirmed); celebrity test = the researchers'
+      suggestion (reported). The summary card is @fig-3-12; the complete anatomy is @fig-3-3.
+    activity: "Ask two students which probe result changed their picture of the tool most."
+    book: "Chapter Summary, @fig-3-3, @fig-3-12; Warm-up revisit."
+
+- layout: key_terms
+  minutes: 1
+  title: "Key terms"
+  size: 20
+  terms:
+    - "token"
+    - "tokenizer"
+    - "next-token prediction"
+    - "probability distribution"
+    - "sampling (of tokens)"
+    - "temperature"
+    - "option"
+    - "reasoning tokens"
+    - "pretraining"
+    - "fine-tuning"
+    - "instruction tuning"
+    - "learning from human feedback"
+    - "inference (Ch. 2)"
+    - "knowledge cutoff"
+    - "memory (product feature)"
+    - "context window"
+    - "system prompt"
+    - "retrieval (RAG)"
+    - "tool use"
+    - "agent"
+    - "large language model"
+    - "probe"
+    - "reversal curse"
+    - "attention (Deep)"
+    - "Transformer (Deep)"
+  note: "Definitions: Chapter 3 and the glossary. (Deep) terms are optional and not on exams."
+  notes:
+    say: |
+      These are the key terms for Chapter 3. Most of them are in the A2 Chapter 3 pool, so you are already working with
+      them. Exams that use this book ask for terms like these, so make sure you can define each in a sentence of your own.
+      A quick self-test: cover the slide and define three of them for your neighbor. Watch the pairs: training and
+      inference; settings and options, so temperature is an option, never a setting; the context window and a memory
+      feature; retrieval and tool use; an agent and a workflow. The two Deep terms come from an optional section on
+      attention and are not on the exams.
+    background: |
+      Key Terms list from the chapter. Definitions are in the chapter text and docs/glossary.md. Examinable scope: Core
+      sections only (decision D20); Deep terms are not examinable.
+    activity: "30-second pair self-test: each partner defines two terms."
+    book: "Chapter Summary, Key Terms; glossary."
+
+- layout: exit_ticket
+  minutes: 3
+  questions:
+    - "Which link in your map are you least sure of, and why?"
+    - "Why can the same prompt give two different answers?"
+    - "Name one Chapter 2 data problem a language model can inherit."
+  instruction: "3 min · index card or your course site · ungraded"
+  notes:
+    say: |
+      Last three minutes: the exit ticket. Answer on an index card or on your course site; it is not graded, and it
+      tells me what to reteach. The first question is your hardest link, which you will turn into two sentences for A2.
+      The second checks the central mechanism of Chapter 3. The third connects the two chapters: generative
+      AI is machine learning, so it inherits Chapter 2's problems. Before you leave: finish A2 by the date your
+      instructor set. Next we move from how the tools work to how to frame a task for them, Chapter 5.
+    background: |
+      Good answers: (2) at each step a token is picked with some chance, so runs can follow different paths (§3.2);
+      (3) for example who is in the sample (sampling bias), biased labels, or shortcuts the training data allows
+      (§2.6: generative AI "inherits every problem in this chapter"). Next in the book's suggested order: framing a
+      task (Chapter 5; Deep: Chapter 6). Reading order differs from chapter order: Chapter 4 is read later, together
+      with Chapter 8.
+    activity: "3 min; collect cards at the door or close the online form at the end of the session."
+    book: "§3.2; §2.6; Lab 3.1 exit step."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: deep
+  session: after
+  kicker: "Deep 3.A · attention in plain words"
+  title: "Going deeper: attention"
+  figure: f3-10-attention
+  figure_width: 0.62
+  size: 22
+  bullets:
+    - "Each token’s representation mixes in tokens **before** it"
+    - "“big” draws on “trophy”; “small” on “suitcase”"
+    - "Illustration, not measured weights"
+  takeaway: "Most of today’s language models are built on the Transformer (as of October 2026)"
+  notes:
+    say: |
+      Use this slide only if there is time or a student asks how the model uses the whole context when it scores the
+      next token. Most of today's language models are built on the Transformer architecture, and its central part is
+      called attention. At every layer, the representation of each token is updated with a weighted mix of the
+      representations of the tokens before it; a token cannot draw on tokens that come later, which matches how text is
+      produced, one token after another. Take a sentence from a well-known test of everyday reasoning: "The trophy
+      doesn't fit in the brown suitcase because it's too big." When the model reaches "big", attention lets that
+      position draw strongly on "trophy". Change "big" to "small", and the strongest link should go to "suitcase".
+    background: |
+      Deep 3.A (optional, not examinable). Vaswani et al. (2017) introduced the Transformer; as of October 2026 some
+      newer designs mix in other parts. The sentence is from the Winograd schema challenge (Levesque et al., 2012).
+      The figure is an illustration, not measured weights; real models have many attention layers and many heads per
+      layer, and individual weights are hard to interpret (Chapter 17). Deep 3.B (scale): prediction error fell
+      predictably as models, data and compute grew (Kaplan et al., 2020); Chinchilla, 70 billion parameters on 1.4
+      trillion tokens (Hoffmann et al., 2022); lower prediction error is not the same as more truthful output.
+    activity: "Optional; not part of the 75-minute plans."
+    book: "Deep 3.A Attention in Plain Words, @fig-3-10; Deep 3.B."
+
+- layout: references
+  title: "References"
+  per_slide: 7
+  refs:
+    - "Anthropic. (2024, December 19). *Building effective agents*. https://www.anthropic.com/engineering/building-effective-agents"
+    - "Bai, Y., Kadavath, S., Kundu, S., et al. (2022). *Constitutional AI: Harmlessness from AI feedback* (arXiv:2212.08073)."
+    - "Berglund, L., Tong, M., Kaufmann, M., Balesni, M., Stickland, A. C., Korbak, T., & Evans, O. (2024). The reversal curse: LLMs trained on “A is B” fail to learn “B is A”. In *ICLR 2024*. https://arxiv.org/abs/2309.12288"
+    - "Carlini, N., Tramèr, F., Wallace, E., et al. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650)."
+    - "Cheng, J., Marone, M., Weller, O., Lawrie, D., Khashabi, D., & Van Durme, B. (2024). Dated data: Tracing knowledge cutoffs in large language models. In *COLM 2024*. https://arxiv.org/abs/2403.12958"
+    - "Fu, T., Ferrando, R., Conde, J., Arriaga, C., & Reviriego, P. (2024). *Why do large language models (LLMs) struggle to count letters?* (arXiv:2412.18626)."
+    - "Hoffmann, J., Borgeaud, S., Mensch, A., et al. (2022). Training compute-optimal large language models. In *NeurIPS 35*. https://arxiv.org/abs/2203.15556"
+    - "Kaplan, J., McCandlish, S., Henighan, T., et al. (2020). *Scaling laws for neural language models* (arXiv:2001.08361)."
+    - "Levesque, H. J., Davis, E., & Morgenstern, L. (2012). The Winograd schema challenge. In *KR 2012*. AAAI Press."
+    - "Lewis, P., Perez, E., Piktus, A., et al. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. In *NeurIPS 33*."
+    - "Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2024). Lost in the middle: How language models use long contexts. *TACL, 12*, 157–173. https://doi.org/10.1162/tacl_a_00638"
+    - "OpenAI. (2024, September 12). *Learning to reason with LLMs*. https://openai.com/index/learning-to-reason-with-llms/"
+    - "Ouyang, L., Wu, J., Jiang, X., et al. (2022). Training language models to follow instructions with human feedback. In *NeurIPS 35*. https://arxiv.org/abs/2203.02155"
+    - "Petrov, A., La Malfa, E., Torr, P. H. S., & Bibi, A. (2023). Language model tokenizers introduce unfairness between languages. In *NeurIPS 36*. https://arxiv.org/abs/2305.15425"
+    - "Schick, T., Dwivedi-Yu, J., Dessì, R., et al. (2023). Toolformer: Language models can teach themselves to use tools. In *NeurIPS 36*."
+    - "Şeker, Ş. E., & Nizam-Özoğur, H. (2026). Enhancing software development with large language models: A case study of Kolay.ai. *Electrica, 26*, Article 0033. https://doi.org/10.5152/electrica.2026.25033"
+    - "Sennrich, R., Haddow, B., & Birch, A. (2016). Neural machine translation of rare words with subword units. In *Proceedings of ACL 2016* (pp. 1715–1725). https://doi.org/10.18653/v1/P16-1162"
+    - "United Nations. (1948). *Universal Declaration of Human Rights* [Translations in the Unicode UDHR collection]."
+    - "Vaswani, A., Shazeer, N., Parmar, N., et al. (2017). Attention is all you need. In *NeurIPS 30* (pp. 5998–6008)."
+    - "Wolfram, S. (2023). *What is ChatGPT doing … and why does it work?* Wolfram Media."
+  notes:
+    say: |
+      Reference slides; not presented in class. These are the sources cited on the slides and in the speaker notes, in
+      short APA form, taken from the chapter's reference list. Students do not need to read them; the chapter is written
+      to be understandable without them. If a student wants to go further, point them to Berglund et al. (2024): the
+      introduction and the celebrity test are readable without the mathematics; Liu et al. (2024) for clear figures of
+      the U-shaped pattern; and Petrov et al. (2023) for a table of tokenizer costs in many languages.
+    background: |
+      Full entries (all authors, URLs) are in the chapter's References section, fact-checked in docs/factcheck/ch03.csv.
+      OpenAI (n.d.), Reasoning models (API documentation, retrieved October 18, 2026), is also cited in §3.2. Wolfram
+      (2023) is the chapter's recommended further reading.
+    activity: "Not presented."
+    book: "Chapter 3, References; Further Reading and Compass Links."

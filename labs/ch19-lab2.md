@@ -5,7 +5,7 @@
 | Type | Check It (home, optional) |
 | Objectives | O6 (LO6; LO5) · tags 4D:DISC, 4D:DIL |
 | Time | 20 minutes |
-| Materials | Links to two published model cards from two different providers (Compass and your course site, dated); the model card's nine sections (section 19.7; Mitchell et al., 2019) |
+| Materials | Links to two published model cards from two different providers (Compass and the companion files, dated); the model card's nine sections (section 19.7; Mitchell et al., 2019) |
 
 ## Steps (tool-neutral)
 1. Open the two cards. Record the provider, the model and the date you read each card.

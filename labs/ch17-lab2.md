@@ -5,7 +5,7 @@
 | Type | Check It |
 | Objectives | O5 (LO5) · tags 4D:DIL, UNESCO:ETH-A |
 | Time | About 25 minutes including reading this sheet and the debrief, at home; optional |
-| Materials | Two provided extracts from published model or system cards (two providers, dated, as of October 2026) and one dataset datasheet extract (on your course site; each extract about 200 words); the eight-field checklist below |
+| Materials | Two provided extracts from published model or system cards (two providers, dated, as of October 2026) and one dataset datasheet extract (in the companion files; each extract about 200 words); the eight-field checklist below |
 
 ## Steps (tool-neutral)
 1. **Skim (4 min).** For each document, note who published it, for which model or dataset, and its date and version.

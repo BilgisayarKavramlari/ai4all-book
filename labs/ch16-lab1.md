@@ -51,7 +51,7 @@ Short outputs make counting fast. Individual counts (2–3 per version) almost n
 Individual: A12 items 3 (fairness row) and 4c (bias probe), graded with Chapter 15's A12 rubric.
 
 ## Accessibility and alternatives
-Printed, dated outputs for every prompt (screen-reader-friendly versions on your course site); the private opt-out above; the station card and tally sheets as accessible tables.
+Printed, dated outputs for every prompt (screen-reader-friendly versions in the companion files); the private opt-out above; the station card and tally sheets as accessible tables.
 
 ## Safety and privacy
 Invented names and the provided paragraph only; no real applicants, classmates or patients. Memory and personalization off so that earlier chats do not shape outputs and the station's prompts stay out of stored history. Tally sheets hold counts only.

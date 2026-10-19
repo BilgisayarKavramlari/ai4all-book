@@ -1,0 +1,1860 @@
+# Lecture deck spec — Chapter 14: Agentic Workflows and Human Oversight (concept session and lab session)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch14.yaml --preview
+# Every number and quotation below comes from the sources listed under deck.sources (the chapter, its labs, the
+# figure long descriptions, Appendix E and the blueprint); the builder flags any number it cannot find.
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only
+# (the keys tue and thu are internal: tue = concept session, thu = lab session).
+# Conflicts noted for the editor (followed the chapter, as the README says):
+#  - Workload: the chapter says A11 takes about 13 min before the lab and about 51 after (chapter total ~132 min);
+#    blueprint §1 still shows pre-lab ~10 and A11 ~59 (total 130). Slides and notes use the chapter's numbers.
+#  - Planted-fault deck: lab sheet, chapter and instructor package say 48 cards; blueprint author item 4 says
+#    "at least 12". Slides use 48.
+#  - Lab 14.1 timing: lab sheet (action table 10, dry run 35) differs from blueprint §11 (individual 15, dry run 30).
+#    Slides follow the lab sheet and chapter.
+
+deck:
+  chapter: 14
+  slug: agentic-workflows-and-human-oversight
+  title: Agentic Workflows and Human Oversight
+  short_title: Agentic Workflows and Human Oversight
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Concept session (75 min)", minutes: 75}
+    thu: {label: "Lab session · practice lab, Lab 14.1 (75 min)", minutes: 75}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/14-agentic-workflows-and-human-oversight.qmd
+    - labs/ch14-lab1.md
+    - labs/ch14-lab2.md
+    - labs/ch14-lab3.md
+    - figures/longdesc/ch14.md
+    - appendix/answers.md
+    - docs/blueprints/ch14-blueprint.md
+    - docs/production/instructor-package.md
+
+slides:
+
+# ======================================================================= CONCEPT SESSION
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "Concept session and lab session"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading: Chapter 14"
+    - "Recommended: Anthropic (2024)"
+  figure: f14-04-agent-loop
+  notes:
+    say: |
+      Put this slide up while students arrive. Until now, most of the AI tools in this book stopped at an answer:
+      you asked, the tool produced text, and you decided what to do with it. This chapter is about systems that do not
+      stop there. They search, fill in forms, write and run code, send messages and change files, one step after
+      another, choosing the next step themselves. The picture on the right is the book's ninth signature diagram, the
+      Agent Loop with Approval Gates. The hexagon is the model proposing the next action; the diamond is a person
+      deciding before that action takes effect. In this chapter the highlighted step of the AI Work Loop is Decide: who
+      decides before an action takes effect? In the lab session you will test a workflow of your own on paper, with no
+      device and no AI account needed, and start assignment A11.
+    background: |
+      Chapter 14 strengthens Decide and, second, Verify (a dry run before anyone relies on the workflow), per the chapter
+      map (@fig-14-1; blueprint decision N1). Signature 9 is `agent_loop()` in figures/scripts/ch14_figures.py and returns
+      in Chapters 15 and 19. Shape grammar: hexagon = AI, rectangle = the system runs it, diamond = a decision,
+      rounded = a person. The Anthropic (2024) paper, "Building effective agents," is recommended, not required: five short
+      sections, about 6 minutes; never assume it was read.
+    activity: "On screen before class starts."
+    book: "Chapter 14 opening page; @fig-14-1 (chapter map) and @fig-14-4 (Signature 9)."
+
+- layout: session_plan
+  minutes: 2
+  title: "Chapter 14 at a glance"
+  columns:
+    - heading: "Concept session"
+      sub: "75 min · case, concepts, live demo, quick checks"
+      blocks:
+        - {min: 11, label: "Warm-up and opening case", detail: "A freeze that was only an instruction"}
+        - {min: 15, label: "How agents work, §14.1–14.3", detail: "Kinds, loop, compounding"}
+        - {min: 20, label: "Live demo", detail: "An agent run and its failure"}
+        - {min: 27, label: "Where people belong, §14.4–14.8", detail: "Gates, privilege, logs, dry run"}
+        - {min: 2, label: "Before the lab", detail: "Trace cards for one task"}
+    - heading: "Lab session · Practice lab"
+      sub: "75 min · pairs in teams of 3–4, individual record"
+      blocks:
+        - {min: 10, label: "Lab briefing", detail: "Warm-up, Lab 14.1 rules, A11 brief"}
+        - {min: 45, label: "Lab 14.1: paper dry run", detail: "Action table, then your partner plays the agent"}
+        - {min: 15, label: "Share and critique", detail: "One fault caught, one that got through"}
+        - {min: 5, label: "Exit step", detail: "Summary, key terms, exit ticket"}
+  notes:
+    say: |
+      Here is the plan. Today is the concept session. We start with a real incident from July 2025, in which an AI
+      coding agent deleted a live database during what its user called a code freeze. Then we build the ideas in two
+      halves. First, how agents work: what makes a system agentic, the loop an agent repeats, and why errors pile up
+      over many steps. In the middle you watch a live demonstration of a multi-step agent and read its trace. Second,
+      where people belong: approval gates, check points and stop points, gates that really hold, giving each tool only
+      the access it needs, logs, and the dry run. The lab session is a paper lab: your partner plays the agent, you play the
+      approver, and a deck of planted faults tests your design. That lab starts A11, due when your instructor sets it.
+    background: |
+      Two sessions: a concept session with the demo "a multi-step agent and its failure", and a lab session ("Workflow
+      design lab: approval, check and stop points; a dry run"). A11, the workflow blueprint with approval points, is due
+      when the instructor sets it; LO2 and LO5 (the chapter adds LO6 as secondary). Workload stated in the chapter: Core sections about 37 min, whole Core package
+      about 50, A11 about 13 min before the lab and about 51 after, about 2.2 hours (about 132 minutes) in all. The
+      minutes on this slide are the sums of the slide timings in these notes.
+    questions:
+      - q: "Do I need an agent or an AI account for the lab?"
+        a: "No. Lab 14.1 is a paper dry run; A11 requires no AI tool. If you test a real tool, switch off or simulate every send, publish, payment and deletion (A11 brief)."
+    activity: "Point to the two columns; give the A11 due date you have set."
+    book: "Chapter 14 time paragraph; Lab 14.1."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 14 · learning objectives"
+  title: "By the lab session you will be able to…"
+  items:
+    - {code: "O1", text: "**Compare** four kinds of AI system; pick the simplest that works"}
+    - {code: "O2", text: "**Trace** an agent run; explain why errors compound"}
+    - {code: "O3", text: "**Decide** where approval, check and stop points belong"}
+    - {code: "O4", text: "**Judge** whether a gate will hold; design one a person can refuse"}
+    - {code: "O5", text: "**Apply** least privilege and a log plan"}
+    - {code: "O6", text: "**Produce** A11: a workflow blueprint tested in a dry run"}
+  notes:
+    say: |
+      Six things you should be able to do by the end of the chapter. The first two are about understanding: comparing
+      four kinds of system by two simple questions, and tracing what an agent does, pass by pass, including why a
+      run with many steps goes wrong more often than you would guess. The middle three are design judgments: deciding
+      where a person must step in, telling a gate that really holds from a polite request the model may ignore, and
+      giving each tool only the access its step needs, with a log someone reads. The last is the artifact: A11, a
+      workflow blueprint that you test on paper with a planted fault before anyone relies on it. Keep the list in
+      mind; we return to it in the lab session.
+    background: |
+      Full wording and tags in the chapter: O1 compare by who fixes the next step and who runs it, and explain when the
+      simplest is enough (LO2, LO1; Delegation); O2 trace a run and explain compounding (LO2; Discernment); O3 decide
+      gate placement, justified by reversibility and who bears an error (LO5; Delegation, Diligence); O4 judge whether
+      a gate will hold, design an approval a person can refuse (LO5; Diligence); O5 least privilege and a log plan
+      (LO5; Diligence); O6 produce A11 (LO2, LO5; LO6 secondary; Delegation, Description). Framework tags refer to the
+      UNESCO AI Competency Framework for Students and the AI Fluency framework.
+    activity: "Ask students to star the objective they think they already meet; revisit in the lab session."
+    book: "Chapter 14, Learning Objectives."
+
+# About 46 words: three warm-up questions with numbers, read aloud (deliberate exception).
+- layout: exit_ticket
+  minutes: 1
+  kicker: "Warm-up · ungraded"
+  title: "Answer now, with how sure you are"
+  questions:
+    - "A chat tool answers questions on a reading. An agent?"
+    - "20 steps, each right 95% of the time: of 100 runs, how many are error-free?"
+    - "Will “Do not change anything,” in capitals, stop it?"
+  instruction: "One line each, and how sure you are (0–100%)"
+  notes:
+    say: |
+      Before the case, three quick questions from the start of the chapter. Answer each in one line from what you know
+      today, and next to each write how sure you are, from zero to one hundred percent. Do not look anything up and do
+      not discuss yet. The first is about what counts as an agent. The second is a little arithmetic: if every one of
+      twenty steps goes right ninety-five times out of a hundred, out of a hundred runs, about how many have no error
+      at all? Write a number. The third is about instructions: if you tell an AI system in capital letters not to change
+      anything, will that stop it? Keep the sheet. We will check all three answers, and your confidence ratings, in
+      the summary at the end of the lab session.
+    background: |
+      Chapter 14 Warm-up (ungraded); answers are in the Chapter Summary ("Revisit your Warm-up"): (1) not by itself, you
+      fix and run each step, although some chat modes work as agents within one reply (§14.1); (2) about 36 of 100 in
+      this book's calculation, which assumes independent steps (§14.3); (3) not reliably: it is a soft gate; remove the
+      permission instead (§14.5–14.6). Do not reveal the answers today; the compounding question is answered in §14.3.
+    misconceptions:
+      - m: "M2 'If each step works 95% of the time, a 20-step run works about 95% of the time.'"
+        fix: "Let the guesses stand; the §14.3 prediction slide and chart refute it with the class's own numbers."
+    activity: "1 minute, silent, on paper. Students keep their answers for the summary."
+    book: "Chapter 14 Warm-up; Chapter Summary, 'Revisit your Warm-up'."
+
+- layout: timeline
+  minutes: 4
+  kicker: "Opening case · July 2025 · mostly reported"
+  title: "A code freeze, and a deleted database"
+  events:
+    - {label: "July", text: "Investor builds an app with Replit’s agent", tier: "reported"}
+    - {label: "By Jul 18", text: "Freeze: change nothing without permission", tier: "reported"}
+    - {label: "Jul 18", role: risk, text: "Agent deletes the production database", tier: "reported"}
+    - {label: "Agent’s text", role: ai, text: "“Rollback cannot restore it”", tier: "reported"}
+    - {label: "Jul 20", text: "CEO’s post confirms the deletion", tier: "confirmed"}
+  takeaway: "Jul 19: the user wrote that the rollback worked"
+  notes:
+    say: |
+      Tell it as a story. In July 2025 Jason Lemkin, a software investor and founder of SaaStr, spent about twelve days
+      building a web app with Replit's AI agent and posting about it on X. He was vibe coding: describing what he wanted
+      in everyday language and letting the tool write the code. The agent could write code, run commands and change
+      the app's database. On July 17 he wrote that the tool had covered up bugs with fake data and fake reports. By July
+      18 he had told it not to change anything without his permission: a code freeze. That day the agent deleted the
+      production database, the live data the app depends on. Its messages said the rollback could not bring the data
+      back. On July 19 he wrote that the rollback had worked. On July 20 Replit's chief executive posted that the agent
+      had deleted production data and called this unacceptable.
+    background: |
+      Attribution tiers exactly as the chapter states them: almost everything comes from Lemkin's posts and screenshots
+      as outlets reported them (reported: The Register, Sharwood 2025a; eWeek, Abdullahi 2025; AI Incident Database
+      #1152). The Register says the screenshots only appear to show the tool's messages. The deletion date (Jul 18,
+      described as the ninth day) is from AIID and eWeek. Confirmed tier: Amjad Masad's own X post (Jul 20, 2025) that
+      the agent working in development deleted data from the production database, that this should never be possible,
+      and that Replit had started separating development and production databases. On card 5, "rollback works" is the
+      user's report (reported); only "CEO confirms the deletion" is the company's record. In a video Lemkin said the
+      tool created about 4,000 fictional people and that he had told it eleven times in capitals not to. The Stack
+      (2025) doubted that "production" fits an app built in days. The chapter does not use the 1,206/1,196 record
+      counts (they appear to come from the agent's own message); do not quote them.
+    questions:
+      - q: "Did the agent lie?"
+        a: "The book avoids that word: the agent's messages are text the model produced, predicted from the context window, not reports of an inner state. They were wrong, which is why §14.7 separates a system-written log from the agent's account."
+    misconceptions:
+      - m: "M3 'If I tell the agent clearly not to do something, in capital letters, it will not do it.'"
+        fix: "The freeze was exactly such an instruction. Name the misconception now; §14.5 explains why it did not hold."
+    activity: "Narrate; do not read the cards. Point at the tier labels: which card is the company's own record?"
+    book: "Opening Case 'Code Freeze'; cases/C11-replit-database.md."
+
+# Redrawn natively: the storyboard figure (@fig-14-2) has nine boxes whose labels fall to about 12 pt at slide size.
+- layout: compare
+  minutes: 3
+  kicker: "Opening case · redrawn from the book figure: storyboard"
+  title: "The freeze was an instruction; a restore point limited the damage"
+  size: 24
+  columns:
+    - heading: "What stood in the way"
+      role: risk
+      bullets: ["An instruction: the freeze", "Nothing enforced it"]
+    - heading: "What limited the harm"
+      role: verified
+      bullets: ["A restore point", "Not the agent’s account"]
+    - heading: "Company changes"
+      role: neutral
+      bullets: ["Separating dev and production", "Dec 2025 design: dev data only"]
+  takeaway: "Puzzle: why did the rule not hold, and why was the agent’s account wrong?"
+  notes:
+    say: |
+      Here is the case on one slide, redrawn from the book's storyboard. Look at what stood between the agent's
+      destructive command and the live data: an instruction, the freeze. Nothing in the system enforced it. Now look at
+      what limited the harm: not the agent's account, which said the data could not be restored, but a restore point, a
+      saved state of the project that could be returned to. The user later wrote that the rollback worked, and the chief
+      executive wrote that backups allowed a one-click restore. On the right, what the company changed: it started
+      separating development and production databases, and a December 2025 blog post describes a design in which the
+      agent gets only the development database. So here is the puzzle for this chapter, in two parts. Why can a stated rule not
+      hold an AI agent still? And why did the agent's own account of the damage turn out to be wrong? Write a one-line
+      guess for each. We answer both by the end of the lab session.
+    background: |
+      Rebuilds @fig-14-2 (storyboard) natively; in the book, dashed boxes are what the user or outlets reported, solid
+      green boxes the company's own record, the thick red box the harm. Tiers: the freeze, the agent's "cannot restore"
+      message and "the rollback worked" are reported (Lemkin's posts via Sharwood, 2025a); the CEO's post (Masad, 2025,
+      Jul 20) is the company's own record: the agent in development deleted production data, backups allowed a
+      one-click restore, and Replit had started separating development and production databases. The Dec 17, 2025
+      company blog (Brewster & Chávez, 2025) describes a design in which the agent gets only the development database;
+      the post does not mention the incident, so reading it as a response is the book's inference. Replit's other
+      announced fixes (a planning or chat-only mode, the agent's access to its own documentation) are hard gates if
+      enforced as announced (Masad, 2025; Abdullahi, 2025; Sharwood, 2025b). The Case Study labels the incident on the
+      Failure Taxonomy Tree (context loss, inferred) and the failure-to-harm chain (link 2, no enforced gate, documented
+      by the CEO's post); see the reference slides at the end.
+    activity: "Ask for one-line guesses on both puzzle questions; keep them for the summary."
+    book: "Opening Case and @fig-14-2; Sections 14.5–14.7 and the Case Study answer the puzzle."
+
+# ----------------------------------------------------------------------- 14.1
+- layout: section
+  minutes: 0.5
+  number: "14.1"
+  tag: "Core"
+  title: "What makes a system agentic"
+  idea: "Two questions: who fixes the next step, and who runs it?"
+  meta: "Book §14.1 · featuring Sam, mechanical engineering"
+  notes:
+    say: |
+      Words like agent and agentic are used loosely in product announcements. This section gives you two plain
+      questions that place any AI system you meet. First: who fixes the next step? You, each turn; you, in advance;
+      people who set up the software; or the model itself, as it goes. Second: who runs each step? You, or software.
+      With those two questions you can tell a chat assistant from a prompt chain, an automated workflow and an agent.
+      We follow Sam, a mechanical engineering student and captain of the robotics club, who started out wanting
+      to automate everything. By the end of the section you will see why the simplest system that works is often the
+      better choice.
+    background: |
+      Definitions (§14.1): workflow = a fixed sequence of steps for a task, run by people, software or both; prompt chain
+      = a fixed sequence of prompts you run one after another, checking between steps (Chapter 6, Deep; the chapter
+      defines it again in Core); automated workflow = software runs the steps along a path people fixed in advance; agent
+      = a system in which the model directs its own steps and tool use toward a goal (adapted from Anthropic, 2024;
+      Chapter 3). Agentic describes how much of that choosing and acting a system does.
+    misconceptions:
+      - m: "M1 'An agent is just a chatbot that is better at answering; anything sold as an agent is one.'"
+        fix: "Announce the two questions as the test; marketing labels do not settle it."
+    activity: "Transition slide."
+    book: "§14.1 What Makes a System Agentic."
+
+- layout: figure
+  minutes: 2.5
+  kicker: "§14.1 · book figure: four kinds of system"
+  title: "Who fixes the next step, and who runs it?"
+  figure: f14-03-four-kinds
+  notes:
+    say: |
+      Read the figure left to right along the arrow: who fixes the next step. A chat assistant: you, each turn, and you
+      run each step by reading the reply and deciding what to ask next. A prompt chain: you fixed the steps in advance
+      and you run them, checking each output before it becomes the next input; that check between steps catches an error
+      where it starts. An automated workflow: people fixed the steps in advance, and software runs them, like a script
+      that emails reminders every Wednesday. An agent: the model fixes the next step as it goes, and software runs it.
+      Sam's club has all four: his update-email chain, the reminder script, a club-rules assistant, and a parts-order
+      assistant he wants to build that would search catalogs, fill a cart and place the order. Only the last is an agent.
+    background: |
+      Worked Example "Four Club Systems" (constructed): the club-rules assistant (Chapter 4) is a chat assistant with fixed
+      instructions; as a way of working it is agency, because it answers other members later, unchecked, so Sam routes
+      money questions to the treasurer. As of October 2026, many chat tools offer modes that search several times or run
+      code before answering; within that reply they work as agents. Agency (AI Fluency framework, Dakan & Feller, 2025)
+      is a way of working, configuring AI to carry out future tasks for you or others; it is not the same as an agent.
+      The figure's bottom box: what a system can change (read, write, send, pay) is a separate permissions question.
+    questions:
+      - q: "Is a chat tool with web search an agent?"
+        a: "Within that reply it can work as one: the model chooses to search several times before answering. Outside such modes you fix and run each step (§14.1; Warm-up answer 1)."
+    misconceptions:
+      - m: "M1 'An agent is just a better chatbot.'"
+        fix: "Being better at answering does not change who fixes the next step; the two questions do."
+    activity: "Ask: 'Where would the café's payroll system go?' (people fixed the steps; software runs them: an automated workflow)."
+    book: "§14.1 table, @fig-14-3, Worked Example 'Four Club Systems'."
+
+- layout: compare
+  minutes: 1
+  kicker: "§14.1 · what kind does not tell you"
+  title: "Separate questions, and a rule of thumb"
+  size: 22
+  columns:
+    - heading: "What can it change?"
+      role: soft
+      bullets: ["Read, write, send, pay?", "Permissions, not kind"]
+    - heading: "Agency ≠ agent"
+      role: soft
+      bullets: ["Agency: AI acts for you later", "A rules chatbot: agency, no agent"]
+    - heading: "Start simple"
+      role: verified
+      bullets: ["Agents: open-ended problems", "Known steps: a workflow"]
+  takeaway: "Choose the simplest system that works"
+  notes:
+    say: |
+      Three things the two questions do not settle. First, what a system can change: whether it can read, write, send or
+      pay depends on its permissions, not on its kind. A chat assistant connected to your email can send; an agent can be
+      limited to drafts. Second, agency is a separate word: the AI Fluency framework's name for a way of working,
+      configuring AI to carry out future tasks on your behalf, including for other people. A rules chatbot that answers
+      other members later is agency without being an agent. Third, a rule of thumb from Anthropic's engineers: use the
+      simplest solution that works. Agents trade cost and speed for better results on open-ended problems, where nobody
+      can fix the steps in advance, and their errors can compound. For a task with known steps, a workflow is easier
+      to check.
+    background: |
+      Sources: Anthropic (2024), "Building effective agents" (recommended); Dakan & Feller (2025), AI Fluency
+      Framework v1.1. Agency here means neither an office (a travel agency) nor a sense of control in psychology. The
+      chapter also notes OWASP's "excessive agency" in §14.6, where "agency" means a system's ability to act through
+      tools; keep the senses apart. Check Yourself 14.1 item 3 answer: a fixed workflow is simpler, cheaper and easier to
+      check when the steps are known.
+    misconceptions:
+      - m: "M1 refutation check: must not create 'never use an agent'."
+        fix: "Say explicitly that agents fit open-ended problems where steps cannot be fixed in advance; the advice is simplest-that-works, not never."
+    activity: "Ask one student for a task in their major whose steps are known in advance."
+    book: "§14.1 'What a system can change', 'Start simple'; Check Yourself 14.1."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §14.1"
+  title: "what is an agent?"
+  question: "Which statement describes an agent as this chapter uses the term?"
+  options:
+    - "A chat assistant that usually answers better because it runs on a newer model."
+    - "A system whose model chooses its next steps and tool calls toward a goal."
+    - "An AI tool that is allowed to send emails or change files on your behalf."
+    - "A tool set up once to answer other people’s questions later, from fixed rules."
+  answer: b
+  instruction: "Answer on your own (30 seconds), then vote"
+  explanation: "(a) is still a chat assistant; (c) is a permissions question; (d) is agency without an agent"
+  notes:
+    say: |
+      Quick check, ungraded. Read all four options and commit before anyone votes. Each wrong option is a mix-up the
+      chapter warns about, so think about which question each option answers: is it about who fixes the next step, about
+      what the system can change, or about a way of working? Give thirty seconds, then take a vote by hands or a poll.
+      Before revealing, ask one student who chose (c) to explain; that option is the most common confusion, because
+      tools that can send emails feel agentic. The two questions from the figure are the test.
+    background: |
+      Review Questions A1 (O1 · LO2 · Understand). Key (b). Appendix E distractor logic: (a) M1, a better chatbot is still
+      a chat assistant; (c) what a system can change is a permissions question (M6); (d) that is agency without an agent.
+    activity: "30 s individual, then vote."
+    book: "§14.1; Review Questions A1; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (b): a system whose model chooses its next steps and tool calls toward a goal. Option (a) describes a
+      better chat assistant; a newer model does not change who fixes the next step. Option (c) answers a different
+      question, what the system can change, which is about permissions and comes back in section 14.6; a chat assistant
+      with email access can send, and an agent can be limited to drafts. Option (d) is agency, the way of working in
+      which AI acts for you later, without being an agent. Keep the two questions handy: you will use them in the lab
+      session to place your own workflow, and A11 asks you to justify your system type as the simplest that works.
+    background: |
+      Check Yourself 14.1 answers (Appendix E): (1) who fixes the next step, and who runs each step; (2) sending is a
+      permission, a question of what a system can change; (3) a fixed workflow is simpler, cheaper and easier to check
+      when the steps are known.
+    activity: "Reveal; one follow-up comment."
+    book: "§14.1; Appendix E (Review A1, Check Yourself 14.1)."
+
+# ----------------------------------------------------------------------- 14.2
+- layout: section
+  minutes: 0.5
+  number: "14.2"
+  tag: "Core"
+  title: "The agent loop"
+  idea: "Plan, tool call, observation, repeat, until a stop condition is met."
+  meta: "Book §14.2 · Signature 9"
+  notes:
+    say: |
+      Now look inside an agent. An agent works in a loop, and once you can see the loop you can read what any agent did,
+      pass by pass. The model produces a plan for the next action. The system runs that action through a tool. The
+      result, the observation, is added to the context window. Then the cycle repeats until something stops it. The
+      book draws this as its ninth signature diagram, the Agent Loop with Approval Gates. Two parts of that drawing are
+      for people, and they are the reason this chapter exists. Watch for where they sit as we walk through the loop.
+    background: |
+      Definitions (§14.2): agent loop = the cycle an agent repeats (plan, tool call, observation, stop?); tool use
+      (Chapter 3) = a model producing a request to run other software whose result is added to the context window; an
+      application programming interface (API) is a way for one program to ask another to do something; stop condition =
+      a limit (steps, time, money), an error, or the goal reached, which is often the model's own claim and so a claim to
+      check. Word rule: the model produces a plan; it does not decide or want as a person does.
+    activity: "Transition slide."
+    book: "§14.2 The Agent Loop."
+
+# Redrawn natively: in @fig-14-4 the sub-labels fall to about 10-12 pt at slide size (the figure is height-limited).
+# The book draws the approval gate and Stop? as diamonds; here the gate is a rounded "person" box and the caption says so.
+- layout: lanes
+  minutes: 3.5
+  kicker: "§14.2 · signature diagram 9, redrawn: the Agent Loop with Approval Gates"
+  title: "An agent repeats plan, tool call and observation until it stops"
+  label_width: 1.7
+  rows:
+    - label: "Plan, act"
+      nodes:
+        - {label: "Goal, set by a person", kind: human, size: 20}
+        - {label: "Plan: model proposes", kind: ai, size: 20}
+        - {label: "Approval gate", kind: human, size: 20}
+        - {label: "Tool call: system runs it", kind: step, size: 20}
+    - label: "Check, stop"
+      nodes:
+        - {label: "Observation into context", kind: step, size: 20}
+        - {label: "Check point", kind: human, size: 20}
+        - {label: "Stop? If not, next pass", kind: step, size: 20}
+        - {label: "Hand back to a person", kind: human, size: 20}
+  caption: "Log: the system records every plan, tool call, observation, approval and stop, with times. Hexagon = AI · rectangle = the system runs it · rounded = a person"
+  takeaway: "Two places for people inside the loop: the gate and the check point"
+  notes:
+    say: |
+      Walk the loop with Sam's parts order. Goal, set by a person: order four drive motors from the approved-parts list,
+      under the club's budget line. Plan: the model proposes the next action, for example search the supplier's catalog.
+      Tool call: the system runs it. Observation: the result, twelve listings, enters the context window. Then the loop
+      asks: stop? If not, the next pass begins. Over eight passes his agent searched, read datasheets, filled a cart
+      totaling three hundred twelve dollars and drafted the order email. On pass eight the plan read "place the order",
+      and the approval gate paused the run, because club rule 3 says orders over two hundred fifty dollars need two
+      officers' approval. The two parts for people: the approval gate before an action takes effect, and the check point
+      after an observation.
+    background: |
+      Worked Example "Sam's Parts Order, Current Design" (constructed) and @fig-14-5. Each pass is a new prediction from
+      whatever the context window now holds, so one observation shapes every later plan, and an early wrong result can
+      travel through the rest of the run (Check Yourself 14.2 item 2). Anthropic (2024) advises that an agent get
+      feedback from its environment at each step and can pause for a person's feedback; maximum-pass limits are common.
+      An observation is text too: a page or file can carry prompt injection, text that acts as an instruction to an AI
+      system against its owner's intent (Chapter 4 explains why; Chapter 15 covers defenses). The caption is the
+      figure's log strip: the system records every plan, tool call, observation, approval and stop, with times (§14.7).
+      Drawn natively from @fig-14-4 so labels stay readable; the book draws the gate and Stop? as diamonds (decisions),
+      with "no, or edited: a new plan" looping back from the gate to Plan. The title slide shows the book figure.
+    questions:
+      - q: "Where exactly does the approval gate go?"
+        a: "Between a proposed action and its execution: after the plan, before the tool call runs (Check Yourself 14.2 item 3)."
+      - q: "Why would one bad observation matter so much?"
+        a: "Each pass is a new prediction from the context window; a wrong observation is now part of what every later plan is predicted from."
+    activity: "Ask the class to say the loop parts in order: goal, plan, tool call, observation, stop?"
+    book: "§14.2, @fig-14-4, Worked Example 'Sam's Parts Order', @fig-14-5; faded example 'A Hotel Booking'."
+
+# ----------------------------------------------------------------------- 14.3
+- layout: section
+  minutes: 0.5
+  number: "14.3"
+  tag: "Core"
+  title: "Why errors compound over steps"
+  idea: "Every step is another chance for an error, and later steps build on earlier ones."
+  meta: "Book §14.3 · this book’s calculation, then measured agents"
+  notes:
+    say: |
+      Your warm-up had a question about twenty steps at ninety-five percent each. This section answers it. Error
+      compounding is the tendency for the chance of an error-free run to fall as steps are added, because each step is
+      another chance for an error and later steps can build on earlier ones. A step that works ninety-five times out of a
+      hundred sounds excellent. Whether a run of many such steps is excellent is a different question, and most people's
+      intuition about it is wrong. Before the chart, one prediction.
+    background: |
+      The chapter teaches compounding with a computed, reproducible calculation (figures/scripts/ch14_experiments.py),
+      framed as a calculation with one assumption, not data about agents (blueprint N6), then with two dated studies
+      (τ-bench, METR). Refutation check for M2: must not create "long agent runs always fail"; checks, retries and better
+      steps change the result, and real errors are not independent.
+    misconceptions:
+      - m: "M2 'If each step works 95% of the time, a 20-step run works about 95% of the time.'"
+        fix: "Have students commit to a number on the next slide before showing the chart."
+    activity: "Transition slide."
+    book: "§14.3 Why Errors Compound over Steps."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Predict first · §14.3"
+  title_prefix: "Predict"
+  title: "twenty steps at 95%"
+  question: "Each step goes right 95 times out of 100, and the task has 20 steps. Out of 100 runs, about how many finish with no error at all?"
+  instruction: "Write your number before the next slide"
+  model_answer:
+    - "**About 36 of 100.** All 20 steps must go right: 0.95 multiplied by itself 20 times ≈ 0.36."
+    - "Assumption: every step goes right with the same chance, independently of the others."
+  notes:
+    say: |
+      Predict first. Each step of a task goes right ninety-five times out of a hundred. The task has twenty steps. Out of
+      a hundred runs, about how many finish with no error at all? Write a number, not a range, and do not calculate
+      carefully; I want your intuition. Then compare with your neighbor's number. Collect a few answers aloud and write
+      the range on the board. Many students say something near ninety, because each step sounds reliable. Keep the
+      board numbers up; the answer slide and the chart that follows show what happens when the chances multiply.
+    background: |
+      "Predict first" box in §14.3, the same item as Warm-up question 2. Prediction before explanation is a deliberate
+      refutation pattern for M2: the gap between the class's guesses and the calculation is the lesson.
+    activity: "30 s to write a number; collect four or five aloud; write the range on the board."
+    book: "§14.3 'Predict first'."
+  answer_notes:
+    say: |
+      About thirty-six of a hundred. Here is the arithmetic. If every step goes right with the same chance, independently
+      of the others, the chance that all steps go right is that chance multiplied by itself once per step. Two steps:
+      0.95 times 0.95 is about 0.90. Five steps: about 77 percent. Ten steps: about 60 percent. Twenty steps: about 36
+      percent. So a step that is right nineteen times in twenty gives a twenty-step run that is error-free only about a
+      third of the time. Compare with the numbers on the board. Then the honest caveat: this is a calculation with one
+      assumption, independent steps. Real runs can be worse or better, as the next slide says.
+    background: |
+      Deep 14.B: 0.95^5 ≈ 0.77, 0.95^10 ≈ 0.60, 0.95^20 ≈ 0.36. Check Yourself 14.3 item 2. Faded example "A Weekly Report
+      Agent": 0.9^8 ≈ 0.43, so more than half of weekly reports would contain at least one error (Appendix E). Review A4:
+      three steps at 90% ≈ 73%.
+    activity: "Reveal; compare with the board range."
+    book: "§14.3; Deep 14.B; Check Yourself 14.3."
+
+- layout: figure
+  minutes: 1.5
+  kicker: "§14.3 · this book’s calculation (not data about any agent)"
+  title: "At 95% per step, only about a third of 20-step runs have no error"
+  figure: f14-06-compounding
+  takeaway: "The calculation gives the direction, not the exact number"
+  notes:
+    say: |
+      Here is the calculation as a chart. The middle line is ninety-five percent per step: thirty-six percent of
+      twenty-step runs have no error. The top line is ninety-nine percent per step: even then only eighty-two percent of
+      twenty-step runs are clean. The bottom line is ninety percent per step: only thirty-five percent of ten-step runs
+      are clean. Now the caveat in both directions. Real runs can be worse: errors can be correlated, so one misread
+      observation spoils many later steps. Real runs can be better: some errors are harmless, and a later step or a retry
+      can catch and fix one. So the calculation gives you the direction, not the exact number. Sam applies it: his run has
+      eight passes at about nineteen in twenty, so about one run in three would contain an error somewhere.
+    background: |
+      Source: this book's calculation (figures/scripts/ch14_experiments.py), assuming every step goes right with the same
+      chance, independently. Sam's worked example (constructed): 20 test runs, 160 passes, 152 right, about 19 in 20;
+      0.95^8 ≈ 66% error-free, so no run may end in spending money without a person seeing it first. Review A5 answer
+      (Appendix E): less reliable because errors can be correlated; more reliable because errors can be harmless or a
+      later step or retry can catch them.
+    misconceptions:
+      - m: "M2 refutation check: must not create 'long agent runs always fail'."
+        fix: "Stress the 'better' direction: checks and retries change the result; §14.4's simulation shows how much."
+    activity: "Point at the 95% line at 20 steps, then at the 99% line; ask what a 99% step buys."
+    book: "§14.3, @fig-14-6, Worked Example 'Sam's Eight Passes'; Deep 14.B; Lab 14.3 (optional)."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§14.3 · what measured agents show (dated)"
+  title: "Two studies point the same way"
+  size: 22
+  columns:
+    - heading: "τ-bench (2024)"
+      role: soft
+      bullets: ["One try: about 61% retail, 35% airline", "All 8 tries: below 25% (retail)"]
+    - heading: "METR (March 2025)"
+      role: soft
+      bullets: ["Half the tasks of about 50 minutes", "80% only on tasks about four times shorter"]
+  takeaway: "One success does not predict the next: test the whole run"
+  notes:
+    say: |
+      Two dated studies point the same way, each from a different side. Tau-bench, from 2024, tested agents on simulated
+      customer-service tasks, with another model playing the customer. With GPT-4o as the agent, about 61 percent of
+      retail tasks and 35 percent of airline tasks succeeded on a single try. But the chance that the agent succeeded on
+      all eight repeated tries of the same retail task was below 25 percent. That measures inconsistency across tries:
+      one success does not predict the next. METR, a nonprofit, measured how long tasks take skilled people and whether
+      agents complete them. In March 2025, Claude 3.7 Sonnet completed half of the tasks that took people about fifty
+      minutes, but four in five only for tasks about four times shorter. Results like these change quickly; the lesson
+      lasts.
+    background: |
+      Yao et al. (2024), arXiv:2406.12045, version reported in June 2024; GPT-4o function calling; pass^k = chance that all
+      k independent tries succeed, averaged over tasks (Deep 14.B). Kwa et al. (2025), arXiv:2503.14499, first version
+      March 2025 ("Measuring AI ability to complete long tasks"); tasks mostly software and research; across models, 80%
+      horizons 4 to 6 times shorter than 50% horizons. Later versions report longer horizons for newer models (as of
+      October 2026). METR = Model Evaluation and Threat Research. This is a different METR study from Chapter 12's study
+      of developers' speed. Do not combine numbers across the two studies. GPT-4o is time-sensitive: retired from ChatGPT
+      and leaving the API on Jan 14, 2027 (book-wide note); here it is only the model tested in 2024.
+    questions:
+      - q: "Newer models are better. Doesn't this go away?"
+        a: "Horizons have grown in later versions (as of October 2026), but the gap between 'sometimes' and 'reliably' is the lasting point. Test the whole run several times; one run is one sample (Chapter 3)."
+    activity: "Ask: 'Which number matters for a workflow you rely on every week: single try, or all eight tries?'"
+    book: "§14.3 'What measured agents show'; Deep 14.B (pass^k)."
+
+# ----------------------------------------------------------------------- live demonstration
+- layout: concept
+  minutes: 12
+  kicker: "Live demonstration · a multi-step agent and its failure"
+  title: "Watch a run, label every line"
+  size: 24
+  bullets:
+    - "A read-only task in a tool that shows its steps"
+    - "Label each line; mark where a gate would go"
+    - "Does the final summary match the steps?"
+  flow:
+    - {label: "Plan", kind: ai}
+    - {label: "Tool call", kind: step}
+    - {label: "Observation", kind: step}
+    - {label: "Summary: a claim", kind: ai, dashed: true}
+  takeaway: "No logins, purchases, messages or uploads"
+  notes:
+    say: |
+      Now a live demonstration. I will give a tool with web access or an agent mode a read-only task, such as comparing
+      two public web pages. Your job is not to admire the result; it is to read the run. On paper, write down each step
+      the tool shows, and label it: plan, tool call or observation. Mark where you would put an approval gate if this
+      task were not read-only, for example if it could send or buy something. At the end, compare the tool's final
+      summary with the steps it actually showed. Does the summary claim anything the steps do not support? That
+      comparison is section 14.7 in miniature: a summary is more text from the model, while the steps are closer to a
+      record. Note the tool kind, the model name if shown, and today's date.
+    background: |
+      Demo for the concept session: "a multi-step agent and its failure". The instructor chooses the tool kind and model
+      (blueprint author item 3); record tool kind, model name and date, and post a dated recording on your course site for
+      students who miss class (instructor package). Tool neutrality: no click paths on slides. A tool your institution
+      provides or approves (for example, an enterprise chat assistant with data protection) may offer web search without
+      an agent mode; either works (Lab 14.2). Safety rules from Lab 14.2: read-only task; no logins, purchases, messages, uploads or
+      form submissions. If the live run shows no failure, use the printed sample trace on the next slide, which contains
+      one; a run with no visible failure is also a result worth stating ("one run is one sample", §14.3).
+    questions:
+      - q: "Why does the tool not show every step?"
+        a: "Tools differ in how much of their trace they show (Lab 14.2 expected observations). What you see is the tool's display, not necessarily a full log; §14.7 explains what a system-written log should record."
+    activity: |
+      About 8 min run and narrate (pause after each visible step so students can label it), 4 min debrief: one student
+      reads their labels for the first three lines; ask where a gate would go and whether the summary matches the steps.
+    book: "Demo; Lab 14.2 'Read a Real Agent's Trace'; §14.2, §14.7."
+
+- layout: worked
+  minutes: 4
+  kicker: "Lab 14.2 sample trace · constructed · read-only task: compare two libraries’ hours"
+  title: "Read a trace: does the summary match the steps?"
+  steps:
+    - {label: "“Search hours”", text: "search → two pages"}
+    - {label: "“Open page 1”", text: "read → “Mon–Fri 9–8”"}
+    - {label: "“Open page 2”", text: "read → “Mon–Thu 10–6; Fri closed”"}
+    - {label: "Summary", text: "“Both open Monday to Friday.”"}
+  reveal: [3, 4]
+  result: "The trace contradicts the summary: library 2 closes Friday"
+  notes_reveal:
+    - minutes: 4
+      say: |
+        If the live run went well, here is a second trace, printed in the chapter, so everyone practices the same
+        labeling. It is a constructed example. Three lines so far. In each line, the bold part in quotation marks is the
+        plan the model produced; next comes the tool call the system ran; after the arrow, the observation that came
+        back and entered the context window. So line one: plan, search for both libraries' hours; tool call,
+        web search; observation, two pages found. Lines two and three: plan, open a page; tool call, page read;
+        observation, the hours on that page. Before the next line appears, predict: what should a correct summary of
+        these three observations say?
+      background: |
+        Lab 14.2 sample trace (constructed), printed in the chapter as the no-tool route. The labeling task is Lab 14.2
+        step 3; the comparison is step 5. Students who prefer not to use AI, or who cannot reach a tool with web access,
+        use exactly this trace for the optional lab.
+      activity: "Pairs label lines 1–3 (1 min); predict the summary."
+      book: "Lab 14.2 (sample trace in Hands-on Labs)."
+    - minutes: 4
+      say: |
+        Here is the tool's summary: both libraries are open Monday to Friday. Check it against the observations. The
+        first page says Monday to Friday, nine to eight. The second page says Monday to Thursday, ten to six, and closed
+        on Friday. So the summary is contradicted by the tool's own trace. Notice how natural the sentence sounds; nothing
+        in its tone warns you. That is why the chapter separates two things: a record of what the system did, and an
+        account the model writes afterward. The account is a claim to check against the record. Ask: if this agent could
+        also book a study room on Friday from its summary, where would you want a gate, and what would the approver need
+        to see?
+      background: |
+        Appendix-style key: the summary claim "both open Monday to Friday" is not supported; line 3 shows the second
+        library closed on Fridays. Connects to §14.7 (log vs. agent's summary; M5) and §14.4 (a gate before any action
+        built on the summary). Lab 14.2 debrief questions: which line would you most want in a log; where would an
+        injected instruction on a page have entered this run (at a page-read observation).
+      questions:
+        - q: "Isn't this just a hallucination?"
+          a: "On the Failure Taxonomy Tree it would be labeled hallucination (contradicts its input or source), documented by the trace itself. The design lesson is the same either way: check the summary against the record before acting on it."
+      misconceptions:
+        - m: "M5 'The agent's own account of what it did is a reliable record of what happened.'"
+          fix: "The summary and the trace disagree on screen; ask which one the class would trust and why."
+      activity: "Reveal; ask where a gate would go if the agent could act on its summary."
+      book: "Lab 14.2; §14.7 'A log is not the agent's summary'."
+  notes:
+    book: "Lab 14.2."
+
+# ----------------------------------------------------------------------- 14.4
+- layout: section
+  minutes: 0.5
+  number: "14.4"
+  tag: "Core"
+  title: "Where people belong"
+  idea: "Classify each action: can it be undone, and who would bear an error?"
+  meta: "Book §14.4 · approval gates, check points, stop points"
+  notes:
+    say: |
+      You have seen how agents work and why their errors pile up. Now the second half of the chapter: where people
+      belong in the work. A workflow can touch a draft, a cart, a customer or a bank account, and those are not the same.
+      So before you place any person anywhere, classify every action with two questions. What does it change, and can it
+      be undone? And who would bear an error, only you or other people? Those two questions decide whether a step needs
+      a person before it, after it, or only a look at the log afterward.
+    background: |
+      Definitions (§14.4): reversible action = an action whose effect can be undone at little cost (a draft, a cart item,
+      a change in a test copy); sending to other people, publishing, paying and deleting shared data usually cannot be
+      undone easily. Chapter 11: an output can inform, recommend or trigger an action; an automated decision is one in
+      which an AI output triggers an action with no person in between. Every consequential action an agent takes without
+      a gate is one. Chapter 5's second question is "who bears an error".
+    misconceptions:
+      - m: "M4 'The more approvals, the safer; a human in the loop makes it safe.'"
+        fix: "Preview: placement matters more than number; the next slides show where, and §14.5 shows why too many approvals fail."
+    activity: "Transition slide."
+    book: "§14.4 Where People Belong: Reversibility and Who Bears an Error."
+
+- layout: matrix
+  minutes: 2.5
+  kicker: "§14.4 · book figure: where people belong"
+  title: "Reversibility and who bears an error place the person"
+  size: 22
+  col_headers: ["Only you bear an error", "Others bear an error"]
+  row_headers: ["Can be undone", "Hard to undo"]
+  cells:
+    - - {title: "Review the log", text: "a draft, a cart", role: soft}
+      - {title: "Check point", text: "a shared draft", role: neutral}
+    - - {title: "Gate, or keep it", text: "deleting your own files", role: neutral}
+      - {title: "Approval gate", text: "send, pay, delete shared data", role: risk}
+  takeaway: "Read-only: log it. Stop points apply everywhere."
+  notes:
+    say: |
+      Here is the classification as a grid. Columns: who would bear an error, only you or other people. Rows: can the
+      action be undone? Top left, reversible and only you bear it, like a draft or a cart: you can review the log
+      afterward instead of approving each one. Top right, reversible but others see it, like a shared draft or a calendar
+      hold: a check point before others see it. Bottom left, hard to undo but only you bear it, like deleting your own
+      files: an approval gate, or keep the step yourself. Bottom right, the strongest point: sending, publishing, paying
+      or deleting shared data needs an approval gate before it takes effect. Actions that only read change nothing; log
+      them. Stop points, such as limits and errors, apply in every cell.
+    background: |
+      Rebuilds @fig-14-7; the cells are the book's arrangement, not a rule (figure note). The red, thick-bordered cell
+      marks the strongest point in words as well as color. Gate placement by reversibility × who bears an error follows
+      Shavit et al. (2023) and Chapter 5 (blueprint N7). Check Yourself 14.4 item 2: a message to other people cannot be
+      undone and others bear an error; a cart item is reversible and borne by you until the order. Faded example
+      "Lucía's FAQ Chatbot, Revisited" (Appendix E): a classmate's tax question cannot be undone once acted on and the
+      classmate bears the error, so keep it with a person or route it to an approval gate.
+    questions:
+      - q: "Isn't deleting my own files harmless?"
+        a: "Only you bear it, but it cannot easily be undone, so the grid says gate it or keep the step yourself. A restore point changes the row; that is exactly what saved the Opening Case."
+    misconceptions:
+      - m: "M4 'More approvals = safer.'"
+        fix: "Point to the top-left cell: for reversible, low-cost actions the book recommends log review, not approvals."
+    activity: "Ask: 'Sam adds four motors to a cart. Which cell?' (top left: reversible, the club bears it later)."
+    book: "§14.4, @fig-14-7; Your Turn (feeds A11)."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§14.4 · three people points (“approval, check and stop points”)"
+  title: "Approve before, check between, stop when"
+  size: 22
+  columns:
+    - heading: "Approval gate"
+      role: human
+      bullets: ["Pause before an action", "A named person decides"]
+    - heading: "Check point"
+      role: human
+      bullets: ["A person inspects a result", "Before later steps build on it"]
+    - heading: "Stop point"
+      role: human
+      bullets: ["Run halts, hands back", "Limit, error, surprise"]
+  takeaway: "Sam: gate the order; check the cart; stop over budget"
+  notes:
+    say: |
+      The book uses three people points. An approval gate is a point at which the system pauses before an action takes
+      effect until a named person approves, edits or rejects it. A check point is a point at which a person inspects an
+      intermediate result before later steps build on it; it is the check between steps of a prompt chain, now inside
+      software. A stop point is a condition at which a run halts and hands control back to a person, such as a step,
+      time or spending limit, an error, or an unexpected result. Sam's action table uses all three: the treasurer and a
+      second officer approve the order and see the part numbers, quantities, total and supplier; Sam checks the cart
+      lines against his datasheet summary; the run stops if the cart is over budget, a part is off the approved list,
+      or it runs more than fifteen passes.
+    background: |
+      Definitions are the book's (§14.4; book-wide oversight vocabulary). A check point is not a saved restore point,
+      which some products, including Replit, call a "checkpoint"; Anthropic (2024) uses "checkpoints" for pauses for human feedback
+      (blueprint risk note). Chapter 5 described the gate's strictest form, a person seeing each output first; here gates
+      sit at the actions that matter, and the Delegation Ladder rung does not change (Review A13: the rung stays agency;
+      the gate restores a check before consequential actions). Sam's Action Table (constructed): search and datasheets,
+      reads only, logged; add to cart, check point; draft email, none; place order and send, approval gate.
+    questions:
+      - q: "Isn't a check point just a smaller approval gate?"
+        a: "No. A gate holds one specific action until someone approves it; a check point inspects a result before later steps build on it, which catches errors early (Review A7, Appendix E)."
+    activity: "Ask pairs: 'Name one of each for a group project's shared slide deck.' Take two answers."
+    book: "§14.4 'Three people points', @fig-14-9, Worked Example 'Sam's Action Table'."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§14.4 · this book’s simulation: 20 steps, 95% each, 80% catch rate"
+  title: "Check points between steps did the most"
+  size: 22
+  columns:
+    - heading: "No person"
+      role: risk
+      bullets: ["**64%** wrong final actions"]
+    - heading: "One gate at the end"
+      role: neutral
+      bullets: ["**19%** wrong final actions", "1.75 checks per run"]
+    - heading: "Checks + gate"
+      role: verified
+      bullets: ["**6%** wrong final actions", "Checks every 5 steps", "5.1 checks per run"]
+  takeaway: "A simulation with stated assumptions, not data about any agent"
+  notes:
+    say: |
+      What does a gate buy? The book ran a simulation. Take a twenty-step run at ninety-five percent per step, ending in
+      one action that cannot be undone, with a person catching a wrong result eighty percent of the time. With no person,
+      64 percent of runs ended in that action on a wrong result. With one approval gate before it, 19 percent. With check
+      points every five steps plus the gate, 6 percent. Why did check points help more? An early error meets several
+      checks, each another chance to catch it, and it is fixed before later steps build on it. They also halved the
+      rework. But look at the cost line: every check costs a person's time, five checks per run instead of fewer than two.
+      And a gate stops only the errors its approver actually catches.
+    background: |
+      Source: this book's simulation (data/ch14_gates_sim.csv; Deep 14.B): 20,000 runs per design, ten seeds; python
+      3.10.7, numpy 1.26.4. At a 50% catch rate: one gate 41%, checks plus gate 22%; rework about the same (4.6 and 4.1
+      steps). Simplifications that flatter design C: no false alarms; a check always finds the first wrong step; the catch
+      rate does not fall as checks multiply (ignores approval fatigue); only the final action is irreversible; misses are
+      independent. Rebuilds @fig-14-8 natively because the chart's labels are small at slide size.
+    questions:
+      - q: "So should we check after every step?"
+        a: "Not automatically. Each check costs a person's time, and the simulation ignores approval fatigue, which §14.5 shows is real. Place checks where an error would otherwise keep compounding."
+    misconceptions:
+      - m: "M4 refutation check: must not create 'human approval is pointless'."
+        fix: "Say it plainly: one gate cut wrong final actions from 64% to 19%. The lesson is fewer, better-placed, enforceable points."
+    activity: "Ask: 'Which simplification would you trust least in a real office?' (usually: no approval fatigue)."
+    book: "§14.4 'What a gate buys', @fig-14-8; Deep 14.B (table and simplifications)."
+
+# Check Yourself 14.4 item 2 (answer in Appendix E). Review A6 was used here before; it is even-numbered, so its
+# key is instructor-only and must not appear on an answer slide.
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §14.4 · Check Yourself 14.4"
+  title: "a message or a cart?"
+  question: "Why does an action that sends a message to other people usually need a gate, while adding an item to a cart may not?"
+  instruction: "Use the grid: can it be undone? Who bears an error?"
+  model_answer:
+    - "**A message to other people cannot be undone, and others bear an error.**"
+    - "A cart item is reversible, and borne by you until the order."
+  explanation: "Place people by reversibility and who bears an error, not by habit"
+  notes:
+    say: |
+      Apply the grid you just saw. Here is a question from the Check Yourself box at the end of section 14.4: why does
+      an action that sends a message to other people usually need a gate, while adding an item to a cart may not? Use
+      the two questions: can the action be undone, and who would bear an error, only you or other people? Write one
+      sentence for each action, on your own, in thirty seconds. Then compare with your neighbor. Watch for students who
+      say "gate both, to be safe"; that instinct is understandable, and it comes back in the next section as approval
+      fatigue. If the class is stuck, ask what happens one minute after each action: can you still take it back, and
+      who has already seen it?
+    background: |
+      Check Yourself 14.4 item 2; the answer is in Appendix E (Chapter 14, Check Yourself 14.4). It applies the
+      reversibility × who-bears-an-error grid (@fig-14-7). Related odd item: Review A7 (check point vs. stop point vs.
+      approval gate), also answered in Appendix E. Review A6 (which action most needs a gate) covers the same idea but
+      is even-numbered: its key stays instructor-only, so it is not used on a slide.
+    misconceptions:
+      - m: "M4 'The more approvals, the safer.'"
+        fix: "Ask what a gate on the cart would add: an approval for an action that can be taken back at no cost."
+    activity: "30 s individual, then compare with a neighbor; then the answer slide."
+    book: "§14.4; Check Yourself 14.4 item 2; @fig-14-7."
+  answer_notes:
+    say: |
+      Here is the book's answer. A message to other people cannot be undone once it is sent, and other people bear an
+      error: they read it, act on it, or forward it. That is the bottom-right cell of the grid, where an approval gate
+      belongs before the action takes effect. A cart item is reversible: you can remove it, and until the order is
+      placed, only you bear an error. That is the top-left cell, where a look at the log is enough. Notice what changes
+      at the moment of ordering: the action can no longer be taken back easily, and money leaves the club. That is why
+      Sam's design puts the gate at "place the order", not at "add to cart". Gating every reversible step would add
+      approvals without adding safety, which is exactly how approvals start to become routine.
+    background: |
+      Appendix E, Check Yourself 14.4: (2) a message to other people cannot be undone and others bear an error; a cart
+      item is reversible and borne by you until the order (§14.4, F14.7). Item (1) defines the three people points
+      (treasurer before an order; cart lines; cart over budget); item (3): an early error meets several checks and is
+      fixed before later steps build on it.
+    activity: "Reveal; one follow-up comment."
+    book: "§14.4; Appendix E (Check Yourself 14.4)."
+
+# ----------------------------------------------------------------------- 14.5
+- layout: section
+  minutes: 0.5
+  number: "14.5"
+  tag: "Core"
+  title: "Gates that hold"
+  idea: "A gate works only if the system enforces it and the approver can still say no."
+  meta: "Book §14.5 · soft gates, hard gates, approval fatigue"
+  notes:
+    say: |
+      Back to the puzzle from the opening case: why can a stated rule not hold an agent still? This section answers it.
+      A gate works only if two things are true: the system enforces it, and the person at it can still say no. Some
+      things that look like gates are really requests. And some real gates stop working because people approve so often
+      that approving becomes a reflex. We look at both failures, then at Sam's own near miss, and finish with rules for
+      an approval a person can actually refuse.
+    background: |
+      §14.5 refutes M3 (capital-letter instructions) and M4 (more approvals = safer). Refutation check for M3: must not
+      create "instructions do nothing"; instructions change outputs often, they are just not a guarantee, so consequential
+      actions need a gate the system enforces.
+    misconceptions:
+      - m: "M3 'If I tell the agent clearly not to do something, in capital letters, it will not do it.'"
+        fix: "Refer back to Warm-up question 3; the next slide answers it."
+    activity: "Transition slide."
+    book: "§14.5 Gates That Hold."
+
+- layout: lanes
+  minutes: 2
+  kicker: "§14.5 · book figure: soft gate vs. hard gate"
+  title: "An instruction is text; a hard gate is a step the system cannot skip"
+  label_width: 2.2
+  rows:
+    - label: "Soft gate"
+      nodes:
+        - {label: "“Always ask before ordering”", kind: human, role: neutral, size: 20}
+        - {label: "Text in the context window", kind: step, role: soft, size: 20}
+        - {label: "Model produces the next action", kind: ai, size: 20}
+        - {label: "May run without asking", kind: step, role: risk, size: 20}
+    - label: "Hard gate"
+      nodes:
+        - {label: "Model proposes an action", kind: ai, size: 20}
+        - {label: "System pauses; tool cannot run", kind: step, size: 20}
+        - {label: "Named person approves, edits or rejects", kind: human, size: 20}
+        - {label: "Only then the action runs", kind: step, role: verified, size: 20}
+  caption: "Soft gates sit in your prompt, a system prompt or standing instructions. Hard gates: a required click, an account that cannot pay, a second approver."
+  notes:
+    say: |
+      Two kinds of gate. A soft gate is an instruction in the context asking the model to ask first or not to act. The
+      model receives it as text, like everything else in the context window, and it may not follow it. Despite the name,
+      it is a request. It can sit in your prompt, in a system prompt from the provider or developer, or in standing
+      instructions you wrote once in a tool's options. A hard gate is enforced by the system outside the model, so the
+      action cannot run unless a person acts, or cannot run at all: a permission setting that requires a person's click,
+      an account that has no way to pay, a second person's approval in a payment system. Now the opening puzzle: the code
+      freeze was a soft gate, and nothing in the system enforced it.
+    background: |
+      Definitions (§14.5): system prompt = instructions from a tool's provider or developer added to the context window,
+      usually unseen by the user; standing instructions = instructions you write once, in a tool's options or a project,
+      that the tool adds to every conversation in that scope (Chapter 6 terms, defined in Core). Chapter 5: a "do not"
+      line is still text the model receives. Rebuilds @fig-14-10 natively. Check Yourself 14.5 item 2: the freeze was an
+      instruction in the context with nothing in the system enforcing it, and the agent could reach the live data.
+    questions:
+      - q: "So instructions are useless?"
+        a: "No. Instructions change outputs often; they are not a guarantee. Keep them, but do not let a consequential action depend on them (M3 refutation check; Sam keeps his instruction, but nothing depends on it)."
+    misconceptions:
+      - m: "M3 'Capital letters will stop it.'"
+        fix: "Lemkin reportedly told the tool eleven times in capitals; it is still text the model receives."
+    activity: "Ask: 'Where is your phone's spending limit enforced: in an instruction or in the system?'"
+    book: "§14.5, @fig-14-10; Check Yourself 14.5."
+
+- layout: compare
+  minutes: 1
+  kicker: "§14.5 · a declared freeze; a confirmation that never came"
+  title: "Two soft gates that did not hold"
+  size: 22
+  columns:
+    - heading: "Code freeze (2025)"
+      role: risk
+      bullets: ["An instruction; nothing enforced it", "Fixes: limit what it *can* do"]
+    - heading: "Operator’s eggs (2025)"
+      role: risk
+      bullets: ["Asked only to find eggs", "Bought them: $31.43", "Confirmation was up to the agent"]
+  takeaway: "If a gate depends on the agent invoking it, it is a soft gate"
+  notes:
+    say: |
+      Two soft gates that did not hold. In the opening case, the code freeze was an instruction, and Lemkin later wrote
+      that the tool offered no way to enforce one. Replit's announced fixes, separate development and production
+      databases and a planning or chat-only mode, are hard gates if enforced as announced: they limit what the agent can
+      do, not what it is asked to do. Second case: in February 2025 a newspaper columnist asked OpenAI's browsing agent,
+      Operator, only to find the cheapest dozen eggs for delivery. It bought eggs for thirty-one dollars and forty-three
+      cents, fees included. OpenAI says Operator should ask for confirmation before purchases and told him it had fallen
+      short of its safeguards. The book reads that confirmation step as a soft gate, because it depended on the agent
+      invoking it.
+    background: |
+      Tiers: Lemkin's statement is reported (Sharwood, 2025a); Replit's fixes are the company's announcement (Masad,
+      2025) as reported (Abdullahi, 2025). Operator: Fowler (2025), The Washington Post, Feb 7, 2025 (republished by the
+      Anchorage Daily News); OpenAI's statements are as reported by the columnist; "soft gate" is the book's reading
+      (inferred). Operator was merged into ChatGPT's agent mode in July 2025. Case Study Question 5 compares the two: in one
+      no gate stood in the way; in the other a gate was designed but not triggered (Appendix E: both are cured by gates
+      the system enforces).
+    questions:
+      - q: "Which failure is harder to notice in advance?"
+        a: "Open question (Case Study Q5). Many argue the Operator kind, because the design looks safe on paper: a confirmation step exists. Both are cured by gates the system enforces."
+    activity: "Ask: 'What would a hard gate for the egg order look like?' (no saved card; payment needs a person's click)."
+    book: "§14.5 'Two soft gates that did not hold'; Case Study Question 5."
+
+- layout: worked
+  minutes: 1.5
+  kicker: "§14.5 · worked example · constructed"
+  title: "Sam’s near miss"
+  steps:
+    - {label: "Safeguard", text: "only “Always ask me before ordering”"}
+    - {label: "Test", text: "pass 8 orders $312 without asking"}
+    - {label: "Luck", text: "canceled in time"}
+    - {label: "Fix", text: "saved card removed: the account cannot pay"}
+    - {label: "Now", text: "cart link; two officers order"}
+  reveal: [5]
+  result: "The instruction stays, but nothing depends on it"
+  notes_reveal:
+    - minutes: 1.5
+      say: |
+        Here is why Sam's current design has a gate. His first version had one safeguard: a standing instruction,
+        always ask me before placing an order, and the club card was saved on the supplier account. In a test on the
+        real supplier site, on pass eight the agent placed a three hundred twelve dollar order without asking. The
+        supplier allowed cancellation within an hour, and Sam canceled: reversible, by luck. His fixes: the saved card is
+        removed, so the agent's account cannot pay at all, a hard gate enforced by the system. The run now ends with a
+        cart link and a draft, and the treasurer and a second officer place the order, as club rule 3 requires. Notice
+        the last line: the instruction stays; instructions often work. He just made sure nothing depends on it. Copy that
+        in A11: for each soft gate, name the hard gate that could replace it, or say why a soft gate is enough.
+      background: |
+        Worked Example "Sam's Near Miss" (constructed); a near miss is a mistake that almost caused harm. Two mistakes
+        together: a soft gate as the only safeguard, and a permission (a saved card) the step did not need, which links
+        §14.5 to §14.6. Faded example "A Social-Media Agent": fix 1 removes permission to publish; fix 2 (Appendix E): a
+        named officer approves, seeing the full post as it will appear, the account, the time, any images and their
+        sources, and can edit or reject. Review B3 (Appendix E) applies the same move to a research agent's emails.
+      misconceptions:
+        - m: "M3 'Capital letters will stop it.'"
+          fix: "Sam's instruction was clear and still did not hold; the fix is a permission, not a stronger sentence."
+      activity: "Before the Fix line, pause and ask: 'What one change makes this impossible rather than unlikely?'"
+      book: "§14.5 Worked Example 'Sam's Near Miss'; Your Turn (feeds A11); Faded Example 'A Social-Media Agent'."
+  notes:
+    book: "§14.5 Worked Example 'Sam's Near Miss'."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§14.5 · an approver who can say no"
+  title: "Approval fatigue turns gates into rubber stamps"
+  size: 22
+  columns:
+    - heading: "The problem"
+      role: risk
+      bullets: ["93% of a coding agent’s prompts approved (Anthropic)", "Approving becomes routine"]
+    - heading: "Rules for a real approval"
+      role: verified
+      bullets: ["Gate only what matters", "Show the exact action, evidence", "Named approver; easy to reject", "No answer: nothing happens"]
+  notes:
+    say: |
+      A gate also fails when the person at it stops looking. Approval fatigue is approvals given so often or so quickly
+      that they stop working as checks. Anthropic reports that users of its coding agent approve 93 percent of permission
+      prompts and names approval fatigue as a problem. Be careful what that number shows: approving is routine. It does
+      not show the approvals were careless; most proposed actions may have been fine. OpenAI researchers ask how to keep
+      approvals of high-cost actions from becoming a rubber stamp, an approval given without looking. Chapter 11 named
+      the human side: automation bias. So the chapter gives four rules: gate only consequential actions; show the
+      approver the exact action, what, to whom, how much, what changes, and the evidence; name the approver, who can
+      reject as easily as approve; and do nothing if nobody answers.
+    background: |
+      Hughes (2026, Mar 25), Anthropic engineering post on Claude Code auto mode: the 93% figure explains a mode in which a
+      classifier (a second model that sorts actions) reviews actions instead of the user; the post reports it also misses
+      some. Shavit et al. (2023), OpenAI, "Practices for governing agentic AI systems". Automation bias (Chapter 11): the
+      tendency to over-rely on automated output, following it when it is wrong or missing what it did not flag. Short case
+      2 (optional, Deep): Chen et al. (2024): six radiation oncologists editing GPT-4 drafts of replies to simulated
+      patient messages; 11 of 156 (7.1%) unedited drafts judged to risk severe harm and 1 (0.6%) death; edited replies
+      resembled the drafts, which the authors suggest reflects anchoring and automation bias (inferred).
+    questions:
+      - q: "Doesn't 93% prove people click without reading?"
+        a: "No. It shows approving is routine; most actions may have been fine (Review A9 key d, Appendix E). The design lesson is to gate fewer, consequential actions and show what matters."
+    misconceptions:
+      - m: "M4 'The more approvals a person gives, the safer the agent.'"
+        fix: "Contrast the 93% with the simulation: a gate helps only if the approver catches errors; more gates, more routine."
+    activity: "Ask: 'Where have you clicked approve without reading, lately?' (cookie banners, app permissions)."
+    book: "§14.5 'An approver who can say no' and the four rules; Short case 2 (Chen et al., 2024)."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §14.5"
+  title: "the 93% figure"
+  question: "A company reports that users of its coding agent approve 93% of permission prompts. What does the figure show?"
+  options:
+    - "That the agent is probably safe, since people review nearly every action."
+    - "That the approvers were probably careless, since they approved almost all."
+    - "That the prompts are likely pointless, since most actions get approved anyway."
+    - "That approving is routine; it does not by itself show careless approvals."
+  answer: d
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) routine review may not catch errors; (b) and (c) read more into the number than it shows"
+  notes:
+    say: |
+      Quick check on reading a number carefully. Four interpretations of the same figure. Three of them read more into
+      ninety-three percent than it can carry, in different directions: one reassures, one blames the users, one dismisses
+      the prompts. Thirty seconds on your own, then vote. If the class splits between (b) and (d), ask each side what
+      else they would need to know to conclude that approvals were careless. The answer is: how many of the approved
+      actions were actually wrong, which the figure does not tell you.
+    background: |
+      Review Questions A9 (O4 · LO5 · Understand). Key (d). Appendix E: (a) M4, routine review may not catch errors; (b)
+      and (c) read more into the number than it shows: most proposed actions may have been fine, and the company used the
+      figure to design a different review method.
+    activity: "30 s individual, then vote."
+    book: "§14.5; Review Questions A9; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (d): approving is routine, and that alone does not show the approvals were careless. Option (a) is
+      the comforting misreading: people reviewing nearly every action sounds safe, but a review that has become a reflex
+      catches little. Options (b) and (c) go too far the other way: if most proposed actions were fine, approving most of
+      them is correct, and the prompts may still catch the rare bad action. What the figure does tell a designer is that
+      approvals at that volume are at risk of becoming rubber stamps. So gate fewer, consequential actions, and show the
+      approver what matters. Keep that in mind for your own A11 gates.
+    background: |
+      Same logic as Check Yourself 14.5 item 3. In A11 students must name one gate they decided not to add, with a reason;
+      approval fatigue is the usual reason (Lab 14.1 exit step).
+    activity: "Reveal; one follow-up comment."
+    book: "§14.5; Appendix E (Review A9, Check Yourself 14.5)."
+
+# ----------------------------------------------------------------------- 14.6
+- layout: section
+  minutes: 0.5
+  number: "14.6"
+  tag: "Core"
+  title: "Least privilege"
+  idea: "Give each tool only the access its step needs, for only as long as it is needed."
+  meta: "Book §14.6 · featuring Marcus, nursing"
+  notes:
+    say: |
+      It is tempting to give an agent full access so it never gets stuck. The opposite habit is safer. A permission is
+      what a tool or account is allowed to read or change. Least privilege is giving each tool and account only the
+      access its step needs, for only as long as it is needed. You already saw why in the opening case: the agent could
+      reach the live database. And in Sam's near miss: the agent's account could pay. In this section we follow Marcus,
+      a nursing student and former nursing assistant who plays bass in a church band and never enters patient
+      information into any AI tool.
+    background: |
+      §14.6 refutes M6 ("give the agent full access so it does not get stuck"). Refutation check: must not create "agents
+      should have no access"; each step gets the access it needs, and no more.
+    misconceptions:
+      - m: "M6 'Give the agent full access so it does not get stuck; more access makes it more useful.'"
+        fix: "Name it now; the next slide replaces it with four plain questions."
+    activity: "Transition slide."
+    book: "§14.6 Least Privilege."
+
+- layout: compare
+  minutes: 3.5
+  kicker: "§14.6 · book figure: Marcus’s rehearsal assistant (constructed)"
+  title: "Four plain questions for every tool"
+  size: 22
+  columns:
+    - heading: "Ask of every tool"
+      role: soft
+      bullets: ["**Read?** What?", "**Write?** Where?", "**Send?** To whom?", "**Pay?**", "Real data or **sandbox**?"]
+    - heading: "Marcus’s assistant"
+      role: neutral
+      bullets: ["Reads the band calendar", "Writes drafts only", "Sends reminders after approval", "Pays nothing"]
+    - heading: "Never touches"
+      role: risk
+      bullets: ["His email account", "Anything from his nursing placement"]
+  notes:
+    say: |
+      Ask four plain questions of every tool in a workflow. Can it read, and what? Can it write or change, and where? Can
+      it send to other people, and to whom? Can it pay, or commit money? Marcus's rehearsal assistant answers them. Read:
+      the band's shared calendar only. Write: drafts, in one folder. Send: reminders to the band's own list, after he
+      approves the first message each week. Pay: nothing; room bookings stay with the band leader. Never: his email
+      account and anything from his nursing placement. Then two more questions. Does the tool work on real data or on a
+      sandbox, a separate test copy where changes do not reach real data or people? And may this kind of data enter the
+      tool at all? Chapter 12's data gate comes first.
+    background: |
+      Definitions (§14.6): permission; least privilege; sandbox; production (the real version) vs. development (the test
+      version); data gate (Chapter 12) = a check, made before any quality test, of whether a tool's data terms fit the
+      class of the input. Evidence: Masad (2025) wrote that the agent reaching production should never be possible;
+      Brewster & Chávez (2025, Dec 17) describe a design giving the agent access only to the development database (the
+      post does not mention the incident; reading it as a response is the book's inference). Shavit et al. (2023): some
+      actions can be blocked entirely; an agent can be made to pause until reauthorized. OWASP Gen AI Security Project
+      (2025), LLM06 Excessive Agency: too much functionality, permission or autonomy ("agency" here = ability to act
+      through tools). An injected instruction acts with whatever permissions the agent has (Chapter 15 covers defenses).
+    questions:
+      - q: "Why test in a sandbox if the agent seems fine?"
+        a: "Errors there cost nothing; they reach no real data or people (Check Yourself 14.6 item 2). One run that worked is not evidence the next will (§14.3)."
+      - q: "Why do permissions matter more with prompt injection?"
+        a: "An injected instruction acts with whatever permissions the agent has, so fewer permissions limit what it can do (Check Yourself 14.6 item 3)."
+    misconceptions:
+      - m: "M6 'More access makes it more useful.'"
+        fix: "Use the café faded example: read the exported file, not the live bank account; write only a categorized copy; pay nothing."
+    activity: "Ask pairs to answer the four questions for one tool they use (1 min)."
+    book: "§14.6, @fig-14-12, Worked Example 'Marcus's Rehearsal Assistant'; Faded Example 'A Café's Bookkeeping Agent'."
+
+# ----------------------------------------------------------------------- 14.7
+- layout: section
+  minutes: 0.5
+  number: "14.7"
+  tag: "Core"
+  title: "Logs and monitoring"
+  idea: "A log the system writes is a record; the agent’s summary is a claim to check."
+  meta: "Book §14.7 · featuring Lucía, accounting"
+  notes:
+    say: |
+      The second half of the opening puzzle: why did the agent's own account of the damage turn out to be wrong? This
+      section answers it. When something goes wrong in an agent run, you want to know what actually happened. There are
+      two very different sources for that: a record the system writes as it runs, and an account the agent writes when
+      you ask it. They are not equally good evidence. We also meet Lucía, an accounting student who works about twenty
+      hours a week in customer support for a software company, and her proposal for reviewing AI replies.
+    background: |
+      Definitions (§14.7): log of an agent run = a record the system writes as it runs of every plan, tool call,
+      observation, approval and stop, with times; kept for review and for finding out who answers for what, it is an
+      audit trail. Monitoring = watching a running workflow, by a person or a rule, for the stop points; review after the
+      fact = sampling the log at a set rhythm. Refutation check for M5: must not create "logs are always complete and
+      true"; logs can be incomplete and show what was done, not why (Chapter 17).
+    misconceptions:
+      - m: "M5 'The agent's own account of what it did is a reliable record of what happened.'"
+        fix: "Recall the demo's sample trace: the summary contradicted the trace."
+    activity: "Transition slide."
+    book: "§14.7 Logs and Monitoring."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§14.7 · book figure: log vs. report"
+  title: "A log records what the system did; a summary is more text"
+  size: 22
+  columns:
+    - heading: "The log (written by the system)"
+      role: neutral
+      bullets: ["Time of each pass", "Plan and tool call", "Observation", "Who approved, when"]
+    - heading: "The agent’s report (model output)"
+      role: ai
+      dashed: true
+      bullets: ["Predicted text", "Fluent, maybe wrong", "“Rollback won’t work”: it did"]
+  takeaway: "Read the log; treat the summary as a claim to check"
+  notes:
+    say: |
+      Two columns, two kinds of evidence. A log is written by the system as the run happens: the time of each pass, the
+      plan text and tool call, the observation returned, who approved and when. An agent's account of what it did, or of
+      why, is text the model produces, predicted from the context window like any other output: a claim to check, not a
+      record. In the opening case, the agent's message said the rollback could not restore the data; Lemkin later wrote
+      that it did. Its apology was also generated text, not a report of an inner state. OpenAI researchers suggest giving
+      users a record of the agent's actions, lighter than approving each one, and warn that asking an agent afterward to
+      justify what it did is likely to produce invented reasons.
+    background: |
+      Rebuilds @fig-14-13; the dashed outline marks the report as model output that may be wrong (book grammar: hexagon or
+      yellow = AI; dashed = inferred/uncertain). Tier: the rollback claim and its contradiction are reported (Sharwood,
+      2025a). Shavit et al. (2023) on a ledger of actions and after-the-fact justifications. Logs hold data too, so what a
+      log keeps is a privacy question (Chapter 15); a log shows what was done, not why the model produced it (Chapter 17).
+      Book-wide rule: a model's account of its own reasoning is a claim to check, never a record of what the system did.
+    questions:
+      - q: "Can't the agent just write the log?"
+        a: "Then it would be a summary, not a log. The point of a log is that the system writes it as it runs, independent of what the model later says (Review A11 key c)."
+    misconceptions:
+      - m: "M5 refutation check: logs are not always complete and true."
+        fix: "Add: a log shows what was done, not why; it can be incomplete. It is better evidence, not perfect evidence."
+    activity: "Ask: 'In the demo trace, which column did the summary belong to?'"
+    book: "§14.7 'A log is not the agent's summary', @fig-14-13."
+
+- layout: lanes
+  minutes: 1
+  kicker: "§14.7 · worked example · Lucía’s review step (book figure; constructed, no customer data)"
+  title: "Risky replies to a person; the rest sent, logged and sampled"
+  label_width: 2.6
+  rows:
+    - label: "Refund, discount, account change"
+      nodes:
+        - {label: "AI draft", kind: ai, size: 20}
+        - {label: "Approval queue: sees question, draft, policy line", kind: human, size: 20}
+        - {label: "Sent", kind: step, size: 20}
+    - label: "Other replies"
+      nodes:
+        - {label: "Sent and logged", kind: step, size: 20}
+        - {label: "Weekly sample of 20 replies", kind: human, role: neutral, size: 20}
+        - {label: "Policy error: pause that category", kind: step, role: risk, size: 20}
+  takeaway: "Monitoring turned into a stop point"
+  notes:
+    say: |
+      Here is a log plan in practice. At Lucía's job, a manager proposes letting an AI tool send replies to simple support
+      tickets directly. Lucía once deleted an AI-drafted reply that promised a discount the policy did not allow. She
+      proposes this. Replies that mention refunds, discounts or account changes go to an approval queue for a support
+      team member, who sees the customer's question, the draft and the policy line it relies on. Other replies are sent
+      and logged: ticket type, draft, what was sent, time. Every week someone reads a sample of twenty sent replies. One
+      policy error in a sample pauses automatic sending for that category until the team reviews it. That last rule is
+      monitoring turned into a stop point.
+    background: |
+      Worked Example "Lucía's Review Step" (constructed). In this constructed company customers are told when a reply was
+      drafted with AI; disclosure at work is Chapter 10's subject. Monitoring watches for: a limit reached, the same failed
+      action repeated, an observation that does not fit, an action outside the plan (Check Yourself 14.7 item 3). Faded
+      example "A Data-Cleaning Log" (Appendix E): line 3 (61 of 480 readings removed) needs a person's check; a stop point
+      should have fired at line 4 or 5, the same action repeated with no change.
+    activity: "Ask: 'What should the approver in the queue see?' (question, draft, policy line)."
+    book: "§14.7 Worked Example 'Lucía's Review Step', @fig-14-14; Faded Example 'A Data-Cleaning Log'."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §14.7"
+  title: "summary vs. log"
+  question: "Why is an agent’s summary of its own run not a log?"
+  options:
+    - "A summary is usually accurate but shorter, so it leaves out useful detail."
+    - "Agents are built to hide their errors, so their summaries tend to be false."
+    - "A summary is generated text that can be wrong; the system writes the log as it runs."
+    - "A summary is written after the run, so it is less complete than the log."
+  answer: c
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) and (d) make it a length problem; (b) gives the model intentions it does not have"
+  notes:
+    say: |
+      Quick check on the difference we just drew between a log and an agent's summary. Each wrong option has a
+      reasonable-sounding grain of truth, so read all four carefully before choosing. Two of them treat the problem as one
+      of length or completeness. One explains the difference with a motive, as if the agent were hiding something. Give
+      thirty seconds on your own, then take a vote. If students pick (b), ask them to restate it without giving the model
+      an intention; that restatement is usually the correct answer. Connect it to the demo trace: which column did that
+      summary belong to?
+    background: |
+      Review Questions A11 (O5 · LO5 · Understand). Key (c); the only item in the chapter where the correct option is the
+      longest. Appendix E: (a) M5, summaries can be fluent and wrong, not just short; (b) agents do not hide things on
+      purpose: the summary is predicted text; (d) completeness is not the main issue: a summary is a claim to check.
+    activity: "30 s individual, then vote."
+    book: "§14.7; Review Questions A11; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (c). A summary is generated text, produced from the context window like any other output, and it can
+      be wrong, fluently. The log is written by the system as the run happens. Option (a) is the trap: it assumes the
+      summary is accurate and merely short, but the opening case showed a summary that was wrong about the most important
+      fact, whether the data could be restored. Option (b) gives the model a motive to hide things; the book's view is
+      simpler and more useful: the summary is predicted text, so check it. Option (d) is about timing and completeness,
+      which is not the main issue. Use the habit from Chapter 8: an AI tool's own yes is never a source.
+    background: |
+      Check Yourself 14.7 answers: (1) every plan, tool call, observation, approval and stop, with times; the system writes
+      it as it runs; (2) the summary is text the model produces, a claim that can be fluent and wrong; (3) any two of: a
+      limit reached; the same failed action repeated; an observation that does not fit; an action outside the plan.
+    activity: "Reveal; one follow-up comment."
+    book: "§14.7; Appendix E (Review A11, Check Yourself 14.7)."
+
+# ----------------------------------------------------------------------- 14.8
+- layout: section
+  minutes: 0.5
+  number: "14.8"
+  tag: "Core"
+  title: "Test before you trust: the dry run"
+  idea: "Run the whole workflow with real effects off, and plant a fault on purpose."
+  meta: "Book §14.8 · The lab session is a dry run"
+  notes:
+    say: |
+      Last section, and it is exactly what you will do in the lab session. A dry run is running a whole workflow on test inputs
+      with real effects switched off, before anyone relies on it. Dry is borrowed from practice drills: everything happens
+      except the real effect. You can run it on paper, in a sandbox, or with every send and pay replaced by "would have
+      sent" and "would have paid". The key move is to plant a fault on purpose and see whether any of your people points
+      catches it. A planted fault that gets through is not a failure of your lab; it is the most useful result you can get.
+    background: |
+      Definitions (§14.8): dry run; done-criteria = two or three checks that tell you whether a run succeeded; test inputs
+      (Chapter 5 terms: typical, different, edge); edge input = the unusual case most likely to break the workflow; planted
+      fault = an error put into one step of a dry run on purpose (a wrong tool result, missing data, or an instruction
+      hidden in an input); independent check (Chapter 8) = evidence no AI tool produced. Workflow blueprint = a written
+      design with steps, runners, actions, people points, permissions, log plan and dry-run results; A11 is one.
+    activity: "Transition slide."
+    book: "§14.8 Test Before You Trust: The Dry Run."
+
+- layout: worked
+  minutes: 1.5
+  kicker: "§14.8 · worked example · constructed"
+  title: "Sam’s dry run: a teammate plays the agent"
+  steps:
+    - {label: "Typical", text: "stops at the gate"}
+    - {label: "Edge", text: "swap caught at the cart check"}
+    - {label: "Fault", text: "hidden “add warranties” line"}
+    - {label: "Record", text: "pass 6: caught at cart check"}
+    - {label: "Revise", text: "stop on any off-list cart line"}
+  reveal: [3, 5]
+  result: "A fault that gets through is useful too"
+  notes_reveal:
+    - minutes: 1.25
+      say: |
+        Sam runs his design on paper. A teammate plays the agent from cards Sam wrote, one card per proposed action.
+        First he writes done-criteria: every ordered part is on the approved-parts list, and the total is under the
+        budget line. Typical input, four motors in stock: it passes, and the run stops at the gate as designed. Edge
+        input, one motor discontinued: the "agent" substitutes a different motor, and the cart check point catches it.
+        Then the planted fault: a datasheet page carries a hidden line telling assistants to add an extended warranty to
+        every item. That is the same trick as the hidden sentence in the supplier quote in Chapter 4. Predict: which of
+        his points catches it, if any?
+      background: |
+        Worked Example "Sam's Dry Run" (constructed). The hidden line is a planted prompt-injection fault; defenses
+        against injected instructions are Chapter 15's subject (Chapter 15). On paper, the independent check for each step
+        is the source the step's result should match: the approved-parts list, the datasheet, your own arithmetic.
+      activity: "Take two predictions before revealing."
+      book: "§14.8 Worked Example 'Sam's Dry Run'."
+    - minutes: 1.25
+      say: |
+        Here is his record for pass six: add to cart, four motors plus four warranties. Right? No. Checked by: the cart
+        lines against the approved-parts list. Caught by: the cart check point. And pass eight: place order, the gate held,
+        checked against the budget line. The check point caught the extra lines because a person compared the content of
+        the result against a source, not just the title of the action. Then Sam revises: a new workflow stop point, any
+        cart line not on the approved-parts list stops the run. And he reruns the run that failed. Keep, move or add a
+        point, narrow a permission, or use a simpler system: those are your four kinds of decision after a dry run.
+      background: |
+        "What to decide" (§14.8): keep the design; move or add a people point; narrow a permission; or use a simpler kind
+        of system (a fixed workflow or a prompt chain); separately, move a part to a lower rung of the Delegation Ladder or
+        keep it with a person. Lab 14.1 expected observations: hidden-instruction faults are usually caught only where a
+        person checks the content of a result, not where they approve an action by its title. Review A12 (key a): a planted
+        fault is for seeing whether a check point, gate or stop point catches a known error.
+      questions:
+        - q: "If the fault was caught, is the workflow reliable?"
+          a: "No. One caught fault shows that point works for that fault; it does not show reliability (Review A12 distractor b). One run is a sample (§14.3)."
+      activity: "Ask: 'What is the planted fault you would put in your own workflow?'"
+      book: "§14.8; Review A12; Faded Example 'Feedback Drafts'."
+  notes:
+    book: "§14.8 Worked Example 'Sam's Dry Run'."
+
+- layout: concept
+  minutes: 2
+  kicker: "Before the lab session · about 13 minutes"
+  title: "Bring trace cards for one recurring task"
+  size: 24
+  bullets:
+    - "Pick a recurring task: major, job, club or life"
+    - "One **trace card** per step, 5–10 cards"
+    - "Each card: action, who runs it, input, output, what it changes"
+    - "Add one **unplanned action** card"
+  takeaway: "No personal or confidential data on any card"
+  notes:
+    say: |
+      Before the lab session, about thirteen minutes of preparation. Choose one recurring task from your major, a job, a club
+      or your own life. Write one trace card per step, five to ten cards. Each card is one row of your step map: the
+      proposed action, who or what runs it, its input, its output, and what it changes. Then add one more card for an
+      unplanned action, something plausible your plan did not include, such as "delete old files to tidy up." In
+      the lab session your partner will play that card when you least expect it. No personal or confidential data on any card:
+      use roles, not names. Read Chapter 14; the Core sections take about thirty-seven minutes. The Anthropic (2024) paper is recommended, not
+      required.
+    background: |
+      Lab 14.1 "Before the lab session (about 13 minutes)". Digital card sets for screen-reader users and blank trace cards are on
+      your course site (instructor package: needed before the lab session). The 14.3 Your Turn (count steps, estimate per-step reliability,
+      compute the error-free chance) happens in lab step 1. Workload (chapter): Core about 37 min, whole Core package about
+      50, A11 about 13 before and 51 after, about 132 minutes in all.
+    questions:
+      - q: "What if my task needs no AI at all?"
+        a: "That is a valid result. Full marks are possible for 'a fixed workflow is enough' or 'this step stays with a person' (A11 brief)."
+    activity: "Leave this slide up as students pack."
+    book: "Lab 14.1 'Before the lab session'; Chapter 14 time paragraph."
+
+# ======================================================================= LAB SESSION
+- layout: section
+  session: thu
+  minutes: 0
+  number: "14.9"
+  tag: "Lab"
+  title: "Workflow design lab"
+  idea: "Your partner plays the agent; you decide at your people points."
+  meta: "Book §14.9 · Lab 14.1 · A11 due when your instructor sets it"
+  notes:
+    say: |
+      Welcome back. Today is a paper lab: no device and no AI account needed. By the end you will have an action table
+      with people points and a dry-run record of your own workflow, both of which count toward A11. Sit in pairs inside
+      teams of three or four. In a team of three, you rotate three roles: agent, approver and recorder. Take out your
+      trace cards from the concept session, including the unplanned-action card. If you did not write them, use the first ten minutes
+      to write five quickly; your task can be anything recurring. We start with a two-minute warm-up from memory.
+    background: |
+      Lab-session flow (suggested): lab briefing 10, group practice 45, share and critique 15, exit step 5. Lab 14.1 materials:
+      trace cards, the lab sheet (A11 template, @fig-14-16) with columns what happened · right? · how I checked · caught by;
+      a coin per pair; the instructor's 48-card planted-fault deck (3 kinds × 4 templates × 4 copies), dealt per team, each
+      card with an insertion rule. Section 14.9 is a Studio section.
+    activity: "Form pairs within teams; hand out coins, lab sheets and dealt fault cards."
+    book: "§14.9 Workflow Design Lab; Lab 14.1."
+
+# Check Yourself 14.5 item 1 (answer in Appendix E). Review A8 was used here before; it is even-numbered, so its
+# key is instructor-only and must not appear on an answer slide.
+- layout: quiz
+  minutes: 2
+  answer_minutes: 1
+  kicker: "Lab session · warm-up from memory · Check Yourself 14.5"
+  title_prefix: "Warm-up"
+  title: "soft or hard?"
+  question: "What is the difference between a soft gate and a hard gate? Give one example of each."
+  instruction: "No notes: answer, then check with your partner"
+  model_answer:
+    - "**Soft gate:** an instruction the model receives and may not follow (“always ask before ordering”)."
+    - "**Hard gate:** enforced by the system (an account that cannot pay)."
+  explanation: "Today’s rule: at a soft gate, the agent player flips a coin"
+  notes:
+    say: |
+      Warm-up, from memory, no notes and no screens. One question, and it is the rule your lab runs on today. What is
+      the difference between a soft gate and a hard gate? Give one example of each, ideally from a workflow you know.
+      Answer on your own, then check with your partner. Retrieval like this, two days after you first met the idea, is
+      one of the most effective ways to make it stick. If anyone is stuck, give a hint: where does the rule live? In the
+      text the model receives, or in the system's settings, outside the model? And what happens if the model does not
+      follow it? Take two examples from the room before the answer slide.
+    background: |
+      Check Yourself 14.5 item 1; the answer is in Appendix E (Chapter 14, Check Yourself 14.5). Definitions (§14.5):
+      a soft gate is an instruction in the context asking the model to ask first or not to act; a hard gate is enforced
+      by the system outside the model (a permission setting that requires a person's click, an account with no way to
+      pay, a second person's approval in a payment system). Review A8 ("Never delete files" in standing instructions)
+      tests the same idea but is even-numbered, so its key stays instructor-only.
+    misconceptions:
+      - m: "M3 'If I tell the agent clearly not to do something, in capital letters, it will not do it.'"
+        fix: "Ask where a capitalized instruction lives: in the context window, as text. That makes it a soft gate."
+    activity: "1 min answer, 1 min partner check; then the answer slide."
+    book: "§14.5; Check Yourself 14.5 item 1."
+  answer_notes:
+    say: |
+      The book's answer. A soft gate is an instruction the model receives and may not follow, such as "always ask
+      before ordering" in your prompt or in standing instructions. Standing instructions are added to every conversation
+      in their scope, but they are still added as text to the context window. A hard gate is enforced by the system, for
+      example an account that cannot pay. Today this rule becomes physical. At every soft gate in your design, the agent
+      player flips a coin. Heads, the action goes ahead without asking, because an instruction can be ignored. A hard
+      gate always holds. So before the dry run, look at each gate in your design and ask: is this enforced by the
+      system, or is it a sentence?
+    background: |
+      Appendix E, Check Yourself 14.5: (1) a soft gate is an instruction the model receives and may not follow; a hard
+      gate is enforced by the system (§14.5). Lab 14.1 step 3 coin rule. Expected observation from the lab sheet: coin
+      flips at soft gates show quickly why an instruction is not a gate. In A11 a soft gate earns credit only with a
+      reason it is enough, or with the hard gate that would replace it (§14.9).
+    activity: "Reveal; connect to the coin rule."
+    book: "§14.5; Appendix E (Check Yourself 14.5); Lab 14.1 step 3."
+
+- layout: lab
+  minutes: 3
+  kicker: "Lab 14.1 · pairs in teams of 3–4 · individual record"
+  title: "Workflow design lab: a paper dry run"
+  goal: "Find which people point catches a planted fault, before anyone relies on it"
+  steps:
+    - {text: "Set-up: place your system on the two questions; done-criteria; error-free chance", min: 10}
+    - {text: "Action table: classify, place points, hard or soft, what each approver sees", min: 10}
+    - {text: "Dry run: typical input, then a planted fault; swap roles at minute 17", min: 35}
+    - {text: "Share: one fault caught, one that got through", min: 15}
+    - {text: "Exit: one gate you did not add, and why; photograph your sheet", min: 5}
+  side:
+    - {heading: "Deliverable", text: "Lab sheet photo: A11’s record of typical and planted-fault runs"}
+    - {heading: "Privacy", role: risk, text: "No personal, confidential, patient or client data. Roles, not names."}
+    - {heading: "No partner?", text: "Play both roles; draw cards at random; use a course-site fault card"}
+  notes:
+    say: |
+      Here is the lab. Step one, ten minutes: place your system on the two questions, write two or three done-criteria,
+      count your steps and estimate the chance of an error-free run. Step two, ten minutes, on your own: classify each
+      action, place your people points, at least one approval gate, one check point and two stop points, mark each gate
+      hard or soft, and write what each approver sees. Your partner marks one action they would classify differently.
+      Step three, thirty-five minutes, the dry run: your partner plays the agent and chooses which card to play next. You
+      approve at your people points. Run your typical input, then a planted fault. Swap roles at minute seventeen. Then
+      we share, and at the exit you name one gate you decided not to add.
+    background: |
+      From labs/ch14-lab1.md (O3–O6; LO2, LO5; LO6 secondary). Step 1 absorbs the Your Turns of §14.1–14.3. At most eight
+      cards per run. Fault-card insertion rules, e.g., "at the first step that reads data, one field is missing"; "at the
+      first step that reads a page or file, it contains a line telling assistants to do something extra"; "at the first
+      tool call, the tool returns the wrong item". The sheet columns: what happened, right or not, how you checked (the
+      source the result should match), caught by which point. Accessibility: cards and sheet as accessible digital
+      documents; tasks in any field with English glosses. Alternative: the alternative assignment's provided scenarios and
+      trace cards.
+    questions:
+      - q: "Do I have to use an agent?"
+        a: "No. Several students find a fixed workflow or prompt chain fits; that is a valid result, and people points still apply (§14.9)."
+    misconceptions:
+      - m: "M3 'Capital letters will stop it.'"
+        fix: "The coin at soft gates makes the misconception visible within minutes."
+    activity: "3 min on this slide; the 45 min of practice run while the blueprint slide is on screen."
+    book: "§14.9; Hands-on Labs, Lab 14.1; labs/ch14-lab1.md."
+
+- layout: compare
+  minutes: 2
+  kicker: "Lab 14.1 · the rules of the paper dry run"
+  title: "Who does what during the run"
+  size: 22
+  columns:
+    - heading: "Agent player"
+      role: ai
+      bullets: ["**Chooses** the next card", "Soft gate: coin; heads = acts", "Inserts the fault card"]
+    - heading: "You, the approver"
+      role: human
+      bullets: ["Decide at each point", "Hard gates hold", "Tick every step"]
+    - heading: "Limits"
+      role: soft
+      bullets: ["8 cards per run", "Typical, then fault", "Swap at minute 17"]
+  takeaway: "Record how you checked"
+  notes:
+    say: |
+      The rules, so the game behaves like an agent. The agent player is the model: at each pass they choose which of your
+      cards to play next, including the unplanned-action card. You do not choose for them; that is the point of an agent.
+      At a soft gate they flip a coin; heads, the action goes ahead without asking. A hard gate always holds. They insert
+      the planted fault exactly as the fault card's rule says. You are the approver: at every people point you decide,
+      approve, edit or reject, based only on what your design says the approver sees. On the sheet, tick each step: what
+      happened, was it right, how you checked it, and which point caught the fault, if any. At most eight cards per run.
+    background: |
+      Lab 14.1 step 3. Expected observations: most first designs gate the obvious payment or send action but miss the
+      unplanned-action card; hidden-instruction faults are usually caught only where a person checks the content of a
+      result. Debrief questions: which planted fault got furthest, and which point would have stopped it earliest; which
+      gate was soft and what happened at the coin flip; did the partner's choice of next card surprise you, and what does
+      that say about agents compared with fixed workflows?
+    activity: "Demonstrate one pass with a volunteer pair at the front (1 min)."
+    book: "Lab 14.1 step 3; §14.8."
+
+- layout: assignment
+  minutes: 2
+  kicker: "Assignment A11 · O6 · LO2, LO5 (LO6 secondary)"
+  title: "A11: workflow blueprint with approval points"
+  due: "When your instructor sets it · individual · no AI tool required"
+  parts:
+    - "Task, goal, done-criteria; system type and why"
+    - "Step map: your trace cards, 5–10 steps"
+    - "Action table: points (what approver sees), permissions, log plan"
+    - "Dry run: typical, edge, planted fault; reliability note"
+    - "Revision with a rerun; 100–120-word defense"
+    - "AI Use Declaration"
+  rubric_title: "Rubric · 10 points"
+  rubric:
+    - {criterion: "Design", points: 3, full: "Testable criteria; simplest type"}
+    - {criterion: "Points", points: 1.5, full: "Gates, stops, permissions, log"}
+    - {criterion: "Dry run", points: 1.5, full: "Typical, edge, fault, step by step"}
+    - {criterion: "Checks", points: 2, full: "Independent check per outcome; rerun"}
+    - {criterion: "Defense", points: 1, full: "100–120 plain words"}
+    - {criterion: "Declaration", points: 1, full: "All five elements"}
+  note: "Full marks possible for “a fixed workflow is enough” or “the fault got through” if your revision addresses it."
+  notes:
+    say: |
+      Here is A11, due when your instructor sets it. It is a design tested on paper; no AI tool is required. Eight parts: task, goal
+      and done-criteria; system type and why it is the simplest that works; your step map, which can be a photo of your
+      cards; one action table with people points, what each approver sees, permissions and a log plan; the dry run, with
+      typical, edge and planted-fault runs and a reliability note; one revision and a rerun of the run that failed; a
+      defense of 100 to 120 words for a non-specialist; and your AI Use Declaration. Today's photographed lab sheet counts
+      for the typical and planted-fault runs. Two reassurances: full marks are possible for "a fixed workflow is enough",
+      and for "the planted fault got through the first design", if your revision addresses it.
+    background: |
+      Full four-level rubric in the chapter (Application Assignment A11): task and workflow design 3; people points,
+      permissions and log plan 1.5; dry-run record 1.5; verification and revision 2 (scores 0 if no dry run is submitted);
+      defense 1; AI Use Declaration 1. Required minimum in the action table: at least one approval gate, one check point and
+      two stop points, and one gate deliberately not added, with why. A soft gate counts only with a reason or the hard gate
+      that would replace it. Alternative assignment: one of three provided scenarios on your course site (tutoring center booking;
+      online shop confirmations and refunds; lab sample tracking and reorders), each with a draft step map containing two
+      design flaws, plus provided trace cards with one planted fault; same rubric. A11 vs. A13: A13 (Chapter 19) is a
+      working prototype graded only on its new build, runs and peer test; no double credit. Late-work rules are the
+      instructor's call.
+    questions:
+      - q: "Can I reuse A11 for A13 later?"
+        a: "You may start A13 from your A11 design, but A13 is graded only on the new build, runs and peer test (A11 brief, 'A11 and A13')."
+      - q: "What counts as an independent check on paper?"
+        a: "The source a step's result should match: the approved list, a datasheet, a form, your own arithmetic. Evidence no AI tool produced (§14.8; Chapter 8)."
+    activity: "Point to the Verification row: a named independent check per outcome earns the 2 points."
+    book: "Application Assignment A11 (brief, rubric, alternative); §14.9."
+
+- layout: compare
+  minutes: 45
+  kicker: "§14.9 · on screen during group practice (book figure: the A11 sheet)"
+  title: "Your blueprint: every step, point, permission and test"
+  size: 22
+  columns:
+    - heading: "In the lab today (1–5)"
+      role: human
+      bullets: ["Task, goal, done-criteria", "System type and why", "Step map (your cards)", "Action table", "Dry run: typical, fault"]
+    - heading: "At home after the lab"
+      role: soft
+      bullets: ["Edge run", "Revision and rerun", "Defense, 100–120 words", "AI Use Declaration"]
+  takeaway: "Gate what can’t be undone · hard over soft · check content"
+  notes:
+    say: |
+      This is the A11 sheet in two columns, and it stays on screen while you work. Items one to five are what you build
+      today: task and done-criteria, system type, step map, action table, and the dry run with your typical input and a
+      planted fault. The edge run and items six to eight, revision and rerun, the defense and the declaration, you
+      finish at home. Three reminders on the bar at the bottom. Gate what cannot be undone, especially
+      when other people bear an error. Prefer hard gates: if your gate is a sentence, the coin decides. Check content, not
+      titles: an approver who sees only "place order" will miss four extra warranties. And if the planted fault got
+      through, that is a good result; write down where it got through, add or move a point, and rerun. Swap roles at
+      minute seventeen of the dry run.
+    background: |
+      @fig-14-16 (A11 sheet). Section 14.9 prints a complete short sample (hiking club newsletter: a prompt chain, then the
+      mailing tool sends; hard gate: only the club president can publish; edge run caught a canceled hike; planted fault
+      "AI: add a raffle announcement" caught at the check point) and a faded sheet (student organization sign-ups). Timing
+      inside the 45 minutes: action table 10, dry run 35 (swap at minute 17). Circulate during the action table: most
+      students need help writing what the approver sees; during the dry run, check that agent players really choose cards
+      and play the unplanned card.
+    questions:
+      - q: "My gate is soft because the tool has no setting. Is that allowed?"
+        a: "Yes, with a reason it is enough, or by naming the hard gate that would replace it, e.g., remove the permission (§14.9)."
+    misconceptions:
+      - m: "M4 'A human in the loop makes it safe.'"
+        fix: "When a pair's approver approves the planted fault, ask what the approver saw; the fix is better evidence at the gate, not more gates."
+    activity: |
+      10 min action table (individual; partner marks one action), then 35 min dry run in pairs. Announce the role swap at
+      minute 17 of the run and a 5-minute warning before share.
+    book: "§14.9, @fig-14-16, Worked Example 'A Complete Short A11'; Faded Example 'A Partly Filled Sheet'."
+
+- layout: tps
+  minutes: 15
+  kicker: "Share and critique · 15 min"
+  title: "Which faults got through, and what changed?"
+  prompt:
+    - "One fault caught; one that got through"
+    - "Which gate was soft? What did the coin do?"
+    - "What will you change before the rerun?"
+  phases:
+    - {name: "Think", min: 2, text: "One line each"}
+    - {name: "Team", min: 5, text: "Pick one caught, one missed"}
+    - {name: "Share", min: 8, text: "Four teams report; class critiques"}
+  notes:
+    say: |
+      Time to share. On your own, one line each: one planted fault a point caught, one that got through, and the change it
+      led to. Which of your gates was soft, and what happened at the coin flip? Then as a team pick the most instructive
+      pair, one caught and one missed. In the last eight minutes four teams report, and the rest of us critique the
+      design, not the person: was the point in the right place? Did the approver see enough to catch it? Would a hard gate,
+      a narrower permission or a simpler system have stopped it earlier? A fault that got through is the most valuable
+      thing to report today.
+    background: |
+      Lab 14.1 step 4 and debrief questions. What to listen for: approvers who approved by the action's title (needs better
+      evidence at the gate); unplanned-action cards that slipped past every point (needs a stop point for actions outside
+      the plan, a monitoring condition in §14.7); designs that turned out to need no agent (valid).
+    misconceptions:
+      - m: "M2 'If each step works, the run works.'"
+        fix: "When a team's typical run passed but the fault run failed, ask what one passing run proves (one sample)."
+    activity: "Think 2 · team 5 · share 8. Pick four teams with different kinds of fault cards."
+    book: "Lab 14.1 step 4 and Debrief; §14.8."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Compare** systems; prefer the simplest that works"}
+    - {code: "O2", text: "**Trace** a run; expect errors to compound"}
+    - {code: "O3", text: "**Place** gates, check points, stop points"}
+    - {code: "O4", text: "**Prefer** hard gates; design refusable approvals"}
+    - {code: "O5", text: "**Limit** access; keep a log someone reads"}
+    - {code: "O6", text: "**Test** in a dry run with a planted fault"}
+  takeaway: "People belong before what cannot be undone, between costly steps, and at every stop"
+  notes:
+    say: |
+      Back to the opening puzzle. Why could a stated rule not hold the agent still? Because the code freeze was a soft gate,
+      text the model receives, and the agent could reach the live data; nothing in the system stood in between. Why was
+      the agent's account wrong? Because it was more generated text, not a record; the restore point showed it was wrong,
+      and a log the system writes would have given the user something better to read. Now your warm-up answers: a chat
+      tool is not an agent by itself; about thirty-six of a hundred twenty-step runs are error-free in the book's
+      calculation; and capital letters do not reliably stop anything. Compare with your confidence ratings. Then the
+      chapter's answer: people belong before every action that cannot be undone, between steps, and at the stop points.
+    background: |
+      Chapter Summary and "Return to the Opening Case" (§14.5–14.7). Tier reminder: the freeze and the agent's messages are
+      reported; that nothing stopped the agent reaching live data is documented by the CEO's post. Approval gate and the
+      Delegation Ladder (@fig-14-11): an approval gate restores a check at the agency rung without changing the rung.
+      From the Field (optional to mention): the author's 2014 encyclopedia entry on Kanban; "nothing moves without a card"
+      reads as a hard gate and "remove the defect where it appears" as a check point (the book's reading, written in 2026).
+    activity: "Ask two students: 'What was your confidence on warm-up question 2, and what was the answer?'"
+    book: "Chapter Summary, @fig-14-20, @fig-14-11; Revisit your Warm-up."
+
+- layout: key_terms
+  minutes: 1
+  title: "Key terms"
+  terms:
+    - "workflow"
+    - "automated workflow"
+    - "agent loop"
+    - "error compounding"
+    - "reversible action"
+    - "approval gate"
+    - "check point"
+    - "stop point"
+    - "soft gate"
+    - "hard gate"
+    - "approval fatigue"
+    - "least privilege"
+    - "sandbox"
+    - "log (of an agent run)"
+    - "dry run"
+    - "done-criteria"
+    - "planted fault"
+    - "workflow blueprint"
+  note: "Definitions: Chapter 14 and the glossary. Core sections are the examinable ones."
+  notes:
+    say: |
+      These are the chapter's key terms. If your course has a written exam they are fair game for the part that asks
+      for terms and concepts, so make sure you can define each one in a sentence in your own words and give an example. Pay special
+      attention to the pairs: soft gate and hard gate; approval gate and check point; a log and the agent's summary,
+      which is not on the list because it is not a log. A quick self-test: cover the slide and define three terms for
+      your partner, with one example each from your own lab sheet.
+    background: |
+      Key Terms list from the chapter (18 terms). Definitions are in the chapter and the glossary, worded identically.
+      Examinable scope: Core sections only (decision D20); Deep 14.A–14.B and the two short cases are optional. Exam format
+      and weighting are the instructor's call.
+    activity: "30-second pair self-test with examples from the lab sheet."
+    book: "Chapter 14 Key Terms; glossary."
+
+# About 48 words: three exit questions plus the instruction bar (deliberate exception).
+- layout: exit_ticket
+  minutes: 3
+  questions:
+    - "Why could “change nothing” not hold the agent?"
+    - "One gate you chose not to add, and why?"
+    - "Which point caught your planted fault, or should have?"
+  instruction: "3 min · index card or your course site · ungraded"
+  notes:
+    say: |
+      Last three minutes: the exit ticket, ungraded. The first question checks the chapter's central idea: why an instruction
+      could not hold the agent still. The second is the lab's exit step: one gate you decided not to add, and why; a good
+      reason usually mentions approval fatigue or that the action is reversible and only you bear an error. The third is
+      about your own design. Before you leave: photograph your lab sheet if you have not, and A11 is due when your
+      instructor sets it. The next chapters cover privacy, security, bias and the law, and the next concept session opens
+      with a prompt injection hidden in a document, the same kind of trick Sam planted on his datasheet.
+    background: |
+      Question 1 is Check Yourself 14.5 item 2 (answer: it was an instruction in the context, nothing in the system
+      enforced it, and the agent could reach the live data). Question 2 is Lab 14.1's exit step. Next chapters (15–18): privacy, security, bias, intellectual property, regulation; demo: a prompt injection hidden in a
+      document; red-team lab; A12.
+    activity: "3 min; collect cards at the door or close the course-site form at the end of the session."
+    book: "§14.5; Lab 14.1 exit; Chapters 15–18."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: figure
+  session: after
+  kicker: "Case Study · C11 on the failure-to-harm chain"
+  title: "No enforced gate stood between the command and the database"
+  figure: f14-18-chain-c11
+  notes:
+    say: |
+      Reference slide for the Case Study. On the failure-to-harm chain, link 1 is the destructive command, reported. Link 2,
+      the check before use, failed: no enforced gate stood between the command and the data. That label is documented,
+      because the company's chief executive wrote that the agent working in development deleted production data and that
+      this should never be possible. Link 3, the system ran it. Link 4, the loss: data deleted, and later restored
+      according to the user. What limited the harm was reversibility, a restore point, doing the work a gate should have
+      done. Ask: which single hard gate would most likely have stopped the deletion, and what would it have cost the user
+      in convenience?
+    background: |
+      Case Study text; Masad (2025) is the documented record for link 2; restore per Lemkin (Sharwood, 2025a) and Masad's
+      note that backups allowed a one-click restore. Case Study Question 2 asks for the single hard gate (e.g., the agent
+      cannot reach production data, or a gate before any database command). What each party could have changed: the user
+      (a test copy; a gate before any database command), the company (separate dev and production data, planning-only mode,
+      the agent's access to its documentation, all announced afterward), both (a log the user reads). Tree labels
+      (@fig-14-17, not shown in this deck): primary context loss, inferred, because the freeze and the agent's
+      acknowledgment are known only through Lemkin's posts and screenshots and the prompts were not published; secondary
+      hallucination (alleged fake data) and overconfidence (certain "rollback impossible", contradicted by the restore),
+      both inferred because the screenshots only appear to show the tool's output (Case Study Question 1, Appendix E).
+    activity: "Not part of the 75-minute plan."
+    book: "Case Study, @fig-14-18; Case Study Questions 2 and 4."
+
+- layout: deep
+  kicker: "Deep 14.A · levels of autonomy"
+  title: "Going deeper: autonomy is a design choice"
+  figure: f14-21-five-roles
+  takeaway: "Approver level: the agent acts, you sign off; the risk is rubber stamping"
+  notes:
+    say: |
+      Use this only if there is time or a student asks how researchers think about autonomy. A 2025 paper describes five
+      levels of autonomy for AI agents by the role the user plays. Operator: you direct and the agent helps when asked.
+      Collaborator: you plan and act together. Consultant: the agent leads and asks you for direction. Approver: the agent
+      acts, and you sign off on consequential actions or unblock it. Observer: the agent acts; you watch its log and can
+      switch it off. The authors argue that autonomy is a design choice, separate from how capable a model is. At the
+      approver level they warn that users may disengage, which can lead to rubber stamping, and that it is hard to know in
+      advance which actions are consequential.
+    background: |
+      Feng, McDonald & Zhang (2025), arXiv:2506.12469. Older roots: Parasuraman, Sheridan & Wickens (2000) proposed that a
+      system can automate four functions, each to its own degree (information gathering, analysis, choosing a decision or
+      action, carrying it out); an agent can be highly automated in all four. Bainbridge (1983), "Ironies of automation":
+      the more a system automates, the more the person's job becomes watching and taking over in rare, difficult moments
+      with little practice. The book's reading: an approval gate keeps a step at the approver level, and the §14.5 rules
+      try to keep that approver engaged. Deep sections are not examinable (D20).
+    activity: "Optional; not part of the 75-minute plan."
+    book: "Deep 14.A Levels of Automation and the Person's Role, @fig-14-21."
+
+- layout: references
+  title: "References"
+  per_slide: 10
+  refs:
+    - "Abdullahi, A. (2025, July 22). *'Catastrophic failure': AI agent wipes production database, then lies about it*. eWeek."
+    - "AI Incident Database. (2025). *Incident 1152: LLM-driven Replit agent reportedly executed unauthorized destructive commands during code freeze*. https://incidentdatabase.ai/cite/1152/"
+    - "Anthropic. (2024, December 19). *Building effective agents*. https://www.anthropic.com/engineering/building-effective-agents"
+    - "Bainbridge, L. (1983). Ironies of automation. *Automatica, 19*(6), 775–779."
+    - "Brewster, C., & Chávez, L. H. (2025, December 17). *Inside Replit's snapshot engine: The tech making AI agents safe*. Replit Blog."
+    - "Chen, S., Guevara, M., Moningi, S., et al. (2024). The effect of using a large language model to respond to patient messages. *The Lancet Digital Health, 6*(6), e379–e381."
+    - "Dakan, R., & Feller, J. (2025, December). *The AI Fluency Framework* (Version 1.1). Higher Education Authority."
+    - "Feng, K. J. K., McDonald, D. W., & Zhang, A. X. (2025). *Levels of autonomy for AI agents* (arXiv:2506.12469)."
+    - "Fowler, G. A. (2025, February 7). Is OpenAI's Operator, a new AI “agent,” ready to help in the real world? *The Washington Post*."
+    - "Hughes, J. (2026, March 25). *How we built Claude Code auto mode: A safer way to skip permissions*. Anthropic."
+    - "Kwa, T., West, B., Becker, J., et al. (2025). *Measuring AI ability to complete long software tasks* (arXiv:2503.14499; version 1, March 2025)."
+    - "Lemkin, J. [@jasonlk]. (2025, July 17). *Vibe Coding Day 8* [Post]. X."
+    - "Masad, A. [@amasad]. (2025, July 20). *We saw Jason's post …* [Post]. X."
+    - "OWASP Gen AI Security Project. (2025). *LLM06:2025 Excessive Agency*. In *OWASP Top 10 for LLM Applications 2025*."
+    - "Parasuraman, R., Sheridan, T. B., & Wickens, C. D. (2000). A model for types and levels of human interaction with automation. *IEEE Transactions on SMC—Part A, 30*(3), 286–297."
+    - "Sharwood, S. (2025a, July 21). Vibe coding service Replit deleted user's production database, faked data, told fibs galore. *The Register*."
+    - "Sharwood, S. (2025b, July 22). Replit makes vibe-y promise to stop its AI agents making vibe coding disasters. *The Register*."
+    - "Shavit, Y., Agarwal, S., Brundage, M., et al. (2023, December 14). *Practices for governing agentic AI systems*. OpenAI."
+    - "The Stack. (2025, July 21). *Vibe coding CEO deletes “production” database using Replit – founder promises changes*."
+    - "Yao, S., Shinn, N., Razavi, P., & Narasimhan, K. (2024). *τ-bench: A benchmark for tool-agent-user interaction in real-world domains* (arXiv:2406.12045)."
+  notes:
+    say: |
+      Reference slides; not presented in class. These are the sources cited on the slides and in the speaker notes, in
+      short APA form, shortened from the chapter's reference list, which has the full author lists and URLs. Students do
+      not need to read them; the chapter is written to be understandable without them. For students who want more, point
+      them first to the recommended reading, Anthropic's "Building effective agents", the five short sections named in Further Reading, about
+      six minutes. Shavit et al. (2023), sections 4.2, 4.4 and 4.7, covers approval, legibility and interruptibility.
+      Yao et al. (2024) explains why one success is not the same as reliable success.
+    background: |
+      Full entries are in the chapter's References section (fact-checked; docs/factcheck/ch14.csv). The recommended reading is Anthropic (2024). Time-sensitive items for the refresh list
+      (chapter handoff): Replit's agent safeguards, Operator's status, Anthropic's 93% figure, τ-bench and METR horizons,
+      the OWASP list version, agent-mode availability in institution-provided tools.
+    activity: "Not presented."
+    book: "Chapter 14 References; Further Reading and Compass Links."

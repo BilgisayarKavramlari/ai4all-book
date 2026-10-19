@@ -1,0 +1,826 @@
+# Lecture deck spec — Chapter 6: Context Engineering and Reusable Workflows (Deep, optional extension to Chapter 5)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch06.yaml --preview
+# Chapter 6 is a Deep chapter: optional and not examinable (D20, D-6.a). The book's suggested plan lists it as "D: Ch. 6" beside
+# Chapter 5, whose lab session belongs to Chapter 5's A3 sprint. So this is a SHORT deck framed as
+# enrichment: a 20-minute segment (session "seg", sums to 20 min) plus self-study slides at the end ("self", no
+# class time). There is no graded artifact; the personal prompt library is optional and ungraded.
+# Every number and quotation comes from the sources under deck.sources; the builder flags any number it cannot find.
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes.
+
+deck:
+  chapter: 6
+  slug: context-engineering-and-reusable-workflows
+  title: Context Engineering and Reusable Workflows
+  short_title: Context Engineering (optional)
+  author: Şadi Evren Şeker
+  sessions:
+    seg: {label: "optional 20-minute enrichment segment", minutes: 20}
+    self: {label: "self-study slides (not part of the 20-minute segment)"}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/06-context-engineering-and-reusable-workflows.qmd
+    - labs/ch06-lab1.md
+    - labs/ch06-lab2.md
+    - labs/ch06-lab3.md
+    - labs/ch06-lab4.md
+    - figures/longdesc/ch06.md
+    - appendix/answers.md
+    - docs/blueprints/ch06-blueprint.md
+
+slides:
+
+# ======================================================================= 20-MINUTE SEGMENT
+- layout: title
+  session: seg
+  minutes: 0
+  subtitle: "Optional enrichment · Deep chapter · not on exams"
+  meta:
+    - "Optional extension to Chapter 5 (“D: Ch. 6”)"
+    - "Şadi Evren Şeker"
+    - "Use as a 20-minute segment or for self-study"
+  figure: f6-01-chapter-map
+  notes:
+    say: |
+      This deck is optional enrichment, and you can say so plainly to students: Chapter 6 is a Deep chapter, nothing in
+      it is on an exam, and there is no graded artifact. It answers the question students start asking as soon as
+      Chapter 5's iteration works: what happens when you want the same good result again next week, on a new input,
+      without starting from zero? The picture on the right is the chapter map: what the model receives, steering and
+      keeping, and reuse. It strengthens the Prompt step of the AI Work Loop, then Verify. Tell students the chapter's
+      question, which the last slide of the segment answers: if the model is the same, why do two people get such
+      different results from it?
+    background: |
+      HOW TO USE THIS DECK. Chapter 6 is tagged Deep throughout except 6.6 (Studio); it is not examinable (decision D20;
+      D-6.a), and its review questions are practice only. The book's suggested plan lists "D: Ch. 6" with Chapter 5, but Chapter 5's lab session is fully used by Lab 5.1 (the A3 sprint), so do not take time from it. Three ways to use the
+      deck: (1) a 20-minute segment, slides 1–19 (through the summary), for example in a later review slot (Lab 6.1's instructor notes
+      suggest a short discussion of edge inputs that broke templates) or before the workflow assignment A11 (Chapter 14),
+      which builds on sections 6.6–6.7; (2) self-study: post the deck with its notes on your course site next to the chapter's fast
+      route; (3) a team that finishes Lab 5.1 early may start Lab 6.1 in class. The slides after the summary are for
+      self-study only. Compass is optional and never part of a course grade.
+    questions:
+      - q: "Is any of this on an exam?"
+        a: "No. Chapter 6 is a Deep chapter: optional and not examinable. Its ideas do help with A11 (Chapter 14) and with your own work."
+    activity: "On screen while you introduce the segment; say 'optional, not on exams' once, clearly."
+    book: "Chapter 6 opening page, @fig-6-1; 'Chapter 6 at a glance' (fast and full routes)."
+
+- layout: session_plan
+  minutes: 1
+  title: "Two ways through Chapter 6"
+  columns:
+    - heading: "In class · 20-minute segment"
+      sub: "optional enrichment, not on exams"
+      blocks:
+        - {min: 2, label: "Opening case: Medprompt", detail: "Same model, different context"}
+        - {min: 6, label: "What the model receives", detail: "Layers; choose and arrange"}
+        - {min: 5, label: "Examples and persistent context", detail: "Steering, the reversal, upkeep"}
+        - {min: 4, label: "Reuse", detail: "Templates and chains"}
+        - {min: 3, label: "Check and summary", detail: "One quick check; the answer"}
+    - heading: "On your own · self-study"
+      sub: "at 150 words per minute"
+      blocks:
+        - {min: 25, label: "Fast route", detail: "Opening, §6.1, §6.6 recap, Summary"}
+        - {min: 65, label: "Full route", detail: "Everything through the Case Study"}
+        - {min: 30, label: "Lab 6.1: template your prompt", detail: "Optional; 10-minute version"}
+  notes:
+    say: |
+      There are two ways through this chapter. In class, we take twenty minutes for the big ideas: a research case where
+      the same model got very different results, the layers of text a model receives, how to choose and arrange what you
+      give it, what in-context examples can and cannot do, and how to turn a prompt that works into something reusable.
+      On your own, the chapter offers a fast route of about twenty-five minutes, which stands on its own, and a full route
+      of about sixty-five minutes. The labs are optional; Lab 6.1, about thirty minutes, turns your final A3 prompt into a
+      template. A good plan from the book: read the fast route now and the rest before you start the workflow
+      assignment (A11, Chapter 14), which builds on it.
+    background: |
+      Chapter time paragraph, at 150 words per minute, longer if English is not the reader's first language: fast route
+      about 25 minutes (this page, Opening Case, 6.1, 6.6 with its recap box, Summary); full route about 65 minutes
+      (about 75 with Ethics Lens, Career Connection, From the Field and Summary); Your Turn boxes and labs are extra. Labs:
+      6.1 Template Your Prompt 30 min; 6.2 Context A/B 40; 6.3 Two Steps or One? 30; 6.4 Audit Your Standing Context 15;
+      each has a 10-minute version. The optional personal prompt library takes about 2.5–3 hours spread over the time between A3
+      (Chapter 5) and A11 (Chapter 14) and is not one of the book's numbered assignments. The blueprint's earlier estimate of about 20 minutes for the
+      fast route is superseded by the chapter's 25.
+    questions:
+      - q: "Should I do the prompt library?"
+        a: "Only if you want to; it is optional and ungraded. It is a strong starting point for A11 (Chapter 14) and A13 (Chapter 19), and can serve as portfolio evidence."
+    activity: "Point to the right column; say where the slides and the fast route are posted."
+    book: "Chapter 6 time paragraph; Hands-on Labs; Application Assignment (optional)."
+
+- layout: objectives
+  minutes: 0.5
+  kicker: "Chapter 6 · learning objectives (optional chapter)"
+  title: "After this chapter you can…"
+  items:
+    - {code: "O1", text: "**Explain** the context layers a model receives"}
+    - {code: "O2", text: "**Construct** context from selected, labeled material"}
+    - {code: "O3", text: "**Judge** whether in-context examples help"}
+    - {code: "O4", text: "**Evaluate** what belongs in persistent features"}
+    - {code: "O5", text: "**Create** a reusable template with placeholders"}
+    - {code: "O6", text: "**Design** a short prompt chain with a human check"}
+  notes:
+    say: |
+      Six objectives, in the order of the chapter. The first two are about what the model receives: the layers of text
+      in its context window, and how to choose, label and order what you add. The third and fourth are about steering
+      and keeping: whether in-context examples actually help on your task, and what belongs in features that store
+      notes and instructions for you. The last two are about reuse: a template you can run again on new inputs, and a short chain of
+      prompts with your check between the steps. None of these is examined. They are habits that make Chapter 5's
+      iteration last beyond one task, and the last two feed directly into the workflow blueprint in Chapter 14.
+    background: |
+      Chapter wording and tags: O1 Explain the layers of context a model receives in a chat tool, and which you control
+      (LO2; Description); O2 Construct the context for a task from selected, labeled and ordered material (LO2;
+      Description); O3 Judge, from a with-and-without test on several test inputs, whether in-context examples improve an
+      output (LO2, LO3; Discernment, Description); O4 Evaluate which information belongs in standing instructions, a
+      project space, memory, or only the current chat (LO2; Diligence, Description); O5 Create a reusable prompt template
+      with placeholders (LO2); O6 Design a two- or three-step prompt chain with a human check between steps (LO2;
+      Delegation, Description).
+    activity: "Do not read the list; point to O5 and O6 as the ones that pay off in Chapter 14."
+    book: "Chapter 6, Learning Objectives."
+
+- layout: timeline
+  minutes: 2
+  kicker: "Opening case · Nori et al. (2023) · GPT-4 on MedQA (book figure: Medprompt chart, redrawn)"
+  title: "Same model, not retrained: 81.7% became 90.2%"
+  events:
+    - {label: "No examples", text: "**81.7%** simple prompt"}
+    - {label: "+ 5 examples", text: "**83.9%** random solved questions", role: soft}
+    - {label: "+ reasoning", text: "**87.3%** GPT-4’s own steps", role: soft}
+    - {label: "Similar ones", text: "**88.4%** chosen by similarity", role: soft}
+    - {label: "+ 5 runs, vote", text: "**90.2%** shuffled, then voted", role: verified}
+  takeaway: "Nothing inside the model changed. So what changed?"
+  notes:
+    say: |
+      In November 2023, researchers at Microsoft, with one co-author from OpenAI, tested GPT-4 on MedQA, a benchmark of
+      multiple-choice questions in the style of the U.S. exam doctors must pass to practice. They did not retrain the
+      model. They changed what it received with each question, and how they asked. With a simple prompt and no examples,
+      it scored 81.7 percent. Then, one at a time: five solved questions as in-context examples; worked reasoning for
+      those examples, which GPT-4 had written itself; examples chosen by similarity to each question; and finally five
+      runs with the answer options shuffled, and a vote. The combination, which they called Medprompt, reached 90.2
+      percent. Same model. Ask: nothing inside the model changed, so what did?
+    background: |
+      Nori et al. (2023), Figure 4 values (decision D-6.e): 81.7 → 83.9 → 87.3 → 88.4 → 90.2. The largest single step
+      was the self-written reasoning (87.3). Changes to what the model received added about 6.7 points; the workflow
+      (runs and vote) about 1.8. The authors note the components are not independent and call their order subjective,
+      so read the steps as rough shares (the paper's Figure 6 gives +0.8 and +2.1 for the last two steps; recorded in
+      data/ch06_medprompt.csv). Limits the authors state: a multiple-choice benchmark is not the practice of medicine;
+      they could not rule out that some test questions appeared in training text. The chart's axis does not start at
+      zero, as its label says; this slide redraws the bars as a step sequence so the values are legible. Interests: mostly Microsoft researchers studying OpenAI's models; Microsoft is a major
+      investor in OpenAI and offers its models through its cloud service.
+    questions:
+      - q: "So GPT-4 is ready to be a doctor?"
+        a: "No. The authors themselves say a multiple-choice benchmark is not the practice of medicine, and benchmark scores do not show that a tool works with real patients (Opening Case; Case Study)."
+    misconceptions:
+      - m: "M1 'The model receives only the message I just typed.'"
+        fix: "Point at the bars: every gain came from what the model received or how it was run, not from a new model."
+    activity: "Ask for a quick guess: which kind of change added more, what the model received or how the task was run? (Case Study's prediction.)"
+    book: "Opening Case 'Same Model, Different Context'; Case Study 'Medprompt, Revisited', @fig-6-12."
+
+# ----------------------------------------------------------------------- 6.1–6.3
+- layout: section
+  minutes: 0
+  number: "6.1–6.3"
+  tag: "Deep"
+  title: "What the model receives"
+  idea: "Everything in the context window shapes the output, not only your prompt."
+  meta: "Book §6.1–6.3 · optional, not on exams"
+  notes:
+    say: |
+      First part of the answer: what the model received. Recall Chapter 3: the context window is the space for
+      everything a language model receives in one turn, measured in tokens, and the response also counts toward it.
+      You probably think of it as holding your message. In practice, it holds several layers of text, and some of them
+      are filled before you type a word. This part has three steps: what the layers are, what to include, and how to
+      arrange it. The idea on the slide is the one to keep: your prompt is only one of the things shaping the output.
+    background: |
+      Section 6.1 recalls Chapter 3's four kinds of text in the window (system prompt, conversation so far, pasted or
+      retrieved text, your prompt) and adds two: standing instructions and project files and memory notes. Because the
+      chapter is optional, it re-explains every earlier term in one or two sentences (box "Plain words for this
+      chapter").
+    activity: "Transition slide (no separate time)."
+    book: "§6.1 What the Model Actually Receives."
+
+- layout: lanes
+  minutes: 2.5
+  kicker: "§6.1 · the context layers (book figure, redrawn)"
+  title: "Six layers can fill the window before your prompt"
+  label_width: 3.6
+  rows:
+    - label: "System prompt"
+      nodes:
+        - {label: "Set by the provider; usually unseen", kind: step, role: soft}
+    - label: "Standing instructions"
+      nodes:
+        - {label: "Set by you, once, in options or a project", kind: human}
+    - label: "Project files, memory"
+      nodes:
+        - {label: "Set by you or by the product", kind: human}
+    - label: "Conversation so far"
+      nodes:
+        - {label: "You and the model, earlier", kind: step}
+    - label: "Pasted or retrieved text"
+      nodes:
+        - {label: "You, or a search tool", kind: step}
+    - label: "Your prompt"
+      nodes:
+        - {label: "The only layer you write right now", kind: human}
+  takeaway: "An output can change when your prompt does not"
+  notes:
+    say: |
+      Read from the top. The system prompt is set by the tool's maker; you usually cannot see it. Your standing
+      instructions are set by you, once: instructions you write in a tool's options or a project, which the tool adds to
+      every conversation in that scope, such as "always answer in American English." Project files and memory notes are
+      set by you or by the product; memory is a product feature that saves notes about a user and adds them to later
+      conversations. It adds text; it does not train the model. Then the conversation so far, pasted or retrieved text,
+      and finally your prompt, the only layer you write right now. Sam, a mechanical engineering senior, asked for the
+      robotics club's weekly update. The draft said he would share lessons from his co-op, which he had finished a year
+      earlier. His prompt was fine; an old memory note reached the output.
+    background: |
+      Context layers = the book's term: the separate sources of text that together fill a model's context window in one
+      turn, each set by someone and at some time (@fig-6-3; redrawn here so labels are legible). Context engineering =
+      deciding what goes into the window, from which layer, in what form and in what order; the term spread in June 2025
+      when Tobi Lütke (Shopify) and Andrej Karpathy said they preferred it to "prompt engineering" (Willison, 2025). Some
+      providers publish their chat apps' system prompts: Anthropic since August 2024 (Willison, 2024), xAI for Grok since
+      May 2025 after it blamed an unauthorized change to its prompt (Wiggers, 2025). Some models are trained to give the
+      provider's instructions priority (Wallace et al., 2024); inside your own message, nothing separates instructions
+      from pasted text unless you label it. Worked example "Sam's Club Update" (constructed); a co-op is a paid work term
+      that counts toward a degree. Warning box: the six layers are not Chapter 5's six prompt parts; the parts describe
+      one layer, your prompt.
+    questions:
+      - q: "Does memory mean the model learned about me?"
+        a: "No. Memory is a product feature that stores notes and adds them as text to later chats; the model's parameters do not change, and notes can be wrong, stale or missing (§6.1, §6.5)."
+    misconceptions:
+      - m: "M1 'The model receives only the message I just typed.'"
+        fix: "Use Sam's co-op line: nothing in his prompt mentioned it."
+      - m: "M4 'Memory means the model has learned about me, and what it stored is complete and correct.'"
+        fix: "Memory adds text; the note about the co-op was out of date."
+    activity: "Ask: 'In your last AI chat, which layers were there besides your prompt?' (Your Turn 6.1, by type only, no content.)"
+    book: "§6.1, @fig-6-3, Worked Example 'Sam's Club Update'; box 'Two lists of six'."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§6.2 · Shi et al. (2023) · an older model, code-davinci-002"
+  title: "One irrelevant sentence lowered accuracy"
+  size: 26
+  columns:
+    - heading: "Original problems"
+      role: verified
+      text: "**95.0%** correct"
+      size: 32
+    - heading: "+ one irrelevant sentence"
+      role: risk
+      text: "**72.4%** correct"
+      size: 32
+    - heading: "+ “ignore irrelevant information”"
+      role: soft
+      text: "**77.8%** correct"
+      size: 32
+  header_height: 1.15
+  takeaway: "Give the model what the task needs, and little else"
+  notes:
+    say: |
+      A prediction first. Researchers took 100 school-level math word problems that a model could solve, and added one
+      sentence to each that had nothing to do with the answer, such as a detail about someone else's age. Does accuracy go
+      up, stay the same or go down? Take a guess. Here is what happened in this 2023 study. On the original problems the
+      model scored 95 percent. With one irrelevant sentence, 72.4 percent. Telling it to ignore irrelevant information
+      brought it back only to 77.8 percent. That model is older than the tools you use, but the pattern keeps turning
+      up. The lesson is not "give the model less." It is: give it what the task needs, and little else. Every page you
+      add should earn its place.
+    background: |
+      Shi et al. (2023), ICML: 58,052 distracted versions of 100 GSM8K problems built, a random 4,000 tested; model
+      code-davinci-002 with step-by-step prompting; for only 6 of the 100 problems did the model answer every version
+      correctly (@fig-6-4). A 2025 industry technical report (Hong et al., 2025, Chroma, a company that sells search and
+      retrieval software; not peer-reviewed; an interested party) tested 18 models and reported less reliable performance
+      as input grew, and that even one distracting sentence lowered results. Chapter 3's "lost in the middle" study (Liu
+      et al., 2024): information in the middle of a long input was used less reliably. Four habits (§6.2): select
+      excerpts; name each excerpt's source and date; add a gap instruction ("If the answer is not in the material below,
+      say so"); leave out what must not be shared (Chapter 15).
+    misconceptions:
+      - m: "M2 'More context is always better: paste the whole document.'"
+        fix: "The 95.0 → 72.4 drop from a single unrelated sentence."
+    activity: "Show of hands on the prediction before revealing the numbers."
+    book: "§6.2 prediction, @fig-6-4; Check Yourself 6.2."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§6.2–6.3 · worked example · constructed (book figure: catalog before and after)"
+  title: "Select, label, and put the full task last"
+  size: 22
+  columns:
+    - heading: "Before"
+      role: neutral
+      bullets: ["Task first", "Whole 120-page catalog: **two price lists**", "All 8 pages of rules"]
+    - heading: "After"
+      role: human
+      bullets: ["Task in brief, instructions", "Pages 14 and 52, **2027 list**, labeled", "Rule 3, labeled", "**Full task last**"]
+  takeaway: "Selecting removed the old price list, the source of a smooth, wrong order"
+  notes:
+    say: |
+      Sam needs to order two drive motors and four wheels for the robotics club. He has the supplier's 120-page catalog
+      and the club's 8-page budget rules. His first version put the task first and pasted everything. The catalog
+      contained two price lists, 2026 and 2027; an order priced from the old list would read smoothly and be wrong. His
+      rebuilt context selects only what the task needs: catalog pages 14 and 52 from the 2027 list, and budget rule 3,
+      which says orders over 250 dollars need two officers' approval. Each excerpt is labeled with its source and date.
+      An instruction says to use only this material and to say so if a part is missing. The full task comes last, right
+      before the output begins. He still checks every price against the page.
+    background: |
+      Worked Examples "Sam's Parts Order" and "Sam's Order, Rebuilt" (constructed; catalog, prices and rules invented),
+      @fig-6-6. Labels make the boundary between instructions and material visible and reduce, not remove, the chance
+      that text in the material acts as an instruction (the mechanism behind prompt injection, Chapter 4 §4.6;
+      defenses in Chapter 15). "Full task last" is provider guidance, and providers differ: Anthropic's guide
+      says long documents near the top and the question at the end, reporting up to 30% better responses in its tests;
+      OpenAI's GPT-4.1 guide says instructions before and after long material, and before it if only once. In "lost in
+      the middle" (Liu et al., 2024), repeating the question before and after helped a simple lookup task but barely
+      changed question answering. Treat it as a habit to test (decision D-6.g). Note: Appendix E's model answer to
+      Review A5 says "old 2025 list"; the chapter says 2026, so follow the chapter.
+    questions:
+      - q: "Does labeling protect me from instructions hidden in a document?"
+        a: "It reduces the chance, but does not remove it; text in a document can still act as an instruction (prompt injection, Chapter 4 §4.6; defenses in Chapter 15)."
+    activity: "Ask: 'Which of the four habits removed the error source?' (Selecting excerpts; naming source and date.)"
+    book: "§6.2 Worked Example 'Sam's Parts Order'; §6.3, @fig-6-6, Worked Example 'Sam's Order, Rebuilt'."
+
+# ----------------------------------------------------------------------- 6.4–6.5
+- layout: section
+  minutes: 0
+  number: "6.4–6.5"
+  tag: "Deep"
+  title: "Steering and keeping"
+  idea: "Examples steer only inside the context; persistent features need upkeep."
+  meta: "Book §6.4–6.5 · optional, not on exams"
+  notes:
+    say: |
+      Second part: two ways people try to make results stick. One is in-context examples: show the model a few samples of
+      what you want. The other is features that store text for you: standing instructions, project spaces and
+      memory. Both put text into the context window. Neither changes the model. The idea on the slide sums up both
+      sections: examples steer only while they are in the context, and anything a feature adds automatically needs
+      regular upkeep, because you stop seeing it.
+    background: |
+      Chapter 5 defined the in-context example in Core (a sample input with the output you want, placed in a prompt to
+      show the pattern); Chapter 6 owns choosing, balancing, ordering and testing them (chapter brief, Chapter 5/6
+      boundary). Section 6.5 reuses Chapter 5's "agency is not an agent" box: standing instructions are a step toward
+      agency, not an agent.
+    activity: "Transition slide (no separate time)."
+    book: "§6.4 Choosing and Testing In-Context Examples; §6.5 Standing Instructions, Projects and Memory."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§6.4 · three claims about in-context examples"
+  title: "Examples steer, inside that context only"
+  size: 24
+  columns:
+    - heading: "1 · No learning"
+      role: soft
+      text: "Parameters do not change; a new chat starts over"
+    - heading: "2 · Choice and order"
+      role: soft
+      text: "One-sided or reordered examples swing results"
+    - heading: "3 · So test"
+      role: human
+      text: "With and without, on the same test inputs"
+  takeaway: "One-sided examples act like class imbalance"
+  notes:
+    say: |
+      Three claims. One: examples steer format and pattern, inside that context only. Researchers call this in-context
+      learning, but the word "learning" misleads: the model's parameters do not change. The examples are tokens in the
+      window, and a new chat without them starts from the same parameters as before. Two: which examples you pick, and
+      their order, change the results. Studies of GPT-3-era models found that the choice, the format and even the order
+      of the same examples could move accuracy from near guessing to near the best results of the time. If all three
+      examples carry the label "positive," outputs lean that way, like class imbalance from Chapter 2 in miniature.
+      Three: so test. Run the same test inputs with your examples and without them, and keep them only if they help.
+    background: |
+      Brown et al. (2020) introduced few-shot prompting with GPT-3. Zhao et al. (2021) traced sensitivity to the model
+      favoring answers common among the examples, near the end of the prompt, and common in training text; Lu et al.
+      (2022): reordering the same examples alone could swing between near-best and near random. These were 2021–2022
+      models: reasons to test, not fixed rules. Checklist (§6.4): cover typical, different and edge inputs; balance the
+      labels; keep examples short and in the exact output format; try a second order once; never use real people's data.
+      Worked example (constructed, outputs illustrative): a research assistant coding 300 survey answers kept balanced
+      examples (Version B) because they matched her hand-coding best on 20 test answers, noting that no examples plus
+      clear definitions (Version C) was close.
+    questions:
+      - q: "If examples worked today, can I skip them tomorrow?"
+        a: "The improvement does not carry over: a new chat without them starts from the same parameters (§6.4; Review A7)."
+    misconceptions:
+      - m: "M3 'In-context examples teach the model, so more examples always help.'"
+        fix: "Parameters do not change; balance and order matter; and for one newer model examples lowered the score (next slide)."
+    activity: "Ask: 'Which Chapter 2 idea does a one-sided set of examples resemble?' (Class imbalance.)"
+    book: "§6.4, @fig-6-7, Worked Example 'Coding Survey Answers'; Short case 1."
+
+- layout: compare
+  minutes: 2
+  kicker: "Case study · Nori et al. (2023, 2024) · MedQA"
+  title: "The same kind of examples helped one model and hurt another"
+  size: 24
+  columns:
+    - heading: "GPT-4, 2023"
+      role: verified
+      bullets: ["Five solved examples **raised** the score", "Medprompt: **90.2%**"]
+    - heading: "o1-preview, 2024"
+      role: risk
+      bullets: ["No examples: about **95–96%**", "Five solved examples **lowered** the score", "Runs and a vote still helped"]
+  takeaway: "A context design belongs to a model and a date: record it, retest it"
+  notes:
+    say: |
+      Here is the reversal. In November 2024 the same lead author and colleagues tested o1-preview, an OpenAI model
+      designed to produce reasoning before its final answer. With no examples and none of Medprompt's techniques, it
+      scored about 95 to 96 percent on MedQA, higher than GPT-4 with all of Medprompt. Then they added Medprompt's parts
+      one at a time. Five solved examples, the same kind of technique that had helped GPT-4, lowered o1-preview's score.
+      Across their benchmarks, examples were inconsistent and on average hurt. Running the question several times and
+      voting still helped, at a higher cost. One reading the authors offer: o1-preview already produces reasoning, so
+      examples add little, and may have confused the model, their word. The lesson: a design that helps belongs to a
+      task, a model and a date.
+    background: |
+      Nori et al. (2024), arXiv:2411.03590. "About 95–96%": the paper's summary table gives 96.0%; its chart of prompting
+      methods shows slightly lower values (D-6.e). To address the worry about memorized test questions, the 2024 team
+      also used a Japanese medical licensing exam given after the model's training data was collected. The 2024 authors
+      noted MedQA scores may be near the most the benchmark can show, because some questions are flawed. Interests: both
+      studies are mostly by Microsoft researchers about OpenAI models, each with one OpenAI co-author; Microsoft is a
+      major investor in OpenAI (OpenAI, 2023). Interests do not make findings wrong; read these as these authors'
+      benchmark results and look for independent checks (Case Study Question 5, model answer in Appendix E).
+    questions:
+      - q: "So should I never use examples with reasoning models?"
+        a: "The chapter's rule is to test, not to ban: run your test inputs with and without, and record the model and date (§6.4, Case Study)."
+    misconceptions:
+      - m: "M5 'A prompt that worked once will work every time, on every input and every model.'"
+        fix: "Same technique, two models, opposite effects."
+    activity: "Ask: 'Which field in a library entry would have warned you?' (Tested on: model and date.)"
+    book: "Case Study 'Medprompt, Revisited' (the reversal; interests); Review A9."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§6.5 · standing instructions, projects, memory"
+  title: "Persistent features save effort and need upkeep"
+  size: 24
+  columns:
+    - heading: "Benefits"
+      role: verified
+      bullets: ["Less repeating", "A shared starting point"]
+    - heading: "Three costs"
+      role: risk
+      bullets: ["**Invisible**", "**Stale**", "**Privacy**"]
+    - heading: "Monthly check"
+      role: human
+      bullets: ["Still true? Needed?", "Fine for a classmate?", "Every chat, or one project?"]
+  takeaway: "A step toward agency, not an agent"
+  notes:
+    say: |
+      Three features put text into the window without you typing it: standing instructions, project spaces, where chosen
+      files and instructions are added to every conversation started inside, and memory. Two benefits: you stop repeating
+      yourself, and a team can share one starting point. Three costs. Invisibility: text you do not see is easy to
+      forget, like Sam's old co-op note, or a rule written for one task that harms another. Staleness: notes describe the
+      world when they were saved. Privacy: whatever these features store sits in the provider's systems and reaches the
+      model in later chats. So once a month, or whenever outputs surprise you, ask four questions of every item, and
+      edit, move or delete. Setting this up is a step toward agency, in Chapter 5's sense, not an agent.
+    background: |
+      Book terms (D-6.d): "standing instructions", "project space", "memory (product feature)", "system prompt" for the
+      provider's layer; product names vary and change. The chapter's "As of October 2026" box dates these features
+      by provider since 2023 (with its own references); do not quote product names on slides. Check which assistant features your
+      institution or employer allows. Check before you delete: in some tools deleted items cannot be restored. Whether conversations train
+      future models is a separate account option (Chapter 15). Worked example "Sam Cleans Up": move the club-style rule
+      into the club project, delete the co-op note, keep the club-meeting-day note, replace last year's template.
+    misconceptions:
+      - m: "M4 'What memory stored is complete and correct.'"
+        fix: "Ask students to imagine one stale note about themselves; the monthly check exists for it."
+    activity: "Optional: Lab 6.4 at home (15 min); record item types and actions, never contents."
+    book: "§6.5, @fig-6-8, box 'Names for these features', Worked Example 'Sam Cleans Up'; Lab 6.4."
+
+# ----------------------------------------------------------------------- 6.6–6.7
+- layout: section
+  minutes: 0
+  number: "6.6–6.7"
+  tag: "Studio"
+  title: "Reuse: templates and chains"
+  idea: "A prompt that works becomes reusable with placeholders, new tests and versions."
+  meta: "Book §6.6 (Studio) · §6.7 (Deep)"
+  notes:
+    say: |
+      Last part: reuse. Chapter 5 ended with a prompt that works: it meets your criteria across repeated runs and test
+      inputs. But it was built for one task, on the inputs you tested. This part turns it into something you can run
+      again next week on inputs you have not seen. Two tools: a prompt template, with fixed parts and placeholders, kept
+      in a small library with a test record; and a prompt chain, a fixed sequence of prompts with your check between
+      steps. Section 6.6 is the chapter's one Studio section: it is what Lab 6.1 practices.
+    background: |
+      Section 6.6 carries the recap box for fast-route readers. Section 6.7 is Deep. The workflow-vs-agent line is
+      adapted from Anthropic (2024b), a recommended reading for Chapter 14.
+    activity: "Transition slide (no separate time)."
+    book: "§6.6 Reusable Prompts: Templates and Your Library; §6.7 Simple Multi-Step Workflows."
+
+# The final reveal is about 56 words, above the 40-word guide: the book's template line plus four steps are the
+# worked example (deliberate exception, as in ch01's worked example).
+- layout: worked
+  minutes: 1
+  max_words: 60
+  kicker: "§6.6 · worked example · constructed · Sam’s club-update template"
+  title: "From a prompt that works to a template"
+  context: "Template: NOTES ({DATE}): {NOTES} · task · audience · constraints · format"
+  steps:
+    - {label: "Criteria", text: "Every decision in; nothing added; owners, dates"}
+    - {label: "Test inputs", text: "Typical; two meetings merged; nothing decided"}
+    - {label: "v1.0", text: "Edge input: an invented decision"}
+    - {label: "v1.1", text: "+ “No decisions this week.” All pass"}
+  reveal: [2, 4]
+  result: "Placeholders, new tests, a dated version"
+  notes_reveal:
+    - minutes: 1
+      say: |
+        Sam writes the club update every week, so he turns his prompt into a template. A prompt template is a prompt
+        written for a recurring task, with fixed parts and placeholders for the parts that change; a placeholder is a
+        marked slot, such as NOTES or DATE in braces, that you replace with new material each time. His fixed parts: the
+        task, the audience, the constraints, the format. Then three pass criteria: every decision in the notes appears;
+        nothing appears that is not in the notes; each task has an owner and a date. And three new test inputs, because a
+        template will meet inputs Chapter 5 never tested: a typical meeting, two short meetings merged, and an edge case,
+        a meeting where nothing was decided. Ask: which one do you expect to break it?
+      background: |
+        Worked Example "Sam's Template, v1.0 to v1.1" (§6.6), constructed. Three things make a prompt reusable:
+        placeholders (it is parameterized), re-testing across new inputs (rerun earlier inputs after every change), and
+        versions (number, date, tool and model, what changed). The Medprompt team also published templates with
+        placeholders in braces (Nori et al., 2024).
+      activity: "Take one prediction for the edge input."
+      book: "§6.6 Worked Example; @fig-6-9."
+    - minutes: 1
+      say: |
+        The edge input broke it. With version 1.0, the typical and different inputs met all three criteria, but the
+        meeting where nothing was decided produced an invented decision: "The team agreed to order new wheels."
+        Criterion two failed. He made one change for version 1.1, a line saying that if no decisions were made, write
+        "No decisions this week," and reran all three inputs. All criteria were met. Then he saved the entry in his
+        library, a plain text file, with the version, the date, the tool and model, and the test record. He also tried two
+        sample updates as in-context examples; outputs with and without them met the same criteria, so he left them out
+        and wrote down why. A good entry also says when not to use it.
+      background: |
+        Prompt library = a personal or shared collection of tested prompt templates, each recorded with when to use it,
+        what it was tested on and how it has changed (@fig-6-10, library card). Faded example: a nursing student's
+        drug-leaflet summary template, public material only, never patient data; Appendix E model answer lists
+        different and edge inputs and "do not use for patient-specific questions or dosing decisions." Lab 6.1 (30 min,
+        10-minute version) turns a student's final A3 prompt into the first library entry.
+      questions:
+        - q: "Why test again if my A3 prompt already passed?"
+          a: "A template meets inputs you never tested, and the model may change; new typical, different and edge inputs show whether it works beyond the original task (Check Yourself 6.6, item 2)."
+      activity: "Point to Lab 6.1 as the at-home next step."
+      book: "§6.6 Worked Example, @fig-6-10; Faded Example 'A Drug-Leaflet Summary Template'; Lab 6.1."
+  notes:
+    book: "§6.6 Worked Example."
+
+- layout: lanes
+  minutes: 1.5
+  kicker: "§6.7 · worked example · constructed (book figure: chain with a check)"
+  title: "A check between steps catches errors where they start"
+  label_width: 2.3
+  rows:
+    - label: "Step 1"
+      nodes:
+        - {label: "Notes, names replaced by roles", kind: step}
+        - {label: "Extract decisions and action items", kind: ai}
+        - {label: "Sam checks dates and owners", kind: human}
+    - label: "Step 2"
+      nodes:
+        - {label: "Corrected list into the v1.1 template", kind: ai}
+        - {label: "Sam reads, edits, sends", kind: human}
+  caption: "This week the check caught “12 February” where the notes said “21 February.”"
+  takeaway: "In a chain you fix the steps in advance; in an agent the model chooses them"
+  notes:
+    say: |
+      A prompt chain is a fixed sequence of prompts that you run one after another, where each step's output becomes the
+      next step's input and you check the result between steps. Twice this term a wrong date reached Sam's final email,
+      so he split the task. Step one extracts every decision and action item, with owner and due date, exactly as
+      written. Then his check: he compares the list with his notes. This week one date read 12 February where the notes
+      said 21 February, and he fixed it by hand. Step two runs his template on the corrected list. The error showed up in
+      a short list, where it took ten seconds to spot, instead of inside a finished email that sounded right. Put the
+      check after the step where errors are most likely and most costly.
+    background: |
+      Wu, Terry & Cai (2022), CHI: 20 participants; chaining improved result quality and made the system feel more
+      transparent and controllable; participants checked each part on its own, which the authors compared to
+      "unit-testing." When one prompt is enough, do not chain by habit. A second workflow shape: repeat the same step and
+      compare, as in Medprompt's five shuffled runs and a vote. Workflow vs. agent (adapted from Anthropic, 2024b): in a
+      prompt chain you decide and run the steps; in an agent, a system in which the model directs its own steps and tool
+      use, the model chooses what to do next, and the check must be designed in as an approval gate (Chapter 14). Lab 6.3
+      compares one prompt and a two-step chain on notes with planted errors, with an equal 5-minute check.
+    questions:
+      - q: "Does a longer chain mean a safer chain?"
+        a: "No. A chain does not check itself; the safety comes from a person's check placed where errors start (§6.7)."
+    misconceptions:
+      - m: "M6 'Once a task is split into steps, it runs itself: a chain needs no checks.'"
+        fix: "Point to the rounded 'Sam checks' box: remove it and the wrong date flows through."
+    activity: "Ask: 'In a task you repeat, after which step could you still fix a mistake quickly and cheaply?'"
+    book: "§6.7, @fig-6-11, Worked Example 'Sam's Three-Step Chain', table 'Prompt chain vs. agent'; Lab 6.3."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · §6.4 · practice, not examined"
+  title: "after the examples"
+  question: "Three in-context examples improved today’s outputs. Which statement is accurate?"
+  options:
+    - "The examples updated the model, so tomorrow’s chats follow the pattern without them."
+    - "Adding two more examples of the same kind is the most reliable next step."
+    - "They steer outputs only while in the context; a new chat without them starts as before."
+    - "Because the examples worked once, their order no longer needs to be tested."
+  answer: c
+  instruction: "Answer on your own (20 seconds), then vote"
+  explanation: "(a), (b): examples teach the model, more always helps; (d): order still matters"
+  notes:
+    say: |
+      One quick check, for practice only; this chapter is not examined. Read the four options and choose on your own,
+      twenty seconds, then vote. Each wrong option is a belief the chapter set out to correct: that examples update the
+      model, that more of the same kind always helps, and that once examples work their order no longer matters. If
+      several students choose (a), that is the most useful misconception to surface, because it also explains why people
+      expect a tool to "remember" what worked yesterday.
+    background: |
+      Review Questions A7 (O3 · LO2 · Understand), odd-numbered, keyed in Appendix E: (c). (a) and (b) are M3 (examples
+      teach the model; more always helps); (d) is M5 (order sensitivity: Lu et al., 2022; Zhao et al., 2021). Deep
+      chapter: practice only (D20).
+    activity: "20 s individual, then vote."
+    book: "§6.4; Review A7; Appendix E (Chapter 6)."
+  answer_notes:
+    say: |
+      The answer is (c). In-context examples steer the output only while they are in the context window. The model's
+      parameters do not change, so a new chat without the examples starts exactly as before. Option (a) is the
+      "learning" misunderstanding; the phrase in-context learning invites it. Option (b) assumes more of the same always
+      helps, but one-sided examples pull outputs toward one pattern, and for a newer reasoning model even well-made
+      examples lowered the score. Option (d) ignores the finding that reordering the same examples can swing results.
+      The practical habit: if examples help, put them in your template, and test with and without them on your test
+      inputs whenever the tool changes.
+    background: |
+      Appendix E, Review A7 explanation. Same idea: Spaced Review 2 (why an in-context example in today's prompt does not
+      change tomorrow's answers in a new chat).
+    activity: "Reveal; then go to the summary."
+    book: "§6.4; Appendix E (Review A7)."
+
+- layout: objectives
+  minutes: 0.5
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "Same model, different results: why"
+  items:
+    - {code: "O1", text: "**Layers:** your prompt is one of six"}
+    - {code: "O2", text: "**Select** excerpts, label them, full task last"}
+    - {code: "O3", text: "**Examples** steer in context only; test with and without"}
+    - {code: "O4", text: "**Persistent features:** invisible, stale, private"}
+    - {code: "O5", text: "**Templates:** placeholders, new tests, versions"}
+    - {code: "O6", text: "**Chains:** your check where errors start"}
+  takeaway: "Whatever you build, test it, record it, and test it again when something changes"
+  notes:
+    say: |
+      Back to the question: if the model is the same, why do two people get such different results from it? Much of the
+      difference lies outside the model: in what it receives, meaning the layers someone builds, the material they select
+      and label, and the examples they choose, and in how the task is run, meaning the steps, the repeats and the checks.
+      Medprompt raised one model's benchmark score by about eight and a half points without retraining it. But a design
+      that helps is tied to a task, a model and a date: the same kind of examples that helped GPT-4 in 2023 lowered a
+      newer model's score in 2024. So the second half of the answer is the bar at the bottom. If you want to go further,
+      start with Lab 6.1 at home.
+    background: |
+      Chapter Summary. Warm-up revisit: (1) besides your message, a model may receive a system prompt, standing
+      instructions, project files, memory notes, the conversation so far and pasted or retrieved text; (2) all 50 pages
+      of a pasted document are not used equally well; long inputs are used unevenly and irrelevant material can lower
+      accuracy; (3) a new chat without the examples does not keep the improvement. Neither Medprompt change showed the
+      system was ready for clinical use.
+    activity: "End of the 20-minute segment. Point to the self-study slides and Lab 6.1."
+    book: "Chapter Summary, @fig-6-14; Warm-up revisit."
+
+# ======================================================================= SELF-STUDY
+- layout: key_terms
+  session: self
+  title: "Key terms (optional chapter)"
+  terms:
+    - "context engineering"
+    - "context layers"
+    - "standing instructions"
+    - "project space"
+    - "memory (product feature)"
+    - "system prompt (Ch. 3)"
+    - "gap instruction"
+    - "in-context example (Ch. 5)"
+    - "class imbalance (Ch. 2)"
+    - "prompt template"
+    - "placeholder"
+    - "prompt version"
+    - "prompt library"
+    - "prompt chain"
+    - "test inputs (Ch. 5)"
+    - "agent (Ch. 3)"
+    - "context window (Ch. 3)"
+  note: "Not on exams. Core chapters that use these terms (12, 14, 15, 19) define them again."
+  notes:
+    say: |
+      Self-study slide. These are the chapter's key terms. None of them is on an exam, because Chapter 6 is optional. But
+      several come back in later, required chapters, especially Chapter 14 on agentic workflows, and those chapters
+      define them again in their own words, so you will not be lost if you skip this chapter. Three distinctions are
+      worth keeping: context layers, everything the model receives, versus the six parts of your prompt; a prompt chain,
+      where you fix and run the steps, versus an agent, where the model chooses them; and memory, a product feature that
+      adds text, versus learning, which would change the model's parameters, and does not happen in your chat.
+    background: |
+      Key Terms list from the chapter (17 entries, including reused terms from Chapters 2, 3 and 5). Book-wide rule
+      (decision D-6.b; chapter brief): Core chapters 12, 14, 15 and 19 must define any Chapter 6 term they use (context
+      layers, in-context example, standing instructions, memory, prompt chain) in their own Core text. Terminology fixed
+      by Chapter 6: "in-context example" (never a bare "example"), "test inputs" (not "test set"), "system prompt" only
+      for the provider's or developer's layer.
+    activity: "Self-study; not presented in the segment."
+    book: "Chapter Summary, Key Terms; glossary."
+
+- layout: lab
+  title: "Try it at home: four optional labs"
+  kicker: "Self-study · Hands-on Labs 6.1–6.4 · each has a 10-minute version"
+  goal: "Turn Chapter 5’s prompt into something you can reuse, and test it"
+  steps:
+    - {text: "**6.1 Template your prompt:** placeholders, three new test inputs, v1.1", min: 30}
+    - {text: "**6.2 Context A/B:** no document, whole document, labeled excerpt", min: 40}
+    - {text: "**6.3 Two steps or one?** Same 5-minute check, planted errors", min: 30}
+    - {text: "**6.4 Audit your standing context:** fix, move or delete one item", min: 15}
+  side:
+    - {heading: "Optional library", text: "3 entries and a workflow card, built over time; ungraded"}
+    - {heading: "Privacy", role: risk, text: "Never personal data in prompts, projects or memory; record item types, not contents"}
+    - {heading: "No tool?", text: "Provided samples on your course site for every lab"}
+  notes:
+    say: |
+      Self-study slide. Four optional labs, each with a ten-minute version for busy weeks. Lab 6.1 is the one to start
+      with: take your final A3 prompt, mark what stays and what changes, replace the changing parts with placeholders,
+      write two or three pass criteria, test on three new inputs, fix one failure, and save version 1.1 as the first
+      entry in your library. Lab 6.2 compares three ways of giving a model a store-policy document. Lab 6.3 compares one
+      prompt with a two-step chain on meeting notes that contain planted errors, with the same five minutes of checking
+      in both. Lab 6.4 audits the features that store text for you. Record only item types and actions, never
+      contents.
+    background: |
+      From labs/ch06-lab1.md to ch06-lab4.md. Lab 6.1 can be started in Lab 5.1 by a team that finishes
+      early (step 1–2 in class, test at home); instructor note: collect two or three anonymized edge inputs that broke
+      templates for a short discussion. Lab 6.2: question 3's answer sits in a footnote in the middle of the
+      document on purpose ("lost in the middle"). Lab 6.3 key: five planted errors (two due dates for one task, one task
+      with two owners, a decision recorded "postponed" then "approved", a meeting time without a time zone); ask students
+      to separate errors in the notes from errors the output introduced. Lab 6.4: never collect contents; a class tally
+      of item types is enough. Instructor package: all provided materials, dated sample outputs and the sample library
+      are needed before the session. Personal prompt library: optional, about 2.5–3 hours over the time between A3 and A11, a
+      10-point rubric (feedback only if the instructor chooses) and an alternative (repair a flawed sample library).
+    questions:
+      - q: "Does the prompt library count toward my grade?"
+        a: "No. It is optional and ungraded unless your instructor chooses to give feedback; it is not one of the book's numbered assignments."
+    activity: "Self-study; not presented in the segment."
+    book: "Hands-on Labs 6.1–6.4; Application Assignment (optional): Personal Prompt Library."
+
+- layout: quiz
+  kicker: "Self-study · §6.5 · faded example"
+  title: "where does it belong?"
+  question: "Sort each item: S standing instructions · P project file · C this chat only · N never store"
+  option_tags: ["(4)", "(5)", "(6)", "(7)", "(8)"]
+  options:
+    - "“Answer in Spanish today.”"
+    - "“My student ID number.”"
+    - "“The rubric for the history essay.”"
+    - "“Always show your sources as a list at the end.”"
+    - "“My draft cover letter, to polish once.”"
+  answer: ["C", "N", "P", "S", "C"]
+  instruction: "Sort all five, then check the next slide"
+  explanation: "Ask of each: still true? needed in every chat? fine for a classmate to read?"
+  answer_minutes: 0
+  notes:
+    say: |
+      Self-study check from the book's faded example on persistent features. Sort each of the five items into standing
+      instructions, a project file, this chat only, or never store. The book has already done three for you: "I am a
+      nursing student; explain drug names in plain words" goes into standing instructions; this semester's lab schedule
+      is a project file for that course; and a friend's medical history is never stored, and never pasted either. Use the
+      monthly-check questions from section 6.5 as you decide: is it still true, is it needed in every chat, and would you
+      be comfortable if a classmate read it?
+    background: |
+      Faded Example "Where Does It Belong?" (§6.5); items numbered (4)–(8) as in the book; Appendix E key: (4) this chat
+      only; (5) never store; (6) project file for that course; (7) standing instructions; (8) this chat only.
+    activity: "Self-study; not presented in the segment."
+    book: "§6.5 Faded Example 'Where Does It Belong?'; Appendix E (Chapter 6)."
+  answer_notes:
+    say: |
+      Here is the key. "Answer in Spanish today" is for this chat only: it is true today, not every day, and as a
+      standing instruction it would quietly change every later chat. Your student ID number is never stored: personal
+      data does not belong in persistent features, or in prompts. The history-essay rubric is a project file for that
+      course, so it is added to chats about that course and nowhere else. "Always show your sources as a list at the end"
+      is a good standing instruction, because you want it everywhere. And your draft cover letter, to polish once, is this
+      chat only. Notice the pattern: a file that matters for one course belongs with that course, not in every chat.
+    background: |
+      Appendix E, faded example 6.5. Chapter 15 covers what never to store or paste. Review A10 practices the same placement; it is
+      even-numbered, so its key stays instructor-only (not in these notes, which may be posted for self-study).
+    activity: "Self-study."
+    book: "§6.5; Appendix E (faded example 6.5)."
+
+- layout: references
+  session: after
+  title: "References"
+  per_slide: 10
+  refs:
+    - "Anthropic. (n.d.). *Prompting best practices*. Claude Docs. Retrieved October 18, 2026."
+    - "Anthropic. (2024b, December 19). *Building effective agents*."
+    - "Brown, T. B., Mann, B., Ryder, N., et al. (2020). Language models are few-shot learners. *Advances in Neural Information Processing Systems, 33*, 1877–1901."
+    - "Dakan, R., & Feller, J. (2025, December). *The AI Fluency Framework* (Version 1.1). Higher Education Authority."
+    - "Hong, K., Troynikov, A., & Huber, J. (2025, July 14). *Context rot: How increasing input tokens impacts LLM performance* [Technical report]. Chroma."
+    - "Liu, N. F., Lin, K., Hewitt, J., et al. (2024). Lost in the middle: How language models use long contexts. *TACL, 12*, 157–173."
+    - "Lu, Y., Bartolo, M., Moore, A., Riedel, S., & Stenetorp, P. (2022). Fantastically ordered prompts and where to find them. In *Proceedings of ACL 2022* (pp. 8086–8098)."
+    - "Nori, H., Lee, Y. T., Zhang, S., et al. (2023). *Can generalist foundation models outcompete special-purpose tuning? Case study in medicine* (arXiv:2311.16452)."
+    - "Nori, H., Usuyama, N., King, N., et al. (2024). *From Medprompt to o1: Exploration of run-time strategies for medical challenge problems and beyond* (arXiv:2411.03590)."
+    - "OpenAI. (n.d.). *GPT-4.1 prompting guide*. OpenAI Cookbook. Retrieved October 18, 2026."
+    - "OpenAI. (2023, January 23). *OpenAI and Microsoft extend partnership*."
+    - "Shi, F., Chen, X., Misra, K., et al. (2023). Large language models can be easily distracted by irrelevant context. *Proceedings of the 40th ICML, PMLR 202*, 31210–31227."
+    - "Wallace, E., Xiao, K., Leike, R., et al. (2024). *The instruction hierarchy: Training LLMs to prioritize privileged instructions* (arXiv:2404.13208)."
+    - "Wiggers, K. (2025, May 15). xAI blames Grok’s obsession with white genocide on an “unauthorized modification.” *TechCrunch.*"
+    - "Willison, S. (2024, August 26). *Anthropic release notes: System prompts*. Simon Willison’s Weblog."
+    - "Willison, S. (2025, June 27). *Context engineering*. Simon Willison’s Weblog."
+    - "Wu, T., Terry, M., & Cai, C. J. (2022). AI chains: Transparent and controllable human-AI interaction by chaining large language model prompts. In *CHI 2022* (pp. 1–22)."
+    - "Zhao, Z., Wallace, E., Feng, S., Klein, D., & Singh, S. (2021). Calibrate before use: Improving few-shot performance of language models. *Proceedings of the 38th ICML, PMLR 139*, 12697–12706."
+  notes:
+    say: |
+      Reference slides; not presented. These are the sources cited on the slides and in the speaker notes, in short APA
+      form, shortened from the chapter's reference list; the full entries with all authors and URLs are in the chapter.
+      Students do not need to read any of them. For a student who wants to go further, the book suggests the Medprompt
+      paper itself, especially its step-by-step chart, the follow-up with o1-preview, which includes the team's prompt
+      templates, and the AI Chains study by Wu, Terry and Cai, which has clear examples of chains and checks.
+    background: |
+      Full entries are in the chapter's References (fact-checked: docs/factcheck/ch06.csv). Anthropic (2024b) is a recommended reading for Chapter 14 (the chapter's Further Reading lists it as recommended). Not cited in this deck but in the chapter: the product-history sources of the 6.5 box (Anthropic, 2024a; Google, 2024; OpenAI, 2024; Zeff, 2025), Anthropic (2025)
+      on context engineering for agents, Min et al. (2022) and Yoo et al. (2022), Sclar et al. (2024), Chapman et al.
+      (2000) and Şeker (2018) for From the Field (CRISP-DM).
+    activity: "Not presented."
+    book: "Chapter 6, References; Further Reading and Compass Links."

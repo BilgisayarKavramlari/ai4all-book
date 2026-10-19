@@ -1,0 +1,1696 @@
+# Lecture deck spec — Chapter 20: Your AI Portfolio and Career Narrative (portfolio workshop, defenses)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch20.yaml --preview
+# Every number and quotation comes from deck.sources; the builder flags any number it cannot find there.
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only.
+#
+# Chapter 20 has no concept session of its own (decisions D23, D25). In the book's suggested plan the portfolio
+# workshop (Lab 20.1) is followed by oral defenses and a final review (keys are internal):
+#   tue   = the workshop, minutes 0–50 and 65–75 of Lab 20.1 (60 min). Minutes 50–65 (the Chapter 21 code peer
+#           check, Lab 21.1) live in the Chapter 21 deck, so they are not counted twice.
+#           Each lab step opens with a 1–2 minute brief on the chapter section it practices, taken from that
+#           step's own minutes. The defense-preparation segment (2–3 min) is taken from the narrative-review step.
+#   thu   = defense session (the same run sheet serves a second defense session after the 10-minute final review).
+#   after = exam-preparation self-study: §20.2, the Case Study, review items, summary, key terms.
+
+deck:
+  chapter: 20
+  slug: your-ai-portfolio-and-career-narrative
+  title: Your AI Portfolio and Career Narrative
+  short_title: Your AI Portfolio and Career Narrative
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Portfolio workshop · Lab 20.1 minutes 0–50 and 65–75 (50–65 in the Chapter 21 deck)", minutes: 60}
+    thu: {label: "Defense session · oral defenses I (same run sheet for a second session)", minutes: 75}
+    after: {label: "exam preparation · self-study and office hours (not presented)"}
+  sources:
+    - chapters/20-your-ai-portfolio-and-career-narrative.qmd
+    - chapters/21-your-personal-ai-code-of-practice.qmd
+    - labs/ch20-lab1.md
+    - labs/ch20-lab2.md
+    - labs/ch20-lab3.md
+    - labs/ch21-lab1.md
+    - figures/longdesc/ch20.md
+    - appendix/answers.md
+    - docs/blueprints/ch20-blueprint.md
+    - docs/decisions.md
+
+slides:
+
+# ======================================================================= WORKSHOP
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "Portfolio workshop and oral defenses"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading: Chapter 20 and Chapter 21 Part A · Recommended: NACE career readiness; WEF (2025)"
+  figure: f20-07-portfolio-anatomy
+  notes:
+    say: |
+      Put this slide up while students arrive and find their teams. Today is not a lecture; it is a workshop. Until
+      now your work has been read by your instructor and a few classmates. Now you prepare it for a reader who
+      has never met you: a recruiter, a hiring manager, an admissions committee. The picture on the right is the
+      Portfolio Anatomy, the book's diagram of a portfolio as an argument: a career narrative on top, an evidence
+      map under it, entries that each carry their own evidence, your reflection and your code of practice, and at
+      the bottom the oral defense, live and without a tool. Ask everyone to take out three things now: the draft of
+      A14 parts 1 to 3, the code-of-practice draft from Chapter 21, and a pen. We will use all of them in the next
+      75 minutes.
+    background: |
+      The book's suggested plan: the workshop (Lab 20.1, 75 min) is followed by oral defenses and, if your course has
+      one, a final exam. Reading for today: Chapter 20 and Chapter 21 Part A (recommended: NACE career readiness page
+      and the WEF Future of Jobs Report 2025, Key findings). Chapter 20 says section 20.2 is read after the workshop with
+      the Case Study, as exam preparation (D25), so do not assume students have read it. The figure is Signature 12 (@fig-20-7). The chapter map highlights
+      Disclose, with Verify second. No lab step needs an AI tool or account.
+    questions:
+      - q: "I did not finish my A14 draft. Can I still take part?"
+        a: "Yes. Work with what you have: a partial map can still be swapped, and the privacy pass and rehearsal work on any draft. A14 is due with the portfolio, when your instructor sets it."
+    activity: "On screen before the session. Students sit in their teams of 3–4 and pair up inside the team."
+    book: "Chapter 20 opening page; @fig-20-7 (Portfolio Anatomy); Lab 20.1."
+
+- layout: session_plan
+  minutes: 1
+  title: "Workshop, defenses and exam preparation at a glance"
+  columns:
+    - heading: "Portfolio workshop"
+      sub: "Lab 20.1 · 75 min · pairs inside your team"
+      blocks:
+        - {min: 8, label: "Briefing", detail: "Portfolio Anatomy, the decision chain"}
+        - {min: 12, label: "Map swap", detail: "Find a claim with no evidence"}
+        - {min: 12, label: "Employer read", detail: "90 seconds: what did you do?"}
+        - {min: 8, label: "Privacy pass", detail: "Names, others’ data, employer details"}
+        - {min: 10, label: "Narrative review + defense prep", detail: "One change; how defenses work"}
+        - {min: 15, label: "Code peer check (Chapter 21)", detail: "Trigger test, one line revised"}
+        - {min: 10, label: "Defense rehearsal", detail: "3 + 2 minutes each, timed"}
+    - heading: "Defenses and the final review"
+      sub: "Portfolio due when your instructor sets it"
+      blocks:
+        - {min: 75, label: "Defenses I", detail: "Your slot; 5 minutes each"}
+        - {min: 10, label: "Final review", detail: "Final Bridge, 10 minutes"}
+        - {min: 65, label: "Defenses II", detail: "Your slot"}
+        - {min: 75, label: "Final exam, if you have one", detail: "Format set by your instructor"}
+  notes:
+    say: |
+      Here is the plan for the last stretch. Today follows the lab sheet minute by minute. After an eight-minute
+      briefing you work in pairs on one record, your A14 sheet: first your partner looks for a claim on your map
+      with no evidence behind it, then reads one entry as an employer would, then checks your privacy, then
+      suggests one change to your narrative. At minute 50 we switch to Chapter 21 for fifteen minutes and check each
+      other's code of practice. The last ten minutes are a timed defense rehearsal. Everything is due when
+      your instructor sets it: A14, the code of practice and the final portfolio. Defenses run in the slot you sign
+      up for. A later session also opens with ten minutes of final review, and if your course has a final exam, your
+      instructor tells you when it is.
+    background: |
+      Lab 20.1 timings (chapter and labs/ch20-lab1.md): 0–8 briefing; 8–20 map swap; 20–32 employer read; 32–40
+      privacy pass; 40–50 narrative review; 50–65 Chapter 21 peer check (Lab 21.1, in the Chapter 21 deck); 65–75
+      defense rehearsal. In this deck the defense-preparation segment (about 3 minutes) is taken from the
+      narrative-review step, and each step opens with a short brief from its own minutes. If your course has a final exam, its
+      format and weight are yours to set; do not promise a weight the course does not state. Defense capacity depends on
+      your class size: at 5 minutes each, every ten students need about 50 minutes (blueprint, author item 3); the chapter
+      says extra slots are announced on your course site.
+    questions:
+      - q: "Do we get feedback on A14 before the portfolio is due?"
+        a: "Today's peer review is the feedback step; A14 is due with the portfolio, when your instructor sets it (chapter, A14 brief)."
+    activity: "Point at the two columns; do not read every block. Say the due time twice: when your instructor sets it."
+    book: "Chapter 20 'Milestones for the portfolio' box; Lab 20.1 table."
+
+- layout: objectives
+  minutes: 0.5
+  kicker: "Chapter 20 · learning objectives"
+  title: "By your defense you will be able to…"
+  items:
+    - {code: "O1", text: "**Map** your artifacts to NACE competencies with evidence"}
+    - {code: "O2", text: "**Evaluate** a labor-market claim: who, whom, when, what"}
+    - {code: "O3", text: "**Produce** revision evidence: before, after, why, the check"}
+    - {code: "O4", text: "**Write** entries and a narrative whose claims point to artifacts"}
+    - {code: "O5", text: "**Protect** classmates’, employers’ and clients’ information"}
+    - {code: "O6", text: "**Defend** your work in 3 + 2 minutes"}
+  notes:
+    say: |
+      Six objectives, and today you practice five of them on your own drafts. The map swap is objective one: every
+      competency you claim needs a behavior and an artifact a reader can see. The employer read is objective four:
+      does your entry separate what the AI did from what you did? The privacy pass is objective five. The rehearsal
+      is objective six, the defense. Objective three, revision evidence, is what your portfolio entries show, and
+      objective two, reading labor-market claims, is exam-preparation reading after the workshop, together with the Case Study.
+      You do not need to memorize the list; it is printed at the start of Chapter 20. Notice that all of them serve
+      one question the chapter asks: what will convince a reader who has never met you that you can do this work,
+      with AI, responsibly?
+    background: |
+      Full objectives with tags (chapter): O1 explain NACE career readiness and map artifacts with evidence (LO7);
+      O2 evaluate a labor-market claim and state it exactly and dated (LO7, LO3); O3 produce revision evidence (LO7,
+      LO2, LO3); O4 write entries and a narrative with an AI Use Declaration that separates the AI's part (LO7,
+      LO4); O5 apply the data classes to a portfolio's new readers (LO7, LO5); O6 defend in 3 + 2 minutes (LO7,
+      LO6). NACE = National Association of Colleges and Employers. Section 20.2 (O2) is examinable but scheduled
+      after the workshop (D25).
+    activity: "Show briefly; point out which step practices which objective."
+    book: "Chapter 20, Learning Objectives; the chapter's question."
+
+# Four dated events and the puzzle: the case in one view (event texts shortened; detail in the notes).
+- layout: timeline
+  minutes: 1
+  kicker: "Opening case · one employer’s AI rules for applicants (2025)"
+  title: "“Write the first draft yourself”"
+  events:
+    - {label: "Feb and May 2025", text: "Postings: no AI in applications", tier: "reported"}
+    - {label: "Jul 10, 2025", text: "Company page: rules by stage", tier: "confirmed"}
+    - {label: "Applications", text: "Own first draft; AI may refine; invent nothing", tier: "confirmed"}
+    - {label: "Live interviews", text: "No AI unless allowed", tier: "confirmed"}
+  takeaway: "Puzzle: why would an AI company want your own first draft?"
+  notes:
+    say: |
+      One minute of story before we work. Some employers now say in writing how applicants may use AI. One of the
+      clearest examples is a company that builds AI models. In February 2025, and again in May, Fortune reported
+      that its job postings asked applicants not to use AI assistants at all when writing their applications. By
+      July the rule had changed. The company's own page for candidates, last updated July 10, 2025, sets rules by
+      stage: write the first draft of your résumé and answers yourself, then you may use the company's AI model to
+      refine them, but never to create experience you do not have. Interview preparation with AI is encouraged. Live
+      interviews: no AI unless the company says otherwise. Here is the puzzle: its staff use AI every day. Why does
+      it still want your first draft and your unaided thinking in the interview? Keep it in mind; your portfolio is
+      the answer.
+    background: |
+      Case C29. Company: Anthropic, named in the chapter as the case's subject (provider neutrality: two other
+      employers balance it in the Case Study). Tiers exactly as the chapter states: the earlier "no AI" rule is
+      reported (Burleigh, 2025a, 2025d, Fortune, Feb 4 and May 19, 2025); the July 10, 2025 candidate guidance page
+      is confirmed (Anthropic, 2025, the company's own record); the head of talent's LinkedIn post calling the
+      approach intentional is reported via Fortune (Burleigh, 2025c, July 21). Take-home assessments: no AI unless
+      the company says a particular assessment allows it. The page states its reasons: to see candidates' real
+      experience and how they think, and it asks candidates to be open about their AI use. Rules change; the
+      chapter dates all three employers "as of October 2026".
+    questions:
+      - q: "Isn't it hypocritical for an AI company to limit AI?"
+        a: "The chapter's reading (marked as the book's): the rules protect evidence of the person, namely their own thinking, a true record and a moment to see them think without a tool. The page allows what does not threaten that: preparation and polishing (Case Study)."
+    misconceptions:
+      - m: "M2 'Saying I used AI will count against me, so I leave it out.'"
+        fix: "The company asks candidates to be open about their AI use. Undisclosed use is the risk. But do not overcorrect: live interviews often allow no AI at all."
+    activity: "Narrate; ask the puzzle question; take no answers yet. Return to it at the defense-prep segment."
+    book: "Opening Case 'Write the First Draft Yourself', @fig-20-2; Case Study (C29)."
+
+# About 48 words: five dates with their deliverables; dates are the content (deliberate exception).
+- layout: timeline
+  minutes: 0.5
+  kicker: "Milestones · work back from your instructor’s dates"
+  title: "The last stretch, step by step"
+  events:
+    - {label: "Days before", text: "Reflection + five entries done"}
+    - {label: "Workshop", text: "Bring your drafts"}
+    - {label: "Portfolio due", text: "A14, code, portfolio together"}
+    - {label: "After you submit", text: "Your defense slot"}
+    - {label: "Final exam", text: "If your course has one"}
+  takeaway: "Apply today’s notes, then submit"
+  notes:
+    say: |
+      Thirty seconds on the calendar, because several deadlines meet at the end. A few days ago you should have
+      finished your reflection and the five revision entries other than A13; A13 itself was finished before the
+      workshop. Today you improve your drafts with a partner. When the portfolio is due, three things go in together
+      on your course site: A14, your code of practice and the final portfolio, which includes both. The oral
+      defenses follow; you defend in the slot you signed up for. If your course has a final exam, your instructor
+      tells you when it is. If you are behind on the reflection or the entries, tell me today, not the night
+      before. The plan after today is simple: apply what your partner found today, run the privacy check once more,
+      and submit.
+    background: |
+      Milestones box in Chapter 20: an early checkpoint your instructor sets (Failure Diary first version); about a
+      week before the portfolio is due, six artifacts chosen; a few days before, the reflection and the five revision
+      entries other than A13; A13 finished before the workshop; the workshop; then A14, code and portfolio due
+      together; then the oral defense. Late work: the chapter does not state a late rule for the portfolio, so do not
+      improvise one in class; your own course policy applies. Time (chapter): Chapter 20 about 94 minutes, Chapter 21
+      Part A and the workshop draft about 51 (D25); portfolio assembly is stated separately at about 5.5 to 7.5 hours
+      spread over several weeks.
+    questions:
+      - q: "If my defense is early, can I still change the portfolio after I submit it?"
+        a: "The portfolio is due before the defense and the defense uses that version; 'numbers match the portfolio' is part of the Evidence criterion."
+    activity: "Ask: 'Who has not yet signed up for a defense slot?' Point them to your course site."
+    book: "Chapter 20 'Milestones for the portfolio'; The Final Portfolio, Time; The Oral Defense, When."
+
+- layout: lanes
+  minutes: 2
+  kicker: "§20.3 · Signature 12: Portfolio Anatomy (book figure, redrawn)"
+  title: "A portfolio is an argument, not a scrapbook"
+  label_width: 2.6
+  rows:
+    - label: "Front page"
+      nodes:
+        - {label: "Career narrative: three claims, one reader", kind: human, role: neutral}
+        - {label: "Evidence map: artifact, outcome, competency, trail", kind: step}
+    - label: "Each entry (≥ 6, incl. A13)"
+      nodes:
+        - {label: "Artifact", kind: step}
+        - {label: "Revision trace", kind: step}
+        - {label: "Verification trail", kind: step}
+        - {label: "Declaration line", kind: step}
+    - label: "Across entries"
+      nodes:
+        - {label: "Reflection since A1", kind: human, role: neutral}
+        - {label: "Code of practice (Ch. 21)", kind: human, role: neutral}
+    - label: "Live"
+      nodes:
+        - {label: "Oral defense: 3 + 2 minutes, no tool", kind: human}
+  caption: "Rounded = your judgment in your own words · rectangle = a record a reader can check"
+  takeaway: "At least six entries, one of them A13 — each with its own evidence"
+  notes:
+    say: |
+      This is the one diagram for today. A portfolio, in this book, is a selection of your work, each piece with
+      the evidence of how you made and checked it, presented for a reader outside the course. Read it top down. The
+      career narrative makes three claims to one named reader. The evidence map lists each entry with the outcome
+      it shows, the NACE competency it gives evidence of, and where the checks are. Each of at least six entries
+      carries four things: the artifact, its revision trace, its verification trail and an AI Use Declaration line.
+      Across all entries sit your reflection and your code of practice. At the bottom, the oral defense tests all of
+      it, live. Rounded boxes are your judgment in your own words; rectangles are records a reader can check. Today
+      every step of the workshop works on one part of this picture.
+    background: |
+      Section 20.3. Choosing six: at least six revised artifacts, one must be A13; cover different outcomes; include
+      at least one with a documented failure or a decision not to use AI (it shows you can find where a tool fails,
+      which a polished final product hides); prefer checks a reader could repeat; the A14 entry is one of the six.
+      Supporting evidence: the Failure Diary or a Mini-Project; one optional project may replace one artifact.
+      Layout: front page with narrative and map; one page per entry; reflection; code; portfolio declaration. The
+      course version stays on your course site; any public version must first pass section 20.6. There is no A8: the
+      sequence leaves that slot for a midterm review. Worked example: Lucía chooses A1, A5, A9, A11, A12, A13 and leaves out A10 because two rows used
+      her employer's ticket categories.
+    questions:
+      - q: "Why would I include an artifact where something went wrong?"
+        a: "A documented failure or a 'no AI' decision shows you can find where a tool fails, which a polished final product hides (Check Yourself 20.3)."
+    misconceptions:
+      - m: "M1 'A portfolio shows my best final products; drafts and mistakes make me look weak.'"
+        fix: "A final product hides judgment; revision evidence shows it. Do not overcorrect into 'include everything': six chosen entries, each with a reason."
+    activity: "Point at each layer as you name it; say which workshop step works on it. (Redrawn natively so labels stay legible; arrows in a row show reading order.)"
+    book: "§20.3 Portfolio Anatomy, @fig-20-7; Worked Example 'Lucía Chooses Six'."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "§20.8 · the question to expect"
+  title: "“What did the AI do, and what did you do?”"
+  size: 24
+  bullets:
+    - "Weak: “It wrote most of it and I checked it.”"
+    - "Strong: a **decision chain**, five links, with evidence"
+  flow:
+    - {label: "You asked for", kind: human, role: neutral}
+    - {label: "The AI produced", kind: ai}
+    - {label: "You kept, changed or rejected", kind: human, role: neutral}
+    - {label: "You checked", kind: step, role: verified}
+    - {label: "Who decided", kind: human}
+  flow_height: 1.45
+  takeaway: "Every link a listener needs, in your own words"
+  notes:
+    say: |
+      Every reader of your portfolio, and I in your defense, will ask one question: what did the AI do, and what did
+      you do? "It wrote most of it and I checked it" leaves out every link a listener needs. A strong answer is a
+      decision-chain answer with five links: what you asked for, what the AI produced, what you kept, changed or
+      rejected and why, how you checked, and who decided. Here is Lucía's, from her A9: "I asked a chat tool to
+      compare the three fundraisers per volunteer hour. It produced totals and recommended the book swap. I didn't
+      accept that until I'd checked every row against the paper sign-in sheets; two long shifts were missing. With
+      the real hours the car wash came first. The board decided." Five links, in under thirty seconds. You will use
+      this in the employer read and in the rehearsal.
+    background: |
+      Section 20.8 and @fig-20-16 (redrawn natively so labels stay ≥ 20 pt; in the book the third link is a
+      diamond, a decision). Constructed examples in the chapter also give Sam (A11: in a live test his agent placed
+      a $312 order despite an instruction to ask first; now it stops at a cart link and two officers place orders),
+      Marcus (A4), Elif (A7: rejected a tool's rewording that turned 'used SPSS in a stats lab' into 'fluent SPSS
+      user') and Hana (alt text; they/them). Other questions students may hear: Why this artifact? What would you
+      check next? What did you leave out of the public version? Which part would you not trust a tool with again?
+    questions:
+      - q: "What if I used no AI at all for that entry?"
+        a: "Then say so and show the decision: 'No AI used' and 'I tried AI and rejected it, because…' are strong entries (§20.5); the chain becomes what you did, how you checked and who decided."
+    misconceptions:
+      - m: "M6 'If AI helped, the work isn't mine' / 'The AI did most of it and I checked it is a full answer.'"
+        fix: "Ownership means having decided what the text says and being able to explain and defend it (Chapter 10). The chain shows that ownership; do not let it become 'AI use is fine if you understand it' without declaration and check."
+    activity: "Ask one volunteer to give a one-sentence chain for any recent artifact; count the links aloud."
+    book: "§20.8, @fig-20-16; Worked Example 'Lucía's Chain, and Four More'; Check Yourself 20.8."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Check Yourself 20.9 · asked in the briefing"
+  title: "the employer read"
+  question: "In the 90-second “employer read,” what does your partner do, and what do you learn from it?"
+  instruction: "Think 30 seconds, then tell your partner"
+  model_answer:
+    - "**Partner:** reads your entry for 90 seconds, turns it over, says what they believe you did and what the AI did."
+    - "**You learn:** where your entry blurs the two or hides your part."
+  notes:
+    say: |
+      The lab sheet asks this question aloud before we start, because it explains the most useful step of today.
+      Think for thirty seconds, then tell your partner. Here is the setup: in step three, your partner reads your
+      entry for ninety seconds, as a busy reader would, then turns the page over and says out loud what they believe
+      you did and what the AI did. What could you learn from that? Do not explain your entry to them first; the
+      point is that a stranger will not hear your explanation. They will only see the page. Take one or two answers
+      before you show the model answer.
+    background: |
+      Check Yourself 20.9 (Appendix E): the partner says what they believe you did and what the AI did after 90
+      seconds; you learn where your entry blurs the two or hides your part. Lab 20.1 expected observations: the
+      employer read usually shows that the AI's part and the student's part are blurred in at least one sentence.
+      Lab step 1 also asks the instructor to show one strong and one weak evidence line; the next block's slide
+      ("Strong critical thinker" vs. a checked result, §20.1) serves that purpose.
+    activity: "30 s think, 30 s pair, then show the answer slide."
+    book: "§20.9; Lab 20.1 step 1; Check Yourself 20.9."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      Here is the answer. Your partner reads the entry for ninety seconds, turns it over and says what they believe
+      you did and what the AI did. Then you compare that with what you meant. Where the two differ, your entry blurs
+      the AI's part and yours, or it hides your part, and that is exactly the sentence to rewrite. In most pairs
+      there is at least one such sentence, so do not be surprised when you find one. It is a good result: you found
+      it today, not a recruiter next month. Now let's start with the map, the front page of your portfolio.
+    background: |
+      Lab 20.1 step 3: compare with what you meant; change the entry where the two differ. The entry's six parts
+      (§20.5): situation and task, what you did, what the AI did, how you checked, the result and one limit.
+    activity: "Reveal; move straight to the map swap."
+    book: "Check Yourself 20.9; Appendix E (Chapter 20)."
+
+# ----------------------------------------------------------------------- 8–20 Map swap
+- layout: section
+  minutes: 0
+  number: "8–20"
+  tag: "Lab"
+  title: "Map swap: claim or evidence?"
+  idea: "A competency counts when a reader can see evidence of it."
+  meta: "Book §20.1, §20.3 · A14 part 1 · 12 minutes"
+  notes:
+    say: |
+      Minute eight: the map swap. Your evidence map is the table on the front of your portfolio: each entry, the
+      course outcome it shows, the NACE competency it gives evidence of, and where the checks are. NACE is the
+      National Association of Colleges and Employers. In this step your partner reads your map and looks for one
+      competency claim with no visible evidence behind it, and you fix it or cut it. Before you swap, two minutes on
+      why this matters, and on what A14 and the portfolio are scored on, because the map is part one of A14. Then
+      you get the rest of the twelve minutes to work.
+    background: |
+      Lab 20.1 step 2 (8–20 min). Brief taken from the step's 12 minutes: about 3.5 minutes for the NACE slide,
+      the A14 brief and the portfolio rubric, about 8.5 minutes to swap and fix. If pairs are slow, shorten the
+      rubric slide to a pointer: the full rubric is printed in the chapter and on your course site.
+    activity: "Transition; pairs keep their drafts face down until the work slide."
+    book: "§20.1, §20.3; Lab 20.1 step 2."
+
+# F20.3 redrawn natively: at slide size the book's dot chart has labels of about 8 pt. Four of its eight
+# competencies are shown (the largest and smallest of the four big gaps, critical thinking, and the reversal);
+# all eight are in the notes. Competencies are columns because the builder's fixed 1.35-inch row-label width
+# cuts off a long single word such as “Communication” (no overflow warning).
+- layout: matrix
+  minutes: 1
+  kicker: "§20.1 · NACE, 2024 · % rating graduates “very” or “extremely” proficient (book figure F20.3)"
+  title: "Employers were less positive than students"
+  col_headers: ["Leadership", "Critical thinking", "Communication", "Technology"]
+  row_headers: ["Students", "Employers", "Gap"]
+  cells:
+    - - {title: "66.0%", role: soft}
+      - {title: "80.8%", role: soft}
+      - {title: "78.1%", role: soft}
+      - {title: "60.5%", role: soft}
+    - - {title: "31.0%", role: neutral}
+      - {title: "55.9%", role: neutral}
+      - {title: "53.5%", role: neutral}
+      - {title: "72.0%", role: neutral}
+    - - {title: "35.0 points", role: neutral}
+      - {title: "24.9 points", role: neutral}
+      - {title: "24.6 points", role: neutral}
+      - {title: "Employers higher", role: neutral}
+  takeaway: "“Strong critical thinker” is a claim; a checked result is evidence"
+  notes:
+    say: |
+      In 2024 NACE surveyed two different groups: 20,482 students and 237 employers. Both rated how proficient
+      recent graduates are. Look at communication: 78.1 percent of students said very or extremely proficient,
+      against 53.5 percent of employers. In four competencies, communication, critical thinking, professionalism
+      and leadership, the gap was 24.6 to 35.0 percentage points. Technology runs the other way: employers rated it
+      higher. Careful: different people answered, so this shows a difference in views, not that any one of you
+      overrates yourself. NACE's own reading is that many students do not connect coursework to the competencies
+      employers seek. So a skills list convinces nobody. A line like "strong critical thinker" is a claim. "I checked
+      the claims in an AI overview against official pages and found three contradicted" is evidence. That is what
+      your partner looks for.
+    background: |
+      Gray (2025), NACE: student survey March to May 2024 (20,482 students); employer survey August to September
+      2024 (237 employers). NACE does not publish the questions or say whether its student figures cover all
+      respondents or only the 2,281 graduating seniors. Values (longdesc F20.3): leadership 66.0 vs 31.0;
+      professionalism 79.7 vs 50.3; critical thinking 80.8 vs 55.9; communication 78.1 vs 53.5; technology 60.5 vs
+      72.0 (employers higher); teamwork nearly equal (83.5 vs 81.5). NACE lists eight competencies; equity and
+      inclusion is marked "under review" as of October 2026. The book paraphrases NACE (noncommercial-use note;
+      blueprint N7). The slide redraws @fig-20-3 with four of the eight competencies; the others are professionalism
+      (above, a 29.4-point gap), teamwork (above), career and self-development 61.5 vs 43.2 and equity and inclusion
+      79.5 vs 63.3. Graduate, medical and professional schools: read the program's own application page and map
+      evidence to each item (§20.1; Lab 20.2 optional).
+    questions:
+      - q: "So are students wrong about themselves?"
+        a: "The data cannot say that: two different groups answered, not a matched comparison (Check Yourself 20.1). It shows that views differ, which is why evidence matters more than self-ratings."
+    misconceptions:
+      - m: "M3 'Listing skills such as critical thinking is enough.'"
+        fix: "Use the gap and the claim/evidence pair. Do not overcorrect into 'self-assessment is worthless': it starts the map; evidence finishes it."
+    activity: "Read one row aloud (communication); then ask: 'Which line on your map is a claim, not evidence?' Silent check, 10 seconds."
+    book: "§20.1, @fig-20-3 (redrawn here), Worked Example 'Lucía's First Three Rows'; Check Yourself 20.1."
+
+- layout: assignment
+  minutes: 1.5
+  kicker: "Application Assignment A14 · O1, O4 · LO7"
+  title: "A14: Revision evidence map and career narrative"
+  due: "When your instructor sets it · on your course site, with the portfolio"
+  parts:
+    - "Evidence map: at least 6 rows (your portfolio’s entries)"
+    - "One portfolio entry, 80–100 words"
+    - "Career narrative, 150–200 words, to one reader named by role"
+    - "AI Use Declaration, plus one sentence on a choice you made"
+  rubric_title: "Suggested rubric · 10 points"
+  rubric:
+    - {criterion: "Evidence map", points: 3, full: "≥ 6 rows, all fields; each competency backed by a behavior and artifact"}
+    - {criterion: "Entry + narrative", points: 3, full: "Six entry parts; AI’s part separate; three claims tied to rows; change noted"}
+    - {criterion: "Verification", points: 2, full: "Every claim traceable; nothing beyond the evidence"}
+    - {criterion: "Declaration", points: 1, full: "All five elements, or “no AI tools used”"}
+    - {criterion: "Judgment", points: 1, full: "Names a choice and why"}
+  note: "No AI tool is required. Alternative: write for a provided reader profile on your course site; same rubric."
+  notes:
+    say: |
+      A14 is the sheet you are working on today, and it is due with the portfolio. Four parts. One,
+      an evidence map of at least six rows: artifact, outcome, one NACE competency with a behavior in your words,
+      what you revised and why, where the verification trail is, and a privacy status. Two, one portfolio entry of
+      80 to 100 words; it is one of your six. Three, a career narrative of 150 to 200 words to one reader named by
+      role, with three claims, each pointing to a map row, and one change after today's peer review, noted in a
+      line. Four, your AI Use Declaration and one sentence naming a choice you made, an entry left out or a claim
+      narrowed, and why. The rubric is ten points. Note the verification row: every claim must trace to an artifact.
+    background: |
+      Time: about 50 minutes at home (chapter time line). Full four-level rubric in the chapter (A14). Suggested split of the points: task 3 = evidence map;
+      process evidence 3 = entry and narrative; verification 2; declaration and judgment 2 = declaration 1 +
+      judgment 1. Scored separately; where work fits two levels it gets the lower level that fully applies.
+      Verification 1.5 = one untraceable claim or an undated labor-market sentence. A labor-market sentence is
+      optional (one at most, exact, dated and attributed; read §20.2 first). For the narrative the chapter
+      recommends "your words only" or "AI as reader" on the voice and ownership spectrum; if a tool is used, the
+      zones of your course apply (§10.2). A14 grades the entry's format; the portfolio grades its revision (no double
+      credit). Alternative assignment: same four parts for one provided reader profile (a graduate program in the
+      field, a campus employer or a scholarship committee), course versions only, no public version.
+    questions:
+      - q: "Can the narrative mention that AI will create millions of jobs?"
+        a: "Only one labor-market sentence, exact, dated and attributed, and 'AI will…' only when quoting someone. Most narratives are stronger without it (§20.2, §20.7)."
+    activity: "Point at part 3's 'one change after peer review': students earn it in the 40–50 step today."
+    book: "Application Assignment A14 (brief, rubric, alternative); @fig-20-17; @fig-20-4."
+
+- layout: assignment
+  minutes: 1
+  kicker: "The final portfolio · O1–O5 · LO7"
+  title: "Final portfolio: what the 100 points score"
+  due: "When your instructor sets it · one PDF, slide file or web-page export"
+  parts:
+    - "Front: A14 narrative and evidence map"
+    - "≥ 6 revised artifacts incl. A13, each with revision entry, trail, declaration line"
+    - "A 2-page reflection since A1"
+    - "Your code of practice (Chapter 21)"
+    - "Portfolio declaration + privacy self-check"
+  rubric_title: "Suggested rubric · 100 points"
+  rubric:
+    - {criterion: "1a Revision", points: 15, full: "Five non-A13 entries, 3 each"}
+    - {criterion: "1b Reflection", points: 10, full: "Both A1 goals with evidence; one honest limit"}
+    - {criterion: "2a Trails", points: 14, full: "Named independent checks, verdicts, uncertainty"}
+    - {criterion: "2b Declaration", points: 6, full: "Five elements; a line per entry"}
+    - {criterion: "3 Prototype", points: 20, full: "A further change beyond A13, with a rerun"}
+    - {criterion: "4 Code", points: 15, full: "Chapter 21’s rubric"}
+    - {criterion: "5 Defense", points: 20, full: "Four criteria, 5 each"}
+  notes:
+    say: |
+      And here is the whole portfolio on one slide, so you know what the submission can be scored on if your instructor grades it. Revision
+      evidence for the five entries other than A13, three points each: before and after, a reason, a check, and a
+      change that answers the reason. Your reflection, ten points: both of your A1 goals, met or not, with evidence,
+      and one thing you do not yet trust yourself to do. The quality of your verification trails, fourteen. Your
+      portfolio declaration, six. A further change to your A13 prototype, beyond what A13 already graded, with a
+      rerun: twenty. Your code of practice, fifteen, scored with Chapter 21's rubric. And your oral defense, twenty.
+      One privacy rule: if a classmate's data or confidential employer data is found, that entry is withheld and you
+      get 48 hours to upload a redacted version, with no further penalty.
+    background: |
+      Chapter 20, The Final Portfolio: Brief and Rubric. Suggested totals: revision 25 (1a 15 + 1b 10), verification
+      20 (2a 14 + 2b 6), domain prototype 20, code of practice 15, defense 20. No double credit: A13's own build,
+      runs, peer test and first revision stay with A13's grade; the narrative is graded only in A14; the code only
+      through Chapter 21's rubric. One artifact may be replaced by an optional chapter project; if your instructor allows it, a missed artifact
+      may be completed now and counted (its original grade does not change). Privacy gate: an entry with a
+      classmate's personal data, confidential employer or client data, or any patient or research-participant
+      information is withheld from grading; 48 hours from the notice to upload a redacted version; an entry still
+      not fixed scores 0 on its rows; nothing else is lost. (The blueprint's earlier fixed window
+      was replaced by the chapter's 48 hours; follow the chapter.) Alternative routes: Chapter 19's provided
+      scenario if A13 cannot leave the course; "no AI" entries valid at every criterion.
+    questions:
+      - q: "Does the row-3 change need to be big?"
+        a: "No. One new input and a rerun are enough (Worked Example: Lucía adds a bank statement with a duplicated line, reruns, adds a line-count step and a card limit, reruns again)."
+    activity: "Do not read the table; point at rows 1a, 3 and 5 and move on."
+    book: "The Final Portfolio: Brief and Rubric (rubric table, privacy, no double credit); Worked Examples 'A Reflection Paragraph' and 'Lucía's Further Change to A13'."
+
+- layout: lab
+  minutes: 8.5
+  kicker: "Lab 20.1 · step 2 · on screen while you work"
+  title: "Map swap: one claim without evidence"
+  goal: "Every competency on your map backed by a behavior and an artifact"
+  steps:
+    - {text: "Swap maps with your partner"}
+    - {text: "Partner marks one competency claim with no visible evidence", min: 3}
+    - {text: "Fix it (name the behavior and artifact) or cut it", min: 4}
+    - {text: "Check each row has a privacy status", min: 1.5}
+  side:
+    - {heading: "Deliverable", text: "A14 part 1, revised; note what you cut"}
+    - {heading: "Group of three", text: "Third person keeps time and asks follow-ups; rotate each step"}
+    - {heading: "Privacy", role: risk, text: "Never paste a classmate’s work into an AI tool"}
+  notes:
+    say: |
+      Swap maps now. Your job as the partner is to find one competency claim on the map that has no visible
+      evidence behind it: a competency named, but no behavior and no artifact a reader could check. Mark it. Then
+      give it back. As the writer, you have two honest options: fix it by naming the behavior and the artifact, or
+      cut it. Cutting is a good result. Lucía planned to claim leadership and dropped it, because no artifact showed
+      her running a project yet. Before you swap back, check that every row has a privacy status: as is, names
+      replaced, described only, or permission recorded. If you are a group of three, the third person keeps time and
+      asks follow-up questions, and you rotate at each step.
+    background: |
+      Lab 20.1 step 2 and §20.1 worked example (Lucía's first three rows: A5 → critical thinking, A9 → critical
+      thinking, A12 → professionalism). Faded example 20.1 (marketing student, A10: technology; one tool invented a
+      product feature in two of five test inputs); the A14 template's first map row is filled with it. Model answer
+      (Appendix E): "Compared two tools on five test inputs; one invented a product feature twice, so I chose the
+      other and added a fact check before posting." @fig-20-4 is the book's LO × NACE mapping (not NACE's) for
+      students who cannot find a competency. No partner: the lab sheet's solo route covers the entry, the privacy flow
+      and the rehearsal; for the map, a suggestion (not in the lab sheet) is to reread it after a break and mark the
+      weakest claim yourself.
+    questions:
+      - q: "My partner says my 'teamwork' row is weak, but all my teamwork was in class labs. What now?"
+        a: "Peer tests and peer swaps can give evidence (the book's map lists A3's peer swap and A13's peer test under teamwork); name the behavior and replace the classmate's name with a placeholder."
+    misconceptions:
+      - m: "M3 'Listing skills such as critical thinking is enough.'"
+        fix: "If a pair cannot find a weak row, ask them to read one row aloud and say what a stranger could check."
+    activity: "8.5 min. Circulate; at minute 18 warn 'two minutes, check privacy status'."
+    book: "Lab 20.1 step 2; §20.1 Worked and Faded Examples; @fig-20-8 (Lucía's map)."
+
+# ----------------------------------------------------------------------- 20–32 Employer read
+- layout: section
+  minutes: 0
+  number: "20–32"
+  tag: "Lab"
+  title: "Employer read: what did you do?"
+  idea: "An honest entry puts the AI’s part and your part side by side."
+  meta: "Book §20.4–20.5 · A14 part 2 · 12 minutes"
+  notes:
+    say: |
+      Minute twenty: the employer read. This step works on one portfolio entry, the 80- to 100-word account of one
+      piece of work that is part two of A14. An outside reader gives an entry a minute or two. In that time they
+      must be able to see the situation and the task, what you did, what the AI did, how you checked, the result and
+      one limit. First, two short slides: what an honest entry looks like, and what revision evidence looks like,
+      because your entry should point to it. Then your partner reads your entry for ninety seconds and tells you
+      what they believe happened.
+    background: |
+      Lab 20.1 step 3 (20–32 min). Brief about 2.5 minutes taken from the step; about 9.5 minutes of work. The
+      portfolio entry adapts the STAR format (situation, task, action, result), which some employers recommend for
+      interview answers (Amazon, n.d.), adding the AI's part and the check (§20.5).
+    activity: "Transition."
+    book: "§20.4, §20.5; Lab 20.1 step 3."
+
+# Native redraw of the entry-anatomy figure (F20.11), cut to about 40 words; the full entry is in the notes.
+- layout: compare
+  minutes: 1.5
+  kicker: "§20.5 · Lucía’s A9 entry, constructed (book figure: entry anatomy)"
+  title: "The AI’s part and your part, side by side"
+  size: 22
+  columns:
+    - heading: "What the AI did"
+      role: ai
+      text: "Totals; recommended the book swap"
+    - heading: "What Lucía did"
+      role: human
+      text: "Checked every row against sign-in sheets: two shifts missing"
+    - heading: "Three rules"
+      role: soft
+      bullets: ["No invented experience", "Numbers from the artifact", "“No AI” or “rejected, because…” is strong"]
+      size: 20
+  takeaway: "Each entry: situation, both parts, check, result, limit"
+  notes:
+    say: |
+      An entry is a short account of one piece of work for an outside reader: situation and task, what you did, what
+      the AI did, how you checked, the result and one limit. It ends with one line of AI Use Declaration. Three rules
+      keep it honest. First, never let a tool supply experience you do not have; the Opening Case's rule is a good
+      test for every sentence. If you could not explain where a sentence came from, it does not belong. Second,
+      numbers come from the artifact, not from memory or a tool's summary of it. Third, "No AI used" and "I tried AI
+      and rejected it, because…" are strong entries: they show a decision based on evidence about the tool, which
+      is exactly the judgment a reader is looking for. Keep the wording yours, because you will defend it aloud.
+    background: |
+      §20.5 and @fig-20-11. Worked example (Lucía's A9 entry): treasurer of the accounting students' association;
+      compared three fundraisers by money raised per volunteer hour; a chat tool that can run code produced totals
+      and recommended the book swap; she checked every row against paper sign-in sheets and found two long
+      book-swap shifts missing; with real hours the car wash came first; limit: one year of data; declaration: one
+      chat tool, recommendation rejected after checking. Ownership (Chapter 10): having decided what a text says
+      and being able to explain, defend and stand behind every sentence; not the same as legal authorship. The
+      portfolio declaration also covers any AI used to assemble the portfolio itself. Faded example (environmental
+      science; 12 readings converted, 2 flagged; one flag wrong because the tool used the wrong limit) is home
+      practice.
+    questions:
+      - q: "Will saying I used AI lower my grade?"
+        a: "No. Disclosure is required, and the portfolio scores the declaration (2b) and the trails. Undisclosed use is the problem (course policy)."
+    misconceptions:
+      - m: "M2 'Saying I used AI will count against me, so I leave it out.'"
+        fix: "Point to the Opening Case: an AI company asks candidates to be open about AI use. The portfolio rubric scores the declaration."
+    activity: "Ask students to underline, in their own entry, the sentence that says what the AI did."
+    book: "§20.5, @fig-20-11, Worked Example 'Lucía's A9 Entry'; Check Yourself 20.5."
+
+# Native redraw of the revision-entry figure (F20.10); before and after shortened, full wording in the notes.
+- layout: compare
+  minutes: 1
+  kicker: "§20.4 · Lucía’s A5, constructed (book figure: revision entry)"
+  title: "Keep the “before” exactly as you submitted it"
+  size: 22
+  columns:
+    - heading: "Before (as submitted)"
+      role: neutral
+      text: "“75 to pass”: supported, 75%. No source named."
+    - heading: "After"
+      role: verified
+      text: "Two official pages: 75 is a scaled score (0–99), not a percentage. Checked Oct 2026."
+    - heading: "Changed · why · trail"
+      role: soft
+      bullets: ["Corrected, strengthened", "Why: instructor feedback", "Trail: two dated pages"]
+      size: 20
+  takeaway: "Kinds: corrected · strengthened · narrowed · returned"
+  notes:
+    say: |
+      Your entry points to revision evidence, so here is what that looks like. Lucía's A5 checked claims from an AI
+      overview of the CPA exam. Her row for "75 to pass" read "supported, 75%", with no source. Her instructor asked
+      which page said 75. After: supported by the exam's frequently asked questions page and the state board's
+      scoring page; 75 is a scaled score on a 0 to 99 scale, not a percentage correct; checked October 2026. What
+      changed: corrected and strengthened. Why: the feedback. The fourth kind on the bar, returned, means an AI step
+      handed back to a person. Trail: two rows, each with its page and date, and a
+      remaining uncertainty, because rules change. The key rule: the before keeps your words as you submitted them.
+      If you rewrote it, no reader could see the revision. Only classmates' names and data are replaced, with a
+      note.
+    background: |
+      §20.4. Revision trace (Chapter 10): versions from notes or first draft to the tool's draft to the final, with
+      what changed, who or what proposed it, and why. Verification trail (this chapter): the checks behind a result,
+      with sources or recalculations, verdicts and what remained uncertain. Verdict scale (Chapter 8): supported,
+      partly supported, unsupported, contradicted, cannot verify. Independent checks: evidence no AI tool produced;
+      asking the same tool again is not one. Four kinds of revision: corrected, strengthened, narrowed, returned (an
+      AI step handed back to a person, or "no AI" chosen). A portfolio revision is scored only in the portfolio,
+      separately from any revise-once policy of your course. CPA = Certified Public Accountant.
+    questions:
+      - q: "My 'before' is embarrassing. Can I tidy it up?"
+        a: "No. The before is the evidence of what changed (Check Yourself 20.4). Only other people's names and data are replaced, and you say where."
+    misconceptions:
+      - m: "M1 'Drafts and mistakes make me look weak.'"
+        fix: "The before-and-after is what shows judgment; a reader sees that you found and fixed the problem."
+    activity: "Optional: name the kind of revision in the student-teacher faded example ('most' → 14 of 24: narrowed)."
+    book: "§20.4, @fig-20-10, Worked Example 'Lucía's A5 Entry'; Faded Example 'A Student Teacher's Paragraph'."
+
+- layout: lab
+  minutes: 9.5
+  kicker: "Lab 20.1 · step 3 · on screen while you work"
+  title: "Employer read: 90 seconds, then turn it over"
+  goal: "Your partner can say what you did and what the AI did"
+  steps:
+    - {text: "Partner reads your entry for 90 seconds", min: 1.5}
+    - {text: "Turns it over; says what you did and what the AI did", min: 1.5}
+    - {text: "Compare with what you meant; mark where they differ", min: 1.5}
+    - {text: "Swap roles", min: 4.5}
+    - {text: "Rewrite the blurred sentence", min: 0.5}
+  side:
+    - {heading: "Deliverable", text: "A14 part 2 (80–100 words), revised"}
+    - {heading: "No partner", text: "Reread your entry after a 10-minute break; write what a stranger would believe"}
+  notes:
+    say: |
+      Now the employer read. Writer, hand your entry over and stay silent. Partner, read it for ninety seconds, as a
+      busy recruiter would. Then turn the page over and say, out loud, what you believe the writer did and what the
+      AI did. Writer, compare that with what you meant, and mark every place where the two differ. Then swap roles.
+      In the last moments, rewrite the sentence that blurred the two parts. Usually it is a sentence where the tool
+      is invisible, like "I analyzed the data," when a tool produced the totals, or the reverse, where your own
+      check disappears. A rule from earlier: never paste a classmate's entry into an AI tool, including to "improve"
+      it.
+    background: |
+      Lab 20.1 step 3. Expected observations (lab sheet): the employer read usually shows that the AI's part and the
+      student's part are blurred in at least one sentence. The entry has six parts and the A14 rubric's Exemplary
+      level requires all six and a clear split of the AI's part and yours; 1 point (Developing) if there is no split.
+      The writer may change the entry where the two readings differ. No-partner route from the lab sheet.
+    questions:
+      - q: "My partner understood everything. Is that a failed step?"
+        a: "No; it is a valid result. Note it, and check one more thing: did they name how you checked? Most first entries skip that link."
+    activity: "Time the 90 seconds aloud for the whole room (start, stop), twice. Circulate during the comparison."
+    book: "Lab 20.1 step 3; §20.5."
+
+# ----------------------------------------------------------------------- 32–40 Privacy pass
+- layout: section
+  minutes: 0
+  number: "32–40"
+  tag: "Lab"
+  title: "Privacy pass: new readers"
+  idea: "Every item passes a data-class check again for its new readers."
+  meta: "Book §20.6 · your privacy self-check · 8 minutes"
+  notes:
+    say: |
+      Minute thirty-two: the privacy pass. An item that was fine to submit to me can still be wrong for a portfolio.
+      Sending work to a new reader is like pasting it into a new tool: it goes somewhere you do not control, and the
+      reader may forward it. So every item passes the data-class check again. We do the book's short faded example
+      first, about two minutes, then you check each other's drafts with the privacy flow. Write down every change you
+      make. That record is your privacy self-check for the portfolio, so today's eight minutes also complete a
+      required line of your portfolio declaration.
+    background: |
+      Lab 20.1 step 4 (32–40 min): faded example first (2 minutes), then the privacy flow (@fig-20-13), recording
+      changes; the record counts as the portfolio's privacy self-check. Lab 20.1 materials: printed privacy flow
+      (instructor package). Data classes (Chapter 12): the book uses a generic three-level classification: public,
+      internal or confidential, restricted or legally protected. FERPA protects students' education records; HIPAA protects health information held by
+      health providers and insurers.
+    activity: "Transition; hand out the printed privacy flow if not done."
+    book: "§20.6; Lab 20.1 step 4."
+
+- layout: lanes
+  minutes: 1
+  kicker: "§20.6 · the privacy check (book figure, redrawn)"
+  title: "Whose information is in it?"
+  label_width: 2.3
+  rows:
+    - label: "Only yours"
+      nodes:
+        - {label: "Your own work", kind: human, role: neutral}
+        - {label: "Keep; check its data class", kind: step, role: verified}
+    - label: "Protected"
+      nodes:
+        - {label: "Patients’, participants’, clients’ confidential data", kind: step}
+        - {label: "Remove it", kind: step, role: risk}
+    - label: "Others’ work"
+      nodes:
+        - {label: "Classmates’, employer’s, client’s", kind: step}
+        - {label: "Written permission?", kind: human, role: neutral}
+        - {label: "Yes: keep, noted · No: placeholders", kind: step}
+  takeaway: "A recruiter has no contract with you: apply the consumer-terms column, more strictly"
+  notes:
+    say: |
+      Here is the flow. For each item, ask whose information is in it. Only yours: keep it, but check its data class
+      anyway. Protected information, meaning patients', research participants' or a client's confidential data:
+      remove it, always. Classmates' work, an employer's material or a client's work: do you have written permission
+      from its owner? Yes: keep it and note the permission. No: replace the details with placeholders, stand-ins such
+      as "[product]", or describe the method without the data. For classmates the plain rule is that their
+      work and results are theirs to share, not yours: replace names, paraphrase their comment, keep your change. For
+      an employer, ask your manager in writing. A public portfolio is read with the strictest column, because a
+      recruiter has no contract with you or with your institution.
+    background: |
+      §20.6. For a public portfolio, read Chapter 12's consumer-terms column and apply it more strictly; only Public
+      Data and your own non-sensitive work go out as they are. The table is the book's reading of common guidance and
+      a generic three-level classification; your institution's or employer's own classification decides any case it does not cover; a field rule, an employer's
+      policy or a client's contract can still say no to something the table allows. Redact = remove or black out;
+      replace = placeholders; describe = method without the data. No AI output was wrong here, so the Failure
+      Taxonomy Tree does not apply (input-side question, as in Chapter 15). Worked example: Lucía asks her manager
+      in writing; allowed to describe the method, not the data; removes company name, ticket text, team metrics and
+      the internal refund policy wording; records the permission in her map.
+    questions:
+      - q: "My classmate agreed to test my prototype. Can I keep her results as they are?"
+        a: "No: replace her name and inputs with placeholders and keep your own change (§20.6). Agreeing to test is not permission to publish her results."
+    misconceptions:
+      - m: "M5 'It's my portfolio, so anything I worked on can go in, including classmates' feedback and my employer's data.'"
+        fix: "A portfolio is a publication to new readers. Do not overcorrect into 'never mention a team or a job': describe the method, replace the data."
+    activity: "Point at the 'protected' branch: no permission makes patient or participant data acceptable."
+    book: "§20.6, @fig-20-13, the data-class table, Worked Example 'Lucía's Public A12'; Check Yourself 20.6."
+
+- layout: quiz
+  minutes: 1.5
+  kicker: "Faded example · §20.6 · do it first (Lab 20.1 step 4)"
+  title: "a group lab record"
+  question: "A lab record names three teammates and includes a photo of a hotel’s internal room-rate sheet from a summer job. Names are now “Teammate A, B, C.” Next fix, and why?"
+  instruction: "Write the next fix and its reason (90 seconds)"
+  model_answer:
+    - "**Remove** the internal rate sheet, or describe the method without it: it is the employer’s confidential data."
+    - "Ask the employer, in writing, before showing anything from the job."
+  notes:
+    say: |
+      Do this one on your own first. A hospitality student's lab record lists three teammates by name and includes a
+      photo of a hotel's internal room-rate sheet from her summer job. The first fix is done for you: the
+      teammates' names became Teammate A, B and C. What is the next fix, and why? Write one line for the fix and one
+      for the reason. Use the flow on the last slide: whose information is the rate sheet? Is it protected, or does
+      it need permission? Ninety seconds. Then we check, and you move straight to each other's drafts with the same
+      questions.
+    background: |
+      Faded example 20.6 ("A Group Lab Record", Field: Hospitality), done in Lab 20.1. Appendix E model answer:
+      remove the internal rate sheet (an employer's confidential data) or describe the method without it; ask the
+      employer, in writing, before showing anything from the job.
+    activity: "90 s individual; no pair discussion before the answer."
+    book: "§20.6 Faded Example 'A Group Lab Record'; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The rate sheet is an employer's internal document, so it is not hers to publish. Remove it, or describe what
+      she did with it without showing the data, for example "compared weekday and weekend rates for one room type."
+      And before anything from that job goes into a portfolio, she asks the employer, in writing, and keeps the
+      answer. Notice the pattern: first the people, then the employer, and the record of each change. Now do the same
+      with your partner's draft: names, other people's data, employer details, client material. Write down every
+      change; that list is your privacy self-check.
+    background: |
+      Strictest rule wins; ask the rule's owner in writing (§18.1). Spaced Review item 3 (Chapter 18): if the
+      employer's policy forbids describing its internal tools in public, the employer's policy governs the public
+      portfolio (Appendix E).
+    activity: "Reveal; pairs start the privacy pass at once."
+    book: "§20.6; Appendix E (Chapter 20, faded example 20.6)."
+
+- layout: lab
+  minutes: 5
+  kicker: "Lab 20.1 · step 4 · on screen while you work"
+  title: "Privacy pass: check each other’s drafts"
+  goal: "Nothing in your draft that is not yours to show"
+  steps:
+    - {text: "Classmates’ names, comments, peer-test results → placeholders", min: 2}
+    - {text: "Employer or client details → remove, describe, or written permission", min: 2}
+    - {text: "Record each change: your privacy self-check", min: 1}
+  side:
+    - {heading: "Deliverable", text: "A list of changes = the portfolio’s privacy self-check line"}
+    - {heading: "Never", role: risk, text: "Patients’ or research participants’ information, in any version"}
+  notes:
+    say: |
+      Swap drafts again: map, entry and narrative. Go through three questions. First, other students: does the draft
+      name a classmate, quote a peer comment or show a peer-test result? Replace the name with a placeholder,
+      paraphrase the comment, keep the writer's own change. Second, employers and clients: ticket data, internal
+      policies, metrics, client names, client work. Remove it, describe the method, or note written permission.
+      Third, anything from a patient or a research participant: that never goes into any version. Write down every
+      change, with one word for the reason. That list is your privacy self-check, and it counts for the portfolio.
+      Five minutes.
+    background: |
+      Lab 20.1 step 4. Expected observations (lab sheet): the privacy pass most often finds classmates' names in
+      peer-test or peer-swap records and employer details in work-based artifacts. Portfolio contents item 5: the
+      privacy self-check is one line confirming the §20.6 checks were run; the Lab 20.1 record counts. Course
+      version: stays on your course site, but replace classmates' names anyway. The no-partner route: use the privacy flow
+      alone.
+    questions:
+      - q: "Do I need to redact things in the course version I submit?"
+        a: "Replace classmates' names with placeholders anyway. Any public version must pass every check in §20.6 (Final Portfolio, Privacy)."
+    misconceptions:
+      - m: "M5 '…anything I worked on can go in.'"
+        fix: "Ask pairs to count their changes; a draft with zero changes is worth a second look at peer-test and peer-swap records."
+    activity: "5 min; give a 1-minute warning."
+    book: "Lab 20.1 step 4; §20.6; The Final Portfolio, Privacy."
+
+# ----------------------------------------------------------------------- 40–50 Narrative + defense prep
+- layout: section
+  minutes: 0
+  number: "40–50"
+  tag: "Lab"
+  title: "Narrative review, then defense prep"
+  idea: "Every claim in your narrative points to an artifact."
+  meta: "Book §20.7–20.8 · A14 part 3 · 10 minutes"
+  notes:
+    say: |
+      Minute forty: the career narrative, A14 part three. It opens your portfolio and is often the only part a busy
+      reader finishes. Your partner suggests one change; you decide whether to take it and note the change you made,
+      because A14 asks for one change after today's peer review. Then, at the end of these ten minutes, three short
+      slides on the defense: the format, what is scored, and the support routes. The first thirty seconds of
+      your defense is one sentence of this narrative, so the two belong together.
+    background: |
+      Lab 20.1 step 5 (40–50 min). In this deck the step is split: about 1 minute brief, 6 minutes partner review,
+      about 3 minutes defense-preparation segment. If the room needs the full ten minutes for narratives, show the
+      three defense slides at minute 65 instead and shorten the rehearsal to 2 + 1 minutes each, the format the lab
+      sheet gives for groups of three.
+    activity: "Transition."
+    book: "§20.7, §20.8; Lab 20.1 step 5."
+
+- layout: lanes
+  minutes: 1
+  kicker: "§20.7 · Lucía’s narrative, constructed (book figure, redrawn)"
+  title: "One named reader, three claims, three entries"
+  label_width: 1.8
+  rows:
+    - label: "Reader"
+      nodes:
+        - {label: "A recruiter at an accounting firm", kind: human, role: neutral}
+    - label: "Claim 1"
+      nodes:
+        - {label: "“I check before I send”", kind: human, role: neutral}
+        - {label: "A5 entry", kind: step, role: verified}
+    - label: "Claim 2"
+      nodes:
+        - {label: "“I look for what the numbers leave out”", kind: human, role: neutral}
+        - {label: "A9 entry", kind: step, role: verified}
+    - label: "Claim 3"
+      nodes:
+        - {label: "“I design checks into AI-assisted work”", kind: human, role: neutral}
+        - {label: "A11 and A12 entries", kind: step, role: verified}
+  takeaway: "Write for one reader by role — a narrative for everyone convinces no one"
+  notes:
+    say: |
+      A career narrative is a short argument to one named reader: where you are going, shown by three pieces of
+      evidence. Name the reader by role, such as "a recruiter at an accounting firm" or the admissions committee of a
+      particular program. The structure: reader and purpose in one sentence; three claims, each pointing to an entry
+      on your map; and what you are learning next, honestly. Look at Lucía's: "I check before I send," pointing to
+      A5; "I look for what the numbers leave out," pointing to A9; "I design checks into AI-assisted work," pointing
+      to A11 and A12. Her change after peer review: she replaced "I am detail-oriented" with the A9 example. Do not
+      invent goals you do not have; a reader will ask about them in the defense.
+    background: |
+      §20.7 and @fig-20-14. Lucía's full narrative is about 170 words, within A14's 150–200. Keep the wording yours
+      (§20.5; "your words only" or "AI as reader"). For a graduate, medical or professional school, use the
+      program's stated requirements as the frame. A labor-market sentence is optional, one at most, dated and
+      attributed (§20.2). Faded example (psychology major; reader: admissions committee of a research master's
+      program; first claim "I trace claims to the original study (A6)") is home practice; model answers in Appendix
+      E.
+    questions:
+      - q: "Why not write one narrative I can send to every employer?"
+        a: "Claims, evidence and wording can then fit what that reader needs; a narrative for everyone convinces no one in particular (Check Yourself 20.7)."
+    activity: "Ask writers to read their reader sentence to their partner before the review starts."
+    book: "§20.7, @fig-20-14, Worked Example 'Lucía's Narrative'; Check Yourself 20.7."
+
+- layout: lab
+  minutes: 6
+  kicker: "Lab 20.1 · step 5 · on screen while you work"
+  title: "Narrative review: one change, your decision"
+  goal: "Three claims, each tied to a map row, for one named reader"
+  steps:
+    - {text: "Partner reads your narrative; checks the reader is named by role", min: 1.5}
+    - {text: "Partner suggests one change: an untied claim, a vague phrase", min: 1.5}
+    - {text: "You decide; note the change in one line (A14 part 3)", min: 3}
+  side:
+    - {heading: "Look for", text: "Adjectives with no artifact, such as “detail-oriented”"}
+    - {heading: "Deliverable", text: "One change noted: earns the A14 “change noted” point"}
+  notes:
+    say: |
+      Swap narratives. Partner: first, is there one reader, named by role? Then read each claim and point to the map
+      row it ties to. A claim with no row, or an adjective with no artifact behind it, like "detail-oriented" or
+      "passionate," is the change to suggest. Suggest one change only. Writer: you decide. You may accept it, adapt
+      it or reject it with a reason, but write one line saying what you changed, because the A14 rubric asks for one
+      change after today's peer review, noted. Keep the wording yours; you will say the first sentence aloud in
+      your defense. Six minutes in all; swap halfway.
+    background: |
+      Lab 20.1 step 5 and A14 part 3. A14 rubric, Entry and narrative (3): Exemplary includes "change noted"; one
+      point off (Proficient) if the change is not noted or one claim is untied. Lucía's change: "I am
+      detail-oriented" replaced with the A9 example. If time is short, cut the swap to one direction and let the
+      second writer self-review against the three-part structure.
+    activity: "6 min; call 'swap' at minute 3."
+    book: "Lab 20.1 step 5; §20.7; A14 part 3."
+
+- layout: section
+  minutes: 0
+  number: "Prep"
+  tag: "Defense"
+  title: "Your oral defense"
+  idea: "Five minutes: one decision chain, your evidence, your own answers."
+  meta: "Book §20.8 · The Oral Defense: Brief and Rubric"
+  notes:
+    say: |
+      Now three minutes on the defense itself, because your defense is coming. An oral defense is
+      a short, live explanation of your work followed by questions, in which you show that you own it. It is the
+      classroom version of the Opening Case's live interview: no AI tool and no script. Remember the puzzle from the
+      start: why would an AI company want your own first draft and no AI in the interview? Because those are the
+      evidence of the person. Your defense is that evidence, for your course. Three slides: the format, what is
+      scored and what is not, and how to prepare.
+    background: |
+      Section 20.8 and the Oral Defense brief. The rehearsal at minute 65 practices exactly this format. Defense is
+      20 of the portfolio's 100 points. Sign-up for slots is on your course site, where any extra slots are announced.
+    activity: "Transition."
+    book: "§20.8; The Oral Defense: Brief and Rubric."
+
+# About 50 words: the four timed parts of the defense are the slide's content (deliberate exception).
+- layout: concept
+  minutes: 1
+  kicker: "§20.8 · format: 3 + 2 minutes (book figure: defense timeline)"
+  title: "Three minutes from you, two minutes of questions"
+  size: 26
+  bullets:
+    - "Index card: key words and numbers, no sentences"
+    - "Your portfolio open; no AI tool, no script"
+  flow:
+    - {label: "Narrative sentence · 30 s", kind: human, role: neutral}
+    - {label: "One entry as a chain · 90 s", kind: human, role: neutral}
+    - {label: "One revision + check · 60 s", kind: step, role: verified}
+    - {label: "Questions · 2 min", kind: human}
+  flow_height: 1.5
+  takeaway: "Speak at your own speed: plan less, not faster"
+  notes:
+    say: |
+      Here is the format. About thirty seconds for one sentence of your narrative. About ninety seconds to walk
+      through one entry as a decision chain: asked for, produced, kept or rejected and why, checked, decided. About
+      sixty seconds for one revision and its check. Then two minutes of questions from me. You may bring one index
+      card with key words and numbers, not sentences to read aloud, and keep your portfolio open. Three minutes is a
+      limit, not a pace. Speak at your own speed, and if you speak slowly, plan less content rather than talking
+      faster. Choose the entry you know best, ideally one with a documented failure or a "no AI" decision, because
+      it gives the strongest chain.
+    background: |
+      Oral Defense brief: when your instructor sets it (for example, a slot you sign up for on your course site; extra slots announced there). Index
+      card: key words, numbers and short phrases, not sentences. Sample questions (§20.8): What did the AI do, and
+      what did you do? Why this artifact? What would you check next? What did you leave out of the public version?
+      Which part would you not trust a tool with again? In your defense you may also be asked to explain one line
+      of your code of practice (Chapter 21, §21.5). Logistics note for the instructor: at 5 minutes each, plan
+      about 5 minutes per student plus changeovers and adjust to your class size; the chapter defers to extra slots on your course site, and the blueprint lists two options
+      (two parallel rooms with a teaching assistant, or 3 + 1 minutes). Decide before students sign up
+      and tell them the slot length.
+    questions:
+      - q: "Can I use slides?"
+        a: "The brief allows one index card and your open portfolio; no AI tool and no script. Anything you read aloud word for word counts as a script."
+    activity: "Ask: 'Which entry will you defend?' Students write it on their card now."
+    book: "§20.8, @fig-20-15; The Oral Defense: Brief and Rubric (Format)."
+
+- layout: compare
+  minutes: 1
+  kicker: "Defense rubric (20 points) and support"
+  title: "Scored: structure and evidence — not accent or speed"
+  columns:
+    - heading: "Scored, 5 points each"
+      role: verified
+      bullets: ["Decision chain", "Evidence", "Answers", "Structure and explanation"]
+      size: 22
+    - heading: "Not scored"
+      role: soft
+      bullets: ["Accent", "Fluency", "Speed"]
+      size: 22
+    - heading: "Support routes"
+      role: neutral
+      bullets: ["Second language: talk to your instructor early", "Accommodation or a conflict: recorded 3 + live 2"]
+      size: 20
+  header_height: 1.0
+  takeaway: "Unknown? Say what you know, what you would check, and where"
+  notes:
+    say: |
+      What is scored? Four criteria, five points each. Decision chain: complete for one entry. Evidence: you show the
+      before and after and the trail, and the numbers match your portfolio. Answers: from your own understanding;
+      for something you do not know, say what you know, what you would check and where. That is a strong answer,
+      not a weak one. Structure and explanation: a non-specialist can follow you, and your content fits the time.
+      What is not scored: your accent, your fluency, your speed. If English is your second language and you are
+      worried about speaking, talk to me early. With an approved accommodation through your institution's disability or accessibility
+      office, or a documented conflict, you may give a recorded three-minute presentation plus a live
+      two-minute conversation, in person or by video.
+    background: |
+      Defense rubric (chapter): Decision chain, Evidence, Answers, Structure and explanation; levels Exemplary 5,
+      Proficient 4, Developing 2–3, Beginning 0–1. Where an approved
+      accommodation allows it, a student may answer one question in writing within a set time (chapter). Book-file
+      differences to know: the blueprint (§9c) named the fourth criterion "Clarity and time" with "within 3:00" and
+      allowed "written answers to two questions"; Lab 20.1's accessibility note allows the rehearsal "in writing
+      (two written answers in 5 minutes)". The chapter's brief is the final text: "Structure and explanation",
+      content fits the time, and one written answer where an approved accommodation allows it. Follow the chapter. Remaining uncertainty
+      spoken aloud is Chapter 8's term (§20.8).
+    questions:
+      - q: "Is a defense unfair to shy or second-language speakers?"
+        a: "The rubric scores structure and explanation, not accent, fluency or speed, and there is an accommodation route; Review C3 asks you to take a position using exactly this evidence."
+      - q: "What if I freeze on a question?"
+        a: "Say what you know, what you would check and where. That is remaining uncertainty spoken aloud, and the Answers criterion rewards it."
+    misconceptions:
+      - m: "M6 '\"The AI did most of it and I checked it\" is a full answer.'"
+        fix: "Point at 'Decision chain': two or more missing links is Developing (2–3)."
+    activity: "Read the 'Not scored' column aloud. Invite students to email or see you early about support."
+    book: "The Oral Defense: Brief and Rubric (Support and alternative route; rubric); §20.8; Review C3."
+
+- layout: concept
+  minutes: 1
+  kicker: "§20.8 · preparing in 25 minutes"
+  title: "Prepare one card, one chain, one honest “I would check…”"
+  size: 28
+  bullets:
+    - "Card: key words and numbers, no sentences"
+    - "Pick one entry; say its five links aloud"
+    - "Pick one revision and its check"
+    - "Practice: “I don’t know yet; I would check… in…”"
+  takeaway: "Rehearse once, timed — then sign up for your slot on your course site"
+  notes:
+    say: |
+      How to prepare. The portfolio brief budgets about twenty-five minutes to prepare and rehearse the defense, so
+      this is not a big job. Make one index card: key words and the numbers you will mention, copied from your
+      portfolio so they match. No sentences to read. Choose one entry and say its five links aloud. Choose one
+      revision and the check behind it. Then practice the sentence you will need when you do not know an answer: "I
+      don't know yet. What I know is this; I would check it in that place." It is the same habit as remaining
+      uncertainty in Chapter 8. In ten minutes we rehearse once, timed, with your partner. If you have not signed up
+      for a slot, do it today on your course site.
+    background: |
+      Final Portfolio, Time: about 25 minutes to prepare and rehearse the defense. Evidence criterion: numbers match
+      the portfolio (Proficient if one detail does not match). The card rule is from the brief: key words, numbers
+      and short phrases, not sentences to read aloud.
+    questions:
+      - q: "Should I memorize a script?"
+        a: "No. No script is allowed, and a memorized script usually breaks on the first question. Know your chain and your numbers instead."
+    activity: "Students draft the card's first three key words now (30 seconds)."
+    book: "§20.8; The Oral Defense: Brief and Rubric; The Final Portfolio, Time."
+
+- layout: section
+  minutes: 0
+  number: "50–65"
+  tag: "Ch 21"
+  title: "Code of practice peer check"
+  idea: "Switch to the Chapter 21 deck. Back here at minute 65 for the rehearsal."
+  meta: "Lab 21.1 inside Lab 20.1 · bring your code draft"
+  notes:
+    say: |
+      Minute fifty. Take out your code-of-practice draft from Chapter 21 Part A: three commitments and a boundaries
+      line. For the next fifteen minutes we work on it with the Chapter 21 slides: your partner reads your draft
+      aloud, tests each line with three questions, and names one line to revise. You record that line before and
+      after; it is item 7 of your code's brief, due with the portfolio. At minute sixty-five we come back to
+      this deck for the defense rehearsal, so keep your A14 draft and your index card nearby.
+    background: |
+      Lab 21.1 (labs/ch21-lab1.md): a named 15-minute slot of Lab 20.1, minutes 50–65. Its minutes are counted in
+      the Chapter 21 deck's workshop session (15), not here, so this deck's workshop session totals 60. Open
+      slides/out/ch21-your-personal-ai-code-of-practice.pptx at its section slide "50–65".
+    activity: "Switch decks."
+    book: "Lab 20.1 step 6; Chapter 21 Lab 21.1; §21.5."
+
+# ----------------------------------------------------------------------- 65–75 Defense rehearsal
+- layout: tps
+  minutes: 10
+  kicker: "Lab 20.1 · step 7 · 65–75 · timed"
+  title: "Defense rehearsal: 3 + 2 minutes each"
+  prompt:
+    - "Partner asks: “What did the AI do, and what did you do?”"
+    - "Plus one follow-up"
+  phases:
+    - {name: "A defends", min: 3, text: "Sentence · chain · revision"}
+    - {name: "B asks", min: 2, text: "Question + follow-up"}
+    - {name: "Swap", min: 5, text: "B defends, A asks"}
+  notes:
+    say: |
+      Last ten minutes: a timed rehearsal. Partner A defends for three minutes: one sentence of the narrative, one
+      entry as a decision chain, one revision and its check. Partner B keeps time and then asks, for two minutes:
+      "What did the AI do, and what did you do?" and one follow-up, such as why this artifact, or what you would
+      check next. Then swap. Listeners, while you listen, count the links in the chain. Most first answers skip one:
+      how you checked. Tell your partner which link was missing. Groups of three use two plus one minutes each:
+      the narrative sentence and one entry as a decision chain, then the defense question. After class, write your
+      exit sentence: one sentence you will cut from your defense.
+    background: |
+      Lab 20.1 step 7. Expected observation (lab sheet): in the rehearsal, most first answers skip the "how you
+      checked" link. Group of three: 2 + 1 minutes each, about 9 minutes in all. No-partner route: record a timed
+      rehearsal on your phone and listen once. Accessibility: the rehearsal can be done in writing for students with
+      an approved accommodation (lab sheet). Exit step for the workshop (lab sheet): write one sentence you will
+      cut, after class.
+    questions:
+      - q: "I went over three minutes. Do I lose points?"
+        a: "The rubric's Structure criterion asks that content fits the time; one point off if content is cut off at the limit. Cut content, do not speed up."
+    misconceptions:
+      - m: "M6 '\"It wrote most of it and I checked it\" is a full answer.'"
+        fix: "Listeners count the five links aloud after each chain."
+    activity: "Run the timer for the whole room: 3:00, 2:00, swap, 3:00, 2:00. Announce each switch."
+    book: "Lab 20.1 step 7; §20.8; @fig-20-15, @fig-20-16."
+
+# About 50 words: the exit checklist with the due time; shown as students leave (deliberate exception).
+- layout: concept
+  minutes: 0
+  kicker: "Before your defense"
+  title: "After today"
+  size: 28
+  bullets:
+    - "Apply today’s changes: map, entry, narrative, privacy"
+    - "Submit A14, your code and the portfolio **when your instructor sets it**"
+    - "Write your exit sentence: one sentence you will cut"
+    - "Sign up for a slot; make your index card"
+  takeaway: "Exam preparation: Chapter 21 Part B and the Final Bridge"
+  notes:
+    say: |
+      Leave this up as you pack. After today: apply what your partners found, in the map, the entry, the narrative
+      and the privacy record. When the portfolio is due, submit A14, your code of practice and the final portfolio on
+      your course site. Write your exit sentence, the one sentence you will cut from your defense. Sign up for
+      a defense slot if you have not, and make your index card. For exam preparation: read Chapter 21 Part B and do
+      the Final Bridge review items; section 20.2 and the Case Study of Chapter 20 are part of your exam preparation
+      too. If your course has a final exam, your instructor tells you when it is. Good luck with the defense.
+    background: |
+      Exam-preparation reading: Chapter 21 Part B (Case Study, Summary, Last Words), about 7 minutes; Final
+      Bridge about 40 minutes; Chapter 20's §20.2, Case Study, faded examples at home and review questions are
+      exam preparation (D23, D24, D25). The Final Bridge's odd answers are in Appendix E; even answers are
+      instructor-only, so your instructor may review them in a final-review segment (see the Chapter 21 deck).
+    activity: "On screen as students leave."
+    book: "Lab 20.1 step 7 (exit sentence); Chapter 20 milestones; Chapter 21 Part B and Final Bridge."
+
+# ======================================================================= DEFENSE SESSION
+- layout: section
+  session: thu
+  minutes: 0
+  number: "Oral"
+  tag: "Defense"
+  title: "Oral defenses"
+  idea: "Show that you own your work: one chain, your evidence, your answers."
+  meta: "Defenses I · a second session (II) can follow the final review"
+  notes:
+    say: |
+      Welcome to the defenses. Here is how today works. You defend in the order of the sign-up slots on your course site.
+      Each defense is five minutes: three minutes from you, two minutes of questions from me. No AI tool and no
+      script; one index card and your portfolio open. While others defend, please work quietly or wait outside, as
+      announced; nobody needs to stay for every defense, and nobody should record anyone else's. If you are nervous,
+      remember: three minutes is a limit, not a pace, and "I don't know yet; I would check it in…" is a good answer.
+      In a later session, the defenses continue after a ten-minute final review.
+    background: |
+      Suggested plan: oral portfolio defenses I (3 + 2 minutes); a second session with defenses II and a final
+      review. Room arrangements (waiting outside, order, changeovers) are not specified in the book; announce your
+      own. Capacity (author item 3 in the blueprint): at 5 minutes each, plan about 5 minutes per student plus
+      changeovers; the chapter says extra slots are announced on your course site. Students with an approved
+      accommodation or a documented conflict may use the recorded 3-minute presentation plus a live 2-minute
+      conversation (in person or by video).
+    activity: "On screen as students arrive; read the slot order aloud."
+    book: "The Oral Defense: Brief and Rubric."
+
+# Run sheet on screen for a whole defense session (same flow as the format slide).
+- layout: concept
+  minutes: 75
+  kicker: "Defense session · on screen between defenses"
+  title: "Five minutes: three from you, two of questions"
+  size: 24
+  bullets:
+    - "No AI tool, no script; card and portfolio open"
+    - "Scored: chain, evidence, answers, structure"
+  flow:
+    - {label: "Narrative sentence · 30 s", kind: human, role: neutral}
+    - {label: "One entry as a chain · 90 s", kind: human, role: neutral}
+    - {label: "One revision + check · 60 s", kind: step, role: verified}
+    - {label: "Questions · 2 min", kind: human}
+  flow_height: 1.5
+  takeaway: "Expect: “What did the AI do, and what did you do?”"
+  notes:
+    say: |
+      This slide stays on screen during the defenses. Before each student starts, say one sentence: "You have three
+      minutes; I will tell you at two and a half." Then listen for the chain: what you asked for, what the AI
+      produced, what you kept, changed or rejected and why, how you checked, who decided. In the two minutes of
+      questions, start with the expected question, "What did the AI do, and what did you do?", then one follow-up
+      from the list in the background. If a student freezes, help them toward the strong answer: "What do you know,
+      and where would you check?" Score the four criteria immediately after each defense, before the next student
+      starts, and write one line of feedback per criterion.
+    background: |
+      Rubric (5 each): Decision chain (Exemplary: complete for one entry; Proficient: one link thin or missing,
+      such as the decider unnamed; Developing: two or more links missing, parts blurred; Beginning: no chain).
+      Evidence (before and after and the trail shown; numbers match the portfolio). Answers (from own
+      understanding; limits stated; for an unknown, says what to check and where; Developing: defers to the tool or
+      the slide). Structure and explanation (a non-specialist can follow; terms explained; content fits the time).
+      Sample follow-ups (§20.8): Why this artifact? What would you check next? What did you leave out of the public
+      version? Which part would you not trust a tool with again? You may also ask about one line of the code of
+      practice: why that moment, how you would show you acted, what evidence stands behind it (§21.5). Do not score
+      accent, fluency or speed. Where an approved accommodation allows it, a student may answer one question in writing
+      within a set time.
+    questions:
+      - q: "Can I look at my portfolio while answering?"
+        a: "Yes: the portfolio stays open, and showing the before and after or the trail is part of the Evidence criterion."
+    activity: "75 min of defenses at 5 min each plus changeovers; keep a visible timer."
+    book: "The Oral Defense: Brief and Rubric; §20.8; §21.5 (code line)."
+
+# ======================================================================= EXAM PREPARATION
+- layout: section
+  session: after
+  number: "20.2"
+  tag: "Core"
+  title: "Reading labor-market claims without hype"
+  idea: "A labor-market number is a forecast by named respondents at a date."
+  meta: "Book §20.2 · exam preparation"
+  notes:
+    say: |
+      This part of the deck is for exam preparation: section 20.2 and the Case Study, which the chapter schedules as
+      exam preparation. Use it in office hours, post it on your course site, or show it if time allows. The idea is
+      on the slide. Before you repeat any labor-market number, ask who made it, whom they asked, when, what was
+      measured, what caused it, and whether it is a forecast or a count of something that happened. A labor-market
+      forecast is an estimate of future jobs or skills, made by named people or organizations at a date. The book's
+      example is the most-quoted one: the World Economic Forum's Future of Jobs Report 2025.
+    background: |
+      §20.2 is Core and examinable, read after the workshop with the Case Study (D25). Recommended reading in part: WEF
+      (2025), Key findings, pp. 5–6. Lab 20.3 (optional, 20–35 minutes) is the Your Turn: trace one headline that
+      cites the report.
+    activity: "Reference slide (not presented)."
+    book: "§20.2 Reading Labor-Market Claims Without Hype."
+
+# Native redraw of the claim-anatomy figure (F20.6): seven questions with short answers; detail in the notes.
+- layout: compare
+  kicker: "§20.2 · anatomy of a labor-market claim (book figure, redrawn)"
+  title: "Seven questions before you repeat “170 million jobs”"
+  size: 22
+  columns:
+    - heading: "Who said it, and why"
+      role: neutral
+      bullets: ["Who: the WEF, from employers", "Whom: over 1,000 employers", "When: May–Sep 2024", "Cause: all trends, not AI alone"]
+    - heading: "What kind of number"
+      role: neutral
+      bullets: ["Measured: expectations", "Forecast: 2025–2030", "Gross: net is about 78 million"]
+  takeaway: "A source for what employers expected, not for what will happen"
+  notes:
+    say: |
+      Take the claim "170 million new jobs by 2030" and ask the seven questions. Who said it? The World Economic
+      Forum, from employers' answers. Whom did they ask? Over 1,000 employers, not workers. When? A survey that ran
+      from May to September 2024. What caused it? All the trends the survey asked about combined, such as wider
+      digital access, the cost of living, the green transition and aging populations, not AI alone. What was
+      measured? Expectations and plans, not outcomes. Forecast or count? An estimate for 2025 to 2030. Gross or net?
+      Gross: 92 million displaced come with it, so the net figure is about 78 million. In short, the report is the
+      primary source for what these employers expected, not evidence of what will happen.
+    background: |
+      WEF (2025): over 1,000 employers employing more than 14 million workers, 22 industry groups, 55 economies;
+      answers collected May to September 2024 (a note on p. 99 says May to August; Deep 20.A). Respondents are
+      mostly large employers; small firms and informal work are out of scope (p. 97). The WEF extrapolated the
+      percentages to the jobs in its dataset (about 1.2 billion). Jobs linked to AI and information processing:
+      about 11 million created and 9 million displaced (p. 25). Other key findings: on average 39% of workers' core
+      skills expected to change or become outdated; analytical thinking rated the top core skill (seven in ten
+      companies call it essential); AI and big data top the fastest-growing skills; two-thirds of employers plan to
+      hire people with specific AI skills, while 40% expect to reduce their workforce where AI can automate tasks.
+    misconceptions:
+      - m: "M4 ''78 million new jobs' is a fact about the future.'"
+        fix: "It is a forecast by surveyed employers, extrapolated, gross and net. Do not overcorrect into 'forecasts are useless': they report what employers expected and planned, dated."
+    activity: "Self-study; Check Yourself 20.2."
+    book: "§20.2, @fig-20-6; Lab 20.3."
+
+# F20.5 redrawn natively: at slide size the book's bar chart has labels of about 8 pt.
+- layout: compare
+  kicker: "§20.2 · WEF (2025), all trends, 2025–2030 · % of about 1.2 billion jobs (book figure F20.5)"
+  title: "Created, displaced, net: three different numbers"
+  size: 32
+  columns:
+    - heading: "Created"
+      role: neutral
+      text: "**170 million**"
+      bullets: ["14% of jobs"]
+    - heading: "Displaced"
+      role: neutral
+      text: "**92 million**"
+      bullets: ["8% of jobs"]
+    - heading: "Net growth"
+      role: neutral
+      text: "**78 million**"
+      bullets: ["7% of jobs"]
+  takeaway: "170 million is gross; net is about 78 million; churn is 22%"
+  notes:
+    say: |
+      The chart puts the three numbers side by side. About 170 million jobs created, 14 percent of the roughly 1.2
+      billion jobs in the report's dataset. About 92 million displaced, 8 percent. Net growth, created minus
+      displaced, about 78 million, or 7 percent. Created plus displaced, 22 percent of those jobs, is what the report
+      calls churn. Notice that a headline can pick any one of these numbers and sound very different: "170 million
+      new jobs" and "92 million jobs wiped out" describe the same estimate. And none of the three is an AI number;
+      they cover every trend the survey asked about. For AI and information processing, the report gives about 11
+      million created and 9 million displaced.
+    background: |
+      Data from data/ch20_wef2025.csv (WEF, 2025, pp. 5–6, 25, 97, 99). Gross = before subtracting; net = what
+      remains. Deep 20.A (optional): churn = (170 + 92) ÷ 1,180 ≈ 22%; covered roles about 1.18 billion employees out
+      of 2.18 billion in the ILO data. Skill-change estimates moved between editions: 57% (2020), 44% (2023), 39%
+      (2025). In a portfolio a labor-market sentence is optional: one at most, exact, dated and attributed; "AI
+      will…" only when quoting someone.
+    questions:
+      - q: "Why is 'AI will create 170 million jobs' wrong in two ways?"
+        a: "It is not an AI number (all trends combined) and it is a gross estimate from employers' 2024 expectations, not a fact (Check Yourself 20.2)."
+    activity: "Self-study."
+    book: "§20.2, @fig-20-5 (redrawn here as three cards); Deep 20.A."
+
+- layout: compare
+  kicker: "§20.2 · worked example · constructed"
+  title: "Lucía’s sentence: check it, fix it, then cut it"
+  size: 22
+  columns:
+    - heading: "First draft"
+      role: risk
+      text: "“AI is creating 170 million jobs, so accounting is safe.”"
+    - heading: "Checked"
+      role: neutral
+      bullets: ["Gross, not net", "Worldwide estimate", "All trends, not AI"]
+    - heading: "Decision"
+      role: verified
+      bullets: ["Rewritten exactly, dated, attributed", "Then cut: it says nothing about her"]
+  takeaway: "Accurate is not the same as useful to your reader"
+  notes:
+    say: |
+      Here is the habit in one example. Lucía's first draft of her narrative said: "AI is creating 170 million jobs,
+      so accounting is safe." She checks it against the report. The number is gross; it covers jobs worldwide; it is
+      an estimate; and it is not an AI number, because it sums every trend the survey asked about. Her rewrite is
+      exact, dated and attributed: the World Economic Forum, extrapolating from a 2024 survey of over 1,000
+      employers, estimated about 170 million jobs created and 92 million displaced worldwide from 2025 to 2030,
+      across all trends. Then she cuts the sentence from her narrative. It is accurate now, but it says nothing about
+      her. That is the last step of reading a claim: deciding whether your reader needs it at all.
+    background: |
+      §20.2 Worked Example "Lucía's Sentence" (constructed). Faded example (journalism): "AI will wipe out 92 million
+      jobs." Model answer (Appendix E): gross, not net (the same estimate has about 170 million created, net about
+      78 million); displaced by all trends combined, not AI alone (AI and information processing: about 9 million
+      displaced and 11 million created); the WEF's estimate from employers' 2024 expectations for 2025–2030. Review
+      C1 (odd): strong answers say one exact, dated sentence can show awareness of the field but says nothing about
+      the student, and most portfolios are stronger without one.
+    activity: "Self-study; then try the faded headline."
+    book: "§20.2 Worked Example 'Lucía's Sentence', Faded Example 'A Headline'; Review C1."
+
+- layout: quiz
+  kicker: "Review Questions A3 · §20.2"
+  title: "net growth"
+  question: "The WEF estimated about 170 million jobs created and 92 million displaced from 2025 to 2030. What is the expected net growth?"
+  options:
+    - "About 78 million jobs, or 7% of the jobs in the report’s dataset."
+    - "About 170 million jobs, or 14% of the jobs in the report’s dataset."
+    - "About 262 million jobs, or 22% of the jobs in the report’s dataset."
+    - "About 92 million jobs, or 8% of the jobs in the report’s dataset."
+  answer: a
+  instruction: "Answer without notes, then check"
+  explanation: "(b) is the gross figure; (c) adds created and displaced (that is churn); (d) is the displaced figure"
+  notes:
+    say: |
+      Final-exam practice in the exam's Part A format. Read the four options and commit to one before checking. The
+      question looks like arithmetic, and it is, but the distractors test whether you know the words. Each wrong
+      option is a real number from the same report, used in the wrong role: one is the gross figure, one is the
+      displaced figure, and one adds created and displaced together. If you can say what each of the four numbers
+      is called, you understand gross, net and churn. Keep the units in mind too: the percentages are shares of
+      the roughly 1.2 billion jobs in the report's dataset, not of all jobs in the world.
+    background: |
+      Review Questions A3 (O2 · LO3 · Apply). Key from Appendix E: (a) 170 − 92. Distractor sources (chapter
+      comment): (b) gross for net (M4); (c) and (d) adding or picking the wrong figure.
+    activity: "Self-study item; answer on the next slide."
+    book: "§20.2; Review Questions A3; Appendix E."
+  answer_minutes: null
+  answer_notes:
+    say: |
+      The answer is (a): about 78 million jobs, or 7 percent of the jobs in the report's dataset, because net growth
+      is jobs created minus jobs displaced, 170 minus 92. Option (b) is the gross figure, the one headlines like.
+      Option (c) adds the two together: that sum, 22 percent, is what the report calls churn, a measure of how much
+      the workforce moves, not of growth. Option (d) is the displaced figure alone. And remember the context that no
+      option states: all of these are estimates from employers' expectations collected in 2024, across all trends,
+      not only AI.
+    background: |
+      Appendix E (Chapter 20, Review A3). Net job growth and labor-market churn are defined in Deep 20.A (key terms
+      marked Deep; optional), but gross and net are Core (§20.2).
+    activity: "Self-check."
+    book: "§20.2; Deep 20.A; Appendix E."
+
+- layout: section
+  number: "Case"
+  tag: "Core"
+  title: "Your experience, your first draft"
+  idea: "Three employers’ rules keep AI tools out of the interview."
+  meta: "Case Study (C29) · exam preparation"
+  notes:
+    say: |
+      The Case Study returns to the Opening Case with more employers. Three firms, three rules about AI in hiring,
+      two of them known only through news reports. The question for exam preparation is not "which company is right"
+      but: what does each rule protect, where do the rules agree, and what can you conclude from three firms? The
+      short answer, which the next two slides build: all three keep AI tools out of the interview, because the
+      interview is the moment an employer can see the person think. Three firms are not a survey; they show that
+      some employers set such rules, not what employers in general do.
+    background: |
+      Case C29 tiers: confirmed = Anthropic's candidate page (July 10, 2025); reported = Fortune (Feb 4, May 19, Jul
+      21 and Jun 11, 2025) and Business Insider (Feb 27, 2025). No AI output was wrong, so no Failure Taxonomy Tree
+      label and no failure-to-harm chain: a case about rules, like Chapter 1's productivity study. All three dated
+      "as of October 2026".
+    activity: "Reference slide (not presented)."
+    book: "Case Study 'Your Experience, Your First Draft'."
+
+# Native redraw of @fig-20-18: a 3 × 3 matrix of employers by stages with row and column headers, about 64 words;
+# every cell is needed to show where rules were and were not reported (deliberate exception to the 40-word guide).
+- layout: matrix
+  max_words: 65
+  kicker: "Case Study · three employers by three stages (book figure, redrawn)"
+  title: "All three rules keep AI tools out of interviews"
+  size: 22
+  col_headers: ["Application", "Take-home", "Interviews"]
+  row_headers: ["Anthropic (own page)", "Amazon (reported)", "Goldman Sachs (reported)"]
+  cells:
+    - - {title: "Own first draft", text: "AI may refine; invent nothing", role: neutral}
+      - {title: "No AI", text: "unless allowed", role: neutral}
+      - {title: "No AI", text: "unless indicated", role: neutral}
+    - - {title: "No rule reported", role: soft}
+      - {title: "No rule reported", role: soft}
+      - {title: "AI may disqualify", text: "unless explicitly permitted", role: neutral}
+    - - {title: "No rule reported", role: soft}
+      - {title: "No rule reported", role: soft}
+      - {title: "No outside sources", text: "including ChatGPT", role: neutral}
+  takeaway: "Three firms show that such rules exist — not what employers in general do"
+  notes:
+    say: |
+      Read the matrix by rows. The first company, from its own page as of July 2025: your own first draft of
+      application materials, AI may refine but never invent experience; no AI in take-home tasks unless the company
+      says it is allowed; no AI in live interviews unless indicated. Amazon, reported by Business Insider in February
+      2025: internal recruiting guidelines said candidates could be disqualified for using generative AI in
+      interviews unless explicitly permitted. Goldman Sachs, reported by Fortune in June 2025: an email to applicants
+      said its video-interview process prohibits outside sources, including ChatGPT or a search engine. The row labels
+      say which rules come from the company's own page and which are reported; "No rule reported" marks a gap in the
+      reports, not evidence that those stages are unregulated.
+    background: |
+      Amazon (Kim, 2025, Business Insider, Feb 27): reasons given were an unfair advantage and the difficulty of
+      assessing a candidate's own skills (reported). Goldman Sachs (Burleigh, 2025b, Fortune, June 11, citing
+      eFinancialCareers): the campus recruiting team's email to applicants to its private investing academy in EMEA
+      (Europe, the Middle East and Africa); the interview process uses the HireVue platform; a spokesperson said the
+      same language goes to all campus applicants (reported). The first company's page also says it does not use
+      candidates' data to train its model or let the model make hiring decisions, and asks candidates who need
+      accommodations to tell their recruiter early (confirmed).
+    questions:
+      - q: "Why do all three rules keep AI out of the interview?"
+        a: "The interview is the moment the employer sees the person think without a tool; the first company states this reason on its page ('how you think'); the rest is the book's reading."
+    activity: "Self-study."
+    book: "Case Study, short case 'Two interview rules from other large employers', @fig-20-18."
+
+- layout: compare
+  kicker: "Case Study · what each rule protects (this book’s reading)"
+  title: "Each rule protects evidence of the person"
+  size: 22
+  columns:
+    - heading: "Your first draft"
+      role: human
+      text: "Protects evidence of your own thinking"
+    - heading: "No invented experience"
+      role: human
+      text: "Protects the truth of the record"
+    - heading: "No AI in live interviews"
+      role: human
+      text: "Protects a moment to see you think without a tool"
+  takeaway: "Your portfolio answers all three"
+  notes:
+    say: |
+      What does each rule protect? This is the book's reading, marked as such. The first-draft rule protects evidence
+      of the applicant's own thinking. The no-invention rule protects the truth of the record. The interview rule
+      protects a moment in which the employer can see the person think without a tool, which is the page's own
+      stated reason. The page allows what does not threaten these: preparation and polishing. Now map it onto your
+      portfolio. Your declaration answers the company's request for openness. Your revision trace shows the first
+      draft was yours. Your entries contain only experience you had. And your oral defense is the live interview,
+      without a tool. That is also the answer to the Opening Case's puzzle.
+    background: |
+      Case Study "What each rule protects" (inferred tier: the book's reading, except "how you think", the page's
+      stated reason). Appendix E, Case Study Q1 and Q5: the defense mirrors the live interview (live, no tool,
+      questions about your own work) and differs (it is about course work, graded on a published rubric with an
+      alternative route, and asks explicitly about the AI's part). Ethics Lens (recommended): transparency runs both
+      ways; the company states its model does not make hiring decisions and candidates' data does not train it, a
+      claim applicants can hold a company to; Chapter 18 covers laws on automated decisions about people.
+    questions:
+      - q: "Should employers ban AI in all application materials?"
+        a: "Take a position with evidence from the case. The Ethics Lens notes that a first-draft rule lets someone like Elif, who writes important messages in Turkish first, draft and then refine (the book's reading)."
+    activity: "Self-study; Case Study Questions 1–5."
+    book: "Case Study ('What each rule protects', 'What a portfolio answers'); Ethics Lens; Chapter Summary."
+
+- layout: quiz
+  kicker: "Review Questions A11 · §20.8"
+  title: "the strongest answer"
+  question: "Which is the strongest answer to “What did the AI do, and what did you do?”"
+  options:
+    - "“The AI did most of the writing, and I checked it before I handed it in.”"
+    - "“I asked for X, it gave Y, I rejected Z because…, I checked it against…, and I decided.”"
+    - "“I used AI the way the course allows, so the work is fully mine.”"
+    - "“I am not sure what the AI did, but the final version is correct.”"
+  answer: b
+  instruction: "Answer without notes, then check"
+  explanation: "(a) leaves out every link; (c) cites a rule instead of evidence; (d) admits no ownership"
+  notes:
+    say: |
+      One more Part A item, on the defense question. All four options are things students actually say, which is why
+      it is worth practicing. Before you choose, count the links of the decision chain in each answer: what was asked
+      for, what the AI produced, what was kept, changed or rejected and why, how it was checked, and who decided. The
+      strongest answer gives a listener every link. Notice also the answer that sounds confident but rests on a rule
+      rather than on evidence; a rule tells the listener what was allowed, not what you did. Commit to an answer,
+      then check it on the next slide.
+    background: |
+      Review Questions A11 (O6 · LO6 · Understand). Key from Appendix E: (b). Distractors: (a) M6, leaves out every
+      link; (c) cites a rule instead of evidence; (d) admits no ownership of the work. The chapter notes the key is
+      the longest option in this item (one of two allowed).
+    activity: "Self-study item; answer on the next slide."
+    book: "§20.8; Review Questions A11; Appendix E."
+  answer_minutes: null
+  answer_notes:
+    say: |
+      The answer is (b): asked for, produced, rejected and why, checked against something, decided. It is the
+      decision-chain answer from section 20.8. Option (a) is the weak answer from the Warm-up: it leaves out what was
+      asked, what was rejected, how it was checked and who decided. Option (c) cites a rule instead of evidence:
+      being allowed to use AI does not show what you did. Option (d) admits no ownership of the work; even if the
+      final version is correct, the listener learns nothing about your judgment. In the defense, the strongest answer
+      also shows the evidence: open the portfolio to the before and after, or to the trail.
+    background: |
+      Appendix E (Chapter 20, Review A11). Warm-up item 3 revisited in the Chapter Summary: "It wrote most of it and
+      I checked it" is weak; give the decision chain.
+    activity: "Self-check."
+    book: "§20.8; Appendix E; Chapter Summary (Warm-up revisit)."
+
+- layout: objectives
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What convinces a reader who has never met you"
+  items:
+    - {code: "O1", text: "Evidence, not a skills list (NACE)"}
+    - {code: "O2", text: "Numbers with who, whom, when, gross or net"}
+    - {code: "O3", text: "Before and after, the reason, the check"}
+    - {code: "O4", text: "The AI’s part and yours, every claim to an artifact"}
+    - {code: "O5", text: "Others’ information protected"}
+    - {code: "O6", text: "Explained live, without a tool"}
+  takeaway: "Chosen work with its evidence, explained live"
+  notes:
+    say: |
+      The chapter's question was: what will convince a reader who has never met you that you can do this work, with
+      AI, responsibly? Not a list of skills or tools: readers discount those, and in NACE's surveys employers were
+      less positive about graduates' proficiency than students were in most competencies. What convinces is a few
+      chosen pieces of work in which the reader can see the before and the after, what the AI did and what you did,
+      how you checked and what you left out to protect others. A short narrative ties them together, every claim
+      pointing to one of them, and the case closes when you explain any of it live, without a tool. Labor-market
+      numbers can frame why it matters, if you say who estimated them, when, how and from what.
+    background: |
+      Chapter Summary and @fig-20-20. Warm-up revisit: (1) a draft shows the judgment between draft and final; (2)
+      "AI will create 170 million jobs": the WEF's estimate from employers' 2024 expectations for 2025–2030, with 92
+      million displaced, all trends combined (AI and information processing about 11 million created, 9 million
+      displaced); (3) "It wrote most of it and I checked it" is weak; give the decision chain.
+    activity: "Self-study."
+    book: "Chapter Summary, @fig-20-20; Warm-up revisit."
+
+- layout: key_terms
+  title: "Key terms"
+  terms:
+    - "career narrative"
+    - "career readiness"
+    - "competency (career)"
+    - "decision-chain answer"
+    - "evidence map"
+    - "labor-market forecast"
+    - "oral defense"
+    - "Portfolio Anatomy"
+    - "portfolio (course sense)"
+    - "portfolio entry"
+    - "redaction"
+    - "revision evidence"
+    - "verification trail"
+    - "extrapolation (Deep)"
+    - "labor-market churn (Deep)"
+    - "net job growth (Deep)"
+  note: "Definitions: Chapter 20 and the glossary. (Deep) terms are optional and not on exams."
+  notes:
+    say: |
+      These are the key terms of Chapter 20. If your course has an exam, its first part may ask for terms and concepts from the
+      Core sections of the whole book, so this chapter is in scope. A quick self-test:
+      cover the slide and define three terms in your own words, each in one sentence. Pay attention to two pairs. A
+      revision trace and a verification trail: one records what changed and why, the other records the checks behind
+      a result. A portfolio entry and the evidence map: one is the account of one piece of work, the other is the
+      table that ties all entries to outcomes and competencies. The three Deep terms are optional and not examined,
+      but gross and net themselves are Core.
+    background: |
+      Key Terms list from the chapter (13 Core, 3 Deep). Examinable scope: Core sections only (D20). Review A7
+      (odd): a revision trace records versions and what changed, who or what proposed it, and why; a verification
+      trail records the checks behind a result (sources or recalculations, verdicts, what remained uncertain).
+    activity: "Self-study: define three terms aloud."
+    book: "Chapter Summary, Key Terms; glossary; Review A5, A7."
+
+- layout: deep
+  kicker: "Deep 20.A · how the numbers are made (book figure)"
+  title: "Going deeper: from survey answers to “170 million jobs”"
+  size: 26
+  bullets:
+    - "Employers estimate % changes by role"
+    - "The WEF applies them to ILO employee counts"
+    - "Each step adds an assumption"
+  flow:
+    - {label: "Survey answers", kind: step, size: 20}
+    - {label: "% change by role", kind: step, size: 20}
+    - {label: "× ILO counts", kind: step, size: 20}
+    - {label: "Millions created, displaced", kind: step, size: 20}
+    - {label: "Net and churn", kind: step, size: 20}
+  flow_height: 1.4
+  takeaway: "Cite it as what employers expected in 2024 — exactly that"
+  notes:
+    say: |
+      Optional, for students who ask how a survey becomes "170 million jobs." The survey had 38 questions in 12
+      languages and was answered by over 1,000 employers. Respondents estimated how their workforce would change from
+      2025 to 2030, as percentages by role. The World Economic Forum then applied those percentages to employee counts
+      from the International Labour Organization. The roles with enough survey answers cover about 1.18 billion
+      employees, out of 2.18 billion in the ILO data. Each step adds an assumption. That does not make the report
+      useless. It tells you what a large group of employers expected and planned in 2024, which is exactly what you
+      should say when you cite it.
+    background: |
+      Deep 20.A (optional, not examinable). Data collection: the methods appendix says four months, May to September
+      2024 (p. 97); a note two pages later says May to August 2024 (p. 99): a discrepancy inside the source, kept as
+      such by the book. Employee counts were used because responding firms employ people in formal work (p. 99).
+      Small enterprises and the informal sector are out of scope (p. 97). Skills-change share by edition: 57% (2020),
+      44% (2023), 39% (2025); the report suggests more completed training may be one reason. The book's reading,
+      marked: expectations about AI were changing quickly in 2024.
+    activity: "Optional; not part of any class plan."
+    book: "Deep 20.A How the Future of Jobs Numbers Are Made, @fig-20-19."
+
+- layout: references
+  title: "References"
+  per_slide: 10
+  refs:
+    - "Amazon. (n.d.). *Inside Amazon’s recruitment process in the UK*. About Amazon UK. Retrieved October 18, 2026."
+    - "Anthropic. (2025, July 10). *Guidance on candidates’ AI usage*. https://www.anthropic.com/candidate-ai-guidance"
+    - "Burleigh, E. (2025a, February 4). AI company Anthropic’s ironic warning to job candidates: ‘Please do not use AI’. *Fortune*."
+    - "Burleigh, E. (2025b, June 11). Goldman Sachs wants students to stop using ChatGPT in job interviews with the bank. *Fortune*."
+    - "Burleigh, E. (2025c, July 21). $61.5 billion tech giant Anthropic has made a major hiring U-turn… *Fortune*."
+    - "Burleigh, E. (2025d, May 19). Anthropic issues ironic warning to job applicants—don’t use AI when applying to our roles. *Fortune*."
+    - "Gray, K. (2025, January 13). *The gap in perceptions of new grads’ competency proficiency and resources to shrink it*. NACE."
+    - "Kim, E. (2025, February 27). Amazon loves AI, except when candidates use it in their job interviews. *Business Insider*."
+    - "National Association of Colleges and Employers. (n.d.). *What is career readiness?* Retrieved October 18, 2026."
+    - "World Economic Forum. (2025, January). *Future of jobs report 2025*. https://reports.weforum.org/docs/WEF_Future_of_Jobs_Report_2025.pdf"
+  notes:
+    say: |
+      Reference slides; not presented in class. These are the sources cited on the slides and in the speaker notes,
+      in short APA form, from the chapter's reference list. Students do not need to read them; the chapter is written
+      to be understandable without them. If a student wants to go further, point them to the two recommended
+      readings: NACE's page on career readiness with the eight competency definitions, and the World
+      Economic Forum's Future of Jobs Report 2025, Key findings on pages 5 and 6. Full entries with URLs are in the
+      chapter's References section. Gray (2025) is the source of the perception-gap figure.
+    background: |
+      Full entries in the chapter's References (fact-checked). Recommended readings: NACE career readiness page, WEF (2025). The
+      chapter's From the Field cites Şeker (2014), Bilgi ekonomisi; it is not used on these slides. The author-case
+      placeholder in From the Field (an employer's view) is an open author item.
+    activity: "Not presented."
+    book: "Chapter 20, References; Further Reading and Compass Links."

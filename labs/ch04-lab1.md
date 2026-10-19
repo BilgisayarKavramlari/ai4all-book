@@ -45,7 +45,7 @@ Most teams agree on cards 1–3 and 5–7. Disagreements cluster on cards 4, 8 a
 Ungraded. The team's labeled card set and one-sentence reasons.
 
 ## Accessibility and alternatives
-Printable card set and a screen-reader-friendly table on the course site. Students who miss class label all ten printed cards at home; the instructor posts the two demo cards after class.
+Printable card set and a screen-reader-friendly table in the companion files. Students who miss class label all ten printed cards at home; the instructor posts the two demo cards after class.
 
 ## Instructor notes
 Fill the blank cards with two demo outputs that include a source; leave the check for the Chapter 8 verification lab. Card 10 tests whether students over-apply the tree. Time: about 20 minutes, run inside the concept session's live demonstration.

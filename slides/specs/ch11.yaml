@@ -1,0 +1,1744 @@
+# Lecture deck spec — Chapter 11: Decision Support, Data Work and Hidden Assumptions (concept session and lab session)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch11.yaml --preview
+# Every number and quotation below comes from the sources listed under deck.sources (the fact-checked chapter,
+# its labs, the figure long descriptions, Appendix E and the blueprint); the builder flags any number
+# it cannot find there.
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only
+# (the keys tue and thu are internal: tue = concept session, thu = lab session).
+# Text-dense book diagrams (F11.2, F11.3, F11.8, F11.12, F11.14, F11.19/F11.20, F11.22) are redrawn natively
+# (timeline, lanes, compare, matrix, flow) so labels stay >= 20 pt; data charts are used as book figures.
+
+deck:
+  chapter: 11
+  slug: decision-support-data-work-and-hidden-assumptions
+  title: Decision Support, Data Work and Hidden Assumptions
+  short_title: Decision Support and Hidden Assumptions
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Concept session (75 min)", minutes: 75}
+    thu: {label: "Lab session · practice lab, Lab 11.1 (75 min)", minutes: 75}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/11-decision-support-data-work-and-hidden-assumptions.qmd
+    - labs/ch11-lab1.md
+    - labs/ch11-lab2.md
+    - labs/ch11-lab3.md
+    - labs/ch11-lab4.md
+    - labs/ch11-a9-brief-a.md
+    - labs/ch11-a9-brief-b.md
+    - labs/ch11-a9-template-c.md
+    - figures/longdesc/ch11.md
+    - appendix/answers.md
+    - docs/blueprints/ch11-blueprint.md
+
+slides:
+
+# ======================================================================= CONCEPT SESSION
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "Concept session and lab session"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading: Chapter 11"
+    - "Recommended: Dell'Acqua et al. (2026)"
+  figure: f11-01-chapter-map
+  notes:
+    say: |
+      Put this slide up while students arrive. Chapter 11 opens Part III of the book, Deciding and Building with AI. Part II was about what AI tools
+      produce and how to check it. This chapter is about what happens next: someone uses an analysis, a score or a
+      recommendation to make a decision. AI tools can now sort a spreadsheet, run an analysis and draft a decision
+      matrix in seconds, and every one of those outputs rests on choices someone made, often without saying so. The
+      chapter map on the right shows the plan, and the Work Loop strip at its bottom: this chapter strengthens Decide,
+      who owns the decision, and then Verify, recalculating what the decision depends on. In the lab session you audit a
+      decision matrix, which starts assignment A9.
+    background: |
+      Two sessions: a concept session ("Decision support and data work. Demo: a small data analysis with a hidden
+      error") and a lab session ("Decision audit lab: a hiring shortlist or a budget decision"). A9, the decision
+      matrix audit, is due when the instructor sets it; LO3, LO5. The Dell'Acqua et al. paper is recommended, not
+      required ("If you read the recommended paper, add about 12 minutes; nothing in this chapter depends on it").
+      Follow the chapter: do not assume students read it. The chapter map highlights Decide (dark, thick border) with Verify second (dashed).
+    questions:
+      - q: "Is earlier material still examinable?"
+        a: "That is your instructor's call. If your course has a written exam, the Core sections of this chapter are the examinable ones."
+    activity: "On screen before class starts."
+    book: "Chapter 11 opening page; @fig-11-1 (chapter map, Decide highlighted)."
+
+- layout: session_plan
+  minutes: 2
+  title: "Chapter 11 at a glance"
+  columns:
+    - heading: "Concept session"
+      sub: "75 min · a case, two live demos, quick checks"
+      blocks:
+        - {min: 5, label: "Welcome, warm-up, objectives", detail: "Three predictions with confidence"}
+        - {min: 6, label: "Opening case", detail: "A health algorithm built without race"}
+        - {min: 31, label: "Concept core, §11.1–11.6", detail: "Roles, blanks, proxies, checks, matrices, review"}
+        - {min: 17, label: "Live demos", detail: "A hidden error; recalculating one total"}
+        - {min: 5, label: "Case study, read together", detail: "How the bias came to light"}
+        - {min: 11, label: "Quick checks and next steps", detail: "Six checks; before the lab"}
+    - heading: "Lab session · Practice lab"
+      sub: "75 min · teams of 3–4, individual artifact"
+      blocks:
+        - {min: 10, label: "Warm-up and briefing", detail: "Lab 11.1 steps, A9 brief"}
+        - {min: 45, label: "Lab 11.1: decision audit", detail: "Draft, audit, recalculate, test"}
+        - {min: 15, label: "Share and critique", detail: "Did the top option survive?"}
+        - {min: 5, label: "Exit step", detail: "Summary, key terms, exit ticket"}
+  notes:
+    say: |
+      Here is the plan. The first session is the concept session: a real case, six short sections of ideas, two live
+      demonstrations and six quick checks. The first demonstration is a small data
+      analysis with a hidden error, which you will find yourselves before I show it. The second is short: we
+      recalculate one total of an AI-drafted decision matrix by hand. At the end we read the chapter's Case Study
+      together. The second session is the practice lab: in teams you give an AI tool a decision scenario, then audit the matrix
+      it drafts, criterion by criterion, and test whether the top option survives a changed weight or a filled blank.
+      That work becomes A9, due when your instructor sets it, on your course site. Group work happens in class; the artifact is
+      individual.
+    background: |
+      Suggested format for a two-session plan: concept session opening case 10, concept core 35, demonstrations
+      20, concept check 10; lab session briefing 10, group practice 45, share and critique 15, exit step 5. This
+      deck's concept-session split (5 + 6 + 31 + 17 + 5 + 11) keeps the same proportions: the case gets 6 minutes at
+      the start and 5 at the end, because the chapter says the Case Study is read together in the concept session.
+      Minutes on this slide are the sums of the per-slide timings in the notes. If your course runs one longer
+      session or three shorter ones, regroup the slides to fit.
+    questions:
+      - q: "Can my team submit one A9?"
+        a: "No. Team drafts in the lab are shared but ungraded; every A9 is individual (Lab 11.1, Deliverable)."
+    activity: "Point to the two columns; give the A9 due date you have set."
+    book: "Chapter 11 time paragraph."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 11 · learning objectives"
+  title: "By the lab session you will be able to…"
+  items:
+    - {code: "O1", text: "**Distinguish** outputs that inform, recommend or trigger; name the owner"}
+    - {code: "O2", text: "**Test** whether a hidden assumption changes the result"}
+    - {code: "O3", text: "**Evaluate** a proxy: for whom is the gap bigger?"}
+    - {code: "O4", text: "**Verify** an AI analysis by recalculating from the raw data"}
+    - {code: "O5", text: "**Stress-test** a decision matrix: margins and shortlists"}
+    - {code: "O6", text: "**Design** a review step that makes disagreement possible"}
+  notes:
+    say: |
+      Six objectives, and notice the verbs. Distinguish: for any AI output in a workflow, you will say whether it
+      informs, recommends or triggers an action, and who owns the decision. Test: you will check whether a hidden
+      assumption, such as a blank cell or a unit, changes the result. Evaluate: you will ask whether a measure is a
+      fair stand-in for the goal, and for whom it falls short. Verify: you will recalculate the numbers a decision
+      depends on, outside the tool. Stress-test: you will change a weight and see whether the top option survives.
+      Design: you will write a review step that lets a person disagree with the AI and records it. The lab session
+      and A9 use all six.
+    background: |
+      Full wording and tags in the chapter: O1 distinguish informs/recommends/triggers and name the owner (LO5;
+      Delegation); O2 test a hidden assumption: a blank, a definition or unit, a time window, a total that hides
+      groups, a tool default (LO3; Discernment); O3 evaluate a proxy, including for whom the gap is larger (LO5, LO3);
+      O4 verify by recalculating from the raw data, with verdicts and remaining uncertainty (LO3); O5 stress-test a
+      decision matrix (LO3, LO5); O6 design a review step (LO5). LO3 = verify AI claims and document uncertainty; LO5 =
+      apply privacy, security, fairness, transparency and human-oversight principles (the book's learning outcomes).
+    activity: "Ask students to star the objective they expect to be hardest; revisit in the lab session."
+    book: "Chapter 11, Learning Objectives."
+
+# The three Warm-up questions are the content of this slide (about 45 words, deliberate exception).
+- layout: concept
+  minutes: 2
+  kicker: "Warm-up · ungraded · answer from what you know today"
+  title: "Three predictions, with how sure you are"
+  size: 26
+  bullets:
+    - "No race in a health algorithm’s data: can its scores still treat racial groups unequally?"
+    - "Two blank cells in 18 rows: can they change the best option?"
+    - "A doctor reviews every flagged patient: are the tool’s errors now harmless?"
+  takeaway: "Yes or no, plus your confidence (0–100%)"
+  notes:
+    say: |
+      Before anything else, three predictions. Write yes or no for each, and next to it how sure you are, from zero
+      to one hundred percent. First: a health algorithm is not given patients' race. Can its scores still treat
+      racial groups unequally? Second: two cells in a spreadsheet of eighteen rows are blank. Can that change which
+      option looks best? Third: a doctor reviews every patient an AI tool sends them. Does that make the tool's
+      errors harmless? Do not discuss yet, and do not worry about being wrong. We will come back to these in the
+      lab session, and the interesting part will be comparing your answer with your confidence. Keep the paper.
+    background: |
+      The chapter's Warm-up, verbatim in substance. Answers (Chapter Summary): (1) yes, a proxy label carried the
+      gap (§11.3); (2) yes, in the constructed log five ways of handling two blanks all picked the wrong event
+      (§11.2); (3) no, reviewers often follow automated advice (§11.6), and in the case doctors saw only patients the
+      score sent them and corrected little. Do not reveal them now; the summary slide returns to them.
+      Confidence ratings practice the "calibration of your own confidence" habit from Chapter 7.
+    misconceptions:
+      - m: "M3 'If race or gender is left out of the data, the scores cannot be biased.' M6 'Keeping a human in the loop fixes the AI's errors.'"
+        fix: "Do not correct yet; these predictions set up the puzzle. Note how many say 'no' to question 1 and 'yes' to question 3."
+    activity: "90 seconds, silent and written; optional show of hands on question 1 only."
+    book: "Chapter 11, Warm-up; Chapter Summary 'Revisit your Warm-up'."
+
+- layout: timeline
+  minutes: 3
+  kicker: "Opening case · Obermeyer, Powers, Vogeli & Mullainathan (2019)"
+  title: "A health algorithm built without race"
+  events:
+    - {label: "2013–2015", text: "One hospital’s scores and health records", tier: "confirmed"}
+    - {label: "Above 97th", role: ai, text: "Flagged by the score alone", tier: "confirmed"}
+    - {label: "Above 55th", text: "Sent to a doctor to consider", tier: "confirmed"}
+    - {label: "Oct 2019", text: "Scores compared with health records", tier: "confirmed"}
+  takeaway: "Race was never an input"
+  notes:
+    say: |
+      Tell it as a story. Many US hospitals run care management programs: extra help for patients with complex
+      needs, such as a dedicated nurse, more appointments and closer follow-up. They are expensive, so software gives
+      every patient a risk score meant to show how much help they will need. In 2019, four researchers studied one
+      such commercial algorithm in Science, using data from a large academic hospital for 2013 to 2015. In that
+      hospital, patients above the 97th percentile, higher than 97 percent of patients, were flagged for the program
+      by the score alone. Patients above the 55th were referred to their doctor, who was asked to consider enrolling
+      them. The researchers did something outsiders can rarely do: they compared the scores with the patients' actual
+      health records. And the algorithm was never given anyone's race.
+    background: |
+      Source: Obermeyer et al. (2019), Science 366(6464). Sample: all primary care patients in certain insurance
+      contracts, 2013–2015, including 6,079 self-identified Black and 43,539 White patients. The authors describe the
+      algorithm as typical of a class of commercial tools that, by industry estimates, are applied to about 200
+      million people in the US each year (attribute: "by industry estimates"). The authors call it a screening tool,
+      not used for enrollment decisions in isolation; enrollment also depended on doctors and eligibility rules.
+      Attribution tier: everything on this slide is confirmed in the primary record (the article). Wording rule from
+      the blueprint: "the score alone flagged", never "the score decided"; never "the algorithm was racist".
+    questions:
+      - q: "Which company made it?"
+        a: "The article does not name it. Regulators and news reports later named the maker; we come to that in the Case Study, with its attribution tier."
+    activity: "Narrate; do not read the cards."
+    book: "Opening Case 'A Health Algorithm Built Without Race'."
+
+# About 47 words: the case's four key numbers and their hedges are the content (deliberate exception).
+- layout: compare
+  minutes: 3
+  kicker: "Opening case · results (Obermeyer et al., 2019)"
+  title: "Same score, sicker patients"
+  size: 24
+  columns:
+    - heading: "At the 97th percentile"
+      role: soft
+      bullets: ["Black patients: **4.8** chronic conditions", "White patients: **3.8**"]
+    - heading: "Flagged by the score alone"
+      role: soft
+      bullets: ["**17.7%** Black", "**46.5%** if equal by health (simulated)"]
+    - heading: "Its own job"
+      role: neutral
+      bullets: ["No race input", "Predicted costs well"]
+  takeaway: "Puzzle: no race as input, accurate on costs. How did the gap arise?"
+  notes:
+    say: |
+      Here is what they found. At the same risk score, Black patients were considerably sicker than White patients.
+      At the 97th percentile, Black patients had on average 4.8 chronic conditions, long-lasting illnesses such as
+      diabetes or high blood pressure, against 3.8 for White patients: 26.3 percent more. Among the patients the
+      score flagged automatically, 17.7 percent were Black. In the authors' simulation, if the scores had reflected
+      health equally for both groups, that share would have been 46.5 percent. And yet the algorithm was good at its
+      own job: it predicted next year's health-care costs well. So here is the puzzle for today. It never received
+      anyone's race, and it was accurate. How could its scores treat Black patients unequally? And why did the doctors
+      who reviewed patients after it not undo the gap? Sections 11.3 and 11.6 answer it.
+    background: |
+      All figures confirmed in the article (Obermeyer et al., 2019). Say "simulated" every time you give 46.5% (a
+      blueprint wording rule): it is the authors' simulation, not an observed number. Race categories as the authors
+      define them (self-reported; "Black" and "White", capitalized as in the article). The chapter is careful with
+      the second half of the puzzle: the data cannot say why doctors' choices tracked the score; automation bias may
+      be part of the answer, but that is the book's inference, not the authors' finding (§11.6).
+    misconceptions:
+      - m: "M3 'If race or gender is left out of the data, the model's scores cannot be biased.'"
+        fix: "Point at the third card: race was never an input, and the gap is still there. Ask students to hold that contradiction until §11.3."
+      - m: "M4 'A measure that predicts well is a good measure of what we care about.'"
+        fix: "Point at 'predicted next year's costs well': accuracy and fairness to the goal are different questions."
+    activity: "Ask students to write a one-line guess at the puzzle; return to it in §11.3."
+    book: "Opening Case; §11.3 and §11.6 (answers); Chapter Summary."
+
+# ----------------------------------------------------------------------- 11.1
+- layout: section
+  minutes: 0.5
+  number: "11.1"
+  tag: "Core"
+  title: "Decision support, not decision replacement"
+  idea: "The same output can inform, recommend or trigger an action. Someone owns each decision."
+  meta: "Book §11.1 · Lucía sorts a reply"
+  notes:
+    say: |
+      First idea. At work, people use AI outputs to approve a budget, shortlist candidates, pick a supplier or flag a
+      patient. This book calls that decision support: an AI output, such as a summary, an analysis, a score or a
+      recommendation, goes to a named person who decides and answers for the result. That person, or body, is the
+      decision owner. Sometimes there is no person in between: an output triggers an action directly, which the book
+      calls an automated decision. Someone still answers for it, but only afterward. This section gives you one
+      question to ask of any AI output in a workflow: what role is it playing, and who owns the decision?
+    background: |
+      Definitions (§11.1; glossary): decision support, decision owner, automated decision. Chapter 14 returns to
+      automated actions and approval gates. The privacy rule in §11.1: never give a public AI tool personal or
+      confidential data (other people's names, grades, health or pay); analyze your own data in a tool your institution
+      provides or approves (for example, an enterprise chat assistant with data protection; Microsoft Copilot Chat is one
+      example as of October 2026); Chapter 15 explains why.
+    activity: "Transition slide."
+    book: "§11.1 Decision Support, Not Decision Replacement."
+
+- layout: lanes
+  minutes: 3
+  kicker: "§11.1 · one output, three roles (book figure: decision roles)"
+  title: "Inform, recommend or trigger: where the checks go"
+  label_width: 2.6
+  rows:
+    - label: "Informs"
+      nodes:
+        - {label: "AI output", kind: ai}
+        - {label: "One piece of evidence", kind: step}
+        - {label: "Owner decides", kind: human}
+    - label: "Recommends"
+      nodes:
+        - {label: "AI output", kind: ai}
+        - {label: "Proposes an action", kind: step}
+        - {label: "Owner accepts or rejects", kind: human}
+    - label: "Triggers"
+      nodes:
+        - {label: "AI output", kind: ai}
+        - {label: "No person in between", kind: step, role: risk}
+        - {label: "Answered for afterward", kind: step, dashed: true}
+  caption: "Case: above the 55th percentile the score recommended (a doctor considered); above the 97th it triggered (flagged by the score alone)."
+  takeaway: "Triggers: check before switch-on and audit afterward"
+  notes:
+    say: |
+      The same kind of output can play three roles. It can inform: a person reads it as one piece of evidence among
+      others. It can recommend: it proposes what to do, and a person decides whether to follow it. Or it can trigger
+      an action with no person in between: a payment blocked, an email sent, a patient flagged. A quick test: if the
+      output proposes an action that a person then accepts or rejects, it recommends; if it is only one input to a
+      person's own judgment, it informs. The Opening Case shows two roles in one system: above the 55th percentile the
+      score recommended, because a doctor was asked to consider the patient; above the 97th it triggered, because the
+      score alone flagged the patient. The role tells you where the checks go. When nobody looks at each case, the
+      checks must happen before the system is switched on and in regular audits afterward.
+    background: |
+      Rebuilds @fig-11-3 natively (labels ≥ 20 pt). Grammar as in the book: hexagon = AI output, rounded = a person,
+      thick risk border = no person in between, dashed = answered for afterward. Lucía's worked example ("Lucía Sorts a
+      Reply", constructed): information = per-event totals; recommendation = "Repeat the book swap; it raised $24.22
+      per volunteer hour"; decision = not in the reply, it belongs to the board's vote. The owner is the board; Lucía is
+      responsible for what she tells it. Faded example (maintenance score) answer: below the threshold the list
+      recommends and the supervisor owns the decision; above it, the managers who switched on automatic work orders
+      own the rule.
+    questions:
+      - q: "If the doctor can still refuse later, is the 97th-percentile flag really automated?"
+        a: "The flag itself happened with no person in between, so it triggered an action; what followed (enrollment) also depended on doctors and eligibility rules. That is why the article calls the algorithm a screening tool."
+    activity: "Ask: 'Name one decision in your week where an AI output played a part. Which role?' (the §11.1 Your Turn). Take two answers."
+    book: "§11.1 'One output, three roles', @fig-11-3; Worked Example 'Lucía Sorts a Reply'; Faded Example 'A Maintenance Score'."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §11.1"
+  title: "an automated decision"
+  question: "Which is an automated decision?"
+  options:
+    - "A dashboard that shows a manager last month’s sales broken down by region."
+    - "A fraud score that blocks a payment automatically, with no one reviewing it."
+    - "A tool’s loan recommendation that a loan officer reads before she decides."
+    - "A summary of customer complaints that a team discusses at its weekly meeting."
+  answer: b
+  instruction: "Answer on your own (30 seconds), then vote"
+  explanation: "(a) and (d) inform, (c) recommends: in each, a person decides"
+  notes:
+    say: |
+      Quick check, ungraded. Four outputs; which one is an automated decision? Read all four before you choose, and
+      use the test from the last slide: is there a person between the output and the action? Give them thirty seconds,
+      then take a vote by hands or a poll. Before revealing, ask someone who chose (c) to explain; the loan
+      recommendation is the closest distractor, because it sounds consequential. Consequential is not the same as
+      automated: a loan officer reads it before she decides, so a person owns that decision. Then ask what the
+      payment-blocking score in (b) would need before it is switched on.
+    background: |
+      Item: Review Questions A1 (O1 · LO5 · Understand). Key from Appendix E: (b); (a), (c) and (d) inform or
+      recommend, and a person decides.
+    activity: "30 s individual, then vote; show the answer slide."
+    book: "§11.1; Review Questions A1; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (b): the fraud score blocks the payment with no one reviewing it, so it triggers an action. The
+      dashboard and the complaint summary inform: they are evidence for a person's own judgment. The loan
+      recommendation recommends: it proposes an action that the loan officer accepts or rejects, and she owns the
+      decision. Now the practical consequence. Because no one looks at each blocked payment, the checks for (b) must
+      happen before it is switched on, for example by testing how often it blocks honest customers, and in regular
+      audits afterward. And someone still answers for every blocked payment: whoever switched the rule on.
+    background: |
+      Check Yourself 11.1 item 3 (Appendix E): no one looks at each case, so checks must come before switch-on and in
+      audits. Review B1 (scholarship office) applies the same idea to three outputs at once; its odd answer is in
+      Appendix E.
+    activity: "Reveal; one follow-up comment."
+    book: "§11.1; Appendix E (Review A1, Check Yourself 11.1)."
+
+# ----------------------------------------------------------------------- 11.2
+- layout: section
+  minutes: 0.5
+  number: "11.2"
+  tag: "Core"
+  title: "A blank is a decision"
+  idea: "A missing value is not nothing: every way of handling it is an assumption."
+  meta: "Book §11.2 · live demo now"
+  notes:
+    say: |
+      Second idea, and our first live demonstration. A hidden assumption is a choice built into data or an analysis
+      that can change the result but is not stated. Blank cells are the most common place to find one. A missing
+      value is an empty cell or field where a value should be. The idea on the slide is the one to keep: a missing
+      value is not nothing. Every way of handling it, whether you treat it as zero, delete the row or fill it with an
+      estimate, is an assumption about why it is missing. Lucía, our accounting student, is about to find that out
+      with her student association's fundraiser log, and so are you.
+    background: |
+      §11.2 is Core. Terms: hidden assumption, missing value, listwise deletion, imputation. The MCAR/MAR/MNAR
+      vocabulary and multiple imputation are Deep 11.A (optional, not examinable; reference slide at the end). Lucía
+      is the chapter's only featured student (accounting; saving to sit for the CPA exam).
+    misconceptions:
+      - m: "M2 'A few blank cells don't change the answer, and if several ways of filling them agree, the answer is safe.'"
+        fix: "Let the demo refute it; do not state the answer first."
+    activity: "Transition slide; ask students to take out paper for the prediction."
+    book: "§11.2 A Blank Is a Decision."
+
+- layout: lab
+  minutes: 13
+  kicker: "Live demo 1 · a small analysis with a hidden error"
+  title: "Which fundraiser should we repeat?"
+  goal: "Find the error in the AI’s answer before it is shown"
+  steps:
+    - {text: "**Predict:** 18 shifts, 2 blank. Can that change the best event?", min: 2}
+    - {text: "Read the dated AI answer: “Repeat the book swap: $24.22 per volunteer hour”", min: 2}
+    - {text: "**Rows in, rows out:** how many shifts did its code use? Where are the blanks?", min: 4}
+    - {text: "**Why blank?** Find the real value: the paper sign-in sheets", min: 3}
+    - {text: "**Recompute:** $1,059 over 54 hours. Which event is best now?", min: 2}
+  side:
+    - {heading: "On screen", text: "Lucía’s event log (constructed) and a dated AI analysis of it"}
+    - {heading: "No device?", text: "Work in pairs from the printed log"}
+    - {heading: "Privacy", role: risk, text: "The log holds no personal data. Keep it that way."}
+  notes:
+    say: |
+      Lucía is treasurer of the accounting students' association. The board must choose which of last year's three
+      fundraisers to repeat: a bake sale, a book swap or a car wash. Volunteers are scarce, so the question is which
+      raised the most per volunteer hour. She gave a chat tool that can run code the shift log and asked, "Which
+      fundraiser should we repeat?" First, predict: eighteen shifts, six per event, two with no hours recorded. Can two
+      blank cells change which event looks best? Write it down. Now look at the answer: repeat the book swap, 24.22
+      dollars per hour. With a neighbor, check how many rows the code used, and where the blanks are. Then the real
+      hours from the sign-in sheets: 14 and 13. Recompute. The recommendation reverses: the car wash wins.
+    background: |
+      Constructed data (data/ch11_events.csv; §11.2 and §11.4 worked examples). The tool's code used 16 of 18 shifts,
+      dropping the two blanks without a note. Both blanks are book-swap shifts: its two longest, 14 and 13 hours,
+      which ran into the evening when few people came; the volunteers who stayed to the end left without logging.
+      True rate: $1,059 over 54 hours = $19.61 per hour, below the car wash's $22.50; bake sale $18.00 under every
+      choice. Instructor package: show "Lucía's event log without the demo-only column and a dated AI analysis of it"
+      (on your course site, needed before the concept session). Use the dated output with its model name and date; if it is not ready, present
+      the chapter's constructed answer and say so. Do not run a live tool on any personal data.
+    questions:
+      - q: "Isn't deleting incomplete rows the safe choice?"
+        a: "It assumes the deleted rows are like the rest. Here they were the two slowest shifts, so deletion made the book swap look better. Next slide: every shortcut failed here."
+    misconceptions:
+      - m: "M1 'If an AI tool ran the numbers, the arithmetic and the method are right.'"
+        fix: "The arithmetic was correct; the dropped rows were the problem. Method choices are part of the answer."
+      - m: "M2 'A few blank cells don't change the answer.'"
+        fix: "Two blanks out of 18 reversed the recommendation."
+    activity: |
+      2 min predict (individual, written) · 2 min show the AI answer · 4 min pairs count rows and locate blanks ·
+      3 min reveal why the cells are blank and the sign-in sheet values · 2 min recompute together. Ask for hands: who
+      predicted that two blanks could change the answer?
+    book: "§11.2 prediction and Worked Example 'Lucía's Two Blanks'; §11.4 Worked Example 'Lucía Audits the Tool's Answer'."
+
+# Native redraw of book figure F11.5 (its PNG shows the chart's "→" marker as a missing glyph at slide size).
+- layout: compare
+  minutes: 2
+  kicker: "§11.2 · constructed data (book figure: five choices)"
+  title: "Five shortcuts agreed, and all five were wrong"
+  size: 22
+  columns:
+    - heading: "True hours (demo only)"
+      role: verified
+      bullets: ["Book swap **$19.61**", "Car wash **$22.50**", "Best: **car wash**"]
+    - heading: "Book swap, five shortcuts"
+      role: risk
+      bullets: ["Blank as zero $39.22", "Delete rows $24.22", "Fill, mean of all $23.73", "Fill, own mean $26.15", "Copy previous $26.48"]
+  takeaway: "All five picked the book swap"
+  notes:
+    say: |
+      Here is the same log, computed every way. With the true hours, known only because the data are constructed, the
+      book swap earns 19.61 dollars per hour and the car wash 22.50: the car wash is best. Now the shortcuts. Treat the
+      blanks as zero: a formula that divides total proceeds by total hours counts their proceeds but not their hours,
+      so the book swap jumps to 39.22. Delete the rows with a blank: 24.22, the tool's answer. Fill with the mean of
+      all logged shifts: 23.73. Fill with the book swap's own mean: 26.15. Copy the previous shift: 26.48. All five
+      pick the book swap. Every fill put in fewer hours than the true 14 and 13, and deletion left out the two slowest
+      shifts. They all failed the same way, so their agreement told you nothing.
+    background: |
+      Rebuilds book figure F11.5 natively (constructed; data/ch11_missing_choices.csv); car wash $22.50 under every
+      choice. F11.5 is not printed in the chapter in v2, which
+      uses the table in §11.2 with the same numbers; the long description marks it "for slides and Compass".
+      Spreadsheet functions such as SUM and AVERAGE leave empty cells out and normally show no message. The fills:
+      mean of all logged shifts = 8.8 hours; book swap's own mean = 6.75 hours. From the Field (chapter): the author's
+      2017 encyclopedia entry on imputation with Eda Eşmekaya (Şeker & Eşmekaya, 2017) lists nine methods; the Turkish
+      word used for imputation, töhmet, means attributing to something what is not there.
+    questions:
+      - q: "Why does 'blank as zero' raise the rate instead of lowering it?"
+        a: "The proceeds of those shifts still count while their hours count as zero, so the same money is divided by fewer hours (Check Yourself 11.2 item 1)."
+    misconceptions:
+      - m: "M2 '…and if several ways of filling them agree, the answer is safe.'"
+        fix: "Five methods, one wrong answer. Ask: what did all five have in common? (None used the real hours.)"
+    activity: "Ask: 'Which bar would you have believed?' Then point at the first pair."
+    book: "§11.2 table 'How the two blanks were handled'; F11.5 (long description)."
+
+- layout: concept
+  minutes: 2
+  kicker: "§11.2 · the rule, in this order"
+  title: "Count, ask why, get the real value, then compare"
+  size: 24
+  bullets:
+    - "**Count** the blanks by group; **ask why** each is blank"
+    - "**Get the real value** if you can: it beats any estimate"
+    - "**Only then compare** defensible choices"
+  flow:
+    - {label: "Count", kind: human}
+    - {label: "Why?", kind: human}
+    - {label: "Real value", kind: human, role: verified}
+    - {label: "Compare", kind: step}
+  takeaway: "If the decision changes, the data cannot settle it yet"
+  notes:
+    say: |
+      Here is the rule, and the order matters. One: count the blanks by group. Two blanks in one event differ from two
+      spread across events. Two: ask why each one is blank. A smudged page and a skipped long shift call for different
+      fixes. Three: get the real value if you can: the volunteers, the sign-in sheet, the missing interview. A real
+      value beats any estimate, because it needs no assumption. Four: only then compare defensible choices, and say
+      whether the decision changes. If it does, the data cannot settle it yet. How general is Lucía's case? The book
+      ran a simulation of a thousand constructed logs. With blanks at random, deletion picked the truly best event in
+      about 92 percent of logs; when the blanks were the long shifts of one event, every choice did worse. No choice
+      was always right.
+    background: |
+      Simulation (@fig-11-6; 1,000 logs per condition, seed 11; long shifts earn less per hour in the simulation): blank
+      as zero about half (50.5%) vs. about a third (33.6%); deletion 92.2% vs. 87.0%; the fills 61% to 73% in the
+      second condition. A teaching simulation, not a study of real events. Step 2 links to Chapter 2's 1936 poll,
+      whose non-responders differed from responders. Faded example (clinic survey, 4.5 of 5; 70% vs. 30% return
+      rates) answer: blanks likely depend on satisfaction itself; a follow-up to a sample of long-wait patients; the
+      4.5 overstates satisfaction. Refutation check from the blueprint: the lesson is not "never fill a blank".
+    questions:
+      - q: "So should I never fill blanks?"
+        a: "No. Filling can be reasonable once you know why values are missing and cannot get the real ones. The rule is about order: count, ask why, get real values first, then compare choices and report whether the decision changes."
+    misconceptions:
+      - m: "M2 (refutation check) 'never fill a blank'."
+        fix: "Stress step 4: comparing defensible choices is part of the rule, after steps 1–3."
+    activity: "Your Turn (§11.2) for home: count the blanks in one column of your own budget or the practice file on your course site, and write one guess why."
+    book: "§11.2 'The rule, in this order', @fig-11-6; Faded Example 'A Clinic Survey'; Check Yourself 11.2."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §11.2"
+  title: "when methods agree"
+  question: "Four ways of handling the same blanks all point to the same option. What should you conclude?"
+  options:
+    - "Agreement is not evidence they are right; find out why values are missing and get them."
+    - "The answer is probably settled, because four different methods agree on the same option."
+    - "Report the method with the highest estimate, since owners usually want the optimistic case."
+    - "Delete the column that holds the blanks, since a column with gaps is usually unreliable."
+  answer: a
+  instruction: "Answer on your own, then vote"
+  explanation: "(b) is M2; (c) picks a method by its result; (d) discards data without asking why"
+  notes:
+    say: |
+      Second check. You have just seen the answer in action, so this should be quick, but read the options carefully;
+      option (b) sounds like good scientific reasoning. Thirty seconds, then vote. If anyone picks (b), ask them what
+      the five shortcuts in Lucía's log had in common. All of them were made without the real hours, so they could all
+      be wrong in the same direction. Agreement among methods that share the same blind spot is not independent
+      evidence.
+      This item is also a good model of how a written exam item works: each wrong option comes from a
+      misconception we named, so explaining why it is wrong is as useful as finding the right one.
+    background: |
+      Item: Review Questions A5 (O2 · LO3 · Analyze). Key from Appendix E: (a); (b) is M2; (c) picks a method by its
+      result; (d) throws away the column without asking why it is blank. Distractors map to misconception M2.
+    activity: "30 s, vote, reveal."
+    book: "§11.2; Review Questions A5; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (a). When several shortcuts agree, check what they share. In Lucía's log, every fill put in fewer
+      hours than the truth and deletion dropped the two slowest shifts, so all five failed the same way. The fix is not
+      a sixth method; it is the rule: count the blanks by group, ask why they are blank, and get the real values if you
+      can. Option (c) picks a method by the answer it gives, which is the opposite of an honest analysis, and option
+      (d) throws away information without asking why it is missing. Keep this in mind for the lab session: both A9 scenarios
+      have blanks, and each brief tells you why they are blank.
+    background: |
+      Check Yourself 11.2 item 2 (Appendix E): all five failed the same way; every fill was below 14 and 13 hours, and
+      deletion dropped the slowest shifts. The A9 briefs (labs/ch11-a9-brief-a.md and -b.md) give the reason for every
+      blank.
+    activity: "Reveal; one follow-up comment."
+    book: "§11.2; Appendix E (Review A5)."
+
+# ----------------------------------------------------------------------- 11.3
+- layout: section
+  minutes: 0.5
+  number: "11.3"
+  tag: "Core"
+  title: "What you measure versus what you mean"
+  idea: "A score can be accurate for its measure and still wrong for the goal."
+  meta: "Book §11.3 · the puzzle, answered"
+  notes:
+    say: |
+      Back to the puzzle. Every decision uses a measure that stands in for its goal: a store counts repeat purchases
+      to find loyal customers; a course records grades to show learning. Chapter 2 gave this a name: a proxy, a clue
+      that stands in for something else. In Chapter 2 the proxy sat in the inputs: Reuters reported that the
+      recruiting tool marked down the word "women's", which stood in for gender. Today you meet a second place a
+      proxy can hide, and it explains how a score built without race could still treat Black patients unequally.
+    background: |
+      Chapter 2 definitions reused: proxy ("a clue that stands in for something else, such as a word linked to
+      gender"); label ("the correct answer attached to an example: a human decision or a recorded outcome"). In
+      Chapter 2's reading, "women's" stood in for gender (reported: Reuters). This section adds the proxy label. Chapter
+      16 places label choice on the Bias Lifecycle; Chapter 17 asks how such a score should be explained.
+    misconceptions:
+      - m: "M3 'If race or gender is left out of the data, the model's scores cannot be biased.'"
+        fix: "Announce that the next slide shows a second place a proxy can hide: the label."
+    activity: "Transition slide."
+    book: "§11.3 What You Measure Versus What You Mean."
+
+- layout: compare
+  minutes: 3
+  kicker: "§11.3 · the proxy-variable trap (book figure)"
+  title: "The algorithm predicted cost, not need"
+  size: 24
+  columns:
+    - heading: "What we mean"
+      role: human
+      bullets: ["Health need: how sick a patient is"]
+    - heading: "What we measure"
+      role: neutral
+      bullets: ["Next year’s cost: the **label**"]
+    - heading: "For whom is the gap bigger?"
+      role: risk
+      dashed: true
+      bullets: ["Black patients: **$1,801** less spent at equal health"]
+  takeaway: "Accurate for the measure, wrong for the goal"
+  notes:
+    say: |
+      Here is the mechanism. The algorithm was built to find the patients who would need the most care. Need cannot be
+      observed directly, so the label, the outcome it was trained to predict, was total health-care costs in the
+      following year. Cost tracks need, but not equally for everyone. At the same level of health, measured by the
+      number of chronic conditions, Black patients in the study generated on average 1,801 dollars less in costs per
+      year than White patients. The authors point to two likely channels: barriers to getting care that fall harder on
+      poorer patients, and direct effects of race, such as discrimination by providers and patients' distrust of the
+      health system. So the scores measured who would cost the most, not who was sickest. Race was never an input; the
+      gap came in through the label. That is a proxy label: a recorded outcome used because it is easy to measure.
+    background: |
+      Obermeyer et al. (2019), confirmed in the article. Rebuilds @fig-11-8 natively: dashed, thick risk box = the
+      hidden gap. Definition (§11.3): a proxy label is a recorded outcome used as the label because it is easy to
+      measure, standing in for the outcome you actually care about. Distinction from Chapter 2's biased label: the cost
+      label recorded cost correctly; it went wrong only as a stand-in for need. General point: things decisions care
+      about (need, ability, risk) often cannot be observed directly, so choosing a stand-in is an assumption that can
+      fail (Jacobs & Wallach, 2021). Spaced Review 4 asks whether the cost label was noisy, biased or neither.
+    questions:
+      - q: "Why not just add race to the inputs to correct it?"
+        a: "The chapter's fix is a different label, one that measures need; the next slide shows that changing only the label nearly doubled the share of Black patients among the highest-risk 3%. Chapter 16 covers fairness measures."
+    misconceptions:
+      - m: "M3 'If race is left out of the data, the scores cannot be biased.'"
+        fix: "The proxy sat in the label, not the inputs; removing race from the inputs could not touch it."
+      - m: "M4 'A measure that predicts well is a good measure of what we care about.'"
+        fix: "Cost was predicted well and still stood in badly for need. Accuracy checks miss the third question."
+    activity: "Ask the third question of one campus metric (GPA or star ratings): for whom is the gap bigger?"
+    book: "§11.3, @fig-11-7, @fig-11-8; Worked Example 'The Three Questions, Applied'."
+
+# No takeaway: the chart needs the full height so its labels stay near 14 pt; the three questions are the
+# previous slide's column headings.
+- layout: figure
+  minutes: 2
+  kicker: "§11.3 · Obermeyer et al. (2019), Table 2"
+  title: "Changing only the label nearly doubled the share"
+  figure: f11-09-obermeyer-labels
+  notes:
+    say: |
+      The authors then ran a clean test: they changed only the label. With the same inputs and training, they built
+      three predictors of their own: one for total cost, one for avoidable cost, meaning emergency visits and hospital
+      stays, and one for a health measure, the number of active chronic conditions. Among the 3 percent of patients
+      each predictor ranked highest, the share of Black patients was 14.1, 21.0 and 26.7 percent. Changing only the
+      label nearly doubled it. So for any proxy, ask the three questions from the last slide's headings. What do we
+      mean? What do we measure? And for whom is the gap bigger: who, for reasons unrelated to the goal, scores lower or higher on the
+      measure? The third question matters most, and accuracy checks miss it.
+    background: |
+      Obermeyer et al. (2019), Table 2; holdout set; standard error 0.3 percentage points each (long description).
+      The authors' cost predictor is a re-creation tested on part of the data, so its 14.1% differs from the commercial
+      score's 17.7% in the Opening Case; say so if a student compares them. Faded example (tickets closed per hour)
+      answer: measure = tickets closed per hour whatever their difficulty; gap bigger for agents who take the long,
+      hard tickets. The proxy simulation (@fig-11-10, Lab 11.4, Deep) is a mechanism, not a copy of the case data.
+    questions:
+      - q: "Why does 14.1% here differ from 17.7% in the Opening Case?"
+        a: "17.7% is the commercial score; 14.1% is the authors' own re-creation of a cost predictor, tested on part of the data (§11.3)."
+    misconceptions:
+      - m: "M4 'A measure that predicts well is a good measure of what we care about.'"
+        fix: "All three predictors could be accurate for their own label; they selected very different patients."
+    activity: "Pairs: answer the three questions for GPA in 1 minute (the §11.3 Your Turn)."
+    book: "§11.3, @fig-11-9, the three questions; Faded Example 'Tickets Closed per Hour'; Lab 11.3 Proxy Hunt."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §11.3"
+  title: "why the scores were unequal"
+  question: "The algorithm excluded race from its inputs. Why were its scores still unequal?"
+  options:
+    - "A field closely linked to race stayed in the inputs, and the algorithm relied on it."
+    - "The algorithm predicted cost less accurately for Black patients, so its errors were larger."
+    - "Its label, next year’s cost, was lower for Black patients with the same needs."
+    - "Doctors adjusted the scores before enrollment, and their changes lowered some scores."
+  answer: c
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) is Chapter 2’s input proxy (M3); (b) it predicted cost well (M4); (d) doctors did not change scores"
+  notes:
+    say: |
+      Third check. This one separates two ideas that sound alike: a proxy in the inputs and a proxy label. Read all
+      four options. Thirty seconds, then vote. If many students choose (a), that is a good sign that they remember
+      Chapter 2, where a word in the inputs stood in for gender. Ask one of them, and then someone who chose (c), to
+      explain in one sentence where the gap came in. The difference between "in the inputs" and "in the label" is the
+      whole point of section 11.3.
+    background: |
+      Item: Review Questions A7 (O3 · LO5 · Analyze). Key from Appendix E: (c). (a) race and close stand-ins in the
+      inputs were not the mechanism here (M3; Chapter 2's proxy in the inputs); (b) the algorithm predicted cost well
+      (M4); (d) doctors did not change the scores. The option texts are shortened from the book's wording without
+      changing their meaning.
+    activity: "30 s, vote, reveal."
+    book: "§11.3; Review Questions A7; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (c). The label, next year's cost, was lower for Black patients with the same needs, because less
+      was spent on their care: 1,801 dollars less per year at the same level of health. A model trained to predict that
+      label ranks equally sick Black patients as lower risk, even though race is never an input. Option (a) is Chapter
+      2's mechanism, a proxy in the inputs, and it was not the mechanism here. Option (b) is tempting but wrong: the
+      algorithm predicted cost well; the problem was what cost stood for. And doctors did not change the scores. So
+      half of the puzzle is answered. The other half, why doctors' review did not undo the gap, comes in section 11.6.
+    background: |
+      Check Yourself 11.3 (Appendix E): a proxy label is a recorded outcome used as the label, standing in for the
+      goal, while an input proxy is a clue among the inputs ("women's"); the gap entered through the label; accuracy
+      for cost says nothing about need.
+    activity: "Reveal; ask one student to restate the difference between an input proxy and a proxy label."
+    book: "§11.3; Appendix E (Review A7, Check Yourself 11.3)."
+
+# ----------------------------------------------------------------------- 11.4
+- layout: section
+  minutes: 0.5
+  number: "11.4"
+  tag: "Core"
+  title: "Checking an AI-generated analysis"
+  idea: "An analysis can get every sum right and still be wrong."
+  meta: "Book §11.4 · signature diagram 8 reused"
+  notes:
+    say: |
+      In the demo, the arithmetic was correct. The tool divided the right totals; it had simply dropped two rows. That
+      is the idea of this section: an analysis can get every sum right and still be wrong. You already know Chapter
+      8's Verification Funnel. Its first stage is an independent check, evidence no AI tool produced, including your
+      own recalculation. Its second is the primary source. For a number, the raw data are the primary source, and your
+      recalculation from them is your independent check. So you check an analysis by redoing, outside the tool, the
+      parts the decision depends on. The next slide shows where to look.
+    background: |
+      Chapter 8 definitions reused word for word (book-wide rule): independent check = evidence that no AI tool
+      produced: a source with an author or publisher you can name, or your own recalculation or reasoning from known
+      inputs; primary source = the original record a claim comes from. "For a number, the raw data are the primary
+      source (stage 2 of the funnel), and your recalculation from them is your independent check (stage 1)." Book
+      figure @fig-11-11 shows the funnel with the independent-check stage highlighted.
+    misconceptions:
+      - m: "M1 'If an AI tool ran the numbers, the arithmetic and the method are right.'"
+        fix: "Name it now: the demo's arithmetic was right and the method dropped rows."
+    activity: "Transition slide."
+    book: "§11.4 Checking an AI-Generated Analysis; @fig-11-11."
+
+# Native redraw of F11.12 (six boxes). The matrix layout always reserves a row-header column, so the rows are
+# labeled with the check numbers (the order the chapter gives) instead of leaving that column empty.
+- layout: matrix
+  minutes: 3
+  kicker: "§11.4 · book figure: six places to look"
+  title: "Six places a hidden choice can change the answer"
+  col_headers: ["", "", ""]
+  row_headers: ["Checks 1–3", "Checks 4–6"]
+  cells:
+    - - {title: "Rows in, out", text: "How many used?", role: soft}
+      - {title: "Blanks", text: "Handled how? Impossible values?", role: soft}
+      - {title: "Units", text: "Net or gross? $ or $000?", role: soft}
+    - - {title: "Time window", text: "Matches the decision?", role: soft}
+      - {title: "Totals vs. groups", text: "Holds in each group?", role: soft}
+      - {title: "Formula, code", text: "Show, read, rerun", role: soft}
+  takeaway: "Each checked number gets a verdict, plus remaining uncertainty"
+  notes:
+    say: |
+      Six places, in order. One: rows in, rows out. How many records went in, and how many were used? Dropped rows are
+      a decision, as in the demo. Two: blanks and impossible values, such as a 30-hour shift. Three: definitions and
+      units. Net or gross? Dollars or thousands? Dates read as dates? Tool defaults can change data silently: about
+      one-fifth of genomics papers with supplementary Excel gene lists contained gene names the spreadsheet had turned
+      into dates or numbers. Four: time window. After a new price or rule, older patterns may no longer hold. Five:
+      totals versus groups, next slide. Six: the formula or code. Ask the tool to show it, then read it or rerun it.
+      A tool's description of its own assumptions is a lead, not a check. Each number you check gets a verdict on
+      Chapter 8's scale, and the analysis gets a line of remaining uncertainty.
+    background: |
+      Rebuilds @fig-11-12 natively. Ziemann et al. (2016), Genome Biology. Verdict scale (Chapter 8, book-wide):
+      supported · partly supported · unsupported · contradicted · cannot verify. What you can inspect (@fig-11-4, as of
+      October 2026): an AI feature in a spreadsheet usually shows its formula; a chat tool that runs code can show the
+      code if you ask; a chat answer shows nothing but the answer, so you recalculate more yourself. Two short cases in
+      the chapter teach check 1 with no AI involved: Reinhart and Rogoff (2010), where a formula left five countries out
+      of an average, corrected by Herndon et al. (2014); and Public Health England (2020), 15,841 positive COVID-19
+      cases left out of daily figures because files exceeded the system's size limit (the BBC reported an old XLS
+      format, Kelion, 2020). The tree and chain do not apply: no AI output was wrong.
+    questions:
+      - q: "If the tool explains its assumptions, isn't that enough?"
+        a: "No. A model's account of what it did is a claim to check, not a record; read or rerun the formula or code yourself (§11.4, check 6)."
+      - q: "Are AI analyses worse than human ones?"
+        a: "Not the lesson. The Reinhart–Rogoff error was a human spreadsheet error found by outside replication. The lesson is: check any analysis the decision depends on (M1 refutation check)."
+    misconceptions:
+      - m: "M1 'If an AI tool ran the numbers, the arithmetic and the method are right.'"
+        fix: "Use the gene-name example: a default setting silently changed published data. Then add the refutation check: human analyses fail the same way."
+    activity: "Ask: 'Which of the six would have caught the demo's error?' (1: rows in, rows out; also 2.)"
+    book: "§11.4, @fig-11-12, @fig-11-4; Worked Example 'Lucía Audits the Tool's Answer'; Case Study short cases 1 and 2."
+
+# No takeaway: the chart needs the full height so its labels stay near 14 pt; the closing line is in the notes.
+- layout: figure
+  minutes: 2
+  kicker: "§11.4 · Simpson’s paradox · constructed numbers"
+  title: "The total favored one group; both departments favored the other"
+  figure: f11-13-simpson
+  notes:
+    say: |
+      Place five deserves a picture. Simpson's paradox is a pattern in a total that weakens or even reverses inside
+      the groups that make it up. These numbers are constructed. In both departments, group Y is admitted more often
+      than group X. But in the total, X is admitted far more often, 69 percent against 41. How? X applied mostly to the
+      easier department, Y mostly to the harder one. A real example: in fall 1973, graduate admissions at Berkeley
+      showed a clear but misleading pattern of bias against women in the total. Department by department, few showed a
+      significant difference, and about as many favored women as men; women had applied more often to departments that
+      were harder for everyone to enter. Neither the total nor the groups is automatically the truth: which one
+      answers your question depends on why the groups differ.
+    background: |
+      Bickel, Hammel and O'Connell (1975), Science. Constructed chart (@fig-11-13): Department 1 (easier; X 400 and Y
+      100 apply): X 80%, Y 85%; Department 2 (harder; X 100 and Y 400 apply): X 25%, Y 30%; totals X 69%, Y 41%.
+      Berkeley's real data were milder. The chapter's closing line matters: which view answers your question depends
+      on why the groups differ. The campus-survey faded example (3.4 to 3.9; 820 vs. 140 responses) uses checks 4 and 5:
+      verdict "unsupported as stated".
+    questions:
+      - q: "So should I always look at the groups instead of the total?"
+        a: "No. Which one answers your question depends on why the groups differ (§11.4). The check is to look at both and explain any difference."
+    activity: "Ask a student to explain the reversal in one sentence (Check Yourself 11.4 item 3)."
+    book: "§11.4 check 5, @fig-11-13; Faded Example 'A Campus Survey'."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §11.4"
+  title: "Simpson’s paradox"
+  question: "Which statement describes Simpson’s paradox?"
+  options:
+    - "A sample with few responses gives an average that can change a lot from one year to the next."
+    - "A pattern in a total can weaken or reverse within the groups that make it up."
+    - "Spreadsheet default settings can silently turn names or codes into dates or numbers."
+    - "Patterns in older data may stop holding when prices, rules or conditions change."
+  answer: b
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) is sample size, (c) tool defaults (check 3), (d) the time window (check 4)"
+  notes:
+    say: |
+      Fourth check. Every option here is a real problem from this section, so this is really a question about which
+      name goes with which problem. Thirty seconds, then vote. After the vote, before you reveal, ask the class to
+      match each wrong option to one of the six places: that turns one quiz item into a review of the whole list.
+      Expect some students to pick (c), because the gene-name example was vivid; that shows they remember the
+      example but not the name of the problem. Ask which of the six places the gene-name example belongs to, and
+      what a spreadsheet default has to do with groups.
+    background: |
+      Item: Review Questions A9 (O2 · LO3 · Understand). Key from Appendix E: (b); (a) is about sample size, (c) about
+      tool defaults (check 3), (d) about the time window (check 4).
+    activity: "30 s, vote, then match distractors to places before revealing."
+    book: "§11.4; Review Questions A9; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (b): a pattern in a total can weaken or reverse within the groups that make it up. The other three
+      are real hidden choices too, just different ones. Option (c), spreadsheet defaults turning gene names into
+      dates, is check 3, definitions and units. Option (d), old patterns after a price or rule change, is check 4, the
+      time window. Option (a) is about small samples, which you met with the 140 survey responses. Now a harder one
+      for home, from the section's Your Turn: an AI output says the average of 240 orders was 63 dollars, but the file
+      has 252 rows. What do you ask first, and what verdict can you give now?
+    background: |
+      Your Turn answer (Appendix E): first ask which 12 rows were left out and why (blanks, duplicates, returns);
+      verdict for now "cannot verify", because the average depends on whether the missing orders differ from the rest.
+      Spaced Review 3 explains why "cannot verify" beats "partly supported" here.
+    activity: "Reveal; pose the 240-orders question for home."
+    book: "§11.4; Appendix E (Review A9; Your Turn 11.4)."
+
+# ----------------------------------------------------------------------- 11.5
+- layout: section
+  minutes: 0.5
+  number: "11.5"
+  tag: "Core"
+  title: "Decision matrices: structure without false precision"
+  idea: "Every number in a matrix is a choice someone made, and can be checked."
+  meta: "Book §11.5 · live demo 2"
+  notes:
+    say: |
+      The lab session is about one kind of analysis: the decision matrix. A decision matrix is a table that lists
+      options against the criteria they are judged on, each criterion with a scale and a weight. A criterion is one of
+      the things the options are judged on; a weight is how much it counts toward the total. AI tools draft these in
+      seconds, from a spreadsheet or a description. The point is not the arithmetic. The point is that every judgment
+      becomes visible and can be checked. In this section you see why structure helps, how it can mislead, and how to
+      test whether the top option is really on top.
+    background: |
+      Definitions (§11.5; glossary): decision matrix, criterion, weight, sensitivity check, margin, shortlist. Book
+      figure @fig-11-14 (matrix anatomy) shows three candidates and five criteria with six numbered notes; it is
+      summarized on the next slide in words. Chapter 16 looks at criteria that track a protected group and evidence on
+      AI résumé screening; Chapter 18 covers hiring law.
+    activity: "Transition slide."
+    book: "§11.5 Decision Matrices: Structure Without False Precision."
+
+- layout: compare
+  minutes: 2
+  kicker: "§11.5 · book figure: matrix anatomy"
+  title: "Why a matrix helps, and how it misleads"
+  size: 24
+  columns:
+    - heading: "Why structure helps"
+      role: verified
+      bullets: ["Weighted rules beat gut judgment", "Structured interviews ranked first"]
+    - heading: "How it can mislead"
+      role: risk
+      bullets: ["A criterion can be a **proxy**", "A blank scored lowest", "Weights are judgments"]
+  takeaway: "The point: every judgment becomes visible"
+  notes:
+    say: |
+      Why structure helps. For predicting a numerical outcome from numerical information, simple weighted rules, even
+      with equal weights, have outperformed holistic intuition, an overall gut judgment. Structured interviews, which
+      score every candidate on the same questions, ranked first among hiring methods in a 2022 re-analysis of validity
+      studies. Researchers on judgment recommend scoring criteria separately and combining them at the end. Now how
+      it misleads. A criterion can be a proxy: years of experience stand in for skill, and an employee referral, in
+      this book's reading, can track who already knows someone at the firm. A blank can be scored as the lowest value:
+      in the book's example the tool gave candidate C, who has the highest skills test but no interview yet, the lowest
+      interview score, which put C last. And weights are judgments; equal weights are a choice too.
+    background: |
+      Dawes (1979), American Psychologist; Sackett et al. (2022), Journal of Applied Psychology (validity studies =
+      studies of how well a method predicts later job performance); Kahneman, Sibony and Sunstein (2021), Noise: they
+      argue scoring criteria separately reduces random scatter in judgment. "An employee referral can track who already
+      knows someone" is marked in the chapter as the book's reading (inferred tier). The scaling rule: scaled score =
+      (value − low end) ÷ (high end − low end) × 10; reverse when lower is better (10 − that number). Refutation check
+      from the blueprint: M5 must not become "matrices are useless".
+    questions:
+      - q: "If matrices can mislead, why use them at all?"
+        a: "Because structured, criterion-by-criterion judgment tends to beat holistic intuition (Dawes; Sackett et al.), and a matrix makes every judgment visible so it can be checked. Read margins and shortlists, not only the top."
+    misconceptions:
+      - m: "M5 'A decision matrix makes a decision objective.'"
+        fix: "Every number in it is a choice: the criteria, scales, weights and the handling of blanks. Then the refutation check: it still beats gut judgment."
+    activity: "Ask: 'Which criterion in a scholarship matrix might be a proxy?' Take one answer."
+    book: "§11.5 'Why structure helps', 'How the arithmetic works', 'Why it can mislead'; @fig-11-14."
+
+# The final reveal counts about 75 "words", but most are numbers and operators (about 25 real words): five
+# criteria with their arithmetic on one slide are the point of the worked example (deliberate exception, as in
+# Chapter 1's worked example, max_words 90).
+- layout: worked
+  minutes: 2
+  max_words: 78
+  kicker: "Live demo 2 · §11.5 worked example · constructed data"
+  title: "Recalculating one total: candidate E"
+  context: "Tool: E = 7.00. Rescale to 0–10, × weight, add."
+  steps:
+    - {label: "Test 65 (0–100)", text: "6.5 × 25% = 1.625"}
+    - {label: "Interview 3.0 (1–5)", text: "(3 − 1) ÷ 4 × 10 = 5.0; × 25% = 1.25"}
+    - {label: "Experience 8 (0–10)", text: "8.0 × 30% = 2.40"}
+    - {label: "GPA 2.9 (0–4)", text: "7.25 × 10% = 0.725"}
+    - {label: "Referral yes", text: "10 × 10% = 1.00"}
+  reveal: [2, 5]
+  result: "Total 7.00: supported. Now you: candidate A (tool: 5.59)"
+  notes_reveal:
+    - minutes: 2
+      say: |
+        Second live demonstration, and it is short. An AI tool drafted a matrix for a small accounting firm's
+        internship: five criteria with weights 25, 25, 30, 10 and 10, and six candidates. It says candidate E scores
+        7.00. Let's recalculate one total outside the tool. The rule: put every criterion on the same 0-to-10 ruler,
+        using the ends of the scale chosen in advance, then multiply by the weight and add. E's skills test is 65 out of
+        100: 6.5, times 25 percent, is 1.625. E's interview is 3.0 on a 1-to-5 scale: subtract the low end, divide by
+        the range, times ten, gives 5.0; times 25 percent is 1.25. Before I show the rest, try experience yourself: 8
+        years on a 0-to-10 scale, weight 30.
+      background: |
+        Worked Example "Recalculating One Total" (§11.5), constructed data. Table in the chapter: A 88, 4.5, 1, 3.6,
+        no; B 72, 3.5, 6, 3.1, yes; C 91, blank, 2, 3.8, no; D 80, 4.0, 3, 3.3, yes; E 65, 3.0, 8, 2.9, yes; F 84, 4.5,
+        2, 3.4, no. Scale formula: scaled = (value − low end) ÷ (high end − low end) × 10. The template on your course site
+        (data/ch11_matrix_template.xlsx) holds the A–F demo with formulas.
+      activity: "Pause after step 2; 30 seconds for students to compute experience (2.40)."
+      book: "§11.5 'How the arithmetic works'; Worked Example 'Recalculating One Total'."
+    - minutes: 2
+      say: |
+        Experience: 8 out of 10 is 8.0, times 30 percent, 2.40. GPA: 2.9 out of 4 is 7.25, times 10 percent, 0.725.
+        Referral: yes counts as 10, times 10 percent, 1.00. Add them: 7.00. That matches the tool, so the verdict for
+        "E scores 7.00" is supported. Notice that a correct total is a valid result: checking does not mean finding an
+        error. Now you: recompute candidate A from the table on your course site or in the book. The tool says 5.59. One
+        minute, with a neighbor. Then ask yourself the more important question. If the arithmetic is right, does that
+        make the matrix right? Not yet. Next slide: what happens when one judgment in it changes.
+      background: |
+        Check Yourself 11.5 item 2 (Appendix E): candidate A = 2.20 + 2.19 + 0.30 + 0.90 + 0 = 5.59. An AI-drafted
+        matrix that adds raw hours or prices without reversing them has a formula error (check 6, §11.4). The lab session
+        scenario B′ has two "lower is better" criteria; check that they were reversed.
+      questions:
+        - q: "What if my total differs from the tool's in the second decimal?"
+          a: "Check rounding first; if a difference remains, find which criterion causes it. A discrepancy is not expected, only explained if found (A9 item 4)."
+      activity: "1 min pairs compute A; reveal 5.59 orally."
+      book: "§11.5 Worked Example; Check Yourself 11.5."
+  notes:
+    book: "§11.5 Worked Example 'Recalculating One Total'."
+
+# Native redraw of the sensitivity chart (@fig-11-15): its marker labels are about 8 pt at slide size. The three
+# runs with the tool's weights (C's blank as lowest, as the mean, C left out) share one row: same top, margin, shortlist.
+- layout: lanes
+  minutes: 2
+  kicker: "§11.5 · sensitivity check · constructed data (book figure: matrix sensitivity)"
+  title: "The top spot changed; B and E stayed on every shortlist"
+  label_width: 3.4
+  rows:
+    - label: "Tool’s weights"
+      nodes:
+        - {label: "Top: E by 0.06", kind: step}
+        - {label: "Shortlist: E · B · D", kind: step, role: soft}
+    - label: "Experience 20, test 35"
+      nodes:
+        - {label: "Top: D by 0.04", kind: step}
+        - {label: "Shortlist: D · B · E", kind: step, role: soft}
+    - label: "Referral → interview"
+      nodes:
+        - {label: "Top: F by 0.05", kind: step}
+        - {label: "Shortlist: F · B · E", kind: step, role: soft}
+    - label: "Equal weights"
+      nodes:
+        - {label: "Top: B by 0.09", kind: step}
+        - {label: "Shortlist: B · D · E", kind: step, role: soft}
+  caption: "Tool’s weights: same result with C’s blank as lowest, as the mean or left out. Every margin is under 0.31 (half an interview step)."
+  takeaway: "Read the margin and the shortlist, not only the top"
+  notes:
+    say: |
+      A sensitivity check is changing one choice in an analysis, such as a weight or the handling of a blank, to see
+      whether the result changes. Read two things besides the top: the margin, how far the top option leads the next,
+      and the shortlist, the few options that stay near the top whatever you change. Each row here is one run. With
+      the tool's weights, E leads B by 0.06. Make experience 20 and the test 35, and D leads by 0.04. Remove the
+      referral and give its points to the interview: F leads by 0.05. Equal weights: B by 0.09. Each is a near-tie,
+      smaller than the 0.31 points that half a step on one interview rating is worth. But B and E were on every
+      shortlist of three. So the matrix does not say "hire E". It says B and E are strong under every reasonable
+      weighting, the top three are too close to call, and C cannot be judged until interviewed.
+    background: |
+      Constructed data (data/ch11_matrix_sensitivity.csv; @fig-11-15, redrawn here as rows). D was on five of six
+      shortlists. Filling C's
+      blank with the average moved C only from sixth to fifth (3.83 to 5.64); the real fix is to hold the interview
+      (Check Yourself 11.5 item 3: a fill guesses; the interview gives the real value). A weight means little without
+      its scale: score experience on 0–20 years instead of 0–10, and its 30 points count half as much. Rules for a
+      defensible matrix (§11.5): criteria before scoring, one thing per criterion, scale ends fixed in advance, blanks
+      marked and filled with real values where possible, a sensitivity check, margin and shortlist reported, and the
+      reason for the final choice recorded, which may differ from the top score.
+    questions:
+      - q: "Can the owner choose someone other than the top score?"
+        a: "Yes, if the reason is recorded; with margins this small, the order among the top three is too close to call (§11.5; Review C2)."
+    misconceptions:
+      - m: "M5 'A decision matrix makes a decision objective.'"
+        fix: "Point to the changing tops. Then the refutation check: the shortlist was stable, which is useful information."
+    activity: "Ask: 'What would you tell the office manager?' Take one answer, then show the takeaway."
+    book: "§11.5 'The sensitivity check', Worked Example 'Testing the Shortlist', @fig-11-15; rules for a matrix."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §11.5"
+  title: "sensitivity check"
+  question: "What is the main purpose of a sensitivity check on a decision matrix?"
+  options:
+    - "To confirm the top option under the owner’s weights."
+    - "To find and remove the criteria that are proxies."
+    - "To replace the owner’s weights with more neutral equal weights."
+    - "To see whether the top and shortlist change when a defensible choice changes."
+  answer: d
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) a check tests, it does not confirm; (b) is the criteria audit; (c) equal weights are a choice too"
+  notes:
+    say: |
+      Fifth check. Read all four; two of them describe useful things that are simply not what a sensitivity check is
+      for. Thirty seconds, then vote. Watch for (c): students who think equal weights are neutral are showing
+      misconception M5 in a new form. Ask one of them whether equal weights are a choice or the absence of a choice.
+      Option (a) is the other common pick: it describes what many people hope a check will do. A check that can only
+      confirm is not a test. Ask which result would help the owner more, a surviving top option or a changed one;
+      both help, because both show how much the ranking depends on one judgment.
+    background: |
+      Item: Review Questions A11 (O5 · LO3 · Understand). Key from Appendix E: (d); (a) a check tests, it does not
+      confirm; (b) removing proxies is a criteria-audit decision; (c) equal weights are a choice too (M5).
+    activity: "30 s, vote, reveal."
+    book: "§11.5; Review Questions A11; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (d): to see whether the top option and the shortlist change when a defensible choice changes. A
+      sensitivity check is a test, so it can come out either way; if the top option survives every reasonable change,
+      that is a strong, valid result. Option (b) describes the criteria audit, which is a different part of A9: you ask
+      what each criterion means, what it measures, whether it is a proxy and how its blanks were handled. And (c):
+      equal weights are a choice too. In the lab session, A9 asks for two tests of different kinds: one weight change, and one
+      change in how a blank or a criterion is handled.
+    background: |
+      A9 item 5: two sensitivity tests, one weight change and one change in how a blank or a criterion is handled,
+      each with the new top option, margin and shortlist (top two for B′ and C). Review B5 (microscopes, top two 0.1
+      apart) answer in Appendix E: treat the top two as tied, check that price was reversed, decide on stated reasons.
+    activity: "Reveal; connect to A9 item 5."
+    book: "§11.5; Appendix E (Review A11, Review B5)."
+
+# ----------------------------------------------------------------------- 11.6
+- layout: section
+  minutes: 0.5
+  number: "11.6"
+  tag: "Core"
+  title: "Human judgment and automation bias"
+  idea: "A human reviewer helps only if the reviewer can, and does, disagree."
+  meta: "Book §11.6 · the second half of the puzzle"
+  notes:
+    say: |
+      Adding a person to review AI output sounds like the obvious safeguard. The idea on this slide says when it
+      works: only if the reviewer can, and does, disagree. Automation bias is the tendency to over-rely on automated
+      output, following it when it is wrong or missing what it did not flag. So it shows up as two kinds of error. A
+      commission error is following an automated output when it is wrong. An omission error is missing a problem
+      because the system did not flag it: a care manager who checks only flagged patients misses one who is getting
+      worse but was not flagged. Chapter 7 called the general pattern overreliance; automation bias is overreliance in
+      a decision.
+    background: |
+      Definitions (§11.6): automation bias (Goddard et al., 2012); commission and omission errors (Skitka et al.,
+      1999); overreliance (Chapter 7, glossary wording): relying on an AI tool's output more than the task or the
+      evidence warrants, so that your own checking or skill-building drops out. The effect has been found in novices
+      and experts, in flight simulations and other tasks (Skitka et al., 1999; Parasuraman & Manzey, 2010).
+    misconceptions:
+      - m: "M6 'Keeping a human in the loop fixes the AI's errors.'"
+        fix: "State it aloud now; the next two slides test it."
+    activity: "Transition slide."
+    book: "§11.6 Human Judgment and Automation Bias."
+
+# No takeaway: the chart needs the full height so its labels stay near 14 pt; "commission error" is in the notes.
+- layout: figure
+  minutes: 2
+  kicker: "§11.6 · Dratsch et al. (2023) · 27 radiologists"
+  title: "Wrong suggestions misled readers at every experience level"
+  figure: f11-16-dratsch
+  notes:
+    say: |
+      Here is one experiment. In 2023, 27 radiologists read mammograms with suggestions from what they were told was an
+      AI system. The researchers had made some suggestions wrong. The suggestions were categories from a standard
+      system for reporting breast images, which rank how suspicious a finding is. The least experienced readers rated
+      about 80 percent of mammograms correctly when the suggested category was right, and about 20 percent when it was
+      wrong. The most experienced did better, but still dropped: 82 percent and 46 percent. Following a wrong suggestion
+      like this is a commission error. Two limits: the study had
+      no reading without suggestions, and its most experienced group was small. More broadly, a systematic review of 74
+      studies found the effect across fields; in four pooled health-care studies, erroneous advice was more likely to be
+      followed with decision-support software than without.
+    background: |
+      Dratsch et al. (2023), Radiology 307(4), e222176: 27 radiologists, 50 mammograms; the purported AI suggested a
+      wrong BI-RADS category for 12 of 40 test mammograms (the figure's source line; data/ch11_dratsch2023.csv). BI-RADS = Breast Imaging Reporting and
+      Data System; define it if you say the acronym. Exact chart values: inexperienced 79.7% vs. 19.8%; moderately
+      experienced 81.3% vs. 24.8%; very experienced 82.3% vs. 45.5%. Goddard et al. (2012), JAMIA: systematic review of
+      74 studies. Refutation check (blueprint): M6 must not become "human review is pointless": reviewers did catch some
+      errors, and accountability reduced over-reliance in some studies.
+    questions:
+      - q: "So experts are safe?"
+        a: "No. The most experienced readers were misled less, but their accuracy still fell from 82% to 46% with wrong suggestions, and that group was small (Review A14 tests this)."
+    misconceptions:
+      - m: "M6 'Keeping a human in the loop fixes the AI's errors.'"
+        fix: "Every bar pair drops. Then the refutation check: review can work when it is designed to allow disagreement (two slides on)."
+    activity: "Ask students to predict the very experienced group's 'wrong suggestion' bar before revealing it."
+    book: "§11.6 'The evidence', @fig-11-16."
+
+# Native redraw of @fig-11-17 (its five bar labels are about 9 pt at slide size). The three bars the argument
+# rests on are shown; the other two (17.2%, 29.2%) and the 11.9% baseline are in the notes. Dashed = simulated.
+- layout: compare
+  minutes: 2
+  kicker: "§11.6 · Obermeyer et al. (2019) · the authors’ simulations (book figure: enrollment)"
+  title: "Doctors’ review corrected only a small part of the gap"
+  size: 26
+  columns:
+    - heading: "Observed: after doctors’ review"
+      role: neutral
+      bullets: ["**19.2%** of enrolled patients Black"]
+    - heading: "Simulated: random in each score band"
+      role: soft
+      dashed: true
+      bullets: ["**18.3%**", "Cannot be told apart from 19.2%"]
+    - heading: "Simulated: by predicted health in each band"
+      role: verified
+      dashed: true
+      bullets: ["**26.9%**", "Most predicted chronic conditions first"]
+  header_height: 1.2
+  takeaway: "Doctors saw only patients the score referred"
+  notes:
+    say: |
+      Back to the puzzle's second half. Enrollment followed doctors' decisions along with administrative factors such as
+      eligibility rules. Of patients enrolled, 19.2 percent were Black. In the authors' simulations, which use only
+      factors recorded in the data, enrolling at random within each score band gives 18.3 percent, a share that cannot
+      be told apart from 19.2. Selecting within each band the patients with the most predicted chronic conditions gives
+      26.9 percent. The authors conclude that doctors made up for only a small part of the bias, far less than a
+      differently labeled algorithm would have. Two limits. Doctors saw only patients the score had already referred,
+      so a sicker patient below the 55th percentile never reached them: the review missed those by design. And the data
+      cannot say why doctors' choices tracked the score. Automation bias may be part of the answer, but that is the
+      book's inference, not the authors' finding.
+    background: |
+      Obermeyer et al. (2019), text and Table 3 (@fig-11-17, redrawn here as three cards; dashed = simulated); observed
+      19.2% vs. random-within-bin 18.3% not significant (P = 0.83);
+      "the authors' simulations on observable factors" must be attached to this comparison every time (blueprint rule).
+      Other bars: highest predicted cost 17.2%; most predicted chronic conditions overall 29.2%; the Black share of the
+      whole sample 11.9% (dotted line). Tiers: the shares and the authors' conclusion are confirmed (article); the
+      automation-bias explanation is inferred (the book's reading).
+    questions:
+      - q: "Were the doctors biased, then?"
+        a: "The data cannot say. Eligibility rules and other unrecorded factors also shaped enrollment; the book offers automation bias only as a possible part of the answer (inferred)."
+    misconceptions:
+      - m: "M6 'Keeping a human in the loop fixes the AI's errors.'"
+        fix: "The review step in this case could not see the patients it most needed to see, and changed the share very little."
+    activity: "Ask: 'Which kind of error is the patient below the 55th percentile?' (omission)."
+    book: "§11.6 'Back to the Opening Case', @fig-11-17."
+
+- layout: compare
+  minutes: 3
+  kicker: "§11.6 · design a review step"
+  title: "Make disagreement possible, and recorded"
+  size: 22
+  columns:
+    - heading: "A review step says…"
+      role: soft
+      bullets: ["Who reviews", "What they see first", "A reason to disagree", "Where it is recorded"]
+    - heading: "Two habits (book’s suggestions)"
+      role: human
+      bullets: ["Your own estimate **first**", "Record every override and why"]
+  takeaway: "Accountability reduced over-reliance (Goddard et al., 2012)"
+  notes:
+    say: |
+      So how do you design review that works? A review step says four things: who reviews, what they see first, what
+      counts as a reason to disagree, and where a disagreement is recorded. In the aviation and laboratory studies one
+      review covers, making people accountable for their decisions reduced over-reliance. Two further habits are this
+      book's suggestions, consistent with that evidence. Form your own estimate before you see the AI's answer, so you
+      have something to disagree with. And record every override, each time you decide against the AI's output, with
+      its reason, so disagreement is normal and can be learned from. Lucía's board did exactly this: the treasurer
+      counts the sign-in sheets before any vote, members write their own ranking first, and any member can call for a
+      recount, with the reason in the minutes.
+    background: |
+      Goddard et al. (2012): accountability reduced over-reliance in the aviation and laboratory studies it reviews
+      (confirmed in the review); the two habits are labeled in the chapter as the book's suggestions (inferred tier).
+      Worked example "Lucía at the Board Meeting" (constructed): one-line disclosure, "A chat tool ran the first
+      analysis; I checked every number against the sign-in sheets." Faded example (care manager) answer: reason to
+      disagree = a recent change in results or notes showing the patient already has help; record = a "disagree:
+      reason" column reviewed monthly; unflagged patients = a weekly random sample. Ethics Lens: Article 14(4)(b) of the
+      EU AI Act requires that overseers of high-risk systems be enabled to remain aware of automation bias; as of
+      October 2026 these rules are scheduled to apply from December 2027 (August 2028 for systems under product-safety
+      law) after Regulation (EU) 2026/1744 postponed them. Chapter 18 owns the law.
+    questions:
+      - q: "Isn't recording every override a lot of paperwork?"
+        a: "It can be one column in the list ('disagree: reason') reviewed monthly, as in the care-manager example. Without a record, disagreement leaves no trace and the review cannot be audited."
+    misconceptions:
+      - m: "M6 refutation check: 'human review is pointless'."
+        fix: "Review helps when it is designed: own estimate first, reasons recorded, accountability."
+    activity: "Your Turn (§11.6): write a two-line review step for one decision you make with AI help. 1 minute; take one example."
+    book: "§11.6 'Design a review step'; Worked Example 'Lucía at the Board Meeting'; Faded Example 'A Care Manager's Review'; Ethics Lens."
+
+- layout: quiz
+  minutes: 1
+  answer_minutes: 0.5
+  kicker: "Quick check · §11.6"
+  title: "kinds of error"
+  question: "A care manager reviews only the patients an AI list flags, and misses a patient who is getting worse but was not flagged. Which kind of error is this?"
+  options:
+    - "An omission error: a problem missed because the system did not flag it."
+    - "A commission error: following the system’s output even though the output was wrong."
+    - "A proxy-label error: the list predicted cost instead of need."
+    - "A sampling error: the list was built from too few patients."
+  answer: a
+  instruction: "Answer on your own, then vote"
+  explanation: "(b) would be following a wrong flag; (c) and (d) name data problems, not the reviewer’s error"
+  notes:
+    say: |
+      Last check for today. Read the scenario carefully: what did the care manager do, and what did she not do? Thirty
+      seconds, then vote. Option (c) will attract students who connect everything to the Opening Case; it is a data
+      problem in the list, not an error the reviewer made. Ask: what would the care manager have to do differently to
+      avoid this error? That question leads straight into the review step you just designed.
+      Then connect it to the Opening Case: doctors there saw only the patients the score referred. Which kind of error
+      could their review never catch, however careful each doctor was?
+    background: |
+      Item: Review Questions A13 (O6 · LO5 · Apply). Key from Appendix E: (a); (b) a commission error would be
+      following a wrong flag; (c) and (d) name data problems, not the reviewer's error.
+    activity: "30 s, vote, reveal."
+    book: "§11.6; Review Questions A13; Appendix E."
+  answer_notes:
+    say: |
+      The answer is (a), an omission error: a problem missed because the system did not flag it. A commission error
+      would be the opposite: acting on a flag that was wrong. How do you guard against omission errors? You cannot
+      review what you never see, so the review step has to reach beyond the list: for example, a weekly look at a
+      small random sample of unflagged patients. That is the fourth line of the care manager's review in the book's
+      faded example. And it is exactly what was missing in the Opening Case: doctors saw only the patients the score
+      had referred.
+    background: |
+      Faded Example 'A Care Manager's Review', line 4 (Appendix E): a weekly look at a small random sample of unflagged
+      patients, to catch omission errors. Case Study 'better workflow' also suggests checking a sample of patients
+      below the referral threshold.
+    activity: "Reveal; one follow-up comment."
+    book: "§11.6; Appendix E (Review A13; Faded Example 11.6)."
+
+# ----------------------------------------------------------------------- Case Study (read together in the concept session)
+- layout: timeline
+  minutes: 3
+  kicker: "Case study · read together · book figure: storyboard"
+  title: "How the bias came to light"
+  events:
+    - {label: "Before", text: "Maker replicates the finding", tier: "reported"}
+    - {label: "Oct 24–25", role: verified, text: "Article in *Science*", tier: "confirmed"}
+    - {label: "Oct 25", text: "NY regulators write to the company", tier: "confirmed"}
+    - {label: "News", text: "Name the maker; it disputes", tier: "reported"}
+    - {label: "Afterward", text: "Patients: no public record", tier: "inferred"}
+  takeaway: "As of October 2026, no public update has been found"
+  notes:
+    say: |
+      We read the Case Study together. The researchers did their analysis with no contact with the algorithm's maker.
+      Before publication, the authors report, the maker replicated the finding on millions of patients, and an index
+      combining health and cost predictions reduced the bias by 84 percent, by one measure, in the maker's data. The
+      article appeared on October 24 and 25, 2019. On October 25, New York's financial and health regulators wrote to
+      UnitedHealth Group about a program they called Optum's Impact Pro, and asked the company to investigate and to
+      stop using any program it could not show was free of racially disparate impact. The article itself does not name
+      the product; news reports named Optum as the maker, and Optum called the study's conclusion misleading. What
+      happened to individual patients is not on record. Notice the labels under each card: they tell you how we know.
+    background: |
+      Tiers exactly as in the chapter and @fig-11-2: the regulators' letter is confirmed (their own letter, NYDFS &
+      NYSDOH, 2019); the product name and maker are reported (news reports; Ledford, 2019, Nature); Optum's response is
+      reported (Ledford, 2019); individual outcomes are inferred (not on record). The maker's replication on 3,695,943
+      patients and the 84% reduction ("by one measure, in the manufacturer's data", always attached) appear in the
+      article as the authors' report of what they were told or found; the figure labels them "authors' report", shown
+      here as "reported" because the source is the authors' account of the maker's work. Wording rule: the product name
+      appears only attributed to the regulators and news reports. The industry judged such algorithms by cost
+      prediction: a Society of Actuaries evaluation of ten widely used algorithms used it as the accuracy measure.
+    questions:
+      - q: "Why not just say Optum's product was biased?"
+        a: "Because the article does not name it. The name rests on the regulators' letter and news reports; attributing it keeps the claim exactly as strong as its evidence (Case Study Question 2)."
+    activity: "Ask: 'Which card would you need a primary record to confirm?' (the patient outcomes; none exists)."
+    book: "Case Study 'The Health Algorithm, Revisited', Timeline, @fig-11-2; Case Study Question 2."
+
+- layout: concept
+  minutes: 2
+  kicker: "Case study · failure label (Signature 5 and the failure-to-harm chain)"
+  title: "Bias, documented; harm, inferred"
+  size: 22
+  bullets:
+    - "**Tree:** bias, leaf “skewed recommendations”, documented"
+    - "Measured: lower scores at equal health"
+  flow:
+    - {label: "1 · Output wrong", kind: ai}
+    - {label: "2 · Checked? Judged on cost", kind: step, role: risk, dashed: true}
+    - {label: "3 · Top 3% flagged", kind: human}
+    - {label: "4 · Harm: simulated", kind: step, role: risk, dashed: true}
+  flow_height: 1.6
+  takeaway: "Dashed = inferred: links 2 and 4 rest on the authors’ simulations"
+  notes:
+    say: |
+      Now the label, with Chapter 4's two tools. On the Failure Taxonomy Tree this is bias, leaf "skewed
+      recommendations", and it is documented: the article measured lower scores for Black patients at equal health.
+      On the failure-to-harm chain, link 1, the output is wrong: documented. Link 2, checked before use, failed, but it
+      is drawn dashed, inferred: we know the industry judged such scores by cost accuracy, but how much the review
+      corrected is an estimate from the authors' simulations. Link 3, someone relies on it: documented, because the top
+      3 percent were flagged by the score alone. Link 4, harm: inferred, because fewer Black patients identified for
+      extra help is a simulated estimate, with no public record of harm to individuals. The better workflow: frame the
+      goal as need; verify scores against health measures group by group; review thresholds with overrides recorded;
+      disclose what the score predicts.
+    background: |
+      Case Study, failure label (@fig-11-19, @fig-11-20): solid = documented, dashed = inferred (book-wide rule).
+      Better workflow (AI Work Loop, for the team that builds or buys such a score): Frame need and choose a label that
+      measures it; Verify group by group against health; Decide with overrides recorded and a sample below the referral
+      threshold checked; Disclose what the score predicts. Ethics Lens: a convenient measure is chosen for the people
+      who build or buy a system; its errors fall on those for whom the gap is widest. Case Study Questions 3 and 4 use
+      this slide.
+    questions:
+      - q: "Why is the bias documented but the harm only inferred?"
+        a: "The article measured the score gap directly; harm to individuals was never recorded, only estimated in simulations (Case Study Question 4)."
+    activity: "Ask: 'Where would you add a check, and who should run it?' (Case Study Question 3: link 2, before use, by the team building or buying the score)."
+    book: "Case Study: failure label, @fig-11-19, @fig-11-20, 'A better workflow'; Ethics Lens."
+
+- layout: concept
+  minutes: 2
+  kicker: "Before the lab session"
+  title: "Pick your scenario and read its brief"
+  size: 24
+  bullets:
+    - "Read Chapter 11 (about 44 minutes)"
+    - "Choose **A′** (internship), **B′** (fundraiser) or **C** (your own options)"
+    - "Read its brief on your course site; C: fill the template"
+    - "Read the A9 brief and rubric"
+  takeaway: "Scenario C compares options, never people"
+  notes:
+    say: |
+      Before the lab session. Read Chapter 11: about 44 minutes for everything the chapter asks, at a steady pace, longer if
+      you read more slowly or in a second language. Then choose your scenario for the lab. A-prime is an internship
+      shortlist of six constructed candidates, letters G to L. B-prime is a student association choosing one of three
+      spring fundraisers. C is your own choice among options, not people, such as which laptop or which supplier,
+      using your own data in a tool your institution provides or approves, or no AI at all. Each scenario
+      has a one-page brief on your course site that explains every blank. Read it; about five minutes, or ten for C, because
+      you fill in the template. Also read the A9 brief and rubric in the chapter.
+    background: |
+      Chapter time paragraph: about 32 minutes for §11.1–11.6, about 44 for everything read for the chapter; the chapter counts
+      to about 2.0 hours outside class (2.1 with scenario C): chapter 44, A9 brief and rubric 8, Your Turns 13, pre-lab 5
+      (C: 10), A9 at home about 50. The Dell'Acqua et al. paper is recommended (add about 12 minutes); nothing depends on it. Scenarios A′ and B′
+      are not solved anywhere in the book; the instructor key is private/ch11-a9-key.md. Optional: Lab 11.2 (Find the
+      Hidden Error, 20 min), Lab 11.3 (Proxy Hunt, 20 min), Lab 11.4 (Deep). The chapter's reading-time sentence uses
+      the older wording "longer if English is not your first language"; the brief's newer wording is used here.
+    questions:
+      - q: "Why can't I rank real job applicants or classmates for scenario C?"
+        a: "Ranking real people would put their personal data into your work, and ranking people raises the fairness questions Chapter 16 takes up (§11.7; Check Yourself 11.7)."
+    activity: "Leave this slide up as students pack."
+    book: "Chapter 11 time paragraph; §11.7; Lab 11.1 'Before the lab session'; labs/ch11-a9-brief-a.md, -b.md, -template-c.md."
+
+# ======================================================================= LAB SESSION
+- layout: section
+  session: thu
+  minutes: 0
+  number: "11.7"
+  tag: "Lab"
+  title: "Practice lab: the decision audit"
+  idea: "Audit an AI-drafted matrix: criteria, recalculation, two tests."
+  meta: "Book §11.7 · Lab 11.1 · A9 due when your instructor sets it"
+  notes:
+    say: |
+      Welcome back. Today is the decision audit. By the end of the session you will have an AI-drafted decision matrix
+      for your scenario, an audit of every criterion, the top two totals recalculated outside the tool, and at least one
+      sensitivity test. That is most of A9. Teams of three or four work on scenarios A-prime or B-prime together;
+      scenario C students work solo and pair up for the share-and-critique. Every artifact is individual, even when the
+      draft matrix is shared. Take out your scenario brief. We start with a two-minute warm-up from memory.
+    background: |
+      Lab 11.1 timing (lab sheet): briefing 10 · draft 10 · criteria audit 15 · recalculate and test 20 · share 15 ·
+      exit 5 (practice 45 in the suggested format). §11.7 is Studio. Materials: briefs A′ and B′ with CSV files, template
+      C, the spreadsheet template (data/ch11_matrix_template.xlsx), dated AI outputs for A′ and B′ for teams whose tool
+      fails or who prefer not to use one, printed packs for the no-device route, the A9 sheet (F11.18).
+    activity: "Form teams of 3–4 (A′, B′); C students sit together for pairing later."
+    book: "§11.7 The Decision Audit; Lab 11.1; labs/ch11-lab1.md."
+
+- layout: quiz
+  minutes: 2
+  kicker: "Lab session · warm-up from memory"
+  title_prefix: "Warm-up"
+  title: "proxies and places"
+  question: "Write the three proxy questions, and three of the six places to check an AI analysis."
+  instruction: "No notes, no screens: write, then check with your team"
+  model_answer:
+    - "**Proxy:** What do we mean? What do we measure? For whom is the gap bigger?"
+    - "**Six places:** rows in and out · blanks and impossible values · definitions and units · time window · totals vs. groups · formula or code"
+  notes:
+    say: |
+      Warm-up, from memory, no notes and no screens. Write the three questions you ask of any proxy, and then name three
+      of the six places a hidden choice can change an analysis. One minute to write, one minute to check with your team.
+      These are exactly the tools you need today: the proxy questions drive the criteria audit, and the six places
+      drive the recalculation. If someone is stuck, give a hint: the third proxy question is the one accuracy checks
+      miss, and the first place to look is the one that caught Lucía's error.
+    background: |
+      Check Yourself 11.3 and 11.4 item 2. Retrieval two days after first meeting the ideas. Answers: §11.3 three
+      questions; §11.4 six places (F11.12).
+    activity: "1 min write, 1 min team check, then the answer slide."
+    book: "§11.3; §11.4; Check Yourself 11.3–11.4."
+  answer_minutes: 1
+  answer_notes:
+    say: |
+      Here they are. The proxy questions: what do we mean, what do we measure, and for whom is the gap bigger? The six
+      places: rows in and rows out; blanks and impossible values; definitions and units; time window; totals versus
+      groups; formula or code. Now connect them to today. In your criteria audit, you ask the proxy questions of every
+      criterion, plus a fourth point: how were its blanks handled, and can you get the real value? In your
+      recalculation, places one, two and six are the ones you will use most: how many rows did the tool use, how did it
+      treat the blanks, and did it reverse the "lower is better" criteria?
+    background: |
+      A9 item 3 (criteria audit): meant, measured, proxy and for whom, blanks and whether the real value can be
+      obtained. Lab expected observations: AI-drafted matrices often score a blank as the lowest value or drop it
+      without a note, add "lower is better" criteria without reversing them, and present one winner without margins.
+    activity: "Reveal; connect to the lab steps."
+    book: "§11.3; §11.4; Lab 11.1 'Expected observations'."
+
+- layout: lab
+  minutes: 4
+  kicker: "Lab 11.1 · teams of 3–4 (A′, B′) or solo (C) · individual A9"
+  title: "Decision audit: does the top option survive?"
+  goal: "Audit an AI-drafted matrix; recalculate; test it"
+  steps:
+    - {text: "**Draft:** the scenario file and the brief’s prompt in a tool, or the provided dated output. Save prompt, tool, model, date", min: 10}
+    - {text: "**Criteria audit** (individual): meant · measured · proxy, for whom · blanks, real value?", min: 15}
+    - {text: "**Recalculate** the top two in the template, with verdicts; **test:** change one weight or blank → new top, margin, shortlist", min: 20}
+  side:
+    - {heading: "Deliverable", text: "A9 items 2–5 started; team drafts ungraded"}
+    - {heading: "Privacy", role: risk, text: "Constructed data only. C: options, never people; your data only in a tool your institution provides or approves"}
+    - {heading: "No device or no AI?", text: "Printed scenario sheets and the provided matrix"}
+  notes:
+    say: |
+      Here is the lab, 45 minutes of practice. Step one, draft, ten minutes: teams on A-prime or B-prime give an AI
+      tool the scenario file with the prompt in the brief, or use the provided dated output. Save the prompt, the tool,
+      the model if shown, and the date. Scenario C students do the same alone from their own table. Step two, criteria
+      audit, fifteen minutes, individually: for each criterion, what it is meant to capture, what the data measure,
+      whether it is a proxy and for whom the gap is bigger, how blanks were handled and whether the real value can be
+      obtained. Step three, twenty minutes: enter the values in the spreadsheet template, compare its totals for the top
+      two options with the tool's, give each a verdict, then change one weight or one blank and record the new top,
+      the margin and the shortlist.
+    background: |
+      From labs/ch11-lab1.md. The template does the scaling, so students check the tool's totals rather than computing
+      six by hand; if time is short, recalculate one total in class and the second at home. Step 4 is the bottleneck.
+      Scenario-specific observations are in the instructor key (private/ch11-a9-key.md); do not reveal them, so the
+      scenarios stay unsolved. Privacy: constructed scenario data only; no real candidates, employees, patients or
+      customers. No-device route: printed scenario sheets and the provided matrix (the alternative assignment).
+      Accessibility: screen-reader-friendly CSV files and A9 sheet on your course site; solo work for any student who prefers it.
+    questions:
+      - q: "The tool's arithmetic was right and the top option survived my test. Did I fail to find anything?"
+        a: "No. Both are valid results and can earn full marks if your audit shows how you know (§11.7)."
+      - q: "The tool refused or gave a broken matrix. What now?"
+        a: "Use the provided dated output for your scenario on your course site, and record that in your declaration."
+    misconceptions:
+      - m: "M5 'A decision matrix makes a decision objective.'"
+        fix: "Ask each team which single change moved their top option most."
+    activity: "4 min briefing on this slide; the 45 minutes of practice run while the A9 sheet slide is on screen."
+    book: "§11.7; Hands-on Labs, Lab 11.1; labs/ch11-lab1.md."
+
+- layout: assignment
+  minutes: 3
+  kicker: "Assignment A9 · O1–O6 · LO3, LO5"
+  title: "A9: decision matrix audit"
+  due: "When your instructor sets it · individual · about 50 min after the lab"
+  parts:
+    - "Decision statement and owner; the AI-drafted matrix (tool, model, date, prompt)"
+    - "Criteria audit of every criterion; change at least one, or say why not"
+    - "Top two totals recalculated outside the tool, with verdicts"
+    - "Two sensitivity tests: new top, margin, shortlist"
+    - "Revised matrix; memo (120–150 words) with a review step; uncertainty; declaration"
+  rubric_title: "Rubric · 10 points"
+  rubric:
+    - {criterion: "Task", points: 3, full: "All parts; memo with reasons; four-element review step"}
+    - {criterion: "Criteria audit", points: 1.5, full: "Every criterion on all four points"}
+    - {criterion: "Tests", points: 1.5, full: "Two kinds, with top, margin, shortlist"}
+    - {criterion: "Verification", points: 2, full: "Top two recomputed, with verdicts"}
+    - {criterion: "Declaration, judgment", points: 2, full: "Five elements; the owner’s judgment shown"}
+  note: "A top option that survives every test, or correct AI arithmetic, is a valid result if your audit shows how you know."
+  notes:
+    say: |
+      Here is what you submit for A9. A9 has eight items, grouped on the slide. A decision statement with its owner,
+      who is affected and whether it can be reversed. The AI-drafted matrix with tool, model, date and prompt. The
+      criteria audit. The top two totals recalculated outside the tool, each with a verdict. Two sensitivity tests of
+      different kinds, each with the new top, margin and shortlist. A revised matrix and a memo of 120 to 150 words,
+      with a review step that names who reviews, what they see first, what counts as a reason to disagree and where a
+      disagreement is recorded. Then remaining uncertainty and your AI Use Declaration. The rubric is out of ten. And
+      remember: your recommendation may differ from the top score, if you say why.
+    background: |
+      Full four-level rubric in the chapter (Application Assignment A9): Task 3; process evidence split into Criteria
+      audit 1.5 and Sensitivity tests 1.5; Verification 2; Declaration and judgment 2 (the book's artifact split).
+      Time item by item after the lab: brief and rubric 8 (counted separately), audit 8, recalculation 5, second test
+      5, revised matrix 5, memo 15, uncertainty 3, declaration 5, checking and submitting 4: about 50 minutes.
+      Alternative assignment (prefer not to use AI, or no access): for A′ or B′, audit the provided matrix built by an
+      unnamed team (with errors students are not told about); for C, build your matrix yourself and swap with a
+      classmate. Late-work and revision rules are the instructor's call.
+    questions:
+      - q: "What do items 4 and 5 test that item 3 does not?"
+        a: "Whether the numbers are right and whether the result survives a changed choice; item 3 audits what the criteria mean (Check Yourself 11.7)."
+    activity: "Point to the Sensitivity tests row: two tests of different kinds (a weight; a blank or criterion)."
+    book: "Application Assignment A9 (brief, rubric, time, alternative assignment); @fig-11-18."
+
+# Native version of F11.18 (the book figure is too small to read at slide size): the sheet's rows and one model
+# criteria-audit row, on screen for the 45 minutes of practice.
+- layout: compare
+  minutes: 45
+  kicker: "§11.7 · on screen during group practice (book figure: A9 sheet)"
+  title: "Your audit records the evidence behind every number"
+  size: 22
+  columns:
+    - heading: "The A9 sheet"
+      role: soft
+      bullets: ["1–2 Decision, AI matrix", "3 Criteria audit", "4 Recalculation", "5 Two tests", "6 Revised matrix, memo", "7–8 Uncertainty, declaration"]
+    - heading: "Model row: experience"
+      role: human
+      bullets: ["Meant: skill", "Measured: years in any job", "Proxy: gap bigger without unpaid internships", "Change: weight 30 → 15"]
+  takeaway: "Marks need evidence that you checked"
+  notes:
+    say: |
+      This is the A9 sheet, and it stays on screen while you work. Its rows: the decision; the AI-drafted matrix; the
+      criteria audit; the recalculation; two sensitivity tests; the revised matrix and memo; and, dashed, your
+      remaining uncertainty and declaration. Here is a model criteria-audit row from the book's internship example.
+      Years of experience: meant, skill at the work; measured, years in any job; proxy, yes; the gap is bigger for
+      students who could not take unpaid internships or who changed fields; blanks, none; change, lower the weight
+      from 30 to 15 and add a work-sample task. Write every row like that: four points and a decision. I will circulate;
+      call me over when your recalculation disagrees with the tool, or when you cannot tell whether a blank can be
+      filled with a real value.
+    background: |
+      Worked model row (§11.7) and faded model (gallery application P, criterion 1: meant, the quality of the proposed
+      work; measured, one juror's rating; proxy, partly, for one person's taste; blanks, none; change, add a second
+      juror; criteria 2–4 answers in Appendix E). Instructor notes from the lab sheet: step 4 is the bottleneck;
+      circulate there. Debrief questions for the next slide come from the lab sheet. The A9 sheet is also on your course site
+      as an accessible table and printed.
+    questions:
+      - q: "In scenario A′, can I fill candidate J's interview with an average?"
+        a: "First ask whether the real value can be obtained: the brief says J's interview is scheduled after the shortlist is due. Say what that means for the shortlist and for the owner; a fill is a guess (§11.2 rule)."
+    activity: |
+      45 min: draft 10 (teams), criteria audit 15 (individual), recalculate and test 20 (individual). Give time calls at
+      10 and 25 minutes; at minute 40 give a 5-minute warning to record top, margin and shortlist.
+    book: "§11.7 'Worked model' and 'Faded model', @fig-11-18; Lab 11.1 steps 2–4."
+
+- layout: tps
+  minutes: 15
+  kicker: "Share and critique · 15 min"
+  title: "Did your top option survive?"
+  prompt:
+    - "Clearest proxy, and for whom?"
+    - "Did your test change top, margin or shortlist?"
+    - "Which blank has a real value you can get?"
+  phases:
+    - {name: "Think", min: 2, text: "One line each"}
+    - {name: "Team", min: 5, text: "Pick one assumption"}
+    - {name: "Share", min: 8, text: "Report; critique tests"}
+  notes:
+    say: |
+      Share and critique. On your own, answer the three questions in one line each: which criterion in your matrix was
+      the clearest proxy, and for whom was the gap bigger; did your sensitivity test change the top option, the margin
+      or the shortlist; and for which blank could the real value be obtained, and how. Then, as a team, or as a pair for
+      scenario C, pick one hidden assumption to report. In the last eight minutes each team says whether its top option
+      survived and names that assumption. The rest of us critique the test, not the person: was it a defensible
+      change? Would another test have been more revealing? Remember that "it survived" is a good result, if you can
+      show how you know.
+    background: |
+      Debrief questions from labs/ch11-lab1.md (evaluate, analyze, apply). What to listen for: "lower is better"
+      criteria not reversed; blanks scored as the lowest value or dropped without a note; one winner with no margin;
+      weight changes that are not defensible (e.g., zeroing a criterion to force a result). Scenario-specific
+      observations: private/ch11-a9-key.md (instructor only).
+    misconceptions:
+      - m: "M5 'A decision matrix makes a decision objective.'"
+        fix: "When a team's top changes under a small weight change, ask what the owner should take from the margin."
+    activity: "Think 2 · team 5 · share 8. Call first on a team whose top option did not survive, then one whose did."
+    book: "Lab 11.1 step 5 and Debrief; §11.5."
+
+- layout: objectives
+  minutes: 2
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "**Distinguish:** informs, recommends, triggers; name the owner"}
+    - {code: "O2", text: "**Test a blank:** count, ask why, get the real value, compare"}
+    - {code: "O3", text: "**Evaluate a proxy:** mean? measure? for whom is the gap bigger?"}
+    - {code: "O4", text: "**Verify:** six places; recalculate outside the tool"}
+    - {code: "O5", text: "**Stress-test:** margins and shortlists, not only the top"}
+    - {code: "O6", text: "**Design** a review step that makes disagreement possible"}
+  takeaway: "AI can do the arithmetic. You own the choices, and the decision."
+  notes:
+    say: |
+      Back to the opening question: can an AI-assisted analysis make a decision for you? It can do the arithmetic, draft a
+      matrix and propose an option in seconds. But every analysis rests on choices: what a blank means, what a number
+      stands in for, how criteria are weighted. Each can change the answer, and people who review a score tend to follow
+      it. Now your warm-up. Can scores be unequal without race in the data? Yes: a proxy label carried the gap. Can two
+      blanks change the best option? Yes: five ways of handling them all picked the wrong event. Does a doctor's review
+      make errors harmless? No: reviewers often follow automated advice, and in the case doctors saw only the patients
+      the score sent them. Compare those answers with your confidence ratings.
+    background: |
+      Chapter Summary and @fig-11-21. Answer to the chapter question (hedged, as in the book): get the real values where
+      you can, recalculate what the decision depends on, test whether another defensible choice changes the result,
+      and decide as the owner, with your reasons written down. If students did not keep their warm-up, ask them
+      to answer again now and rate their confidence.
+    activity: "Ask two students: 'Which warm-up answer did you get wrong with high confidence?'"
+    book: "Chapter Summary, @fig-11-21; Warm-up revisit."
+
+- layout: key_terms
+  minutes: 1
+  title: "Key terms"
+  terms:
+    - "decision support"
+    - "decision owner"
+    - "automated decision"
+    - "hidden assumption"
+    - "missing value"
+    - "listwise deletion"
+    - "imputation"
+    - "proxy (Ch. 2)"
+    - "proxy label"
+    - "Simpson’s paradox"
+    - "decision matrix"
+    - "criterion"
+    - "weight"
+    - "sensitivity check"
+    - "automation bias"
+    - "commission error"
+    - "omission error"
+    - "overreliance (Ch. 7)"
+    - "MAR, MCAR, MNAR (Deep)"
+    - "multiple imputation (Deep)"
+    - "sensitivity analysis (Deep)"
+  note: "Definitions: Chapter 11 and the glossary. (Deep) terms are optional and not on exams."
+  notes:
+    say: |
+      These are the chapter's key terms; if your course has a written exam they can appear in it, so make sure you can
+      define each in a sentence of your own. Quick self-test: cover the slide and define three for your neighbor. Watch the pairs that
+      are easy to mix up: decision support and automated decision; a proxy and a proxy label; commission error and
+      omission error; and the sensitivity check, which is Core, against sensitivity analysis, which is the Deep
+      section's term for testing assumptions about missing values. The three marked Deep come from an optional section
+      and are not on the exams.
+    background: |
+      Key Terms list from the chapter. Examinable scope: Core sections only; Deep sections are not examinable (D20).
+      Exam format and weighting are the instructor's call; the book's review items cover Core sections only.
+    activity: "30-second pair self-test."
+    book: "Chapter Summary, Key Terms; glossary."
+
+- layout: exit_ticket
+  minutes: 2
+  questions:
+    - "Name one assumption you would not have seen without checking."
+    - "Why did removing race from the inputs not remove the gap?"
+    - "What is the first line of your A9 review step?"
+  instruction: "2 min · index card or your course site · ungraded"
+  notes:
+    say: |
+      Last two minutes: the exit ticket. Answer on an index card or in a course-site form; it is not graded, and it
+      tells me what to reteach. The first question is the lab's own exit step: one hidden assumption you found today
+      that you would have missed without checking. The second checks the most important idea of the chapter. The third
+      starts your memo. Before you leave: A9 is due when your instructor sets it, on your course site. The next
+      chapter is about choosing tools: in the next concept session we run one task in two tools.
+    background: |
+      Question 1 = Lab 11.1 step 6. Question 2 = Check Yourself 11.3 item 2; good answer: the gap entered through the
+      label, because less was spent on equally sick Black patients, so a model predicting cost ranked them lower.
+      Next chapter (Chapter 12): tool ecosystems, cost, privacy; demo: one task in two tools (Chapter 12; Chapter 13
+      Deep). A guest practitioner is optional.
+    activity: "2 min; collect cards at the door or close the course-site form at the end of the session."
+    book: "Lab 11.1 step 6; §11.3; Chapter 12."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: deep
+  session: after
+  kicker: "Deep 11.A · why values go missing"
+  title: "Going deeper: why a value is missing decides the fix"
+  size: 22
+  bullets:
+    - "**MCAR:** a wet page → deletion loses data, no tilt"
+    - "**MAR:** evening shifts, and you know which → a pattern fill can work"
+    - "**MNAR:** long shifts unlogged *because* long → get the real value"
+  takeaway: "Multiple imputation needs MAR; under MNAR, test the assumption"
+  notes:
+    say: |
+      Use this slide only if there is time or a student asks why the shortcuts failed in Lucía's log. Statisticians
+      distinguish three reasons values go missing. Missing completely at random: the reason has nothing to do with any
+      data, like a wet page of sign-in sheets; deleting rows loses information but does not tilt the answer. Missing at
+      random: the reason depends only on things you observed, such as evening shifts logged less often when the log
+      records which shifts were evenings; a fill that uses that pattern can work. Missing not at random: the reason
+      depends on the missing value itself. Lucía's log is this case: the longest shifts went unlogged because they were
+      long, and nothing in the log could predict them. No method recovers values missing for reasons the data cannot
+      see; you need the real value.
+    background: |
+      Deep 11.A (optional, not examinable): Rubin (1976); Sterne et al. (2009). Multiple imputation fills each blank
+      several times with plausible values drawn from a model of the data, analyzes each completed dataset and pools the
+      results so the answer carries the blanks' extra uncertainty; it is widely used when data are MAR, provided the
+      model includes what predicts the missingness. Under possible MNAR, analysts run a sensitivity analysis: assume the
+      missing values were somewhat higher or lower and check whether the conclusion survives. Book figure @fig-11-22.
+      Lab 11.4 (Deep) reruns the chapter's code in a browser notebook. Deep 11.B (Silberzahn et al., 2018): 29 teams, 61
+      analysts, one dataset, estimates from 0.89 to 2.93 in odds-ratio units.
+    questions:
+      - q: "Would a fill based on time of day have rescued Lucía's log?"
+        a: "No. Every late shift is blank, so no logged shift shows what a late shift is like (Deep 11.A)."
+    activity: "Optional; not part of the 75-minute plan."
+    book: "Deep 11.A, @fig-11-22; Deep 11.B; Lab 11.4."
+
+- layout: references
+  title: "References"
+  per_slide: 6
+  refs:
+    - "Bickel, P. J., Hammel, E. A., & O’Connell, J. W. (1975). Sex bias in graduate admissions: Data from Berkeley. *Science, 187*(4175), 398–404."
+    - "Dawes, R. M. (1979). The robust beauty of improper linear models in decision making. *American Psychologist, 34*(7), 571–582."
+    - "Dratsch, T., et al. (2023). Automation bias in mammography. *Radiology, 307*(4), e222176."
+    - "Goddard, K., Roudsari, A., & Wyatt, J. C. (2012). Automation bias: A systematic review. *JAMIA, 19*(1), 121–127."
+    - "Herndon, T., Ash, M., & Pollin, R. (2014). Does high public debt consistently stifle economic growth? *Cambridge Journal of Economics, 38*(2), 257–279."
+    - "Jacobs, A. Z., & Wallach, H. (2021). Measurement and fairness. In *Proceedings of ACM FAccT 2021* (pp. 375–385)."
+    - "Kahneman, D., Sibony, O., & Sunstein, C. R. (2021). *Noise: A flaw in human judgment*. Little, Brown Spark."
+    - "Kelion, L. (2020, October 5). Excel: Why using Microsoft’s tool caused Covid-19 results to be lost. *BBC News*."
+    - "Ledford, H. (2019). Millions of black people affected by racial bias in health-care algorithms. *Nature, 574*(7780), 608–609."
+    - "New York State Department of Financial Services & Department of Health. (2019, October 25). *Joint letter to UnitedHealth Group Incorporated*."
+    - "Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). Dissecting racial bias in an algorithm used to manage the health of populations. *Science, 366*(6464), 447–453."
+    - "Parasuraman, R., & Manzey, D. H. (2010). Complacency and bias in human use of automation. *Human Factors, 52*(3), 381–410."
+    - "Public Health England. (2020, October 4). *PHE statement on delayed reporting of COVID-19 cases*. GOV.UK."
+    - "Regulation (EU) 2024/1689 (Artificial Intelligence Act). *OJ L*, 12.7.2024."
+    - "Regulation (EU) 2026/1744 (Digital Omnibus on AI). *OJ L*, 24.7.2026."
+    - "Reinhart, C. M., & Rogoff, K. S. (2010). Growth in a time of debt. *American Economic Review, 100*(2), 573–578."
+    - "Rubin, D. B. (1976). Inference and missing data. *Biometrika, 63*(3), 581–592."
+    - "Sackett, P. R., Zhang, C., Berry, C. M., & Lievens, F. (2022). Revisiting meta-analytic estimates of validity in personnel selection. *Journal of Applied Psychology, 107*(11), 2040–2068."
+    - "Şeker, Ş. E., & Eşmekaya, E. (2017). Eksik verilerin tamamlanması (Imputation). *YBS Ansiklopedi, 4*(3), 10–17."
+    - "Silberzahn, R., et al. (2018). Many analysts, one data set. *Advances in Methods and Practices in Psychological Science, 1*(3), 337–356."
+    - "Skitka, L. J., Mosier, K. L., & Burdick, M. (1999). Does automation bias decision-making? *International Journal of Human-Computer Studies, 51*(5), 991–1006."
+    - "Sterne, J. A. C., et al. (2009). Multiple imputation for missing data in epidemiological and clinical research. *BMJ, 338*, b2393."
+    - "Ziemann, M., Eren, Y., & El-Osta, A. (2016). Gene name errors are widespread in the scientific literature. *Genome Biology, 17*, 177."
+  notes:
+    say: |
+      Reference slides; not presented in class. These are the sources cited on the slides and in the speaker notes, in
+      short APA form, shortened from the chapter's reference list, which has the full entries with DOIs. Students do not
+      need to read them. If a student wants to go further, point them first to Obermeyer and colleagues (2019): short
+      and readable, especially Figure 1 and the section on label choice. Goddard and colleagues (2012) is free on PubMed
+      Central. Ledford (2019) is Nature's news report with the company's response. The recommended reading, Dell'Acqua
+      and colleagues, is listed in the chapter's Further Reading with a guiding question; nothing in this deck depends
+      on it.
+    background: |
+      Full entries in the chapter's References section (fact-checked; docs/factcheck/ch11.csv). Shortened titles and
+      "et al." are used here to fit the slide; the chapter keeps full author lists. Recommended reading: Dell'Acqua et al. (2026),
+      Organization Science 37(2); if read, the 2023 working paper's sections 3.2 and 3.3.
+    activity: "Not presented."
+    book: "Chapter 11, References; Further Reading and Compass Links."

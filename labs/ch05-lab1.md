@@ -5,7 +5,7 @@
 | Type | Studio (Compare and Reflect) |
 | Objectives | O1–O6 (LO2; LO3, LO4 in support) · tags 4D:DEL, 4D:DESC, 4D:DISC, 4D:DIL |
 | Time | 75 minutes, in the lab session; teams of 3–4; every log is individual. About 60–70 minutes at home to finish A3 |
-| Materials | Any AI chat tool available to you (one your institution provides or approves, or a free tier); the A3 log template (course site; book Figure 5.13; screen-reader-friendly version on the course site); the task bank on the course site; the dated sample log (for the no-device route) |
+| Materials | Any AI chat tool available to you (one your institution provides or approves, or a free tier); the A3 log template (companion files; book Figure 5.13; screen-reader-friendly version in the companion files); the task bank in the companion files; the dated sample log (for the no-device route) |
 
 **Fresh, temporary chat.** Every run starts a new conversation, so no earlier messages are in the context. Where the tool offers a temporary or private mode that is not saved to memory (a product feature that saves notes about a user, or draws on past chats, and adds them to later conversations), use it. Current steps for each tool are in Compass.
 

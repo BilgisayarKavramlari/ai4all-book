@@ -1,0 +1,1795 @@
+# Lecture deck spec — Chapter 19: AI Across Disciplines: Field Guides
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch19.yaml --preview
+# Every number and quotation comes from deck.sources; the builder flags any number it cannot find there.
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only.
+#
+# Sessions (keys are internal; labels are what instructors see):
+#   tue = Session 1, concept session (about 75 min): opening case Ithaca, concept core 19.1–19.7, the live
+#         end-to-end demonstration (the chapter's §19.5 worked example mirrors it), quick checks.
+#   thu = Session 2, lab session (about 75 min): Lab 19.1 Discipline Sprint, timed as the chapter and the lab sheet
+#         give it: briefing 5 · build and run 30 · peer test 20 · share 10 · exit 10 (the blueprint's older
+#         10/25/20/15/5 table is superseded: the chapter wins).
+# Even-numbered Review A items are instructor-only and never appear here; quizzes use odd items or Check Yourself.
+
+deck:
+  chapter: 19
+  slug: ai-across-disciplines-field-guides
+  title: "AI Across Disciplines: Field Guides"
+  short_title: AI Across Disciplines
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Session 1 · concept session (about 75 min)", minutes: 75}
+    thu: {label: "Session 2 · lab session, Lab 19.1 (about 75 min)", minutes: 75}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/19-ai-across-disciplines-field-guides.qmd
+    - labs/ch19-lab1.md
+    - labs/ch19-lab2.md
+    - labs/ch19-lab3.md
+    - figures/longdesc/ch19.md
+    - appendix/answers.md
+    - docs/blueprints/ch19-blueprint.md
+
+slides:
+
+# ======================================================================= SESSION 1 · CONCEPT
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "Concept session and lab session"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading: Chapter 19"
+    - "Suggested: Mitchell et al. (2019), abstract and Figure 1"
+  figure: f19-01-chapter-map
+  notes:
+    say: |
+      Put this slide up while students arrive. In these two sessions every method from the book goes home to your
+      own major. Until now each chapter taught a method that works in any field: frame, prompt, verify, decide,
+      disclose. Chapter 19 asks what changes when you carry that method into nursing, history, accounting,
+      engineering or teaching, and how you show that a workflow you built is ready for its job. The picture on the
+      right is the chapter map: the Work Loop with Frame highlighted, because your field defines the task, what
+      counts as correct, what data may go in and which rules apply. Disclose is the second highlight: you will write
+      a card that says what your workflow is for and not for. The lab session is a build day; the assignment, A13,
+      is a working prototype in your own discipline.
+    background: |
+      Two sessions: a concept session with an end-to-end demonstration, and a lab session (Lab 19.1, Discipline
+      Sprint: three inputs, safeguards, peer test). A13, the domain workflow prototype, is due when the instructor
+      sets it. The model-card paper, Mitchell et al. (2019), "Model cards for model reporting", is the chapter's
+      reading: only the abstract and Figure 1 (about 500 words, about 4 minutes). The chapter map (@fig-19-1)
+      highlights Frame, with Disclose second (blueprint decision Q1).
+    questions:
+      - q: "Do I need to know how to program to build a prototype?"
+        a: "No. A prompt template, a prompt chain, a configured tool or a spreadsheet with an AI feature all count (§19.5)."
+    activity: "On screen before the session starts."
+    book: "Chapter 19 opening page and @fig-19-1."
+
+- layout: session_plan
+  minutes: 1
+  title: "Chapter 19 at a glance"
+  columns:
+    - heading: "Session 1 · Concept session"
+      sub: "About 75 min · case, ideas, live demo, checks"
+      blocks:
+        - {min: 8, label: "Opening case", detail: "Ithaca and Greek inscriptions"}
+        - {min: 38, label: "Concept core, §19.1–19.7", detail: "Map, authority, data, rules, safeguards, card"}
+        - {min: 20, label: "Live demonstration", detail: "One workflow, three inputs"}
+        - {min: 8, label: "Quick checks", detail: "Six short checks"}
+        - {min: 1, label: "Before the lab", detail: "Pre-lab sheet, model-card reading"}
+    - heading: "Session 2 · Lab session"
+      sub: "About 75 min · mixed-field teams, individual records"
+      blocks:
+        - {min: 5, label: "Briefing", detail: "Warm-up, Lab 19.1, A13"}
+        - {min: 30, label: "Build and run", detail: "Three inputs, recorded"}
+        - {min: 20, label: "Peer test", detail: "A partner from another guide"}
+        - {min: 10, label: "Share and critique", detail: "The class map poster"}
+        - {min: 10, label: "Exit", detail: "One change, one exclusion"}
+  notes:
+    say: |
+      Here is the plan. Today we start with a case from ancient history, then build the ideas you need for your
+      own field in seven short sections: the map of uses, who can say "correct", the data your field protects, the
+      rules it writes down, how to build and test a small prototype, safeguards and the peer test, and the card
+      that says what a workflow is for. In the middle you watch one workflow run end to end, live. In the lab
+      session you build your own, run it on three inputs and have a classmate from another field test it. You build
+      in mixed-field teams, but each of you keeps your own record. A13 is due when your instructor sets it.
+    background: |
+      Concept-session pattern used throughout the decks: opening case about 10 · concept core about 35 ·
+      demonstration about 20 · concept check about 10. The lab session follows the chapter and the lab sheet:
+      briefing 5 · build and run 30 · peer test 20 · share 10 · exit 10. The blueprint's §11 table (10/25/20/15/5)
+      predates the chapter and is superseded. The minutes on this slide are the sums of the notes' timings; about
+      75 per session.
+    questions:
+      - q: "Can my team submit one prototype?"
+        a: "A13 is an individual record: you build side by side in mixed-field teams, but each prototype, run record and card is your own (A13 brief)."
+    activity: "Point to the two columns; give the A13 due date you have set."
+    book: "Chapter 19 time paragraph; Lab 19.1; A13 brief."
+
+- layout: objectives
+  minutes: 1
+  kicker: "Chapter 19 · learning objectives"
+  title: "By the end of the lab you will be able to…"
+  items:
+    - {code: "O1", text: "**Explain** why oversight follows the use more than the field"}
+    - {code: "O2", text: "**Analyze** what counts as correct, who confirms it, which data stays out"}
+    - {code: "O3", text: "**Apply** the rules nearest you, with source and date"}
+    - {code: "O4", text: "**Build** a prototype and test it on three inputs"}
+    - {code: "O5", text: "**Evaluate** it with a peer from another field"}
+    - {code: "O6", text: "**Produce** a workflow card and a short defense"}
+  notes:
+    say: |
+      Six objectives, in the order you will use them. The first two are about reading your field: why the same
+      AI use needs different checks in different fields, and, for one task of yours, what counts as a correct
+      result, who can confirm it, and which data must never go into a tool. The third is about rules: finding the
+      ones nearest you and writing down where each came from and when. The last three are the build: a working
+      prototype tested on three inputs, a peer test by someone from another field, and a card that says what the
+      workflow is for and not for, with a short defense a non-specialist can follow. Those three are A13.
+    background: |
+      Chapter objectives with tags: O1 Explain (LO6, LO5 · Discernment); O2 Analyze (LO6, LO3; LO5 · Diligence,
+      Discernment); O3 Apply (LO5, LO6 · Diligence · UNESCO ethics of AI, Apply); O4 Build (LO6, LO2 · Delegation,
+      Description · UNESCO AI system design, Create); O5 Evaluate (LO6; LO2); O6 Produce (LO6; LO5). LO6 is the
+      book's outcome: design an AI-assisted workflow for a task in your own field and defend its decisions to a
+      non-specialist.
+    activity: "Ask students to circle the objective their major makes hardest."
+    book: "Chapter 19, Learning Objectives."
+
+- layout: timeline
+  minutes: 3
+  kicker: "Opening case (C22) · Assael et al. (2022)"
+  title: "A model that restores damaged Greek inscriptions"
+  events:
+    - {label: "Mar 2022", text: "Ithaca described; trained on 78,608 inscriptions", tier: "confirmed"}
+    - {label: "Its tasks", role: ai, text: "Suggest missing letters, region and date", tier: "confirmed"}
+    - {label: "The test", text: "Characters hidden on purpose: answers known", tier: "confirmed"}
+    - {label: "Comparison", text: "Two experts alone, then with Ithaca’s top 20", tier: "confirmed"}
+  takeaway: "One test, one field, two experts, texts damaged on purpose"
+  notes:
+    say: |
+      Tell it as a story. Ancient Greek inscriptions, texts cut into stone, are among the main sources for the
+      history of the ancient Mediterranean. Many are damaged: letters worn away, the place and date unknown.
+      Epigraphy is the study of such texts, and filling the gaps is slow, expert work that other specialists then
+      check. In March 2022 a team from DeepMind and four universities described Ithaca, a deep neural network
+      trained on 78,608 Greek inscriptions from a public database. It suggests the missing letters, the region
+      where a text was written, and when. To test it, the team hid characters on purpose, so the right answers were
+      known. Two ancient-history graduate students trained in epigraphy worked on the same texts alone, and then
+      with Ithaca's top 20 suggestions in front of them. Ask: what result do you expect?
+    background: |
+      Assael et al. (2022), Nature 603, 280–283; case C22. Team: DeepMind, Ca' Foscari University of Venice,
+      Harvard's Center for Hellenic Studies, the Athens University of Economics and Business, the University of
+      Oxford. All facts on this slide are confirmed in the primary record (the paper). Limits the chapter states:
+      one test, in one field, with two experts and texts damaged on purpose. The authors describe Ithaca as designed
+      to assist and expand the historian's workflow, offering restorations as ranked options, not answers.
+    questions:
+      - q: "Were the experts famous professors?"
+        a: "No: two ancient-history graduate students with training in epigraphy (§Opening Case). Do not generalize to all historians."
+    activity: "Take two predictions before showing the results."
+    book: "Opening Case 'Seventy-Two Percent'."
+
+- layout: figure
+  minutes: 3
+  kicker: "Opening case · top-1 restoration accuracy (Assael et al., 2022, Table 1)"
+  title: "Experts with Ithaca beat both the model and the experts"
+  figure: f19-05-ithaca
+  takeaway: "Puzzle: the model alone beat the experts. Why keep historians in charge?"
+  notes:
+    say: |
+      Here are the results. Top-1 accuracy is the share of restorations whose first suggestion was fully right.
+      The two experts alone scored 25.3 percent. Ithaca alone scored 61.8 percent. The experts using Ithaca's
+      suggestions scored 71.7 percent. Ithaca also placed texts in the right one of 84 regions 70.8 percent of the
+      time and dated them to within about 30 years on average. So here is the puzzle for the chapter. If the model
+      alone beat the experts by a wide margin, why should historians stay in charge? And why did the pair beat
+      both? Keep your guess. We come back to it in section 19.2, and the Chapter Summary gives the book's reading.
+    background: |
+      Assael et al. (2022, Table 1). The chart reads data/ch19_ithaca.csv. Confirmed tier for every number. The
+      book's later answer is its own reading (inferred tier): trained people are epigraphy's verification
+      authority, and Ithaca's first suggestion was still wrong in about 38% of restorations; the pair may have done
+      best because people who can judge a ranked list combine well with a model that produces one; the paper does
+      not test why. Sequel: Aeneas (Assael et al., 2025) on Latin inscriptions, with a similar human-plus-model
+      result reported by its authors.
+    misconceptions:
+      - m: "M2 'If the output looks right to me, it is right for my field.'"
+        fix: "Seed it now: Ithaca's best guess was wrong about 38% of the time, and only trained readers could tell which. Do not overcorrect into 'students cannot verify anything': §19.2 sorts checks you can do yourself."
+    activity: "Ask students to write a one-line answer to the puzzle; revisit in §19.2."
+    book: "Opening Case; @fig-19-5; §19.2 'Back to Ithaca'; Chapter Summary."
+
+# ----------------------------------------------------------------------- 19.1
+- layout: section
+  minutes: 0.5
+  number: "19.1"
+  tag: "Core"
+  title: "One method, different fields"
+  idea: "The Work Loop is the same everywhere; four things change from field to field."
+  meta: "Book §19.1 · the Discipline × Use Map"
+  notes:
+    say: |
+      First idea. A nursing student, a historian and an engineer can all use the same AI Work Loop from Chapter 1:
+      frame, prompt, verify, decide, disclose. A discipline is a field of study and work with its own questions,
+      methods and standards. So the method transfers. What changes are four answers: what counts as a correct
+      result and who can confirm it, which data the field protects, which rules it writes down, and who bears an
+      error. This section gives you a map that shows how those answers change the checks a use needs.
+    background: |
+      §19.1 is Core. The field guides (19.F1–F7) are Studio reference material: read the guide nearest your major
+      and one other; exam items supply any field facts they need (blueprint decision Q3; D20).
+    misconceptions:
+      - m: "M1 'AI skills are the same in every field: a good prompt and a careful check work anywhere.'"
+        fix: "Name it now; the map refutes it. Do not create 'nothing transfers': the Work Loop, gates and three test inputs are shared."
+    activity: "Transition slide."
+    book: "§19.1 One Method, Different Fields."
+
+- layout: concept
+  minutes: 2
+  kicker: "§19.1 · what changes by field"
+  title: "Same loop, four different answers"
+  size: 26
+  bullets:
+    - "What counts as **correct**, and who can confirm it"
+    - "Which **data** the field protects"
+    - "Which **rules** the field writes down"
+    - "Who bears an **error**: you, or a patient, client, reader"
+  flow:
+    - {label: "Frame", kind: human}
+    - {label: "Prompt", kind: human}
+    - {label: "Verify", kind: human}
+    - {label: "Decide", kind: human}
+    - {label: "Disclose", kind: human}
+  notes:
+    say: |
+      Here are the four things, in the order the chapter treats them. First, what counts as a correct result, and
+      who can confirm it: section 19.2. Second, which data the field protects: section 19.3. Third, which rules the
+      field writes down: section 19.4. Fourth, who bears an error: only you, or a patient, a client, a student or a
+      reader. The strip at the bottom is the loop you know; it does not change. A field guide is a one-page summary
+      of those four answers for one field, plus its typical uses and a career note. The book has seven guides, with
+      a list that matches common majors to guides. You need yours and one other for the lab.
+    background: |
+      §19.1 and @fig-19-3 (every field guide answers the same five questions: typical uses; what to verify and who
+      can confirm it; data cautions; field rules; career note). The chapter's list matches majors to guides;
+      e.g., healthcare management reads Business and Health; computer science reads Engineering, where coursework
+      code is a check point unless it is safety-relevant; undecided students read the guide for the field they are
+      considering.
+    questions:
+      - q: "My major sits between two guides. Which do I use?"
+        a: "Read both and note one difference (§19 Field Guides, 'Which guide is yours?')."
+    activity: "Ask students to say their guide aloud to a neighbor."
+    book: "§19.1; @fig-19-3; 'Which guide is yours?'."
+
+# Native redraw of @fig-19-2 in two parts (the book figure's 28 cells fall below 15 pt at slide size).
+# Roles: log review = neutral, check point = soft, approval gate and keep with a person = human; every cell
+# also says its level in words, so color carries no meaning alone.
+- layout: matrix
+  minutes: 2.5
+  kicker: "§19.1 · Discipline × Use Map, 1 of 2 · this book’s reading, Oct 2026"
+  title: "The use matters more than the field…"
+  col_headers: ["Drafting", "Data", "Code", "Media"]
+  row_headers: ["Business", "Health", "Arts", "Social science"]
+  cells:
+    - [{title: "check point", role: soft}, {title: "check point", role: soft}, {title: "check point", role: soft}, {title: "check point", role: soft}]
+    - [{title: "approval gate", role: human}, {title: "approval gate", role: human}, {title: "approval gate", role: human}, {title: "approval gate", role: human}]
+    - [{title: "check point", role: soft}, {title: "log review", role: neutral}, {title: "log review", role: neutral}, {title: "approval gate", role: human}]
+    - [{title: "check point", role: soft}, {title: "approval gate", role: human}, {title: "check point", role: soft}, {title: "log review", role: neutral}]
+  takeaway: "…except where a field’s rules raise the floor (Health)"
+  notes:
+    say: |
+      The Discipline × Use Map is a table of fields against kinds of AI use. Each cell shows the default people
+      point for a student's coursework: who checks, and when. Log review: a person reviews the record afterward.
+      Check point: a person inspects an intermediate result before later steps build on it. Approval gate: the work
+      pauses until a named person approves, edits or rejects it. Keep with a person: no AI in the decision. Read
+      down a column and you see the point: most cells in a column match. The use matters more than the field,
+      except where a field's rules raise the floor. Health's row has approval gates for drafting and calculations,
+      because placement work can reach a patient. Two uses are the same in every field and sit under the map:
+      summarizing sources is a check point; deciding about people stays with a person.
+    background: |
+      The map is this book's reading as of October 2026, a default your field's rules and your instructor
+      override (§19.1; data/ch19_use_map.csv; all 42 cells in the long description). Levels follow Chapter 14's rule
+      (can it be undone, and who bears an error?). It is not Chapter 15's Risk Heat Map, and it rates checking, not
+      tool quality (Chapter 12). Chapter 14's stop point is a condition inside a build, not a map level. Each cell
+      has a symbol, a word and a fill pattern, so color is never needed.
+    questions:
+      - q: "Why is a practice dose calculation not an approval gate, if health's row says so?"
+        a: "Health's default assumes placement work that can reach a patient. A practice set that reaches no one is a check point against the course's answer key (§19.1)."
+    misconceptions:
+      - m: "M1 'AI skills are the same in every field.'"
+        fix: "Point at the Health row versus the Business row for drafting; then at the columns, to show most of the method is shared."
+    activity: "Point at the Health row, then down the Data column."
+    book: "§19.1, @fig-19-2 and the four people points."
+
+- layout: matrix
+  minutes: 1.5
+  kicker: "§19.1 · Discipline × Use Map, 2 of 2 · this book’s reading, Oct 2026"
+  title: "Find your row, and read one cell"
+  col_headers: ["Drafting", "Data", "Code", "Media"]
+  row_headers: ["Natural science", "Engineering", "Education"]
+  cells:
+    - [{title: "check point", role: soft}, {title: "approval gate", role: human}, {title: "check point", role: soft}, {title: "keep with a person", role: human}]
+    - [{title: "check point", role: soft}, {title: "approval gate", role: human}, {title: "approval gate", role: human}, {title: "check point", role: soft}]
+    - [{title: "check point", role: soft}, {title: "approval gate", role: human}, {title: "log review", role: neutral}, {title: "check point", role: soft}]
+  takeaway: "Every field: summarizing is a check point; deciding about people stays with a person"
+  notes:
+    say: |
+      The other three rows. Natural science: images that are data, such as micrographs, gels and spectra, stay
+      with a person, because they are evidence; analyzing data before a result leaves the lab is an approval gate.
+      Engineering: analysis behind a design decision and safety-relevant calculations are approval gates. Education:
+      analyzing student data is an approval gate; small scripts that format your own course material need only a
+      log review. And two uses are the same in every field, so the book prints them as one line under the map:
+      summarizing sources is a check point, and advising or deciding about people stays with a person. Now find your
+      own row, pick the cell for the task you plan for A13, and say it to a neighbor with one reason.
+    background: |
+      Cells from data/ch19_use_map.csv via the long description (F19.2). The column "Code" is the book's "code or
+      calculations"; "Media" is "images, audio or video"; the row "Arts" is the Arts and humanities guide. The field guides refine cells in prose:
+      e.g., Engineering coursework code that is not safety-relevant is a check point; Business analysis becomes an
+      approval gate once it moves money or reaches customers (19.F1, 19.F5, 19.F6, 19.F7). The map is a default the
+      field's rules and the instructor override.
+    questions:
+      - q: "Why is media 'keep with a person' only in natural science?"
+        a: "There, images such as micrographs, gels and spectra are data: evidence of a result, so generating or altering them is not a drafting task (19.F5). Diagrams are a check point, disclosed."
+    activity: "Pre-lab Your Turn now: place your A13 task on your row; name the cell and one reason (1 minute)."
+    book: "§19.1, @fig-19-2; field guides 19.F5–19.F7; §19.1 Your Turn (pre-lab)."
+
+- layout: compare
+  minutes: 1
+  kicker: "§19.1 · worked example · nursing, constructed"
+  title: "Marcus reads his row"
+  size: 22
+  columns:
+    - heading: "Study summary"
+      role: soft
+      bullets: ["**Check point**", "Against the textbook chapter"]
+    - heading: "Practice dose calculation"
+      role: neutral
+      bullets: ["Default: approval gate", "Reaches no one: **check point**", "Recompute against the key"]
+    - heading: "Anything about a real patient"
+      role: risk
+      bullets: ["**Keep with a person**", "Placement rules and his own rule"]
+  takeaway: "Same student, three uses, three different checks"
+  notes:
+    say: |
+      Here is the map in use. Marcus is a nursing student who never enters patient information into any AI tool,
+      and says so. Three of his uses. A study summary of a textbook chapter: a check point; he checks it against the
+      chapter. A practice dose calculation: health's default is an approval gate, because calculations usually
+      reach a patient. His practice set reaches no one, so it is a check point: he recomputes each answer by
+      formula against the course's answer key and uses no dose he has not checked. Anything about a real patient:
+      keep with a person, by placement rules and his own rule. Same student, three uses, three
+      different checks. That is the map's lesson in one row.
+    background: |
+      §19.1 Worked Example "Marcus Reads His Row" (constructed). The faded example that follows (Lucía: drafting a
+      customer reply is a check point; the association budget the board votes on is an approval gate, because the
+      Business guide's override applies when an analysis moves money; choosing scholarship recipients is keep with
+      a person) is good homework; answers in Appendix E. Marcus's examples never contain patient information.
+    activity: "Ask: 'Which of your uses changes cell when it starts to reach someone else?'"
+    book: "§19.1 Worked Example; @fig-19-4; Faded Example 'Lucía's Row'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · Review Questions A1 · §19.1"
+  title: "what the map shows"
+  question: "What does the Discipline × Use Map show about oversight?"
+  options:
+    - "That each field needs its own method, so skills from one field rarely carry over."
+    - "That the use matters more than the field, unless a field’s rules raise the floor."
+    - "That fields with more AI use need fewer checks, as their students practice more."
+    - "That most student uses of AI need an approval gate before anyone uses the output."
+  answer: b
+  instruction: "Answer on your own (30 seconds), then vote"
+  explanation: "(a) the method transfers; (c) practice does not remove checks; (d) defaults run from log review up"
+  notes:
+    say: |
+      Quick check, ungraded, in the format of Part A of the final exam. Read all four options before you choose.
+      Two of them come from common misreadings of the map: that each field is its own world, and that more
+      practice means fewer checks. A third goes too far in the careful direction. Give them thirty seconds, then
+      take a vote. Before revealing, ask one student who chose (a) to defend it: it is the overcorrection of the
+      chapter's first misconception, and hearing it aloud helps the class see why the Work Loop still transfers.
+    background: |
+      Review Questions A1 (O1 · LO6 · Understand). Key (Appendix E): (b). (a) M1: the method transfers; (c) M5:
+      practice does not remove the need for checks; (d) over-gating: the map's defaults run from log review to
+      keep with a person.
+    activity: "30 s individual, then vote; then the answer slide."
+    book: "§19.1; Review Questions A1; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (b): the use matters more than the field, unless a field's rules raise the floor. Option (a)
+      sounds sophisticated but is wrong: the Work Loop, gates and test inputs carry over between fields; what
+      changes is what counts as correct, which data is protected, which rules apply and who bears an error. Option
+      (c) confuses practice with safety: experienced users still need checks. Option (d) over-gates: the map's
+      defaults run from log review, through check points and approval gates, to keep with a person. Ask: which
+      cell on your row would you argue with, and what rule or evidence would you cite?
+    background: |
+      Appendix E (Chapter 19, Review A1). Discussion Question 5 asks students which cell they would change for their
+      own field, with the rule or evidence that supports the change; the lab session's share-and-critique step uses it.
+    activity: "Reveal; take one 'I'd change my cell' comment."
+    book: "§19.1; Appendix E."
+
+# ----------------------------------------------------------------------- 19.2
+- layout: section
+  minutes: 0.5
+  number: "19.2"
+  tag: "Core"
+  title: "What counts as correct, and who can say so"
+  idea: "Name the source or person your field accepts before you build."
+  meta: "Book §19.2 · verification authority"
+  notes:
+    say: |
+      Second idea. In Chapter 8 you learned to check a claim outside the tool. This section asks a sharper
+      question: outside the tool, where? Every field has its own evidence for "correct", and its own people who can
+      say so. Once you name them, you know which checks you can do yourself and which need a qualified person.
+      This also answers the puzzle from the opening case, at least in this book's reading. Keep your one-line guess
+      about Ithaca in front of you; in a few minutes you can compare it with the book's answer, and decide whether
+      your guess was about the model, about the experts, or about the way they worked together.
+    background: |
+      §19.2 is Core. It reuses Chapter 8's terms (independent check, primary source) verbatim; Chapter 8 owns
+      verification methods.
+    misconceptions:
+      - m: "M2 'If the output looks right to me, it is right for my field.'"
+        fix: "Ask who in their field could say otherwise. Do not create 'students cannot verify anything': recalculations and primary records are checks they can do."
+    activity: "Transition slide."
+    book: "§19.2 What Counts as Correct, and Who Can Say So."
+
+- layout: compare
+  minutes: 2.5
+  kicker: "§19.2 · verification authority"
+  title: "Every field has its own evidence for “correct”"
+  size: 22
+  columns:
+    - heading: "History"
+      role: neutral
+      bullets: ["The archive record"]
+    - heading: "Chemistry"
+      role: neutral
+      bullets: ["Raw data", "A repeat of the experiment"]
+    - heading: "Engineering"
+      role: neutral
+      bullets: ["The standard", "A licensed engineer"]
+    - heading: "Nursing"
+      role: neutral
+      bullets: ["The drug reference", "The licensed clinician"]
+  takeaway: "Sort your checks: ones you can do, ones that need a qualified person"
+  notes:
+    say: |
+      A historian goes to the archive record, a chemist to the raw data and a repeat of the experiment, an
+      engineer to the standard, a nurse to the drug reference and the licensed clinician. The book calls this
+      verification authority: the source or person a field accepts as able to confirm a result, such as a primary
+      record, a standard, a replication, a licensed professional or a trained specialist. Chapter 8's terms still
+      apply. An independent check is evidence that no AI tool produced; a primary source is the original record a
+      claim comes from. What changes by field is which source counts, and whether you can do the check yourself.
+      So: name the authority before you build, then sort your checks into those you can do, like a recalculation
+      or a primary record, and those that need a qualified person.
+    background: |
+      §19.2 definitions; @fig-19-6 shows the Verification Funnel with the expert stage highlighted ("in your
+      field, who can confirm it?"). Engineering: a licensed professional engineer directs the work and seals it,
+      stamping it as their own professional responsibility (19.F6). Book-wide rule: for a number, the raw data are
+      the primary source and your recalculation is your independent check.
+    questions:
+      - q: "Can I ask the AI tool to verify its own answer?"
+        a: "No: a tool's own check is never the authority (Chapter 8; Appendix E, Review A3 distractor a)."
+    activity: "Ask three students from different majors: 'Who can say “correct” in your field?'"
+    book: "§19.2, @fig-19-6; Chapter 8."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§19.2 · back to Ithaca"
+  title: "Why historians stay in charge"
+  size: 24
+  columns:
+    - heading: "What the paper reports"
+      role: neutral
+      bullets: ["Suggestions, ranked, never certain", "First suggestion still wrong in about 38%"]
+    - heading: "This book’s reading"
+      role: soft
+      dashed: true
+      bullets: ["Trained people are epigraphy’s authority", "Judges choose among ranked options"]
+  takeaway: "Inferred: the paper does not test why the pair did best"
+  notes:
+    say: |
+      Back to the puzzle. The paper presents Ithaca's restorations as plausible suggestions, never as certain. And
+      its first suggestion was still wrong in about 38 percent of restorations. Someone has to decide which
+      suggestions to keep. This book's reading, marked with a dashed outline because it is an inference: historians
+      stay in charge because in epigraphy trained people are the verification authority, and the pair did best
+      because people who could judge a suggestion chose among ranked ones. The paper itself does not test that
+      explanation. Ask: what does this mean for your own workflow? It needs a named check, not just a strong model.
+    background: |
+      §19.2 "Back to Ithaca" and the Chapter Summary. Tiers: the 38% (100 minus 61.8) and "plausible suggestions"
+      are confirmed in the paper; the explanation is inferred (the book's reading), and the dashed outline marks
+      that. Check Yourself 19.2 (2) asks for exactly this reading. The Case Study (A-Lab, C26) shows a similar
+      pattern in chemistry, later today.
+    activity: "Ask two students to compare their opening-case guess with this reading."
+    book: "§19.2 'Back to Ithaca'; Chapter Summary 'Return to the Opening Case'; Check Yourself 19.2."
+
+- layout: compare
+  minutes: 1
+  kicker: "§19.2 · worked example · history, constructed"
+  title: "Hana’s caption: 1921 or 1922?"
+  size: 24
+  columns:
+    - heading: "Authority"
+      role: neutral
+      text: "The scanned page and the archive’s catalog record"
+    - heading: "Check"
+      role: neutral
+      text: "The page, dated 1922, reports the line opening that week"
+    - heading: "Verdict"
+      role: risk
+      text: "Contradicted: caption fixed from the page; archive cited"
+  takeaway: "Cite the record, not the summary"
+  notes:
+    say: |
+      A small example from history. Hana, a media arts and design student with a history minor, is making a history
+      issue of their zine. They ask a chat tool to summarize a scanned 1920s newspaper page. The summary dates a
+      streetcar line's opening to 1921. Who can say whether that is correct? The page itself and the archive's
+      catalog record. Hana checks: the page is dated 1922 and reports the line opening that week. Verdict on
+      Chapter 8's scale: contradicted. Hana corrects the caption from the page and cites the archive, not the
+      summary. Note that this is a check Hana could do alone; no specialist was needed, because the primary record
+      was in hand.
+    background: |
+      §19.2 Worked Example "A Date in a Caption" (constructed; Hana uses they/them). Verdict scale (Chapter 8):
+      supported, partly supported, unsupported, contradicted, cannot verify. Faded example (Sam: summary says 5,300
+      rpm; datasheet revision dated March 2026 lists 5,000 rpm): verdict contradicted; correct from the datasheet
+      (Appendix E).
+    activity: "Ask: 'Which column would change if the page were missing?' (Check: cannot verify.)"
+    book: "§19.2 Worked Example; Faded Example 'A Rated Speed'."
+
+- layout: quiz
+  minutes: 0.75
+  kicker: "Quick check · Review Questions A3 · §19.2"
+  title: "verification authority"
+  question: "What is a field’s verification authority?"
+  options:
+    - "The AI tool that the field’s professionals most often use to check results."
+    - "The test you run yourself on three inputs before you show anyone a result."
+    - "A careful general reader, who can usually confirm a result in most fields."
+    - "The source or person the field accepts as able to confirm a result."
+  answer: d
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) a tool’s check is never the authority; (b) your test is evidence, not the authority; (c) some checks need a qualified person"
+  notes:
+    say: |
+      Definitions are worth points in Part A of the final, so here is one. Four options; one is the book's
+      definition, and each of the others is a tempting shortcut. Ask yourself for each wrong option: is it a source
+      the field accepts, or something that only feels like checking? Give them twenty seconds, then vote. If
+      anyone picks (b), say that their own three tests are good evidence, and that we come back to why they are
+      not enough when we reach the peer test in section 19.6.
+    background: |
+      Review Questions A3 (O2 · LO6 · Understand). Key (Appendix E): (d). (a) M2: a tool's own check is never the
+      authority (Chapter 8); (b) M5: your own test is evidence, not the field's authority; (c) M2: some checks need
+      a qualified person.
+    activity: "20 s, vote, then the answer slide."
+    book: "§19.2; Review Questions A3; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (d): the source or person the field accepts as able to confirm a result. Option (a) is never
+      right: a tool's own check is not the authority, in any field. Option (b) describes your own test: useful
+      evidence, but not what your field accepts as confirmation. Option (c) assumes a careful general reader can
+      confirm anything; in nursing, engineering or epigraphy, some checks need a trained or licensed person. Now
+      write your own field's authority in one line: you will need it on the pre-lab sheet.
+    background: |
+      Appendix E (Chapter 19, Review A3). The pre-lab asks for "verification authority" as the first field answer
+      (Lab 19.1, before the lab).
+    activity: "Students write their field's authority on their pre-lab sheet."
+    book: "§19.2; Appendix E; Lab 19.1 pre-lab."
+
+# ----------------------------------------------------------------------- 19.3
+- layout: section
+  minutes: 0.5
+  number: "19.3"
+  tag: "Core"
+  title: "The data your field protects"
+  idea: "Before you test a tool, ask whether you may give it the input."
+  meta: "Book §19.3 · the data gate, then your field’s rules"
+  notes:
+    say: |
+      Third idea. Chapter 12 taught you the data gate: a check, made before any quality test, of whether a tool's
+      data terms fit the class of the input. This section adds one sentence that matters a great deal in fields
+      like health, education and research: the table you learned is a starting floor. Your field can still say no
+      to an input the table allows. Health records, education records, research participants' answers and
+      clients' files all carry their own rules.
+    background: |
+      §19.3 is Core. It reuses Chapter 12's data-class table, shown here in the generic three-level form of the
+      independence rules (D27); Chapter 15 owns data handling and Chapter 18 the legal layer.
+    misconceptions:
+      - m: "M3 'If I remove the names, any data from my field is safe to use.'"
+        fix: "Name it before the next slide. Do not create 'never use real data': public data, your own work and constructed cases pass."
+    activity: "Transition slide."
+    book: "§19.3 The Data Your Field Protects."
+
+- layout: compare
+  minutes: 2.5
+  kicker: "§19.3 · the data gate (Chapter 12’s table)"
+  title: "The table is the floor; your field can still say no"
+  size: 22
+  columns:
+    - heading: "A starting floor"
+      role: soft
+      bullets: ["Public: yes", "Own work, de-identified: yes, if terms accepted", "Personal or confidential: approved tools only", "Legally protected (FERPA, HIPAA): no"]
+    - heading: "Field rules can still say no"
+      role: risk
+      bullets: ["Placement policy", "IRB protocol, consent form", "Employer policy"]
+  takeaway: "De-identification is a start, not a guarantee of anonymity"
+  notes:
+    say: |
+      On the left, Chapter 12's data-class table in short. Public information may go into any tool. Your own
+      non-sensitive work, material your course provides and de-identified data may go into a consumer tool if you
+      accept its training and retention terms. Personal data about other people and internal or confidential data
+      only in a tool your institution or employer provides or approves, and only if the part needs it. Legally
+      protected records, such as FERPA and HIPAA records, no. Your institution's or employer's own classification
+      decides; this table is a starting floor. On the right, the sentence this chapter adds: a field rule can still
+      say no. A placement policy, an institutional review board protocol, a consent form, HIPAA's own de-identification
+      standard or an employer's policy. And remember Chapter 15: removing names is a start, not a guarantee.
+    background: |
+      §19.3. FERPA = Family Educational Rights and Privacy Act (education records); HIPAA = Health Insurance
+      Portability and Accountability Act (protected health information). IRB = institutional review board, a
+      committee that approves and oversees research with people; informed consent = a participant's agreement after
+      being told what happens to their data. Data minimization: send only what a part needs; a constructed case is an
+      invented example built for practice. The slide uses the generic three-level classification (public ·
+      internal or confidential · restricted or legally protected) of the independence rules (D27); if unsure, ask
+      your institution's IT office. Note: the chapter text still shows an institution-specific version of the table,
+      pending the D27 assembly pass.
+    questions:
+      - q: "Is a tool my institution provides always allowed for course data?"
+        a: "For your own work and course material, yes. Personal data about others only if the part needs it and the rules allow it; legally protected records, no (§19.3 table). Your institution's own classification decides."
+    misconceptions:
+      - m: "M3 'If I remove the names, any data from my field is safe to use.'"
+        fix: "Point at the right column; then give one re-identification example from Chapter 15 (a rare condition plus age, ward and date)."
+    activity: "Ask: 'Name one rule in your field that is stricter than this table.'"
+    book: "§19.3 table and 'The table is the course floor'; Chapter 12; Chapter 15."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§19.3 · worked example · nursing, constructed"
+  title: "Marcus’s inputs: one passes, one is blocked"
+  size: 24
+  columns:
+    - heading: "Textbook drug tables, own notes"
+      role: verified
+      text: "Course material and his own work: **passes**. An approved tool."
+    - heading: "A placement detail, no names"
+      role: risk
+      text: "Floor allows de-identified data; placement rule says no: **blocked**."
+  takeaway: "He builds practice cases from the textbook instead"
+  notes:
+    say: |
+      Marcus applies the gate to two inputs. His textbook's drug tables and his own notes are course material and
+      his own work. They pass the floor, and he uses a tool his institution provides. A detail from his placement,
+      even without names, is different. The floor would allow de-identified data, but his placement's rule says no
+      information about patients goes into any outside tool. Blocked. So he builds practice cases from the textbook
+      instead. Notice what the right card shows: the stricter rule wins, and it is not the classroom rule but the
+      placement's. That is the pattern you will look for in your own field.
+    background: |
+      §19.3 Worked Example "Marcus's Inputs" (constructed); @fig-19-7 shows his data-flow map (Chapter 15's
+      signature) with only textbook tables and his own notes entering; placement data never enters. Faded example
+      (Elif's 60 survey answers; some name classmates; the consent form keeps responses with the course team): no
+      outside tool without the course team's approval; remove names and use an approved tool, or sort by hand
+      (Appendix E).
+    activity: "Ask: 'Which rule blocked the second input?' (The placement's.)"
+    book: "§19.3 Worked Example, @fig-19-7; Faded Example 'Survey Answers'."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · Review Questions A5 · §19.3"
+  title: "a start, not a guarantee"
+  question: "Why is de-identification “a start, not a guarantee”? Give one example from a field."
+  instruction: "One or two sentences, then compare with a neighbor"
+  model_answer:
+    - "Removing names leaves other details that can identify a person **when combined** (Chapter 15)."
+    - "e.g., a rare condition, age, ward and date from a placement; or a small class’s answers that reveal who wrote them."
+  notes:
+    say: |
+      A short-answer check. Write one or two sentences: why is removing names only a start, and what is one example
+      from a field where it would not be enough? Think of Chapter 15, where details that are harmless alone become
+      identifying together. Give them one minute, then compare with a neighbor. Walk around and look for answers
+      that stop at "people could guess"; the stronger answer names the mechanism, details that identify when
+      combined, and gives a concrete field example.
+    background: |
+      Review Questions A5 (O2 · LO5 · Understand; short answer). Model answer from Appendix E. The Chapter 15
+      term is quasi-identifiers; the Final Bridge (Chapter 21, FB7) uses ZIP code, birth date and major as its
+      example.
+    activity: "1 min write, compare, then the answer slide."
+    book: "§19.3; Review Questions A5; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      A model answer: removing names leaves other details that can identify a person when they are combined. In a
+      placement, a patient's rare condition together with their age, the ward and the date can point to one person
+      without a name. In a small class, the answers themselves can reveal who wrote them. So de-identification is a
+      start: combine it with data minimization, sending only what a part needs, or use a constructed case. And then
+      check whether a field rule blocks the input anyway, as Marcus's placement rule did.
+    background: |
+      Appendix E (Chapter 19, Review A5). Check Yourself 19.3 (1): an input can pass Chapter 12's table and still be
+      blocked, because the table is a starting floor and a field rule can still say no.
+    activity: "Reveal; one student reads their example."
+    book: "§19.3; Appendix E."
+
+# ----------------------------------------------------------------------- 19.4
+- layout: section
+  minutes: 0.5
+  number: "19.4"
+  tag: "Core"
+  title: "The rules your field writes down"
+  idea: "Read the rules nearest you first; most say who checks, who discloses and what data may go in."
+  meta: "Book §19.4 · rules nearest first"
+  notes:
+    say: |
+      Fourth idea. Students often think that if there is no AI law for their field, there are no AI rules. In fact
+      most rules that touch your work are written much closer to you: in your course's rules, your program, your
+      placement or employer, your profession's code. This section gives you an order for reading them and a short
+      list of dated examples. You will notice that very few of these rules ban AI outright. Most of them say three
+      practical things: who checks the work, who discloses that AI was used, and what data may go into a tool. Those
+      three are exactly what you will build into your prototype later today and in the lab session.
+    background: |
+      §19.4 is Core. Chapter 18 owns the legal analysis and its three layers (law; what you agree to; your
+      organization's policy); this section applies them nearest first for a student. Not legal advice.
+    misconceptions:
+      - m: "M4 'If there is no AI law for my field, there are no rules for AI in it.'"
+        fix: "List the five layers closer than law. Do not create 'AI is banned in regulated fields': most rules say who checks, who discloses and what data goes in."
+    activity: "Transition slide."
+    book: "§19.4 The Rules Your Field Writes Down."
+
+- layout: concept
+  minutes: 2
+  kicker: "§19.4 · rules nearest first (book figure, redrawn)"
+  title: "Read the rules nearest you first"
+  size: 24
+  bullets:
+    - "**1** Your course and instructor"
+    - "**2** Your program or department"
+    - "**3** A placement site or employer"
+    - "**4** Professional code, licensing board"
+    - "**5** Journals and funders"
+    - "**6** Law, federal and state"
+  notes:
+    say: |
+      Read them in this order. One, your course's written rules and your instructor. Two, your program or department. Three, a
+      placement site or employer. Four, your profession's code and licensing board: the state body that grants
+      licensure, permission to practice, and sets each profession's scope of practice, what its members may do.
+      Five, journals and funders, when you publish or apply. Six, law, federal and state. Why start nearest? Those
+      rules are the most specific to your work, you can ask the people who wrote them, and they are often the
+      strictest. Follow the strictest rule that applies, and ask the rule's owner when one is unclear. If you will
+      study or work outside the United States, your home country's rules fit into the same layers.
+    background: |
+      §19.4 and @fig-19-8 (six stacked rule sources). Check Yourself 19.4 (1) answer (Appendix E): course rules and
+      instructor, program, placement or employer, professional code and licensing board, journals and funders, law;
+      start nearest because those rules are the most specific, you can ask their writers, and they are often the
+      strictest. Chapter 18's working rule: follow the strictest rule that applies; when unclear, ask its owner in
+      writing and keep the answer.
+    questions:
+      - q: "Doesn't federal law override everything?"
+        a: "Law binds you, but the nearest rules are usually more specific and often stricter. You follow the strictest rule that applies; reading nearest first is about finding it fast (Review A6 asks this; its key is instructor-only)."
+    activity: "Students write their nearest rule with its source and date (pre-lab field answer)."
+    book: "§19.4, @fig-19-8; Check Yourself 19.4; Chapter 18 §18.1."
+
+- layout: compare
+  minutes: 2
+  kicker: "§19.4 · dated examples, as of October 2026"
+  title: "Field rules say who checks, who discloses, what goes in"
+  size: 20
+  columns:
+    - heading: "NIH (2023)"
+      role: neutral
+      text: "Reviewers: no generative AI on critiques"
+    - heading: "ICMJE (2026)"
+      role: neutral
+      text: "AI is not an author; disclose its use"
+    - heading: "Texas TRAIGA (2026)"
+      role: neutral
+      text: "Tell patients when AI is used in care"
+    - heading: "TBPELS (2024)"
+      role: neutral
+      text: "Engineers oversee; they answer for what they seal"
+  takeaway: "These are what a prototype must build in"
+  notes:
+    say: |
+      Four dated examples, as of October 2026. The U.S. National Institutes of Health bars its peer reviewers from
+      using generative AI to analyze or write critiques of grant applications. The International Committee of
+      Medical Journal Editors says AI tools cannot be authors and their use must be disclosed. In Texas, a
+      health-care provider must tell a patient when AI is used in their care, under TRAIGA, from January 1, 2026.
+      And the Texas Board of Professional Engineers and Land Surveyors advises licensees not to rely on AI without
+      their own oversight and review, and says they remain responsible for what they seal. Read them again: who
+      checks, who discloses, what data may go in. Those three are exactly what your prototype must build in.
+    background: |
+      Sources (§19.4): NIH (2023), Notice NOT-OD-23-149; ICMJE (2026), Recommendations, Section V; TRAIGA, H.B.
+      149 (Tex. 2025), effective January 1, 2026 (Chapter 18); TBPELS (2024), Policy Advisory Opinion No. 71. All
+      dated as of October 2026 and on the refresh list; check the issuing body's page before relying on one. More
+      per field in the guides: S.B. 1188 (Texas, effective September 1, 2025) for practitioners using AI in
+      diagnosis; the AICPA confidentiality rule; 45 CFR 46 for research with people; COPPA for children under 13.
+    questions:
+      - q: "Do I need to memorize these rules for the exam?"
+        a: "No. The guides are reference material; exam items supply any field facts they need (§19 Field Guides). Know the order and the three things rules say."
+    misconceptions:
+      - m: "M4 'If there is no AI law for my field, there are no rules for AI in it.'"
+        fix: "Only one of the four is a statute; the others come from a funder, an editors' committee and a licensing board."
+    activity: "Ask: 'Which of the three things does each card say?'"
+    book: "§19.4 dated examples; Check Yourself 19.4 (2); field guides 19.F2, 19.F5, 19.F6."
+
+# ----------------------------------------------------------------------- 19.5
+- layout: section
+  minutes: 0.5
+  number: "19.5"
+  tag: "Core"
+  title: "From blueprint to working prototype"
+  idea: "Build the smallest version that works, and test it on three real inputs."
+  meta: "Book §19.5 · today’s live demonstration"
+  notes:
+    say: |
+      Now we build. You know what your field needs: an authority, a data gate, the rules nearest you, a cell on the
+      map. This section turns those answers into a prototype, the smallest working version of a workflow. You will
+      see one run end to end in a few minutes. It is the same workflow the book writes out in section 19.5, so you
+      can reread every step tonight. A prototype does not need programming, and it does not need to be impressive.
+      It needs to run, to be checked against your field's authority, and to show you where it fails, so that your
+      card can say what it is not for.
+    background: |
+      §19.5 is Core; its worked example mirrors the concept session's demonstration (chapter). Which workflow to demonstrate
+      is an author-only item in the blueprint; this deck uses the chapter's Marcus pharmacology chain so the demo
+      and the book match.
+    misconceptions:
+      - m: "M5 'If it worked on my test, it works; my own tests are enough.'"
+        fix: "Preview: three inputs, then a peer. Do not create 'testing is pointless'."
+    activity: "Transition slide; open the tool for the demo."
+    book: "§19.5 From Blueprint to Working Prototype."
+
+- layout: concept
+  minutes: 2
+  kicker: "§19.5 · a build needs no programming"
+  title: "A prototype is the smallest version someone can run"
+  size: 24
+  bullets:
+    - "**Prompt template:** fixed parts, placeholders"
+    - "**Prompt chain:** steps in order, checked between"
+    - "**Configured tool:** standing instructions, chosen files"
+    - "Nothing sends, publishes, pays or deletes"
+  flow:
+    - {label: "Typical input", kind: step}
+    - {label: "Different input", kind: step}
+    - {label: "Edge input", kind: step, role: risk}
+  notes:
+    say: |
+      A prototype is the smallest working version of a workflow, built so that someone can run it, check it and
+      change it; it is not a finished product. A prompt template is a prompt for a recurring task with fixed parts
+      and placeholders. A prompt chain is a fixed sequence of prompts you run one after another, checking the
+      result between steps. A configured tool has standing instructions you write once and files you choose. A
+      spreadsheet with an AI feature, or an automated workflow in a sandbox, a test copy that reaches no real data
+      or people, also counts. Then test it on three real inputs: typical, different and edge. Take the edge case
+      from where your field knows errors happen.
+    background: |
+      §19.5 definitions (Chapter 6 terms defined again in Core, as the book-wide rule requires). Test inputs: a
+      small set of different inputs a prompt is tried on (typical, different, edge). "Real" means actual tasks
+      from your field (your own work, course material, public or constructed data), never personal or confidential
+      data. The build must answer the field guide: inputs pass the data gate and field rules; every output has a
+      named check; at least one people point (approval gate, check point or stop point); nothing sends, publishes,
+      pays or deletes. Decide fit part by part with Chapter 12's fit matrix; "no AI" is a valid cell (@fig-19-10).
+    questions:
+      - q: "What makes an edge input good?"
+        a: "It comes from where your field knows errors happen: look-alike names in health, units in engineering, sarcasm or negation in survey text, missing values in lab data (Lab 19.1, expected observations)."
+    activity: "Ask students to name their field's typical edge case in three words."
+    book: "§19.5 definitions and 'Test it on three real inputs'; @fig-19-10."
+
+# About 70 words on the last reveal: the five steps of the chain are the example (deliberate exception).
+- layout: worked
+  minutes: 2
+  kicker: "§19.5 · worked example · nursing, constructed · mirrors the demo"
+  title: "Marcus’s pharmacology review, written out"
+  context: "Three-step chain on textbook drug tables"
+  steps:
+    - {label: "Step 1 · tool", text: "10 questions, only from the table"}
+    - {label: "Step 2 · no AI", text: "Answer them from memory"}
+    - {label: "Step 3 · tool", text: "Mark each answer: table row, reason"}
+    - {label: "Check point", text: "Marcus checks every mark against the table"}
+    - {label: "Edge run", text: "Look-alike names swapped in question 7: caught"}
+  reveal: [3, 5]
+  result: "One part stays with no AI; a person checks every mark"
+  notes_reveal:
+    - minutes: 1
+      say: |
+        Here is the workflow you are about to see live, written out. Marcus wants a regular pharmacology review that
+        uses no patient information. Step 1 is a template: using only the drug table below, write ten numbered
+        practice questions, each asking for one drug's class, its main use or one listed side effect, and nothing
+        the table does not state. Step 2 has no AI at all: Marcus answers the ten questions from memory, because
+        recall is the point of studying. Step 3 is a second template: mark each answer right or wrong using only
+        the table, and for each mark give the table row used and one plain-language reason. Ask: where would you
+        put the person?
+      background: |
+        §19.5 Worked Example "Marcus's Pharmacology Review, Written Out" (constructed; a tool his institution provides). The
+        chapter prints the full prompt text with placeholders {TABLE}, {QUESTIONS} and {MY ANSWERS}. Fit matrix
+        (@fig-19-10): questions, institution's tool chosen; answers, no AI chosen (recall is the point); marks,
+        institution's tool chosen, he checks every mark; placement material would be blocked in every AI column.
+      activity: "Take two answers to 'where would you put the person?' before the next reveal."
+      book: "§19.5 Worked Example; @fig-19-10."
+    - minutes: 1
+      say: |
+        Here is the person. After step 3, Marcus compares every mark with the table himself: that is his check
+        point. Now the three inputs. Typical: a table for one drug class. Different: a table that mixes U.S. and
+        metric units. Edge: a table with two drugs whose names look alike, because look-alike names are where
+        nursing knows errors happen. On the edge run, question 7 swaps the two names. The marks still look tidy;
+        nothing on the surface warns you. His check point catches it. Notice the shape of the design: one part
+        stays with no AI, and a person checks every mark the tool produces.
+      background: |
+        §19.5 Worked Example; A13 record in §19.8: typical (cardiac drugs) 10/10 marks right; different (mixed
+        units) 10/10; edge (look-alike names) question 7 swapped the names; check: the table; verdict contradicted.
+        Spaced Review 5 (odd; Appendix E): "always check the drug name" in the template is a soft gate; a hard version
+        is a step the workflow enforces, e.g., a "matches the table" column that must be filled before the chain
+        continues.
+      misconceptions:
+        - m: "M5 'If it worked on my test, it works.'"
+          fix: "Two clean runs, then the edge run fails. Only the third input showed the error."
+      activity: "Ask: 'Which input found the error?' (The edge.)"
+      book: "§19.5 Worked Example; §19.8 Marcus's A13; Spaced Review 5."
+  notes:
+    book: "§19.5 Worked Example 'Marcus's Pharmacology Review, Written Out'."
+
+- layout: lab
+  minutes: 18
+  kicker: "Live demonstration · an end-to-end workflow"
+  title: "Demo: one workflow, three inputs, one check point"
+  goal: "Watch a prototype run end to end; predict where it fails"
+  steps:
+    - {text: "Field answers: authority, data gate, rule, map cell", min: 3}
+    - {text: "Run the typical input; check every mark", min: 5}
+    - {text: "Run the different input (mixed units)", min: 3}
+    - {text: "Predict, run the edge input, then check", min: 5}
+    - {text: "Draft the card’s “not for” line together", min: 2}
+  side:
+    - {heading: "Your job", text: "Write one prediction per run before I check it"}
+    - {heading: "Record", text: "Tool kind, model name if shown, date"}
+    - {heading: "Data", role: risk, text: "Textbook tables only; no patient data"}
+  notes:
+    say: |
+      Now watch it run. I start with the field answers, because the build follows them: the authority is the
+      textbook's drug table; the input is course material, so it passes the data gate in a tool the institution
+      provides; the rule is the course's, declare AI use; the map cell is a check point, because nothing reaches a
+      patient. Then three runs. Before each, write one prediction: will the marks be right? I check every mark
+      against the table aloud. On the edge input, watch the drug names. At the end we draft the first line of the
+      card together, the "not for" line, because that is what you write first. I record the tool kind, the model
+      name if the tool shows one, and today's date.
+    background: |
+      The concept session's demonstration is an end-to-end example workflow. Author-only items: which workflow to
+      show (this deck uses the chapter's); a dated recording of the demo for Compass is in the instructor package.
+      If the live run gives clean results on the edge input, say so and use it: the chapter's run is one dated
+      example, and a clean run is still a result to record; show the worked example's failure from the book. If the
+      tool is down, step through the previous slide. Card from §19.7 to aim for: not for patient care; real dose
+      calculations; anyone's grades. Use only a tool your institution provides or approves (for example, an enterprise
+      chat assistant with data protection).
+    questions:
+      - q: "Why not just ask the tool to check its own marks?"
+        a: "Its check is not the authority (Review A3). The table is, and Marcus compares every mark with it himself."
+    misconceptions:
+      - m: "M5 'My own tests are enough.'"
+        fix: "After the demo, ask who outside nursing would understand the reasons; that is the peer test (§19.6)."
+    activity: |
+      3 min field answers · 5 min typical run · 3 min different run · 5 min edge (collect predictions first) · 2 min
+      "not for" line. Students write predictions on the back of their pre-lab sheet.
+    book: "§19.5 Worked Example; §19.7 Marcus's Card."
+
+- layout: compare
+  minutes: 1.5
+  kicker: "§19.5 · A11 and A13 (book figure, redrawn)"
+  title: "A13 is graded on what A11 could not show"
+  size: 24
+  columns:
+    - heading: "A11 · Chapter 14"
+      role: soft
+      bullets: ["A design tested on paper", "Any recurring task", "Oversight is graded"]
+    - heading: "A13 · Chapter 19"
+      role: human
+      bullets: ["A working prototype, your field", "Three real inputs, a peer test", "Graded on new work only"]
+  takeaway: "Reused parts are marked “from A11”: points only if revised and shown working"
+  notes:
+    say: |
+      Many of you will want to start A13 from your A11 design, and you may. But be clear about grading. A11 was a
+      design tested on paper, for any recurring task, and its oversight was graded. A13 is a working prototype in
+      your own discipline, run on three real inputs with a peer test. It is graded only on the new build, the runs
+      and the peer test, with the checks, safeguards, card and defense that belong to them. If you reuse a part of
+      A11, mark it "from A11". It earns points only if you revised it for the build and a run or the peer test
+      shows it working on the build. No double credit.
+    background: |
+      §19.5 "A11 and A13", @fig-19-9 (two lanes: A11 step map, action table, paper dry run, reused with no credit
+      unless revised; A13 build, three runs, safeguards, peer test, card, new). Book-wide assignment boundary (chapter
+      brief): A11 is a design tested on paper; A13 is a working prototype graded only on its new build, runs and
+      peer test.
+    activity: "Ask: 'Which part of your A11 will you reuse, and what will make it count?'"
+    book: "§19.5 'A11 and A13', @fig-19-9; A13 brief."
+
+- layout: quiz
+  minutes: 0.75
+  kicker: "Quick check · Review Questions A7 · §19.5"
+  title: "reusing A11"
+  question: "A student extends an A11 blueprint into A13. How are the reused parts graded?"
+  options:
+    - "In full again, because they are part of the A13 record the student submits."
+    - "At half value, because the A11 rubric already gave them points one time."
+    - "Not at all, so the student has to take them out of the A13 record first."
+    - "Only if revised for the build; otherwise they are marked “from A11.”"
+  answer: d
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) and (b) give double credit; (c) reused parts may stay in the record, marked"
+  notes:
+    say: |
+      A practical check: this one affects how your A13 is scored. The previous slide gave the rule; now apply it.
+      Two options would give the same work credit twice. One option goes too far the other way. Read them all and
+      pick the one that matches the rule exactly. Give them twenty seconds, then vote. If many choose (c), point
+      out that removing the reused parts would make the record harder to follow; the book wants them visible and
+      marked. Students who are extending their A11 should leave this check knowing exactly what to label.
+    background: |
+      Review Questions A7 (O4 · LO6 · Understand). Key (Appendix E): (d). (a) and (b) double credit; (c) reused
+      parts may stay in the record, marked.
+    activity: "20 s, vote, then the answer slide."
+    book: "§19.5; Review Questions A7; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (d): reused parts count only if revised for the build; otherwise they are marked "from A11".
+      Options (a) and (b) would give the same work points twice, in full or at half value; the rubric does not do
+      that. Option (c) goes too far: you may keep reused parts in the A13 record, so a reader can follow the whole
+      design, as long as they are marked. A part earns points again only when you revised it for the build and a run
+      or the peer test shows it working on the build. Check Yourself 19.5, item 2, asks the same thing in your own
+      words.
+    background: |
+      Appendix E (Chapter 19, Review A7; Check Yourself 19.5 (2)): the design (step map, action table, people
+      points) was already graded in A11.
+    activity: "Reveal; one follow-up comment."
+    book: "§19.5; Appendix E."
+
+# ----------------------------------------------------------------------- 19.6
+- layout: section
+  minutes: 0.5
+  number: "19.6"
+  tag: "Core"
+  title: "Safeguards and the peer test"
+  idea: "Your own tests share your blind spots."
+  meta: "Book §19.6 · four safeguards; a peer from another field"
+  notes:
+    say: |
+      Sixth idea. You saw the edge input catch an error in the demo. But all three inputs were chosen by the person
+      who built the workflow, and they share that person's blind spots. This section adds two things: four
+      safeguards that travel with every prototype, and a peer test by someone from another field, who reads your
+      words as a non-specialist would. Think about the reasons in the demo's marks: would a classmate from history
+      or business have understood them? That question is what the peer test answers, and it is why in the lab session you
+      are paired with someone from a different guide.
+    background: |
+      §19.6 is Core. Chapter 14 owns gate theory; Chapter 16 owns fairness measurement (paired-input test, lead).
+    misconceptions:
+      - m: "M5 'If it worked on my test, it works; my own tests are enough.'"
+        fix: "Ask who chose the three inputs. Do not create 'testing is pointless': your tests are evidence; the peer adds what you cannot see."
+    activity: "Transition slide."
+    book: "§19.6 Safeguards and the Peer Test."
+
+- layout: compare
+  minutes: 2
+  kicker: "§19.6 · four safeguards (book figure, redrawn)"
+  title: "Four safeguards travel with every prototype"
+  size: 20
+  columns:
+    - heading: "Data gate"
+      role: neutral
+      text: "Starting floor, then field rules"
+    - heading: "People point"
+      role: human
+      text: "Hard gate where errors reach others"
+    - heading: "Field rule"
+      role: neutral
+      text: "One rule, with source and date"
+    - heading: "Fairness check"
+      role: soft
+      dashed: true
+      text: "If people are described: paired inputs; 3 runs = a lead"
+  takeaway: "Record tool kind, model if shown, date of every run"
+  notes:
+    say: |
+      Four safeguards. One: the data gate, passed: the starting floor, then your field's rules. Two: a people point,
+      and a hard gate, one the system enforces, where an error would fall on other people. Three: one field rule,
+      applied, with its source and date. Four: a fairness check when your workflow describes or affects people: a
+      small paired-input test, inputs identical except for one cue linked to a group, such as a name, run three
+      times each and counted by a rule you wrote before any run. With three runs each, any gap is a lead, worth a
+      bigger test, not a conclusion. If no group cue enters, say so in one line. The fourth card has a dashed
+      outline because it applies only when people are described.
+    background: |
+      §19.6 and @fig-19-11. Record the date, not only the model name: Bisbee et al. (2024) ran the same prompt on a
+      chat model in April, June and July 2023; the July results differed substantially from April's, partly because
+      the provider had updated the model under the same name in June. Chapter 16's two-part rule for a finding: at
+      least 10 runs per version and a gap at least the chance threshold (Appendix E, Review A11 and Spaced Review 3).
+      In this deck's cards, dashed means conditional, as the README allows.
+    questions:
+      - q: "My workflow summarizes lab data. Do I need a fairness check?"
+        a: "Only if it describes or affects people. If no group cue enters, write one line saying so (§19.6; A13 item 4)."
+    activity: "Ask: 'Does your workflow describe people? Which cue would you vary?'"
+    book: "§19.6 four safeguards, @fig-19-11; Bisbee et al. (2024)."
+
+- layout: compare
+  minutes: 2
+  kicker: "§19.6 · worked example · constructed"
+  title: "Hana tests Marcus’s workflow"
+  size: 22
+  columns:
+    - heading: "The test"
+      role: neutral
+      text: "Hana picks the cardiac table; runs it with only Marcus’s instructions"
+    - heading: "The finding"
+      role: risk
+      text: "Marks right, but the reasons were unclear: “ACEi, AE: cough”"
+    - heading: "The revision"
+      role: verified
+      text: "“Spell out every abbreviation”; rerun; Hana follows it"
+  takeaway: "With input __, at step __, I expected __ but saw __"
+  notes:
+    say: |
+      A peer test is a test in which a person from another field runs your prototype on an input of their choosing,
+      within its stated scope and with only your instructions, and records where it confused them or failed. Hana
+      picks one of the three drug tables Marcus brought. The marks are right, but Hana cannot tell why an answer was
+      marked wrong: the reasons use clinical abbreviations. Hana's record uses the sentence frame at the bottom:
+      with the cardiac drugs table, at step 3, I expected a reason I could follow but saw "ACEi, AE: cough"; I was
+      confused by the abbreviations. Marcus adds one instruction, "spell out every abbreviation", reruns Hana's
+      input, and Hana can follow it. Marcus could not have found this alone.
+    background: |
+      §19.6 Worked Example "Hana Tests Marcus's Workflow" (constructed); @fig-19-12 (six steps, finding thick).
+      Fairness check: his drug tables describe no people, so no group cue enters; he records that line. Peer-test
+      rules (Lab 19.1): run only within the stated scope; no personal data; record, do not fix. Bring two or three
+      inputs inside your scope for your peer to choose from.
+    activity: "Ask: 'What would someone from your neighbor's field stumble on in yours?'"
+    book: "§19.6 'Recording a peer test', Worked Example, @fig-19-12."
+
+- layout: quiz
+  minutes: 0.75
+  kicker: "Quick check · Review Questions A9 · §19.6"
+  title: "what a peer test is for"
+  question: "What is a peer test for?"
+  options:
+    - "To show the workflow works, since a second success makes it reliable."
+    - "To find what your own tests miss, through a reader from another field."
+    - "To let a classmate grade the prototype before the instructor reviews it."
+    - "To have an expert in the field certify the workflow before it is used."
+  answer: b
+  instruction: "Answer on your own, then vote"
+  explanation: "(a) one more success is one more sample; (c) the peer records, the instructor grades; (d) a peer is a non-specialist"
+  notes:
+    say: |
+      Last check on safeguards. Think about what Hana did and did not do in the example. Did she prove the workflow
+      works? Did she grade it? Was she an expert in nursing? Each wrong option misreads the peer's role in one of
+      those ways. Twenty seconds, then vote. If anyone picks (d), ask them what Hana's field was; the point of the
+      peer test is precisely that the tester is not an expert in yours. This is the last check before the card, so
+      keep your answer in mind: the peer test feeds the "tested on" line.
+    background: |
+      Review Questions A9 (O5 · LO6 · Understand). Key (Appendix E): (b). (a) M5: one more success is one more
+      sample; (c) the peer records, the instructor grades; (d) a peer is a non-specialist, not a certifier.
+    activity: "20 s, vote, then the answer slide."
+    book: "§19.6; Review Questions A9; Appendix E."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (b): to find what your own tests miss, through a reader from another field. Option (a) treats a
+      second success as proof; it is one more sample, nothing more. Option (c) confuses roles: your peer records what
+      happened, and the instructor grades. Option (d) is the opposite of the design: the peer is a non-specialist,
+      chosen because they read your words as an outsider would. In the lab session you will be both: a builder whose
+      prototype is tested, and a peer who tests someone else's.
+    background: |
+      Appendix E (Chapter 19, Review A9). Check Yourself 19.6 (1): they read your words as a non-specialist and do
+      not share your blind spots about what the outputs should mean.
+    activity: "Reveal; one follow-up comment."
+    book: "§19.6; Appendix E."
+
+# ----------------------------------------------------------------------- 19.7
+- layout: section
+  minutes: 0.5
+  number: "19.7"
+  tag: "Core"
+  title: "Say what it is for: the workflow card"
+  idea: "A workflow is ready only for the uses its card states."
+  meta: "Book §19.7 · model cards (Mitchell et al., 2019)"
+  notes:
+    say: |
+      Last idea of the day, and the one most students skip: writing down what a workflow is for, and what it is
+      not for. The chapter's reading, Mitchell et al. (2019), proposed this for AI models. The book turns it into a five-line card for
+      your workflow. You start it in the lab session and finish it at home. Many students feel that listing limits makes
+      their work look weak. The case at the end of this section, a paper in Nature corrected over one word, shows
+      the opposite: a claim that outruns its checks is what damages trust.
+    background: |
+      §19.7 is Core. The model-card paper (Mitchell et al., 2019) is read in part: the abstract and Figure 1 (about 500
+      words, about 4 minutes, per the chapter's Further Reading); the rest is recommended. Chapter 17 (Deep) places model cards among other
+      transparency documents.
+    misconceptions:
+      - m: "M6 'Writing down limits makes the work look weak; a working prototype is finished.'"
+        fix: "Limits tell others where they can rely on it. Do not create 'a card makes a workflow safe': a card informs; gates protect."
+    activity: "Transition slide."
+    book: "§19.7 Say What It Is For: The Workflow Card."
+
+- layout: compare
+  minutes: 2
+  kicker: "§19.7 · from model card to workflow card (book figure, redrawn)"
+  title: "Write “not for” first"
+  size: 22
+  columns:
+    - heading: "Model card (2019)"
+      role: soft
+      bullets: ["Published with a model", "For, not for, evaluation, limits", "Results by group, not one number"]
+    - heading: "Workflow card (five fields)"
+      role: human
+      bullets: ["**Not for**", "For", "Tested on", "Results", "Limits and safeguards"]
+  takeaway: "A card informs; the gates and checks are what protect"
+  notes:
+    say: |
+      A model card is a short document published with a model that states what it is for and not for, how it was
+      evaluated, including results by group where relevant, and its known limits. The paper lists nine sections, from
+      model details to caveats, and its central argument is to report results for each group and condition, not one
+      overall number. The workflow card is this book's five-field version: not for, for, tested on, results, and
+      limits and safeguards. Write "not for" first, so that no one relies on the workflow where it was never tested.
+      A workflow is ready only for the uses its card states; outside them there is no evidence. And one caution: a
+      card only informs. The gates and checks are what protect.
+    background: |
+      §19.7 (after Mitchell et al., 2019). The paper's nine sections: model details, intended use, factors, metrics,
+      evaluation data, training data, quantitative analyses, ethical considerations, caveats and recommendations.
+      Mapping (@fig-19-13): intended use (out-of-scope) → not for; intended use → for; model details, evaluation
+      data, factors → tested on; metrics, quantitative analyses → results; training data, ethical considerations,
+      caveats → limits and safeguards. Deep 19.B: in a study of 32,111 Hugging Face model cards, evaluation was
+      filled in 15.4% and limitations in 17.4% (Liang et al., 2024, preprint numbers).
+    misconceptions:
+      - m: "M6 'Writing down limits makes the work look weak.'"
+        fix: "Ask: would you rely on a tool whose card listed no limits? Then the counter-check: a card is not a safeguard by itself."
+    activity: "Ask: 'What is the first “not for” line of your workflow?'"
+    book: "§19.7, @fig-19-13; Mitchell et al. (2019); Deep 19.B."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "§19.7 · worked example · Marcus’s card, constructed"
+  title: "Marcus’s card says what it is not for first"
+  size: 22
+  bullets:
+    - "**Not for:** patient care; real dose calculations; anyone’s grades"
+    - "**For:** my own exam review, from my textbook’s drug tables"
+    - "**Tested on:** three tables and Hana’s peer test; tool, model, date"
+    - "**Results:** 10/10; 10/10; edge swap caught; 10/10 after revision"
+    - "**Limits:** one tool; combination drugs untested; I check every mark"
+  notes:
+    say: |
+      Here is Marcus's card. Not for: patient care, real dose calculations, anyone's grades. For: his own exam
+      review, from his textbook's drug tables. Tested on: three tables, typical, different and edge, plus Hana's peer
+      test, with a tool his institution provides, and the model name and date recorded. Results: typical and
+      different, all ten marks right; edge, question 7 swapped two look-alike names, caught at his check point;
+      after the revision, all ten right. Limits and safeguards: one tool and one model; combination drugs not
+      tested; he checks every mark; no group cue enters. Notice that the card names a failure. That makes it more
+      useful, not less.
+    background: |
+      §19.7 Worked Example "Marcus's Card" (constructed); @fig-19-14 (the "not for" row first and thick). Faded
+      example (Sam's motor-datasheet card; a datasheet with no stall-torque value made the tool produce a value not
+      on the datasheet, caught at his check) in Appendix E.
+    activity: "Students draft their own 'not for' line in one sentence."
+    book: "§19.7 Worked Example, @fig-19-14; Faded Example 'Sam's Card'."
+
+- layout: timeline
+  minutes: 3
+  kicker: "Case Study (C26) · the A-Lab · Nature, 2023–2026"
+  title: "“Novel,” then corrected"
+  events:
+    - {label: "Nov 2023", role: ai, text: "“41 novel compounds” from 58 targets", tier: "confirmed"}
+    - {label: "Jan–Mar 2024", text: "Chemists: no new materials", tier: "confirmed"}
+    - {label: "2024 press", text: "Retraction call; author disputes", tier: "reported"}
+    - {label: "Jan 19, 2026", text: "36 of 57; “novel” dropped", tier: "confirmed"}
+  takeaway: "Corrected, not retracted: the field’s channels settled it"
+  notes:
+    say: |
+      One case shows how much one word on a card can carry. In November 2023 a team from Berkeley, Lawrence Berkeley
+      National Laboratory and Google DeepMind described the A-Lab in Nature: robots made inorganic powders from
+      model-proposed recipes, and software read the results from X-ray diffraction patterns. Over 17 days, the
+      abstract said, the lab realized 41 novel compounds from a set of 58 targets. In 2024 solid-state chemists
+      argued that the automated analysis was not yet reliable and that no new materials had been found. On January
+      19, 2026, Nature published an Author Correction: 36 compounds from 57 targets; a manual re-analysis confirmed
+      36 of the 40 reported successes; 4 were inconclusive. "Novel", the authors wrote, had meant new to the
+      prediction platform, not to science.
+    background: |
+      Szymanski et al. (2023; Author Correction 2026); Leeman et al. (2024, PRX Energy, posted January, published
+      March); press exchange reported (Quach, 2024, The Register). One compound was removed because it had mistakenly
+      been included in the models' training data. The title now reads "…synthesis of inorganic materials". Labels:
+      tree "other" (automated identifications not confirmed on expert re-analysis: 4 of 40), documented by the
+      correction; not hallucination (not fluent generated text; inconclusive, not shown false); "novel" is a
+      disclosure problem, not a tree label; chain link 2 "checked before use?" inferred; link 4: no harm beyond a
+      corrected record (@fig-19-17, @fig-19-18).
+    questions:
+      - q: "Was the paper retracted?"
+        a: "No. It was corrected, not retracted (Author Correction, January 19, 2026)."
+      - q: "Why is it not labeled hallucination?"
+        a: "The identifications were not fluent generated text, and the 4 were found inconclusive, not shown false (Case Study; Case Study Question 2)."
+    misconceptions:
+      - m: "M6 'Writing down limits makes the work look weak.'"
+        fix: "One word, 'novel', claimed more than the checks supported. A 'not for' line would have said: not for claiming new to science."
+    activity: "Ask: 'Write the “not for” line for the A-Lab's analysis step' (Case Study Question 5)."
+    book: "Case Study 'Novel, Then Corrected', @fig-19-16, @fig-19-17, @fig-19-18; Case Study Questions."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Quick check · Check Yourself 19.7"
+  title: "the card"
+  question: "Define a model card. Which line of a workflow card do you write first, and why?"
+  instruction: "Two sentences, then compare with a neighbor"
+  model_answer:
+    - "**Model card:** a short document published with a model: what it is for and not for, how it was evaluated (by group where relevant), its known limits."
+    - "**First line: “Not for,”** so no one relies on the workflow where it was never tested."
+  notes:
+    say: |
+      Final check of the day, open-ended. Two sentences: define a model card in your own words, then say which line
+      of a workflow card you write first, and why. One minute, then compare with a neighbor. Listen for answers that
+      remember the three parts of a model card: what it is for and not for, how it was evaluated, and its limits.
+      The "why" of the second sentence is the real test: an untested use is where people get hurt by relying on a
+      workflow.
+    background: |
+      Check Yourself 19.7 (1). Answer (Appendix E): a short document published with a model that states what it is
+      for and not for, how it was evaluated, including results by group where relevant, and its known limits (after
+      Mitchell et al., 2019); write "not for" first, so no one relies on the workflow where it was never tested.
+    activity: "1 min write, compare, then the answer slide."
+    book: "§19.7; Check Yourself 19.7; Appendix E."
+  answer_notes:
+    say: |
+      A model answer. A model card is a short document published with a model that states what it is for and not
+      for, how it was evaluated, including results by group where relevant, and its known limits. You write "not
+      for" first, so that no one relies on the workflow where it was never tested. Connect it to the A-Lab: a
+      "not for" line for its analysis step would have read something like "not for claiming a material is new to
+      science". And to the lab: your card's "not for" line is one of the two things you write in the lab's exit
+      step.
+    background: |
+      Appendix E (Check Yourself 19.7; Case Study Question 5 model answer: not for claiming a material is new to
+      science; publishing identifications no expert has re-checked; disordered products the analysis cannot
+      separate).
+    activity: "Reveal; one student reads their 'not for' line."
+    book: "§19.7; Appendix E."
+
+- layout: concept
+  minutes: 0.75
+  kicker: "Before the lab"
+  title: "Bring your field answers and three inputs"
+  size: 24
+  bullets:
+    - "Read Chapter 19 Core, your guide and one other"
+    - "Model-card paper: abstract and Figure 1 (about 4 minutes)"
+    - "Pre-lab sheet (about 12 minutes): guide, field answers"
+    - "Three inputs written out, plus 2–3 for your peer"
+  takeaway: "No personal, patient, student or client data in any input"
+  notes:
+    say: |
+      Before the lab. Read the Core sections of Chapter 19, the field guide nearest your major and one other. Read
+      the model-card paper's abstract and Figure 1, about four minutes. Then fill in the pre-lab sheet, about twelve minutes: for one
+      recurring task from your major or intended career, write your guide, which is your "field" for pairing, and
+      your field answers: verification authority; data class and gate decision, with any field rule that changes
+      it; one written rule with its source and date; and your map cell. Write out your three test inputs in full,
+      typical, different and edge, and bring two or three more inside your scope for your peer to choose from.
+      These are the Your Turns of sections 19.1 to 19.4.
+    background: |
+      Lab 19.1 "Before the lab". Alternative route: choose your provided scenario (posted with the pre-lab; seven
+      scenarios, one per guide, each with four inputs and three dated outputs) and classify its four inputs instead.
+      Chapter time line: Core about 22 minutes; whole Core package about 52; with the model-card reading (4), the
+      pre-lab (12) and A13 at home (64), about 2 hours 12 minutes in all, 7 minutes less if the workflow
+      describes no people. The instructor needs the pre-lab sheets to make the pairing list by guide.
+    questions:
+      - q: "I can't find a task where I can use real inputs without personal data."
+        a: "Use your own work, course material, public data or a constructed case; if your data gate still fails, take the alternative assignment's provided scenario (A13 brief)."
+    activity: "Leave this slide up as students pack."
+    book: "Lab 19.1 'Before the lab'; Chapter 19 time paragraph; Further Reading (Mitchell et al., 2019)."
+
+# ======================================================================= SESSION 2 · LAB
+- layout: section
+  session: thu
+  minutes: 0
+  number: "Lab"
+  tag: "Lab"
+  title: "Discipline sprint"
+  idea: "Build it, run three inputs, have a peer from another field test it."
+  meta: "Book §19.8 · Lab 19.1 · A13 follows at home"
+  notes:
+    say: |
+      Welcome back. Today is a build day. By the end of the session you will have a working prototype for a task
+      from your own field, three recorded runs, and a peer test by a classmate from another guide. Sit in a
+      mixed-field team of three or four. Take out your pre-lab sheet with your guide, your field answers and your
+      inputs. If you did not finish it, use the two-minute warm-up to write at least your verification authority
+      and your three inputs.
+    background: |
+      Lab 19.1 (labs/ch19-lab1.md): Studio, 75 minutes (briefing 5 · build and run 30 ·
+      peer test 20 · share 10 · exit 10), plus about 12 minutes before class. Materials: pre-lab sheet; a
+      tool the institution provides or approves, or the provided dated outputs;
+      the A13 template; the peer-test card with the sentence frame; the class poster of the Discipline × Use Map;
+      the instructor's pairing list by guide.
+    activity: "Teams form while this slide is up; collect or scan pre-lab sheets for pairing."
+    book: "§19.8 Discipline Sprint; Lab 19.1."
+
+- layout: quiz
+  minutes: 1
+  kicker: "Lab session · warm-up · Review Questions A11"
+  title_prefix: "Warm-up"
+  title: "three runs, two names"
+  question: "Elif runs one practice answer with two first names, 3 runs each, and sees a one-sentence difference. What can she conclude?"
+  options:
+    - "The workflow treats the two names differently, so it is biased against one."
+    - "The workflow treats the two names the same, because the gap is so small."
+    - "Three runs each cannot tell a real difference from ordinary variation."
+    - "Names are not a fairness cue, so the result says little about fairness."
+  answer: c
+  instruction: "From memory, no screens; then check with your team"
+  explanation: "(a) over-reads three runs; (b) a small gap shows nothing either way; (d) a name is a cue linked to groups"
+  notes:
+    say: |
+      Warm-up from memory. This is the fairness check you may run today if your workflow describes people. Elif
+      runs one practice answer with two first names, three runs each, and counts encouraging sentences: three,
+      three and two with one name; three, three and three with the other. Commit to an answer, then check with your
+      team. Watch the two tempting options: one reads too much into the gap, the other reads too much into its
+      small size. One minute; then we look at the answer and go straight into the lab briefing.
+    background: |
+      Review Questions A11 (O5 · LO5 · Understand). Key (Appendix E): (c). The counts are from the §19.6 faded
+      example "Feedback on Tutoring Notes" (constructed).
+    activity: "1 min, then the answer slide."
+    book: "§19.6; Review Questions A11; Faded Example 'Feedback on Tutoring Notes'."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer is (c): three runs each cannot tell a real difference from ordinary variation. So the gap is a
+      lead: worth a bigger test, not a conclusion. Option (a) over-reads three runs. Option (b) makes the mirror
+      mistake: a small gap at three runs shows nothing either way. Option (d) is wrong because a name is exactly a
+      cue linked to groups. Today, if your workflow describes people, run two inputs that differ in one cue, three
+      times each, count by a rule you write before the first run, and record the result as a lead. If no group cue
+      enters, write one line saying so.
+    background: |
+      Appendix E (Review A11): Chapter 16's two-part rule needs at least 10 runs per version and a gap above chance.
+      Faded-example key: record it as a lead and run a bigger test (at least 10 runs per version, counting rule fixed
+      in advance), or a second name pair.
+    activity: "Reveal; connect to A13 item 4."
+    book: "§19.6; Appendix E; A13 item 4."
+
+- layout: lab
+  minutes: 2
+  kicker: "Lab 19.1 · mixed-field teams of 3–4 · individual records"
+  title: "Discipline sprint: build, run, peer-test"
+  goal: "A working prototype, three recorded runs, one peer test"
+  steps:
+    - {text: "Briefing: frame, your row, four safeguards, peer-test rules", min: 5}
+    - {text: "**Build and run** three inputs; record output, tool, date", min: 30}
+    - {text: "**Peer test** in pairs from different guides; swap at 10", min: 20}
+    - {text: "Share: place your cell on the class map poster", min: 10}
+    - {text: "Exit: one change, one use your card excludes", min: 10}
+  side:
+    - {heading: "Deliverable", text: "Photo of your sheet: A13’s lab runs and peer test"}
+    - {heading: "No device or AI?", text: "Provided dated outputs, or your provided scenario"}
+    - {heading: "Privacy", role: risk, text: "No personal, confidential, patient, student or client data"}
+  notes:
+    say: |
+      Here is the lab. Briefing, five minutes, which is now: the five-part frame, your row of the map, the four
+      safeguards and the peer-test rules. Build and run, thirty minutes, alone but in your mixed team: build your
+      prototype in a tool your institution provides or approves, run your three inputs, and record each output, the tool kind, the
+      model name if shown, and the date. Mark anything reused from A11. At minute twenty, at least one run must be
+      recorded. Peer test, twenty minutes, in pairs from different guides: your partner picks one of the inputs you
+      brought and runs your prototype with only your written instructions; you watch and record; swap at minute
+      ten. Then ten minutes of sharing on the class poster, and a ten-minute exit step.
+    background: |
+      Lab 19.1 steps. Peer-test rules: run only within the stated scope; no personal data; record, do not fix the
+      prototype while you test it. If no partner from another guide is available, the instructor confirms it on the
+      sheet and a same-guide peer counts in full. Missed the lab: any classmate from another guide before A13 is due, or
+      office hours as the peer test; record which. Inputs may be in any language, with English glosses for the peer.
+      Compass (optional) has ch19-lab1 with the A13 template and peer-test card.
+    questions:
+      - q: "Can I fix my prototype while my partner tests it?"
+        a: "No: record, do not fix. The record of what confused them is the evidence your revision answers (Lab 19.1 rules)."
+    activity: "2 min on this slide; pairing list read out at the start of the peer test."
+    book: "§19.8; Lab 19.1; labs/ch19-lab1.md."
+
+- layout: assignment
+  minutes: 1.5
+  kicker: "Assignment A13 · O4–O6 · LO6; LO5, LO2"
+  title: "A13: domain workflow prototype"
+  due: "When your instructor sets it · on your course site · individual"
+  parts:
+    - "Task and field answers (≤ 150 words); the build, written out"
+    - "Three runs, each with a check and a verdict"
+    - "Safeguards table; peer test; revision and rerun"
+    - "Workflow card (≤ 100 words); defense (80–100 words)"
+    - "AI Use Declaration"
+  rubric_title: "Rubric · 10 points"
+  rubric:
+    - {criterion: "Build", points: 3, full: "Rerunnable; four field answers, four safeguards"}
+    - {criterion: "Test runs", points: 1.5, full: "Typical, different, real edge"}
+    - {criterion: "Peer test", points: 1.5, full: "Another guide; recorded; linked"}
+    - {criterion: "Verification", points: 1.5, full: "Every run: named check, verdict"}
+    - {criterion: "Other", points: 1.5, full: "Revision, card, defense: 0.5 each"}
+    - {criterion: "Declaration", points: 1, full: "All five elements"}
+  note: "Any personal or confidential data: returned for resubmission before grading."
+  notes:
+    say: |
+      Here is what you submit for A13. Nine parts in one record: your task and field answers in at most 150
+      words; the build written out so someone else could run it; three runs, each with the output, the check you
+      used against your field's authority, and a verdict; a safeguards table; the peer test; one revision with a
+      rerun of the input that failed; a workflow card in at most 100 words; a defense for a non-specialist, 80 to
+      100 words, citing one result and one limit from your card; and an AI Use Declaration. Ten points. Results
+      like "this step stays with a person" or "the edge input failed, and the card now excludes it" can earn full
+      marks.
+    background: |
+      A13 brief and rubric (chapter): Build and field design 3 (four field answers: authority, gate, dated rule,
+      cell; four safeguards: gate, people point shown working, rule applied, fairness check or reason); Test runs
+      1.5; Peer test 1.5; Verification 1.5; Revision 0.5; Workflow card 0.5; Defense 0.5; AI Use Declaration 1. A
+      submission with personal, confidential, patient,
+      student or client data is returned for resubmission before it is graded. Use a tool your institution provides
+      or approves (for example, an enterprise chat assistant with data protection), or a free tier whose terms pass your data gate; switch off or
+      simulate every send, publish, payment and deletion. Alternative assignment: one of seven provided field
+      scenarios (four inputs, three dated outputs), worked forward; rubric read accordingly. Home time about 64
+      minutes after the lab.
+    questions:
+      - q: "My edge input failed and I could not fix it. Do I lose points?"
+        a: "No. 'The edge input failed, and the card now excludes it' is a valid full-mark result (A13 brief)."
+      - q: "Does the declaration count if I used no tool beyond the prototype?"
+        a: "The declaration covers the AI use in building and running the prototype; list tools, purpose, what you accepted, rejected or revised, how you verified it, and where your judgment shaped the work."
+    activity: "Point at 'Verification': every run needs a named check against the field's authority."
+    book: "Application Assignment A13 (brief, rubric, alternative); §19.8, @fig-19-15."
+
+- layout: concept
+  minutes: 30
+  kicker: "Lab 19.1 · on screen during build and run"
+  title: "Build and run: your A13 record"
+  size: 24
+  bullets:
+    - "Build from your field answers: template, chain or tool"
+    - "Run typical, different, edge; record output, tool, model, date"
+    - "Mark anything reused “from A11”"
+    - "Minute 20: at least one run recorded"
+  flow:
+    - {label: "The build", kind: step}
+    - {label: "Three runs, checked", kind: step}
+    - {label: "Peer test", kind: human}
+  takeaway: "These three are the new work A13 is graded on"
+  notes:
+    say: |
+      This stays up while you build. Your A13 record has nine parts; the three in the strip at the bottom, the
+      build, the three runs with their checks and the peer test, are the new work A13 is graded on. Today you fill the build and the runs.
+      Build your prototype from your field answers: a template, a chain or a configured tool. Run your typical,
+      different and edge inputs. For each, record the output, the tool kind, the model name if the tool shows one,
+      and the date. If you reuse part of your A11, mark it. At minute twenty I check that everyone has at least one
+      run recorded. If a part fits better with no AI, that is a valid result: write it down.
+    background: |
+      Lab 19.1 step 2. Expected observations (lab sheet): most first builds pass the typical input; the edge input is
+      where field knowledge shows (look-alike names in health, units in engineering, sarcasm or negation in survey
+      text, missing values in lab data); several students find a fixed template or "no AI" fits one part best. The
+      book's record figure (@fig-19-15, nine boxes, three thick) is redrawn here as a three-box strip because its
+      labels are too small at slide size. Marcus's abridged nine-part A13 (§19.8) is the model; the faded example (Lucía's
+      reconciliation practice) shows a partly filled sheet. Circulate; at minute 20 check that every student has
+      one run recorded.
+    questions:
+      - q: "The tool refuses or gives an error on my input. What now?"
+        a: "Record it with the date: it is a run result. Then check your data gate and your instructions; if the tool is unusable, use the provided outputs route."
+    misconceptions:
+      - m: "M5 'If it worked on my test, it works.'"
+        fix: "When a student says all three runs passed, ask whether the edge input really came from where the field knows errors happen."
+    activity: "30 min build and run; checkpoint at minute 20; 2-minute warning before the peer test."
+    book: "§19.8, @fig-19-15, Worked Example 'Marcus's A13, All Nine Parts'; Lab 19.1 step 2."
+
+- layout: concept
+  minutes: 20
+  kicker: "Lab 19.1 · peer test · pairs from different guides"
+  title: "Peer test: run it with only my instructions"
+  size: 24
+  bullets:
+    - "Partner picks an input; runs it within your scope"
+    - "You record; do not fix it during the test"
+    - "Swap at minute 10"
+  flow:
+    - {label: "Peer picks an input", kind: human}
+    - {label: "Runs your instructions", kind: step}
+    - {label: "Finding", kind: step, role: risk}
+    - {label: "Revision, rerun", kind: human, role: verified}
+  takeaway: "With input __, at step __, I expected __ but saw __. I was confused by __."
+  notes:
+    say: |
+      Peer test. I read the pairs now; each pair has two different guides. Builder, hand over your written
+      instructions and your two or three extra inputs. Tester, pick one input and run the prototype exactly as the
+      instructions say, within the stated scope. Builder, you watch and record, using the sentence frame at the
+      bottom: with input this, at step that, I expected this but saw that; I was confused by this. Do not fix
+      anything while they test; the confusion is the evidence. At minute ten, swap roles. The last minute of each
+      half, the tester reads the sentence aloud so the builder writes it correctly.
+    background: |
+      Lab 19.1 step 3. If no partner from another guide is available, confirm it on the sheet; a same-guide peer
+      counts in full. Peer testers from other fields most often stumble on unexplained abbreviations and on outputs
+      that give no reason (lab sheet). Rubric (Peer test, 1.5): a peer from another guide (or instructor-confirmed
+      same-guide peer) ran it on an input they picked; what they did and what confused them recorded; linked to the
+      revision. The strip redraws @fig-19-12 (six steps, finding thick) in four boxes; the revision and rerun happen
+      at home.
+    activity: "Read the pairing list; call the swap at minute 10; 1-minute warning before share."
+    book: "§19.6 'Recording a peer test'; Lab 19.1 step 3; @fig-19-12."
+
+- layout: tps
+  minutes: 10
+  kicker: "Share and critique · 10 min"
+  title: "Where did two fields disagree?"
+  prompt:
+    - "Place each member’s cell on the class map poster"
+    - "Find one cell where two fields disagreed"
+    - "Which rule or evidence decides it?"
+  phases:
+    - {name: "Place", min: 3, text: "Cells on the poster"}
+    - {name: "Team", min: 3, text: "Pick one disagreement"}
+    - {name: "Share", min: 4, text: "Rule or evidence for each view"}
+  notes:
+    say: |
+      Ten minutes to share and critique. Each team places its members' cells on the class poster of the map. Then
+      find one cell where two fields disagreed, for example analyzing data: an approval gate for one of you and a
+      check point for another. As a team, name the rule or the evidence behind each view. In the last four minutes,
+      two or three teams report, and the class critiques the reason, not the person: is it a written rule with a
+      source and date, or a feeling? This is how a default on the map gets overridden properly.
+    background: |
+      Lab 19.1 step 4 and debrief question 3 (which cell did two fields disagree about, and which rule decides it?).
+      Discussion Question 5 asks which cell a student would change for their own field, with the rule or evidence.
+      Debrief questions 1 and 2 (which input failed; what the peer saw) can be folded in if time allows.
+    misconceptions:
+      - m: "M1 'AI skills are the same in every field.'"
+        fix: "The disagreements on the poster are the evidence that the four things change; the shared columns are the evidence that the method transfers."
+    activity: "Place 3 · team 3 · share 4."
+    book: "Lab 19.1 step 4 and debrief; Discussion Question 5."
+
+- layout: objectives
+  minutes: 2
+  kicker: "Chapter summary (book figure: summary card)"
+  title: "What you can do now"
+  items:
+    - {code: "O1", text: "Read your row: the use matters more than the field"}
+    - {code: "O2", text: "Name who confirms, and the data that stays out"}
+    - {code: "O3", text: "Rules nearest first, with source and date"}
+    - {code: "O4", text: "Build the smallest version; run three inputs"}
+    - {code: "O5", text: "A peer from another field finds what you miss"}
+    - {code: "O6", text: "A card: ready only for the uses it states"}
+  takeaway: "A workflow needs a named check, not just a strong model"
+  notes:
+    say: |
+      Back to the concept session's puzzle. Why should historians stay in charge, when Ithaca alone beat the experts? In this
+      book's reading, because trained people are epigraphy's verification authority, and Ithaca's first suggestion
+      was still wrong in about 38 percent of restorations. The pair may have beaten both because people who can
+      judge a ranked list combine well with a model that produces one; the paper does not test why. Your workflow
+      is the same: it needs a named check, not just a strong model. The chapter's question was what changes when you
+      bring AI into your own field, and how you show your workflow is ready. Four things change; the method stays;
+      and a workflow is ready only for the uses on its card.
+    background: |
+      Chapter Summary and @fig-19-19 (six cards). Warm-up revisit: (1) same method, different source: a drug
+      reference and a clinician in nursing, the archive record in history; (2) not necessarily: the table is the
+      floor, and a consent form or IRB protocol can still say no; (3) only for the uses on its card, after three
+      inputs and a peer test. The Ithaca explanation is the book's reading (inferred tier).
+    activity: "Ask two students to compare their earlier guess with this answer."
+    book: "Chapter Summary, @fig-19-19; Warm-up revisit."
+
+- layout: key_terms
+  minutes: 1
+  title: "Key terms"
+  terms:
+    - "discipline"
+    - "Discipline × Use Map"
+    - "field guide"
+    - "people point"
+    - "verification authority"
+    - "informed consent"
+    - "institutional review board (IRB)"
+    - "licensure"
+    - "scope of practice"
+    - "prototype"
+    - "peer test"
+    - "model card"
+    - "workflow card"
+  note: "Definitions: Chapter 19 and the glossary. Field-guide facts are reference, not exam content."
+  notes:
+    say: |
+      The key terms of the chapter. If your course has an exam with a terms-and-concepts part, this list is
+      where it starts. Pay attention to three pairs: verification authority and Chapter 8's
+      independent check; model card and workflow card; licensure and scope of practice. People point is the general
+      name for the four map levels: log review, check point, approval gate and keep with a person. Cover the slide
+      and define three terms to your neighbor. Field-guide facts, such as a particular board's opinion or a
+      particular law, are reference material; the terms on this slide are the ideas you should be able to use.
+    background: |
+      Key Terms list from the chapter (13 terms). Examinable scope: Core sections only (D20); the field guides are
+      Studio reference, and exam items supply any field facts they need. The book's exam-practice items come in three
+      kinds: terms and concepts, case questions and interpretive questions.
+    activity: "30-second pair self-test."
+    book: "Chapter Summary, Key Terms; glossary."
+
+- layout: exit_ticket
+  minutes: 7
+  questions:
+    - "One change you will make to your prototype"
+    - "One use your card will exclude"
+    - "Why must your defense cite a limit as well as a result?"
+  instruction: "Then photograph your sheet: it records your lab runs and peer test for A13"
+  notes:
+    say: |
+      Last minutes: the lab's exit step. Write one change you will make to your prototype because of a run or the
+      peer test; that change is your A13 revision, and you will rerun the input that failed. Write one use your
+      card will exclude; that is your "not for" line. And answer the third question in one sentence: why must your
+      defense cite a limit as well as a result? Then photograph your sheet: it counts as A13's record of the lab runs
+      and the peer test. A13 is due when your instructor sets it. Next comes the portfolio workshop, with Chapter 20
+      and Part A of Chapter 21.
+    background: |
+      Lab 19.1 step 5 (10 minutes in the lab sheet; this deck spends 3 of them on the summary and key terms).
+      Question 3 is Check Yourself 19.8 (2); answer (Appendix E): a result alone overstates readiness; the limit
+      tells a non-specialist where not to rely on it. Next in the book's suggested pacing: the portfolio workshop with
+      Chapter 20 and Chapter 21 Part A.
+    activity: "Collect cards or close the course-site form at the end of the session; remind about the photo."
+    book: "Lab 19.1 step 5; Check Yourself 19.8; Chapter 20."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: compare
+  session: after
+  kicker: "Field guides 19.F1–F7 · one real case each (reference)"
+  title: "Seven field guides, seven cases"
+  size: 20
+  columns:
+    - heading: "Guides 1–4"
+      role: soft
+      bullets: ["Business: Zillow Offers", "Health: a sepsis model", "Arts: Ithaca", "Social science: silicon samples"]
+    - heading: "Guides 5–7"
+      role: soft
+      bullets: ["Natural science: A-Lab", "Engineering: Autopilot recall", "Education: Tutor CoPilot"]
+  takeaway: "Read your guide and one other; the rest are optional"
+  notes:
+    say: |
+      Reference slide, not presented. Each guide answers the five questions of the frame for one field, adds a
+      fairness question and a short real case, and ends with a career note. Use these cases when a student asks for
+      an example from their field. Business: Zillow Offers, a forecast used outside the conditions it was built for.
+      Health: a vendor's sepsis model that scored lower at a new hospital than in its own documentation. Arts and
+      humanities: Ithaca, the opening case. Social science: language models used as synthetic survey respondents.
+      Natural science: the A-Lab correction. Engineering: Tesla's Autopilot recall. Education: Tutor CoPilot, a
+      tutor-facing tool tested in a randomized trial.
+    background: |
+      Tiers and key numbers as the chapter states them. C23 Zillow (2021): wrote down about $304 million of inventory
+      in Q3, expected $240–265 million more in losses, cut about 25% of staff; the AI's part is inferred ("the
+      algorithm failed" is the press's reading). C24 sepsis (Wong et al., 2021): vendor AUC 0.76–0.83; at Michigan
+      Medicine 0.63 on 38,455 hospitalizations; missed 67% of sepsis cases at score 6 or more, alerted in 18%; vendor
+      disputed (reported); second version validated at four systems, AUC 0.82 to 0.92 (Wong et al., 2026). C25
+      (Bisbee et al., 2024): 48% of coefficients differed significantly. C27: recall of 2,031,220 vehicles; NHTSA
+      closed EA22-002 on April 25, 2024 (467 crashes in scope, 13 with fatalities); remedy query open as of October
+      2026. C28 (Wang et al., 2025, working paper): mastery 62% to 66%; 56% to 65% for lower-rated tutors.
+    activity: "Not presented."
+    book: "Field Guides 19.F1–19.F7 and their cases (C22–C28); 'Which guide is yours?'."
+
+- layout: deep
+  kicker: "Deep 19.A · who uses AI in which fields?"
+  title: "Going deeper: adoption is not the same as fit"
+  figure: f19-21-use-by-field
+  figure_width: 0.66
+  size: 22
+  bullets:
+    - "One company, one tool, 18 days"
+    - "Who used it, not who would benefit"
+  takeaway: "Read usage data with Chapter 12’s questions"
+  notes:
+    say: |
+      Optional, for students who ask which fields use AI most. In April 2025, Anthropic published an analysis of
+      574,740 student conversations with its chat tool, from accounts with higher-education email addresses over 18
+      days, sorted by subject with an automated, privacy-preserving tool. Computer science made up 38.6 percent of
+      the conversations but 5.4 percent of U.S. bachelor's degrees; business 8.9 percent against 18.6; health
+      professions 5.5 against 13.1. Read it with Chapter 12's questions: one company's users, one tool, one period,
+      the company's own classification. It shows who used one tool, not who would benefit, and not whether the use
+      fit the task. A field with little use may have strict data rules, little need, or poor fit.
+    background: |
+      Deep 19.A (optional, not examinable); Handa et al. (2025). The report's introduction gives 36.8% for computer
+      science; its chart gives 38.6% (the chapter notes the discrepancy). @fig-19-21 shows paired bars for five
+      subject groups.
+    activity: "Optional; not part of the 75-minute plans."
+    book: "Deep 19.A, @fig-19-21."
+
+- layout: references
+  title: "References"
+  per_slide: 5
+  refs:
+    - "Argyle, L. P., Busby, E. C., Fulda, N., Gubler, J. R., Rytting, C., & Wingate, D. (2023). Out of one, many: Using language models to simulate human samples. *Political Analysis, 31*(3), 337–351."
+    - "Assael, Y., Sommerschield, T., Shillingford, B., et al. (2022). Restoring and attributing ancient texts using deep neural networks. *Nature, 603*, 280–283. https://doi.org/10.1038/s41586-022-04448-z"
+    - "Assael, Y., Sommerschield, T., Cooley, A., et al. (2025). Contextualizing ancient texts with generative neural networks. *Nature, 645*(8079), 141–147."
+    - "Bisbee, J., Clinton, J. D., Dorff, C., Kenkel, B., & Larson, J. M. (2024). Synthetic replacements for human survey data? The perils of large language models. *Political Analysis, 32*(4), 401–416."
+    - "Handa, K., Bent, D., Tamkin, A., et al. (2025, April 8). *Anthropic education report: How university students use Claude*. Anthropic."
+    - "International Committee of Medical Journal Editors. (2026). *Recommendations for the conduct, reporting, editing, and publication of scholarly work in medical journals* (Section V)."
+    - "Leeman, J., Liu, Y., Stiles, J., et al. (2024). Challenges in high-throughput inorganic materials prediction and autonomous synthesis. *PRX Energy, 3*, 011002."
+    - "Liang, W., Rajani, N., Yang, X., et al. (2024). Systematic analysis of 32,111 AI model cards characterizes documentation practice in AI. *Nature Machine Intelligence, 6*, 744–753."
+    - "Mitchell, M., Wu, S., Zaldivar, A., et al. (2019). Model cards for model reporting. In *Proceedings of FAT* ’19* (pp. 220–229). ACM. https://doi.org/10.1145/3287560.3287596"
+    - "National Highway Traffic Safety Administration. (2024a, April 25). *ODI resume: EA22-002, Autopilot system driver controls*."
+    - "National Institutes of Health. (2023, June 23). *The use of generative artificial intelligence technologies is prohibited for the NIH peer review process* (NOT-OD-23-149)."
+    - "Quach, K. (2024, January 31). ‘Novel’ AI-made materials not actually new – study. *The Register*."
+    - "Szymanski, N. J., Rendy, B., Fei, Y., et al. (2023). An autonomous laboratory for the accelerated synthesis of novel materials. *Nature, 624*, 86–91."
+    - "Szymanski, N. J., Rendy, B., Fei, Y., et al. (2026). Author Correction: An autonomous laboratory for the accelerated synthesis of inorganic materials. *Nature, 650*, E1."
+    - "Tesla, Inc. (2023, December 12). *Part 573 safety recall report 23V-838*. NHTSA."
+    - "Texas Board of Professional Engineers and Land Surveyors. (2024, November 14). *Policy advisory opinion regarding the use of artificial intelligence software by licensees* (No. 71)."
+    - "Texas Responsible Artificial Intelligence Governance Act, H.B. 149, 89th Leg., Reg. Sess. (Tex. 2025)."
+    - "Wang, R. E., Ribeiro, A. T., Robinson, C. D., Loeb, S., & Demszky, D. (2025). *Tutor CoPilot: A human-AI approach for scaling real-time expertise* (EdWorkingPaper No. 24-1054). Annenberg Institute at Brown University."
+    - "Wong, A., Otles, E., Donnelly, J. P., et al. (2021). External validation of a widely implemented proprietary sepsis prediction model in hospitalized patients. *JAMA Internal Medicine, 181*(8), 1065–1070."
+    - "Wong, A., Currey, D., Schwinne, M., et al. (2026). Multicenter prospective validation of an updated proprietary sepsis prediction model. *JAMA Network Open, 9*(2), e260181."
+    - "Zillow Group. (2021b, November 2). *Q3 2021 shareholder letter* (Form 8-K, Exhibit 99.3). U.S. Securities and Exchange Commission."
+  notes:
+    say: |
+      Reference slides; not presented. These are the sources cited on the slides and in the speaker notes, in short
+      APA form, from Chapter 19's reference list. Students need only the model-card paper's abstract and Figure 1. If a student wants
+      to go further, the chapter recommends Assael et al. (2022) on Ithaca, the one-page A-Lab Author Correction as
+      an example of how a field corrects a claim, Bisbee et al. (2024) on why averages are not enough, and Wong et
+      al. (2021, 2026) on validating a vendor's clinical model at a new site.
+    background: |
+      Full entries with all authors and DOIs are in the chapter's References (fact-checked; docs/factcheck/ch19.csv).
+      The From the Field entry (Şeker, 2016, sentiment analysis,
+      domain dependency) supports M1 and Review C1.
+    activity: "Not presented."
+    book: "Chapter 19, References; Further Reading and Compass Links."

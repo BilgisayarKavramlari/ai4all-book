@@ -5,7 +5,7 @@
 | Type | Break It |
 | Objectives | O4, O5 (LO2) · tags 4D:DISC, 4D:DESC |
 | Time | 40 minutes, at home or in Compass (optional) |
-| Materials | Any AI chat tool; a short task with three checkable criteria; two test inputs; the scoring sheet (course site) |
+| Materials | Any AI chat tool; a short task with three checkable criteria; two test inputs; the scoring sheet (companion files) |
 
 ## Steps (tool-neutral)
 1. Choose one popular prompting "trick", a phrase some people believe always improves answers: a politeness phrase, an expert role, an offered tip, or a phrase you have seen recommended online.
@@ -29,7 +29,7 @@ Small differences in either direction are common and often disappear with more r
 Ungraded. A scored table and a two-sentence conclusion.
 
 ## Accessibility and alternatives
-No-device route: score the dated sample outputs on the course site (both conditions, both inputs; model and date given).
+No-device route: score the dated sample outputs in the companion files (both conditions, both inputs; model and date given).
 
 ## Safety and privacy
 No personal data; do not test phrases that ask the tool to bypass its safety rules.

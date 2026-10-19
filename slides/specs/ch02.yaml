@@ -1,0 +1,1353 @@
+# Lecture deck spec — Chapter 2: How Machines Learn from Data (shared concept session with Chapter 3)
+# Format and notes standard: slides/README.md. Build: python3 tools/build_slides.py slides/specs/ch02.yaml --preview
+# Chapters 2 and 3 share one suggested pacing slot (decision D17): Chapter 2 is read before the concept session; this deck covers
+# the FIRST part of a 75-minute concept session (opening case, Chapter 2 core, 2–3 Chapter 2 concept-check items).
+# The rest of the concept session and the lab session belong to slides/specs/ch03.yaml. Split used here: Chapter 2 = 36 min,
+# Chapter 3 = 39 min in the concept session (opening case 10 · concept core 35 · demonstrations 20 · concept check 10 in total).
+# Independence (D27, docs/production/independence-rules.md): no institution, course code, term, calendar dates,
+# enrollment, course-site system or syllabus references on slides or in notes; sessions are named by kind only
+# (the key tue is internal: tue = concept session).
+# Every number and quotation comes from deck.sources; the builder flags any number it cannot find there.
+
+deck:
+  chapter: 2
+  slug: how-machines-learn-from-data
+  title: How Machines Learn from Data
+  short_title: How Machines Learn from Data
+  author: Şadi Evren Şeker
+  sessions:
+    tue: {label: "Concept session, first part (Chapter 2)", minutes: 36}
+    after: {label: "reference slides (not presented)"}
+  sources:
+    - chapters/02-how-machines-learn-from-data.qmd
+    - labs/ch02-lab1.md
+    - labs/ch02-lab2.md
+    - labs/ch02-lab3.md
+    - figures/longdesc/ch02.md
+    - appendix/answers.md
+    - docs/blueprints/ch02-blueprint.md
+    - docs/decisions.md
+    - chapters/03-inside-large-language-models.qmd
+
+slides:
+
+# ======================================================================= CONCEPT SESSION (first part)
+- layout: title
+  session: tue
+  minutes: 0
+  subtitle: "First part of the concept session"
+  meta:
+    - "Şadi Evren Şeker"
+    - "Reading: Chapter 2 (before today)"
+    - "Recommended: Wolfram (2023)"
+  figure: f2-04-pipeline
+  notes:
+    say: |
+      Put this slide up while students arrive. These sessions cover two chapters and one artifact. Today we start with
+      Chapter 2, How Machines Learn from Data, which you read before class, and in the second half of the session we
+      move straight into Chapter 3, Inside Large Language Models. The picture on the right is the Data-to-Prediction
+      Pipeline, the book's third signature diagram: collect data, label it, train a model, use it to predict, and feed
+      the decisions back in as new data. Every stage is a human choice. The chapter strengthens the Verify step of the
+      AI Work Loop in a particular way: you learn to question the data behind an output, not only the output itself.
+      Today's question, which we answer at the end of this part: does the machine really learn, or does it only find
+      the easiest way to get the right answer?
+    background: |
+      Suggested pacing (decision D17): Chapter 2 is read before the concept session; its
+      10-minute opening case is the Amazon recruiting tool; the ungraded concept check includes 2–3 Chapter 2
+      items; the reading and lab for the lab session belong to Chapter 3. Chapter 2's time line: about 30 minutes of Core reading plus
+      about 15 minutes for the paper task in section 2.5. Wolfram (2023) is a recommended reading, not a required one
+      (D18 and the chapter's Further Reading). Chapter Map: Verify highlighted ("question the data behind an output").
+    questions:
+      - q: "Do I need to code for this chapter?"
+        a: "No. The chapter needs no programming or statistics; the build-and-break labs (2.1–2.3) are optional and use free no-code tools or a paper version."
+    activity: "On screen before class starts."
+    book: "Chapter 2 opening page, @fig-2-1 (chapter map) and @fig-2-4 (Data-to-Prediction Pipeline)."
+
+- layout: session_plan
+  minutes: 0.75
+  title: "Chapters 2 and 3 at a glance"
+  columns:
+    - heading: "Session 1 · Concept session"
+      sub: "75 min · Chapter 2 first, then Chapter 3"
+      blocks:
+        - {min: 10, label: "Opening case: the recruiting tool", detail: "Warm-up and the puzzle (Chapter 2)"}
+        - {min: 26, label: "Chapter 2 core and checks, §2.1–2.6", detail: "Rules or examples, the loop, samples, labels, shortcuts"}
+        - {min: 17, label: "Chapter 3 core, §3.1–3.5", detail: "Tokens, next-token scores, training, context, tools"}
+        - {min: 18, label: "Demonstrations", detail: "A tokenizer; one question asked five times"}
+        - {min: 4, label: "Quick checks; before the lab", detail: "Bring your A2 Part 1 draft"}
+    - heading: "Session 2 · Lab session"
+      sub: "75 min · teams of 3–4, individual artifact"
+      blocks:
+        - {min: 10, label: "Lab briefing", detail: "Warm-up, the four probes, A2 Part 2"}
+        - {min: 45, label: "Lab 3.1: Probe the model", detail: "Jigsaw probes; start A2 Part 2"}
+        - {min: 15, label: "Share and critique", detail: "Which result surprised you, and why?"}
+        - {min: 5, label: "Exit step", detail: "Summary, key terms, exit ticket"}
+  notes:
+    say: |
+      Here is the plan. Today's concept session carries two chapters. The first half is Chapter 2: we open with a
+      real case, the recruiting tool Amazon built and abandoned, then walk quickly through how machines learn from
+      examples and where the examples go wrong. You read the chapter before class, so I will not repeat every detail;
+      I will focus on the ideas you need for the concept map and for any quiz or exam your instructor sets. The second half is Chapter 3: what
+      happens inside the language models behind chat tools, with two live demonstrations. The lab session is the practice lab,
+      Probe the model, where you test a chat tool and turn your results into terms for your concept map, assignment
+      A2, due when your instructor sets it. Every quick check today is ungraded practice.
+    background: |
+      Suggested session flow: concept session = opening case 10 · concept core 35 · one or two live demonstrations 20 · concept
+      check 10; lab session = lab briefing 10 · group practice 45 · share and critique 15 · exit step 5. Split used in
+      these decks: Chapter 2 deck = 36 minutes (opening case, Chapter 2 core, three Chapter 2 check items, A2 brief);
+      Chapter 3 deck = 39 minutes in the concept session plus the whole lab session. The block minutes above are rounded from the per-slide
+      timings in both decks. If your course runs two 75-minute sessions a week, this fits; adjust to your class size. A2 is hosted in Chapter 2 (section 2.7) and finished with Chapter 3 terms.
+    questions:
+      - q: "Do I need to have read Chapter 3 today?"
+        a: "No. Chapter 2 is the reading for today; Chapter 3 is the reading before the lab session. Today's second half introduces it."
+    activity: "Point to the two columns; say when A2 is due (your instructor sets it) and that Part 1 is done at home before the lab session."
+    book: "Decision D17; Chapter 2 and Chapter 3 time paragraphs; How to Use This Book, suggested pacing."
+
+- layout: objectives
+  minutes: 0.5
+  kicker: "Chapter 2 · learning objectives"
+  title: "After this chapter you will be able to…"
+  items:
+    - {code: "O1", text: "**Classify** a system as rule-based or learned; place generative AI"}
+    - {code: "O2", text: "**Explain** the loop: predict, measure the error, adjust, repeat"}
+    - {code: "O3", text: "**Diagnose** a data problem from its symptoms, and name a remedy"}
+    - {code: "O4", text: "**Judge** whether a model’s reported accuracy can be trusted"}
+    - {code: "O5", text: "**Produce** a 15-term concept map with labeled links (A2)"}
+  notes:
+    say: |
+      Five things you should be able to do after this chapter. One: tell a system built from written rules from one
+      that learned from examples, and say where generative AI fits. Two: explain how a model learns, in four steps.
+      Three, the biggest one: diagnose a data problem from its symptoms and name a first remedy. Four: judge whether a
+      reported accuracy figure deserves your trust. Five: produce your concept map, assignment A2. Notice that three
+      and four are judgment skills. You will use them every time someone tells you an AI system is "97% accurate", in
+      the news, in a product page, or at work.
+    background: |
+      Full wording and tags in the chapter: O1 Classify (LO1; UNESCO AI techniques and applications; AI4K12 Learning);
+      O2 Explain the supervised learning loop (LO1); O3 Diagnose sampling bias, a proxy, noisy labels, biased labels,
+      class imbalance or a shortcut clue, and name a remedy including documenting the data (LO1, LO5; AI Fluency
+      Discernment); O4 Judge reported performance using held-out testing, overfitting and the score on the smallest
+      class (LO3; Discernment); O5 Produce the A2 concept map (LO1). LO1 = how AI systems work and why they fail; LO3 =
+      verifying claims; LO5 = privacy, fairness and related principles (the book's learning outcomes).
+    activity: "No activity; keep it under a minute."
+    book: "Chapter 2, Learning Objectives."
+
+- layout: concept
+  minutes: 1
+  kicker: "Warm-up · ungraded · from the chapter’s first page"
+  title: "Three questions before the case"
+  size: 28
+  bullets:
+    - "Does an AI system follow rules that programmers wrote? Yes, no or sometimes?"
+    - "Is more data always better data?"
+    - "A model is 99.9% accurate. Is it a good model?"
+  takeaway: "Write your answers down; we come back to them at the end"
+  notes:
+    say: |
+      Before the case, three quick questions from the first page of the chapter. You read the chapter, so you may
+      already know where they lead, but answer from your gut first. Does an AI system follow rules that programmers
+      wrote: yes, no, or sometimes? Is more data always better data? And a model is 99.9 percent accurate: is it a good
+      model? Write one word for each on a scrap of paper or in your notes. Do not discuss yet. We will come back to all
+      three at the end of this part, and you can check whether your first answer changed.
+    background: |
+      The Warm-up box in Chapter 2. Answers are given in the Chapter Summary ("Revisit your Warm-up"): (1) sometimes:
+      rule-based systems do, but today's AI tools mostly use patterns learned from data; (2) no: a larger sample from the
+      wrong source is still the wrong sample; (3) not necessarily: check the score on the smallest class. The three
+      questions map to misconceptions M1, M2 and M4 in the blueprint.
+    misconceptions:
+      - m: "M1 'AI follows rules that programmers wrote'; M2 'more data is always better data'; M4 'high accuracy means the model is right'."
+        fix: "Do not correct anything yet. The point of the warm-up is to commit to an answer that the session then tests."
+    activity: "30 seconds, silent, in writing. No show of hands yet."
+    book: "Chapter 2 Warm-up; Chapter Summary 'Revisit your Warm-up'."
+
+- layout: timeline
+  minutes: 4
+  kicker: "Opening case · Dastin (2018), Reuters"
+  title: "A hiring tool that learned the past"
+  events:
+    - {label: "2014", text: "Amazon team builds a tool to rate applicants 1–5 stars", tier: "reported"}
+    - {label: "Training", role: ai, text: "Ten years of résumés, mostly men’s", tier: "reported"}
+    - {label: "2015", text: "Lower scores: “women’s”, two all-women’s colleges", tier: "reported"}
+    - {label: "By early 2017", text: "Terms neutralized; team disbanded", tier: "reported"}
+  takeaway: "Amazon said recruiters never used it to evaluate candidates"
+  notes:
+    say: |
+      Tell it as a story. In 2014 a team at Amazon began building a tool to help with hiring. The company was hiring
+      fast and wanted to mechanize the search for top talent. The idea was simple: train a system on the résumés the
+      company had received, let it find patterns, and have it score new applicants from one to five stars, the way
+      shoppers rate products. The tool learned from about ten years of résumés, and most of them came from men, a
+      reflection of male dominance across the tech industry. By 2015 the team saw a problem: for technical roles, the
+      ratings were not gender-neutral. The tool gave lower scores to résumés containing the word "women's", as in
+      "women's chess club captain", and to graduates of two all-women's colleges. Amazon edited the programs to treat
+      those terms neutrally, but that did not guarantee fairness, and by early 2017 the team had been disbanded.
+    background: |
+      Single source: Dastin, J. (2018, October 10), Reuters. Attribution tier: every fact on this slide is reported (a
+      named outlet), not confirmed in a primary record; Amazon published no technical description. Who said what:
+      people familiar with the project told Reuters that recruiters looked at the tool's recommendations but never
+      relied on them alone; Amazon said the tool was never used by its recruiters to evaluate candidates. Context from
+      the Case Study: Amazon's global workforce more than tripled between June 2015 and mid-2018, to 575,700. Later,
+      per Reuters, a much-reduced version was kept for simple tasks such as removing duplicate profiles, and a new team
+      was formed to try automated screening again with a focus on diversity. The book does not claim that any candidate
+      was rejected because of the tool; say the same.
+    questions:
+      - q: "Did the tool actually reject women?"
+        a: "The public record does not show that. Reuters' sources said recruiters looked at the recommendations but never relied on them alone, and Amazon said recruiters never used the tool to evaluate candidates. The book makes no claim that anyone was rejected because of it (Case Study, Consequences)."
+      - q: "Why does a case from 2014–2018 matter now?"
+        a: "Because the mechanism is general: any system that learns from past examples can pick up patterns nobody chose. Today's generative models learn from data through the same loop (§2.6)."
+    activity: "Narrate; do not read the cards. Point at the tier chips: 'reported' means a named outlet, here Reuters."
+    book: "Opening Case 'The Recruiting Tool That Learned the Past'; Case Study 'The Recruiting Tool, Revisited'."
+
+- layout: tps
+  minutes: 4
+  kicker: "Opening case · the puzzle"
+  title: "Nobody wrote “prefer men”"
+  prompt:
+    - "Nobody told the model to prefer men. Where did the pattern come from?"
+    - "Write one guess."
+  phases:
+    - {name: "Think", min: 1, text: "One guess, in writing"}
+    - {name: "Pair", min: 2, text: "Agree on one guess"}
+    - {name: "Share", min: 1, text: "Two pairs report"}
+  notes:
+    say: |
+      Here is the puzzle. Nobody at Amazon wrote a rule saying "prefer men", and nobody told the model to prefer men.
+      So where did the pattern come from? Write one guess in a sentence. Then compare with your neighbor and agree on
+      the best guess. I will take two answers. Keep your guess: the chapter answers it with three ideas, and we will
+      meet each one in the next twenty minutes. How a model learns from examples. Why the examples it learns from may
+      not represent the world. And how the answers attached to those examples can carry the past with them. The case is
+      not really about one company. Any system that learns from past examples can pick up patterns nobody chose.
+    background: |
+      Typical student guesses: "the programmers were biased" (M1: a rule was written), "it was told the gender" (not
+      reported; the book avoids claiming a gender field and says only that nobody told the model to prefer men),
+      "the data" (closest). The chapter's answer (Summary, Return to the Opening Case): the tool most likely picked up
+      gender-linked patterns from a sample made mostly of men's résumés, possibly from labels based on past decisions,
+      and through proxy words. The first and the pattern in the third are reported; the label part is the book's
+      reasoning (inferred), because Reuters did not report what the label was.
+    misconceptions:
+      - m: "M1 'AI follows rules that programmers wrote.'"
+        fix: "If a pair says 'someone programmed it that way', ask: which rule? Nobody wrote one. The next section shows where the pattern came from."
+      - m: "M5 'Removing the sensitive column removes the bias.'"
+        fix: "Preview only: Amazon edited the particular terms, and that did not guarantee fairness. Section 2.3 explains why (proxies)."
+    activity: "Think 1 · pair 2 · share 1. Write two guesses on the board to revisit at the end of §2.4."
+    book: "Opening Case (the puzzle); Chapter Summary 'Return to the Opening Case'."
+
+# ----------------------------------------------------------------------- 2.1
+- layout: section
+  minutes: 0.25
+  number: "2.1"
+  tag: "Core"
+  title: "Writing rules or learning them"
+  idea: "People write the rules, or people supply the answers and the machine finds the rules."
+  meta: "Book §2.1 · Mitchell’s definition of learning"
+  notes:
+    say: |
+      First idea. Almost every field has a sorting task: a clinic sorts patients by urgency, a bank sorts transactions
+      into normal and suspicious, your inbox sorts mail. There are two ways to build a system that sorts. You can write
+      the rules yourself, or you can collect examples with the right answers and let the machine find the rules. The
+      second way is machine learning, and it is how the recruiting tool was built. This section gives you the
+      difference and a three-part definition of learning that we use to answer today's question.
+    background: |
+      Section 2.1 is Core. Terms introduced: rule-based system, machine learning; Mitchell's (1997) task, performance
+      measure and experience (T, P, E). Featured example: a spam filter; faded example: Lucía's support-ticket routing.
+    misconceptions:
+      - m: "M1 'AI follows rules that programmers wrote.'"
+        fix: "Name it now; the next slide shows the reversal: in machine learning people supply the answers, not the rules."
+    activity: "Transition slide."
+    book: "§2.1 Writing Rules or Learning Them."
+
+- layout: lanes
+  minutes: 1.5
+  kicker: "§2.1 · two ways to build a system (book figure: rules vs. examples)"
+  title: "In machine learning, people supply the answers"
+  rows:
+    - label: "Classical programming"
+      nodes:
+        - {label: "Data + rules from people", kind: human}
+        - {label: "Computer applies the rules", kind: step}
+        - {label: "Answers", kind: step}
+    - label: "Machine learning"
+      nodes:
+        - {label: "Data + answers (labels)", kind: human}
+        - {label: "Learning finds patterns", kind: ai}
+        - {label: "Rules (learned patterns)", kind: step, role: soft}
+  caption: "Rounded = supplied by people · hexagon = AI component · rectangle = step"
+  takeaway: "No programmer wrote a rule that marked down “women’s”"
+  notes:
+    say: |
+      Two lanes. In classical programming, people write the rules and the computer applies them to data to produce
+      answers. Take a spam filter: if the subject says "free money", mark it as spam; if there are five exclamation
+      marks in a row, mark it as spam. That works for a while. Then spammers change their wording, someone writes new
+      rules, and soon there are thousands of them, some contradicting each other. Machine learning works the other way
+      around. People collect examples, such as thousands of emails each marked spam or not spam, and the machine finds
+      the rules itself, as patterns that separate the two groups. In short: people supply the answers, and the
+      computer finds the rules. That is why nobody had to write a rule marking down "women's": the pattern came from
+      the data.
+    background: |
+      Rule-based systems still make sense where every decision must follow a written policy exactly, such as a
+      company's rules for approving expense claims (§2.1). The lane drawing rebuilds the book's figure (@fig-2-2) with
+      the same grammar: rounded = supplied by people, hexagon = AI component. Check Yourself 2.1 item 3 (why a
+      rule-based system can be easier to explain) has its answer in this contrast: written rules can be read; learned
+      patterns are stored as settings.
+    questions:
+      - q: "Is a rule-based system still AI?"
+        a: "In the broad sense, yes: section 2.6 counts rule-based expert systems as AI. It is not machine learning, because nothing is learned from data."
+    misconceptions:
+      - m: "M1 'AI follows rules that programmers wrote.'"
+        fix: "Point to the bottom lane: the rules are the output of learning, not its input."
+    activity: "Ask: 'Which lane is your email's spam folder in today?' (Mostly the bottom one.)"
+    book: "§2.1 and @fig-2-2; Worked Example 'Rules or Examples?'."
+
+- layout: compare
+  minutes: 1
+  kicker: "§2.1 · worked example · the spam filter"
+  title: "Both approaches fail, in different ways"
+  size: 24
+  columns:
+    - heading: "Rules"
+      role: neutral
+      bullets: ["Subject contains “free money”", "Misses “fr3e m0ney”"]
+    - heading: "Learned from examples"
+      role: ai
+      bullets: ["50,000 emails labeled by people", "Misses patterns not in its examples"]
+    - heading: "Mitchell’s test"
+      role: soft
+      bullets: ["**T**ask: sort spam", "**P**erformance: share sorted correctly", "**E**xperience: labeled emails"]
+  takeaway: "It learns if performance on a task improves with experience"
+  notes:
+    say: |
+      The worked example in the book. A rule-based filter catches "free money" in the subject line, but a spammer
+      writes "fr3e m0ney", uses one exclamation mark and sends a link instead of a file, and all the rules miss it. A
+      learned filter trained on 50,000 labeled emails is more flexible, but it can only learn patterns that appear in
+      its examples, and it may pick up patterns that should not matter, as you will see in section 2.5. Rule of thumb:
+      rules are clear but break when something new appears; learned patterns are flexible but only as good as their
+      examples. On the right is Tom Mitchell's definition of learning: a program learns when its performance on a task,
+      measured in some way, improves with experience. Notice it says nothing about understanding or thinking.
+    background: |
+      Mitchell (1997), Machine Learning, McGraw-Hill: task (T), performance measure (P), experience (E). Check Yourself
+      2.1 item 2 answer from the text: T = sort emails into spam and not spam; P = share of emails sorted correctly; E
+      = emails people have already labeled. The definition matters for the chapter's question in the Summary: in
+      Mitchell's sense a model really learns, but it keeps whatever pattern makes the error smallest. Faded example
+      (Lucía's tickets): Rule 1 "refund or charge → billing" fails on "I can't log in to request my refund".
+    questions:
+      - q: "Does 'learning' here mean the computer understands spam?"
+        a: "No. Mitchell's definition is about measurable improvement on a task, nothing more. That is exactly why the chapter can say both 'it really learns' and 'it takes the easiest path the data allows'."
+    activity: "Your Turn, 30 seconds: name T, P and E for one task from your major. Take one answer."
+    book: "§2.1 Worked Example 'Rules or Examples?'; Mitchell's definition; Check Yourself 2.1."
+
+# ----------------------------------------------------------------------- 2.2
+- layout: section
+  minutes: 0.25
+  number: "2.2"
+  tag: "Core"
+  title: "How a model learns"
+  idea: "Learning is many small corrections toward less error."
+  meta: "Book §2.2 · Sam’s parts sorter · signature diagram 3"
+  notes:
+    say: |
+      Now look inside the bottom lane. How does a machine find rules from examples? We follow Sam, a mechanical
+      engineering student who is tired of sorting bolts, nuts and washers for the robotics club. By the end of this
+      section you will have the formal meaning of a word we have used since Chapter 1, model, and the book's third
+      signature diagram, which organizes the rest of the chapter.
+      Keep one question in mind as we go: if nobody tells the model what a bolt is, what exactly does it end up
+      using to tell a bolt from a nut? The answer comes back to bite Sam in section 2.5.
+    background: |
+      Section 2.2 is Core. Terms: example, training data (training set), input, feature, label, class, supervised
+      learning, model, parameters (settings), error, inference. Chapter 1 promised the formal definition of model;
+      Chapter 3 uses training and inference throughout. Sam Okafor (he/him) is the chapter's featured student.
+    activity: "Transition slide."
+    book: "§2.2 How a Model Learns."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "§2.2 · Sam’s parts sorter (book figure: the learning loop)"
+  title: "Predict, measure the error, adjust, repeat"
+  size: 24
+  bullets:
+    - "**Example**: a photo; **label**: its correct answer"
+    - "**Model**: learned settings (**parameters**) that turn an input into an output"
+    - "Training adjusts the settings; **inference** only uses them"
+  flow:
+    - {label: "Predict: “nut”", kind: ai}
+    - {label: "Measure the error", kind: step}
+    - {label: "Adjust the settings", kind: step}
+    - {label: "Repeat", kind: step}
+  takeaway: "Not sudden understanding: many small corrections"
+  notes:
+    say: |
+      Sam takes 60 photos of each kind of part and labels each one. Each photo is an example, the correct answer is
+      its label, and each possible answer, bolt, nut or washer, is a class. Now the formal definition: a model is a set
+      of learned settings that turns an input into an output. People choose the kind of model; training adjusts its
+      settings, also called parameters. Here is one round. Photo 17 is labeled bolt. The untrained model predicts nut;
+      it gave bolt only 41 percent. Measure the error: the lower the score for the right answer, the bigger the error.
+      Adjust: the settings shift slightly so photos like this one look more like a bolt next time. Repeat with photo
+      18, thousands of times. After a few hundred rounds most photos come out right. Nobody told the model what a bolt
+      is; it was corrected until its guesses matched the labels.
+    background: |
+      Definitions are the book's (§2.2, glossary). Why small steps: a big change made to fit one photo would undo what
+      the settings had picked up from all the others (Check Yourself 2.2 item 3). Before training the settings carry
+      no useful pattern (in many models they start random). The loop describes neural networks and many other models;
+      decision trees (used in §2.5) build rules differently, but all reduce the error on their training examples.
+      When training is done the settings are fixed; showing the model a new photo is inference. Reference table, not
+      to memorize: supervised (labels), unsupervised (structure without answers), self-supervised (answer hidden in the
+      data, such as the next word: how language models are first trained, Chapter 3), reinforcement (rewards and
+      penalties). Deep 2.B shows one step with numbers.
+    questions:
+      - q: "Where are the 'rules' stored, then?"
+        a: "In the settings. The patterns a machine finds in section 2.1 are stored as the values of its parameters, not as written rules."
+      - q: "What changes for a house-price model?"
+        a: "The output is a number, not a class, but the loop is the same: the model predicts $310,000, the house sold for $350,000, so the error is the gap between them; adjust the settings toward a higher prediction; repeat (Faded Example)."
+    misconceptions:
+      - m: "M1 'AI follows rules that programmers wrote.'"
+        fix: "People choose the kind of model and the data; the settings, which hold the 'rules', come from training."
+    activity: "Your Turn (optional, 30 s): what would the label be for a task in your major, and where would it come from?"
+    book: "§2.2, @fig-2-3, Worked Example 'One Round of the Loop', Faded Example 'A House-Price Model'."
+
+- layout: concept
+  minutes: 1.5
+  kicker: "§2.2 · signature diagram 3: the Data-to-Prediction Pipeline"
+  title: "Every prediction inherits choices about its data"
+  size: 24
+  bullets:
+    - "**Collect:** which examples, from whom?"
+    - "**Label:** who decides the answers?"
+    - "**Train, predict:** which model, which cases?"
+    - "**Feedback:** decisions become new data"
+  flow:
+    - {label: "1 Collect data", kind: step}
+    - {label: "2 Label", kind: human}
+    - {label: "3 Train", kind: ai}
+    - {label: "4 Predict", kind: ai}
+  takeaway: "Each stage is a human choice"
+  notes:
+    say: |
+      Here is the whole journey from raw data to a prediction in one picture: the Data-to-Prediction Pipeline. Collect
+      data: which examples, from whom? Label: who decides the right answers, and by which guideline? Train: which model,
+      for how long? Predict: on which new cases? And a fifth stage closes the loop: feedback. Decisions based on a
+      model's predictions often become new data for the next model. Every stage involves human choices: which photos
+      to take, who labels them, what to do with the answers. Each choice can help the model or quietly mislead it. The
+      rest of the chapter follows those choices, stage by stage: the sample in 2.3, the labels in 2.4, and training
+      and testing in 2.5. Keep this picture; it returns in Chapter 11 and later.
+    background: |
+      Signature diagram 3 (@fig-2-4), drawn natively here with the book's grammar (rectangle = step, rounded = human
+      decision, hexagon = AI component) so labels stay readable; the book's version adds the dashed Feedback box below
+      with arrows from Predict back to Collect data. Note on the drawing convention: the book figure uses a dashed
+      outline for Feedback ("loop back into the data"), while the book-wide rule now reserves dashes for "inferred"; the
+      slide avoids the dash. The Case Study marks three stages of this pipeline for the recruiting tool (@fig-2-4d).
+      Compass (MVP, D7) has an interactive version of this pipeline.
+    questions:
+      - q: "Why is 'Label' drawn as a human box?"
+        a: "Because a label is a human decision (someone decides a photo shows a bolt) or a recorded outcome chosen by people (a sale price, whether a customer left). Section 2.4 shows why that matters."
+    activity: "Ask: 'At which stage would you look first for the recruiting tool's problem?' Take two answers; do not resolve yet."
+    book: "§2.2 'Data-to-Prediction Pipeline', @fig-2-4; returns in §2.3 (@fig-2-4b), §2.4 (@fig-2-4c), Case Study (@fig-2-4d)."
+
+# ----------------------------------------------------------------------- 2.3
+- layout: section
+  minutes: 0.25
+  number: "2.3"
+  tag: "Core"
+  title: "A model learns its sample"
+  idea: "A model learns its sample, not the world."
+  meta: "Book §2.3 · the 1936 poll · proxies"
+  notes:
+    say: |
+      Stage one of the pipeline: collecting the data. The loop finds patterns in the examples. So what happens if the
+      examples are not a fair picture of the world? This section answers the first part of the opening puzzle, with a
+      famous failure from 1936 and one new word, proxy, that explains how a model can treat groups differently even
+      when nobody gave it the group.
+      Before we start, a show of hands on warm-up question two: who wrote that more data is always better data?
+      Keep your answer in mind for the next slide.
+    background: |
+      Section 2.3 is Core. Terms: sample, population, sampling bias (coverage gap, non-response, selection), proxy. It
+      also gives a hedged partial answer to Chapter 1's jagged frontier: models tend to do better on tasks well covered
+      by their training data and worse on tasks it covered thinly (one reason, not the only one).
+    misconceptions:
+      - m: "M2 'More data is always better data.'"
+        fix: "Ask for a show of hands on the warm-up question 2 before the next slide."
+    activity: "Transition slide."
+    book: "§2.3 A Model Learns Its Sample."
+
+- layout: compare
+  minutes: 1.25
+  kicker: "§2.3 · the Literary Digest poll, 1936"
+  title: "Nearly 2.4 million ballots, the wrong winner"
+  size: 24
+  columns:
+    - heading: "The poll"
+      role: soft
+      bullets: ["About ten million ballots mailed", "Nearly 2.4 million returned", "Predicted Landon; Roosevelt won by far"]
+    - heading: "Why it failed"
+      role: risk
+      bullets: ["Lists overrepresented wealthier voters", "Those who replied differed", "Squire (1988): both, together"]
+  takeaway: "Big data is not the same as the right data"
+  notes:
+    say: |
+      In 1936 a popular magazine, the Literary Digest, ran an enormous poll on the presidential election. It mailed
+      about ten million ballots and got nearly 2.4 million back. Its prediction: the challenger, Alf Landon, would beat
+      President Franklin D. Roosevelt. Roosevelt won by a very large margin. How can 2.4 million answers be so wrong? The
+      usual explanation is that the names came largely from telephone directories and car registrations, which in 1936
+      overrepresented wealthier voters. Later research shows it is more complicated: the people who chose to send their
+      ballots back also differed from those who did not. Either way, the lesson is the same, and it is on the bar at
+      the bottom: big data is not the same as the right data.
+    background: |
+      Squire (1988), Public Opinion Quarterly: the mailing list and the non-response were both biased and together
+      caused the error. Lusinchi (2012), Social Science History, argues that non-response was the main cause. State
+      both; the chapter does not choose. Short case 1 in the Case Study repeats the poll. The Mangel & Samaniego (1984)
+      account of Abraham Wald's aircraft-survivability work is the chapter's selection example (next slide notes).
+    questions:
+      - q: "Was it the phone books or the people who did not reply?"
+        a: "Researchers disagree on the balance: Squire (1988) found both biased and jointly to blame; Lusinchi (2012) argues non-response was the main cause. Both are sampling problems (Check Yourself 2.3 item 1)."
+    misconceptions:
+      - m: "M2 'More data is always better data.'"
+        fix: "Nearly 2.4 million replies, wrong winner. Size did not fix who was missing."
+    activity: "Ask: 'Who in 1936 was missing from phone books and car registrations?'"
+    book: "§2.3 opening; Case Study, Short case 1."
+
+- layout: compare
+  minutes: 1
+  kicker: "§2.3 · three gaps (book figure: population and sample)"
+  title: "A model learns its sample, not the world"
+  size: 24
+  columns:
+    - heading: "Coverage gap"
+      role: soft
+      bullets: ["Never sampled", "Sam’s parts: one supplier only"]
+    - heading: "Non-response"
+      role: soft
+      bullets: ["Asked, did not answer", "The 1936 ballots"]
+    - heading: "Selection"
+      role: soft
+      bullets: ["In only by meeting a condition", "Résumés from applicants only"]
+  takeaway: "Sample = the examples we have; population = everything the model will meet"
+  notes:
+    say: |
+      Every dataset is a sample: the examples we actually have. The population is everything the model will meet in
+      the real world. A model learns its sample, not the world, and many errors in real use come from the gap between
+      the two. Three gaps cause most of the trouble. A coverage gap: part of the population was never sampled. Sam
+      photographed parts from one supplier; parts from another supplier look different. Non-response: not everyone
+      who was asked answered, as in the 1936 poll. Selection: data entered the sample only by meeting a condition.
+      Résumés from people who applied are not the same as résumés from people who could do the job. Selection hides in
+      surprising places: Wald's aircraft data came only from planes that returned.
+    background: |
+      Other examples in §2.3: a voice assistant trained mostly on adult voices may struggle with children's voices; a
+      medical model trained in one hospital may struggle in another. Wald (Mangel & Samaniego, 1984): aircraft hit in
+      the most dangerous places were less likely to come back, so their damage was missing from the data, and Wald's
+      methods took that into account (Check Yourself 2.3 item 2). In the figure, the dashed sample box holds 16 circles
+      and 2 squares and no triangles ("mostly one kind"); filled shapes are in the sample, outlines are not. Worked
+      Example "Who Is Missing?": a no-show model trained at a downtown clinic and used at a new suburban clinic
+      (coverage gap; check by testing separately on suburban records).
+    questions:
+      - q: "What is the difference between a sample and a population?"
+        a: "A sample is the examples we actually have; the population is everything the model will meet in the real world (Appendix E, Chapter 3 Spaced Review 3)."
+    activity: "Your Turn (30 s): name one dataset from your field and who might be missing from it."
+    book: "§2.3, @fig-2-5, Worked Example 'Who Is Missing?', Faded Example 'A Campus Survey'."
+
+- layout: compare
+  minutes: 1.25
+  kicker: "§2.3 · the opening case returns"
+  title: "A proxy: a clue that stands in for something else"
+  size: 24
+  columns:
+    - heading: "Reported by Reuters"
+      role: neutral
+      bullets: ["Lower scores for “women’s”", "Lower scores for two all-women’s colleges"]
+    - heading: "The book’s reading"
+      role: neutral
+      dashed: true
+      bullets: ["The words acted as **proxies** for gender", "Inferred"]
+    - heading: "So"
+      role: risk
+      bullets: ["Removing a gender field leaves the proxies"]
+  takeaway: "Look for proxies; compare results group by group"
+  notes:
+    say: |
+      Back to the recruiting tool. Its sample was ten years of résumés from people who had applied to one company,
+      mostly men. Here is the most likely answer to the first part of the puzzle. A model does not need to be told
+      anyone's gender. It can find other clues that are linked to gender. Reuters reported that the tool marked down
+      the word "women's" and two all-women's colleges; the book reads those words as such clues. A clue that stands in
+      for something else is called a proxy. And here is the uncomfortable consequence: removing a sensitive piece of
+      information, such as a gender field, does not remove the bias if proxies remain. That is why editing those
+      particular terms did not guarantee fairness: other proxies could remain.
+    background: |
+      Attribution: the marked-down words are reported (Dastin, 2018); calling them proxies is the book's reading
+      (inferred), which the dashed card marks. The book does not claim the data had a gender field (dev memo A3:
+      Reuters does not describe the input fields). Proxies return in Chapter 11 (proxy in the inputs vs. proxy label,
+      decision D-11.1) and Chapter 16 (bias). Jagged frontier link (§2.3, hedged): one reason, not the only one, why
+      the frontier is jagged is that models tend to do better on tasks well covered by their training data.
+    questions:
+      - q: "If you remove the gender field, why can the model still treat genders differently?"
+        a: "Other information can act as a proxy for gender, such as particular words, activities or colleges linked to gender, and the model can pick up those clues (Appendix E, Review A7)."
+    misconceptions:
+      - m: "M5 'Removing the sensitive column removes the bias.'"
+        fix: "Amazon removed the specific terms; Reuters reported this did not guarantee the system would not find other ways to sort candidates unfairly."
+    activity: "Ask: 'Name another clue on a résumé that could stand in for gender, age or neighborhood.' Collect two."
+    book: "§2.3 (proxy paragraph); Case Study, Failure label, stage 3; Check Yourself 2.3 item 3."
+
+- layout: quiz
+  minutes: 0.75
+  kicker: "Quick check · §2.3"
+  title: "ten times more data"
+  question: "A company collects ten times more data from the same source as before. What is the most accurate statement?"
+  options:
+    - "The model will now be fair, because the sample is larger."
+    - "Better on the same people; still misses those the source leaves out."
+    - "Bias shrinks in proportion to the size of the sample."
+    - "A larger sample from one source represents the whole population."
+  answer: b
+  instruction: "Answer on your own (30 seconds), then vote"
+  explanation: "(a), (c) and (d) are versions of “more data is always better data” (M2)"
+  notes:
+    say: |
+      Quick check, ungraded. A company collects ten times more data from the same source as before. Which statement is
+      most accurate? Read all four before you choose, and think about the 1936 poll. Give them thirty seconds, then
+      vote with hands or a poll. If a few students choose (d), ask them what the source leaves out, and let a student
+      who chose (b) answer.
+      This is the kind of item you may meet on a quiz or exam: one option is accurate and the others are
+      versions of a common misconception, so practice reading every option and asking which belief each one
+      hides.
+    background: |
+      Item: Review Questions A5 (O3 · LO1 · Understand). Key and distractor logic from Appendix E: (b); (a), (c) and (d)
+      are versions of M2, "more data is always better data". The option wording on the slide shortens the book's (b)
+      ("The model may become more reliable about the same kinds of people, and still miss anyone the source leaves
+      out") to fit one line; read the book's wording aloud if asked.
+    activity: "30 s individual, then vote. Then the answer slide."
+    book: "§2.3; Review Questions A5; Appendix E (Chapter 2)."
+  answer_minutes: 0.25
+  answer_notes:
+    say: |
+      The answer is (b). More data from the same source can make the model more reliable about the same kinds of
+      people, but it does not add the people the source leaves out. The 1936 poll had nearly 2.4 million replies and
+      still missed. Options (a), (c) and (d) all treat size as if it fixed who is missing. Say it once more: big data is
+      not the same as the right data.
+      Bias does not shrink in proportion to sample size, and a larger sample from one source still represents
+      that source, not the whole population.
+    background: |
+      Appendix E, Review A5: more data from the same source can make the model more reliable about the same kinds of
+      people, but it does not add the people the source leaves out.
+    activity: "Reveal; move on."
+    book: "§2.3; Appendix E (Review A5)."
+
+# ----------------------------------------------------------------------- 2.4
+- layout: section
+  minutes: 0.25
+  number: "2.4"
+  tag: "Core"
+  title: "Labels and balance"
+  idea: "Labels can be wrong at random or in one direction, and the difference matters."
+  meta: "Book §2.4 · the book’s own experiment"
+  notes:
+    say: |
+      Stage two of the pipeline: the labels. A sample can be the wrong shape. The answers attached to it can also be
+      wrong. This section answers the second part of the opening puzzle, and it does so with a result the book
+      produced itself: an experiment you can rerun. First, a prediction.
+      The book trained a simple model to tell handwritten 3s, 5s and 8s apart, then damaged the training data in
+      different ways and measured what happened. Only the training data changed; the model and the test examples
+      stayed the same.
+    background: |
+      Section 2.4 is Core. Terms: noisy labels, biased labels, class imbalance, recall. The experiment: logistic
+      regression on handwritten 3s, 5s and 8s (Alpaydin & Kaynak, 1998), 60 training examples per digit (180 in all),
+      30 runs with different random splits; same test examples within each run, about equal numbers of each digit;
+      only the training data changed. Code and results come with the book's online materials
+      (figures/scripts/ch02_experiments.py; data/ch02_regimes.csv).
+    activity: "Transition slide."
+    book: "§2.4 Labels and Balance."
+
+- layout: quiz
+  minutes: 0.75
+  kicker: "Predict first · §2.4"
+  title_prefix: "Predict"
+  title: "one fifth of the labels are wrong"
+  question: "A model is trained on examples, and one fifth of all the training labels are wrong. How much accuracy does it lose?"
+  options:
+    - "About 5 points"
+    - "About 15 points"
+    - "More than 20 points"
+  answer: ["Scattered: about 6", "", "One way: about 23"]
+  instruction: "Write your guess down before anyone votes"
+  explanation: "It depends on how the labels are wrong: scattered errors cost about 6 points, one-direction errors about 23"
+  notes:
+    say: |
+      Before we look at the evidence, commit to a prediction. A model is trained on examples, and one fifth of all the
+      training labels are wrong. How much accuracy does it lose: about 5 points, about 15, or more than 20? Write your
+      guess down; do not change it after you see the answer. This is a habit worth keeping: predict
+      first, then look at the evidence, and notice when your intuition was off.
+      The setup: a simple model learns to tell apart handwritten 3s, 5s and 8s from 180 training examples, and
+      the test examples never change.
+    background: |
+      The prediction is the chapter's own (§2.4 opening, from the author's Lecture 3 "prediction before the evidence").
+      The answer is deliberately not one of the three options: it depends on how the labels are wrong. Students who
+      chose any option are partly right, which keeps the reveal low-stakes.
+    activity: "20 seconds; hands for a, b, c. Then the answer slide."
+    book: "§2.4 (prediction paragraph)."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      The answer: it depends on how the labels are wrong. In the book's experiment, 20 percent of labels wrong at
+      random, scattered across all digits, cost about 6 points. The same number of wrong labels pointing one way, most
+      of the 8s labeled "3", cost about 23 points. Why such a difference? With scattered errors, each digit still had
+      mostly correct labels, about four in five, so the right pattern still won. With one-directional errors, most 8s
+      carried the label "3", so the model learned to call 8s "3". Same share of wrong labels, very different damage.
+    background: |
+      Numbers from data/ch02_regimes.csv (book experiment): balanced 98.0% overall; 20% scattered wrong (36 of 180,
+      spread across all digits) 91.9%; 20% one-directional (36 of the 60 eights labeled "3") 74.7%. Students'
+      own lab numbers will differ (small datasets and different tools vary); the pattern is what matters (Lab 2.2).
+    misconceptions:
+      - m: "M3 'A few wrong labels don't matter' — or 'all label errors are the same.'"
+        fix: "Same count of wrong labels, about 6 points versus about 23. Direction matters more than count."
+    activity: "Reveal; ask who guessed 'more than 20' and why."
+    book: "§2.4 'What our experiment showed'."
+
+- layout: compare
+  minutes: 1
+  kicker: "§2.4 · where labels come from"
+  title: "Two ways labels go wrong"
+  size: 24
+  columns:
+    - heading: "Noisy labels"
+      role: neutral
+      bullets: ["Wrong **at random**", "A tired click; an unclear guideline"]
+    - heading: "Biased labels"
+      role: risk
+      bullets: ["Wrong **in one direction**", "Often from past decisions", "If “good” meant “hired before”…"]
+  takeaway: "Labels are human decisions or recorded outcomes"
+  notes:
+    say: |
+      Where do labels come from? Many are human decisions: someone decides a photo shows a bolt, an email is spam, or a
+      candidate was successful, usually following a written guideline, and people applying the same guideline can
+      still disagree. Others are recorded outcomes, such as the price a house sold for. Both carry the habits of
+      whoever made or recorded them, often in the past. Labels go wrong in two very different ways. Noisy labels are
+      wrong at random: a tired labeler clicks the wrong button. Biased labels are wrong in one consistent direction,
+      often because they come from past decisions. Reuters did not report what the recruiting tool's label was. But
+      suppose "successful candidate" meant "someone the company hired before", and past hiring favored men. Then every
+      label would lean the same way. That is the second part of the puzzle's answer.
+    background: |
+      Attribution: the label in the recruiting case is the book's reasoning ("if…"), not reported; keep the "if" when
+      you say it (dev memo A2). In real data the harm of one-directional label errors may be less visible than in the
+      experiment: it often shows up as unfair treatment of one group rather than lower overall accuracy (§2.4). Errors
+      from past decisions often point one way, which is why they deserve special suspicion. Biased labels return in
+      Chapter 16. Check Yourself 2.4 item 1 asks for this difference.
+    questions:
+      - q: "Isn't every label from the past biased, then?"
+        a: "Not necessarily. Sometimes the past is roughly what we want (past fraud cases really were fraud, although those labels cover only the fraud someone caught). The question is whether the past is what you are trying to change, as in hiring or lending (Ethics Lens)."
+    misconceptions:
+      - m: "M3 '…all label errors are the same.'"
+        fix: "Contrast the two cards: direction, not count, decides the damage."
+    activity: "Ask: 'In your field, which labels are human decisions, and which are recorded outcomes?'"
+    book: "§2.4 opening, @fig-2-4c; Ethics Lens."
+
+- layout: figure
+  minutes: 1.25
+  kicker: "§2.4 · the book’s experiment: 3s, 5s and 8s, logistic regression, 30 runs"
+  title: "Same share of wrong labels, very different cost"
+  figure: f2-09-label-regimes
+  takeaway: "Imbalance: overall 91.7%, but the rare 8s only 77.3%"
+  notes:
+    say: |
+      Here is the whole experiment. Four training conditions, same model, same test examples. Dark bars are accuracy
+      on all test examples; light bars are accuracy on the 8s. Balanced, correct labels: about 98 percent on both.
+      Scattered wrong labels: overall drops to about 92, and the 8s stay near 90. One-directional wrong labels: overall
+      drops to about 75, and the 8s collapse to 24 percent: the model labeled only about a quarter of them correctly.
+      Now look at the second pair: class imbalance. Here no label is wrong; there were simply only 10 examples of 8
+      against 60 of each other digit. Overall accuracy stays near 92 percent, but the 8s fall to 77.3. Guessing a bigger
+      class lowers the error most of the time, so the model ends up favoring the big classes.
+    background: |
+      Values (data/ch02_regimes.csv; @fig-2-9): balanced 98.0 / 98.5; imbalanced 91.7 / 77.3; 20% scattered 91.9 / 89.9;
+      20% one-direction 74.7 / 24.3 (overall / accuracy on the 8s). Thin lines show ±1 standard deviation across 30
+      runs. The test set had about equal numbers of each digit, so the overall score still dropped under imbalance;
+      in real use the test data is usually as imbalanced as the training data, and then the overall number hides the
+      problem even better (§2.4). Lab 2.2 (optional) lets students rerun the four conditions with their own photos;
+      their numbers will differ.
+    questions:
+      - q: "Why did one-directional errors hurt the 8s so much more?"
+        a: "Because most 8s carried the label '3', so the model learned to call 8s '3'. With scattered errors each digit still had about four in five correct labels, so the right pattern still won (Check Yourself 2.4 item 3)."
+    misconceptions:
+      - m: "M4 'High test accuracy means the model is right.'"
+        fix: "Point at the imbalanced pair: a fine-looking overall score next to a weak score on the rare class."
+    activity: "Ask students to find the bar that would worry a fraud team most (the light bar in the imbalanced pair)."
+    book: "§2.4 table and @fig-2-9; 'Class imbalance and the 99.9% trap'; Lab 2.2."
+
+- layout: worked
+  minutes: 0.75
+  kicker: "§2.4 · worked example · finance"
+  title: "The 99.9% fraud model"
+  context: "A fraud model reports 99.9% accuracy."
+  steps:
+    - {label: "Balance?", text: "Fraud share: 0.1%"}
+    - {label: "Small-class score?", text: "Fraud cases caught: none"}
+    - {label: "Diagnose", text: "class imbalance"}
+    - {label: "Remedy", text: "report recall on fraud; weight the rare class"}
+  reveal: [2, 4]
+  result: "Always check the score on the smallest class"
+  notes_reveal:
+    - minutes: 0.75
+      say: |
+        Take the imbalance to the extreme. Imagine 100,000 card transactions, of which 100 are fraud. A model that
+        says "not fraud" every single time is right 99,900 times out of 100,000. That is 99.9 percent accuracy, and it
+        catches no fraud at all. Now the worked example: a bank's new fraud model reports 99.9 percent accuracy. Step
+        one, ask about balance: how many transactions were fraud? 0.1 percent. Step two, ask for the small-class score:
+        of the real fraud cases, how many did the model catch? None. Pause here and ask the class to name the problem
+        before you reveal the next two steps.
+      background: |
+        The 100,000 / 100 / 99,900 figures are illustrative numbers in the chapter, not real bank data (§2.4, marked
+        "Illustrative numbers"). From the Field gives the same trap in customer churn: in the author's 2016 article, a
+        firm starts a month with 5,000 customers and ends with 4,500 (10% churn); a model predicting "stays" for
+        everyone would be 90% accurate and useless (the 90% trap is the book's present-day connection, not in the
+        article).
+      activity: "Pause after step 2: 'What is the problem called?'"
+      book: "§2.4 'Class imbalance and the 99.9% trap'; Worked Example 'The 99.9% Fraud Model'."
+    - minutes: 0.5
+      say: |
+        Step three, diagnose: class imbalance. Predicting "not fraud" every time gives the lowest error on almost all
+        examples, so that is what training rewards. Step four, the remedy: report the fraud-catching rate separately,
+        and train with methods that give the rare class more weight. The fraud-catching rate has a name: for a single
+        class, the share of its real cases the model catches is called recall. The case you care about is often the
+        rare one: fraud, a disease, a broken part, a customer about to leave. The more a case matters, the less you
+        can trust a single overall score.
+      background: |
+        Recall is the chapter's one extra number (§2.4); precision appears only in Deep 2.C and Chapter 8. Appendix E,
+        Review A11 (98% disease screening when 2% have the disease): a model that says "no disease" to everyone is
+        already 98% accurate and catches no one; ask for recall on the disease class. Good homework item.
+      questions:
+        - q: "Is a model that catches 85% of fraud in testing fine, then?"
+          a: "That is the 'none' scenario in the paper task (item 6): trained with extra weight for the rare class and tested on new data, it is a reasonable result; check that the test reflects real use."
+      misconceptions:
+        - m: "M4 'High test accuracy means the model is right for the right reasons.'"
+          fix: "99.9% and zero fraud caught, on the same model."
+      activity: "Reveal; read the bottom bar aloud."
+      book: "§2.4 Worked Example; Review A11; Appendix E."
+  notes:
+    book: "§2.4 Worked Example 'The 99.9% Fraud Model'."
+
+# ----------------------------------------------------------------------- 2.5
+- layout: section
+  minutes: 0.25
+  number: "2.5"
+  tag: "Core"
+  title: "Right for the wrong reasons"
+  idea: "A model can score well for the wrong reason."
+  meta: "Book §2.5 · shortcuts, test sets, overfitting"
+  notes:
+    say: |
+      Stage three: training and testing. Even with a good sample and good labels, a model can still score well for the
+      wrong reasons. This section gives you two traps, shortcuts and overfitting, and three questions that protect you
+      whenever someone reports a model's accuracy.
+      It ends with a table that puts the six data problems of the chapter side by side, and the paper task,
+      which is our last Chapter 2 concept check today. If you did the paper task at home, you are about to find
+      out how you did.
+    background: |
+      Section 2.5 is Core. Terms: shortcut, test set (held-out testing), overfitting; it ends with the diagnosis table
+      of six problems, the datasheet remedy (Gebru et al., 2021) and the required, ungraded Paper Task (about 15
+      minutes).
+    misconceptions:
+      - m: "M4 'High test accuracy means the model is right for the right reasons.'"
+        fix: "Announce: this section shows two ways a high score can mislead."
+    activity: "Transition slide."
+    book: "§2.5 Right for the Wrong Reasons."
+
+- layout: lanes
+  minutes: 1
+  kicker: "§2.5 · Sam’s sorter again (book figure: a shortcut)"
+  title: "Sam’s model learned the desk, not the part"
+  rows:
+    - label: "In testing"
+      nodes:
+        - {label: "Bolts shot on a brown desk", kind: step}
+        - {label: "Learns “brown = bolt”", kind: ai}
+        - {label: "Same desk: almost all correct", kind: step, role: verified}
+    - label: "At the club"
+      nodes:
+        - {label: "New workbench background", kind: step}
+        - {label: "Applies “brown = bolt”", kind: ai}
+        - {label: "Failure: a nut is called “bolt”", kind: step, role: risk}
+  caption: "Remedy: train and test under the conditions the model will meet in real use"
+  takeaway: "A shortcut goes with the label in the data, not with the task"
+  notes:
+    say: |
+      Sam's parts sorter worked beautifully in testing: almost every photo sorted correctly. Then he set up the camera
+      above the club's workbench, and it failed badly. It took him an evening to find out why. He had photographed all
+      the bolts on his desk at home, brown wood. The nuts and washers were photographed on a white table at the club.
+      The model had found a much easier pattern than "bolt-shaped means bolt": brown background means bolt. It was
+      right in testing because the test photos came from the same desk and table. It was right for the wrong reason.
+      That is a shortcut: a clue that happens to go with the label in the training data but has nothing to do with the
+      task. The remedy is variety: train and test under the conditions the model will meet.
+    background: |
+      Researchers have found shortcuts in many published systems, such as image classifiers that relied on backgrounds
+      or textures instead of the objects (Geirhos et al., 2020). Proxy vs. shortcut (§2.5): a proxy is a close cousin,
+      a clue that went with the label but that nobody wanted used; unlike a shortcut, it does not stop working in a new
+      setting, so testing in new conditions will not reveal it. A shortcut breaks when conditions change; a proxy keeps
+      working and keeps doing harm. Check Yourself 2.5 item 1 asks for Sam's shortcut. Review A14 (wolves and huskies,
+      snow in the background) is the same pattern; Appendix E gives no key for it (even item), so do not show one.
+    questions:
+      - q: "Would testing at the club have revealed the recruiting tool's proxies too?"
+        a: "No. A proxy keeps working in new settings, so it does not break the way Sam's background did. You have to look for proxies and compare results group by group (§2.5)."
+    misconceptions:
+      - m: "M4 'High test accuracy means the model is right for the right reasons.'"
+        fix: "Testing on photos from the same desk measured the shortcut, not the skill."
+    activity: "Ask: 'What would a better test set for Sam look like?' (New backgrounds, the club bench, other lighting.)"
+    book: "§2.5 opening, @fig-2-7; proxy vs. shortcut paragraph."
+
+- layout: figure
+  minutes: 1.25
+  kicker: "§2.5 · the book’s experiment: decision trees on all ten digits"
+  title: "Training accuracy reached 100%; test accuracy stopped near 84%"
+  figure: f2-10-overfitting
+  takeaway: "Overfitting: like memorizing last year’s exam answers"
+  notes:
+    say: |
+      How do we know whether a model learned something useful? We hold some labeled examples back. The model trains on
+      the training set and is scored on a test set it has never seen. That matters because a model with enough
+      settings can fit its training examples almost perfectly, including their accidents. The book trained decision
+      trees of growing complexity on all ten handwritten digits. Training accuracy climbed all the way to 100 percent.
+      Test accuracy rose too, then stopped at about 84 percent. The extra complexity went into fitting those
+      particular examples, not into getting better at new ones. That is overfitting, like a student who memorizes last
+      year's exam answers: perfect on the practice questions, no better on a new exam. The warning sign is a growing
+      gap between training and test accuracy.
+    background: |
+      Experiment (@fig-2-10; data/ch02 files): decision-tree depth 1 to 20; averages of 10 runs; training accuracy 93%
+      at depth 8 and 100% from depth 14; test accuracy 83% at depth 8, then 84–85%. Decision trees learn by splitting
+      the examples with a series of yes-or-no questions; "more complex" means more questions in a row. In some cases
+      test accuracy even falls. Memorization caveat (§2.5): most models keep learned settings, not a copy of their
+      examples to look up; an overfitted model's settings fit so tightly that they act almost like memorized answers;
+      large language models sometimes repeat training text word for word (Carlini et al., 2021), which Chapter 3
+      returns to. Review A9 (100% vs. 84%) has the key (b) overfitting in Appendix E.
+    questions:
+      - q: "So does the model store its training examples?"
+        a: "Most models, including these, keep learned settings, not a copy of the examples. Overfitted settings act almost like memorized answers, and large language models can sometimes repeat training text word for word (§2.5; Carlini et al., 2021)."
+    misconceptions:
+      - m: "M6 'The model stores its training examples and looks answers up.'"
+        fix: "Use the book's careful wording: learned settings, not a lookup table; overfitting makes settings act almost like memorized answers."
+      - m: "M4 'High test accuracy means the model is right.'"
+        fix: "The 100% is on training examples; only the test line tells you about new cases."
+    activity: "Discussion question 5 as a one-liner: 'Which study habits help you on new questions instead of memorized ones?'"
+    book: "§2.5 'Testing on examples the model has never seen', @fig-2-10; Review A9; Appendix E."
+
+- layout: worked
+  minutes: 0.75
+  kicker: "§2.5 · worked example · arts"
+  title: "Hana and the “97% accurate” detector"
+  context: "The claim: “97% accurate” on AI-made art"
+  steps:
+    - {label: "Q1 · New examples?", text: "not stated"}
+    - {label: "Q2 · Real conditions?", text: "one generator, one site; no hand drawings"}
+    - {label: "Q3 · Costliest error?", text: "human work called AI-made: rate unknown"}
+  reveal: [1, 3]
+  result: "May hold for that test set; not for Hana’s work"
+  notes_reveal:
+    - minutes: 0.5
+      say: |
+        So when someone reports a model's accuracy, three questions protect you. One: was it measured on examples the
+        model never saw during training? Two: do the test examples look like the real situations where it will be
+        used? Three: what is the score on the smallest or most important class? Watch Hana, who is skeptical of a new
+        app that claims to tell whether an illustration was made by a human or by AI, with 97 percent accuracy. Q1:
+        was it tested on new examples? The app's page does not say. Ask the class to try Q2 and Q3 before you reveal
+        them.
+      background: |
+        Worked Example "The 97% Art-Style Detector" (§2.5). Hana Nguyen uses they/them pronouns (characters file);
+        their major is Media Arts and Design (decision D26). Faded example that follows: a vendor's résumé screener
+        "predicts job success with 92% accuracy" (Q1 filled in; students write Q2 and Q3, and which Q2 answer would
+        worry them most given the Opening Case).
+      activity: "30 seconds: pairs write Q2 and Q3 for Hana's case."
+      book: "§2.5 three questions; Worked Example 'The 97% Art-Style Detector'."
+    - minutes: 0.25
+      say: |
+        Q2: the test images came from one image generator and one art website. Hana's own work, hand-drawn and scanned,
+        looks nothing like either. Q3: for Hana, the costly mistake is calling human work AI-made. How often does that
+        happen? Unknown. And this is not a small worry: detectors for AI-written text have been found to flag writing
+        by non-native English speakers as AI-generated far more often. Verdict: the 97 percent may be real for that
+        test set and say little about Hana's illustrations. Before trusting it on a client's work, Hana would test it
+        on drawings whose origin they know.
+      background: |
+        Liang et al. (2023), Patterns 4(7): GPT detectors are biased against non-native English writers (the book
+        cites it for text detectors, not image detectors; keep that distinction). Spaced Review 2 asks students to
+        apply Chapter 1's Verify step to this detector.
+      questions:
+        - q: "Which of the three questions matters most?"
+          a: "It depends on the use. For Hana, Q2 and Q3: the test images do not look like their work, and the costly error (human work called AI) is unreported. For a fraud model, Q3 is usually decisive."
+      activity: "Reveal; read the verdict bar."
+      book: "§2.5 Worked Example; Faded Example 'A Résumé Screener's Claim'; Spaced Review 2."
+  notes:
+    book: "§2.5 Worked Example 'The 97% Art-Style Detector'."
+
+- layout: compare
+  minutes: 1
+  kicker: "§2.5 · putting it together (book table: diagnose the data)"
+  title: "Six data problems, six symptoms"
+  size: 22
+  columns:
+    - heading: "Who is in the data"
+      role: soft
+      bullets: ["**Sampling bias:** fails in the field", "**Proxy:** unfair to a group"]
+    - heading: "What the labels say"
+      role: soft
+      bullets: ["**Noisy:** unstable predictions", "**Biased:** consistently unfair"]
+    - heading: "What the score hides"
+      role: soft
+      bullets: ["**Imbalance:** small class missed", "**Shortcut:** breaks in new conditions"]
+  takeaway: "Remedy for all six: a datasheet"
+  notes:
+    say: |
+      Sections 2.3 to 2.5 described six data problems, and each tends to leave a different symptom. Sampling bias:
+      works in testing, fails in the field; first remedy, ask who is missing and test on that group. A proxy: unfair to
+      one group even without the sensitive attribute; look for proxies and compare results group by group. Noisy
+      labels: unstable, contradictory predictions; write a clearer guideline and label twice. Biased labels:
+      consistently unfair to one group; ask what the label really measures. Class imbalance: high overall accuracy, the
+      small class missed; score the small class separately. A shortcut: success that collapses when conditions change;
+      vary the conditions and retest. And one remedy for all six: document the data.
+    background: |
+      The table at the end of §2.5 (problem, what it means, typical symptom, first remedy); the slide groups the six
+      rows in three cards. Datasheets for datasets (Gebru et al., 2021): every dataset comes with answers to questions
+      such as why it was created, who and what is in it, how it was collected and labeled, and what it should not be
+      used for. Lab 2.3 (optional) asks students to write one, plus "Where did my photos go, and who can see them?"
+    questions:
+      - q: "Which datasheet questions would have flagged the recruiting tool?"
+        a: "For example 'Who and what is in it, and what is missing?' (most résumés from men) and 'How was it labeled?' (what counted as a good candidate). Any two with a reason tied to the case earn full credit (Appendix E, Review A15)."
+    activity: "Point to the table in the book; students use it for the paper task on the next slide."
+    book: "§2.5 'Putting it together: diagnose the data' (table); Lab 2.3; Review A15."
+
+- layout: quiz
+  minutes: 1.25
+  kicker: "Quick check · §2.5 paper task, items 1, 3 and 5"
+  title: "diagnose it"
+  question: "Name the data problem in each scenario (one or more, or none), and a first remedy."
+  option_tags: ["1", "3", "5"]
+  options:
+    - "A speech-to-text tool trained mostly on one accent works poorly for others."
+    - "Two very similar product reviews get opposite sentiment labels from the labeling team."
+    - "A plant-disease app trained on leaf photos on a white lab background fails in farmers’ fields."
+  answer: ["Sampling bias", "Noisy labels", "Shortcut + coverage"]
+  legend: "Items 1, 3 and 5 of the paper task (answers in Appendix E)"
+  instruction: "Use the six-problem table; write your answers, then compare with a neighbor"
+  explanation: "Remedies: test on the missing accents · label twice and compare · train and test in real fields"
+  notes:
+    say: |
+      Concept check, ungraded, and it is the paper task from the end of section 2.5. If you did it at home, check your
+      answers; if not, do these three now. For each scenario, name one or more problems from the table, or none, and a
+      first remedy. Work alone for forty-five seconds, then compare with your neighbor. Watch the third one: it may
+      have two problems at once.
+      Use the six-problem table: start from the symptom in the scenario, find the matching row, then check
+      whether a second row also fits. The remedy comes from the same row.
+    background: |
+      Paper Task "Diagnose It" (Core, about 15 minutes, ungraded), items 1, 3 and 5, numbered as in the book. Answers
+      for odd items are in Appendix E; items 2, 4 and 6 are for students to work on (their keys are not in Appendix E;
+      do not show keys for them). Item 4 (loan model, neighborhood, no address field) is the Amazon-like case with two
+      problems (biased labels and a proxy) if a student asks.
+    activity: "45 s alone, 30 s with a neighbor, then the answer slide."
+    book: "§2.5 Paper Task 'Diagnose It'; Appendix E (Chapter 2, paper task 1, 3, 5)."
+  answer_minutes: 0.5
+  answer_notes:
+    say: |
+      Item 1: sampling bias. The sample covered mostly one accent, a coverage gap; remedy, collect and test on speakers
+      of the missing accents. Item 3: noisy labels. Similar reviews got opposite labels at random; remedy, a clearer
+      labeling guideline, and two people label each review and compare. Item 5: a shortcut clue, and a coverage gap.
+      The white lab background went with the training photos, and field photos look different; remedy, train and test
+      on photos taken in real fields, under varied light and backgrounds. Notice that item 5 is Sam's desk all over
+      again.
+    background: |
+      Appendix E, Chapter 2, Paper Task answers 1, 3 and 5 (wording followed closely).
+    activity: "Reveal; ask who found two problems in item 5."
+    book: "§2.5 Paper Task; Appendix E."
+
+# ----------------------------------------------------------------------- 2.6
+- layout: section
+  minutes: 0.25
+  number: "2.6"
+  tag: "Core"
+  title: "Where generative AI fits"
+  idea: "Generative AI is a branch of machine learning, not a different kind of thing."
+  meta: "Book §2.6 · the bridge to Chapter 3"
+  notes:
+    say: |
+      One question remains from Chapter 1: where do today's generative AI tools fit in all this? News stories and job
+      ads use "AI", "machine learning", "deep learning" and "generative AI" as if they meant the same thing. They do not.
+      They fit inside each other, like nested boxes, and this is the bridge to Chapter 3.
+      The point is not the vocabulary itself but what follows from it: if generative AI is machine learning,
+      then everything you just learned about samples, labels and shortcuts applies to the chat tools you use
+      every day.
+    background: |
+      Section 2.6 is Core. Terms: artificial intelligence, machine learning, deep learning, generative AI, large
+      language model. The next-token mechanism is taught in Chapter 3 (Signature 4), not here.
+    misconceptions:
+      - m: "M7 'Deep learning and generative AI are a different, mysterious kind of thing.'"
+        fix: "Name it; the next slide shows generative AI inside machine learning."
+    activity: "Transition slide."
+    book: "§2.6 Where Generative AI Fits."
+
+- layout: lanes
+  minutes: 1
+  kicker: "§2.6 · nested boxes (book figure: the nested family)"
+  title: "Generative AI learns with the same loop, at vast scale"
+  label_width: 3.3
+  rows:
+    - label: "Artificial intelligence"
+      nodes: [{label: "Tasks we associate with intelligence · e.g., an expert system", kind: step}]
+    - label: "Machine learning"
+      nodes: [{label: "Learns rules from data · e.g., a credit-scoring model", kind: step, role: soft}]
+    - label: "Deep learning"
+      nodes: [{label: "Many layers of simple units · e.g., photo recognition", kind: step, role: soft}]
+    - label: "Generative AI"
+      nodes: [{label: "Produces new content · e.g., an image generator", kind: step, role: ai}]
+    - label: "Large language models"
+      nodes: [{label: "Generate text · e.g., today’s chat tools", kind: step, role: ai}]
+  caption: "Each row sits inside the one above it"
+  takeaway: "So it inherits every data problem in this chapter"
+  notes:
+    say: |
+      Read the boxes from the outside in. Artificial intelligence is the broadest term: any system that performs tasks
+      we associate with intelligence; rule-based expert systems count. Machine learning is the part of AI that learns
+      rules from data, like a credit-scoring model. Deep learning is machine learning with many layers of simple
+      computing units; "deep" refers to the number of layers, not to any mysterious depth. Generative AI produces new
+      content: text, images, audio or code. Large language models are generative models that produce text; they power
+      today's chat tools. The key point: generative AI learns from data through the same predict-measure-adjust loop,
+      at a vastly larger scale. During its first training, a language model predicts the next word of real text, and
+      the real next word is the label.
+    background: |
+      Today's generative AI is built almost entirely with deep learning; simpler generative methods exist outside deep
+      learning, so the boxes show today's tools, not a strict rule (§2.6; dev memo A6). In an image model, early layers
+      respond to simple features such as edges; later layers combine them into parts and whole objects (Goodfellow et
+      al., 2016). The bridge: Sam's sorter scores three possible answers; a language model scores every possible next
+      piece of text, from tens or hundreds of thousands of options, picks one and repeats (Chapter 3). The figure's
+      dashed inner boxes mark "generates content" in the book's legend; the book-wide convention now reserves dashes for
+      "inferred", so do not read the dash as uncertainty here.
+    questions:
+      - q: "Is ChatGPT machine learning, then?"
+        a: "Yes. A chat tool runs a large language model, which is generative AI, built with deep learning, which is machine learning. It learned from data through the same loop (§2.6)."
+    misconceptions:
+      - m: "M7 'Deep learning and generative AI are a different, mysterious kind of thing.'"
+        fix: "Same loop, same data problems, bigger scale. 'Deep' = many layers."
+    activity: "Check Yourself 2.6 item 1 aloud: order deep learning, AI, LLMs, machine learning, generative AI from broadest to narrowest."
+    book: "§2.6 and @fig-2-11; Check Yourself 2.6."
+
+- layout: objectives
+  minutes: 0.75
+  kicker: "Chapter 2 summary (book figure: summary card)"
+  title: "Does the machine really learn?"
+  items:
+    - {code: "O1", text: "**Classify:** rules or learned patterns; place generative AI"}
+    - {code: "O2", text: "**Explain:** predict → measure the error → adjust → repeat"}
+    - {code: "O3", text: "**Diagnose:** who is in the sample; noisy or biased labels"}
+    - {code: "O4", text: "**Judge:** new examples? real conditions? smallest class?"}
+    - {code: "O5", text: "**Produce:** a concept map with labeled links (A2)"}
+  takeaway: "It learns, and it keeps whatever pattern the data rewards"
+  notes:
+    say: |
+      Back to the chapter's question: does the machine really learn, or does it only find the easiest way to the right
+      answer? Both. In Mitchell's sense a model really learns: its performance on a task improves with experience. But
+      training keeps whatever pattern makes the error smallest on the examples it was given. If a brown desk, a word
+      like "women's", or always guessing the bigger class lowers the error, the model ends up using it. Nothing in the
+      training process can tell which pattern you meant. And the recruiting tool: nobody told it to prefer men. It
+      most likely picked up gender-linked patterns from a sample made mostly of men's résumés, possibly from labels
+      based on past decisions, and through proxy words. Now check your warm-up: sometimes; no; not necessarily.
+    background: |
+      Chapter Summary, including "Return to the Opening Case" (tiers: sample and proxy words reported; label inferred)
+      and "Revisit your Warm-up": (1) sometimes: rule-based systems follow written rules, today's AI tools mostly
+      learned patterns; (2) no: a larger sample from the wrong source is still the wrong sample; (3) not necessarily:
+      check the score on the smallest class. The book's summary card (@fig-2-15) lists six capabilities (classify,
+      explain the loop, diagnose the sample, diagnose labels, judge a claim, place generative AI); the slide folds
+      them into the five objectives, with "place generative AI" under O1 as in the chapter's objective list.
+    activity: "Ask two students whether their warm-up answers changed, and which idea changed them."
+    book: "Chapter Summary, @fig-2-15; Warm-up revisit."
+
+- layout: assignment
+  minutes: 1.5
+  kicker: "Assignment A2 · O5 · LO1 · hosted in Chapter 2"
+  title: "A2: a concept map of 15 terms"
+  due: "When your instructor sets it · course site · individual"
+  parts:
+    - "15 terms: at least 7 from Chapter 2, at least 5 from Chapter 3"
+    - "A worked definition for each: your words plus one example"
+    - "At least 14 labeled links, each a true sentence"
+    - "A source for each definition; one AI definition corrected"
+    - "AI Use Declaration and two sentences on your hardest link"
+  rubric_title: "Rubric · 10 points"
+  rubric:
+    - {criterion: "Task", points: 3, full: "15 pool terms, 7+ Ch. 2, 5+ Ch. 3"}
+    - {criterion: "Links", points: 1.5, full: "14+ true links; all terms linked"}
+    - {criterion: "Definitions", points: 1.5, full: "Own words, fitting example"}
+    - {criterion: "Verification", points: 2, full: "All 15 sourced; one AI definition fixed"}
+    - {criterion: "Declaration", points: 2, full: "Five elements; hardest-link reflection"}
+  note: "A drawn map or a table, scored the same. Alternative: audit the dated AI glossary on your course site."
+  notes:
+    say: |
+      This chapter's artifact is A2, a concept map of 15 terms. A concept map is not a list of definitions. It is a set of
+      terms connected by labeled links, so that each pair and its link reads as a true sentence, like "a model is
+      trained on training data". You need at least 7 terms from Chapter 2 and at least 5 from Chapter 3. Each term
+      gets a worked definition: your own words plus one concrete example. You need at least 14 labeled links. You check
+      every definition against the chapter or a cited source, and you correct one AI-generated definition, yours or a
+      dated one provided on your course site. Part 1, the Chapter 2 terms, you do at home before the lab session; Part 2, the Chapter 3 terms,
+      you start in the lab. Bring your Part 1 draft. Your instructor sets the due date.
+    background: |
+      Full four-level rubric in Chapter 2's Application Assignment: Task 3 (Proficient 2 = split not met or one or two
+      terms outside the pools); Links 1.5 (every Chapter 3 term linked to a Chapter 2 term for full credit);
+      Definitions 1.5; Verification 2; Declaration and judgment 2 (tools, purpose, accepted/rejected/revised, how
+      verified, where your judgment mattered). Term pool, Chapter 2: rule-based system, machine learning, training
+      data, example, feature, label, class, model, parameter, supervised learning, error, inference, sample, population,
+      sampling bias, proxy, noisy labels, biased labels, class imbalance, recall, shortcut, overfitting, test set, deep
+      learning, generative AI (any other Core Key Term counts); a term in both pools counts once. Expect about 45–60
+      minutes outside class in all. Alternative assignment: audit 15 entries of the dated AI-generated glossary on
+      your course site (correct, incomplete or wrong), with corrected worked definitions and at least 14 labeled links; same
+      rubric. Late-work and revision rules are your instructor's decision.
+    questions:
+      - q: "Do I need special software for the map?"
+        a: "No. A hand-drawn map, a digital map or a structured table (term, definition, example, linked to, link label) are scored the same way."
+      - q: "Can I use AI to write the definitions?"
+        a: "Explanations and study help are permitted; drafting definitions is disclose-and-verify. Either way, the definitions must be in your own words, checked against a source, and declared. One AI definition must be corrected on purpose."
+    activity: "Show the book's five-term mini-map (@fig-2-12) if students ask what a 'labeled link' looks like."
+    book: "§2.7 Map the Terms (A2), @fig-2-12; Application Assignment A2 (rubric, term pool, alternative)."
+
+- layout: concept
+  minutes: 0.5
+  kicker: "Chapter 2 · before the lab session"
+  title: "Your Chapter 2 homework"
+  size: 26
+  bullets:
+    - "Do the §2.5 paper task (about 15 minutes, ungraded)"
+    - "A2 Part 1: at least 7 Chapter 2 terms, defined and linked"
+    - "Optional: Labs 2.1–2.3 at home or in Compass"
+  takeaway: "Next, right now: inside a large language model (Chapter 3)"
+  notes:
+    say: |
+      Before the lab session, from this chapter: finish the paper task at the end of section 2.5 if you have not; it takes
+      about fifteen minutes and it is the best practice for the concept check and for any exam. Start A2 Part 1: at
+      least seven Chapter 2 terms, each with a worked definition and an example, and at least six labeled links.
+      Bring that draft to the lab session. If you want to see the experiments with your own hands, the three build-and-break
+      labs are optional: train a classifier on photos of three objects, break it with bad data, and write a datasheet.
+      Use objects only, never people. Now we switch to Chapter 3.
+    background: |
+      The §2.7 Your Turn asks for at least 7 terms and at least 6 labeled links for Part 1. Labs 2.1–2.3 (25, 25 and 20
+      minutes) are optional and recommended, at home or in Compass (optional, ungraded); a paper card version and a
+      screen-reader route with a tabular dataset are on your course site. Privacy: photograph objects only (no people, faces,
+      documents); Lab 2.3 asks where the tool stores the photos. Workload for Chapters 2 and 3 together (blueprint): Chapter 2 Core 30 +
+      paper task 15 + Chapter 3 Core 25–30 + A2 45–60 minutes; about 2.2–2.5 hours, flagged to the author; Wolfram (2023) made
+      recommended (D18) to bring it near 2 hours.
+    activity: "Leave up for a few seconds, then open the Chapter 3 deck."
+    book: "§2.5 Paper Task; §2.7 Your Turn; Hands-on Labs 2.1–2.3."
+
+# ======================================================================= REFERENCE SLIDES
+- layout: key_terms
+  session: after
+  title: "Key terms (1 of 2)"
+  terms:
+    - "rule-based system"
+    - "machine learning"
+    - "example"
+    - "training data (training set)"
+    - "feature"
+    - "label"
+    - "class"
+    - "supervised learning"
+    - "self-supervised learning"
+    - "model"
+    - "parameter"
+    - "error"
+    - "inference"
+    - "sample"
+    - "population"
+    - "sampling bias"
+  note: "Definitions: Chapter 2 and the glossary. The A2 term pool is in the assignment."
+  notes:
+    say: |
+      Reference slide; show it if time allows at the end of the concept session, or point students to it on your course site. These are
+      the Chapter 2 key terms. They feed directly into A2: the Chapter 2 term pool is drawn from this list, and any Core
+      key term counts. Pay special attention to the pairs that exams like to contrast: sample and population;
+      noisy and biased labels; training set and test set; shortcut and proxy. The four terms marked Deep come from
+      optional sections and are not examinable.
+    background: |
+      Key Terms list from the chapter, split over two slides; Deep terms are marked. Definitions are in the chapter text and
+      docs/glossary.md. Examinable scope: Core sections only (decision D20).
+    activity: "Not presented, or 30-second pair self-test if time allows."
+    book: "Chapter Summary, Key Terms; glossary; Application Assignment term pool."
+
+- layout: key_terms
+  title: "Key terms (2 of 2)"
+  terms:
+    - "proxy"
+    - "noisy labels"
+    - "biased labels"
+    - "class imbalance"
+    - "recall"
+    - "shortcut"
+    - "test set"
+    - "overfitting"
+    - "datasheet"
+    - "deep learning"
+    - "generative AI"
+    - "large language model"
+    - "gradient descent (Deep)"
+    - "learning rate (Deep)"
+    - "precision (Deep)"
+    - "discriminative model (Deep)"
+  note: "Definitions: Chapter 2 and the glossary. (Deep) terms are optional and not on exams."
+  notes:
+    say: |
+      Second key-terms slide; same use as the first. These terms cover sections 2.3 to 2.6:
+      the six data problems and their remedies, the test set, and the nested family that leads into Chapter 3. For A2,
+      remember the pool note from Chapter 3: "sample" in this chapter is a set of examples, while "sampling" in Chapter
+      3 means picking the next token. If you use either word in your map, say which sense you mean, and keep one sense
+      per term. The Deep terms are optional and are not examinable.
+    background: |
+      Chapter 2 Key Terms (continued). Pool note on the two meanings of sampling: Chapter 3 §3.2 box "Two Meanings of
+      Sampling" and Chapter 3 A2 pool note. Examinable scope: Core sections only (D20).
+    activity: "Not presented."
+    book: "Chapter Summary, Key Terms; glossary; Chapter 3 §3.2 box."
+
+- layout: deep
+  kicker: "Deep 2.B · one learning step, with numbers"
+  title: "Going deeper: one step downhill"
+  figure: f2-14-gradient-step
+  size: 22
+  bullets:
+    - "price = w × size; start at w = 2"
+    - "Sold for 300; model says 200"
+    - "Step w downhill: **gradient descent**"
+    - "Step size: **learning rate**"
+  takeaway: "Large models do the same with billions of settings at once"
+  notes:
+    say: |
+      Use this slide only if there is time or a student asks what "adjust the settings" means in numbers. Take the
+      simplest possible model: price equals w times size, with one setting, w. A 100-square-meter apartment sold for
+      300, in thousands of dollars. If w is 2, the model predicts 200, so the prediction is 100 too low. To learn, the
+      training procedure measures how the error changes when w changes, and moves w a small step in the direction that
+      reduces the error. Picture the error as a valley over all possible values of w; each step goes a little downhill.
+      That procedure is gradient descent. The step size is the learning rate: too small, and learning takes a very long
+      time; too large, and each step jumps past the bottom of the valley.
+    background: |
+      Deep 2.B (optional, not examinable). The curve is the squared error (× 1,000) for each value of w; the lowest
+      error is at w = 3; the step shown goes from w = 2 toward about 2.6. Illustration, not market data (@fig-2-14).
+      Appendix F works through the calculation. The other Deep sections: 2.A (three waves of AI: Dartmouth 1956,
+      expert systems, 2012 image-recognition leap, 2016 AlphaGo, 2017 Transformer, November 2022 ChatGPT) and 2.C
+      (discriminative vs. generative models; precision and recall).
+    questions:
+      - q: "Why not jump straight to w = 3?"
+        a: "With one setting you could, but real models have millions or billions of settings and no formula for the best values; small steps downhill, repeated, are what works at scale."
+    activity: "Optional; not part of the 36-minute plan."
+    book: "Deep 2.B One Learning Step, with Numbers, @fig-2-14; Appendix F."
+
+- layout: references
+  title: "References"
+  per_slide: 7
+  refs:
+    - "Alpaydin, E., & Kaynak, C. (1998). *Optical recognition of handwritten digits* [Data set]. UCI Machine Learning Repository. https://doi.org/10.24432/C50P49"
+    - "Carlini, N., Tramèr, F., Wallace, E., et al. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650)."
+    - "Dastin, J. (2018, October 10). Amazon scraps secret AI recruiting tool that showed bias against women. *Reuters*."
+    - "Gebru, T., Morgenstern, J., Vecchione, B., et al. (2021). Datasheets for datasets. *Communications of the ACM, 64*(12), 86–92. https://doi.org/10.1145/3458723"
+    - "Geirhos, R., Jacobsen, J.-H., Michaelis, C., et al. (2020). Shortcut learning in deep neural networks. *Nature Machine Intelligence, 2*(11), 665–673. https://doi.org/10.1038/s42256-020-00257-z"
+    - "Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep learning*. MIT Press."
+    - "Gray, M. L., & Suri, S. (2019). *Ghost work*. Houghton Mifflin Harcourt."
+    - "Liang, W., Yuksekgonul, M., Mao, Y., Wu, E., & Zou, J. (2023). GPT detectors are biased against non-native English writers. *Patterns, 4*(7), Article 100779. https://doi.org/10.1016/j.patter.2023.100779"
+    - "Lusinchi, D. (2012). “President” Landon and the 1936 *Literary Digest* poll. *Social Science History, 36*(1), 23–54. https://doi.org/10.1215/01455532-1461650"
+    - "Mangel, M., & Samaniego, F. J. (1984). Abraham Wald’s work on aircraft survivability. *Journal of the American Statistical Association, 79*(386), 259–267."
+    - "Mitchell, T. M. (1997). *Machine learning*. McGraw-Hill."
+    - "Şeker, Ş. E. (2016). Müşteri kayıp analizi [Customer churn analysis]. *YBS Ansiklopedi, 3*(1), 26–29."
+    - "Squire, P. (1988). Why the 1936 *Literary Digest* poll failed. *Public Opinion Quarterly, 52*(1), 125–133. https://doi.org/10.1086/269085"
+    - "Wolfram, S. (2023). *What is ChatGPT doing … and why does it work?* Wolfram Media."
+  notes:
+    say: |
+      Reference slides; not presented in class. These are the sources cited on the slides and in the speaker notes, in
+      short APA form, taken from the chapter's reference list. Students do not need to read them. If a student wants to
+      go further, point them to Squire (1988), a short and readable account of the 1936 poll, Geirhos et al. (2020),
+      a readable review of shortcut learning, and Gebru et al. (2021) for the full list of datasheet questions.
+      Gray and Suri (2019), cited in the Ethics Lens, is the place to start on the people behind data labeling.
+    background: |
+      Full entries (all authors, URLs) are in the chapter's References section, fact-checked in docs/factcheck/ch02.csv.
+      Recommended reading: Wolfram (2023) (sections on what a model is and on neural nets,
+      about 15 minutes).
+    activity: "Not presented."
+    book: "Chapter 2, References; Further Reading and Compass Links."

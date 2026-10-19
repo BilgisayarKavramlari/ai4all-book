@@ -42,7 +42,7 @@ Most teams settle the citations fastest when they search an index first. Disagre
 The team record (ungraded) and each student's A5 with three checked rows (graded with A5).
 
 ## Accessibility and alternatives
-Students without a device or who opt out of AI use work from the dated sample output (the A5 alternative assignment). Screen-reader-friendly table templates on the course site. Students who miss class do steps 3 and 5 at home.
+Students without a device or who opt out of AI use work from the dated sample output (the A5 alternative assignment). Screen-reader-friendly table templates in the companion files. Students who miss class do steps 3 and 5 at home.
 
 ## Instructor notes
 Run the team check on citations first: it is where the funnel pays off most visibly. Keep the opinion to pages 1–2 in the briefing; the full opinion is in Further Reading.

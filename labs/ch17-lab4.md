@@ -5,7 +5,7 @@
 | Type | Check It |
 | Objectives | O1, O5 (LO5) · tags 4D:DIL, UNESCO:ETH-A |
 | Time | About 20 minutes including reading this sheet and the debrief, in pairs or alone; optional |
-| Materials | Three provided scenario cards (on your course site): a campus housing-priority score; a store's automated refund refusal; a clinic's reminder-call ranking. Each card (about 150 words) gives the decision, the documentation available, and an answer sheet for the decision owner |
+| Materials | Three provided scenario cards (in the companion files): a campus housing-priority score; a store's automated refund refusal; a clinic's reminder-call ranking. Each card (about 150 words) gives the decision, the documentation available, and an answer sheet for the decision owner |
 
 ## Steps
 1. **Pick a card (1 min).**
