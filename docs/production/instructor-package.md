@@ -287,3 +287,15 @@ Every asset the chapter promises on eLearning or in Compass. All sample outputs 
 | Accessible versions: plain-text transcripts, outline form of the argument maps, accessible table templates | All labs | With the lab materials |
 | Compass (optional): interactive argument-map builder using `argument_map()` data; Chapter 23 quiz; moderated debate board | Interactive versions | Before Part VI release |
 <!-- /ch23 -->
+
+<!-- ch22 -->
+## Chapter 22
+| Asset | Where | Needed by |
+|---|---|---|
+| Lab 22.1 launch post, evaluation excerpt and answer notes (all in the lab sheet) | Lab pages (print and course site) | Before the lab session, if an instructor runs it |
+| Lab 22.2 boundary table (printed in the sheet) as an accessible template | Lab pages | Before the lab session |
+| Lab 22.3 chart and data table (accessible; long description in figures/longdesc/ch22.md) | Lab pages | Before the lab session |
+| Lab 22.4 and essay alternative: "then and now" packet (five rows and three claims, each with two later dated sources, under 1,200 words), rebuilt for each printing or term | Lab pages; kept outside any single course site so readers after a term can use it | Before readers start the essay |
+| Essay template (status table, verdict columns) | Lab pages | Before readers start the essay |
+| Updated data/ch22_*.csv and re-rendered F22.3, F22.17 for each edition | Repository | Each edition |
+<!-- /ch22 -->

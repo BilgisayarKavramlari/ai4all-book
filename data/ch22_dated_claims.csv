@@ -1,28 +1,35 @@
-# Every dated claim printed in Chapter 22's "As of October 2026" boxes and case box. Edit this file first each edition; the boxes and the refresh list are built from it.
+# Every dated claim printed in Chapter 22's "As of October 2026" boxes (v2, 2026-10-18). Edit this file first each edition; the boxes and the refresh list are built from it. status: measured | reported | reported (compiled) | outside estimate | forecast | book's inference; facts about events or pages carry a case tier (confirmed) instead.
 section,claim,value,status,who,source,as_of,next_check
-22.2,Top-score gains 2023-2024 on MMMU / GPQA / SWE-bench,+18.8 / +48.9 / +67.3 points,measured,AI Index,Stanford HAI (2025),2026-10-18,each edition
-22.2,SWE-bench Verified top score in one year,about 60% to near 100%,measured,AI Index,Stanford HAI (2026),2026-10-18,each edition
-22.2,PersonQA hallucination rate o3 / o1 / o4-mini,0.33 / 0.16 / 0.48,reported,developer,OpenAI (2025) Table 4,2026-10-18,each edition
-22.2,DeepSeek-R1 method peer-reviewed in Nature,Sept 2025,measured,peer review,Guo et al. (2025),2026-10-18,each edition
-22.2,Monitoring reasoning text,no new consensus found,book's inference,this book,Ch. 17 sources,2026-10-18,each edition
-22.3,METR 50%/80% horizons (Gemini 3.1 Pro; GPT-5.4; Claude Opus 4.6; Claude Mythos Preview early),6.4/1.5 h; 5.7/0.9 h; 12/1.2 h; 17/3.1 h,measured,METR,METR (2026) raw data,2026-10-18,each edition
-22.3,METR doubling time from 2023,about 129 days,measured trend,METR,METR (2026) raw data,2026-10-18,each edition
-22.3,METR page no longer actively updated,last update 2026-09-08,measured,METR,METR (2026),2026-10-18,each edition
-22.3,OSWorld best agent success,about 12% to about 66%; humans 72.36%,measured,AI Index; OSWorld authors,Stanford HAI (2026); Xie et al. (2024),2026-10-18,each edition
-22.3,Agentic AI Foundation founded with MCP and AGENTS.md,Dec 9 2025,reported,Linux Foundation,Linux Foundation (2025),2026-10-18,each edition
-22.4,Video with sound from two providers,Veo 3 May 20 2025; Sora 2 Sept 30 2025,reported,developers,Google (2025); press coverage of OpenAI,2026-10-18,each edition
-22.4,Multimodal reasoning meets or exceeds human baselines on some tests; analog clocks 50.1%,see value,measured,AI Index,Stanford HAI (2026),2026-10-18,each edition
-22.5,Open vs closed leaderboard gap,8% to 1.7% (Jan 2024 to Feb 2025),measured,AI Index (Chatbot Arena),Stanford HAI (2025),2026-10-18,each edition
-22.5,Open vs closed time gap,3.5 months (1.1-5.3),measured,Epoch AI,Epoch AI (2025),2026-10-18,each edition
+22.1,Fast-route box: METR highest horizon below 16 h (Claude Opus 4.6),about 12 h at 50% (range about 5-60 h); 1.2 h at 80%,measured,METR,METR (2026) raw data,2026-10-18,each edition
+22.1,Fast-route box: open vs closed time gap since Jan 2026,about 4 months,measured,Epoch AI,Edwards & Emberson (2026),2026-10-18,each edition
+22.1,Fast-route box: world data centers 2025 and 2030,485 TWh; 950 TWh,outside estimate; forecast,IEA,IEA (2026b),2026-10-18,each edition
+22.1,Fast-route box: Google median text prompt (full stack),0.24 Wh (about 17 s of a 50 W laptop; book's arithmetic),reported,developer,Google Cloud (2025),2026-10-18,each edition
+22.1,Fast-route box: IMO 2026 perfect-score claims,two companies claim 42 of 42,reported,companies via AFP,AFP (2026),2026-10-18,each edition
+22.2,Top-score gains 2023-2024 on MMMU / GPQA / SWE-bench,+18.8 / +48.9 / +67.3 points (SWE-bench 4.4% to 71.7%; book's subtraction),reported (compiled),AI Index,Stanford HAI (2025),2026-10-18,each edition
+22.2,SWE-bench Verified top score in one year,about 60% to near 100%,reported (compiled),AI Index,Stanford HAI (2026),2026-10-18,each edition
+22.2,PersonQA hallucination rate / accuracy o3 / o1 / o4-mini,0.33/0.59; 0.16/0.47; 0.48/0.36,reported,developer,OpenAI (2025a) Table 4,2026-10-18,each edition
+22.2,GPT-5 system card: gpt-5-thinking far fewer factual errors than o3 (own tests; LLM grader),e.g. 65% lower claim-level error rate on production-like prompts,reported,developer,OpenAI (2025b),2026-10-18,each edition
+22.2,DeepSeek R1-Zero and R1 method published after peer review in Nature,Sept 2025,confirmed (case tier),journal,Guo et al. (2025),2026-10-18,each edition
+22.2,Monitoring reasoning text,"new and fragile opportunity" (July 2025); no later change found,book's inference,this book,Korbak et al. (2025),2026-10-18,each edition
+22.3,METR 50%/80% horizons (Gemini 3.1 Pro; GPT-5.4; Claude Opus 4.6),6.4/1.5 h; 5.7/0.9 h; 12/1.2 h (50% range about 5-60 h),measured,METR,METR (2026) raw data (Time Horizon 1.1),2026-10-18,each edition
+22.3,Claude Mythos Preview (early) horizon,17/3.1 h; above METR's 16 h reliability limit; not counted,not counted,METR,METR (2026),2026-10-18,each edition
+22.3,METR doubling time from 2023 (excl. >16 h),about 129 days (range 104-158),measured trend,METR,METR (2026) raw data,2026-10-18,each edition
+22.3,METR page no longer actively updated,last update 2026-09-08,confirmed (case tier),METR's page,METR (2026),2026-10-18,each edition; find successor tracker
+22.3,OSWorld best agent success; human baseline (original task set),about 12% to about 66%; over 72%,reported (compiled); measured,AI Index; OSWorld authors,Stanford HAI (2026); Xie et al. (2024),2026-10-18,each edition
+22.3,Agentic AI Foundation: MCP (tool protocol); AGENTS.md (instruction file); goose,Dec 9 2025,confirmed (case tier); adoption counts reported,Linux Foundation,Linux Foundation (2025),2026-10-18,each edition
+22.4,Video with sound from two providers,Veo 3 May 20 2025; Sora 2 Sept 30 2025,reported,developers,Google (2025); Lanz (2025),2026-10-18,each edition
+22.4,Multimodal reasoning meets or exceeds human baselines on some tests; analog clocks 50.1%,see value,reported (compiled),AI Index,Stanford HAI (2026),2026-10-18,each edition
+22.5,Open vs closed leaderboard score gap,8% to 1.7% (Jan 2024 to Feb 2025),measured (crowd votes; compiled),AI Index (Chatbot Arena),Stanford HAI (2025),2026-10-18,each edition
+22.5,Open vs closed time gap,3.5 months (1.1-5.3) as of Oct 30 2025,measured,Epoch AI,Emberson (2025),2026-10-18,each edition
 22.5,Open vs closed time gap since Jan 2026,about 4 months,measured,Epoch AI,Edwards & Emberson (2026),2026-10-18,each edition
-22.6,Training compute growth of notable models,about 4.3x per year (this book's fit); Epoch 4-5x,measured,Epoch AI data,Epoch AI (2026),2026-10-18,each edition
-22.6,World data centers 2024 and 2030 base case,415 TWh (~1.5%); 945 TWh,measured estimate; forecast,IEA,International Energy Agency (2025),2026-10-18,each edition
-22.6,Data-center electricity 2025 growth and 2030 outlook,+17%; double by 2030; AI-focused triple,measured estimate; forecast,IEA,International Energy Agency (2026),2026-10-18,each edition
-22.6,U.S. data centers 2023 and 2028,4.4% (176 TWh); 6.7%-12%,measured estimate; forecast,LBNL via DOE,Shehabi et al. (2024); DOE (2024) [VERIFY PDF],2026-10-18,each edition
+22.6,Training compute growth of notable models,about 4.3x per year (this book's fit); Epoch 4-5x for frontier models,outside estimates; book's fit,Epoch AI data,Epoch AI (2026),2026-10-18,each edition
+22.6,World data centers 2024 and 2030 base case (2025 edition),415 TWh (~1.5%); 945 TWh,outside estimate; forecast,IEA,IEA (2025),2026-10-18,each edition
+22.6,World data centers 2025 and 2030 (2026 edition),485 TWh (+17%; AI-focused +50%); 950 TWh (~3% in 2030),outside estimate; forecast,IEA,IEA (2026a; 2026b),2026-10-18,each edition
+22.6,U.S. data centers 2023 and 2028,4.4% (176 TWh); 325-580 TWh (6.7%-12%) as 2028 totals,outside estimate; scenarios,LBNL via DOE,Shehabi et al. (2024); DOE (2024),2026-10-18,before print (PDF) and each edition
 22.6,Per median prompt (Google),0.24 Wh full stack; 0.10 Wh active chips,reported,developer,Elsworth et al. (2025); Google Cloud (2025),2026-10-18,each edition
-22.6,Typical query (Epoch estimate),about 0.3 Wh,measured estimate,Epoch AI,You (2025),2026-10-18,each edition
-22.7,2024 Nobel Prize in Chemistry halves,protein design; structure prediction,measured,Nobel committee,Nobel Prize Outreach (2024) [VERIFY page],2026-10-18,each edition
-22.7,GNoME structures and critique,2.2 million; 736 already made; scant evidence,reported; measured,developers; critics,Merchant et al. (2023); Cheetham & Seshadri (2024),2026-10-18,each edition
+22.6,Typical query (Epoch estimate),about 0.3 Wh (range 0.1-4 Wh; 10k-token input about 2.5 Wh),outside estimate,Epoch AI,You (2025),2026-10-18,each edition
+22.7,2024 Nobel Prize in Chemistry halves,protein design; structure prediction,confirmed (case tier),Nobel record,Nobel Prize Outreach (2024),2026-10-18,each edition
+22.7,GNoME structures and critique,2.2 million predicted stable; 736 already made; scant evidence,reported; measured (outside critique),developers; critics,Merchant et al. (2023); Cheetham & Seshadri (2024),2026-10-18,each edition
 22.7,Erdős #728 Lean-checked AI-assisted solution,Jan 2026,measured,proof checker,Sothanaphan (2026),2026-10-18,each edition
-22.7,Unit-distance conjecture disproof,May 20 2026,reported,developer,openai.com [VERIFY],2026-10-18,each edition
-Case,IMO 2026 perfect-score claims (Huawei; Xiaohongshu); 7 of 666 students full marks,100%,reported,developers via AFP,AFP (2026),2026-10-18,each edition
+22.7,Unit-distance conjecture disproof,May 20 2026,reported; checked in an outside preprint,developer; nine outside mathematicians,Alon et al. (2026),2026-10-18,each edition (peer review?)
+22.8,IMO 2026 perfect-score claims (Huawei; Xiaohongshu); 7 of 666 students full marks (AFP citing scoreboard),100%,reported,companies via AFP,AFP (2026),2026-10-18,each edition (IMO statement?)

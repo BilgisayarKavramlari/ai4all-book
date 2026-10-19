@@ -8,8 +8,9 @@ New signature introduced here (book map: "Capability timeline (rewritten each ed
     capability_timeline(highlight=None, note=None, events=None, as_of="October 2026", title=None,
                         start=None, end=None)
 
-  Events come from data/ch22_timeline.csv (id, date, label, status, who, section, aged, as_of) unless
-  `events` (a list of dicts with the same keys) is passed. At most 9 event boxes; the legend does not count.
+  Events come from data/ch22_timeline.csv (id, date, label, status, who, section, aged, as_of, tag) unless
+  `events` (a list of dicts with the same keys) is passed. The optional `tag` column replaces the status word
+  in the box's tag text (e.g. "outside estimate", drawn with the measured mark); the mark follows `status`. At most 9 event boxes; the legend does not count.
   Boxes are placed in date order on two rows (above and below a year axis); a leader line joins each box to
   its date on the axis; a labeled vertical line marks the as-of date.
   Evidence status by tag text and marks, never by color alone:
@@ -128,7 +129,7 @@ def capability_timeline(highlight=None, note=None, events=None, as_of="October 2
             f.text(cx, by + 16, dlab, size=13, weight="700", color=tc)
             f.text(cx, by + 54, e["label"], size=13, color=tc, width=bw - 14)
             aged = e.get("aged", "no") == "yes"
-            tag = f"{st}: {e['who']}" + (" · aged" if aged else "")
+            tag = f"{e.get('tag') or st}: {e['who']}" + (" · aged" if aged else "")
             f.text(cx, by + 108, tag, size=13, italic=True, color=tc, width=bw - 10)
             mx, my = bx + bw - 14, by + 4
             if st == "measured":
@@ -143,7 +144,7 @@ def capability_timeline(highlight=None, note=None, events=None, as_of="October 2
             f.line(cx, by + bh if up else by, cx, ax_y, width=1.2, color=muted)
             f.raw(f'<circle cx="{cx:.1f}" cy="{ax_y}" r="4.5" fill="{ink}"/>')
         ly = ax_y + 44 + bh + 22
-        f.text(400, ly, "■ measured = checked by an outside source · □ reported = the developer's statement",
+        f.text(400, ly, "■ measured or outside estimate = an outside source · □ reported = the developer's statement",
                size=13, color=muted)
         f.text(400, ly + 21, "→ light fill = forecast · dashed outline = the book's inference · folded corner = aged",
                size=13, color=muted)
@@ -199,12 +200,12 @@ def storyboard(f):
     cols = [("Graded by the competition",
              "Gemini Deep Think: 35 of 42, natural language, 4.5 hours",
              "measured: IMO coordinators (as DeepMind's post states)", False),
-            ("Graded by people the developer chose",
+            ("Graded in the developer's own evaluation",
              "OpenAI experimental model: 35 of 42",
-             "reported: three former medalists (Reuters)", False),
+             "reported: three former medalists, according to OpenAI", False),
             ("Checked by a proof program",
-             "Seed Prover (30 of 42, IMO-certified) · Aristotle (gold-level)",
-             "measured: the Lean proof checker, after problems were formalized", False)]
+             "Seed Prover: 30 of 42 after about 3 days · Aristotle: gold level",
+             "measured: each proof's validity (Lean) · scores reported by the developers", False)]
     for i, (head, what, tag, _) in enumerate(cols):
         x = 20 + i * 262
         f.box(x, 50, 236, 64, head, role="neutral", kind="human", size=14)
@@ -215,8 +216,8 @@ def storyboard(f):
           "(the IMO president, reported by AFP)", role="soft", kind="step", size=13)
     f.box(20, 398, 760, 50, "Human context (AFP): 641 students; about 10% won gold; five scored 42 of 42",
           role="neutral", kind="human", size=13)
-    f.text(400, 470, "Hexagon = an AI system's result · rounded = who checked it · tags give the evidence "
-           "status and the source", size=13, color=muted, width=780)
+    f.text(400, 470, "Hexagon = an AI system's result · rounded = who checked it · Seed Prover's score: "
+           "IMO-confirmed, according to ByteDance", size=13, color=muted, width=780)
 
 
 # ---------------------------------------------------------------- F22.4 evidence status and crosswalk
@@ -227,10 +228,10 @@ def evidence_status(f):
           sub="when it was made or measured", sub_size=13)
     f.box(285, 48, 230, 74, "2. Evidence status", role="highlight", kind="decision", size=14, thick=True)
     f.box(550, 48, 230, 74, "3. Who could check it", role="neutral", kind="human", size=15,
-          sub="the outside source that could", sub_size=13)
+          sub="an outside source that could test it", sub_size=13)
     f.arrow(252, 85, 283, 85)
     f.arrow(517, 85, 548, 85)
-    sts = [("■ measured", "checked by an outside source; method you can read", "neutral", False),
+    sts = [("■ measured", "checked by someone other than the developer", "neutral", False),
            ("□ reported", "stated by the developer, or an outlet citing it", "neutral", False),
            ("→ forecast", "about the future, whoever says it", "soft", False),
            ("the book's inference", "this book's reading, marked as such", "neutral", True)]
@@ -243,10 +244,12 @@ def evidence_status(f):
           size=14, sub="confirmed · reported · inferred", sub_size=13)
     f.box(410, 308, 370, 92, "Evidence status: who checked the capability?", role="neutral", kind="step",
           size=14, sub="measured · reported · forecast · the book's inference", sub_size=13)
-    f.text(400, 428, "Example: DeepMind's post is the confirmed record of what DeepMind says; the score it "
+    f.text(400, 424, "Example: DeepMind's post is the confirmed record of what DeepMind says; the score it "
            "reports was checked by the IMO's coordinators, so it is measured.", size=13, italic=True,
            width=760)
-    f.text(400, 470, "Dashed = the book's inference only · light fill = forecast · diamond = the decision you "
+    f.text(400, 464, "\"Reported\" is in both lists: as a tier, a named outlet says so; as a status, only the "
+           "developer vouches for the capability.", size=13, italic=True, width=760)
+    f.text(400, 500, "Dashed = the book's inference only · light fill = forecast · diamond = the decision you "
            "make about a claim", size=13, color=muted, width=780)
 
 
@@ -266,8 +269,9 @@ def test_time(f):
           sub="less computation at answer time", sub_size=13)
     f.box(420, 200, 360, 90, "Reasoning model: more tokens first", role="neutral", kind="step", size=14,
           sub="test-time compute: more computation spent per answer", sub_size=13)
-    f.box(20, 320, 760, 70, "Outside tests: large gains on math and code (measured). Factual errors remain "
-          "and depend on the task (one developer's test: reported).", role="soft", kind="step", size=13)
+    f.box(20, 320, 760, 70, "Scores compiled by an outside tracker: large gains on math and code. Factual "
+          "errors remain and depend on the task (one developer's test: reported).", role="soft", kind="step",
+          size=13)
     f.text(400, 420, "Hexagon = AI · the reasoning text is generated like any other text: a claim to check "
            "(Chapter 17)", size=13, color=muted, width=780)
 
@@ -275,9 +279,9 @@ def test_time(f):
 # ---------------------------------------------------------------- F22.13 trend vs forecast
 def trend_forecast(f):
     muted = MUTED[f.mode]
-    f.text(400, 22, "The trend is measured; whether it continues is a forecast", size=18, weight="700")
-    f.box(20, 60, 240, 110, "Measured inputs", role="neutral", kind="step", size=15,
-          sub="training compute, electricity use, inference cost (outside trackers)", sub_size=13)
+    f.text(400, 22, "The trend is documented; whether it continues is a forecast", size=18, weight="700")
+    f.box(20, 60, 240, 110, "Documented inputs", role="neutral", kind="step", size=15,
+          sub="training compute, electricity use (outside estimates)", sub_size=13)
     f.box(280, 60, 240, 110, "Debated returns", role="neutral", kind="decision", size=14)
     f.box(540, 60, 240, 110, "Forecasts", role="soft", kind="step", size=15,
           sub="2030 compute, data, power; what more scale will buy", sub_size=13)
@@ -365,8 +369,8 @@ def _timeline_title(evs):
     from collections import Counter
     c = Counter(e["status"] for e in evs)
     words = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine"}
-    return (f"Of the {words[len(evs)]} milestones in this chapter's timeline, {words[c['measured']]} were "
-            f"checked by an outside source")
+    return (f"Of the {words[len(evs)]} milestones in this chapter's timeline, {words[c['measured']]} rest on "
+            f"an outside source")
 
 
 def _aged_title(evs):
@@ -377,11 +381,18 @@ def _aged_title(evs):
 
 EVS = read_events()
 AGED = read_events("ch22_timeline_aged.csv")
-COMPUTER_USE = agent_loop(
+_COMPUTER_USE_BASE = agent_loop(
     highlight=["tool", "observation"],
-    annotate={"tool": "a click, keystroke or typed text",
-              "observation": "a new screenshot of the screen"},
+    annotate={"observation": "a new screenshot of the screen"},
     note="A computer-use agent: the same loop, with the screen as the observation (Chapter 14 owns the gates)")
+
+
+def COMPUTER_USE(f):
+    """Signature 9 as drawn by ch14_figures.agent_loop; the tool-call note is placed left of the
+    tool-call -> observation arrow here, because the shared default position sits on that arrow."""
+    _COMPUTER_USE_BASE(f)
+    f.text(615, 200, "a click, keystroke or typed text", size=13, italic=True, weight="600", width=120,
+           color=INK[f.mode])
 MODALITIES = modality_tokens(
     highlight=["audio", "model"],
     note="As of October 2026, some models also produce sound and video, not only receive them (dated box, 22.4)")
@@ -393,9 +404,9 @@ FUNNEL_SCIENCE = verification_funnel(
            "expert": "specialists: replication, critique, formal checks"})
 CHAIN_ERDOS = failure_chain(
     notes={0: "A literature search found existing papers (the output was useful)",
-           1: "Posted as 'solved' before anyone checked the problems' status (reported)",
+           1: "Posted as 'solved' before anyone checked what 'open' meant (documented)",
            2: "Readers and other researchers relied on the post (reported)",
-           3: "Retraction and public correction; no lasting harm reported"},
+           3: "Posts mostly deleted; public correction; no lasting harm reported"},
     highlight={1},
     tag="Tree: none (no output shown wrong) · the failure was a claim published before its check (link 2)")
 
@@ -404,21 +415,22 @@ FIGS = [
     ("f22-02-storyboard", storyboard, 800, 490, "IMO 2025: the same score, three kinds of check"),
     ("f22-03-timeline", capability_timeline(title=_timeline_title(EVS)), 800, timeline_height(),
      _timeline_title(EVS)),
-    ("f22-04-evidence-status", evidence_status, 800, 490,
+    ("f22-04-evidence-status", evidence_status, 800, 520,
      "A claim's status tells you who checked it, not whether it is true"),
     ("f22-05-test-time", test_time, 800, 440,
      "A reasoning model spends extra tokens before it answers, and they cost time and money"),
     ("f22-09-computer-use", COMPUTER_USE, 800, LOOP_H,
      "A computer-use agent's observation is a screenshot; its action is a click or a keystroke"),
     ("f22-10-modalities", MODALITIES, 800, 450, "Some models now produce sound and video, not only receive them"),
-    ("f22-13-trend-forecast", trend_forecast, 800, 460, "The trend is measured; whether it continues is a forecast"),
+    ("f22-13-trend-forecast", trend_forecast, 800, 460, "The trend is documented; whether it continues is a forecast"),
     ("f22-15-boundary", boundary, 800, 506, "A per-prompt energy figure depends on what it counts"),
     ("f22-16-funnel-science", FUNNEL_SCIENCE, 800, funnel_height(tag=True, note=True),
      "For a discovery, the field's own checks are the last stage"),
     ("f22-17-timeline-aged",
-     capability_timeline(events=AGED, start=2014, end=2031, highlight=["qa14", "metr25", "metr26"],
+     capability_timeline(events=AGED, start=2014, end=2031, highlight=["qa14", "metr25", "imo25"],
                          title=_aged_title(AGED),
-                         note="Thick boxes = the claims re-checked in section 22.8 (the 2014 entry; two 22.3 claims)"),
+                         note="Thick boxes = claims re-checked in section 22.8: the 2014 entry, a 2025 horizon, "
+                              "the 2025 olympiad"),
      800, timeline_height(note=True), _aged_title(AGED)),
     ("f22-18-aging-card", aging_card, 800, 480,
      "An aging check asks what a dated claim describes today, and who says so"),

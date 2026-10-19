@@ -450,3 +450,21 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Stochastic parrot | Bender et al.'s (2021) description of a language model: a system that stitches together sequences of linguistic form it has seen, guided by probabilities of how they combine, without reference to meaning. | Stokastik papağan |
 | Symbol grounding problem | How symbols could get their meaning from something other than more symbols (Harnad, 1990). | Sembol temellendirme sorunu |
 | Systems reply | The reply to the Chinese Room that the person is only one part of a system that also includes the rulebook, the papers and the room, and that the whole system understands. | Sistem yanıtı |
+| Capability claim | A statement that a system can now do something. | Yetenek iddiası |
+| As-of date | The date on which a claim was made or measured, not the date on which you read it. | Geçerlilik tarihi |
+| Evidence status | Who has checked a claim so far: measured, reported or forecast, with the book's own inference kept separate; it does not say whether the claim is true. | Kanıt durumu |
+| Measured (claim) | Tested, run or checked by someone other than the developer (an outside source), with a method you can read. | Ölçülmüş (iddia) |
+| Reported (claim) | Stated by the developer, or by a news outlet citing the developer. Scores that an outside tracker only compiles are tagged *reported (compiled)*. | Bildirilmiş (iddia) |
+| Outside estimate | A figure that an outside source calculated from assumptions it states rather than measured; it has an outside author, but its assumptions are the thing to check. | Dış tahmin |
+| Forecast | A statement about the future, whoever makes it. | Öngörü |
+| Outside evaluation | A test of a system run by an outside source. | Dış değerlendirme |
+| Reasoning model | The providers' name for a model trained to produce many intermediate tokens, often hidden, before its final answer; a provider term, not a claim that the model reasons as a person does. | Akıl yürütme modeli |
+| Test-time compute | Computation spent at the moment of answering a question, rather than only during training. | Yanıt anı hesaplaması (test zamanı hesaplama) |
+| Time horizon (of an agent) | The length of task, measured in how long skilled people take, that an agent is predicted to complete half the time (the 50% time horizon); the 80% time horizon is the length it completes four times out of five. | Zaman ufku (ajanın) |
+| Computer-use agent | An agent whose observations are screenshots of a computer screen and whose actions are clicks, keystrokes and typed text. | Bilgisayar kullanan ajan |
+| Tool protocol | A published format that lets a model's requests reach many tools in the same way. | Araç protokolü |
+| Training compute | The total amount of computation used to train a model, counted in FLOP. | Eğitim hesaplaması |
+| FLOP | Floating-point operations: the individual arithmetic steps a computer performs, used to count training compute. | FLOP (kayan noktalı işlem) |
+| Scaling (of AI models) | The finding that language models predicted text better, in a smooth and predictable way, as their size, their training data and the computing used to train them grew. | Ölçekleme |
+| System boundary (of an energy estimate) | Which parts of a system an energy estimate counts. | Sistem sınırı (enerji tahmininin) |
+| Aging check | A check of a dated claim against the best current source: what that source says today, a verdict on the old claim as a description of today, and what changed (the facts, the status or only the names). | Eskime kontrolü |

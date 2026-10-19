@@ -21,6 +21,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Agent loop** · Ch. 14
 :   The cycle an agent repeats: the model produces a plan for the next action, the system runs the tool call, and the result, the observation, is added to the context window, until a stop condition is met.
 
+**Aging check** · Ch. 22
+:   A check of a dated claim against the best current source: what that source says today, a verdict on the old claim as a description of today, and what changed (the facts, the status or only the names).
+
 **AI search** · Ch. 9
 :   A tool that retrieves pages and then produces an answer with links (the search-then-generate lane).
 
@@ -80,6 +83,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 
 **Artificial general intelligence (AGI)** · Ch. 23
 :   An AI system that matches or exceeds people across most cognitive tasks, not only some; there is no agreed definition.
+
+**As-of date** · Ch. 22
+:   The date on which a claim was made or measured, not the date on which you read it.
 
 **Assistance** · Ch. 1
 :   AI use that helps you do the thinking yourself.
@@ -160,6 +166,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Calibration within groups (Deep)** · Ch. 16
 :   A score means the same chance of the outcome in every group (a score of 0.7 means a 70% chance).
 
+**Capability claim** · Ch. 22
+:   A statement that a system can now do something.
+
 **Career narrative** · Ch. 20
 :   A short argument to one named reader: where you are going, shown by three pieces of evidence.
 
@@ -187,7 +196,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Citation tracing** · Ch. 9
 :   Following a claim from where you met it, hop by hop, to the place it first appeared, checking at each hop that the cited source says what the citing source claims.
 
-**Claim** · Ch. 8 (also 22)
+**Claim** · Ch. 8
 :   One statement in an output that you might rely on; marked checkable (it can be true or false) or not checkable as true or false (a judgment, recommendation or prediction).
 
 **Class** · Ch. 2
@@ -213,6 +222,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 
 **Computational functionalism** · Ch. 23
 :   The view, used by Butlin et al. as a working hypothesis, that the right computations could be enough for consciousness.
+
+**Computer-use agent** · Ch. 22
+:   An agent whose observations are screenshots of a computer screen and whose actions are clicks, keystrokes and typed text.
 
 **Confabulation (Deep)** · Ch. 4
 :   Another word for hallucination, used by some researchers and by NIST's Generative AI Profile: confidently stated but false content.
@@ -404,6 +416,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Evidence map** · Ch. 20
 :   A table that lists each entry with the course outcome it shows, the NACE competency it gives evidence of, and where the checks are.
 
+**Evidence status** · Ch. 22
+:   Who has checked a claim so far: measured, reported or forecast, with the book's own inference kept separate; it does not say whether the claim is true.
+
 **Example** · Ch. 2
 :   One item in a dataset, such as one photo or one email.
 
@@ -487,8 +502,14 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Fit matrix** · Ch. 12
 :   A table whose rows are the parts of a task and whose columns are the tools you tested plus no AI; each cell holds a fit decision, its rung and its reason.
 
+**FLOP** · Ch. 22
+:   Floating-point operations: the individual arithmetic steps a computer performs, used to count training compute.
+
 **Fluent (output)** · Ch. 1
 :   Smooth, confident, well-organized text that sounds expert, whether or not it is correct.
+
+**Forecast** · Ch. 22
+:   A statement about the future, whoever makes it.
 
 **Forward-looking responsibility** · Ch. 23
 :   A duty assigned in advance to prevent harm, as opposed to blame assigned afterward.
@@ -711,6 +732,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Meaningful work** · Ch. 23
 :   Work in which people use their skills, make their own decisions and contribute something others value.
 
+**Measured (claim)** · Ch. 22
+:   Tested, run or checked by someone other than the developer (an outside source), with a method you can read.
+
 **Memory (product feature)** · Ch. 3
 :   A product feature that saves notes about a user, or draws on past chats, and adds them to later conversations; it adds text and does not train the model.
 
@@ -813,6 +837,12 @@ Each entry gives the book's definition, word for word as it appears where the te
 
 **Output format** · Ch. 5
 :   The shape the output should take, such as a table, a list or a word limit, chosen so it can be checked.
+
+**Outside estimate** · Ch. 22
+:   A figure that an outside source calculated from assumptions it states rather than measured; it has an outside author, but its assumptions are the thing to check.
+
+**Outside evaluation** · Ch. 22
+:   A test of a system run by an outside source.
 
 **Outside source** · Ch. 9
 :   A source not written or paid for by whoever is behind the page you are checking.
@@ -997,6 +1027,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Random assignment** · Ch. 1
 :   Using chance to decide who receives a tool, so groups are alike on average in everything else.
 
+**Reasoning model** · Ch. 22
+:   The providers' name for a model trained to produce many intermediate tokens, often hidden, before its final answer; a provider term, not a claim that the model reasons as a person does.
+
 **Reasoning tokens** · Ch. 3
 :   Extra tokens some tools produce before the answer, sometimes hidden; they are made in the same way as other tokens and count toward context and cost.
 
@@ -1029,6 +1062,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 
 **Remaining uncertainty** · Ch. 8
 :   What you could not check, and why; recorded with every verdict.
+
+**Reported (claim)** · Ch. 22
+:   Stated by the developer, or by a news outlet citing the developer. Scores that an outside tracker only compiles are tagged *reported (compiled)*.
 
 **Representation harm** · Ch. 16
 :   Harm that stereotypes, demeans or leaves out a group in what people see and read.
@@ -1124,6 +1160,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 
 **Scaffold** · Ch. 7
 :   Temporary support that lets you do what you cannot yet do alone, withdrawn as you improve.
+
+**Scaling (of AI models)** · Ch. 22
+:   The finding that language models predicted text better, in a smooth and predictable way, as their size, their training data and the computing used to train them grew.
 
 **Scope of practice** · Ch. 19
 :   What the members of a licensed profession may do.
@@ -1224,6 +1263,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Synthetic media** · Ch. 13 (also 18)
 :   Images, audio or video generated or substantially altered by AI.
 
+**System boundary (of an energy estimate)** · Ch. 22
+:   Which parts of a system an energy estimate counts.
+
 **System card** · Ch. 17
 :   A provider's document about a released AI system, describing its evaluations, known risks and safety measures.
 
@@ -1265,6 +1307,12 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Test set** · Ch. 2
 :   Labeled examples kept away from training and used only to score the model.
 
+**Test-time compute** · Ch. 22
+:   Computation spent at the moment of answering a question, rather than only during training.
+
+**Time horizon (of an agent)** · Ch. 22
+:   The length of task, measured in how long skilled people take, that an agent is predicted to complete half the time (the 50% time horizon); the 80% time horizon is the length it completes four times out of five.
+
 **Token** · Ch. 3
 :   A unit of text (a word, part of a word, or a symbol) that a language model receives and produces.
 
@@ -1274,6 +1322,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Tone** · Ch. 10
 :   The attitude a message conveys toward its reader and topic, such as formal, warm or brief.
 
+**Tool protocol** · Ch. 22
+:   A published format that lets a model's requests reach many tools in the same way.
+
 **Tool use** · Ch. 3
 :   A model producing a request to run other software, such as a calculator or a search engine, whose result is added to the context window.
 
@@ -1282,6 +1333,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 
 **Trademark** · Ch. 18
 :   A word, name, logo or other sign that identifies who offers goods or services, protected for the business that uses it in trade, whoever designed it.
+
+**Training compute** · Ch. 22
+:   The total amount of computation used to train a model, counted in FLOP.
 
 **Training data** · Ch. 2
 :   The examples a model learns from.
@@ -1408,6 +1462,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Ajan döngüsü | Agent loop |
 | Akıcı (çıktı) | Fluent (output) |
 | Akıl yürütme belirteçleri | Reasoning tokens |
+| Akıl yürütme modeli | Reasoning model |
 | Akran takas testi | Peer swap test |
 | Akran testi | Peer test |
 | Alan rehberi | Field guide |
@@ -1417,6 +1472,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Anlamlı insan denetimi | Meaningful human control |
 | Anlamlı iş | Meaningful work |
 | Araç kullanımı | Tool use |
+| Araç protokolü | Tool protocol |
 | Aralıklı çalışma | Spacing (spaced practice) |
 | Araştırma raporu aracı | Research-report tool |
 | Argüman haritası | Argument map |
@@ -1449,8 +1505,10 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Belirteçleyici (tokenizer) | Tokenizer |
 | Bellek (ürün özelliği) | Memory (product feature) |
 | Beyan edilen güven | Stated confidence |
+| Bildirilmiş (iddia) | Reported (claim) |
 | Bilgi kesim tarihi | Knowledge cutoff |
 | Bilgilendirilmiş onam | Informed consent |
+| Bilgisayar kullanan ajan | Computer-use agent |
 | Bilinç göstergesi özelliği | Indicator property (of consciousness) |
 | Bilişsel yük aktarımı | Cognitive offloading (Deep) |
 | Birincil kaynak | Primary source |
@@ -1478,8 +1536,10 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Derin sahte dedektörü | Deepfake detector |
 | Destek (yardım) | Assistance |
 | Devretme merdiveni | Delegation Ladder |
+| Dış değerlendirme | Outside evaluation |
 | Dış kaynak | Outside source |
 | Dış kaynak kullanımı (devretme) | Outsourcing |
+| Dış tahmin | Outside estimate |
 | Dışdeğerleme | Extrapolation (in labor-market forecasts; Deep) |
 | Dışsal halüsinasyon | Extrinsic hallucination |
 | Difüzyon modeli | Diffusion model |
@@ -1503,6 +1563,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Düşünce zinciri metni | Chain-of-thought text |
 | Düzeltme | Correction (of an article) |
 | Düzenleme haritası | Regulation Map |
+| Eğitim hesaplaması | Training compute |
 | Eğitim kümesi | Training set |
 | Eğitim verisi | Training data |
 | Eksik değer | Missing value |
@@ -1512,6 +1573,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Erişim (getirme) | Retrieval |
 | Erişimle zenginleştirilmiş üretim | Retrieval-augmented generation (RAG) |
 | (Telifte) eser sahipliği | Authorship (in copyright) |
+| Eskime kontrolü | Aging check |
 | Eşit hata oranları | Equal error rates |
 | Eşit kesinlik | Equal precision |
 | Eşit seçilme oranları | Equal selection rates |
@@ -1525,6 +1587,8 @@ Each entry gives the book's definition, word for word as it appears where the te
 | FERPA (öğrenci kayıtları gizliliği yasası) | FERPA |
 | Filigran (dijital) | Watermark (text; Deep) |
 | Filigran (medya) | Watermark (media) |
+| FLOP (kayan noktalı işlem) | FLOP |
+| Geçerlilik tarihi | As-of date |
 | Genel (küresel) açıklama | Global explanation |
 | Gereken basamak | Rung needed |
 | Geri alınabilir eylem | Reversible action |
@@ -1606,6 +1670,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Kalibrasyon farkı | Calibration gap |
 | Kamu malı | Public domain |
 | Kanal dışı doğrulama | Out-of-band check |
+| Kanıt durumu | Evidence status |
 | Kanıt haritası | Evidence map |
 | Kanun | Statute |
 | Kapalı altyazı | Closed captions |
@@ -1671,11 +1736,14 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Otomatik karar | Automated decision |
 | Öğrenme oranı | Learning rate |
 | Öğretmen kipi | Tutor mode |
+| Ölçekleme | Scaling (of AI models) |
+| Ölçülmüş (iddia) | Measured (claim) |
 | Ölçüt | Criterion (in a decision matrix) |
 | Ölümcül üçlü | Lethal trifecta |
 | Ön baskı (hakem öncesi makale) | Preprint |
 | Ön eğitim | Pretraining |
 | Önce yaz | Write first |
+| Öngörü | Forecast |
 | Öngörücü polislik | Predictive policing (Deep) |
 | Örnek | Example |
 | Örnek tabanlı açıklama | Example-based explanation |
@@ -1729,6 +1797,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Simpson paradoksu | Simpson's paradox |
 | Sistem istemi | System prompt |
 | Sistem kartı | System card |
+| Sistem sınırı (enerji tahmininin) | System boundary (of an energy estimate) |
 | Sistem yanıtı | Systems reply |
 | Sistematik derleme | Systematic review |
 | Sokratik sorgulama | Socratic questioning |
@@ -1795,6 +1864,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Verimlilik | Productivity (in a study) |
 | Yalancının kazancı | Liar's dividend |
 | Yanal okuma | Lateral reading |
+| Yanıt anı hesaplaması (test zamanı hesaplama) | Test-time compute |
 | Yanlı etiketler | Biased labels |
 | (Üretilen çıktıda) yanlılık | Bias (in generated output) |
 | (Yapay zekâ sisteminde) yanlılık | Bias (in an AI system) |
@@ -1826,6 +1896,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Yerel açıklama | Local explanation |
 | Yerel model | Local model |
 | Yerleştirilmiş hata | Planted fault |
+| Yetenek iddiası | Capability claim |
 | Yetkinlik | Competency (career) |
 | Yineleme | Iteration |
 | Yineleme günlüğü | Iteration log |
@@ -1837,3 +1908,4 @@ Each entry gives the book's definition, word for word as it appears where the te
 | Yumuşak kapı | Soft gate |
 | Yüksek riskli yapay zekâ sistemi | High-risk AI system (EU AI Act) |
 | Yüzde puan | Percentage point |
+| Zaman ufku (ajanın) | Time horizon (of an agent) |

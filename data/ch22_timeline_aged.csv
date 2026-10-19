@@ -1,8 +1,8 @@
-# Events for the 22.8 aging timeline (2014-2026). aged = yes when a later source changed the claim's facts or status.
-id,date,label,status,who,section,aged,as_of
-qa14,2014-09-01,Machines that talk with users (Siri; Watson),reported,a 2014 overview,22.8,yes,2026-10-18
-metr25,2025-03-19,Agents: 50% horizon about 50 minutes,measured,METR (first version),22.8,yes,2026-10-18
-erdos25,2025-10-17,'Ten open problems solved' post,reported,a developer's executive,Case,yes,2026-10-18
-erdos26,2026-01-04,Erdős problem 728 solved; proof checked in Lean,measured,proof checker + write-up,Case,no,2026-10-18
-metr26,2026-09-08,METR stops updating its horizon page,measured,METR,22.3,no,2026-10-18
-iea30,2030-01-01,Data-center electricity doubles,forecast,IEA (2026 edition),22.6,no,2026-10-18
+# Events for the 22.8 aging timeline (2014-2030). aged = yes when a later source changed the claim's facts or status (or only its names). Thick boxes (highlight) = claims re-checked in section 22.8.
+id,date,label,status,who,section,aged,as_of,tag
+qa14,2014-09-01,Machines that talk with users (Siri; Watson),reported,a 2014 overview,22.8,yes,2026-10-18,
+metr25,2025-03-19,Agents: 50% horizon about 50 minutes,measured,METR (first version),22.8,yes,2026-10-18,
+imo25,2025-07-21,Best measured AI score at the IMO: 35 of 42,measured,IMO coordinators,22.8,yes,2026-10-18,
+erdos25,2025-10-17,'Ten open problems solved' post,reported,a developer's executive,Case,yes,2026-10-18,
+imo26,2026-07-23,Two systems claim 42 of 42 at IMO 2026,reported,the developers (AFP),22.8,no,2026-10-18,
+iea30,2030-01-01,Data-center electricity about 950 TWh,forecast,IEA (2026 edition),22.6,no,2026-10-18,

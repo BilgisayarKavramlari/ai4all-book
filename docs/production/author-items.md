@@ -166,3 +166,9 @@
 4. **From the Field:** approve the ANT entry (September 2014, printed pp. 14–15) and the paraphrase, including the 2004 e-government actor network (five groups) as the entry states it; any real anecdote, never constructed.
 5. Final voice edit (Mode B pass pending).
 <!-- /ch23 -->
+
+<!-- ch22 -->
+## Chapter 22
+1. **From the Field:** approve the use of Şeker (2014), *Ağ Etkisi, Moore Yasası ve Dijitalleşmenin Yenilik ile İlişkisi*, *YBS Ansiklopedi* 1(1), with the wording that it "drew on a table by Fichman, Dos Santos and Zheng (2014)"; confirm the entry's page range (printed citation says 8–12; file name says 9–12); the chapter writes "I wrote" in your voice (not commercial; no D16 line). 22.8 now gives the 2014 row a next check ("the direction, at the next edition") and pairs it with a student-checkable example (the 2026 olympiad). Optional: a real anecdote about watching a technology's examples age; never written for you.
+2. Final voice edit.
+<!-- /ch22 -->

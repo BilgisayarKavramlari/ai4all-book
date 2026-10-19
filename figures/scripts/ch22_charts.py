@@ -6,7 +6,7 @@ Published values and downloaded data (provenance and SHA-256 in data/ch22_meta.t
   F22.8  data/ch22_metr.csv         METR Time Horizon 1.1 raw results (downloaded 2026-10-18)
   F22.11 data/ch22_open_closed.csv  AI Index 2025; Epoch AI Data Insights (2025, 2026)
   F22.12 data/ch22_compute.csv      Epoch AI, Data on AI models (CC BY 4.0)
-  F22.14 data/ch22_energy.csv       IEA (2025, 2026); LBNL via DOE (2024)
+  F22.14 data/ch22_energy.csv       IEA (2025; 2026b report summary); LBNL via DOE (2024)
 Fitted trend lines are this book's calculation, drawn dotted and labeled "trend, not data" (book-wide rule);
 dashes are never used for data. Provider is shown by marker shape and label, never by color alone.
 Every title is written from the CSV values at run time.
@@ -70,9 +70,11 @@ def ols(xs, ys):
 def personqa():
     rows = read("ch22_personqa.csv")
     by = {r["model"]: r for r in rows}
-    title = (f"In its developer's 2025 test, the newer o3 invented facts about people in "
-             f"{float(by['o3']['hallucination_rate']):.0%} of answers, the older o1 in "
-             f"{float(by['o1']['hallucination_rate']):.0%}")
+    more_acc = float(by["o3"]["accuracy"]) > float(by["o1"]["accuracy"])
+    more_hal = float(by["o3"]["hallucination_rate"]) > float(by["o1"]["hallucination_rate"])
+    assert more_acc and more_hal, "title no longer matches the data"
+    title = ("In its developer's 2025 test, the newer o3 was more often accurate and more often wrong "
+             "about people than the older o1")
     for mode, st in STYLE.items():
         fig, ax = plt.subplots(figsize=(8, 3.9))
         names = [r["model"] for r in rows]
@@ -92,8 +94,9 @@ def personqa():
         ax.set_ylabel("share of answers")
         ax.legend(frameon=False, loc="upper left", ncol=2)
         ax.set_title(title, fontsize=13.5, loc="left", wrap=True)
-        source(fig, "Source: OpenAI (2025), o3 and o4-mini System Card, Table 4, PersonQA. The developer's own "
-               "test (reported); it says more research is needed to explain the result. As of October 2026.")
+        source(fig, "Source: OpenAI (2025a), o3 and o4-mini System Card, Table 4, PersonQA. The developer's own "
+               "test (reported); it says o3 makes more claims overall and that more research is needed. "
+               "As of October 2026.")
         save(fig, "f22-06-personqa", mode)
     return title
 
@@ -115,8 +118,9 @@ def benchmarks():
         ax.set_xlabel("gain in score, percentage points, 2023 to 2024")
         ax.invert_yaxis()
         ax.set_title(title, fontsize=13.5, loc="left", wrap=True)
-        source(fig, "Source: Stanford HAI (2025), AI Index Report 2025, top takeaways (measured by outside "
-               "trackers). As of October 2026.", y=-0.1)
+        source(fig, "Source: Stanford HAI (2025), AI Index Report 2025, top takeaways: compiled by an outside "
+               "tracker; many scores were reported by developers. SWE-bench: 4.4% to 71.7% (this book's "
+               "subtraction). As of October 2026.", y=-0.2)
         save(fig, "f22-07-benchmark-jumps", mode)
     return title
 
@@ -153,21 +157,25 @@ def horizons():
         xs = [2023.0, 2026.4]
         ax.plot(xs, [2 ** (a + b * x) / 60 for x in xs], linestyle=":", color=st["ink"], linewidth=1.8)
         ax.text(2024.95, 1.15 / 60,
-                f"dotted: trend, not data\n(this book's fit to METR's best results:\ndoubling about every "
-                f"{doubling_days:.0f} days)", fontsize=11.5, color=st["ink"])
+                f"dotted: trend, not data\n(METR's fit, about 129 days per doubling;\nthis book's "
+                f"recalculation agrees: {doubling_days:.0f} days)", fontsize=11.5, color=st["ink"])
         ax.axhline(16, color=st["muted"], linewidth=1.0)
-        ax.text(2024.4, 19, "above 16 hours: METR calls its estimates unreliable", fontsize=11.5,
+        ax.text(2023.75, 24, "above 16 hours: METR calls its estimates unreliable", fontsize=11.5,
                 color=st["ink"])
         ax.set_yscale("log")
-        ax.set_yticks([1 / 60, 0.1, 1, 4, 16])
-        ax.set_yticklabels(["1 min", "6 min", "1 h", "4 h", "16 h"])
+        ax.set_ylim(0.5 / 60, 45)
+        ax.set_xticks([2023, 2024, 2025, 2026])
+        ax.set_xticklabels(["2023", "2024", "2025", "2026"])
+        ax.set_yticks([1 / 60, 4 / 60, 0.25, 1, 4, 16])
+        ax.set_yticklabels(["1 min", "4 min", "15 min", "1 h", "4 h", "16 h"])  # about ×4 per tick
         ax.set_ylabel("task length for skilled people\n(log scale: each step is a multiple, not a fixed amount)")
         ax.set_xlabel("model release date")
-        ax.legend(frameon=False, fontsize=10.5, ncol=1, loc="upper left")
+        ax.legend(frameon=False, fontsize=10.5, ncol=1, loc="upper left", bbox_to_anchor=(0, 0.9))
         ax.set_title(title, fontsize=13.5, loc="left", wrap=True)
         source(fig, "Source: METR (2026), Time Horizon 1.1 raw results (downloaded October 18, 2026; the page is no "
                "longer actively updated, last updated September 8, 2026). Filled = 50% horizon, open = 80%. "
-               "METR's own fit from 2023 on: doubling about every 129 days.", y=-0.1)
+               "METR's own fit from 2023 on, leaving out estimates above 16 h: about 129 days (range 104–158).",
+               y=-0.1)
         save(fig, "f22-08-horizons", mode)
     return title, doubling_days, latest
 
@@ -189,7 +197,7 @@ def open_closed():
         a1.set_ylim(0, 10)
         a1.set_title("AI Index 2025 (Chatbot Arena)", fontsize=12.5)
         t25, t26 = rows["time_gap_2025"], rows["time_gap_2026"]
-        a2.bar(["2023 to Oct 2025\n(90% range 1.1–5.3)", "Jan to May 2026"], [float(t25["value"]), float(t26["value"])],
+        a2.bar(["as of Oct 30, 2025\n(90% range 1.1–5.3)", "Jan to May 2026"], [float(t25["value"]), float(t26["value"])],
                color=st["light"], edgecolor=st["ink"], width=0.55)
         a2.errorbar([0], [float(t25["value"])], yerr=[[float(t25["value"]) - float(t25["ci_low"])],
                                                       [float(t25["ci_high"]) - float(t25["value"])]],
@@ -202,7 +210,8 @@ def open_closed():
         fig.suptitle(title, fontsize=13.5, x=0.01, ha="left", wrap=True)
         fig.tight_layout(rect=(0, 0, 1, 0.88))
         source(fig, "Sources: Stanford HAI (2025), AI Index Report 2025; Epoch AI Data Insights (October 30, 2025; "
-               "May 29, 2026). Outside trackers (measured). As of October 2026.", y=-0.08)
+               "May 29, 2026). Left: crowd votes, compiled by the AI Index (a score gap); right: Epoch's own index "
+               "(a time gap). As of October 2026.", y=-0.08)
         save(fig, "f22-11-open-closed", mode)
     return title
 
@@ -226,10 +235,12 @@ def compute():
         ax.set_yscale("log")
         ax.set_ylabel("training compute (FLOP)\nlog scale: each step is ten times the last")
         ax.set_xlabel("publication date")
+        ax.set_xticks(list(range(2010, 2027, 2)))
+        ax.set_xticklabels([str(y) for y in range(2010, 2027, 2)])
         ax.set_title(title, fontsize=13.5, loc="left", wrap=True)
         source(fig, f"Source: Epoch AI (2026), Data on AI models, notable models with a compute estimate (n = {len(rows)}; "
-               "downloaded October 18, 2026; CC BY 4.0). Epoch's own summary: 4–5× a year for notable and frontier "
-               "models. FLOP = a count of arithmetic operations.", y=-0.1)
+               "downloaded October 18, 2026; CC BY 4.0); compute values are Epoch's outside estimates. Epoch's figure "
+               "for frontier models: 4–5× a year. FLOP = a count of arithmetic operations.", y=-0.13)
         save(fig, "f22-12-compute", mode)
     return title, factor, len(rows)
 
@@ -238,34 +249,40 @@ def compute():
 def electricity():
     rows = read("ch22_energy.csv")
     w24 = next(r for r in rows if r["scope"] == "world" and r["year"] == "2024")
-    w30 = next(r for r in rows if r["scope"] == "world" and r["year"] == "2030" and r["unit"] == "TWh")
+    w25 = next(r for r in rows if r["scope"] == "world" and r["year"] == "2025" and r["unit"] == "TWh")
+    w30 = next(r for r in rows if r["scope"] == "world" and r["year"] == "2030" and r["source"] == "IEA (2026b)")
     u23 = next(r for r in rows if r["scope"] == "us" and r["year"] == "2023")
     u28 = next(r for r in rows if r["scope"] == "us" and r["year"] == "2028")
-    title = (f"Data centers used about {w24['value_low']} TWh worldwide in 2024; forecasts for 2030 roughly "
-             f"double it")
+    ratio = float(w30["value_low"]) / float(w25["value_low"])
+    assert 1.8 < ratio < 2.2, "title says about twice"
+    title = (f"World data centers used about {w25['value_low']} TWh in 2025; the IEA expects about twice "
+             f"that by 2030")
     for mode, st in STYLE.items():
-        fig, (a1, a2) = plt.subplots(1, 2, figsize=(8.6, 3.8))
-        a1.bar(["2024\nestimate"], [float(w24["value_low"])], color=st["main"], edgecolor=st["ink"], width=0.5)
-        a1.bar(["2030\nforecast"], [float(w30["value_low"])], color=st["light"], edgecolor=st["ink"], width=0.5,
+        fig, (a1, a2) = plt.subplots(1, 2, figsize=(8.6, 3.9), gridspec_kw={"width_ratios": [1.4, 1]})
+        a1.bar(["2024\nestimate"], [float(w24["value_low"])], color=st["main"], edgecolor=st["ink"], width=0.55)
+        a1.bar(["2025\nestimate"], [float(w25["value_low"])], color=st["main"], edgecolor=st["ink"], width=0.55)
+        a1.bar(["2030\nforecast"], [float(w30["value_low"])], color=st["light"], edgecolor=st["ink"], width=0.55,
                linewidth=1.6)
         a1.text(0, float(w24["value_low"]) + 25, f"{w24['value_low']} TWh", ha="center")
-        a1.text(1, float(w30["value_low"]) + 25, f"forecast: {w30['value_low']} TWh", ha="center")
-        a1.set_ylim(0, 1100)
+        a1.text(1, float(w25["value_low"]) + 25, f"{w25['value_low']} TWh", ha="center")
+        a1.text(2, float(w30["value_low"]) + 25, f"forecast:\n{w30['value_low']} TWh", ha="center")
+        a1.set_ylim(0, 1200)
         a1.set_ylabel("terawatt-hours a year")
-        a1.set_title("World (IEA, 2025 edition)", fontsize=12.5)
+        a1.set_title("World (IEA: 2024 from the 2025 edition;\n2025 and 2030 from the 2026 edition)", fontsize=12)
         a2.bar(["2023\nestimate"], [float(u23["value_low"])], color=st["main"], edgecolor=st["ink"], width=0.5)
         lo, hi = float(u28["value_low"]), float(u28["value_high"])
         a2.bar(["2028\nscenarios"], [hi - lo], bottom=[lo], color=st["light"], edgecolor=st["ink"], width=0.5,
                linewidth=1.6)
         a2.text(0, float(u23["value_low"]) + 18, f"{u23['value_low']} TWh", ha="center")
-        a2.text(1, hi + 18, f"forecast: {int(lo)}–{int(hi)} TWh", ha="center")
-        a2.set_ylim(0, 700)
-        a2.set_title("United States (LBNL, 2024)", fontsize=12.5)
+        a2.text(1, hi + 18, f"forecast:\n{int(lo)}–{int(hi)} TWh", ha="center")
+        a2.set_ylim(0, 760)
+        a2.set_title("United States (LBNL, 2024)", fontsize=12)
         fig.suptitle(title, fontsize=13.5, x=0.01, ha="left", wrap=True)
         fig.tight_layout(rect=(0, 0, 1, 0.9))
-        source(fig, "Sources: IEA (2025), Energy and AI; LBNL (Shehabi et al., 2024) as summarized by DOE (2024). "
-               "Filled = estimate of the past; light boxes labeled forecast. The IEA's April 2026 update: +17% in 2025, "
-               "set to double by 2030 (no TWh in its release). As of October 2026.", y=-0.1)
+        source(fig, "Sources: IEA (2025), Energy and AI; IEA (2026b), Key Questions on Energy and AI, executive summary; "
+               "LBNL (Shehabi et al., 2024) as summarized by DOE (2024), 2028 totals. Filled = outside estimate of the "
+               "past; light boxes labeled forecast. The 2025 edition's 2030 base case was 945 TWh. As of October 2026.",
+               y=-0.12)
         save(fig, "f22-14-electricity", mode)
     return title
 

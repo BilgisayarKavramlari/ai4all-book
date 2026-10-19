@@ -1,8 +1,9 @@
-# Published values. IEA (2025) Energy and AI, executive summary: about 415 TWh in 2024 (around 1.5% of world electricity); base case around 945 TWh by 2030; "There are large uncertainties in the outlook". IEA (2026, April 16) news release for Key Questions on Energy and AI: data-centre electricity use +17% in 2025; set to double by 2030; AI-focused data centres to triple (no TWh in the release). DOE (2024, Dec 20) on LBNL (Shehabi et al., 2024): U.S. data centers about 4.4% of U.S. electricity (176 TWh) in 2023; 6.7%-12% by 2028 (325-580 TWh) [VERIFY wording against LBNL-2001637 PDF].
+# Published values. IEA (2025) Energy and AI, executive summary: about 415 TWh in 2024 (around 1.5% of world electricity); base case around 945 TWh by 2030; "There are large uncertainties in the outlook". IEA (2026a, April 16) news release: data-centre electricity use +17% in 2025; set to double by 2030; AI-focused data centres to triple (no TWh in the release). IEA (2026b) Key Questions on Energy and AI, executive summary (read 2026-10-18): 485 TWh in 2025, roughly doubling to 950 TWh in 2030 (about 3% of global electricity); AI-focused data-centre use +50% in 2025. DOE (2024, Dec 20) and Berkeley Lab news release on LBNL (Shehabi et al., 2024, DOI 10.71468/P1WC7Q): U.S. data centers about 4.4% of U.S. electricity (176 TWh) in 2023; 325-580 TWh (6.7%-12%) by 2028. DOE says "an increase between 325 to 580 TWh"; 325/0.067 and 580/0.12 give one common denominator (about 4,840 TWh), so these are 2028 totals (fact-check C63; report PDF still unread, 403).
 scope,year,value_low,value_high,unit,kind,source,status,as_of
-world,2024,415,415,TWh,estimate,IEA (2025),measured,2026-10-18
+world,2024,415,415,TWh,estimate,IEA (2025),outside estimate,2026-10-18
 world,2030,945,945,TWh,base-case forecast,IEA (2025),forecast,2026-10-18
-world,2025,17,17,percent growth,estimate,IEA (2026),measured,2026-10-18
-world,2030,2,2,times 2025 level,forecast,IEA (2026),forecast,2026-10-18
-us,2023,176,176,TWh,estimate,LBNL via DOE (2024),measured,2026-10-18
-us,2028,325,580,TWh,scenario range,LBNL via DOE (2024),forecast,2026-10-18
+world,2025,485,485,TWh,estimate,IEA (2026b),outside estimate,2026-10-18
+world,2030,950,950,TWh,base-case forecast,IEA (2026b),forecast,2026-10-18
+world,2025,17,17,percent growth,estimate,IEA (2026a),outside estimate,2026-10-18
+us,2023,176,176,TWh,estimate,LBNL via DOE (2024),outside estimate,2026-10-18
+us,2028,325,580,TWh,scenario range (totals),LBNL via DOE (2024),forecast,2026-10-18

@@ -264,3 +264,25 @@ Time-sensitive claims: product capabilities, model names, regulations, legal cas
 | 23 | 23.4 author box | Şeker & Arslanhan (2026), Artificial Intelligence Theory and Applications 6(1), 56–74; hermai package | Oct 2026 | DergiPark article page and PDF | With Ch. 17 (package version) |
 | 23 | 23.2 | Li et al. (2023) Othello world-representation study, cited as an example of interpretability evidence | Oct 2026 | arXiv 2210.13382 v5; ICLR 2023 | Each edition (newer interpretability evidence) |
 | 23 | F23.7, 23.2 | GPT-4o named only as a 2026 study's baseline (historic; retired from ChatGPT Jan 2026, API Jan 14, 2027) | Oct 2026 | book-wide rule | Each edition |
+| 22 | whole chapter | Boxes "As of October 2026" in 22.1–22.7; timeline CSVs; 22.8 olympiad example | Oct 2026 | data/ch22_dated_claims.csv; data/ch22_timeline*.csv | Each edition (rewrite) |
+| 22 | 22.2 box, F22.7 | AI Index 2025 gains (+18.8/+48.9/+67.3; SWE-bench 4.4%→71.7%); AI Index 2026 SWE-bench Verified 60% → near 100% (reported, compiled) | Oct 2026 | Stanford HAI (2025, 2026) | Each edition (new AI Index each April) |
+| 22 | 22.2 text and box, F22.6 | PersonQA o3 0.33/0.59, o1 0.16/0.47, o4-mini 0.48/0.36 (developer's test) | Oct 2026 | OpenAI (2025a) system card, Table 4 | Each edition |
+| 22 | 22.2 box | GPT-5 system card: far fewer factual errors than o3 (developer's tests, LLM grader) | Oct 2026 | OpenAI (2025b), Aug 13, 2025 | Each edition |
+| 22 | 22.2 | Shojaee et al. (NeurIPS 2025) dispute; Lawsen comment (corrected) | Oct 2026 | arXiv; NeurIPS proceedings | Each edition |
+| 22 | 22.2 box | Monitoring reasoning text: "new and fragile opportunity" (Korbak et al., 2025); no later change found (book's reading) | Oct 2026 | arXiv:2507.11473 | Each edition |
+| 22 | 22.1 and 22.3 boxes, F22.3, F22.8, Lab 22.3 | METR horizons for four models; Opus 4.6 ~12 h (range 5–60 h); doubling ~129 days (104–158); page "no longer actively updated" (Sept 8, 2026) | Oct 2026 | metr.org/time-horizons; benchmark_results_1_1.yaml | Each edition; find successor tracker |
+| 22 | 22.3 box | OSWorld ~12% → ~66% (AI Index 2026); human over 72% (Xie et al., 2024, original task set) | Oct 2026 | Stanford HAI (2026); arXiv:2404.07972 | Each edition |
+| 22 | 22.3 | Agentic AI Foundation (MCP, AGENTS.md, goose), Dec 2025; adoption counts company claims | Oct 2026 | Linux Foundation press release | Each edition |
+| 22 | 22.4 box | Veo 3 (May 20, 2025) and Sora 2 (Sept 30, 2025) video with sound | Oct 2026 | blog.google; Decrypt (openai.com 403) | Each edition |
+| 22 | 22.4 box | AI Index 2026 multimodal reasoning; analog clocks 50.1% | Oct 2026 | Stanford HAI (2026) | Each edition |
+| 22 | 22.1 and 22.5 boxes, F22.11 | Open–closed gap: 8% → 1.7% (Chatbot Arena, score gap); 3.5 months as of Oct 30, 2025; ~4 months (May 2026) | Oct 2026 | Stanford HAI (2025); Epoch AI data insights | Each edition |
+| 22 | 22.6 box, F22.12 | Training compute ~4.3×/yr (book's fit, 478 models); Epoch 4–5× for frontier models | Oct 2026 | Epoch AI data (CC BY), downloaded 2026-10-18 | Each edition |
+| 22 | 22.1 and 22.6 boxes, F22.14, 22.8 faded | IEA 2025 ed.: 415 TWh (2024), 945 TWh (2030); IEA 2026: 485 TWh (2025, +17%; AI-focused +50%), ~950 TWh (2030, ~3%) | Oct 2026 | iea.org (Energy and AI; Key Questions on Energy and AI) | Each edition (new IEA editions) |
+| 22 | 22.6 box, F22.14 | LBNL/DOE: 4.4% (176 TWh) in 2023; 325–580 TWh (6.7–12%) in 2028, as totals | Oct 2026 | DOE release; LBNL-2001637 PDF not read | Before print (editor reads PDF) |
+| 22 | 22.1 and 22.6 boxes, F22.15, Lab 22.2 | Google 0.24 / 0.10 Wh per median prompt; Epoch ~0.3 Wh (0.1–4 Wh; 10k-token input ~2.5 Wh); "3 Wh" per Epoch's account | Oct 2026 | arXiv:2508.15734; Google Cloud blog; Epoch (You, 2025) | Each edition |
+| 22 | 22.6 | Hu & Tong (Reuters, Nov 15, 2024) plateau report; Epoch 2030 feasibility (2e29 FLOP); Villalobos 2026–2032 | Oct 2026 | reuters.com; epoch.ai; arXiv | Each edition |
+| 22 | 22.7 box | Nobel 2024 chemistry halves (confirmed) | Oct 2026 | nobelprize.org (Internet Archive capture) | Each edition |
+| 22 | 22.7 box, Short 2 | GNoME 2.2 million predicted stable, 736; Cheetham & Seshadri critique | Oct 2026 | Crossref abstract | Each edition |
+| 22 | 22.7 box, Short 1 | Erdős #728 Lean-checked (Jan 2026); unit-distance disproof reported (May 20, 2026), checked in an outside preprint (Alon et al., 2026), not yet peer-reviewed | Oct 2026 | arXiv:2601.07421; arXiv:2605.20695 | Each edition (peer review?) |
+| 22 | 22.1 box, 22.8 | IMO 2026: Huawei and Xiaohongshu claim 100%; 7 of 666 students full marks (AFP citing scoreboard); no IMO statement | Oct 2026 | AFP (2026) | Each edition (IMO statement? official results) |
+| 22 | Ethics, Career | AI Index 2026: incidents 362 vs 233; industry >90% of notable frontier models; Pew 2024 surveys 73% vs 23% (20-year outlook) | Oct 2026 | Stanford HAI (2026); Pew Research Center (2025) | Each edition |

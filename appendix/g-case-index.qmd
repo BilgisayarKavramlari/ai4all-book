@@ -4,8 +4,6 @@
 
 This index lists the 31 documented cases the book analyzes: by chapter, by field and by failure type. The failure label follows the Failure Taxonomy Tree (Chapter 4): *documented* means the record shows the branch's defining feature, *inferred* means it does not; "chain link" refers to the failure-to-harm chain. Cases in which no output was wrong (input-side harms, policies, training-data disputes, positive results) are not placed on the tree.
 
-† Taken from the case file; not yet in the book's case register (cases/index.csv).
-
 ## Cases by Chapter {#sec-appendix-g-chapter .unnumbered}
 
 | Chapter | Cases |
@@ -31,7 +29,7 @@ This index lists the 31 documented cases the book analyzes: by chapter, by field
 | 19 | C22, C23, C24, C25, C26, C27, C28 |
 | 20 | C29 |
 | 21 | C21 |
-| 22 | C31† |
+| 22 | C31 |
 | 23 | C30 |
 
 | ID | Title | Year | Chapter(s) | Field | Failure label | Outcome |
@@ -65,7 +63,7 @@ This index lists the 31 documented cases the book analyzes: by chapter, by field
 | C28 | Tutor CoPilot: tutor-facing AI suggestions in a randomized trial (Wang et al.) | 2024–2025 | 19 | education (tutoring) | none on the tree (positive trial); the tutor is the gate (design) | positive |
 | C29 | Your experience your first draft: employers' rules for applicants' AI use (Anthropic's stage-by-stage candidate guidance; Amazon and Goldman Sachs interview rules as reported) | 2025 | 20 | business/human resources | none on the tree (policy case; no AI output was wrong); no failure-to-harm chain | mixed (rules; no outcome data) |
 | C21 | ACM Code of Ethics and Professional Conduct (2018 update): what a profession's code can and cannot do | 2018 | 21 | computing/professional ethics | none on the tree (governance document; no AI output); no chain link | governance (code revised; current as of October 2026) |
-| C31† | Two gold medals, three kinds of grading: AI at the International Mathematical Olympiad | 2025–2026 | 22 | mathematics / AI evaluation | none on the tree (no output shown wrong; an evidence-status case). Short case 1: chain link 2 "checked before use?" failed (documented in the problem-list maintainer's public reply, as reported by The Decoder) | mixed (strong results; uneven checking) |
+| C31 | AI at the International Mathematical Olympiad: two 35/42 results under different grading (IMO coordinators vs. three former medalists in OpenAI's own evaluation), Lean-checked proofs with developer-reported scores (Seed Prover 30/42, said IMO-confirmed; Aristotle), and 2026 perfect-score claims | 2025–2026 | 22 | mathematics/AI evaluation | none on the tree (no output shown wrong; evidence-status case); Short 1 (Erdős post, Oct 2025): chain link 2 checked before use? failed (documented in the maintainer's reply, as reported) | mixed |
 | C30 | Three texts on machine understanding: Turing 1950, Searle 1980, Bender et al. 2021, with Jones & Bergen 2026 (persona-prompted models pass a three-party Turing test, by the authors' account) | 1950–2026 | 23 | philosophy/AI research | none on the tree (debate case; no output wrong) | research debate (unresolved) |
 
 ## Cases by Field {#sec-appendix-g-field .unnumbered}
@@ -98,7 +96,7 @@ This index lists the 31 documented cases the book analyzes: by chapter, by field
 | health (clinical decision support) | C24 | External validation of the Epic Sepsis Model at Michigan Medicine (Wong et al.); version 2 validated 2026 | 2021 | 19 | negative |
 | law | C05 | Mata v. Avianca: fabricated case citations in a court filing | 2023 | 8, 10, 18 | negative |
 | law/intellectual property | C15 | Thomson Reuters v. Ross: training on Westlaw headnotes not fair use (affirmed on appeal 2026) | 2025–2026 | 18 | negative (for the AI developer) |
-| mathematics / AI evaluation | C31† | Two gold medals, three kinds of grading: AI at the International Mathematical Olympiad | 2025–2026 | 22 | mixed (strong results; uneven checking) |
+| mathematics/AI evaluation | C31 | AI at the International Mathematical Olympiad: two 35/42 results under different grading (IMO coordinators vs. three former medalists in OpenAI's own evaluation), Lean-checked proofs with developer-reported scores (Seed Prover 30/42, said IMO-confirmed; Aristotle), and 2026 perfect-score claims | 2025–2026 | 22 | mixed |
 | natural science (materials chemistry) | C26 | A-Lab: 'novel' materials claimed, challenged and corrected (Author Correction 2026) | 2023–2026 | 19 | mixed |
 | philosophy/AI research | C30 | Three texts on machine understanding: Turing 1950, Searle 1980, Bender et al. 2021, with Jones & Bergen 2026 (persona-prompted models pass a three-party Turing test, by the authors' account) | 1950–2026 | 23 | research debate (unresolved) |
 | social science (survey research) | C25 | Silicon samples: language models as survey respondents (Argyle et al. 2023; Bisbee et al. 2024) | 2023–2024 | 19 | mixed |
@@ -144,4 +142,4 @@ A case appears once for each branch its label names; "Not on the tree" collects 
 | Not on the tree | C28 | Tutor CoPilot: tutor-facing AI suggestions in a randomized trial (Wang et al.) | 2024–2025 | 19 | positive |
 | Not on the tree | C29 | Your experience your first draft: employers' rules for applicants' AI use (Anthropic's stage-by-stage candidate guidance; Amazon and Goldman Sachs interview rules as reported) | 2025 | 20 | mixed (rules; no outcome data) |
 | Not on the tree | C30 | Three texts on machine understanding: Turing 1950, Searle 1980, Bender et al. 2021, with Jones & Bergen 2026 (persona-prompted models pass a three-party Turing test, by the authors' account) | 1950–2026 | 23 | research debate (unresolved) |
-| Not on the tree | C31† | Two gold medals, three kinds of grading: AI at the International Mathematical Olympiad | 2025–2026 | 22 | mixed (strong results; uneven checking) |
+| Not on the tree | C31 | AI at the International Mathematical Olympiad: two 35/42 results under different grading (IMO coordinators vs. three former medalists in OpenAI's own evaluation), Lean-checked proofs with developer-reported scores (Seed Prover 30/42, said IMO-confirmed; Aristotle), and 2026 perfect-score claims | 2025–2026 | 22 | mixed |

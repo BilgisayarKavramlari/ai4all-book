@@ -1020,3 +1020,50 @@ Overall 364 of 400 (91.0%); Spanish first-year questions 28 of 40 (70.0%), hidde
 1. Turing did not claim that the machines of his day think; he proposed replacing the question, not answering it, and treated sustained, satisfactory answers as the evidence to use. So, by Turing's own framing, the 2026 result is the kind of evidence he asked for; Searle argues that such evidence cannot settle understanding. Either reading earns credit if both are stated fairly.
 3. No AI output was shown to be wrong: the systems did what the study asked; the case is a debate, not a failure.
 5. Researchers who do not sell AI products, using a published method (for example indicator assessments by independent consciousness scientists), with their data and reasoning open to checking; ideally reviewed by people on both sides.
+
+## Chapter 22
+
+### Check Yourself
+**22.1** (1) The as-of date, the evidence status (measured, reported, forecast; the book's inference kept separate) and who could check it (§22.1). (2) It is the original record of what the developer claims, and no AI tool produced it, but the developer is behind it, so it is not an outside source (§22.1).
+**22.2** (1) Computation spent at the moment of answering, such as producing many tokens before the final answer; every token is computed and usually billed, so it takes time and money (§22.2). (2) The step text is generated like any other text; it can include unsupported steps, and in one developer's test a newer reasoning model invented facts about people more often than an older one (§22.2; Chapter 17).
+**22.3** (1) On tasks that take skilled people four hours, the agent is predicted to succeed about half the time; it does not mean it succeeds reliably (the 80% horizon is shorter) or on other kinds of tasks (§22.3). (2) Points are measurements; a fitted line is a trend, and the part beyond the last point is an extrapolation, a forecast; this book draws trend lines dotted and labels them "trend, not data" (§22.3).
+**22.4** (1) It describes how the video looks, as stated by its maker; a realistic video is not evidence that an event happened (§22.4; Chapter 13). (2) When looks and sound are less useful as clues, checking source, channel and earliest version is what still works (§22.4).
+**22.5** (1) A crowd-vote leaderboard gap compiled by the AI Index (a gap in score, from people picking the better of two anonymous answers) and Epoch AI's time gap (months until an open-weight model reaches a closed model's level on its index) (§22.5). (2) Do: run the model on your own hardware or adapt it. Not shown: the training data (§22.5; Chapter 12).
+**22.6** (1) Data: the growth of training compute and of data centers' electricity use (outside estimates); forecast: whether more scale will keep improving models, and future compute, data and power (§22.6). (2) They can count different parts of the system (their boundary), such as only active chips or also idle capacity and cooling (§22.6).
+**22.7** (1) Replication, critique and peer review need other specialists, data and time; an announcement needs none of these (§22.7). (2) That the formal proof is valid step by step; specialists still judge whether the formal statement says what the original problem meant (§22.7).
+**22.8** (1) The facts, the status, or only the names (§22.8). (2) Because a claim keeps aging after today's check, and a check with no date or trigger is easy to forget (§22.8).
+
+### Faded examples
+- **22.1 sales page:** Who could check it: an outside evaluator, or the buyer's own trial, measuring the share of tickets closed with no human help and no reopening, on a stated set of tickets and dates. Rewrite: "The company's March 2026 sales page says its agent resolves 80% of tickets without human help; it gives no method or outside test."
+- **22.2 tutor's promise:** An outside test on drug-dose questions with known answers from a primary drug reference, with enough questions to see errors; meanwhile, check every dose against the reference and never use the tool's answer as the source.
+- **22.3 maintenance agent:** Q2: even on METR's software and research tasks, eight-hour tasks would succeed only about half the time at a 50% horizon of eight hours; four-in-five success (the 80% horizon) holds only for tasks several times shorter, about one to one and a half hours in the box. Scheduling building maintenance is a different task, so it needs its own trial. Q3: a dry run on the team's own scheduling tasks (Chapter 14), with an approval gate before any schedule is published or any work order sent.
+- **22.4 voices:** Trace first: the designer names no source, so the claim has no status yet (at most the designer's opinion); who could check: a listening test with people who do not know which clips are real, run by someone without a stake. The printed study: listeners caught about 73% of speech deepfakes made with older methods, so about one in four passed as real; a newer voice may well go unnoticed by many students. That is a reason to disclose AI narration, not to rely on its realism.
+- **22.5 "a year behind":** Trackers: about 3.5 months as of October 2025 and about 4 months in 2026 (Epoch AI, measured); a score gap of 1.7% on a leaderboard by February 2025 (AI Index). "A year behind" is not what they measured. "Useless for serious work" is a separate judgment about fit that no tracker measures; only a trial on the work settles it.
+- **22.6 council meeting:** Status of the traced figure: an outside estimate by the IEA, dated 2025, for a typical AI-focused data center (the largest under construction use 20 times as much), not a measurement of this proposal. Question: "What is this facility's expected annual electricity use at full operation, who estimated it, and what does the figure include?"
+- **22.7 newsletter:** The field: two materials chemists (2024), examining the claims, found scant evidence of compounds that were at once new, credible and useful, while calling the methods promising. Rewrite: "In 2023, Google DeepMind researchers reported 2.2 million crystal structures predicted to be stable (reported by the developers); in 2024, specialists questioned how many are new and useful (an outside critique)."
+- **22.8 energy row:** Verdict on "about 945 TWh by 2030" as a description of today: supported (the 2026 report gives about 950 TWh); "partly supported" is also acceptable if you treat the small change as a difference and say so. What changed: the facts only slightly (a new edition, 945 → about 950); the status did not change (still a forecast); the names did not change. Next check: the IEA's next edition.
+
+### Review Questions A
+1. As-of date: the date on which a claim was made or measured, not when you read it. Evidence status: who has checked a claim so far (measured, reported, forecast; the book's inference kept separate); it does not say whether the claim is true (§22.1).
+3. A case tier asks whether a fact is in the primary record; the evidence status asks who checked the capability. DeepMind's post is the confirmed record of what DeepMind says; the score it reports was checked by the IMO's coordinators, so the claim is measured (§22.1).
+5. Where answers can be checked automatically (math, single-answer science questions, code with tests); a training procedure that rewards checkable right answers can improve most where checking is easy (§22.2; the "why" is this book's reading of Guo et al.).
+7. The length of task (in skilled people's time) that the agent completes half the time; the 80% horizon is several times shorter, and a person who relies on an agent needs it to succeed most of the time (§22.3).
+9. Do: run it on the institution's own hardware so inputs stay inside; study and adapt it. Does not reveal: the training data (§22.5).
+11. That a formal proof is valid step by step; whether the formal statement matches the original problem (§22.7).
+
+### Review Questions B
+1. Date: the announcement's date; status: reported (a company's own announcement; one paper accepted at a workshop is a narrower fact than "writes publishable papers"); who could check: the workshop's reviewers and the paper itself. Rewrite: "In [month year], [company] said a paper produced with its system was accepted at a workshop; the claim that AI writes publishable research papers in general has not been tested."
+3. 1 → 2 → 4 hours in about 10 months: two doublings, about one every five months. The 64-hour point is not data: it is an extrapolation, a forecast (§22.3).
+
+### Review Questions C
+1. Strong answers take a position and weigh the measured gap (months; §22.5) against things scores do not show: data terms, support, features, the license, local control and lock-in (Chapter 12); they name a task where each choice fits.
+
+### Spaced Review
+1. A tool's answer is not evidence that something is true; the verdict rests on a source you opened (Chapter 8).
+3. Each step is another chance for error: under the book's calculation, 0.95^20 ≈ 36% of runs have no error (Chapter 14).
+5. For example, a new tool or a change in a tool's terms or capabilities (such as an agent that can act on your files), which should trigger a review of the code (Chapter 21).
+
+### Case Study Questions
+1. Competition coordinators: the proofs, by student criteria; not the system, computing or human involvement. Graders in the developer's own evaluation: the proofs, according to the developer; not independent of the developer, and the IMO did not certify the result. Proof checker: each step of the formal proof; not whether the formalization matched the problem, and not the score, which the developers reported.
+3. The olympiad case shows no wrong output; the Erdős post was a claim about an output published before it was checked, a failure on chain link 2 (documented in the maintainer's reply, as reported).
+5. The Erdős claim was settled within days (withdrawn, section 22.8), because the problem list's maintainer could check his own records and the papers existed; the materials claim required specialists to examine compounds, which takes longer.
