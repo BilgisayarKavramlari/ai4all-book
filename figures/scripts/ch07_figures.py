@@ -56,7 +56,7 @@ def chapter_map(f):
             f.text((xs[i] + xs[i + 1]) / 2 - 2, y, "→", size=14, color=MUTED[f.mode])
     f.text(400, 382, "Frame: is the goal the output or the skill? Verify: check your learning, not only the tool's answer.",
            size=13, color=MUTED[f.mode])
-    f.text(400, 408, "Opening case: a high-school math experiment in Türkiye (Bastani et al., 2025)", size=13,
+    f.text(400, 408, "Opening case: a high-school math experiment in Turkey (Bastani et al., 2025)", size=13,
            color=MUTED[f.mode])
 
 

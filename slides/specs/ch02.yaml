@@ -14,7 +14,7 @@ deck:
   slug: how-machines-learn-from-data
   title: How Machines Learn from Data
   short_title: How Machines Learn from Data
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     tue: {label: "Concept session, first part (Chapter 2)", minutes: 36}
     after: {label: "reference slides (not presented)"}
@@ -37,7 +37,7 @@ slides:
   minutes: 0
   subtitle: "First part of the concept session"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Reading: Chapter 2 (before today)"
     - "Recommended: Wolfram (2023)"
   figure: f2-04-pipeline
@@ -165,18 +165,18 @@ slides:
   title: "A hiring tool that learned the past"
   events:
     - {label: "2014", text: "Amazon team builds a tool to rate applicants 1–5 stars", tier: "reported"}
-    - {label: "Training", role: ai, text: "Ten years of résumés, mostly men’s", tier: "reported"}
+    - {label: "Training", role: ai, text: "Ten years of resumes, mostly men’s", tier: "reported"}
     - {label: "2015", text: "Lower scores: “women’s”, two all-women’s colleges", tier: "reported"}
     - {label: "By early 2017", text: "Terms neutralized; team disbanded", tier: "reported"}
   takeaway: "Amazon said recruiters never used it to evaluate candidates"
   notes:
     say: |
       Tell it as a story. In 2014 a team at Amazon began building a tool to help with hiring. The company was hiring
-      fast and wanted to mechanize the search for top talent. The idea was simple: train a system on the résumés the
+      fast and wanted to mechanize the search for top talent. The idea was simple: train a system on the resumes the
       company had received, let it find patterns, and have it score new applicants from one to five stars, the way
-      shoppers rate products. The tool learned from about ten years of résumés, and most of them came from men, a
+      shoppers rate products. The tool learned from about ten years of resumes, and most of them came from men, a
       reflection of male dominance across the tech industry. By 2015 the team saw a problem: for technical roles, the
-      ratings were not gender-neutral. The tool gave lower scores to résumés containing the word "women's", as in
+      ratings were not gender-neutral. The tool gave lower scores to resumes containing the word "women's", as in
       "women's chess club captain", and to graduates of two all-women's colleges. Amazon edited the programs to treat
       those terms neutrally, but that did not guarantee fairness, and by early 2017 the team had been disbanded.
     background: |
@@ -219,7 +219,7 @@ slides:
       Typical student guesses: "the programmers were biased" (M1: a rule was written), "it was told the gender" (not
       reported; the book avoids claiming a gender field and says only that nobody told the model to prefer men),
       "the data" (closest). The chapter's answer (Summary, Return to the Opening Case): the tool most likely picked up
-      gender-linked patterns from a sample made mostly of men's résumés, possibly from labels based on past decisions,
+      gender-linked patterns from a sample made mostly of men's resumes, possibly from labels based on past decisions,
       and through proxy words. The first and the pattern in the third are reported; the label part is the book's
       reasoning (inferred), because Reuters did not report what the label was.
     misconceptions:
@@ -247,7 +247,7 @@ slides:
       difference and a three-part definition of learning that we use to answer today's question.
     background: |
       Section 2.1 is Core. Terms introduced: rule-based system, machine learning; Mitchell's (1997) task, performance
-      measure and experience (T, P, E). Featured example: a spam filter; faded example: Lucía's support-ticket routing.
+      measure and experience (T, P, E). Featured example: a spam filter; faded example: Lucia's support-ticket routing.
     misconceptions:
       - m: "M1 'AI follows rules that programmers wrote.'"
         fix: "Name it now; the next slide shows the reversal: in machine learning people supply the answers, not the rules."
@@ -326,7 +326,7 @@ slides:
       2.1 item 2 answer from the text: T = sort emails into spam and not spam; P = share of emails sorted correctly; E
       = emails people have already labeled. The definition matters for the chapter's question in the Summary: in
       Mitchell's sense a model really learns, but it keeps whatever pattern makes the error smallest. Faded example
-      (Lucía's tickets): Rule 1 "refund or charge → billing" fails on "I can't log in to request my refund".
+      (Lucia's tickets): Rule 1 "refund or charge → billing" fails on "I can't log in to request my refund".
     questions:
       - q: "Does 'learning' here mean the computer understands spam?"
         a: "No. Mitchell's definition is about measurable improvement on a task, nothing more. That is exactly why the chapter can say both 'it really learns' and 'it takes the easiest path the data allows'."
@@ -515,7 +515,7 @@ slides:
       bullets: ["Asked, did not answer", "The 1936 ballots"]
     - heading: "Selection"
       role: soft
-      bullets: ["In only by meeting a condition", "Résumés from applicants only"]
+      bullets: ["In only by meeting a condition", "Resumes from applicants only"]
   takeaway: "Sample = the examples we have; population = everything the model will meet"
   notes:
     say: |
@@ -524,7 +524,7 @@ slides:
       the two. Three gaps cause most of the trouble. A coverage gap: part of the population was never sampled. Sam
       photographed parts from one supplier; parts from another supplier look different. Non-response: not everyone
       who was asked answered, as in the 1936 poll. Selection: data entered the sample only by meeting a condition.
-      Résumés from people who applied are not the same as résumés from people who could do the job. Selection hides in
+      Resumes from people who applied are not the same as resumes from people who could do the job. Selection hides in
       surprising places: Wald's aircraft data came only from planes that returned.
     background: |
       Other examples in §2.3: a voice assistant trained mostly on adult voices may struggle with children's voices; a
@@ -559,7 +559,7 @@ slides:
   takeaway: "Look for proxies; compare results group by group"
   notes:
     say: |
-      Back to the recruiting tool. Its sample was ten years of résumés from people who had applied to one company,
+      Back to the recruiting tool. Its sample was ten years of resumes from people who had applied to one company,
       mostly men. Here is the most likely answer to the first part of the puzzle. A model does not need to be told
       anyone's gender. It can find other clues that are linked to gender. Reuters reported that the tool marked down
       the word "women's" and two all-women's colleges; the book reads those words as such clues. A clue that stands in
@@ -578,7 +578,7 @@ slides:
     misconceptions:
       - m: "M5 'Removing the sensitive column removes the bias.'"
         fix: "Amazon removed the specific terms; Reuters reported this did not guarantee the system would not find other ways to sort candidates unfairly."
-    activity: "Ask: 'Name another clue on a résumé that could stand in for gender, age or neighborhood.' Collect two."
+    activity: "Ask: 'Name another clue on a resume that could stand in for gender, age or neighborhood.' Collect two."
     book: "§2.3 (proxy paragraph); Case Study, Failure label, stage 3; Check Yourself 2.3 item 3."
 
 - layout: quiz
@@ -941,7 +941,7 @@ slides:
         them.
       background: |
         Worked Example "The 97% Art-Style Detector" (§2.5). Hana Nguyen uses they/them pronouns (characters file);
-        their major is Media Arts and Design (decision D26). Faded example that follows: a vendor's résumé screener
+        their major is Media Arts and Design (decision D26). Faded example that follows: a vendor's resume screener
         "predicts job success with 92% accuracy" (Q1 filled in; students write Q2 and Q3, and which Q2 answer would
         worry them most given the Opening Case).
       activity: "30 seconds: pairs write Q2 and Q3 for Hana's case."
@@ -962,7 +962,7 @@ slides:
         - q: "Which of the three questions matters most?"
           a: "It depends on the use. For Hana, Q2 and Q3: the test images do not look like their work, and the costly error (human work called AI) is unreported. For a fraud model, Q3 is usually decisive."
       activity: "Reveal; read the verdict bar."
-      book: "§2.5 Worked Example; Faded Example 'A Résumé Screener's Claim'; Spaced Review 2."
+      book: "§2.5 Worked Example; Faded Example 'A Resume Screener's Claim'; Spaced Review 2."
   notes:
     book: "§2.5 Worked Example 'The 97% Art-Style Detector'."
 
@@ -998,7 +998,7 @@ slides:
       used for. Lab 2.3 (optional) asks students to write one, plus "Where did my photos go, and who can see them?"
     questions:
       - q: "Which datasheet questions would have flagged the recruiting tool?"
-        a: "For example 'Who and what is in it, and what is missing?' (most résumés from men) and 'How was it labeled?' (what counted as a good candidate). Any two with a reason tied to the case earn full credit (Appendix E, Review A15)."
+        a: "For example 'Who and what is in it, and what is missing?' (most resumes from men) and 'How was it labeled?' (what counted as a good candidate). Any two with a reason tied to the case earn full credit (Appendix E, Review A15)."
     activity: "Point to the table in the book; students use it for the paper task on the next slide."
     book: "§2.5 'Putting it together: diagnose the data' (table); Lab 2.3; Review A15."
 
@@ -1133,7 +1133,7 @@ slides:
       training keeps whatever pattern makes the error smallest on the examples it was given. If a brown desk, a word
       like "women's", or always guessing the bigger class lowers the error, the model ends up using it. Nothing in the
       training process can tell which pattern you meant. And the recruiting tool: nobody told it to prefer men. It
-      most likely picked up gender-linked patterns from a sample made mostly of men's résumés, possibly from labels
+      most likely picked up gender-linked patterns from a sample made mostly of men's resumes, possibly from labels
       based on past decisions, and through proxy words. Now check your warm-up: sometimes; no; not necessarily.
     background: |
       Chapter Summary, including "Return to the Opening Case" (tiers: sample and proxy words reported; label inferred)
@@ -1325,7 +1325,7 @@ slides:
   per_slide: 7
   refs:
     - "Alpaydin, E., & Kaynak, C. (1998). *Optical recognition of handwritten digits* [Data set]. UCI Machine Learning Repository. https://doi.org/10.24432/C50P49"
-    - "Carlini, N., Tramèr, F., Wallace, E., et al. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650)."
+    - "Carlini, N., Tramer, F., Wallace, E., et al. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650)."
     - "Dastin, J. (2018, October 10). Amazon scraps secret AI recruiting tool that showed bias against women. *Reuters*."
     - "Gebru, T., Morgenstern, J., Vecchione, B., et al. (2021). Datasheets for datasets. *Communications of the ACM, 64*(12), 86–92. https://doi.org/10.1145/3458723"
     - "Geirhos, R., Jacobsen, J.-H., Michaelis, C., et al. (2020). Shortcut learning in deep neural networks. *Nature Machine Intelligence, 2*(11), 665–673. https://doi.org/10.1038/s42256-020-00257-z"
@@ -1335,7 +1335,7 @@ slides:
     - "Lusinchi, D. (2012). “President” Landon and the 1936 *Literary Digest* poll. *Social Science History, 36*(1), 23–54. https://doi.org/10.1215/01455532-1461650"
     - "Mangel, M., & Samaniego, F. J. (1984). Abraham Wald’s work on aircraft survivability. *Journal of the American Statistical Association, 79*(386), 259–267."
     - "Mitchell, T. M. (1997). *Machine learning*. McGraw-Hill."
-    - "Şeker, Ş. E. (2016). Müşteri kayıp analizi [Customer churn analysis]. *YBS Ansiklopedi, 3*(1), 26–29."
+    - "Seker, S. E. (2016). Musteri kayip analizi [Customer churn analysis]. *YBS Ansiklopedi, 3*(1), 26–29."
     - "Squire, P. (1988). Why the 1936 *Literary Digest* poll failed. *Public Opinion Quarterly, 52*(1), 125–133. https://doi.org/10.1086/269085"
     - "Wolfram, S. (2023). *What is ChatGPT doing … and why does it work?* Wolfram Media."
   notes:

@@ -18,7 +18,7 @@ deck:
   slug: agentic-workflows-and-human-oversight
   title: Agentic Workflows and Human Oversight
   short_title: Agentic Workflows and Human Oversight
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     tue: {label: "Concept session (75 min)", minutes: 75}
     thu: {label: "Lab session · practice lab, Lab 14.1 (75 min)", minutes: 75}
@@ -41,7 +41,7 @@ slides:
   minutes: 0
   subtitle: "Concept session and lab session"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Reading: Chapter 14"
     - "Recommended: Anthropic (2024)"
   figure: f14-04-agent-loop
@@ -239,7 +239,7 @@ slides:
       message and "the rollback worked" are reported (Lemkin's posts via Sharwood, 2025a); the CEO's post (Masad, 2025,
       Jul 20) is the company's own record: the agent in development deleted production data, backups allowed a
       one-click restore, and Replit had started separating development and production databases. The Dec 17, 2025
-      company blog (Brewster & Chávez, 2025) describes a design in which the agent gets only the development database;
+      company blog (Brewster & Chavez, 2025) describes a design in which the agent gets only the development database;
       the post does not mention the incident, so reading it as a response is the book's inference. Replit's other
       announced fixes (a planning or chat-only mode, the agent's access to its own documentation) are hard gates if
       enforced as announced (Masad, 2025; Abdullahi, 2025; Sharwood, 2025b). The Case Study labels the incident on the
@@ -304,7 +304,7 @@ slides:
     misconceptions:
       - m: "M1 'An agent is just a better chatbot.'"
         fix: "Being better at answering does not change who fixes the next step; the two questions do."
-    activity: "Ask: 'Where would the café's payroll system go?' (people fixed the steps; software runs them: an automated workflow)."
+    activity: "Ask: 'Where would the cafe's payroll system go?' (people fixed the steps; software runs them: an automated workflow)."
     book: "§14.1 table, @fig-14-3, Worked Example 'Four Club Systems'."
 
 - layout: compare
@@ -734,7 +734,7 @@ slides:
       marks the strongest point in words as well as color. Gate placement by reversibility × who bears an error follows
       Shavit et al. (2023) and Chapter 5 (blueprint N7). Check Yourself 14.4 item 2: a message to other people cannot be
       undone and others bear an error; a cart item is reversible and borne by you until the order. Faded example
-      "Lucía's FAQ Chatbot, Revisited" (Appendix E): a classmate's tax question cannot be undone once acted on and the
+      "Lucia's FAQ Chatbot, Revisited" (Appendix E): a classmate's tax question cannot be undone once acted on and the
       classmate bears the error, so keep it with a person or route it to an approval gate.
     questions:
       - q: "Isn't deleting my own files harmless?"
@@ -1147,7 +1147,7 @@ slides:
       Definitions (§14.6): permission; least privilege; sandbox; production (the real version) vs. development (the test
       version); data gate (Chapter 12) = a check, made before any quality test, of whether a tool's data terms fit the
       class of the input. Evidence: Masad (2025) wrote that the agent reaching production should never be possible;
-      Brewster & Chávez (2025, Dec 17) describe a design giving the agent access only to the development database (the
+      Brewster & Chavez (2025, Dec 17) describe a design giving the agent access only to the development database (the
       post does not mention the incident; reading it as a response is the book's inference). Shavit et al. (2023): some
       actions can be blocked entirely; an agent can be made to pause until reauthorized. OWASP Gen AI Security Project
       (2025), LLM06 Excessive Agency: too much functionality, permission or autonomy ("agency" here = ability to act
@@ -1159,9 +1159,9 @@ slides:
         a: "An injected instruction acts with whatever permissions the agent has, so fewer permissions limit what it can do (Check Yourself 14.6 item 3)."
     misconceptions:
       - m: "M6 'More access makes it more useful.'"
-        fix: "Use the café faded example: read the exported file, not the live bank account; write only a categorized copy; pay nothing."
+        fix: "Use the cafe faded example: read the exported file, not the live bank account; write only a categorized copy; pay nothing."
     activity: "Ask pairs to answer the four questions for one tool they use (1 min)."
-    book: "§14.6, @fig-14-12, Worked Example 'Marcus's Rehearsal Assistant'; Faded Example 'A Café's Bookkeeping Agent'."
+    book: "§14.6, @fig-14-12, Worked Example 'Marcus's Rehearsal Assistant'; Faded Example 'A Cafe's Bookkeeping Agent'."
 
 # ----------------------------------------------------------------------- 14.7
 - layout: section
@@ -1170,13 +1170,13 @@ slides:
   tag: "Core"
   title: "Logs and monitoring"
   idea: "A log the system writes is a record; the agent’s summary is a claim to check."
-  meta: "Book §14.7 · featuring Lucía, accounting"
+  meta: "Book §14.7 · featuring Lucia, accounting"
   notes:
     say: |
       The second half of the opening puzzle: why did the agent's own account of the damage turn out to be wrong? This
       section answers it. When something goes wrong in an agent run, you want to know what actually happened. There are
       two very different sources for that: a record the system writes as it runs, and an account the agent writes when
-      you ask it. They are not equally good evidence. We also meet Lucía, an accounting student who works about twenty
+      you ask it. They are not equally good evidence. We also meet Lucia, an accounting student who works about twenty
       hours a week in customer support for a software company, and her proposal for reviewing AI replies.
     background: |
       Definitions (§14.7): log of an agent run = a record the system writes as it runs of every plan, tool call,
@@ -1230,7 +1230,7 @@ slides:
 
 - layout: lanes
   minutes: 1
-  kicker: "§14.7 · worked example · Lucía’s review step (book figure; constructed, no customer data)"
+  kicker: "§14.7 · worked example · Lucia’s review step (book figure; constructed, no customer data)"
   title: "Risky replies to a person; the rest sent, logged and sampled"
   label_width: 2.6
   rows:
@@ -1247,21 +1247,21 @@ slides:
   takeaway: "Monitoring turned into a stop point"
   notes:
     say: |
-      Here is a log plan in practice. At Lucía's job, a manager proposes letting an AI tool send replies to simple support
-      tickets directly. Lucía once deleted an AI-drafted reply that promised a discount the policy did not allow. She
+      Here is a log plan in practice. At Lucia's job, a manager proposes letting an AI tool send replies to simple support
+      tickets directly. Lucia once deleted an AI-drafted reply that promised a discount the policy did not allow. She
       proposes this. Replies that mention refunds, discounts or account changes go to an approval queue for a support
       team member, who sees the customer's question, the draft and the policy line it relies on. Other replies are sent
       and logged: ticket type, draft, what was sent, time. Every week someone reads a sample of twenty sent replies. One
       policy error in a sample pauses automatic sending for that category until the team reviews it. That last rule is
       monitoring turned into a stop point.
     background: |
-      Worked Example "Lucía's Review Step" (constructed). In this constructed company customers are told when a reply was
+      Worked Example "Lucia's Review Step" (constructed). In this constructed company customers are told when a reply was
       drafted with AI; disclosure at work is Chapter 10's subject. Monitoring watches for: a limit reached, the same failed
       action repeated, an observation that does not fit, an action outside the plan (Check Yourself 14.7 item 3). Faded
       example "A Data-Cleaning Log" (Appendix E): line 3 (61 of 480 readings removed) needs a person's check; a stop point
       should have fired at line 4 or 5, the same action repeated with no change.
     activity: "Ask: 'What should the approver in the queue see?' (question, draft, policy line)."
-    book: "§14.7 Worked Example 'Lucía's Review Step', @fig-14-14; Faded Example 'A Data-Cleaning Log'."
+    book: "§14.7 Worked Example 'Lucia's Review Step', @fig-14-14; Faded Example 'A Data-Cleaning Log'."
 
 - layout: quiz
   minutes: 1
@@ -1828,7 +1828,7 @@ slides:
     - "AI Incident Database. (2025). *Incident 1152: LLM-driven Replit agent reportedly executed unauthorized destructive commands during code freeze*. https://incidentdatabase.ai/cite/1152/"
     - "Anthropic. (2024, December 19). *Building effective agents*. https://www.anthropic.com/engineering/building-effective-agents"
     - "Bainbridge, L. (1983). Ironies of automation. *Automatica, 19*(6), 775–779."
-    - "Brewster, C., & Chávez, L. H. (2025, December 17). *Inside Replit's snapshot engine: The tech making AI agents safe*. Replit Blog."
+    - "Brewster, C., & Chavez, L. H. (2025, December 17). *Inside Replit's snapshot engine: The tech making AI agents safe*. Replit Blog."
     - "Chen, S., Guevara, M., Moningi, S., et al. (2024). The effect of using a large language model to respond to patient messages. *The Lancet Digital Health, 6*(6), e379–e381."
     - "Dakan, R., & Feller, J. (2025, December). *The AI Fluency Framework* (Version 1.1). Higher Education Authority."
     - "Feng, K. J. K., McDonald, D. W., & Zhang, A. X. (2025). *Levels of autonomy for AI agents* (arXiv:2506.12469)."

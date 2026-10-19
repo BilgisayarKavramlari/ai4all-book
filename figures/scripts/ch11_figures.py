@@ -382,7 +382,7 @@ def mechanisms(f):
         f.box(20, y, 240, 110, h, role="neutral", kind="step", dashed=(i == 2), thick=(i == 2), size=15,
               sub=ab, sub_size=14)
         f.arrow(262, y + 55, 290, y + 55)
-        f.box(292, y, 230, 110, "Example from Lucía's log", role="soft", kind="step", size=13, sub=ex,
+        f.box(292, y, 230, 110, "Example from Lucia's log", role="soft", kind="step", size=13, sub=ex,
               sub_size=13)
         f.arrow(524, y + 55, 552, y + 55)
         f.box(554, y, 226, 110, "What it means", role="verified" if i < 2 else "risk", kind="human", size=13,

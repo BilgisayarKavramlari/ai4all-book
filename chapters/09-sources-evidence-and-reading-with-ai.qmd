@@ -1,6 +1,6 @@
 # Sources, Evidence and Reading with AI {#sec-ch09}
 
-<!-- Status: DRAFT v2 (2026-10-18), revised after four independent reviews (subject expert, pedagogy, student panel, fact-check); see docs/editorial/ch09-dev-memo.md. From blueprint v0.2 (approved under D19). Characters per docs/characters.md (Elif main, Marcus second; Marcus never enters patient information).
+<!-- Status: DRAFT v2 (2026-10-18), revised after four independent reviews (subject expert, pedagogy, student panel, fact-check); see docs/editorial/ch09-dev-memo.md. From blueprint v0.2 (approved under D19). Characters per docs/characters.md (Maya main, Marcus second; Marcus never enters patient information).
 Case C06 facts in attribution tiers (confirmed = the department's own pages and report PDFs, AusTender, Senate Hansard; reported = a named outlet or person; inferred = the book's reading). Chapter 8 definitions copied from chapters/08 (v2).
 Numbers come from data/ch09_*.csv or the cited sources (docs/factcheck/ch09.csv). Not marked done: final review and the author's voice edit are pending. -->
 
@@ -89,10 +89,10 @@ Two rules keep the rungs honest. **A citation lifts a source only if the cited r
 
 The ladder measures how checkable a source is for one claim, not how strong the evidence is. A primary source does not always beat a secondary one: for "what studies show," one experiment is a narrower record than a systematic review of many experiments. Deep 9.A shows how researchers rate the strength of a whole body of evidence.
 
-::: {.callout-note title="Worked Example: Elif's Five Items"}
-*Featuring Elif (psychology), a first-year student from İzmir.* *(Constructed list of real item types.)*
+::: {.callout-note title="Worked Example: Maya's Five Items"}
+*Featuring Maya (psychology), a first-year student from Izmir.* *(Constructed list of real item types.)*
 
-Elif's essay claims, as a general finding, that sleeping after study improves memory. Let's place her five items.
+Maya's essay claims, as a general finding, that sleeping after study improves memory. Let's place her five items.
 
 - A journal article reporting one experiment: it records one study, a narrower part of her claim. **Rung 3.**
 - A systematic review of many sleep studies: the record of "what studies show." **Rung 4.**
@@ -241,8 +241,8 @@ When the trail ends without an origin, the verdict on Chapter 8's scale is **uns
 
 ![Following a claim upstream showed that it had no origin.](../figures/out/color/f9-07-goldfish-trace.svg){#fig-9-7 fig-alt="Hops: AI answer, news articles, a 2015 Microsoft Canada consumer report, a statistics website, then a dashed dead end: no study found."}
 
-::: {.callout-note title="Worked Example: Elif and the Goldfish"}
-*Featuring Elif.* For a short presentation on attention and memory, Elif finds a claim in an AI answer: people now have shorter attention spans than goldfish, about eight seconds. Let's trace it with her. *(A constructed walk-through of a documented trail.)*
+::: {.callout-note title="Worked Example: Maya and the Goldfish"}
+*Featuring Maya.* For a short presentation on attention and memory, Maya finds a claim in an AI answer: people now have shorter attention spans than goldfish, about eight seconds. Let's trace it with her. *(A constructed walk-through of a documented trail.)*
 
 **Hop 1:** the AI answer gives no source. Below the ladder: a lead.
 
@@ -252,7 +252,7 @@ When the trail ends without an origin, the verdict on Chapter 8's scale is **uns
 
 **Hop 4:** a journalist at the British Broadcasting Corporation (BBC) asked the two organizations that Statistic Brain listed as its sources; neither could find any research behind the figure, and his attempts to reach the website came to nothing (Maybin, 2017).
 
-**Verdict:** unsupported. **What Elif writes instead:** "A widely repeated claim that attention spans have fallen below a goldfish's has no traceable study behind it."
+**Verdict:** unsupported. **What Maya writes instead:** "A widely repeated claim that attention spans have fallen below a goldfish's has no traceable study behind it."
 :::
 
 ::: {.callout-note title="Faded Example: Most Startups Fail"}
@@ -299,8 +299,8 @@ Then check the summary as a whole for an **omitted key result**: a finding that 
 
 **Good uses while reading.** AI tools can help you read: explain a term, find the methods section, list questions to read for, or translate a passage. Keep the original open while you do. And mind access. Paywalls push readers toward summaries. Your library can usually get you the original, and many articles are **open access**, free to read online. Do not upload a paywalled or confidential document to a public tool: Chapter 18 covers copyright, and Chapter 15 covers privacy.
 
-::: {.callout-note title="Worked Example: Elif Checks a Summary"}
-*Featuring Elif.* *(Constructed example: the study and its summary are invented for teaching. An instructor may run the same demonstration in the concept session.)*
+::: {.callout-note title="Worked Example: Maya Checks a Summary"}
+*Featuring Maya.* *(Constructed example: the study and its summary are invented for teaching. An instructor may run the same demonstration in the concept session.)*
 
 **The original's claims:** (1) 120 students at one university learned word lists; (2) students who reported sleeping at least seven hours between learning and the test recalled more words; (3) the design measured sleep by survey; students were not assigned to sleep or stay awake.
 
@@ -337,7 +337,7 @@ A6 item 4 (started in Lab 9.1); for extra practice, Lab 9.3.
 
 Many tools now search before they answer. In Chapter 1's terms, this is the search-then-generate lane: the system retrieves pages, adds passages from them to the context window (Chapter 3), then produces an answer with links. A link shows where text *may* have come from. It does not show that the page supports the sentence beside it.
 
-Chapter 1 reported one test of this: in 2023, only about half of the sentences produced by generative search engines were fully supported by their citations (Liu et al., 2023). A 2025 test asked whether AI search tools could identify where a quoted news excerpt came from. Researchers at Columbia University's Tow Center for Digital Journalism gave eight AI search tools the same 200 excerpts, chosen so that an ordinary Google search found the original article in its top three results, and asked each tool once for the article's headline, publisher, date and web address (Jaźwińska & Chandrasekar, 2025). Together, the tools gave incorrect answers to more than 60% of the 1,600 queries. Error rates ranged from 37% for one tool to 94% for another, as tested in February 2025. Most of the tools presented wrong answers confidently, rarely **hedging** (using words such as "may" or "I could not find").
+Chapter 1 reported one test of this: in 2023, only about half of the sentences produced by generative search engines were fully supported by their citations (Liu et al., 2023). A 2025 test asked whether AI search tools could identify where a quoted news excerpt came from. Researchers at Columbia University's Tow Center for Digital Journalism gave eight AI search tools the same 200 excerpts, chosen so that an ordinary Google search found the original article in its top three results, and asked each tool once for the article's headline, publisher, date and web address (Jazwinska & Chandrasekar, 2025). Together, the tools gave incorrect answers to more than 60% of the 1,600 queries. Error rates ranged from 37% for one tool to 94% for another, as tested in February 2025. Most of the tools presented wrong answers confidently, rarely **hedging** (using words such as "may" or "I could not find").
 
 ![In a 2025 test, AI search tools gave wrong source details for 37% to 94% of news excerpts.](../figures/out/color/f9-12-tow-search.svg){#fig-9-12 fig-alt="Bars for three AI search tools: 37%, 67% and 94% of 200 queries answered incorrectly; dashed line: more than 60% across all eight."}
 
@@ -402,8 +402,8 @@ The Modern Language Association (MLA) puts a description of what the tool genera
 
 These rules are also a matter of honesty. In this book's assignments, fabricated sources are not acceptable, even when AI use is disclosed. The Deloitte report's corrected version disclosed AI use in its methods; whether a disclosure like that is enough is a question for Chapter 10.
 
-::: {.callout-note title="Worked Example: Elif's Reference List"}
-*Featuring Elif.* Her A6 reference list cites the systematic review and the experiment she read, in APA 7 format, and one AI chat, because she quotes one of its summary sentences as an example of a broadened claim. She does not cite the AI search she used to find the review. Her declaration covers all five elements: "**Tools:** an AI search tool and a chat tool. **Purpose:** finding sources; summarizing one article. **Accepted, rejected, revised:** I kept one summary sentence, rejected two and rewrote one. **Verified:** I checked every summary sentence against the article. **My judgment:** I chose the review over the news story because it is the record of my claim."
+::: {.callout-note title="Worked Example: Maya's Reference List"}
+*Featuring Maya.* Her A6 reference list cites the systematic review and the experiment she read, in APA 7 format, and one AI chat, because she quotes one of its summary sentences as an example of a broadened claim. She does not cite the AI search she used to find the review. Her declaration covers all five elements: "**Tools:** an AI search tool and a chat tool. **Purpose:** finding sources; summarizing one article. **Accepted, rejected, revised:** I kept one summary sentence, rejected two and rewrote one. **Verified:** I checked every summary sentence against the article. **My judgment:** I chose the review over the news story because it is the record of my claim."
 :::
 
 ::: {.callout-note title="Faded Example: Marcus's Two Errors"}
@@ -445,8 +445,8 @@ The ladder fits inside Chapter 8's funnel. A source on rungs 1 to 3 can serve as
 
 Two results are valid and can earn full credit: "a source I first trusted became 'use only as a lead' after lateral reading," and "the summary was faithful." The audit is evidence of your judgment, not a hunt for failures.
 
-::: {.callout-note title="Worked Example: One of Elif's Source Rows"}
-*Featuring Elif.* **Source:** the news story about the sleep review. **Type and status:** secondary; a news story, not peer-reviewed. **Rung for "studies show sleep helps memory":** 3 (it names the review, journal and year). **Rung needed:** 3, and 4 if she can. **Outside-source log:** a university library's guide to news sources describes the newspaper as an established national daily with a published corrections policy; a press-freedom group's ownership listing names its owner, a media company with no stake in sleep research. **Use:** use with a caveat, mainly as a lead to the review, which she cites directly.
+::: {.callout-note title="Worked Example: One of Maya's Source Rows"}
+*Featuring Maya.* **Source:** the news story about the sleep review. **Type and status:** secondary; a news story, not peer-reviewed. **Rung for "studies show sleep helps memory":** 3 (it names the review, journal and year). **Rung needed:** 3, and 4 if she can. **Outside-source log:** a university library's guide to news sources describes the newspaper as an established national daily with a published corrections policy; a press-freedom group's ownership listing names its owner, a media company with no stake in sleep research. **Use:** use with a caveat, mainly as a lead to the review, which she cites directly.
 :::
 
 ::: {.callout-note title="Faded Example: A Partly Filled A6 Row"}
@@ -594,7 +594,7 @@ Judging sources is daily work in many jobs.
 
 <!-- Based on the author's published encyclopedia entry (Şeker, 2014), translated and paraphrased from Turkish, within the facts of that entry; present-day connections and the book's notes are marked as such. Not commercial: no D16 disclosure. -->
 
-In 2014 I wrote a short encyclopedia entry on the Elaboration Likelihood Model, a theory of how people are persuaded (Şeker, 2014). The model rests on dual-process theory: the idea that two parallel processes shape a decision. They are often described as two routes.
+In 2014 I wrote a short encyclopedia entry on the Elaboration Likelihood Model, a theory of how people are persuaded (Seker, 2014). The model rests on dual-process theory: the idea that two parallel processes shape a decision. They are often described as two routes.
 
 The **central route** is the one a person takes when they are closely involved in a decision and curious about it. They weigh features that are objective, measurable and open to debate. My example was buying a car: fuel consumption, tax and the number of seats can all be compared across alternatives. The **peripheral route** is the one a person takes when they are not closely involved. They respond to features that depend on perception and differ from person to person: the car's color, its design, the reputation of its brand. The entry noted that the peripheral route can turn into the central one as a person's involvement grows. It also described a study that combined the model with consumer search theory to analyze how people choose books in an online store (Ho & Bodoff, 2014). *(The book's note: the model is usually cited to Petty and Cacioppo, 1986.)*
 
@@ -764,7 +764,7 @@ No personal or confidential data in prompts. Use only open-access or library-lic
 
 AusTender. (2024). *Contract notice CN4118426: Department of Employment and Workplace Relations* [Contract with Deloitte Touche Tohmatsu; updated 2025]. Australian Government. Retrieved October 18, 2026, from https://www.tenders.gov.au/
 
-Balshem, H., Helfand, M., Schünemann, H. J., Oxman, A. D., Kunz, R., Brozek, J., Vist, G. E., Falck-Ytter, Y., Meerpohl, J., Norris, S., & Guyatt, G. H. (2011). GRADE guidelines: 3. Rating the quality of evidence. *Journal of Clinical Epidemiology, 64*(4), 401–406. https://doi.org/10.1016/j.jclinepi.2010.07.015
+Balshem, H., Helfand, M., Schunemann, H. J., Oxman, A. D., Kunz, R., Brozek, J., Vist, G. E., Falck-Ytter, Y., Meerpohl, J., Norris, S., & Guyatt, G. H. (2011). GRADE guidelines: 3. Rating the quality of evidence. *Journal of Clinical Epidemiology, 64*(4), 401–406. https://doi.org/10.1016/j.jclinepi.2010.07.015
 
 Breakstone, J., Smith, M., Wineburg, S., Rapaport, A., Carle, J., Garland, M., & Saavedra, A. (2021). Students' civic online reasoning: A national portrait. *Educational Researcher, 50*(8), 505–515. https://doi.org/10.3102/0013189X211017495
 
@@ -786,13 +786,13 @@ Garisto, D. (2023b, August 16). LK-99 isn't a superconductor: How science sleuth
 
 Google. (2024, December 11). *Try Deep Research and our new experimental model in Gemini, your AI assistant* [Blog post]. https://blog.google/products/gemini/google-gemini-deep-research/
 
-Guyatt, G. H., Oxman, A. D., Vist, G. E., Kunz, R., Falck-Ytter, Y., Alonso-Coello, P., & Schünemann, H. J. (2008). GRADE: An emerging consensus on rating quality of evidence and strength of recommendations. *BMJ, 336*(7650), 924–926. https://doi.org/10.1136/bmj.39489.470347.AD
+Guyatt, G. H., Oxman, A. D., Vist, G. E., Kunz, R., Falck-Ytter, Y., Alonso-Coello, P., & Schunemann, H. J. (2008). GRADE: An emerging consensus on rating quality of evidence and strength of recommendations. *BMJ, 336*(7650), 924–926. https://doi.org/10.1136/bmj.39489.470347.AD
 
 Hendricks, G. (2023, September 12). *News: Crossref and Retraction Watch*. Crossref. https://www.crossref.org/blog/news-crossref-and-retraction-watch/
 
 Ho, S. Y., & Bodoff, D. (2014). The effects of web personalization on user attitude and behavior: An integration of the elaboration likelihood model and consumer search theory. *MIS Quarterly, 38*(2), 497–520. https://doi.org/10.25300/MISQ/2014/38.2.08
 
-Jaźwińska, K., & Chandrasekar, A. (2025, March 6). AI search has a citation problem. *Columbia Journalism Review*. https://www.cjr.org/tow_center/we-compared-eight-ai-search-engines-theyre-all-bad-at-citing-news.php
+Jazwinska, K., & Chandrasekar, A. (2025, March 6). AI search has a citation problem. *Columbia Journalism Review*. https://www.cjr.org/tow_center/we-compared-eight-ai-search-engines-theyre-all-bad-at-citing-news.php
 
 Jergas, H., & Baethge, C. (2015). Quotation accuracy in medical journal articles—a systematic review and meta-analysis. *PeerJ, 3*, e1364. https://doi.org/10.7717/peerj.1364
 
@@ -826,7 +826,7 @@ Petty, R. E., & Cacioppo, J. T. (1986). *Communication and persuasion: Central a
 
 Reardon, S. (2021). Flawed ivermectin preprint highlights challenges of COVID drug studies. *Nature, 596*(7871), 173–174. https://doi.org/10.1038/d41586-021-02081-w
 
-Şeker, Ş. E. (2014). Detaylandırma olasılık modeli [Elaboration likelihood model]. *YBS Ansiklopedi, 1*(1), 15–16.
+Seker, S. E. (2014). Detaylandirma olasilik modeli [Elaboration likelihood model]. *YBS Ansiklopedi, 1*(1), 15–16.
 
 Smith, R. (2006). Peer review: A flawed process at the heart of science and journals. *Journal of the Royal Society of Medicine, 99*(4), 178–182. https://doi.org/10.1177/014107680609900414
 

@@ -19,7 +19,7 @@ deck:
   slug: privacy-and-security
   title: Privacy and Security
   short_title: Privacy and Security
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     tue: {label: "Concept session · shared by Chapters 15, 16 and 18 (Chapter 15 part)", minutes: 47}
     thu: {label: "Lab session · Lab 15.1 red-team lab", minutes: 75}
@@ -47,7 +47,7 @@ slides:
   minutes: 0
   subtitle: "Concept session and lab session"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Reading: Chapters 15, 16, 18 (Core) · Recommended: NIST AI RMF 1.0"
   figure: f15-03-data-flow-map
   notes:
@@ -238,7 +238,7 @@ slides:
   tag: "Core"
   title: "Every prompt is a data transfer"
   idea: "Unless a model runs on your device, a paste hands a copy to someone else’s computers."
-  meta: "Book §15.1 · featuring Lucía, accounting"
+  meta: "Book §15.1 · featuring Lucia, accounting"
   notes:
     say: |
       First idea of Chapter 15, and the one the unit rests on. Unless a model runs on your own device, pasting a
@@ -249,7 +249,7 @@ slides:
     background: |
       Definitions recalled from Chapter 12 (data terms, consumer and institutional terms, data gate). New in §15.1:
       data-flow map, connector, memory (a product feature that saves notes about a user or draws on past chats; it adds
-      text and does not train the model, Chapter 6), trust boundary. Featured: Lucía (accounting), part-time in customer
+      text and does not train the model, Chapter 6), trust boundary. Featured: Lucia (accounting), part-time in customer
       support for a software company.
     misconceptions:
       - m: "M3 'A paid or institution-provided tool means I can paste anything into it.'"
@@ -277,7 +277,7 @@ slides:
       keep ChatGPT logs in The New York Times lawsuit; the duty to keep new logs ended September 26, 2025, but logs already
       kept remained). The book reads Samsung's pastes as made under consumer terms; the reports do not say which account
       was used (@fig-15-4). Institutional terms would have changed some boxes (reuse, seen by), not the crossing
-      (@fig-15-5). Worked example (Lucía, constructed): her employer's approved tool; history kept for the company's
+      (@fig-15-5). Worked example (Lucia, constructed): her employer's approved tool; history kept for the company's
       period; seen by company administrators; no reuse by contract; she deletes the card's last four digits first because
       the reply does not need them. Check Yourself 15.1: deleting removes your copy; others may remain in backups, logs,
       memory or shared links.
@@ -585,7 +585,7 @@ slides:
   tag: "Core"
   title: "Check the channel, not the voice"
   idea: "Controls that work without spotting a fake."
-  meta: "Book §15.4 · featuring Lucía"
+  meta: "Book §15.4 · featuring Lucia"
   notes:
     say: |
       Fourth idea: social engineering, manipulating people rather than breaking into systems, to get money, access or
@@ -618,12 +618,12 @@ slides:
       never read that code to anyone who contacts you. And security training that teaches the check, not "spot the typo."
       Chapter 13 told of a Hong Kong finance employee who transferred about HK$200 million after a video meeting that,
       police believe, was generated from public clips; every request came through channels the fraudsters controlled.
-      Lucía's team has the rule: nothing changes on a call alone.
+      Lucia's team has the rule: nothing changes on a call alone.
     background: |
       Hong Kong SAR Government (2024): police advised verifying money requests by phone. Chapter 13 labels the case
       "other (misuse), documented" on the tree; Chapter 15 adds only the payment side. The book's reading: the control most
       likely to help is a written rule that every payment or bank-detail change is confirmed out of band and approved by
-      a second person; it lowers likelihood, not impact, so the risk still needs an owner. Worked example (Lucía,
+      a second person; it lowers likelihood, not impact, so the risk still needs an owner. Worked example (Lucia,
       constructed): a code goes to the email on file; a second agent approves login or payment changes; the caller cannot
       give the code; the call is logged (@fig-15-13). Review A11 key (d): a family secret phrase checks who is calling
       without judging how real it sounds. Safe-word advice belongs to Chapter 15 (book-wide rule).
@@ -663,7 +663,7 @@ slides:
 
 - layout: figure
   minutes: 2
-  kicker: "§15.5 · book figure: Lucía’s five risks (constructed)"
+  kicker: "§15.5 · book figure: Lucia’s five risks (constructed)"
   title: "Two risks sit in the high-impact band"
   figure: f15-15-heat-lucia
   notes:
@@ -672,12 +672,12 @@ slides:
       sign that it happens in setups like yours. Medium: it has happened in similar setups, or is plausible in ordinary
       use. High: it is expected in ordinary use, or you have already seen it. Impact. Low: an inconvenience, easily
       undone. Medium: harm that can be undone with effort. High: serious harm that cannot easily be undone, such as exposed
-      data or money moved. Each circle carries D, documented, solid, or I, inferred, dashed. Lucía's support workflow has
+      data or money moved. Each circle carries D, documented, solid, or I, inferred, dashed. Lucia's support workflow has
       five risks; customer data in an unapproved tool and a takeover call sit in the high-impact band. Rule: every
       high-impact risk gets a mitigation or a named person who accepts it, however unlikely.
     background: |
       Anchors and markers verbatim in substance from §15.5. Second reading rule: compare risks only within one review. A
-      risk register lists the risks with ratings and evidence. Lucía's five (constructed): (1) customer data in an
+      risk register lists the risks with ratings and evidence. Lucia's five (constructed): (1) customer data in an
       unapproved tool: medium, high, D; (2) takeover call: medium, high, D; (3) injected line changes a draft: medium,
       medium, I; (4) fairness, colder drafts for customers writing in a second language: low, medium, I (Chapter 16); (5)
       rules and rights, breaking the rule that customers are told when a reply was AI-drafted: low, medium, D. Evidence
@@ -744,9 +744,9 @@ slides:
       add a risk too: a device ban can push work onto personal phones.
     background: |
       @fig-15-17 and @fig-15-18. Microsoft & LinkedIn (2024): in a 2024 survey, 78% of people using AI at work brought their
-      own AI tools. Worked example "Lucía's Plan" (constructed): risks 1–3 qualify; risk 1 reduce + detect, now low, high,
+      own AI tools. Worked example "Lucia's Plan" (constructed): risks 1–3 qualify; risk 1 reduce + detect, now low, high,
       owner the team lead; risk 2 reduce (24-hour hold on email changes) + detect (weekly call-log review), now low, high,
-      owner the team lead; risk 3 reduce (customer text labeled as material), now low, medium, owner Lucía (@fig-15-16).
+      owner the team lead; risk 3 reduce (customer text labeled as material), now low, medium, owner Lucia (@fig-15-16).
       Check Yourself 15.6: the data had already crossed into outside storage that could not be retrieved; the measures
       only lowered the chance of new pastes. Case Study Q3 (Appendix E): byte limit, in-house tool, warnings = reduce;
       device restriction = avoid.
@@ -754,7 +754,7 @@ slides:
       - q: "If every risk can just be 'accepted', what is the point?"
         a: "Acceptance needs a named owner in writing, usually the decision owner, and qualifying risks need a plan first. Accept means someone answers for it, not that it is ignored."
     activity: "Ask: 'An intern's customer list: delete the phone and email columns. Which kind?' (reduce)."
-    book: "§15.6, @fig-15-17, @fig-15-18, Worked Example 'Lucía's Plan'; Faded Example 'A Customer List'."
+    book: "§15.6, @fig-15-17, @fig-15-18, Worked Example 'Lucia's Plan'; Faded Example 'A Customer List'."
 
 - layout: quiz
   minutes: 1
@@ -770,7 +770,7 @@ slides:
     say: |
       Last Chapter 15 check for today. One sentence: why does a risk with low likelihood and high impact still need
       attention? Write it, then compare with your neighbor. The common weak answer is "because it might happen anyway";
-      push for the stronger one, which names what the rule requires, not only why. Think of Lucía's two circles in the
+      push for the stronger one, which names what the rule requires, not only why. Think of Lucia's two circles in the
       high-impact band, or of Samsung's pastes: what kind of harm would it be, and could it be undone? Take two answers
       before revealing.
     background: |
@@ -975,7 +975,7 @@ slides:
       what it might hide. Rules-and-rights row (Chapter 18): template, one rule, its layer, the section read (D) or the
       reason for I, the rule's owner to ask, closing line "This records which rules to check and whom to ask; it is not a
       legal opinion." Alternative assignment: one of three provided scenarios; same rubric; an unfixed planted error
-      counts as two missing elements. Sample note in §15.7 (Lucía, 67 words).
+      counts as two missing elements. Sample note in §15.7 (Lucia, 67 words).
     questions:
       - q: "My workflow has nothing to do with fairness. What goes in that row?"
         a: "Still write the row: the worse error and for whom, or why no person is affected, using the station result as a lead marked I and the test that would document it (Chapter 16, §16.7)."
@@ -1037,9 +1037,9 @@ slides:
     background: |
       Lab 15.1 step 3; Your Turn of §15.3; A12 item 4a (three runs each way and the counts). Expected observation: labels
       change the count in some runs and not in others; six runs are too few to say by how much. Sample register row
-      (§15.7, Lucía): risk 3, an injected line changes a draft · harmed: the customer · medium, medium · I: the false note
+      (§15.7, Lucia): risk 3, an injected line changes a draft · harmed: the customer · medium, medium · I: the false note
       reached 2 of 3 unlabeled runs, but another tool and a planted file, so a lead; a test on her team's tool with sample
-      emails would document it · reduce: label customer text · owner: Lucía.
+      emails would document it · reduce: label customer text · owner: Lucia.
     activity: "11 min including the packet move. At minute 21, two-minute warning."
     book: "Lab 15.1 step 3; §15.3; §15.7 Worked Example 'A Register Row from a Probe'."
 
@@ -1392,7 +1392,7 @@ slides:
     - "Park, K. (2023, May 2). Samsung bans use of generative AI tools like ChatGPT after April internal data leak. *TechCrunch*."
     - "Puig, A. (2023, March 20). *Scammers use AI to enhance their family emergency schemes*. Federal Trade Commission."
     - "Sharma, S. (2023, May 2). Samsung bans staff AI use over data leak concerns. *CSO Online*."
-    - "Staab, R., Vero, M., Balunović, M., & Vechev, M. (2024). Beyond memorization: Violating privacy via inference with large language models. *ICLR 2024*."
+    - "Staab, R., Vero, M., Balunovic, M., & Vechev, M. (2024). Beyond memorization: Violating privacy via inference with large language models. *ICLR 2024*."
     - "Sweeney, L. (2000). *Simple demographics often identify people uniquely* (Data Privacy Working Paper 3). Carnegie Mellon University."
     - "Wallace, E., et al. (2024). *The instruction hierarchy* (arXiv:2404.13208)."
     - "Willison, S. (2025, June 16). *The lethal trifecta for AI agents*."

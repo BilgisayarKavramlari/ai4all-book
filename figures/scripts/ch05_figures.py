@@ -188,7 +188,7 @@ def frame_card(f):
            size=13, color=MUTED[f.mode])
 
 
-# ---------------------------------------------------------------- F5.3b Lucía's parts on the ladder
+# ---------------------------------------------------------------- F5.3b Lucia's parts on the ladder
 LUCIA_PARTS = {"agency": "Not now: a study-group chatbot for common questions would answer classmates without her",
                "augmentation": "Part 3: why does the example budget confuse readers?",
                "automation": "Part 2: draft the handout text (checked against her criteria)",
@@ -236,7 +236,7 @@ def klarna_storyboard(f):
            size=13, color=MUTED[f.mode])
 
 
-# ---------------------------------------------------------------- F5.7 Lucía v1 vs v2
+# ---------------------------------------------------------------- F5.7 Lucia v1 vs v2
 def lucia_v1_v2(f):
     f.box(20, 30, 250, 200, "", role="soft", kind="step")
     f.text(145, 52, "v1 (first prompt)", size=15, weight="700")
@@ -300,7 +300,7 @@ def why_chain(f):
              ("Why?", "no figures were in the prompt, so the output filled in plausible ones", "neutral", False),
              ("Why?", "the frame card said to use the association's figures, but they were never pasted",
               "neutral", False),
-             ("Why?", "they were in Lucía's notes, not in the prompt", "neutral", False),
+             ("Why?", "they were in Lucia's notes, not in the prompt", "neutral", False),
              ("Fix (v2)", "add the figures as context; predict: every number matches", "verified", False)]
     y = 26
     for i, (lab, sub, role, dashed) in enumerate(nodes):
@@ -322,7 +322,7 @@ def why_chain(f):
 
 # ---------------------------------------------------------------- F5.11 Test grid
 def test_grid(f):
-    f.text(400, 24, "Lucía's v4: three test inputs × two runs, five criteria", size=15, weight="700")
+    f.text(400, 24, "Lucia's v4: three test inputs × two runs, five criteria", size=15, weight="700")
     cols = ["Run 1", "Run 2"]
     rows = [("Typical", "the association's figures"), ("Different", "income that changes month to month"),
             ("Edge", "costs higher than income")]
@@ -393,7 +393,7 @@ def log_template(f):
         f.line(x0, y0 + rh * r, x0 + sum(widths), y0 + rh * r, width=1)
     f.text(400, 396, "One change per row, a prediction before the run, scores tied to your criteria.",
            size=13, color=MUTED[f.mode])
-    f.text(400, 418, "Constructed example (Lucía's log); the empty row is yours.", size=13, italic=True,
+    f.text(400, 418, "Constructed example (Lucia's log); the empty row is yours.", size=13, italic=True,
            color=MUTED[f.mode])
 
 
@@ -436,14 +436,14 @@ FIGS = [
     ("f5-03-delegation-ladder", delegation_ladder(), 800, 570,
      "The higher the rung, the harder it is to check what the AI contributed before it takes effect"),
     ("f5-03b-ladder-lucia", delegation_ladder(annotate=LUCIA_PARTS), 800, 570,
-     "One task, several rungs: Lucía places each part of her handout"),
+     "One task, several rungs: Lucia places each part of her handout"),
     ("f5-04-three-questions", three_questions, 800, 450,
      "Three questions point to different rungs; they are weighed, not computed"),
     ("f5-05-klarna-storyboard", klarna_storyboard, 800, 350,
      "Klarna's public account moved from efficiency (2024) to quality and a promise of human help (May 2025), then back to AI savings (Nov 2025)"),
     ("f5-06-prompt-anatomy", prompt_anatomy(), 800, 475,
      "A prompt has six parts; the task is the only one you always need"),
-    ("f5-07-lucia-v1-v2", lucia_v1_v2, 800, 510, "The framed prompt carries what Lucía knew but had not written down"),
+    ("f5-07-lucia-v1-v2", lucia_v1_v2, 800, 510, "The framed prompt carries what Lucia knew but had not written down"),
     ("f5-08-iteration-loop", iteration_loop, 800, 492,
      "Iteration is the loop between Prompt and Verify: one change, a prediction, a rerun, a score"),
     ("f5-09-why-chain", why_chain, 800, 515,

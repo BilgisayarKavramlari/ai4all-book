@@ -11,7 +11,7 @@
 1. METR's horizon page is "no longer actively updated" (last update September 8, 2026). — 22.3
 2. Open-weight models trail the best closed models by about four months (Epoch AI, May 2026). — 22.5
 3. World data centers are expected to use about 950 TWh by 2030 (IEA, 2026 report). — 22.6
-4. The May 20, 2026 result in geometry (a disproof of a 1946 conjecture of Paul Erdős) is reported by its developer and checked by outside mathematicians in a preprint, not yet peer-reviewed. — 22.7
+4. The May 20, 2026 result in geometry (a disproof of a 1946 conjecture of Paul Erdos) is reported by its developer and checked by outside mathematicians in a preprint, not yet peer-reviewed. — 22.7
 5. Two companies' perfect scores at the 2026 olympiad are reported by the companies, with no IMO statement (AFP). — 22.8
 
 ## Steps (tool-neutral)

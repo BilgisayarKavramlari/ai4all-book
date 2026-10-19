@@ -22,7 +22,7 @@ deck:
   slug: philosophical-debates-minds-meaning-and-responsibility
   title: "Philosophical Debates: Minds, Meaning and Responsibility"
   short_title: Philosophical Debates (optional)
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     opt: {label: "Optional session · Deep chapter, not examinable · use only if time allows"}
     after: {label: "reference slides (not presented)"}
@@ -45,7 +45,7 @@ slides:
   minutes: 0
   subtitle: "Optional enrichment · Deep chapter, not on exams"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Reading (optional): Chapter 23, fast route about 23 min"
   figure: f23-01-chapter-map
   notes:
@@ -65,7 +65,7 @@ slides:
       side at its strongest and do not reveal or imply your own position as the answer. The chapter's "Author's view"
       boxes are placeholders ("to be added by the author before publication") and hold no view, so this deck has no
       author's-view slide; do not fill them in for the author. Decision D20: Deep chapters (6, 13, 17, 22, 23) are
-      not examinable. Featured students: Elif (psychology, İzmir) and Hana (they/them; media arts and design); all their
+      not examinable. Featured students: Maya (psychology, Izmir) and Hana (they/them; media arts and design); all their
       work is constructed. Case C30 (Turing, Searle, Bender et al., with Jones & Bergen, 2026).
     questions:
       - q: "Will any of this be on the final?"
@@ -274,8 +274,8 @@ slides:
 - layout: worked
   minutes: 1.5
   max_words: 58
-  kicker: "§23.1 · worked example · constructed: Elif maps a seminar claim"
-  title: "Elif maps a seminar claim"
+  kicker: "§23.1 · worked example · constructed: Maya maps a seminar claim"
+  title: "Maya maps a seminar claim"
   context: "A classmate: “AI tutors can’t understand students, so they can’t help them.”"
   steps:
     - {label: "Claim", text: "AI tutors cannot help students"}
@@ -287,21 +287,21 @@ slides:
   notes_reveal:
     - minutes: 1.5
       say: |
-        Elif is a first-year psychology student whose program runs a seminar on minds and machines. In the seminar a
+        Maya is a first-year psychology student whose program runs a seminar on minds and machines. In the seminar a
         classmate says: "AI tutors can't understand students, so they can't help them." Step one, the claim: AI
         tutors cannot help students. Step two, the stated reason: AI tools produce text by prediction, not by
-        understanding. Is that true? That is the next section's question, so Elif marks it "contested" and moves on.
+        understanding. Is that true? That is the next section's question, so Maya marks it "contested" and moves on.
         Now ask the class: for the conclusion to follow from that reason, what must the classmate also assume, without
         saying it?
       background: |
-        Worked Example "Elif Maps a Seminar Claim" (§23.1), constructed; the seminar is a constructed course. The
-        "contested" mark is the chapter's word: the reason's truth is §23.2's question. Elif's map is @fig-23-4.
+        Worked Example "Maya Maps a Seminar Claim" (§23.1), constructed; the seminar is a constructed course. The
+        "contested" mark is the chapter's word: the reason's truth is §23.2's question. Maya's map is @fig-23-4.
       activity: "Pause after step 2; take two or three suggestions for the unstated premise."
       book: "§23.1 Worked Example; @fig-23-4."
     - minutes: 1.5
       say: |
         Step three: the classmate must assume that only something that understands a student can help that student.
-        The claim never says so, so Elif draws it dashed: it is her reconstruction. Step four, objections. One denies
+        The claim never says so, so Maya draws it dashed: it is her reconstruction. Step four, objections. One denies
         that unstated premise: practice questions and feedback can help a learner whether or not their source
         understands anything; Chapter 7 showed when they help and when they become a crutch. Another opposes the
         claim directly: whether a tool helps is a question a study can test. So the disagreement does not sit where it
@@ -317,7 +317,7 @@ slides:
       activity: "Ask: 'Which would you check first, the stated reason or the unstated premise, and how?'"
       book: "§23.1 Worked Example; Faded Example 'A Jobs Op-Ed'; Appendix E."
   notes:
-    book: "§23.1 Worked Example 'Elif Maps a Seminar Claim'."
+    book: "§23.1 Worked Example 'Maya Maps a Seminar Claim'."
 
 # ----------------------------------------------------------------------- 23.2
 # Redrawn natively from @fig-23-6 (Chinese Room map): the book map's labels fall to about 8 pt at slide size.
@@ -345,14 +345,14 @@ slides:
       systems reply says the whole system, person plus rules plus papers, understands: it denies that premise three is
       about the right thing. The robot reply accepts premise two and adds connections to the world.
     background: |
-      Elif's three-premise reconstruction (Worked Example "Elif Maps the Chinese Room"; @fig-23-6). Searle's answers:
+      Maya's three-premise reconstruction (Worked Example "Maya Maps the Chinese Room"; @fig-23-6). Searle's answers:
       to the systems reply, the person could memorize the rules and still not understand; to the robot reply, camera
       signals would reach the person as more symbols. The book reads the robot reply as an early form of Harnad's
       (1990) symbol grounding problem (inferred). Robot reply mapped as accepting premise 2 (Searle's "tacitly
       concedes", D-23.13). Searle allowed that machines with the right causal powers, such as brains, can think (Case
       Study table). Turing side, for balance: Turing answered nine objections; the objection from consciousness (a
       machine must feel, not only produce words) he answered by noting that we grant other people minds on the
-      evidence of behavior (@fig-23-5). Elif, who writes in English and thinks in Turkish, finds the robot reply most
+      evidence of behavior (@fig-23-5). Maya, who writes in English and thinks in Turkish, finds the robot reply most
       interesting, labeled a reflection, not evidence.
     misconceptions:
       - m: "M2 'The Chinese Room proves no computer could ever understand.'"
@@ -361,7 +361,7 @@ slides:
       - q: "Isn't the systems reply obviously right? Neurons don't understand either."
         a: "Present it at its strongest, then Searle's answer: memorize the rules and you are the whole system, still without Chinese. Which premise you find stronger is the disagreement (§23.2)."
     activity: "Ask: 'Which premise does the systems reply deny, and which does the robot reply accept?' (the §23.2 Your Turn asks the same for Bender and Koller)."
-    book: "§23.2, @fig-23-5, @fig-23-6; Worked Example 'Elif Maps the Chinese Room'; Check Yourself 23.2, item 2; Review A3."
+    book: "§23.2, @fig-23-5, @fig-23-6; Worked Example 'Maya Maps the Chinese Room'; Check Yourself 23.2, item 2; Review A3."
 
 - layout: compare
   minutes: 2.5
@@ -460,7 +460,7 @@ slides:
   minutes: 1.5
   kicker: "Quick check · §23.3 worked example · constructed sort"
   title: "what kind of evidence?"
-  question: "Elif’s seminar: for each statement, what kind of evidence is it?"
+  question: "Maya’s seminar: for each statement, what kind of evidence is it?"
   option_tags: ["(1)", "(2)", "(3)", "(4)"]
   options:
     - "A chatbot: “Sometimes I feel lonely between conversations”"
@@ -473,18 +473,18 @@ slides:
   explanation: "About the system: (3), and weakly (1). About a company or people: (2), (4)"
   notes:
     say: |
-      A quick sort, from Elif's seminar. For each of the four statements, ask: what kind of evidence is it, and
+      A quick sort, from Maya's seminar. For each of the four statements, ask: what kind of evidence is it, and
       evidence about what? The first is a chatbot's own sentence, a constructed output. The second is a company's
       policy on its own models. The third is the conclusion of the 2023 indicators report. The fourth is a survey of
       people. Label each one on your own, then compare with your neighbor. A hint: for each, ask whether it tells you
       something about the system, about a company, or about people.
     background: |
-      Worked Example "Elif Sorts Four Statements" (§23.3), constructed. Item 4 is Colombatto & Fleming (2024): a July
+      Worked Example "Maya Sorts Four Statements" (§23.3), constructed. Item 4 is Colombatto & Fleming (2024): a July
       2023 survey of 300 U.S. adults; 67% gave ChatGPT some possibility of phenomenal consciousness, and more frequent
       users were more likely to do so (@fig-23-10: 33% "definitely not"). Item 2 is Anthropic (2025); the book's Claude
       disclosure applies (D-23.5).
     activity: "1 min alone, 30 s with a neighbor, then the answer slide."
-    book: "§23.3 Worked Example 'Elif Sorts Four Statements'; @fig-23-10."
+    book: "§23.3 Worked Example 'Maya Sorts Four Statements'; @fig-23-10."
   answer_minutes: 1
   answer_notes:
     say: |
@@ -538,7 +538,7 @@ slides:
       highlight (whose view is whose). THE ONE PUBLISHED AUTHOR PASSAGE (§23.4 box, decisions D-23.2 and D-23.7), for
       instructor reference only, never as the author's verdict on the gap. The chapter prints it with this disclosure:
       "I am a founder of OptiWisdom, which develops software for businesses, including AI tools. See 'How This Book Was
-      Written.'" The passage paraphrases a 2026 article on explainable AI (Şeker & Arslanhan, 2026, the HermAI
+      Written.'" The passage paraphrases a 2026 article on explainable AI (Seker & Arslanhan, 2026, the HermAI
       framework): when people cannot understand how an opaque model reached a decision, trust, accountability and
       fairness suffer. The chapter adds that it ties accountability to understanding a decision and takes no side
       between Matthias and his critics. CONFLICT NOTE: the blueprint cites a 2025 manuscript without the disclosure;
@@ -636,7 +636,7 @@ slides:
         whether anyone is fully culpable remains a fair question to debate." Faded Example "A Paralegal's Clause"
         (homework; key in Appendix E). Lab 23.4 "Who Answers?" applies the four gaps to a constructed hospital
         discharge summary that omits an allergy; its model judgment gives both Matthias's and Tigard's readings.
-        From the Field (actor-network theory, Şeker, 2014; not commercial, no disclosure needed) suggests listing every
+        From the Field (actor-network theory, Seker, 2014; not commercial, no disclosure needed) suggests listing every
         actor, human and not; the chapter adds that "actant" is an analytic term, not a claim that machines bear moral
         responsibility.
       questions:
@@ -798,7 +798,7 @@ slides:
       - q: "Thousands of researchers signed or answered surveys; isn't that evidence?"
         a: "A signature list shows who holds a view, not that it is true; survey answers are forecasts (@fig-23-19; Check Yourself 23.7, item 1)."
     activity: "Optional: Faded Example 'An Entry-Level Jobs Post' (“Stanford proved it”): did they prove AI caused it? Key in Appendix E."
-    book: "§23.6, @fig-23-17; §23.7, @fig-23-18, @fig-23-19; Worked Examples 'Hana Reads Two Headlines' and 'Elif Maps the Statement and Its Critics'."
+    book: "§23.6, @fig-23-17; §23.7, @fig-23-18, @fig-23-19; Worked Examples 'Hana Reads Two Headlines' and 'Maya Maps the Statement and Its Critics'."
 
 - layout: quiz
   minutes: 1
@@ -943,7 +943,7 @@ slides:
       decides?); long-term risk (how fast do effects arrive, can systems be controlled, what comes first?). Warm-up
       revisit: (1) whether a partner you cannot tell from a person understands is the disputed question; (2) "I am
       afraid of being switched off" is evidence of what the system produced, a claim to check; (3) in practice the
-      people with assigned duties answer; whether that blame is fair depends on control and foresight. Elif learned
+      people with assigned duties answer; whether that blame is fair depends on control and foresight. Maya learned
       that the loudest claim is rarely where the disagreement sits; Hana added "what would change my mind" to the
       code of practice from Chapter 21.
     activity: "Ask students to look at their Warm-up item 3 answer and confidence: did it change, and why?"
@@ -1022,7 +1022,7 @@ slides:
     - "Danaher, J. (2019). *Automation and utopia*. Harvard University Press."
     - "Doshi, A. R., & Hauser, O. P. (2024). Generative AI enhances individual creativity… *Science Advances, 10*(28), eadn5290."
     - "Elish, M. C. (2019). Moral crumple zones. *Engaging Science, Technology, and Society, 5*, 40–60."
-    - "Gebru, T., & Torres, É. P. (2024). The TESCREAL bundle. *First Monday, 29*(4)."
+    - "Gebru, T., & Torres, E. P. (2024). The TESCREAL bundle. *First Monday, 29*(4)."
     - "Grace, K., et al. (2024). *Thousands of AI authors on the future of AI* (arXiv:2401.02843, v3)."
     - "Harnad, S. (1990). The symbol grounding problem. *Physica D, 42*(1–3), 335–346."
     - "Hofstadter, D. R. (1995). *Fluid concepts and creative analogies*. Basic Books."
@@ -1045,8 +1045,8 @@ slides:
     - "Santoni de Sio, F., & Mecacci, G. (2021). Four responsibility gaps with AI. *Philosophy & Technology, 34*(4)."
     - "Santoni de Sio, F., & van den Hoven, J. (2018). Meaningful human control. *Frontiers in Robotics and AI, 5*, 15."
     - "Searle, J. R. (1980). Minds, brains, and programs. *Behavioral and Brain Sciences, 3*(3), 417–424."
-    - "Şeker, Ş. E. (2014). Aktör ağ teorisi [Actor network theory]. *YBS Ansiklopedi, 1*(1), 14–15."
-    - "Şeker, Ş. E., & Arslanhan, Z. (2026). Hermai. *Artificial Intelligence Theory and Applications, 6*(1), 56–74."
+    - "Seker, S. E. (2014). Aktor ag teorisi [Actor network theory]. *YBS Ansiklopedi, 1*(1), 14–15."
+    - "Seker, S. E., & Arslanhan, Z. (2026). Hermai. *Artificial Intelligence Theory and Applications, 6*(1), 56–74."
     - "Seth, A. K. (2025). Conscious AI and biological naturalism. *Behavioral and Brain Sciences, 49*, e315."
     - "Shanahan, M. (2024). Talking about large language models. *Communications of the ACM, 67*(2), 68–79."
     - "Suleyman, M. (2025, August 19). *Seemingly conscious AI is coming*."

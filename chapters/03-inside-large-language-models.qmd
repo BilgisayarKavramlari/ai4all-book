@@ -1,6 +1,6 @@
 # Inside Large Language Models {#sec-ch03}
 
-<!-- Status: v2 (2026-10-18): revised after four independent reviews (docs/editorial/ch03-dev-memo.md), plus a light Mode B voice pass. v1 draft kept in build/ch03/ch03-v1-prereview.qmd. From blueprint v0.2 (approved under D18, D19). Characters per docs/characters.md (Elif main; Hana they/them).
+<!-- Status: v2 (2026-10-18): revised after four independent reviews (docs/editorial/ch03-dev-memo.md), plus a light Mode B voice pass. v1 draft kept in build/ch03/ch03-v1-prereview.qmd. From blueprint v0.2 (approved under D18, D19). Characters per docs/characters.md (Maya main; Hana they/them).
 Computed numbers come only from data/ch03_*.csv (figures/scripts/ch03_tokens.py, tiktoken 0.8.0); published values in data/ch03_lost_middle.csv and data/ch03_reversal.csv. Next-token scores are illustrative (no local open model; see data/ch03_tokens_meta.txt). -->
 
 ![Chapter 3 at a glance. This chapter strengthens the Prompt step: know what the model actually receives.](../figures/out/color/f3-01-chapter-map.svg){#fig-3-1 fig-alt="Chapter map: How it works (3.1–3.3), What it receives (3.4–3.5), Do (3.6, Lab 3.1, A2 Part 2); Work Loop with Prompt highlighted."}
@@ -49,7 +49,7 @@ You will revisit your answers in the Chapter Summary.
 
 [Core]{.path}
 
-*Featuring Elif, a first-year psychology student from İzmir.*
+*Featuring Maya, a first-year psychology student from Izmir.*
 
 Every field has its own long words, from drug names to species names. How a model handles them starts with a step most users never see.
 
@@ -64,12 +64,12 @@ Most tokenizers are built from large amounts of text before the model is trained
 Four practical consequences follow.
 
 - **Letters are not directly visible.** A model that receives " strawberry" as one number does not receive its letters one by one. This is one commonly given reason why models have miscounted letters. A 2024 preprint (a study not yet peer reviewed) found more to the story: many models could identify the letters in a word but still miscounted them, especially letters that appear more than twice (Fu et al., 2024).
-- **Rare names split into odd pieces.** At the start of a text, Elif's hometown, "İzmir," becomes three pieces: "İ," "z" and "mir." After a space it becomes two: " İz" and "mir."
+- **Rare names split into pieces.** Maya's hometown, "Izmir," is not one token. At the start of a text it becomes "Iz" and "mir." After a space it becomes " Iz" and "mir," and the first piece, which now includes the space, is a different token with a different number.
 - **Length limits and cost are counted in tokens.** The amount of text a tool can handle at once, and the price of many paid services, are measured in tokens, not words (Petrov et al., 2023).
 - **The same text costs different amounts in different languages.** That is the answer to your prediction, as the next example and @fig-3-2 show.
 
-::: {.callout-note title="Worked Example: Elif's Abstract in Two Languages"}
-Elif writes a short abstract for her research-methods class in English and in Turkish. *(Constructed example: the abstract describes an invented study; the Turkish translation is the book's.)*
+::: {.callout-note title="Worked Example: Maya's Abstract in Two Languages"}
+Maya writes a short abstract for her research-methods class in English and in Turkish. *(Constructed example: the abstract describes an invented study; the Turkish translation is the book's.)*
 
 **Step 1 — Count words.** English: 59 words. Turkish: 51 words. Turkish adds many endings to one word, so it needs fewer words.
 
@@ -192,7 +192,7 @@ Then training ends, and the settings are fixed. Every time you use the tool, tha
 **3. Patterns, not a fact store.** The settings hold patterns from the training text, not a table of facts. Why would training work in one direction only? During training, the model always scores what comes **after** the text before it. A sentence of the form "A's mother is B" raises the score for "B" after "A's mother is"; it gives no practice at producing "A" after "a child of B is." For the real-world test, the researchers suggest that training text more often names the celebrity first and the parent second (Berglund et al., 2024). A second factor they mention is tuning GPT-4 to avoid giving information about individuals. This book notes that it cannot explain why untuned Llama-1 base models showed the same gap. As Chapter 2 noted, a model can also repeat training text almost word for word (Carlini et al., 2021); that is still producing likely tokens, not looking up a record.
 
 ::: {.callout-note title="Worked Example: Last Week's News"}
-Elif asks a chat tool, with the search option turned off, who won a student-government election on her campus last week.
+Maya asks a chat tool, with the search option turned off, who won a student-government election on her campus last week.
 
 **Step 1 — Training or inference?** Inference: the settings are fixed. **Step 2 — Cutoff.** The election happened after any cutoff, so no training text described it. **Step 3 — Expected output.** Still a fluent answer, possibly a plausible but invented name, or a statement that it has no information. **Step 4 — Fix.** Use a source with current information, or a tool that searches and shows its sources, and check them (section 3.5).
 :::
@@ -249,15 +249,15 @@ Let's take a long document and test it the diagnostic way. Hana pastes a long pu
 :::
 
 ::: {.callout-note title="Faded Example: A Long Support Thread"}
-*Featuring Lucía, who works part-time in customer support. Constructed, anonymized example.*
+*Featuring Lucia, who works part-time in customer support. Constructed, anonymized example.*
 
-Lucía has a 60-message support thread. In message 31, the customer changed the email address on their account. She asks a tool to draft a reply that confirms the new email address.
+Lucia has a 60-message support thread. In message 31, the customer changed the email address on their account. She asks a tool to draft a reply that confirms the new email address.
 
 **Step 1 (done for you):** The email change sits in the middle of a long input, so it is the detail most at risk.
 
 **Step 2:** How would you check the draft? _______________________
 
-**Step 3:** What should Lucía confirm before pasting customer messages into any AI tool? _______________________ (Chapter 15 covers privacy.)
+**Step 3:** What should Lucia confirm before pasting customer messages into any AI tool? _______________________ (Chapter 15 covers privacy.)
 :::
 
 ::: {.callout-tip title="Check Yourself 3.4"}
@@ -295,11 +295,11 @@ Chapters 8 and 9 teach full methods for checking citations and sources. Here, th
 **What agents are.** Some systems repeat these steps on their own: the model requests a tool, receives the result, produces the next request, and continues toward a goal. Anthropic (2024) calls a system an **agent** when the model directs its own steps and tool use, and a *workflow* when people fixed the steps in advance. Agents are covered in Chapter 14.
 
 ::: {.callout-note title="Worked Example: A Search-Then-Generate Answer"}
-Elif asks a tool that searches: "What grade point average (GPA) do I need to keep my international student scholarship, and how many semesters are left if I have 45 of 120 credits and take 15 per semester?" *(Constructed example.)*
+Maya asks a tool that searches: "What grade point average (GPA) do I need to keep my international student scholarship, and how many semesters are left if I have 45 of 120 credits and take 15 per semester?" *(Constructed example.)*
 
 The response says: (1) "You need a 3.0 GPA" [link 1, the scholarship office page]; (2) "You must take at least 12 credits per semester" [link 2, a 2019 student forum post]; (3) "You can appeal a lost scholarship within 30 days" [no link]; (4) "You have 5 semesters left" [calculator tool: (120 − 45) ÷ 15 = 5].
 
-**Marking** (with the five verdicts this book uses; Chapter 8 explains them fully): *supported*, the evidence says what the claim says; *partly supported*, part of the claim holds, part does not or is missing; *unsupported*, no evidence found either way at the stage you reached; *contradicted*, the evidence says otherwise; *cannot verify*, no source you can reach. (1) supported, if the page says 3.0 and is current. (2) unsupported for now: the only source is a 2019 student forum post, old and unofficial; check the official page. (3) unsupported: no source; ask the office. (4) supported for the arithmetic: (120 − 45) ÷ 15 = 5; but it assumes Elif keeps taking 15 credits, and the tool did only the arithmetic it was given.
+**Marking** (with the five verdicts this book uses; Chapter 8 explains them fully): *supported*, the evidence says what the claim says; *partly supported*, part of the claim holds, part does not or is missing; *unsupported*, no evidence found either way at the stage you reached; *contradicted*, the evidence says otherwise; *cannot verify*, no source you can reach. (1) supported, if the page says 3.0 and is current. (2) unsupported for now: the only source is a 2019 student forum post, old and unofficial; check the official page. (3) unsupported: no source; ask the office. (4) supported for the arithmetic: (120 − 45) ÷ 15 = 5; but it assumes Maya keeps taking 15 credits, and the tool did only the arithmetic it was given.
 :::
 
 ::: {.callout-note title="Faded Example: Marking a Retrieved Answer"}
@@ -471,7 +471,7 @@ Lab 3.1 is the in-class lab for the lab session. Labs 3.2 and 3.3 are optional a
 
 ## Ethics Lens: Whose Language Costs More? {.unnumbered}
 
-Elif writes in English, but she thinks in Turkish. Section 3.1 showed that her Turkish abstract needed 1.6 to 2.3 times as many tokens as the English one, depending on the tokenizer. For a student who pays per token, or who works with a tool that limits how much text it takes, that is a real difference. For a speaker of Tamil or Shan, the difference can be several times larger (Petrov et al., 2023).
+Maya writes in English, but she thinks in Turkish. Section 3.1 showed that her Turkish abstract needed 1.6 to 2.3 times as many tokens as the English one, depending on the tokenizer. For a student who pays per token, or who works with a tool that limits how much text it takes, that is a real difference. For a speaker of Tamil or Shan, the difference can be several times larger (Petrov et al., 2023).
 
 The book's own measurement shows both sides of the story. A newer tokenizer narrowed the gap for every language in @fig-3-2. Yet even the newer one needed 2.5 times as many tokens for Tamil as for English. Token cost is only one part of fairness. Quality can also differ between languages; Chapter 16 looks at fairness and bias in depth.
 
@@ -500,7 +500,7 @@ You do not need any of these titles to use the chapter's ideas. A nurse who asks
 
 <!-- Based on Şeker & Nizam-Özoğur (2026), Electrica 26, article 0033 (doi:10.5152/electrica.2026.25033; full text read 2026-10-18), and its earlier unpublished version (Şeker, 2024; Drive 1yPpN_rmplzKfjhJs7yXyE8YTBATr0_db; build/ch03/manuscript.md). Facts limited to what both say, except where a detail is attributed to the earlier version. Present-day connections marked as such. Product not named in the text (style sheet §4, D13 precedent); its name appears in the article title in the references. Disclosure per D16. Author approval pending (handoff). -->
 
-In 2026, my colleague Hatice Nizam-Özoğur and I published a case study of a software project in which large language models generated much of the routine code (Şeker & Nizam-Özoğur, 2026). An earlier version was a 2024 manuscript of mine (Şeker, 2024). The project built a web platform that helps small and medium-sized businesses analyze their sales, customers and finances. Work was split into modules. A language model was prompted to generate the code for one module at a time, and people then reviewed, tested and integrated it. Several code-generation tools were used, including ChatGPT and GitHub Copilot.
+In 2026, my colleague Hatice Nizam-Ozogur and I published a case study of a software project in which large language models generated much of the routine code (Seker & Nizam-Ozogur, 2026). An earlier version was a 2024 manuscript of mine (Seker, 2024). The project built a web platform that helps small and medium-sized businesses analyze their sales, customers and finances. Work was split into modules. A language model was prompted to generate the code for one module at a time, and people then reviewed, tested and integrated it. Several code-generation tools were used, including ChatGPT and GitHub Copilot.
 
 Both versions record three problems that this chapter can now explain.
 
@@ -550,7 +550,7 @@ agent · attention (Deep) · context window · fine-tuning · inference (Ch. 2) 
    (c) As its letters, grouped into syllables.\
    (d) As a whole word that it looks up in a stored list of facts.
 2. *(O1 · LO1 · Remember)* Define *token* and *tokenizer* in one sentence each.
-3. *(O1 · LO1 · Understand)* Elif's Turkish abstract had fewer words than the English version but more tokens. Which explanation fits best?\
+3. *(O1 · LO1 · Understand)* Maya's Turkish abstract had fewer words than the English version but more tokens. Which explanation fits best?\
    (a) Turkish words are longer, so each one takes more time to process.\
    (b) The model receives Turkish text letter by letter, so every letter is a token.\
    (c) The tokenizer splits many Turkish words into several pieces, so the same content needs more tokens.\
@@ -675,7 +675,7 @@ Bai, Y., Kadavath, S., Kundu, S., Askell, A., Kernion, J., Jones, A., Chen, A., 
 
 Berglund, L., Tong, M., Kaufmann, M., Balesni, M., Stickland, A. C., Korbak, T., & Evans, O. (2024). The reversal curse: LLMs trained on "A is B" fail to learn "B is A". In *The Twelfth International Conference on Learning Representations (ICLR 2024)*. https://arxiv.org/abs/2309.12288
 
-Carlini, N., Tramèr, F., Wallace, E., Jagielski, M., Herbert-Voss, A., Lee, K., Roberts, A., Brown, T., Song, D., Erlingsson, Ú., Oprea, A., & Raffel, C. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650). USENIX Association. https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting
+Carlini, N., Tramer, F., Wallace, E., Jagielski, M., Herbert-Voss, A., Lee, K., Roberts, A., Brown, T., Song, D., Erlingsson, U., Oprea, A., & Raffel, C. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650). USENIX Association. https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting
 
 Cheng, J., Marone, M., Weller, O., Lawrie, D., Khashabi, D., & Van Durme, B. (2024). Dated data: Tracing knowledge cutoffs in large language models. In *Proceedings of the Conference on Language Modeling (COLM 2024)*. https://arxiv.org/abs/2403.12958
 
@@ -687,7 +687,7 @@ Kaplan, J., McCandlish, S., Henighan, T., Brown, T. B., Chess, B., Child, R., Gr
 
 Levesque, H. J., Davis, E., & Morgenstern, L. (2012). The Winograd schema challenge. In *Proceedings of the Thirteenth International Conference on Principles of Knowledge Representation and Reasoning (KR 2012)*. AAAI Press. https://aaai.org/ocs/index.php/KR/KR12/paper/view/4492
 
-Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W., Rocktäschel, T., Riedel, S., & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. In *Advances in Neural Information Processing Systems 33*. https://papers.nips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html
+Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Kuttler, H., Lewis, M., Yih, W., Rocktaschel, T., Riedel, S., & Kiela, D. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks. In *Advances in Neural Information Processing Systems 33*. https://papers.nips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html
 
 Liu, N. F., Lin, K., Hewitt, J., Paranjape, A., Bevilacqua, M., Petroni, F., & Liang, P. (2024). Lost in the middle: How language models use long contexts. *Transactions of the Association for Computational Linguistics, 12*, 157–173. https://doi.org/10.1162/tacl_a_00638
 
@@ -699,16 +699,16 @@ Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C. L., Mishkin, P., Zhan
 
 Petrov, A., La Malfa, E., Torr, P. H. S., & Bibi, A. (2023). Language model tokenizers introduce unfairness between languages. In *Advances in Neural Information Processing Systems 36*. https://arxiv.org/abs/2305.15425
 
-Schick, T., Dwivedi-Yu, J., Dessì, R., Raileanu, R., Lomeli, M., Hambro, E., Zettlemoyer, L., Cancedda, N., & Scialom, T. (2023). Toolformer: Language models can teach themselves to use tools. In *Advances in Neural Information Processing Systems 36*. https://arxiv.org/abs/2302.04761
+Schick, T., Dwivedi-Yu, J., Dessi, R., Raileanu, R., Lomeli, M., Hambro, E., Zettlemoyer, L., Cancedda, N., & Scialom, T. (2023). Toolformer: Language models can teach themselves to use tools. In *Advances in Neural Information Processing Systems 36*. https://arxiv.org/abs/2302.04761
 
-Şeker, Ş. E. (2024). *Experiences and challenges in AI-driven modular software development using large language models for code generation* [Unpublished manuscript; earlier version of Şeker & Nizam-Özoğur, 2026]. Faculty of Computer and Information Technologies, Istanbul University.
+Seker, S. E. (2024). *Experiences and challenges in AI-driven modular software development using large language models for code generation* [Unpublished manuscript; earlier version of Seker & Nizam-Ozogur, 2026]. Faculty of Computer and Information Technologies, Istanbul University.
 
-Şeker, Ş. E., & Nizam-Özoğur, H. (2026). Enhancing software development with large language models: A case study of Kolay.ai. *Electrica, 26*, Article 0033, 1–10. https://doi.org/10.5152/electrica.2026.25033
+Seker, S. E., & Nizam-Ozogur, H. (2026). Enhancing software development with large language models: A case study of Kolay.ai. *Electrica, 26*, Article 0033, 1–10. https://doi.org/10.5152/electrica.2026.25033
 
 Sennrich, R., Haddow, B., & Birch, A. (2016). Neural machine translation of rare words with subword units. In *Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)* (pp. 1715–1725). https://doi.org/10.18653/v1/P16-1162
 
 United Nations. (1948). *Universal Declaration of Human Rights* [Translations in the Unicode UDHR collection, via the NLTK udhr2 corpus]. https://www.ohchr.org/en/human-rights/universal-declaration/translations
 
-Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention is all you need. In *Advances in Neural Information Processing Systems 30* (pp. 5998–6008). https://papers.nips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention is all you need. In *Advances in Neural Information Processing Systems 30* (pp. 5998–6008). https://papers.nips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html
 
 Wolfram, S. (2023). *What is ChatGPT doing … and why does it work?* Wolfram Media.

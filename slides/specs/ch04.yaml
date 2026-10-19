@@ -14,7 +14,7 @@ deck:
   slug: how-and-why-ai-fails
   title: How and Why AI Fails
   short_title: How and Why AI Fails
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     tue: {label: "Session 1 · concept session, about 75 min", minutes: 75}
     after: {label: "self-study and reference slides (not presented)"}
@@ -38,7 +38,7 @@ slides:
   minutes: 0
   subtitle: "Concept session · paired with Chapter 8’s lab"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Reading: Chapter 4 (before this session)"
     - "Recommended: Ji et al. (2023), definitions"
   figure: f4-02-failure-tree
@@ -1292,13 +1292,13 @@ slides:
       Worked Example "The Moffatt Chain" (§4.7; @fig-4-9), all confirmed from the decision: link 1 paras. 15–17; link 2
       para. 28 (failed, documented); link 3 paras. 18, 29 (a customer has no reason to know one part of a website is
       accurate and another is not); link 4 para. 40. An organization that deploys a tool can act on every link.
-      Faded example: Lucía's 20% discount (Chapter 1): link 1 hallucination, documented; link 2 held (she checked
+      Faded example: Lucia's 20% discount (Chapter 1): link 1 hallucination, documented; link 2 held (she checked
       against policy), so no harm (Appendix E).
     questions:
       - q: "Was Moffatt's reliance unreasonable, since the policy page was linked?"
         a: "The tribunal found it reasonable: a customer has no reason to know that one part of a website is accurate and another is not (paras. 18, 29)."
-    activity: "Ask: 'In Lucía's discount email from Chapter 1, which link held?' (Link 2: she checked.)"
-    book: "§4.7 Worked Example 'The Moffatt Chain', @fig-4-9; Faded Example 'Lucía's Discount on the Chain'."
+    activity: "Ask: 'In Lucia's discount email from Chapter 1, which link held?' (Link 2: she checked.)"
+    book: "§4.7 Worked Example 'The Moffatt Chain', @fig-4-9; Faded Example 'Lucia's Discount on the Chain'."
 
 - layout: compare
   minutes: 1.25
@@ -1809,7 +1809,7 @@ slides:
     - "OpenAI. (2025a, April 29). *Sycophancy in GPT-4o: What happened and what we’re doing about it*."
     - "OpenAI. (2025b, May 2). *Expanding on what we missed with sycophancy*."
     - "OWASP. (2024). *OWASP Top 10 for LLM applications 2025*. OWASP Foundation."
-    - "Şeker, Ş. E. (2014). Sebep etki diyagramları [Cause and effect diagrams, fishbone diagrams]. *YBS Ansiklopedi, 1*(4), 2–4."
+    - "Seker, S. E. (2014). Sebep etki diyagramlari [Cause and effect diagrams, fishbone diagrams]. *YBS Ansiklopedi, 1*(4), 2–4."
     - "Sharma, M., Tong, M., Korbak, T., et al. (2024). Towards understanding sycophancy in language models. In *ICLR 2024*."
     - "Wallace, E., Xiao, K., Leike, R., Weng, L., Heidecke, J., & Beutel, A. (2024). *The instruction hierarchy: Training LLMs to prioritize privileged instructions* (arXiv:2404.13208)."
   notes:
@@ -1824,6 +1824,6 @@ slides:
       Full entries (all authors, URLs) are in the chapter's References section, fact-checked in docs/factcheck/ch04.csv.
       Further Reading: Ji et al. (2023), recommended (definitions and categories sections); the Moffatt decision, read
       again with Chapter 10. Laban et al. (2025) also appeared at ICLR 2026. Chapters 4 and 5 each cite a different
-      "Şeker (2014)" entry (fishbone; 5 Whys); the book-level list will need 2014a/2014b (editor request c).
+      "Seker (2014)" entry (fishbone; 5 Whys); the book-level list will need 2014a/2014b (editor request c).
     activity: "Not presented."
     book: "Chapter 4, References; Further Reading and Compass Links."

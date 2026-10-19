@@ -6,20 +6,20 @@ Chapter: 2 (also 16) · Field: business / human resources · Failure label: unde
 Amazon built an experimental tool to score job applicants automatically. The case is known from one investigative Reuters report (Dastin, 2018); the book uses only what that report states, and marks its own reasoning as such.
 
 ## Timeline
-- 2014: a team begins building a tool to review résumés and score applicants.
+- 2014: a team begins building a tool to review resumes and score applicants.
 - 2015: the company realizes the system is not rating candidates for software-developer and other technical posts in a gender-neutral way.
 - Then: Amazon edits the programs to make particular terms neutral; this does not guarantee that the system will not find other ways to sort candidates that could be discriminatory.
 - By early 2017: the team is disbanded.
 - October 10, 2018: Reuters reports the story (Dastin, 2018).
 
 ## What the AI did
-Scored applicants from one to five stars. Its models were trained to find patterns in résumés submitted to the company over about ten years; most came from men. It penalized résumés containing the word "women's" (as in "women's chess club captain") and downgraded graduates of two all-women's colleges.
+Scored applicants from one to five stars. Its models were trained to find patterns in resumes submitted to the company over about ten years; most came from men. It penalized resumes containing the word "women's" (as in "women's chess club captain") and downgraded graduates of two all-women's colleges.
 
 ## What humans did
 People chose the training data and what the tool would treat as a good candidate. The company found the problem and edited the programs. According to people familiar with the project, recruiters looked at the recommendations but never relied solely on them. Amazon said the tool "was never used by Amazon recruiters to evaluate candidates" (statement in the Reuters.com version).
 
 ## Mapped to the Data-to-Prediction Pipeline (source figure F2.4d)
-1. Collect data — documented: mostly men's résumés (an under-represented group, not class imbalance in the 2.4 sense).
+1. Collect data — documented: mostly men's resumes (an under-represented group, not class imbalance in the 2.4 sense).
 2. Label — book's reasoning, not reported: if "good candidate" reflected past applications and hiring, the labels could carry past preferences.
 3. Train — documented pattern, book's interpretation: words and college names linked to gender acted as proxies.
 

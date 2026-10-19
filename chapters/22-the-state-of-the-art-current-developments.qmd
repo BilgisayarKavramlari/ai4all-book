@@ -391,8 +391,8 @@ Claims that an AI system has made a discovery are among the most consequential c
 ::: {.callout-note title="As of October 2026: AI and science"}
 - 2024 Nobel Prize in Chemistry: half for computational protein design, half for protein structure prediction (AlphaFold) (Nobel Prize Outreach, 2024). *Confirmed: the Nobel record.* The capability had been measured earlier, in the CASP test and by years of use in other laboratories.
 - GNoME (2023): 2.2 million structures predicted to be stable, of which 736 had already been made independently in laboratories (*reported: the developers' paper*); critique of novelty and usefulness (*measured: an outside critique*; Cheetham & Seshadri, 2024).
-- January 2026: an AI-assisted solution to Erdős problem #728 was checked in Lean and written up publicly (Sothanaphan, 2026). *Measured: proof checker and write-up.*
-- May 20, 2026: OpenAI reported that an internal reasoning model disproved a 1946 conjecture of Paul Erdős in geometry. *Reported by the developer; checked by nine outside mathematicians in a preprint* (Alon et al., 2026), *not yet peer-reviewed.*
+- January 2026: an AI-assisted solution to Erdos problem #728 was checked in Lean and written up publicly (Sothanaphan, 2026). *Measured: proof checker and write-up.*
+- May 20, 2026: OpenAI reported that an internal reasoning model disproved a 1946 conjecture of Paul Erdos in geometry. *Reported by the developer; checked by nine outside mathematicians in a preprint* (Alon et al., 2026), *not yet peer-reviewed.*
 :::
 
 ::: {.callout-note title="Worked Example: Hana's Headline"}
@@ -431,7 +431,7 @@ Pick one AI-and-science headline. How far through the four steps has it gone: an
 
 Every box in this chapter will age. An **aging check** is a check of a dated claim against the best current source: what does that source say today, what is your verdict on the old claim as a description of today (Chapter 8's five-point scale), and what changed? Three things can change: **the facts** (a number or a policy moved), **the status** (a reported claim was measured, or a measurement was withdrawn) or **only the names** (the products are new, the pattern is the same). In an aging check, *contradicted* means "no longer true as a description of today," not "wrong when it was written." The last step is to decide when to check again, because a claim keeps aging after today's check and a check with no date or trigger is easy to forget (@fig-22-18). In other words, an aging check asks whether yesterday's sentence is still true today, and if not, which part moved.
 
-**The book's own example.** In 2014, the author of this book wrote an encyclopedia entry on digital innovation, drawing on a table by Fichman, Dos Santos and Zheng (2014). One of its twelve rows described a shift to real-time question-and-answer systems: machines that can talk with users, with Siri and IBM Watson, two products of that time, as the examples (Şeker, 2014; From the Field has more). Read in October 2026, the row's direction held: machines that converse are now ordinary. Its examples aged: today's systems are built differently and are named differently. Verdict on the row as a description of today: *partly supported*; what changed: only the names (and the technology behind them), not the direction. Next check: the direction, at the next edition of this book.
+**The book's own example.** In 2014, the author of this book wrote an encyclopedia entry on digital innovation, drawing on a table by Fichman, Dos Santos and Zheng (2014). One of its twelve rows described a shift to real-time question-and-answer systems: machines that can talk with users, with Siri and IBM Watson, two products of that time, as the examples (Seker, 2014; From the Field has more). Read in October 2026, the row's direction held: machines that converse are now ordinary. Its examples aged: today's systems are built differently and are named differently. Verdict on the row as a description of today: *partly supported*; what changed: only the names (and the technology behind them), not the direction. Next check: the direction, at the next edition of this book.
 
 **A claim you can check yourself: the olympiad, a year later.** *Old claim* (July 2025, the Opening Case): the best measured AI score at the IMO was 35 of 42, while five students scored a perfect 42. *Today's source:* AFP's report on the 2026 olympiad in Shanghai. Two Chinese companies, Huawei and Xiaohongshu, said their systems scored 100%, which is a perfect 42; Xiaohongshu said its answers were submitted to the IMO's organizers for grading and that human help was prohibited, and the companies received the problems after the students had sat the exam. Seven of 666 students scored full marks, AFP reported, citing the official scoreboard. A venture investor said four other models also scored 42 in his own informal test, with no published method, so that result is not measured. The report contained no statement from the IMO (AFP, 2026). *Verdict for today:* partly supported: 35 of 42 may no longer be the best AI score, but the higher scores are reported, not yet measured. *What changed:* the facts, as reported. *Next check:* an IMO statement on the 2026 grading, or the 2027 olympiad. **This book reads** these reports as a sign that by 2026 the olympiad may no longer separate the strongest systems, which is how benchmarks age; this is the book's inference.
 
@@ -494,7 +494,7 @@ All four labs are optional and can be done at home. The labs say what to do, not
 
 ### Short case 1: "Ten open problems solved" (2025) {.unnumbered}
 
-On October 17–18, 2025, a senior OpenAI executive posted that a model had found solutions to ten previously open problems posed by the mathematician Paul Erdős. The maintainer of the website that lists the problems replied that "open" on his site meant only that he did not know of a solution; the model's output pointed to existing papers that solved them. The posts were mostly deleted (The Decoder, 2025). The model's output, a literature search, was useful. The failure was in the claim about it, published before anyone checked what "open" meant: on the chain, link 2, "checked before use?", failed (documented in the maintainer's public reply, as The Decoder reported) (@fig-22-19).
+On October 17–18, 2025, a senior OpenAI executive posted that a model had found solutions to ten previously open problems posed by the mathematician Paul Erdos. The maintainer of the website that lists the problems replied that "open" on his site meant only that he did not know of a solution; the model's output pointed to existing papers that solved them. The posts were mostly deleted (The Decoder, 2025). The model's output, a literature search, was useful. The failure was in the claim about it, published before anyone checked what "open" meant: on the chain, link 2, "checked before use?", failed (documented in the maintainer's public reply, as The Decoder reported) (@fig-22-19).
 
 ![The 'ten solved problems' claim failed at the check before publication.](../figures/out/color/f22-19-chain-erdos.svg){#fig-22-19 fig-alt="Failure-to-harm chain with link 2 highlighted: a useful literature search posted as 'solved' before checking; reliance; public correction."}
 
@@ -527,7 +527,7 @@ People's expectations differ too. In U.S. surveys run by the Pew Research Center
 
 ## From the Field {.unnumbered}
 
-In 2014, I wrote a short encyclopedia entry, in Turkish, on how three ideas relate to innovation: Moore's law, network effects and digitalization (Şeker, 2014). It drew on a table by Fichman, Dos Santos and Zheng (2014) and set out twelve examples, each with its effects, its results and examples from industry. The entry does not define Moore's law; this book adds that it is the observation, first made in 1965 and revised in 1975, that the number of components on a chip doubled at a regular interval (Moore, 1965, 1975).
+In 2014, I wrote a short encyclopedia entry, in Turkish, on how three ideas relate to innovation: Moore's law, network effects and digitalization (Seker, 2014). It drew on a table by Fichman, Dos Santos and Zheng (2014) and set out twelve examples, each with its effects, its results and examples from industry. The entry does not define Moore's law; this book adds that it is the observation, first made in 1965 and revised in 1975, that the number of components on a chip doubled at a regular interval (Moore, 1965, 1975).
 
 Two of the entry's rows matter here. One described a shift to real-time question-and-answer systems: advances in natural language processing were being built into everyday interfaces, giving machines that can talk with users in ways similar to how people talk to each other, with Siri and IBM Watson as the examples. Another described how technologies spread: network effects, path dependence, winner-take-all markets and lock-in, with standards wars such as VHS against Beta.
 
@@ -754,7 +754,7 @@ Pew Research Center. (2025, April 3). *How the U.S. public and AI experts view a
 
 Reuters. (2025, July 21). Google and OpenAI's AI models win milestone gold at global math competition. *CP24* (Reuters wire). https://www.cp24.com/news/world/2025/07/21/google-and-openais-ai-models-win-milestone-gold-at-global-math-competition/
 
-Şeker, Ş. E. (2014). Ağ etkisi, Moore yasası ve dijitalleşmenin yenilik ile ilişkisi [The relation of network effects, Moore's law and digitalization to innovation]. *YBS Ansiklopedi, 1*(1).
+Seker, S. E. (2014). Ag etkisi, Moore yasasi ve dijitallesmenin yenilik ile iliskisi [The relation of network effects, Moore's law and digitalization to innovation]. *YBS Ansiklopedi, 1*(1).
 
 Sevilla, J., et al. (2024, August 20). *Can AI scaling continue through 2030?* Epoch AI. https://epoch.ai/blog/can-ai-scaling-continue-through-2030
 
@@ -762,7 +762,7 @@ Shehabi, A., et al. (2024). *2024 United States data center energy usage report*
 
 Shojaee, P., Mirzadeh, I., Alizadeh, K., Horton, M., Bengio, S., & Farajtabar, M. (2025). The illusion of thinking: Understanding the strengths and limitations of reasoning models via the lens of problem complexity. In *Advances in Neural Information Processing Systems 38 (NeurIPS 2025)*. https://arxiv.org/abs/2506.06941
 
-Sothanaphan, N. (2026). *Resolution of Erdős problem #728: A writeup of Aristotle's Lean proof* (arXiv:2601.07421). https://arxiv.org/abs/2601.07421
+Sothanaphan, N. (2026). *Resolution of Erdos problem #728: A writeup of Aristotle's Lean proof* (arXiv:2601.07421). https://arxiv.org/abs/2601.07421
 
 Stanford HAI. (2025). *AI Index Report 2025*. Stanford Institute for Human-Centered Artificial Intelligence. https://hai.stanford.edu/ai-index/2025-ai-index-report
 

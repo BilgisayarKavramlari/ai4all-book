@@ -225,7 +225,7 @@ def claim_split(f):
         f.text(690, y + 1, s, size=13, anchor="start", weight="700" if s == "high" else "normal")
     f.text(400, 440, "Hexagon = the AI output · each row = one statement you might rely on · dashed row = not "
            "checkable as true or false", size=13, color=muted, width=780)
-    f.text(400, 462, "Lucía's overview is a constructed example; section 8.2 checks claim 1.", size=13,
+    f.text(400, 462, "Lucia's overview is a constructed example; section 8.2 checks claim 1.", size=13,
            color=muted, italic=True)
 
 

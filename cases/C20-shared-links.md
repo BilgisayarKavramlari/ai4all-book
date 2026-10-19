@@ -6,7 +6,7 @@ Chapter: 15 (short case 2; Case Study only) · Field: consumer apps / privacy ·
 In 2025 ChatGPT let users share a conversation by link and, with an extra opt-in box, make the shared chat findable by search engines.
 
 ## Timeline
-- July 2025: *Fast Company* reports finding over 4,500 shared chats indexed by Google, some with personal details such as names and résumés (reported, as described by Southern, 2025; the book says "thousands").
+- July 2025: *Fast Company* reports finding over 4,500 shared chats indexed by Google, some with personal details such as names and resumes (reported, as described by Southern, 2025; the book says "thousands").
 - July 31, 2025: OpenAI's chief information security officer, Dane Stuckey, announces on X that the option, "a short-lived experiment," is removed because it introduced too many chances to share things by accident; OpenAI works to remove indexed content from search engines (reported: Abdullahi, 2025, eWeek, which names Stuckey; Southern, 2025, which quotes the statement).
 
 ## What the AI did

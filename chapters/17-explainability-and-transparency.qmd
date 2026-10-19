@@ -555,7 +555,7 @@ In 2019, complaints on social media said that a new credit card gave women lower
 
 **Recourse can move the burden.** A counterfactual such as "lower your debt and reapply" is advice to a person. The system and its owner stay the same. Researchers have warned that counterfactual explanations rest on hidden assumptions, for example that the suggested change is feasible and that the model will not change in the meantime (Barocas et al., 2020). This book's reading: when every explanation tells the person what to change, no one asks whether the system should change.
 
-**Explanations as cover.** A plausible explanation can make an unfair system look fair. Researchers showed that it is possible to generate explanations that look fair for a model that is not, which they call *fairwashing* (Aïvodji et al., 2019). This is why section 17.5 asks for faithfulness, and why the Case Study asks for independent access. Fairness is Chapter 16's subject; the law on rights and remedies is Chapter 18's; who is responsible when no one can explain a decision is Chapter 23's.
+**Explanations as cover.** A plausible explanation can make an unfair system look fair. Researchers showed that it is possible to generate explanations that look fair for a model that is not, which they call *fairwashing* (Aivodji et al., 2019). This is why section 17.5 asks for faithfulness, and why the Case Study asks for independent access. Fairness is Chapter 16's subject; the law on rights and remedies is Chapter 18's; who is responsible when no one can explain a decision is Chapter 23's.
 
 *Discussion:* if an organization can either explain its decisions better or let people contest them more easily, which should it do first, and why?
 
@@ -578,7 +578,7 @@ The descriptions below are illustrations, not labor-market data.
 
 *Disclosure: I am a founder of OptiWisdom, which develops software for businesses, including AI tools. See "How This Book Was Written."*
 
-In a 2026 article with Zümra Arslanhan, I described a hermeneutic approach to explainable AI and an open-source tool built on it, Hermai (Şeker & Arslanhan, 2026). Hermeneutics is the study of interpretation. Its central idea, the *hermeneutic circle*, developed by thinkers such as the philosopher Hans-Georg Gadamer, is that you understand a whole through its parts and each part through the whole: a word through its sentence, and the sentence through its words. In AI, we argued, this is the difference between breaking a prediction down into numbers and building an understanding of it that a person can use.
+In a 2026 article with Zumra Arslanhan, I described a hermeneutic approach to explainable AI and an open-source tool built on it, Hermai (Seker & Arslanhan, 2026). Hermeneutics is the study of interpretation. Its central idea, the *hermeneutic circle*, developed by thinkers such as the philosopher Hans-Georg Gadamer, is that you understand a whole through its parts and each part through the whole: a word through its sentence, and the sentence through its words. In AI, we argued, this is the difference between breaking a prediction down into numbers and building an understanding of it that a person can use.
 
 The article names two limits of feature-attribution tools such as LIME and SHAP. First, when they change features independently of one another, ignoring how the features relate, they can create cases that could not exist in the real data, such as a 25-year-old with 30 years of work experience, which makes the explanation hard to trust. Second, a list of scores breaks a decision into separate pieces and leaves out how they work together: it does not tell the story behind the decision, or answer the question users also ask: what would have had to change?
 
@@ -658,7 +658,7 @@ This chapter is optional and not examinable. The questions below follow the same
 
 1. *(O1 · LO5 · Apply)* A university sets parking-permit priority with a model; low scores are rejected automatically. Name three audiences and the layers each needs.
 2. *(O3 · LO5 · Analyze)* *Constructed.* An insurance quote tool tells a driver: "Your premium is high mainly because of your annual mileage (12,000 miles) and your car's age (14 years). With mileage under 8,000, your premium would fall by 18%." Classify each sentence, judge whether the second is recourse, and say what neither shows about the driver's real risk.
-3. *(O4 · LO5, LO3 · Evaluate)* A hiring team accepts a chatbot's written reasons for ranking ten résumés, because "it explains itself clearly." What would you check, and how? (Fairness testing: Chapter 16.)
+3. *(O4 · LO5, LO3 · Evaluate)* A hiring team accepts a chatbot's written reasons for ranking ten resumes, because "it explains itself clearly." What would you check, and how? (Fairness testing: Chapter 16.)
 4. *(O5 · LO5 · Evaluate)* A city publishes a register entry for a benefits-triage tool: purpose, data sources, a contact email, no accuracy figures, no appeal process. Audit the six layers and name the two most important gaps.
 
 ### Review Questions C: Interpretive Questions {.unnumbered}
@@ -746,7 +746,7 @@ Valid results that can earn full marks: "the record does not contain the reasons
 
 Adebayo, J., Gilmer, J., Muelly, M., Goodfellow, I., Hardt, M., & Kim, B. (2018). Sanity checks for saliency maps. In *Advances in Neural Information Processing Systems 31* (pp. 9505–9515).
 
-Aïvodji, U., Arai, H., Fortineau, O., Gambs, S., Hara, S., & Tapp, A. (2019). Fairwashing: The risk of rationalization. In *Proceedings of the 36th International Conference on Machine Learning* (PMLR 97, pp. 161–170).
+Aivodji, U., Arai, H., Fortineau, O., Gambs, S., Hara, S., & Tapp, A. (2019). Fairwashing: The risk of rationalization. In *Proceedings of the 36th International Conference on Machine Learning* (PMLR 97, pp. 161–170).
 
 Alvarez-Melis, D., & Jaakkola, T. S. (2018). *On the robustness of interpretability methods* (arXiv:1806.08049). ICML Workshop on Human Interpretability in Machine Learning.
 
@@ -776,7 +776,7 @@ Dakan, R., & Feller, J. (2025, December). *The AI Fluency Framework: A descripti
 
 DeGrave, A. J., Janizek, J. D., & Lee, S.-I. (2021). AI for radiographic COVID-19 detection selects shortcuts over signal. *Nature Machine Intelligence, 3*(7), 610–619. https://doi.org/10.1038/s42256-021-00338-7
 
-Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H., & Crawford, K. (2021). Datasheets for datasets. *Communications of the ACM, 64*(12), 86–92. https://doi.org/10.1145/3458723
+Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daume III, H., & Crawford, K. (2021). Datasheets for datasets. *Communications of the ACM, 64*(12), 86–92. https://doi.org/10.1145/3458723
 
 Goodman, B., & Flaxman, S. (2017). European Union regulations on algorithmic decision-making and a "right to explanation." *AI Magazine, 38*(3), 50–57.
 
@@ -788,7 +788,7 @@ Jain, S., & Wallace, B. C. (2019). Attention is not explanation. In *Proceedings
 
 Korbak, T., Balesni, M., Barnes, E., Bengio, Y., Benton, J., Bloom, J., Chen, M., Cooney, A., Dafoe, A., Dragan, A., Emmons, S., Evans, O., Farhi, D., Greenblatt, R., Hendrycks, D., Hobbhahn, M., Hubinger, E., Irving, G., Jenner, E., . . . Mikulik, V. (2025). *Chain of thought monitorability: A new and fragile opportunity for AI safety* (arXiv:2507.11473). https://arxiv.org/abs/2507.11473
 
-Lapuschkin, S., Wäldchen, S., Binder, A., Montavon, G., Samek, W., & Müller, K.-R. (2019). Unmasking Clever Hans predictors and assessing what machines really learn. *Nature Communications, 10*, 1096. https://doi.org/10.1038/s41467-019-08987-4
+Lapuschkin, S., Waldchen, S., Binder, A., Montavon, G., Samek, W., & Muller, K.-R. (2019). Unmasking Clever Hans predictors and assessing what machines really learn. *Nature Communications, 10*, 1096. https://doi.org/10.1038/s41467-019-08987-4
 
 Lee, J. D., & See, K. A. (2004). Trust in automation: Designing for appropriate reliance. *Human Factors, 46*(1), 50–80.
 
@@ -816,7 +816,7 @@ Ribeiro, M. T., Singh, S., & Guestrin, C. (2016). "Why should I trust you?": Exp
 
 Rudin, C. (2019). Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead. *Nature Machine Intelligence, 1*(5), 206–215. https://doi.org/10.1038/s42256-019-0048-x
 
-Şeker, Ş. E., & Arslanhan, Z. (2026). Hermai: A hermeneutic framework for context-aware and narrative explainable AI. *Artificial Intelligence Theory and Applications, 6*(1), 56–74. https://dergipark.org.tr/en/pub/aita/article/1796258. Software: hermai (Version 0.1.8), Python Package Index, https://pypi.org/project/hermai/; source code: https://github.com/bilgisayarkavramlari/hermai (MIT License).
+Seker, S. E., & Arslanhan, Z. (2026). Hermai: A hermeneutic framework for context-aware and narrative explainable AI. *Artificial Intelligence Theory and Applications, 6*(1), 56–74. https://dergipark.org.tr/en/pub/aita/article/1796258. Software: hermai (Version 0.1.8), Python Package Index, https://pypi.org/project/hermai/; source code: https://github.com/bilgisayarkavramlari/hermai (MIT License).
 
 Selbst, A. D., & Powles, J. (2017). Meaningful information and the right to explanation. *International Data Privacy Law, 7*(4), 233–242. https://doi.org/10.1093/idpl/ipx022
 

@@ -15,7 +15,7 @@ deck:
   slug: framing-tasks-and-iterating-prompts
   title: Framing Tasks and Iterating Prompts
   short_title: Framing Tasks and Iterating Prompts
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     tue: {label: "Concept session (about 75 min)", minutes: 75}
     thu: {label: "Lab session, Lab 5.1 (about 75 min)", minutes: 75}
@@ -37,7 +37,7 @@ slides:
   minutes: 0
   subtitle: "Concept session and lab session"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Reading: Chapter 5"
     - "Recommended: AI Fluency, module 2"
   figure: f5-01-chapter-map
@@ -74,7 +74,7 @@ slides:
         - {min: 3, label: "Welcome and objectives", detail: "The chapter and the question"}
         - {min: 8, label: "Opening case: Klarna", detail: "By the company’s own measures, it worked"}
         - {min: 37, label: "Concept core, §5.1–5.5", detail: "Frame, ladder, prompt parts, iteration, evidence"}
-        - {min: 13, label: "Live demo: vague vs. framed", detail: "Lucía’s v1 and v5, twice each"}
+        - {min: 13, label: "Live demo: vague vs. framed", detail: "Lucia’s v1 and v5, twice each"}
         - {min: 12, label: "Quick checks", detail: "Five short checks, answers shown"}
         - {min: 2, label: "Before the lab session", detail: "Choose a task; read Chapter 5"}
     - heading: "Session 2 · Lab session"
@@ -232,7 +232,7 @@ slides:
     background: |
       Section 5.1 is Core. Providers' own guides agree with framing first: one assumes you have defined success and a
       way to test for it before you write a prompt (Anthropic, n.d.-b); another recommends tests that measure a
-      prompt's behavior as you change it (OpenAI, n.d.). Lucía (accounting sophomore) is the only featured student this
+      prompt's behavior as you change it (OpenAI, n.d.). Lucia (accounting sophomore) is the only featured student this
       chapter; all her prompts and outputs are constructed examples.
     misconceptions:
       - m: "M2 'You can skip framing and just start typing; the tool will work out what you want.'"
@@ -283,7 +283,7 @@ slides:
 - layout: compare
   minutes: 2.5
   kicker: "§5.1 · worked example · constructed"
-  title: "Lucía frames a budgeting handout"
+  title: "Lucia frames a budgeting handout"
   size: 22
   columns:
     - heading: "As she received it"
@@ -299,7 +299,7 @@ slides:
   takeaway: "“Freshmen” became an audience; “good” became five checks"
   notes:
     say: |
-      Lucía, an accounting sophomore, is asked by the accounting students' association to prepare a one-page handout
+      Lucia, an accounting sophomore, is asked by the accounting students' association to prepare a one-page handout
       for a 30-minute budgeting workshop for first-year students. The request, as she received it, was "something about
       budgeting for freshmen." Her frame turns that into something she can work with. Goal: help first-year students
       draft their first monthly budget during the workshop. Audience: first-year students, many managing money alone
@@ -309,7 +309,7 @@ slides:
       she supplies, no real student's information. What stays with her: choosing the content, checking every number,
       the final edit.
     background: |
-      Worked Example "Lucía Frames a Handout" (§5.1), constructed. The full criteria are C1 one page, under 350 words;
+      Worked Example "Lucia Frames a Handout" (§5.1), constructed. The full criteria are C1 one page, under 350 words;
       C2 every number from the figures the association gave, totals add up; C3 plain language a first-year student
       can follow without a dictionary; C4 one worked example as a table with a total row; C5 no product, bank or app
       named. Limits: no statistics unless from a source she supplies; the association's constructed example figures;
@@ -317,9 +317,9 @@ slides:
       C3, limits and "what stays" to the student; Appendix E has a model answer.
     questions:
       - q: "Is 'plain language' really checkable?"
-        a: "Only once you say for whom: 'a first-year student can follow it without a dictionary.' Even so, Lucía later found her own sense of 'plain' was in her head; the peer swap in 5.5 exposed it."
+        a: "Only once you say for whom: 'a first-year student can follow it without a dictionary.' Even so, Lucia later found her own sense of 'plain' was in her head; the peer swap in 5.5 exposed it."
     activity: "Ask: 'Which of her five criteria could you check in under a minute?' (C1, C4, C5 at a glance; C2 needs arithmetic.)"
-    book: "§5.1 Worked Example 'Lucía Frames a Handout'; Faded Example 'A Lab-Safety Summary'."
+    book: "§5.1 Worked Example 'Lucia Frames a Handout'; Faded Example 'A Lab-Safety Summary'."
 
 - layout: quiz
   minutes: 1.5
@@ -340,7 +340,7 @@ slides:
       exact skill a teammate will test in the lab session, when they mark any of your criteria they could not score.
     background: |
       Check Yourself 5.1, item 2. The chapter's guidance: a good criterion is checkable; "clear" is not, until you say
-      clear to whom (§5.1). Lucía's C3 ("plain language a first-year student can follow without a dictionary") and her
+      clear to whom (§5.1). Lucia's C3 ("plain language a first-year student can follow without a dictionary") and her
       later rewrite after the peer swap ("every money term is explained in everyday words") are the book's own
       examples.
     activity: "45 s write, 30 s neighbor check, then show the answer slide."
@@ -351,7 +351,7 @@ slides:
       Here is the idea behind a good answer. "Clear" becomes checkable when you say clear to whom and how you would
       tell. "A first-year student can follow it without a dictionary" names the reader. "Every technical term is
       explained in everyday words the first time it is used" names something you can point to in the text. Both are
-      from Lucía's handout: the first was her original third criterion, and the second is how she rewrote it after a
+      from Lucia's handout: the first was her original third criterion, and the second is how she rewrote it after a
       classmate tested her prompt, which you will see in section 5.5. Ask one or two students to read their criterion;
       ask the class whether it could be scored met, partly met or not met. If it cannot, it is not yet a criterion.
     background: |
@@ -511,8 +511,8 @@ slides:
 
 - layout: lanes
   minutes: 1.5
-  kicker: "§5.2 · worked example · constructed (book figure: Lucía’s ladder)"
-  title: "One task, several rungs: Lucía’s handout"
+  kicker: "§5.2 · worked example · constructed (book figure: Lucia’s ladder)"
+  title: "One task, several rungs: Lucia’s handout"
   label_width: 2.6
   rows:
     - label: "Agency"
@@ -531,10 +531,10 @@ slides:
       nodes:
         - {label: "Choose what students need", kind: human, role: soft}
         - {label: "Check every number", kind: human, role: soft}
-  caption: "Rounded = Lucía’s part; hexagon = the AI tool’s part. The chatbot is only a proposal."
+  caption: "Rounded = Lucia’s part; hexagon = the AI tool’s part. The chatbot is only a proposal."
   notes:
     say: |
-      Back to Lucía's handout, part by part. Choosing what first-year students need to know: the floor, because it is
+      Back to Lucia's handout, part by part. Choosing what first-year students need to know: the floor, because it is
       her judgment about her audience. Drafting the handout text: automation, because she can check the draft against
       her criteria before anyone sees it. Working out why the example budget confuses readers: augmentation; she talks
       it through with a tool, turn by turn, and keeps the decision. Final check: the floor; she checks every number
@@ -542,7 +542,7 @@ slides:
       at any hour. That would be agency: it would answer other people later, with no check before each answer, and they
       would bear any error. She decides "not now", until there is a fixed source of answers and a way to check them.
     background: |
-      Worked Example "Lucía's Handout, Part by Part" (§5.2), constructed; FAQ stands for frequently asked questions.
+      Worked Example "Lucia's Handout, Part by Part" (§5.2), constructed; FAQ stands for frequently asked questions.
       The faded example (a history student's archive visit report) places two parts and leaves (c) and (d); Appendix
       E: (c) augmentation, because the student keeps the thinking (or the floor if the seminar assesses that
       explanation); (d) agency, and not the student's decision alone: visitors would bear errors, so archive staff need
@@ -725,10 +725,10 @@ slides:
         - "**Context:** the exact figures"
         - "**Constraints:** no product; explain terms; show any gap"
         - "**Format:** one table"
-  takeaway: "v5 carries what Lucía knew but had not written down"
+  takeaway: "v5 carries what Lucia knew but had not written down"
   notes:
     say: |
-      Here are the two prompts I am about to run. Lucía's first prompt, v1, written from her frame card: write a
+      Here are the two prompts I am about to run. Lucia's first prompt, v1, written from her frame card: write a
       one-page handout for first-year students on how to make a monthly budget; include one worked example as a table;
       use plain language. It has a task, a format and a length. But in the book, two runs produced an example budget
       with income and rent figures she never gave, and a total that did not match its items. Her final prompt, v5, has
@@ -737,7 +737,7 @@ slides:
       Two parts are missing on purpose: no role, because the voice needed no special setting, and no in-context
       examples, because the format line already shows the shape.
     background: |
-      Worked Example "Lucía's First and Final Prompts" (§5.3), @fig-5-7. Full v5 text: "Task: Write a one-page handout
+      Worked Example "Lucia's First and Final Prompts" (§5.3), @fig-5-7. Full v5 text: "Task: Write a one-page handout
       for first-year students on how to make a monthly budget. Context: Use only these monthly figures: income $1,150;
       rent $650; groceries $280; phone $45; transport $60. Constraints: Use plain language. Refer to tools in general
       terms, such as 'a spreadsheet or a notebook'; do not name any product, bank or app. Explain every money term in
@@ -748,8 +748,8 @@ slides:
     misconceptions:
       - m: "M4 'Every prompt needs all six parts.'"
         fix: "v5 is strong with four parts; it leaves out role and in-context examples, with a reason for each."
-    activity: "Ask the class to predict, for each prompt, which of Lucía's five criteria it will miss. Write the predictions on the board before the demo."
-    book: "§5.3 Worked Example 'Lucía's First and Final Prompts', @fig-5-7."
+    activity: "Ask the class to predict, for each prompt, which of Lucia's five criteria it will miss. Write the predictions on the board before the demo."
+    book: "§5.3 Worked Example 'Lucia's First and Final Prompts', @fig-5-7."
 
 - layout: lab
   minutes: 13
@@ -768,7 +768,7 @@ slides:
   notes:
     say: |
       This is the live demonstration. I will run v1 in a fresh, temporary chat, twice, so we can see run-to-run
-      variation. As each output appears, you score it against Lucía's five criteria: met, partly met or not met. Pay
+      variation. As each output appears, you score it against Lucia's five criteria: met, partly met or not met. Pay
       special attention to C2: does every number come from the figures, and does the total add up? Recompute the total
       yourselves; do not trust the table. Then I run v5 twice, and we score again. Our results may not match the book's,
       and that is fine: the book's outputs are constructed examples, and outputs vary between runs and tools. What we
@@ -783,7 +783,7 @@ slides:
       is down. Save the outputs: the lab session's warm-up and a later review can use them.
     questions:
       - q: "v5 still got the total wrong. Does that mean the prompt failed?"
-        a: "It means C2 is not met on that run. The next step in the loop is to diagnose and trace it (5.4); part of C2 may stay with you, because checking numbers is on Lucía's floor."
+        a: "It means C2 is not met on that run. The next step in the loop is to diagnose and trace it (5.4); part of C2 may stay with you, because checking numbers is on Lucia's floor."
       - q: "Why a fresh chat each time?"
         a: "A follow-up in the same chat keeps earlier turns in the context window, so it is not a clean test (§5.4, step 5)."
     misconceptions:
@@ -811,7 +811,7 @@ slides:
     say: |
       Quick check. Read all four options, choose on your own, then we vote. Thirty seconds. This item is built from
       the misconceptions we just met, so each wrong option is a belief many people hold. If many of you choose (a), ask
-      yourselves what happened in the study with math word problems. If many choose (c), think back to Lucía's v5,
+      yourselves what happened in the study with math word problems. If many choose (c), think back to Lucia's v5,
       which left two parts out on purpose. Before revealing, ask one student who chose (c) to explain why; it is a
       reasonable-sounding rule, and the contrast with the answer is the point of the section.
     background: |
@@ -824,7 +824,7 @@ slides:
     say: |
       The answer is (b): each part should serve the task, and irrelevant material can lower quality. Options (a) and
       (c) are the "more is always better" belief: adding everything you know, or using all six parts every time. The
-      published test with unrelated sentences in math word problems showed accuracy can go down, and Lucía's strong
+      published test with unrelated sentences in math word problems showed accuracy can go down, and Lucia's strong
       final prompt has only four parts. Option (d) is the magic-role belief: a role sets voice, and in the study we saw
       it did not improve factual accuracy overall. So the habit is: for each part you add, ask what it does for this
       task. If you cannot say, leave it out and test.
@@ -850,7 +850,7 @@ slides:
       experiment about the words people use in prompts, and I want you to commit to a guess before you see the result.
     background: |
       Section 5.4 is Core. Its prediction prompt (Please vs. I order you) opens the section in the book; the iteration
-      loop is drawn as the Prompt ↔ Verify part of the AI Work Loop. Lucía's log (v2, v3) is the worked example.
+      loop is drawn as the Prompt ↔ Verify part of the AI Work Loop. Lucia's log (v2, v3) is the worked example.
     activity: "Transition slide."
     book: "§5.4 Iterate on Purpose."
 
@@ -937,7 +937,7 @@ slides:
       only when needed. Sometimes the honest answer is that a part belongs on the floor. The book's From the
       Field (the author's 2014 encyclopedia entry on the "5 Whys") connects here: asking why repeatedly can stay at
       symptoms and cannot go beyond what you already know, and its refinement, confirming each answer before the next
-      why, matches changing one thing at a time (Şeker, 2014). Use it only if time allows.
+      why, matches changing one thing at a time (Seker, 2014). Use it only if time allows.
     questions:
       - q: "Isn't one change at a time very slow?"
         a: "It is slower per version and faster overall, because every row tells you something. With several changes at once, an improvement teaches you nothing (Review A10's logic; Check Yourself 5.4, item 1)."
@@ -952,7 +952,7 @@ slides:
 - layout: worked
   minutes: 1.5
   max_words: 75
-  kicker: "§5.4 · worked example · tracing Lucía’s v1"
+  kicker: "§5.4 · worked example · tracing Lucia’s v1"
   title: "Ask “why?” more than once"
   context: "v1 missed C2 twice: invented numbers, wrong total."
   steps:
@@ -966,7 +966,7 @@ slides:
   notes_reveal:
     - minutes: 1.5
       say: |
-        Let's trace Lucía's v1. It missed C2 in both runs: invented numbers and a wrong total. Why? No figures were in the
+        Let's trace Lucia's v1. It missed C2 in both runs: invented numbers and a wrong total. Why? No figures were in the
         prompt, so the output filled in plausible ones. Why? Her frame card said to use the association's figures, but
         she never pasted them. Why? They were in her notes, not in the prompt. Notice two things. First, she checked each
         link: the prompt really had no figures, and the frame card really said to use them. Second, there was a tempting
@@ -974,14 +974,14 @@ slides:
         test it: if the totals are still wrong when the figures are given, that explanation gains weight. Ask: what
         should v2 change, and what do you predict?
       background: |
-        Worked Example "Tracing Lucía's v1" (§5.4), @fig-5-9: the why-chain marks each link "checked"; the dashed side
+        Worked Example "Tracing Lucia's v1" (§5.4), @fig-5-9: the why-chain marks each link "checked"; the dashed side
         box ("bad at sums?") is an assumption, dashed because inferred. Constructed example. Connects to Chapter 3's
         context window: what is in her notes is not in what the model receives.
       misconceptions:
         - m: "M3 'What is in my head reaches the tool.'"
           fix: "The whole chain ends at 'in her notes, not in the prompt'."
       activity: "Pause after the third why; take two predictions for v2."
-      book: "§5.4 Worked Example 'Tracing Lucía's v1', @fig-5-9."
+      book: "§5.4 Worked Example 'Tracing Lucia's v1', @fig-5-9."
     - minutes: 1.5
       say: |
         Here is her log. v2 is v1 plus the figures: one change, to the context. Prediction: every number matches. Result:
@@ -1072,7 +1072,7 @@ slides:
 
 - layout: matrix
   minutes: 3
-  kicker: "§5.5 · worked example · Lucía’s v4 on test inputs (book figure: test grid)"
+  kicker: "§5.5 · worked example · Lucia’s v4 on test inputs (book figure: test grid)"
   title: "Test across runs and inputs, not once"
   size: 22
   bullets:
@@ -1093,13 +1093,13 @@ slides:
     say: |
       A test input is one of a small set of different inputs a prompt is tried on, to see whether it works beyond one
       case. Typical is the case you expect most often. Different changes something that matters. Edge is unusual but
-      possible, the case most likely to break the prompt. Lucía tried v4 on three inputs, twice each. Typical: the
+      possible, the case most likely to break the prompt. Lucia tried v4 on three inputs, twice each. Typical: the
       association's figures. Different: tutoring income that changes from month to month. Edge: costs higher than
       income. Four of six runs met every criterion. One run on the different input gave the example as a list, not a
       table. One run on the edge input "balanced" the budget by inventing an "other income" line. Verdict: not yet. So
       v5 adds a rule: if costs are higher than income, say so and show the gap. All six runs then met all criteria.
     background: |
-      Worked Example "Is Lucía's Prompt Done?" (§5.5), @fig-5-11. Because v5 was shaped to pass the edge input, she
+      Worked Example "Is Lucia's Prompt Done?" (§5.5), @fig-5-11. Because v5 was shaped to pass the edge input, she
       adds one new input (a month with a one-time $120 textbook cost); both runs meet all criteria, and she stops:
       evidence for this task, tool and date, not proof. Terminology: test inputs, not a test set; a test set (Chapter
       2) is labeled examples kept away from training. The idea is related: judge something on cases it was not shaped
@@ -1111,7 +1111,7 @@ slides:
       - m: "M5 'If it worked once, it works.'"
         fix: "Point to the grid: four passing runs and two failures on the same prompt."
     activity: "Ask students to name an edge input for a task from their major."
-    book: "§5.5 Worked Example 'Is Lucía's Prompt Done?', @fig-5-11; Check Yourself 5.5, item 1."
+    book: "§5.5 Worked Example 'Is Lucia's Prompt Done?', @fig-5-11; Check Yourself 5.5, item 1."
 
 - layout: lanes
   minutes: 2
@@ -1124,7 +1124,7 @@ slides:
         - {label: "Your v3, no explanation", kind: human}
         - {label: "A classmate runs it in a fresh chat", kind: human}
         - {label: "Output scored against your criteria", kind: human}
-    - label: "Lucía’s swap"
+    - label: "Lucia’s swap"
       nodes:
         - {label: "Output: “gross pay minus withholdings”", kind: ai}
         - {label: "C3 plain language: partly met", kind: step, role: risk}
@@ -1135,9 +1135,9 @@ slides:
       The last check needs another person. In a peer swap test, someone else runs your prompt without your explanation
       and scores the output against your criteria. It reveals what was in your head but not in the prompt. You cannot
       easily see your own missing context, because you always read the prompt with it. In the lab, a classmate ran
-      Lucía's v3 and marked C3, plain language, only partly met. The handout explained net pay as "gross pay minus
+      Lucia's v3 and marked C3, plain language, only partly met. The handout explained net pay as "gross pay minus
       withholdings," and the classmate did not know that withholdings are amounts, such as taxes, that an employer keeps
-      back from a paycheck. Lucía, an accounting major, had not noticed: her sense of "plain" was in her head. She
+      back from a paycheck. Lucia, an accounting major, had not noticed: her sense of "plain" was in her head. She
       rewrote C3 and, in v4, added a rule to explain every money term in everyday words.
     background: |
       Redrawn natively from the book's figure (@fig-5-12; the book's version adds the "gap? yes/no" decision). The
@@ -1263,7 +1263,7 @@ slides:
   notes:
     say: |
       Warm-up, from memory, no notes and no screens. Write down what every row of an iteration log should contain. Then
-      check with your team. Think back to Lucía's log in the concept session: v2 added the figures, v3 added a product rule. What did
+      check with your team. Think back to Lucia's log in the concept session: v2 added the figures, v3 added a product rule. What did
       each row have in common? Retrieval like this, a couple of days after first meeting an idea, helps it stick, and
       this particular idea is what your A3 rubric scores under "Versions and changes" and "Testing evidence." If a team
       gets stuck, give a hint: there are four things, and one of them has to be written before you press enter.
@@ -1325,7 +1325,7 @@ slides:
       - q: "My v1 already meets every criterion. Now what?"
         a: "Add a harder test input, such as an edge case (lab sheet, 'If it does not work'); or check whether your criteria are really checkable."
       - q: "Can I change the frame instead of the prompt?"
-        a: "Yes, if the trace ends there; log it as a 'frame' row, as Lucía did after her peer swap (§5.5)."
+        a: "Yes, if the trace ends there; log it as a 'frame' row, as Lucia did after her peer swap (§5.5)."
     misconceptions:
       - m: "M5 'If it worked once, it works.'"
         fix: "One run each today is a start, not evidence; the A3 record needs two runs per version and test inputs."
@@ -1404,7 +1404,7 @@ slides:
   notes:
     say: |
       This is the log template, and it stays on screen while you work. Each row: the version, the part you changed, your
-      prediction, run one, run two, and keep or revert. The example rows are Lucía's: v2 pasted the figures, v3 added the
+      prediction, run one, run two, and keep or revert. The example rows are Lucia's: v2 pasted the figures, v3 added the
       product rule. The book's template also shows a frame row, the one she added after her peer swap, when she rewrote
       C3 and rescored her v3 outputs without a new run. The last row on the slide is yours. Two reminders while you work. Every run goes in a fresh,
       temporary chat, so earlier turns cannot shape the test. And when you stop, ask yourself the stopping question from
@@ -1611,7 +1611,7 @@ slides:
     - "OpenAI. (n.d.). *Prompt engineering*. OpenAI API documentation. Retrieved October 18, 2026."
     - "Schulhoff, S., Ilie, M., Balepur, N., et al. (2024). *The prompt report: A systematic survey of prompt engineering techniques* (arXiv:2406.06608)."
     - "Sclar, M., Choi, Y., Tsvetkov, Y., & Suhr, A. (2024). Quantifying language models’ sensitivity to spurious features in prompt design. In *ICLR 2024*."
-    - "Şeker, Ş. E. (2014). Beş neden yöntemi (5 whys) [The 5 Whys method]. *YBS Ansiklopedi, 1*(4), 5–6."
+    - "Seker, S. E. (2014). Bes neden yontemi (5 whys) [The 5 Whys method]. *YBS Ansiklopedi, 1*(4), 5–6."
     - "Shi, F., Chen, X., Misra, K., et al. (2023). Large language models can be easily distracted by irrelevant context. *Proceedings of the 40th ICML, PMLR 202*, 31210–31227."
     - "Shibu, S. (2025, May 9). Klarna is hiring customer service agents after AI couldn’t cut it on calls, according to the company’s CEO. *Entrepreneur*."
     - "Wei, J., Wang, X., Schuurmans, D., et al. (2022). Chain-of-thought prompting elicits reasoning in large language models. *Advances in Neural Information Processing Systems, 35*, 24824–24837."

@@ -397,13 +397,13 @@ MAP_TEMPLATE = dict(
     title="An argument map shows reasons and objections, not who is right")
 
 MAP_ELIF = dict(
-    claim=("AI tutors can't understand students, so they can't help them", "a classmate in Elif's seminar"),
+    claim=("AI tutors can't understand students, so they can't help them", "a classmate in Maya's seminar"),
     pros=[("AI tools produce text by prediction, not by understanding", "the classmate (contested: 23.2)"),
           ("Only something that understands a student can help that student", "unstated premise", "inferred")],
     cons=[{"text": "Practice questions and feedback help students whether or not the tool understands",
-           "source": "Elif", "target": "pro:2"},
-          ("Help can be measured; the claim can be tested in a study", "Elif")],
-    title="Elif's map: the disagreement sits in one unstated premise")
+           "source": "Maya", "target": "pro:2"},
+          ("Help can be measured; the claim can be tested in a study", "Maya")],
+    title="Maya's map: the disagreement sits in one unstated premise")
 
 MAP_TURING = dict(
     claim=("Replace \"Can machines think?\" with the imitation game", "Turing (1950)"),

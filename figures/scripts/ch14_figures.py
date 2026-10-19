@@ -185,7 +185,7 @@ def storyboard(f):
     f.text(400, 392, "Solid = the company's own record (read) · dashed = reported by the user or outlets", size=13,
            color=muted)
     f.text(400, 414, "Thick = the harm · hexagon = text the agent produced", size=13, color=muted)
-    f.text(400, 442, "Sources: Masad (2025); Brewster & Chávez (2025); Sharwood (2025a, 2025b); Abdullahi (2025); "
+    f.text(400, 442, "Sources: Masad (2025); Brewster & Chavez (2025); Sharwood (2025a, 2025b); Abdullahi (2025); "
            "AI Incident Database #1152", size=13, color=muted, width=780)
 
 
@@ -308,7 +308,7 @@ def log_vs_report(f):
            color=muted, width=780)
 
 
-# ---------------------------------------------------------------- F14.14 Lucía's review step
+# ---------------------------------------------------------------- F14.14 Lucia's review step
 def lucia_review(f):
     muted = MUTED[f.mode]
     f.box(20, 150, 130, 80, "AI draft of a reply", role="ai", kind="ai", size=14)
@@ -327,7 +327,7 @@ def lucia_review(f):
     f.arrow(588, 319, 452, 319, label="yes", label_dy=-12, size=13)
     f.box(220, 290, 230, 60, "Pause automatic sending for that category", role="risk", kind="step", thick=True,
           size=14)
-    f.text(400, 404, "Lucía's proposal (constructed; no customer data). Thick = a stop point and an approval gate.",
+    f.text(400, 404, "Lucia's proposal (constructed; no customer data). Thick = a stop point and an approval gate.",
            size=13, color=muted, width=780)
 
 
@@ -463,7 +463,7 @@ FIGS = [
     ("f14-13-log-report", log_vs_report, 800, 395,
      "A log records what the system did; the agent's summary is more text from the model"),
     ("f14-14-lucia-review", lucia_review, 800, 420,
-     "Lucía's review step sends risky replies to a person and samples the rest"),
+     "Lucia's review step sends risky replies to a person and samples the rest"),
     ("f14-15-dry-run", dry_run, 800, 435,
      "A dry run with a planted fault shows which point catches an error before anyone relies on the workflow"),
     ("f14-16-a11-sheet", a11_sheet, 800, 490, "Your blueprint records every step, action, point, permission and test"),

@@ -1,4 +1,4 @@
-"""Front cover for *AI for All: Career-Ready AI Skills* (Şadi Evren Şeker).
+"""Front cover for *AI for All: Career-Ready AI Skills* (Sadi Evren Seker).
 
 Run from the repo root:
     python3 figures/scripts/cover.py
@@ -25,7 +25,7 @@ OUT = os.path.join(ROOT, "cover")
 
 TITLE = "AI for All"
 SUBTITLE = "Career-Ready AI Skills"
-AUTHOR = "Şadi Evren Şeker"
+AUTHOR = "Sadi Evren Seker"
 EDITION = "First edition · 2027"
 LOOP = ["Frame", "Prompt", "Verify", "Decide", "Disclose"]
 
@@ -139,7 +139,7 @@ def arc_path(cx, cy, r, a0, a1):
     return f"M{x0:.2f},{y0:.2f} A{r:.2f},{r:.2f} 0 {large} 1 {x1:.2f},{y1:.2f}"
 
 
-DESC = ("Book cover. Title AI for All, subtitle Career-Ready AI Skills, author Şadi Evren Şeker. "
+DESC = ("Book cover. Title AI for All, subtitle Career-Ready AI Skills, author Sadi Evren Seker. "
         "Artwork: the book's AI Work Loop drawn as five shapes on a circle. Four rounded squares are "
         "human steps; the Decide step is a large solid diamond. A yellow hexagon, the AI tool, sits "
         "in the middle and reaches the loop only by dashed lines: AI assists, people decide.")

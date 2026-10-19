@@ -61,7 +61,7 @@ You will revisit your answers in the Chapter Summary.
 
 [Core]{.path}
 
-*Featuring Lucía, an accounting sophomore.*
+*Featuring Lucia, an accounting sophomore.*
 
 Whether the task is a lab report, a marketing post, a lesson plan or a budget, most people start using AI by typing. Start one step earlier. Before the first prompt, write a **task frame**: a short statement of a task's goal, audience, success criteria, limits and what stays with you, written before the first prompt.
 
@@ -79,10 +79,10 @@ Now return to the Opening Case. This book reads Klarna's story as a framing prob
 
 In 2025, the chief executive was reported as saying cost had been too dominant and quality had suffered (Fisher, 2025). In other words, the success criteria a team chooses decide what "the system worked" means. A criterion nobody wrote down is a criterion nobody checks.
 
-::: {.callout-note title="Worked Example: Lucía Frames a Handout"}
+::: {.callout-note title="Worked Example: Lucia Frames a Handout"}
 **Field:** Business and accounting. *Constructed example.*
 
-The accounting students' association asks Lucía to prepare a one-page handout for a 30-minute workshop on budgeting for first-year students. The request, as she received it, was "something about budgeting for freshmen" (first-year students).
+The accounting students' association asks Lucia to prepare a one-page handout for a 30-minute workshop on budgeting for first-year students. The request, as she received it, was "something about budgeting for freshmen" (first-year students).
 
 **Her task frame:**
 
@@ -106,7 +106,7 @@ A biology student who leads a research lab group must give two new members a sum
 - **Limits:** _______________________
 - **What stays with the student:** _______________________
 
-*Hint:* look at Lucía's C1 (length) and C4 (format), and ask what the student must still decide or check personally.
+*Hint:* look at Lucia's C1 (length) and C4 (format), and ask what the student must still decide or check personally.
 :::
 
 ::: {.callout-important title="Your Turn"}
@@ -155,10 +155,10 @@ Three questions help you place a part:
 In the AI Fluency framework, *agency* is a way of working: you configure AI to carry out future tasks on your behalf (Dakan & Feller, 2025). An **agent** is a kind of system: one in which the model directs its own steps and tool use (Anthropic, 2024; Chapter 3). A course chatbot that answers questions from a fixed set of instructions is agency without being an agent. Sections 6.5 and 7.5, and Chapter 14, come back to this difference.
 :::
 
-::: {.callout-note title="Worked Example: Lucía's Handout, Part by Part"}
+::: {.callout-note title="Worked Example: Lucia's Handout, Part by Part"}
 **Field:** Business and accounting. *Constructed example.*
 
-![One task, several rungs: Lucía places each part of her handout.](../figures/out/color/f5-03b-ladder-lucia.svg){#fig-5-3b fig-alt="Ladder with Lucía's parts: floor, choose content and final check; automation, draft; augmentation, why the example confuses; agency, not now."}
+![One task, several rungs: Lucia places each part of her handout.](../figures/out/color/f5-03b-ladder-lucia.svg){#fig-5-3b fig-alt="Ladder with Lucia's parts: floor, choose content and final check; automation, draft; augmentation, why the example confuses; agency, not now."}
 
 - **Part 1, choose what first-year students need to know: floor.** It is her judgment about her audience.
 - **Part 2, draft the handout text: automation.** She can check the draft against her criteria before anyone sees it.
@@ -214,12 +214,12 @@ In Chapter 2, an **example** is one item in a dataset, such as one photo or one 
 In this chapter, **context** is one part of your prompt: the background this task needs. Your context is one of the things inside the context window.
 :::
 
-::: {.callout-note title="Worked Example: Lucía's First and Final Prompts"}
+::: {.callout-note title="Worked Example: Lucia's First and Final Prompts"}
 **Field:** Business and accounting. *Constructed example.*
 
-![The framed prompt carries what Lucía knew but had not written down.](../figures/out/color/f5-07-lucia-v1-v2.svg){#fig-5-7 fig-alt="Left: v1, a three-sentence prompt. Right: her final prompt, v5, with labeled parts: task, context with the figures, constraints, output format."}
+![The framed prompt carries what Lucia knew but had not written down.](../figures/out/color/f5-07-lucia-v1-v2.svg){#fig-5-7 fig-alt="Left: v1, a three-sentence prompt. Right: her final prompt, v5, with labeled parts: task, context with the figures, constraints, output format."}
 
-**v1**, Lucía's first prompt, written from her frame card:
+**v1**, Lucia's first prompt, written from her frame card:
 
 ```
 Write a one-page handout for first-year students on how to make a
@@ -301,12 +301,12 @@ So wording effects are real, hard to predict, and different from question to que
 
 **Ask "why?" more than once.** The first answer is often only a symptom. If the trace ends at the task itself (an unclear goal, an undecided audience), go back to Frame instead of rewording. Sometimes the honest answer is that this part belongs on the floor.
 
-::: {.callout-note title="Worked Example: Tracing Lucía's v1"}
+::: {.callout-note title="Worked Example: Tracing Lucia's v1"}
 **Field:** Business and accounting. *Constructed example.*
 
 ![Asking why more than once traces a weak output back to the prompt, or to the frame.](../figures/out/color/f5-09-why-chain.svg){#fig-5-9 fig-alt="Chain: wrong total and invented numbers → no figures in prompt → frame said use them → left in notes → fix v2. Dashed side: bad at sums?"}
 
-Let's take Lucía's v1. It missed C2 in both runs: invented numbers and a wrong total.
+Let's take Lucia's v1. It missed C2 in both runs: invented numbers and a wrong total.
 
 Why? No figures were in the prompt, so the output filled in plausible ones. Why?
 
@@ -368,10 +368,10 @@ The last check needs another person. In a **peer swap test**, someone else runs 
 
 ![A peer swap test shows what was in your head but not in your prompt.](../figures/out/color/f5-12-peer-swap.svg){#fig-5-12 fig-alt="Flow: your latest prompt → a classmate runs it in a fresh chat → output → scored against your criteria → gap? yes: add it to prompt; no: evidence."}
 
-::: {.callout-note title="Worked Example: Is Lucía's Prompt Done?"}
+::: {.callout-note title="Worked Example: Is Lucia's Prompt Done?"}
 **Field:** Business and accounting. *Constructed example.*
 
-**Peer swap on v3 (in the lab).** A classmate runs Lucía's v3 and marks C3 only partly met. The handout explains *net pay* (the money you actually receive after deductions) as "gross pay minus withholdings," and the classmate does not know that *withholdings* are amounts, such as taxes, that an employer keeps back from a paycheck. Lucía, an accounting major, had not noticed: her sense of "plain" was in her head.
+**Peer swap on v3 (in the lab).** A classmate runs Lucia's v3 and marks C3 only partly met. The handout explains *net pay* (the money you actually receive after deductions) as "gross pay minus withholdings," and the classmate does not know that *withholdings* are amounts, such as taxes, that an employer keeps back from a paycheck. Lucia, an accounting major, had not noticed: her sense of "plain" was in her head.
 
 - **Frame row.** C3 becomes "every money term is explained in everyday words." Prompt unchanged; rescored, the v3 outputs partly meet C3.
 - **v4 = v3 + an explain-terms rule.** Changed: a constraint ("Explain every money term in everyday words the first time you use it"). Prediction: C3 met. Result: met in both runs. Keep.
@@ -380,7 +380,7 @@ The last check needs another person. In a **peer swap test**, someone else runs 
 
 **Different:** tutoring income that changes from month to month. **Edge:** costs higher than income.
 
-![A prompt works when it passes across runs and test inputs, not once.](../figures/out/color/f5-11-test-grid.svg){#fig-5-11 fig-alt="Grid for Lucía's v4: three inputs by two runs; one partly met (different input), one not met (edge input); verdict: not yet."}
+![A prompt works when it passes across runs and test inputs, not once.](../figures/out/color/f5-11-test-grid.svg){#fig-5-11 fig-alt="Grid for Lucia's v4: three inputs by two runs; one partly met (different input), one not met (edge input); verdict: not yet."}
 
 Four of six runs meet every criterion. One run on the different input gives the worked example as a list, not a table (C4 partly met). One run on the edge input "balances" the budget by inventing an "other income" line (C2 not met). Verdict: not yet.
 
@@ -429,7 +429,7 @@ Lab 5.1 turns sections 5.1 to 5.5 into a record: your **iteration log**, a recor
 
 **What a strong log shows.** Each row makes one change and names the prompt part it changes, or says "frame." Each row has a prediction written before the run.
 
-Each result is scored against the criteria from your frame card, not against a feeling. Each row ends with a decision: keep or revert. Lucía's rows in sections 5.4 and 5.5 are a condensed example.
+Each result is scored against the criteria from your frame card, not against a feeling. Each row ends with a decision: keep or revert. Lucia's rows in sections 5.4 and 5.5 are a condensed example.
 
 **What a weak log looks like.** Four rewordings of the same sentence, no criteria, results described as "better" or "worse," one run each. It may end with a good prompt, but it gives no evidence that the prompt is good, or why.
 
@@ -588,7 +588,7 @@ Neither is neutral, and whoever writes the criteria decides whose interests are 
 
 **Telling people.** If an AI system speaks to people on your behalf, they deserve to know, and to know how to reach a person. Chapter 10 covers disclosing AI use at work, Chapter 17 discusses transparency, and Chapter 18 discusses the rules that increasingly require it.
 
-**What goes into a prompt.** Context makes prompts better, and it is also where private information leaks. Lucía used constructed figures, not real students' finances. In this book's work, personal or confidential data does not go into public AI tools; Chapter 15 explains why.
+**What goes into a prompt.** Context makes prompts better, and it is also where private information leaks. Lucia used constructed figures, not real students' finances. In this book's work, personal or confidential data does not go into public AI tools; Chapter 15 explains why.
 
 ## Career Connection {.unnumbered}
 
@@ -605,7 +605,7 @@ Neither is neutral, and whoever writes the criteria decides whose interests are 
 
 <!-- Based on the author's encyclopedia entry (Şeker, 2014), "Beş Neden Yöntemi (5 Whys)", YBS Ansiklopedi 1(4), read from Drive 1DrAi2SG_C_WyYCC5xminYeMS0uoMl7zJ on 2026-10-18; translated and paraphrased from Turkish. Facts limited to the entry; present-day connections marked as such. Registry: docs/production/ftf-sources.md. No commercial interest: no disclosure (D16 not applicable). -->
 
-In 2014 I wrote a short encyclopedia entry on the "5 Whys," a method for finding what lies behind a problem (Şeker, 2014). It is used in quality work, usually with experts or the people inside a process, though it can also work with customers or suppliers. The method is simple: ask "why?" about a problem five times in a row.
+In 2014 I wrote a short encyclopedia entry on the "5 Whys," a method for finding what lies behind a problem (Seker, 2014). It is used in quality work, usually with experts or the people inside a process, though it can also work with customers or suppliers. The method is simple: ask "why?" about a problem five times in a row.
 
 The entry used a common example. A car will not start. Why? The battery is dead.
 
@@ -619,7 +619,7 @@ The entry also reported criticisms of the method, citing Toyota's global purchas
 
 Its results are not repeatable: different people, at different times and places, can reach different answers. And having to answer "why" again and again can scatter the focus instead of finding the main cause. In response, the entry noted, people developed refinements, such as confirming that each answer is true, and discussing how much it really matters, before asking the next "why."
 
-*Present-day connections, read with this chapter:* asking "why does this task exist, and for whom?" before writing a prompt is the Frame step. "It cannot go beyond what you already know" applies to a frame too: Lucía could not see her own jargon until a classmate ran her prompt. "Not repeatable" is why section 5.5 runs a prompt more than once and on more than one input. And "confirm each answer before the next why" is the discipline of changing one thing at a time and checking the result before moving on.
+*Present-day connections, read with this chapter:* asking "why does this task exist, and for whom?" before writing a prompt is the Frame step. "It cannot go beyond what you already know" applies to a frame too: Lucia could not see her own jargon until a classmate ran her prompt. "Not repeatable" is why section 5.5 runs a prompt more than once and on more than one input. And "confirm each answer before the next why" is the discipline of changing one thing at a time and checking the result before moving on.
 
 ## Chapter Summary {.unnumbered}
 
@@ -719,7 +719,7 @@ agency (mode of working with AI) · agent (Ch. 3) · anatomy of a prompt · augm
 Come back to these a few days after reading, without looking back.
 
 1. *(Chapter 3 · LO1 · Understand)* Why can the same prompt give different outputs on two runs? Which step of the iteration loop in section 5.4 allows for this?
-2. *(Chapter 3 · LO1 · Understand)* Lucía's figures were "in her notes, not in the prompt." Use the definition of the context window to explain why that mattered.
+2. *(Chapter 3 · LO1 · Understand)* Lucia's figures were "in her notes, not in the prompt." Use the definition of the context window to explain why that mattered.
 3. *(Chapter 3 · LO1 · Understand)* A student corrects a chat tool during a long conversation, then reuses the original prompt in a fresh chat. Why might the correction no longer apply?
 4. *(Chapter 2 · LO1 · Understand)* How are this chapter's test inputs like a test set in Chapter 2, and how are they different?
 5. *(Chapter 1 · LO4 · Remember)* Name the five steps of the AI Work Loop. Which two did this chapter strengthen?
@@ -847,9 +847,9 @@ Schulhoff, S., Ilie, M., Balepur, N., Kahadze, K., Liu, A., Si, C., Li, Y., Gupt
 
 Sclar, M., Choi, Y., Tsvetkov, Y., & Suhr, A. (2024). Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting. In *The Twelfth International Conference on Learning Representations (ICLR 2024)*. https://arxiv.org/abs/2310.11324
 
-Şeker, Ş. E. (2014). Beş neden yöntemi (5 whys) [The 5 Whys method]. *YBS Ansiklopedi, 1*(4), 5. <!-- Pages as in the entry's own printed citation line; the issue contents list p. 5 (author-only item in the handoff). -->
+Seker, S. E. (2014). Bes neden yontemi (5 whys) [The 5 Whys method]. *YBS Ansiklopedi, 1*(4), 5. <!-- Pages as in the entry's own printed citation line; the issue contents list p. 5 (author-only item in the handoff). -->
 
-Shi, F., Chen, X., Misra, K., Scales, N., Dohan, D., Chi, E. H., Schärli, N., & Zhou, D. (2023). Large language models can be easily distracted by irrelevant context. *Proceedings of the 40th International Conference on Machine Learning, PMLR 202*, 31210–31227.
+Shi, F., Chen, X., Misra, K., Scales, N., Dohan, D., Chi, E. H., Scharli, N., & Zhou, D. (2023). Large language models can be easily distracted by irrelevant context. *Proceedings of the 40th International Conference on Machine Learning, PMLR 202*, 31210–31227.
 
 Shibu, S. (2025, May 9). Klarna is hiring customer service agents after AI couldn't cut it on calls, according to the company's CEO. *Entrepreneur*. https://www.entrepreneur.com/business-news/klarna-ceo-reverses-course-by-hiring-more-humans-not-ai/491396
 

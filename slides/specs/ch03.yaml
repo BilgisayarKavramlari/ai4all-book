@@ -13,7 +13,7 @@ deck:
   slug: inside-large-language-models
   title: Inside Large Language Models
   short_title: Inside Large Language Models
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     tue: {label: "Session 1 · concept session, second part (Chapter 3), about 39 min", minutes: 39}
     thu: {label: "Session 2 · lab session, about 75 min", minutes: 75}
@@ -37,7 +37,7 @@ slides:
   minutes: 0
   subtitle: "Concept session (second part) and lab session"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Reading: Chapter 3 (before the lab session)"
     - "Recommended: Wolfram (2023)"
   figure: f3-03-anatomy
@@ -208,8 +208,8 @@ slides:
       live with a tokenizer, and the result has consequences for letter counting, for rare names, for cost and for
       fairness between languages.
     background: |
-      Section 3.1 is Core. Terms: token, tokenizer. Featured student: Elif Kaya (she/her), a first-year psychology
-      student from İzmir. The prediction is the chapter's own, answered with a computed figure (data/ch03_tokens.csv,
+      Section 3.1 is Core. Terms: token, tokenizer. Featured student: Maya Aral (she/her), a first-year psychology
+      student from Izmir. The prediction is the chapter's own, answered with a computed figure (data/ch03_tokens.csv,
       tiktoken 0.8.0).
     misconceptions:
       - m: "M1 'The model reads words and letters the way I do.'"
@@ -246,7 +246,7 @@ slides:
     background: |
       Tokenizer facts (§3.1): the newer tokenizer has about 200,000 tokens in its list (o200k_base); merging method from
       Sennrich et al. (2016). " hydroxychloroquine" after a space → " hydro", "xy", "chl", "oroquine"; at the start of
-      a text, five pieces. "İzmir" at the start → "İ", "z", "mir"; after a space → " İz", "mir". Letter counting: one
+      a text, five pieces. "Izmir" at the start → "Iz", "mir"; after a space → " Iz", "mir" (a different first token). Letter counting: one
       commonly given reason models miscount letters; a 2024 preprint (not peer reviewed) found many models could
       identify the letters but still miscounted, especially letters appearing more than twice (Fu et al., 2024). Do not
       overclaim: "the model got it right" is a valid probe result, and many current tools count short words correctly.
@@ -271,7 +271,7 @@ slides:
     - {text: "Ask: what follows for letter counts, cost and length limits?", min: 2}
   side:
     - {heading: "Record", text: "Tokenizer name and date with every count"}
-    - {heading: "Backup", text: "Dated outputs saved in advance; or use Elif’s counts (next slide)"}
+    - {heading: "Backup", text: "Dated outputs saved in advance; or use Maya’s counts (next slide)"}
     - {heading: "Privacy", role: risk, text: "No personal text; a sentence anyone may see"}
   notes:
     say: |
@@ -298,13 +298,13 @@ slides:
         fix: "Point at the pieces on screen: these numbers are all the model receives."
     activity: |
       2 min coffee prompt · 2 min strawberry and the drug name · 3 min volunteer sentence (prediction by hands first) ·
-      2 min consequences. If the network fails, use the dated outputs you saved and go straight to Elif's example.
+      2 min consequences. If the network fails, use the dated outputs you saved and go straight to Maya's example.
     book: "§3.1 Your Turn; Lab 3.2; instructor package (Chapter 3)."
 
 - layout: compare
   minutes: 1
   kicker: "§3.1 · worked example · psychology (constructed abstract)"
-  title: "Elif’s abstract: fewer words, more tokens"
+  title: "Maya’s abstract: fewer words, more tokens"
   size: 24
   columns:
     - heading: "English"
@@ -319,7 +319,7 @@ slides:
   takeaway: "The result depends on the tokenizer: always name it"
   notes:
     say: |
-      Here is the book's worked example. Elif writes a short abstract for her research-methods class in English and in
+      Here is the book's worked example. Maya writes a short abstract for her research-methods class in English and in
       Turkish. Count words: English 59, Turkish 51. Turkish adds many endings to one word, so it needs fewer words.
       Count tokens: with a newer tokenizer, English is 68 tokens and Turkish 110. With an older tokenizer from the same
       company, 67 and 155. So the Turkish version has fewer words but about 1.6 times as many tokens with the newer
@@ -328,13 +328,13 @@ slides:
       depends on the tokenizer, name it whenever you report a count.
     background: |
       Constructed example: the abstract describes an invented study; the Turkish translation is the book's (§3.1).
-      Counts computed by the book with tiktoken 0.8.0 (newer = o200k_base, older = cl100k_base). Elif Kaya: first-year
-      psychology student from İzmir (characters file); the Ethics Lens returns to her ("Whose Language Costs More?").
+      Counts computed by the book with tiktoken 0.8.0 (newer = o200k_base, older = cl100k_base). Maya Aral: first-year
+      psychology student from Izmir (characters file); the Ethics Lens returns to her ("Whose Language Costs More?").
     questions:
       - q: "Fewer words but more tokens: how?"
         a: "The tokenizer splits many Turkish words into several pieces, so the same content needs more tokens (Review A3, key (c))."
     activity: "Ask the volunteer from the demo whether their ratio was closer to 1.6 or 2.3, and which tokenizer the page used."
-    book: "§3.1 Worked Example 'Elif's Abstract in Two Languages'."
+    book: "§3.1 Worked Example 'Maya's Abstract in Two Languages'."
 
 - layout: figure
   minutes: 1
@@ -367,7 +367,7 @@ slides:
   minutes: 0.5
   kicker: "Quick check · §3.1"
   title: "fewer words, more tokens"
-  question: "Elif’s Turkish abstract had fewer words than the English version but more tokens. Which explanation fits best?"
+  question: "Maya’s Turkish abstract had fewer words than the English version but more tokens. Which explanation fits best?"
   options:
     - "Turkish words are longer, so each one takes more time to process."
     - "The model receives Turkish text letter by letter, so every letter is a token."
@@ -378,7 +378,7 @@ slides:
   explanation: "(a) confuses length with processing; (b) is M1; (d) is false: a given tokenizer always counts the same"
   notes:
     say: |
-      Quick check, ungraded. Elif's Turkish abstract had fewer words than the English one but more tokens. Which
+      Quick check, ungraded. Maya's Turkish abstract had fewer words than the English one but more tokens. Which
       explanation fits best? Read all four. One of them is the misconception we named at the start of the section,
       that the model receives letters. Another sounds technical but confuses two different things. Give them twenty
       seconds and take a vote. If anyone picks (d), ask them what happened in the demonstration when we pasted the
@@ -728,7 +728,7 @@ slides:
         fix: "Coverage is uneven before the cutoff too (Cheng et al., 2024)."
       - m: "M2 'The model looks up the answer in a database of facts.'"
         fix: "A fact store would answer both directions; patterns learned forward do not."
-    activity: "Worked Example 'Last Week's News' as a 20-second oral check: with search off, what should Elif expect?"
+    activity: "Worked Example 'Last Week's News' as a 20-second oral check: with search off, what should Maya expect?"
     book: "§3.3 three consequences; Worked Example 'Last Week's News'; Faded Example 'Which Questions Need Current Information?'."
 
 - layout: quiz
@@ -824,7 +824,7 @@ slides:
       dropping or shortening older parts.
     background: |
       Sizes and overflow methods change often; current numbers are in Compass ([COMPASS: context-window sizes by tool]);
-      no product numbers in Core. From the Field (Şeker & Nizam-Özoğur, 2026): in an LLM-assisted software project,
+      no product numbers in Core. From the Field (Seker & Nizam-Ozogur, 2026): in an LLM-assisted software project,
       generated code often did not follow project-wide decisions over a long project, so developers restated them in
       structured prompts; the earlier version links this to the limited context window (a present-day connection
       drawn by the book). Check Yourself 3.4 item 1 asks for the four kinds of text.
@@ -858,14 +858,14 @@ slides:
       48.3. Worked Example (Hana, they/them, a history minor): a digitized 1890s county history; predict the middle
       question is most at risk; ask each question in a new chat; check against the page; the constructed result: the
       middle answer gives a date from a different chapter; repeat and ask for a supporting quotation, and search the
-      document for it. Faded: Lucía's 60-message support thread, email change in message 31 (privacy: Chapter 15).
+      document for it. Faded: Lucia's 60-message support thread, email change in message 31 (privacy: Chapter 15).
     questions:
       - q: "So should I put important things at the start?"
         a: "That is a design question for Chapter 6. For now, the habit is diagnostic: predict which parts are at risk, then check them against the source. The lab's probe 3 tests your own tool."
     misconceptions:
       - m: "M5 'If it fits in the context window, the model uses all of it equally well.'"
         fix: "Middle position: lower than no passages at all, for that model in 2023."
-    activity: "Ask: 'Where in a 60-message thread is a detail most at risk?' (Lucía's faded example: the middle.)"
+    activity: "Ask: 'Where in a 60-message thread is a detail most at risk?' (Lucia's faded example: the middle.)"
     book: "§3.4, @fig-3-6; Worked Example 'Hana's Long Document'; Faded Example 'A Long Support Thread'; Case Study Short case 1."
 
 # ----------------------------------------------------------------------- 3.5
@@ -943,8 +943,8 @@ slides:
 - layout: worked
   minutes: 0.75
   kicker: "§3.5 · worked example · constructed · five verdicts (Chapter 8)"
-  title: "Marking Elif’s search-then-generate answer"
-  context: "Elif asks a search tool: her scholarship’s GPA rule, semesters left"
+  title: "Marking Maya’s search-then-generate answer"
+  context: "Maya asks a search tool: her scholarship’s GPA rule, semesters left"
   # The final reveal is about 65 words: four claims with their verdicts on one slide are the point of the
   # example (deliberate exception to the 50-word limit).
   max_words: 70
@@ -958,7 +958,7 @@ slides:
   notes_reveal:
     - minutes: 0.5
       say: |
-        Here is the habit in action. Elif asks a tool that searches: what grade point average do I need to keep my
+        Here is the habit in action. Maya asks a tool that searches: what grade point average do I need to keep my
         international student scholarship, and how many semesters are left if I have 45 of 120 credits and take 15 per
         semester? The response makes four claims. We mark them with the five verdicts this book uses: supported,
         partly supported, unsupported, contradicted, cannot verify. Claim one, "you need a 3.0 GPA", links to the
@@ -975,7 +975,7 @@ slides:
       say: |
         Claim three, "you can appeal a lost scholarship within 30 days", has no link at all: unsupported; ask the
         office. Claim four, "you have 5 semesters left", came from the calculator tool: 120 minus 45 is 75, divided by
-        15 is 5. The arithmetic is supported. But notice what the tool did not do: it assumes Elif keeps taking 15
+        15 is 5. The arithmetic is supported. But notice what the tool did not do: it assumes Maya keeps taking 15
         credits, and the tool did only the arithmetic it was given. A wrong question gets an exact wrong answer. That is
         the point of the bar: a link shows what was retrieved, not that each claim is right.
       background: |
@@ -1010,7 +1010,7 @@ slides:
       one pulls together the whole anatomy: what changes during training, what fills the context window, and how a
       response is produced. Read every option and name the misconception behind each wrong one before you vote. Twenty
       seconds. If you hear (b) defended, ask whether the model's settings changed when it searched. If you hear (a),
-      point back to Elif's second claim: it had a link, and the link led to an old forum post.
+      point back to Maya's second claim: it had a link, and the link led to an old forum post.
     background: |
       Item: Review Questions A11 (O3 · LO3 · Understand). Key from Appendix E: (d). (a) is M6; (b) confuses retrieval
       with training (the settings do not change, so nothing is reflected "exactly"); (c) is false: the response is
@@ -1507,7 +1507,7 @@ slides:
     - "Anthropic. (2024, December 19). *Building effective agents*. https://www.anthropic.com/engineering/building-effective-agents"
     - "Bai, Y., Kadavath, S., Kundu, S., et al. (2022). *Constitutional AI: Harmlessness from AI feedback* (arXiv:2212.08073)."
     - "Berglund, L., Tong, M., Kaufmann, M., Balesni, M., Stickland, A. C., Korbak, T., & Evans, O. (2024). The reversal curse: LLMs trained on “A is B” fail to learn “B is A”. In *ICLR 2024*. https://arxiv.org/abs/2309.12288"
-    - "Carlini, N., Tramèr, F., Wallace, E., et al. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650)."
+    - "Carlini, N., Tramer, F., Wallace, E., et al. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650)."
     - "Cheng, J., Marone, M., Weller, O., Lawrie, D., Khashabi, D., & Van Durme, B. (2024). Dated data: Tracing knowledge cutoffs in large language models. In *COLM 2024*. https://arxiv.org/abs/2403.12958"
     - "Fu, T., Ferrando, R., Conde, J., Arriaga, C., & Reviriego, P. (2024). *Why do large language models (LLMs) struggle to count letters?* (arXiv:2412.18626)."
     - "Hoffmann, J., Borgeaud, S., Mensch, A., et al. (2022). Training compute-optimal large language models. In *NeurIPS 35*. https://arxiv.org/abs/2203.15556"
@@ -1518,8 +1518,8 @@ slides:
     - "OpenAI. (2024, September 12). *Learning to reason with LLMs*. https://openai.com/index/learning-to-reason-with-llms/"
     - "Ouyang, L., Wu, J., Jiang, X., et al. (2022). Training language models to follow instructions with human feedback. In *NeurIPS 35*. https://arxiv.org/abs/2203.02155"
     - "Petrov, A., La Malfa, E., Torr, P. H. S., & Bibi, A. (2023). Language model tokenizers introduce unfairness between languages. In *NeurIPS 36*. https://arxiv.org/abs/2305.15425"
-    - "Schick, T., Dwivedi-Yu, J., Dessì, R., et al. (2023). Toolformer: Language models can teach themselves to use tools. In *NeurIPS 36*."
-    - "Şeker, Ş. E., & Nizam-Özoğur, H. (2026). Enhancing software development with large language models: A case study of Kolay.ai. *Electrica, 26*, Article 0033. https://doi.org/10.5152/electrica.2026.25033"
+    - "Schick, T., Dwivedi-Yu, J., Dessi, R., et al. (2023). Toolformer: Language models can teach themselves to use tools. In *NeurIPS 36*."
+    - "Seker, S. E., & Nizam-Ozogur, H. (2026). Enhancing software development with large language models: A case study of Kolay.ai. *Electrica, 26*, Article 0033. https://doi.org/10.5152/electrica.2026.25033"
     - "Sennrich, R., Haddow, B., & Birch, A. (2016). Neural machine translation of rare words with subword units. In *Proceedings of ACL 2016* (pp. 1715–1725). https://doi.org/10.18653/v1/P16-1162"
     - "United Nations. (1948). *Universal Declaration of Human Rights* [Translations in the Unicode UDHR collection]."
     - "Vaswani, A., Shazeer, N., Parmar, N., et al. (2017). Attention is all you need. In *NeurIPS 30* (pp. 5998–6008)."

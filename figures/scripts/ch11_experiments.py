@@ -4,7 +4,7 @@ All data are CONSTRUCTED or SIMULATED for teaching; no real people, events or pa
 Run from the repo root:
     python3 figures/scripts/ch11_experiments.py
 Writes:
-    data/ch11_events.csv              Lucía's constructed volunteer-shift table (true hours kept in a separate column)
+    data/ch11_events.csv              Lucia's constructed volunteer-shift table (true hours kept in a separate column)
     data/ch11_missing_choices.csv     per-event $/volunteer-hour and the "best" event under each missing-value choice
     data/ch11_missing_sim.csv         share of 1,000 simulated datasets in which each choice picks the truly best event,
                                       when blanks fall at random in every event and when they fall only at one
@@ -29,7 +29,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 DATA = os.path.join(ROOT, "data")
 EVENTS = ["Bake sale", "Book swap", "Car wash"]
 
-# ------------------------------------------------------------------ 1. Lucía's events (constructed)
+# ------------------------------------------------------------------ 1. Lucia's events (constructed)
 # (event, shift, true_hours, proceeds, hours_logged?)  proceeds in dollars, net of costs
 SHIFTS = [
     ("Bake sale", 1, 8, 144, True), ("Bake sale", 2, 9, 162, True), ("Bake sale", 3, 10, 180, True),
@@ -371,7 +371,7 @@ def xlsx_template():
 
 
 if __name__ == "__main__":
-    print("1. Lucía's events ($ per volunteer hour)")
+    print("1. Lucia's events ($ per volunteer hour)")
     lucia_table()
     print("2. Simulation")
     simulation()

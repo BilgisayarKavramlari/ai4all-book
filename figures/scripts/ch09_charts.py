@@ -1,7 +1,7 @@
 """Chapter 9 data charts (color + gray SVG). Run from the repo root:
     python3 figures/scripts/ch09_charts.py
 F9.9   published values (data/ch09_peters2025.csv; Peters & Chin-Yee, 2025, Table 2)
-F9.12  published values (data/ch09_tow2025.csv; Jaźwińska & Chandrasekar, 2025)
+F9.12  published values (data/ch09_tow2025.csv; Jazwinska & Chandrasekar, 2025)
 """
 import csv
 import os
@@ -89,7 +89,7 @@ def f9_12(mode):
     ax.set_ylabel("Queries answered incorrectly (%)")
     ax.set_title("In a February 2025 test, AI search tools gave wrong source details\n"
                  "for 37% to 94% of news excerpts", loc="left", fontweight="bold", fontsize=12.5, pad=10)
-    fig.text(0.01, -0.1, "Source: Jaźwińska & Chandrasekar (2025), Tow Center, Columbia Journalism Review: 200 news "
+    fig.text(0.01, -0.1, "Source: Jazwinska & Chandrasekar (2025), Tow Center, Columbia Journalism Review: 200 news "
              "excerpts per tool, eight tools, one run each.\nThe three tools whose rates the article text reports; "
              "error rates ranged from 37% to 94%. As tested in February 2025.", fontsize=9.5, color=s["ink"])
     save(fig, "f9-12-tow-search", mode)

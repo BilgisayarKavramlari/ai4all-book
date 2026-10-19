@@ -1,6 +1,6 @@
 # Bias and Fairness {#sec-ch16}
 
-<!-- Status: DRAFT v2.1 (2026-10-18): final review applied (build/ch16/reviews/final.md: 5 must, 13 should, 2 nice); four independent reviews applied (docs/editorial/ch16-dev-memo.md), Mode B voice pass. Blueprint v0.2 (approved under D19). Featured student: Elif only (docs/characters.md); all AI outputs are constructed examples unless a model and date are given. Case C13 facts from Buolamwini & Gebru (2018) and Raji & Buolamwini (2019), read in full (build/ch16/src/). Numbers in text come from data/ch16_*.csv or the cited sources; computed numbers from figures/scripts/ch16_experiments.py (exact, no seeds). Wilson & Caliskan (2024): race and intersectional results only. Gender Shades tested gender classification, never "face recognition". Lifecycle parts are "phases"; chain parts are "links"; dashed = inferred (or reported, where a legend says so). Time count per D22 (week totals removed under D27): whole Core package with Check Yourself, faded-example and Warm-up answering ≈ 30 min (build/ch16/count.py). Not marked done: final review and the author's voice edit are pending. -->
+<!-- Status: DRAFT v2.1 (2026-10-18): final review applied (build/ch16/reviews/final.md: 5 must, 13 should, 2 nice); four independent reviews applied (docs/editorial/ch16-dev-memo.md), Mode B voice pass. Blueprint v0.2 (approved under D19). Featured student: Maya only (docs/characters.md); all AI outputs are constructed examples unless a model and date are given. Case C13 facts from Buolamwini & Gebru (2018) and Raji & Buolamwini (2019), read in full (build/ch16/src/). Numbers in text come from data/ch16_*.csv or the cited sources; computed numbers from figures/scripts/ch16_experiments.py (exact, no seeds). Wilson & Caliskan (2024): race and intersectional results only. Gender Shades tested gender classification, never "face recognition". Lifecycle parts are "phases"; chain parts are "links"; dashed = inferred (or reported, where a legend says so). Time count per D22 (week totals removed under D27): whole Core package with Check Yourself, faded-example and Warm-up answering ≈ 30 min (build/ch16/count.py). Not marked done: final review and the author's voice edit are pending. -->
 
 ![Chapter 16 at a glance. This chapter strengthens Verify (test a system group by group) and then Decide (who chooses what counts as fair).](../figures/out/color/f16-01-chapter-map.svg){#fig-16-1 fig-alt="Chapter map: where and how much (16.1–16.3), test and fix (16.4–16.6), practice (16.7, Lab 15.1, A12); Work Loop with Verify highlighted."}
 
@@ -52,7 +52,7 @@ For each answer, write how sure you are, from 0 to 100%.
 
 [Core]{.path}
 
-In her research-methods class, Elif read that most participants in published behavioral research come from WEIRD societies: Western, educated, industrialized, rich and democratic (Henrich et al., 2010). She now asks the same of AI: whose data trained this tool?
+In her research-methods class, Maya read that most participants in published behavioral research come from WEIRD societies: Western, educated, industrialized, rich and democratic (Henrich et al., 2010). She now asks the same of AI: whose data trained this tool?
 
 In this book, **bias (in an AI system)** is a systematic difference in how a system's outputs or errors fall on different groups of people that disadvantages some of them; Chapter 4's **bias (in generated output)** is the same idea for what a tool produces. Neither needs anyone to intend harm.
 
@@ -71,8 +71,8 @@ Two kinds of harm are commonly distinguished (Blodgett et al., 2020). An **alloc
 
 ![Bias can withhold an opportunity or misrepresent a group.](../figures/out/color/f16-04-harms.svg){#fig-16-4 fig-alt="Two columns: allocation harm (job shortlist, care program, tutoring offer) and representation harm (stereotyped images, default descriptions)."}
 
-::: {.callout-note title="Worked Example: Elif's Outreach Score"}
-*(Constructed.)* At the peer-tutoring center where Elif volunteers, the coordinator considers an **outreach score** that would email first-year students predicted to need tutoring, trained on last year's visit records. Elif places four risks:
+::: {.callout-note title="Worked Example: Maya's Outreach Score"}
+*(Constructed.)* At the peer-tutoring center where Maya volunteers, the coordinator considers an **outreach score** that would email first-year students predicted to need tutoring, trained on last year's visit records. Maya places four risks:
 
 - **Data:** the label "visited the center" records who knew about it and came, not who needed help: a proxy label.
 - **Model:** tested only on overall accuracy.
@@ -82,7 +82,7 @@ Two kinds of harm are commonly distinguished (Blodgett et al., 2020). An **alloc
 Harm: allocation (a tutoring offer withheld).
 :::
 
-![Elif's outreach score could let bias in at every phase.](../figures/out/color/f16-05-lifecycle-elif.svg){#fig-16-5 fig-alt="The Bias Lifecycle with data highlighted and a note at each phase for Elif's outreach score; use and feedback dashed as inferred."}
+![Maya's outreach score could let bias in at every phase.](../figures/out/color/f16-05-lifecycle-elif.svg){#fig-16-5 fig-alt="The Bias Lifecycle with data highlighted and a note at each phase for Maya's outreach score; use and feedback dashed as inferred."}
 
 ::: {.callout-note title="Faded Example: A Bank's Offer Chatbot"}
 A bank's chatbot suggests credit-card offers. It was trained on which offers past customers accepted, tested on overall acceptance, and appears only in the bank's app; customers who decline are shown fewer offers next year.
@@ -106,7 +106,7 @@ Name the four phases of the Bias Lifecycle, and say why bias can enter even if n
 
 *Prediction:* a tool is right 90% of the time on 1,270 faces in four groups. Could one group's error rate be far above 10%?
 
-It can. An overall number averages over everyone, so one group's errors can disappear inside it. Overall accuracy still matters; it is just not enough. **Disaggregated evaluation** reports a system's performance separately for each group and subgroup instead of one overall number (Barocas et al., 2021). An **intersectional subgroup** is defined by two or more characteristics at once, such as darker-skinned women; the idea that disadvantage can concentrate where categories meet comes from the legal scholar Kimberlé Crenshaw (1989).
+It can. An overall number averages over everyone, so one group's errors can disappear inside it. Overall accuracy still matters; it is just not enough. **Disaggregated evaluation** reports a system's performance separately for each group and subgroup instead of one overall number (Barocas et al., 2021). An **intersectional subgroup** is defined by two or more characteristics at once, such as darker-skinned women; the idea that disadvantage can concentrate where categories meet comes from the legal scholar Kimberle Crenshaw (1989).
 
 ![Overall error of 6–12% hid error rates of up to 35% for darker-skinned women.](../figures/out/color/f16-06-gendershades.svg){#fig-16-6 fig-alt="Grouped bars for Microsoft, Face++ and IBM: overall error 6.3, 10.0 and 12.1%; darker-skinned women 20.8, 34.5 and 34.7%."}
 
@@ -181,7 +181,7 @@ Two groups have different base rates and the tool's precision is equal in both. 
 
 You usually cannot see a generative tool's data, but you can test its outputs. A **paired-input test** runs inputs that are identical except for one cue linked to a group (a name, a pronoun, a stated first language), many times each, counts the outputs by a rule fixed before any run, and compares the counts. Chapter 12's bake-off changed only the tool; this changes only the cue.
 
-Wilson & Caliskan (2024) changed only the name on 554 résumés ranked by three text-embedding models (models that turn texts into numbers for comparison). Names associated with White Americans in the study were favored in about 85% of 27 statistical tests, and names associated with Black men were disadvantaged in up to 100% of comparisons; the study tested only those names, and its gender-only results were later corrected. Race and sex are **protected characteristics**: characteristics that anti-discrimination law says decisions such as hiring must not be based on (Chapter 18). For "a photo of the face of a software developer," a classifier choosing among White, Black and Asian labeled 99% of 100 images from one image generator as White; 56% of U.S. software developers identify as White (Bianchi et al., 2023). An agent that ranks people needs the same test (Chapter 14).
+Wilson & Caliskan (2024) changed only the name on 554 resumes ranked by three text-embedding models (models that turn texts into numbers for comparison). Names associated with White Americans in the study were favored in about 85% of 27 statistical tests, and names associated with Black men were disadvantaged in up to 100% of comparisons; the study tested only those names, and its gender-only results were later corrected. Race and sex are **protected characteristics**: characteristics that anti-discrimination law says decisions such as hiring must not be based on (Chapter 18). For "a photo of the face of a software developer," a classifier choosing among White, Black and Asian labeled 99% of 100 images from one image generator as White; 56% of U.S. software developers identify as White (Bianchi et al., 2023). An agent that ranks people needs the same test (Chapter 14).
 
 ![A paired-input test changes one cue and counts many runs.](../figures/out/color/f16-10-paired-input.svg){#fig-16-10 fig-alt="Process: one input, two versions with one cue changed, a fixed counting rule, many fresh runs, counts with totals, a threshold check."}
 
@@ -198,8 +198,8 @@ No gap is not proof of no bias: at 30 runs per version, only gaps of about 30 po
 
 ![If both versions truly give a pattern half the time, 10 runs each show a 20-point gap about half the time.](../figures/out/color/f16-07-small-samples.svg){#fig-16-7 fig-alt="Two bar charts by runs per version (10–100): chance of a 20-point gap falls from 50.3% at 10 runs; the chance threshold falls from 50 points to 15."}
 
-::: {.callout-note title="Worked Example: Elif Tests a Name"}
-*Constructed outputs.* Elif asks for "three majors for a first-year student named ___ who loves biology and chemistry," with the name Emily or Elif. **Rule (fixed first):** count runs in which all three suggestions are science majors. **Runs:** 15 fresh chats each, one tool, memory off. **Counts:** Emily 8 of 15; Elif 5 of 15. **Reading:** the counts differ by 3; at 15 runs they must differ by 6. A lead: she plans 30 runs each.
+::: {.callout-note title="Worked Example: Maya Tests a Name"}
+*Constructed outputs.* Maya asks for "three majors for a first-year student named ___ who loves biology and chemistry," with the name Emily or Maya. **Rule (fixed first):** count runs in which all three suggestions are science majors. **Runs:** 15 fresh chats each, one tool, memory off. **Counts:** Emily 8 of 15; Maya 5 of 15. **Reading:** the counts differ by 3; at 15 runs they must differ by 6. A lead: she plans 30 runs each.
 :::
 
 ::: {.callout-note title="Faded Example: Three Pronouns"}
@@ -215,7 +215,7 @@ At the station, run your table's prompt and record your table's subtotal. At the
 :::
 
 ::: {.callout-tip title="Check Yourself 16.4"}
-What stays the same, and what changes, in a paired-input test? Why is Elif's 8 of 15 against 5 of 15 a lead?
+What stays the same, and what changes, in a paired-input test? Why is Maya's 8 of 15 against 5 of 15 a lead?
 :::
 
 ## 16.5 Mitigation and Its Limits {#sec-16-5 .unnumbered}
@@ -238,10 +238,10 @@ A **mitigation (of bias)** is a change meant to reduce a measured bias. Chapter 
 
 **Fixes have limits.** Counter-stereotype prompts did not stop the stereotypes Bianchi et al. (2023) found. In February 2024 Google paused its chatbot's images of people, saying that tuning meant to show a range of people had not accounted for prompts that should not show one (Raghavan, 2024). Removing the "gender direction" from a word-embedding model (one that represents words as lists of numbers) left the bias recoverable (Gonen & Goldberg, 2019). A fix can hide or move a problem, so test again after every fix.
 
-![A narrower use and a reduce step lowered Elif's bias risk; its owner accepts what is left.](../figures/out/color/f16-14-heatmap.svg){#fig-16-14 fig-alt="Risk Heat Map: risk 1, documented, moves from medium likelihood and medium impact to low likelihood and low impact."}
+![A narrower use and a reduce step lowered Maya's bias risk; its owner accepts what is left.](../figures/out/color/f16-14-heatmap.svg){#fig-16-14 fig-alt="Risk Heat Map: risk 1, documented, moves from medium likelihood and medium impact to low likelihood and low impact."}
 
-::: {.callout-note title="Faded Example: Name-Blind Résumés"}
-A firm removes names before an AI screen. The résumés still list clubs (one reads "women's chess club, captain") and colleges, including two women's colleges.
+::: {.callout-note title="Faded Example: Name-Blind Resumes"}
+A firm removes names before an AI screen. The resumes still list clubs (one reads "women's chess club, captain") and colleges, including two women's colleges.
 
 **What it fixes (filled):** the name cue; a reduce mitigation at the data phase.
 
@@ -266,8 +266,8 @@ Fairness work can fail when it ignores the setting a tool is used in (Selbst et 
 
 ![Someone must choose which error matters more, and say who was asked.](../figures/out/color/f16-15-choice-record.svg){#fig-16-15 fig-alt="Flow: the decision, which error harms whom, fairness definition, people affected asked, decision owner records the choice and reason."}
 
-::: {.callout-note title="Worked Example: Elif Answers the Coordinator"}
-*Constructed.* Elif argues that a missed student costs more than an extra email, so equal miss rates matter most for the outreach score. She proposes asking first-year students through the center's feedback form, and that the coordinator, as decision owner, record the choice and its reason.
+::: {.callout-note title="Worked Example: Maya Answers the Coordinator"}
+*Constructed.* Maya argues that a missed student costs more than an extra email, so equal miss rates matter most for the outreach score. She proposes asking first-year students through the center's feedback form, and that the coordinator, as decision owner, record the choice and its reason.
 :::
 
 ::: {.callout-note title="Faded Example: Reminder Calls"}
@@ -290,7 +290,7 @@ At station 3 of Chapter 15's red-team lab (Lab 15.1), each table runs one **bias
 
 It feeds two parts of A12. **Item 4c, the probe record:** the prompt pair and its cue, the station's preregistered counting rule, your counts, the pooled counts with totals (live and printed apart), and lead or finding, with the smallest gap the pooled count could detect. **Item 3, the fairness row:** the worse error and for whom; allocation or representation; the phase; likelihood and impact (Chapter 15's anchors); the evidence marker; the mitigation's kind, what it might hide, and the risk owner. The station tests *that tool on that prompt*: it documents your workflow's risk only if your workflow uses the same tool for the same kind of task. Otherwise mark the row inferred, cite the station result as a lead, and name the test that would document it.
 
-::: {.callout-note title="Worked Example: Elif's Fairness Row"}
+::: {.callout-note title="Worked Example: Maya's Fairness Row"}
 *Constructed.* Prompt B has the tool score a fixed paragraph's argument from 1 to 10, with the line "Author's first language: English" or "…: Turkish". Pooled: scores of 7 or more in 31 of 39 runs with "English" against 19 of 39 with "Turkish"; the counts differ by 12, above the 10 needed: a finding (to be re-run before the center relies on it). The center plans to score short drafts with the same tool, so the result transfers for the cue tested. **Row:** the same argument scores lower when the author line states Turkish rather than English as first language (other languages untested) · harmed: writers whose drafts state Turkish as their first language, through lower scores (allocation, if scores shape tutoring offers) · phase: model · likelihood medium (most drafts state no first language; whether other cues, such as names, produce the same gap is untested) · impact medium · documented (same tool, same kind of task, the cue tested) · reduce: remove author lines before scoring; avoid: the score never decides who gets tutoring · owner: the coordinator.
 :::
 
@@ -328,7 +328,7 @@ The fourth phase of the lifecycle can make a small bias grow. Ensign et al. (201
 
 ![A feedback loop sends the system back to where it already looked.](../figures/out/color/f16-18-feedback-loop.svg){#fig-16-18 fig-alt="The Bias Lifecycle with feedback highlighted: patrols lead to more records and more patrols; records show where people looked."}
 
-Quieter versions are everywhere. In Chapter 11's health algorithm, cost reflected past access to care, and access to care would follow the program's choices. In Elif's outreach score, students never emailed never visit. Generative tools may add one more path: text a model produces and people post online can end up in the data later models are trained on; in experiments, training indiscriminately on model-generated content made the rarer parts of the original data disappear (Shumailov et al., 2024). A feedback loop also hides itself. The data a system produces look like evidence about the world, but they record where the system and its users looked. Elif's coordinator, reading next year's visit records, would see few visits from students the emails never reached and might conclude that they need less help, when the records show only who was told about the center. What to watch: monitor results group by group after launch, keep some decisions independent of the tool's past outputs, and record who was never offered the chance.
+Quieter versions are everywhere. In Chapter 11's health algorithm, cost reflected past access to care, and access to care would follow the program's choices. In Maya's outreach score, students never emailed never visit. Generative tools may add one more path: text a model produces and people post online can end up in the data later models are trained on; in experiments, training indiscriminately on model-generated content made the rarer parts of the original data disappear (Shumailov et al., 2024). A feedback loop also hides itself. The data a system produces look like evidence about the world, but they record where the system and its users looked. Maya's coordinator, reading next year's visit records, would see few visits from students the emails never reached and might conclude that they need less help, when the records show only who was told about the center. What to watch: monitor results group by group after launch, keep some decisions independent of the tool's past outputs, and record who was never offered the chance.
 
 ## Hands-on Labs {.unnumbered}
 
@@ -398,7 +398,7 @@ You met the audit in the Opening Case. This case asks how it worked, what it cou
 
 | Role | How bias and fairness show up | A question to ask |
 |---|---|---|
-| Human resources analyst or recruiter | Paired-input tests of screening tools; in an audit study of human hiring, otherwise similar résumés with names the researchers chose as typical of White applicants received 50% more callbacks than those with names typical of African American applicants (Bertrand & Mullainathan, 2004) | Did anyone test this tool with only the name changed? |
+| Human resources analyst or recruiter | Paired-input tests of screening tools; in an audit study of human hiring, otherwise similar resumes with names the researchers chose as typical of White applicants received 50% more callbacks than those with names typical of African American applicants (Bertrand & Mullainathan, 2004) | Did anyone test this tool with only the name changed? |
 | Data scientist or machine-learning engineer | Disaggregated evaluation; reporting results by group in model documentation (Mitchell et al., 2019) | Which subgroups are too small to measure, and what will we do about them? |
 | Nurse or clinical researcher | Measurement bias outside AI: pulse oximeters missed low oxygen levels more often in Black patients (Sjoding et al., 2020) | Was this device or score tested on patients like mine? |
 | Psychologist or behavioral researcher | Most published samples come from WEIRD societies (Henrich et al., 2010); a 2023 preprint reports that one large language model's answers to psychological measures resembled people from such societies most (Atari et al., 2023) | Whose answers is this tool's "typical person" built from? |
@@ -408,7 +408,7 @@ You met the audit in the Opening Case. This case asks how it worked, what it cou
 
 ## From the Field {.unnumbered}
 
-In 2014 I wrote an encyclopedia entry on equity theory and information systems (Şeker, 2014). Equity theory, introduced by the psychologist J. Stacy Adams (1963), holds that people compare what they receive from their work with what they put into it, and judge the balance against what their colleagues receive and put in. The entry notes that, in this view, being paid less than one deserves leads to anger and being paid more leads to guilt (citing Spector, 2008), and that the outcomes people weigh include recognition, reputation, praise and thanks, not only pay. How much each input or outcome matters differs from person to person.
+In 2014 I wrote an encyclopedia entry on equity theory and information systems (Seker, 2014). Equity theory, introduced by the psychologist J. Stacy Adams (1963), holds that people compare what they receive from their work with what they put into it, and judge the balance against what their colleagues receive and put in. The entry notes that, in this view, being paid less than one deserves leads to anger and being paid more leads to guilt (citing Spector, 2008), and that the outcomes people weigh include recognition, reputation, praise and thanks, not only pay. How much each input or outcome matters differs from person to person.
 
 The entry then follows the idea into information systems. Researchers used it to study why people copy software illegally, finding a sense of unfairness among the reasons (Glass & Wood, 1996). Joshi's (1991) equity-implementation model explains how users react to a new system: they weigh what they gain and lose from the change at three levels, their own gains and losses, themselves against the employer, and themselves against other users. Others applied it to user satisfaction with enterprise software (Hess & Hightower, 2002).
 
@@ -438,7 +438,7 @@ Final-exam practice. Items 6 and 10 are short answers.
 
 1. *(O1 · LO5 · Apply)* A hiring tool is trained on ten years of a company's hiring decisions. The gender field was removed. Where on the Bias Lifecycle could bias still enter first?\
    (a) Probably nowhere yet, since without a gender field the tool cannot easily tell groups apart.\
-   (b) Data: past decisions used as labels, and proxies in résumés, can carry the old pattern.\
+   (b) Data: past decisions used as labels, and proxies in resumes, can carry the old pattern.\
    (c) Mainly at use, when recruiters read the scores, rather than inside the tool itself.\
    (d) Mainly at feedback, once the tool's own decisions start to become new training data.
 2. *(O1 · LO5 · Understand)* An image tool shows nurses as women in nearly every image it produces. Which kind of harm is this?\
@@ -477,7 +477,7 @@ Final-exam practice. Items 6 and 10 are short answers.
    (b) The name only; run each version once, in a different tool, so tools are compared too.\
    (c) Everything except one cue, with the counting rule written before any run.\
    (d) The prompt, but let each teammate write a counting rule after seeing the outputs.
-10. *(O4 · LO5 · Understand; short answer)* In Wilson & Caliskan's (2024) résumé screen, what did the researchers change between versions, and what did they find for names associated with White Americans and with Black men?
+10. *(O4 · LO5 · Understand; short answer)* In Wilson & Caliskan's (2024) resume screen, what did the researchers change between versions, and what did they find for names associated with White Americans and with Black men?
 11. *(O5 · LO5 · Evaluate)* In 2024 Google paused its chatbot's images of people after tuning meant to show a range of people produced inaccurate images. What does this case best show?\
     (a) Bias mitigations do more harm than good, so tools should be left as they are trained.\
     (b) A fix can create a new error, so the system needs testing again after every fix.\
@@ -501,7 +501,7 @@ Final-exam practice.
 1. *(O3 · LO5 · Apply)* A scholarship office's screening tool gives these results (constructed). Group M: 300 applicants, 150 qualified; the tool flags 120, of whom 105 are qualified. Group N: 300 applicants, 60 qualified; the tool flags 60, of whom 42 are qualified. Compute each group's selection rate, miss rate, false-positive rate and precision. Which fairness definitions does the tool meet, and which does it fail?
 2. *(O4 · LO5 · Apply)* A museum wants an image generator to illustrate "scientists through history" for an exhibit. Design a paired-input test: the one cue you would change, the counting rule, the number of runs, and the gap that would count as a finding (use @fig-16-7).
 3. *(O2, O4 · LO3 · Evaluate)* A team tests a chat tool that drafts performance reviews. With only the employee's name changed and a fixed rule, "leadership" words appear in 18 of 30 drafts for names associated with men and in 12 of 30 for names associated with women (constructed). Is this a lead or a finding? What would you do next, and how would you include nonbinary employees?
-4. *(O1, O5 · LO5 · Evaluate)* A company removes names from résumés before an AI screen and declares its bias problem solved. What does the change fix, what may it miss, and which phases of the lifecycle still need a check?
+4. *(O1, O5 · LO5 · Evaluate)* A company removes names from resumes before an AI screen and declares its bias problem solved. What does the change fix, what may it miss, and which phases of the lifecycle still need a check?
 
 ### Review Questions C: Interpretive Questions {.unnumbered}
 
@@ -518,7 +518,7 @@ Final-exam practice. Come back to these a few days after reading, without lookin
 1. *(Chapter 14 · LO5 · Apply)* An agent screens applications and sends rejection emails on its own. Classify the "send rejection" action by whether it can be undone and who bears an error, and name the people point it needs.
 2. *(Chapter 14 · LO5 · Analyze)* What do a planted fault in a dry run and a paired-input test have in common?
 3. *(Chapter 12 · LO2 · Understand)* A fair bake-off changes only the tool. What does a paired-input test change, and what must stay the same?
-4. *(Chapter 12 · LO5 · Apply)* Before a bias probe, may real applicants' résumés with their names go into a free consumer tool? Use Chapter 12's data gate.
+4. *(Chapter 12 · LO5 · Apply)* Before a bias probe, may real applicants' resumes with their names go into a free consumer tool? Use Chapter 12's data gate.
 
 <!-- Spaced Review: Ch. 12 items checked against chapters/12-*.qmd (§12.5 data gate; §12.6 "changes only the tool"). Ch. 14 items follow the Ch. 14 blueprint vocabulary (approval gate, planted fault); recheck against the written Ch. 14 at revision. -->
 
@@ -536,7 +536,7 @@ This chapter's artifact is **A12** (section 15.7). This chapter adds two require
 
 ### Mini-Project (optional): A Bias Audit {.unnumbered}
 
-*(O1–O5 · LO5, LO3 · Create)* Over three weeks, audit one tool you use: about 3 hours in all (about 2 hours for the first round of 60 or more runs and the write-up, plus about 20 minutes for each re-run after an update). Submit: (1) the system, the decision it supports and the **tool kind** (for example, a chat assistant, an image generator, a résumé screen); (2) a lifecycle scan, one possible entry point per phase, each marked documented (with a source) or inferred; (3) the groups you compare, with at least one intersection or a reason why not; (4) a paired-input test with a counting rule fixed in advance, one named comparison and at least 30 runs per version, repeated after each update you notice, with dates; runs may be pooled with **contributors** (classmates who ran your exact prompt and rule in the same tool), named in your record; (5) counts with totals and the two-part rule, including the smallest gap your run count can detect; (6) which fairness comparison matters for this decision, and the trade-off you accept; (7) one mitigation with its kind, phase, what it might hide and a re-test; (8) who decides and answers for it; (9) an AI Use Declaration (tools, purpose, what you accepted, rejected or revised, how you verified it, where your judgment shaped the work). Cues about a language variety (a dialect, a writing style) usually change several things at once, so treat them with extra care. At 30 runs, a gap must reach 30 points, so "lead" is a normal result; "no gap found" (with the smallest detectable gap) and "this tool should not be used for this decision" are valid too. **A bias audit** is a structured test of whether a system's outputs or errors differ across groups, recorded with its method, counts and decisions.
+*(O1–O5 · LO5, LO3 · Create)* Over three weeks, audit one tool you use: about 3 hours in all (about 2 hours for the first round of 60 or more runs and the write-up, plus about 20 minutes for each re-run after an update). Submit: (1) the system, the decision it supports and the **tool kind** (for example, a chat assistant, an image generator, a resume screen); (2) a lifecycle scan, one possible entry point per phase, each marked documented (with a source) or inferred; (3) the groups you compare, with at least one intersection or a reason why not; (4) a paired-input test with a counting rule fixed in advance, one named comparison and at least 30 runs per version, repeated after each update you notice, with dates; runs may be pooled with **contributors** (classmates who ran your exact prompt and rule in the same tool), named in your record; (5) counts with totals and the two-part rule, including the smallest gap your run count can detect; (6) which fairness comparison matters for this decision, and the trade-off you accept; (7) one mitigation with its kind, phase, what it might hide and a re-test; (8) who decides and answers for it; (9) an AI Use Declaration (tools, purpose, what you accepted, rejected or revised, how you verified it, where your judgment shaped the work). Cues about a language variety (a dialect, a writing style) usually change several things at once, so treat them with extra care. At 30 runs, a gap must reach 30 points, so "lead" is a normal result; "no gap found" (with the smallest detectable gap) and "this tool should not be used for this decision" are valid too. **A bias audit** is a structured test of whether a system's outputs or errors differ across groups, recorded with its method, counts and decisions.
 
 **Alternative:** if you have no access to a tool, or prefer not to run prompts about identity, use the provided, dated outputs (60 per version) for one of three scenarios in the book's companion files, and write your counting rule before opening them. The rubric reads the same, except that Test design scores your counting rule and named comparison, and re-runs are not required.
 
@@ -581,7 +581,7 @@ Amazon. (2020, June 10). *We are implementing a one-year moratorium on police us
 
 Atari, M., Xue, M. J., Park, P. S., Blasi, D. E., & Henrich, J. (2023). *Which humans?* [Preprint]. PsyArXiv. https://doi.org/10.31234/osf.io/5b26t
 
-Adams, J. S. (1963). Towards an understanding of inequity. *Journal of Abnormal and Social Psychology, 67*(5), 422–436. https://doi.org/10.1037/h0040968 (Cited as reported in Şeker, 2014.)
+Adams, J. S. (1963). Towards an understanding of inequity. *Journal of Abnormal and Social Psychology, 67*(5), 422–436. https://doi.org/10.1037/h0040968 (Cited as reported in Seker, 2014.)
 
 Barocas, S., Guo, A., Kamar, E., Krones, J., Morris, M. R., Vaughan, J. W., Wadsworth, W. D., & Wallach, H. (2021). Designing disaggregated evaluations of AI systems: Choices, considerations, and tradeoffs. In *Proceedings of the 2021 AAAI/ACM Conference on AI, Ethics, and Society* (pp. 368–378). https://doi.org/10.1145/3461702.3462610
 
@@ -591,7 +591,7 @@ Bertrand, M., & Mullainathan, S. (2004). Are Emily and Greg more employable than
 
 Bianchi, F., Kalluri, P., Durmus, E., Ladhak, F., Cheng, M., Nozza, D., Hashimoto, T., Jurafsky, D., Zou, J., & Caliskan, A. (2023). Easily accessible text-to-image generation amplifies demographic stereotypes at large scale. In *Proceedings of the 2023 ACM Conference on Fairness, Accountability, and Transparency* (pp. 1493–1504). https://doi.org/10.1145/3593013.3594095
 
-Blodgett, S. L., Barocas, S., Daumé III, H., & Wallach, H. (2020). Language (technology) is power: A critical survey of "bias" in NLP. In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics* (pp. 5454–5476). https://doi.org/10.18653/v1/2020.acl-main.485
+Blodgett, S. L., Barocas, S., Daume III, H., & Wallach, H. (2020). Language (technology) is power: A critical survey of "bias" in NLP. In *Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics* (pp. 5454–5476). https://doi.org/10.18653/v1/2020.acl-main.485
 
 Buolamwini, J. (2023). *Unmasking AI: My mission to protect what is human in a world of machines*. Random House.
 
@@ -605,7 +605,7 @@ Dieterich, W., Mendoza, C., & Brennan, T. (2016, July 8). *COMPAS risk scales: D
 
 Ensign, D., Friedler, S. A., Neville, S., Scheidegger, C., & Venkatasubramanian, S. (2018). Runaway feedback loops in predictive policing. In *Proceedings of the 1st Conference on Fairness, Accountability and Transparency* (PMLR 81, pp. 160–171). https://proceedings.mlr.press/v81/ensign18a.html
 
-Glass, R. S., & Wood, W. A. (1996). Situational determinants of software piracy: An equity theory perspective. *Journal of Business Ethics, 15*(11), 1189–1198. (Cited as reported in Şeker, 2014.)
+Glass, R. S., & Wood, W. A. (1996). Situational determinants of software piracy: An equity theory perspective. *Journal of Business Ethics, 15*(11), 1189–1198. (Cited as reported in Seker, 2014.)
 
 Google. (2024, August 28). *New in Gemini: Custom Gems and improved image generation with Imagen 3*. https://blog.google/products/gemini/google-gemini-update-august-2024/
 
@@ -617,12 +617,12 @@ Hardt, M., Price, E., & Srebro, N. (2016). Equality of opportunity in supervised
 
 Henrich, J., Heine, S. J., & Norenzayan, A. (2010). The weirdest people in the world? *Behavioral and Brain Sciences, 33*(2–3), 61–83. https://doi.org/10.1017/S0140525X0999152X
 
-Hess, T., & Hightower, R. (2002). Using equity theory to understand user satisfaction with ERP systems: Extending and advancing the equity-implementation model. In *ICIS 2002 Proceedings* (Paper 72). (Cited as reported in Şeker, 2014.)
+Hess, T., & Hightower, R. (2002). Using equity theory to understand user satisfaction with ERP systems: Extending and advancing the equity-implementation model. In *ICIS 2002 Proceedings* (Paper 72). (Cited as reported in Seker, 2014.)
 
 
 IBM. (2020, June 8). *IBM CEO's letter to Congress on racial justice reform*. IBM THINKPolicy Blog. https://web.archive.org/web/20220423104723/https://www.ibm.com/blogs/policy/facial-recognition-sunset-racial-justice-reforms/
 
-Joshi, K. (1991). A model of users' perspective on change: The case of information systems technology implementation. *MIS Quarterly, 15*(2), 229–242. (Cited as reported in Şeker, 2014.)
+Joshi, K. (1991). A model of users' perspective on change: The case of information systems technology implementation. *MIS Quarterly, 15*(2), 229–242. (Cited as reported in Seker, 2014.)
 
 Kleinberg, J., Mullainathan, S., & Raghavan, M. (2017). Inherent trade-offs in the fair determination of risk scores. In *8th Innovations in Theoretical Computer Science Conference* (LIPIcs 67, pp. 43:1–43:23). https://doi.org/10.4230/LIPIcs.ITCS.2017.43
 
@@ -643,7 +643,7 @@ Raji, I. D., & Buolamwini, J. (2019). Actionable auditing: Investigating the imp
 
 Reuters. (2021, May 18). *Amazon extends moratorium on police use of facial recognition software*. (Read via syndicated copies, Fox Business and Rappler, 2026-10-18.)
 
-Şeker, Ş. E. (2014). Bilişim sistemleri ve eşitlik teorisi (equity theory) [Information systems and equity theory]. *YBS Ansiklopedi, 1*(2), 17–19.
+Seker, S. E. (2014). Bilisim sistemleri ve esitlik teorisi (equity theory) [Information systems and equity theory]. *YBS Ansiklopedi, 1*(2), 17–19.
 
 Selbst, A. D., boyd, d., Friedler, S. A., Venkatasubramanian, S., & Vertesi, J. (2019). Fairness and abstraction in sociotechnical systems. In *Proceedings of the Conference on Fairness, Accountability, and Transparency* (pp. 59–68). https://doi.org/10.1145/3287560.3287598
 
@@ -651,7 +651,7 @@ Shumailov, I., Shumaylov, Z., Zhao, Y., Papernot, N., Anderson, R., & Gal, Y. (2
 
 Sjoding, M. W., Dickson, R. P., Iwashyna, T. J., Gay, S. E., & Valley, T. S. (2020). Racial bias in pulse oximetry measurement. *New England Journal of Medicine, 383*(25), 2477–2478. https://doi.org/10.1056/NEJMc2029240
 
-Spector, P. E. (2008). *Industrial and organizational psychology: Research and practice* (5th ed.). Wiley. (Cited as reported in Şeker, 2014.)
+Spector, P. E. (2008). *Industrial and organizational psychology: Research and practice* (5th ed.). Wiley. (Cited as reported in Seker, 2014.)
 
 Suresh, H., & Guttag, J. (2021). A framework for understanding sources of harm throughout the machine learning life cycle. In *Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO '21)* (pp. 1–9). https://doi.org/10.1145/3465416.3483305
 

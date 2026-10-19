@@ -12,6 +12,7 @@ Usage (from the repo root):  python3 tools/build_glossary.py [--report]
 
 Rerun after merging new chapter handoffs into docs/glossary.md. Never edit a-glossary.qmd by hand.
 """
+INCLUDE_TURKISH_INDEX = False
 import glob
 import re
 import sys
@@ -204,8 +205,7 @@ def main():
         "Each entry gives the book's definition, word for word as it appears where the term is "
         "defined, and the chapter that defines it (\"also\" marks other chapters that list the term "
         "among their Key Terms). Labels in parentheses, such as *(of a model)* or *(Deep)*, "
-        "separate different senses of a word or mark a term from an optional Deep section. "
-        "A Turkish equivalents index follows the English entries.",
+        "separate different senses of a word or mark a term from an optional Deep section.",
         "",
     ]
     letter = None
@@ -216,7 +216,10 @@ def main():
             out += [f"## {letter} {{.unnumbered .unlisted}}", ""]
         out += [f"**{t}** · {ch_label(chapters[t])}", f":   {d}", ""]
 
-    out += [
+    # The book is ASCII-only (author's rule, 2026-10-19); the Turkish index is kept for a
+    # future Turkish edition and is off for this one.
+    if INCLUDE_TURKISH_INDEX:
+      out += [
         "## Turkish Equivalents Index {#sec-appendix-a-turkish .unnumbered}",
         "",
         "*Türkçe karşılıklar dizini.* Each Turkish equivalent points to the English term above, "
@@ -225,7 +228,7 @@ def main():
         "| Türkçe | English term |",
         "|------------------|------------------|",
     ]
-    for tr in sorted(tr_map, key=tr_key):
+      for tr in sorted(tr_map, key=tr_key):
         out.append(f"| {tr} | {'; '.join(sorted(tr_map[tr], key=en_key))} |")
     out.append("")
     open(OUT, "w", encoding="utf8").write("\n".join(out))

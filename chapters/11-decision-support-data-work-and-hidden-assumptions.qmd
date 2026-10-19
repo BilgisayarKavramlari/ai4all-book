@@ -69,12 +69,12 @@ The role tells you where the checks go. If an output only informs, the owner's j
 
 **One privacy rule.** Never give a public AI tool personal or confidential data: other people's names, grades, health or pay. If you analyze your own data, use a tool your institution provides or approves (for example, an enterprise chat assistant with data protection). Chapter 15 explains why.
 
-::: {.callout-note title="Worked Example: Lucía Sorts a Reply"}
-*Featuring Lucía (accounting), who is saving to sit for the CPA (Certified Public Accountant) exam.* *(Constructed example.)*
+::: {.callout-note title="Worked Example: Lucia Sorts a Reply"}
+*Featuring Lucia (accounting), who is saving to sit for the CPA (Certified Public Accountant) exam.* *(Constructed example.)*
 
-Lucía is the treasurer (she keeps the accounts) of the accounting students' association. The board must choose which of last year's fundraisers to repeat: a bake sale, a book swap or a car wash. Volunteers are scarce, so the question is which raised the most per volunteer hour. She gives a chat tool that can run code the association's shift log, which holds no personal data, and asks, "Which fundraiser should we repeat?"
+Lucia is the treasurer (she keeps the accounts) of the accounting students' association. The board must choose which of last year's fundraisers to repeat: a bake sale, a book swap or a car wash. Volunteers are scarce, so the question is which raised the most per volunteer hour. She gives a chat tool that can run code the association's shift log, which holds no personal data, and asks, "Which fundraiser should we repeat?"
 
-She sorts the reply into three parts. **Information:** per-event totals of proceeds (money raised, after costs) and hours. **Recommendation:** "Repeat the book swap; it raised $24.22 per volunteer hour." **Decision:** not in the reply. It belongs to the board's vote. The owner is the board; Lucía is responsible for what she tells it.
+She sorts the reply into three parts. **Information:** per-event totals of proceeds (money raised, after costs) and hours. **Recommendation:** "Repeat the book swap; it raised $24.22 per volunteer hour." **Decision:** not in the reply. It belongs to the board's vote. The owner is the board; Lucia is responsible for what she tells it.
 :::
 
 ::: {.callout-note title="Faded Example: A Maintenance Score"}
@@ -101,7 +101,7 @@ Name one decision in your week where an AI output played a part. Did it inform, 
 
 [Core]{.path}
 
-Before you read on, make a prediction. Lucía's log has 18 shifts, six per event. Two of them have no volunteer hours recorded. Can two blank cells change which event looks best? Write your guess down.
+Before you read on, make a prediction. Lucia's log has 18 shifts, six per event. Two of them have no volunteer hours recorded. Can two blank cells change which event looks best? Write your guess down.
 
 A **hidden assumption** is a choice built into data or an analysis that can change the result but is not stated. Blank cells are the most common place to find one. A **missing value** is an empty cell or field where a value should be. It is not nothing: every way of handling it is an assumption about why it is missing.
 
@@ -124,7 +124,7 @@ A **hidden assumption** is a choice built into data or an analysis that can chan
 
 All five shortcuts agreed, and all five were wrong: every fill put in fewer hours than the true 14 and 13, and deletion left out the two slowest shifts. Agreement among methods is not evidence that they are right.
 
-A simulation of 1,000 constructed logs shows how general this is (@fig-11-6). As in Lucía's log, long shifts earned less per hour; if they had not, deleting them would have mattered far less. With blanks at random across all events, blank as zero picked the truly best event in about half of the logs and deletion in about 92%. With blanks on the long shifts of one event, every choice did worse: blank as zero about a third, deletion 87%, the fills 61% to 73%. No choice was always right, and in Lucía's own log even deletion picked the wrong event.
+A simulation of 1,000 constructed logs shows how general this is (@fig-11-6). As in Lucia's log, long shifts earned less per hour; if they had not, deleting them would have mattered far less. With blanks at random across all events, blank as zero picked the truly best event in about half of the logs and deletion in about 92%. With blanks on the long shifts of one event, every choice did worse: blank as zero about a third, deletion 87%, the fills 61% to 73%. No choice was always right, and in Lucia's own log even deletion picked the wrong event.
 
 ![In 1,000 simulated logs, every shortcut did worse when the blanks were the long shifts of one event.](../figures/out/color/f11-06-missing-sim.svg){#fig-11-6 fig-alt="Paired bars for five choices: share of simulated logs that picked the best event, lower for every choice when blanks were one event's long shifts."}
 
@@ -135,8 +135,8 @@ A simulation of 1,000 constructed logs shows how general this is (@fig-11-6). As
 3. **Get the real value if you can:** the volunteers, the sign-in sheet, the missing interview. A real value beats any estimate.
 4. **Only then compare defensible choices,** and say whether the decision changes. If it does, the data cannot settle it yet.
 
-::: {.callout-note title="Worked Example: Lucía's Two Blanks"}
-*(Constructed data.)* The tool recommended the book swap at $24.22 per hour. Lucía follows the rule.
+::: {.callout-note title="Worked Example: Lucia's Two Blanks"}
+*(Constructed data.)* The tool recommended the book swap at $24.22 per hour. Lucia follows the rule.
 
 **Count:** both blanks are book-swap shifts; the other events have none. **Why:** a volunteer says the two longest shifts ran into the evening, when few people came, and the people who stayed to the end left without logging. **Real value:** the paper sign-in sheets in the association's binder, where volunteers wrote start and end times, show 14 and 13 hours. **Recompute:** $1,059 over 54 hours is $19.61 per hour, below the car wash's $22.50. **Compare:** with the real hours, no fill is needed. The recommendation reverses.
 :::
@@ -196,7 +196,7 @@ The third question matters most, and accuracy checks miss it. Chapter 16 places 
 :::
 
 ::: {.callout-note title="Faded Example: Tickets Closed per Hour"}
-*(Business; constructed example.)* Lucía's support team ranks agents by tickets closed per hour, to reward helpful agents. Some agents take the long, hard tickets that others pass on.
+*(Business; constructed example.)* Lucia's support team ranks agents by tickets closed per hour, to reward helpful agents. Some agents take the long, hard tickets that others pass on.
 
 **What do we mean?** Agents who solve customers' problems well. **What do we measure?** _______. **For whom is the gap bigger?** _______.
 :::
@@ -223,7 +223,7 @@ Chapter 8's **Verification Funnel** is the book's diagram of three checks a clai
 
 ![Checking an AI analysis starts with your own recalculation.](../figures/out/color/f11-11-funnel-analysis.svg){#fig-11-11 fig-alt="The Verification Funnel with the independent check stage highlighted; note: recalculate from the raw data; read the formula or code."}
 
-An analysis can get every sum right and still be wrong. In Lucía's case the arithmetic was correct; the dropped rows were the problem. So look beyond the arithmetic, in six places where a hidden choice can change the answer (@fig-11-12):
+An analysis can get every sum right and still be wrong. In Lucia's case the arithmetic was correct; the dropped rows were the problem. So look beyond the arithmetic, in six places where a hidden choice can change the answer (@fig-11-12):
 
 1. **Rows in, rows out.** How many records went in, and how many were used? Dropped rows are a decision.
 2. **Blanks and impossible values.** How were blanks handled (section 11.2)? Any values that cannot be true, such as a 30-hour shift?
@@ -242,7 +242,7 @@ An analysis can get every sum right and still be wrong. In Lucía's case the ari
 
 Each number you check gets a **verdict** on Chapter 8's five-point scale: supported, partly supported, unsupported, contradicted, cannot verify. The analysis as a whole gets a line of **remaining uncertainty**: what you could not check, and why.
 
-::: {.callout-note title="Worked Example: Lucía Audits the Tool's Answer"}
+::: {.callout-note title="Worked Example: Lucia Audits the Tool's Answer"}
 *(Constructed example.)* **1. Rows:** the file had 18 shifts; the tool's code used 16. The two blanks were dropped without a note. **2. Blanks:** both in the book swap (section 11.2). **3. Units:** proceeds are net of costs in every row. **4. Time:** all from last academic year; the same events are planned. **5. Groups:** the comparison is already by event. **6. Code:** she asks for it and finds the line that drops incomplete rows.
 
 **Verdicts:** "Car wash: $22.50 per hour" — supported (recalculated). "Book swap: $24.22 per hour" — contradicted by the sign-in sheets ($19.61). "Repeat the book swap" — contradicted. **Remaining uncertainty:** one year of data, and the weather on the car wash days.
@@ -311,7 +311,7 @@ A **decision matrix** is a table that lists options against the criteria they ar
 
 So the matrix does not say "hire E." It says that B and E are strong under every reasonable weighting, that the order among the top three is **too close to call** (too close to pick a winner), and that C cannot be judged until interviewed. An AI-drafted matrix that adds raw hours or prices without reversing them has a formula error (check 6, section 11.4).
 
-**Rules for a matrix you can defend:** write the criteria before you score the options; let each criterion measure one thing; fix the scale ends in advance; mark blanks and get the missing values where you can; run a sensitivity check; report the margin and the shortlist; and record the reason for the final choice, which may differ from the top score. Chapter 16 looks at criteria that track a protected group and at evidence on AI résumé screening; Chapter 18 covers hiring law.
+**Rules for a matrix you can defend:** write the criteria before you score the options; let each criterion measure one thing; fix the scale ends in advance; mark blanks and get the missing values where you can; run a sensitivity check; report the margin and the shortlist; and record the reason for the final choice, which may differ from the top score. Chapter 16 looks at criteria that track a protected group and at evidence on AI resume screening; Chapter 18 covers hiring law.
 
 ::: {.callout-note title="Faded Example: A Gallery's Grant Shortlist"}
 *(Arts.)* A community gallery scores grant applications on four criteria: artistic quality (rated 0–10 by one juror; weight 40%), community reach (expected visitors, scale 0–500; 30%), budget realism (1–5; 20%) and exhibition history (number of past shows, scale 0–10; 10%). Application P: quality 8, reach 300 visitors, budget 4, history 2 shows.
@@ -353,8 +353,8 @@ Two limits matter. Doctors saw only patients the score had already referred, so 
 
 **Design a review step.** A review step says who reviews, what they see first, what counts as a reason to disagree, and where a disagreement is recorded. In the aviation and laboratory studies Goddard et al. (2012) review, making people accountable for their decisions reduced over-reliance. Two further habits are this book's suggestions, consistent with that evidence: **form your own estimate before you see the AI's answer**, so you have something to disagree with; and **record every override** (each time you decide against the AI's output) and its reason, so disagreement is normal and can be learned from.
 
-::: {.callout-note title="Worked Example: Lucía at the Board Meeting"}
-*(Constructed example.)* Lucía presents the analysis with one line of disclosure (Chapter 10): "A chat tool ran the first analysis; I checked every number against the sign-in sheets." She shows the reversal: car wash first once the real hours are in.
+::: {.callout-note title="Worked Example: Lucia at the Board Meeting"}
+*(Constructed example.)* Lucia presents the analysis with one line of disclosure (Chapter 10): "A chat tool ran the first analysis; I checked every number against the sign-in sheets." She shows the reversal: car wash first once the real hours are in.
 
 **The board's review step:** (1) The treasurer counts the sign-in sheets before any vote. (2) Board members write their own ranking before seeing the tool's. (3) Any member can call for a recount, and the reason goes in the **minutes**, the official record of the meeting. The board votes for the car wash, and the minutes record why.
 :::
@@ -410,7 +410,7 @@ Statisticians distinguish three reasons values go missing (Rubin, 1976; Sterne e
 
 ![Why a value is missing decides which fix is safe.](../figures/out/color/f11-22-mechanisms.svg){#fig-11-22 fig-alt="Three rows: MCAR, MAR and MNAR, each with an example from the event log and what it means for fixing the data."}
 
-The names explain the chapter's demonstration. Under MCAR, deleting incomplete rows loses information but does not tilt the answer. Under MAR, a fill that uses the known pattern can work. Lucía's spreadsheet is MNAR: the blanks depend on the hours themselves, and the spreadsheet has no column (such as an end time) that could predict them. Even a fill based on time of day would fail there, because every late shift is blank, so no logged shift shows what a late shift is like. The simulation's two conditions roughly correspond to the first and third cases.
+The names explain the chapter's demonstration. Under MCAR, deleting incomplete rows loses information but does not tilt the answer. Under MAR, a fill that uses the known pattern can work. Lucia's spreadsheet is MNAR: the blanks depend on the hours themselves, and the spreadsheet has no column (such as an end time) that could predict them. Even a fill based on time of day would fail there, because every late shift is blank, so no logged shift shows what a late shift is like. The simulation's two conditions roughly correspond to the first and third cases.
 
 **Multiple imputation** is a widely used method when values are missing at random, provided the model includes what predicts the missingness. It fills each blank several times with plausible values drawn from a model of the data, analyzes each completed dataset separately, and pools the results so that the final answer carries the extra uncertainty that the blanks create. A widely cited guide for medical researchers describes its potential and its pitfalls, including the need to think about why data are missing before using it (Sterne et al., 2009). When data may be MNAR, analysts run a **sensitivity analysis**: they assume the missing values were somewhat higher or lower than the fill and check whether the conclusion survives. No method recovers values that are missing for reasons the data cannot see. If you want to try this yourself, Lab 11.4 runs the chapter's own code in a browser notebook.
 
@@ -454,7 +454,7 @@ These labs are tool-neutral: they describe what to do, not which buttons to pres
 3. When you find the error, recalculate the affected number and give each claim in the analysis a verdict.
 4. Write the corrected sentence. Compare with the key (in Compass, optional).
 
-This works like section 11.4's worked example (Lucía audits the tool's answer), with a different file.
+This works like section 11.4's worked example (Lucia audits the tool's answer), with a different file.
 
 ### Lab 11.3: Proxy Hunt (Check It · 20 minutes · optional) {.unnumbered}
 
@@ -517,7 +517,7 @@ The **Failure Taxonomy Tree** is the book's diagram that sorts AI failures into 
 
 Decision support is daily work in many jobs.
 
-- **Accountants and auditors** recalculate the figures an analysis rests on before anyone relies on them. Lucía's habit of checking against the source document is the core of the job.
+- **Accountants and auditors** recalculate the figures an analysis rests on before anyone relies on them. Lucia's habit of checking against the source document is the core of the job.
 - **Recruiters and HR analysts** build shortlists. Structured criteria and interviews improve them (Sackett et al., 2022); auditing every criterion for proxies is part of the work (Chapters 16 and 18).
 - **Health-care analysts and care managers** use risk scores and set thresholds, and decide what a score may trigger without review.
 - **Operations and supply-chain analysts** compare suppliers in matrices of price, quality, delivery and risk, where a sensitivity check shows whether a choice is robust.
@@ -529,7 +529,7 @@ Decision support is daily work in many jobs.
 
 <!-- Based on the author's co-authored encyclopedia entry (Şeker & Eşmekaya, 2017; YBS Ansiklopedi 4(3), 10–17, per the fact-check), translated and paraphrased from Turkish, within the facts of that entry; present-day connections are marked as such. Not commercial: no D16 disclosure. First-person voice to be checked by the author (Author-only item 2). -->
 
-In 2017, with my co-author Eda Eşmekaya, I wrote an encyclopedia entry on filling in missing data, a problem that data-mining projects meet whenever values are missing (Şeker & Eşmekaya, 2017). The Turkish word we used for imputation, *töhmet*, means in the dictionary to attribute to something what is not there. That is exactly what imputation does: it puts a value where none was recorded.
+In 2017, with my co-author Eda Esmekaya, I wrote an encyclopedia entry on filling in missing data, a problem that data-mining projects meet whenever values are missing (Seker & Esmekaya, 2017). The Turkish word we used for imputation, *tohmet*, means in the dictionary to attribute to something what is not there. That is exactly what imputation does: it puts a value where none was recorded.
 
 The entry started from where blanks come from: data read incorrectly, data damaged at the source, or data that are hard to reach. Blanks cause trouble for most ready-made statistics packages, and the right method depends on the situation and on what you expect from the data. We listed nine and worked through the main ones with small tables. Deleting every incomplete row can throw away useful information; in some columns, the share of missing values can reach 90%. Deleting only the rows a particular calculation needs keeps more data, but every calculation then runs on a different set of rows, which makes results hard to compare. Filling a blank with the average works only for numbers, not for categories, and becomes unreliable when much is missing. Filling from a fitted line needs at least two numeric fields; our example estimated a person's weight from their height. Copying the previous row's value can duplicate an unusual value. Multiple imputation fills each blank several times, analyzes each version and pools the results. Machine-learning methods, such as using a record's nearest neighbors, can also fill blanks.
 
@@ -629,7 +629,7 @@ automated decision · automation bias · commission error · criterion (in a dec
 
 Come back to these a few days after reading, without looking back. The first two connect this chapter to Chapters 10 and 9, the two chapters just before it; the last two are bridge items that reach further back.
 
-1. *(Chapter 10 · LO4 · Apply)* Lucía tells the board that a chat tool ran the first analysis. What should a one-line disclosure say, and what does disclosure not fix?
+1. *(Chapter 10 · LO4 · Apply)* Lucia tells the board that a chat tool ran the first analysis. What should a one-line disclosure say, and what does disclosure not fix?
 2. *(Chapter 9 · LO3 · Analyze)* A company publishes its sales dataset; a news site turns it into a chart; an encyclopedia article quotes the chart. Which is the primary, secondary and tertiary source for the sales numbers, and which would you check a number against?
 3. *(Bridge: Chapter 8 · LO3 · Apply)* For the "average of 240 orders" output in section 11.4, why is "cannot verify" a better verdict than "partly supported" until you know which rows were used?
 4. *(Bridge: Chapter 2 · LO1 · Analyze)* Chapter 2 distinguished noisy labels from biased labels. Was the cost label in the Opening Case noisy, biased, or neither? Explain why this chapter calls it a proxy label instead.
@@ -711,7 +711,7 @@ Dawes, R. M. (1979). The robust beauty of improper linear models in decision mak
 
 Dell'Acqua, F., McFowland, E., III, Mollick, E., Lifshitz, H., Kellogg, K. C., Rajendran, S., Krayer, L., Candelon, F., & Lakhani, K. R. (2026). Navigating the jagged technological frontier: Field experimental evidence of the effects of artificial intelligence on knowledge worker productivity and quality. *Organization Science, 37*(2), 403–423. https://doi.org/10.1287/orsc.2025.21838
 
-Dratsch, T., Chen, X., Rezazade Mehrizi, M., Kloeckner, R., Mähringer-Kunz, A., Püsken, M., Baeßler, B., Sauer, S., Maintz, D., & Pinto dos Santos, D. (2023). Automation bias in mammography: The impact of artificial intelligence BI-RADS suggestions on reader performance. *Radiology, 307*(4), e222176. https://doi.org/10.1148/radiol.222176
+Dratsch, T., Chen, X., Rezazade Mehrizi, M., Kloeckner, R., Mahringer-Kunz, A., Pusken, M., Baessler, B., Sauer, S., Maintz, D., & Pinto dos Santos, D. (2023). Automation bias in mammography: The impact of artificial intelligence BI-RADS suggestions on reader performance. *Radiology, 307*(4), e222176. https://doi.org/10.1148/radiol.222176
 
 Goddard, K., Roudsari, A., & Wyatt, J. C. (2012). Automation bias: A systematic review of frequency, effect mediators, and mitigators. *Journal of the American Medical Informatics Association, 19*(1), 121–127. https://doi.org/10.1136/amiajnl-2011-000089
 
@@ -745,9 +745,9 @@ Rubin, D. B. (1976). Inference and missing data. *Biometrika, 63*(3), 581–592.
 
 Sackett, P. R., Zhang, C., Berry, C. M., & Lievens, F. (2022). Revisiting meta-analytic estimates of validity in personnel selection: Addressing systematic overcorrection for restriction of range. *Journal of Applied Psychology, 107*(11), 2040–2068. https://doi.org/10.1037/apl0000994
 
-Şeker, Ş. E., & Eşmekaya, E. (2017). Eksik verilerin tamamlanması (Imputation) [Imputation of missing data]. *YBS Ansiklopedi, 4*(3), 10–17. https://ybsansiklopedi.com/wp-content/uploads/2017/08/imputation_tohmet.pdf
+Seker, S. E., & Esmekaya, E. (2017). Eksik verilerin tamamlanmasi (Imputation) [Imputation of missing data]. *YBS Ansiklopedi, 4*(3), 10–17. https://ybsansiklopedi.com/wp-content/uploads/2017/08/imputation_tohmet.pdf
 
-Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahník, Š., Bai, F., Bannard, C., Bonnier, E., Carlsson, R., Cheung, F., Christensen, G., Clay, R., Craig, M. A., Dalla Rosa, A., Dam, L., Evans, M. H., Flores Cervantes, I., … Nosek, B. A. (2018). Many analysts, one data set: Making transparent how variations in analytic choices affect results. *Advances in Methods and Practices in Psychological Science, 1*(3), 337–356. https://doi.org/10.1177/2515245917747646
+Silberzahn, R., Uhlmann, E. L., Martin, D. P., Anselmi, P., Aust, F., Awtrey, E., Bahnik, S., Bai, F., Bannard, C., Bonnier, E., Carlsson, R., Cheung, F., Christensen, G., Clay, R., Craig, M. A., Dalla Rosa, A., Dam, L., Evans, M. H., Flores Cervantes, I., … Nosek, B. A. (2018). Many analysts, one data set: Making transparent how variations in analytic choices affect results. *Advances in Methods and Practices in Psychological Science, 1*(3), 337–356. https://doi.org/10.1177/2515245917747646
 
 Skitka, L. J., Mosier, K. L., & Burdick, M. (1999). Does automation bias decision-making? *International Journal of Human-Computer Studies, 51*(5), 991–1006. https://doi.org/10.1006/ijhc.1999.0252
 

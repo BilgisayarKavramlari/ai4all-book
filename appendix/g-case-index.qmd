@@ -35,9 +35,9 @@ This index lists the 31 documented cases the book analyzes: by chapter, by field
 | ID | Title | Year | Chapter(s) | Field | Failure label | Outcome |
 |----|------------------|-----|-----|----------|----------------------------|--------|
 | C01 | Generative AI at Work: customer-support productivity (Brynjolfsson Li & Raymond) | 2025 | 1 | business | none (productivity study; uneven gains) | positive |
-| C04 | Bastani et al.: GPT-4 tutors and learning in a high school in Türkiye | 2025 | 1, 7 | education | hallucination (wrong calculation: mostly flawed solution logic, some arithmetic; documented); overreliance (use failure, failure-to-harm chain, documented) | mixed |
+| C04 | Bastani et al.: GPT-4 tutors and learning in a high school in Turkey | 2025 | 1, 7 | education | hallucination (wrong calculation: mostly flawed solution logic, some arithmetic; documented); overreliance (use failure, failure-to-harm chain, documented) | mixed |
 | C09 | Dell'Acqua et al.: BCG consultants and the jagged technological frontier (one tool; 18 tasks inside and one outside; the overview group was correct least often; quality rated higher for wrong answers) | 2023 | 1, 11, 12 | consulting | hallucination, leaf contradicts its input or source, or wrong calculation or reasoning (inferred: outputs not reported); chain links 2-3 overreliance (documented by the authors' statement; automation bias, Ch. 11) | mixed |
-| C02 | Amazon recruiting tool penalizes résumés mentioning women | 2018 | 2, 16 | business/HR | bias (under-represented group; proxy features; possibly biased labels) | negative |
+| C02 | Amazon recruiting tool penalizes resumes mentioning women | 2018 | 2, 16 | business/HR | bias (under-represented group; proxy features; possibly biased labels) | negative |
 | C16 | The reversal curse: models trained on "A is B" fail on "B is A" (Berglund et al.) | 2024 | 3 | AI research/general knowledge | hallucination (inferred; reverse-direction failures) | research finding (no harm) |
 | C03 | Moffatt v. Air Canada: airline liable for its chatbot's wrong bereavement-fare answer | 2024 | 4, 10, 18 | customer service/law | hallucination (inferred: the record does not describe the chatbot's technology); chain link 2 no accuracy check (documented, para. 28) | negative |
 | C18 | Klarna AI customer-service assistant: by the company's own measures | 2024–2025 | 5 | business/customer service | none on the tree; workflow: no human check before each answer (failure-to-harm chain, inferred) | mixed |
@@ -63,7 +63,7 @@ This index lists the 31 documented cases the book analyzes: by chapter, by field
 | C28 | Tutor CoPilot: tutor-facing AI suggestions in a randomized trial (Wang et al.) | 2024–2025 | 19 | education (tutoring) | none on the tree (positive trial); the tutor is the gate (design) | positive |
 | C29 | Your experience your first draft: employers' rules for applicants' AI use (Anthropic's stage-by-stage candidate guidance; Amazon and Goldman Sachs interview rules as reported) | 2025 | 20 | business/human resources | none on the tree (policy case; no AI output was wrong); no failure-to-harm chain | mixed (rules; no outcome data) |
 | C21 | ACM Code of Ethics and Professional Conduct (2018 update): what a profession's code can and cannot do | 2018 | 21 | computing/professional ethics | none on the tree (governance document; no AI output); no chain link | governance (code revised; current as of October 2026) |
-| C31 | AI at the International Mathematical Olympiad: two 35/42 results under different grading (IMO coordinators vs. three former medalists in OpenAI's own evaluation), Lean-checked proofs with developer-reported scores (Seed Prover 30/42, said IMO-confirmed; Aristotle), and 2026 perfect-score claims | 2025–2026 | 22 | mathematics/AI evaluation | none on the tree (no output shown wrong; evidence-status case); Short 1 (Erdős post, Oct 2025): chain link 2 checked before use? failed (documented in the maintainer's reply, as reported) | mixed |
+| C31 | AI at the International Mathematical Olympiad: two 35/42 results under different grading (IMO coordinators vs. three former medalists in OpenAI's own evaluation), Lean-checked proofs with developer-reported scores (Seed Prover 30/42, said IMO-confirmed; Aristotle), and 2026 perfect-score claims | 2025–2026 | 22 | mathematics/AI evaluation | none on the tree (no output shown wrong; evidence-status case); Short 1 (Erdos post, Oct 2025): chain link 2 checked before use? failed (documented in the maintainer's reply, as reported) | mixed |
 | C30 | Three texts on machine understanding: Turing 1950, Searle 1980, Bender et al. 2021, with Jones & Bergen 2026 (persona-prompted models pass a three-party Turing test, by the authors' account) | 1950–2026 | 23 | philosophy/AI research | none on the tree (debate case; no output wrong) | research debate (unresolved) |
 
 ## Cases by Field {#sec-appendix-g-field .unnumbered}
@@ -73,7 +73,7 @@ This index lists the 31 documented cases the book analyzes: by chapter, by field
 | AI research/general knowledge | C16 | The reversal curse: models trained on "A is B" fail on "B is A" (Berglund et al.) | 2024 | 3 | research finding (no harm) |
 | arts and humanities (epigraphy) | C22 | Ithaca: experts with a model's ranked suggestions restore ancient Greek inscriptions better than either alone (Assael et al.) | 2022 | 19 | positive |
 | business | C01 | Generative AI at Work: customer-support productivity (Brynjolfsson Li & Raymond) | 2025 | 1 | positive |
-| business/HR | C02 | Amazon recruiting tool penalizes résumés mentioning women | 2018 | 2, 16 | negative |
+| business/HR | C02 | Amazon recruiting tool penalizes resumes mentioning women | 2018 | 2, 16 | negative |
 | business/customer service | C18 | Klarna AI customer-service assistant: by the company's own measures | 2024–2025 | 5 | mixed |
 | business (real estate forecasting) | C23 | Zillow Offers winds down after it cannot forecast home prices ($304M Q3 write-down) | 2021 | 19 | negative |
 | business/human resources | C29 | Your experience your first draft: employers' rules for applicants' AI use (Anthropic's stage-by-stage candidate guidance; Amazon and Goldman Sachs interview rules as reported) | 2025 | 20 | mixed (rules; no outcome data) |
@@ -83,7 +83,7 @@ This index lists the 31 documented cases the book analyzes: by chapter, by field
 | consulting | C09 | Dell'Acqua et al.: BCG consultants and the jagged technological frontier (one tool; 18 tasks inside and one outside; the overview group was correct least often; quality rated higher for wrong answers) | 2023 | 1, 11, 12 | mixed |
 | consumer apps/privacy | C20 | ChatGPT shared chats made findable by search engines (opt-in option removed July 31, 2025) | 2025 | 15 | negative |
 | customer service/law | C03 | Moffatt v. Air Canada: airline liable for its chatbot's wrong bereavement-fare answer | 2024 | 4, 10, 18 | negative |
-| education | C04 | Bastani et al.: GPT-4 tutors and learning in a high school in Türkiye | 2025 | 1, 7 | mixed |
+| education | C04 | Bastani et al.: GPT-4 tutors and learning in a high school in Turkey | 2025 | 1, 7 | mixed |
 | education/institutional communication | C07 | Vanderbilt Peabody message after the Michigan State shooting drafted with ChatGPT | 2023 | 10 | negative |
 | education (tutoring) | C28 | Tutor CoPilot: tutor-facing AI suggestions in a randomized trial (Wang et al.) | 2024–2025 | 19 | positive |
 | engineering/corporate | C12 | Samsung engineers paste source code and a meeting transcript into a chat tool (three cases in 20 days; data could not be retrieved; generative AI restricted on company devices, confirmed by a spokesperson) | 2023 | 15 | negative |
@@ -109,14 +109,14 @@ A case appears once for each branch its label names; "Not on the tree" collects 
 | Failure type | ID | Title | Year | Chapter(s) | Outcome |
 |----------|----|-----------------------------|-----|-----|----------|
 | Hallucination | C03 | Moffatt v. Air Canada: airline liable for its chatbot's wrong bereavement-fare answer | 2024 | 4, 10, 18 | negative |
-| Hallucination | C04 | Bastani et al.: GPT-4 tutors and learning in a high school in Türkiye | 2025 | 1, 7 | mixed |
+| Hallucination | C04 | Bastani et al.: GPT-4 tutors and learning in a high school in Turkey | 2025 | 1, 7 | mixed |
 | Hallucination | C05 | Mata v. Avianca: fabricated case citations in a court filing | 2023 | 8, 10, 18 | negative |
 | Hallucination | C06 | Deloitte Australia's report for the Department of Employment and Workplace Relations: incorrect references; corrected; final installment of the fee repaid | 2025 | 9, 10 | negative |
 | Hallucination | C07 | Vanderbilt Peabody message after the Michigan State shooting drafted with ChatGPT | 2023 | 10 | negative |
 | Hallucination | C09 | Dell'Acqua et al.: BCG consultants and the jagged technological frontier (one tool; 18 tasks inside and one outside; the overview group was correct least often; quality rated higher for wrong answers) | 2023 | 1, 11, 12 | mixed |
 | Hallucination | C11 | Replit agent deletes a production database during a code freeze (freeze was an instruction; agent could reach production data; restore point limited the harm) | 2025 | 14 | negative |
 | Hallucination | C16 | The reversal curse: models trained on "A is B" fail on "B is A" (Berglund et al.) | 2024 | 3 | research finding (no harm) |
-| Bias | C02 | Amazon recruiting tool penalizes résumés mentioning women | 2018 | 2, 16 | negative |
+| Bias | C02 | Amazon recruiting tool penalizes resumes mentioning women | 2018 | 2, 16 | negative |
 | Bias | C08 | Obermeyer et al.: health-care algorithm uses cost as a proxy for need | 2019 | 11, 16 | negative |
 | Bias | C13 | Gender Shades: intersectional error rates in commercial gender classification | 2018 | 16 | negative (then mixed: named companies cut the gaps within seven months) |
 | Bias | C14 | Dutch childcare-benefits scandal: a self-learning risk model used a citizenship indicator; reviewers could not see which indicators drove a score | 2013–2021 | 17 | negative |

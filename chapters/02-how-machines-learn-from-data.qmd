@@ -13,9 +13,9 @@ Computed numbers come only from data/ch02_*.csv (figures/scripts/ch02_experiment
 
 ## Opening Case: The Recruiting Tool That Learned the Past {.unnumbered}
 
-In 2014, a team at Amazon began building a tool to help with hiring. The company was hiring fast and wanted to mechanize the search for top talent (Dastin, 2018). The idea was simple. Train the system on the résumés the company had received, let it find patterns in them, and have it score new applicants from one to five stars, the way shoppers rate products (Dastin, 2018).
+In 2014, a team at Amazon began building a tool to help with hiring. The company was hiring fast and wanted to mechanize the search for top talent (Dastin, 2018). The idea was simple. Train the system on the resumes the company had received, let it find patterns in them, and have it score new applicants from one to five stars, the way shoppers rate products (Dastin, 2018).
 
-The tool learned from about ten years of résumés sent to the company. Most of those résumés came from men, a reflection of male dominance across the tech industry (Dastin, 2018). By 2015, the team noticed a problem. The system was not rating candidates for technical roles in a gender-neutral way. It gave lower scores to résumés that contained the word "women's," as in "women's chess club captain," and to graduates of two all-women's colleges (Dastin, 2018).
+The tool learned from about ten years of resumes sent to the company. Most of those resumes came from men, a reflection of male dominance across the tech industry (Dastin, 2018). By 2015, the team noticed a problem. The system was not rating candidates for technical roles in a gender-neutral way. It gave lower scores to resumes that contained the word "women's," as in "women's chess club captain," and to graduates of two all-women's colleges (Dastin, 2018).
 
 Amazon edited the programs so that they would treat those particular terms neutrally. That did not guarantee that the system would not find other ways to sort candidates unfairly. By early 2017 the team behind the project had been disbanded. People familiar with the project told Reuters that recruiters looked at the tool's recommendations but never relied on them alone. Amazon said the tool was never used by its recruiters to evaluate candidates (Dastin, 2018).
 
@@ -77,8 +77,8 @@ So does an AI system follow rules that programmers wrote? Some do: these are **r
 **Rule of thumb:** rules are clear but break easily when something new appears; learned patterns are flexible but only as good as their examples.
 :::
 
-::: {.callout-note title="Faded Example: Lucía's Support Tickets"}
-*Featuring Lucía, who works part-time in customer support.*
+::: {.callout-note title="Faded Example: Lucia's Support Tickets"}
+*Featuring Lucia, who works part-time in customer support.*
 
 Her company routes each incoming support ticket to one of three teams: billing, technical or account access.
 
@@ -187,13 +187,13 @@ Three gaps cause most of the trouble:
 
 - **Coverage gap:** part of the population was never sampled. Sam photographed parts from one supplier; parts from another supplier look different.
 - **Non-response:** not everyone who was asked answered, and those who answered may differ, as in the 1936 poll.
-- **Selection:** data entered the sample only by meeting a condition. Résumés from people who applied are not the same as résumés from people who could do the job.
+- **Selection:** data entered the sample only by meeting a condition. Resumes from people who applied are not the same as resumes from people who could do the job.
 
 Selection can hide in surprising places. During the Second World War, the statistician Abraham Wald worked with damage data from aircraft that came back from missions. Aircraft hit in the most dangerous places were less likely to come back, so their damage was missing from the data, and Wald's methods took that into account (Mangel & Samaniego, 1984).
 
 ![The sampling stage: every later stage inherits who was in the sample and who was not.](../figures/out/color/f2-04b-pipeline-sampling.svg){#fig-2-4b fig-alt="The pipeline with the collect-data stage highlighted and the note 'Who is in the sample?'"}
 
-Now return to the recruiting tool. Its sample was ten years of résumés from people who had applied to one company, mostly men. Here is the most likely answer to the opening puzzle. A model does not need to be told anyone's gender. It can find other clues that are linked to gender. Reuters reported that the tool marked down the word "women's" and two all-women's colleges; this book reads those as such clues. A clue that stands in for something else is called a **proxy**. Removing a sensitive piece of information, such as a gender field, does not remove the bias if proxies remain. Chapter 11 returns to proxies in decision-making.
+Now return to the recruiting tool. Its sample was ten years of resumes from people who had applied to one company, mostly men. Here is the most likely answer to the opening puzzle. A model does not need to be told anyone's gender. It can find other clues that are linked to gender. Reuters reported that the tool marked down the word "women's" and two all-women's colleges; this book reads those as such clues. A clue that stands in for something else is called a **proxy**. Removing a sensitive piece of information, such as a gender field, does not remove the bias if proxies remain. Chapter 11 returns to proxies in decision-making.
 
 This also gives a partial answer to a puzzle from Chapter 1: why is the frontier jagged? One reason, though not the only one, is that models tend to do better on tasks well covered by their training data and worse on tasks it covered thinly.
 
@@ -315,8 +315,8 @@ An app claims to tell whether an illustration was made by a human or by AI, with
 **Q1:** Was it tested on new examples? The app's page does not say. **Q2:** Do the test images look like real use? They came from one image generator and one art website. Hana's own work, hand-drawn and scanned, looks nothing like either. **Q3:** What about the most important class? For Hana, the costly mistake is calling human work AI-made. How often does that happen? Unknown. Detectors for AI-written text have been found to flag writing by non-native English speakers as AI-generated far more often (Liang et al., 2023), so this is not a small worry. **Verdict:** the 97% may be real for that test set and say little about Hana's illustrations. Before trusting it on a client's work, they would test it on drawings whose origin they know.
 :::
 
-::: {.callout-note title="Faded Example: A Résumé Screener's Claim"}
-A vendor says its résumé-screening model "predicts job success with 92% accuracy."
+::: {.callout-note title="Faded Example: A Resume Screener's Claim"}
+A vendor says its resume-screening model "predicts job success with 92% accuracy."
 
 **Q1 (done for you):** Was the 92% measured on applicants the model never saw in training?
 
@@ -504,15 +504,15 @@ For your Lab 2.1 dataset, answer six questions in a few lines each: Why was it c
 
 **Timeline.** 2014: work begins. 2015: the team finds that ratings for technical roles are not gender-neutral. Then: Amazon edits the programs to treat particular terms neutrally. By early 2017: the team is disbanded. October 2018: Reuters reports the story (Dastin, 2018).
 
-**What the AI did.** It scored résumés from one to five stars. It had learned from about ten years of résumés submitted to the company.
+**What the AI did.** It scored resumes from one to five stars. It had learned from about ten years of resumes submitted to the company.
 
 **What humans did.** People chose the training data and set the tool's goal; Reuters did not report how a good candidate was defined. The company found the problem and edited the programs. People familiar with the project told Reuters that recruiters looked at the tool's recommendations but never relied on them alone; Amazon said the tool was never used by its recruiters to evaluate candidates (Dastin, 2018).
 
 **Failure label.** Most likely a chain of problems at three stages of the pipeline. The reporting confirms the first and the pattern in the third; the second is this book's reasoning about how such a tool usually works.
 
-![The recruiting tool: problems at three stages of the pipeline.](../figures/out/color/f2-04d-pipeline-case.svg){#fig-2-4d fig-alt="Pipeline with three stages marked: mostly men's résumés; labels possibly from past hiring; proxy words such as 'women's'."}
+![The recruiting tool: problems at three stages of the pipeline.](../figures/out/color/f2-04d-pipeline-case.svg){#fig-2-4d fig-alt="Pipeline with three stages marked: mostly men's resumes; labels possibly from past hiring; proxy words such as 'women's'."}
 
-1. **Collect data.** Most résumés came from men, a reflection of male dominance across the tech industry (Dastin, 2018). Women were an under-represented group in the sample (section 2.3). This is not class imbalance in the section 2.4 sense, because gender was not the label.
+1. **Collect data.** Most resumes came from men, a reflection of male dominance across the tech industry (Dastin, 2018). Women were an under-represented group in the sample (section 2.3). This is not class imbalance in the section 2.4 sense, because gender was not the label.
 2. **Label.** Reuters did not report what the tool treated as the right answer. If the label was based on past applications and hiring outcomes, and those favored men, the labels carried that lean (biased labels, section 2.4).
 3. **Train.** During training, the word "women's" and the names of two all-women's colleges became clues linked to lower scores (Dastin, 2018). In this book's reading, they acted as **proxies** for gender (section 2.3). Removing those particular words did not guarantee that other proxies were gone.
 
@@ -556,7 +556,7 @@ You do not need any of these titles to use the chapter's ideas. A nurse who asks
 
 <!-- Based on the author's published article (Şeker, 2016), within the facts of that article; connections to this chapter are marked as such. Disclosure as in D13. -->
 
-In 2016 I wrote a short encyclopedia article on customer churn analysis, the study of customers leaving a business (Şeker, 2016). Churn matters most in subscription businesses such as telecom, banking and insurance, where keeping a customer usually costs less than winning a new one.
+In 2016 I wrote a short encyclopedia article on customer churn analysis, the study of customers leaving a business (Seker, 2016). Churn matters most in subscription businesses such as telecom, banking and insurance, where keeping a customer usually costs less than winning a new one.
 
 The article illustrated the basic calculation with a simple example: a firm starts the month with 5,000 customers and ends it with 4,500, a monthly churn rate of 10%. Read that example with this chapter in mind. If you built a model to predict who will leave in such a month, nine out of ten examples would belong to the class "stayed." A model that predicts "stays" for everyone would be 90% accurate and useless, the same trap as the fraud model in section 2.4.
 
@@ -572,7 +572,7 @@ Finally, the data. Prediction models in this area combine past records with sign
 
 **The chapter's question:** *Does the machine really learn, or does it only find the easiest way to get the right answer?* The answer is both. In Mitchell's sense, a model really learns: its performance on a task improves with experience. But training keeps whatever pattern makes the error smallest on the examples it was given. If a brown desk, a word like "women's" or always guessing the bigger class lowers the error, the model ends up using it. Nothing in the training process can tell which pattern you meant.
 
-**Return to the Opening Case.** Nobody told the recruiting tool to prefer men. It most likely picked up gender-linked patterns from a sample made mostly of men's résumés, possibly from labels based on past decisions, and through proxy words. The problems began in the data, before any prediction was made.
+**Return to the Opening Case.** Nobody told the recruiting tool to prefer men. It most likely picked up gender-linked patterns from a sample made mostly of men's resumes, possibly from labels based on past decisions, and through proxy words. The problems began in the data, before any prediction was made.
 
 **Revisit your Warm-up.** (1) Do AI systems follow rules that programmers wrote? *Sometimes:* rule-based systems do, but today's AI tools mostly use patterns learned from data. (2) Is more data always better data? *No:* a larger sample from the wrong source is still the wrong sample. (3) Is a 99.9% accurate model good? *Not necessarily:* check the score on the smallest class.
 
@@ -731,11 +731,11 @@ Alpaydin, E., & Kaynak, C. (1998). *Optical recognition of handwritten digits* [
 
 Campbell, M., Hoane, A. J., Jr., & Hsu, F.-h. (2002). Deep Blue. *Artificial Intelligence, 134*(1–2), 57–83. https://doi.org/10.1016/S0004-3702(01)00129-1
 
-Carlini, N., Tramèr, F., Wallace, E., Jagielski, M., Herbert-Voss, A., Lee, K., Roberts, A., Brown, T., Song, D., Erlingsson, Ú., Oprea, A., & Raffel, C. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650). USENIX Association.
+Carlini, N., Tramer, F., Wallace, E., Jagielski, M., Herbert-Voss, A., Lee, K., Roberts, A., Brown, T., Song, D., Erlingsson, U., Oprea, A., & Raffel, C. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650). USENIX Association.
 
 Dastin, J. (2018, October 10). Amazon scraps secret AI recruiting tool that showed bias against women. *Reuters*. https://www.reuters.com/article/us-amazon-com-jobs-automation-insight-idUSKCN1MK08G
 
-Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé, H., III, & Crawford, K. (2021). Datasheets for datasets. *Communications of the ACM, 64*(12), 86–92. https://doi.org/10.1145/3458723
+Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daume, H., III, & Crawford, K. (2021). Datasheets for datasets. *Communications of the ACM, 64*(12), 86–92. https://doi.org/10.1145/3458723
 
 Geirhos, R., Jacobsen, J.-H., Michaelis, C., Zemel, R., Brendel, W., Bethge, M., & Wichmann, F. A. (2020). Shortcut learning in deep neural networks. *Nature Machine Intelligence, 2*(11), 665–673. https://doi.org/10.1038/s42256-020-00257-z
 
@@ -757,7 +757,7 @@ Mitchell, T. M. (1997). *Machine learning*. McGraw-Hill.
 
 OpenAI. (2022, November 30). *Introducing ChatGPT*. https://openai.com/index/chatgpt/
 
-Şeker, Ş. E. (2016). Müşteri kayıp analizi [Customer churn analysis]. *YBS Ansiklopedi, 3*(1), 26–29. https://ybsansiklopedi.com/wp-content/uploads/2016/06/musteri_kayip.pdf
+Seker, S. E. (2016). Musteri kayip analizi [Customer churn analysis]. *YBS Ansiklopedi, 3*(1), 26–29. https://ybsansiklopedi.com/wp-content/uploads/2016/06/musteri_kayip.pdf
 
 Russell, S., & Norvig, P. (2021). *Artificial intelligence: A modern approach* (4th ed.). Pearson.
 
@@ -767,6 +767,6 @@ Silver, D., Schrittwieser, J., Simonyan, K., Antonoglou, I., Huang, A., Guez, A.
 
 Squire, P. (1988). Why the 1936 *Literary Digest* poll failed. *Public Opinion Quarterly, 52*(1), 125–133. https://doi.org/10.1086/269085
 
-Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention is all you need. In *Advances in Neural Information Processing Systems 30* (pp. 5998–6008).
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, L., & Polosukhin, I. (2017). Attention is all you need. In *Advances in Neural Information Processing Systems 30* (pp. 5998–6008).
 
 Wolfram, S. (2023). *What is ChatGPT doing … and why does it work?* Wolfram Media.

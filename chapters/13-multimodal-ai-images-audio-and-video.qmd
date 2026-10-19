@@ -299,7 +299,7 @@ An image you want to share has no label, no watermark you can find and no creden
 Researchers drew faces from a pool of 800: 400 photos of real people and 400 made by a face generator from 2020. Each participant classified 128 of them. What share did people classify correctly? And after training with feedback?
 :::
 
-In the study, 315 participants classified the faces correctly 48.2% of the time, about the same as guessing. A second group of 219 participants, trained with examples and told after every face whether they were right, reached 59.0% (Nightingale & Farid, 2022). Training added about 11 percentage points (this book's calculation). Voices are hard too: in English and Mandarin, listeners correctly identified 73% of the speech deepfakes they heard, and training helped only a little; the authors note that their deepfakes came from older methods (Mai et al., 2023). In another experiment, 210 people could not reliably detect deepfake videos, tended to call them authentic, and overestimated their own skill (Köbis et al., 2021). Groups do better than individuals: across 15,016 participants, ordinary people judging one set of videos were about as accurate as a leading detection model, though their errors differed (Groh et al., 2022).
+In the study, 315 participants classified the faces correctly 48.2% of the time, about the same as guessing. A second group of 219 participants, trained with examples and told after every face whether they were right, reached 59.0% (Nightingale & Farid, 2022). Training added about 11 percentage points (this book's calculation). Voices are hard too: in English and Mandarin, listeners correctly identified 73% of the speech deepfakes they heard, and training helped only a little; the authors note that their deepfakes came from older methods (Mai et al., 2023). In another experiment, 210 people could not reliably detect deepfake videos, tended to call them authentic, and overestimated their own skill (Kobis et al., 2021). Groups do better than individuals: across 15,016 participants, ordinary people judging one set of videos were about as accurate as a leading detection model, though their errors differed (Groh et al., 2022).
 
 ![People judging faces did about as well as guessing; training helped a little.](../figures/out/color/f13-11-human-detection.svg){#fig-13-11 fig-alt="Two panels: faces judged correctly 48.2%, after training 59.0%, guessing 50%; separately, 73% of speech deepfakes identified."}
 
@@ -521,7 +521,7 @@ In January 2024, before New Hampshire's presidential primary, voters received ro
 
 **The people depicted.** Generated media can place real people's faces and voices in scenes they never took part in. The most harmful case is intimate imagery made without consent. In the United States, the TAKE IT DOWN Act, signed on May 19, 2025, requires covered platforms to remove reported nonconsensual intimate images within 48 hours, a duty enforceable from May 19, 2026 (as of October 2026; WilmerHale, 2026). Chapters 15 and 18 take this up.
 
-**The artists whose work trained the models.** Artists hold a range of views. In a 2024 survey of 459 artists, most respondents said developers should disclose which artworks are used in training and that AI outputs should not belong to the model's makers; the authors describe a tension between the tools' possible benefits and harms for artists (Lovato et al., 2024). One survey is not every artist, but these concerns are reasoned, not a fear of change. Some artists use protection tools: Glaze, built with user studies involving more than 1,000 artists, adds small changes to images meant to disrupt the copying of a style (Shan et al., 2023). Later researchers showed that, as tested, simple edits could defeat such protections (Hönig et al., 2025). Artists can still act: contracts that say whether AI may be used, disclosure to clients, content credentials on their own work, and collective rules like Hana's. Whether training on artists' work is lawful, and on what terms, is Chapter 18's subject.
+**The artists whose work trained the models.** Artists hold a range of views. In a 2024 survey of 459 artists, most respondents said developers should disclose which artworks are used in training and that AI outputs should not belong to the model's makers; the authors describe a tension between the tools' possible benefits and harms for artists (Lovato et al., 2024). One survey is not every artist, but these concerns are reasoned, not a fear of change. Some artists use protection tools: Glaze, built with user studies involving more than 1,000 artists, adds small changes to images meant to disrupt the copying of a style (Shan et al., 2023). Later researchers showed that, as tested, simple edits could defeat such protections (Honig et al., 2025). Artists can still act: contracts that say whether AI may be used, disclosure to clients, content credentials on their own work, and collective rules like Hana's. Whether training on artists' work is lawful, and on what terms, is Chapter 18's subject.
 
 **Trust itself.** When fakes are common, real evidence can be dismissed. The **liar's dividend** is the benefit a person gains by dismissing real recordings as fake when fakes are common (Chesney & Citron, 2019). Checking protects the real as well as exposing the fake. Law is moving here too. The European Union's AI Act requires providers to mark AI-generated content in a machine-readable way and deployers to disclose deepfakes (Regulation (EU) 2024/1689, Art. 50). As of October 2026, these duties have applied since August 2, 2026, and systems already on the market have until December 2, 2026 for the marking duty (Regulation (EU) 2026/1744; Chapter 18).
 
@@ -544,7 +544,7 @@ The descriptions below are illustrations, not labor-market data.
 
 <!-- Based on the author's encyclopedia entry (Şeker, 2015), "Dijital Varlık ve Enformasyon Toplumu", YBS Ansiklopedi 2(2), 12–16, June 2015, read from Drive 1lXos207zGxsCOkXfVYoFcRGPlpb4bbzO on 2026-10-18 (build/ch13/ftf-dijital-varlik.md); translated and paraphrased from Turkish. Facts limited to sections 1–1.4 of the entry; present-day connections marked. Not commercial: no D16 disclosure. Registry: docs/production/ftf-sources.md (editor to register). -->
 
-In 2015 I wrote an encyclopedia entry on digital assets and the information society (Şeker, 2015). It began with a broad definition: any value that can be represented digitally, in ones and zeros, is a digital asset, whether a picture, a piece of music or a text.
+In 2015 I wrote an encyclopedia entry on digital assets and the information society (Seker, 2015). It began with a broad definition: any value that can be represented digitally, in ones and zeros, is a digital asset, whether a picture, a piece of music or a text.
 
 The entry described **digital-asset metadata**: extra data that records an asset's content, type, producer and date, used to classify and manage it. It noted that as assets become more varied, the metadata grows, and that over time the metadata, such as catalogs and indexes, becomes an asset in its own right. It also argued that digital assets have two kinds of value. One is material: a photographer can sell a picture. The other the entry called sentimental, and its examples concern reputation. If a photographer's work is deleted, or copied by someone else without permission, there is a material loss; if someone with bad intentions takes over a business's website and publishes news against the business, the greater loss is to reputation, brand and customer relationships. The entry observed that attacks of this second kind, such as fake accounts created in a person's name, were rising quickly with social media. Finally, it described systems that manage assets by ownership, access and copyright terms.
 
@@ -712,7 +712,7 @@ Bookman, T. (2025, June 13). Political operative who admitted to creating fake B
 
 C2PA. (2026). *C2PA and Content Credentials explainer* (Specification version 2.3). Coalition for Content Provenance and Authenticity. Retrieved October 18, 2026, from https://spec.c2pa.org/specifications/specifications/2.3/explainer/Explainer.html
 
-Carlini, N., Hayes, J., Nasr, M., Jagielski, M., Sehwag, V., Tramèr, F., Balle, B., Ippolito, D., & Wallace, E. (2023). Extracting training data from diffusion models. In *Proceedings of the 32nd USENIX Security Symposium* (pp. 5253–5270). USENIX Association.
+Carlini, N., Hayes, J., Nasr, M., Jagielski, M., Sehwag, V., Tramer, F., Balle, B., Ippolito, D., & Wallace, E. (2023). Extracting training data from diffusion models. In *Proceedings of the 32nd USENIX Security Symposium* (pp. 5253–5270). USENIX Association.
 
 Chandra, N. A., Lee, H., Murtfeldt, R., Qiu, L., Karmakar, A., Tanumihardja, E., Farhat, K., Caffee, B., Lee, C., Choi, J., Paik, S., Kim, A., & Etzioni, O. (2025). *Deepfake-Eval-2024: A multi-modal in-the-wild benchmark of deepfakes circulated in 2024* (arXiv:2503.02857v5). arXiv. https://arxiv.org/abs/2503.02857
 
@@ -724,7 +724,7 @@ Dakan, R., & Feller, J. (2025). *AI fluency: Framework & foundations*. Anthropic
 
 Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N. (2021). An image is worth 16x16 words: Transformers for image recognition at scale. In *International Conference on Learning Representations (ICLR 2021)*. https://openreview.net/forum?id=YicbFdNTTy
 
-Dufour, N., Pathak, A., Samangouei, P., Hariri, N., Deshetti, S., Dudfield, A., Guess, C., Hernández Escayola, P., Tran, B., Babakar, M., & Bregler, C. (2024). *AMMeBa: A large-scale survey and dataset of media-based misinformation in-the-wild* (arXiv:2405.11697). arXiv. https://arxiv.org/abs/2405.11697
+Dufour, N., Pathak, A., Samangouei, P., Hariri, N., Deshetti, S., Dudfield, A., Guess, C., Hernandez Escayola, P., Tran, B., Babakar, M., & Bregler, C. (2024). *AMMeBa: A large-scale survey and dataset of media-based misinformation in-the-wild* (arXiv:2405.11697). arXiv. https://arxiv.org/abs/2405.11697
 
 Federal Communications Commission. (2024a). *Implications of artificial intelligence technologies on protecting consumers from unwanted robocalls and robotexts* (Declaratory Ruling FCC 24-17, CG Docket No. 23-362; adopted February 2, 2024, released February 8, 2024).
 
@@ -744,11 +744,11 @@ Ho, J., Jain, A., & Abbeel, P. (2020). Denoising diffusion probabilistic models.
 
 Hong Kong SAR Government. (2024, June 26). *LCQ9: Combating frauds involving deepfake* [Press release]. https://www.info.gov.hk/gia/general/202406/26/P2024062600192.htm
 
-Hönig, R., Rando, J., Carlini, N., & Tramèr, F. (2025). Adversarial perturbations cannot reliably protect artists from generative AI. In *International Conference on Learning Representations (ICLR 2025)*. https://arxiv.org/abs/2406.12027
+Honig, R., Rando, J., Carlini, N., & Tramer, F. (2025). Adversarial perturbations cannot reliably protect artists from generative AI. In *International Conference on Learning Representations (ICLR 2025)*. https://arxiv.org/abs/2406.12027
 
 Johnson, D. B. (2024, February 6). New Hampshire authorities trace Biden AI robocall to Texas-based telecom. *CyberScoop*. https://cyberscoop.com/lingo-life-biden-ai-robocall/
 
-Köbis, N. C., Doležalová, B., & Soraperra, I. (2021). Fooled twice: People cannot detect deepfakes but think they can. *iScience, 24*(11), 103364. https://doi.org/10.1016/j.isci.2021.103364
+Kobis, N. C., Dolezalova, B., & Soraperra, I. (2021). Fooled twice: People cannot detect deepfakes but think they can. *iScience, 24*(11), 103364. https://doi.org/10.1016/j.isci.2021.103364
 
 Koenecke, A., Choi, A. S. G., Mei, K. X., Schellmann, H., & Sloane, M. (2024). Careless Whisper: Speech-to-text hallucination harms. In *Proceedings of the 2024 ACM Conference on Fairness, Accountability, and Transparency* (pp. 1672–1681). https://doi.org/10.1145/3630106.3658996
 
@@ -774,7 +774,7 @@ Regulation (EU) 2026/1744 of the European Parliament and of the Council amending
 
 Rombach, R., Blattmann, A., Lorenz, D., Esser, P., & Ommer, B. (2022). High-resolution image synthesis with latent diffusion models. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition* (pp. 10684–10695).
 
-Şeker, S. E. (2015). Dijital varlık ve enformasyon toplumu [Digital asset and information society]. *YBS Ansiklopedi, 2*(2), 12–16.
+Seker, S. E. (2015). Dijital varlik ve enformasyon toplumu [Digital asset and information society]. *YBS Ansiklopedi, 2*(2), 12–16.
 
 Shan, S., Cryan, J., Wenger, E., Zheng, H., Hanocka, R., & Zhao, B. Y. (2023). Glaze: Protecting artists from style mimicry by text-to-image models. In *Proceedings of the 32nd USENIX Security Symposium* (pp. 2187–2204). USENIX Association.
 

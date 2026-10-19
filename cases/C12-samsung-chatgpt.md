@@ -38,7 +38,7 @@ Opening = facts and puzzle · 15.1 = the flow crossed the boundary; the notice's
 See the chapter's Case Study Questions 1–5.
 
 ## Sources (accessed 2026-10-18)
-1. Jeong, D.-Y. (2023, March 30). [Exclusive] Concerns become reality: Samsung Electronics sees misuse as soon as it lifts its ChatGPT ban [in Korean]. *The Economist* (Korea). https://economist.co.kr/article/view/ecn202303300057 (earliest report; reporter 정두용; the site romanizes the byline Jeong Du-yong)
+1. Jeong, D.-Y. (2023, March 30). [Exclusive] Concerns become reality: Samsung Electronics sees misuse as soon as it lifts its ChatGPT ban [in Korean]. *The Economist* (Korea). https://economist.co.kr/article/view/ecn202303300057 (earliest report; byline romanized by the site as Jeong Du-yong)
 2. Gurman, M. (2023, May 2). Samsung bans staff's AI use after spotting ChatGPT data leak. *Bloomberg*. https://www.bloomberg.com/news/articles/2023-05-02/samsung-bans-chatgpt-and-other-generative-ai-use-by-staff-after-leak (paywalled; summary read)
 3. Sharma, S. (2023, May 2). Samsung bans staff AI use over data leak concerns. *CSO Online*. https://www.csoonline.com/article/575215/samsung-bans-staff-ai-use-over-data-leak-concerns.html
 3a. Park, K. (2023, May 2). Samsung bans use of generative AI tools like ChatGPT after April internal data leak. *TechCrunch*. https://techcrunch.com/2023/05/02/samsung-bans-use-of-generative-ai-tools-like-chatgpt-after-april-internal-data-leak/

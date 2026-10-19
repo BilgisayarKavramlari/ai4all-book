@@ -13,7 +13,7 @@ deck:
   slug: context-engineering-and-reusable-workflows
   title: Context Engineering and Reusable Workflows
   short_title: Context Engineering (optional)
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     seg: {label: "optional 20-minute enrichment segment", minutes: 20}
     self: {label: "self-study slides (not part of the 20-minute segment)"}
@@ -37,7 +37,7 @@ slides:
   subtitle: "Optional enrichment · Deep chapter · not on exams"
   meta:
     - "Optional extension to Chapter 5 (“D: Ch. 6”)"
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Use as a 20-minute segment or for self-study"
   figure: f6-01-chapter-map
   notes:
@@ -234,7 +234,7 @@ slides:
       Context layers = the book's term: the separate sources of text that together fill a model's context window in one
       turn, each set by someone and at some time (@fig-6-3; redrawn here so labels are legible). Context engineering =
       deciding what goes into the window, from which layer, in what form and in what order; the term spread in June 2025
-      when Tobi Lütke (Shopify) and Andrej Karpathy said they preferred it to "prompt engineering" (Willison, 2025). Some
+      when Tobi Lutke (Shopify) and Andrej Karpathy said they preferred it to "prompt engineering" (Willison, 2025). Some
       providers publish their chat apps' system prompts: Anthropic since August 2024 (Willison, 2024), xAI for Grok since
       May 2025 after it blamed an unauthorized change to its prompt (Wiggers, 2025). Some models are trained to give the
       provider's instructions priority (Wallace et al., 2024); inside your own message, nothing separates instructions
@@ -821,6 +821,6 @@ slides:
     background: |
       Full entries are in the chapter's References (fact-checked: docs/factcheck/ch06.csv). Anthropic (2024b) is a recommended reading for Chapter 14 (the chapter's Further Reading lists it as recommended). Not cited in this deck but in the chapter: the product-history sources of the 6.5 box (Anthropic, 2024a; Google, 2024; OpenAI, 2024; Zeff, 2025), Anthropic (2025)
       on context engineering for agents, Min et al. (2022) and Yoo et al. (2022), Sclar et al. (2024), Chapman et al.
-      (2000) and Şeker (2018) for From the Field (CRISP-DM).
+      (2000) and Seker (2018) for From the Field (CRISP-DM).
     activity: "Not presented."
     book: "Chapter 6, References; Further Reading and Compass Links."

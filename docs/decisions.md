@@ -399,3 +399,12 @@ The author asked the editor to make suitable choices for open items and to escal
 | D-22.9 | Full route about 9,870 words (~66 min), over the blueprint's 7,900-word budget by ~25%: the review-required additions (trace-first rule, variants, crosswalk warning, fast-route box, PersonQA and R1 corrections, IMO follow-up in 22.8, recap glossary) were kept; the chapter is optional and counts toward no required time | Honest count; brief "never pad", reviews |
 | D-22.10 | Essay rubric is for self-assessment or an instructor's optional feedback; time about 90 minutes counted per requirement; alternative (400–600 words, for readers without reliable internet or current sources) uses the same rubric with two named changes; portfolio use conditional ("if your course uses the portfolio and you finish before it is due") | Pedagogy #7–9; panel; editor decision 8; D27 |
 <!-- /ch22-decisions -->
+
+## D28 — ASCII-only text and international example names (author, 2026-10-19)
+
+- The book contains no Turkish or other accented Latin letters; every name and title is written in American English characters (Seker, Istanbul, Turkey, Bilgisayar Kavramlari, Lucia). The only exception is the author's name in bold at the start of About the Author: Şadi Evren Şeker. Greek letters stay where they are mathematical symbols or part of a proper name (η, Δ, τ-bench).
+- Example people carry international names. The featured psychology student is Maya Aral (formerly Elif Kaya); her background is unchanged (from Izmir, Turkey; English is her second language).
+- The glossary's Turkish equivalents index is turned off (tools/build_glossary.py, INCLUDE_TURKISH_INDEX = False) and kept for a future Turkish edition.
+- Raw downloaded datasets (e.g., data/ch22_compute.csv) and computational inputs (the Turkish abstract in figures/scripts/ch03_tokens.py) are not converted; they do not print in the book.
+- About the Author follows the author's 2026-10-19 notes: no graduating universities named; postdoctoral research at The University of Texas at Dallas in big data analytics may be named (author's explicit exception to D27 for the biography).
+- A one-line thank-you page to R. follows the title page (front/thanks.qmd).

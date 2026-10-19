@@ -17,7 +17,7 @@ deck:
   slug: explainability-and-transparency
   title: Explainability and Transparency
   short_title: Explainability and Transparency
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     opt: {label: "optional enrichment · Deep, not examinable · use only if time allows"}
     after: {label: "reference slides (not presented)"}
@@ -40,7 +40,7 @@ slides:
   minutes: 0
   subtitle: "Optional enrichment · Deep chapter, not on exams"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Reading (optional): Chapter 17, fast route about 22 min"
   figure: f17-03-layers
   notes:
@@ -633,7 +633,7 @@ slides:
       rule). Sanity checks: Adebayo et al. (2018). Fooling LIME and SHAP: Slack et al. (2020), also Short case 1.
       Instability: Alvarez-Melis and Jaakkola (2018). The grid rebuilds @fig-17-12 with the book's two axes; the
       lower-row cell labels here are this deck's paraphrase (the book marks only the dangerous cell). The risk cell
-      has a thick border and the word "Dangerous", not only color. Fairwashing (Aïvodji et al., 2019; Ethics Lens):
+      has a thick border and the word "Dangerous", not only color. Fairwashing (Aivodji et al., 2019; Ethics Lens):
       generating fair-looking explanations for an unfair model.
     questions:
       - q: "Isn't a widely used method trustworthy?"
@@ -1017,7 +1017,7 @@ slides:
   per_slide: 10
   refs:
     - "Adebayo, J., et al. (2018). Sanity checks for saliency maps. *NeurIPS 31*, 9505–9515."
-    - "Aïvodji, U., et al. (2019). Fairwashing: The risk of rationalization. *ICML 2019*, PMLR 97, 161–170."
+    - "Aivodji, U., et al. (2019). Fairwashing: The risk of rationalization. *ICML 2019*, PMLR 97, 161–170."
     - "Alvarez-Melis, D., & Jaakkola, T. S. (2018). *On the robustness of interpretability methods* (arXiv:1806.08049)."
     - "Amnesty International. (2021). *Xenophobic machines* (EUR 35/4686/2021)."
     - "Anthropic. (2025, March 27). *Tracing the thoughts of a large language model*."

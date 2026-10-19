@@ -19,7 +19,7 @@ deck:
   slug: the-state-of-the-art-current-developments
   title: "The State of the Art: Current Developments"
   short_title: State of the Art (optional)
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     seg: {label: "optional 25-minute enrichment segment", minutes: 25}
     self: {label: "self-study slides (not part of the 25-minute segment)"}
@@ -42,7 +42,7 @@ slides:
   minutes: 0
   subtitle: "Optional enrichment · Deep chapter · not on exams"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Written as of October 2026; parts will have aged"
     - "Use as a 25-minute segment or for self-study"
   figure: f22-01-chapter-map
@@ -306,7 +306,7 @@ slides:
       next edition can redraw it with new events.
     background: |
       @fig-22-3 (long description in figures/longdesc/ch22.md): Jul 2025 OpenAI (reported: the developer); Jul 2025
-      Gemini Deep Think (measured: IMO coordinators); Jan 2026 Erdős problem 728 (measured: proof checker); Feb 2026
+      Gemini Deep Think (measured: IMO coordinators); Jan 2026 Erdos problem 728 (measured: proof checker); Feb 2026
       agents' 50% horizon about 12 hours (measured: METR); Apr 2026 data-center electricity up 17% in 2025 (outside
       estimate: IEA); May 2026 a model disproves a 1946 geometry conjecture (reported: the developer, with an outside
       preprint); May 2026 open-weight models about four months behind (measured: Epoch AI); Jul 2026 two systems claim 42
@@ -594,7 +594,7 @@ slides:
       not wrong when it was written. The last step is to decide when to check again, because a claim keeps aging after
       today's check.
     background: |
-      §22.8 is Studio. The book's own example: in 2014 the author wrote an encyclopedia entry (Şeker, 2014), drawing on a
+      §22.8 is Studio. The book's own example: in 2014 the author wrote an encyclopedia entry (Seker, 2014), drawing on a
       table by Fichman, Dos Santos and Zheng (2014); one of its twelve rows described a shift to real-time
       question-and-answer systems, machines that can talk with users, with Siri and IBM Watson as the examples. Read in
       October 2026: the direction held, the examples aged. Verdict: partly supported; what changed: only the names (and the
@@ -647,7 +647,7 @@ slides:
         inference, not a measurement. Notice the pattern: date, status and source again, plus a date for the next check.
       background: |
         Book's inference, marked as such in §22.8. Related, Short case 1 (Case Study): on October 17–18, 2025, a senior
-        executive posted that a model had found solutions to ten open Erdős problems; the problem list's maintainer replied
+        executive posted that a model had found solutions to ten open Erdos problems; the problem list's maintainer replied
         that "open" meant only that he knew of no solution, and the model's output pointed to existing papers; the posts
         were mostly deleted (The Decoder, 2025). Chain link 2, "checked before use?", failed. Since then: problem #728
         solved with AI help and checked in Lean (January 2026; Sothanaphan, 2026); a May 20, 2026 geometry result checked by
@@ -786,7 +786,7 @@ slides:
       bullets: ["GNoME, 2023: 2.2 million structures predicted stable (reported)", "2024 critique: “scant evidence” of new, useful ones"]
     - heading: "Proof-checked"
       role: neutral
-      bullets: ["Erdős #728, January 2026: checked in Lean", "A checker confirms the proof, not the problem’s translation"]
+      bullets: ["Erdos #728, January 2026: checked in Lean", "A checker confirms the proof, not the problem’s translation"]
   takeaway: "A machine-checked proof is fast; replication and critique take years"
   notes:
     say: |
@@ -803,8 +803,8 @@ slides:
       structure prediction (Nobel Prize Outreach, 2024), confirmed; CASP: predictions compared with measured, unpublished
       structures (Jumper et al., 2021). GNoME (Merchant et al., 2023): 2.2 million predicted stable, 736 already made
       independently in laboratories (reported: the developers' paper); critique (Cheetham & Seshadri, 2024; measured: an
-      outside critique). Erdős #728: AI-assisted, checked in Lean and written up, January 2026 (Sothanaphan, 2026),
-      measured. May 20, 2026: OpenAI reported an internal reasoning model disproved a 1946 Erdős conjecture in geometry;
+      outside critique). Erdos #728: AI-assisted, checked in Lean and written up, January 2026 (Sothanaphan, 2026),
+      measured. May 20, 2026: OpenAI reported an internal reasoning model disproved a 1946 Erdos conjecture in geometry;
       checked by nine outside mathematicians in a preprint (Alon et al., 2026), not yet peer-reviewed. Chapter 19's A-Lab
       case: the same field corrected an automated claim through a published correction. Worked example (constructed):
       Hana's "first AI-discovered pigment" headline: partly supported; next check, the journal version.
@@ -965,11 +965,11 @@ slides:
     - "OpenAI. (2025a, April 16). *OpenAI o3 and o4-mini system card*."
     - "OpenAI. (2025b, August 13). *GPT-5 system card*."
     - "Reuters. (2025, July 21). Google and OpenAI’s AI models win milestone gold at global math competition. *CP24* (Reuters wire)."
-    - "Şeker, Ş. E. (2014). Ağ etkisi, Moore yasası ve dijitalleşmenin yenilik ile ilişkisi. *YBS Ansiklopedi, 1*(1)."
+    - "Seker, S. E. (2014). Ag etkisi, Moore yasasi ve dijitallesmenin yenilik ile iliskisi. *YBS Ansiklopedi, 1*(1)."
     - "Sevilla, J., et al. (2024, August 20). *Can AI scaling continue through 2030?* Epoch AI."
     - "Shehabi, A., et al. (2024). *2024 United States data center energy usage report* (LBNL-2001637). Lawrence Berkeley National Laboratory."
     - "Shojaee, P., et al. (2025). The illusion of thinking. In *Advances in Neural Information Processing Systems 38 (NeurIPS 2025)*."
-    - "Sothanaphan, N. (2026). *Resolution of Erdős problem #728: A writeup of Aristotle’s Lean proof* (arXiv:2601.07421)."
+    - "Sothanaphan, N. (2026). *Resolution of Erdos problem #728: A writeup of Aristotle’s Lean proof* (arXiv:2601.07421)."
     - "Stanford HAI. (2025). *AI Index Report 2025*."
     - "Stanford HAI. (2026). *AI Index Report 2026*."
     - "The Decoder. (2025, October 18). Leading OpenAI researcher announced a GPT-5 math breakthrough that never happened."

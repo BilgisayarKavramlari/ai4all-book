@@ -209,7 +209,7 @@ TONES = [("Formal", "Dear [Coordinator], I am writing to inform you that I am un
 
 def three_tones(f):
     muted = MUTED[f.mode]
-    f.text(400, 24, "Elif's five points, three tones (constructed example)", size=17, weight="700")
+    f.text(400, 24, "Maya's five points, three tones (constructed example)", size=17, weight="700")
     for i, (tone, body, markers) in enumerate(TONES):
         x = 20 + i * 258
         f.box(x, 46, 242, 40, tone, role="highlight" if tone == "Warm" else "neutral", kind="step",
@@ -217,7 +217,7 @@ def three_tones(f):
         f.box(x, 92, 242, 250, "", role="ai", kind="step", size=13)
         f.text(x + 121, 216, body, size=13, width=222, weight="normal")
         f.text(x + 121, 370, markers, size=13, width=230, italic=True, color=muted)
-    f.text(400, 414, "Yellow cards = tool outputs · the same five points in each · thick = the version Elif chose "
+    f.text(400, 414, "Yellow cards = tool outputs · the same five points in each · thick = the version Maya chose "
            "to edit (she cut the \"completely understand\" sentence and added her own thanks)", size=13,
            color=muted, width=780)
 

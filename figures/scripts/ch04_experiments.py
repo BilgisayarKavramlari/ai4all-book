@@ -27,9 +27,9 @@ DATA = os.path.join(ROOT, "data")
 SEED = 4
 N = 1000
 
-TRAIN = [("Nairobi", "Kenya"), ("Lima", "Peru"), ("Ankara", "Türkiye"), ("Hanoi", "Vietnam"),
+TRAIN = [("Nairobi", "Kenya"), ("Lima", "Peru"), ("Ankara", "Turkey"), ("Hanoi", "Vietnam"),
          ("Ottawa", "Canada"), ("Canberra", "Australia"), ("Dakar", "Senegal"), ("Oslo", "Norway"),
-         ("Bogotá", "Colombia"), ("Manila", "the Philippines"), ("Cairo", "Egypt"), ("Tokyo", "Japan")]
+         ("Bogota", "Colombia"), ("Manila", "the Philippines"), ("Cairo", "Egypt"), ("Tokyo", "Japan")]
 UNSEEN = [("Accra", "Ghana"), ("Quito", "Ecuador"), ("Lisbon", "Portugal"), ("Seoul", "South Korea")]
 TRUE = dict(TRAIN + UNSEEN)
 

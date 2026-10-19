@@ -6,7 +6,7 @@ Run from the repo root:
 
 Outputs
   data/ch03_tokens.csv          UDHR full text, tokens per language, two tokenizers (F3.2)
-  data/ch03_tokens_example.csv  Elif's constructed abstract, English vs. Turkish (3.1 worked example)
+  data/ch03_tokens_example.csv  Maya's constructed abstract, English vs. Turkish (3.1 worked example)
   data/ch03_token_pieces.csv    token pieces of the words used as examples in 3.1
   data/ch03_temperature.csv     illustrative scores at three temperatures + seeded draws (3.2, F3.4)
   data/ch03_tokens_meta.txt     versions, encodings, text source and checksum
@@ -53,7 +53,7 @@ ABSTRACT_TR = ("Sınav kaygısı, üniversite birinci sınıf öğrencileri aras
                "alışkanlıkları ve endişe hakkında kısa bir anket doldurdu. Altı saatten az uyuduğunu bildiren "
                "öğrenciler daha yüksek kaygı da bildirdi. Sonuçlar, uykunun kampüs destek programları için "
                "yararlı bir odak olabileceğini göstermektedir.")
-PIECE_WORDS = [" hydroxychloroquine", "hydroxychloroquine", " strawberry", "strawberry", " Nguyen", "İzmir", " İzmir",
+PIECE_WORDS = [" hydroxychloroquine", "hydroxychloroquine", " strawberry", "strawberry", " Nguyen", "Izmir", " Izmir",
                " psikoloji"]
 
 # Illustrative next-token probabilities at temperature 1 for the prompt
@@ -114,7 +114,7 @@ def main():
               ["lang_code", "language", "characters", "tokens_o200k_base", "ratio_to_english_o200k_base",
                "tokens_cl100k_base", "ratio_to_english_cl100k_base"], rows)
 
-    # 3.1 worked example: Elif's constructed abstract
+    # 3.1 worked example: Maya's constructed abstract
     ex = []
     for lang, t in (("English", ABSTRACT_EN), ("Turkish", ABSTRACT_TR)):
         ex.append([lang, len(t.split()), len(t)] + [len(encs[n].encode(t)) for n in ENCODINGS])
@@ -170,7 +170,7 @@ def main():
         fh.write("Preprocessing: NFC normalization, blank lines removed, first (title) line dropped.\n")
         fh.write("Languages: " + ", ".join(f"{n} ({c})" for c, n in LANGS) + "\n")
         fh.write("Note: the Vietnamese file has one extra line (adoption note) after the title; kept.\n")
-        fh.write("Elif's abstract: constructed by the book (not a real study); Turkish translation by the book.\n")
+        fh.write("Maya's abstract: constructed by the book (not a real study); Turkish translation by the book.\n")
         fh.write("Next-token scores (ch03_temperature.csv): ILLUSTRATIVE, chosen by the book. No local causal\n"
                  "language model (e.g., GPT-2) was found in ~/.cache/huggingface on 2026-10-18; none downloaded.\n")
         fh.write(f"Temperature draws: random.Random({SEED}), {N_DRAWS} draws each at T = 0.5 and T = 1.5.\n")

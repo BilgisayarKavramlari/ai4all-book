@@ -23,7 +23,7 @@ deck:
   slug: bias-and-fairness
   title: Bias and Fairness
   short_title: Bias and Fairness
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     tue: {label: "Concept session · Chapter 16 segment of the shared session (8 concept minutes + 3-minute check)", minutes: 11}
     thu: {label: "Lab session · Lab 15.1 station 3 (minutes 34–49) and the pooled reading at the gallery walk", minutes: 18}
@@ -49,7 +49,7 @@ slides:
   minutes: 0
   subtitle: "Concept-session segment and Lab 15.1 station 3"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Reading: Chapter 16 Core (about 30 min) · Recommended: Buolamwini & Gebru (2018)"
   figure: f16-03-lifecycle
   notes:
@@ -66,7 +66,7 @@ slides:
       (@fig-16-1). Time (chapter): about 16 minutes for the Core sections and about 30 for the whole Core package,
       including about 6 minutes to answer the Warm-up, Check Yourself and faded examples; the blueprint's earlier count
       was about 28, and the chapter's 30 is used here. The recommended reading (Buolamwini & Gebru, 2018; abstract, §1, §4.1 with Table 4,
-      §5) adds about 10 minutes; never assume it was read. Featured student: Elif (psychology). Compass
+      §5) adds about 10 minutes; never assume it was read. Featured student: Maya (psychology). Compass
       is optional and never part of a course grade.
     activity: "Switch to this deck after the Chapter 15 segment's last check."
     book: "Chapter 16 opening page; @fig-16-1, @fig-16-3."
@@ -185,7 +185,7 @@ slides:
       34.7 percent. An overall number averages over everyone, so one group's errors can disappear inside it. The fix is
       disaggregated evaluation: report a system's performance separately for each group and subgroup instead of one
       overall number. An intersectional subgroup is defined by two or more characteristics at once, such as darker-skinned
-      women; the idea that disadvantage can concentrate where categories meet comes from the legal scholar Kimberlé
+      women; the idea that disadvantage can concentrate where categories meet comes from the legal scholar Kimberle
       Crenshaw. Overall accuracy still matters; it is just not enough.
     background: |
       @fig-16-6 (Buolamwini & Gebru, 2018, Table 4). Worked Example "Reading Gender Shades Group by Group" (IBM): women
@@ -259,7 +259,7 @@ slides:
     questions:
       - q: "Can't a better model fix this?"
         a: "Only a tool that never flags anyone wrongly, or groups with equal base rates, escapes it (§16.3; Review A8, even, keeps its key private). Better models shrink errors; they do not remove the conflict."
-    activity: "Ask: 'Which design would you pick for tutoring outreach, and why?' Take one answer; Elif's answer is in §16.6."
+    activity: "Ask: 'Which design would you pick for tutoring outreach, and why?' Take one answer; Maya's answer is in §16.6."
     book: "§16.3, @fig-16-9; Worked Example 'Two Groups, Two Designs'; Check Yourself 16.3."
 
 - layout: quiz
@@ -322,7 +322,7 @@ slides:
     background: |
       Check Yourself 16.6 (§16.6). Stakeholders = everyone affected by the decision, including people who never use the
       tool; decision owner (Chapter 11) = the named person or body who decides and answers for the result. Worked example
-      "Elif Answers the Coordinator" (constructed): a missed student costs more than an extra email, so equal miss rates
+      "Maya Answers the Coordinator" (constructed): a missed student costs more than an extra email, so equal miss rates
       matter most; she proposes asking first-year students through the center's feedback form and that the coordinator,
       as decision owner, record the choice and its reason (@fig-16-15).
     activity: "1 min write and compare, then the answer slide."
@@ -330,7 +330,7 @@ slides:
   answer_notes:
     say: |
       Model answer: the numbers show what each choice costs; which errors matter more is a value choice, for the people
-      affected and the decision owner. Elif's version for the tutoring outreach score: a missed student costs more than
+      affected and the decision owner. Maya's version for the tutoring outreach score: a missed student costs more than
       an extra email, so equal miss rates matter most; ask first-year students through the center's feedback form; and the
       coordinator, as decision owner, records the choice and the reason. That is the chapter's answer to "who decides
       what fair means": not the engineers alone and not the vendor, but a named owner who asked the people who bear the
@@ -343,7 +343,7 @@ slides:
       - m: "M6 'Fairness is a technical question for engineers to settle.'"
         fix: "Refutation check: must not create 'technical measurement does not matter'; you cannot have the conversation without the numbers."
     activity: "Reveal; switch to the Chapter 18 deck."
-    book: "§16.6, @fig-16-15; Worked Example 'Elif Answers the Coordinator'; Appendix E (Check Yourself 16.6)."
+    book: "§16.6, @fig-16-15; Worked Example 'Maya Answers the Coordinator'; Appendix E (Check Yourself 16.6)."
 
 # ======================================================================= LAB SESSION: LAB 15.1 STATION 3 (18 min)
 - layout: section
@@ -529,7 +529,7 @@ slides:
 - layout: worked
   minutes: 0
   max_words: 80
-  kicker: "§16.7 · worked example · Elif’s fairness row (constructed)"
+  kicker: "§16.7 · worked example · Maya’s fairness row (constructed)"
   title: "From a pooled probe to an A12 fairness row"
   context: "Prompt B, pooled: 7+ in 31 of 39 runs (English) vs. 19 of 39 (Turkish)"
   steps:
@@ -544,14 +544,14 @@ slides:
   notes_reveal:
     - minutes: 0
       say: |
-        Here is how a station result becomes the fairness row of A12, in the chapter's constructed example. Elif's
+        Here is how a station result becomes the fairness row of A12, in the chapter's constructed example. Maya's
         class pooled prompt B: scores of 7 or more in 31 of 39 runs when the author line said English, and 19 of 39 when
         it said Turkish. Step one, the gap: the counts differ by 12, and at 39 runs they must differ by 10, so it is a
         finding, to be re-run before anyone relies on it. Step two, does it transfer to her workflow? Her tutoring
         center plans to score short drafts with the same tool, so the same tool and the same kind of task: documented,
         for the cue tested. Before the next slide: what goes in the row?
       background: |
-        §16.7 Worked Example "Elif's Fairness Row" (constructed outputs). The transfer rule (book-wide, A12): a station
+        §16.7 Worked Example "Maya's Fairness Row" (constructed outputs). The transfer rule (book-wide, A12): a station
         result documents your workflow's risk only if your workflow uses the same tool for the same kind of task and the
         probe passed the two-part rule; otherwise the row is inferred, the station result a lead, with the test that
         would document it (Check Yourself 16.7, Appendix E). This slide is drafted at the gallery walk or at home; it
@@ -580,7 +580,7 @@ slides:
       activity: "Students copy the row's skeleton onto the A12 sheet."
       book: "§16.7, @fig-16-16; Application Assignment 'A12's Fairness Row and Bias Probe'."
   notes:
-    book: "§16.7 Worked Example 'Elif's Fairness Row'."
+    book: "§16.7 Worked Example 'Maya's Fairness Row'."
 
 # ======================================================================= EXTENDED SECTION (optional class time)
 - layout: section
@@ -606,8 +606,8 @@ slides:
 
 - layout: compare
   minutes: 2
-  kicker: "§16.1 · worked example · Elif’s outreach score (constructed; book figure redrawn)"
-  title: "Bias could enter Elif’s outreach score at every phase"
+  kicker: "§16.1 · worked example · Maya’s outreach score (constructed; book figure redrawn)"
+  title: "Bias could enter Maya’s outreach score at every phase"
   size: 20
   columns:
     - heading: "Data"
@@ -627,7 +627,7 @@ slides:
   takeaway: "Harm: allocation, a tutoring offer withheld · dashed = inferred"
   notes:
     say: |
-      Elif studies psychology. In her research-methods class she read that most participants in published behavioral
+      Maya studies psychology. In her research-methods class she read that most participants in published behavioral
       research come from WEIRD societies: Western, educated, industrialized, rich and democratic. She asks the same of
       AI: whose data trained this tool? At the tutoring center where she volunteers, the coordinator considers an outreach
       score that would email first-year students predicted to need tutoring, trained on last year's visit records. Data:
@@ -635,7 +635,7 @@ slides:
       tested only on overall accuracy. Use: emails in English only. Feedback: students never emailed never visit, so next
       year's data say they never needed help. The harm: allocation, a tutoring offer withheld.
     background: |
-      §16.1 Worked Example "Elif's Outreach Score" (constructed), @fig-16-5 (use and feedback dashed as inferred).
+      §16.1 Worked Example "Maya's Outreach Score" (constructed), @fig-16-5 (use and feedback dashed as inferred).
       Henrich et al. (2010) for WEIRD. Chapter 11's health algorithm used cost as a proxy label for need. Faded example
       "A Bank's Offer Chatbot" (Appendix E): model tested only on overall acceptance; use only in the app; feedback,
       decliners see fewer offers; harm allocation.
@@ -650,7 +650,7 @@ slides:
   question: "A hiring tool is trained on ten years of a company’s hiring decisions. The gender field was removed. Where could bias still enter first?"
   options:
     - "Probably nowhere yet, since without a gender field the tool cannot easily tell groups apart."
-    - "Data: past decisions used as labels, and proxies in résumés, can carry the old pattern."
+    - "Data: past decisions used as labels, and proxies in resumes, can carry the old pattern."
     - "Mainly at use, when recruiters read the scores, rather than inside the tool itself."
     - "Mainly at feedback, once the tool’s own decisions start to become new training data."
   answer: b
@@ -671,19 +671,19 @@ slides:
   answer_notes:
     say: |
       The answer is (b), data. Past decisions used as labels carry whatever pattern the people who made them followed,
-      and résumés hold proxies: a club, a college, a gap in work history. Option (a) is the misconception that removing a
+      and resumes hold proxies: a club, a college, a gap in work history. Option (a) is the misconception that removing a
       field removes the bias. Options (c) and (d) name real phases, use and feedback, but later ones; the question asks
       where bias could enter first. The same idea returns in section 16.5: a firm that removes names before an AI screen
-      fixes the name cue, but a résumé line like "women's chess club, captain" still carries it.
+      fixes the name cue, but a resume line like "women's chess club, captain" still carries it.
     background: |
-      Faded Example "Name-Blind Résumés" (Appendix E): it may miss proxies such as "women's chess club" and women's
+      Faded Example "Name-Blind Resumes" (Appendix E): it may miss proxies such as "women's chess club" and women's
       colleges; detect with a paired-input test that changes only the club line or the college, and re-test after any
       change. Review B4 (even) asks the same; its key is private.
     misconceptions:
       - m: "M1 'If nobody intended it, or the group field was removed, the system is fair.'"
         fix: "Refutation check: the lifecycle is a map of where to look, not proof that every system is hopelessly biased."
     activity: "Reveal; one follow-up comment."
-    book: "§16.1, §16.5; Appendix E (Review A1; Faded Example 'Name-Blind Résumés')."
+    book: "§16.1, §16.5; Appendix E (Review A1; Faded Example 'Name-Blind Resumes')."
 
 # About 60 words on the last reveal: the three levels of the worked example must be compared together (deliberate exception).
 - layout: worked
@@ -805,7 +805,7 @@ slides:
   size: 24
   bullets:
     - "Inputs identical except **one cue** linked to a group"
-    - "Wilson & Caliskan (2024): only the name changed, 554 résumés"
+    - "Wilson & Caliskan (2024): only the name changed, 554 resumes"
     - "Bianchi et al. (2023): 99% of generated developers White; workforce 56%"
   flow:
     - {label: "Two versions, one cue", kind: step}
@@ -819,7 +819,7 @@ slides:
       that are identical except for one cue linked to a group, a name, a pronoun, a stated first language, many times
       each, counts the outputs by a rule fixed before any run, and compares the counts. Chapter 12's bake-off changed only
       the tool; this changes only the cue. The evidence that such tests matter: Wilson and Caliskan changed only the name
-      on 554 résumés ranked by three text-embedding models. Names associated with White Americans were favored in about
+      on 554 resumes ranked by three text-embedding models. Names associated with White Americans were favored in about
       85 percent of 27 statistical tests, and names associated with Black men were disadvantaged in up to 100 percent of
       comparisons. The study tested only those names.
     background: |
@@ -837,32 +837,32 @@ slides:
 - layout: worked
   minutes: 2
   max_words: 70
-  kicker: "§16.4 · worked example · Elif tests a name (constructed outputs)"
-  title: "Elif tests a name: lead or finding?"
+  kicker: "§16.4 · worked example · Maya tests a name (constructed outputs)"
+  title: "Maya tests a name: lead or finding?"
   context: "“Three majors for a first-year student named ___ who loves biology and chemistry”"
   steps:
     - {label: "Rule, fixed first", text: "Count runs where all three are science majors"}
     - {label: "Runs", text: "15 fresh chats each, one tool, memory off"}
-    - {label: "Counts", text: "Emily 8 of 15; Elif 5 of 15"}
+    - {label: "Counts", text: "Emily 8 of 15; Maya 5 of 15"}
     - {label: "Reading", text: "Differ by 3; at 15 runs they must differ by 6"}
   reveal: [3, 4]
   result: "A lead: she plans 30 runs each"
   notes_reveal:
     - minutes: 1
       say: |
-        Elif tries the method herself. She asks a tool for three majors for a first-year student who loves biology and
-        chemistry, with the name Emily or Elif. Before any run she fixes the rule: count runs in which all three
+        Maya tries the method herself. She asks a tool for three majors for a first-year student who loves biology and
+        chemistry, with the name Emily or Maya. Before any run she fixes the rule: count runs in which all three
         suggestions are science majors. Fifteen fresh chats per name, one tool, memory off. The counts: Emily 8 of 15,
-        Elif 5 of 15. Is that a finding? Use the two-part rule: was the test fair, and is the gap big enough?
+        Maya 5 of 15. Is that a finding? Use the two-part rule: was the test fair, and is the gap big enough?
       background: |
         §16.4 Worked Example (constructed outputs). Threshold at 15 runs per version: counts must differ by 6 (40
         points).
       activity: "Pairs, 30 s: lead or finding?"
-      book: "§16.4 Worked Example 'Elif Tests a Name'."
+      book: "§16.4 Worked Example 'Maya Tests a Name'."
     - minutes: 1
       say: |
         The test was fair: one cue, a fixed rule, one tool, fresh chats, equal runs, at least ten. But the counts differ
-        by 3, and at 15 runs per version they must differ by 6. So it is a lead, not a finding. Elif plans 30 runs each.
+        by 3, and at 15 runs per version they must differ by 6. So it is a lead, not a finding. Maya plans 30 runs each.
         Notice what she does not do: she does not conclude "no bias" either. At 30 runs per version, only gaps of about
         30 points can show; no gap is not proof of no bias. Check Yourself 16.4 asks exactly this.
       background: |
@@ -876,7 +876,7 @@ slides:
       activity: "Ask: 'How many runs would she need to detect a 20-point gap?' (see @fig-16-7)."
       book: "§16.4; Check Yourself 16.4; Faded Example 'Three Pronouns'."
   notes:
-    book: "§16.4 Worked Example 'Elif Tests a Name'."
+    book: "§16.4 Worked Example 'Maya Tests a Name'."
 
 - layout: compare
   minutes: 1.5
@@ -941,7 +941,7 @@ slides:
       labels bias (documented, confirmed by the company) and secondary hallucination (documented). Review A11 (key b): a
       fix can create a new error, so test again; (a) overcorrects M5; (c) and (d) are M5.
     activity: "Ask: 'A firm removes names before an AI screen. What might it miss?' (proxies: clubs, colleges)."
-    book: "§16.5 'Fixes have limits'; Short case 1; Faded Example 'Name-Blind Résumés'; Review A11."
+    book: "§16.5 'Fixes have limits'; Short case 1; Faded Example 'Name-Blind Resumes'; Review A11."
 
 - layout: concept
   minutes: 1.5
@@ -1088,7 +1088,7 @@ slides:
     - "Barocas, S., Guo, A., Kamar, E., et al. (2021). Designing disaggregated evaluations of AI systems. *AIES 2021*, 368–378."
     - "Bianchi, F., Kalluri, P., Durmus, E., et al. (2023). Easily accessible text-to-image generation amplifies demographic stereotypes at large scale. *FAccT 2023*, 1493–1504."
     - "Barocas, S., Hardt, M., & Narayanan, A. (2023). *Fairness and machine learning: Limitations and opportunities*. MIT Press."
-    - "Blodgett, S. L., Barocas, S., Daumé III, H., & Wallach, H. (2020). Language (technology) is power. *ACL 2020*, 5454–5476."
+    - "Blodgett, S. L., Barocas, S., Daume III, H., & Wallach, H. (2020). Language (technology) is power. *ACL 2020*, 5454–5476."
     - "Buolamwini, J. (2023). *Unmasking AI*. Random House."
     - "Buolamwini, J., & Gebru, T. (2018). Gender shades: Intersectional accuracy disparities in commercial gender classification. *PMLR 81*, 77–91."
     - "Chouldechova, A. (2017). Fair prediction with disparate impact. *Big Data, 5*(2), 153–163."

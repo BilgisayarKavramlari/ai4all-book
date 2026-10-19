@@ -1,6 +1,6 @@
 # Philosophical Debates: Minds, Meaning and Responsibility {#sec-ch23}
 
-<!-- Status: v2 (2026-10-18), Stage 5 revision: D27 independence and editor decisions 0–14 (build/ch23/editor-decisions-stage5.md) applied over the four reviews; earlier: v1 Stage 2 draft from blueprint v0.2 (approved under D19). Deep chapter: not examinable (D20). The book's final chapter. Featured students: Elif and Hana (they/them) only; other people are unnamed one-off figures. Case C30. Figures: figures/scripts/ch23_figures.py (new chapter signature argument_map(); imports failure_chain from ch04_figures and verification_funnel from ch08_figures) and ch23_charts.py (published values in data/ch23_*.csv). Source notes: build/ch23/src/notes.md. Rule for the whole chapter: every debate has two strong sides from primary sources; the book's own voice takes no side; the author's view appears only in labeled boxes: one quotes his published HermAI article (23.4, with the D16 disclosure); the others are titled "Author's view — to be added by the author before publication" and contain no view. All of Elif's and Hana's work is constructed. -->
+<!-- Status: v2 (2026-10-18), Stage 5 revision: D27 independence and editor decisions 0–14 (build/ch23/editor-decisions-stage5.md) applied over the four reviews; earlier: v1 Stage 2 draft from blueprint v0.2 (approved under D19). Deep chapter: not examinable (D20). The book's final chapter. Featured students: Maya and Hana (they/them) only; other people are unnamed one-off figures. Case C30. Figures: figures/scripts/ch23_figures.py (new chapter signature argument_map(); imports failure_chain from ch04_figures and verification_funnel from ch08_figures) and ch23_charts.py (published values in data/ch23_*.csv). Source notes: build/ch23/src/notes.md. Rule for the whole chapter: every debate has two strong sides from primary sources; the book's own voice takes no side; the author's view appears only in labeled boxes: one quotes his published HermAI article (23.4, with the D16 disclosure); the others are titled "Author's view — to be added by the author before publication" and contain no view. All of Maya's and Hana's work is constructed. -->
 
 ![Chapter 23 at a glance. An optional chapter about the Decide step of the AI Work Loop, with Disclose second.](../figures/out/color/f23-01-chapter-map.svg){#fig-23-1 fig-alt="Chapter map: method and minds (23.1–23.3), responsibility and work (23.4–23.6), the long view (23.7–23.8, case); Work Loop with Decide highlighted."}
 
@@ -66,7 +66,7 @@ You will revisit your answers in the Chapter Summary.
 
 [Deep]{.path}
 
-*Deep sections are optional and not examinable. Featuring Elif, a first-year psychology student from İzmir, whose psychology program runs a seminar on minds and machines (constructed course).*
+*Deep sections are optional and not examinable. Featuring Maya, a first-year psychology student from Izmir, whose psychology program runs a seminar on minds and machines (constructed course).*
 
 Philosophers, psychologists, computer scientists, economists and artists all argue about AI, citing experiments, thought experiments or history. A loud claim and a careful one can sound equally sure, so this section gives you one tool for all the debates.
 
@@ -80,21 +80,21 @@ A map is not a verdict; it shows how each side's reasoning is built. For example
 
 To map fairly you need the **steelman** of each view: the strongest fair version of it, the one its own holders would recognize and accept. The opposite, a weak version built to be knocked down, is a **straw man** (the image is of a dummy made of straw, easy to knock over). This chapter follows one rule for every debate. Each side appears at its strongest, from its own primary sources. The book's own voice takes no side. The author's own view is kept apart, in labeled boxes. Where he has published something relevant, the box gives it with its source (section 23.4). Elsewhere a box titled "Author's view — to be added by the author before publication" marks the place; nothing is written there on his behalf. Your own view, in the optional position paper (section 23.8), gets the same treatment: its own labeled paragraph.
 
-::: {.callout-note title="Worked Example: Elif Maps a Seminar Claim"}
-*Constructed example.* In Elif's seminar a classmate says: "AI tutors can't understand students, so they can't help them."
+::: {.callout-note title="Worked Example: Maya Maps a Seminar Claim"}
+*Constructed example.* In Maya's seminar a classmate says: "AI tutors can't understand students, so they can't help them."
 
 **Step 1 — The claim.** AI tutors cannot help students.
 
-**Step 2 — Stated reason.** AI tools produce text by prediction, not by understanding. (Whether that is true is section 23.2's question; Elif marks it "contested" and moves on.)
+**Step 2 — Stated reason.** AI tools produce text by prediction, not by understanding. (Whether that is true is section 23.2's question; Maya marks it "contested" and moves on.)
 
-**Step 3 — Unstated premise.** For the conclusion to follow, the classmate must assume that only something that understands a student can help that student. The claim never says so. Elif draws it dashed: it is her reconstruction.
+**Step 3 — Unstated premise.** For the conclusion to follow, the classmate must assume that only something that understands a student can help that student. The claim never says so. Maya draws it dashed: it is her reconstruction.
 
 **Step 4 — Objections.** One denies the unstated premise: practice questions and feedback can help a learner whether or not their source understands anything (Chapter 7 showed when they help and when they become a crutch). Another opposes the claim directly: whether a tool helps is a question a study can test.
 
 **Result:** @fig-23-4. The disagreement does not sit where it first seemed to, in whether machines understand. It sits in the unstated premise about what help requires.
 :::
 
-![Elif's map: the disagreement sits in one unstated premise.](../figures/out/color/f23-04-map-elif.svg){#fig-23-4 fig-alt="Elif's map: claim AI tutors can't help; reason about prediction; dashed premise that only understanding helps; one objection denies that premise."}
+![Maya's map: the disagreement sits in one unstated premise.](../figures/out/color/f23-04-map-elif.svg){#fig-23-4 fig-alt="Maya's map: claim AI tutors can't help; reason about prediction; dashed premise that only understanding helps; one objection denies that premise."}
 
 ::: {.callout-note title="Faded Example: A Jobs Op-Ed"}
 *Constructed example.* An op-ed (an opinion article in a newspaper or website) paragraph: "AI will replace marketing jobs. These tools already write ad copy in seconds, and companies always cut costs when they can."
@@ -120,7 +120,7 @@ Take one claim about AI you heard this week (a post, a lecture, a conversation).
 
 [Deep]{.path}
 
-*Featuring Elif.*
+*Featuring Maya.*
 
 Chapter 3 asked whether a language model knows things or predicts text, and answered the mechanical half: it predicts text one token at a time. This section asks the other half: granting what a model does, is anything like **understanding** going on? The word has no single agreed meaning, which is part of the problem. In this section it means grasping what words are about, not only how they are used.
 
@@ -134,16 +134,16 @@ Searle also answered the replies he had met when presenting the argument to AI r
 
 ![The systems reply denies that the person in the room is the one who would understand.](../figures/out/color/f23-06-map-room.svg){#fig-23-6 fig-alt="Chinese Room map: three premises; the systems reply denies the third; the robot and brain simulator replies oppose the claim."}
 
-::: {.callout-note title="Worked Example: Elif Maps the Chinese Room"}
-*Constructed example.* For her seminar, Elif maps Searle's argument.
+::: {.callout-note title="Worked Example: Maya Maps the Chinese Room"}
+*Constructed example.* For her seminar, Maya maps Searle's argument.
 
 **Step 1 — The claim (Searle's):** running the right program is not enough for understanding.
 
-**Step 2 — The premises (Elif's three-premise reconstruction):** (1) a program manipulates symbols by their form; (2) form alone is not enough for meaning; (3) the person in the room follows the rules and understands no Chinese.
+**Step 2 — The premises (Maya's three-premise reconstruction):** (1) a program manipulates symbols by their form; (2) form alone is not enough for meaning; (3) the person in the room follows the rules and understands no Chinese.
 
 **Step 3 — The replies, and what each accepts or denies:** the systems reply denies that premise 3 is about the right thing: the person is not the one who would understand. The robot reply accepts premise 2 and adds connections to the world; Searle answered that the camera signals would reach him as more symbols. The brain simulator reply opposes the claim as a whole.
 
-**Step 4 — A note in her own words.** Elif writes in English and thinks in Turkish (Chapter 3). In either language she can connect words to things she has seen and done; the person in the room cannot. So the robot reply interests her most. She labels this a reflection, not evidence.
+**Step 4 — A note in her own words.** Maya writes in English and thinks in Turkish (Chapter 3). In either language she can connect words to things she has seen and done; the person in the room cannot. So the robot reply interests her most. She labels this a reflection, not evidence.
 
 **Result:** the map shows where the replies part ways with Searle: the systems reply at premise 3; the robot reply over whether a program connected to the world is still "form alone."
 :::
@@ -190,7 +190,7 @@ Map Bender and Koller's argument (@fig-23-8) in two premises and a claim, in you
 
 [Deep]{.path}
 
-*Featuring Elif.*
+*Featuring Maya.*
 
 Understanding is one question; feeling is another. This section separates two questions often run together, using two working definitions. **Phenomenal consciousness** is experience: there is something it is like to be that system, as there is something it is like for you to taste coffee or feel pain. **Moral status** is the property of being something whose interests matter morally for its own sake, so that what happens to it can wrong it. Many philosophers link the two, because a being that can suffer seems to have interests, but some argue that other features, such as having goals of one's own, could also matter.
 
@@ -210,8 +210,8 @@ What do people believe? In a July 2023 survey of 300 U.S. adults, 67% gave ChatG
 
 ![Moral status: two serious sides, one label: contested.](../figures/out/color/f23-11-map-welfare.svg){#fig-23-11 fig-alt="Map: claim AI welfare deserves attention now; reasons from Long et al. and Birch; Seth denies the first reason; Suleyman opposes the claim."}
 
-::: {.callout-note title="Worked Example: Elif Sorts Four Statements"}
-*Constructed example.* Elif's seminar asks for each statement: what kind of evidence is it?
+::: {.callout-note title="Worked Example: Maya Sorts Four Statements"}
+*Constructed example.* Maya's seminar asks for each statement: what kind of evidence is it?
 
 1. A chatbot writes, "Sometimes I feel lonely between conversations." (*constructed output*) → **a self-report:** a claim to check; it shows what the system produced, not what it experiences.
 2. A company says it lets its models end abusive chats because of welfare uncertainty. → **a policy by an interested source:** it shows what the company decided and says, not what is true about its models.
@@ -290,7 +290,7 @@ The Tempe crash in the Case Study is a real chain in which you can test Elish's 
 ::: {.callout-note title="The author's view (partial, from a published article)"}
 *Disclosure: I am a founder of OptiWisdom, which develops software for businesses, including AI tools. See "How This Book Was Written."*
 
-In a 2026 article on explainable AI with Zümra Arslanhan, I wrote that when people cannot understand how an opaque model reached a decision, trust, accountability and fairness all suffer; an incorrect medical diagnosis or a biased loan denial from such a model is a potential harm to society, not just a statistical error (Şeker & Arslanhan, 2026; paraphrased). That passage ties accountability to being able to understand a decision. It does not take a side between Matthias and his critics.
+In a 2026 article on explainable AI with Zumra Arslanhan, I wrote that when people cannot understand how an opaque model reached a decision, trust, accountability and fairness all suffer; an incorrect medical diagnosis or a biased loan denial from such a model is a potential harm to society, not just a statistical error (Seker & Arslanhan, 2026; paraphrased). That passage ties accountability to being able to understand a decision. It does not take a side between Matthias and his critics.
 :::
 
 ::: {.callout-note title="Faded Example: A Paralegal's Clause"}
@@ -423,18 +423,18 @@ Find one claim about AI and jobs you have seen this month. Rewrite it as one dat
 
 [Deep]{.path}
 
-*Featuring Elif.*
+*Featuring Maya.*
 
 The last debate is about the future, where evidence is thinnest. Two terms first. **Artificial general intelligence (AGI)** is usually meant as an AI system that matches or exceeds people across most cognitive tasks, not only some; there is no agreed definition, and one proposal from researchers at a developer defines levels of AGI by how well and how broadly a system performs (Morris et al., 2024), an interested source like any developer. **Existential risk** from AI, as this chapter uses the term, is the risk of outcomes as bad as human extinction or the permanent loss of humanity's future. A note on tone: this section reports serious positions calmly. If the topic makes you anxious, that is a reasonable response to an unsettled question; the method below is a way to think about it, not a reason to worry more.
 
 **Side A: treat extreme risk as a priority.** In May 2023 the Center for AI Safety (CAIS), an advocacy and research organization, published a one-sentence statement saying that reducing the risk of extinction from AI should be a global priority alongside other societal-scale risks such as pandemics and nuclear war (Center for AI Safety, 2023; paraphrased). Its signatories included the computer scientists Geoffrey Hinton and Yoshua Bengio and leaders of several AI companies; those leaders are interested sources too. A 2024 article by Bengio, Hinton and colleagues in *Science* argued that capabilities are advancing fast, that society is not ready for systems that could pursue goals in ways people cannot control, and that more safety research and governance are needed (Bengio et al., 2024). In a survey conducted in 2023, between 38% and 51% of 2,778 published AI researchers, depending on how the question was asked, gave at least a 10% chance to outcomes as bad as human extinction (Grace et al., 2024). Those are forecasts: researchers' estimates about the future, not measurements.
 
-**Side B: treat AI as a normal technology.** The computer scientists Arvind Narayanan and Sayash Kapoor (2025) argue that AI is a general-purpose technology like electricity or the internet, whose effects arrive slowly, through adoption by people and institutions, so that policy should build resilience rather than respond to speculative scenarios. The researchers Timnit Gebru and Émile P. Torres (2024) argue that the long-term-risk framing draws attention and money away from present, documented harms, such as the bias and labor problems earlier chapters covered, and that the framing has roots they trace to twentieth-century eugenics.
+**Side B: treat AI as a normal technology.** The computer scientists Arvind Narayanan and Sayash Kapoor (2025) argue that AI is a general-purpose technology like electricity or the internet, whose effects arrive slowly, through adoption by people and institutions, so that policy should build resilience rather than respond to speculative scenarios. The researchers Timnit Gebru and Emile P. Torres (2024) argue that the long-term-risk framing draws attention and money away from present, documented harms, such as the bias and labor problems earlier chapters covered, and that the framing has roots they trace to twentieth-century eugenics.
 
 **Between them: an assessment.** The *International AI Safety Report*, chaired by Yoshua Bengio, developed with more than 100 experts and backed by more than 30 countries and international organizations, published its first edition in January 2025 and its second on February 3, 2026. It reviews the evidence on capabilities and risks, records where experts disagree, and does not recommend any policy (International AI Safety Report, 2026). A statement, an assessment and an essay are different kinds of document (@fig-23-19): a signature list shows who holds a view, not that the view is true. Chapter 22 covers what current systems can do; this section is about the arguments.
 
-::: {.callout-note title="Worked Example: Elif Maps the Statement and Its Critics"}
-*Constructed example.* Elif maps the CAIS statement against Narayanan and Kapoor.
+::: {.callout-note title="Worked Example: Maya Maps the Statement and Its Critics"}
+*Constructed example.* Maya maps the CAIS statement against Narayanan and Kapoor.
 
 **Step 1 — The claim:** extinction risk from AI should be a global priority (CAIS, paraphrased).
 
@@ -611,9 +611,9 @@ The descriptions below are illustrations, not labor-market data.
 
 <!-- Based on the author's encyclopedia entry "Aktör Ağ Teorisi (Actor Network Theory)", YBS Ansiklopedi 1(1), September 2014, printed pp. 14–15 (the PDF's own citation line; file m8_p18_19_aktoragteorisi.pdf), read in full from Drive 1UwSp0DJ-3NtBlAOZRVWO9O20tKFeBprX on 2026-10-18; translated and paraphrased from Turkish. Facts limited to the entry; present-day connections marked as the book's. Not commercial: no D16 disclosure. -->
 
-In September 2014 I wrote a short encyclopedia entry on **actor-network theory** (ANT), an approach from the sociology of science and technology associated with Bruno Latour, Michel Callon and John Law in the 1980s (Şeker, 2014). Its central move is to count things, not only people, as actors in a social analysis. The entry's example was Türkiye's Southeastern Anatolia Project: the Atatürk Dam and the irrigation channels can be actors in the network, and people's relations with them are analyzed too. ANT calls such non-human participants *actants*.
+In September 2014 I wrote a short encyclopedia entry on **actor-network theory** (ANT), an approach from the sociology of science and technology associated with Bruno Latour, Michel Callon and John Law in the 1980s (Seker, 2014). Its central move is to count things, not only people, as actors in a social analysis. The entry's example was Turkey's Southeastern Anatolia Project: the Ataturk Dam and the irrigation channels can be actors in the network, and people's relations with them are analyzed too. ANT calls such non-human participants *actants*.
 
-The entry described ANT as constructivist: instead of sorting claims into true and false at the start, it accepts the entities involved and analyzes what their interactions produce. It noted a weakness: ANT is not good at explaining power relations. It also included a network I had drawn in 2004 for Türkiye's e-government, with five groups of actors: citizens, the state, economic actors, foreign players and universities.
+The entry described ANT as constructivist: instead of sorting claims into true and false at the start, it accepts the entities involved and analyzes what their interactions produce. It noted a weakness: ANT is not good at explaining power relations. It also included a network I had drawn in 2004 for Turkey's e-government, with five groups of actors: citizens, the state, economic actors, foreign players and universities.
 
 For information systems, the entry argued, ANT's strength is that it analyzes a system with all its parts, without separating the living from the non-living, which suits systems with a human–machine boundary or with AI. Its example was a health system with doctors, nurses, secretaries, tablets, patient-tracking software, servers and barcode readers, each affecting the system differently. It also gave a warning: giving information systems too much priority in the network risks technological determinism, the view that technology drives everything, which runs against ANT itself (citing Mitev, 2009). And it noted engineers' habit of treating each system as a black box, looking only at inputs and outputs.
 
@@ -627,7 +627,7 @@ For information systems, the entry argued, ANT's strength is that it analyzes a 
 
 **Return to the Opening Case.** The 2026 test gave Turing's game a result, and each side reads it as support: as the evidence Turing asked for, as beside Searle's point, or as a sign of how readily people read meaning into fluent text. The dispute is about a premise, not the data.
 
-**Elif and Hana.** Elif's seminar maps showed her that the loudest claim in a debate is rarely where the disagreement sits. Hana wrote down a view on creativity that they can defend and revise, and added its "what would change my mind" line to their code of practice from Chapter 21.
+**Maya and Hana.** Maya's seminar maps showed her that the loudest claim in a debate is rarely where the disagreement sits. Hana wrote down a view on creativity that they can defend and revise, and added its "what would change my mind" line to their code of practice from Chapter 21.
 
 **Revisit your Warm-up.** (1) Does a partner you cannot tell from a person understand you? *That is the disputed question:* behavior is evidence, and whether it is enough is what Turing and Searle disagree about (section 23.2). (2) What is "I am afraid of being switched off" evidence of? *Of what the system produced;* it is a claim to check, a rule both sides of the consciousness debate accept (section 23.3). (3) Who answers for the wrong room? *In practice,* the people with assigned duties: the decision owner and whoever approved the schedule; *whether that blame is fair* depends on what they could control and foresee (section 23.4).
 
@@ -822,9 +822,9 @@ Driver, J. (2025, July 31). The history of utilitarianism (substantive revision)
 
 Elish, M. C. (2019). Moral crumple zones: Cautionary tales in human-robot interaction. *Engaging Science, Technology, and Society, 5*, 40–60. https://doi.org/10.17351/ests2019.260
 
-Gebru, T., & Torres, É. P. (2024). The TESCREAL bundle: Eugenics and the promise of utopia through artificial general intelligence. *First Monday, 29*(4). https://doi.org/10.5210/fm.v29i4.13636
+Gebru, T., & Torres, E. P. (2024). The TESCREAL bundle: Eugenics and the promise of utopia through artificial general intelligence. *First Monday, 29*(4). https://doi.org/10.5210/fm.v29i4.13636
 
-Grace, K., Stewart, H., Sandkühler, J. F., Thomas, S., Weinstein-Raun, B., Brauner, J., & Korzekwa, R. C. (2024). *Thousands of AI authors on the future of AI* (arXiv:2401.02843; version 3, October 8, 2025). arXiv. https://arxiv.org/abs/2401.02843
+Grace, K., Stewart, H., Sandkuhler, J. F., Thomas, S., Weinstein-Raun, B., Brauner, J., & Korzekwa, R. C. (2024). *Thousands of AI authors on the future of AI* (arXiv:2401.02843; version 3, October 8, 2025). arXiv. https://arxiv.org/abs/2401.02843
 
 Harnad, S. (1990). The symbol grounding problem. *Physica D: Nonlinear Phenomena, 42*(1–3), 335–346. https://doi.org/10.1016/0167-2789(90)90087-6
 
@@ -838,7 +838,7 @@ Jones, C. R., & Bergen, B. K. (2026). Large language models pass a standard thre
 
 Keynes, J. M. (1963). Economic possibilities for our grandchildren. In *Essays in persuasion* (pp. 358–373). W. W. Norton. (Original work published 1930)
 
-Li, K., Hopkins, A. K., Bau, D., Viégas, F., Pfister, H., & Wattenberg, M. (2023). Emergent world representations: Exploring a sequence model trained on a synthetic task. In *The Eleventh International Conference on Learning Representations (ICLR 2023)*. https://openreview.net/forum?id=DeG07_TcZvT
+Li, K., Hopkins, A. K., Bau, D., Viegas, F., Pfister, H., & Wattenberg, M. (2023). Emergent world representations: Exploring a sequence model trained on a synthetic task. In *The Eleventh International Conference on Learning Representations (ICLR 2023)*. https://openreview.net/forum?id=DeG07_TcZvT
 
 Long, R., Sebo, J., Butlin, P., Finlinson, K., Fish, K., Harding, J., Pfau, J., Sims, T., Birch, J., & Chalmers, D. (2024). *Taking AI welfare seriously* (arXiv:2411.00986). arXiv. https://doi.org/10.48550/arXiv.2411.00986
 
@@ -874,9 +874,9 @@ Santoni de Sio, F., & van den Hoven, J. (2018). Meaningful human control over au
 
 Searle, J. R. (1980). Minds, brains, and programs. *Behavioral and Brain Sciences, 3*(3), 417–424. https://doi.org/10.1017/S0140525X00005756
 
-Şeker, Ş. E. (2014). Aktör ağ teorisi [Actor network theory]. *YBS Ansiklopedi, 1*(1), 14–15.
+Seker, S. E. (2014). Aktor ag teorisi [Actor network theory]. *YBS Ansiklopedi, 1*(1), 14–15.
 
-Şeker, Ş. E., & Arslanhan, Z. (2026). Hermai: A hermeneutic framework for context-aware and narrative explainable AI. *Artificial Intelligence Theory and Applications, 6*(1), 56–74. https://dergipark.org.tr/en/pub/aita/article/1796258. Software: hermai, open-source Python package; source code: https://github.com/bilgisayarkavramlari/hermai
+Seker, S. E., & Arslanhan, Z. (2026). Hermai: A hermeneutic framework for context-aware and narrative explainable AI. *Artificial Intelligence Theory and Applications, 6*(1), 56–74. https://dergipark.org.tr/en/pub/aita/article/1796258. Software: hermai, open-source Python package; source code: https://github.com/bilgisayarkavramlari/hermai
 
 Seth, A. K. (2025). Conscious artificial intelligence and biological naturalism. *Behavioral and Brain Sciences, 49*, Article e315. https://doi.org/10.1017/S0140525X25000032
 

@@ -14,7 +14,7 @@ deck:
   slug: decision-support-data-work-and-hidden-assumptions
   title: Decision Support, Data Work and Hidden Assumptions
   short_title: Decision Support and Hidden Assumptions
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     tue: {label: "Concept session (75 min)", minutes: 75}
     thu: {label: "Lab session · practice lab, Lab 11.1 (75 min)", minutes: 75}
@@ -40,7 +40,7 @@ slides:
   minutes: 0
   subtitle: "Concept session and lab session"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Reading: Chapter 11"
     - "Recommended: Dell'Acqua et al. (2026)"
   figure: f11-01-chapter-map
@@ -251,7 +251,7 @@ slides:
   tag: "Core"
   title: "Decision support, not decision replacement"
   idea: "The same output can inform, recommend or trigger an action. Someone owns each decision."
-  meta: "Book §11.1 · Lucía sorts a reply"
+  meta: "Book §11.1 · Lucia sorts a reply"
   notes:
     say: |
       First idea. At work, people use AI outputs to approve a budget, shortlist candidates, pick a supplier or flag a
@@ -304,9 +304,9 @@ slides:
       checks must happen before the system is switched on and in regular audits afterward.
     background: |
       Rebuilds @fig-11-3 natively (labels ≥ 20 pt). Grammar as in the book: hexagon = AI output, rounded = a person,
-      thick risk border = no person in between, dashed = answered for afterward. Lucía's worked example ("Lucía Sorts a
+      thick risk border = no person in between, dashed = answered for afterward. Lucia's worked example ("Lucia Sorts a
       Reply", constructed): information = per-event totals; recommendation = "Repeat the book swap; it raised $24.22
-      per volunteer hour"; decision = not in the reply, it belongs to the board's vote. The owner is the board; Lucía is
+      per volunteer hour"; decision = not in the reply, it belongs to the board's vote. The owner is the board; Lucia is
       responsible for what she tells it. Faded example (maintenance score) answer: below the threshold the list
       recommends and the supervisor owns the decision; above it, the managers who switched on automatic work orders
       own the rule.
@@ -314,7 +314,7 @@ slides:
       - q: "If the doctor can still refuse later, is the 97th-percentile flag really automated?"
         a: "The flag itself happened with no person in between, so it triggered an action; what followed (enrollment) also depended on doctors and eligibility rules. That is why the article calls the algorithm a screening tool."
     activity: "Ask: 'Name one decision in your week where an AI output played a part. Which role?' (the §11.1 Your Turn). Take two answers."
-    book: "§11.1 'One output, three roles', @fig-11-3; Worked Example 'Lucía Sorts a Reply'; Faded Example 'A Maintenance Score'."
+    book: "§11.1 'One output, three roles', @fig-11-3; Worked Example 'Lucia Sorts a Reply'; Faded Example 'A Maintenance Score'."
 
 - layout: quiz
   minutes: 1
@@ -372,11 +372,11 @@ slides:
       that can change the result but is not stated. Blank cells are the most common place to find one. A missing
       value is an empty cell or field where a value should be. The idea on the slide is the one to keep: a missing
       value is not nothing. Every way of handling it, whether you treat it as zero, delete the row or fill it with an
-      estimate, is an assumption about why it is missing. Lucía, our accounting student, is about to find that out
+      estimate, is an assumption about why it is missing. Lucia, our accounting student, is about to find that out
       with her student association's fundraiser log, and so are you.
     background: |
       §11.2 is Core. Terms: hidden assumption, missing value, listwise deletion, imputation. The MCAR/MAR/MNAR
-      vocabulary and multiple imputation are Deep 11.A (optional, not examinable; reference slide at the end). Lucía
+      vocabulary and multiple imputation are Deep 11.A (optional, not examinable; reference slide at the end). Lucia
       is the chapter's only featured student (accounting; saving to sit for the CPA exam).
     misconceptions:
       - m: "M2 'A few blank cells don't change the answer, and if several ways of filling them agree, the answer is safe.'"
@@ -396,12 +396,12 @@ slides:
     - {text: "**Why blank?** Find the real value: the paper sign-in sheets", min: 3}
     - {text: "**Recompute:** $1,059 over 54 hours. Which event is best now?", min: 2}
   side:
-    - {heading: "On screen", text: "Lucía’s event log (constructed) and a dated AI analysis of it"}
+    - {heading: "On screen", text: "Lucia’s event log (constructed) and a dated AI analysis of it"}
     - {heading: "No device?", text: "Work in pairs from the printed log"}
     - {heading: "Privacy", role: risk, text: "The log holds no personal data. Keep it that way."}
   notes:
     say: |
-      Lucía is treasurer of the accounting students' association. The board must choose which of last year's three
+      Lucia is treasurer of the accounting students' association. The board must choose which of last year's three
       fundraisers to repeat: a bake sale, a book swap or a car wash. Volunteers are scarce, so the question is which
       raised the most per volunteer hour. She gave a chat tool that can run code the shift log and asked, "Which
       fundraiser should we repeat?" First, predict: eighteen shifts, six per event, two with no hours recorded. Can two
@@ -413,7 +413,7 @@ slides:
       dropping the two blanks without a note. Both blanks are book-swap shifts: its two longest, 14 and 13 hours,
       which ran into the evening when few people came; the volunteers who stayed to the end left without logging.
       True rate: $1,059 over 54 hours = $19.61 per hour, below the car wash's $22.50; bake sale $18.00 under every
-      choice. Instructor package: show "Lucía's event log without the demo-only column and a dated AI analysis of it"
+      choice. Instructor package: show "Lucia's event log without the demo-only column and a dated AI analysis of it"
       (on your course site, needed before the concept session). Use the dated output with its model name and date; if it is not ready, present
       the chapter's constructed answer and say so. Do not run a live tool on any personal data.
     questions:
@@ -428,7 +428,7 @@ slides:
       2 min predict (individual, written) · 2 min show the AI answer · 4 min pairs count rows and locate blanks ·
       3 min reveal why the cells are blank and the sign-in sheet values · 2 min recompute together. Ask for hands: who
       predicted that two blanks could change the answer?
-    book: "§11.2 prediction and Worked Example 'Lucía's Two Blanks'; §11.4 Worked Example 'Lucía Audits the Tool's Answer'."
+    book: "§11.2 prediction and Worked Example 'Lucia's Two Blanks'; §11.4 Worked Example 'Lucia Audits the Tool's Answer'."
 
 # Native redraw of book figure F11.5 (its PNG shows the chart's "→" marker as a missing glyph at slide size).
 - layout: compare
@@ -459,8 +459,8 @@ slides:
       uses the table in §11.2 with the same numbers; the long description marks it "for slides and Compass".
       Spreadsheet functions such as SUM and AVERAGE leave empty cells out and normally show no message. The fills:
       mean of all logged shifts = 8.8 hours; book swap's own mean = 6.75 hours. From the Field (chapter): the author's
-      2017 encyclopedia entry on imputation with Eda Eşmekaya (Şeker & Eşmekaya, 2017) lists nine methods; the Turkish
-      word used for imputation, töhmet, means attributing to something what is not there.
+      2017 encyclopedia entry on imputation with Eda Esmekaya (Seker & Esmekaya, 2017) lists nine methods; the Turkish
+      word used for imputation, tohmet, means attributing to something what is not there.
     questions:
       - q: "Why does 'blank as zero' raise the rate instead of lowering it?"
         a: "The proceeds of those shifts still count while their hours count as zero, so the same money is divided by fewer hours (Check Yourself 11.2 item 1)."
@@ -491,7 +491,7 @@ slides:
       spread across events. Two: ask why each one is blank. A smudged page and a skipped long shift call for different
       fixes. Three: get the real value if you can: the volunteers, the sign-in sheet, the missing interview. A real
       value beats any estimate, because it needs no assumption. Four: only then compare defensible choices, and say
-      whether the decision changes. If it does, the data cannot settle it yet. How general is Lucía's case? The book
+      whether the decision changes. If it does, the data cannot settle it yet. How general is Lucia's case? The book
       ran a simulation of a thousand constructed logs. With blanks at random, deletion picked the truly best event in
       about 92 percent of logs; when the blanks were the long shifts of one event, every choice did worse. No choice
       was always right.
@@ -529,7 +529,7 @@ slides:
     say: |
       Second check. You have just seen the answer in action, so this should be quick, but read the options carefully;
       option (b) sounds like good scientific reasoning. Thirty seconds, then vote. If anyone picks (b), ask them what
-      the five shortcuts in Lucía's log had in common. All of them were made without the real hours, so they could all
+      the five shortcuts in Lucia's log had in common. All of them were made without the real hours, so they could all
       be wrong in the same direction. Agreement among methods that share the same blind spot is not independent
       evidence.
       This item is also a good model of how a written exam item works: each wrong option comes from a
@@ -541,7 +541,7 @@ slides:
     book: "§11.2; Review Questions A5; Appendix E."
   answer_notes:
     say: |
-      The answer is (a). When several shortcuts agree, check what they share. In Lucía's log, every fill put in fewer
+      The answer is (a). When several shortcuts agree, check what they share. In Lucia's log, every fill put in fewer
       hours than the truth and deletion dropped the two slowest shifts, so all five failed the same way. The fix is not
       a sixth method; it is the rule: count the blanks by group, ask why they are blank, and get the real values if you
       can. Option (c) picks a method by the answer it gives, which is the opposite of an honest analysis, and option
@@ -771,7 +771,7 @@ slides:
       - m: "M1 'If an AI tool ran the numbers, the arithmetic and the method are right.'"
         fix: "Use the gene-name example: a default setting silently changed published data. Then add the refutation check: human analyses fail the same way."
     activity: "Ask: 'Which of the six would have caught the demo's error?' (1: rows in, rows out; also 2.)"
-    book: "§11.4, @fig-11-12, @fig-11-4; Worked Example 'Lucía Audits the Tool's Answer'; Case Study short cases 1 and 2."
+    book: "§11.4, @fig-11-12, @fig-11-4; Worked Example 'Lucia Audits the Tool's Answer'; Case Study short cases 1 and 2."
 
 # No takeaway: the chart needs the full height so its labels stay near 14 pt; the closing line is in the notes.
 - layout: figure
@@ -863,7 +863,7 @@ slides:
       Definitions (§11.5; glossary): decision matrix, criterion, weight, sensitivity check, margin, shortlist. Book
       figure @fig-11-14 (matrix anatomy) shows three candidates and five criteria with six numbered notes; it is
       summarized on the next slide in words. Chapter 16 looks at criteria that track a protected group and evidence on
-      AI résumé screening; Chapter 18 covers hiring law.
+      AI resume screening; Chapter 18 covers hiring law.
     activity: "Transition slide."
     book: "§11.5 Decision Matrices: Structure Without False Precision."
 
@@ -1185,13 +1185,13 @@ slides:
       review covers, making people accountable for their decisions reduced over-reliance. Two further habits are this
       book's suggestions, consistent with that evidence. Form your own estimate before you see the AI's answer, so you
       have something to disagree with. And record every override, each time you decide against the AI's output, with
-      its reason, so disagreement is normal and can be learned from. Lucía's board did exactly this: the treasurer
+      its reason, so disagreement is normal and can be learned from. Lucia's board did exactly this: the treasurer
       counts the sign-in sheets before any vote, members write their own ranking first, and any member can call for a
       recount, with the reason in the minutes.
     background: |
       Goddard et al. (2012): accountability reduced over-reliance in the aviation and laboratory studies it reviews
       (confirmed in the review); the two habits are labeled in the chapter as the book's suggestions (inferred tier).
-      Worked example "Lucía at the Board Meeting" (constructed): one-line disclosure, "A chat tool ran the first
+      Worked example "Lucia at the Board Meeting" (constructed): one-line disclosure, "A chat tool ran the first
       analysis; I checked every number against the sign-in sheets." Faded example (care manager) answer: reason to
       disagree = a recent change in results or notes showing the patient already has help; record = a "disagree:
       reason" column reviewed monthly; unflagged patients = a weekly random sample. Ethics Lens: Article 14(4)(b) of the
@@ -1205,7 +1205,7 @@ slides:
       - m: "M6 refutation check: 'human review is pointless'."
         fix: "Review helps when it is designed: own estimate first, reasons recorded, accountability."
     activity: "Your Turn (§11.6): write a two-line review step for one decision you make with AI help. 1 minute; take one example."
-    book: "§11.6 'Design a review step'; Worked Example 'Lucía at the Board Meeting'; Faded Example 'A Care Manager's Review'; Ethics Lens."
+    book: "§11.6 'Design a review step'; Worked Example 'Lucia at the Board Meeting'; Faded Example 'A Care Manager's Review'; Ethics Lens."
 
 - layout: quiz
   minutes: 1
@@ -1398,7 +1398,7 @@ slides:
       of the six places a hidden choice can change an analysis. One minute to write, one minute to check with your team.
       These are exactly the tools you need today: the proxy questions drive the criteria audit, and the six places
       drive the recalculation. If someone is stuck, give a hint: the third proxy question is the one accuracy checks
-      miss, and the first place to look is the one that caught Lucía's error.
+      miss, and the first place to look is the one that caught Lucia's error.
     background: |
       Check Yourself 11.3 and 11.4 item 2. Retrieval two days after first meeting the ideas. Answers: §11.3 three
       questions; §11.4 six places (F11.12).
@@ -1678,12 +1678,12 @@ slides:
   takeaway: "Multiple imputation needs MAR; under MNAR, test the assumption"
   notes:
     say: |
-      Use this slide only if there is time or a student asks why the shortcuts failed in Lucía's log. Statisticians
+      Use this slide only if there is time or a student asks why the shortcuts failed in Lucia's log. Statisticians
       distinguish three reasons values go missing. Missing completely at random: the reason has nothing to do with any
       data, like a wet page of sign-in sheets; deleting rows loses information but does not tilt the answer. Missing at
       random: the reason depends only on things you observed, such as evening shifts logged less often when the log
       records which shifts were evenings; a fill that uses that pattern can work. Missing not at random: the reason
-      depends on the missing value itself. Lucía's log is this case: the longest shifts went unlogged because they were
+      depends on the missing value itself. Lucia's log is this case: the longest shifts went unlogged because they were
       long, and nothing in the log could predict them. No method recovers values missing for reasons the data cannot
       see; you need the real value.
     background: |
@@ -1695,7 +1695,7 @@ slides:
       Lab 11.4 (Deep) reruns the chapter's code in a browser notebook. Deep 11.B (Silberzahn et al., 2018): 29 teams, 61
       analysts, one dataset, estimates from 0.89 to 2.93 in odds-ratio units.
     questions:
-      - q: "Would a fill based on time of day have rescued Lucía's log?"
+      - q: "Would a fill based on time of day have rescued Lucia's log?"
         a: "No. Every late shift is blank, so no logged shift shows what a late shift is like (Deep 11.A)."
     activity: "Optional; not part of the 75-minute plan."
     book: "Deep 11.A, @fig-11-22; Deep 11.B; Lab 11.4."
@@ -1722,7 +1722,7 @@ slides:
     - "Reinhart, C. M., & Rogoff, K. S. (2010). Growth in a time of debt. *American Economic Review, 100*(2), 573–578."
     - "Rubin, D. B. (1976). Inference and missing data. *Biometrika, 63*(3), 581–592."
     - "Sackett, P. R., Zhang, C., Berry, C. M., & Lievens, F. (2022). Revisiting meta-analytic estimates of validity in personnel selection. *Journal of Applied Psychology, 107*(11), 2040–2068."
-    - "Şeker, Ş. E., & Eşmekaya, E. (2017). Eksik verilerin tamamlanması (Imputation). *YBS Ansiklopedi, 4*(3), 10–17."
+    - "Seker, S. E., & Esmekaya, E. (2017). Eksik verilerin tamamlanmasi (Imputation). *YBS Ansiklopedi, 4*(3), 10–17."
     - "Silberzahn, R., et al. (2018). Many analysts, one data set. *Advances in Methods and Practices in Psychological Science, 1*(3), 337–356."
     - "Skitka, L. J., Mosier, K. L., & Burdick, M. (1999). Does automation bias decision-making? *International Journal of Human-Computer Studies, 51*(5), 991–1006."
     - "Sterne, J. A. C., et al. (2009). Multiple imputation for missing data in epidemiological and clinical research. *BMJ, 338*, b2393."

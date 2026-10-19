@@ -25,7 +25,7 @@ Title: Source Serif 4 Bold (opsz 60). Subtitle, author, labels: Source Sans 3 Se
 ## Why alt-1
 - **alt-1 "The Loop" (chosen):** it reuses a diagram readers will learn, and the human decision is the clear focal point. It also holds up best at thumbnail size: the title reads at 100 px wide, and the shapes read in grayscale.
 - **alt-2 "Many drafts, one decision":** AI hexagons converge on a navy diamond. The idea is clear, but the many thin lines look busy, the lower third is empty, and the light hexagons lose contrast when small.
-- **alt-3 "Pattern":** a grid of faint shapes with one lit loop. It is strong as a graphic, but the square loop on a grid looks like a circuit board, which is the cliché this cover avoids.
+- **alt-3 "Pattern":** a grid of faint shapes with one lit loop. It is strong as a graphic, but the square loop on a grid looks like a circuit board, which is the cliche this cover avoids.
 
 ## Regenerate
 ```

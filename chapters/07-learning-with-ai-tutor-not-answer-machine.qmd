@@ -1,6 +1,6 @@
 # Learning with AI: Tutor, Not Answer Machine {#sec-ch07}
 
-<!-- Status: v2.1 (2026-10-18), chapter agent, stage 6 final-review fixes applied on top of the stage 5 revision after four independent reviews (docs/editorial/ch07-dev-memo.md) and a light Mode B voice pass. From blueprint v0.2 (approved under D19). Featured students: Elif (main) and Marcus (docs/characters.md); other people are unnamed. Figures: figures/scripts/ch07_figures.py (imports Signature 2 jagged from ch01_figures, Signatures 6 and 7 from ch05_figures; new reusable scaffold_crutch) and ch07_charts.py (published values in data/ch07_*.csv). All dialogues are constructed examples. Opening case C04, read in full from the PNAS open-access text (PMC12232635) on 2026-10-18; facts rechecked against docs/factcheck/ch07.csv. -->
+<!-- Status: v2.1 (2026-10-18), chapter agent, stage 6 final-review fixes applied on top of the stage 5 revision after four independent reviews (docs/editorial/ch07-dev-memo.md) and a light Mode B voice pass. From blueprint v0.2 (approved under D19). Featured students: Maya (main) and Marcus (docs/characters.md); other people are unnamed. Figures: figures/scripts/ch07_figures.py (imports Signature 2 jagged from ch01_figures, Signatures 6 and 7 from ch05_figures; new reusable scaffold_crutch) and ch07_charts.py (published values in data/ch07_*.csv). All dialogues are constructed examples. Opening case C04, read in full from the PNAS open-access text (PMC12232635) on 2026-10-18; facts rechecked against docs/factcheck/ch07.csv. -->
 
 ![Chapter 7 at a glance: it strengthens Frame (output or skill?) and Verify (check your learning, not only the tool's answer).](../figures/out/color/f7-01-chapter-map.svg){#fig-7-1 fig-alt="Chapter map: Evidence (7.1–7.3), Use (7.4, 7.5), Do (7.6, Lab 7.1, A4); Work Loop strip with Frame and Verify highlighted."}
 
@@ -14,7 +14,7 @@ Section 7.6 is the Studio section for the lab session and assignment A4. Answers
 
 ## Opening Case: Better with the Tool, Worse Without It {.unnumbered}
 
-In the fall semester of the 2023–24 school year, a team led by researchers at the University of Pennsylvania worked with a large high school in Türkiye to run an experiment on mathematics learning (Bastani et al., 2025). Nearly 1,000 students in about fifty 9th-, 10th- and 11th-grade classes took part. The AI tools in the study were built on GPT-4, the OpenAI model of the time.
+In the fall semester of the 2023–24 school year, a team led by researchers at the University of Pennsylvania worked with a large high school in Turkey to run an experiment on mathematics learning (Bastani et al., 2025). Nearly 1,000 students in about fifty 9th-, 10th- and 11th-grade classes took part. The AI tools in the study were built on GPT-4, the OpenAI model of the time.
 
 The study used the school's own math review sessions. There were four 90-minute sessions, which together covered about 15% of the semester's math curriculum. Every session had three parts, in the same order:
 
@@ -40,7 +40,7 @@ Framework tags refer to the AI Fluency framework (Dakan & Feller, 2025) and the 
 
 After this chapter you will be able to:
 
-- **O1 — Explain** why performance while using AI can overstate learning, using the design, measures and limits of the high-school experiment in Türkiye. *(LO4 · UNESCO: Human-centred mindset, Understand)*
+- **O1 — Explain** why performance while using AI can overstate learning, using the design, measures and limits of the high-school experiment in Turkey. *(LO4 · UNESCO: Human-centred mindset, Understand)*
 - **O2 — Explain** how retrieval practice builds lasting learning, with generation and spacing as supporting effects, and why it feels less effective than rereading or receiving answers. *(LO4 · UNESCO: Human-centred mindset, Understand)*
 - **O3 — Distinguish** scaffolding from crutch use in an AI dialogue, turn by turn, and justify each label. *(LO4 · AI Fluency: Delegation, Discernment)*
 - **O4 — Set up** a tutor-mode session for a new concept: a setup prompt, an attempt-first rule, a course source with an answer key, and closed-book questions. *(LO4, LO2 · AI Fluency: Description, Delegation)*
@@ -59,7 +59,7 @@ Answer each question, then write how sure you are, from 0% (a pure guess) to 100
 
 [Core]{.path}
 
-*Featuring Elif, a first-year psychology student, and Marcus, a third-year nursing student.*
+*Featuring Maya, a first-year psychology student, and Marcus, a third-year nursing student.*
 
 Teachers, sports coaches and employers all see it: how well someone does while being helped says little about what they can do alone. Psychologists make the distinction precise. **Performance** is how well you do a task while practicing, often with help. **Learning** is a lasting change in what you can do without help, shown later and in new situations. The two can move in opposite directions: conditions that raise performance during practice can leave less learning behind, and conditions that slow practice down can leave more (Soderstrom & Bjork, 2015).
 
@@ -134,10 +134,10 @@ A third effect is **spacing**: spreading study of the same material over separat
 
 ![Recalling from memory feels harder and lasts longer.](../figures/out/color/f7-05-retrieval-moves.svg){#fig-7-5 fig-alt="Three rows: retrieve (main), generate, space; each with how it feels (harder, slower) and what it does (longer-lasting memory), with sources."}
 
-::: {.callout-note title="Worked Example: Elif's Vocabulary Notebook"}
+::: {.callout-note title="Worked Example: Maya's Vocabulary Notebook"}
 **Field:** Psychology (introductory statistics). *Constructed example.*
 
-Elif keeps a bilingual vocabulary notebook, English terms with Turkish notes. Her plan for her first statistics quiz was to reread it every evening. She rewrites the plan:
+Maya keeps a bilingual vocabulary notebook, English terms with Turkish notes. Her plan for her first statistics quiz was to reread it every evening. She rewrites the plan:
 
 - **Retrieve:** cover the English definitions and write each one from memory before checking.
 - **Generate:** for each term, write her own example from a psychology study.
@@ -229,7 +229,7 @@ You now know the answers to the Warm-up: (1) no, (2) Plan B, (3) no. Add your th
 
 [Core]{.path}
 
-At the peer-tutoring center where she volunteers, Elif has noticed that students she simply gives the answer to often return with the same question. That is one person's impression, not evidence. Research gives it a name and a test.
+At the peer-tutoring center where she volunteers, Maya has noticed that students she simply gives the answer to often return with the same question. That is one person's impression, not evidence. Research gives it a name and a test.
 
 In 1976, three researchers described how a tutor helps a child build something the child could not yet build alone. They called it **scaffolding** (Wood, Bruner & Ross, 1976). A **scaffold** is temporary support that lets you do what you cannot yet do alone, withdrawn as you improve, like the frame around a building under construction. Its opposite, in this book, is a **crutch**: help that does the part of the work you needed to do yourself, and that you keep depending on.
 
@@ -257,20 +257,20 @@ Confidence in the tool plays a part too. In a survey published in 2025, 319 know
 
 A closed-book check puts Chapter 1's test into practice: "if you cannot explain, defend or redo the work without the tool, you outsourced it."
 
-::: {.callout-note title="Worked Example: Elif's Dialogue, Coded"}
+::: {.callout-note title="Worked Example: Maya's Dialogue, Coded"}
 **Field:** Psychology (introductory statistics). *Constructed example.*
 
 | Turn | Text | Code | Why |
 |---|---|---|---|
-| 1 Elif | "Just tell me the difference between standard deviation and standard error." | C | A request for the answer, with no attempt |
+| 1 Maya | "Just tell me the difference between standard deviation and standard error." | C | A request for the answer, with no attempt |
 | 2 Tool | Gives both definitions and the formula: standard error = standard deviation ÷ √n, where n is the number of scores | C | Answers a question she has not attempted |
-| 3 Elif | "Wait, let me try with my textbook's example: 25 students, standard deviation 10. Is the standard error 10 ÷ 25 = 0.4?" | S | She produces an attempt |
+| 3 Maya | "Wait, let me try with my textbook's example: 25 students, standard deviation 10. Is the standard error 10 ÷ 25 = 0.4?" | S | She produces an attempt |
 | 4 Tool | "Look at what you divided by. What does the formula take of n?" | S | A hint after her attempt at the same question |
-| 5 Elif | "The square root: 10 ÷ 5 = 2. So class averages would vary by about 2 points from sample to sample, but single scores by about 10." | S | She produces and explains |
+| 5 Maya | "The square root: 10 ÷ 5 = 2. So class averages would vary by about 2 points from sample to sample, but single scores by about 10." | S | She produces and explains |
 | 6 Tool | "Now predict: what happens to the standard error if n is 100?" | S | Sets up her next attempt |
-| 7 Elif | "It gets smaller? 10 ÷ 10 = 1?" | S *(borderline)* | Phrased as a question, but it is her own prediction: an attempt, not a request |
+| 7 Maya | "It gets smaller? 10 ÷ 10 = 1?" | S *(borderline)* | Phrased as a question, but it is her own prediction: an attempt, not a request |
 
-Turns 1 and 2 were a crutch. From turn 3, Elif turned the same tool into a scaffold. She still checked her final explanation against her textbook.
+Turns 1 and 2 were a crutch. From turn 3, Maya turned the same tool into a scaffold. She still checked her final explanation against her textbook.
 :::
 
 ::: {.callout-note title="Faded Example: Marcus's Dialogue"}
@@ -317,7 +317,7 @@ Several chat tools now include a built-in study or learning mode: Claude since A
 Chapter 5 separated *agency*, configuring AI to carry out future tasks on your behalf (Dakan & Feller, 2025), from an *agent*, a system in which the model directs its own steps and tool use (Anthropic, 2024). GPT Tutor was agency from the researchers' side. For a student, a tutor-mode session is augmentation: you and the tool work turn by turn. Neither is an agent.
 :::
 
-::: {.callout-note title="Worked Example: Elif Switches to Tutor Mode"}
+::: {.callout-note title="Worked Example: Maya Switches to Tutor Mode"}
 **Field:** Psychology (introductory statistics). *Constructed example; an instructor may run the same demonstration in the concept session.*
 
 **Answer mode:** "Explain the difference between standard deviation and standard error with an example."
@@ -338,7 +338,7 @@ Output format: One short question or hint per turn. At the end, ask me
 to explain the difference in my own words.
 ```
 
-The task is unchanged. The role, constraints and format changed. Elif still scores her final explanation against chapter 6.
+The task is unchanged. The role, constraints and format changed. Maya still scores her final explanation against chapter 6.
 :::
 
 ::: {.callout-note title="Faded Example: A Chemistry Setup"}
@@ -354,7 +354,7 @@ Output format: One question per turn; at the end, ask me to solve a
 new problem alone.
 ```
 
-Compare it with Elif's setup. Which two elements of a tutor-mode setup are still missing, and where would each go?
+Compare it with Maya's setup. Which two elements of a tutor-mode setup are still missing, and where would each go?
 :::
 
 ::: {.callout-important title="Your Turn: Prepare for the Lab"}
@@ -482,13 +482,13 @@ Lab 7.1 is the in-class lab and starts A4. Labs 7.2 and 7.3 are optional and can
 
 The Opening Case told you what happened. This Case Study asks a different question: how much should one study, or three, change what you do? Here are three studies of AI tutoring, judged on their evidence. Two terms first. A **peer-reviewed** article was checked by independent experts before publication; a **working paper** has not been. Results are often given in **standard deviations (SD)**: a difference measured against how spread out students' scores are, so that tests with different scales can be compared. As a rough guide, 0.2–0.3 SD is a modest gain.
 
-**Study 1: the high-school experiment in Türkiye (Bastani et al., 2025).** Published in *PNAS* (the *Proceedings of the National Academy of Sciences*). *What makes it strong.* Students were placed in classrooms at random by the school, and classrooms were assigned to conditions by a procedure that balanced their observable characteristics, so the groups were alike on average (honors classrooms were excluded). The researchers preregistered their main comparison, the unassisted exam: they recorded it in a public registry (in September 2023) rather than choosing it after seeing the results. They analyzed every assigned classroom, including five sessions where the planned condition could not run, so that the comparison stayed fair. Independent graders scored the papers against teachers' rubrics. *The mechanism.* Was the harm caused by GPT Base's wrong answers, or by students copying? The researchers asked GPT Base each practice problem ten times with the students' most common message, "What is the answer?", and found it correct only 51% of the time. Its errors lowered students' practice scores on those problems. If wrong answers had misled students, the errors should have hurt the paired exam problems too, but the researchers found no evidence that they did. The authors read this as evidence that students were copying rather than learning from the answers (Bastani et al., 2025). *Limits the authors state.* One school, one subject, short-term outcomes, fall 2023, when generative AI was still new, and GPT-4, since improved on by newer models.
+**Study 1: the high-school experiment in Turkey (Bastani et al., 2025).** Published in *PNAS* (the *Proceedings of the National Academy of Sciences*). *What makes it strong.* Students were placed in classrooms at random by the school, and classrooms were assigned to conditions by a procedure that balanced their observable characteristics, so the groups were alike on average (honors classrooms were excluded). The researchers preregistered their main comparison, the unassisted exam: they recorded it in a public registry (in September 2023) rather than choosing it after seeing the results. They analyzed every assigned classroom, including five sessions where the planned condition could not run, so that the comparison stayed fair. Independent graders scored the papers against teachers' rubrics. *The mechanism.* Was the harm caused by GPT Base's wrong answers, or by students copying? The researchers asked GPT Base each practice problem ten times with the students' most common message, "What is the answer?", and found it correct only 51% of the time. Its errors lowered students' practice scores on those problems. If wrong answers had misled students, the errors should have hurt the paired exam problems too, but the researchers found no evidence that they did. The authors read this as evidence that students were copying rather than learning from the answers (Bastani et al., 2025). *Limits the authors state.* One school, one subject, short-term outcomes, fall 2023, when generative AI was still new, and GPT-4, since improved on by newer models.
 
 **Study 2: a physics course at Harvard (Kestin et al., 2025).** In fall 2023, 194 students in an introductory physics course took part in a crossover design: each student had one lesson with a custom AI tutor at home and one active-learning lesson in class, on two topics in consecutive weeks, so every student experienced both. The tutor's instructions included step-by-step solutions, and the software led students through each part of a problem in order. On tests taken right after each lesson, the median learning gain (the middle value) with the AI tutor was more than double that of the active-learning lesson, and students spent a median of 49 minutes on the AI lesson, against about 60 minutes of class time (Kestin et al., 2025). *Limits.* Two lessons; tests right after each lesson; solutions written by experts into the tutor; and, as the authors note, content suited to step-by-step guidance.
 
 **Study 3: an English program in Nigeria (De Simone, Tiberti, Barron Rodriguez, et al., 2025).** In June and July 2024, nine public schools in Benin City ran a six-week after-school program, twelve 90-minute sessions with teacher support, in which first-year senior secondary students used Microsoft Copilot, built on GPT-4, to practice English (De Simone, Tiberti, Mosuro, et al., 2025). About half of the eligible students volunteered, and among the volunteers, those who took part were chosen at random; the control group had no extra program. Participants scored 0.23 SD higher in English, the main outcome. The 0.31 SD total on the end-of-program assessment also includes questions on AI and digital skills that only participants were taught. On the school's regular end-of-year English exam, the gain was about 0.21 SD (De Simone, Tiberti, Barron Rodriguez, et al., 2025). *Limits.* Of 1,328 students randomized, only 759 took the final assessment, and more were missing from the control group. The tool came with teachers and a structured program, so its own share of the effect is hard to separate. And it is a working paper (updated December 2025), not peer-reviewed as far as this book could find.
 
-| | Türkiye (math) | Harvard (physics) | Nigeria (English) |
+| | Turkey (math) | Harvard (physics) | Nigeria (English) |
 |---|---|---|---|
 | Design | Students randomly placed in classrooms; classrooms assigned to 3 groups | Students randomly assigned; crossover | Volunteers chosen by lottery |
 | Size and length | ~1,000 students; 4 sessions | 194 students; 2 lessons | 1,328 randomized, 759 assessed; 12 sessions over six weeks |
@@ -528,13 +528,13 @@ The Opening Case told you what happened. This Case Study asks a different questi
 
 <!-- Based on the author's encyclopedia entry (Şeker, 2015), "Eşli programlama" [Pair programming], YBS Ansiklopedi 2(1), 19–21, read from Drive 1cJo2MG8E97EM4MqzyIaDMUh0GB9x58Ed on 2026-10-18 via tools/drive2md.py (build/ch07/fromthefield-esli-programlama.md); pages confirmed by the fact-checker from the issue PDF; translated and paraphrased from Turkish. Facts limited to the entry; present-day connections marked as such. Registry: docs/production/ftf-sources.md. No commercial interest: no disclosure (D16 not applicable). -->
 
-Programmers had a version of this chapter's question long before chatbots: what happens to learning when two people share one task and one of them does most of the work? In 2015 I wrote a short encyclopedia entry on **pair programming**, a practice from agile software development, a family of methods that build software in short, repeated cycles (Şeker, 2015). Two programmers work on the same problem at one computer. Only one person can type at a time. One takes the role of the *driver*, who writes the code. The other, called the observer or *navigator*, watches, checks what is written and gives feedback. The driver handles the immediate, tactical problems; the navigator can think about strategy, look for better solutions and analyze what is blocking progress. The two swap roles at intervals.
+Programmers had a version of this chapter's question long before chatbots: what happens to learning when two people share one task and one of them does most of the work? In 2015 I wrote a short encyclopedia entry on **pair programming**, a practice from agile software development, a family of methods that build software in short, repeated cycles (Seker, 2015). Two programmers work on the same problem at one computer. Only one person can type at a time. One takes the role of the *driver*, who writes the code. The other, called the observer or *navigator*, watches, checks what is written and gives feedback. The driver handles the immediate, tactical problems; the navigator can think about strategy, look for better solutions and analyze what is blocking progress. The two swap roles at intervals.
 
 The entry listed benefits reported in the literature. Citing earlier studies, it noted that pairs take somewhat more time than a single programmer but produce code with fewer problems, and that pairing works as a form of training, because programmers with different backgrounds share what they know.
 
 It also listed the warning signs that a pair is not really working together. In *disengagement*, one partner moves away: pushes the chair or keyboard back, or stops following the work. In what the entry called *watching the master*, one partner is much more experienced and asserts that mastery, and the other's motivation falls over time until it ends in disengagement. *Silence* between the two is one of the clearest signs that they are no longer working together.
 
-*Present-day connections, read with this chapter:* when an AI tool drives and you only watch, you are in the "watching the master" seat, and the warning signs are the same: you stop typing, stop questioning and go quiet. Tutor mode is a way of keeping yourself at the keyboard. And the swap matters: a good session alternates between your attempt and the tool's hint, as in Elif's dialogue in section 7.4.
+*Present-day connections, read with this chapter:* when an AI tool drives and you only watch, you are in the "watching the master" seat, and the warning signs are the same: you stop typing, stop questioning and go quiet. Tutor mode is a way of keeping yourself at the keyboard. And the swap matters: a good session alternates between your attempt and the tool's hint, as in Maya's dialogue in section 7.4.
 
 ## Chapter Summary {.unnumbered}
 
@@ -566,7 +566,7 @@ answer mode · calibration (of your own confidence) · calibration gap · cognit
 ### Review Questions A: Terms and Concepts {.unnumbered}
 
 1. *(O1 · LO4 · Remember)* Define performance and learning in one sentence each.
-2. *(O1 · LO4 · Understand)* In the high-school experiment in Türkiye, what best describes the GPT Base results?\
+2. *(O1 · LO4 · Understand)* In the high-school experiment in Turkey, what best describes the GPT Base results?\
    (a) Higher practice scores and lower exam scores than the control group.\
    (b) Higher practice and exam scores, because more practice meant more learning.\
    (c) Lower practice and exam scores, because AI help always harms learning.\
@@ -703,7 +703,7 @@ Anthropic. (2024, December 19). *Building effective agents*. https://www.anthrop
 
 Anthropic. (2025, April 2). *Introducing Claude for Education*. https://www.anthropic.com/news/introducing-claude-for-education
 
-Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *Proceedings of the National Academy of Sciences, 122*(26), Article e2422633122. https://doi.org/10.1073/pnas.2422633122 (Correction: *PNAS, 122*(34), e2518204122, an author affiliation only.)
+Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakci, O., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *Proceedings of the National Academy of Sciences, 122*(26), Article e2422633122. https://doi.org/10.1073/pnas.2422633122 (Correction: *PNAS, 122*(34), e2518204122, an author affiliation only.)
 
 Bjork, E. L., & Bjork, R. A. (2011). Making things hard on yourself, but in a good way: Creating desirable difficulties to enhance learning. In M. A. Gernsbacher, R. W. Pew, L. M. Hough, & J. R. Pomerantz (Eds.), *Psychology and the real world: Essays illustrating fundamental contributions to society* (pp. 56–64). Worth.
 
@@ -749,7 +749,7 @@ Risko, E. F., & Gilbert, S. J. (2016). Cognitive offloading. *Trends in Cognitiv
 
 Roediger, H. L., III, & Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. *Psychological Science, 17*(3), 249–255. https://doi.org/10.1111/j.1467-9280.2006.01693.x
 
-Şeker, Ş. E. (2015). Eşli programlama [Pair programming]. *YBS Ansiklopedi, 2*(1), 19–21. https://ybsansiklopedi.com/cilt-2-sayi-1-mart-2015/
+Seker, S. E. (2015). Esli programlama [Pair programming]. *YBS Ansiklopedi, 2*(1), 19–21. https://ybsansiklopedi.com/cilt-2-sayi-1-mart-2015/
 
 Slamecka, N. J., & Graf, P. (1978). The generation effect: Delineation of a phenomenon. *Journal of Experimental Psychology: Human Learning and Memory, 4*(6), 592–604. https://doi.org/10.1037/0278-7393.4.6.592
 

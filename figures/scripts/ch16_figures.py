@@ -163,7 +163,7 @@ def harms(f):
     f.text(400, 24, "Two kinds of harm", size=18, weight="700")
     cols = [("Allocation harm", "An opportunity or resource is withheld",
              ["A job shortlist (Ch. 2's recruiting tool)", "A care program (Ch. 11's health algorithm)",
-              "A tutoring offer (Elif's outreach score)"]),
+              "A tutoring offer (Maya's outreach score)"]),
             ("Representation harm", "A group is stereotyped, demeaned or left out",
              ["Images of \"a software developer\"", "Default descriptions of \"a typical\" person",
               "A group missing from examples"])]
@@ -324,7 +324,7 @@ LIFECYCLE_ELIF = bias_lifecycle(
            "use": "outreach emails in English only",
            "feedback": "students never emailed never visit"},
     dashed=["use", "feedback"],
-    tag="Elif's reading of the outreach score (constructed): data marked; use and feedback inferred")
+    tag="Maya's reading of the outreach score (constructed): data marked; use and feedback inferred")
 
 LIFECYCLE_FIX = bias_lifecycle(
     notes={"data": "reduce: add missing groups · limit: proxies can stay",
@@ -362,7 +362,7 @@ FIGS = [
     ("f16-03-lifecycle", LIFECYCLE_INTRO, 800, lifecycle_height(),
      "Bias can enter at four phases, and each phase needs its own check"),
     ("f16-05-lifecycle-elif", LIFECYCLE_ELIF, 800, lifecycle_height(),
-     "Elif's outreach score could let bias in at every phase"),
+     "Maya's outreach score could let bias in at every phase"),
     ("f16-04-harms", harms, 800, 300, "Bias can withhold an opportunity or misrepresent a group"),
     ("f16-08-three-questions", three_questions, 800, 362, "Three fairness definitions ask three different questions"),
     ("f16-10-paired-input", paired_input, 800, 340, "A paired-input test changes one cue and counts many runs"),
@@ -409,6 +409,6 @@ if __name__ == "__main__":
         if hm is not None:
             from ch15_figures import HEAT_H
             render("f16-14-heatmap", hm, 800, HEAT_H,
-                   "A narrower use and a reduce step lowered Elif's bias risk; its owner accepts what is left",
+                   "A narrower use and a reduce step lowered Maya's bias risk; its owner accepts what is left",
                    ROOT)
             print("rendered f16-14-heatmap")

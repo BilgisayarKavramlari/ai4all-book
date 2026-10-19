@@ -34,7 +34,7 @@ $endif$
   outline-small-depth: 1,
   copyright: [
     *AI for All: Career-Ready AI Skills* \
-    Şadi Evren Şeker \
+    Sadi Evren Seker \
     Edition 2027.1 (working draft, #datetime.today().display("[month repr:long] [day], [year]")) — not for distribution.
 
     Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).

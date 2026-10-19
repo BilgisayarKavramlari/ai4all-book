@@ -18,7 +18,7 @@ deck:
   title: "Learning with AI: Tutor, Not Answer Machine"
   short_title: "Learning with AI: Tutor, Not Answer Machine"
   week: 4
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     tue: {label: "Session 1 · concept session, about 75 min", minutes: 75}
     thu: {label: "Session 2 · lab session, about 75 min", minutes: 75}
@@ -40,7 +40,7 @@ slides:
   minutes: 0
   subtitle: "Concept session and lab session · about 75 minutes each"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Read Chapter 7 before the lab session"
   figure: f7-08-scaffold-crutch
   notes:
@@ -83,7 +83,7 @@ slides:
         - {min: 5, label: "Exit step", detail: "Summary, key terms, exit ticket"}
   notes:
     say: |
-      Here is the plan for the chapter. In this concept session we start with a real experiment from a high school in Türkiye, where students who did
+      Here is the plan for the chapter. In this concept session we start with a real experiment from a high school in Turkey, where students who did
       better with an AI tool did worse without it. Then five short sections explain why: what practice scores measure,
       how memory is built, why feeling ready misleads, how to tell a scaffold from a crutch, and how to set a tool up as
       a tutor. In the middle you will watch, and take part in, a live comparison of answer mode and tutor mode. We end
@@ -125,7 +125,7 @@ slides:
       still learn.
     background: |
       Full wording and tags in the chapter: O1 explain (LO4; UNESCO human-centred mindset, Understand), using the
-      design, measures and limits of the experiment in Türkiye; O2 explain retrieval practice with generation and
+      design, measures and limits of the experiment in Turkey; O2 explain retrieval practice with generation and
       spacing (LO4); O3 distinguish scaffolding from crutch use turn by turn and justify each label (LO4; AI Fluency
       Delegation, Discernment); O4 set up a session: setup prompt, attempt-first rule, course source with an answer
       key, closed-book questions (LO4, LO2; Description, Delegation); O5 judge learning by comparing predicted and
@@ -156,7 +156,7 @@ slides:
       figure in Chapter 7 (D-7.h). Chapter 5's Delegation Ladder asked a third question, "is this skill yours to
       build?", with a pointer to Chapter 7; Deep 7.B returns to it with the ladder (@fig-7-14).
     misconceptions:
-      - m: "Elif's starting worry: 'using AI to study is cheating.'"
+      - m: "Maya's starting worry: 'using AI to study is cheating.'"
         fix: "Not a separate misconception in the blueprint; say now that study help is permitted (Chapter 1's zones) and that §7.4 shows the cost of crutch use is learning, not misconduct."
     activity: "Ask: 'Name one assignment this term where the skill, not the output, is the point.' Take one answer."
     book: "Chapter 7 at a glance; @fig-7-1; Chapter 5 (Delegation Ladder, third question)."
@@ -164,7 +164,7 @@ slides:
 - layout: timeline
   minutes: 3
   kicker: "Opening Case · Bastani et al. (2025), PNAS"
-  title: "A math experiment in a high school in Türkiye"
+  title: "A math experiment in a high school in Turkey"
   events:
     - {label: "Fall 2023–24", text: "Nearly 1,000 students, about fifty classes", tier: "confirmed"}
     - {label: "Part 1", text: "A teacher reviews a topic", tier: "confirmed"}
@@ -174,7 +174,7 @@ slides:
   notes:
     say: |
       Tell it as a story. In the fall semester of the 2023–24 school year, a team led by researchers at the University
-      of Pennsylvania worked with a large high school in Türkiye. Nearly 1,000 students in about fifty 9th-, 10th- and
+      of Pennsylvania worked with a large high school in Turkey. Nearly 1,000 students in about fifty 9th-, 10th- and
       11th-grade classes took part, using tools built on GPT-4, the OpenAI model of the time. The study used the
       school's own math review sessions: four sessions of 90 minutes each, together about 15 percent of the semester's
       math. Every session had three parts in the same order. A teacher reviewed a topic, such as counting arrangements,
@@ -182,7 +182,7 @@ slides:
       everyone took a closed-book, closed-laptop exam, with each problem paired with a very similar practice problem.
       Both parts counted toward grades, so everyone had a reason to try.
     background: |
-      Bastani, Bastani, Sungu, Ge, Kabakcı and Mariman (2025), PNAS 122(26), e2422633122, open access; read in full by
+      Bastani, Bastani, Sungu, Ge, Kabakci and Mariman (2025), PNAS 122(26), e2422633122, open access; read in full by
       the chapter author (PMC12232635). Tier: everything on this slide is confirmed in the published study. The school
       places students in regular classrooms at random; the researchers assigned whole classrooms to conditions with a
       procedure that balanced observable characteristics such as earlier grades, so the groups were alike on average
@@ -488,8 +488,8 @@ slides:
     misconceptions:
       - m: "M2 '…struggle means I am doing it wrong.'"
         fix: "Struggle you can meet is the point; but do not overcorrect: a difficulty with no way through and no answer afterward is just a difficulty."
-    activity: "Point to Elif's notebook example in the book: retrieve, generate, space, check against the glossary."
-    book: "§7.2, @fig-7-5, contrast box 'Two Meanings of Retrieval and Generation'; Worked Example 'Elif's Vocabulary Notebook'."
+    activity: "Point to Maya's notebook example in the book: retrieve, generate, space, check against the glossary."
+    book: "§7.2, @fig-7-5, contrast box 'Two Meanings of Retrieval and Generation'; Worked Example 'Maya's Vocabulary Notebook'."
 
 - layout: quiz
   minutes: 1
@@ -697,12 +697,12 @@ slides:
   notes:
     say: |
       You now know why recalling and producing matter, and why you might not notice when you skip them. This section
-      turns that into a test you can apply to any conversation with a tool, one turn at a time. Elif volunteers at a
+      turns that into a test you can apply to any conversation with a tool, one turn at a time. Maya volunteers at a
       peer-tutoring center, and she has noticed that students she simply gives the answer to often come back with the
       same question. That is one person's impression, not evidence. Research gives it a name and a test. The test is on
       the slide; it is the most important sentence of the chapter. Read it aloud with me.
     background: |
-      Elif's peer-tutoring observation is a fictional anecdote, never used as evidence (blueprint §6; the chapter says
+      Maya's peer-tutoring observation is a fictional anecdote, never used as evidence (blueprint §6; the chapter says
       so). The test wording is book-wide (D-7.e): "Who produced the answer in this turn: you, from your own memory, or
       the tool?" It replaced the blueprint's "who recalled and produced", which let a tool "recall"; use the chapter's
       wording.
@@ -788,7 +788,7 @@ slides:
       for the test and the request rule; it is the lab session's warm-up. Lab 7.1 step 1 restates the rules for the briefing.
     questions:
       - q: "What if I phrase my attempt as a question, like 'Is it 1?'"
-        a: "If it is your own prediction or answer, it is an attempt: S. Elif's turn 7 in the worked example is exactly this borderline case."
+        a: "If it is your own prediction or answer, it is an attempt: S. Maya's turn 7 in the worked example is exactly this borderline case."
     activity: "Ask for one example of an S request from students' own chats."
     book: "§7.4, the two rules."
 
@@ -797,31 +797,31 @@ slides:
 - layout: worked
   minutes: 1.5
   kicker: "§7.4 · worked example · intro statistics · constructed"
-  title: "Elif’s dialogue, coded turn by turn"
+  title: "Maya’s dialogue, coded turn by turn"
   context: "Standard deviation versus standard error"
   steps:
     - {label: "Turns 1–2", text: "“Just tell me…”; the tool answers · C, C"}
-    - {label: "Turn 3, Elif", text: "“10 ÷ 25 = 0.4?” · S: her attempt"}
+    - {label: "Turn 3, Maya", text: "“10 ÷ 25 = 0.4?” · S: her attempt"}
     - {label: "Turn 4, tool", text: "“What does the formula take of n?” · S: a hint"}
-    - {label: "Turn 5, Elif", text: "“The square root: 10 ÷ 5 = 2” · S: she produces"}
+    - {label: "Turn 5, Maya", text: "“The square root: 10 ÷ 5 = 2” · S: she produces"}
     - {label: "Turns 6–7", text: "“Predict: n = 100?” “10 ÷ 10 = 1?” · S, S"}
   reveal: [2, 5]
   result: "Same tool: a crutch for two turns, then a scaffold"
   notes_reveal:
     - minutes: 1.5
       say: |
-        Here is a constructed dialogue from Elif's introductory statistics course. Turn 1: "Just tell me the difference
+        Here is a constructed dialogue from Maya's introductory statistics course. Turn 1: "Just tell me the difference
         between standard deviation and standard error." A request for the answer with no attempt: C. Turn 2: the tool
         gives both definitions and the formula, standard error equals standard deviation divided by the square root of
-        n, the number of scores. It answers a question she has not attempted: C. Turn 3: Elif stops herself and tries
+        n, the number of scores. It answers a question she has not attempted: C. Turn 3: Maya stops herself and tries
         her textbook's example: 25 students, standard deviation 10. Is the standard error 10 divided by 25, 0.4? She
         produced an attempt: S, even though it is wrong. Ask the class to code turns 4 to 7 before you reveal them.
       background: |
-        Worked Example "Elif's Dialogue, Coded" (constructed; intro statistics, Elif's course per docs/characters.md).
+        Worked Example "Maya's Dialogue, Coded" (constructed; intro statistics, Maya's course per docs/characters.md).
         Turn texts are shortened on the slide; full wording in the book's table. Her attempt is wrong (she divided by n,
         not by the square root of n); it is still S, because the code asks who produced, not whether it is right.
       activity: "Pairs code turns 4–7 (40 s) before the reveal."
-      book: "§7.4 Worked Example 'Elif's Dialogue, Coded'."
+      book: "§7.4 Worked Example 'Maya's Dialogue, Coded'."
     - minutes: 1
       say: |
         Turn 4: the tool asks, "Look at what you divided by. What does the formula take of n?" A hint after her attempt
@@ -835,11 +835,11 @@ slides:
         (break-even, business) is the next quick check; its key is in Appendix E.
       misconceptions:
         - m: "M4 'AI help is either always good or always bad for learning.'"
-          fix: "One dialogue held both kinds of turn; Elif's choice at turn 3 changed which."
+          fix: "One dialogue held both kinds of turn; Maya's choice at turn 3 changed which."
       activity: "Reveal; ask which turn did the most for her learning (turn 5)."
       book: "§7.4 Worked Example; Faded Example 'Marcus's Dialogue'."
   notes:
-    book: "§7.4 Worked Example 'Elif's Dialogue, Coded'."
+    book: "§7.4 Worked Example 'Maya's Dialogue, Coded'."
 
 - layout: compare
   minutes: 1.5
@@ -865,7 +865,7 @@ slides:
       what earns the marks.
     background: |
       The two-row table is from §7.4 (blueprint §3); Chapter 1's assistance and outsourcing definitions are reused, not
-      repeated. Elif's starting worry ("using AI to study is cheating") is answered here rather than treated as a
+      repeated. Maya's starting worry ("using AI to study is cheating") is answered here rather than treated as a
       separate misconception (blueprint §4). AI use during A4's closed-book checks is not acceptable: the checks play
       the role of an exam (D-7.c).
     questions:
@@ -1014,7 +1014,7 @@ slides:
       your first language. The task does not change.
     background: |
       Signature 6 (Anatomy of a Prompt, Chapter 5) reused in @fig-7-10 with role, constraints and output format
-      highlighted; redrawn here as four cards, each naming whether it changed. Elif's full setup is in the §7.5 Worked
+      highlighted; redrawn here as four cards, each naming whether it changed. Maya's full setup is in the §7.5 Worked
       Example (it mirrors this demonstration). The chemistry faded example misses two elements: the attempt-first
       constraint and the source to check against (Appendix E). Agency is not an agent (box in §7.5): a tutor-mode
       session is augmentation, turn by turn.
@@ -1025,7 +1025,7 @@ slides:
       - m: "M5a 'Once a tool is in tutor mode, my learning is taken care of.'"
         fix: "The setup only creates the chance to attempt; you still have to attempt."
     activity: "Students copy the four headings; they write their own setup before the lab."
-    book: "§7.5, @fig-7-10; Worked Example 'Elif Switches to Tutor Mode'; Faded Example 'A Chemistry Setup'."
+    book: "§7.5, @fig-7-10; Worked Example 'Maya Switches to Tutor Mode'; Faded Example 'A Chemistry Setup'."
 
 - layout: lab
   minutes: 18
@@ -1067,7 +1067,7 @@ slides:
     activity: |
       3 + 8 + 4 + 3 min. Instructor drives the tool on the projector; students attempt on paper. If there is no network,
       read the dated pair aloud in two voices.
-    book: "§7.5 Worked Example 'Elif Switches to Tutor Mode'; Lab 7.3; instructor package, Chapter 7."
+    book: "§7.5 Worked Example 'Maya Switches to Tutor Mode'; Lab 7.3; instructor package, Chapter 7."
 
 - layout: compare
   minutes: 2
@@ -1155,7 +1155,7 @@ slides:
   title: "How strong is the evidence? Three studies"
   size: 20
   columns:
-    - heading: "Türkiye · math"
+    - heading: "Turkey · math"
       role: soft
       bullets: ["~1,000 students, 4 sessions", "Base 17% lower; Tutor no different", "Peer-reviewed (PNAS)"]
     - heading: "Harvard · physics"
@@ -1189,7 +1189,7 @@ slides:
       reading (inferred). Instructor package: the comparison table and the five Case Study Questions as a handout.
     questions:
       - q: "Which study is the strongest evidence about lasting learning?"
-        a: "None measures long-term learning. A common strong answer: Türkiye has the strongest design; Harvard is randomized but two lessons with immediate tests; Nigeria runs longest but randomized volunteers, lost many students and is a working paper (Case Study Question 3, Appendix E)."
+        a: "None measures long-term learning. A common strong answer: Turkey has the strongest design; Harvard is randomized but two lessons with immediate tests; Nigeria runs longest but randomized volunteers, lost many students and is a working paper (Case Study Question 3, Appendix E)."
       - q: "So will AI tutors replace teachers?"
         a: "Review C3 asks exactly this. All three tools depended on teachers or expert-written solutions; the studies are short and single-subject. Separate 'AI can do parts of tutoring well in some conditions' from 'replace teachers'."
     misconceptions:
@@ -1566,7 +1566,7 @@ slides:
       Chapter Summary. Tiers: the copying evidence is the authors' interpretation (reported); "what differed was who
       produced the answers" is the book's reading (inferred); the hedges "most likely", "consistent with" and "one
       likely reason" are the chapter's. Warm-up revisit: (1) no; (2) Plan B; (3) no, a tool can agree with a wrong
-      answer. From the Field (author's 2015 entry on pair programming, Şeker, 2015): when an AI tool drives and you
+      answer. From the Field (author's 2015 entry on pair programming, Seker, 2015): when an AI tool drives and you
       only watch, you are in the "watching the master" seat; tutor mode keeps you at the keyboard (present-day
       connection marked as the book's).
     activity: "Ask two students: 'What was your first guess about the puzzle, and was it right?'"
@@ -1664,7 +1664,7 @@ slides:
   per_slide: 7
   refs:
     - "Anthropic. (2025, April 2). *Introducing Claude for Education*. https://www.anthropic.com/news/introducing-claude-for-education"
-    - "Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *PNAS, 122*(26), e2422633122. https://doi.org/10.1073/pnas.2422633122"
+    - "Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakci, O., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *PNAS, 122*(26), e2422633122. https://doi.org/10.1073/pnas.2422633122"
     - "Bjork, E. L., & Bjork, R. A. (2011). Making things hard on yourself, but in a good way: Creating desirable difficulties to enhance learning. In M. A. Gernsbacher et al. (Eds.), *Psychology and the real world* (pp. 56–64). Worth."
     - "Bjork, R. A. (1994). Memory and metamemory considerations in the training of human beings. In J. Metcalfe & A. P. Shimamura (Eds.), *Metacognition: Knowing about knowing* (pp. 185–205). MIT Press."
     - "Bloom, B. S. (1984). The 2 sigma problem: The search for methods of group instruction as effective as one-to-one tutoring. *Educational Researcher, 13*(6), 4–16. https://doi.org/10.3102/0013189X013006004"
@@ -1683,7 +1683,7 @@ slides:
     - "Nickow, A., Oreopoulos, P., & Quan, V. (2024). The promise of tutoring for PreK–12 learning: A systematic review and meta-analysis of the experimental evidence. *American Educational Research Journal, 61*(1), 74–107. https://doi.org/10.3102/00028312231208687"
     - "OpenAI. (2025, July 29). *Introducing study mode*. https://openai.com/index/chatgpt-study-mode/"
     - "Roediger, H. L., III, & Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. *Psychological Science, 17*(3), 249–255. https://doi.org/10.1111/j.1467-9280.2006.01693.x"
-    - "Şeker, Ş. E. (2015). Eşli programlama [Pair programming]. *YBS Ansiklopedi, 2*(1), 19–21."
+    - "Seker, S. E. (2015). Esli programlama [Pair programming]. *YBS Ansiklopedi, 2*(1), 19–21."
     - "Slamecka, N. J., & Graf, P. (1978). The generation effect: Delineation of a phenomenon. *Journal of Experimental Psychology: Human Learning and Memory, 4*(6), 592–604. https://doi.org/10.1037/0278-7393.4.6.592"
     - "Soderstrom, N. C., & Bjork, R. A. (2015). Learning versus performance: An integrative review. *Perspectives on Psychological Science, 10*(2), 176–199. https://doi.org/10.1177/1745691615569000"
     - "VanLehn, K. (2011). The relative effectiveness of human tutoring, intelligent tutoring systems, and other tutoring systems. *Educational Psychologist, 46*(4), 197–221. https://doi.org/10.1080/00461520.2011.611369"

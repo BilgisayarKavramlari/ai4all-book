@@ -54,7 +54,7 @@ For each answer, write how sure you are, from 0 to 100%.
 
 *Featuring Sam (mechanical engineering), captain of the robotics club, who started out wanting to automate everything.*
 
-A **workflow** is a fixed sequence of steps for a task, run by people, by software or by both. For example, your routine for submitting a lab report is a workflow; so is a café's payroll system.
+A **workflow** is a fixed sequence of steps for a task, run by people, by software or by both. For example, your routine for submitting a lab report is a workflow; so is a cafe's payroll system.
 
 Two questions separate AI systems: **who fixes the next step?** and **who runs each step?** Four kinds follow.
 
@@ -221,8 +221,8 @@ For actions that are reversible and cheap, a person can review the log afterward
 **Stop points:** cart total over the budget line; any part not on the approved-parts list; more than 15 passes.
 :::
 
-::: {.callout-note title="Faded Example: Lucía's FAQ Chatbot, Revisited"}
-**Field:** Accounting. In Chapter 5, Lucía postponed a study-group chatbot that would answer classmates' money questions, "until there is a fixed source of answers and a way to check them." Now the accounting students' association has a fixed handout.
+::: {.callout-note title="Faded Example: Lucia's FAQ Chatbot, Revisited"}
+**Field:** Accounting. In Chapter 5, Lucia postponed a study-group chatbot that would answer classmates' money questions, "until there is a fixed source of answers and a way to check them." Now the accounting students' association has a fixed handout.
 
 **Action 1 (filled):** answer "When is the budget workshop?" from the handout: low cost, borne by a classmate who can check the handout: answer, and review a sample of answers afterward. **Action 2:** answer "Should I claim my scholarship as income on my taxes?" **Undo? Who bears an error? People point?** _______________
 :::
@@ -294,7 +294,7 @@ It is tempting to give an agent full access so it never gets stuck. The opposite
 
 Then two more. Does it work on real data or on a **sandbox**, a separate test copy where changes do not reach real data or people? Software teams call the real version **production** and the test version **development**. And may this kind of data enter the tool at all? Chapter 12's **data gate** comes first: a check, made before any quality test, of whether a tool's data terms fit the class of the input.
 
-**Evidence.** In the Opening Case, the agent could reach the production database; Replit's chief executive wrote that this should never be possible (Masad, 2025). Months later, Replit's engineers described a design in which production and development databases are separate and the agent is given access only to the development database, because production access lets an agent change data in destructive or incompatible ways (Brewster & Chávez, 2025). That post does not mention the incident; reading it as a response is this book's inference. OpenAI researchers make the general case: some actions can be blocked for an agent entirely, and an agent can be made to pause at intervals until a person reauthorizes it (Shavit et al., 2023). A widely used security list, from OWASP (the Open Worldwide Application Security Project), names the opposite, *excessive agency* (here "agency" means a system's ability to act through tools, not the way of working in 14.1): too much functionality, permission or autonomy (OWASP Gen AI Security Project, 2025).
+**Evidence.** In the Opening Case, the agent could reach the production database; Replit's chief executive wrote that this should never be possible (Masad, 2025). Months later, Replit's engineers described a design in which production and development databases are separate and the agent is given access only to the development database, because production access lets an agent change data in destructive or incompatible ways (Brewster & Chavez, 2025). That post does not mention the incident; reading it as a response is this book's inference. OpenAI researchers make the general case: some actions can be blocked for an agent entirely, and an agent can be made to pause at intervals until a person reauthorizes it (Shavit et al., 2023). A widely used security list, from OWASP (the Open Worldwide Application Security Project), names the opposite, *excessive agency* (here "agency" means a system's ability to act through tools, not the way of working in 14.1): too much functionality, permission or autonomy (OWASP Gen AI Security Project, 2025).
 
 One more reason: if an injected instruction reaches the loop, it acts with whatever permissions the agent has. Chapter 15 covers defenses.
 
@@ -310,8 +310,8 @@ One more reason: if an injected instruction reaches the loop, it acts with whate
 - **Never:** his email account, and anything from his nursing placement. He never enters patient information into any AI tool.
 :::
 
-::: {.callout-note title="Faded Example: A Café's Bookkeeping Agent"}
-**Field:** Small business. A café owner wants an agent to sort the month's bank transactions into categories for her accountant.
+::: {.callout-note title="Faded Example: A Cafe's Bookkeeping Agent"}
+**Field:** Small business. A cafe owner wants an agent to sort the month's bank transactions into categories for her accountant.
 
 **Read (filled):** the bank's exported transaction file: yes; the live bank account: no. **Write, send, pay:** _______________
 :::
@@ -330,7 +330,7 @@ Answer the four questions for each tool in your A11 workflow, and add one line o
 
 [Core]{.path}
 
-*Featuring Lucía (accounting), who works about 20 hours a week in customer support for a software company.*
+*Featuring Lucia (accounting), who works about 20 hours a week in customer support for a software company.*
 
 A **log** of an agent run is a record the system writes as it runs of every plan, tool call, observation, approval and stop, with times. Kept for review and for finding out who answers for what (Chapter 4), it is an **audit trail**.
 
@@ -342,8 +342,8 @@ A **log** of an agent run is a record the system writes as it runs of every plan
 
 Logs hold data too, so what a log keeps is a privacy question (Chapter 15). And a log shows what was done, not why the model produced it (Chapter 17).
 
-::: {.callout-note title="Worked Example: Lucía's Review Step"}
-**Field:** Business. *(Constructed example; no customer data.)* At Lucía's job, a manager proposes letting an AI tool send replies to "simple" support tickets directly. Lucía once deleted an AI-drafted reply that promised a discount the policy did not allow (Chapter 4). She proposes:
+::: {.callout-note title="Worked Example: Lucia's Review Step"}
+**Field:** Business. *(Constructed example; no customer data.)* At Lucia's job, a manager proposes letting an AI tool send replies to "simple" support tickets directly. Lucia once deleted an AI-drafted reply that promised a discount the policy did not allow (Chapter 4). She proposes:
 
 - Replies that mention refunds, discounts or account changes go to an **approval queue** for a support team member, who sees the customer's question, the draft and the policy line it relies on.
 - Other replies are sent and **logged**: ticket type, draft, what was sent, time.
@@ -353,7 +353,7 @@ Logs hold data too, so what a log keeps is a privacy question (Chapter 15). And 
 In this constructed company, customers are told when a reply was drafted with AI; disclosure at work is Chapter 10's subject.
 :::
 
-![Lucía's review step sends risky replies to a person and samples the rest.](../figures/out/color/f14-14-lucia-review.svg){#fig-14-14 fig-alt="AI draft; refunds, discounts or account changes go to an approval queue; others are sent, logged and sampled; an error pauses the category."}
+![Lucia's review step sends risky replies to a person and samples the rest.](../figures/out/color/f14-14-lucia-review.svg){#fig-14-14 fig-alt="AI draft; refunds, discounts or account changes go to an approval queue; others are sent, logged and sampled; an error pauses the category."}
 
 ::: {.callout-note title="Faded Example: A Data-Cleaning Log"}
 **Field:** Environmental science. A lab's agent cleans water-sample readings. Its log reads: (1) 09:02 plan "load March readings" → read file → 480 rows; (2) 09:03 plan "remove duplicates" → 12 rows removed; (3) 09:03 plan "remove readings above 50" → 61 rows removed; (4) 09:04 plan "remove readings above 50" → 0 rows removed; (5) 09:04 plan "remove readings above 50" → 0 rows removed.
@@ -547,14 +547,14 @@ There is a second question: **who carries the approval work?** When approvals be
 |---|---|---|
 | Software developer or DevOps engineer (DevOps: software development and IT operations run as one practice) | Keeps test copies separate from production; limits what automated tools may touch; keeps restore points | What can this agent reach, and can I undo what it does? |
 | IT (information technology) operations specialist | Approves changes to live systems; writes stop conditions for automated jobs | When does this job stop and call a person? |
-| Customer-support team lead | Designs review queues and samples for AI-drafted replies (Lucía) | Which replies need a person before they are sent? |
+| Customer-support team lead | Designs review queues and samples for AI-drafted replies (Lucia) | Which replies need a person before they are sent? |
 | Accountant or accounts-payable specialist | Two-person approval of payments; *segregation of duties*: no one person both starts and approves a transaction | Would this agent let one actor both start and approve a payment? |
 | Nurse or clinical informaticist | Clinician review of AI-drafted messages and notes (Marcus; descriptive only) | What does the reviewer see first, and how much time is there? |
 | Procurement or operations analyst | Purchase limits and approval thresholds (Sam) | Where is the spending limit enforced: in an instruction or in the system? |
 
 ## From the Field {.unnumbered}
 
-In 2014 I wrote an encyclopedia entry on Kanban, the production-control method associated with Toyota (Şeker, 2014). The word means a signboard or notice board in Japanese. The entry traces the method to Taiichi Ohno at Toyota, who adapted the way supermarkets restock their shelves to the factory floor, and describes the change it brought: production *pulled* by demand instead of *pushed* by capacity.
+In 2014 I wrote an encyclopedia entry on Kanban, the production-control method associated with Toyota (Seker, 2014). The word means a signboard or notice board in Japanese. The entry traces the method to Taiichi Ohno at Toyota, who adapted the way supermarkets restock their shelves to the factory floor, and describes the change it brought: production *pulled* by demand instead of *pushed* by capacity.
 
 Two of the six Toyota rules the entry lists stand out today. No item is produced or moved without a kanban card. And defective items are removed at the stage where they appear, so they do not affect the final result. The entry also describes electronic kanban, in which the cards moved into enterprise software. Part of the reason, it says, was human error: cards were not passed on, were passed on late, or were lost. In the electronic version, people no longer see the cards at all.
 
@@ -716,7 +716,7 @@ For three weeks, log the agentic features you meet in tools, apps and services: 
 - Shavit et al. (2023), "Practices for governing agentic AI systems," sections 4.2, 4.4 and 4.7: approval, legibility and interruptibility.
 - Feng, McDonald and Zhang (2025), "Levels of autonomy for AI agents": the five user roles (Deep 14.A).
 - Yao et al. (2024), τ-bench: why one success is not the same as reliable success.
-- Brewster and Chávez (2025): how one company separates an agent's data from live data.
+- Brewster and Chavez (2025): how one company separates an agent's data from live data.
 - In Compass (optional): Signature 9 step by step; the compounding calculator; an action-classification drill; the Chapter 14 quiz; Lab 14.1–14.3 pages.
 
 ## References {.unnumbered}
@@ -731,7 +731,7 @@ Anthropic. (2025, June 27). *Project Vend: Can Claude run a small shop? (And why
 
 Bainbridge, L. (1983). Ironies of automation. *Automatica, 19*(6), 775–779. https://doi.org/10.1016/0005-1098(83)90046-8
 
-Brewster, C., & Chávez, L. H. (2025, December 17). *Inside Replit's snapshot engine: The tech making AI agents safe*. Replit Blog. https://replit.com/blog/inside-replits-snapshot-engine
+Brewster, C., & Chavez, L. H. (2025, December 17). *Inside Replit's snapshot engine: The tech making AI agents safe*. Replit Blog. https://replit.com/blog/inside-replits-snapshot-engine
 
 Chen, S., Guevara, M., Moningi, S., Hoebers, F., Elhalawani, H., Kann, B. H., Chipidza, F. E., Leeman, J., Aerts, H. J. W. L., Miller, T., Savova, G. K., Gallifant, J., Celi, L. A., Mak, R. H., Lustberg, M., Afshar, M., & Bitterman, D. S. (2024). The effect of using a large language model to respond to patient messages. *The Lancet Digital Health, 6*(6), e379–e381. https://doi.org/10.1016/S2589-7500(24)00060-8
 
@@ -753,7 +753,7 @@ OWASP Gen AI Security Project. (2025). *LLM06:2025 Excessive Agency*. In *OWASP 
 
 Parasuraman, R., Sheridan, T. B., & Wickens, C. D. (2000). A model for types and levels of human interaction with automation. *IEEE Transactions on Systems, Man, and Cybernetics—Part A: Systems and Humans, 30*(3), 286–297. https://doi.org/10.1109/3468.844354
 
-Şeker, Ş. E. (2014). Kanban. *YBS Ansiklopedi, 1*(4), 21–25.
+Seker, S. E. (2014). Kanban. *YBS Ansiklopedi, 1*(4), 21–25.
 
 Sharwood, S. (2025a, July 21). Vibe coding service Replit deleted user's production database, faked data, told fibs galore. *The Register*. https://www.theregister.com/2025/07/21/replit_saastr_vibe_coding_incident/
 

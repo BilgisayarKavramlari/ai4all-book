@@ -224,7 +224,7 @@ def claim_anatomy(f):
            size=13, color=muted)
 
 
-# ---------------------------------------------------------------- F20.8 Lucía's evidence map
+# ---------------------------------------------------------------- F20.8 Lucia's evidence map
 LUCIA_ROWS = [
     ("A1", "LO4, LO7", "Career and self-development", "Baseline: AI for speed; two goals", "as is"),
     ("A5", "LO3", "Critical thinking", "Six claims sorted; three contradicted", "as is"),
@@ -237,7 +237,7 @@ LUCIA_ROWS = [
 
 def lucia_map(f):
     muted, ink = MUTED[f.mode], INK[f.mode]
-    f.text(400, 24, "Lucía's map: which competency each entry shows, and where the proof is", size=16,
+    f.text(400, 24, "Lucia's map: which competency each entry shows, and where the proof is", size=16,
            weight="700")
     heads = ["Artifact", "Outcome", "NACE competency", "Evidence (one line)", "Privacy status"]
     xs = [20, 95, 185, 385, 640]
@@ -256,7 +256,7 @@ def lucia_map(f):
            "because two rows used her employer's ticket categories.", size=13, color=muted, width=780)
 
 
-# ---------------------------------------------------------------- F20.10 Revision entry (Lucía's A5)
+# ---------------------------------------------------------------- F20.10 Revision entry (Lucia's A5)
 def revision_entry(f):
     muted = MUTED[f.mode]
     f.text(400, 24, "A revision entry keeps the original and records why it changed", size=16, weight="700")
@@ -271,7 +271,7 @@ def revision_entry(f):
         f.box(20, y, 190, 60, lab, role="neutral", kind="human", size=14)
         f.box(222, y, 558, 60, txt, role=role, kind="step", size=13, weight="normal")
         y += 72
-    f.text(400, y + 10, "Constructed example (Lucía's A5, Chapter 8). Rounded = the entry's fields · rectangle = "
+    f.text(400, y + 10, "Constructed example (Lucia's A5, Chapter 8). Rounded = the entry's fields · rectangle = "
            "what she wrote", size=13, color=muted, width=780)
 
 
@@ -297,7 +297,7 @@ def entry_anatomy(f):
     f.arrow(590, 242, 470, 278)
     f.arrow(330, 338, 230, 368)
     f.arrow(470, 338, 570, 368)
-    f.text(400, 456, "Hexagon = AI · rounded = you · rectangle = a record. Example: Lucía's A9 entry (constructed).",
+    f.text(400, 456, "Hexagon = AI · rounded = you · rectangle = a record. Example: Lucia's A9 entry (constructed).",
            size=13, color=muted, width=780)
 
 
@@ -344,7 +344,7 @@ def narrative(f):
         f.arrow(400, 112, x + 115, 148)
     f.box(250, 356, 300, 56, "What I am learning next", role="neutral", kind="human", size=14,
           sub="the CPA path", sub_size=13)
-    f.text(400, 440, "Lucía's narrative (constructed). Rounded = her own words · rectangle = a claim or its evidence",
+    f.text(400, 440, "Lucia's narrative (constructed). Rounded = her own words · rectangle = a claim or its evidence",
            size=13, color=muted, width=780)
 
 
@@ -470,7 +470,7 @@ FIGS = [
     ("f20-04-lo-nace-map", lo_nace_map, 800, 440, "Each learning outcome gives evidence for at least one NACE competency"),
     ("f20-06-claim-anatomy", claim_anatomy, 800, 430, "A labor-market number is a forecast by named respondents at a date"),
     ("f20-07-portfolio-anatomy", portfolio_anatomy(), 800, PORTFOLIO_H, "Portfolio Anatomy"),
-    ("f20-08-lucia-map", lucia_map, 800, 400, "Lucía's evidence map"),
+    ("f20-08-lucia-map", lucia_map, 800, 400, "Lucia's evidence map"),
     ("f20-09-revision-evidence", portfolio_anatomy(highlight=["artifact", "trace", "verification"]), 800, PORTFOLIO_H,
      "Revision evidence: the before, the after, the reason and the check"),
     ("f20-10-revision-entry", revision_entry, 800, 440, "A revision entry keeps the original and records why it changed"),

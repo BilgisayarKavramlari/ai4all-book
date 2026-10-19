@@ -11,7 +11,7 @@ deck:
   slug: why-ai-changes-study-and-work
   title: Why AI Changes Study and Work
   short_title: Why AI Changes Study and Work
-  author: Şadi Evren Şeker
+  author: Sadi Evren Seker
   sessions:
     tue: {label: "Concept session (about 75 min)", minutes: 75}
     thu: {label: "Lab session, Lab 1.2 (about 75 min)", minutes: 75}
@@ -33,7 +33,7 @@ slides:
   minutes: 0
   subtitle: "Concept session and lab session"
   meta:
-    - "Şadi Evren Şeker"
+    - "Sadi Evren Seker"
     - "Reading: Chapter 1"
     - "Recommended: AI Fluency, module 1"
   figure: f1-02-ai-work-loop-frame
@@ -537,12 +537,12 @@ slides:
       support chat is to solve the customer's problem; if the suggestion solves it, the job is done. In a course, an
       assignment exists so that you build a skill you can use without the tool: on an exam, in an interview, or when
       the tool gives you something wrong. There is evidence for this difference. In a study of high school math
-      students in Türkiye, students who practiced with unrestricted access to a chatbot did better during practice,
+      students in Turkey, students who practiced with unrestricted access to a chatbot did better during practice,
       but worse on an exam without the tool than students who practiced with books and notes. A version designed to
       give hints instead of answers showed no measurable harm, and no gain either.
     background: |
       Bastani et al. (2025), PNAS 122(26), e2422633122 (a recommended reading, used in Chapter 7). Describe it exactly:
-      high school mathematics students in Türkiye; the comparison group practiced with books and notes; the exam at
+      high school mathematics students in Turkey; the comparison group practiced with books and notes; the exam at
       the end of the session was taken without the tool. The hint-based version showed no measurable harm on the exam
       but did not raise exam scores above the comparison group. Chapter 7 studies tutoring versus answer mode
       in depth; do not go further today.
@@ -836,7 +836,7 @@ slides:
     misconceptions:
       - m: "M4 'If it sounds confident and fluent, it is probably right.'"
         fix: "Use the lawyers: trained professionals, fluent made-up citations, real sanctions."
-    activity: "Point to Elif's worked example in the book (tracing the 'Stanford study, 13%' statistic) as reading before the lab session."
+    activity: "Point to Maya's worked example in the book (tracing the 'Stanford study, 13%' statistic) as reading before the lab session."
     book: "§1.4, @fig-1-9, the three terms; Worked Example 'Tracing a Confident Statistic'; Chapter 8 (Mata v. Avianca)."
 
 - layout: quiz
@@ -1091,7 +1091,7 @@ slides:
   max_words: 90
   kicker: "§1.6 · worked example · business"
   title: "The loop on an upset customer’s email"
-  context: "Lucía, customer support: an order arrived broken, again; the customer wants a refund."
+  context: "Lucia, customer support: an order arrived broken, again; the customer wants a refund."
   steps:
     - {label: "Frame", text: "Keep the customer. Drafting: inside. The refund decision: not the tool’s."}
     - {label: "Prompt", text: "Apologize; free express replacement or a refund; promise nothing else."}
@@ -1103,7 +1103,7 @@ slides:
   notes_reveal:
     - minutes: 1.5
       say: |
-        Let's run the loop on a real-looking task. Put yourself in Lucía's place: she works part-time in customer
+        Let's run the loop on a real-looking task. Put yourself in Lucia's place: she works part-time in customer
         support. A customer writes that her order arrived broken, for the second time; she is angry and asks for a
         refund. Frame first: the goal is to solve the problem and keep the customer. A good reply apologizes, states the
         fix clearly and follows company policy. Drafting a calm reply is likely inside the frontier. Deciding the refund
@@ -1115,7 +1115,7 @@ slides:
         Worked example in §1.6, with figure @fig-1-12 (five-step strip). The full prompt in the book: "Draft a short,
         polite reply to a customer whose order arrived broken for the second time. Apologize, offer a replacement
         shipped by express at no cost, and say a refund is also available if she prefers. Do not promise anything
-        else. Keep it under 120 words." Lucía is one of the book's five recurring fictional students (accounting).
+        else. Keep it under 120 words." Lucia is one of the book's five recurring fictional students (accounting).
       activity: "Pause after Prompt; take two predictions of what could go wrong."
       book: "§1.6 Worked Example 'The AI Work Loop on an Upset Customer's Email', @fig-1-12."
     - minutes: 1.5
@@ -1344,7 +1344,7 @@ slides:
       athletes record their real starting times; an impressive baseline tells you nothing about your progress.
     background: |
       Second stronger goal in the book: "By the end of the term, design one AI-assisted workflow for a real task in my nursing
-      courses, with a step where I verify medical facts (LO6)." The book's sample baseline (Elif, psychology): summary
+      courses, with a step where I verify medical facts (LO6)." The book's sample baseline (Maya, psychology): summary
       of a reading (inside; revised after comparing with notes), a statistic on international students (unsure; no
       source found, not used), a keyword count in a 30-page report (outside; the tool's number was wrong, checked with
       the word processor's search). Her declaration lists tools and date, accepted/revised/rejected outputs, how each was
@@ -1473,7 +1473,7 @@ slides:
     background: |
       Question 1 is Check Yourself 1.2, item 3. Good answer (§1.2): at work, the goal is the output, so faster is
       better; in a course, an assignment exists to build a skill you can use without the tool, so if the tool produces
-      the reasoning the assignment is done but the learning is not; evidence: the Türkiye mathematics study (Bastani et
+      the reasoning the assignment is done but the learning is not; evidence: the Turkey mathematics study (Bastani et
       al., 2025). Next: Chapter 2, opening case the Amazon recruiting tool; how machines learn
       from data, then what a language model is.
     activity: "3 min; collect cards at the door or close the online form when time is up."
@@ -1519,7 +1519,7 @@ slides:
   per_slide: 5
   refs:
     - "Anthropic. (n.d.). *AI fluency: Framework & foundations* [Online course]. Anthropic Academy."
-    - "Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *PNAS, 122*(26), e2422633122. https://doi.org/10.1073/pnas.2422633122"
+    - "Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakci, O., & Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. *PNAS, 122*(26), e2422633122. https://doi.org/10.1073/pnas.2422633122"
     - "Brynjolfsson, E., Li, D., & Raymond, L. (2025). Generative AI at work. *The Quarterly Journal of Economics, 140*(2), 889–942. https://doi.org/10.1093/qje/qjae044"
     - "Dell’Acqua, F., McFowland, E., III, Mollick, E., et al. (2023). *Navigating the jagged technological frontier* (Harvard Business School Working Paper No. 24-013). https://ssrn.com/abstract=4573321"
     - "Farquhar, S., Kossen, J., Kuhn, L., & Gal, Y. (2024). Detecting hallucinations in large language models using semantic entropy. *Nature, 630*, 625–630. https://doi.org/10.1038/s41586-024-07421-0"

@@ -362,8 +362,8 @@ You may believe that when an AI tool makes the mistake, the tool, or its maker, 
 **Scope.** This is one small-claims decision in British Columbia, not a general rule of law; Chapter 18 covers liability.
 :::
 
-::: {.callout-note title="Faded Example: Lucía's Discount on the Chain"}
-In Chapter 1, Lucía's AI-drafted reply promised a 20% discount that policy did not allow. She deleted it before sending.
+::: {.callout-note title="Faded Example: Lucia's Discount on the Chain"}
+In Chapter 1, Lucia's AI-drafted reply promised a 20% discount that policy did not allow. She deleted it before sending.
 
 **Link 1:** hallucination, documented. **Link 2:** held: she checked the draft against policy. **Was there a harm, and why not?** _______
 :::
@@ -551,7 +551,7 @@ As of 2026, many organizations use AI tools in work that touches customers, and 
 
 <!-- Based on the author's published article (Şeker, 2014), translated and paraphrased from Turkish, within the facts of that article; present-day connections are marked as such. Assigned by the editor (docs/production/ftf-sources.md). Not commercial: no D16 disclosure. -->
 
-In 2014 I wrote a short encyclopedia entry on cause-and-effect diagrams, often called fishbone diagrams (Şeker, 2014). They are an analytical tool from quality work. You write the effect you are investigating at the head of the "fish," the factors that may cause it along the bones, and the factors behind those factors on smaller bones. One look at the diagram shows everything you think might be driving the result. Some sources call it an Ishikawa diagram, after Kaoru Ishikawa, who brought it into the literature in 1968; the entry cites his *Guide to Quality Control* (1968).
+In 2014 I wrote a short encyclopedia entry on cause-and-effect diagrams, often called fishbone diagrams (Seker, 2014). They are an analytical tool from quality work. You write the effect you are investigating at the head of the "fish," the factors that may cause it along the bones, and the factors behind those factors on smaller bones. One look at the diagram shows everything you think might be driving the result. Some sources call it an Ishikawa diagram, after Kaoru Ishikawa, who brought it into the literature in 1968; the entry cites his *Guide to Quality Control* (1968).
 
 The entry suggested six places to start looking for causes: people, methods, tools and machines, materials, measurements and the environment. It stressed that the analysis need not stop at these six, and it listed longer checklists: the 6M list (and its 8M extension) in manufacturing, the 7P list in marketing and the 5S list in services. Its example traced low customer satisfaction to three main causes, low-quality products, high prices and an inadequate support line, each with its own smaller causes. It also noted that the diagram does not have to be drawn as a fish at all.
 
@@ -652,7 +652,7 @@ bias (in generated output) · confabulation (Deep) · context loss · documented
 Come back to these a few days after reading, without looking back. They connect this chapter to Chapters 1, 2 and 3, which come before it in the book.
 
 1. *(Chapter 1 · LO1 · Understand)* Chapter 1 said that a generative AI system produces likely text rather than looking up a stored answer. Which cause of hallucination in section 4.2 follows from that, and why does it mean a fluent answer still needs checking?
-2. *(Chapter 2 · LO5 · Analyze)* In Chapter 2's Opening Case, a recruiting tool picked up gender-linked patterns from a sample made mostly of men's résumés. Name two places in the pipeline where bias can enter a language model (section 4.3). Which of them matches the recruiting tool's problem?
+2. *(Chapter 2 · LO5 · Analyze)* In Chapter 2's Opening Case, a recruiting tool picked up gender-linked patterns from a sample made mostly of men's resumes. Name two places in the pipeline where bias can enter a language model (section 4.3). Which of them matches the recruiting tool's problem?
 3. *(Chapter 3 · LO1 · Remember)* What is a knowledge cutoff? On which branch and leaf of the tree does an answer go that misses an event after the cutoff?
 4. *(Chapter 1 · LO1 · Analyze)* Chapter 1 warned that fluency is not evidence. Which branch of the tree is about certainty that outruns the evidence, and what would make that label documented rather than inferred?
 5. *(Chapter 3 · LO1 · Apply)* Label "lost in the middle" on the tree, and say how section 4.4 extends it.
@@ -751,7 +751,7 @@ OpenAI. (2025b, May 2). *Expanding on what we missed with sycophancy*. https://o
 
 OWASP. (2024). *OWASP Top 10 for LLM applications 2025*. OWASP Foundation. https://genai.owasp.org/llm-top-10/
 
-Şeker, Ş. E. (2014). Sebep etki diyagramları [Cause and effect diagrams, fishbone diagrams]. *YBS Ansiklopedi, 1*(4), 2–4.
+Seker, S. E. (2014). Sebep etki diyagramlari [Cause and effect diagrams, fishbone diagrams]. *YBS Ansiklopedi, 1*(4), 2–4.
 
 Sharma, M., Tong, M., Korbak, T., Duvenaud, D., Askell, A., Bowman, S. R., Durmus, E., Hatfield-Dodds, Z., Johnston, S. R., Kravec, S., Maxwell, T., McCandlish, S., Ndousse, K., Rausch, O., Schiefer, N., Yan, D., Zhang, M., & Perez, E. (2024). Towards understanding sycophancy in language models. In *The Twelfth International Conference on Learning Representations (ICLR 2024)*. https://proceedings.iclr.cc/paper_files/paper/2024/hash/0105f7972202c1d4fb817da9f21a9663-Abstract-Conference.html
 

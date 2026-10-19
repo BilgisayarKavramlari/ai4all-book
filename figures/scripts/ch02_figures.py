@@ -329,7 +329,7 @@ FIGS = [
      "The sampling stage: every later stage inherits who was in the sample"),
     ("f2-04c-pipeline-labels", pipeline((1,), {1: "Human decisions or recorded outcomes, often from the past"}), 800, 390,
      "The labeling stage: a label is a human decision"),
-    ("f2-04d-pipeline-case", pipeline((0, 1, 2), {0: "Mostly résumés from men", 1: "Possibly past hiring decisions",
+    ("f2-04d-pipeline-case", pipeline((0, 1, 2), {0: "Mostly resumes from men", 1: "Possibly past hiring decisions",
                                                   2: "Proxy words such as “women's”"}), 800, 390,
      "The recruiting tool: problems at three stages of the pipeline"),
     ("f2-05-population-sample", population_sample, 800, 460, "A model learns its sample, not the world"),

@@ -76,10 +76,10 @@ Splitting has three steps.
 
 In other words, you will not check everything equally: the ranking tells you where to start, and section 8.2 shows how far to go.
 
-::: {.callout-note title="Worked Example: Lucía's Exam Overview"}
-*Featuring Lucía (accounting), who is saving to sit for the CPA (Certified Public Accountant) exam.* *(Constructed example.)*
+::: {.callout-note title="Worked Example: Lucia's Exam Overview"}
+*Featuring Lucia (accounting), who is saving to sit for the CPA (Certified Public Accountant) exam.* *(Constructed example.)*
 
-Let's take Lucía's study plan. She asks a chat tool for a short overview of the exam, and the output is one confident paragraph (@fig-8-3). She splits it into six claims: (1) four sections, AUD, BEC, FAR and REG (Auditing and Attestation; Business Environment and Concepts; Financial Accounting and Reporting; Taxation and Regulation); (2) four hours each; (3) 75 to pass; (4) all four within 18 months; (5) the source, "the official exam blueprint"; (6) start with the hardest section.
+Let's take Lucia's study plan. She asks a chat tool for a short overview of the exam, and the output is one confident paragraph (@fig-8-3). She splits it into six claims: (1) four sections, AUD, BEC, FAR and REG (Auditing and Attestation; Business Environment and Concepts; Financial Accounting and Reporting; Taxation and Regulation); (2) four hours each; (3) 75 to pass; (4) all four within 18 months; (5) the source, "the official exam blueprint"; (6) start with the hardest section.
 
 ![One fluent paragraph held six separate claims to check.](../figures/out/color/f8-03-claim-split.svg){#fig-8-3 fig-alt="A constructed AI paragraph about the CPA exam split into six rows: four sections, four hours, score of 75, 18 months, a source, and a judgment."}
 
@@ -133,7 +133,7 @@ Each check ends in a **verdict**, a judgment on the book's five-point scale, and
 How far a particular source deserves trust is Chapter 9's question.
 
 ::: {.callout-note title="Worked Example: Is BEC Still on the Exam?"}
-*Featuring Lucía.* Claim 1: the exam has four sections, AUD, BEC, FAR and REG. Stakes: high.
+*Featuring Lucia.* Claim 1: the exam has four sections, AUD, BEC, FAR and REG. Stakes: high.
 
 **Stage 1.** A review-course page with a named publisher says the exam changed in January 2024, which conflicts with the claim.
 
@@ -200,8 +200,8 @@ One shortcut never counts: asking the tool whether its source is real. The answe
 **Verdict:** contradicted. A record shows the case does not exist.
 :::
 
-::: {.callout-note title="Faded Example: Lucía's Enron Paragraph"}
-*(Constructed output for Lucía's accounting class.)* It cites three references:
+::: {.callout-note title="Faded Example: Lucia's Enron Paragraph"}
+*(Constructed output for Lucia's accounting class.)* It cites three references:
 
 1. Sarbanes-Oxley Act of 2002, Pub. L. No. 107-204 (Public Law number 107-204). *Checked:* on the U.S. government's legal publishing site; enacted July 30, 2002. Supported.
 2. Healy, P. M., & Palepu, K. G. (2005). The fall of Enron. *The Accounting Review*, 80(2). *Which check, and which failure?* _______
@@ -234,7 +234,7 @@ A common belief is that if several runs, or several tools, give the same answer,
 ![Answers that change across fresh runs are a warning sign; answers that agree are not proof. Each run picks its words again (Chapter 3).](../figures/out/color/f8-07-three-runs.svg){#fig-8-7 fig-alt="One question, three fresh chats: two runs give the outdated four sections at 95% sure; one differs; agreement is not proof, disagreement is a warning."}
 
 ::: {.callout-note title="Worked Example: What the Signals Would Have Shown"}
-*Featuring Lucía.* *(Constructed example.)* Let's go back to before she checked claim 1. She asks the same question in three temporary chats and asks the tool to state its confidence.
+*Featuring Lucia.* *(Constructed example.)* Let's go back to before she checked claim 1. She asks the same question in three temporary chats and asks the tool to state its confidence.
 
 Runs 1 and 2 repeat the four-section structure, each "95% sure." Run 3 describes three core sections plus a discipline section.
 
@@ -286,8 +286,8 @@ The **calibration gap** is the difference between stated confidence and the shar
 *(Constructed data for teaching.)* @fig-8-9 shows a 30-question record. In the 90–100% group, the tool's average stated confidence was 94%, but it was right on 9 of 15 answers, 60%: a gap of about 34 points. Confidence rose with accuracy, as in the published tests, but every group sits below the diagonal. **Conclusion:** this tool's high confidence still needs checking.
 :::
 
-::: {.callout-note title="Faded Example: Lucía's Study Questions"}
-*(Constructed.)* Lucía asks a tool ten accounting questions from her textbook's answer key.
+::: {.callout-note title="Faded Example: Lucia's Study Questions"}
+*(Constructed.)* Lucia asks a tool ten accounting questions from her textbook's answer key.
 
 | Stated confidence | Average stated | Answers | Correct | Share correct | Gap |
 |---|---|---|---|---|---|
@@ -319,16 +319,16 @@ A **claim verification table** has one row per claim and records how far each cl
 
 A strong table splits claims one fact per row, matches the stage to the stakes, opens every citation, names the indexes searched when something is not found, and says "cannot verify" honestly when that is the truth. A weak table has ten rows of "looks right" and uses the tool's own answers as sources.
 
-::: {.callout-note title="Worked Example: Two of Lucía's Rows, and Her Gap"}
-**Claim 4, number, high stakes.** "You must pass all four sections within 18 months." Before checking: Lucía 70%, the tool 90%. Stage 2: the national model rule changed from 18 to 30 months in 2023 (NASBA, 2023), and her state board's rule allows 30 months (22 Tex. Admin. Code § 511.80). Verdict: contradicted. Uncertainty: rules change; she will recheck when she applies.
+::: {.callout-note title="Worked Example: Two of Lucia's Rows, and Her Gap"}
+**Claim 4, number, high stakes.** "You must pass all four sections within 18 months." Before checking: Lucia 70%, the tool 90%. Stage 2: the national model rule changed from 18 to 30 months in 2023 (NASBA, 2023), and her state board's rule allows 30 months (22 Tex. Admin. Code § 511.80). Verdict: contradicted. Uncertainty: rules change; she will recheck when she applies.
 
-**Claim 5, citation, medium stakes.** "Source: the official exam blueprint." Lucía 80%, the tool 95%. Stage 2: the blueprints exist (AICPA & CIMA, 2026), but they describe three core sections and a discipline section, not BEC. Verdict for claim 5: contradicted (failure 3: the source says the opposite).
+**Claim 5, citation, medium stakes.** "Source: the official exam blueprint." Lucia 80%, the tool 95%. Stage 2: the blueprints exist (AICPA & CIMA, 2026), but they describe three core sections and a discipline section, not BEC. Verdict for claim 5: contradicted (failure 3: the source says the opposite).
 
 **Her gap.** Of her ten A5 claims (the six above plus four from the rest of the output), four were at 80% or higher, average 86%; two were supported, 50%. Gap: 86 − 50 = 36 points.
 :::
 
 ::: {.callout-note title="Faded Example: A Half-Filled Row"}
-**Claim 3, number, high stakes.** "You need a score of 75 to pass each section." Before checking: Lucía 90%, the tool 95%. **Stage reached and source:** stage 2, the exam's official frequently asked questions page. **Verdict and uncertainty:** _______ **The tool's gap, if six of its ten claims were at 80% or higher, average 93%, and three were supported:** _______
+**Claim 3, number, high stakes.** "You need a score of 75 to pass each section." Before checking: Lucia 90%, the tool 95%. **Stage reached and source:** stage 2, the exam's official frequently asked questions page. **Verdict and uncertainty:** _______ **The tool's gap, if six of its ten claims were at 80% or higher, average 93%, and three were supported:** _______
 :::
 
 ::: {.callout-important title="Your Turn"}
@@ -462,7 +462,7 @@ Verification is already a job skill, and in some jobs it is a large part of the 
 - **Paralegals and legal researchers** often check the authorities in a filing before it goes to court.
 - **Journalists and fact-checkers** take claims back to primary sources and keep a record of how each one was checked.
 - **Reference librarians** help people find and confirm sources; for students, they are often the expert at stage 3.
-- **Auditors and staff accountants**, Lucía's future field, trace amounts back to source documents. U.S. audit standards, set by the Public Company Accounting Oversight Board (PCAOB), treat evidence from a knowledgeable source independent of the company as more reliable than evidence from inside it (Public Company Accounting Oversight Board [PCAOB], 2024, AS 1105.08). Chapter 9 returns to judging sources.
+- **Auditors and staff accountants**, Lucia's future field, trace amounts back to source documents. U.S. audit standards, set by the Public Company Accounting Oversight Board (PCAOB), treat evidence from a knowledgeable source independent of the company as more reliable than evidence from inside it (Public Company Accounting Oversight Board [PCAOB], 2024, AS 1105.08). Chapter 9 returns to judging sources.
 - **Pharmacists and nurses** check drug information against official labeling before it reaches a patient.
 - **Data analysts** check a figure in a report against the dataset it came from, and recompute it.
 - **In your own field:** the person who can say "this claim is supported by the primary source, and here is what I could not check" is the one people trust with AI tools.
@@ -471,7 +471,7 @@ Verification is already a job skill, and in some jobs it is a large part of the 
 
 <!-- Based on the author's published paper (Şeker, 2015, IEEE Access 3, 368–380), within the facts of that paper; present-day connections are marked as the book's. Assigned under D19 (ftf-sources.md row in the handoff). Not commercial: no D16 disclosure. -->
 
-When you reach the expert stage of the funnel, you may find that experts disagree. How do you combine their judgments? In 2015 I published a paper on a computer-based version of a method built for that question, Argument Delphi (Şeker, 2015). The classical Delphi method gathers predictions from a group of experts in rounds. A facilitator collects the predictions, combines them, for example by averaging, and reports the result back; the experts then revise, and the rounds repeat.
+When you reach the expert stage of the funnel, you may find that experts disagree. How do you combine their judgments? In 2015 I published a paper on a computer-based version of a method built for that question, Argument Delphi (Seker, 2015). The classical Delphi method gathers predictions from a group of experts in rounds. A facilitator collects the predictions, combines them, for example by averaging, and reports the result back; the experts then revise, and the rounds repeat.
 
 The paper pointed to a weakness in that design: the classical method collects numbers, not arguments. The reasons behind each prediction stay out of the discussion. Argument Delphi instead asks people to state arguments and to criticize one another's. The paper modeled those arguments and ratings as a network, so that the strongest arguments could be found and analyzed.
 
@@ -651,7 +651,7 @@ Bell, M. (2025, May 29). Lessons (and an apology) from the Sun-Times CEO on that
 
 Charlotin, D. (2026). *AI hallucination cases* [Database]. Retrieved October 18, 2026, from https://www.damiencharlotin.com/hallucinations/
 
-Chelli, M., Descamps, J., Lavoué, V., Trojani, C., Azar, M., Deckert, M., Raynier, J.-L., Clowez, G., Boileau, P., & Ruetsch-Chelli, C. (2024). Hallucination rates and reference accuracy of ChatGPT and Bard for systematic reviews: Comparative analysis. *Journal of Medical Internet Research, 26*, e53164. https://doi.org/10.2196/53164
+Chelli, M., Descamps, J., Lavoue, V., Trojani, C., Azar, M., Deckert, M., Raynier, J.-L., Clowez, G., Boileau, P., & Ruetsch-Chelli, C. (2024). Hallucination rates and reference accuracy of ChatGPT and Bard for systematic reviews: Comparative analysis. *Journal of Medical Internet Research, 26*, e53164. https://doi.org/10.2196/53164
 
 Chicago Sun-Times. (2025, May 20). *Chicago Sun-Times response to May 18 special section*. https://chicago.suntimes.com/press-room/2025/05/20/chicago-sun-times-response-to-may-18-special-section
 
@@ -691,7 +691,7 @@ OpenAI. (2025, April 16). *OpenAI o3 and o4-mini system card*. https://cdn.opena
 
 Public Company Accounting Oversight Board. (2024). *Amendments related to aspects of designing and performing audit procedures that involve technology-assisted analysis of information in electronic form* (PCAOB Release No. 2024-007), Appendix 1 (AS 1105.08). https://assets.pcaobus.org/pcaob-dev/docs/default-source/rulemaking/docket-052/2024-007-adoptingrelease.pdf
 
-Şeker, Ş. E. (2015). Computerized argument Delphi technique. *IEEE Access, 3*, 368–380. https://doi.org/10.1109/ACCESS.2015.2424703
+Seker, S. E. (2015). Computerized argument Delphi technique. *IEEE Access, 3*, 368–380. https://doi.org/10.1109/ACCESS.2015.2424703
 
 22 Tex. Admin. Code § 511.80 (amended effective June 3, 2026). Texas State Board of Public Accountancy. https://www.sos.state.tx.us/texreg/archive/May292026/Adopted%20Rules/22.EXAMINING%20BOARDS.html
 

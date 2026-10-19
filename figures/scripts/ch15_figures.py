@@ -413,7 +413,7 @@ def channel_check(f):
            "person · crossed out = set aside", size=13, color=muted, width=780)
 
 
-# ---------------------------------------------------------------- figure f15-13 Lucía's account-change rule
+# ---------------------------------------------------------------- figure f15-13 Lucia's account-change rule
 def account_change(f):
     muted = MUTED[f.mode]
     f.box(20, 130, 150, 90, "Caller asks to change the account email", role="neutral", kind="step", size=14)
@@ -437,7 +437,7 @@ HEAT_EMPTY = risk_heat_map(note="Anchors in full: section 15.5.")
 LUCIA = [(1, 2, 3, "D"), (2, 2, 3, "D"), (3, 2, 2, "I"), (4, 1, 2, "I"), (5, 1, 2, "D")]
 HEAT_LUCIA = risk_heat_map(risks=LUCIA, note="Constructed example. Risks 1–5 are listed in section 15.5.")
 HEAT_MOVES = risk_heat_map(risks=LUCIA, moves={1: (1, 3), 2: (1, 3), 3: (1, 2)},
-                           note="Risks 1 and 2 stay in the band, so the team lead owns them; risk 3's owner is Lucía.")
+                           note="Risks 1 and 2 stay in the band, so the team lead owns them; risk 3's owner is Lucia.")
 HEAT_SAMSUNG = risk_heat_map(risks=[(1, 3, 3, "D")], moves={1: (1, 3)},
                              note="1 = confidential data pasted into an outside tool. Data already sent did not move.")
 HEAT_SAME_CELL = risk_heat_map(risks=[(1, 2, 3, "I"), (2, 2, 3, "I")],
@@ -541,13 +541,13 @@ FIGS = [
      "closes"),
     ("f15-12-channel-check", channel_check, 800, 420,
      "Check the channel and get a second approver; how real a voice sounds is not a check"),
-    ("f15-13-account-change", account_change, 800, 380, "Lucía's team changes nothing on a call alone"),
+    ("f15-13-account-change", account_change, 800, 380, "Lucia's team changes nothing on a call alone"),
     ("f15-14-heat-map", HEAT_EMPTY, 800, HEAT_H,
      "Rate each risk by likelihood and impact, and mark what the rating rests on"),
     ("f15-15-heat-lucia", HEAT_LUCIA, 800, HEAT_H,
-     "Two of Lucía's five risks sit in the high-impact band, so both need a mitigation or an owner"),
+     "Two of Lucia's five risks sit in the high-impact band, so both need a mitigation or an owner"),
     ("f15-16-heat-moves", HEAT_MOVES, 800, HEAT_H,
-     "Mitigations lowered the likelihood of Lucía's two high-impact risks, but their impact stayed high, so each "
+     "Mitigations lowered the likelihood of Lucia's two high-impact risks, but their impact stayed high, so each "
      "has an owner"),
     ("f15-17-ladder", ladder, 800, 350,
      "Four ways to answer a risk: avoid it, reduce it, detect it, or accept it, each with a named owner"),

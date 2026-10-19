@@ -102,7 +102,7 @@ This chapter's six context layers are not Chapter 5's six prompt parts (role, ta
 
 The system-prompt layer is real, even when it is invisible. At least two providers publish the system prompts of their chat apps: Anthropic since August 2024, with a log of later changes (Willison, 2024), and xAI, for its Grok chatbot, since May 2025, after it blamed an unauthorized change to its prompt for answers that kept raising an unrelated political topic (Wiggers, 2025). These prompts include instructions about tone, formatting and what the assistant should say it cannot do. Publishing is a choice each provider makes, so assume that a layer you did not write is shaping the output.
 
-**Context engineering** is deciding what goes into a model's context window, from which layer, in what form and in what order, so that a task can be done well. The term spread in June 2025, when Shopify's chief executive, Tobi Lütke, and the AI researcher Andrej Karpathy said they preferred it to "prompt engineering" (Willison, 2025). This chapter uses it for everyday work in a chat tool.
+**Context engineering** is deciding what goes into a model's context window, from which layer, in what form and in what order, so that a task can be done well. The term spread in June 2025, when Shopify's chief executive, Tobi Lutke, and the AI researcher Andrej Karpathy said they preferred it to "prompt engineering" (Willison, 2025). This chapter uses it for everyday work in a chat tool.
 
 **How the layers relate to the anatomy of a prompt.** Chapter 5's anatomy of a prompt describes your prompt, layer 6. Its **context** part, the background a task needs, can travel in your prompt, in a pasted document or in a project file. Its **in-context examples** part usually lives in your prompt or in a reusable template (section 6.6). The other layers are added by the tool or by features you switched on earlier.
 
@@ -614,7 +614,7 @@ Reusable prompts and careful context are becoming ordinary parts of many jobs. T
 
 ## From the Field {.unnumbered}
 
-In 2018 I wrote an encyclopedia article on CRISP-DM, which the article expands as "Cross Industry Standard Processing – Data Mining" (Şeker, 2018). It describes a standard process for data projects. The original guide was published by a group of companies in 2000 (Chapman et al., 2000). The process has six steps: understanding the business problem, understanding the data, preparing the data, modeling, evaluation and deployment.
+In 2018 I wrote an encyclopedia article on CRISP-DM, which the article expands as "Cross Industry Standard Processing – Data Mining" (Seker, 2018). It describes a standard process for data projects. The original guide was published by a group of companies in 2000 (Chapman et al., 2000). The process has six steps: understanding the business problem, understanding the data, preparing the data, modeling, evaluation and deployment.
 
 The steps are not a straight line. The article describes loops: between understanding the problem and understanding the data, because what the data allows can change how the problem is defined; between preparation and modeling, because some models need data prepared in particular ways. The most important loop, the article says, runs from evaluation back to the very start, so that a project can go through all the steps again if its results do not meet the success criteria set at the beginning.
 
@@ -622,7 +622,7 @@ The article also reports what long use of the process in industry has taught pra
 
 *Present-day connections, read with this chapter:* a library entry is a small process standard of its own. It fixes the steps that should not change, and its test record plays the role of CRISP-DM's evaluation loop: when a template fails on an edge input, you go back and change it. "Start from the problem, not the data" becomes "start from the task, not the tool": a template is worth building only for a task you have framed (Chapter 5) and actually repeat. And a standard that works across industries is not a standard answer; it is a standard way to get to an answer and check it.
 
-*Disclosure: The article's printed affiliation is Bilkav Eğitim Danışmanlık, a company I founded.*
+*Disclosure: The article's printed affiliation is Bilkav Egitim Danismanlik, a company I founded.*
 
 ## Chapter Summary {.unnumbered}
 
@@ -825,9 +825,9 @@ OpenAI. (2024, February 13). *Memory and new controls for ChatGPT*. https://open
 
 Sclar, M., Choi, Y., Tsvetkov, Y., & Suhr, A. (2024). Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting. In *The Twelfth International Conference on Learning Representations (ICLR 2024)*. https://arxiv.org/abs/2310.11324
 
-Şeker, Ş. E. (2018). CRISP-DM: Endüstriler arası standart işleme – veri madenciliği için [CRISP-DM: Cross industry standard processing – data mining]. *YBS Ansiklopedi, 5*(2), 10–17. https://ybsansiklopedi.com/cilt-5-sayi-2-temmuz-2018/
+Seker, S. E. (2018). CRISP-DM: Endustriler arasi standart isleme – veri madenciligi icin [CRISP-DM: Cross industry standard processing – data mining]. *YBS Ansiklopedi, 5*(2), 10–17. https://ybsansiklopedi.com/cilt-5-sayi-2-temmuz-2018/
 
-Shi, F., Chen, X., Misra, K., Scales, N., Dohan, D., Chi, E. H., Schärli, N., & Zhou, D. (2023). Large language models can be easily distracted by irrelevant context. *Proceedings of the 40th International Conference on Machine Learning, PMLR 202*, 31210–31227.
+Shi, F., Chen, X., Misra, K., Scales, N., Dohan, D., Chi, E. H., Scharli, N., & Zhou, D. (2023). Large language models can be easily distracted by irrelevant context. *Proceedings of the 40th International Conference on Machine Learning, PMLR 202*, 31210–31227.
 
 Wallace, E., Xiao, K., Leike, R., Weng, L., Heidecke, J., & Beutel, A. (2024). *The instruction hierarchy: Training LLMs to prioritize privileged instructions* (arXiv:2404.13208). arXiv. https://arxiv.org/abs/2404.13208
 

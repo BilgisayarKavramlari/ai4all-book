@@ -52,7 +52,7 @@ For each answer, write how sure you are, from 0 to 100%.
 
 [Core]{.path}
 
-*Featuring Lucía (accounting), who works part-time in customer support for a software company.*
+*Featuring Lucia (accounting), who works part-time in customer support for a software company.*
 
 Unless a model runs on your own device, pasting a document into an AI tool hands a copy to someone else's computers. Recall Chapter 12: a tool's **data terms** are the parts of its terms and its options that say what happens to what you type and upload; you accept **consumer terms** as an individual, while **institutional terms** are a contract between the provider and your university or employer. A **data gate** is a check, made before any quality test, of whether a tool's data terms fit the class of the input. This section follows the data after the gate.
 
@@ -75,9 +75,9 @@ Samsung's pastes crossed that line, and the company's notice, as reported, said 
 ![Institutional terms change who may reuse and see an input, not where it travels.](../figures/out/color/f15-05-flow-terms.svg){#fig-15-5 fig-alt="Data-flow map annotated: institutional terms often mean no training and admin access; storage per contract; the input still crosses the boundary."}
 
 ::: {.callout-note title="Worked Example: A Long Support Thread, Mapped"}
-*Featuring Lucía. Constructed example; no real customer data.*
+*Featuring Lucia. Constructed example; no real customer data.*
 
-Chapter 3 asked what Lucía should confirm before pasting customer messages into an AI tool. Let's take her map box by box. **In:** the thread (name, email, order number, card's last four digits), into her employer's approved tool. **Stored:** history, for the period the company chose. **Seen by:** company administrators. **Reused:** no, by contract. **Out:** her edited reply. The reply does not need the card digits, so she deletes them first.
+Chapter 3 asked what Lucia should confirm before pasting customer messages into an AI tool. Let's take her map box by box. **In:** the thread (name, email, order number, card's last four digits), into her employer's approved tool. **Stored:** history, for the period the company chose. **Seen by:** company administrators. **Reused:** no, by contract. **Out:** her edited reply. The reply does not need the card digits, so she deletes them first.
 :::
 
 ::: {.callout-note title="Faded Example: A Group Project"}
@@ -199,7 +199,7 @@ What does removing one leg of the risky combination prevent, and what does it no
 
 [Core]{.path}
 
-*Featuring Lucía.*
+*Featuring Lucia.*
 
 **Social engineering** is manipulating people, rather than breaking into systems, to get them to give money, access or information. **Phishing** is a message designed to trick its reader; **spear phishing** is tailored to one person. In a study with 101 participants (groups of about 25), fully AI-automated spear-phishing emails drew a 54% click rate, the same as personalized emails by human experts, against 12% for generic phishing (Heiding et al., 2024). Clumsy wording is no longer a reliable sign.
 
@@ -217,12 +217,12 @@ From Chapter 13: a **deepfake** is **synthetic media** (images, audio or video g
 Chapter 13 tells of a Hong Kong finance employee who transferred about HK$200 million after a video meeting that, police believe, was generated from public clips (Hong Kong SAR Government, 2024); it labels the case **other** (misuse), documented, on the Failure Taxonomy Tree. Here, only the payment side: every request came through channels the fraudsters controlled, and police advised verifying money requests by phone (Hong Kong SAR Government, 2024). In this book's reading, the control most likely to help is a written rule: every payment or bank-detail change is confirmed out of band and approved by a second person. On the heat map, before such a rule: medium likelihood, high impact (money moved), D (the police record); the rule lowers the likelihood, not the impact, so the risk still needs an owner.
 
 ::: {.callout-note title="Worked Example: The Urgent Caller"}
-*Featuring Lucía. Constructed example.*
+*Featuring Lucia. Constructed example.*
 
-An upset, hurried caller asks Lucía to change a customer account's email address. Her team's rule: nothing changes on a call alone. A code goes to the email on file; a second agent approves login or payment changes. The caller cannot give the code; Lucía logs the call (@fig-15-13).
+An upset, hurried caller asks Lucia to change a customer account's email address. Her team's rule: nothing changes on a call alone. A code goes to the email on file; a second agent approves login or payment changes. The caller cannot give the code; Lucia logs the call (@fig-15-13).
 :::
 
-![Lucía's team changes nothing on a call alone.](../figures/out/color/f15-13-account-change.svg){#fig-15-13 fig-alt="Flow: caller asks to change the account email; code sent to the email on file; confirmed? Yes: a second agent approves. No: no change, call logged."}
+![Lucia's team changes nothing on a call alone.](../figures/out/color/f15-13-account-change.svg){#fig-15-13 fig-alt="Flow: caller asks to change the account email; code sent to the email on file; confirmed? Yes: a second agent approves. No: no change, call logged."}
 
 ::: {.callout-note title="Faded Example: A Voice Message at the Front Desk"}
 **Field:** Hospitality. A hotel's front desk gets a voice message that sounds like the general manager: refund a guest's card today, call back on the number in the message. The staff directory lists the manager's number; the front-office manager approves refunds.
@@ -238,7 +238,7 @@ Name two controls that do not depend on spotting a fake, and say why each works.
 
 [Core]{.path}
 
-*Featuring Lucía, with a faded example from Marcus.*
+*Featuring Lucia, with a faded example from Marcus.*
 
 You cannot remove every risk, so compare them. NIST's AI Risk Management Framework treats **risk** as a combination of how likely a harmful event is and how bad its consequences would be (NIST, 2023). The **Risk Heat Map** puts both on one grid (@fig-15-14). Rate each risk for the workflow as it runs today:
 
@@ -252,12 +252,12 @@ Each risk is a numbered circle: **D** and a solid outline mean documented (a tes
 **Two reading rules.** Every risk in the high-impact row gets a mitigation or a named person who accepts it, however unlikely it seems. And compare risks only within one review: your "medium" and someone else's may differ. A **risk register** lists the risks with ratings and evidence.
 
 ::: {.callout-note title="Worked Example: Five Risks in a Support Workflow"}
-*Featuring Lucía. Constructed example, continuing her team's review step from Chapter 14.*
+*Featuring Lucia. Constructed example, continuing her team's review step from Chapter 14.*
 
 (1) Privacy: customer data pasted into an unapproved tool: medium ("has happened in similar setups": a coworker at another branch did it), high ("exposed data"), D. (2) Security: a takeover call succeeds: medium ("plausible": the team logs attempts; none has succeeded), high, D. (3) Security: an injected line in a customer's email changes a draft: medium, medium, I. (4) Fairness: colder drafts for customers writing in a second language: low, medium, I (Chapter 16). (5) Rules and rights: breaking the company's rule that customers are told when a reply was AI-drafted: low, medium, D (policy text). Risks 1 and 2 sit in the band (@fig-15-15).
 :::
 
-![Two of Lucía's five risks sit in the high-impact band, so both need a mitigation or an owner.](../figures/out/color/f15-15-heat-lucia.svg){#fig-15-15 fig-alt="Heat map: risks 1 and 2 at medium likelihood, high impact; risk 3 medium, medium; risks 4 and 5 low, medium. Solid D or dashed I outlines."}
+![Two of Lucia's five risks sit in the high-impact band, so both need a mitigation or an owner.](../figures/out/color/f15-15-heat-lucia.svg){#fig-15-15 fig-alt="Heat map: risks 1 and 2 at medium likelihood, high impact; risk 3 medium, medium; risks 4 and 5 low, medium. Solid D or dashed I outlines."}
 
 ::: {.callout-note title="Faded Example: Marcus's Study Workflow"}
 **Field:** Nursing. Rate each: likelihood (anchor) · impact (anchor) · D or I. **Risk A (done for you):** a placement detail slips into a prompt: low ("no sign": textbook cases only) · high (a patient's privacy) · I. **Risk B:** a hidden line in a shared guide puts a false note on a flashcard. Facts: guides are shared often; the lab's planted file did this; a wrong card could cost quiz points. **Risk C:** someone else reads his stored chats. Facts: history kept 30 days (constructed terms); only textbook content; multi-factor login.
@@ -271,7 +271,7 @@ Why does a risk with low likelihood and high impact still need attention?
 
 [Core]{.path}
 
-*Featuring Lucía.*
+*Featuring Lucia.*
 
 A **mitigation** is a change that lowers a risk's likelihood, its impact or both. This book uses four kinds (@fig-15-17):
 
@@ -288,11 +288,11 @@ A risk **qualifies** for a full plan if its impact is high, or if both its likel
 
 **Red-teaming** is testing a system the way an attacker would, with permission, to find weaknesses first. In this book you red-team only your own sessions, with provided files and fake data.
 
-::: {.callout-note title="Worked Example: Lucía's Plan"}
-*Constructed example.* Risks 1–3 qualify. Risk 1 (unapproved tool): reduce (a one-line reminder in the reply template) and detect (the team lead checks the approved tool's usage log monthly); now low, high; owner: the team lead, who accepts the residual risk. Risk 2 (takeover call): reduce (a 24-hour hold on email changes, with a notice to the old address) and detect (weekly review of the call log); now low, high; owner: the team lead. Risk 3 (injected line): reduce (customer text labeled as material in the template); now low, medium; owner: Lucía. Risks 4 and 5 keep their ratings, with owners (@fig-15-16).
+::: {.callout-note title="Worked Example: Lucia's Plan"}
+*Constructed example.* Risks 1–3 qualify. Risk 1 (unapproved tool): reduce (a one-line reminder in the reply template) and detect (the team lead checks the approved tool's usage log monthly); now low, high; owner: the team lead, who accepts the residual risk. Risk 2 (takeover call): reduce (a 24-hour hold on email changes, with a notice to the old address) and detect (weekly review of the call log); now low, high; owner: the team lead. Risk 3 (injected line): reduce (customer text labeled as material in the template); now low, medium; owner: Lucia. Risks 4 and 5 keep their ratings, with owners (@fig-15-16).
 :::
 
-![Mitigations lowered the likelihood of Lucía's two high-impact risks, but their impact stayed high, so each has an owner.](../figures/out/color/f15-16-heat-moves.svg){#fig-15-16 fig-alt="Heat map with arrows: risks 1 and 2 move from medium to low likelihood, still high impact; risk 3 from medium to low, medium impact."}
+![Mitigations lowered the likelihood of Lucia's two high-impact risks, but their impact stayed high, so each has an owner.](../figures/out/color/f15-16-heat-moves.svg){#fig-15-16 fig-alt="Heat map with arrows: risks 1 and 2 move from medium to low likelihood, still high impact; risk 3 from medium to low, medium impact."}
 
 ::: {.callout-note title="Faded Example: A Customer List"}
 **Field:** Marketing. An intern pastes a customer list (names, emails, phone numbers, purchases) into a consumer tool to group customers by buying habits. Proposed: (a) delete the phone and email columns; (b) use the company's institutional tool instead; (c) the marketing manager checks the tool's history monthly.
@@ -313,9 +313,9 @@ A12 follows this chapter's order (@fig-15-19). Review your A11 workflow or A10 t
 ![Your review records the flow, the risks, the tests, the fixes and who owns what remains.](../figures/out/color/f15-19-a12-sheet.svg){#fig-15-19 fig-alt="A12 sheet: scope; data-flow map; register of five risks; red-team record; heat map before and after; mitigation plan; note; declaration."}
 
 ::: {.callout-note title="Worked Example: A Register Row from a Probe, and a Note"}
-*Featuring Lucía. Constructed example.*
+*Featuring Lucia. Constructed example.*
 
-**Row:** risk 3, an injected line changes a draft · who is harmed: the customer · medium, medium · I: in the lab file, the false note reached 2 of 3 unlabeled runs, but that was another tool and a planted file, so it is a lead; a test on her team's tool with sample emails would document it · reduce: label customer text · owner: Lucía.
+**Row:** risk 3, an injected line changes a draft · who is harmed: the customer · medium, medium · I: in the lab file, the false note reached 2 of 3 unlabeled runs, but that was another tool and a planted file, so it is a lead; a test on her team's tool with sample emails would document it · reduce: label customer text · owner: Lucia.
 
 **Note to the team lead (67 words):** The AI tool may draft replies to support tickets from the ticket text, labeled as material, with payment details removed. It must not send any reply on its own or change any account. Agents read every draft before sending. One decision is yours: whether to accept the remaining account-takeover risk, now low likelihood but high impact, with weekly call-log reviews, or to add a second code.
 :::
@@ -412,7 +412,7 @@ New job here: all three legs in one product (the user's private data, an email f
 ::: {.callout-note title="Short case 2 (optional): Shared Chats in Search Results (C20, 2025)"}
 [Deep]{.path}
 
-In 2025, a popular chat tool let users share a conversation by link and, with an extra opt-in box, make the shared chat findable by search engines. *Fast Company* reported finding thousands of shared chats in search results, some with personal details such as names and résumés (as described by Southern, 2025). On July 31, 2025, OpenAI's chief information security officer, Dane Stuckey, announced that the option, which he called a short-lived experiment, was being removed because it created too many chances to share things by accident; the company said it was working to remove indexed chats from search engines (Abdullahi, 2025; Southern, 2025).
+In 2025, a popular chat tool let users share a conversation by link and, with an extra opt-in box, make the shared chat findable by search engines. *Fast Company* reported finding thousands of shared chats in search results, some with personal details such as names and resumes (as described by Southern, 2025). On July 31, 2025, OpenAI's chief information security officer, Dane Stuckey, announced that the option, which he called a short-lived experiment, was being removed because it created too many chances to share things by accident; the company said it was working to remove indexed chats from search engines (Abdullahi, 2025; Southern, 2025).
 
 New job here: a sharing feature is a data flow. It widened the "seen by" box from the people with the link to anyone with a search engine (@fig-15-26). The tree does not apply: no output was wrong. On a heat map, the impact for some users was high (personal details made public), and an opt-in box did not make the likelihood low.
 :::
@@ -435,13 +435,13 @@ New job here: a sharing feature is a data flow. It widened the "seen by" box fro
 | Privacy officer or compliance analyst | Draws data-flow maps and keeps risk registers for new tools | Who sees this data, for how long, and under whose rules? |
 | Nurse or clinical informatics specialist | Keeps patient information in approved clinical systems; reviews AI tools before use (Marcus's field) | Does this tool belong inside our approved systems at all? |
 | Accounts-payable or treasury analyst | Confirms payment and bank-detail changes out of band; two approvers | Who confirmed this request, and through which channel? |
-| Customer-support team lead | Sets account-change rules and approved AI tools (Lucía's field) | What can a caller change without a code? |
+| Customer-support team lead | Sets account-change rules and approved AI tools (Lucia's field) | What can a caller change without a code? |
 | IT help desk | Handles phishing reports and multi-factor authentication | Did anyone click, and what did it reach? |
 | Human resources specialist | Keeps employee records out of unapproved tools | Which employee data is Confidential, and where may it go? |
 
 ## From the Field {.unnumbered}
 
-In 2015 I wrote an encyclopedia entry on big data and the life cycles that companies and researchers proposed for it (Şeker, 2015). It began from the "five Vs" of big data, volume, velocity, variety, veracity and value, and then compared several life-cycle models. Following a University of Essex guide to managing research data (Corti et al., 2014, as cited in the entry), I described data as passing through phases: it is created, processed, analyzed and preserved, with backups, formats and archives kept current; access to it is decided, which means setting access rights, applying security controls, checking that sharing stays within the legal framework, and monitoring who accesses it, how often and why; and finally it is reused. I asked whether finished data should simply be thrown away, and noted that every model I compared repeated nearly the same cycle: data is produced all the time, processed, stored, given an access decision, and used again.
+In 2015 I wrote an encyclopedia entry on big data and the life cycles that companies and researchers proposed for it (Seker, 2015). It began from the "five Vs" of big data, volume, velocity, variety, veracity and value, and then compared several life-cycle models. Following a University of Essex guide to managing research data (Corti et al., 2014, as cited in the entry), I described data as passing through phases: it is created, processed, analyzed and preserved, with backups, formats and archives kept current; access to it is decided, which means setting access rights, applying security controls, checking that sharing stays within the legal framework, and monitoring who accesses it, how often and why; and finally it is reused. I asked whether finished data should simply be thrown away, and noted that every model I compared repeated nearly the same cycle: data is produced all the time, processed, stored, given an access decision, and used again.
 
 **Connections today** (this book's reading, written in 2026). When you paste a document into an AI tool, your data enters another organization's life cycle at "creation." Every later phase, preserving (retention, backups), deciding access (reviewers, administrators, anyone with a link) and reusing (training future models), then runs under that organization's rules, not yours. In other words, the data-flow map of section 15.1 is that life cycle drawn from the user's side. And the entry's question "who accesses it, how often and why" is the question a log answers (Chapter 14). The entry was about big data projects inside companies, not AI chat tools; the connection is mine, not the entry's.
 
@@ -603,17 +603,17 @@ Anthropic. (2025, August 25). *Piloting Claude in Chrome*. https://claude.com/bl
 
 Anthropic. (2026, August 26). *Claude in Chrome is generally available*. https://claude.com/blog/claude-in-chrome-generally-available
 
-Carlini, N., Tramèr, F., Wallace, E., Jagielski, M., Herbert-Voss, A., Lee, K., Roberts, A., Brown, T., Song, D., Erlingsson, Ú., Oprea, A., & Raffel, C. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650). USENIX Association. https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting
+Carlini, N., Tramer, F., Wallace, E., Jagielski, M., Herbert-Voss, A., Lee, K., Roberts, A., Brown, T., Song, D., Erlingsson, U., Oprea, A., & Raffel, C. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650). USENIX Association. https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting
 
 Chen, J. (2025, October 11). OpenAI no longer has to preserve all of its ChatGPT data, with some exceptions. *Engadget*. https://www.engadget.com/ai/openai-no-longer-has-to-preserve-all-of-its-chatgpt-data-with-some-exceptions-192422093.html
 
-Corti, L., Van den Eynden, V., Bishop, L., & Woollard, M. (2014). *Managing and sharing research data: A guide to good practice*. SAGE. (Cited as in Şeker, 2015.)
+Corti, L., Van den Eynden, V., Bishop, L., & Woollard, M. (2014). *Managing and sharing research data: A guide to good practice*. SAGE. (Cited as in Seker, 2015.)
 
 Cox, L. A., Jr. (2008). What's wrong with risk matrices? *Risk Analysis, 28*(2), 497–512. https://doi.org/10.1111/j.1539-6924.2008.01030.x
 
 David C. (2025, December 8). *Prompt injection is not SQL injection (it may be worse)* [Blog post]. National Cyber Security Centre. https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection
 
-Debenedetti, E., Shumailov, I., Fan, T., Hayes, J., Carlini, N., Fabian, D., Kern, C., Shi, C., Terzis, A., & Tramèr, F. (2025). *Defeating prompt injections by design* (arXiv:2503.18813). arXiv. https://arxiv.org/abs/2503.18813
+Debenedetti, E., Shumailov, I., Fan, T., Hayes, J., Carlini, N., Fabian, D., Kern, C., Shi, C., Terzis, A., & Tramer, F. (2025). *Defeating prompt injections by design* (arXiv:2503.18813). arXiv. https://arxiv.org/abs/2503.18813
 
 Dobberstein, L. (2023, April 6). Samsung reportedly leaked its own secrets through ChatGPT. *The Register*. https://www.theregister.com/2023/04/06/samsung_reportedly_leaked_its_own/
 
@@ -633,7 +633,7 @@ Microsoft. (2025, June 11). *M365 Copilot information disclosure vulnerability* 
 
 Microsoft & LinkedIn. (2024, May 8). *2024 Work Trend Index annual report: AI at work is here. Now comes the hard part*. Microsoft. https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part
 
-Nasr, M., Carlini, N., Hayase, J., Jagielski, M., Cooper, A. F., Ippolito, D., Choquette-Choo, C. A., Wallace, E., Tramèr, F., & Lee, K. (2023). *Scalable extraction of training data from (production) language models* (arXiv:2311.17035) [Preprint; published in revised form as Nasr, Rando et al., "Scalable extraction of training data from aligned, production language models," ICLR 2025]. arXiv. https://arxiv.org/abs/2311.17035
+Nasr, M., Carlini, N., Hayase, J., Jagielski, M., Cooper, A. F., Ippolito, D., Choquette-Choo, C. A., Wallace, E., Tramer, F., & Lee, K. (2023). *Scalable extraction of training data from (production) language models* (arXiv:2311.17035) [Preprint; published in revised form as Nasr, Rando et al., "Scalable extraction of training data from aligned, production language models," ICLR 2025]. arXiv. https://arxiv.org/abs/2311.17035
 
 National Institute of Standards and Technology. (2023). *Artificial intelligence risk management framework (AI RMF 1.0)* (NIST AI 100-1). https://doi.org/10.6028/NIST.AI.100-1
 
@@ -653,13 +653,13 @@ Park, K. (2023, May 2). Samsung bans use of generative AI tools like ChatGPT aft
 
 Puig, A. (2023, March 20). *Scammers use AI to enhance their family emergency schemes* [Consumer alert]. Federal Trade Commission. https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes
 
-Şeker, Ş. E. (2015). Büyük veri ve büyük veri yaşam döngüleri [Big data and big data life cycles]. *YBS Ansiklopedi, 2*(3), 10–17. http://ybsansiklopedi.com/cilt-2-sayi-2-eylul-2015/
+Seker, S. E. (2015). Buyuk veri ve buyuk veri yasam donguleri [Big data and big data life cycles]. *YBS Ansiklopedi, 2*(3), 10–17. http://ybsansiklopedi.com/cilt-2-sayi-2-eylul-2015/
 
 Sharma, S. (2023, May 2). Samsung bans staff AI use over data leak concerns. *CSO Online*. https://www.csoonline.com/article/575215/samsung-bans-staff-ai-use-over-data-leak-concerns.html
 
 Southern, M. G. (2025, July 31). OpenAI is pulling shared ChatGPT chats from Google search. *Search Engine Journal*. https://www.searchenginejournal.com/openai-is-pulling-shared-chatgpt-chats-from-google-search/552671/
 
-Staab, R., Vero, M., Balunović, M., & Vechev, M. (2024). Beyond memorization: Violating privacy via inference with large language models. In *The Twelfth International Conference on Learning Representations (ICLR 2024)*. https://arxiv.org/abs/2310.07298
+Staab, R., Vero, M., Balunovic, M., & Vechev, M. (2024). Beyond memorization: Violating privacy via inference with large language models. In *The Twelfth International Conference on Learning Representations (ICLR 2024)*. https://arxiv.org/abs/2310.07298
 
 Sweeney, L. (2000). *Simple demographics often identify people uniquely* (Data Privacy Working Paper 3). Carnegie Mellon University. https://dataprivacylab.org/projects/identifiability/paper1.pdf
 

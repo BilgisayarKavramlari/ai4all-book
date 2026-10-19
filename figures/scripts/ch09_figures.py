@@ -145,7 +145,7 @@ GOLDFISH = hop_chain(
     notes={0: "Below the ladder: a lead", 1: "Exists; names its source", 2: "Exists; not the origin",
            3: "Its listed sources found no research", 4: "Write what the trail shows"},
     heading="Following the goldfish claim upstream showed that it had no origin",
-    foot="Elif's trace (constructed walk-through of a documented trail; Maybin, 2017).")
+    foot="Maya's trace (constructed walk-through of a documented trail; Maybin, 2017).")
 
 
 # ---------------------------------------------------------------- F9.1 Chapter map
