@@ -146,6 +146,8 @@ OVERRIDES = {
     "Outdated information": [1, 4],
     # Ch. 10's Key Terms list "watermark (Deep)" without a sense label; the text sense is Ch. 10's.
     "Watermark (text; Deep)": [10],
+    # Ch. 20 lists it as "Deep 20.A: extrapolation (in labor-market forecasts)", which the parser skips.
+    "Extrapolation (in labor-market forecasts; Deep)": [20],
 }
 
 TR_ORDER = "aâbcçdefgğhıiîjklmnoöprsştuûüvyz"
