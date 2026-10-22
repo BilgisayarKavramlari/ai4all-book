@@ -89,6 +89,10 @@ format:
     toc: true
     cover-image: cover/cover-epub-inner.jpg   # 1400 x 2240 (under Ingram's 3.2 MP EPUB image limit)
     number-sections: true
+    identifier:
+      - scheme: ISBN-13
+        text: "979-8-1829-6230-8"
+    publisher: "OptiWisdom LLC"
     rights: "Copyright 2027 Sadi Evren Seker. Licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)."
     accessModes: [textual, visual]
     accessModeSufficient: [textual]

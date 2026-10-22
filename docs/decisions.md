@@ -415,3 +415,9 @@ The author asked the editor to make suitable choices for open items and to escal
 - The print interior is a separate build: `quarto render --profile print --to typst` → `_book-print/` (no cover page, grayscale figures from figures/out/gray/, grayscale theme, no element at the trim edge, so no bleed), then `tools/make-print-pdfx.sh` converts it to PDF/X-1a:2001 (DeviceGray, transparency flattened). The screen PDF (`quarto render --to typst` → `_book/`) keeps the color cover and theme.
 - The full wrap cover (back + spine + front) is made from Ingram's cover template once the ISBN and final page count are known (author item).
 - Preflight: docs/production/INGRAM_PREFLIGHT.md.
+
+## D30 — Publisher, ISBNs, page limit, OptiWisdom naming (author, 2026-10-22)
+
+- Imprint: OptiWisdom LLC (the author's company), published through IngramSpark. ISBNs: paperback 979-8-1829-6229-2, EPUB 979-8-1829-6230-8 (check digits verified).
+- The paperback interior must stay at or under 1,200 pages (IngramSpark limit given by the author).
+- Bilkav is not named in the book; where a company affiliation of the author is needed, OptiWisdom is used. OptiWisdom products (e.g., OptiScorer, OptiSegment, OptiMatcher) may be described as disclosed examples (D16), from facts the author or public OptiWisdom sources supply.

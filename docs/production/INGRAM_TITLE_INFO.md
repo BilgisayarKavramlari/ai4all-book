@@ -31,9 +31,12 @@ Not: Kitapta adınız ASCII yazılıyor (karar D28). Ingram'a da aynı biçimde 
 
 **Language:** English
 
-**Publisher / Imprint:** sizde (künyede "[to be added]" olarak bekliyor).
+**Publisher / Imprint:**
+```
+OptiWisdom LLC
+```
 
-**ISBN:** basılı ve e-kitap için iki ayrı ISBN (sizde).
+**ISBN:** Print `979-8-1829-6229-2` · Ebook `979-8-1829-6230-8` (ikisinin de kontrol basamağı doğru).
 
 ## 3. Kısa açıklama (Short Description) — 292 karakter
 

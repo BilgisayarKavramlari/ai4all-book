@@ -2,7 +2,7 @@
 
 Kitabın baskı dosyasında (1.106 sayfa) köşeli parantez içinde kalan her ifade tarandı. Bunların neredeyse hepsi kitabın bilerek kullandığı biçimler: kaynakça türleri ("[Blog post]", "[Press release]"), şablon alanları ("[NAME]", "[date]", "[month year]"), puanlar ("[2 points]"), mahkeme kararlarının yıl köşeli parantezi ("[2025] EWHC"). Sizin doldurmanız gereken köşeli parantezli alan **yalnızca "[to be added]"** ve kitapta altı yerde geçiyor.
 
-## A. Kitapta "[to be added]" yazan alanlar
+## A. Kitapta "[to be added]" yazan alanlar — TAMAMLANDI (22 Ekim 2026: OptiWisdom LLC; 979-8-1829-6229-2; 979-8-1829-6230-8)
 
 | # | Sayfa | Bağlam (kitaptaki metin) | Sizden istenen |
 |---|---|---|---|

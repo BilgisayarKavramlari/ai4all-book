@@ -66,8 +66,9 @@ $endif$
 
     Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0): https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-    Publisher: [to be added]. \
-    ISBN (paperback): [to be added]. ISBN (EPUB): [to be added].
+    Published by OptiWisdom LLC. \
+    ISBN 979-8-1829-6229-2 (paperback) \
+    ISBN 979-8-1829-6230-8 (EPUB)
   ],
 $if(quarto.language.crossref-ch-prefix)$
   supplement-chapter: "$quarto.language.crossref-ch-prefix$",
