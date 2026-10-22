@@ -7,6 +7,17 @@ set -euo pipefail
 IN="${1:-_book-print/AI-for-All.pdf}"
 OUT="${2:-_book-print/AI-for-All-interior-PDFX1a.pdf}"
 DEF="tools/pdfx/PDFX_def_ai4all.ps"
+# IngramSpark wants an even page count: add one blank page at the end if needed.
+N=$(qpdf --show-npages "$IN")
+if [ $((N % 2)) -eq 1 ]; then
+  BLANK="$(mktemp -d)/blank.pdf"
+  gs -q -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -dDEVICEWIDTHPOINTS=612 -dDEVICEHEIGHTPOINTS=792 -dFIXEDMEDIA \
+     -sOutputFile="$BLANK" -c showpage
+  EVEN="$(dirname "$BLANK")/even.pdf"
+  qpdf "$IN" --pages "$IN" "$BLANK" -- "$EVEN"
+  IN="$EVEN"
+  echo "added a blank last page ($N -> $((N + 1)) pages)"
+fi
 gs -dPDFX=1 -dBATCH -dNOPAUSE -dNOSAFER -dQUIET \
    -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 \
    -sColorConversionStrategy=Gray -sProcessColorModel=DeviceGray \

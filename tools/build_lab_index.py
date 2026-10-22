@@ -24,7 +24,7 @@ What it derives
              "Required" ("in a lab session" added when the header says so).
   tools      short phrases matched in the Materials and AI tools fields (see TOOL_RULES);
              "No device or AI account needed" and no-device routes are reported as stated.
-  compass    every row's "In Compass (optional)" column reads "link to be added";
+  compass    no Compass column (author, 2026-10-22: no unfinished links in print); the page keys
              the [COMPASS: chNN-labK] keys are listed in an HTML comment so the
              editor can replace them when the short links exist.
 
@@ -243,7 +243,7 @@ def render(rows):
         "<!-- Generated from the headers of labs/chNN-labK.md by tools/build_lab_index.py. "
         "Do not edit by hand; change the lab file and rerun the script. -->",
         "",
-        "# Compass Lab Index {#sec-appendix-b}",
+        "# Lab Index {#sec-appendix-b}",
         "",
         f"This index lists every hands-on lab in the book: {len(rows)} labs in Chapters 1 to 21, "
         f"{n_req} of them required (each is designed for a lab session) "
@@ -261,8 +261,7 @@ def render(rows):
         "",
         "**Compass.** Compass, the book's digital companion, is optional and never part of a course grade; "
         "no student data moves between a course and Compass, and every lab can be done from the book. Each "
-        "row's last column will carry a short link to the lab's Compass page; until the links exist, it reads "
-        "\"In Compass (optional): link to be added\".",
+        "Compass adds lab pages in stages, at optiwisdom.com.",
         "",
     ]
     for part, chapters in PARTS:
@@ -270,19 +269,18 @@ def render(rows):
         if not part_rows:
             continue
         out += [f"## {part} {{.unnumbered}}", "",
-                "| Lab | Title | Ch. | Time | Status | What you need | In Compass (optional) |",
-                "|------|------------|--|---------|-------|-------------|--------|"]
+                "| Lab | Title | Ch. | Time | Status | What you need |",
+                "|------|------------|--|---------|-------|-------------|"]
         for r in part_rows:
             out.append("| " + " | ".join(cell(x) for x in [
-                r["code"], r["title"], str(r["chapter"]), r["duration"], r["status"], r["tools"],
-                "link to be added"]) + " |")
+                r["code"], r["title"], str(r["chapter"]), r["duration"], r["status"], r["tools"]]) + " |")
         out.append("")
     out += [
         "Lab 15.1, Station 3 (the bias probe) is written in Chapter 16 but run inside Chapter 15's red-team "
         "lab; Lab 21.1 (the code peer check) is a named 15-minute slot inside Lab 20.1. The A9 scenario "
         "briefs and the scenario C template (Chapter 11) are assignment materials, not labs, and are not listed.",
         "",
-        "<!-- Compass placeholders, one per lab, for the editor to replace with short links:",
+        "<!-- Compass page keys, one per lab (for the Compass team; not printed):",
     ]
     out += [f"     {r['code']}: [COMPASS: {r['key']}]" for r in rows]
     out += ["-->", ""]

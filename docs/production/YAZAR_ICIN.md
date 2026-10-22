@@ -17,7 +17,7 @@ Güncelleme: 18 Ekim 2026. Araştırarak doldurabildiğim her şey dolduruldu (b
 5. **Çıkar beyanları (D16), kalan iki soru:**
    - Bölüm 18: "Yazılımların Kaynakları" yazısı ticari bir işe (danışmanlık, ürün, OptiWisdom/Bilkav) bağlı mı?
    - Bölüm 19: "Duygu Analizi" yazısındaki iş paketli proje ticari mi, kamu fonlu mu (ör. TÜBİTAK), yoksa üniversite projesi mi?
-6. **Bölüm 23 — yazarın görüşü** (isteğe bağlı): altı tartışmada (makineler anlayabilir mi; bilinç ve ahlaki statü; sorumluluk boşluğu; yaratıcılık ve yazarlık; iş ve anlam; YGZ ve uzun vadeli risk) birer kısa görüş. Kitapta "Author's view — to be added by the author before publication" kutusu var. 23.4 için HermAI makalenizdeki fikri kullandım, onaylayın.
+6. **Bölüm 23 — yazarın görüşü** (isteğe bağlı): boş "Author's view" kutuları 22 Ekim 2026'da kaldırıldı; yalnızca 23.4'teki HermAI makalesinden alıntılı kutu duruyor (onaylayın). Bir tartışmaya kendi görüşünüzü eklemek isterseniz yeni kutu açarım.
 7. **Son ses düzeltmesi:** 23 bölümün tamamı (hiçbirini "bitti" olarak işaretlemedim).
 
 ## Kitabın dışında kalan, yalnız sizin dersiniz için olanlar (D27)
@@ -46,3 +46,10 @@ Kitap artık hiçbir dersin izlencesine, takvimine ya da öğrenci sayısına ba
 - 35 adet "[COMPASS: …]" yer tutucusu → "In Compass (optional): …" notu ya da kaldırıldı
 - APA YZ atıf şablonu tarayıcıda doğrulandı (Ek C)
 - From the Field sayfa aralıkları (`docs/production/ftf-page-ranges.md`)
+
+
+## IngramSpark (22 Ekim 2026)
+
+- ISBN (basılı + EPUB) ve yayıncı adı → künye (s. 2) ve kolofon.
+- Ingram kapak şablonu (1106 sayfa) → tam kapak.
+- Fiyat, toptan indirim, iade, yayın tarihi kararları: `docs/production/INGRAM_TITLE_INFO.md` bölüm 9.
