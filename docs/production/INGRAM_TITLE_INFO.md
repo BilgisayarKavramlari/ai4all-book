@@ -109,11 +109,11 @@ Not: Biyografideki bilgiler kitaptaki "About the Author" ile aynı; o sayfanın 
 | Paper | 50 lb White |
 | Binding | Paperback (perfect bound) |
 | Cover finish | Gloss ya da Matte (karar sizde; ikisi de uygun) |
-| Page count | **1106** (iç dosyanın sayfa sayısı; çift sayı) |
+| Page count | **1114** (iç dosyanın sayfa sayısı; çift sayı) |
 | Interior file | `_book-print/AI-for-All-interior-PDFX1a.pdf` (PDF/X-1a:2001, gri ton, kapaksız) |
 | Cover file | Henüz yok: tam kapak (arka + sırt + ön) |
 
-Sırt kalınlığı tahmini: 1106 × 0.00225 in ≈ **2.49 in** (50 lb white için yaklaşık kâğıt kalınlığı; doğrulanmadı). Kesin ölçüyü Ingram'ın kapak şablonu verecek.
+Sırt kalınlığı tahmini: 1114 × 0.00225 in ≈ **2.51 in** (50 lb white için yaklaşık kâğıt kalınlığı; doğrulanmadı). Kesin ölçüyü Ingram'ın kapak şablonu verecek.
 
 Sayfa sınırı: İkincil kaynaklar 50 lb white için 1.050–1.200 sayfa diyor. Sayfa sayısını girdiğinizde sistem kabul etmezse bana yazın; düzeni sıkılaştırırım.
 
@@ -137,5 +137,5 @@ Sayfa sınırı: İkincil kaynaklar 50 lb white için 1.050–1.200 sayfa diyor.
 ## 10. Dosyalar tamamlanınca sıra
 
 1. ISBN'leri ve yayıncı adını bana iletin; künyeyi (s. 2) ve kolofonu güncelleyip iç dosyayı ve EPUB'u yeniden üretirim. Sayfa sayısı değişmez.
-2. Ingram'da **Tools & Resources → Cover Template Generator** ile şablonu indirin (ISBN, 8.5 × 11, Black & White Standard, 50 lb White, Paperback, Perfect Bound, 1106 sayfa) ve PDF'i bana iletin. Tam kapağı (barkod alanı dahil) o şablona göre hazırlarım.
+2. Ingram'da **Tools & Resources → Cover Template Generator** ile şablonu indirin (ISBN, 8.5 × 11, Black & White Standard, 50 lb White, Paperback, Perfect Bound, 1114 sayfa) ve PDF'i bana iletin. Tam kapağı (barkod alanı dahil) o şablona göre hazırlarım.
 3. Başlık kaydına dönüp dosyaları yükleyin; Ingram'ın e-provasını (eProof) onaylamadan önce birlikte kontrol edelim.
