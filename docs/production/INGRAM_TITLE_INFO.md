@@ -111,9 +111,9 @@ Not: Biyografideki bilgiler kitaptaki "About the Author" ile aynı; o sayfanın 
 | Cover finish | Gloss ya da Matte (karar sizde; ikisi de uygun) |
 | Page count | **1114** (iç dosyanın sayfa sayısı; çift sayı) |
 | Interior file | `_book-print/AI-for-All-interior-PDFX1a.pdf` (PDF/X-1a:2001, gri ton, kapaksız) |
-| Cover file | Henüz yok: tam kapak (arka + sırt + ön) |
+| Cover file | `_book-print/AI-for-All-cover-PDFX1a.pdf` (21 × 12 in, Ingram şablonu üzerine; CMYK PDF/X-1a; sırt 2.182 in; barkod %100 siyah; yeniden üretmek için `tools/make-print-cover.sh`) |
 
-Sırt kalınlığı tahmini: 1114 × 0.00225 in ≈ **2.51 in** (50 lb white için yaklaşık kâğıt kalınlığı; doğrulanmadı). Kesin ölçüyü Ingram'ın kapak şablonu verecek.
+Sırt kalınlığı: **2.182 in** (Ingram kapak şablonu, Black & White, 50 lb White, 1114 sayfa).
 
 Sayfa sınırı: İkincil kaynaklar 50 lb white için 1.050–1.200 sayfa diyor. Sayfa sayısını girdiğinizde sistem kabul etmezse bana yazın; düzeni sıkılaştırırım.
 
