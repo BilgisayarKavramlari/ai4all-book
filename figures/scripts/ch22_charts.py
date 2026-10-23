@@ -30,6 +30,13 @@ plt.rcParams.update({"font.size": 12.5, "axes.spines.top": False, "axes.spines.r
                      "svg.fonttype": "none", "svg.hashsalt": "ch22"})
 plt.rcParams["font.sans-serif"] = ["Source Sans 3", "STIXGeneral", "DejaVu Sans"]  # no system-font fallback in print (D29)
 
+
+def _solid(hex_color, alpha):
+    """The color hex_color would show at this alpha over white, as an opaque color (no transparency in PDF/X)."""
+    h = hex_color.lstrip("#")
+    r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
+    return "#%02X%02X%02X" % tuple(round(c * alpha + 255 * (1 - alpha)) for c in (r, g, b))
+
 STYLE = {
     "color": {"main": "#1C3D6E", "accent": "#FCE38A", "risk": "#C2410C", "ok": "#4CAF84", "ink": "#1D1D1F",
               "light": "#EEF2F7", "muted": "#5C5C66", "hatch": None},
@@ -228,7 +235,7 @@ def compute():
              f"(this book's fit to Epoch AI's data)")
     for mode, st in STYLE.items():
         fig, ax = plt.subplots(figsize=(8.4, 4.4))
-        ax.scatter(xs, ys, s=10, facecolor=st["main"], edgecolor="none", alpha=0.75)
+        ax.scatter(xs, ys, s=10, facecolor=_solid(st["main"], 0.75), edgecolor="none")
         line_x = [2010, 2026.8]
         ax.plot(line_x, [10 ** (a + b * x) for x in line_x], linestyle=":", color=st["ink"], linewidth=2)
         ax.text(2010.3, 1e25, f"dotted: trend, not data\n(this book's fit: about {factor:.1f}× a year)",

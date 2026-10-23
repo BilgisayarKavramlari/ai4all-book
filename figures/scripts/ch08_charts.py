@@ -20,6 +20,13 @@ plt.rcParams.update({"font.size": 12, "axes.spines.top": False, "axes.spines.rig
                      "svg.fonttype": "none"})
 plt.rcParams["font.sans-serif"] = ["Source Sans 3", "STIXGeneral", "DejaVu Sans"]  # no system-font fallback in print (D29)
 
+
+def _solid(hex_color, alpha):
+    """The color hex_color would show at this alpha over white, as an opaque color (no transparency in PDF/X)."""
+    h = hex_color.lstrip("#")
+    r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
+    return "#%02X%02X%02X" % tuple(round(c * alpha + 255 * (1 - alpha)) for c in (r, g, b))
+
 STYLE = {
     "color": {"main": "#1C3D6E", "accent": "#FCE38A", "risk": "#C2410C", "ink": "#1D1D1F", "hatch": None,
               "risk_hatch": None, "muted": "#5C5C66"},
@@ -77,7 +84,7 @@ def f8_9(mode):
     ax.text(70, 75, "perfect calibration", rotation=37, fontsize=10.5, color=s["muted"], ha="center")
     xs = [float(r["mean_stated_confidence"]) for r in rows]
     ys = [float(r["share_correct_pct"]) for r in rows]
-    ax.bar(xs, ys, width=8, color=s["main"], edgecolor=s["ink"], linewidth=1, hatch=s["hatch"], alpha=0.9)
+    ax.bar(xs, ys, width=8, color=_solid(s["main"], 0.9), edgecolor=s["ink"], linewidth=1, hatch=s["hatch"])
     for xi, yi, r in zip(xs, ys, rows):
         ax.text(xi, yi / 2, f"{int(r['n_correct'])} of\n{int(r['n_items'])}", ha="center", va="center",
                 fontsize=11.5, fontweight="bold", color="#FFFFFF" if mode == "color" else s["ink"],
