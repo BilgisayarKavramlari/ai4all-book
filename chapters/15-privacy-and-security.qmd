@@ -3,11 +3,11 @@
 <!-- Status: REVISION v2 (2026-10-18) after four independent reviews (build/ch15/reviews/; dev memo docs/editorial/ch15-dev-memo.md). Blueprint v0.2 (approved under D19). Featured students: Lucía (main thread) and Marcus (docs/characters.md); Marcus's examples never contain patient data. All AI outputs are constructed examples unless a model and date are given; tools are described by kind, never by brand, except as subjects of cited cases and evidence.
 Case C12 tiers: the three pastes come from The Economist Korea (Jeong, 2023, read in Korean); the memo from Bloomberg (Gurman, 2023) as described by CSO Online (Sharma, 2023); a Samsung spokesperson confirmed the device restriction to TechCrunch (Park, 2023) and did not comment on the leak. Not marked done: final review and the author's final voice edit are pending. -->
 
-![Chapter 15 at a glance. This chapter strengthens Prompt (what you send decides your privacy) and, second, Decide (which risks to reduce, and who owns the rest).](../figures/out/color/f15-01-chapter-map.svg){#fig-15-1 fig-alt="Chapter map: privacy (15.1–15.2), security (15.3–15.4), risk (15.5–15.6), then the lab and A12; Work Loop with Prompt highlighted, Decide second."}
+![Chapter 15 at a glance. This chapter strengthens Prompt (what you send decides your privacy) and, second, Decide (which risks to reduce, and who owns the rest).](../figures/out/color/f15-01-chapter-map.svg){#fig-15-1 fig-alt="Chapter map: privacy (15.1–15.2), security (15.3–15.4, threat models 15.7), risk (15.5–15.6), lab and A12 (15.8); Work Loop: Prompt, Decide second."}
 
 **Chapter 15 at a glance.** Every time you paste, type, upload or connect something to an AI tool, information leaves your hands. Usually nothing bad follows. Sometimes it does: a company's secret code ends up on another firm's servers, a customer's details sit in a chat history, or a hidden line in a document steers what a tool writes. This chapter gives you four habits and one tool. Trace where your data goes before you send it. Send only what the task needs; a missing name does not make data anonymous. Assume that any text a tool receives can carry instructions. Check requests for money, logins or data through a channel you already trust, not by how real a voice sounds. And rate what could go wrong on a **Risk Heat Map**, so that you, or the person who decides, can reduce the worst risks and knowingly accept the rest.
 
-**Time:** the Core sections take about 20 minutes, and the whole Core package (the Opening Case, the Warm-up, sections 15.1 to 15.7, answering the Warm-up and Check Yourself items, and the Summary) about 30 minutes, at a steady pace (150 words a minute); allow more if you read more slowly or are reading in a second language. A12 takes about 3 minutes before the lab session and about 39 minutes after it, including reading its brief and rubric. A short recommended reading is listed in Further Reading. The Case Study, the short cases, the optional box and Deep sections are optional; the faded examples, the Review A questions, the Spaced Review and the Case Study Questions are exam practice. Core sections are examinable. Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter questions are in Appendix E.
+**Time:** the Core sections take about 27 minutes, and the whole Core package (the Opening Case, the Warm-up, sections 15.1 to 15.8, answering the Warm-up, the Check Yourself items and the section 15.7 Your Turn, and the Summary) about 41 minutes, at a steady pace (150 words a minute); allow more if you read more slowly or are reading in a second language. A12 takes about 3 minutes before the lab session and about 39 minutes after it, including reading its brief and rubric. A short recommended reading is listed in Further Reading. The Case Study, the short cases, the optional box and Deep sections are optional; the faded examples, the Review A questions, the Spaced Review and the Case Study Questions are exam practice. Core sections are examinable. Answers to Check Yourself, the faded examples, the section 15.7 Your Turn and odd-numbered end-of-chapter questions are in Appendix E.
 
 **The question of this chapter:** *How do you use AI tools without giving away what is not yours to give, or opening a door to an attacker?* The Chapter Summary answers it.
 
@@ -33,7 +33,7 @@ After this chapter you will be able to:
 
 - **O1 — Trace** the data flow of an AI-assisted task on a data-flow map, and mark where the data leaves your control. *(LO5 · AI Fluency: Diligence · UNESCO: ethics of AI, Apply)*
 - **O2 — Apply** data minimization to an input, and **explain** why removing names does not make data anonymous and why biometric data needs extra care. *(LO5 · AI Fluency: Diligence · UNESCO: ethics of AI, Apply)*
-- **O3 — Explain** why prompt injection cannot be fully prevented today, and **select** layered defenses for a workflow. *(LO5 · AI Fluency: Discernment, Diligence · UNESCO: AI techniques and applications, Understand)*
+- **O3 — Explain** why prompt injection cannot be fully prevented today, **select** layered defenses for a workflow, and **classify** attacks on an AI system by what they target and whether they harm confidentiality, integrity or availability. *(LO5 · AI Fluency: Discernment, Diligence · UNESCO: AI techniques and applications, Understand)*
 - **O4 — Apply** controls against AI-enabled social engineering that do not depend on spotting a fake. *(LO5 · AI Fluency: Diligence · UNESCO: ethics of AI, Apply)*
 - **O5 — Rate** risks on the Risk Heat Map with stated evidence, and **choose** mitigations, naming an owner for what remains. *(LO5; LO3 secondary · AI Fluency: Diligence, Discernment · UNESCO: ethics of AI, Apply)*
 - **O6 — Produce** A12: a responsible AI risk review with a data-flow map, a risk register, a record of safe tests, a heat map before and after mitigation, and a note for the person who decides. *(LO5 · AI Fluency: Diligence, Description · UNESCO: AI system design, Create)*
@@ -163,7 +163,7 @@ Why can a file without names still identify people?
 
 Recall Chapter 4: **prompt injection** is text that acts as an instruction to an AI system against its owner's intent; direct when a user types it, indirect when it is hidden in content the system retrieves. A tool that can act carries out an injected instruction with whatever access it has (Chapter 14). One aim of attackers is **exfiltration**: getting data out of a system to themselves.
 
-**Can it be fixed?** Not completely, as of October 2026. OWASP (the Open Worldwide Application Security Project), which publishes security guidance, ranks prompt injection first among risks of language-model applications and says it is unclear whether fool-proof prevention exists (OWASP GenAI Security Project, 2025). Anthropic reported that new safeguards cut attack success in its own browsing-agent tests from 23.6% to 11.2% in August 2025 (Anthropic, 2025); in August 2026, on a harder test with a new grading pipeline, it reported no successful attacks on three of its four newest models and 0.3% on the fourth, calling prompt injection "a moving target" (Anthropic, 2026). These are one company's results on its own tests, and this book reads the two sets as not directly comparable. Independently, the UK's National Cyber Security Centre (NCSC) argued in December 2025 that because models draw no firm line between data and instructions, prompt injection may never be fully mitigated, and advised reducing its risk and impact (David C., 2025). In other words: defenses are improving, and none has been shown to stop every attack outside the tests it was measured on.
+**Can it be fixed?** Not completely, as of October 2026. OWASP (the Open Worldwide Application Security Project), which publishes security guidance, ranks prompt injection first among risks of language-model applications and says it is unclear whether fool-proof prevention exists (OWASP GenAI Security Project, 2025a). Anthropic reported that new safeguards cut attack success in its own browsing-agent tests from 23.6% to 11.2% in August 2025 (Anthropic, 2025); in August 2026, on a harder test with a new grading pipeline, it reported no successful attacks on three of its four newest models and 0.3% on the fourth, calling prompt injection "a moving target" (Anthropic, 2026). These are one company's results on its own tests, and this book reads the two sets as not directly comparable. Independently, the UK's National Cyber Security Centre (NCSC) argued in December 2025 that because models draw no firm line between data and instructions, prompt injection may never be fully mitigated, and advised reducing its risk and impact (David C., 2025). In other words: defenses are improving, and none has been shown to stop every attack outside the tests it was measured on.
 
 ![Each layer of defense against prompt injection reduces the risk; none removes it.](../figures/out/color/f15-08-layers.svg){#fig-15-8 fig-alt="Six layers: label untrusted content, trained priority, filters, least privilege, approval gate, log; a line for injected text thins at each."}
 
@@ -304,7 +304,53 @@ A risk **qualifies** for a full plan if its impact is high, or if both its likel
 Why did none of Samsung's measures lower the impact of the pastes already made?
 :::
 
-## 15.7 The Red-Team Lab and the Risk Review (Lab 15.1 and A12) {#sec-15-7 .unnumbered}
+## 15.7 Threat Models: Who Could Attack an AI System, and How {#sec-15-7 .unnumbered}
+
+[Core]{.path}
+
+*Featuring Lucia.*
+
+Who might attack an AI system on purpose, and how? Security teams answer with a **threat model**: a written description of a system, of what could go wrong with it and of who could make it go wrong. Practitioners ask four questions: what are we working on, what can go wrong, what are we going to do about it, and did we do a good enough job (Braiterman et al., 2020)?
+
+**Three more words.** An **adversary** (or **attacker**) is a person or group that tries, on purpose, to harm a system or the people who rely on it. A **trust boundary** is a line between parts of a system that are trusted differently; anything that crosses it, in either direction, needs a check. On a data-flow map (section 15.1), it is the line past which your data is handled under someone else's rules. The **attack surface** is every place where an attacker can try to get into a system, change what it does or take data out of it (after Joint Task Force, 2020). It counts the ways in; permissions (section 14.6) decide how much an attacker who gets in can do.
+
+**Three things to protect.** The **CIA triad** (not the agency) names the three properties security work protects: confidentiality, that information reaches only the people allowed to see it; integrity, that information is not improperly changed or destroyed and, for an AI system, that its outputs are not steered by an attacker; and availability, that people can reach and use a system and its information reliably and on time (NIST, 2004; Vassilev et al., 2025). For generative AI, NIST adds a fourth attacker goal, misuse: getting around the limits a system's owner placed on its use (Vassilev et al., 2025).
+
+**The attack families:**
+
+| Attack family | What is attacked | Property threatened | Covered in |
+|---|---|---|---|
+| Prompt injection | A system's instructions, via text hidden in what it reads | Integrity; confidentiality if data is sent out | 15.3 |
+| Jailbreaking | A system's limits, via text typed directly | Misuse (not one of the three) | 15.3 |
+| Data poisoning | The examples a model is trained on | Integrity; sometimes availability | Here |
+| Model extraction | The model, copied from its answers | Confidentiality | Here |
+| Prompt extraction | The system prompt (the developer's instructions) | Confidentiality | Here |
+| Membership inference | The training data: was one person's record in it? | Confidentiality | Deep 15.A |
+| Adversarial example | One input, changed slightly, often invisibly | Integrity of the output | Here |
+| Supply-chain compromise | The parts a system is built from | All three | Here; 14.6 |
+
+**Jailbreaking** is direct prompt injection used to make a system do what its makers prohibit. **Data poisoning** is inserting or changing the examples a model is trained or fine-tuned on, so that it behaves as the attacker wants (both after Vassilev et al., 2025). **Model extraction** is building a working copy of a model from its answers; Tramer et al. (2016) did it with queries alone, on small machine-learning models, not today's large language models. OWASP advises that a system prompt "should not be considered a secret" (OWASP GenAI Security Project, 2025b).
+
+**Supply-chain compromise** is an attack on something a system is built from: a code library (ready-made code that programs share), a downloaded model file, or a tool or connector it is given. Between December 25 and 30, 2022, installing a test version of the AI code library PyTorch, built nightly for developers, on Linux computers could pull in a fake package (a bundle of code installed with it) under a borrowed name; when its code ran, it uploaded system details and files, including login (SSH, secure shell) keys (PyTorch Foundation, 2022). In 2024, a security company reported about 100 models on a public model-sharing site whose files could run code when loaded (Cohen, 2024).
+
+::: {.callout-important title="Your Turn"}
+Name the family and the property threatened (or misuse). (1) *Psychology:* someone probes a mood-tracking app's model to learn whether a named person's counseling notes were in its training data. (2) *Biology:* someone adds mislabeled photos to a public collection a plant-identification app is trained on, so it labels a poisonous plant safe. (3) *Hospitality:* a review that a booking assistant reads hides a line telling it to put one hotel first. (4) A user's role-play makes a chat tool write what its makers prohibit.
+:::
+
+**The threat-model questions.** Before using or building on an AI tool, ask: (1) What is the system? On its data-flow map, every arrow across a trust boundary is attack surface. (2) Who would attack it, and for what? (3) What can each adversary touch? (4) What may each tool and connector do: read, write, send, pay (section 14.6)? Each plausible answer becomes a register row (section 15.5); section 15.6 answers the practitioners' last two questions.
+
+::: {.callout-note title="Worked Example: Lucia's Threat Model"}
+*Constructed example, continuing section 15.5.*
+
+**System:** her team's AI tool drafts replies from customer emails and reaches the ticket system through a connector. **Adversaries:** a fraudster after account access; anyone who can email the team. **Ways in:** customer emails (prompt injection); the connector (supply chain). **Its permissions:** unknown, yet they set the possible harm. Risk 3 already covers a changed draft. New risk 6: an injected email or a connector flaw makes the tool read or change other customers' records: medium ("plausible in ordinary use": anyone can email the team, and the EchoLeak short case showed this route), high ("exposed data"), I (untested). As a high-impact risk it needs a mitigation or an owner; she first asks the team lead what the connector may read and write: narrower access lowers the impact.
+:::
+
+::: {.callout-tip title="Check Yourself 15.7"}
+1. Name the three properties of the CIA triad, and give one attack on an AI system that threatens each.
+2. Why is a downloaded model file or library part of an AI system's attack surface?
+:::
+
+## 15.8 The Red-Team Lab and the Risk Review (Lab 15.1 and A12) {#sec-15-8 .unnumbered}
 
 [Studio]{.path}
 
@@ -320,7 +366,7 @@ A12 follows this chapter's order (@fig-15-19). Review your A11 workflow or A10 t
 **Note to the team lead (67 words):** The AI tool may draft replies to support tickets from the ticket text, labeled as material, with payment details removed. It must not send any reply on its own or change any account. Agents read every draft before sending. One decision is yours: whether to accept the remaining account-takeover risk, now low likelihood but high impact, with weekly call-log reviews, or to add a second code.
 :::
 
-::: {.callout-tip title="Check Yourself 15.7"}
+::: {.callout-tip title="Check Yourself 15.8"}
 When does a lab probe's result document a risk in your own workflow, and when is it only a lead?
 :::
 
@@ -328,7 +374,7 @@ When does a lab probe's result document a risk in your own workflow, and when is
 
 [Deep]{.path}
 
-NIST's generative AI profile notes that models may leak, generate or correctly infer sensitive information about people, and that text present in only a few training examples can still be memorized (NIST, 2024). Chapter 2 showed that a model can repeat training text almost word for word (Carlini et al., 2021). In 2023, researchers showed this at scale on a production chat model: with about US$200 of queries to gpt-3.5-turbo, they extracted more than 10,000 unique examples of memorized training text, using prompts that pushed the model away from its usual chat behavior, and estimated that larger budgets would extract far more (Nasr et al., 2023, a preprint later published in revised form). The book does not describe the prompts.
+NIST's generative AI profile notes that models may leak, generate or correctly infer sensitive information about people, and that text present in only a few training examples can still be memorized (NIST, 2024). Chapter 2 showed that a model can repeat training text almost word for word (Carlini et al., 2021). In 2023, researchers showed this at scale on a production chat model: with about US$200 of queries to gpt-3.5-turbo, they extracted more than 10,000 unique examples of memorized training text, using prompts that pushed the model away from its usual chat behavior, and estimated that larger budgets would extract far more (Nasr et al., 2023, a preprint later published in revised form). The book does not describe the prompts. Membership inference (section 15.7) asks only whether a person's record was in the training data; Shokri et al. (2017) showed it on models trained by commercial machine-learning services, with realistic data that included hospital discharge records.
 
 What this means for you is narrower than it sounds. The model's settings (parameters) do not change while you chat (Chapter 3); a memory feature stores notes outside the model (section 15.1). Whether your words could ever surface in a *future* model depends on whether your account's terms allow training on them (Chapter 12). Deletion has limits too. In a 2025 copyright lawsuit brought by *The New York Times*, a U.S. court ordered OpenAI in May to keep ChatGPT logs that would otherwise have been deleted; the duty to keep new logs ended on September 26, 2025, but logs already kept remained, along with those of accounts the newspaper flagged (Chen, 2025).
 
@@ -382,6 +428,10 @@ At home, by the date your instructor sets: the fifth risk, the plans for qualify
 ### Lab 15.3: A Call-Back Drill (Practice · 15 minutes · optional, paper) {.unnumbered}
 
 *(O4 · LO5 · Apply)* With a partner, play two rounds: one of you is an urgent caller asking for an account change (section 15.4, worked example) or a hotel refund (faded example); the other applies the out-of-band check and the second approver. Then write a verification plan for your family, club or team that says *how* you would check a request, never a real phrase or phone number.
+
+### Lab 15.4: Same Frames, New Tool (Check It · 35 minutes · optional) {.unnumbered}
+
+*(O1, O3, O5 · LO5; Chapter 12's data gate and fit matrix · Apply, Evaluate)* Choose an AI tool of a kind you have not used in this book's labs, one you can already reach without a new account or install, and one part of a real task with no personal or confidential data. On a one-page sheet: (1) describe the tool with section 12.2's four questions; (2) run the data gate before any test, giving each question about 2 minutes ("not found" is an answer), and note what the tool can reach beyond your input, which is part of its attack surface (section 15.7); (3) test it on a typical and an edge input, one that is unusual but possible and most likely to break it (Chapter 5); (4) write one fit-matrix row against your familiar tool and no AI, each cell with a decision, its rung (its step on the Delegation Ladder, section 12.7) and a reason, and under it a four-line card, *not for* first, which Chapter 19's workflow card extends; (5) rate two risks on the heat map with D or I, naming for each the attack family from section 15.7's table (or "not an attack") and the property at stake: confidentiality, integrity or availability. No account or device? Use the dated sample pack in the companion files (or, if your course provides it, your instructor's).
 
 ## Case Study: The Paste That Could Not Be Taken Back {.unnumbered}
 
@@ -449,7 +499,7 @@ In 2015 I wrote an encyclopedia entry on big data and the life cycles that compa
 
 ![Chapter 15 summary card.](../figures/out/color/f15-21-summary-card.svg){#fig-15-21 fig-alt="Six cards: trace a prompt on the map; minimize; assume inputs can instruct; remove a leg; check the channel; rate, mitigate and name an owner."}
 
-**The chapter's question:** *How do you use AI tools without giving away what is not yours to give, or opening a door to an attacker?* Trace where each input goes, and send only what the task needs; removing names is not anonymity. Assume any text a tool receives can carry instructions: as of October 2026, no defense has been shown to stop prompt injection completely in real use, so layer defenses and keep the three legs apart. Check requests for money, logins or data through a channel you trust. Rate what remains with evidence, reduce what you can, and let a named person accept the rest.
+**The chapter's question:** *How do you use AI tools without giving away what is not yours to give, or opening a door to an attacker?* Trace where each input goes, and send only what the task needs; removing names is not anonymity. Assume any text a tool receives can carry instructions: as of October 2026, no defense has been shown to stop prompt injection completely in real use, so layer defenses and keep the three legs apart. Check requests for money, logins or data through a channel you trust. Before you build on a tool, ask who could attack it, what they could touch and which of confidentiality, integrity and availability they would harm. Rate what remains with evidence, reduce what you can, and let a named person accept the rest.
 
 **Return to the Opening Case.** The data crossed the trust boundary into storage Samsung did not control (15.1); its measures lowered the chance of new pastes, not the impact of old ones (15.6).
 
@@ -457,11 +507,11 @@ In 2015 I wrote an encyclopedia entry on big data and the life cycles that compa
 
 ### Key Terms {.unnumbered}
 
-biometric data · data-flow map · data minimization · defense in depth · de-identification · dual authorization · exfiltration · impact (of a risk) · inference (of personal attributes) · lethal trifecta · likelihood (of a risk) · mitigation (avoid, reduce, detect, accept) · personal data · qualifying risk · quasi-identifier · red-teaming · re-identification · residual risk · risk · risk owner · Risk Heat Map · risk register · sensitive data · trust boundary
+adversary (attacker) · attack surface · biometric data · CIA triad · data-flow map · data minimization · data poisoning · defense in depth · de-identification · dual authorization · exfiltration · impact (of a risk) · inference (of personal attributes) · jailbreaking · lethal trifecta · likelihood (of a risk) · mitigation (avoid, reduce, detect, accept) · model extraction · personal data · qualifying risk · quasi-identifier · red-teaming · re-identification · residual risk · risk · risk owner · Risk Heat Map · risk register · sensitive data · supply-chain compromise · threat model · trust boundary
 
 ## End-of-Chapter Package {.unnumbered}
 
-<!-- Each item: objective · LO · revised Bloom level. Odd-numbered answers → appendix/answers.md (Appendix E, via docs/production/handoff/ch15.md); even-numbered → private/ch15-answers-even.md. Review A distractors draw on M1–M6 (blueprint v0.2); MC keys rotated: A1 b, A2 d, A3 c, A5 a, A6 a, A7 c, A9 b, A11 d, A12 c. Option lengths checked by script (build/ch15/check_mc.py): the key is the longest option in at most two items; A7 and A9 each have a hedged distractor. Review A, the Spaced Review and the Case Study Questions are final-exam practice (D22). -->
+<!-- Each item: objective · LO · revised Bloom level. Odd-numbered answers → appendix/answers.md (Appendix E, via docs/production/handoff/ch15.md); even-numbered → private/ch15-answers-even.md. Review A distractors draw on M1–M6 (blueprint v0.2); MC keys rotated: A1 b, A2 d, A3 c, A5 a, A6 a, A7 c, A9 b, A11 d, A12 c, A14 b. Option lengths checked by script (build/ch15/check_mc.py): the key is the longest option in at most two items; A7 and A9 each have a hedged distractor. Review A, the Spaced Review and the Case Study Questions are final-exam practice (D22). -->
 
 ### Review Questions A: Terms and Concepts {.unnumbered}
 
@@ -514,6 +564,11 @@ biometric data · data-flow map · data minimization · defense in depth · de-i
     (c) A mitigation, or a named owner who accepts the risk in writing.\
     (d) Removing it from the register if the decision owner agrees to that.
 13. *(O2 · LO5 · Understand)* Why does biometric data need more care than a password? Give two kinds of biometric data.
+14. *(O3 · LO5 · Analyze)* A competitor sends thousands of questions to a company's paid online AI service and uses the answers to train a working copy of its model. Which attack family is this, and which property does it threaten?\
+    (a) Membership inference; the confidentiality of people in its training data.\
+    (b) Model extraction; the confidentiality of a model its owner keeps private.\
+    (c) Prompt extraction; the confidentiality of the instructions the service is given.\
+    (d) Data poisoning; the integrity of the answers that other customers receive.
 
 ### Review Questions B: Case Questions {.unnumbered}
 
@@ -603,9 +658,13 @@ Anthropic. (2025, August 25). *Piloting Claude in Chrome*. https://claude.com/bl
 
 Anthropic. (2026, August 26). *Claude in Chrome is generally available*. https://claude.com/blog/claude-in-chrome-generally-available
 
+Braiterman, Z., Shostack, A., Marcil, J., de Vries, S., Michlin, I., Wuyts, K., Hurlbut, R., Schoenfield, B. S. E., Scott, F., Coles, M., Romeo, C., Miller, A., Tarandach, I., Douglen, A., & French, M. (2020). *Threat modeling manifesto*. https://www.threatmodelingmanifesto.org/
+
 Carlini, N., Tramer, F., Wallace, E., Jagielski, M., Herbert-Voss, A., Lee, K., Roberts, A., Brown, T., Song, D., Erlingsson, U., Oprea, A., & Raffel, C. (2021). Extracting training data from large language models. In *Proceedings of the 30th USENIX Security Symposium* (pp. 2633–2650). USENIX Association. https://www.usenix.org/conference/usenixsecurity21/presentation/carlini-extracting
 
 Chen, J. (2025, October 11). OpenAI no longer has to preserve all of its ChatGPT data, with some exceptions. *Engadget*. https://www.engadget.com/ai/openai-no-longer-has-to-preserve-all-of-its-chatgpt-data-with-some-exceptions-192422093.html
+
+Cohen, D. (2024, February 27). *Data scientists targeted by malicious Hugging Face ML models with silent backdoor* [Blog post]. JFrog. https://jfrog.com/blog/data-scientists-targeted-by-malicious-hugging-face-ml-models-with-silent-backdoor/
 
 Corti, L., Van den Eynden, V., Bishop, L., & Woollard, M. (2014). *Managing and sharing research data: A guide to good practice*. SAGE. (Cited as in Seker, 2015.)
 
@@ -629,11 +688,15 @@ Hong Kong SAR Government. (2024, June 26). *LCQ9: Combating frauds involving dee
 
 Jeong, D.-Y. (2023, March 30). [Exclusive] Concerns become reality: Samsung Electronics sees misuse as soon as it lifts its ChatGPT ban [in Korean]. *The Economist* (Korea). https://economist.co.kr/article/view/ecn202303300057
 
+Joint Task Force. (2020). *Security and privacy controls for information systems and organizations* (NIST Special Publication 800-53, Rev. 5). National Institute of Standards and Technology. https://doi.org/10.6028/NIST.SP.800-53r5
+
 Microsoft. (2025, June 11). *M365 Copilot information disclosure vulnerability* (CVE-2025-32711) [Security update guide entry]. Microsoft Security Response Center. https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-32711
 
 Microsoft & LinkedIn. (2024, May 8). *2024 Work Trend Index annual report: AI at work is here. Now comes the hard part*. Microsoft. https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part
 
 Nasr, M., Carlini, N., Hayase, J., Jagielski, M., Cooper, A. F., Ippolito, D., Choquette-Choo, C. A., Wallace, E., Tramer, F., & Lee, K. (2023). *Scalable extraction of training data from (production) language models* (arXiv:2311.17035) [Preprint; published in revised form as Nasr, Rando et al., "Scalable extraction of training data from aligned, production language models," ICLR 2025]. arXiv. https://arxiv.org/abs/2311.17035
+
+National Institute of Standards and Technology. (2004). *Standards for security categorization of federal information and information systems* (Federal Information Processing Standards Publication 199). https://doi.org/10.6028/NIST.FIPS.199
 
 National Institute of Standards and Technology. (2023). *Artificial intelligence risk management framework (AI RMF 1.0)* (NIST AI 100-1). https://doi.org/10.6028/NIST.AI.100-1
 
@@ -647,15 +710,21 @@ OpenAI. (2023c, April 25). *New ways to manage your data in ChatGPT*. https://op
 
 OpenAI. (2025, December 22). *Continuously hardening ChatGPT Atlas against prompt injection attacks*. https://openai.com/index/hardening-atlas-against-prompt-injection/
 
-OWASP GenAI Security Project. (2025). *LLM01:2025 Prompt injection*. OWASP Top 10 for LLM Applications 2025. https://genai.owasp.org/llmrisk/llm01-prompt-injection/
+OWASP GenAI Security Project. (2025a). *LLM01:2025 Prompt injection*. OWASP Top 10 for LLM Applications 2025. https://genai.owasp.org/llmrisk/llm01-prompt-injection/
+
+OWASP GenAI Security Project. (2025b). *LLM07:2025 System prompt leakage*. OWASP Top 10 for LLM Applications 2025. https://genai.owasp.org/llmrisk/llm072025-system-prompt-leakage/
 
 Park, K. (2023, May 2). Samsung bans use of generative AI tools like ChatGPT after April internal data leak. *TechCrunch*. https://techcrunch.com/2023/05/02/samsung-bans-use-of-generative-ai-tools-like-chatgpt-after-april-internal-data-leak/
 
 Puig, A. (2023, March 20). *Scammers use AI to enhance their family emergency schemes* [Consumer alert]. Federal Trade Commission. https://consumer.ftc.gov/consumer-alerts/2023/03/scammers-use-ai-enhance-their-family-emergency-schemes
 
+PyTorch Foundation. (2022, December 31). *Compromised PyTorch-nightly dependency chain between December 25th and December 30th, 2022* [Blog post]. https://pytorch.org/blog/compromised-nightly-dependency/
+
 Seker, S. E. (2015). Buyuk veri ve buyuk veri yasam donguleri [Big data and big data life cycles]. *YBS Ansiklopedi, 2*(3), 10–17. http://ybsansiklopedi.com/cilt-2-sayi-2-eylul-2015/
 
 Sharma, S. (2023, May 2). Samsung bans staff AI use over data leak concerns. *CSO Online*. https://www.csoonline.com/article/575215/samsung-bans-staff-ai-use-over-data-leak-concerns.html
+
+Shokri, R., Stronati, M., Song, C., & Shmatikov, V. (2017). Membership inference attacks against machine learning models. In *2017 IEEE Symposium on Security and Privacy (SP)* (pp. 3–18). IEEE. https://doi.org/10.1109/SP.2017.41
 
 Southern, M. G. (2025, July 31). OpenAI is pulling shared ChatGPT chats from Google search. *Search Engine Journal*. https://www.searchenginejournal.com/openai-is-pulling-shared-chatgpt-chats-from-google-search/552671/
 
@@ -663,9 +732,13 @@ Staab, R., Vero, M., Balunovic, M., & Vechev, M. (2024). Beyond memorization: Vi
 
 Sweeney, L. (2000). *Simple demographics often identify people uniquely* (Data Privacy Working Paper 3). Carnegie Mellon University. https://dataprivacylab.org/projects/identifiability/paper1.pdf
 
+Tramer, F., Zhang, F., Juels, A., Reiter, M. K., & Ristenpart, T. (2016). Stealing machine learning models via prediction APIs. In *Proceedings of the 25th USENIX Security Symposium* (pp. 601–618). USENIX Association. https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/tramer
+
 U.S. Department of Education. (n.d.). *What is FERPA?* Student Privacy Policy Office. https://studentprivacy.ed.gov/faq/what-ferpa
 
 U.S. Department of Health and Human Services. (n.d.). *Minimum necessary requirement*. https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/minimum-necessary-requirement
+
+Vassilev, A., Oprea, A., Fordyce, A., Anderson, H., Davies, X., & Hamin, M. (2025). *Adversarial machine learning: A taxonomy and terminology of attacks and mitigations* (NIST AI 100-2 E2025). National Institute of Standards and Technology. https://doi.org/10.6028/NIST.AI.100-2e2025
 
 Wallace, E., Xiao, K., Leike, R., Weng, L., Heidecke, J., & Beutel, A. (2024). *The instruction hierarchy: Training LLMs to prioritize privileged instructions* (arXiv:2404.13208). arXiv. https://arxiv.org/abs/2404.13208
 

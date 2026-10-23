@@ -18,10 +18,20 @@ Stages: blueprint → draft → build-outs → independent checks → dev memo �
 | 12 | The Tool Ecosystem and Task-Tool Fit | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~13,500 / 10,000 | author: live syllabus (R10 recommended, Case Study in Tuesday class, A10 routes, CometAI line); OptiScorer From the Field ("my company built"?); §12.5 data-class table as course guidance; library access (Org. Sci., Randazzo); voice edit | 2026-10-18 |
 | 13 | Multimodal AI: Images, Audio and Video (Deep) | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~12,800 / 8,000 | author: From the Field (2015 Dijital Varlık) approval; Lab 13.4 clip consent; Arup status before print; voice edit | 2026-10-18 |
 | 14 | Agentic Workflows and Human Oversight | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~13,500 / 10,000 | author: live syllabus (R11 recommended, A11 changes); Kanban From the Field approval; Apr 6 demo tool/model; voice edit | 2026-10-18 |
-| 15 | Privacy and Security | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~11,200 / 10,000 | author: live syllabus (R12–R15 recommended, A12 hosting, Tuesday split); From the Field (2015, pp. 10–17); UTD OIT/ISO approval for Lab 15.1 station 1; demo tool and guest; voice edit | 2026-10-18 |
+| 15 | Privacy and Security | v2.2 — D31 (2026-10-22): new Core section 15.7 Threat Models (old 15.7 → 15.8) and Lab 15.4 (unfamiliar tool); four independent reviews pending; awaiting author's voice edit | ~11,200 / 10,000 | author: live syllabus (R12–R15 recommended, A12 hosting, Tuesday split); From the Field (2015, pp. 10–17); UTD OIT/ISO approval for Lab 15.1 station 1; demo tool and guest; voice edit | 2026-10-22 |
 | 16 | Bias and Fairness | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~10,750 / 10,000 | author: live syllabus (R13 recommended, ~8 min on Apr 13); From the Field (equity theory 2014) approval; UTD check on Copilot Chat memory setting; voice edit | 2026-10-18 |
 | 17 | Explainability and Transparency (Deep) | v2.1 — merged | ~12,400 / 8,000 | author: HermAI (D16, status); voice edit | 2026-10-18 |
 | 18 | Intellectual Property, Law and Governance | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~10,800 / 10,000 | author: live syllabus (R14/R15 recommended, Mini-Project 3–4 h); From the Field (Yazılımların Kaynakları) + D16; ~7 min Tue; UTDSP5017 citation; Ross status recheck Nov 2026; voice edit | 2026-10-18 |
 | 19 | AI Across Disciplines: Field Guides | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~13,500 / 10,000 | author: From the Field (Duygu Analizi) + D16 question; Tuesday demo workflow; live syllabus (R16 part); voice edit | 2026-10-18 |
 | 20 | Your AI Portfolio and Career Narrative | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~11,500 / 10,000 | author: live syllabus (portfolio ~6 h, A14 title, R17 recommended); defense logistics; privacy gate as policy; From the Field (Bilgi Ekonomisi) + optional employer paragraph; voice edit | 2026-10-18 |
 | 21 | Your Personal AI Code of Practice | v2.1 — four reviews, revision, final review fixes, voice pass; merged | ~11,500 / 10,000 | author: live syllabus (Part A/B split, Final Bridge review slot); code AI rule vs D-10.2; Last Words author note; From the Field (Kontrol Sayfası) pages; voice edit | 2026-10-18 |
+
+
+## Edition 2027.2 (planned; not in the current print edition, D31)
+
+| Item | Stage | File | Updated |
+|---|---|---|---|
+| Building with AI (new chapter) | blueprint v0.1 | docs/blueprints/ed2027.2-building-with-ai-blueprint.md | 2026-10-22 |
+| AI Governance in Organizations (new chapter) | blueprint v0.1 | docs/blueprints/ed2027.2-ai-governance-in-organizations-blueprint.md | 2026-10-22 |
+
+Print edition 2027.1: 23 chapters, schedule unchanged (D31).

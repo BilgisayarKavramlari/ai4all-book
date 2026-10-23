@@ -278,7 +278,7 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Done-criteria | Two or three checks that tell you whether a run succeeded. | Tamamlanma ölçütleri |
 | Workflow blueprint | A written design of a workflow: its steps, who or what runs each, its actions, people points, permissions, log plan and dry-run results. | İş akışı planı |
 | Data-flow map | A drawing of where one input goes once you send it: what goes in, where it is stored, who can see it, whether it is reused and where the output goes. | Veri akış haritası |
-| Trust boundary | The line past which your data is handled under someone else's rules. | Güven sınırı |
+| Trust boundary | A line between parts of a system that are trusted differently; anything that crosses it, in either direction, needs a check. On a data-flow map (section 15.1), it is the line past which your data is handled under someone else's rules. | Güven sınırı |
 | Personal data | Information about an identified or identifiable person (also called personally identifiable information, PII). | Kişisel veri |
 | Sensitive data | Personal data that can do special harm if exposed, such as biometric, health or location data. | Hassas veri |
 | Biometric data | Data about a person's body or behavior, such as a face, a voice, a fingerprint or the way someone walks. | Biyometrik veri |
@@ -301,6 +301,14 @@ One entry per term. Keep definitions short and identical wherever the term is de
 | Qualifying risk | A risk that needs a full mitigation plan in A12: its impact is high, or both its likelihood and its impact are at least medium. | Plan gerektiren risk |
 | Risk owner | The person who agrees in writing to carry a risk. | Risk sahibi |
 | Red-teaming | Testing a system the way an attacker would, with permission, to find weaknesses first. | Kırmızı takım testi |
+| Threat model | A written description of a system, of what could go wrong with it and of who could make it go wrong. | Tehdit modeli |
+| Adversary (attacker) | A person or group that tries, on purpose, to harm a system or the people who rely on it. | Hasım (saldırgan) |
+| Attack surface | Every place where an attacker can try to get into a system, change what it does or take data out of it. | Saldırı yüzeyi |
+| CIA triad | The three properties security work protects: confidentiality, that information reaches only the people allowed to see it; integrity, that information is not improperly changed or destroyed and, for an AI system, that its outputs are not steered by an attacker; and availability, that people can reach and use a system and its information reliably and on time. | Gizlilik-bütünlük-erişilebilirlik üçlüsü (CIA üçlüsü) |
+| Jailbreaking | Direct prompt injection used to make a system do what its makers prohibit. | Jailbreak (kısıt aşma) |
+| Data poisoning | Inserting or changing the examples a model is trained or fine-tuned on, so that it behaves as the attacker wants. | Veri zehirleme |
+| Model extraction | Building a working copy of a model from its answers. | Model çıkarma (model kopyalama) |
+| Supply-chain compromise | An attack on something a system is built from: a code library (ready-made code that programs share), a downloaded model file, or a tool or connector it is given. | Tedarik zinciri saldırısı |
 | Bias (in an AI system) | A systematic difference in how a system's outputs or errors fall on different groups of people that disadvantages some of them. | (Yapay zekâ sisteminde) yanlılık |
 | Bias Lifecycle | The book's four-phase picture of where bias can enter an AI system: data, model, use and feedback. | Yanlılık yaşam döngüsü |
 | Allocation harm | Harm that withholds an opportunity or resource, such as a job or a place in a program. | Dağıtım zararı |

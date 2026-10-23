@@ -251,7 +251,8 @@ def chapter_map(f):
             f.box(x, 94 + i * 88, 230, 70, it, role="neutral", kind="step", size=14)
         if c < 2:
             f.arrow(x + 236, 173, x + 252, 173)
-    f.box(30, 280, 740, 50, "15.7 Red-team lab (Lab 15.1) and A12, the responsible AI risk review",
+    f.text(400, 266, "15.7 Threat models: who could attack, and how", size=13, weight="600")
+    f.box(30, 280, 740, 50, "15.8 Red-team lab (Lab 15.1) and A12, the responsible AI risk review",
           role="verified", kind="human", size=14)
     y = 372
     f.text(150, y, "AI Work Loop:", size=14, weight="700", anchor="end")

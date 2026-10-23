@@ -209,6 +209,12 @@ The third question matters most, and accuracy checks miss it. Chapter 16 places 
 Pick one metric from your field or campus: GPA, step counts, citation counts, star ratings. Answer the three questions for it.
 :::
 
+::: {.callout-note title="Disclosed example (optional): Who chose the segments?"}
+*Disclosure: I am a founder of OptiWisdom, which develops software for businesses, including AI tools.* OptiSegment is an OptiWisdom product, developed with TUBITAK (the Scientific and Technological Research Council of Turkey) 1507 support (project 7190398). It is an automated machine learning (AutoML) engine for clustering: grouping similar records without preset labels. Given a table, it prepares the data and input columns, picks and tunes a method such as k-means, flags unusual records, and scores clusters with internal measures such as silhouette (how well records fit their cluster). The cluster labels feed later scoring. Company documents report no customer deployment or measured result.
+
+Its brochure lists segment axes including ethnic origin and religious or political beliefs, and says the product "does not act on prejudice." Yet people chose those axes: hidden assumptions about what matters (Jacobs & Wallach, 2021). European Union law treats such data as special categories (Regulation (EU) 2016/679, Art. 9).
+:::
+
 ::: {.callout-tip title="Check Yourself 11.3"}
 1. What is a proxy label, and how does it differ from a proxy in the inputs?
 2. Why did removing race from the inputs not remove the gap in the Opening Case?
@@ -734,6 +740,8 @@ Obermeyer, Z., Powers, B., Vogeli, C., & Mullainathan, S. (2019). Dissecting rac
 Parasuraman, R., & Manzey, D. H. (2010). Complacency and bias in human use of automation: An attentional integration. *Human Factors, 52*(3), 381–410. https://doi.org/10.1177/0018720810376055
 
 Public Health England. (2020, October 4). *PHE statement on delayed reporting of COVID-19 cases* [Press release; updated October 5, 2020]. GOV.UK. https://www.gov.uk/government/news/phe-statement-on-delayed-reporting-of-covid-19-cases
+
+Regulation (EU) 2016/679 of the European Parliament and of the Council (General Data Protection Regulation). *Official Journal of the European Union*, L 119, 4.5.2016, p. 1. https://eur-lex.europa.eu/eli/reg/2016/679/oj
 
 Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). (2024). *Official Journal of the European Union*, L, 2024/1689, 12.7.2024. http://data.europa.eu/eli/reg/2024/1689/oj
 

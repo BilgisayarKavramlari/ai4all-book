@@ -702,9 +702,11 @@ Employers may ask how you use AI in your field. Your A13 is an answer you can sh
 
 In 2016, I wrote an encyclopedia entry on **sentiment analysis**, software that classifies the feeling a text expresses, at first simply as positive, negative or neutral (Seker, 2016). Among the hard problems the entry listed were sarcasm and implied feeling, negation, several subjects in one sentence, and one I want you to remember here: **domain dependency**. The same words mean different things in different domains. The entry's example: a film whose plot moves unpredictably is being praised; a car that moves unpredictably is being faulted.
 
-The entry also noted that the right method depended on the application: fast statistical methods for streaming social-media posts, slower language-based methods where accuracy mattered more. It added that success rates were lower for Turkish than for English, and it reported, citing a 2013 newspaper piece, that people classify sentiment with about 85% success, while about 70% was then counted as success for software.
+The entry also noted that the right method depended on the application: fast statistical methods for streaming social-media posts, slower language-based methods where accuracy mattered more. It added that success rates were lower for Turkish than for English. And it reported a 2013 benchmark from *The Guardian*, given by the technology chief of a social-media data company: people judged sentiment with about 85% accuracy, while about 70% was then the best the software industry reached (Burn-Murdoch, 2013). Read those numbers as a 2013 benchmark, not as today's figures.
 
 **Read it with this chapter** (this book's reading, written in 2026). Domain dependency is the reason this chapter has field guides. A general tool's output has to be read with your field's meaning of its words; in medicine, for example, a "positive" test result is often bad news. And measuring software against how well people do the same task works, in this book's reading, as an early way of naming a verification authority. The entry is about text classification in 2016, not about today's generative tools; the design question carried over.
+
+**About the entry:** *Adapted from a literature review I wrote in 2016 as a consultant to a TUBITAK-supported industrial R&D project (no. 3150106) at a Turkish e-commerce company.* (TUBITAK is the Scientific and Technological Research Council of Turkey; R&D means research and development.)
 
 ## Chapter Summary {.unnumbered}
 
@@ -879,6 +881,8 @@ Assael, Y., Sommerschield, T., Shillingford, B., Bordbar, M., Pavlopoulos, J., C
 Bisbee, J., Clinton, J. D., Dorff, C., Kenkel, B., & Larson, J. M. (2024). Synthetic replacements for human survey data? The perils of large language models. *Political Analysis, 32*(4), 401–416. https://doi.org/10.1017/pan.2024.5
 
 Blatch, M. L. (2015, March 1). AICPA's revised confidentiality rule and Sec. 7216. *Journal of Accountancy*. https://www.journalofaccountancy.com/issues/2015/mar/aicpa-confidentiality-rule.html
+
+Burn-Murdoch, J. (2013, June 10). Social media analytics: Are we nearly there yet? *The Guardian*. https://www.theguardian.com/news/datablog/2013/jun/10/social-media-analytics-sentiment-analysis
 
 Children's Online Privacy Protection Rule, 90 Fed. Reg. 16918 (April 22, 2025).
 

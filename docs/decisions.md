@@ -421,3 +421,11 @@ The author asked the editor to make suitable choices for open items and to escal
 - Imprint: OptiWisdom LLC (the author's company), published through IngramSpark. ISBNs: paperback 979-8-1829-6229-2, EPUB 979-8-1829-6230-8 (check digits verified).
 - The paperback interior must stay at or under 1,200 pages (IngramSpark limit given by the author).
 - Bilkav is not named in the book; where a company affiliation of the author is needed, OptiWisdom is used. OptiWisdom products (e.g., OptiScorer, OptiSegment, OptiMatcher) may be described as disclosed examples (D16), from facts the author or public OptiWisdom sources supply.
+
+## D31 — Print stays at 23 chapters; two chapters move to edition 2027.2; threat models in Chapter 15 (author, 2026-10-22)
+
+- The current print edition (2027.1) goes ahead with 23 chapters on the existing schedule; no work may delay it.
+- Two new chapters are planned for edition 2027.2 only, as blueprints: "Building with AI" (docs/blueprints/ed2027.2-building-with-ai-blueprint.md) and "AI Governance in Organizations" (docs/blueprints/ed2027.2-ai-governance-in-organizations-blueprint.md). They are not in _quarto.yml and get no chapter text in 2027.1.
+- Chapter 15 gains a Core section 15.7 on threat models (vocabulary on an AI system; the attack families as one set, cross-referencing 15.3, Deep 15.A, 14.6 and 15.5); the former 15.7 (Red-Team Lab and Risk Review) becomes 15.8. No new figure.
+- Chapter 15 gains Lab 15.4 (evaluate an unfamiliar AI tool with the 12.7 fit matrix, the 15.5 risk heat map and a short card that Chapter 19's workflow card extends).
+- Out of scope by the author's decision: health informatics or clinical AI depth beyond 19's Health field guide; any new assessment tool beyond Lab 15.4; any grant, funder or institution name in the book (D27 stands).

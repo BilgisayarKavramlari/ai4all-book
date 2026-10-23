@@ -9,6 +9,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Abstract** · Ch. 9
 :   The short summary at the start of a research article.
 
+**Adversary (attacker)** · Ch. 15
+:   A person or group that tries, on purpose, to harm a system or the people who rely on it.
+
 **Affirmed** · Ch. 18
 :   The appeals court agreed with the trial court's decision.
 
@@ -89,6 +92,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 
 **Assistance** · Ch. 1
 :   AI use that helps you do the thinking yourself.
+
+**Attack surface** · Ch. 15
+:   Every place where an attacker can try to get into a system, change what it does or take data out of it.
 
 **Attention (Deep)** · Ch. 3
 :   In a Transformer, the mechanism that updates each token's representation with a weighted mix of the tokens before it.
@@ -193,6 +199,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Chinese Room argument** · Ch. 23
 :   Searle's (1980) thought experiment and the conclusion he drew from it: running the right program, which manipulates symbols by their form (syntax), is not by itself enough for understanding (semantics).
 
+**CIA triad** · Ch. 15
+:   The three properties security work protects: confidentiality, that information reaches only the people allowed to see it; integrity, that information is not improperly changed or destroyed and, for an AI system, that its outputs are not steered by an attacker; and availability, that people can reach and use a system and its information reliably and on time.
+
 **Citation tracing** · Ch. 9
 :   Following a claim from where you met it, hop by hop, to the place it first appeared, checking at each hop that the cited source says what the citing source claims.
 
@@ -287,6 +296,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 
 **Data minimization** · Ch. 15
 :   Sending only what a part of a task needs.
+
+**Data poisoning** · Ch. 15
+:   Inserting or changing the examples a model is trained or fine-tuned on, so that it behaves as the attacker wants.
 
 **Data terms** · Ch. 12
 :   The parts of a tool's terms and its options that say what happens to what you type and upload.
@@ -642,6 +654,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Jagged technological frontier** · Ch. 1
 :   The uneven boundary between tasks an AI tool handles well and tasks it handles poorly, even among tasks that look equally hard.
 
+**Jailbreaking** · Ch. 15
+:   Direct prompt injection used to make a system do what its makers prohibit.
+
 **Jurisdiction** · Ch. 18
 :   The area, such as a country, a state or a city, whose law applies.
 
@@ -776,6 +791,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 
 **Model card** · Ch. 17 (also 19)
 :   A short document published with a model that states what it is for and not for, how it was evaluated, including results by group where relevant, and its known limits (after Mitchell et al., 2019).
+
+**Model extraction** · Ch. 15
+:   Building a working copy of a model from its answers.
 
 **Moral crumple zone** · Ch. 23
 :   The person nearest an automated system absorbing the blame for a failure even when they had little control over the system's behavior (Elish, 2019).
@@ -1251,6 +1269,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Supervised learning** · Ch. 2
 :   Learning from examples that each come with a correct answer (label).
 
+**Supply-chain compromise** · Ch. 15
+:   An attack on something a system is built from: a code library (ready-made code that programs share), a downloaded model file, or a tool or connector it is given.
+
 **Surrogate model** · Ch. 17
 :   A simpler model trained to imitate a complex one, often to explain it.
 
@@ -1310,6 +1331,9 @@ Each entry gives the book's definition, word for word as it appears where the te
 **Test-time compute** · Ch. 22
 :   Computation spent at the moment of answering a question, rather than only during training.
 
+**Threat model** · Ch. 15
+:   A written description of a system, of what could go wrong with it and of who could make it go wrong.
+
 **Time horizon (of an agent)** · Ch. 22
 :   The length of task, measured in how long skilled people take, that an agent is predicted to complete half the time (the 50% time horizon); the 80% time horizon is the length it completes four times out of five.
 
@@ -1368,7 +1392,7 @@ Each entry gives the book's definition, word for word as it appears where the te
 :   Three questions a line must pass: would you notice the moment at the time, could you or someone else trace afterward that you acted, and does the reason point to your own evidence?
 
 **Trust boundary** · Ch. 15
-:   The line past which your data is handled under someone else's rules.
+:   A line between parts of a system that are trusted differently; anything that crosses it, in either direction, needs a check. On a data-flow map (section 15.1), it is the line past which your data is handled under someone else's rules.
 
 **Tutor mode** · Ch. 7
 :   A way of using an AI tool in which it is set up to respond with questions and hints and to wait for your attempts, instead of giving answers.

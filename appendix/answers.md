@@ -621,7 +621,9 @@ Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter qu
 - **15.4** An out-of-band check confirms through a channel the attacker does not control; dual authorization means one deceived person cannot act alone (multi-factor authentication is a third) (§15.4).
 - **15.5** Its harm would be serious and hard to undo, so the high-impact rule requires a mitigation or a named owner who accepts it (§15.5).
 - **15.6** The data had already crossed into outside storage that could not be retrieved; the measures only lowered the chance of new pastes (§15.6).
-- **15.7** Only when the tool and the kind of task match your workflow; otherwise it is a lead: mark I, cite the result and name the test that would document it (§15.5, §15.7).
+- **15.7 (1)** Confidentiality (information reaches only allowed people): model extraction, prompt extraction or membership inference. Integrity (information is not improperly changed, and outputs are not steered by an attacker): prompt injection, data poisoning or an adversarial example. Availability (reliable, timely use): data poisoning that degrades the model, or a supply-chain compromise, which can threaten all three. Jailbreaking serves a fourth goal, misuse (§15.7).
+- **15.7 (2)** The system is built from it, and it comes from outside your control, so it crosses a trust boundary: a tampered library or model file can run code, leak data or change outputs once installed or loaded (the PyTorch test version, 2022; model files that ran code, 2024). Its permissions then decide how much harm follows (§14.6, §15.7).
+- **15.8** Only when the tool and the kind of task match your workflow; otherwise it is a lead: mark I, cite the result and name the test that would document it (§15.5, §15.8).
 
 ### Faded examples
 - **15.1, group project:** stored: chat history and memory, until deleted (and backups); seen by: reviewers if a chat is flagged, and everyone in the group chat; reused: may train future models unless the student opts out; out: the group chat. Boundary: between the pasted input and the tool. Under the section 12.5 table, classmates' names and phone numbers do not go into a consumer tool: use placeholders.
@@ -630,6 +632,9 @@ Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter qu
 - **15.4, front desk:** the general manager's number in the staff directory, or in person; the front-office manager approves; no refund until both confirm.
 - **15.5, Marcus:** Risk B: medium ("plausible in ordinary use"; the lab file is a planted lead) · medium (lost quiz points, undoable with effort) · I. Risk C: low ("no sign"; multi-factor login) · low (only textbook content) · D for the stated terms or I with that reason; either evidence mark is accepted with the reason.
 - **15.6, customer list:** (b) reduce; (c) detect. Owner: the marketing manager.
+
+### Your Turn keys (where a single answer exists)
+- **15.7 Your Turn:** (1) membership inference; confidentiality. (2) data poisoning; integrity (the app's outputs are steered). (3) prompt injection, indirect; integrity. (4) jailbreaking; misuse, not one of the three properties (§15.7).
 
 ### Review Questions A
 1. **(b)** The line past which your data is handled under someone else's rules. (a) confuses the map with verification (Ch. 8); (c) is the context window (Ch. 3); (d) is a training option, one box of the map (M1).
@@ -655,6 +660,7 @@ Answers to Check Yourself, the faded examples and odd-numbered end-of-chapter qu
 1. One map: input = two programs' source code and a meeting transcript; tool at the provider; storage on outside servers (could not be retrieved, reported); reuse depending on the terms. The harm sat in the input and storage boxes, past the trust boundary.
 3. Byte limit: reduce; in-house tool: reduce; warnings and possible discipline: reduce; device restriction: avoid. Likely owners (the reader's reasoning; the reports name none): the division's management or IT security, and the company's leadership for the restriction.
 5. C12: a person sent data across the boundary; controls: the data gate, an approved tool, a written rule, data loss prevention. C19: a system combined the three legs; controls: remove a leg, layered defenses, vendor fixes. Only C19 is on the tree, because injected text changed an output; in C12 no output was wrong.
+- **Lab 15.4.** No single answer; accept "blocked at the gate" and "pages only, not tested" as full results. Look for the gate before any run, the familiar tool's cell marked predicted unless taken from A10, and one risk from what the new tool receives, reaches or may do, each risk with its attack family from section 15.7 (or "not an attack") and the property at stake.
 
 ## Chapter 16
 

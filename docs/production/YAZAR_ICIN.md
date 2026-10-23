@@ -19,6 +19,7 @@ Güncelleme: 18 Ekim 2026. Araştırarak doldurabildiğim her şey dolduruldu (b
    - Bölüm 19: "Duygu Analizi" yazısındaki iş paketli proje ticari mi, kamu fonlu mu (ör. TÜBİTAK), yoksa üniversite projesi mi?
 6. **Bölüm 23 — yazarın görüşü** (isteğe bağlı): boş "Author's view" kutuları 22 Ekim 2026'da kaldırıldı; yalnızca 23.4'teki HermAI makalesinden alıntılı kutu duruyor (onaylayın). Bir tartışmaya kendi görüşünüzü eklemek isterseniz yeni kutu açarım.
 7. **Son ses düzeltmesi:** 23 bölümün tamamı (hiçbirini "bitti" olarak işaretlemedim).
+8. **Lab 15.4 (örnek paket):** Lab 15.4'ün hesapsız, cihazsız yolu "companion files" içindeki tarihli örnek pakete dayanıyor; paket henüz yok. Gerçek bir araçla yapılmış, tarihli gerçek bir çalıştırmanın çıktısı gerekir, kurgulanmış (uydurma) çıktı olmaz: bir YZ not özelliği, veri koşulları sayfasından tarihli alıntı, üç girdi (tipik, farklı, uç) ve dökümleri, araç türü, model veya sürüm ve tarihle numaralı üç çıktı. Aracı ve çalıştırmayı siz seçip onaylamalısınız (ayrıntı: `docs/production/instructor-package.md`, Chapter 15).
 
 ## Kitabın dışında kalan, yalnız sizin dersiniz için olanlar (D27)
 

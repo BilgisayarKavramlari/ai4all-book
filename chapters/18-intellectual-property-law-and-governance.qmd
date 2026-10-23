@@ -282,7 +282,7 @@ A12's register (Chapter 15) has five risks; this chapter supplies the **rules-an
 
 1. **Scratch list:** your answers to prompts a–e on your data-flow map (@fig-18-14). Where to look: the tool's terms; your course's AI rule and your institution's AI policy; your institution's data classes; an employer's, client's or placement's policy; one law from this chapter.
 2. **Choose** the rule with the **highest stakes** (whose breach would harm people most or be hardest to undo); name its layer and write the risk, with who is harmed.
-3. **Evidence:** D only if you opened the rule's own text for this tool and data and cite its section; for a law, I with a reason is acceptable ("read this chapter's summary, not the statute"). A provided scenario's rules paragraph (section 15.7) counts as the rule's text.
+3. **Evidence:** D only if you opened the rule's own text for this tool and data and cite its section; for a law, I with a reason is acceptable ("read this chapter's summary, not the statute"). A provided scenario's rules paragraph (section 15.8) counts as the rule's text.
 4. **Rate, mitigate, ask:** likelihood and impact (Chapter 15's anchors); a mitigation with a risk owner; the rule's owner with your question. End: "This records which rules to check and whom to ask; it is not a legal opinion."
 
 ![Walk the data-flow map and list the rules that may apply at each box.](../figures/out/color/f18-15-flow-rules.svg){#fig-18-14 fig-alt="Chapter 15's data-flow map with a rules note at the input, storage, reuse, output and recipients boxes."}
@@ -421,7 +421,11 @@ The law answers narrower questions. In *Bartz*, the settled claims concerned pir
 
 In 2014 I wrote an encyclopedia entry on where organizations get their software (Seker, 2014). It describes five sources: software firms that build custom or packaged products, large integrated enterprise systems, cloud services, open-source software and in-house development. For choosing among them it lists these criteria: cost, functionality, the availability and speed of support, flexibility, documentation and ease of installation. The entry cites Laudon and Laudon's textbook as its source (Laudon & Laudon, 2012). It adds that cost is more than the price: maintenance, add-ons, and the license and management costs of the operating system the software needs.
 
-On open source, the entry gives my market experience at the time. Open-source code lets a customer adapt the software. I wrote that I had once been a firm defender of open source and had moved away from it, because I saw "open source" used more as a marketing tool than as the good-faith idea of free software it began as. I named practices I had seen: keeping the newest version commercial and the older one open, and giving the software away while selling documentation or services. And I wrote what vendors should not do: give a firm free software, make it dependent, then charge more than paid software would cost. I advised buyers to plan budgets for at least five to ten years.
+On open source, the entry gives my market experience at the time. Open-source code lets a customer adapt the software. In 2014 I wrote that I had once been a firm defender of open source and had moved away from it, because I saw "open source" used more as a marketing tool than as the good-faith idea of free software it began as. I named practices I had seen: keeping the newest version commercial and the older one open, and giving the software away while selling documentation or services. And I wrote what vendors should not do: give a firm free software, make it dependent, then charge more than paid software would cost. I advised buyers to plan budgets for at least five to ten years. I still hold that view.
+
+One case shows why. In the early 2000s, a software company won contracts with many Turkish municipalities by bidding far below market prices. It signed one-year contracts and automated some of the municipalities' most critical services. When a municipality ended the contract, the company refused to hand over the data, the source code (the program's human-readable text) and even the passwords. The system was locked, so the municipality had little choice but to stay. The contracts were written to allow this, and many of these cases ended up in court. In a sense the company had a point: it was working far below market rates. But the practice spread quickly, because experience in buying software was thin and because an elected mayor could approve a cheap deal that showed results in that mayor's own term, while the cost landed on the next administration. Municipalities learned. Today I doubt any would sign such a deal without proper terms on data, code and exit.
+
+The pattern lives on in other forms, such as a website built "for free" whose renewal is priced very high, under a contract that gives the developer all the rights. I have also seen vendors tolerate unlicensed copies until users depended on them, then start charging. That is my observation, not a documented strategy. But the idea has been said aloud: in 1998, *Fortune* quoted Bill Gates as saying that if people were going to copy software without paying, Microsoft would rather they copy its own, because users would get "sort of addicted" and the company could find a way to collect later (Schlender, 1998). Economists have shown why tolerated copying can pay. When a product is worth more as more people use it (a network effect), leaving it unprotected can raise a seller's profits (Conner & Rumelt, 1991; Takeyama, 1994). One study of spreadsheets and word processors in the United Kingdom (1987–1992) estimated that six of every seven users had unlicensed copies, yet those users brought in more than 80% of the new paying buyers by word of mouth (Givon et al., 1995). Peitz and Waelbroeck (2006) review this research.
 
 **Present-day connections (this book's reading, written in 2026).** First, "open" on an AI model can mean very different licenses (Deep 18.A): read the license, not the label. Second, a free tier or a free model can become a dependency, so check how the terms can change before you build a workflow on them (Chapter 12). Third, the long view applies to AI tools as it did to software. The entry concerns business software in 2014, not AI; open licenses also give real freedoms, such as studying and changing the code, which my 2014 view did not dwell on. *Disclosure: I am a founder of OptiWisdom, which develops software for businesses, including AI tools. See "How This Book Was Written."*
 
@@ -535,7 +539,7 @@ Come back to these a few days after reading, without looking back. They connect 
 
 ### Application Assignment: A12's Rules-and-Rights Risk {.unnumbered}
 
-This chapter's artifact is **A12, the responsible AI risk review**, in section 15.7. This chapter adds one required risk to its register: the **rules-and-rights risk**, drafted in Lab 15.1, step 6, and finished at home in about 3 minutes. *(O1, O3, O4, O5 · LO5 · Apply, Evaluate)* Chapter 15's rubric grades it under "Register," and its mitigation under "Plan."
+This chapter's artifact is **A12, the responsible AI risk review**, in section 15.8. This chapter adds one required risk to its register: the **rules-and-rights risk**, drafted in Lab 15.1, step 6, and finished at home in about 3 minutes. *(O1, O3, O4, O5 · LO5 · Apply, Evaluate)* Chapter 15's rubric grades it under "Register," and its mitigation under "Plan."
 
 **Write it in Chapter 15's template:** "risk of breaking [a named rule] or of [a named person] losing [a named right]," with the rule's layer and who is harmed; likelihood and impact by Chapter 15's anchors; the evidence, **D only if you opened the rule's own text for the tool and data your workflow uses and cite its section** (for a law, I with a reason is acceptable; a provided scenario's rules paragraph counts as the rule's text); a mitigation of a named kind with a risk owner by role; the rule's owner with your question; and the not-a-legal-opinion line (section 18.6).
 
@@ -586,6 +590,8 @@ American Bar Association, Standing Committee on Ethics and Professional Responsi
 
 Bookman, T. (2025, June 13). Political operative who admitted to creating fake Biden robocalls found not guilty. *New Hampshire Public Radio*. https://www.nhpr.org/nh-news/2025-06-13/political-operative-fake-biden-robocalls-nh-primary-found-not-guilty
 
+Conner, K. R., & Rumelt, R. P. (1991). Software piracy: An analysis of protection strategies. *Management Science, 37*(2), 125–139. https://doi.org/10.1287/mnsc.37.2.125
+
 Copyright Act of Japan (Act No. 48 of 1970), Art. 30-4 (official English translation, Japanese Law Translation). https://www.japaneselawtranslation.go.jp/
 
 Davis, W. (2026, October 12). AI company plans to seek new hearing in copyright battle. *MediaPost*. https://www.mediapost.com/publications/article/418680/ai-company-plans-to-seek-new-hearing-in-copyright.html
@@ -610,6 +616,8 @@ Federal Trade Commission. (2026, May 19). *FTC begins enforcing the TAKE IT DOWN
 
 *Getty Images (US) Inc. v. Stability AI Ltd* [2025] EWHC 2863 (Ch) (November 4, 2025); consequentials [2025] EWHC 3343 (Ch).
 
+Givon, M., Mahajan, V., & Muller, E. (1995). Software piracy: Estimation of lost sales and the impact on software diffusion. *Journal of Marketing, 59*(1), 29–37. https://doi.org/10.1177/002224299505900103
+
 *Kadrey v. Meta Platforms, Inc.*, 788 F. Supp. 3d 1026 (N.D. Cal. 2025) (No. 3:23-cv-03417-VC) (order of June 25, 2025, Dkt. 598).
 
 Laudon, K. C., & Laudon, J. P. (2012). *Management information systems: Managing the digital firm* (12th ed.). Prentice Hall. (Cited in Seker, 2014, as 2011.)
@@ -628,13 +636,19 @@ Open Source Initiative. (2024). *The Open Source AI Definition 1.0*. https://ope
 
 OpenAI. (2023, November 6). *New models and developer products announced at DevDay*. https://openai.com/index/new-models-and-developer-products-announced-at-devday/
 
+Peitz, M., & Waelbroeck, P. (2006). Piracy of digital products: A critical review of the theoretical literature. *Information Economics and Policy, 18*(4), 449–476. https://doi.org/10.1016/j.infoecopol.2006.06.005
+
 Regulation (EU) 2024/1689 of the European Parliament and of the Council of 13 June 2024 laying down harmonised rules on artificial intelligence (Artificial Intelligence Act). *Official Journal of the European Union*, L, 12.7.2024. https://eur-lex.europa.eu/eli/reg/2024/1689/oj
 
 Regulation (EU) 2026/1744 of the European Parliament and of the Council of 8 July 2026 amending Regulations (EU) 2024/1689, (EU) 2018/1139 and (EU) 2023/1230 as regards the simplification of the implementation of harmonised rules on artificial intelligence (Digital Omnibus on AI). *Official Journal of the European Union*, L, 24.7.2026. https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng
 
+Schlender, B. (1998, July 20). The Bill & Warren show. *Fortune*. https://money.cnn.com/magazines/fortune/fortune_archive/1998/07/20/245683/index.htm
+
 Seker, S. E. (2014). Yazilimlarin kaynaklari [Sources of software]. *YBS Ansiklopedi, 1*(2), 5–8.
 
 TAKE IT DOWN Act, Pub. L. No. 119-12 (2025).
+
+Takeyama, L. N. (1994). The welfare implications of unauthorized reproduction of intellectual property in the presence of demand network externalities. *Journal of Industrial Economics, 42*(2), 155–166. https://doi.org/10.2307/2950487
 
 Texas H.B. 149, 89th Leg., Reg. Sess. (2025) (Texas Responsible Artificial Intelligence Governance Act), enrolled. https://capitol.texas.gov/tlodocs/89R/billtext/html/HB00149F.htm
 
