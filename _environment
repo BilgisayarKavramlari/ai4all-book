@@ -1,0 +1,4 @@
+# Quarto loads this file for every render. Typst ignores the machine's system fonts and uses
+# only fonts/ (plus Quarto's bundled fonts), so every PDF build embeds the same, static fonts.
+# Reason: a variable Source Sans 3 installed on a build machine made regular text ExtraLight.
+TYPST_IGNORE_SYSTEM_FONTS=true

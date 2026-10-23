@@ -83,6 +83,8 @@ format:
     toc: true
     toc-depth: 1
     number-sections: true
+    font-paths:
+      - fonts                   # static Source Sans 3 and the other book fonts; see fonts/README.md
     template-partials:
       - typst/typst-show.typ    # cover page, US Letter, palette, copyright block
   epub:
