@@ -39,4 +39,5 @@ Print edition 2027.1: 23 chapters, schedule unchanged (D31).
 
 ## Print edition 2027.1 (IngramSpark)
 
-- 2026-11-09: first print eProof approved by the author (D32). Next: enable distribution, pricing; EPUB title validation.
+- 2026-11-09: first print eProof approved by the author (D32); 5 printed copies ordered for review and gifts. Next: check the printed copies; enable distribution and pricing.
+- Ebook: IngramSpark rejected the EPUB; the ebook goes through Draft2Digital and other channels (D33). Open: the rejection reason, and whether the ebook ISBN may be used outside IngramSpark.

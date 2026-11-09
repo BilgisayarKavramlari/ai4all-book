@@ -14,9 +14,9 @@ Talk to the author in Turkish; write book content in English.
 
 ## Outputs and constraints
 - Two editions from one source: print interior PDF (grayscale, IngramSpark paperback; build with `quarto render --profile print --to typst`, then tools/make-print-pdfx.sh) and EPUB 3 (color). Every figure has a color and a grayscale render.
-- Book decisions are in docs/decisions.md (they override docs/context/). License CC BY-NC-SA 4.0. First release through IngramSpark (EPUB + one paperback volume, D29); open-web edition later.
+- Book decisions are in docs/decisions.md (they override docs/context/). License CC BY-NC-SA 4.0. Paperback through IngramSpark (one volume, D29; eProof approved 2026-11-09, D32); ebook through Draft2Digital and other channels (D33); open-web edition later.
 - The book is not part of the course development grant; never describe it as grant-funded or grant-owned.
-- Distributor rules change: always re-check IngramSpark's current file requirements before upload (see docs/production/INGRAM_PREFLIGHT.md; the ai4all-publisher-d2d skill is out of date since D29).
+- Distributor rules change: always re-check the current file requirements before upload: IngramSpark for print (docs/production/INGRAM_PREFLIGHT.md), Draft2Digital and other channels for the ebook (ai4all-publisher-d2d skill, D33).
 
 ## Skills
 | Stage | Skill |

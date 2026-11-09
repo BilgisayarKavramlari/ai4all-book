@@ -1,5 +1,7 @@
 # IngramSpark title information pack (Başlık bilgi paketi)
 
+> **Durum (9 Kasım 2026):** Basılı kitap onaylandı (eProof, D32) ve 5 kopya sipariş edildi. E-kitap IngramSpark'ta reddedildi; Draft2Digital ve diğer kanallardan çıkacak (D33). Buradaki e-kitap alanları o kanallarda da kullanılabilir.
+
 Hazırlandı: 22 Ekim 2026. Alan değerleri İngilizce (kopyala-yapıştır için kod blokları içinde); açıklamalar Türkçe.
 Kaynaklar: IngramSpark *Print Book Setup Guide* (BISAC en fazla 3, sayfa sayısı çift olmalı, toptan indirim ve iade seçenekleri); BISAC kodları BISG'in resmî listesinden (bisg.org, Ekim 2026) doğrulandı. Ingram'ın açıklama, kısa açıklama ve biyografi karakter sınırlarını resmî kaynaktan doğrulayamadım (yardım sayfası erişime kapalıydı); aşağıdaki metinler yaygın sınırların (kısa açıklama 350, açıklama 4.000 karakter) altında tutuldu.
 

@@ -54,3 +54,8 @@ Kitap artık hiçbir dersin izlencesine, takvimine ya da öğrenci sayısına ba
 - ISBN (basılı + EPUB) ve yayıncı adı → künye (s. 2) ve kolofon.
 - Ingram kapak şablonu (1106 sayfa) → tam kapak.
 - Fiyat, toptan indirim, iade, yayın tarihi kararları: `docs/production/INGRAM_TITLE_INFO.md` bölüm 9.
+
+## Yayın durumu (9 Kasım 2026)
+
+- Basılı: eProof onaylandı, 5 kopya sipariş edildi. Kopyalar gelince kâğıt, gri tonlar, sırt ve kapak kontrol edilecek; sonra dağıtım "Enable" ve fiyat.
+- E-kitap: IngramSpark reddetti; Draft2Digital ve diğer kanallar (D33). Gerekenler: (1) Ingram'ın ret gerekçesi, (2) e-kitap ISBN'i 979-8-1829-6230-8 IngramSpark dışında kullanılabilir mi?

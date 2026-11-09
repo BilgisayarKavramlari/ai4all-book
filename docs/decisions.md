@@ -434,3 +434,8 @@ The author asked the editor to make suitable choices for open items and to escal
 
 - The author approves IngramSpark's first print eProof of ISBN 979-8-1829-6229-2. It was built from the interior uploaded before commit 113a5f0, so in print pages 296 (Figure 8.9) and 868 (Figure 22.12) are full-page grayscale images at 720 ppi, and Figure 17.8's two maps are at 1033 ppi. All other pages and the cover match the repository build page for page.
 - The corrected interior (vector pages, images at 300 ppi; same 1,114 pages, so the same cover) is kept for the next file revision: `quarto render --profile print --to typst`, then `tools/make-print-pdfx.sh`.
+
+## D33 — Print through IngramSpark; ebook through Draft2Digital and other channels (author, 2026-11-09)
+
+- Print: the author approved the eProof (D32) and ordered 5 printed copies (for review and as gifts) on 2026-11-09. The paperback (ISBN 979-8-1829-6229-2) stays with IngramSpark.
+- Ebook: IngramSpark rejected the EPUB. The ebook goes out through Draft2Digital and other channels instead (amends D29 for the ebook only; D3's Draft2Digital route returns for the EPUB). Before upload, re-check each channel's current EPUB rules (CLAUDE.md) and whether ebook ISBN 979-8-1829-6230-8 may be used outside IngramSpark (if it was issued through IngramSpark, a channel's own free ISBN or a separately bought one may be needed).
