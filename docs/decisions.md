@@ -429,3 +429,8 @@ The author asked the editor to make suitable choices for open items and to escal
 - Chapter 15 gains a Core section 15.7 on threat models (vocabulary on an AI system; the attack families as one set, cross-referencing 15.3, Deep 15.A, 14.6 and 15.5); the former 15.7 (Red-Team Lab and Risk Review) becomes 15.8. No new figure.
 - Chapter 15 gains Lab 15.4 (evaluate an unfamiliar AI tool with the 12.7 fit matrix, the 15.5 risk heat map and a short card that Chapter 19's workflow card extends).
 - Out of scope by the author's decision: health informatics or clinical AI depth beyond 19's Health field guide; any new assessment tool beyond Lab 15.4; any grant, funder or institution name in the book (D27 stands).
+
+## D32 — First print eProof approved as delivered (author, 2026-11-09)
+
+- The author approves IngramSpark's first print eProof of ISBN 979-8-1829-6229-2. It was built from the interior uploaded before commit 113a5f0, so in print pages 296 (Figure 8.9) and 868 (Figure 22.12) are full-page grayscale images at 720 ppi, and Figure 17.8's two maps are at 1033 ppi. All other pages and the cover match the repository build page for page.
+- The corrected interior (vector pages, images at 300 ppi; same 1,114 pages, so the same cover) is kept for the next file revision: `quarto render --profile print --to typst`, then `tools/make-print-pdfx.sh`.

@@ -35,3 +35,8 @@ Stages: blueprint → draft → build-outs → independent checks → dev memo �
 | AI Governance in Organizations (new chapter) | blueprint v0.1 | docs/blueprints/ed2027.2-ai-governance-in-organizations-blueprint.md | 2026-10-22 |
 
 Print edition 2027.1: 23 chapters, schedule unchanged (D31).
+
+
+## Print edition 2027.1 (IngramSpark)
+
+- 2026-11-09: first print eProof approved by the author (D32). Next: enable distribution, pricing; EPUB title validation.
