@@ -7,8 +7,8 @@ set -euo pipefail
 cd publishing/print-cover
 TYPST_IGNORE_SYSTEM_FONTS=true quarto typst compile --font-path ../../fonts cover.typ cover-rgb.pdf
 cd ../..
-OUT=_book-print/AI-for-All-cover-PDFX1a.pdf
-mkdir -p _book-print
+OUT=build/out/AI-for-All-cover-PDFX1a.pdf   # outside _book-print, which each print render empties
+mkdir -p build/out
 gs -dPDFX=1 -dBATCH -dNOPAUSE -dNOSAFER -dQUIET \
    -sDEVICE=pdfwrite -dCompatibilityLevel=1.3 \
    -sColorConversionStrategy=CMYK -sProcessColorModel=DeviceCMYK \

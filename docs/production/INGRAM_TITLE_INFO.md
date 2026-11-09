@@ -111,7 +111,7 @@ Not: Biyografideki bilgiler kitaptaki "About the Author" ile aynı; o sayfanın 
 | Cover finish | Gloss ya da Matte (karar sizde; ikisi de uygun) |
 | Page count | **1114** (iç dosyanın sayfa sayısı; çift sayı) |
 | Interior file | `_book-print/AI-for-All-interior-PDFX1a.pdf` (PDF/X-1a:2001, gri ton, kapaksız) |
-| Cover file | `_book-print/AI-for-All-cover-PDFX1a.pdf` (21 × 12 in, Ingram şablonu üzerine; CMYK PDF/X-1a; sırt 2.182 in; barkod %100 siyah; yeniden üretmek için `tools/make-print-cover.sh`) |
+| Cover file | `build/out/AI-for-All-cover-PDFX1a.pdf` (21 × 12 in, Ingram şablonu üzerine; CMYK PDF/X-1a; sırt 2.182 in; barkod %100 siyah; yeniden üretmek için `tools/make-print-cover.sh`) |
 
 Sırt kalınlığı: **2.182 in** (Ingram kapak şablonu, Black & White, 50 lb White, 1114 sayfa).
 
